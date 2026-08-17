@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["structurally_plausible", "natural", "world_knowledge_required", "unsupported_construction", "answer_ambiguity_suspected", "note"],
+  "properties": {
+    "structurally_plausible": {"type": "boolean"},
+    "natural": {"type": "boolean"},
+    "world_knowledge_required": {"type": "boolean"},
+    "unsupported_construction": {"type": "boolean"},
+    "answer_ambiguity_suspected": {"type": "boolean"},
+    "note": {"type": "string"}
+  }
+}

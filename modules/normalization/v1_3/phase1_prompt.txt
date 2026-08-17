@@ -1,0 +1,43 @@
+Normalize one English Grammar Profile (EGP) descriptor using the supplied
+grammar schema and normalization rules.
+
+Use only:
+- egp_id
+- supercategory
+- subcategory
+- guideword
+- can_do
+
+Do not use or infer from examples, CEFR, other descriptors or mappings,
+running counts, KC design, item generation, or KT results.
+
+Use guideword and can_do as primary evidence; supercategory and subcategory
+provide supporting context.
+
+For each dimension apply this priority:
+1. exact atomic value -> scalar;
+2. independently asserted alternatives -> separate OR cells;
+3. bounded superclass/underspecification without member-wise support -> list;
+4. no usable constraint -> null.
+
+Lists never independently support their members. Dimensions inside a cell are
+AND constraints; cells are OR branches. Never infer Cartesian combinations.
+
+Apply tense-modal compatibility to partial and complete cells. Apply the
+descriptor-level aspect table literally: closed nonmodal DO/main-BE/subject-WH
+finite-main-verb simple forms and imperative base forms have aspect=none;
+broad modal or BE/HAVE wording remains aspect=null unless independently cued;
+explicit perfect/progressive evidence overrides. An unnegated imperative has
+polarity=positive; explicit negative/NOT has polarity=negative.
+
+For every partial mapping, note must begin with the exact convention
+`phase2 eligible: ...`. A bare `question form`, `question forms`, or
+`questions` does not make clause eligible. Name only dimensions passing every
+rulebook eligibility condition; otherwise use `phase2 eligible: none`.
+Preserve special imperative realization only in note; do not add fields.
+
+Return exactly one EGPMapping object and no other text.
+
+INPUT:
+{record}
+

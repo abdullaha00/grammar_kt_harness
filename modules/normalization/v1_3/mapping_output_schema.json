@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["egp_id", "result", "cells", "note"],
+  "properties": {
+    "egp_id": {"type": "string", "minLength": 1},
+    "result": {
+      "type": "string",
+      "enum": ["complete", "partial", "out_of_scope", "schema_failure", "unresolved"]
+    },
+    "cells": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/GrammarCell"}
+    },
+    "note": {"type": ["string", "null"]}
+  },
+  "$defs": {
+    "GrammarCell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tense", "aspect", "voice", "polarity", "clause", "modal"],
+      "properties": {
+        "tense": {"$ref": "#/$defs/TenseConstraint"},
+        "aspect": {"$ref": "#/$defs/AspectConstraint"},
+        "voice": {"$ref": "#/$defs/VoiceConstraint"},
+        "polarity": {"$ref": "#/$defs/PolarityConstraint"},
+        "clause": {"$ref": "#/$defs/ClauseConstraint"},
+        "modal": {"$ref": "#/$defs/ModalConstraint"}
+      }
+    },
+    "TenseConstraint": {
+      "anyOf": [
+        {"enum": ["present", "past", "NA"]},
+        {"type": "array", "minItems": 1, "items": {"enum": ["present", "past", "NA"]}},
+        {"type": "null"}
+      ]
+    },
+    "AspectConstraint": {
+      "anyOf": [
+        {"enum": ["none", "progressive", "perfect", "perfect_progressive"]},
+        {"type": "array", "minItems": 1, "items": {"enum": ["none", "progressive", "perfect", "perfect_progressive"]}},
+        {"type": "null"}
+      ]
+    },
+    "VoiceConstraint": {
+      "anyOf": [
+        {"enum": ["active", "passive"]},
+        {"type": "array", "minItems": 1, "items": {"enum": ["active", "passive"]}},
+        {"type": "null"}
+      ]
+    },
+    "PolarityConstraint": {
+      "anyOf": [
+        {"enum": ["positive", "negative"]},
+        {"type": "array", "minItems": 1, "items": {"enum": ["positive", "negative"]}},
+        {"type": "null"}
+      ]
+    },
+    "ClauseConstraint": {
+      "anyOf": [
+        {"enum": ["declarative", "polar_question", "subject_wh_question", "non_subject_wh_question", "imperative"]},
+        {"type": "array", "minItems": 1, "items": {"enum": ["declarative", "polar_question", "subject_wh_question", "non_subject_wh_question", "imperative"]}},
+        {"type": "null"}
+      ]
+    },
+    "ModalConstraint": {
+      "anyOf": [
+        {"enum": ["none", "can", "could", "may", "might", "must", "shall", "should", "will", "would"]},
+        {"type": "array", "minItems": 1, "items": {"enum": ["none", "can", "could", "may", "might", "must", "shall", "should", "will", "would"]}},
+        {"type": "null"}
+      ]
+    }
+  }
+}
+

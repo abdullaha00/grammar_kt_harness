@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RealizationSpec v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "realization_id",
+    "canonical_cell_id",
+    "source_descriptor_id",
+    "predicate_frame_id",
+    "subject",
+    "wh",
+    "imperative_subtype",
+    "let_pronoun"
+  ],
+  "properties": {
+    "realization_id": {"type": "string", "pattern": "^REAL_[A-F0-9]{16}$"},
+    "canonical_cell_id": {"type": "string", "pattern": "^CELL_[A-F0-9]{16}$"},
+    "source_descriptor_id": {"type": "string", "minLength": 1},
+    "predicate_frame_id": {"type": "string", "minLength": 1},
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "person", "number"],
+      "properties": {
+        "text": {"type": "string", "minLength": 1},
+        "person": {"enum": [1, 2, 3]},
+        "number": {"enum": ["singular", "plural"]}
+      }
+    },
+    "wh": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["role", "phrase"],
+          "properties": {
+            "role": {"enum": ["subject", "object", "adjunct"]},
+            "phrase": {"type": "string", "minLength": 1}
+          }
+        }
+      ]
+    },
+    "imperative_subtype": {
+      "type": ["string", "null"],
+      "enum": [null, "ordinary", "emphatic_do", "lets", "lets_not", "let_pronoun"]
+    },
+    "let_pronoun": {"type": ["string", "null"]}
+  }
+}

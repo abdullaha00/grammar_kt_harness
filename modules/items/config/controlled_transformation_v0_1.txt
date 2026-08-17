@@ -1,0 +1,4 @@
+Produce exactly one sentence from the fixed frame.
+Grammar: tense={tense}; aspect={aspect}; voice={voice}; polarity={polarity}; clause={clause}; modal={modal}; imperative subtype={imperative_subtype}.
+Use exactly: subject="{subject}"; verb lemma={lemma}; object="{object}"; complement="{complement}"; WH phrase="{wh_phrase}"; LET pronoun="{let_pronoun}".
+Do not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly {punctuation_name}. Return one sentence only.

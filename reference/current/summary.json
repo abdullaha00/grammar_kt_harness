@@ -1,0 +1,11 @@
+{
+  "reference_repository": "/home/abdullah/grammar_kt_e2e_pilot",
+  "reference_commit": "91ed3bace17b91f436716f3290114eb1394fe759",
+  "normalization_repository": "/home/abdullah/egp_normalization_v1_3_pilot",
+  "normalization_commit": "fa7755bd6db96fe413ed70bda69154ebe97aa1fe",
+  "outcome": "FREEZE_E2E_V1_AND_SCALE",
+  "claim_boundary": "Operational and technical reference only; no human-learning or cognitive-KC validity claim.",
+  "counts_file": "expected_counts.json",
+  "deterministic_hashes_file": "deterministic_hashes.json",
+  "kt_sanity_file": "kt_sanity.json"
+}

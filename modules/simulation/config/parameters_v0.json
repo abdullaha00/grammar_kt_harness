@@ -1,0 +1,20 @@
+{
+  "version": "SIMULATION_v0",
+  "seed": 20260817,
+  "learners_per_profile": 60,
+  "item_passes_per_learner": 2,
+  "train_end_sequence": 54,
+  "validation_end_sequence": 72,
+  "difficulty_min": -0.8,
+  "difficulty_max": 0.8,
+  "multi_kc_penalty": 0.15,
+  "probability_floor": 0.1,
+  "probability_span": 0.8,
+  "correct_gain": 0.6,
+  "incorrect_gain": 0.35,
+  "profiles": {
+    "low": {"beta_alpha": 2.0, "beta_beta": 6.0, "learning_rate": 0.06},
+    "mixed": {"beta_alpha": 2.0, "beta_beta": 2.0, "learning_rate": 0.05},
+    "high": {"beta_alpha": 6.0, "beta_beta": 2.0, "learning_rate": 0.035}
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ItemSpec v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["item_id", "source_descriptor_ids", "canonical_cell_id", "realization_spec", "item_family", "primary_kc_id", "all_kc_ids", "prompt", "target_answer", "accepted_answers", "contrast_set_id", "generation_metadata", "validator_results", "provenance"],
+  "properties": {
+    "item_id": {"type": "string", "pattern": "^ITEM_[A-F0-9]{16}$"},
+    "source_descriptor_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "canonical_cell_id": {"type": "string", "pattern": "^CELL_[A-F0-9]{16}$"},
+    "realization_spec": {"type": "object"},
+    "item_family": {"const": "CONTROLLED_TRANSFORMATION_v0_1"},
+    "primary_kc_id": {"type": "string"},
+    "all_kc_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "prompt": {"type": "string", "minLength": 1},
+    "target_answer": {"type": "string", "minLength": 1},
+    "accepted_answers": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "contrast_set_id": {"type": ["string", "null"]},
+    "generation_metadata": {"type": "object"},
+    "validator_results": {"type": "object"},
+    "provenance": {"type": "object"}
+  }
+}

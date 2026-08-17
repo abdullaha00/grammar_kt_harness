@@ -1,0 +1,21 @@
+{
+  "unique_source_descriptors": 139,
+  "phase1_units": 147,
+  "complete_mappings": 44,
+  "partial_mappings": 79,
+  "out_of_scope": 15,
+  "unresolved": 1,
+  "schema_failures": 0,
+  "source_cell_edges": 48,
+  "canonical_cells": 24,
+  "kcs": 9,
+  "accepted_items": 45,
+  "q_rows": 45,
+  "q_columns": 9,
+  "q_edges": 99,
+  "learners": 180,
+  "events_per_learner": 90,
+  "interactions": 16200,
+  "provenance_edges": 16658
+}
+

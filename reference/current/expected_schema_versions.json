@@ -1,0 +1,12 @@
+{
+  "normalization": "egp_normalization_v1_3",
+  "grammar_cell": "six_field_v1",
+  "realization": "RealizationSpec_v0",
+  "kc": "KC_PROJECTION_v1",
+  "items": "CONTROLLED_TRANSFORMATION_v0_1",
+  "qmatrix": "QMATRIX_v1",
+  "simulation": "SIMULATION_v0",
+  "kt": "KT_SANITY_v0",
+  "provenance": "PROVENANCE_v1"
+}
+

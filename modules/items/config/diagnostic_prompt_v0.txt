@@ -1,0 +1,16 @@
+Evaluate one tightly controlled English grammar-production item as an automated diagnostic.
+
+Judge the supplied prompt together with its intended answer and canonical grammar target. The prompt deliberately fixes lexical material and grammar features; do not call that ordinary constraint an ambiguity or answer leak.
+
+Set:
+- structurally_plausible=true only if the intended answer realizes the supplied six-field target;
+- natural=true only if the answer is acceptable ordinary English under the deliberately controlled frame;
+- world_knowledge_required=true only if solving requires facts beyond the supplied words and grammar;
+- unsupported_construction=true only if the item introduces grammar outside its supplied target;
+- answer_ambiguity_suspected=true if another response distinct from accepted_answers could obey every explicit prompt constraint.
+
+Return exactly one JSON object and no other text:
+{"structurally_plausible":boolean,"natural":boolean,"world_knowledge_required":boolean,"unsupported_construction":boolean,"answer_ambiguity_suspected":boolean,"note":string}
+
+ITEM:
+{item}
