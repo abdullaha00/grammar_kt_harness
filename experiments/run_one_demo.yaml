@@ -1,9 +1,0 @@
-extends: current
-experiment_id: run_one_demo
-
-# Keep no-argument demonstrations independent of the non-redistributed source
-# corpus. Individual run_one evidence still records its exact fixture input.
-source:
-  path: modules/stage_1_source/fixtures/core.jsonl
-  sha256: 0c5214c26599bd12bad78967410006344c7640db518da9d40f03d89c1e08f908
-  records: 1

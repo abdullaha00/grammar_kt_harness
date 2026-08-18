@@ -1,0 +1,56 @@
+experiment: base
+
+source:
+  path: /home/abdullah/urop-aug/sources/parsed_final/egp_entries.jsonl
+  sha256: e38c4f959f188150dae7b88f21e35d77828048772e222191818dc0c2488486cd
+  records: 1222
+  selected_descriptors: 139
+  sample_ids: modules/source/sample_ids.txt
+  sample_metadata: modules/source/sample_metadata.jsonl
+  annotation_units: modules/source/annotation_units.jsonl
+
+normalisation:
+  phase1_prompt: phase1
+  phase2_prompt: phase2
+  wrapper: wrapper
+  rulebook: rulebook
+  dimensions: grammar_dimensions
+  output_schema: mapping_schema
+  instructions: model_instructions
+  backend_config: backend
+  workers: 3
+  max_attempts: 2
+
+canonical: {}
+
+realisation:
+  rules: default
+  lexicon: default
+  config: default
+
+kc:
+  policy: factorized
+
+items:
+  family: controlled_transformation
+  realisation_lexicon: default
+  replicates_per_kc: 5
+  development_replicates: 2
+  validation:
+    rules: rules
+    prompt: diagnostic_prompt
+    output_schema: diagnostic_schema
+    instructions: diagnostic_instructions
+    backend_config: backend
+    workers: 6
+    max_attempts: 2
+
+simulation:
+  config: default
+  seed: 20260817
+  learners: 180
+  events_per_learner: 90
+
+kt:
+  config: default
+  techniques: [empirical, bkt, logistic]

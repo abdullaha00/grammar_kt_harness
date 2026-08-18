@@ -1,2 +1,0 @@
-"""Canonical GrammarCell inventory module."""
-

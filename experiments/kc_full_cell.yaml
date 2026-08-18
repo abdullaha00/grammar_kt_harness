@@ -1,0 +1,5 @@
+extends: base
+experiment: kc_full_cell
+
+kc:
+  policy: full_cell

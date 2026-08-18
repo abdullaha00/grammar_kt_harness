@@ -1,110 +1,94 @@
-# Grammar-to-KT research harness
+# Grammar–KT experimental harness
 
-This repository is a small experimental laboratory around the accepted grammar-to-KT pipeline. It preserves the methodology while making each scientific input, one-unit decision, run difference, and lineage edge inspectable.
-
-```text
-source → normalization → canonical → realization → kc → items
-       → qmatrix → simulation → kt
-provenance references every declared interface and methodology hash
-```
-
-The package folders are numbered in pipeline order for file-explorer browsing:
+This repository is a small research laboratory for the fixed pipeline:
 
 ```text
-modules/
-  stage_1_source/
-  stage_2_normalization/
-  stage_3_canonical/
-  stage_4_realization/
-  stage_5_kc/
-  stage_6_items/
-  stage_7_qmatrix/
-  stage_8_simulation/
-  stage_9_kt/
-  stage_10_provenance/
+source → normalisation → canonical → realisation → KC selection
+       → items → deterministic Q-matrix → simulation → KT
 ```
 
-The semantic stage names inside run directories and manifests remain stable
-(`source`, `normalization`, …, `provenance`).
+The scientific methodology remains explicit and replaceable:
 
-Each module contains a concise README, `contract.yaml`, its behavior-defining prompts/rules/configs/schemas, representative fixtures where useful, executable stage code, and unit-level commands. Generated observations live only in `runs/`.
+- `modules/` — prompts, rulebooks, policies, item families, lexicons, parameters, and tiny fixtures;
+- `src/grammar_kt/` — Python that executes those choices;
+- `scripts/` — the five researcher-facing commands;
+- `experiments/` — small combinations of scientific choices;
+- `runs/` — generated observations and model evidence;
+- `tests/` — software and boundary tests.
 
-## Install and reference experiment
+Q-matrix generation is implementation, not a separate scientific choice. Run metadata records the Git commit/dirty state, resolved experiment, seed, and external source SHA-256. There is no provenance stage, fingerprint graph, or automatic cache.
 
-Use Python 3.11+:
+## Install and run
 
 ```bash
+python -m venv .venv
+source .venv/bin/activate
 python -m pip install -e .
-python scripts/run_experiment.py current
-python scripts/validate_experiment.py runs/current
+python scripts/run.py base
 ```
 
-The external EGP source is hash-pinned but not redistributed. Its current local path can be overridden with `--source-path`.
+The baseline needs the external EGP source declared in `experiments/base.yaml` and invokes the configured models for normalisation and item diagnostics. Model evidence is retained under the relevant unit directory as `input.json`, `rendered_prompt.txt`, `invocation.json`, `raw_output.txt`, `parsed_output.json`, and `validation.json`.
 
-The accepted reference manifest still declares:
-
-```text
-139 unique descriptors → 44 complete mappings → 24 exact cells
-→ 9 factorized KCs → 45 accepted items → 45×9 Q / 99 edges
-→ 180 learners / 16,200 observable interactions
-```
-
-These are operational reference counts. Synthetic states are simulator truth; automated diagnostics are not human item validation; KT metrics are technical sanity checks.
-
-## Unit and fixture workflow
-
-Every `run_one` command has a representative default and prints explicit
-`before` and `after` JSON. These demonstrations write to `runs/run_one_demo/`:
+Run one example without constructing an experiment:
 
 ```bash
-python -m modules.stage_1_source.run_one
-python -m modules.stage_2_normalization.run_one  # invokes the configured model
-python -m modules.stage_3_canonical.run_one
-python -m modules.stage_4_realization.run_one
-python -m modules.stage_5_kc.run_one
-python -m modules.stage_6_items.run_one
-python -m modules.stage_8_simulation.run_one
+python scripts/run_one.py realisation --fixture lexical_present_question
+python scripts/run_one.py kc --fixture perfect_progressive --policy factorized
+python scripts/run_one.py items --fixture valid_deterministic_item
+python scripts/run_one.py simulation
 ```
 
-Pass an identifier to replace the representative default:
+Each command prints `BEFORE` and `AFTER`. Normalisation uses the configured model and defaults to the first readable fixture:
 
 ```bash
-python -m modules.stage_2_normalization.run_one EGP_ID --experiment current
-python -m modules.stage_2_normalization.inspect EGP_ID --experiment current
-python -m modules.stage_4_realization.run_one CELL_ID --experiment current
-python -m modules.stage_5_kc.run_one CELL_ID --experiment full_cell
-python -m modules.stage_5_kc.explain CELL_ID --experiment full_cell
-python -m modules.stage_6_items.run_one OPPORTUNITY_ID --experiment current
-python -m modules.stage_6_items.inspect ITEM_ID --experiment current
-python -m modules.stage_7_qmatrix.explain ITEM_ID --experiment current
-python -m modules.stage_8_simulation.run_one LEARNER_ID --experiment current
+python scripts/run_one.py normalisation --phase1-only
+python scripts/run_one.py normalisation EGP_ID --experiment base
 ```
 
-Representative deterministic fixtures run without scaling the experiment:
+Use `--output /tmp/my-debug-run` to retain one-off evidence at a chosen location.
+
+## KC experiment example
+
+1. Copy `modules/kc/policies/factorized.json` to `modules/kc/policies/new_policy.json` and edit its rules. Supported rule primitives are `cell`, `operation`, and `all`; no Python change is needed for a policy using those primitives.
+2. Test one case:
+
+   ```bash
+   python scripts/run_one.py kc --fixture perfect_progressive --policy new_policy
+   ```
+
+3. Declare only the intervention in `experiments/kc_new_policy.yaml`:
+
+   ```yaml
+   extends: base
+   experiment: kc_new_policy
+
+   kc:
+     policy: new_policy
+   ```
+
+4. With `runs/base/` already present, explicitly reuse its pre-KC outputs and execute KC onward:
+
+   ```bash
+   python scripts/run.py kc_new_policy --from kc
+   python scripts/compare.py base kc_new_policy --stage kc
+   ```
+
+`--from` is intentionally explicit. It copies earlier stage outputs from the parent run and records that fact in `metadata.json`; it does not infer reuse from hashes.
+
+## Inspect, compare, validate
 
 ```bash
-python -m modules.stage_4_realization.run --input modules/stage_4_realization/fixtures/core.jsonl
-python -m modules.stage_5_kc.run --input modules/stage_5_kc/fixtures/core.jsonl
-python -m modules.stage_6_items.run --input modules/stage_6_items/fixtures/core.jsonl
+python scripts/inspect.py normalisation EGP_ID --run base
+python scripts/inspect.py kc CELL_ID --run base
+python scripts/inspect.py item ITEM_ID --run base
+python scripts/inspect.py qmatrix ITEM_ID --run base
+python scripts/inspect.py kt EVENT_ID --run base
+
+python scripts/compare.py base kc_full_cell
+python scripts/compare.py base kc_full_cell --stage kc
+python scripts/validate.py base
 ```
 
-Normalization fixtures invoke the configured backend and therefore are explicit:
+Experiment variants inherit recursively and deep-merge mappings; lists replace atomically. For example, `experiments/kc_full_cell.yaml` changes only `kc.policy`, while `experiments/kt_bkt_only.yaml` changes only `kt.techniques`. Run the latter with `--from kt` to consume the exact parent observable dataset without rerunning upstream stages.
 
-```bash
-python -m modules.stage_2_normalization.run \
-  --input modules/stage_2_normalization/fixtures/core.jsonl \
-  --experiment current
-```
-
-## Controlled variants, reuse, and comparison
-
-Variant YAML files deep-merge `extends: current`. `runs/<id>/experiment_manifest.json` stores the fully resolved manifest and scientific-file hashes; `diff_from_parent.json` stores leaf-level interventions.
-
-```bash
-python scripts/run_experiment.py kt_bkt_only --only kt
-python scripts/compare_runs.py runs/current runs/kt_bkt_only --stage kt
-```
-
-The runner fingerprints each stage from its declared input hashes, scientific configuration/resource hashes, and relevant implementation hashes. An identical completed stage is symlink-reused and recorded as `reused` in `stage_status.json`; otherwise it is `executed`. `--force` deliberately bypasses reuse for selected stages.
-
-See [DESIGN.md](DESIGN.md), [experiments/README.md](experiments/README.md), and the module READMEs for exact contracts and research variables.
+The reference numbers in `reference/current/expected_counts.json` are operational/technical checks, not evidence of human learning, KC cognitive validity, or acquisition order.

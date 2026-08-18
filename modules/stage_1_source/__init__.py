@@ -1,2 +1,0 @@
-"""Source subset module."""
-

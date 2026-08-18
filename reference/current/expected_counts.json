@@ -15,7 +15,5 @@
   "q_edges": 99,
   "learners": 180,
   "events_per_learner": 90,
-  "interactions": 16200,
-  "provenance_edges": 16658
+  "interactions": 16200
 }
-

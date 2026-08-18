@@ -1,0 +1,27 @@
+{
+  "fixture_label": "perfect_progressive",
+  "opportunity_id": "OPP_FIXTURE_PERFECT_PROGRESSIVE",
+  "split": "development",
+  "canonical_cell_id": "CELL_FIXTURE_PERFECT_PROGRESSIVE",
+  "cell": {
+    "tense": "present",
+    "aspect": "perfect_progressive",
+    "voice": "active",
+    "polarity": "positive",
+    "clause": "declarative",
+    "modal": "none"
+  },
+  "realization_spec": {
+    "realization_id": "REAL_FIXTURE_PERFECT_PROGRESSIVE",
+    "canonical_cell_id": "CELL_FIXTURE_PERFECT_PROGRESSIVE",
+    "source_descriptor_id": "FIX_KC_PERFECT_PROGRESSIVE",
+    "predicate_frame_id": "FRAME_WORK",
+    "subject": {"text": "the technician", "person": 3, "number": "singular"},
+    "wh": null,
+    "imperative_subtype": null,
+    "let_pronoun": null
+  },
+  "realization_operations": ["perfect_progressive"],
+  "source_descriptor_ids": ["FIX_KC_PERFECT_PROGRESSIVE"],
+  "source_mapping_notes": {"FIX_KC_PERFECT_PROGRESSIVE": null}
+}

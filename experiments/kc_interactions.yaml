@@ -1,0 +1,5 @@
+extends: base
+experiment: kc_interactions
+
+kc:
+  policy: factorized_plus_interactions

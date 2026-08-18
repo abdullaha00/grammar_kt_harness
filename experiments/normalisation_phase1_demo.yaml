@@ -1,0 +1,5 @@
+extends: base
+experiment: normalisation_phase1_demo
+
+normalisation:
+  phase1_prompt: phase1_demo
