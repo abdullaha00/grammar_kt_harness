@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KCSpec",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["kc_id", "name", "definition", "activation_rule", "required_conditions", "includes", "excludes", "source_cell_ids", "source_descriptor_ids", "realization_dependencies", "near_neighbours", "rationale"],
+  "properties": {
+    "kc_id": {"type": "string", "pattern": "^KC_[A-Z0-9_]+$"},
+    "name": {"type": "string", "minLength": 1},
+    "definition": {"type": "string", "minLength": 1},
+    "activation_rule": {"type": "object"},
+    "required_conditions": {"type": "array", "items": {"type": "string"}},
+    "includes": {"type": "array", "items": {"type": "string"}},
+    "excludes": {"type": "array", "items": {"type": "string"}},
+    "source_cell_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "source_descriptor_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "realization_dependencies": {"type": "array", "items": {"type": "string"}},
+    "near_neighbours": {"type": "array", "items": {"type": "string"}},
+    "rationale": {"type": "string", "minLength": 1}
+  }
+}

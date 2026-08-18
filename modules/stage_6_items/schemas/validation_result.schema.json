@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ValidationResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["item_id", "status", "reasons", "deterministic", "diagnostic_unit_id"],
+  "properties": {
+    "item_id": {"type": "string", "pattern": "^ITEM_[A-F0-9]{16}$"},
+    "status": {"enum": ["accepted", "rejected"]},
+    "reasons": {"type": "array", "items": {"type": "string"}},
+    "deterministic": {"type": "object"},
+    "diagnostic_unit_id": {"type": ["string", "null"]}
+  }
+}

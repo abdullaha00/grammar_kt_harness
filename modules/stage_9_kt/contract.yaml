@@ -1,0 +1,11 @@
+module: kt
+input:
+  - {path: simulation/observable_interactions.jsonl, type: "Interaction[]"}
+configuration:
+  - kt.config
+  - kt.techniques
+procedure: Compute pre-event observable features and run only the selected registered baselines.
+output:
+  - {path: predictions.jsonl, type: "KTPrediction[]"}
+  - {path: metrics.json, type: TechnicalMetrics}
+forbidden_state: [oracle, source, normalization, canonical, realization, items, qmatrix]

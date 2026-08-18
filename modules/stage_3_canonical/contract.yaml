@@ -1,0 +1,10 @@
+module: canonical
+input:
+  - {path: normalization/final_mappings.jsonl, type: "EGPMapping[]"}
+configuration:
+  - canonical.version
+procedure: Keep complete scalar cells, assign stable exact-cell IDs, and retain each source edge and note.
+output:
+  - {path: canonical_cells.jsonl, type: "GrammarCellRecord[]"}
+  - {path: source_cell_edges.jsonl, type: "SourceCellEdge[]"}
+forbidden_state: [source_raw, realization, kc, items, qmatrix, simulation, kt]

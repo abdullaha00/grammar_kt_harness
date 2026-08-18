@@ -5,13 +5,13 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from modules.canonical.run import build
-from modules.items.helpers import item_id, render_prompt
-from modules.kc.policy import matches
-from modules.normalization.run import _load_validator
-from modules.provenance.run import build_graph
-from modules.realization.engine import realize, validate_spec
-from modules.simulation.run import FORBIDDEN_OBSERVABLE, difficulty
+from modules.stage_3_canonical.run import build
+from modules.stage_6_items.helpers import item_id, render_prompt
+from modules.stage_5_kc.policy import matches
+from modules.stage_2_normalization.run import _load_validator
+from modules.stage_10_provenance.run import build_graph
+from modules.stage_4_realization.engine import realize, validate_spec
+from modules.stage_8_simulation.run import FORBIDDEN_OBSERVABLE, difficulty
 from shared.utils.io import ROOT, read_json, sha256_file
 
 
@@ -41,12 +41,12 @@ def spec(wh=None) -> dict:
 
 class FrozenNormalizationTests(unittest.TestCase):
     def test_frozen_hashes(self) -> None:
-        frozen = ROOT / "modules/normalization/v1_3"
+        frozen = ROOT / "modules/stage_2_normalization/v1_3"
         for filename, expected in read_json(frozen / "artifact_hashes.json").items():
             self.assertEqual(sha256_file(frozen / filename), expected, filename)
 
     def test_phase2_changes_only_eligible_dimension(self) -> None:
-        validator = _load_validator(ROOT / "modules/normalization/v1_3/validate.py")
+        validator = _load_validator(ROOT / "modules/stage_2_normalization/v1_3/validate.py")
         cell = {
             "tense": ["present", "past"], "aspect": "none", "voice": "active",
             "polarity": "positive", "clause": "declarative", "modal": "none",
@@ -112,7 +112,7 @@ class KCAndItemTests(unittest.TestCase):
         self.assertEqual(item_id("KC_A", current_spec, 0), item_id("KC_A", current_spec, 0))
         self.assertNotEqual(item_id("KC_A", current_spec, 0), item_id("KC_B", current_spec, 0))
         cell = {"tense": "past", "aspect": "perfect", "voice": "active", "polarity": "negative", "clause": "declarative", "modal": "none"}
-        template = (ROOT / "modules/items/config/controlled_transformation_v0_1.txt").read_text(encoding="utf-8")
+        template = (ROOT / "modules/stage_6_items/prompts/controlled_transformation_v0_1.txt").read_text(encoding="utf-8")
         prompt = render_prompt(template, cell, current_spec, {"lemma": "write", "object": "the report", "complement": None})
         for value in cell.values():
             self.assertIn(value, prompt)

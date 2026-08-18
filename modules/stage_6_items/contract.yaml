@@ -1,0 +1,17 @@
+module: items
+input:
+  - {path: realization/realizations.jsonl, type: "RealizationRecord[]"}
+  - {path: kc/cell_kc_projection.jsonl, type: "KCActivation[]"}
+  - {path: kc/kc_inventory.jsonl, type: "KCSpec[]"}
+configuration:
+  - items.generation
+  - items.validation
+  - realization.lexicon
+  - realization.rules
+procedure: Deterministically generate candidates, run hard validation, then an independent model diagnostic.
+output:
+  - {path: generation/candidate_items.jsonl, type: "ItemSpec[]"}
+  - {path: validation/accepted_items.jsonl, type: "ItemSpec[]"}
+  - {path: validation/validation_results.jsonl, type: "ValidationResult[]"}
+  - {path: units/<validation_unit>/, type: ModelInvocationEvidence}
+forbidden_state: [source, normalization, qmatrix, simulation, kt]

@@ -9,12 +9,11 @@ from typing import Any
 
 from jsonschema.validators import validator_for
 
-from modules.canonical.run import stable_cell_id
+from modules.stage_3_canonical.run import stable_cell_id
 from shared.utils.io import DIMENSIONS, ROOT, read_json, read_jsonl, repo_path, utc_now
 from shared.utils.manifests import verify_descriptor
+from shared.utils.stages import STAGES
 
-
-STAGES = ("source", "normalization", "canonical", "realization", "kc", "items", "qmatrix", "simulation", "kt", "provenance")
 FORBIDDEN_OBSERVABLE = {
     "profile", "pre_mastery", "post_mastery", "response_probability", "random_draw",
     "target_answer", "accepted_answers", "prompt", "definition", "activation_rule",
@@ -23,7 +22,13 @@ FORBIDDEN_OBSERVABLE = {
 
 def _manifest_errors(run_dir: Path) -> list[str]:
     errors: list[str] = []
-    manifests = sorted(run_dir.rglob("manifest.json"))
+    manifests = list(run_dir.rglob("manifest.json"))
+    manifests.extend(
+        run_dir / stage / "manifest.json"
+        for stage in STAGES
+        if (run_dir / stage / "manifest.json").is_file()
+    )
+    manifests = sorted(set(manifests), key=str)
     if not manifests:
         return ["no stage manifests found"]
     for path in manifests:
@@ -144,11 +149,11 @@ def validate_run(run_dir: Path, *, compare_reference: bool = True) -> dict[str, 
     provenance = read_jsonl(required["provenance"])
 
     schema_jobs = (
-        (required["source"], ROOT / "shared/schemas/source_record.schema.json", "source"),
+        (required["source"], ROOT / "modules/stage_1_source/schemas/source_descriptor.schema.json", "source"),
         (required["mappings"], repo_path(config["normalization"]["output_schema"]), "mapping"),
-        (required["accepted"], ROOT / "shared/schemas/item.schema.json", "accepted item"),
-        (required["observable"], ROOT / "shared/schemas/interaction.schema.json", "observable interaction"),
-        (required["provenance"], ROOT / "shared/schemas/provenance_edge.schema.json", "provenance edge"),
+        (required["accepted"], ROOT / "modules/stage_6_items/schemas/item_spec_v0_1.schema.json", "accepted item"),
+        (required["observable"], ROOT / "modules/stage_8_simulation/schemas/interaction.schema.json", "observable interaction"),
+        (required["provenance"], ROOT / "modules/stage_10_provenance/schemas/provenance_edge.schema.json", "provenance edge"),
     )
     for data_path, schema_path, label in schema_jobs:
         errors.extend(_schema_errors(data_path, schema_path, label))

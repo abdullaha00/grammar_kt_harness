@@ -1,62 +1,110 @@
-# Modular grammar-to-KT harness
+# Grammar-to-KT research harness
 
-This repository is the minimal executable form of the current EGP grammar-to-KT experiment. It keeps normalization, canonical grammar, realization, KC policy, item construction, Q-matrix derivation, simulation, and KT techniques independently configurable through one experiment manifest; it intentionally omits the methodology-development history.
+This repository is a small experimental laboratory around the accepted grammar-to-KT pipeline. It preserves the methodology while making each scientific input, one-unit decision, run difference, and lineage edge inspectable.
 
 ```text
-external EGP source -> source subset -> normalization -> canonical cells
-  -> realization -> KC projection -> item generation -> item validation
-  -> Q-matrix -> simulation -> KT -> provenance
+source → normalization → canonical → realization → kc → items
+       → qmatrix → simulation → kt
+provenance references every declared interface and methodology hash
 ```
 
-| module | declared input | output |
-|---|---|---|
-| source | hash-pinned EGP JSONL + fixed IDs | subset, metadata, units |
-| normalization | subset + frozen v1.3 contract | Phase 1/2 and final mappings |
-| canonical | final mappings | cells and source-to-cell edges |
-| realization | cells, source edges, frozen rules/lexicon | executable RealizationSpecs |
-| KC | cells, realizations, policy | KC inventory and cell projection |
-| items | cells, realizations, KC projection | candidates, diagnostics, accepted/rejected items |
-| Q-matrix | accepted items + KC policy | matrix and derived item-to-KC edges |
-| simulation | item bank + Q-matrix | separate observable and oracle interactions |
-| KT | observable interactions | predictions and technical metrics |
-| provenance | all stage interfaces | typed lineage graph and audit |
+The package folders are numbered in pipeline order for file-explorer browsing:
 
-## Prerequisites
+```text
+modules/
+  stage_1_source/
+  stage_2_normalization/
+  stage_3_canonical/
+  stage_4_realization/
+  stage_5_kc/
+  stage_6_items/
+  stage_7_qmatrix/
+  stage_8_simulation/
+  stage_9_kt/
+  stage_10_provenance/
+```
 
-Use Python 3.11+ and install the pinned packages with `python -m pip install -e .`. The current normalization and item diagnostic use Codex CLI 0.147.0 semantics and require working Codex authentication. The restricted EGP source is not redistributed; see `data/external/README.md`. The reference run launches 147 Phase-1 annotations, mechanically routed Phase 2 annotations (88 in the accepted run), and 50 independent item diagnostics.
+The semantic stage names inside run directories and manifests remain stable
+(`source`, `normalization`, …, `provenance`).
 
-## Reproduce and validate
+Each module contains a concise README, `contract.yaml`, its behavior-defining prompts/rules/configs/schemas, representative fixtures where useful, executable stage code, and unit-level commands. Generated observations live only in `runs/`.
+
+## Install and reference experiment
+
+Use Python 3.11+:
 
 ```bash
-python scripts/run_experiment.py experiments/current.yaml
+python -m pip install -e .
+python scripts/run_experiment.py current
 python scripts/validate_experiment.py runs/current
 ```
 
-Override only the local source location with `--source-path /path/to/egp_entries.jsonl`. Existing completed runs are never overwritten; `--force` first moves the old run to a timestamped backup.
+The external EGP source is hash-pinned but not redistributed. Its current local path can be overridden with `--source-path`.
 
-## Controlled variants
+The accepted reference manifest still declares:
 
-Experiment files may `extends: current.yaml`; nested keys are deep-merged. Give every variant a new `experiment_id`. To reuse a verified unchanged prefix, declare `reuse.run` and `reuse.through`.
-
-```bash
-cp experiments/current.yaml experiments/new_prompt.yaml
-# change experiment_id and normalization.phase1_prompt only
-python scripts/run_experiment.py experiments/new_prompt.yaml
-
-cp experiments/current.yaml experiments/dkt.yaml
-# change experiment_id and kt.techniques; optionally reuse through simulation
-python scripts/run_experiment.py experiments/dkt.yaml
-
-cp experiments/current.yaml experiments/full_cell.yaml
-# change experiment_id and kc.policy to full_cell
-python scripts/run_experiment.py experiments/full_cell.yaml
+```text
+139 unique descriptors → 44 complete mappings → 24 exact cells
+→ 9 factorized KCs → 45 accepted items → 45×9 Q / 99 edges
+→ 180 learners / 16,200 observable interactions
 ```
 
-Trace an accepted item with:
+These are operational reference counts. Synthetic states are simulator truth; automated diagnostics are not human item validation; KT metrics are technical sanity checks.
+
+## Unit and fixture workflow
+
+Every `run_one` command has a representative default and prints explicit
+`before` and `after` JSON. These demonstrations write to `runs/run_one_demo/`:
 
 ```bash
-python scripts/trace_item.py ITEM_ID --run current
+python -m modules.stage_1_source.run_one
+python -m modules.stage_2_normalization.run_one  # invokes the configured model
+python -m modules.stage_3_canonical.run_one
+python -m modules.stage_4_realization.run_one
+python -m modules.stage_5_kc.run_one
+python -m modules.stage_6_items.run_one
+python -m modules.stage_8_simulation.run_one
 ```
 
-See `DESIGN.md` for the scientific boundaries and `experiments/README.md` for manifest inheritance and prefix reuse.
+Pass an identifier to replace the representative default:
 
+```bash
+python -m modules.stage_2_normalization.run_one EGP_ID --experiment current
+python -m modules.stage_2_normalization.inspect EGP_ID --experiment current
+python -m modules.stage_4_realization.run_one CELL_ID --experiment current
+python -m modules.stage_5_kc.run_one CELL_ID --experiment full_cell
+python -m modules.stage_5_kc.explain CELL_ID --experiment full_cell
+python -m modules.stage_6_items.run_one OPPORTUNITY_ID --experiment current
+python -m modules.stage_6_items.inspect ITEM_ID --experiment current
+python -m modules.stage_7_qmatrix.explain ITEM_ID --experiment current
+python -m modules.stage_8_simulation.run_one LEARNER_ID --experiment current
+```
+
+Representative deterministic fixtures run without scaling the experiment:
+
+```bash
+python -m modules.stage_4_realization.run --input modules/stage_4_realization/fixtures/core.jsonl
+python -m modules.stage_5_kc.run --input modules/stage_5_kc/fixtures/core.jsonl
+python -m modules.stage_6_items.run --input modules/stage_6_items/fixtures/core.jsonl
+```
+
+Normalization fixtures invoke the configured backend and therefore are explicit:
+
+```bash
+python -m modules.stage_2_normalization.run \
+  --input modules/stage_2_normalization/fixtures/core.jsonl \
+  --experiment current
+```
+
+## Controlled variants, reuse, and comparison
+
+Variant YAML files deep-merge `extends: current`. `runs/<id>/experiment_manifest.json` stores the fully resolved manifest and scientific-file hashes; `diff_from_parent.json` stores leaf-level interventions.
+
+```bash
+python scripts/run_experiment.py kt_bkt_only --only kt
+python scripts/compare_runs.py runs/current runs/kt_bkt_only --stage kt
+```
+
+The runner fingerprints each stage from its declared input hashes, scientific configuration/resource hashes, and relevant implementation hashes. An identical completed stage is symlink-reused and recorded as `reused` in `stage_status.json`; otherwise it is `executed`. `--force` deliberately bypasses reuse for selected stages.
+
+See [DESIGN.md](DESIGN.md), [experiments/README.md](experiments/README.md), and the module READMEs for exact contracts and research variables.

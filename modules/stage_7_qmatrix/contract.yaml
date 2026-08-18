@@ -1,0 +1,13 @@
+module: qmatrix
+input:
+  - {path: items/validation/accepted_items.jsonl, type: "ItemSpec[]"}
+  - {path: kc/cell_kc_projection.jsonl, type: "KCActivation[]"}
+  - {path: kc/kc_inventory.jsonl, type: "KCSpec[]"}
+configuration:
+  - qmatrix.version
+  - qmatrix.max_kcs_per_item
+procedure: Copy frozen opportunity activation into deterministic item-KC edges and a binary matrix.
+output:
+  - {path: q_matrix.csv, type: BinaryQMatrix}
+  - {path: item_kc_edges.jsonl, type: "ItemKCEdge[]"}
+forbidden_state: [source, normalization, canonical, realization, simulation, kt]

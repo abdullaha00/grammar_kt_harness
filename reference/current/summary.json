@@ -5,6 +5,7 @@
   "normalization_commit": "fa7755bd6db96fe413ed70bda69154ebe97aa1fe",
   "outcome": "FREEZE_E2E_V1_AND_SCALE",
   "claim_boundary": "Operational and technical reference only; no human-learning or cognitive-KC validity claim.",
+  "byte_reference_status": "Legacy layout only; the refactored harness validates semantic contracts and headline counts.",
   "counts_file": "expected_counts.json",
   "deterministic_hashes_file": "deterministic_hashes.json",
   "kt_sanity_file": "kt_sanity.json"

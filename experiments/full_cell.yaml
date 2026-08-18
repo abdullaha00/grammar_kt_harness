@@ -1,0 +1,4 @@
+extends: current
+experiment_id: full_cell
+kc:
+  policy: full_cell

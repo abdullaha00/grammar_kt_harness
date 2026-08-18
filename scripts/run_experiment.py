@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
-"""Connect module contracts in dependency order; scientific logic stays in modules."""
+"""Execute selected module contracts with lightweight content-addressed reuse."""
 
 from __future__ import annotations
 
 import argparse
-import json
 import os
-import shutil
-import subprocess
 import sys
-from datetime import datetime, timezone
+from dataclasses import replace
 from pathlib import Path
 from typing import Any, Callable
 
@@ -17,19 +14,23 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from modules.canonical.run import run_stage as run_canonical
-from modules.items.run import run_stage as run_items
-from modules.kc.run import run_stage as run_kc
-from modules.kt.run import run_stage as run_kt
-from modules.normalization.run import run_stage as run_normalization
-from modules.provenance.run import run_stage as run_provenance
-from modules.qmatrix.run import run_stage as run_qmatrix
-from modules.realization.run import run_stage as run_realization
-from modules.simulation.run import run_stage as run_simulation
-from modules.source.run import run_stage as run_source
-from shared.utils.config import load_experiment
-from shared.utils.io import display_path, read_json, repo_path, sha256_file, utc_now, write_json
-from shared.utils.run_validation import STAGES, validate_run, verify_manifests
+from modules.stage_3_canonical.run import run_stage as run_canonical
+from modules.stage_6_items.run import run_stage as run_items
+from modules.stage_5_kc.run import run_stage as run_kc
+from modules.stage_9_kt.run import run_stage as run_kt
+from modules.stage_2_normalization.run import run_stage as run_normalization
+from modules.stage_10_provenance.run import run_stage as run_provenance
+from modules.stage_7_qmatrix.run import run_stage as run_qmatrix
+from modules.stage_4_realization.run import run_stage as run_realization
+from modules.stage_8_simulation.run import run_stage as run_simulation
+from modules.stage_1_source.run import run_stage as run_source
+from shared.utils.config import resolve_experiment
+from shared.utils.experiment import ensure_run_metadata
+from shared.utils.io import read_json, utc_now, write_json
+from shared.utils.manifests import verify_descriptor
+from shared.utils.research import backup_path
+from shared.utils.run_validation import validate_run
+from shared.utils.stages import DEPENDENCIES, STAGES, stage_config, stage_fingerprint, transitive_requirements
 
 
 StageRunner = Callable[[Path, dict[str, Any], Path, list[str]], None]
@@ -47,83 +48,6 @@ RUNNERS: dict[str, StageRunner] = {
 }
 
 
-def _git_commit() -> str | None:
-    try:
-        return subprocess.check_output(
-            ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True, stderr=subprocess.DEVNULL
-        ).strip()
-    except (OSError, subprocess.CalledProcessError):
-        return None
-
-
-def _backup(path: Path) -> Path:
-    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    candidate = path.with_name(f"{path.name}.backup-{stamp}")
-    serial = 1
-    while candidate.exists() or candidate.is_symlink():
-        serial += 1
-        candidate = path.with_name(f"{path.name}.backup-{stamp}-{serial}")
-    shutil.move(str(path), str(candidate))
-    return candidate
-
-
-def _stage_config(stage: str, config: dict[str, Any]) -> dict[str, Any]:
-    value = dict(config[stage])
-    if stage == "items":
-        value["_realization"] = config["realization"]
-    elif stage == "qmatrix":
-        value["_realization"] = config["realization"]
-        value["_kc"] = config["kc"]
-    return value
-
-
-def _reuse(run_dir: Path, config: dict[str, Any], manifest_path: Path) -> set[str]:
-    reuse = config.get("reuse")
-    if not reuse:
-        return set()
-    base_value = reuse.get("run")
-    through = reuse.get("through")
-    if not isinstance(base_value, str) or through not in STAGES:
-        raise ValueError("reuse requires 'run' and a valid 'through' stage")
-    base = Path(base_value)
-    if not base.is_absolute():
-        base = ROOT / "runs" / base
-    base = base.resolve()
-    errors = verify_manifests(base)
-    if errors:
-        raise RuntimeError("cannot reuse a run with invalid manifests: " + "; ".join(errors[:5]))
-    base_manifest_path = base / "experiment_manifest.json"
-    if not base_manifest_path.is_file():
-        raise RuntimeError(f"reuse base has no experiment manifest: {base}")
-    base_record = read_json(base_manifest_path)
-    base_config = base_record.get("resolved_config", base_record)
-    reusable = set(STAGES[: STAGES.index(through) + 1])
-    for stage in reusable:
-        if stage == "provenance" and not config.get("provenance", {}).get("enabled", False):
-            continue
-        if config.get(stage) != base_config.get(stage):
-            raise RuntimeError(f"cannot reuse through {through}: {stage} configuration differs")
-        source = base / stage
-        destination = run_dir / stage
-        if not (source / "manifest.json").is_file():
-            raise RuntimeError(f"reuse base is missing completed stage {stage}: {source}")
-        if destination.exists() or destination.is_symlink():
-            raise RuntimeError(f"reuse target already exists: {destination}")
-        os.symlink(source, destination, target_is_directory=True)
-    write_json(
-        run_dir / "reuse.json",
-        {
-            "base_run": str(base),
-            "through": through,
-            "stages": sorted(reusable, key=STAGES.index),
-            "base_experiment_manifest": display_path(base_manifest_path),
-            "base_experiment_manifest_sha256": sha256_file(base_manifest_path),
-            "new_experiment_manifest": display_path(manifest_path),
-        },
-    )
-    return reusable
-
-
 def _selection(args: argparse.Namespace, provenance_enabled: bool) -> list[str]:
     available = list(STAGES if provenance_enabled else STAGES[:-1])
     if args.only:
@@ -135,85 +59,220 @@ def _selection(args: argparse.Namespace, provenance_enabled: bool) -> list[str]:
     return available[start : end + 1]
 
 
+def _verify_stage(stage_dir: Path) -> list[str]:
+    manifest_path = stage_dir / "manifest.json"
+    if not manifest_path.is_file():
+        return [f"missing stage manifest: {manifest_path}"]
+    try:
+        manifest = read_json(manifest_path)
+    except Exception as error:
+        return [f"cannot read {manifest_path}: {error}"]
+    errors = []
+    for category in ("inputs", "configs", "code", "outputs"):
+        for descriptor in manifest.get(category, []):
+            problem = verify_descriptor(descriptor)
+            if problem:
+                errors.append(f"{manifest_path}: {problem}")
+    if manifest.get("validation_status") != "PASS":
+        errors.append(f"{manifest_path}: validation status is not PASS")
+    return errors
+
+
+def _candidate_runs(run_dir: Path, config: dict[str, Any]) -> list[Path]:
+    candidates: list[Path] = []
+    explicit = config.get("reuse", {}).get("run") if isinstance(config.get("reuse"), dict) else None
+    if explicit:
+        path = Path(explicit)
+        candidates.append((path if path.is_absolute() else ROOT / "runs" / path).resolve())
+    for candidate in sorted((ROOT / "runs").iterdir()):
+        if candidate.resolve() == run_dir.resolve() or ".backup-" in candidate.name:
+            continue
+        if candidate.is_dir():
+            candidates.append(candidate.resolve())
+    unique: list[Path] = []
+    for candidate in candidates:
+        if candidate not in unique:
+            unique.append(candidate)
+    return unique
+
+
+def _reuse_stage(
+    stage: str,
+    run_dir: Path,
+    fingerprint: dict[str, Any],
+    candidates: list[Path],
+) -> Path | None:
+    destination = run_dir / stage
+    if destination.exists() or destination.is_symlink():
+        return None
+    for candidate in candidates:
+        source = candidate / stage
+        manifest_path = source / "manifest.json"
+        if not manifest_path.is_file():
+            continue
+        manifest = read_json(manifest_path)
+        if manifest.get("stage_fingerprint") != fingerprint["sha256"]:
+            continue
+        errors = _verify_stage(source)
+        if errors:
+            continue
+        os.symlink(source.resolve(), destination, target_is_directory=True)
+        return candidate
+    return None
+
+
+def _record_status(
+    path: Path,
+    statuses: dict[str, Any],
+    *,
+    stage: str,
+    status: str,
+    fingerprint: str,
+    source: Path | None = None,
+) -> None:
+    statuses[stage] = {
+        "status": status,
+        "fingerprint": fingerprint,
+        "from_run": str(source) if source else None,
+        "recorded_utc": utc_now(),
+    }
+    write_json(path, {"stages": statuses})
+
+
+def _stamp_executed_manifest(stage_dir: Path, fingerprint: dict[str, Any]) -> None:
+    path = stage_dir / "manifest.json"
+    manifest = read_json(path)
+    manifest["stage_fingerprint"] = fingerprint["sha256"]
+    manifest["fingerprint_basis"] = fingerprint
+    manifest["execution"] = {"status": "executed", "reused_from": None}
+    write_json(path, manifest)
+
+
 def main() -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("experiment", type=Path)
-    controls = parser.add_mutually_exclusive_group()
-    controls.add_argument("--only", choices=STAGES)
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("experiment", help="manifest path or short name under experiments/")
+    parser.add_argument("--only", choices=STAGES)
     parser.add_argument("--from", dest="from_stage", choices=STAGES)
     parser.add_argument("--to", dest="to_stage", choices=STAGES)
-    parser.add_argument("--force", action="store_true", help="move an existing run aside before starting again")
+    parser.add_argument("--force", action="store_true", help="rerun selected stages instead of reusing cache")
     parser.add_argument("--source-path", type=Path, help="override only the external EGP source path")
     args = parser.parse_args()
     if args.only and (args.from_stage or args.to_stage):
         parser.error("--only cannot be combined with --from/--to")
-    experiment_path = args.experiment.resolve()
-    config = load_experiment(experiment_path)
-    experiment_id = config.get("experiment_id")
-    if not isinstance(experiment_id, str) or not experiment_id or Path(experiment_id).name != experiment_id:
-        raise ValueError("experiment_id must be one safe path component")
-    if args.source_path:
-        config["source"] = {**config["source"], "path": str(args.source_path.resolve())}
-    run_dir = ROOT / "runs" / experiment_id
-    if run_dir.exists() or run_dir.is_symlink():
-        if args.force:
-            backup = _backup(run_dir)
-            print(f"moved existing run to {backup}")
-        else:
-            summary_path = run_dir / "summary.json"
-            if summary_path.is_file() and read_json(summary_path).get("completed"):
-                raise RuntimeError(f"refusing to overwrite completed run {run_dir}; use --force")
-    run_dir.mkdir(parents=True, exist_ok=True)
-    experiment_manifest = run_dir / "experiment_manifest.json"
-    record = {
-        "experiment_id": experiment_id,
-        "resolved_config": config,
-        "source_yaml": str(experiment_path),
-        "source_yaml_sha256": sha256_file(experiment_path),
-        "harness_git_commit": _git_commit(),
-        "created_utc": utc_now(),
-        "command": [sys.executable, *sys.argv],
-    }
-    if experiment_manifest.is_file():
-        previous = read_json(experiment_manifest)
-        comparable = {key: value for key, value in previous.items() if key != "command"}
-        current = {key: value for key, value in record.items() if key != "command"}
-        # Timestamps differ on resumption; every scientific/config field must not.
-        comparable.pop("created_utc", None)
-        current.pop("created_utc", None)
-        if comparable != current:
-            raise RuntimeError(f"existing partial run was created from a different resolved experiment: {run_dir}")
-    else:
-        write_json(experiment_manifest, record)
 
-    if any(run_dir.rglob("manifest.json")):
-        manifest_errors = verify_manifests(run_dir)
-        if manifest_errors:
-            raise RuntimeError("existing upstream manifest/hash check failed: " + "; ".join(manifest_errors[:5]))
-    reused = _reuse(run_dir, config, experiment_manifest)
+    resolution = resolve_experiment(args.experiment)
+    if args.source_path:
+        overridden = dict(resolution.resolved)
+        overridden["source"] = {**overridden["source"], "path": str(args.source_path.resolve())}
+        resolution = replace(resolution, resolved=overridden)
+    config = resolution.resolved
+    experiment_id = config.get("experiment_id")
+    run_dir = ROOT / "runs" / str(experiment_id)
+    summary_path = run_dir / "summary.json"
+    if run_dir.exists() and summary_path.is_file() and read_json(summary_path).get("completed"):
+        if not args.force:
+            raise RuntimeError(f"refusing to overwrite completed run {run_dir}; use --force")
+        backup = backup_path(run_dir)
+        print(f"moved existing run to {backup}")
+    run_dir, experiment_manifest = ensure_run_metadata(
+        resolution, command=[sys.executable, *sys.argv], run_dir=run_dir
+    )
     selected = _selection(args, bool(config.get("provenance", {}).get("enabled", False)))
+    required = transitive_requirements(selected)
+    candidates = _candidate_runs(run_dir, config)
+    status_path = run_dir / "stage_status.json"
+    statuses = read_json(status_path).get("stages", {}) if status_path.is_file() else {}
     command = [sys.executable, *sys.argv]
-    for stage in selected:
-        if stage in reused:
-            print(f"{stage}: reused from immutable base run")
+
+    for stage in STAGES:
+        if stage not in required:
             continue
         destination = run_dir / stage
-        if destination.exists() or destination.is_symlink():
-            raise RuntimeError(f"refusing to overwrite existing stage {stage}: {destination}")
-        for upstream in STAGES[: STAGES.index(stage)]:
-            if upstream == "kt" and stage == "provenance":
-                # Provenance does not consume KT output.
+        if (destination / "manifest.json").is_file():
+            if args.force and stage in selected:
+                backup = backup_path(destination)
+                print(f"{stage}: moved prior stage to {backup.name}")
+            else:
+                errors = _verify_stage(destination)
+                if errors:
+                    raise RuntimeError("existing stage failed manifest verification: " + "; ".join(errors[:5]))
+                existing = read_json(destination / "manifest.json").get("stage_fingerprint")
+                expected_fingerprint = stage_fingerprint(stage, run_dir, config)["sha256"]
+                if existing != expected_fingerprint:
+                    raise RuntimeError(
+                        f"existing {stage} fingerprint differs from current inputs/config/implementation; use --force"
+                    )
+                prior = statuses.get(stage, {})
+                existing_status = prior.get("status")
+                if existing_status not in {"executed", "reused"}:
+                    existing_status = "reused" if destination.is_symlink() else "executed"
+                source = None
+                if existing_status == "reused":
+                    if prior.get("from_run"):
+                        source = Path(prior["from_run"])
+                    elif destination.is_symlink():
+                        source = destination.resolve().parent
+                _record_status(
+                    status_path,
+                    statuses,
+                    stage=stage,
+                    status=existing_status,
+                    fingerprint=existing,
+                    source=source,
+                )
                 continue
-            if not (run_dir / upstream / "manifest.json").is_file():
-                raise RuntimeError(f"{stage} requires completed upstream stage {upstream}")
+        elif args.force and stage in selected and (destination.exists() or destination.is_symlink()):
+            backup = backup_path(destination)
+            print(f"{stage}: moved prior partial stage to {backup.name}")
+        for dependency in DEPENDENCIES[stage]:
+            if not (run_dir / dependency / "manifest.json").is_file():
+                raise RuntimeError(f"{stage} requires completed declared dependency {dependency}")
+        fingerprint = stage_fingerprint(stage, run_dir, config)
+        reused_from = None if (args.force and stage in selected) else _reuse_stage(
+            stage, run_dir, fingerprint, candidates
+        )
+        if reused_from is not None:
+            print(f"{stage}: reused from {reused_from.name}")
+            _record_status(
+                status_path, statuses, stage=stage, status="reused",
+                fingerprint=fingerprint["sha256"], source=reused_from,
+            )
+            continue
+        if stage not in selected:
+            raise RuntimeError(
+                f"{stage} is required by {selected} but no content-identical completed stage exists; "
+                "include it in --from/--to or run the parent experiment first"
+            )
         print(f"{stage}: starting", flush=True)
-        RUNNERS[stage](run_dir, _stage_config(stage, config), experiment_manifest, command)
+        RUNNERS[stage](run_dir, stage_config(stage, config), experiment_manifest, command)
+        _stamp_executed_manifest(run_dir / stage, fingerprint)
+        _record_status(
+            status_path, statuses, stage=stage, status="executed",
+            fingerprint=fingerprint["sha256"],
+        )
         print(f"{stage}: complete", flush=True)
 
-    required_stages = list(STAGES if config.get("provenance", {}).get("enabled", False) else STAGES[:-1])
-    if all((run_dir / stage / "manifest.json").is_file() for stage in required_stages):
+    # Materialize any other unchanged stages when possible. In particular this
+    # makes `--only kt` a complete run without executing its upstream prefix.
+    for stage in STAGES:
+        destination = run_dir / stage
+        if (destination / "manifest.json").is_file():
+            continue
+        if any(not (run_dir / dependency / "manifest.json").is_file() for dependency in DEPENDENCIES[stage]):
+            continue
+        fingerprint = stage_fingerprint(stage, run_dir, config)
+        reused_from = _reuse_stage(stage, run_dir, fingerprint, candidates)
+        if reused_from is not None:
+            print(f"{stage}: reused unchanged result from {reused_from.name}")
+            _record_status(
+                status_path, statuses, stage=stage, status="reused",
+                fingerprint=fingerprint["sha256"], source=reused_from,
+            )
+
+    expected = list(STAGES if config.get("provenance", {}).get("enabled", False) else STAGES[:-1])
+    if all((run_dir / stage / "manifest.json").is_file() for stage in expected):
         summary = validate_run(run_dir, compare_reference=True)
-        write_json(run_dir / "summary.json", summary)
+        write_json(summary_path, summary)
         print(f"validation: {summary['status']} {summary['counts']}")
         if summary["status"] != "PASS":
             for error in summary["errors"][:20]:
@@ -221,12 +280,12 @@ def main() -> int:
             return 1
     else:
         write_json(
-            run_dir / "summary.json",
+            summary_path,
             {
                 "status": "PARTIAL",
                 "completed": False,
                 "experiment_id": experiment_id,
-                "completed_stages": [stage for stage in required_stages if (run_dir / stage / "manifest.json").is_file()],
+                "completed_stages": [stage for stage in expected if (run_dir / stage / "manifest.json").is_file()],
             },
         )
     return 0

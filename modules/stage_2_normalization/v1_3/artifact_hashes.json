@@ -1,0 +1,11 @@
+{
+  "_common.py": "9910432cf56ff084e3215db9083b18cfa40244da80e0effa7d6c0528f7362da4",
+  "../rules/model_instructions_v1_3.md": "246356ed6944ee4deaffde915062fe9b01a5f808f27f620a20429aff613522ee",
+  "../schemas/egp_mapping_v1_3.schema.json": "c039f09a2e5e855b2b999d54ba097b545410ae4ffa550908367411e5b939ee9f",
+  "../prompts/invocation_wrapper_v1_3.txt": "98c19ec4316d9b2e6b79cd1ec57b674f43f33f23ac179535682dd09493a60606",
+  "../prompts/phase1_v1_3.txt": "a914f7ba634b9f713e2a681927caa379230c2eb11f2bed96cc1591fc21fd0aa4",
+  "../prompts/phase2_v1_3.txt": "9a21611b2c7b08657dbec2b043f55f603417f033c85e1c8c93dce5deb04634d7",
+  "../rules/rulebook_v1_3.md": "fcc83ffb71e0ae9c075cd56be2a5f6cde4d4f6e2aa85befd0db96a298e25396f",
+  "../schemas/grammar_dimensions_v1_3.txt": "8b9b209db727f40b96f47bb25e81ae74aa42f05223299f5b31da25b4559bf248",
+  "validate.py": "1cf7a931fa748c40428eac9440427d50c3d368bdd2f80ce1b27e5e86d21d8e1c"
+}

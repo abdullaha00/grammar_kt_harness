@@ -1,0 +1,4 @@
+extends: current
+experiment_id: phase1_demo
+normalization:
+  phase1_prompt: modules/stage_2_normalization/prompts/phase1_demo_variant.txt

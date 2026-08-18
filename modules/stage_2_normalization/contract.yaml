@@ -1,0 +1,18 @@
+module: normalization
+input:
+  - {path: source/source_subset.jsonl, type: "SourceDescriptor[]"}
+  - {path: source/phase1_records.jsonl, type: "Phase1SourceProjection[]"}
+  - {path: source/annotation_units.jsonl, type: "AnnotationUnit[]"}
+configuration:
+  - normalization.model_config
+  - normalization.phase1_prompt
+  - normalization.phase2_prompt
+  - normalization.prompt_wrapper
+  - normalization.rulebook
+  - normalization.schema
+  - normalization.output_schema
+procedure: Fresh-context Phase 1, mechanical routing, fresh-context Phase 2, then frozen validation.
+output:
+  - {path: final_mappings.jsonl, type: "EGPMapping[]"}
+  - {path: units/<unit>/phase<phase>/, type: ModelInvocationEvidence}
+forbidden_state: [canonical, realization, kc, items, qmatrix, simulation, kt]

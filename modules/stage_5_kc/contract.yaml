@@ -1,0 +1,12 @@
+module: kc
+input:
+  - {path: canonical/canonical_cells.jsonl, type: "GrammarCellRecord[]"}
+  - {path: realization/realizations.jsonl, type: "RealizationRecord[]"}
+configuration:
+  - kc.policy
+  - kc.policies.<selected>
+procedure: Build one opportunity per cell and apply only the selected declarative activation policy.
+output:
+  - {path: kc_inventory.jsonl, type: "KCSpec[]"}
+  - {path: cell_kc_projection.jsonl, type: "KCActivation[]"}
+forbidden_state: [items, qmatrix, simulation, kt]

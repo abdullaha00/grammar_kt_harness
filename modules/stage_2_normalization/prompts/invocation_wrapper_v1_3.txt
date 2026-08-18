@@ -1,0 +1,8 @@
+FROZEN GRAMMAR SCHEMA
+=====================
+{{schema}}
+FROZEN NORMALIZATION RULEBOOK
+=============================
+{{rulebook}}
+FROZEN PHASE {{phase}} PROMPT
+=====================

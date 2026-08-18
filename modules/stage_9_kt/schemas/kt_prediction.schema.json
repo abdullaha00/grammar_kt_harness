@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KTPrediction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["event_id", "learner_id", "sequence_index", "dataset_split", "correct"],
+  "properties": {
+    "event_id": {"type": "string"},
+    "learner_id": {"type": "string"},
+    "sequence_index": {"type": "integer", "minimum": 1},
+    "dataset_split": {"enum": ["train", "validation", "test"]},
+    "correct": {"enum": [0, 1]},
+    "empirical": {"type": "number", "minimum": 0, "maximum": 1},
+    "bkt": {"type": "number", "minimum": 0, "maximum": 1},
+    "logistic": {"type": "number", "minimum": 0, "maximum": 1}
+  },
+  "anyOf": [
+    {"required": ["empirical"]},
+    {"required": ["bkt"]},
+    {"required": ["logistic"]}
+  ]
+}

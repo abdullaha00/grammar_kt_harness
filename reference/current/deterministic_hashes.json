@@ -1,5 +1,7 @@
 {
-  "scope": "Reference bytes conditional on the exact accepted final mappings and accepted item bank; not requirements for fresh LLM outputs.",
+  "scope": "Legacy pre-refactor reference bytes conditional on the exact accepted final mappings and accepted item bank; not requirements for fresh LLM outputs or the research-oriented evidence layout.",
+  "status": "legacy_layout_reference",
+  "refactor_note": "The modular harness carries source notes/IDs across declared interfaces and embeds methodology references in provenance, so several wrapper-record byte hashes are expected to differ while stable semantic IDs and headline counts remain the acceptance checks.",
   "reference_commit": "91ed3bace17b91f436716f3290114eb1394fe759",
   "conditional_inputs": {
     "final_mappings.jsonl": "3edc63367ee040364b312df734302f056645ae78c2b2d5b97bb8db4a93850469",

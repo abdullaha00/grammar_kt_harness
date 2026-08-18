@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ItemKCEdge",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["edge_id", "item_id", "kc_id", "canonical_cell_id", "realization_id", "source_descriptor_ids", "activation_rule", "kc_projection_version", "manual_post_hoc"],
+  "properties": {
+    "edge_id": {"type": "string", "pattern": "^QEDGE_[A-F0-9]{16}$"},
+    "item_id": {"type": "string", "pattern": "^ITEM_[A-F0-9]{16}$"},
+    "kc_id": {"type": "string"},
+    "canonical_cell_id": {"type": "string", "pattern": "^CELL_[A-F0-9]{16}$"},
+    "realization_id": {"type": "string", "pattern": "^REAL_[A-F0-9]{16}$"},
+    "source_descriptor_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "activation_rule": {"type": "object"},
+    "kc_projection_version": {"type": "string"},
+    "manual_post_hoc": {"const": false}
+  }
+}
