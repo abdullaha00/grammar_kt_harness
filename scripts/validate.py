@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run small structural and leakage checks over a saved run."""
+"""Validate that a saved run is complete and structurally internally consistent."""
 
 from __future__ import annotations
 
@@ -8,15 +8,11 @@ import json
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-if str(Path(__file__).resolve().parent) in sys.path:
-    sys.path.remove(str(Path(__file__).resolve().parent))
-sys.path.insert(0, str(ROOT / "src"))
+sys.path.remove(str(Path(__file__).resolve().parent))
 
-from grammar_kt import STAGES
-from grammar_kt.io import read_jsonl
-from grammar_kt.models import grammar_cell, interaction
-from grammar_kt.simulation import FORBIDDEN_OBSERVABLE
+from grammar_kt.io import ROOT, read_json, read_jsonl
+from grammar_kt.records import grammar_cell, observable_interaction
+from grammar_kt.runner import STAGE_NAMES
 
 
 def validate(run: Path) -> dict:
@@ -24,24 +20,27 @@ def validate(run: Path) -> dict:
     for required in ("experiment.yaml", "metadata.json"):
         if not (run / required).is_file():
             errors.append(f"missing {required}")
-    for stage in STAGES:
+    for stage in STAGE_NAMES:
         if not (run / stage).is_dir():
             errors.append(f"missing stage output: {stage}")
-    if not (run / "qmatrix").is_dir():
-        errors.append("missing derived output: qmatrix")
     if (run / "canonical/canonical_cells.jsonl").is_file():
         for row in read_jsonl(run / "canonical/canonical_cells.jsonl"):
             try:
                 grammar_cell(row["cell"], label=row["canonical_cell_id"])
             except ValueError as error:
                 errors.append(str(error))
+    for audit_file, label in (
+        (run / "qmatrix" / "audit.json", "Q-matrix"),
+        (run / "simulation" / "audit.json", "simulation"),
+    ):
+        if audit_file.is_file():
+            audit = read_json(audit_file)
+            if audit.get("status") != "PASS":
+                errors.append(f"{label} audit failed: {audit.get('structural_errors', audit.get('errors', []))}")
     if (run / "simulation/observable_interactions.jsonl").is_file():
         for row in read_jsonl(run / "simulation/observable_interactions.jsonl"):
-            leaked = FORBIDDEN_OBSERVABLE & set(row)
-            if leaked:
-                errors.append(f"{row.get('event_id')}: oracle/content leakage {sorted(leaked)}")
             try:
-                interaction(row, label=row.get("event_id", "interaction"))
+                observable_interaction(row, label=row.get("event_id", "interaction"))
             except ValueError as error:
                 errors.append(str(error))
     return {"status": "PASS" if not errors else "FAIL", "errors": errors, "error_count": len(errors)}

@@ -2,9 +2,9 @@
   "metric": "test_auc",
   "expectation_type": "approximate_technical_sanity",
   "tolerance": 0.02,
-  "empirical": 0.629037744915592,
-  "bkt": 0.6137542569260839,
-  "logistic": 0.6569534135633185,
+  "empirical": 0.6216185639374046,
+  "bkt": 0.6141172220157728,
+  "logistic": 0.6668355423427887,
+  "reference_basis": "deterministic downstream replay from the archived accepted 24-cell, 9-KC pilot inputs",
   "not_an_ontology_selection_objective": true
 }
-

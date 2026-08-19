@@ -3,12 +3,11 @@
 from __future__ import annotations
 
 import json
-import hashlib
 from pathlib import Path
 from typing import Any
 
-from .io import read_jsonl, resource, write_jsonl
-from .models import kc_opportunity
+from .io import ROOT, read_jsonl, repo_path, stable_id, write_jsonl
+from .records import kc_opportunity
 
 
 OPPORTUNITY_FIELDS = (
@@ -25,38 +24,23 @@ def load_policy(path: Path) -> dict[str, Any]:
     return policy
 
 
-def matches(expression: dict[str, Any], opportunity: dict[str, Any]) -> bool:
-    if "all" in expression:
-        return all(matches(part, opportunity) for part in expression["all"])
-    if "operation" in expression:
-        return expression["operation"] in opportunity["realization_operations"]
-    if "cell" in expression:
-        for key, expected in expression["cell"].items():
-            actual = opportunity["cell"][key]
-            if isinstance(expected, list):
-                if actual not in expected:
-                    return False
-            elif actual != expected:
-                return False
-        return True
-    raise ValueError(f"unknown KC activation expression: {expression}")
-
-
-def explain_match(expression: dict[str, Any], opportunity: dict[str, Any]) -> dict[str, Any]:
-    """Return the same decision as ``matches`` plus literal rule-level evidence."""
+def evaluate_rule(expression: dict[str, Any], opportunity: dict[str, Any]) -> tuple[bool, dict[str, Any]]:
+    """Evaluate one activation expression and return its literal evidence."""
 
     if "all" in expression:
-        parts = [explain_match(part, opportunity) for part in expression["all"]]
-        return {
-            "matched": all(part["matched"] for part in parts),
+        evaluated = [evaluate_rule(part, opportunity) for part in expression["all"]]
+        matched = all(result for result, _evidence in evaluated)
+        return matched, {
+            "matched": matched,
             "operator": "all",
-            "parts": parts,
+            "parts": [evidence for _result, evidence in evaluated],
         }
     if "operation" in expression:
         expected = expression["operation"]
         actual = opportunity["realization_operations"]
-        return {
-            "matched": expected in actual,
+        matched = expected in actual
+        return matched, {
+            "matched": matched,
             "field": "realization_operations",
             "expected": expected,
             "actual": actual,
@@ -67,11 +51,12 @@ def explain_match(expression: dict[str, Any], opportunity: dict[str, Any]) -> di
             actual = opportunity["cell"][key]
             matched = actual in expected if isinstance(expected, list) else actual == expected
             checks.append({"field": f"cell.{key}", "expected": expected, "actual": actual, "matched": matched})
-        return {"matched": all(check["matched"] for check in checks), "operator": "cell", "checks": checks}
+        matched = all(check["matched"] for check in checks)
+        return matched, {"matched": matched, "operator": "cell", "checks": checks}
     raise ValueError(f"unknown KC activation expression: {expression}")
 
 
-def explain_policy(policy: dict[str, Any], opportunity: dict[str, Any]) -> dict[str, Any]:
+def apply_policy(policy: dict[str, Any], opportunity: dict[str, Any]) -> dict[str, Any]:
     if policy["kind"] == "full_cell":
         kc_id = "KC_FULL_" + opportunity["canonical_cell_id"].removeprefix("CELL_")
         return {
@@ -88,12 +73,12 @@ def explain_policy(policy: dict[str, Any], opportunity: dict[str, Any]) -> dict[
         }
     rules = []
     for rule in policy["rules"]:
-        evidence = explain_match(rule["activation_rule"], opportunity)
+        activated, evidence = evaluate_rule(rule["activation_rule"], opportunity)
         rules.append(
             {
                 "kc_id": rule["kc_id"],
                 "name": rule["name"],
-                "activated": evidence["matched"],
+                "activated": activated,
                 "activation_rule": rule["activation_rule"],
                 "evidence": evidence,
             }
@@ -105,16 +90,13 @@ def explain_policy(policy: dict[str, Any], opportunity: dict[str, Any]) -> dict[
     }
 
 
-def activated_kcs(policy: dict[str, Any], opportunity: dict[str, Any]) -> list[str]:
-    if policy["kind"] == "full_cell":
-        return ["KC_FULL_" + opportunity["canonical_cell_id"].removeprefix("CELL_")]
-    return sorted(
-        rule["kc_id"] for rule in policy["rules"] if matches(rule["activation_rule"], opportunity)
-    )
-
-
-def materialize(policy: dict[str, Any], opportunities: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    projections = [{**opportunity, "kc_ids": activated_kcs(policy, opportunity)} for opportunity in opportunities]
+def materialize_inventory(
+    policy: dict[str, Any], opportunities: list[dict[str, Any]]
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    projections = [
+        {**opportunity, "kc_ids": apply_policy(policy, opportunity)["activated_kcs"]}
+        for opportunity in opportunities
+    ]
     templates: dict[str, dict[str, Any]] = {}
     if policy["kind"] == "full_cell":
         for opportunity in opportunities:
@@ -157,28 +139,26 @@ def materialize(policy: dict[str, Any], opportunities: list[dict[str, Any]]) -> 
     return projections, cards
 
 
-def policy_path(name: str | Path) -> Path:
-    return resource("kc", "policies", name, ".json")
-
-
-def declared_opportunity(value: dict[str, Any]) -> dict[str, Any]:
-    return {field: value[field] for field in OPPORTUNITY_FIELDS}
-
-
 def run_one(value: dict[str, Any], policy_name: str) -> dict[str, Any]:
-    opportunity = kc_opportunity(declared_opportunity(value))
-    policy = load_policy(policy_path(policy_name))
-    projections, cards = materialize(policy, [opportunity])
+    opportunity = kc_opportunity({field: value[field] for field in OPPORTUNITY_FIELDS})
+    supplied = Path(policy_name)
+    policy_file = (
+        ROOT / "modules" / "kc" / "policies" / supplied.with_suffix(".json")
+        if len(supplied.parts) == 1 and not supplied.suffix
+        else repo_path(supplied)
+    )
+    policy = load_policy(policy_file)
+    projections, cards = materialize_inventory(policy, [opportunity])
     return {
         "input": opportunity,
         "policy": policy_name,
         "output": projections[0],
         "kc_specs": cards,
-        "explanation": explain_policy(policy, opportunity),
+        "explanation": apply_policy(policy, opportunity),
     }
 
 
-def run(run_dir: Path, config: dict[str, Any]) -> dict[str, Any]:
+def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     output = run_dir / "kc"
     output.mkdir(parents=True, exist_ok=False)
     cells = {row["canonical_cell_id"]: row for row in read_jsonl(run_dir / "canonical" / "canonical_cells.jsonl")}
@@ -190,9 +170,8 @@ def run(run_dir: Path, config: dict[str, Any]) -> dict[str, Any]:
     opportunities = []
     for cell_id in sorted(selected):
         realisation = selected[cell_id]
-        basis = f"{cell_id}|{realisation['spec']['realization_id']}"
         opportunities.append(kc_opportunity({
-            "opportunity_id": "OPP_" + hashlib.sha256(basis.encode()).hexdigest()[:16].upper(),
+            "opportunity_id": stable_id("OPP", cell_id, realisation["spec"]["realization_id"]),
             "split": realisation["split"],
             "canonical_cell_id": cell_id,
             "cell": cells[cell_id]["cell"],
@@ -201,11 +180,11 @@ def run(run_dir: Path, config: dict[str, Any]) -> dict[str, Any]:
             "source_descriptor_ids": cells[cell_id]["source_descriptor_ids"],
             "source_mapping_notes": cells[cell_id]["source_mapping_notes"],
         }))
-    policy = load_policy(policy_path(config["policy"]))
-    projections, cards = materialize(policy, opportunities)
+    policy = load_policy(repo_path(settings["policy"]))
+    projections, cards = materialize_inventory(policy, opportunities)
     empty = [row["canonical_cell_id"] for row in projections if not row["kc_ids"]]
     if empty:
         raise RuntimeError(f"KC policy leaves cells uncovered: {empty}")
     write_jsonl(output / "cell_kc_projection.jsonl", sorted(projections, key=lambda row: row["opportunity_id"]))
     write_jsonl(output / "kc_inventory.jsonl", sorted(cards, key=lambda row: row["kc_id"]))
-    return {"policy": config["policy"], "opportunities": len(projections), "kcs": len(cards)}
+    return {"policy": settings["policy"], "opportunities": len(projections), "kcs": len(cards)}

@@ -38,11 +38,18 @@ python scripts/run_one.py items --fixture valid_deterministic_item
 python scripts/run_one.py simulation
 ```
 
-Each command prints `BEFORE` and `AFTER`. Normalisation uses the configured model and defaults to the first readable fixture:
+For a compact, executable tour with one fixed input and real call per pipeline
+component, open [`notebooks/module_unit_examples.ipynb`](notebooks/module_unit_examples.ipynb).
+The normalisation cell makes one call through the configured model backend.
+
+Each command prints `BEFORE` and `AFTER`. `run_one.py` accepts a bundled
+fixture or an explicit one-record JSON file; it never searches saved runs.
+Normalisation uses the configured model and defaults to the first fixture:
 
 ```bash
 python scripts/run_one.py normalisation --phase1-only
-python scripts/run_one.py normalisation EGP_ID --experiment base
+python scripts/run_one.py normalisation --egp-id EGP_ID --experiment base
+python scripts/run_one.py kc --input /tmp/opportunity.json
 ```
 
 Use `--output /tmp/my-debug-run` to retain one-off evidence at a chosen location.
@@ -63,7 +70,7 @@ Use `--output /tmp/my-debug-run` to retain one-off evidence at a chosen location
    experiment: kc_new_policy
 
    kc:
-     policy: new_policy
+     policy: modules/kc/policies/new_policy.json
    ```
 
 4. With `runs/base/` already present, explicitly reuse its pre-KC outputs and execute KC onward:
@@ -83,6 +90,7 @@ python scripts/inspect.py kc CELL_ID --run base
 python scripts/inspect.py item ITEM_ID --run base
 python scripts/inspect.py qmatrix ITEM_ID --run base
 python scripts/inspect.py kt EVENT_ID --run base
+python scripts/inspect.py trace ITEM_ID --run base
 
 python scripts/compare.py base kc_full_cell
 python scripts/compare.py base kc_full_cell --stage kc
@@ -90,5 +98,12 @@ python scripts/validate.py base
 ```
 
 Experiment variants inherit recursively and deep-merge mappings; lists replace atomically. For example, `experiments/kc_full_cell.yaml` changes only `kc.policy`, while `experiments/kt_bkt_only.yaml` changes only `kt.techniques`. Run the latter with `--from kt` to consume the exact parent observable dataset without rerunning upstream stages.
+
+Item generation makes one deterministic construction pass per KC and retains
+the selected opportunity, replicate, split, and lexical search offset. The
+simulator derives events per learner from the accepted item count and configured
+item passes, then derives train/validation boundaries from fractions. Q-matrix
+integrity errors remain fatal; redundancy, density, support, and wide rows are
+saved as scientific diagnostics so policy variants can complete.
 
 The reference numbers in `reference/current/expected_counts.json` are operational/technical checks, not evidence of human learning, KC cognitive validity, or acquisition order.

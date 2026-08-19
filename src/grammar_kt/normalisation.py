@@ -8,94 +8,193 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any
 
-from .backend import get_backend, save_model_result
-from .io import read_jsonl, read_yaml, resource, write_json, write_jsonl
+from .backend import invoke_model, save_model_result
+from .io import ROOT, read_jsonl, read_yaml, repo_path, write_json, write_jsonl
 from .normalisation_validation import RESULTS, parse_raw_mapping, validate_mapping, validate_phase2_transition
 
 
-def configured(value: dict[str, Any]) -> dict[str, Any]:
-    backend = read_yaml(resource("normalisation", "configs", value.get("backend_config", "backend"), ".yaml"))
-    return {**backend, **value}
+NORMALISATION_DIR = ROOT / "modules" / "normalisation"
+WRAPPER = NORMALISATION_DIR / "prompts" / "wrapper.txt"
+GRAMMAR_DIMENSIONS = NORMALISATION_DIR / "rules" / "grammar_dimensions.txt"
+RULEBOOK = NORMALISATION_DIR / "rules" / "rulebook.md"
+MODEL_INSTRUCTIONS = NORMALISATION_DIR / "rules" / "model_instructions.md"
+OUTPUT_SCHEMA = NORMALISATION_DIR / "configs" / "mapping_schema.json"
+PHASE1_FIELDS = ("egp_id", "supercategory", "subcategory", "guideword", "can_do")
 
 
-def render_prompt(phase: int, config: dict[str, Any], task: dict[str, Any]) -> str:
-    schema = resource("normalisation", "rules", config["dimensions"], ".txt").read_text(encoding="utf-8")
-    rulebook = resource("normalisation", "rules", config["rulebook"], ".md").read_text(encoding="utf-8")
-    wrapper = resource("normalisation", "prompts", config["wrapper"], ".txt").read_text(encoding="utf-8")
-    template = resource("normalisation", "prompts", config[f"phase{phase}_prompt"], ".txt").read_text(encoding="utf-8")
-    values = {"schema": schema, "rulebook": rulebook, "phase": str(phase), "record": json.dumps(task["record"], ensure_ascii=False, separators=(",", ":"))}
-    if phase == 2:
-        values.update({
-            "phase1_mapping": json.dumps(task["phase1_mapping"], ensure_ascii=False, separators=(",", ":")),
-            "examples": json.dumps(task["examples"], ensure_ascii=False, separators=(",", ":")),
-        })
+def _fill_prompt(template: str, values: dict[str, str]) -> str:
     for key, replacement in values.items():
-        wrapper = wrapper.replace("{{" + key + "}}", replacement)
         template = template.replace("{{" + key + "}}", replacement)
-        wrapper = wrapper.replace("{" + key + "}", replacement)
         template = template.replace("{" + key + "}", replacement)
-    unresolved = [part.split("}}", 1)[0] for part in (wrapper + template).split("{{")[1:]]
+    unresolved = [part.split("}}", 1)[0] for part in template.split("{{")[1:]]
     if unresolved:
         raise ValueError(f"unresolved prompt placeholders: {unresolved}")
-    return wrapper + template
+    return template
 
 
-def invoke_phase(phase: int, task: dict[str, Any], config: dict[str, Any], unit_root: Path) -> dict[str, Any]:
-    prompt = render_prompt(phase, config, task)
+def _prompt_wrapper(phase: int) -> str:
+    values = {
+        "schema": GRAMMAR_DIMENSIONS.read_text(encoding="utf-8"),
+        "rulebook": RULEBOOK.read_text(encoding="utf-8"),
+        "phase": str(phase),
+    }
+    return _fill_prompt(WRAPPER.read_text(encoding="utf-8"), values)
+
+
+def render_phase1_prompt(record: dict[str, Any], template: str) -> str:
+    values = {"record": json.dumps(record, ensure_ascii=False, separators=(",", ":"))}
+    return _prompt_wrapper(1) + _fill_prompt(template, values)
+
+
+def render_phase2_prompt(
+    record: dict[str, Any],
+    phase1_mapping: dict[str, Any],
+    examples: list[Any],
+    template: str,
+) -> str:
+    values = {
+        "record": json.dumps(record, ensure_ascii=False, separators=(",", ":")),
+        "phase1_mapping": json.dumps(phase1_mapping, ensure_ascii=False, separators=(",", ":")),
+        "examples": json.dumps(examples, ensure_ascii=False, separators=(",", ":")),
+    }
+    return _prompt_wrapper(2) + _fill_prompt(template, values)
+
+
+def _invoke_mapping(
+    *,
+    phase: int,
+    unit_id: str,
+    egp_id: str,
+    prompt: str,
+    evidence_input: dict[str, Any],
+    unit_root: Path,
+    backend_settings: dict[str, Any],
+    max_attempts: int,
+    phase1_mapping: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     phase_dir = unit_root / f"phase{phase}"
     phase_dir.mkdir(parents=True, exist_ok=False)
     attempts = []
-    for number in range(1, int(config.get("max_attempts", 2)) + 1):
+    for number in range(1, max_attempts + 1):
         attempt = phase_dir / f"attempt-{number:02d}"
-        write_json(attempt / "input.json", {
-            "phase": phase,
-            "unit_id": task["unit_id"],
-            "egp_id": task["egp_id"],
-            "record": task["record"],
-            **({"phase1_mapping": task["phase1_mapping"], "examples": task["examples"]} if phase == 2 else {}),
-        })
-        result = get_backend(config["backend"]).invoke(
+        write_json(attempt / "input.json", {"phase": phase, "unit_id": unit_id, **evidence_input})
+        raw_path, returncode = invoke_model(
             prompt=prompt,
-            output_schema=resource("normalisation", "configs", config["output_schema"], ".json"),
-            instructions=resource("normalisation", "rules", config["instructions"], ".md"),
+            output_schema=OUTPUT_SCHEMA,
+            instructions=MODEL_INSTRUCTIONS,
             unit_dir=attempt,
-            config=config,
+            settings=backend_settings,
         )
-        mapping, errors = parse_raw_mapping(result.raw_path.read_text(encoding="utf-8"))
-        if result.returncode:
-            errors.append(f"backend exited {result.returncode}")
+        mapping, errors = parse_raw_mapping(raw_path.read_text(encoding="utf-8"))
+        if returncode:
+            errors.append(f"backend exited {returncode}")
         if mapping is not None:
-            errors.extend(validate_mapping(mapping, task["egp_id"], phase=phase))
-            if phase == 2:
-                errors.extend(validate_phase2_transition(task["phase1_mapping"], mapping))
+            errors.extend(validate_mapping(mapping, egp_id, phase=phase))
+            if phase1_mapping is not None:
+                errors.extend(validate_phase2_transition(phase1_mapping, mapping))
         save_model_result(attempt, mapping, errors)
         attempts.append({"attempt": number, "valid": not errors, "errors": errors})
         if mapping is not None and not errors:
-            result_row = {"mapping": mapping, "selected_attempt": number, "attempts": attempts}
-            write_json(phase_dir / "result.json", result_row)
-            return result_row
-    raise RuntimeError(f"normalisation {task['unit_id']} phase {phase} exhausted attempts: {attempts}")
+            result = {"mapping": mapping, "selected_attempt": number, "attempts": attempts}
+            write_json(phase_dir / "result.json", result)
+            return result
+    raise RuntimeError(f"normalisation {unit_id} phase {phase} exhausted attempts: {attempts}")
 
 
-def normalise_one(record: dict[str, Any], config: dict[str, Any], *, output: Path | None = None,
-                  phase1_only: bool = False, unit_id: str | None = None) -> dict[str, Any]:
-    config = configured(config)
-    output = output or Path(tempfile.mkdtemp(prefix="grammar-kt-normalisation-"))
-    unit = unit_id or str(record["egp_id"])
-    unit_root = output / "units" / unit
-    projected = {key: record.get(key) for key in ("egp_id", "supercategory", "subcategory", "guideword", "can_do")}
-    task = {"unit_id": unit, "egp_id": record["egp_id"], "record": projected}
-    first = invoke_phase(1, task, config, unit_root)
+def run_phase1(
+    record: dict[str, Any],
+    *,
+    unit_id: str,
+    unit_root: Path,
+    prompt_template: str,
+    backend_settings: dict[str, Any],
+    max_attempts: int,
+) -> dict[str, Any]:
+    prompt = render_phase1_prompt(record, prompt_template)
+    return _invoke_mapping(
+        phase=1,
+        unit_id=unit_id,
+        egp_id=record["egp_id"],
+        prompt=prompt,
+        evidence_input={"egp_id": record["egp_id"], "record": record},
+        unit_root=unit_root,
+        backend_settings=backend_settings,
+        max_attempts=max_attempts,
+    )
+
+
+def run_phase2(
+    record: dict[str, Any],
+    phase1_mapping: dict[str, Any],
+    examples: list[Any],
+    *,
+    unit_id: str,
+    unit_root: Path,
+    prompt_template: str,
+    backend_settings: dict[str, Any],
+    max_attempts: int,
+) -> dict[str, Any]:
+    prompt = render_phase2_prompt(record, phase1_mapping, examples, prompt_template)
+    return _invoke_mapping(
+        phase=2,
+        unit_id=unit_id,
+        egp_id=record["egp_id"],
+        prompt=prompt,
+        evidence_input={
+            "egp_id": record["egp_id"],
+            "record": record,
+            "phase1_mapping": phase1_mapping,
+            "examples": examples,
+        },
+        unit_root=unit_root,
+        backend_settings=backend_settings,
+        max_attempts=max_attempts,
+        phase1_mapping=phase1_mapping,
+    )
+
+
+def normalise_record(
+    record: dict[str, Any],
+    *,
+    unit_id: str,
+    output: Path,
+    phase1_template: str,
+    phase2_template: str,
+    backend_settings: dict[str, Any],
+    max_attempts: int,
+    phase1_only: bool = False,
+) -> dict[str, Any]:
+    unit_root = output / "units" / unit_id
+    phase1_record = {key: record.get(key) for key in PHASE1_FIELDS}
+    first = run_phase1(
+        phase1_record,
+        unit_id=unit_id,
+        unit_root=unit_root,
+        prompt_template=phase1_template,
+        backend_settings=backend_settings,
+        max_attempts=max_attempts,
+    )
     second = None
-    if not phase1_only and first["mapping"]["result"] in {"partial", "unresolved"}:
-        second = invoke_phase(2, {**task, "phase1_mapping": first["mapping"], "examples": record.get("examples", [])}, config, unit_root)
+    if not phase1_only and first["mapping"]["result"] == "partial":
+        second = run_phase2(
+            phase1_record,
+            first["mapping"],
+            record.get("examples", []),
+            unit_id=unit_id,
+            unit_root=unit_root,
+            prompt_template=phase2_template,
+            backend_settings=backend_settings,
+            max_attempts=max_attempts,
+        )
     result = {
         "input": record,
         "phase1": first["mapping"],
         "phase2_routing_reason": (
-            f"phase1 result was {first['mapping']['result']}" if second else
-            "phase1-only requested" if phase1_only else
-            f"phase1 result {first['mapping']['result']} does not route to phase2"
+            "phase1 result was partial"
+            if second
+            else "phase1-only requested"
+            if phase1_only
+            else f"phase1 result {first['mapping']['result']} does not route to phase2"
         ),
         "phase2": second["mapping"] if second else None,
         "output": (second or first)["mapping"],
@@ -105,21 +204,59 @@ def normalise_one(record: dict[str, Any], config: dict[str, Any], *, output: Pat
     return result
 
 
-def run(run_dir: Path, config: dict[str, Any]) -> dict[str, Any]:
+def normalise_one(
+    record: dict[str, Any],
+    settings: dict[str, Any],
+    *,
+    output: Path | None = None,
+    phase1_only: bool = False,
+    unit_id: str | None = None,
+) -> dict[str, Any]:
+    """Convenience adapter for scripts: load settings, then normalise one record."""
+
+    return normalise_record(
+        record,
+        unit_id=unit_id or str(record["egp_id"]),
+        output=output or Path(tempfile.mkdtemp(prefix="grammar-kt-normalisation-")),
+        phase1_template=repo_path(settings["phase1_prompt"]).read_text(encoding="utf-8"),
+        phase2_template=repo_path(settings["phase2_prompt"]).read_text(encoding="utf-8"),
+        backend_settings=read_yaml(settings["backend"]),
+        max_attempts=int(settings.get("max_attempts", 2)),
+        phase1_only=phase1_only,
+    )
+
+
+def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     output = run_dir / "normalisation"
     output.mkdir(parents=True, exist_ok=False)
     source = {row["egp_id"]: row for row in read_jsonl(run_dir / "source" / "source_subset.jsonl")}
     phase1 = {row["egp_id"]: row for row in read_jsonl(run_dir / "source" / "phase1_records.jsonl")}
     units = read_jsonl(run_dir / "source" / "annotation_units.jsonl")
-    jobs = [(unit, {**source[unit["egp_id"]], **phase1[unit["egp_id"]]}) for unit in units]
+
+    phase1_template = repo_path(settings["phase1_prompt"]).read_text(encoding="utf-8")
+    phase2_template = repo_path(settings["phase2_prompt"]).read_text(encoding="utf-8")
+    backend_settings = read_yaml(settings["backend"])
+    max_attempts = int(settings.get("max_attempts", 2))
+
     results: list[tuple[dict[str, Any], dict[str, Any]]] = []
-    with ThreadPoolExecutor(max_workers=max(1, int(config.get("workers", 3)))) as pool:
-        futures = {
-            pool.submit(normalise_one, record, config, output=output, unit_id=unit["unit_id"]): unit
-            for unit, record in jobs
-        }
+    with ThreadPoolExecutor(max_workers=max(1, int(settings.get("workers", 3)))) as pool:
+        futures = {}
+        for unit in units:
+            record = {**source[unit["egp_id"]], **phase1[unit["egp_id"]]}
+            future = pool.submit(
+                normalise_record,
+                record,
+                unit_id=unit["unit_id"],
+                output=output,
+                phase1_template=phase1_template,
+                phase2_template=phase2_template,
+                backend_settings=backend_settings,
+                max_attempts=max_attempts,
+            )
+            futures[future] = unit
         for future in as_completed(futures):
             results.append((futures[future], future.result()))
+
     by_unit = {unit["unit_id"]: result for unit, result in results}
     primary = [unit for unit in units if unit["duplicate_of"] is None]
     final = [by_unit[unit["unit_id"]]["output"] for unit in primary]

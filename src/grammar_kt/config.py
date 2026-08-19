@@ -1,4 +1,4 @@
-"""Readable experiment inheritance and scientific-resource resolution."""
+"""Readable experiment inheritance."""
 
 from __future__ import annotations
 
@@ -13,9 +13,7 @@ from .io import ROOT, read_yaml
 @dataclass(frozen=True)
 class Experiment:
     name: str
-    path: Path
-    raw: dict[str, Any]
-    resolved: dict[str, Any]
+    settings: dict[str, Any]
     parent: str | None
 
 
@@ -58,9 +56,9 @@ def _resolve(filename: Path, seen: tuple[Path, ...]) -> tuple[dict[str, Any], st
 def resolve_experiment(value: str | Path = "base") -> Experiment:
     filename = experiment_path(value)
     raw = read_yaml(filename)
-    resolved, parent = _resolve(filename, ())
-    resolved["experiment"] = raw.get("experiment", filename.stem)
-    return Experiment(filename.stem, filename, raw, resolved, parent)
+    settings, parent = _resolve(filename, ())
+    settings["experiment"] = raw.get("experiment", filename.stem)
+    return Experiment(filename.stem, settings, parent)
 
 
 def changed_values(base: Any, target: Any, prefix: str = "") -> list[dict[str, Any]]:

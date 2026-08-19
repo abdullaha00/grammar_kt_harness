@@ -12,14 +12,14 @@ from typing import Any
 
 import numpy as np
 
-from .io import read_json, read_jsonl, resource, write_json, write_jsonl
-from .models import interaction
+from .io import ROOT, read_json, read_jsonl, repo_path, write_json, write_jsonl
+from .records import FORBIDDEN_OBSERVABLE_FIELDS, observable_interaction
 
 
-FORBIDDEN_OBSERVABLE = {
-    "profile", "pre_mastery", "post_mastery", "response_probability", "random_draw",
-    "target_answer", "accepted_answers", "prompt", "definition", "activation_rule",
-}
+SIMULATION_DIR = ROOT / "modules" / "simulation"
+FIXTURE_ITEMS = SIMULATION_DIR / "fixtures" / "accepted_items.jsonl"
+FIXTURE_Q_MATRIX = SIMULATION_DIR / "fixtures" / "q_matrix.csv"
+FORBIDDEN_OBSERVABLE = FORBIDDEN_OBSERVABLE_FIELDS
 
 
 def difficulty(item_id: str, low: float, high: float) -> float:
@@ -34,6 +34,22 @@ def sigmoid(value: float) -> float:
 def logit(value: float) -> float:
     value = min(max(value, 0.001), 0.999)
     return math.log(value / (1.0 - value))
+
+
+def split_boundaries(event_count: int, train_fraction: float, validation_fraction: float) -> tuple[int, int]:
+    if event_count < 1:
+        raise ValueError("simulation requires at least one event per learner")
+    if train_fraction <= 0 or validation_fraction <= 0 or train_fraction + validation_fraction >= 1:
+        raise ValueError("train and validation fractions must be positive and sum to less than one")
+    train_end = int(event_count * train_fraction)
+    validation_end = int(event_count * (train_fraction + validation_fraction))
+    if event_count >= 3:
+        train_end = min(max(train_end, 1), event_count - 2)
+        validation_end = min(max(validation_end, train_end + 1), event_count - 1)
+    else:
+        train_end = max(train_end, 1)
+        validation_end = event_count
+    return train_end, validation_end
 
 
 def _read_q(path: Path) -> tuple[list[str], dict[str, list[str]]]:
@@ -101,6 +117,8 @@ def simulate_records(
     item_by_id: dict[str, dict[str, Any]],
     q_by_item: dict[str, list[str]],
     kc_ids: list[str],
+    train_end_sequence: int,
+    validation_end_sequence: int,
     *,
     target_learner: str | None = None,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
@@ -156,8 +174,8 @@ def simulate_records(
                 correct = int(draw < probability)
                 current_opportunities = {kc: opportunities[kc] + 1 for kc in active}
                 split = (
-                    "train" if sequence <= params["train_end_sequence"]
-                    else "validation" if sequence <= params["validation_end_sequence"]
+                    "train" if sequence <= train_end_sequence
+                    else "validation" if sequence <= validation_end_sequence
                     else "test"
                 )
                 event_id = f"EVENT_{learner_id}_{sequence:03d}"
@@ -205,14 +223,20 @@ def simulate_records(
     return observed, oracle, learners, learner_oracle
 
 
-def run_one(learner_id: str, config: dict[str, Any]) -> dict[str, Any]:
-    items = read_jsonl(resource("simulation", "fixtures", "accepted_items", ".jsonl"))
-    q_path = resource("simulation", "fixtures", "q_matrix", ".csv")
-    kc_ids, q_by_item = _read_q(q_path)
-    params = read_json(resource("simulation", "configs", config["config"], ".json"))
-    params["seed"] = int(config["seed"])
+def run_one(learner_id: str, settings: dict[str, Any]) -> dict[str, Any]:
+    items = read_jsonl(FIXTURE_ITEMS)
+    kc_ids, q_by_item = _read_q(FIXTURE_Q_MATRIX)
+    params = read_json(repo_path(settings["parameters"]))
+    params["seed"] = int(settings["seed"])
+    event_count = len(items) * int(params["item_passes_per_learner"])
+    train_end, validation_end = split_boundaries(
+        event_count,
+        float(params["train_fraction"]),
+        float(params["validation_fraction"]),
+    )
     observed, _oracle, learners, _learner_oracle = simulate_records(
         params, {row["item_id"]: row for row in items}, q_by_item, kc_ids,
+        train_end, validation_end,
         target_learner=learner_id,
     )
     return {
@@ -223,14 +247,13 @@ def run_one(learner_id: str, config: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def run(run_dir: Path, config: dict[str, Any]) -> dict[str, Any]:
+def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     output = run_dir / "simulation"
     output.mkdir(parents=True, exist_ok=False)
     items_path = run_dir / "items" / "validation" / "accepted_items.jsonl"
     q_path = run_dir / "qmatrix" / "q_matrix.csv"
-    parameter_path = resource("simulation", "configs", config["config"], ".json")
-    params = read_json(parameter_path)
-    params["seed"] = int(config["seed"])
+    params = read_json(repo_path(settings["parameters"]))
+    params["seed"] = int(settings["seed"])
     items = read_jsonl(items_path)
     item_by_id = {row["item_id"]: row for row in items}
     q_kcs, q_by_item = _read_q(q_path)
@@ -241,15 +264,15 @@ def run(run_dir: Path, config: dict[str, Any]) -> dict[str, Any]:
     for item_id_value, item in item_by_id.items():
         if item["all_kc_ids"] != q_by_item[item_id_value]:
             raise RuntimeError(f"accepted item labels differ from Q row: {item_id_value}")
-    learner_total = int(params["learners_per_profile"]) * len(params["profiles"])
-    if learner_total != int(config["learners"]):
-        raise RuntimeError(f"simulator config yields {learner_total} learners, experiment declares {config['learners']}")
     event_total = len(items) * int(params["item_passes_per_learner"])
-    if event_total != int(config["events_per_learner"]):
-        raise RuntimeError(f"simulator config yields {event_total} events/learner, experiment declares {config['events_per_learner']}")
+    train_end, validation_end = split_boundaries(
+        event_total,
+        float(params["train_fraction"]),
+        float(params["validation_fraction"]),
+    )
 
     observed, oracle, learners, learner_oracle = simulate_records(
-        params, item_by_id, q_by_item, q_kcs
+        params, item_by_id, q_by_item, q_kcs, train_end, validation_end
     )
     audit = _audit(observed, oracle, learners, item_by_id, event_total)
     if audit["status"] != "PASS":
@@ -265,5 +288,12 @@ def run(run_dir: Path, config: dict[str, Any]) -> dict[str, Any]:
     write_jsonl(learner_oracle_path, learner_oracle)
     write_json(audit_path, audit)
     for row in observed:
-        interaction(row, label=row["event_id"])
-    return {"seed": params["seed"], "learners": len(learners), "events_per_learner": event_total, "interactions": len(observed), "observable_oracle_separate": True}
+        observable_interaction(row, label=row["event_id"])
+    return {
+        "seed": params["seed"],
+        "learners": len(learners),
+        "events_per_learner": event_total,
+        "split_boundaries": {"train_end": train_end, "validation_end": validation_end},
+        "interactions": len(observed),
+        "observable_oracle_separate": True,
+    }

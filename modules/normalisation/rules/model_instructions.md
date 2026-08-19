@@ -1,6 +1,6 @@
 # Experiment instructions
 
-This is one isolated EGP normalization unit.
+This is one isolated EGP normalisation unit.
 
 - Treat the supplied prompt, rules, schema, and task input as fixed for this
   invocation. Preserve defects as outcomes; do not repair inputs during the run.

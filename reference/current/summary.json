@@ -3,9 +3,9 @@
   "reference_commit": "91ed3bace17b91f436716f3290114eb1394fe759",
   "normalisation_repository": "/home/abdullah/egp_normalization_v1_3_pilot",
   "normalisation_commit": "fa7755bd6db96fe413ed70bda69154ebe97aa1fe",
-  "outcome": "FREEZE_E2E_V1_AND_SCALE",
+  "outcome": "FINAL_BASELINE_METHOD_READY_FOR_FRESH_RUN",
   "claim_boundary": "Operational and technical reference only; no human-learning or cognitive-KC validity claim.",
-  "byte_reference_status": "Legacy layout only; the refactored harness validates semantic contracts and headline counts.",
+  "byte_reference_status": "Legacy upstream inputs only; the final baseline was checked by semantic contracts, headline counts, and deterministic downstream replay.",
   "counts_file": "expected_counts.json",
   "kt_sanity_file": "kt_sanity.json"
 }

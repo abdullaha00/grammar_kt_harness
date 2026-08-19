@@ -12,13 +12,10 @@ from collections import Counter
 from pathlib import Path
 from typing import Any, Callable
 
-ROOT = Path(__file__).resolve().parents[1]
-if str(Path(__file__).resolve().parent) in sys.path:
-    sys.path.remove(str(Path(__file__).resolve().parent))
-sys.path.insert(0, str(ROOT / "src"))
+sys.path.remove(str(Path(__file__).resolve().parent))
 
 from grammar_kt.config import changed_values
-from grammar_kt.io import read_json, read_jsonl, read_yaml
+from grammar_kt.io import ROOT, read_json, read_jsonl, read_yaml
 
 
 def run_path(value: str) -> Path:
@@ -63,9 +60,18 @@ def records(a: Path, b: Path, filename: str, key: str) -> dict[str, Any]:
 
 
 def canonical_stage(a: Path, b: Path) -> dict[str, Any]:
+    def source_edges(run: Path) -> dict[str, dict[str, Any]]:
+        filename = run / "canonical/source_cell_edges.jsonl"
+        if not filename.is_file():
+            return {}
+        return {
+            f"{row['egp_id']}|{row['source_cell_index']}|{row['canonical_cell_id']}": row
+            for row in read_jsonl(filename)
+        }
+
     return {
         "cells": records(a, b, "canonical/canonical_cells.jsonl", "canonical_cell_id"),
-        "source_cell_edges": records(a, b, "canonical/source_cell_edges.jsonl", "edge_id"),
+        "source_cell_edges": delta(source_edges(a), source_edges(b)),
     }
 
 

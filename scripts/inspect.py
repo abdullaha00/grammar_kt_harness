@@ -9,15 +9,12 @@ import sys
 from pathlib import Path
 from typing import Any
 
-ROOT = Path(__file__).resolve().parents[1]
-if str(Path(__file__).resolve().parent) in sys.path:
-    sys.path.remove(str(Path(__file__).resolve().parent))
-sys.path.insert(0, str(ROOT / "src"))
+sys.path.remove(str(Path(__file__).resolve().parent))
 
 import yaml
 
 from grammar_kt import kc, qmatrix
-from grammar_kt.io import read_json, read_jsonl
+from grammar_kt.io import ROOT, read_json, read_jsonl, repo_path
 
 
 def one(rows: list[dict[str, Any]], key: str, value: str) -> dict[str, Any]:
@@ -53,8 +50,8 @@ def inspect_normalisation(run: Path, identifier: str) -> dict[str, Any]:
 def inspect_kc(run: Path, identifier: str) -> dict[str, Any]:
     opportunity = one(read_jsonl(run / "kc" / "cell_kc_projection.jsonl"), "canonical_cell_id", identifier)
     experiment = yaml.safe_load((run / "experiment.yaml").read_text(encoding="utf-8"))
-    policy = kc.load_policy(kc.policy_path(experiment["kc"]["policy"]))
-    return {"opportunity": opportunity, "explanation": kc.explain_policy(policy, opportunity)}
+    policy = kc.load_policy(repo_path(experiment["kc"]["policy"]))
+    return {"opportunity": opportunity, "explanation": kc.apply_policy(policy, opportunity)}
 
 
 def inspect_item(run: Path, identifier: str) -> dict[str, Any]:
@@ -87,9 +84,61 @@ def inspect_kt(run: Path, identifier: str) -> dict[str, Any]:
     return {"observable_interaction": event, "prediction": prediction, "oracle_used_by_kt": False}
 
 
+def inspect_trace(run: Path, identifier: str) -> dict[str, Any]:
+    """Reconstruct an item lineage by joining stable IDs in saved stage outputs."""
+
+    candidates = read_jsonl(run / "items" / "generation" / "candidate_items.jsonl")
+    item = one(candidates, "item_id", identifier)
+    cell_id = item["canonical_cell_id"]
+    canonical_cell = one(read_jsonl(run / "canonical" / "canonical_cells.jsonl"), "canonical_cell_id", cell_id)
+    source_edges = [
+        row
+        for row in read_jsonl(run / "canonical" / "source_cell_edges.jsonl")
+        if row["canonical_cell_id"] == cell_id
+    ]
+    source_ids = {row["egp_id"] for row in source_edges}
+    source_descriptors = [
+        row
+        for row in read_jsonl(run / "source" / "source_subset.jsonl")
+        if row["egp_id"] in source_ids
+    ]
+    mappings = [
+        row
+        for row in read_jsonl(run / "normalisation" / "final_mappings.jsonl")
+        if row["egp_id"] in source_ids
+    ]
+    realisations = [
+        row
+        for row in read_jsonl(run / "realisation" / "realisations.jsonl")
+        if row["spec"]["canonical_cell_id"] == cell_id
+    ]
+    projection = one(read_jsonl(run / "kc" / "cell_kc_projection.jsonl"), "canonical_cell_id", cell_id)
+    q_edges = [
+        row
+        for row in read_jsonl(run / "qmatrix" / "item_kc_edges.jsonl")
+        if row["item_id"] == identifier
+    ]
+    interactions = [
+        row
+        for row in read_jsonl(run / "simulation" / "observable_interactions.jsonl")
+        if row["item_id"] == identifier
+    ]
+    return {
+        "source_descriptors": source_descriptors,
+        "normalisation_mappings": mappings,
+        "canonical_cell": canonical_cell,
+        "source_cell_edges": source_edges,
+        "supporting_realisations": realisations,
+        "kc_projection": projection,
+        "item": item,
+        "q_edges": q_edges,
+        "interactions": {"count": len(interactions), "first_five": interactions[:5]},
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Inspect one saved experimental unit.")
-    parser.add_argument("kind", choices=("normalisation", "kc", "item", "qmatrix", "kt"))
+    parser.add_argument("kind", choices=("normalisation", "kc", "item", "qmatrix", "kt", "trace"))
     parser.add_argument("identifier")
     parser.add_argument("--run", default="base")
     args = parser.parse_args()
@@ -102,6 +151,7 @@ def main() -> int:
         "item": inspect_item,
         "qmatrix": lambda current, identifier: qmatrix.explain(current, identifier),
         "kt": inspect_kt,
+        "trace": inspect_trace,
     }
     print(json.dumps(handlers[args.kind](run, args.identifier), ensure_ascii=False, indent=2, sort_keys=True))
     return 0

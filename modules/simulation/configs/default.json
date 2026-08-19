@@ -1,10 +1,8 @@
 {
-  "version": "SIMULATION_v0",
-  "seed": 20260817,
   "learners_per_profile": 60,
   "item_passes_per_learner": 2,
-  "train_end_sequence": 54,
-  "validation_end_sequence": 72,
+  "train_fraction": 0.6,
+  "validation_fraction": 0.2,
   "difficulty_min": -0.8,
   "difficulty_max": 0.8,
   "multi_kc_penalty": 0.15,

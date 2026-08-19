@@ -1,7 +1,5 @@
 {
-  "version": "KT_SANITY_v0",
   "empirical": {"alpha": 1.0, "beta": 1.0},
   "bkt": {"learn": 0.04, "guess": 0.20, "slip": 0.10},
   "logistic": {"C": 1.0, "max_iter": 300, "solver": "lbfgs", "random_state": 20260817}
 }
-
