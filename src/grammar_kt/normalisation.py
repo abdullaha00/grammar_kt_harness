@@ -22,6 +22,8 @@ OUTPUT_SCHEMA = NORMALISATION_DIR / "configs" / "mapping_schema.json"
 PHASE1_FIELDS = ("egp_id", "supercategory", "subcategory", "guideword", "can_do")
 
 
+# Prompt construction
+
 def _fill_prompt(template: str, values: dict[str, str]) -> str:
     for key, replacement in values.items():
         template = template.replace("{{" + key + "}}", replacement)
@@ -32,7 +34,7 @@ def _fill_prompt(template: str, values: dict[str, str]) -> str:
     return template
 
 
-def _prompt_wrapper(phase: int) -> str:
+def _render_method_context(phase: int) -> str:
     values = {
         "schema": GRAMMAR_DIMENSIONS.read_text(encoding="utf-8"),
         "rulebook": RULEBOOK.read_text(encoding="utf-8"),
@@ -43,7 +45,7 @@ def _prompt_wrapper(phase: int) -> str:
 
 def render_phase1_prompt(record: dict[str, Any], template: str) -> str:
     values = {"record": json.dumps(record, ensure_ascii=False, separators=(",", ":"))}
-    return _prompt_wrapper(1) + _fill_prompt(template, values)
+    return _render_method_context(1) + _fill_prompt(template, values)
 
 
 def render_phase2_prompt(
@@ -57,8 +59,10 @@ def render_phase2_prompt(
         "phase1_mapping": json.dumps(phase1_mapping, ensure_ascii=False, separators=(",", ":")),
         "examples": json.dumps(examples, ensure_ascii=False, separators=(",", ":")),
     }
-    return _prompt_wrapper(2) + _fill_prompt(template, values)
+    return _render_method_context(2) + _fill_prompt(template, values)
 
+
+# Model invocation and validation
 
 def _invoke_mapping(
     *,
@@ -206,25 +210,30 @@ def normalise_record(
 
 def normalise_one(
     record: dict[str, Any],
-    settings: dict[str, Any],
     *,
+    phase1_template: str,
+    phase2_template: str,
+    backend_settings: dict[str, Any],
+    max_attempts: int,
     output: Path | None = None,
     phase1_only: bool = False,
     unit_id: str | None = None,
 ) -> dict[str, Any]:
-    """Convenience adapter for scripts: load settings, then normalise one record."""
+    """Normalise one descriptor with explicit method inputs."""
 
     return normalise_record(
         record,
         unit_id=unit_id or str(record["egp_id"]),
         output=output or Path(tempfile.mkdtemp(prefix="grammar-kt-normalisation-")),
-        phase1_template=repo_path(settings["phase1_prompt"]).read_text(encoding="utf-8"),
-        phase2_template=repo_path(settings["phase2_prompt"]).read_text(encoding="utf-8"),
-        backend_settings=read_yaml(settings["backend"]),
-        max_attempts=int(settings.get("max_attempts", 2)),
+        phase1_template=phase1_template,
+        phase2_template=phase2_template,
+        backend_settings=backend_settings,
+        max_attempts=max_attempts,
         phase1_only=phase1_only,
     )
 
+
+# Full stage
 
 def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     output = run_dir / "normalisation"

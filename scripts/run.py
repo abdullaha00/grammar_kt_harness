@@ -7,6 +7,7 @@ import argparse
 import sys
 from pathlib import Path
 
+# Prevent this directory's inspect.py from shadowing Python's standard inspect module.
 sys.path.remove(str(Path(__file__).resolve().parent))
 
 from grammar_kt.runner import run_experiment
@@ -14,7 +15,7 @@ from grammar_kt.runner import run_experiment
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Run the grammar-to-KT pipeline.")
-    parser.add_argument("experiment", help="short name in experiments/ or YAML path")
+    parser.add_argument("experiment", help="short name in experiments/ (without .yaml)")
     parser.add_argument("--from", dest="from_stage", help="reuse earlier outputs from the parent run and execute from this stage")
     parser.add_argument("--force", action="store_true", help="replace this exact run directory")
     args = parser.parse_args()

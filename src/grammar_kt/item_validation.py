@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from .backend import invoke_model, save_model_result
-from .io import ROOT, read_json, read_jsonl, read_yaml, repo_path, write_json, write_jsonl
+from .io import ROOT, read_jsonl, write_json, write_jsonl
 from .items import item_id, nuisance_signature, render_prompt
 from .realisation import LEXICON, realise, validate_spec
 
@@ -38,15 +38,16 @@ GENERATION_FIELDS = {
     "opportunity_search_offset",
     "lexical_search_offset",
 }
+DIAGNOSTIC_FAILURE_LABELS = {
+    "structurally_plausible": "structurally implausible",
+    "natural": "unnatural",
+    "world_knowledge_required": "world knowledge required",
+    "unsupported_construction": "unsupported construction",
+    "answer_ambiguity_suspected": "answer ambiguity suspected",
+}
 
 
-def diagnostic_valid(value: Any) -> bool:
-    return (
-        isinstance(value, dict) and set(value) == DIAGNOSTIC_FIELDS
-        and all(isinstance(value[key], bool) for key in DIAGNOSTIC_FIELDS - {"note"})
-        and isinstance(value["note"], str)
-    )
-
+# Deterministic acceptance checks
 
 def deterministic_results(candidates: list[dict[str, Any]], *, cells: dict[str, dict[str, str]],
                           edge_sources: dict[str, set[str]], mappings: dict[str, dict[str, Any]],
@@ -123,6 +124,8 @@ def deterministic_results(candidates: list[dict[str, Any]], *, cells: dict[str, 
     return results
 
 
+# Independent model diagnostic
+
 def run_diagnostic(unit: dict[str, Any], item: dict[str, Any], *, root: Path,
                    prompt_template: str, backend_settings: dict[str, Any],
                    max_attempts: int) -> dict[str, Any]:
@@ -143,7 +146,12 @@ def run_diagnostic(unit: dict[str, Any], item: dict[str, Any], *, root: Path,
         parsed, errors = None, []
         try:
             parsed = json.loads(raw_path.read_text(encoding="utf-8"))
-            if not diagnostic_valid(parsed):
+            if not (
+                isinstance(parsed, dict)
+                and set(parsed) == DIAGNOSTIC_FIELDS
+                and all(isinstance(parsed[key], bool) for key in DIAGNOSTIC_FIELDS - {"note"})
+                and isinstance(parsed["note"], str)
+            ):
                 errors.append("output failed diagnostic shape/type check")
         except Exception as error:
             errors.append(f"JSON parse error: {error}")
@@ -156,23 +164,24 @@ def run_diagnostic(unit: dict[str, Any], item: dict[str, Any], *, root: Path,
     return {"validation_unit_id": uid, "item_id": item["item_id"], "duplicate_of": unit["duplicate_of"], "status": "exhausted", "successful_attempt": None, "result": None, "attempts": attempts}
 
 
-def model_reasons(result: dict[str, Any], expected: dict[str, bool]) -> list[str]:
-    labels = {
-        "structurally_plausible": "structurally implausible", "natural": "unnatural",
-        "world_knowledge_required": "world knowledge required", "unsupported_construction": "unsupported construction",
-        "answer_ambiguity_suspected": "answer ambiguity suspected",
-    }
-    return [f"automated diagnostic: {labels[key]}" for key, value in expected.items() if result.get(key) != value]
+# Full validation stage
 
-
-def run_validation(items_dir: Path, run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
+def run_validation(
+    items_dir: Path,
+    run_dir: Path,
+    *,
+    family_template: str,
+    acceptance: dict[str, bool],
+    backend_settings: dict[str, Any],
+    workers: int,
+    max_attempts: int,
+) -> dict[str, Any]:
     output = items_dir / "validation"
     output.mkdir(parents=True, exist_ok=False)
     candidates = read_jsonl(items_dir / "generation" / "candidate_items.jsonl")
     units = read_jsonl(items_dir / "generation" / "validation_units.jsonl")
     projections = read_jsonl(run_dir / "kc" / "cell_kc_projection.jsonl")
     inventory = read_jsonl(run_dir / "kc" / "kc_inventory.jsonl")
-    template = repo_path(settings["family_prompt"]).read_text(encoding="utf-8")
     frames = {row["predicate_frame_id"]: row for row in read_jsonl(LEXICON)}
     cells = {row["canonical_cell_id"]: row["cell"] for row in projections}
     edge_sources = {row["canonical_cell_id"]: set(row["source_descriptor_ids"]) for row in projections}
@@ -180,18 +189,15 @@ def run_validation(items_dir: Path, run_dir: Path, settings: dict[str, Any]) -> 
     hard = deterministic_results(
         candidates, cells=cells, edge_sources=edge_sources, mappings=mappings, frames=frames,
         projections={row["canonical_cell_id"]: row["kc_ids"] for row in projections},
-        kc_ids={row["kc_id"] for row in inventory}, template=template,
+        kc_ids={row["kc_id"] for row in inventory}, template=family_template,
     )
     write_jsonl(output / "deterministic_results.jsonl", hard)
     hard_by_id = {row["item_id"]: row for row in hard}
     items_by_id = {row["item_id"]: row for row in candidates}
     eligible = {row["item_id"] for row in hard if row["status"] == "accepted"}
-    validation_settings = settings["validation"]
-    backend_settings = read_yaml(validation_settings["backend"])
     prompt_template = DIAGNOSTIC_PROMPT.read_text(encoding="utf-8")
-    max_attempts = int(validation_settings.get("max_attempts", 2))
     diagnostics = []
-    with ThreadPoolExecutor(max_workers=max(1, int(validation_settings.get("workers", 6)))) as pool:
+    with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
         futures = [
             pool.submit(
                 run_diagnostic,
@@ -213,13 +219,16 @@ def run_validation(items_dir: Path, run_dir: Path, settings: dict[str, Any]) -> 
     write_jsonl(output / "diagnostics.jsonl", diagnostics)
     diagnostics_by_uid = {row["validation_unit_id"]: row for row in diagnostics}
     primary_uid = {row["item_id"]: row["validation_unit_id"] for row in units if row["duplicate_of"] is None}
-    expected = read_json(repo_path(validation_settings["acceptance"]))
     accepted, rejected, result_rows = [], [], []
     for item in candidates:
         reasons = list(hard_by_id[item["item_id"]]["errors"])
         diagnostic = diagnostics_by_uid.get(primary_uid[item["item_id"]])
         if diagnostic:
-            reasons.extend(model_reasons(diagnostic["result"], expected))
+            reasons.extend(
+                f"automated diagnostic: {DIAGNOSTIC_FAILURE_LABELS[key]}"
+                for key, expected_value in acceptance.items()
+                if diagnostic["result"].get(key) != expected_value
+            )
         elif not reasons:
             reasons.append("independent automated diagnostic missing")
         validator_results = {

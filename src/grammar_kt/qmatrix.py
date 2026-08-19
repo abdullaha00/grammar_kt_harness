@@ -13,6 +13,8 @@ from .io import read_jsonl, write_json, write_jsonl
 LOW_SUPPORT_ITEM_COUNT = 5
 
 
+# Item/KC projection and diagnostics
+
 def build(
     items: list[dict[str, Any]],
     cards: list[dict[str, Any]],
@@ -110,6 +112,8 @@ def build(
     return kc_ids, rows, edges, audit
 
 
+# Full stage
+
 def run(run_dir: Path, _settings: dict[str, Any] | None = None) -> dict[str, Any]:
     items = read_jsonl(run_dir / "items" / "validation" / "accepted_items.jsonl")
     cards = read_jsonl(run_dir / "kc" / "kc_inventory.jsonl")
@@ -128,19 +132,3 @@ def run(run_dir: Path, _settings: dict[str, Any] | None = None) -> dict[str, Any
     write_jsonl(output / "item_kc_edges.jsonl", sorted(edges, key=lambda row: (row["item_id"], row["kc_id"])))
     write_json(output / "audit.json", audit)
     return {"rows": len(rows), "columns": len(kc_ids), "edges": len(edges)}
-
-
-def explain(run_dir: Path, item_id: str) -> dict[str, Any]:
-    edges = [
-        row
-        for row in read_jsonl(run_dir / "qmatrix" / "item_kc_edges.jsonl")
-        if row["item_id"] == item_id
-    ]
-    if not edges:
-        raise KeyError(item_id)
-    return {
-        "item_id": item_id,
-        "kc_ids": [row["kc_id"] for row in edges],
-        "edges": edges,
-        "reason": "copied deterministically from the item's frozen cell KC projection",
-    }

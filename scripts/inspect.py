@@ -9,12 +9,11 @@ import sys
 from pathlib import Path
 from typing import Any
 
+# Prevent this file from shadowing Python's standard inspect module in dependencies.
 sys.path.remove(str(Path(__file__).resolve().parent))
 
-import yaml
-
-from grammar_kt import kc, qmatrix
-from grammar_kt.io import ROOT, read_json, read_jsonl, repo_path
+from grammar_kt import kc
+from grammar_kt.io import ROOT, read_json, read_jsonl, read_yaml, repo_path
 
 
 def one(rows: list[dict[str, Any]], key: str, value: str) -> dict[str, Any]:
@@ -49,7 +48,7 @@ def inspect_normalisation(run: Path, identifier: str) -> dict[str, Any]:
 
 def inspect_kc(run: Path, identifier: str) -> dict[str, Any]:
     opportunity = one(read_jsonl(run / "kc" / "cell_kc_projection.jsonl"), "canonical_cell_id", identifier)
-    experiment = yaml.safe_load((run / "experiment.yaml").read_text(encoding="utf-8"))
+    experiment = read_yaml(run / "experiment.yaml")
     policy = kc.load_policy(repo_path(experiment["kc"]["policy"]))
     return {"opportunity": opportunity, "explanation": kc.apply_policy(policy, opportunity)}
 
@@ -82,6 +81,22 @@ def inspect_kt(run: Path, identifier: str) -> dict[str, Any]:
     event = one(read_jsonl(run / "simulation" / "observable_interactions.jsonl"), "event_id", identifier)
     prediction = one(read_jsonl(run / "kt" / "predictions.jsonl"), "event_id", identifier)
     return {"observable_interaction": event, "prediction": prediction, "oracle_used_by_kt": False}
+
+
+def inspect_qmatrix(run: Path, identifier: str) -> dict[str, Any]:
+    edges = [
+        row
+        for row in read_jsonl(run / "qmatrix" / "item_kc_edges.jsonl")
+        if row["item_id"] == identifier
+    ]
+    if not edges:
+        raise KeyError(identifier)
+    return {
+        "item_id": identifier,
+        "kc_ids": [row["kc_id"] for row in edges],
+        "edges": edges,
+        "reason": "copied deterministically from the item's frozen cell KC projection",
+    }
 
 
 def inspect_trace(run: Path, identifier: str) -> dict[str, Any]:
@@ -145,15 +160,19 @@ def main() -> int:
     run = Path(args.run)
     if not run.is_dir():
         run = ROOT / "runs" / args.run
-    handlers = {
-        "normalisation": inspect_normalisation,
-        "kc": inspect_kc,
-        "item": inspect_item,
-        "qmatrix": lambda current, identifier: qmatrix.explain(current, identifier),
-        "kt": inspect_kt,
-        "trace": inspect_trace,
-    }
-    print(json.dumps(handlers[args.kind](run, args.identifier), ensure_ascii=False, indent=2, sort_keys=True))
+    if args.kind == "normalisation":
+        result = inspect_normalisation(run, args.identifier)
+    elif args.kind == "kc":
+        result = inspect_kc(run, args.identifier)
+    elif args.kind == "item":
+        result = inspect_item(run, args.identifier)
+    elif args.kind == "qmatrix":
+        result = inspect_qmatrix(run, args.identifier)
+    elif args.kind == "kt":
+        result = inspect_kt(run, args.identifier)
+    else:
+        result = inspect_trace(run, args.identifier)
+    print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
     return 0
 
 

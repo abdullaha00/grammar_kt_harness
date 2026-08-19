@@ -12,10 +12,11 @@ ROOT = Path(__file__).resolve().parents[1]
 
 from grammar_kt import canonical, items, kc, kt, qmatrix, realisation, simulation, source
 from grammar_kt.backend import invoke_model, save_model_result
-from grammar_kt.config import changed_values, resolve_experiment
+from grammar_kt.config import load_experiment
 from grammar_kt.io import read_json, read_jsonl, sha256_file, write_json, write_jsonl
-from grammar_kt.normalisation import normalise_record, render_phase1_prompt
+from grammar_kt.normalisation import normalise_one, render_phase1_prompt
 from grammar_kt.normalisation_validation import validate_mapping, validate_phase2_transition
+from grammar_kt.records import FORBIDDEN_OBSERVABLE_FIELDS, kc_opportunity
 from grammar_kt.runner import PIPELINE, STAGE_NAMES, run_experiment
 
 
@@ -24,12 +25,18 @@ CELL = {"tense": "past", "aspect": "none", "voice": "active", "polarity": "posit
 
 class ExperimentTests(unittest.TestCase):
     def test_inheritance_changes_only_declared_component(self) -> None:
-        base = resolve_experiment("base")
-        variant = resolve_experiment("kc_full_cell")
-        self.assertEqual(variant.parent, "base")
-        self.assertEqual(variant.settings["kc"]["policy"], "modules/kc/policies/full_cell.json")
-        changes = changed_values(base.settings, variant.settings)
-        self.assertEqual({row["path"] for row in changes}, {"experiment", "kc.policy"})
+        base, _ = load_experiment("base")
+        variant, parent = load_experiment("kc_full_cell")
+        self.assertEqual(parent, "base")
+        self.assertEqual(variant["kc"]["policy"], "modules/kc/policies/full_cell.json")
+        self.assertEqual(set(base) - {"experiment", "kc"}, set(variant) - {"experiment", "kc"})
+        for stage in set(base) - {"experiment", "kc"}:
+            self.assertEqual(base[stage], variant[stage])
+        self.assertEqual(set(base["kc"]), {"policy"})
+
+    def test_experiments_are_loaded_only_by_short_name(self) -> None:
+        with self.assertRaisesRegex(ValueError, "short name"):
+            load_experiment("experiments/base.yaml")
 
     def test_pipeline_order_is_defined_once_without_numbered_modules(self) -> None:
         self.assertEqual(STAGE_NAMES, ["source", "normalisation", "canonical", "realisation", "kc", "items", "qmatrix", "simulation", "kt"])
@@ -37,7 +44,7 @@ class ExperimentTests(unittest.TestCase):
         self.assertFalse(list((ROOT / "modules").glob("stage_*")), "legacy numbered modules remain")
 
     def test_baseline_declares_accepted_design_counts(self) -> None:
-        settings = resolve_experiment("base").settings
+        settings, _ = load_experiment("base")
         expected = read_json(ROOT / "reference/current/expected_counts.json")
         parameters = read_json(ROOT / settings["simulation"]["parameters"])
         self.assertEqual(settings["source"]["selected_descriptors"], expected["unique_source_descriptors"])
@@ -47,7 +54,7 @@ class ExperimentTests(unittest.TestCase):
         self.assertNotIn("events_per_learner", settings["simulation"])
 
     def test_from_stage_reuse_is_explicit_and_records_parent(self) -> None:
-        resolution = resolve_experiment("kc_full_cell")
+        resolution = load_experiment("kc_full_cell")
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             parent = root / "base"
@@ -62,7 +69,7 @@ class ExperimentTests(unittest.TestCase):
                 return execute
 
             replacement_pipeline = [(stage, fake(stage)) for stage in STAGE_NAMES]
-            with patch("grammar_kt.runner.resolve_experiment", return_value=resolution), patch("grammar_kt.runner.PIPELINE", replacement_pipeline):
+            with patch("grammar_kt.runner.load_experiment", return_value=resolution), patch("grammar_kt.runner.PIPELINE", replacement_pipeline):
                 output = run_experiment("kc_full_cell", from_stage="kc", runs_root=root)
             metadata = read_json(output / "metadata.json")
             self.assertEqual(metadata["reused_from"]["run"], "base")
@@ -89,39 +96,36 @@ class ExperimentTests(unittest.TestCase):
             item_backend = root / "item_backend.yaml"
             write_json(normalisation_backend, {"backend": "fixture_file", "response_file": str(normalisation_response)})
             write_json(item_backend, {"backend": "fixture_file", "response_file": str(diagnostic_response)})
-            experiment = root / "fixture.yaml"
-            write_json(
-                experiment,
-                {
-                    "experiment": "fixture_e2e",
-                    "source": {
-                        "path": str(source_file), "sha256": sha256_file(source_file),
-                        "records": 1, "selected_descriptors": 1,
-                        "sample_ids": str(root / "ids.txt"), "sample_metadata": str(root / "metadata.jsonl"),
-                        "annotation_units": str(root / "units.jsonl"),
-                    },
-                    "normalisation": {
-                        "phase1_prompt": "modules/normalisation/prompts/phase1.txt",
-                        "phase2_prompt": "modules/normalisation/prompts/phase2.txt",
-                        "backend": str(normalisation_backend), "workers": 1, "max_attempts": 1,
-                    },
-                    "canonical": {},
-                    "realisation": {"split_config": "modules/realisation/configs/default.json"},
-                    "kc": {"policy": "modules/kc/policies/factorized.json"},
-                    "items": {
-                        "family_prompt": "modules/items/families/controlled_transformation.txt",
-                        "replicates_per_kc": 5, "development_replicates": 2,
-                        "validation": {
-                            "acceptance": "modules/items/validation/model_acceptance.json",
-                            "backend": str(item_backend), "workers": 2, "max_attempts": 1,
-                            "repeated_diagnostics": 2,
-                        },
-                    },
-                    "simulation": {"parameters": "modules/simulation/configs/default.json", "seed": 20260817},
-                    "kt": {"parameters": "modules/kt/configs/default.json", "techniques": ["empirical", "bkt"]},
+            fixture_settings = {
+                "experiment": "fixture_e2e",
+                "source": {
+                    "path": str(source_file), "sha256": sha256_file(source_file),
+                    "records": 1, "selected_descriptors": 1,
+                    "sample_ids": str(root / "ids.txt"), "sample_metadata": str(root / "metadata.jsonl"),
+                    "annotation_units": str(root / "units.jsonl"),
                 },
-            )
-            run = run_experiment(str(experiment), runs_root=root / "runs")
+                "normalisation": {
+                    "phase1_prompt": "modules/normalisation/prompts/phase1.txt",
+                    "phase2_prompt": "modules/normalisation/prompts/phase2.txt",
+                    "backend": str(normalisation_backend), "workers": 1, "max_attempts": 1,
+                },
+                "canonical": {},
+                "realisation": {"split_config": "modules/realisation/configs/default.json"},
+                "kc": {"policy": "modules/kc/policies/factorized.json"},
+                "items": {
+                    "family_prompt": "modules/items/families/controlled_transformation.txt",
+                    "replicates_per_kc": 5, "development_replicates": 2,
+                    "validation": {
+                        "acceptance": "modules/items/validation/model_acceptance.json",
+                        "backend": str(item_backend), "workers": 2, "max_attempts": 1,
+                        "repeated_diagnostics": 2,
+                    },
+                },
+                "simulation": {"parameters": "modules/simulation/configs/default.json", "seed": 20260817},
+                "kt": {"parameters": "modules/kt/configs/default.json", "techniques": ["empirical", "bkt"]},
+            }
+            with patch("grammar_kt.runner.load_experiment", return_value=(fixture_settings, None)):
+                run = run_experiment("fixture_e2e", runs_root=root / "runs")
             self.assertEqual(len(read_jsonl(run / "items/validation/accepted_items.jsonl")), 5)
             self.assertEqual(read_json(run / "qmatrix/audit.json")["status"], "PASS")
             self.assertEqual(read_json(run / "simulation/audit.json")["status"], "PASS")
@@ -140,7 +144,8 @@ class NormalisationTests(unittest.TestCase):
         self.assertTrue(validate_phase2_transition(first, changed))
 
     def test_prompt_is_rendered_from_selected_files(self) -> None:
-        settings = resolve_experiment("base").settings["normalisation"]
+        settings, _ = load_experiment("base")
+        settings = settings["normalisation"]
         record = read_jsonl(ROOT / "modules/normalisation/fixtures/core.jsonl")[0]
         prompt = render_phase1_prompt(record, (ROOT / settings["phase1_prompt"]).read_text(encoding="utf-8"))
         self.assertIn(record["egp_id"], prompt)
@@ -174,14 +179,14 @@ class NormalisationTests(unittest.TestCase):
             output = root / "normalisation"
             output.mkdir()
             prompt_dir = ROOT / "modules" / "normalisation" / "prompts"
-            result = normalise_record(
+            result = normalise_one(
                 {"egp_id": "E", "supercategory": "VERBS", "subcategory": "", "guideword": "", "can_do": "", "examples": []},
-                unit_id="u1",
-                output=output,
                 phase1_template=(prompt_dir / "phase1.txt").read_text(encoding="utf-8"),
                 phase2_template=(prompt_dir / "phase2.txt").read_text(encoding="utf-8"),
                 backend_settings={"backend": "fixture_file", "response_file": str(response)},
                 max_attempts=1,
+                unit_id="u1",
+                output=output,
             )
             self.assertIsNone(result["phase2"])
             self.assertFalse((output / "units" / "u1" / "phase2").exists())
@@ -207,10 +212,26 @@ class SourceTests(unittest.TestCase):
     def test_source_selection_and_hash_guard(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             settings = self.source_settings(Path(temporary))
-            selected, metadata, units = source.select(settings)
+            selected, metadata, units = source.select_records(
+                settings["path"],
+                expected_sha256=settings["sha256"],
+                expected_record_count=settings["records"],
+                sample_ids_path=settings["sample_ids"],
+                expected_descriptor_count=settings["selected_descriptors"],
+                sample_metadata_path=settings["sample_metadata"],
+                annotation_units_path=settings["annotation_units"],
+            )
             self.assertEqual(([row["egp_id"] for row in selected], len(metadata), len(units)), (["E1"], 1, 1))
             with self.assertRaisesRegex(RuntimeError, "SHA-256"):
-                source.select({**settings, "sha256": "0" * 64})
+                source.select_records(
+                    settings["path"],
+                    expected_sha256="0" * 64,
+                    expected_record_count=settings["records"],
+                    sample_ids_path=settings["sample_ids"],
+                    expected_descriptor_count=settings["selected_descriptors"],
+                    sample_metadata_path=settings["sample_metadata"],
+                    annotation_units_path=settings["annotation_units"],
+                )
 
 
 class ComponentTests(unittest.TestCase):
@@ -223,22 +244,29 @@ class ComponentTests(unittest.TestCase):
         cells, edges = canonical.build(mappings)
         self.assertEqual((len(cells), len(edges)), (1, 2))
 
-    def test_realisation_and_kc_run_one(self) -> None:
+    def test_realisation_and_kc_policy_application(self) -> None:
         for fixture in read_jsonl(ROOT / "modules/realisation/fixtures/core.jsonl"):
             result = realisation.run_one(fixture)
             self.assertTrue(result["valid"], fixture["fixture_label"])
-        opportunity = read_json(ROOT / "modules/kc/fixtures/perfect_progressive.json")
-        factorized = kc.run_one(opportunity, "factorized")
-        interactions = kc.run_one(opportunity, "factorized_plus_interactions")
-        self.assertEqual(factorized["output"]["kc_ids"], ["KC_ASPECT_PERFECT", "KC_ASPECT_PROGRESSIVE", "KC_FINITE_PRESENT"])
-        self.assertIn("KC_INT_PERFECT_PROGRESSIVE_CHAIN", interactions["output"]["kc_ids"])
+        opportunity = kc_opportunity(read_json(ROOT / "modules/kc/fixtures/perfect_progressive.json"))
+        factorized = kc.apply_policy(
+            kc.load_policy(ROOT / "modules/kc/policies/factorized.json"),
+            opportunity,
+        )
+        interactions = kc.apply_policy(
+            kc.load_policy(ROOT / "modules/kc/policies/factorized_plus_interactions.json"),
+            opportunity,
+        )
+        self.assertEqual(factorized["activated_kcs"], ["KC_ASPECT_PERFECT", "KC_ASPECT_PROGRESSIVE", "KC_FINITE_PRESENT"])
+        self.assertIn("KC_INT_PERFECT_PROGRESSIVE_CHAIN", interactions["activated_kcs"])
 
     def test_new_supported_policy_requires_no_python_change(self) -> None:
         opportunity = read_json(ROOT / "modules/kc/fixtures/perfect_progressive.json")
         with tempfile.TemporaryDirectory() as temporary:
             policy = Path(temporary) / "new_policy.json"
             policy.write_text(json.dumps({"policy_id": "TEST", "kind": "rules", "rules": [{"kc_id": "KC_TEST", "name": "test", "definition": "test", "activation_rule": {"cell": {"aspect": "perfect_progressive"}}, "required_conditions": [], "includes": [], "excludes": [], "realization_dependencies": [], "near_neighbours": [], "rationale": "test"}]}), encoding="utf-8")
-            self.assertEqual(kc.run_one(opportunity, str(policy))["output"]["kc_ids"], ["KC_TEST"])
+            result = kc.apply_policy(kc.load_policy(policy), kc_opportunity(opportunity))
+            self.assertEqual(result["activated_kcs"], ["KC_TEST"])
 
     def test_generic_run_one_cli(self) -> None:
         result = subprocess.run([sys.executable, "scripts/run_one.py", "kc", "--fixture", "perfect_progressive", "--policy", "factorized"], cwd=ROOT, text=True, capture_output=True)
@@ -292,10 +320,28 @@ class ComponentTests(unittest.TestCase):
         self.assertEqual(len({row["target_answer"] for row in generated}), 5)
 
     def test_simulation_observable_has_no_oracle_fields(self) -> None:
-        settings = resolve_experiment("base").settings["simulation"]
-        result = simulation.run_one("L0001", settings)
-        for row in result["observable_interactions"]:
-            self.assertFalse(simulation.FORBIDDEN_OBSERVABLE & set(row))
+        settings, _ = load_experiment("base")
+        settings = settings["simulation"]
+        fixture_dir = ROOT / "modules/simulation/fixtures"
+        fixture_items = read_jsonl(fixture_dir / "accepted_items.jsonl")
+        kc_ids, q_by_item = simulation.read_q_matrix(fixture_dir / "q_matrix.csv")
+        parameters = read_json(settings["parameters"])
+        parameters["seed"] = settings["seed"]
+        event_count = len(fixture_items) * parameters["item_passes_per_learner"]
+        train_end, validation_end = simulation.split_boundaries(
+            event_count, parameters["train_fraction"], parameters["validation_fraction"]
+        )
+        observed, _oracle, _learners, _learner_oracle = simulation.simulate_records(
+            parameters,
+            {row["item_id"]: row for row in fixture_items},
+            q_by_item,
+            kc_ids,
+            train_end,
+            validation_end,
+            target_learner="L0001",
+        )
+        for row in observed:
+            self.assertFalse(FORBIDDEN_OBSERVABLE_FIELDS & set(row))
 
     def test_simulation_split_boundaries_scale_with_item_count(self) -> None:
         self.assertEqual(simulation.split_boundaries(90, 0.6, 0.2), (54, 72))
@@ -313,10 +359,11 @@ class ComponentTests(unittest.TestCase):
             (run / "simulation").mkdir()
             write_jsonl(run / "simulation/observable_interactions.jsonl", [row])
             with self.assertRaisesRegex(ValueError, "leakage"):
-                kt.run(run, resolve_experiment("base").settings["kt"])
+                settings, _ = load_experiment("base")
+                kt.run(run, settings["kt"])
 
     def test_small_fixture_pipeline_through_kt(self) -> None:
-        settings = resolve_experiment("base").settings
+        settings, _ = load_experiment("base")
         with tempfile.TemporaryDirectory() as temporary:
             run = Path(temporary)
             write_json(run / "experiment.yaml", {})
@@ -329,7 +376,15 @@ class ComponentTests(unittest.TestCase):
             realisation.run(run, settings["realisation"])
             kc.run(run, settings["kc"])
             (run / "items").mkdir()
-            generated = items.generate_items(run / "items", run, settings["items"])
+            item_settings = settings["items"]
+            generated = items.generate_items(
+                run / "items",
+                run,
+                family_prompt_path=item_settings["family_prompt"],
+                replicates_per_kc=item_settings["replicates_per_kc"],
+                development_replicates=item_settings["development_replicates"],
+                repeated_diagnostics=item_settings["validation"]["repeated_diagnostics"],
+            )
             candidates = read_jsonl(run / "items/generation/candidate_items.jsonl")
             (run / "items/validation").mkdir()
             write_jsonl(run / "items/validation/accepted_items.jsonl", candidates)

@@ -8,6 +8,7 @@ import json
 import sys
 from pathlib import Path
 
+# Prevent this directory's inspect.py from shadowing Python's standard inspect module.
 sys.path.remove(str(Path(__file__).resolve().parent))
 
 from grammar_kt.io import ROOT, read_json, read_jsonl

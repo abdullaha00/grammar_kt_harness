@@ -42,13 +42,13 @@ For a compact, executable tour with one fixed input and real call per pipeline
 component, open [`notebooks/module_unit_examples.ipynb`](notebooks/module_unit_examples.ipynb).
 The normalisation cell makes one call through the configured model backend.
 
-Each command prints `BEFORE` and `AFTER`. `run_one.py` accepts a bundled
+`run_one.py` prints `BEFORE` and `AFTER`. It accepts a bundled
 fixture or an explicit one-record JSON file; it never searches saved runs.
 Normalisation uses the configured model and defaults to the first fixture:
 
 ```bash
 python scripts/run_one.py normalisation --phase1-only
-python scripts/run_one.py normalisation --egp-id EGP_ID --experiment base
+python scripts/run_one.py normalisation --egp-id EGP_ID
 python scripts/run_one.py kc --input /tmp/opportunity.json
 ```
 
@@ -98,6 +98,9 @@ python scripts/validate.py base
 ```
 
 Experiment variants inherit recursively and deep-merge mappings; lists replace atomically. For example, `experiments/kc_full_cell.yaml` changes only `kc.policy`, while `experiments/kt_bkt_only.yaml` changes only `kt.techniques`. Run the latter with `--from kt` to consume the exact parent observable dataset without rerunning upstream stages.
+
+Experiment execution accepts only short names from `experiments/*.yaml`. The
+loader has one interface: `settings, parent = load_experiment("kc_full_cell")`.
 
 Item generation makes one deterministic construction pass per KC and retains
 the selected opportunity, replicate, split, and lexical search offset. The

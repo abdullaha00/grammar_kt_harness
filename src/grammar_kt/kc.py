@@ -6,15 +6,11 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .io import ROOT, read_jsonl, repo_path, stable_id, write_jsonl
+from .io import read_jsonl, repo_path, stable_id, write_jsonl
 from .records import kc_opportunity
 
 
-OPPORTUNITY_FIELDS = (
-    "opportunity_id", "split", "canonical_cell_id", "cell", "realization_spec",
-    "realization_operations", "source_descriptor_ids", "source_mapping_notes",
-)
-
+# Policy loading
 
 def load_policy(path: Path) -> dict[str, Any]:
     policy = json.loads(path.read_text(encoding="utf-8"))
@@ -23,6 +19,8 @@ def load_policy(path: Path) -> dict[str, Any]:
         policy = {**policy, "rules": base["rules"] + policy["interaction_rules"]}
     return policy
 
+
+# Rule evaluation
 
 def evaluate_rule(expression: dict[str, Any], opportunity: dict[str, Any]) -> tuple[bool, dict[str, Any]]:
     """Evaluate one activation expression and return its literal evidence."""
@@ -90,6 +88,8 @@ def apply_policy(policy: dict[str, Any], opportunity: dict[str, Any]) -> dict[st
     }
 
 
+# Inventory construction
+
 def materialize_inventory(
     policy: dict[str, Any], opportunities: list[dict[str, Any]]
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
@@ -139,24 +139,7 @@ def materialize_inventory(
     return projections, cards
 
 
-def run_one(value: dict[str, Any], policy_name: str) -> dict[str, Any]:
-    opportunity = kc_opportunity({field: value[field] for field in OPPORTUNITY_FIELDS})
-    supplied = Path(policy_name)
-    policy_file = (
-        ROOT / "modules" / "kc" / "policies" / supplied.with_suffix(".json")
-        if len(supplied.parts) == 1 and not supplied.suffix
-        else repo_path(supplied)
-    )
-    policy = load_policy(policy_file)
-    projections, cards = materialize_inventory(policy, [opportunity])
-    return {
-        "input": opportunity,
-        "policy": policy_name,
-        "output": projections[0],
-        "kc_specs": cards,
-        "explanation": apply_policy(policy, opportunity),
-    }
-
+# Full stage
 
 def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     output = run_dir / "kc"

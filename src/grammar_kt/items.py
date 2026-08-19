@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .io import read_jsonl, repo_path, stable_id, write_json, write_jsonl
+from .io import read_json, read_jsonl, read_yaml, repo_path, stable_id, write_json, write_jsonl
 from .realisation import LEXICON, imperative_subtype, realise, validate_spec
 
 
@@ -28,6 +28,8 @@ SUBJECTS = (
     {"text": "she", "person": 3, "number": "singular"},
 )
 
+
+# Item form and stable identity
 
 def render_prompt(template: str, cell: dict[str, str], spec: dict[str, Any], frame: dict[str, Any]) -> str:
     passive = cell["voice"] == "passive"
@@ -62,15 +64,7 @@ def item_id(primary_kc_id: str, spec: dict[str, Any], replicate: int) -> str:
     return stable_id("ITEM", ITEM_FAMILY, primary_kc_id, spec["realization_id"], replicate)
 
 
-def _wh_conditions(clause: str) -> dict[str, str] | None:
-    if clause == "subject_wh_question":
-        return {"phrase": "who", "role": "subject"}
-    if clause == "non_subject_wh_question":
-        return {"phrase": "what", "role": "object"}
-    return None
-
-
-def _construct_spec(
+def construct_item_spec(
     primary_kc_id: str,
     opportunity: dict[str, Any],
     replicate: int,
@@ -82,6 +76,12 @@ def _construct_spec(
     source_id = source_ids[(replicate + choice) % len(source_ids)]
     note = opportunity["source_mapping_notes"].get(source_id)
     subtype = imperative_subtype(note) if cell["clause"] == "imperative" else None
+    if cell["clause"] == "subject_wh_question":
+        wh = {"phrase": "who", "role": "subject"}
+    elif cell["clause"] == "non_subject_wh_question":
+        wh = {"phrase": "what", "role": "object"}
+    else:
+        wh = None
 
     frame_ids = ("FRAME_LIKE",) if cell["modal"] == "would" and cell["voice"] == "active" else TRANSITIVE_FRAMES
     frame_id = frame_ids[choice % len(frame_ids)]
@@ -102,7 +102,7 @@ def _construct_spec(
         source_id,
         frame_id,
         subject,
-        _wh_conditions(cell["clause"]),
+        wh,
         subtype,
         replicate,
     )
@@ -112,11 +112,13 @@ def _construct_spec(
         "source_descriptor_id": source_id,
         "predicate_frame_id": frame_id,
         "subject": subject,
-        "wh": _wh_conditions(cell["clause"]),
+        "wh": wh,
         "imperative_subtype": subtype,
         "let_pronoun": "them" if subtype == "let_pronoun" else None,
     }
 
+
+# Opportunity selection and deterministic construction
 
 def construct_items(
     projections: list[dict[str, Any]],
@@ -148,7 +150,7 @@ def construct_items(
                 cell = opportunity["cell"]
                 for lexical_offset in range(len(TRANSITIVE_FRAMES) * len(SUBJECTS)):
                     choice = replicate + kc_offset + lexical_offset
-                    spec = _construct_spec(primary_kc_id, opportunity, replicate, choice, frames)
+                    spec = construct_item_spec(primary_kc_id, opportunity, replicate, choice, frames)
                     frame = frames[spec["predicate_frame_id"]]
                     errors = validate_spec(
                         spec,
@@ -220,13 +222,23 @@ def construct_items(
     return candidates
 
 
-def generate_items(items_dir: Path, run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
+# Saved generation evidence
+
+def generate_items(
+    items_dir: Path,
+    run_dir: Path,
+    *,
+    family_prompt_path: str | Path,
+    replicates_per_kc: int,
+    development_replicates: int,
+    repeated_diagnostics: int,
+) -> dict[str, Any]:
     output = items_dir / "generation"
     output.mkdir(parents=True, exist_ok=False)
     projections = read_jsonl(run_dir / "kc" / "cell_kc_projection.jsonl")
     cards = read_jsonl(run_dir / "kc" / "kc_inventory.jsonl")
     frames = {row["predicate_frame_id"]: row for row in read_jsonl(LEXICON)}
-    template_path = repo_path(settings["family_prompt"])
+    template_path = repo_path(family_prompt_path)
     template = template_path.read_text(encoding="utf-8")
 
     candidates = construct_items(
@@ -234,8 +246,8 @@ def generate_items(items_dir: Path, run_dir: Path, settings: dict[str, Any]) -> 
         cards,
         frames,
         template,
-        replicates_per_kc=int(settings["replicates_per_kc"]),
-        development_replicates=int(settings["development_replicates"]),
+        replicates_per_kc=replicates_per_kc,
+        development_replicates=development_replicates,
     )
     ordered = sorted(candidates, key=lambda row: row["item_id"])
     write_jsonl(output / "candidate_items.jsonl", ordered)
@@ -245,7 +257,7 @@ def generate_items(items_dir: Path, run_dir: Path, settings: dict[str, Any]) -> 
         for index, row in enumerate(ordered, 1)
     ]
     repeated = [row for row in ordered if row["generation_metadata"]["split"] == "held_out"][
-        : int(settings["validation"].get("repeated_diagnostics", 5))
+        :repeated_diagnostics
     ]
     originals = {unit["item_id"]: unit["validation_unit_id"] for unit in units}
     for index, row in enumerate(repeated, len(units) + 1):
@@ -283,6 +295,8 @@ def generate_items(items_dir: Path, run_dir: Path, settings: dict[str, Any]) -> 
     return {"candidate_items": len(ordered), "diagnostic_units": len(units)}
 
 
+# One-fixture boundary
+
 def evaluate_fixture(fixture: dict[str, Any]) -> dict[str, Any]:
     frames = {row["predicate_frame_id"]: row for row in read_jsonl(LEXICON)}
     cell, spec = fixture["cell"], fixture["spec"]
@@ -311,11 +325,29 @@ def evaluate_fixture(fixture: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+# Full stage
+
 def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     from .item_validation import run_validation
 
     output = run_dir / "items"
     output.mkdir(parents=True, exist_ok=False)
-    generation = generate_items(output, run_dir, settings)
-    validation = run_validation(output, run_dir, settings)
+    validation_settings = settings["validation"]
+    generation = generate_items(
+        output,
+        run_dir,
+        family_prompt_path=settings["family_prompt"],
+        replicates_per_kc=int(settings["replicates_per_kc"]),
+        development_replicates=int(settings["development_replicates"]),
+        repeated_diagnostics=int(validation_settings.get("repeated_diagnostics", 5)),
+    )
+    validation = run_validation(
+        output,
+        run_dir,
+        family_template=repo_path(settings["family_prompt"]).read_text(encoding="utf-8"),
+        acceptance=read_json(validation_settings["acceptance"]),
+        backend_settings=read_yaml(validation_settings["backend"]),
+        workers=int(validation_settings.get("workers", 6)),
+        max_attempts=int(validation_settings.get("max_attempts", 2)),
+    )
     return {**generation, **validation}

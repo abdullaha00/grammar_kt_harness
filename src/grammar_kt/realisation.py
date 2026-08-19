@@ -14,6 +14,8 @@ REALISATION_DIR = ROOT / "modules" / "realisation"
 LEXICON = REALISATION_DIR / "lexicons" / "default.jsonl"
 
 
+# Morphology
+
 def finite_be(tense: str, subject: dict) -> str:
     if tense == "past":
         return "was" if subject["number"] == "singular" and subject["person"] in {1, 3} else "were"
@@ -60,6 +62,8 @@ def inflect(lemma: str, requested: str, tense: str, subject: dict, frame: dict) 
     return values[requested]
 
 
+# Auxiliary-chain construction
+
 def lexical_nodes(cell: dict) -> list[tuple[str, str]]:
     nodes: list[tuple[str, str]] = []
     if cell["aspect"] in {"perfect", "perfect_progressive"}:
@@ -99,6 +103,8 @@ def inflect_chain(cell: dict, spec: dict, frame: dict, imperative: bool = False)
         previous_role = role
     return words, agreement_site
 
+
+# RealizationSpec validation
 
 def validate_spec(spec: dict, cell: dict, frame: dict, source_note: str | None) -> list[str]:
     errors: list[str] = []
@@ -143,6 +149,8 @@ def validate_spec(spec: dict, cell: dict, frame: dict, source_note: str | None) 
         errors.append(f"imperative subtype does not preserve source note: {noted}")
     return errors
 
+
+# Clause realization
 
 def realise(spec: dict, cell: dict, frame: dict) -> dict:
     imperative = cell["clause"] == "imperative"
@@ -224,6 +232,8 @@ def realise(spec: dict, cell: dict, frame: dict) -> dict:
     return {"surface": surface, "auxiliary_chain": auxiliary_chain, "agreement_site": agreement_site, "operations": sorted(set(operations)), "tokens": tokens}
 
 
+# RealizationSpec construction
+
 def imperative_subtype(note: str | None) -> str:
     text = note or ""
     if "LET'S NOT" in text:
@@ -237,7 +247,7 @@ def imperative_subtype(note: str | None) -> str:
     return "ordinary"
 
 
-def _case(cell_row: dict[str, Any], edge: dict[str, Any], serial: int, held_out: set[str]) -> dict[str, Any]:
+def construct_case(cell_row: dict[str, Any], edge: dict[str, Any], serial: int, held_out: set[str]) -> dict[str, Any]:
     cell = cell_row["cell"]
     frame = (
         "FRAME_LIKE" if cell["modal"] == "would" else
@@ -274,7 +284,7 @@ def build_cases(cells: list[dict[str, Any]], edges: list[dict[str, Any]], held_o
     for cell_row in sorted(cells, key=lambda row: row["canonical_cell_id"]):
         edge = sorted(by_cell[cell_row["canonical_cell_id"]], key=lambda row: row["egp_id"])[0]
         serial += 1
-        cases.append(_case(cell_row, edge, serial, held_out))
+        cases.append(construct_case(cell_row, edge, serial, held_out))
     existing = {(row["spec"]["canonical_cell_id"], row["spec"]["source_descriptor_id"]) for row in cases}
     for cell_row in cells:
         if cell_row["cell"]["clause"] != "imperative":
@@ -283,7 +293,7 @@ def build_cases(cells: list[dict[str, Any]], edges: list[dict[str, Any]], held_o
             key = (cell_row["canonical_cell_id"], edge["egp_id"])
             if edge.get("source_note") and key not in existing:
                 serial += 1
-                cases.append(_case(cell_row, edge, serial, held_out))
+                cases.append(construct_case(cell_row, edge, serial, held_out))
     return cases
 
 
@@ -297,6 +307,8 @@ def run_one(fixture: dict[str, Any]) -> dict[str, Any]:
         errors.append(f"surface differs: {result['surface']!r}")
     return {"input": fixture, "output": result, "valid": not errors, "errors": errors}
 
+
+# Full stage
 
 def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     output = run_dir / "realisation"

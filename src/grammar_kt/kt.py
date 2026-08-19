@@ -15,17 +15,7 @@ from .io import read_json, read_jsonl, repo_path, write_json, write_jsonl
 from .records import observable_interaction
 
 
-def _metrics(targets: np.ndarray, predictions: np.ndarray) -> dict[str, Any]:
-    predictions = np.clip(predictions, 1e-6, 1 - 1e-6)
-    return {
-        "auc": float(roc_auc_score(targets, predictions)),
-        "log_loss": float(log_loss(targets, predictions)),
-        "accuracy_at_0_5": float(accuracy_score(targets, predictions >= 0.5)),
-        "n": int(len(targets)),
-        "mean_prediction": float(np.mean(predictions)),
-        "observed_rate": float(np.mean(targets)),
-    }
-
+# Observable pre-event features
 
 def pre_event_features(rows: list[dict[str, Any]], kc_ids: list[str], alpha: float, beta: float) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     learner_attempts: Counter[str] = Counter()
@@ -63,7 +53,18 @@ def pre_event_features(rows: list[dict[str, Any]], kc_ids: list[str], alpha: flo
     return np.asarray(features, dtype=float), np.asarray(targets, dtype=int), np.asarray(empirical)
 
 
-def bkt_predictions(rows: list[dict[str, Any]], kc_ids: list[str], settings: dict[str, float], alpha: float, beta: float) -> np.ndarray:
+# Baselines
+
+def bkt_predictions(
+    rows: list[dict[str, Any]],
+    kc_ids: list[str],
+    *,
+    learn: float,
+    guess: float,
+    slip: float,
+    alpha: float,
+    beta: float,
+) -> np.ndarray:
     train_success: Counter[str] = Counter()
     train_attempt: Counter[str] = Counter()
     for row in rows:
@@ -79,9 +80,6 @@ def bkt_predictions(rows: list[dict[str, Any]], kc_ids: list[str], settings: dic
     by_learner: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for row in rows:
         by_learner[row["learner_id"]].append(row)
-    guess = float(settings["guess"])
-    slip = float(settings["slip"])
-    learn = float(settings["learn"])
     for learner_rows in by_learner.values():
         mastery = dict(initial)
         for row in sorted(learner_rows, key=lambda value: value["sequence_index"]):
@@ -97,6 +95,22 @@ def bkt_predictions(rows: list[dict[str, Any]], kc_ids: list[str], settings: dic
                 mastery[kc] = posterior + (1.0 - posterior) * learn
     return np.asarray([predictions[row["event_id"]] for row in rows])
 
+
+# Evaluation
+
+def prediction_metrics(targets: np.ndarray, predictions: np.ndarray) -> dict[str, Any]:
+    predictions = np.clip(predictions, 1e-6, 1 - 1e-6)
+    return {
+        "auc": float(roc_auc_score(targets, predictions)),
+        "log_loss": float(log_loss(targets, predictions)),
+        "accuracy_at_0_5": float(accuracy_score(targets, predictions >= 0.5)),
+        "n": int(len(targets)),
+        "mean_prediction": float(np.mean(predictions)),
+        "observed_rate": float(np.mean(targets)),
+    }
+
+
+# Full stage
 
 def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     output = run_dir / "kt"
@@ -122,7 +136,16 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     if "empirical" in techniques:
         predictions["empirical"] = empirical
     if "bkt" in techniques:
-        predictions["bkt"] = bkt_predictions(rows, kc_ids, technique_settings["bkt"], alpha, beta)
+        bkt_settings = technique_settings["bkt"]
+        predictions["bkt"] = bkt_predictions(
+            rows,
+            kc_ids,
+            learn=float(bkt_settings["learn"]),
+            guess=float(bkt_settings["guess"]),
+            slip=float(bkt_settings["slip"]),
+            alpha=alpha,
+            beta=beta,
+        )
         extra["bkt_parameters"] = {
             **technique_settings["bkt"],
             "initial_mastery_source": "smoothed train outcome rate per KC",
@@ -153,7 +176,7 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     }
     for name, values in predictions.items():
         metrics["techniques"][name] = {
-            current_split: _metrics(targets[split == current_split], values[split == current_split])
+            current_split: prediction_metrics(targets[split == current_split], values[split == current_split])
             for current_split in ("validation", "test")
         }
     prediction_rows = [

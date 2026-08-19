@@ -10,7 +10,7 @@ from typing import Any
 import yaml
 
 from . import canonical, items, kc, kt, normalisation, qmatrix, realisation, simulation, source
-from .config import resolve_experiment
+from .config import load_experiment
 from .io import ROOT, utc_now, write_json
 
 
@@ -50,9 +50,8 @@ def _copy_upstream(parent: Path, target: Path, start: str) -> list[str]:
 
 def run_experiment(name: str, *, from_stage: str | None = None, force: bool = False,
                    runs_root: Path | None = None) -> Path:
-    experiment = resolve_experiment(name)
-    settings = experiment.settings
-    run_name = settings.get("experiment", experiment.name)
+    settings, parent_name = load_experiment(name)
+    run_name = settings.get("experiment", name)
     root = runs_root or ROOT / "runs"
     run_dir = root / run_name
     if run_dir.exists():
@@ -66,7 +65,7 @@ def run_experiment(name: str, *, from_stage: str | None = None, force: bool = Fa
     commit, dirty = git_state()
     metadata = {
         "experiment": run_name,
-        "parent": experiment.parent,
+        "parent": parent_name,
         "git_commit": commit,
         "git_dirty": dirty,
         "timestamp": utc_now(),
@@ -80,15 +79,15 @@ def run_experiment(name: str, *, from_stage: str | None = None, force: bool = Fa
     if from_stage:
         if from_stage not in STAGE_NAMES:
             raise ValueError(f"unknown stage {from_stage!r}; choose from {STAGE_NAMES}")
-        if not experiment.parent:
+        if not parent_name:
             raise ValueError("--from requires an experiment with extends: PARENT")
-        parent = root / experiment.parent
+        parent = root / parent_name
         if not parent.is_dir():
             raise FileNotFoundError(f"parent run does not exist: {parent}")
         copied = _copy_upstream(parent, run_dir, from_stage)
-        metadata["reused_from"] = {"run": experiment.parent, "stages": copied}
+        metadata["reused_from"] = {"run": parent_name, "stages": copied}
         for stage in copied:
-            metadata["stages"][stage] = {"status": "reused", "from": experiment.parent}
+            metadata["stages"][stage] = {"status": "reused", "from": parent_name}
         start_index = STAGE_NAMES.index(from_stage)
     write_json(run_dir / "metadata.json", metadata)
     for stage, run_stage in PIPELINE[start_index:]:

@@ -10,17 +10,12 @@ import statistics
 import sys
 from collections import Counter
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
+# Prevent this directory's inspect.py from shadowing Python's standard inspect module.
 sys.path.remove(str(Path(__file__).resolve().parent))
 
-from grammar_kt.config import changed_values
 from grammar_kt.io import ROOT, read_json, read_jsonl, read_yaml
-
-
-def run_path(value: str) -> Path:
-    direct = Path(value)
-    return direct.resolve() if direct.is_dir() else (ROOT / "runs" / value).resolve()
 
 
 def keyed(path: Path, key: str) -> dict[str, dict[str, Any]]:
@@ -34,6 +29,23 @@ def delta(left: dict[str, Any], right: dict[str, Any]) -> dict[str, Any]:
         "removed": sorted(set(left) - set(right)),
         "changed": sorted(key for key in common if left[key] != right[key]),
     }
+
+
+def configuration_changes(base: Any, target: Any, prefix: str = "") -> list[dict[str, Any]]:
+    """Describe the resolved method choices that differ between two runs."""
+
+    if isinstance(base, dict) and isinstance(target, dict):
+        changes = []
+        for key in sorted(set(base) | set(target)):
+            dotted = f"{prefix}.{key}" if prefix else key
+            if key not in base:
+                changes.append({"path": dotted, "from": None, "to": target[key]})
+            elif key not in target:
+                changes.append({"path": dotted, "from": base[key], "to": None})
+            else:
+                changes.extend(configuration_changes(base[key], target[key], dotted))
+        return changes
+    return [] if base == target else [{"path": prefix, "from": base, "to": target}]
 
 
 def normalisation(a: Path, b: Path) -> dict[str, Any]:
@@ -55,10 +67,6 @@ def normalisation(a: Path, b: Path) -> dict[str, Any]:
     }
 
 
-def records(a: Path, b: Path, filename: str, key: str) -> dict[str, Any]:
-    return delta(keyed(a / filename, key), keyed(b / filename, key))
-
-
 def canonical_stage(a: Path, b: Path) -> dict[str, Any]:
     def source_edges(run: Path) -> dict[str, dict[str, Any]]:
         filename = run / "canonical/source_cell_edges.jsonl"
@@ -70,16 +78,19 @@ def canonical_stage(a: Path, b: Path) -> dict[str, Any]:
         }
 
     return {
-        "cells": records(a, b, "canonical/canonical_cells.jsonl", "canonical_cell_id"),
+        "cells": delta(
+            keyed(a / "canonical/canonical_cells.jsonl", "canonical_cell_id"),
+            keyed(b / "canonical/canonical_cells.jsonl", "canonical_cell_id"),
+        ),
         "source_cell_edges": delta(source_edges(a), source_edges(b)),
     }
 
 
 def realisation_stage(a: Path, b: Path) -> dict[str, Any]:
-    def load(run: Path) -> dict[str, dict[str, Any]]:
+    def realisations_by_id(run: Path) -> dict[str, dict[str, Any]]:
         filename = run / "realisation/realisations.jsonl"
         return {row["spec"]["realization_id"]: row for row in read_jsonl(filename)} if filename.is_file() else {}
-    return delta(load(a), load(b))
+    return delta(realisations_by_id(a), realisations_by_id(b))
 
 
 def kc_stage(a: Path, b: Path) -> dict[str, Any]:
@@ -126,19 +137,20 @@ def item_stage(a: Path, b: Path) -> dict[str, Any]:
 
 
 def qmatrix_stage(a: Path, b: Path) -> dict[str, Any]:
-    def edges(run: Path) -> set[tuple[str, str]]:
+    def item_kc_pairs(run: Path) -> set[tuple[str, str]]:
         filename = run / "qmatrix/item_kc_edges.jsonl"
         return {(row["item_id"], row["kc_id"]) for row in read_jsonl(filename)} if filename.is_file() else set()
-    def shape(run: Path) -> tuple[set[str], set[str]]:
+
+    def matrix_shape(run: Path) -> tuple[set[str], set[str]]:
         filename = run / "qmatrix/q_matrix.csv"
         if not filename.is_file():
             return set(), set()
         with filename.open(newline="", encoding="utf-8") as handle:
             rows = list(csv.DictReader(handle))
         return {row["item_id"] for row in rows}, set(rows[0]) - {"item_id"} if rows else set()
-    left, right = edges(a), edges(b)
-    rows_a, columns_a = shape(a)
-    rows_b, columns_b = shape(b)
+    left, right = item_kc_pairs(a), item_kc_pairs(b)
+    rows_a, columns_a = matrix_shape(a)
+    rows_b, columns_b = matrix_shape(b)
     return {
         "shape": {"run_a": [len(rows_a), len(columns_a)], "run_b": [len(rows_b), len(columns_b)]},
         "added_rows": sorted(rows_b - rows_a), "removed_rows": sorted(rows_a - rows_b),
@@ -148,7 +160,7 @@ def qmatrix_stage(a: Path, b: Path) -> dict[str, Any]:
 
 
 def simulation_stage(a: Path, b: Path) -> dict[str, Any]:
-    def summary(run: Path) -> dict[str, Any]:
+    def interaction_summary(run: Path) -> dict[str, Any]:
         filename = run / "simulation/observable_interactions.jsonl"
         rows = read_jsonl(filename) if filename.is_file() else []
         return {
@@ -157,7 +169,7 @@ def simulation_stage(a: Path, b: Path) -> dict[str, Any]:
             "correct_rate": statistics.fmean(row["correct"] for row in rows) if rows else None,
             "multi_kc_rows": sum(len(row["kc_ids"]) > 1 for row in rows),
         }
-    return {"run_a": summary(a), "run_b": summary(b)}
+    return {"run_a": interaction_summary(a), "run_b": interaction_summary(b)}
 
 
 def kt_stage(a: Path, b: Path) -> dict[str, Any]:
@@ -173,24 +185,32 @@ def kt_stage(a: Path, b: Path) -> dict[str, Any]:
     return result
 
 
-COMPARATORS: dict[str, Callable[[Path, Path], dict[str, Any]]] = {
-    "normalisation": normalisation,
-    "canonical": canonical_stage,
-    "realisation": realisation_stage,
-    "kc": kc_stage,
-    "items": item_stage,
-    "qmatrix": qmatrix_stage,
-    "simulation": simulation_stage,
-    "kt": kt_stage,
-}
+COMPARISON_STAGES = ("normalisation", "canonical", "realisation", "kc", "items", "qmatrix", "simulation", "kt")
 
 
 def compare(a: Path, b: Path, stage: str | None = None) -> dict[str, Any]:
-    names = [stage] if stage else list(COMPARATORS)
+    names = [stage] if stage else COMPARISON_STAGES
     output = {}
     for name in names:
         try:
-            output[name] = COMPARATORS[name](a, b)
+            if name == "normalisation":
+                output[name] = normalisation(a, b)
+            elif name == "canonical":
+                output[name] = canonical_stage(a, b)
+            elif name == "realisation":
+                output[name] = realisation_stage(a, b)
+            elif name == "kc":
+                output[name] = kc_stage(a, b)
+            elif name == "items":
+                output[name] = item_stage(a, b)
+            elif name == "qmatrix":
+                output[name] = qmatrix_stage(a, b)
+            elif name == "simulation":
+                output[name] = simulation_stage(a, b)
+            elif name == "kt":
+                output[name] = kt_stage(a, b)
+            else:
+                raise ValueError(f"unknown comparison stage: {name}")
         except (FileNotFoundError, KeyError, TypeError) as error:
             output[name] = {"unavailable": str(error)}
     return output
@@ -200,10 +220,16 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Compare two experimental runs semantically.")
     parser.add_argument("run_a")
     parser.add_argument("run_b")
-    parser.add_argument("--stage", choices=tuple(COMPARATORS))
+    parser.add_argument("--stage", choices=COMPARISON_STAGES)
     args = parser.parse_args()
-    a, b = run_path(args.run_a), run_path(args.run_b)
-    experiment_changes = changed_values(read_yaml(a / "experiment.yaml"), read_yaml(b / "experiment.yaml")) if (a / "experiment.yaml").is_file() and (b / "experiment.yaml").is_file() else []
+    run_a = Path(args.run_a)
+    run_b = Path(args.run_b)
+    a = run_a.resolve() if run_a.is_dir() else (ROOT / "runs" / args.run_a).resolve()
+    b = run_b.resolve() if run_b.is_dir() else (ROOT / "runs" / args.run_b).resolve()
+    experiment_changes = configuration_changes(
+        read_yaml(a / "experiment.yaml"),
+        read_yaml(b / "experiment.yaml"),
+    ) if (a / "experiment.yaml").is_file() and (b / "experiment.yaml").is_file() else []
     print(json.dumps({"run_a": str(a), "run_b": str(b), "experiment_changes": experiment_changes, "comparison": compare(a, b, args.stage)}, ensure_ascii=False, indent=2, sort_keys=True))
     return 0
 

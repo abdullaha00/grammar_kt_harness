@@ -12,15 +12,11 @@ from typing import Any
 
 import numpy as np
 
-from .io import ROOT, read_json, read_jsonl, repo_path, write_json, write_jsonl
+from .io import read_json, read_jsonl, repo_path, write_json, write_jsonl
 from .records import FORBIDDEN_OBSERVABLE_FIELDS, observable_interaction
 
 
-SIMULATION_DIR = ROOT / "modules" / "simulation"
-FIXTURE_ITEMS = SIMULATION_DIR / "fixtures" / "accepted_items.jsonl"
-FIXTURE_Q_MATRIX = SIMULATION_DIR / "fixtures" / "q_matrix.csv"
-FORBIDDEN_OBSERVABLE = FORBIDDEN_OBSERVABLE_FIELDS
-
+# Response and learning equations
 
 def difficulty(item_id: str, low: float, high: float) -> float:
     fraction = int(hashlib.sha256(item_id.encode()).hexdigest()[:16], 16) / float(0xFFFFFFFFFFFFFFFF)
@@ -52,7 +48,9 @@ def split_boundaries(event_count: int, train_fraction: float, validation_fractio
     return train_end, validation_end
 
 
-def _read_q(path: Path) -> tuple[list[str], dict[str, list[str]]]:
+# Q-matrix input and simulation audit
+
+def read_q_matrix(path: Path) -> tuple[list[str], dict[str, list[str]]]:
     with path.open(newline="", encoding="utf-8") as handle:
         rows = list(csv.DictReader(handle))
     if not rows or "item_id" not in rows[0]:
@@ -64,13 +62,13 @@ def _read_q(path: Path) -> tuple[list[str], dict[str, list[str]]]:
     }
 
 
-def _audit(observed: list[dict[str, Any]], oracle: list[dict[str, Any]], learners: list[dict[str, Any]], items: dict[str, dict[str, Any]], expected_events: int) -> dict[str, Any]:
+def audit_simulation(observed: list[dict[str, Any]], oracle: list[dict[str, Any]], learners: list[dict[str, Any]], items: dict[str, dict[str, Any]], expected_events: int) -> dict[str, Any]:
     errors: list[str] = []
     by_learner: dict[str, list[dict[str, Any]]] = defaultdict(list)
     multi_kc_rows = 0
     for row in observed:
         by_learner[row["learner_id"]].append(row)
-        leaked = FORBIDDEN_OBSERVABLE & set(row)
+        leaked = FORBIDDEN_OBSERVABLE_FIELDS & set(row)
         if leaked:
             errors.append(f"{row['event_id']}: oracle/content leakage {sorted(leaked)}")
         if row["correct"] not in {0, 1}:
@@ -107,10 +105,12 @@ def _audit(observed: list[dict[str, Any]], oracle: list[dict[str, Any]], learner
         "minimum_opportunities_per_learner_kc": minimum,
         "oracle_rows": len(oracle),
         "observable_oracle_alignment": not any("alignment" in error for error in errors),
-        "observable_forbidden_keys": sorted(FORBIDDEN_OBSERVABLE),
+        "observable_forbidden_keys": sorted(FORBIDDEN_OBSERVABLE_FIELDS),
         "leakage_errors": sum("leakage" in error for error in errors),
     }
 
+
+# Chronological learner events
 
 def simulate_records(
     params: dict[str, Any],
@@ -223,29 +223,7 @@ def simulate_records(
     return observed, oracle, learners, learner_oracle
 
 
-def run_one(learner_id: str, settings: dict[str, Any]) -> dict[str, Any]:
-    items = read_jsonl(FIXTURE_ITEMS)
-    kc_ids, q_by_item = _read_q(FIXTURE_Q_MATRIX)
-    params = read_json(repo_path(settings["parameters"]))
-    params["seed"] = int(settings["seed"])
-    event_count = len(items) * int(params["item_passes_per_learner"])
-    train_end, validation_end = split_boundaries(
-        event_count,
-        float(params["train_fraction"]),
-        float(params["validation_fraction"]),
-    )
-    observed, _oracle, learners, _learner_oracle = simulate_records(
-        params, {row["item_id"]: row for row in items}, q_by_item, kc_ids,
-        train_end, validation_end,
-        target_learner=learner_id,
-    )
-    return {
-        "learner": learners[0],
-        "observable_interactions": observed,
-        "oracle_retained_separately": True,
-        "fixture_items": len(items),
-    }
-
+# Full stage
 
 def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     output = run_dir / "simulation"
@@ -256,7 +234,7 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     params["seed"] = int(settings["seed"])
     items = read_jsonl(items_path)
     item_by_id = {row["item_id"]: row for row in items}
-    q_kcs, q_by_item = _read_q(q_path)
+    q_kcs, q_by_item = read_q_matrix(q_path)
     if not q_kcs or set(q_by_item) != set(item_by_id):
         raise RuntimeError("Q-matrix dimensions do not match the accepted item inputs")
     if any(not active for active in q_by_item.values()):
@@ -274,7 +252,7 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     observed, oracle, learners, learner_oracle = simulate_records(
         params, item_by_id, q_by_item, q_kcs, train_end, validation_end
     )
-    audit = _audit(observed, oracle, learners, item_by_id, event_total)
+    audit = audit_simulation(observed, oracle, learners, item_by_id, event_total)
     if audit["status"] != "PASS":
         raise RuntimeError(f"simulation audit failed: {audit['errors'][:5]}")
     observed_path = output / "observable_interactions.jsonl"

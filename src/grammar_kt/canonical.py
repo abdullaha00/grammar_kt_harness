@@ -11,14 +11,6 @@ from .io import read_jsonl, stable_id, write_jsonl
 from .records import DIMENSIONS, grammar_cell
 
 
-def canonical_json(cell: dict[str, str]) -> str:
-    return json.dumps({key: cell[key] for key in DIMENSIONS}, ensure_ascii=False, separators=(",", ":"))
-
-
-def stable_cell_id(cell: dict[str, str]) -> str:
-    return stable_id("CELL", canonical_json(cell))
-
-
 def build(mappings: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     cells_by_id: dict[str, dict[str, str]] = {}
     edges_by_cell: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -27,7 +19,12 @@ def build(mappings: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[di
             continue
         for source_index, raw in enumerate(mapping["cells"]):
             cell = grammar_cell({key: raw[key] for key in DIMENSIONS}, label=f"{mapping['egp_id']} cell")
-            cell_id = stable_cell_id(cell)
+            canonical_json = json.dumps(
+                {key: cell[key] for key in DIMENSIONS},
+                ensure_ascii=False,
+                separators=(",", ":"),
+            )
+            cell_id = stable_id("CELL", canonical_json)
             cells_by_id[cell_id] = cell
             edges_by_cell[cell_id].append({
                 "egp_id": mapping["egp_id"],
