@@ -18,57 +18,6 @@ from typing import Any
 from .io import repo_path, utc_now, write_json
 
 
-def _evidence_paths(unit_dir: Path) -> tuple[Path, Path, Path, Path, Path]:
-    unit_dir.mkdir(parents=True, exist_ok=True)
-    paths = tuple(
-        unit_dir / name
-        for name in (
-            "rendered_prompt.txt",
-            "raw_output.txt",
-            "events.jsonl",
-            "stderr.txt",
-            "invocation.json",
-        )
-    )
-    if any(item.exists() for item in paths):
-        raise RuntimeError(f"refusing to overwrite model evidence: {unit_dir}")
-    return paths
-
-
-def _invocation_metadata(
-    settings: dict[str, Any],
-    command: list[str],
-    output_schema: Path,
-    instructions: Path,
-    started: str,
-    finished: str,
-    returncode: int,
-    timed_out: bool,
-) -> dict[str, Any]:
-    return {
-        "backend": settings["backend"],
-        "model": settings.get("model"),
-        "reasoning_effort": settings.get("reasoning_effort"),
-        "reasoning_options": settings.get("reasoning_options", {}),
-        "timeout_seconds": settings.get("timeout_seconds"),
-        "command": command,
-        "output_schema": str(output_schema),
-        "instructions": str(instructions),
-        "started_utc": started,
-        "finished_utc": finished,
-        "returncode": returncode,
-        "timed_out": timed_out,
-        "execution_isolation": {
-            "sandbox": settings.get("sandbox"),
-            "approval_policy": settings.get("approval_policy"),
-            "ignore_user_config": settings.get("ignore_user_config", True),
-            "ephemeral": settings.get("ephemeral", True),
-        },
-        "model_snapshot_pinned": bool(settings.get("model_snapshot_pinned", False)),
-        "decoding_parameters_pinned": bool(settings.get("decoding_parameters_pinned", False)),
-    }
-
-
 def invoke_model(
     *,
     prompt: str,
@@ -79,7 +28,22 @@ def invoke_model(
 ) -> tuple[Path, int]:
     """Invoke the selected backend and retain all transport evidence."""
 
-    prompt_path, raw_path, events_path, stderr_path, metadata_path = _evidence_paths(unit_dir)
+    unit_dir.mkdir(parents=True, exist_ok=True)
+    prompt_path, raw_path, events_path, stderr_path, metadata_path = (
+        unit_dir / name
+        for name in (
+            "rendered_prompt.txt",
+            "raw_output.txt",
+            "events.jsonl",
+            "stderr.txt",
+            "invocation.json",
+        )
+    )
+    if any(
+        path.exists()
+        for path in (prompt_path, raw_path, events_path, stderr_path, metadata_path)
+    ):
+        raise RuntimeError(f"refusing to overwrite model evidence: {unit_dir}")
     prompt_path.write_text(prompt, encoding="utf-8")
     backend = settings["backend"]
 
@@ -154,16 +118,28 @@ def invoke_model(
 
     write_json(
         metadata_path,
-        _invocation_metadata(
-            settings,
-            command,
-            output_schema,
-            instructions,
-            started,
-            finished,
-            returncode,
-            timed_out,
-        ),
+        {
+            "backend": settings["backend"],
+            "model": settings.get("model"),
+            "reasoning_effort": settings.get("reasoning_effort"),
+            "reasoning_options": settings.get("reasoning_options", {}),
+            "timeout_seconds": settings.get("timeout_seconds"),
+            "command": command,
+            "output_schema": str(output_schema),
+            "instructions": str(instructions),
+            "started_utc": started,
+            "finished_utc": finished,
+            "returncode": returncode,
+            "timed_out": timed_out,
+            "execution_isolation": {
+                "sandbox": settings.get("sandbox"),
+                "approval_policy": settings.get("approval_policy"),
+                "ignore_user_config": settings.get("ignore_user_config", True),
+                "ephemeral": settings.get("ephemeral", True),
+            },
+            "model_snapshot_pinned": bool(settings.get("model_snapshot_pinned", False)),
+            "decoding_parameters_pinned": bool(settings.get("decoding_parameters_pinned", False)),
+        },
     )
     return raw_path, returncode
 

@@ -31,6 +31,7 @@ def select_records(
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
     """Select and verify the declared EGP sample and annotation units."""
 
+    # Verify and read the full external source snapshot.
     source = repo_path(source_path)
     if sha256_file(source) != expected_sha256:
         raise RuntimeError("external EGP source SHA-256 differs from experiments/base.yaml")
@@ -38,6 +39,8 @@ def select_records(
     records = read_jsonl(source)
     if len(records) != expected_record_count:
         raise RuntimeError(f"external source has {len(records)} records; expected {expected_record_count}")
+
+    # Select the declared descriptor IDs in their declared order.
     by_id = {row["egp_id"]: row for row in records}
     missing = [value for value in ids if value not in by_id]
     if missing:
@@ -45,6 +48,8 @@ def select_records(
     selected = [by_id[value] for value in ids]
     if len(selected) != expected_descriptor_count:
         raise RuntimeError(f"selected {len(selected)} descriptors; expected {expected_descriptor_count}")
+
+    # Validate the sample metadata and repeated annotation-unit design.
     metadata = read_jsonl(sample_metadata_path)
     units = read_jsonl(annotation_units_path)
     if [row["egp_id"] for row in metadata] != ids:
@@ -67,6 +72,7 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
         sample_metadata_path=settings["sample_metadata"],
         annotation_units_path=settings["annotation_units"],
     )
+    # Isolate the five descriptor fields permitted as Phase-1 evidence.
     write_jsonl(output / "source_subset.jsonl", selected, sort_keys=False)
     write_jsonl(output / "phase1_records.jsonl", [phase1_record(row) for row in selected], sort_keys=False)
     write_jsonl(output / "sample_metadata.jsonl", metadata, sort_keys=False)

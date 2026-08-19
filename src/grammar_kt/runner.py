@@ -37,17 +37,6 @@ def git_state() -> tuple[str | None, bool | None]:
         return None, None
 
 
-def _copy_upstream(parent: Path, target: Path, start: str) -> list[str]:
-    copied = []
-    for stage in STAGE_NAMES[:STAGE_NAMES.index(start)]:
-        source_dir = parent / stage
-        if not source_dir.is_dir():
-            raise FileNotFoundError(f"parent run lacks {stage}: {source_dir}")
-        shutil.copytree(source_dir, target / stage)
-        copied.append(stage)
-    return copied
-
-
 def run_experiment(name: str, *, from_stage: str | None = None, force: bool = False,
                    runs_root: Path | None = None) -> Path:
     settings, parent_name = load_experiment(name)
@@ -84,7 +73,13 @@ def run_experiment(name: str, *, from_stage: str | None = None, force: bool = Fa
         parent = root / parent_name
         if not parent.is_dir():
             raise FileNotFoundError(f"parent run does not exist: {parent}")
-        copied = _copy_upstream(parent, run_dir, from_stage)
+        copied = []
+        for stage in STAGE_NAMES[:STAGE_NAMES.index(from_stage)]:
+            source_dir = parent / stage
+            if not source_dir.is_dir():
+                raise FileNotFoundError(f"parent run lacks {stage}: {source_dir}")
+            shutil.copytree(source_dir, run_dir / stage)
+            copied.append(stage)
         metadata["reused_from"] = {"run": parent_name, "stages": copied}
         for stage in copied:
             metadata["stages"][stage] = {"status": "reused", "from": parent_name}

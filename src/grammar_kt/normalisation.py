@@ -22,49 +22,9 @@ OUTPUT_SCHEMA = NORMALISATION_DIR / "configs" / "mapping_schema.json"
 PHASE1_FIELDS = ("egp_id", "supercategory", "subcategory", "guideword", "can_do")
 
 
-# Prompt construction
-
-def _fill_prompt(template: str, values: dict[str, str]) -> str:
-    for key, replacement in values.items():
-        template = template.replace("{{" + key + "}}", replacement)
-        template = template.replace("{" + key + "}", replacement)
-    unresolved = [part.split("}}", 1)[0] for part in template.split("{{")[1:]]
-    if unresolved:
-        raise ValueError(f"unresolved prompt placeholders: {unresolved}")
-    return template
-
-
-def _render_method_context(phase: int) -> str:
-    values = {
-        "schema": GRAMMAR_DIMENSIONS.read_text(encoding="utf-8"),
-        "rulebook": RULEBOOK.read_text(encoding="utf-8"),
-        "phase": str(phase),
-    }
-    return _fill_prompt(WRAPPER.read_text(encoding="utf-8"), values)
-
-
-def render_phase1_prompt(record: dict[str, Any], template: str) -> str:
-    values = {"record": json.dumps(record, ensure_ascii=False, separators=(",", ":"))}
-    return _render_method_context(1) + _fill_prompt(template, values)
-
-
-def render_phase2_prompt(
-    record: dict[str, Any],
-    phase1_mapping: dict[str, Any],
-    examples: list[Any],
-    template: str,
-) -> str:
-    values = {
-        "record": json.dumps(record, ensure_ascii=False, separators=(",", ":")),
-        "phase1_mapping": json.dumps(phase1_mapping, ensure_ascii=False, separators=(",", ":")),
-        "examples": json.dumps(examples, ensure_ascii=False, separators=(",", ":")),
-    }
-    return _render_method_context(2) + _fill_prompt(template, values)
-
-
 # Model invocation and validation
 
-def _invoke_mapping(
+def invoke_and_validate(
     *,
     phase: int,
     unit_id: str,
@@ -105,91 +65,92 @@ def _invoke_mapping(
     raise RuntimeError(f"normalisation {unit_id} phase {phase} exhausted attempts: {attempts}")
 
 
-def run_phase1(
+def normalise_one(
     record: dict[str, Any],
     *,
-    unit_id: str,
-    unit_root: Path,
-    prompt_template: str,
-    backend_settings: dict[str, Any],
-    max_attempts: int,
-) -> dict[str, Any]:
-    prompt = render_phase1_prompt(record, prompt_template)
-    return _invoke_mapping(
-        phase=1,
-        unit_id=unit_id,
-        egp_id=record["egp_id"],
-        prompt=prompt,
-        evidence_input={"egp_id": record["egp_id"], "record": record},
-        unit_root=unit_root,
-        backend_settings=backend_settings,
-        max_attempts=max_attempts,
-    )
-
-
-def run_phase2(
-    record: dict[str, Any],
-    phase1_mapping: dict[str, Any],
-    examples: list[Any],
-    *,
-    unit_id: str,
-    unit_root: Path,
-    prompt_template: str,
-    backend_settings: dict[str, Any],
-    max_attempts: int,
-) -> dict[str, Any]:
-    prompt = render_phase2_prompt(record, phase1_mapping, examples, prompt_template)
-    return _invoke_mapping(
-        phase=2,
-        unit_id=unit_id,
-        egp_id=record["egp_id"],
-        prompt=prompt,
-        evidence_input={
-            "egp_id": record["egp_id"],
-            "record": record,
-            "phase1_mapping": phase1_mapping,
-            "examples": examples,
-        },
-        unit_root=unit_root,
-        backend_settings=backend_settings,
-        max_attempts=max_attempts,
-        phase1_mapping=phase1_mapping,
-    )
-
-
-def normalise_record(
-    record: dict[str, Any],
-    *,
-    unit_id: str,
-    output: Path,
     phase1_template: str,
     phase2_template: str,
     backend_settings: dict[str, Any],
     max_attempts: int,
+    output: Path | None = None,
     phase1_only: bool = False,
+    unit_id: str | None = None,
 ) -> dict[str, Any]:
-    unit_root = output / "units" / unit_id
+    """Execute the two-phase method for one descriptor in fresh model contexts."""
+
+    selected_unit_id = unit_id or str(record["egp_id"])
+    selected_output = output or Path(tempfile.mkdtemp(prefix="grammar-kt-normalisation-"))
+    unit_root = selected_output / "units" / selected_unit_id
+
+    # Phase 1: descriptor evidence only
     phase1_record = {key: record.get(key) for key in PHASE1_FIELDS}
-    first = run_phase1(
-        phase1_record,
-        unit_id=unit_id,
+    method_context = WRAPPER.read_text(encoding="utf-8")
+    for key, replacement in {
+        "schema": GRAMMAR_DIMENSIONS.read_text(encoding="utf-8"),
+        "rulebook": RULEBOOK.read_text(encoding="utf-8"),
+        "phase": "1",
+    }.items():
+        method_context = method_context.replace("{{" + key + "}}", replacement)
+        method_context = method_context.replace("{" + key + "}", replacement)
+    phase1_prompt = phase1_template
+    phase1_json = json.dumps(phase1_record, ensure_ascii=False, separators=(",", ":"))
+    phase1_prompt = phase1_prompt.replace("{{record}}", phase1_json).replace("{record}", phase1_json)
+    unresolved = [part.split("}}", 1)[0] for part in (method_context + phase1_prompt).split("{{")[1:]]
+    if unresolved:
+        raise ValueError(f"unresolved prompt placeholders: {unresolved}")
+    first = invoke_and_validate(
+        phase=1,
+        unit_id=selected_unit_id,
+        egp_id=phase1_record["egp_id"],
+        prompt=method_context + phase1_prompt,
+        evidence_input={"egp_id": phase1_record["egp_id"], "record": phase1_record},
         unit_root=unit_root,
-        prompt_template=phase1_template,
         backend_settings=backend_settings,
         max_attempts=max_attempts,
     )
+
+    # Phase 2: examples may refine only an eligible part of a partial mapping
     second = None
     if not phase1_only and first["mapping"]["result"] == "partial":
-        second = run_phase2(
-            phase1_record,
-            first["mapping"],
-            record.get("examples", []),
-            unit_id=unit_id,
+        examples = record.get("examples", [])
+        method_context = WRAPPER.read_text(encoding="utf-8")
+        for key, replacement in {
+            "schema": GRAMMAR_DIMENSIONS.read_text(encoding="utf-8"),
+            "rulebook": RULEBOOK.read_text(encoding="utf-8"),
+            "phase": "2",
+        }.items():
+            method_context = method_context.replace("{{" + key + "}}", replacement)
+            method_context = method_context.replace("{" + key + "}", replacement)
+        phase2_prompt = phase2_template
+        for key, value in {
+            "record": phase1_record,
+            "phase1_mapping": first["mapping"],
+            "examples": examples,
+        }.items():
+            replacement = json.dumps(value, ensure_ascii=False, separators=(",", ":"))
+            phase2_prompt = phase2_prompt.replace("{{" + key + "}}", replacement)
+            phase2_prompt = phase2_prompt.replace("{" + key + "}", replacement)
+        unresolved = [part.split("}}", 1)[0] for part in (method_context + phase2_prompt).split("{{")[1:]]
+        if unresolved:
+            raise ValueError(f"unresolved prompt placeholders: {unresolved}")
+        second = invoke_and_validate(
+            phase=2,
+            unit_id=selected_unit_id,
+            egp_id=phase1_record["egp_id"],
+            prompt=method_context + phase2_prompt,
+            evidence_input={
+                "egp_id": phase1_record["egp_id"],
+                "record": phase1_record,
+                "phase1_mapping": first["mapping"],
+                "examples": examples,
+            },
             unit_root=unit_root,
-            prompt_template=phase2_template,
             backend_settings=backend_settings,
             max_attempts=max_attempts,
+            phase1_mapping=first["mapping"],
         )
+
+    # Final mapping and retained evidence
     result = {
         "input": record,
         "phase1": first["mapping"],
@@ -206,31 +167,6 @@ def normalise_record(
     }
     write_json(unit_root / "result.json", result)
     return result
-
-
-def normalise_one(
-    record: dict[str, Any],
-    *,
-    phase1_template: str,
-    phase2_template: str,
-    backend_settings: dict[str, Any],
-    max_attempts: int,
-    output: Path | None = None,
-    phase1_only: bool = False,
-    unit_id: str | None = None,
-) -> dict[str, Any]:
-    """Normalise one descriptor with explicit method inputs."""
-
-    return normalise_record(
-        record,
-        unit_id=unit_id or str(record["egp_id"]),
-        output=output or Path(tempfile.mkdtemp(prefix="grammar-kt-normalisation-")),
-        phase1_template=phase1_template,
-        phase2_template=phase2_template,
-        backend_settings=backend_settings,
-        max_attempts=max_attempts,
-        phase1_only=phase1_only,
-    )
 
 
 # Full stage
@@ -253,7 +189,7 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
         for unit in units:
             record = {**source[unit["egp_id"]], **phase1[unit["egp_id"]]}
             future = pool.submit(
-                normalise_record,
+                normalise_one,
                 record,
                 unit_id=unit["unit_id"],
                 output=output,

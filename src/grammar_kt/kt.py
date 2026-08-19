@@ -115,6 +115,8 @@ def prediction_metrics(targets: np.ndarray, predictions: np.ndarray) -> dict[str
 def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     output = run_dir / "kt"
     output.mkdir(parents=True, exist_ok=False)
+
+    # Load and validate observable chronological data only.
     dataset_path = run_dir / "simulation" / "observable_interactions.jsonl"
     technique_settings = read_json(repo_path(settings["parameters"]))
     techniques = list(settings["techniques"])
@@ -127,12 +129,16 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
         observable_interaction(row, label=row["event_id"])
     rows.sort(key=lambda row: (row["learner_id"], row["sequence_index"]))
     kc_ids = sorted({kc_id for row in rows for kc_id in row["kc_ids"]})
+
+    # Build pre-event observable features and the empirical baseline.
     alpha = float(technique_settings["empirical"]["alpha"])
     beta = float(technique_settings["empirical"]["beta"])
     features, targets, empirical = pre_event_features(rows, kc_ids, alpha, beta)
     split = np.asarray([row["dataset_split"] for row in rows])
     predictions: dict[str, np.ndarray] = {}
     extra: dict[str, Any] = {}
+
+    # Run the requested baselines.
     if "empirical" in techniques:
         predictions["empirical"] = empirical
     if "bkt" in techniques:
@@ -168,6 +174,8 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
             ],
             "values": [float(value) for value in model.coef_[0]],
         }
+
+    # Evaluate validation/test splits and retain predictions and metrics.
     metrics: dict[str, Any] = {
         "purpose": "technical sanity only; not KC selection or cognitive validation",
         "oracle_used": False,

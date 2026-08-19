@@ -13,7 +13,7 @@ sys.path.remove(str(Path(__file__).resolve().parent))
 
 from grammar_kt import canonical, items, kc, normalisation, realisation, simulation, source
 from grammar_kt.io import ROOT, read_json, read_jsonl, read_yaml, repo_path, write_json
-from grammar_kt.records import kc_opportunity
+from grammar_kt.records import grammar_cell, kc_opportunity
 
 
 def main() -> int:
@@ -150,7 +150,22 @@ def main() -> int:
                     "source_note": before.get("source_note"),
                     "expected_surface": before["derivation"]["surface"],
                 }
-            after = realisation.run_one(before)
+            frames = {
+                row["predicate_frame_id"]: row
+                for row in read_jsonl(realisation.LEXICON)
+            }
+            spec = before["spec"]
+            cell = grammar_cell(before["cell"])
+            frame = frames[spec["predicate_frame_id"]]
+            errors = realisation.validate_spec(spec, cell, frame, before.get("source_note"))
+            derivation = realisation.realise(spec, cell, frame) if not errors else None
+            if (
+                derivation
+                and before.get("expected_surface")
+                and derivation["surface"] != before["expected_surface"]
+            ):
+                errors.append(f"surface differs: {derivation['surface']!r}")
+            after = {"input": before, "output": derivation, "valid": not errors, "errors": errors}
         elif args.stage == "kc":
             opportunity_fields = (
                 "opportunity_id",

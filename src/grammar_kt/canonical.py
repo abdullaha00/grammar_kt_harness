@@ -14,6 +14,8 @@ from .records import DIMENSIONS, grammar_cell
 def build(mappings: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     cells_by_id: dict[str, dict[str, str]] = {}
     edges_by_cell: dict[str, list[dict[str, Any]]] = defaultdict(list)
+
+    # Validate every exact cell in complete mappings, derive its stable ID, and deduplicate it.
     for mapping in mappings:
         if mapping["result"] != "complete":
             continue
@@ -33,6 +35,8 @@ def build(mappings: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[di
                 "canonical_cell_id": cell_id,
                 "source_note": mapping.get("note"),
             })
+
+    # Aggregate all descriptor support onto each deduplicated GrammarCell.
     cells = []
     for cell_id in sorted(cells_by_id):
         rows = edges_by_cell[cell_id]
@@ -45,6 +49,8 @@ def build(mappings: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[di
             "source_descriptor_ids": ids,
             "source_mapping_notes": {source_id: next(row["source_note"] for row in rows if row["egp_id"] == source_id) for source_id in ids},
         })
+
+    # Retain one explicit source-to-cell edge for every source mapping cell.
     edges = sorted((row for rows in edges_by_cell.values() for row in rows), key=lambda row: (row["egp_id"], row["source_cell_index"], row["canonical_cell_id"]))
     return cells, edges
 

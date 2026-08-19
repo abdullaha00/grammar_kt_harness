@@ -60,64 +60,6 @@ def nuisance_signature(spec: dict[str, Any]) -> tuple[Any, ...]:
     )
 
 
-def item_id(primary_kc_id: str, spec: dict[str, Any], replicate: int) -> str:
-    return stable_id("ITEM", ITEM_FAMILY, primary_kc_id, spec["realization_id"], replicate)
-
-
-def construct_item_spec(
-    primary_kc_id: str,
-    opportunity: dict[str, Any],
-    replicate: int,
-    choice: int,
-    frames: dict[str, dict[str, Any]],
-) -> dict[str, Any]:
-    cell = opportunity["cell"]
-    source_ids = opportunity["source_descriptor_ids"]
-    source_id = source_ids[(replicate + choice) % len(source_ids)]
-    note = opportunity["source_mapping_notes"].get(source_id)
-    subtype = imperative_subtype(note) if cell["clause"] == "imperative" else None
-    if cell["clause"] == "subject_wh_question":
-        wh = {"phrase": "who", "role": "subject"}
-    elif cell["clause"] == "non_subject_wh_question":
-        wh = {"phrase": "what", "role": "object"}
-    else:
-        wh = None
-
-    frame_ids = ("FRAME_LIKE",) if cell["modal"] == "would" and cell["voice"] == "active" else TRANSITIVE_FRAMES
-    frame_id = frame_ids[choice % len(frame_ids)]
-    if cell["voice"] == "passive":
-        subject = {"text": frames[frame_id]["object"], "person": 3, "number": "singular"}
-    elif cell["clause"] == "imperative":
-        subject = {"text": "you", "person": 2, "number": "singular"}
-    elif cell["clause"] == "subject_wh_question":
-        subject = {"text": "who", "person": 3, "number": "singular"}
-    else:
-        subject = dict(SUBJECTS[(choice // len(frame_ids)) % len(SUBJECTS)])
-
-    realization_id = stable_id(
-        "REAL",
-        "item",
-        primary_kc_id,
-        opportunity["canonical_cell_id"],
-        source_id,
-        frame_id,
-        subject,
-        wh,
-        subtype,
-        replicate,
-    )
-    return {
-        "realization_id": realization_id,
-        "canonical_cell_id": opportunity["canonical_cell_id"],
-        "source_descriptor_id": source_id,
-        "predicate_frame_id": frame_id,
-        "subject": subject,
-        "wh": wh,
-        "imperative_subtype": subtype,
-        "let_pronoun": "them" if subtype == "let_pronoun" else None,
-    }
-
-
 # Opportunity selection and deterministic construction
 
 def construct_items(
@@ -143,20 +85,78 @@ def construct_items(
         domain = sorted(opportunities_by_kc[primary_kc_id], key=lambda row: row["canonical_cell_id"])
         if not domain:
             raise RuntimeError(f"KC has no item-generation opportunities: {primary_kc_id}")
+
+        # Each KC receives the declared number of deterministic replicates.
         for replicate in range(replicates_per_kc):
             selected = None
+
+            # Search the KC's eligible grammatical opportunities in a stable rotation.
             for opportunity_offset in range(len(domain)):
                 opportunity = domain[(replicate + kc_offset + opportunity_offset) % len(domain)]
                 cell = opportunity["cell"]
+
+                # Search source/frame/subject conditions until prompt and answer are unique.
                 for lexical_offset in range(len(TRANSITIVE_FRAMES) * len(SUBJECTS)):
                     choice = replicate + kc_offset + lexical_offset
-                    spec = construct_item_spec(primary_kc_id, opportunity, replicate, choice, frames)
-                    frame = frames[spec["predicate_frame_id"]]
+                    source_ids = opportunity["source_descriptor_ids"]
+                    source_id = source_ids[(replicate + choice) % len(source_ids)]
+                    source_note = opportunity["source_mapping_notes"].get(source_id)
+                    subtype = (
+                        imperative_subtype(source_note)
+                        if cell["clause"] == "imperative"
+                        else None
+                    )
+                    if cell["clause"] == "subject_wh_question":
+                        wh = {"phrase": "who", "role": "subject"}
+                    elif cell["clause"] == "non_subject_wh_question":
+                        wh = {"phrase": "what", "role": "object"}
+                    else:
+                        wh = None
+
+                    frame_ids = (
+                        ("FRAME_LIKE",)
+                        if cell["modal"] == "would" and cell["voice"] == "active"
+                        else TRANSITIVE_FRAMES
+                    )
+                    frame_id = frame_ids[choice % len(frame_ids)]
+                    frame = frames[frame_id]
+                    if cell["voice"] == "passive":
+                        subject = {"text": frame["object"], "person": 3, "number": "singular"}
+                    elif cell["clause"] == "imperative":
+                        subject = {"text": "you", "person": 2, "number": "singular"}
+                    elif cell["clause"] == "subject_wh_question":
+                        subject = {"text": "who", "person": 3, "number": "singular"}
+                    else:
+                        subject = dict(SUBJECTS[(choice // len(frame_ids)) % len(SUBJECTS)])
+
+                    spec = {
+                        "realization_id": stable_id(
+                            "REAL",
+                            "item",
+                            primary_kc_id,
+                            opportunity["canonical_cell_id"],
+                            source_id,
+                            frame_id,
+                            subject,
+                            wh,
+                            subtype,
+                            replicate,
+                        ),
+                        "canonical_cell_id": opportunity["canonical_cell_id"],
+                        "source_descriptor_id": source_id,
+                        "predicate_frame_id": frame_id,
+                        "subject": subject,
+                        "wh": wh,
+                        "imperative_subtype": subtype,
+                        "let_pronoun": "them" if subtype == "let_pronoun" else None,
+                    }
+
+                    # Validate and realise the complete specification before selecting it.
                     errors = validate_spec(
                         spec,
                         cell,
                         frame,
-                        opportunity["source_mapping_notes"].get(spec["source_descriptor_id"]),
+                        source_note,
                     )
                     if errors:
                         continue
@@ -177,7 +177,9 @@ def construct_items(
             used_answers.add(derivation["surface"])
             candidates.append(
                 {
-                    "item_id": item_id(primary_kc_id, spec, replicate),
+                    "item_id": stable_id(
+                        "ITEM", ITEM_FAMILY, primary_kc_id, spec["realization_id"], replicate
+                    ),
                     "source_descriptor_ids": opportunity["source_descriptor_ids"],
                     "canonical_cell_id": opportunity["canonical_cell_id"],
                     "realization_spec": spec,

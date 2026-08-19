@@ -137,11 +137,15 @@ def simulate_records(
             learner_number += 1
             learner_id = f"L{learner_number:04d}"
             retain = target_learner is None or learner_id == target_learner
+
+            # Initial learner mastery
             mastery = {
                 kc: float(rng.beta(profile["beta_alpha"], profile["beta_beta"]))
                 for kc in kc_ids
             }
             initial = dict(mastery)
+
+            # Shuffled item order for each complete pass
             order: list[str] = []
             for _pass in range(int(params["item_passes_per_learner"])):
                 item_ids = sorted(item_by_id)
@@ -160,10 +164,13 @@ def simulate_records(
                     }
                 )
             for sequence, item_id_value in enumerate(order, 1):
+                # Active KCs, pre-event mastery, and item difficulty
                 item = item_by_id[item_id_value]
                 active = q_by_item[item_id_value]
                 pre = {kc: mastery[kc] for kc in active}
                 item_difficulty = difficulty(item_id_value, params["difficulty_min"], params["difficulty_max"])
+
+                # Response probability and observed response
                 z = (
                     sum(logit(pre[kc]) for kc in active) / len(active)
                     - item_difficulty
@@ -172,6 +179,8 @@ def simulate_records(
                 probability = params["probability_floor"] + params["probability_span"] * sigmoid(z)
                 draw = float(rng.random())
                 correct = int(draw < probability)
+
+                # Opportunity indices and chronological split
                 current_opportunities = {kc: opportunities[kc] + 1 for kc in active}
                 split = (
                     "train" if sequence <= train_end_sequence
@@ -196,6 +205,8 @@ def simulate_records(
                             "dataset_split": split,
                         }
                     )
+
+                # Mastery update
                 gain = params["correct_gain"] if correct else params["incorrect_gain"]
                 for kc in active:
                     mastery[kc] = min(

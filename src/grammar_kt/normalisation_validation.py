@@ -135,10 +135,6 @@ def _value_refines(parent: Any, child: Any) -> bool:
     return parent is None and (child is None or isinstance(child, (str, list)))
 
 
-def _cell_refines(parent: dict[str, Any], child: dict[str, Any], eligible: set[str]) -> bool:
-    return all(_value_refines(parent[field], child[field]) if field in eligible else child[field] == parent[field] for field in DIMENSION_ORDER)
-
-
 def validate_phase2_transition(phase1: dict[str, Any], phase2: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     if phase1.get("egp_id") != phase2.get("egp_id"):
@@ -172,9 +168,25 @@ def validate_phase2_transition(phase1: dict[str, Any], phase2: dict[str, Any]) -
     if not all(isinstance(cell, dict) and set(cell) == set(DIMENSIONS) for cell in parents + children):
         return errors + ["cannot compare malformed Phase-1/Phase-2 cells"]
     for index, child in enumerate(children):
-        if not any(_cell_refines(parent, child, eligible) for parent in parents):
+        if not any(
+            all(
+                _value_refines(parent[field], child[field])
+                if field in eligible
+                else child[field] == parent[field]
+                for field in DIMENSION_ORDER
+            )
+            for parent in parents
+        ):
             errors.append(f"Phase-2 cell {index} is not a licensed refinement of any Phase-1 cell")
     for index, parent in enumerate(parents):
-        if not any(_cell_refines(parent, child, eligible) for child in children):
+        if not any(
+            all(
+                _value_refines(parent[field], child[field])
+                if field in eligible
+                else child[field] == parent[field]
+                for field in DIMENSION_ORDER
+            )
+            for child in children
+        ):
             errors.append(f"Phase-1 cell {index} has no Phase-2 descendant")
     return errors

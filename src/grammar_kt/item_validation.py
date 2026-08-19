@@ -10,8 +10,8 @@ from pathlib import Path
 from typing import Any
 
 from .backend import invoke_model, save_model_result
-from .io import ROOT, read_jsonl, write_json, write_jsonl
-from .items import item_id, nuisance_signature, render_prompt
+from .io import ROOT, read_jsonl, stable_id, write_json, write_jsonl
+from .items import ITEM_FAMILY, nuisance_signature, render_prompt
 from .realisation import LEXICON, realise, validate_spec
 
 
@@ -115,7 +115,13 @@ def deterministic_results(candidates: list[dict[str, Any]], *, cells: dict[str, 
             )
         ):
             errors.append("generation metadata mismatch")
-        elif row["item_id"] != item_id(row["primary_kc_id"], spec, metadata["replicate"]):
+        elif row["item_id"] != stable_id(
+            "ITEM",
+            ITEM_FAMILY,
+            row["primary_kc_id"],
+            spec["realization_id"],
+            metadata["replicate"],
+        ):
             errors.append("stable item ID mismatch")
         if prompt_counts[row["prompt"]] != 1 or answer_counts[row["target_answer"]] != 1:
             errors.append("duplicate prompt or target answer")

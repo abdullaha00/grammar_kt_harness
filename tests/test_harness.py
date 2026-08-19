@@ -14,7 +14,7 @@ from grammar_kt import canonical, items, kc, kt, qmatrix, realisation, simulatio
 from grammar_kt.backend import invoke_model, save_model_result
 from grammar_kt.config import load_experiment
 from grammar_kt.io import read_json, read_jsonl, sha256_file, write_json, write_jsonl
-from grammar_kt.normalisation import normalise_one, render_phase1_prompt
+from grammar_kt.normalisation import normalise_one
 from grammar_kt.normalisation_validation import validate_mapping, validate_phase2_transition
 from grammar_kt.records import FORBIDDEN_OBSERVABLE_FIELDS, kc_opportunity
 from grammar_kt.runner import PIPELINE, STAGE_NAMES, run_experiment
@@ -147,10 +147,28 @@ class NormalisationTests(unittest.TestCase):
         settings, _ = load_experiment("base")
         settings = settings["normalisation"]
         record = read_jsonl(ROOT / "modules/normalisation/fixtures/core.jsonl")[0]
-        prompt = render_phase1_prompt(record, (ROOT / settings["phase1_prompt"]).read_text(encoding="utf-8"))
-        self.assertIn(record["egp_id"], prompt)
-        self.assertIn("tense", prompt)
-        self.assertNotIn("{{record}}", prompt)
+        with tempfile.TemporaryDirectory() as temporary:
+            output = Path(temporary)
+            response = output / "response.json"
+            write_json(
+                response,
+                {"egp_id": record["egp_id"], "result": "complete", "cells": [CELL], "note": None},
+            )
+            normalise_one(
+                record,
+                phase1_template=(ROOT / settings["phase1_prompt"]).read_text(encoding="utf-8"),
+                phase2_template=(ROOT / settings["phase2_prompt"]).read_text(encoding="utf-8"),
+                backend_settings={"backend": "fixture_file", "response_file": str(response)},
+                max_attempts=1,
+                output=output,
+                phase1_only=True,
+            )
+            prompt = (
+                output / "units" / record["egp_id"] / "phase1" / "attempt-01" / "rendered_prompt.txt"
+            ).read_text(encoding="utf-8")
+            self.assertIn(record["egp_id"], prompt)
+            self.assertIn("tense", prompt)
+            self.assertNotIn("{{record}}", prompt)
 
     def test_fixture_backend_retains_exact_evidence_without_hash_graph(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
@@ -245,9 +263,17 @@ class ComponentTests(unittest.TestCase):
         self.assertEqual((len(cells), len(edges)), (1, 2))
 
     def test_realisation_and_kc_policy_application(self) -> None:
+        frames = {
+            row["predicate_frame_id"]: row
+            for row in read_jsonl(realisation.LEXICON)
+        }
         for fixture in read_jsonl(ROOT / "modules/realisation/fixtures/core.jsonl"):
-            result = realisation.run_one(fixture)
-            self.assertTrue(result["valid"], fixture["fixture_label"])
+            cell, spec = fixture["cell"], fixture["spec"]
+            frame = frames[spec["predicate_frame_id"]]
+            errors = realisation.validate_spec(spec, cell, frame, fixture.get("source_note"))
+            derivation = realisation.realise(spec, cell, frame) if not errors else None
+            self.assertEqual(errors, [], fixture["fixture_label"])
+            self.assertEqual(derivation["surface"], fixture["expected_surface"])
         opportunity = kc_opportunity(read_json(ROOT / "modules/kc/fixtures/perfect_progressive.json"))
         factorized = kc.apply_policy(
             kc.load_policy(ROOT / "modules/kc/policies/factorized.json"),

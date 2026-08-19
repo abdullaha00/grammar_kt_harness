@@ -153,8 +153,11 @@ def validate_spec(spec: dict, cell: dict, frame: dict, source_note: str | None) 
 # Clause realization
 
 def realise(spec: dict, cell: dict, frame: dict) -> dict:
+    # Morphology and auxiliary/verb chain
     imperative = cell["clause"] == "imperative"
     chain, agreement_site = inflect_chain(cell, spec, frame, imperative=imperative)
+
+    # Passive, aspect, and modal operations
     operations: list[str] = []
     object_text = frame["object"]
     complement = frame["complement"]
@@ -166,6 +169,7 @@ def realise(spec: dict, cell: dict, frame: dict) -> dict:
     if cell["modal"] != "none":
         operations.append("central_modal")
 
+    # Imperative subtype and surface form
     if imperative:
         subtype = spec["imperative_subtype"]
         base_chain, _ = inflect_chain(cell, spec, frame, imperative=True)
@@ -191,6 +195,7 @@ def realise(spec: dict, cell: dict, frame: dict) -> dict:
         surface = " ".join(tokens).capitalize() + "."
         return {"surface": surface, "auxiliary_chain": tokens[:-1] if len(tokens) > 1 else [], "agreement_site": "none", "operations": sorted(set(operations)), "tokens": tokens}
 
+    # Do-support and negation
     inherent_operator = bool(chain[:-1]) or cell["modal"] != "none" or frame["frame_type"] == "copular"
     requires_operator = cell["polarity"] == "negative" or cell["clause"] in {"polar_question", "non_subject_wh_question"}
     if requires_operator and not inherent_operator:
@@ -201,6 +206,7 @@ def realise(spec: dict, cell: dict, frame: dict) -> dict:
         chain.insert(1, "not")
         operations.append("negation")
 
+    # Arguments, inversion, and WH structure
     arguments: list[str] = []
     if object_text and not (spec["wh"] and spec["wh"]["role"] == "object"):
         arguments.extend(object_text.split())
@@ -224,6 +230,8 @@ def realise(spec: dict, cell: dict, frame: dict) -> dict:
         operations.extend(["non_subject_wh", "operator_inversion"])
     else:
         raise ValueError(f"unsupported clause: {clause}")
+
+    # Surface sentence
     punctuation = "?" if clause.endswith("question") else "."
     surface = " ".join(tokens)
     surface = surface[0].upper() + surface[1:] + punctuation
@@ -247,65 +255,64 @@ def imperative_subtype(note: str | None) -> str:
     return "ordinary"
 
 
-def construct_case(cell_row: dict[str, Any], edge: dict[str, Any], serial: int, held_out: set[str]) -> dict[str, Any]:
-    cell = cell_row["cell"]
-    frame = (
-        "FRAME_LIKE" if cell["modal"] == "would" else
-        "FRAME_REPAIR" if cell["voice"] == "passive" else
-        "FRAME_WORK" if cell["aspect"] in {"progressive", "perfect_progressive"} else
-        "FRAME_WRITE" if serial % 2 else "FRAME_INSPECT"
-    )
-    subject = {"text": "The machine", "person": 3, "number": "singular"} if cell["voice"] == "passive" else (
-        {"text": "The technician", "person": 3, "number": "singular"} if serial % 2 else
-        {"text": "The technicians", "person": 3, "number": "plural"}
-    )
-    subtype = imperative_subtype(edge.get("source_note")) if cell["clause"] == "imperative" else None
-    basis = f"{cell_row['canonical_cell_id']}|{edge['egp_id']}|{frame}|{subtype}|{serial}"
-    return {
-        "split": "held_out" if cell_row["canonical_cell_id"] in held_out else "development",
-        "spec": {
-            "realization_id": stable_id("REAL", basis),
-            "canonical_cell_id": cell_row["canonical_cell_id"],
-            "source_descriptor_id": edge["egp_id"],
-            "predicate_frame_id": frame,
-            "subject": subject,
-            "wh": None,
-            "imperative_subtype": subtype,
-            "let_pronoun": "them" if subtype == "let_pronoun" else None,
-        },
-    }
-
-
 def build_cases(cells: list[dict[str, Any]], edges: list[dict[str, Any]], held_out: set[str]) -> list[dict[str, Any]]:
+    """Choose the deterministic lexical conditions used to realise each cell."""
+
     by_cell: dict[str, list[dict[str, Any]]] = {}
     for edge in edges:
         by_cell.setdefault(edge["canonical_cell_id"], []).append(edge)
-    cases, serial = [], 0
+
+    # Give every canonical cell one realization from its first supporting descriptor.
+    selected: list[tuple[dict[str, Any], dict[str, Any]]] = []
     for cell_row in sorted(cells, key=lambda row: row["canonical_cell_id"]):
         edge = sorted(by_cell[cell_row["canonical_cell_id"]], key=lambda row: row["egp_id"])[0]
-        serial += 1
-        cases.append(construct_case(cell_row, edge, serial, held_out))
-    existing = {(row["spec"]["canonical_cell_id"], row["spec"]["source_descriptor_id"]) for row in cases}
+        selected.append((cell_row, edge))
+
+    # Preserve additional source-noted imperative subtypes as separate realizations.
+    existing = {
+        (cell_row["canonical_cell_id"], edge["egp_id"])
+        for cell_row, edge in selected
+    }
     for cell_row in cells:
         if cell_row["cell"]["clause"] != "imperative":
             continue
         for edge in sorted(by_cell[cell_row["canonical_cell_id"]], key=lambda row: row["egp_id"]):
             key = (cell_row["canonical_cell_id"], edge["egp_id"])
             if edge.get("source_note") and key not in existing:
-                serial += 1
-                cases.append(construct_case(cell_row, edge, serial, held_out))
+                selected.append((cell_row, edge))
+
+    # Construct each complete RealizationSpec in the same chronological pass.
+    cases = []
+    for serial, (cell_row, edge) in enumerate(selected, 1):
+        cell = cell_row["cell"]
+        frame = (
+            "FRAME_LIKE" if cell["modal"] == "would" else
+            "FRAME_REPAIR" if cell["voice"] == "passive" else
+            "FRAME_WORK" if cell["aspect"] in {"progressive", "perfect_progressive"} else
+            "FRAME_WRITE" if serial % 2 else "FRAME_INSPECT"
+        )
+        subject = {"text": "The machine", "person": 3, "number": "singular"} if cell["voice"] == "passive" else (
+            {"text": "The technician", "person": 3, "number": "singular"} if serial % 2 else
+            {"text": "The technicians", "person": 3, "number": "plural"}
+        )
+        subtype = imperative_subtype(edge.get("source_note")) if cell["clause"] == "imperative" else None
+        basis = f"{cell_row['canonical_cell_id']}|{edge['egp_id']}|{frame}|{subtype}|{serial}"
+        cases.append(
+            {
+                "split": "held_out" if cell_row["canonical_cell_id"] in held_out else "development",
+                "spec": {
+                    "realization_id": stable_id("REAL", basis),
+                    "canonical_cell_id": cell_row["canonical_cell_id"],
+                    "source_descriptor_id": edge["egp_id"],
+                    "predicate_frame_id": frame,
+                    "subject": subject,
+                    "wh": None,
+                    "imperative_subtype": subtype,
+                    "let_pronoun": "them" if subtype == "let_pronoun" else None,
+                },
+            }
+        )
     return cases
-
-
-def run_one(fixture: dict[str, Any]) -> dict[str, Any]:
-    frames = {row["predicate_frame_id"]: row for row in read_jsonl(LEXICON)}
-    spec, cell = fixture["spec"], grammar_cell(fixture["cell"])
-    frame = frames[spec["predicate_frame_id"]]
-    errors = validate_spec(spec, cell, frame, fixture.get("source_note"))
-    result = realise(spec, cell, frame) if not errors else None
-    if result and fixture.get("expected_surface") and result["surface"] != fixture["expected_surface"]:
-        errors.append(f"surface differs: {result['surface']!r}")
-    return {"input": fixture, "output": result, "valid": not errors, "errors": errors}
 
 
 # Full stage

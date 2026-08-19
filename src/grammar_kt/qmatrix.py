@@ -22,6 +22,7 @@ def build(
 ) -> tuple[list[str], list[tuple[str, list[int]]], list[dict[str, Any]], dict[str, Any]]:
     """Build Q records, separating integrity failures from scientific diagnostics."""
 
+    # Structural inputs and frozen projection integrity
     structural_errors: list[str] = []
     item_ids = [row["item_id"] for row in items]
     kc_ids = sorted(row["kc_id"] for row in cards)
@@ -44,6 +45,8 @@ def build(
     known_kcs = set(card_by_id)
     rows: list[tuple[str, list[int]]] = []
     edges: list[dict[str, Any]] = []
+
+    # Matrix rows and explicit item-KC edges
     for item in sorted(items, key=lambda row: row["item_id"]):
         projection = projection_by_cell.get(item["canonical_cell_id"])
         if projection is None:
@@ -75,6 +78,7 @@ def build(
                 }
             )
 
+    # Descriptive structural diagnostics
     columns = {
         kc_id: tuple(values[index] for _item_id, values in rows)
         for index, kc_id in enumerate(kc_ids)
