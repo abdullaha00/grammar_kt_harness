@@ -1,18 +1,18 @@
-"""Registry-driven technical KT baselines using pre-event observable features only."""
+"""Technical KT baselines using pre-event observable features only."""
 
 from __future__ import annotations
 
 import math
 from collections import Counter, defaultdict
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, log_loss, roc_auc_score
 
-from .io import read_json, read_jsonl, resource, write_json, write_jsonl
-from .models import interaction
+from .io import read_json, read_jsonl, repo_path, write_json, write_jsonl
+from .records import observable_interaction
 
 
 def _metrics(targets: np.ndarray, predictions: np.ndarray) -> dict[str, Any]:
@@ -27,7 +27,7 @@ def _metrics(targets: np.ndarray, predictions: np.ndarray) -> dict[str, Any]:
     }
 
 
-def _features(rows: list[dict[str, Any]], kc_ids: list[str], alpha: float, beta: float) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+def pre_event_features(rows: list[dict[str, Any]], kc_ids: list[str], alpha: float, beta: float) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     learner_attempts: Counter[str] = Counter()
     learner_correct: Counter[str] = Counter()
     learner_kc_attempts: Counter[tuple[str, str]] = Counter()
@@ -63,7 +63,7 @@ def _features(rows: list[dict[str, Any]], kc_ids: list[str], alpha: float, beta:
     return np.asarray(features, dtype=float), np.asarray(targets, dtype=int), np.asarray(empirical)
 
 
-def _bkt(rows: list[dict[str, Any]], kc_ids: list[str], config: dict[str, float], alpha: float, beta: float) -> np.ndarray:
+def bkt_predictions(rows: list[dict[str, Any]], kc_ids: list[str], settings: dict[str, float], alpha: float, beta: float) -> np.ndarray:
     train_success: Counter[str] = Counter()
     train_attempt: Counter[str] = Counter()
     for row in rows:
@@ -79,9 +79,9 @@ def _bkt(rows: list[dict[str, Any]], kc_ids: list[str], config: dict[str, float]
     by_learner: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for row in rows:
         by_learner[row["learner_id"]].append(row)
-    guess = float(config["guess"])
-    slip = float(config["slip"])
-    learn = float(config["learn"])
+    guess = float(settings["guess"])
+    slip = float(settings["slip"])
+    learn = float(settings["learn"])
     for learner_rows in by_learner.values():
         mastery = dict(initial)
         for row in sorted(learner_rows, key=lambda value: value["sequence_index"]):
@@ -98,43 +98,42 @@ def _bkt(rows: list[dict[str, Any]], kc_ids: list[str], config: dict[str, float]
     return np.asarray([predictions[row["event_id"]] for row in rows])
 
 
-def run(run_dir: Path, config: dict[str, Any]) -> dict[str, Any]:
+def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     output = run_dir / "kt"
     output.mkdir(parents=True, exist_ok=False)
     dataset_path = run_dir / "simulation" / "observable_interactions.jsonl"
-    technique_config_path = resource("kt", "configs", config["config"], ".json")
-    technique_config = read_json(technique_config_path)
-    techniques = list(config["techniques"])
+    technique_settings = read_json(repo_path(settings["parameters"]))
+    techniques = list(settings["techniques"])
     allowed = {"empirical", "bkt", "logistic"}
     unknown = set(techniques) - allowed
     if unknown:
         raise ValueError(f"unknown KT techniques: {sorted(unknown)}")
     rows = read_jsonl(dataset_path)
     for row in rows:
-        interaction(row, label=row["event_id"])
+        observable_interaction(row, label=row["event_id"])
     rows.sort(key=lambda row: (row["learner_id"], row["sequence_index"]))
     kc_ids = sorted({kc_id for row in rows for kc_id in row["kc_ids"]})
-    alpha = float(technique_config["empirical"]["alpha"])
-    beta = float(technique_config["empirical"]["beta"])
-    features, targets, empirical = _features(rows, kc_ids, alpha, beta)
+    alpha = float(technique_settings["empirical"]["alpha"])
+    beta = float(technique_settings["empirical"]["beta"])
+    features, targets, empirical = pre_event_features(rows, kc_ids, alpha, beta)
     split = np.asarray([row["dataset_split"] for row in rows])
     predictions: dict[str, np.ndarray] = {}
     extra: dict[str, Any] = {}
     if "empirical" in techniques:
         predictions["empirical"] = empirical
     if "bkt" in techniques:
-        predictions["bkt"] = _bkt(rows, kc_ids, technique_config["bkt"], alpha, beta)
+        predictions["bkt"] = bkt_predictions(rows, kc_ids, technique_settings["bkt"], alpha, beta)
         extra["bkt_parameters"] = {
-            **technique_config["bkt"],
+            **technique_settings["bkt"],
             "initial_mastery_source": "smoothed train outcome rate per KC",
         }
     if "logistic" in techniques:
-        logistic_config = technique_config["logistic"]
+        logistic_settings = technique_settings["logistic"]
         model = LogisticRegression(
-            C=float(logistic_config["C"]),
-            max_iter=int(logistic_config["max_iter"]),
-            solver=logistic_config["solver"],
-            random_state=int(logistic_config["random_state"]),
+            C=float(logistic_settings["C"]),
+            max_iter=int(logistic_settings["max_iter"]),
+            solver=logistic_settings["solver"],
+            random_state=int(logistic_settings["random_state"]),
         )
         model.fit(features[split == "train"], targets[split == "train"])
         predictions["logistic"] = model.predict_proba(features)[:, 1]

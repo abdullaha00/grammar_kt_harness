@@ -2,14 +2,13 @@
 
 from __future__ import annotations
 
-import hashlib
 import json
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
-from .io import DIMENSIONS, read_jsonl, write_jsonl
-from .models import grammar_cell
+from .io import read_jsonl, stable_id, write_jsonl
+from .records import DIMENSIONS, grammar_cell
 
 
 def canonical_json(cell: dict[str, str]) -> str:
@@ -17,7 +16,7 @@ def canonical_json(cell: dict[str, str]) -> str:
 
 
 def stable_cell_id(cell: dict[str, str]) -> str:
-    return "CELL_" + hashlib.sha256(canonical_json(cell).encode()).hexdigest()[:16].upper()
+    return stable_id("CELL", canonical_json(cell))
 
 
 def build(mappings: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
@@ -30,9 +29,7 @@ def build(mappings: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[di
             cell = grammar_cell({key: raw[key] for key in DIMENSIONS}, label=f"{mapping['egp_id']} cell")
             cell_id = stable_cell_id(cell)
             cells_by_id[cell_id] = cell
-            basis = f"{mapping['egp_id']}|{source_index}|{canonical_json(cell)}"
             edges_by_cell[cell_id].append({
-                "edge_id": "EDGE_" + hashlib.sha256(basis.encode()).hexdigest()[:16].upper(),
                 "egp_id": mapping["egp_id"],
                 "source_mapping_result": mapping["result"],
                 "source_cell_index": source_index,
@@ -55,7 +52,7 @@ def build(mappings: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[di
     return cells, edges
 
 
-def run(run_dir: Path, _config: dict[str, Any]) -> dict[str, Any]:
+def run(run_dir: Path, _settings: dict[str, Any]) -> dict[str, Any]:
     output = run_dir / "canonical"
     output.mkdir(parents=True, exist_ok=False)
     cells, edges = build(read_jsonl(run_dir / "normalisation" / "final_mappings.jsonl"))

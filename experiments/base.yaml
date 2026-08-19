@@ -10,47 +10,35 @@ source:
   annotation_units: modules/source/annotation_units.jsonl
 
 normalisation:
-  phase1_prompt: phase1
-  phase2_prompt: phase2
-  wrapper: wrapper
-  rulebook: rulebook
-  dimensions: grammar_dimensions
-  output_schema: mapping_schema
-  instructions: model_instructions
-  backend_config: backend
+  phase1_prompt: modules/normalisation/prompts/phase1.txt
+  phase2_prompt: modules/normalisation/prompts/phase2.txt
+  backend: modules/normalisation/configs/backend.yaml
   workers: 3
   max_attempts: 2
 
 canonical: {}
 
 realisation:
-  rules: default
-  lexicon: default
-  config: default
+  split_config: modules/realisation/configs/default.json
 
 kc:
-  policy: factorized
+  policy: modules/kc/policies/factorized.json
 
 items:
-  family: controlled_transformation
-  realisation_lexicon: default
+  family_prompt: modules/items/families/controlled_transformation.txt
   replicates_per_kc: 5
   development_replicates: 2
   validation:
-    rules: rules
-    prompt: diagnostic_prompt
-    output_schema: diagnostic_schema
-    instructions: diagnostic_instructions
-    backend_config: backend
+    acceptance: modules/items/validation/model_acceptance.json
+    backend: modules/items/validation/backend.yaml
     workers: 6
     max_attempts: 2
+    repeated_diagnostics: 5
 
 simulation:
-  config: default
+  parameters: modules/simulation/configs/default.json
   seed: 20260817
-  learners: 180
-  events_per_learner: 90
 
 kt:
-  config: default
+  parameters: modules/kt/configs/default.json
   techniques: [empirical, bkt, logistic]

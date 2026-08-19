@@ -1,15 +1,17 @@
-#!/usr/bin/env python3
-"""Deterministic RealizationSpec v0 realiser and validator."""
+"""Deterministic RealizationSpec realiser and validator."""
 
 from __future__ import annotations
 
 import re
-import hashlib
 from pathlib import Path
 from typing import Any
 
-from .io import read_json, read_jsonl, resource, write_jsonl
-from .models import grammar_cell
+from .io import ROOT, read_json, read_jsonl, repo_path, stable_id, write_jsonl
+from .records import grammar_cell
+
+
+REALISATION_DIR = ROOT / "modules" / "realisation"
+LEXICON = REALISATION_DIR / "lexicons" / "default.jsonl"
 
 
 def finite_be(tense: str, subject: dict) -> str:
@@ -34,7 +36,7 @@ def finite_aux(lemma: str, tense: str, subject: dict) -> str:
     raise ValueError(f"unsupported auxiliary: {lemma}")
 
 
-def form(lemma: str, requested: str, tense: str, subject: dict, frame: dict) -> str:
+def inflect(lemma: str, requested: str, tense: str, subject: dict, frame: dict) -> str:
     if lemma == "be":
         values = {"base": "be", "past_participle": "been", "present_participle": "being"}
     elif lemma == "have":
@@ -58,7 +60,7 @@ def form(lemma: str, requested: str, tense: str, subject: dict, frame: dict) -> 
     return values[requested]
 
 
-def lexical_nodes(cell: dict, frame: dict) -> list[tuple[str, str]]:
+def lexical_nodes(cell: dict) -> list[tuple[str, str]]:
     nodes: list[tuple[str, str]] = []
     if cell["aspect"] in {"perfect", "perfect_progressive"}:
         nodes.append(("have", "perfect"))
@@ -71,7 +73,7 @@ def lexical_nodes(cell: dict, frame: dict) -> list[tuple[str, str]]:
 
 
 def inflect_chain(cell: dict, spec: dict, frame: dict, imperative: bool = False) -> tuple[list[str], str]:
-    nodes = lexical_nodes(cell, frame)
+    nodes = lexical_nodes(cell)
     words: list[str] = []
     agreement_site = "none"
     previous_role: str | None = None
@@ -93,7 +95,7 @@ def inflect_chain(cell: dict, spec: dict, frame: dict, imperative: bool = False)
             agreement_site = lemma if lemma != "main" else "main_verb"
         else:
             raise ValueError("unlicensed chain relation")
-        words.append(form(lemma, requested, cell["tense"], spec["subject"], frame))
+        words.append(inflect(lemma, requested, cell["tense"], spec["subject"], frame))
         previous_role = role
     return words, agreement_site
 
@@ -105,7 +107,7 @@ def validate_spec(spec: dict, cell: dict, frame: dict, source_note: str | None) 
         "subject", "wh", "imperative_subtype", "let_pronoun",
     }
     if set(spec) != expected:
-        errors.append("RealizationSpec fields differ from v0 schema")
+        errors.append("RealizationSpec fields differ from the schema")
     if not re.fullmatch(r"REAL_[A-F0-9]{16}", str(spec.get("realization_id", ""))):
         errors.append("invalid realization_id")
     subject = spec.get("subject", {})
@@ -186,7 +188,6 @@ def realise(spec: dict, cell: dict, frame: dict) -> dict:
     if requires_operator and not inherent_operator:
         chain = [finite_aux("do", cell["tense"], spec["subject"]), frame["base"]]
         agreement_site = "do"
-        inherent_operator = True
         operations.append("do_support")
     if cell["polarity"] == "negative":
         chain.insert(1, "not")
@@ -253,7 +254,7 @@ def _case(cell_row: dict[str, Any], edge: dict[str, Any], serial: int, held_out:
     return {
         "split": "held_out" if cell_row["canonical_cell_id"] in held_out else "development",
         "spec": {
-            "realization_id": "REAL_" + hashlib.sha256(basis.encode()).hexdigest()[:16].upper(),
+            "realization_id": stable_id("REAL", basis),
             "canonical_cell_id": cell_row["canonical_cell_id"],
             "source_descriptor_id": edge["egp_id"],
             "predicate_frame_id": frame,
@@ -286,8 +287,8 @@ def build_cases(cells: list[dict[str, Any]], edges: list[dict[str, Any]], held_o
     return cases
 
 
-def run_one(fixture: dict[str, Any], config: dict[str, Any]) -> dict[str, Any]:
-    frames = {row["predicate_frame_id"]: row for row in read_jsonl(resource("realisation", "lexicons", config["lexicon"], ".jsonl"))}
+def run_one(fixture: dict[str, Any]) -> dict[str, Any]:
+    frames = {row["predicate_frame_id"]: row for row in read_jsonl(LEXICON)}
     spec, cell = fixture["spec"], grammar_cell(fixture["cell"])
     frame = frames[spec["predicate_frame_id"]]
     errors = validate_spec(spec, cell, frame, fixture.get("source_note"))
@@ -297,14 +298,14 @@ def run_one(fixture: dict[str, Any], config: dict[str, Any]) -> dict[str, Any]:
     return {"input": fixture, "output": result, "valid": not errors, "errors": errors}
 
 
-def run(run_dir: Path, config: dict[str, Any]) -> dict[str, Any]:
+def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     output = run_dir / "realisation"
     output.mkdir(parents=True, exist_ok=False)
     cells = read_jsonl(run_dir / "canonical" / "canonical_cells.jsonl")
     edges = read_jsonl(run_dir / "canonical" / "source_cell_edges.jsonl")
-    choices = read_json(resource("realisation", "configs", config["config"], ".json"))
+    choices = read_json(repo_path(settings["split_config"]))
     held_out = set(choices["held_out_cell_ids"])
-    frames = {row["predicate_frame_id"]: row for row in read_jsonl(resource("realisation", "lexicons", config["lexicon"], ".jsonl"))}
+    frames = {row["predicate_frame_id"]: row for row in read_jsonl(LEXICON)}
     cell_by_id = {row["canonical_cell_id"]: grammar_cell(row["cell"]) for row in cells}
     by_cell: dict[str, list[dict[str, Any]]] = {}
     for edge in edges:

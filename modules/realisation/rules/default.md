@@ -1,4 +1,4 @@
-# Deterministic realization rules v0
+# Deterministic realization rules
 
 ## Cue precedence and chain
 
@@ -25,7 +25,7 @@ WH questions, insert finite DO and leave the main verb in base form. Main
 copular BE is its own operator and never takes DO.
 
 Place uncontracted `not` immediately after the operator. A positive declarative
-has no added operator. Contractions are outside v0.
+has no added operator. Contractions are outside this method.
 
 ## Clause order
 
@@ -56,4 +56,3 @@ new GrammarCell distinction.
 Passive realization requires `passive_compatible=true` and an overt object in
 the lexical frame. Copular frames cannot be passive. A subject-WH spec requires
 WH role `subject`; a non-subject-WH spec requires `object` or `adjunct`.
-

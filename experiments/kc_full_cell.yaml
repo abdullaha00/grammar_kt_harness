@@ -2,4 +2,4 @@ extends: base
 experiment: kc_full_cell
 
 kc:
-  policy: full_cell
+  policy: modules/kc/policies/full_cell.json

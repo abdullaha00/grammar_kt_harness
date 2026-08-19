@@ -6,18 +6,8 @@ import json
 import re
 from typing import Any
 
+from .records import CENTRAL_MODALS, DIMENSIONS as DIMENSION_ORDER, GRAMMAR_VALUES as DIMENSIONS, MORPHOLOGICAL_TENSES
 
-DIMENSION_ORDER = ("tense", "aspect", "voice", "polarity", "clause", "modal")
-DIMENSIONS = {
-    "tense": {"present", "past", "NA"},
-    "aspect": {"none", "progressive", "perfect", "perfect_progressive"},
-    "voice": {"active", "passive"},
-    "polarity": {"positive", "negative"},
-    "clause": {"declarative", "polar_question", "subject_wh_question", "non_subject_wh_question", "imperative"},
-    "modal": {"none", "can", "could", "may", "might", "must", "shall", "should", "will", "would"},
-}
-CENTRAL_MODALS = DIMENSIONS["modal"] - {"none"}
-MORPHOLOGICAL_TENSES = {"present", "past"}
 RESULTS = {"complete", "partial", "out_of_scope", "schema_failure", "unresolved"}
 ZERO_RESULTS = {"out_of_scope", "schema_failure", "unresolved"}
 ELIGIBILITY_PREFIX = "phase2 eligible: "
