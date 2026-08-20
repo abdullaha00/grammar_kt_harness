@@ -85,6 +85,14 @@ factorized, interaction, and transductive full-cell policies remain explicit
 baselines, and selection evaluation also constructs an honest full-cell policy
 from development cells only.
 
+`kc_factorized_dev_frozen` is a second inductive control. It starts from the
+expert factorized hypothesis space but retains only rules activated by
+development item opportunities, then freezes that reduced policy before
+holdout application. Baseline prior-information categories remain explicit:
+selected structural, factorized-development-frozen, and full-cell-development-
+frozen are inductive; the current factorized policies are expert priors; and
+full-cell-all is transductive.
+
 KC selection deliberately does not read item-bank, simulation, Q-matrix, or KT
 artifacts. The simulator now runs before selection, so selection and every
 ontology variant reuse the same fixed learner-item outcomes by construction.
@@ -145,10 +153,33 @@ materialisation, KT joins `base_events.jsonl` with
 indices in `kt/projected_interactions.jsonl`. The fixed event-stream SHA-256 is
 persisted in `simulation/audit.json` and surfaced by `compare.py`.
 
-The current two-pass chronological train/validation/test split is still only a
-technical KT split: compositional-holdout items can occur in temporal training.
-Phase D must enforce a canonical compositional training boundary before any
-claim about KT compositional generalisation.
+## Development acquisition and frozen compositional probes
+
+The ordinary two-pass chronological train/validation/test stream remains a
+technical KT sanity benchmark. Phase D adds a separate stream under
+`simulation/compositional/`: every learner acquires only development-cell items
+over two shuffled passes, after which the oracle mastery state is frozen. Each
+of the 17 compositional-holdout items and the one novel-feature item is then
+probed once. Every probe probability and outcome reads the same frozen
+post-development oracle state; probes never update that state, and keyed probe
+draws make results independent of probe ordering.
+
+For each candidate ontology, `kt/compositional/` projects KCs onto the fixed
+acquisition and probe events. Empirical histories, BKT mastery, and logistic
+features are learned from development acquisition only and frozen before every
+probe. A probe is labelled fully development-supported, cold, or uncovered.
+Cold KCs use a fixed training-independent prior; uncovered probes use the
+learner-global smoothed development prior and remain in all-event metrics.
+Metrics report log loss (primary), Brier score, AUC, accuracy, calibration,
+coverage, and development-supported coverage separately for compositional and
+novel-feature probes. `compare.py --stage compositional` verifies fixed probe
+equality and computes paired learner-level bootstrap intervals; `inspect.py
+probe EVENT_ID` shows the fixed-data, private-oracle, and candidate-model
+boundaries explicitly.
+
+This protocol measures transfer of learner evidence under one controlled,
+factorized synthetic world. A higher score is not evidence that an ontology is
+a cognitively correct model of human grammar learning.
 
 ## Predefined KC policy experiment example
 
@@ -191,10 +222,12 @@ python scripts/inspect.py kc CELL_ID --run base
 python scripts/inspect.py item ITEM_ID --run base
 python scripts/inspect.py qmatrix ITEM_ID --run base
 python scripts/inspect.py kt EVENT_ID --run base
+python scripts/inspect.py probe COMP_PROBE_EVENT_ID --run base
 python scripts/inspect.py trace ITEM_ID --run base
 
 python scripts/compare.py base kc_full_cell
 python scripts/compare.py base kc_full_cell --stage kc
+python scripts/compare.py base kc_interactions --stage compositional
 python scripts/validate.py base
 ```
 

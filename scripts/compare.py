@@ -17,6 +17,7 @@ sys.path.remove(str(Path(__file__).resolve().parent))
 
 from grammar_kt.io import ROOT, read_json, read_jsonl, read_yaml
 from grammar_kt.items import item_bank_fingerprint
+from grammar_kt.kt import learner_bootstrap_log_loss_difference
 
 
 def keyed(path: Path, key: str) -> dict[str, dict[str, Any]]:
@@ -275,7 +276,120 @@ def kt_stage(a: Path, b: Path) -> dict[str, Any]:
     return result
 
 
-COMPARISON_STAGES = ("normalisation", "canonical", "realisation", "items", "simulation", "kc_selection", "kc", "qmatrix", "kt")
+def compositional_stage(a: Path, b: Path) -> dict[str, Any]:
+    """Compare fixed Phase-D probes and paired ontology predictions."""
+
+    def fixed(run: Path) -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]]]:
+        directory = run / "simulation/compositional"
+        audit = read_json(directory / "audit.json")
+        probes = read_jsonl(directory / "compositional_probe_events.jsonl") + read_jsonl(
+            directory / "novel_feature_probe_events.jsonl"
+        )
+        frozen = read_jsonl(directory / "learner_frozen_oracle_state.jsonl")
+        return audit, probes, frozen
+
+    audit_a, probes_a, frozen_a = fixed(a)
+    audit_b, probes_b, frozen_b = fixed(b)
+    fields = (
+        "event_id",
+        "learner_id",
+        "item_id",
+        "canonical_cell_id",
+        "correct",
+        "item_difficulty",
+        "dataset_split",
+        "canonical_split",
+    )
+    values_a = [tuple(row[field] for field in fields) for row in probes_a]
+    values_b = [tuple(row[field] for field in fields) for row in probes_b]
+    metrics_a = read_json(a / "kt/compositional/metrics.json")
+    metrics_b = read_json(b / "kt/compositional/metrics.json")
+    support_a = read_json(a / "kt/compositional/representation_support.json")
+    support_b = read_json(b / "kt/compositional/representation_support.json")
+    predictions_a = read_jsonl(a / "kt/compositional/predictions.jsonl")
+    predictions_b = read_jsonl(b / "kt/compositional/predictions.jsonl")
+    techniques = sorted(
+        set(metrics_a.get("holdout_evaluation", {}))
+        & set(metrics_b.get("holdout_evaluation", {}))
+    )
+    differences = []
+    bootstraps = []
+    bootstrap_config = read_json(a / "kt/compositional/bootstrap_comparisons.json")
+    repetitions = int(bootstrap_config.get("repetitions", 1000))
+    seed = int(bootstrap_config.get("seed", 20260817))
+    for technique in techniques:
+        for split_name in ("compositional_holdout", "novel_feature_holdout"):
+            left = metrics_a["holdout_evaluation"][technique][split_name][
+                "all_probes_fixed_fallback"
+            ]
+            right = metrics_b["holdout_evaluation"][technique][split_name][
+                "all_probes_fixed_fallback"
+            ]
+            for metric in ("log_loss", "brier_score", "auc", "accuracy_at_0_5", "ece"):
+                before, after = left[metric], right[metric]
+                differences.append(
+                    {
+                        "technique": technique,
+                        "canonical_split": split_name,
+                        "metric": metric,
+                        "run_a": before,
+                        "run_b": after,
+                        "run_b_minus_run_a": (
+                            after - before
+                            if before is not None and after is not None
+                            else None
+                        ),
+                    }
+                )
+        if predictions_a and predictions_b:
+            bootstraps.append(
+                learner_bootstrap_log_loss_difference(
+                    predictions_a,
+                    predictions_b,
+                    technique=technique,
+                    probe_type="compositional_holdout",
+                    repetitions=repetitions,
+                    seed=seed,
+                )
+            )
+    invariance = {
+        "probe_stream_hash_equal": audit_a.get("all_probe_stream_sha256")
+        == audit_b.get("all_probe_stream_sha256"),
+        "probe_rows_equal": values_a == values_b,
+        "probe_event_ids_equal": [row["event_id"] for row in probes_a]
+        == [row["event_id"] for row in probes_b],
+        "correctness_equal": [row["correct"] for row in probes_a]
+        == [row["correct"] for row in probes_b],
+        "learner_item_probe_identity_equal": [
+            (row["learner_id"], row["item_id"]) for row in probes_a
+        ]
+        == [(row["learner_id"], row["item_id"]) for row in probes_b],
+        "frozen_oracle_state_equal": frozen_a == frozen_b,
+    }
+    return {
+        "fixed_probe_data": {
+            "run_a_sha256": audit_a.get("all_probe_stream_sha256"),
+            "run_b_sha256": audit_b.get("all_probe_stream_sha256"),
+            "probe_events": {"run_a": len(probes_a), "run_b": len(probes_b)},
+            "all_equal": all(invariance.values()),
+            "invariance": invariance,
+        },
+        "representation_support": {
+            "run_a": {
+                "compositional_holdout": support_a.get("compositional_holdout"),
+                "novel_feature_holdout": support_a.get("novel_feature_holdout"),
+            },
+            "run_b": {
+                "compositional_holdout": support_b.get("compositional_holdout"),
+                "novel_feature_holdout": support_b.get("novel_feature_holdout"),
+            },
+        },
+        "metric_differences": differences,
+        "paired_learner_bootstrap_a_minus_b": bootstraps,
+    }
+
+
+COMPARISON_STAGES = ("normalisation", "canonical", "realisation", "items", "simulation", "kc_selection", "kc", "qmatrix", "kt", "compositional")
 
 
 def compare(a: Path, b: Path, stage: str | None = None) -> dict[str, Any]:
@@ -301,6 +415,8 @@ def compare(a: Path, b: Path, stage: str | None = None) -> dict[str, Any]:
                 output[name] = simulation_stage(a, b)
             elif name == "kt":
                 output[name] = kt_stage(a, b)
+            elif name == "compositional":
+                output[name] = compositional_stage(a, b)
             else:
                 raise ValueError(f"unknown comparison stage: {name}")
         except (FileNotFoundError, KeyError, TypeError) as error:

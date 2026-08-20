@@ -49,6 +49,15 @@ BASE_EVENT_FIELDS = {
     "item_difficulty",
     "dataset_split",
 }
+COMPOSITIONAL_EVENT_FIELDS = BASE_EVENT_FIELDS | {"evaluation_role", "probe_type"}
+COMPOSITIONAL_PROJECTION_FIELDS = COMPOSITIONAL_EVENT_FIELDS | {
+    "kc_ids",
+    "opportunity_indices",
+    "development_supported_kc_ids",
+    "cold_kc_ids",
+    "covered",
+    "fully_development_supported",
+}
 FORBIDDEN_BASE_EVENT_FIELDS = FORBIDDEN_OBSERVABLE_FIELDS | {"kc_ids", "opportunity_indices"}
 ORACLE_EVENT_FIELDS = {
     "event_id",
@@ -124,6 +133,71 @@ def observable_base_event(value: Any, *, label: str = "ObservableBaseEvent") -> 
     unexpected = set(value) - BASE_EVENT_FIELDS
     if unexpected:
         raise ValueError(f"{label}: unexpected base-event fields {sorted(unexpected)}")
+    return value
+
+
+def compositional_base_event(
+    value: Any, *, label: str = "CompositionalBaseEvent"
+) -> dict[str, Any]:
+    """Validate a Phase-D acquisition/probe event without candidate or oracle fields."""
+
+    _base_event_fields(value, label=label)
+    if value.get("evaluation_role") not in {"acquisition", "probe"}:
+        raise ValueError(f"{label}: invalid compositional evaluation role")
+    expected_probe_type = {
+        "development": "development_acquisition",
+        "compositional_holdout": "compositional_holdout",
+        "novel_feature_holdout": "novel_feature_holdout",
+    }[value["canonical_split"]]
+    if value.get("probe_type") != expected_probe_type:
+        raise ValueError(f"{label}: probe type does not match canonical split")
+    if value["evaluation_role"] == "acquisition" and value["canonical_split"] != "development":
+        raise ValueError(f"{label}: acquisition must contain development items only")
+    if value["evaluation_role"] == "probe" and value["canonical_split"] == "development":
+        raise ValueError(f"{label}: probes must be held-out items")
+    leaked = FORBIDDEN_BASE_EVENT_FIELDS & set(value)
+    if leaked:
+        raise ValueError(f"{label}: oracle/KC/content leakage {sorted(leaked)}")
+    unexpected = set(value) - COMPOSITIONAL_EVENT_FIELDS
+    if unexpected:
+        raise ValueError(f"{label}: unexpected compositional-event fields {sorted(unexpected)}")
+    return value
+
+
+def compositional_projected_interaction(
+    value: Any, *, label: str = "CompositionalProjectedInteraction"
+) -> dict[str, Any]:
+    """Validate a Phase-D event annotated from development-frozen candidate support."""
+
+    if not isinstance(value, dict) or set(value) != COMPOSITIONAL_PROJECTION_FIELDS:
+        raise ValueError(f"{label}: compositional projection fields differ from the schema")
+    base = {key: value[key] for key in COMPOSITIONAL_EVENT_FIELDS}
+    compositional_base_event(base, label=label)
+    kc_ids = value["kc_ids"]
+    supported = value["development_supported_kc_ids"]
+    cold = value["cold_kc_ids"]
+    if not all(
+        isinstance(rows, list)
+        and len(rows) == len(set(rows))
+        and all(isinstance(kc_id, str) for kc_id in rows)
+        for rows in (kc_ids, supported, cold)
+    ):
+        raise ValueError(f"{label}: KC fields must be duplicate-free string lists")
+    if set(supported) | set(cold) != set(kc_ids) or set(supported) & set(cold):
+        raise ValueError(f"{label}: supported/cold KCs must partition active KCs")
+    if set(value["opportunity_indices"]) != set(kc_ids):
+        raise ValueError(f"{label}: opportunity indices must match active KCs")
+    if any(
+        not isinstance(index, int) or index < 1
+        for index in value["opportunity_indices"].values()
+    ):
+        raise ValueError(f"{label}: opportunity indices must be positive integers")
+    if value["covered"] is not bool(kc_ids):
+        raise ValueError(f"{label}: covered flag does not match active KCs")
+    if value["fully_development_supported"] is not (
+        bool(kc_ids) and not cold
+    ):
+        raise ValueError(f"{label}: development-supported flag is inconsistent")
     return value
 
 

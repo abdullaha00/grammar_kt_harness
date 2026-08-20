@@ -3,12 +3,12 @@
 from __future__ import annotations
 
 import json
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
 from .io import read_json, read_jsonl, repo_path, stable_id, write_json, write_jsonl
-from .kc import apply_policy, evaluate_rule, load_policy
+from .kc import apply_policy, evaluate_rule, load_policy, project_items
 from .kc_candidates import discover_candidates, nuisance_opportunities, salient_facts
 from .realisation import LEXICON
 from .records import DIMENSIONS
@@ -363,6 +363,7 @@ def compile_policy(selection: dict[str, Any], development_cell_ids: list[str]) -
         "description": "Development-only deterministic structural KC selection.",
         "selection_metadata": {
             "selector": selection["selector"],
+            "baseline_category": "inductive",
             "development_cell_ids": development_cell_ids,
             "held_out_content_used": False,
             "objective": selection["objective"],
@@ -378,6 +379,7 @@ def compile_predefined_policy(path: Path, development_cell_ids: list[str]) -> di
             **loaded,
             "selection_metadata": {
                 "selector": "predefined_transductive_baseline",
+                "baseline_category": "transductive",
                 "development_cell_ids": development_cell_ids,
                 "held_out_content_used": "dynamic full-cell rules are created at application time",
             },
@@ -388,6 +390,7 @@ def compile_predefined_policy(path: Path, development_cell_ids: list[str]) -> di
         "description": loaded.get("description", "Predefined expert baseline."),
         "selection_metadata": {
             "selector": "predefined_expert_baseline",
+            "baseline_category": "expert_prior",
             "development_cell_ids": development_cell_ids,
             "held_out_content_used": False,
             "source_policy": str(path),
@@ -420,8 +423,80 @@ def development_frozen_full_cell_policy(development_cells: list[dict[str, Any]])
     return {
         "policy_id": stable_id("POLICY", "FULL_CELL_DEV_FROZEN_v0", rules),
         "kind": "rules",
+        "description": "Exact-cell baseline compiled from development cells only.",
+        "selection_metadata": {
+            "selector": "development_frozen_full_cell",
+            "baseline_category": "inductive",
+            "development_cell_ids": sorted(
+                row["canonical_cell_id"] for row in development_cells
+            ),
+            "held_out_content_used": False,
+        },
         "rules": rules,
     }
+
+
+def development_frozen_factorized_policy(
+    policy_path: Path,
+    development_cells: list[dict[str, Any]],
+    development_items: list[dict[str, Any]],
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Retain expert factor rules supported by development item opportunities only."""
+
+    loaded = load_policy(policy_path)
+    if loaded["kind"] != "rules":
+        raise ValueError("FACTORIZED_DEV_FROZEN requires a rule policy")
+    development_cell_ids = {
+        row["canonical_cell_id"] for row in development_cells
+    }
+    if any(
+        item["generation_metadata"]["canonical_split"] != "development"
+        or item["canonical_cell_id"] not in development_cell_ids
+        for item in development_items
+    ):
+        raise RuntimeError("development-frozen factorized policy received held-out items")
+    projections, _cards = project_items(development_items, development_cells, loaded)
+    item_support = Counter(
+        kc_id for row in projections for kc_id in row["kc_ids"]
+    )
+    cell_support: dict[str, set[str]] = defaultdict(set)
+    for row in projections:
+        for kc_id in row["kc_ids"]:
+            cell_support[kc_id].add(row["canonical_cell_id"])
+    kept_rules = [
+        rule for rule in loaded["rules"] if item_support[rule["kc_id"]] > 0
+    ]
+    rejected = [
+        rule["kc_id"] for rule in loaded["rules"] if item_support[rule["kc_id"]] == 0
+    ]
+    support = {
+        rule["kc_id"]: {
+            "development_item_support": item_support[rule["kc_id"]],
+            "development_cell_support": len(cell_support[rule["kc_id"]]),
+        }
+        for rule in kept_rules
+    }
+    policy = {
+        "policy_id": stable_id(
+            "POLICY", "FACTORIZED_DEV_FROZEN_v0", kept_rules, sorted(development_cell_ids)
+        ),
+        "kind": "rules",
+        "description": (
+            "Expert factorization hypothesis with rules frozen by development-item support."
+        ),
+        "selection_metadata": {
+            "selector": "development_frozen_factorized",
+            "baseline_category": "inductive",
+            "source_policy": str(policy_path),
+            "development_cell_ids": sorted(development_cell_ids),
+            "development_item_count": len(development_items),
+            "held_out_content_used": False,
+            "rule_support": support,
+            "rejected_zero_development_support_kc_ids": sorted(rejected),
+        },
+        "rules": kept_rules,
+    }
+    return policy, support
 
 
 # Post-freeze evaluation
@@ -616,7 +691,11 @@ def evaluate_after_freeze(
     split_by_id = partition["split_by_id"]
     selected = evaluate_policy(
         selected_policy,
-        label="SELECTED_STRUCTURAL" if mode == "structural" else "SELECTED_PREDEFINED_BASELINE",
+        label={
+            "structural": "SELECTED_STRUCTURAL",
+            "development_frozen_factorized": "FACTORIZED_DEV_FROZEN",
+            "development_frozen_full_cell": "FULL_CELL_DEV_FROZEN",
+        }.get(mode, "SELECTED_PREDEFINED_BASELINE"),
         cells=cells,
         split_by_id=split_by_id,
         opportunities=opportunities,
@@ -773,7 +852,12 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     output.mkdir(parents=True, exist_ok=False)
     config = read_json(repo_path(settings["config"]))
     mode = settings.get("mode", "structural")
-    if mode not in {"structural", "predefined", "development_frozen_full_cell"}:
+    if mode not in {
+        "structural",
+        "predefined",
+        "development_frozen_factorized",
+        "development_frozen_full_cell",
+    }:
         raise ValueError(f"unknown KC-selection mode: {mode}")
 
     cells = read_jsonl(run_dir / "canonical" / "canonical_cells.jsonl")
@@ -807,6 +891,50 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
                 "policy": str(policy_path),
                 "selected_kc_ids": sorted(selected_kcs),
                 "reason": "explicit expert/transductive baseline; not data-selected",
+            }
+        ]
+        objective = None
+    elif mode == "development_frozen_factorized":
+        all_items = read_jsonl(run_dir / "items" / "validation" / "accepted_items.jsonl")
+        # Split labels and IDs establish the boundary before rule activation sees item content.
+        development_items = [
+            row
+            for row in all_items
+            if row["generation_metadata"]["canonical_split"] == "development"
+            and row["canonical_cell_id"] in set(partition["development_cell_ids"])
+        ]
+        policy_path = repo_path(settings["policy"])
+        policy, development_rule_support = development_frozen_factorized_policy(
+            policy_path, partition["development_cells"], development_items
+        )
+        selected_kcs = {rule["kc_id"] for rule in policy["rules"]}
+        diagnostics = discovery["diagnostics"]
+        for row in diagnostics:
+            row["selection_status"] = (
+                "selected_development_supported_expert_rule"
+                if row["kc_id"] in selected_kcs
+                else "not_selected_development_frozen_expert_rule"
+            )
+            row["selection_reason"] = (
+                "expert factor rule has development-item support"
+                if row["kc_id"] in selected_kcs
+                else "rule absent from the expert factor policy or has zero development support"
+            )
+        trace = [
+            {
+                "step": 1,
+                "action": "development_frozen_factorized_policy",
+                "source_policy": str(policy_path),
+                "development_item_count": len(development_items),
+                "selected_kc_ids": sorted(selected_kcs),
+                "development_rule_support": development_rule_support,
+                "rejected_zero_support_kc_ids": policy["selection_metadata"][
+                    "rejected_zero_development_support_kc_ids"
+                ],
+                "reason": (
+                    "expert rules were retained solely when activated by a development item; "
+                    "the policy was then frozen before holdout application"
+                ),
             }
         ]
         objective = None

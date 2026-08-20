@@ -17,7 +17,12 @@ from grammar_kt.config import load_experiment
 from grammar_kt.io import read_json, read_jsonl, sha256_file, write_json, write_jsonl
 from grammar_kt.normalisation import normalise_one
 from grammar_kt.normalisation_validation import validate_mapping, validate_phase2_transition
-from grammar_kt.records import FORBIDDEN_BASE_EVENT_FIELDS, kc_opportunity, observable_base_event
+from grammar_kt.records import (
+    FORBIDDEN_BASE_EVENT_FIELDS,
+    compositional_base_event,
+    kc_opportunity,
+    observable_base_event,
+)
 from grammar_kt.runner import PIPELINE, STAGE_NAMES, run_experiment
 
 
@@ -40,6 +45,14 @@ class ExperimentTests(unittest.TestCase):
         self.assertEqual(parent, "base")
         self.assertEqual(settings["kc_selection"]["mode"], "development_frozen_full_cell")
         self.assertEqual(settings["items"], load_experiment("base")[0]["items"])
+
+    def test_development_frozen_factorized_is_an_explicit_inductive_control(self) -> None:
+        settings, parent = load_experiment("kc_factorized_dev_frozen")
+        self.assertEqual(parent, "base")
+        self.assertEqual(settings["kc_selection"]["mode"], "development_frozen_factorized")
+        self.assertEqual(
+            settings["kc_selection"]["policy"], "modules/kc/policies/factorized.json"
+        )
 
     def test_experiments_are_loaded_only_by_short_name(self) -> None:
         with self.assertRaisesRegex(ValueError, "short name"):
@@ -523,7 +536,7 @@ class ComponentTests(unittest.TestCase):
             self.assertFalse(FORBIDDEN_BASE_EVENT_FIELDS & set(row))
             observable_base_event(row)
 
-    def test_five_ontologies_share_fixed_events_but_change_candidate_annotations(self) -> None:
+    def test_six_ontologies_share_temporal_and_compositional_fixed_events(self) -> None:
         fixture = read_json(ROOT / "modules/kc_selection/fixtures/core.json")
         frames = {
             row["predicate_frame_id"]: row for row in read_jsonl(realisation.LEXICON)
@@ -571,8 +584,31 @@ class ComponentTests(unittest.TestCase):
             copy.deepcopy(fixture),
             read_json(ROOT / "modules/kc_selection/configs/deterministic_v0.json"),
         )["selected_policy"]
+        development_cells = [
+            row
+            for row in fixture["canonical_cells"]
+            if next(
+                split["split"]
+                for split in fixture["cell_splits"]
+                if split["canonical_cell_id"] == row["canonical_cell_id"]
+            )
+            == "development"
+        ]
+        development_items = [
+            row
+            for row in bank
+            if row["generation_metadata"]["canonical_split"] == "development"
+        ]
+        factorized_dev_frozen, _support = (
+            kc_selection.development_frozen_factorized_policy(
+                ROOT / "modules/kc/policies/factorized.json",
+                development_cells,
+                development_items,
+            )
+        )
         policies = {
             "SELECTED_STRUCTURAL": selected,
+            "FACTORIZED_DEV_FROZEN": factorized_dev_frozen,
             "CURRENT_FACTORIZED": kc.load_policy(
                 ROOT / "modules/kc/policies/factorized.json"
             ),
@@ -580,16 +616,7 @@ class ComponentTests(unittest.TestCase):
                 ROOT / "modules/kc/policies/factorized_plus_interactions.json"
             ),
             "FULL_CELL_DEV_FROZEN": kc_selection.development_frozen_full_cell_policy(
-                [
-                    row
-                    for row in fixture["canonical_cells"]
-                    if next(
-                        split["split"]
-                        for split in fixture["cell_splits"]
-                        if split["canonical_cell_id"] == row["canonical_cell_id"]
-                    )
-                    == "development"
-                ]
+                development_cells
             ),
             "FULL_CELL_ALL_TRANSDUCTIVE": kc.load_policy(
                 ROOT / "modules/kc/policies/full_cell.json"
@@ -602,6 +629,9 @@ class ComponentTests(unittest.TestCase):
         q_edges = {}
         histories = {}
         uncovered_events = {}
+        phase_d_hashes = {}
+        phase_d_boundaries = {}
+        phase_d_histories = {}
         for label, policy in policies.items():
             base_events, _oracle, _learners, _parameters = simulation.simulate_records(
                 params,
@@ -649,9 +679,50 @@ class ComponentTests(unittest.TestCase):
                 for row in projected
             )
             uncovered_events[label] = sum(not row["kc_ids"] for row in projected)
+            phase_d = simulation.simulate_compositional_records(
+                params,
+                item_by_id,
+                oracle_by_item,
+                oracle_feature_ids,
+            )
+            probes = (
+                phase_d["compositional_probe_events"]
+                + phase_d["novel_feature_probe_events"]
+            )
+            phase_d_hashes[label] = simulation.event_stream_fingerprint(probes)
+            phase_d_boundaries[label] = [
+                (
+                    row["event_id"],
+                    row["learner_id"],
+                    row["item_id"],
+                    row["correct"],
+                    row["item_difficulty"],
+                    row["canonical_split"],
+                )
+                for row in probes
+            ]
+            acquisition_projection, probe_projection, _supported, _counts = (
+                kt.project_compositional_interactions(
+                    phase_d["acquisition_events"], probes, item_projection
+                )
+            )
+            self.assertTrue(
+                all(row["canonical_split"] == "development" for row in acquisition_projection)
+            )
+            phase_d_histories[label] = tuple(
+                (
+                    row["event_id"],
+                    tuple(row["kc_ids"]),
+                    tuple(row["opportunity_indices"].items()),
+                    tuple(row["cold_kc_ids"]),
+                )
+                for row in probe_projection
+            )
 
         self.assertEqual(len(set(fixed_hashes.values())), 1)
+        self.assertEqual(len(set(phase_d_hashes.values())), 1)
         self.assertEqual(len({tuple(rows) for rows in fixed_rows.values()}), 1)
+        self.assertEqual(len({tuple(rows) for rows in phase_d_boundaries.values()}), 1)
         self.assertEqual(items.item_bank_fingerprint(bank), items.item_bank_fingerprint(copy.deepcopy(bank)))
         self.assertNotEqual(q_columns["SELECTED_STRUCTURAL"], q_columns["CURRENT_FACTORIZED"])
         self.assertNotEqual(
@@ -661,6 +732,10 @@ class ComponentTests(unittest.TestCase):
         self.assertNotEqual(
             histories["CURRENT_FACTORIZED"],
             histories["CURRENT_FACTORIZED_PLUS_INTERACTIONS"],
+        )
+        self.assertNotEqual(
+            phase_d_histories["CURRENT_FACTORIZED"],
+            phase_d_histories["CURRENT_FACTORIZED_PLUS_INTERACTIONS"],
         )
         self.assertGreater(
             uncovered_events["FULL_CELL_DEV_FROZEN"],
@@ -693,6 +768,213 @@ class ComponentTests(unittest.TestCase):
             ],
             1,
         )
+
+    def test_phase_d_acquisition_and_oracle_probes_are_strictly_frozen(self) -> None:
+        fixture = read_json(ROOT / "modules/kc_selection/fixtures/core.json")
+        frames = {row["predicate_frame_id"]: row for row in read_jsonl(realisation.LEXICON)}
+        opportunities = items.build_item_opportunities(
+            fixture["canonical_cells"],
+            fixture["cell_splits"],
+            frames,
+            read_json(ROOT / "modules/items/configs/fixed_bank_v0.json"),
+        )
+        bank = items.construct_items(
+            opportunities,
+            frames,
+            (ROOT / "modules/items/families/controlled_transformation.txt").read_text(
+                encoding="utf-8"
+            ),
+        )
+        params = read_json(ROOT / "modules/simulation/configs/structural_oracle_v0.json")
+        params.update(
+            seed=20260817,
+            learners_per_profile=2,
+            profiles={
+                "fixture": {
+                    "beta_alpha": 2.0,
+                    "beta_beta": 2.0,
+                    "learning_rate": 0.05,
+                }
+            },
+        )
+        oracle_projection, feature_ids = simulation.project_oracle_items(
+            bank, fixture["canonical_cells"], params
+        )
+        oracle_by_item = {
+            row["item_id"]: row["oracle_feature_ids"] for row in oracle_projection
+        }
+        item_by_id = {row["item_id"]: row for row in bank}
+        result = simulation.simulate_compositional_records(
+            params, item_by_id, oracle_by_item, feature_ids
+        )
+        self.assertTrue(result["acquisition_events"])
+        self.assertTrue(
+            all(
+                row["canonical_split"] == "development"
+                and row["evaluation_role"] == "acquisition"
+                for row in result["acquisition_events"]
+            )
+        )
+        frozen = {
+            row["learner_id"]: row["post_development_mastery"]
+            for row in result["learner_frozen_oracle_state"]
+        }
+        for row in result["oracle_probe_evidence"]:
+            self.assertFalse(row["oracle_update_applied"])
+            self.assertEqual(
+                row["frozen_post_development_mastery"],
+                {
+                    feature_id: frozen[row["learner_id"]][feature_id]
+                    for feature_id in row["oracle_feature_ids"]
+                },
+            )
+        reversed_result = simulation.simulate_compositional_records(
+            params,
+            dict(reversed(list(item_by_id.items()))),
+            dict(reversed(list(oracle_by_item.items()))),
+            feature_ids,
+        )
+        self.assertEqual(
+            result["compositional_probe_events"],
+            reversed_result["compositional_probe_events"],
+        )
+        self.assertEqual(
+            result["oracle_probe_evidence"], reversed_result["oracle_probe_evidence"]
+        )
+        leaked = {**result["compositional_probe_events"][0], "pre_mastery": {}}
+        with self.assertRaisesRegex(ValueError, "leakage"):
+            compositional_base_event(leaked)
+
+    def test_phase_d_candidate_probe_state_is_frozen_and_labels_cold_or_uncovered(self) -> None:
+        fixture = read_json(ROOT / "modules/kc_selection/fixtures/core.json")
+        frames = {row["predicate_frame_id"]: row for row in read_jsonl(realisation.LEXICON)}
+        bank = items.construct_items(
+            items.build_item_opportunities(
+                fixture["canonical_cells"],
+                fixture["cell_splits"],
+                frames,
+                read_json(ROOT / "modules/items/configs/fixed_bank_v0.json"),
+            ),
+            frames,
+            (ROOT / "modules/items/families/controlled_transformation.txt").read_text(
+                encoding="utf-8"
+            ),
+        )
+        params = read_json(ROOT / "modules/simulation/configs/structural_oracle_v0.json")
+        params.update(
+            seed=20260817,
+            learners_per_profile=1,
+            profiles={
+                "fixture": {
+                    "beta_alpha": 2.0,
+                    "beta_beta": 2.0,
+                    "learning_rate": 0.05,
+                }
+            },
+        )
+        oracle_projection, feature_ids = simulation.project_oracle_items(
+            bank, fixture["canonical_cells"], params
+        )
+        generated = simulation.simulate_compositional_records(
+            params,
+            {row["item_id"]: row for row in bank},
+            {row["item_id"]: row["oracle_feature_ids"] for row in oracle_projection},
+            feature_ids,
+        )
+        probes = generated["compositional_probe_events"] + generated[
+            "novel_feature_probe_events"
+        ]
+        factorized_projection, _cards = kc.project_items(
+            bank,
+            fixture["canonical_cells"],
+            kc.load_policy(ROOT / "modules/kc/policies/factorized.json"),
+        )
+        acquisition, projected, supported, _counts = kt.project_compositional_interactions(
+            generated["acquisition_events"], probes, factorized_projection
+        )
+        novel = [row for row in projected if row["canonical_split"] == "novel_feature_holdout"]
+        self.assertTrue(novel)
+        self.assertTrue(all(row["covered"] and row["cold_kc_ids"] for row in novel))
+        self.assertTrue(all(not row["fully_development_supported"] for row in novel))
+        _acq_reversed, projected_reversed, _supported, _counts = (
+            kt.project_compositional_interactions(
+                generated["acquisition_events"], list(reversed(probes)), factorized_projection
+            )
+        )
+        self.assertEqual(
+            {row["event_id"]: row for row in projected},
+            {row["event_id"]: row for row in projected_reversed},
+        )
+        states = kt.frozen_development_statistics(acquisition)
+        kc_ids = sorted({kc_id for row in factorized_projection for kc_id in row["kc_ids"]})
+        _features, _targets, predictions, _fallback = kt.frozen_probe_features(
+            projected, kc_ids, states, alpha=1.0, beta=1.0, cold_prior=0.5
+        )
+        changed = copy.deepcopy(projected)
+        changed[0]["correct"] = 1 - changed[0]["correct"]
+        _changed_features, _changed_targets, changed_predictions, _changed_fallback = (
+            kt.frozen_probe_features(
+                changed, kc_ids, states, alpha=1.0, beta=1.0, cold_prior=0.5
+            )
+        )
+        self.assertEqual(predictions.tolist(), changed_predictions.tolist())
+        selected = kc_selection.evaluate_fixture(
+            copy.deepcopy(fixture),
+            read_json(ROOT / "modules/kc_selection/configs/deterministic_v0.json"),
+        )["selected_policy"]
+        selected_projection, _cards = kc.project_items(
+            bank, fixture["canonical_cells"], selected
+        )
+        _acquisition, selected_probes, _supported, _counts = (
+            kt.project_compositional_interactions(
+                generated["acquisition_events"], probes, selected_projection
+            )
+        )
+        selected_novel = [
+            row
+            for row in selected_probes
+            if row["canonical_split"] == "novel_feature_holdout"
+        ]
+        self.assertTrue(all(not row["covered"] and row["kc_ids"] == [] for row in selected_novel))
+
+    def test_phase_d_bootstrap_is_paired_at_learner_level_and_deterministic(self) -> None:
+        left = [
+            {
+                "event_id": f"E{learner}{item}",
+                "learner_id": learner,
+                "item_id": item,
+                "probe_type": "compositional_holdout",
+                "correct": correct,
+                "empirical": probability,
+            }
+            for learner, values in {
+                "L1": (("I1", 1, 0.8), ("I2", 0, 0.3)),
+                "L2": (("I1", 0, 0.2), ("I2", 1, 0.7)),
+            }.items()
+            for item, correct, probability in values
+        ]
+        right = [{**row, "empirical": 0.5} for row in left]
+        first = kt.learner_bootstrap_log_loss_difference(
+            left,
+            right,
+            technique="empirical",
+            probe_type="compositional_holdout",
+            repetitions=100,
+            seed=17,
+        )
+        second = kt.learner_bootstrap_log_loss_difference(
+            left,
+            right,
+            technique="empirical",
+            probe_type="compositional_holdout",
+            repetitions=100,
+            seed=17,
+        )
+        self.assertEqual(first, second)
+        self.assertEqual(first["learners"], 2)
+        self.assertEqual(first["events"], 4)
+        self.assertEqual(first["sampling_unit"].split(";")[0], "learner")
+        self.assertLess(first["mean_difference"], 0)
 
     def test_simulation_split_boundaries_scale_with_item_count(self) -> None:
         self.assertEqual(simulation.split_boundaries(90, 0.6, 0.2), (54, 72))
@@ -820,6 +1102,52 @@ class KCSelectionTests(unittest.TestCase):
             {rule["kc_id"] for rule in policy["rules"]},
             {row["kc_id"] for row in cards},
         )
+
+    def test_factorized_dev_frozen_uses_development_item_support_only(self) -> None:
+        partition, _discovery = self.discover()
+        opportunities = items.build_item_opportunities(
+            self.fixture["canonical_cells"],
+            self.fixture["cell_splits"],
+            self.frames,
+            read_json(ROOT / "modules/items/configs/fixed_bank_v0.json"),
+        )
+        bank = items.construct_items(
+            opportunities,
+            self.frames,
+            (ROOT / "modules/items/families/controlled_transformation.txt").read_text(
+                encoding="utf-8"
+            ),
+        )
+        development_items = [
+            row
+            for row in bank
+            if row["generation_metadata"]["canonical_split"] == "development"
+        ]
+        first, support = kc_selection.development_frozen_factorized_policy(
+            ROOT / "modules/kc/policies/factorized.json",
+            partition["development_cells"],
+            development_items,
+        )
+        heldout_mutated = copy.deepcopy(bank)
+        for row in heldout_mutated:
+            if row["generation_metadata"]["canonical_split"] != "development":
+                row["realization_evidence"]["operations"] = ["heldout_only_operation"]
+                row["source_descriptor_ids"] = ["HELDOUT_MUTATION"]
+        second, second_support = kc_selection.development_frozen_factorized_policy(
+            ROOT / "modules/kc/policies/factorized.json",
+            partition["development_cells"],
+            [
+                row
+                for row in heldout_mutated
+                if row["generation_metadata"]["canonical_split"] == "development"
+            ],
+        )
+        self.assertEqual(first, second)
+        self.assertEqual(support, second_support)
+        selected = {rule["kc_id"] for rule in first["rules"]}
+        self.assertNotIn("KC_MODAL_WOULD", selected)
+        self.assertIn("KC_ASPECT_PERFECT", selected)
+        self.assertFalse(first["selection_metadata"]["held_out_content_used"])
 
     def test_perfect_progressive_components_and_duplicate_alternatives_are_explicit(self) -> None:
         _partition, discovery = self.discover()

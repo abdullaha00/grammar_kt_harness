@@ -12,7 +12,13 @@ from pathlib import Path
 sys.path.remove(str(Path(__file__).resolve().parent))
 
 from grammar_kt.io import ROOT, read_json, read_jsonl
-from grammar_kt.records import grammar_cell, observable_base_event, projected_kt_interaction
+from grammar_kt.records import (
+    compositional_base_event,
+    compositional_projected_interaction,
+    grammar_cell,
+    observable_base_event,
+    projected_kt_interaction,
+)
 from grammar_kt.runner import STAGE_NAMES
 
 
@@ -33,6 +39,7 @@ def validate(run: Path) -> dict:
     for audit_file, label in (
         (run / "qmatrix" / "audit.json", "Q-matrix"),
         (run / "simulation" / "audit.json", "simulation"),
+        (run / "simulation" / "compositional" / "audit.json", "compositional simulation"),
     ):
         if audit_file.is_file():
             audit = read_json(audit_file)
@@ -50,6 +57,29 @@ def validate(run: Path) -> dict:
                 projected_kt_interaction(row, label=row.get("event_id", "KT interaction"))
             except ValueError as error:
                 errors.append(str(error))
+    for filename in (
+        run / "simulation/compositional/acquisition_events.jsonl",
+        run / "simulation/compositional/compositional_probe_events.jsonl",
+        run / "simulation/compositional/novel_feature_probe_events.jsonl",
+    ):
+        if filename.is_file():
+            for row in read_jsonl(filename):
+                try:
+                    compositional_base_event(row, label=row.get("event_id", "Phase-D event"))
+                except ValueError as error:
+                    errors.append(str(error))
+    for filename in (
+        run / "kt/compositional/acquisition_projected_interactions.jsonl",
+        run / "kt/compositional/probe_projection.jsonl",
+    ):
+        if filename.is_file():
+            for row in read_jsonl(filename):
+                try:
+                    compositional_projected_interaction(
+                        row, label=row.get("event_id", "Phase-D KT interaction")
+                    )
+                except ValueError as error:
+                    errors.append(str(error))
     return {"status": "PASS" if not errors else "FAIL", "errors": errors, "error_count": len(errors)}
 
 

@@ -134,6 +134,93 @@ def inspect_kt(run: Path, identifier: str) -> dict[str, Any]:
     }
 
 
+def inspect_probe(run: Path, identifier: str) -> dict[str, Any]:
+    simulation_directory = run / "simulation/compositional"
+    probe_events = read_jsonl(
+        simulation_directory / "compositional_probe_events.jsonl"
+    ) + read_jsonl(simulation_directory / "novel_feature_probe_events.jsonl")
+    event = one(probe_events, "event_id", identifier)
+    item = one(
+        read_jsonl(run / "items/validation/accepted_items.jsonl"),
+        "item_id",
+        event["item_id"],
+    )
+    cell = one(
+        read_jsonl(run / "canonical/canonical_cells.jsonl"),
+        "canonical_cell_id",
+        event["canonical_cell_id"],
+    )
+    oracle_item = one(
+        read_jsonl(run / "simulation/oracle_item_projection.jsonl"),
+        "item_id",
+        event["item_id"],
+    )
+    private_oracle = one(
+        read_jsonl(simulation_directory / "oracle_probe_evidence.jsonl"),
+        "event_id",
+        identifier,
+    )
+    item_projection = one(
+        read_jsonl(run / "kc/item_kc_projection.jsonl"),
+        "item_id",
+        event["item_id"],
+    )
+    projected_probe = one(
+        read_jsonl(run / "kt/compositional/probe_projection.jsonl"),
+        "event_id",
+        identifier,
+    )
+    candidate_state = one(
+        read_jsonl(run / "kt/compositional/learner_frozen_candidate_state.jsonl"),
+        "learner_id",
+        event["learner_id"],
+    )
+    prediction = one(
+        read_jsonl(run / "kt/compositional/predictions.jsonl"),
+        "event_id",
+        identifier,
+    )
+    active_state = {
+        kc_id: {
+            "development_attempts": candidate_state["kc_attempts"].get(kc_id, 0),
+            "development_correct": candidate_state["kc_correct"].get(kc_id, 0),
+            "frozen_bkt_mastery": candidate_state["bkt_mastery"].get(kc_id),
+            "development_supported": kc_id
+            in projected_probe["development_supported_kc_ids"],
+            "cold": kc_id in projected_probe["cold_kc_ids"],
+        }
+        for kc_id in projected_probe["kc_ids"]
+    }
+    return {
+        "fixed_probe_boundary": {
+            "item_and_realisation_evidence": item,
+            "canonical_cell": cell,
+            "canonical_split": event["canonical_split"],
+            "fixed_observable_probe_outcome": event,
+        },
+        "private_data_generating_evidence_not_consumed_by_kt": {
+            "oracle_item_projection": oracle_item,
+            "oracle_probe_evidence": private_oracle,
+            "warning": "private structural-oracle evidence is debugging information, not model input",
+        },
+        "candidate_representation_boundary": {
+            "item_kc_projection": item_projection,
+            "development_support_and_frozen_history": projected_probe,
+            "active_kc_frozen_state": active_state,
+            "learner_global_development_state": {
+                "attempts": candidate_state["development_attempts"],
+                "correct": candidate_state["development_correct"],
+            },
+            "prediction": prediction,
+        },
+        "invariants": {
+            "oracle_used_by_kt": False,
+            "probe_updated_oracle_state": private_oracle["oracle_update_applied"],
+            "probe_updated_candidate_state": candidate_state["probe_updates_applied"],
+        },
+    }
+
+
 def inspect_qmatrix(run: Path, identifier: str) -> dict[str, Any]:
     projection = one(
         read_jsonl(run / "kc" / "item_kc_projection.jsonl"),
@@ -235,7 +322,7 @@ def inspect_trace(run: Path, identifier: str) -> dict[str, Any]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Inspect one saved experimental unit.")
-    parser.add_argument("kind", choices=("normalisation", "kc", "item", "qmatrix", "event", "kt", "trace"))
+    parser.add_argument("kind", choices=("normalisation", "kc", "item", "qmatrix", "event", "kt", "probe", "trace"))
     parser.add_argument("identifier")
     parser.add_argument("--run", default="base")
     args = parser.parse_args()
@@ -252,6 +339,8 @@ def main() -> int:
         result = inspect_qmatrix(run, args.identifier)
     elif args.kind in {"event", "kt"}:
         result = inspect_kt(run, args.identifier)
+    elif args.kind == "probe":
+        result = inspect_probe(run, args.identifier)
     else:
         result = inspect_trace(run, args.identifier)
     print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))

@@ -14,5 +14,9 @@
   "FULL_CELL_DEV_FROZEN": {
     "policy": null,
     "status": "generated inside kc_selection from development cells only; honest memorisation control"
+  },
+  "FACTORIZED_DEV_FROZEN": {
+    "policy": "modules/kc/policies/factorized.json",
+    "status": "inductive expert-factor baseline retaining rules with development-item support only"
   }
 }

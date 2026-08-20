@@ -45,6 +45,12 @@
   ],
   "learners_per_profile": 60,
   "item_passes_per_learner": 2,
+  "compositional_protocol": {
+    "protocol_id": "DEVELOPMENT_ACQUISITION_FROZEN_PROBES_v0",
+    "seed_offset": 1000003,
+    "acquisition_passes": 2,
+    "probe_repetitions": 1
+  },
   "train_fraction": 0.6,
   "validation_fraction": 0.2,
   "difficulty_min": -0.8,
