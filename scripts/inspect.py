@@ -12,8 +12,7 @@ from typing import Any
 # Prevent this file from shadowing Python's standard inspect module in dependencies.
 sys.path.remove(str(Path(__file__).resolve().parent))
 
-from grammar_kt import kc
-from grammar_kt.io import ROOT, read_json, read_jsonl, read_yaml, repo_path
+from grammar_kt.io import ROOT, read_json, read_jsonl
 
 
 def one(rows: list[dict[str, Any]], key: str, value: str) -> dict[str, Any]:
@@ -47,10 +46,18 @@ def inspect_normalisation(run: Path, identifier: str) -> dict[str, Any]:
 
 
 def inspect_kc(run: Path, identifier: str) -> dict[str, Any]:
-    opportunity = one(read_jsonl(run / "kc" / "cell_kc_projection.jsonl"), "canonical_cell_id", identifier)
-    experiment = read_yaml(run / "experiment.yaml")
-    policy = kc.load_policy(repo_path(experiment["kc"]["policy"]))
-    return {"opportunity": opportunity, "explanation": kc.apply_policy(policy, opportunity)}
+    projections = read_jsonl(run / "kc" / "item_kc_projection.jsonl")
+    matches = [
+        row for row in projections
+        if row["item_id"] == identifier or row["canonical_cell_id"] == identifier
+    ]
+    if not matches:
+        raise KeyError(identifier)
+    return {
+        "frozen_policy": read_json(run / "kc_selection" / "selected_policy.json"),
+        "authoritative_projection_unit": "accepted concrete item realization",
+        "item_projections": matches,
+    }
 
 
 def inspect_item(run: Path, identifier: str) -> dict[str, Any]:
@@ -78,14 +85,58 @@ def inspect_item(run: Path, identifier: str) -> dict[str, Any]:
 
 
 def inspect_kt(run: Path, identifier: str) -> dict[str, Any]:
-    event = one(read_jsonl(run / "simulation" / "observable_interactions.jsonl"), "event_id", identifier)
+    event = one(read_jsonl(run / "simulation" / "base_events.jsonl"), "event_id", identifier)
+    item = one(
+        read_jsonl(run / "items" / "validation" / "accepted_items.jsonl"),
+        "item_id",
+        event["item_id"],
+    )
+    cell = one(
+        read_jsonl(run / "canonical" / "canonical_cells.jsonl"),
+        "canonical_cell_id",
+        event["canonical_cell_id"],
+    )
+    oracle_projection = one(
+        read_jsonl(run / "simulation" / "oracle_item_projection.jsonl"),
+        "item_id",
+        event["item_id"],
+    )
+    oracle_event = one(
+        read_jsonl(run / "simulation" / "oracle_interactions.jsonl"),
+        "event_id",
+        identifier,
+    )
+    item_projection = one(
+        read_jsonl(run / "kc" / "item_kc_projection.jsonl"),
+        "item_id",
+        event["item_id"],
+    )
+    projected = one(
+        read_jsonl(run / "kt" / "projected_interactions.jsonl"),
+        "event_id",
+        identifier,
+    )
     prediction = one(read_jsonl(run / "kt" / "predictions.jsonl"), "event_id", identifier)
-    return {"observable_interaction": event, "prediction": prediction, "oracle_used_by_kt": False}
+    return {
+        "fixed_data_boundary": {
+            "item_and_realisation_evidence": item,
+            "canonical_cell": cell,
+            "base_event": event,
+            "oracle_item_projection": oracle_projection,
+            "oracle_event_private_to_simulator": oracle_event,
+        },
+        "candidate_representation_boundary": {
+            "item_kc_projection": item_projection,
+            "projected_kt_interaction": projected,
+            "prediction": prediction,
+        },
+        "oracle_used_by_kt": False,
+    }
 
 
 def inspect_qmatrix(run: Path, identifier: str) -> dict[str, Any]:
     projection = one(
-        read_jsonl(run / "qmatrix" / "item_kc_projection.jsonl"),
+        read_jsonl(run / "kc" / "item_kc_projection.jsonl"),
         "item_id",
         identifier,
     )
@@ -104,10 +155,13 @@ def inspect_qmatrix(run: Path, identifier: str) -> dict[str, Any]:
 
 
 def inspect_trace(run: Path, identifier: str) -> dict[str, Any]:
-    """Reconstruct an item lineage by joining stable IDs in saved stage outputs."""
+    """Reconstruct an item or fixed-event lineage by joining saved stable IDs."""
 
     candidates = read_jsonl(run / "items" / "generation" / "candidate_items.jsonl")
-    item = one(candidates, "item_id", identifier)
+    base_events = read_jsonl(run / "simulation" / "base_events.jsonl")
+    event = next((row for row in base_events if row["event_id"] == identifier), None)
+    item_id = event["item_id"] if event else identifier
+    item = one(candidates, "item_id", item_id)
     cell_id = item["canonical_cell_id"]
     canonical_cell = one(read_jsonl(run / "canonical" / "canonical_cells.jsonl"), "canonical_cell_id", cell_id)
     source_edges = [
@@ -131,25 +185,25 @@ def inspect_trace(run: Path, identifier: str) -> dict[str, Any]:
         for row in read_jsonl(run / "realisation" / "realisations.jsonl")
         if row["spec"]["canonical_cell_id"] == cell_id
     ]
-    cell_projection = one(
-        read_jsonl(run / "kc" / "cell_kc_projection.jsonl"),
-        "canonical_cell_id",
-        cell_id,
-    )
     item_projection = one(
-        read_jsonl(run / "qmatrix" / "item_kc_projection.jsonl"),
+        read_jsonl(run / "kc" / "item_kc_projection.jsonl"),
         "item_id",
-        identifier,
+        item_id,
     )
     q_edges = [
         row
         for row in read_jsonl(run / "qmatrix" / "item_kc_edges.jsonl")
-        if row["item_id"] == identifier
+        if row["item_id"] == item_id
     ]
-    interactions = [
-        row
-        for row in read_jsonl(run / "simulation" / "observable_interactions.jsonl")
-        if row["item_id"] == identifier
+    interactions = [row for row in base_events if row["item_id"] == item_id]
+    oracle_item_projection = one(
+        read_jsonl(run / "simulation" / "oracle_item_projection.jsonl"),
+        "item_id",
+        item_id,
+    )
+    projected_interactions = [
+        row for row in read_jsonl(run / "kt" / "projected_interactions.jsonl")
+        if row["item_id"] == item_id
     ]
     return {
         "source_descriptors": source_descriptors,
@@ -157,17 +211,31 @@ def inspect_trace(run: Path, identifier: str) -> dict[str, Any]:
         "canonical_cell": canonical_cell,
         "source_cell_edges": source_edges,
         "supporting_realisations": realisations,
-        "cell_kc_projection": cell_projection,
-        "item_kc_projection": item_projection,
         "item": item,
-        "q_edges": q_edges,
-        "interactions": {"count": len(interactions), "first_five": interactions[:5]},
+        "fixed_simulation": {
+            "oracle_item_projection": oracle_item_projection,
+            "base_event": event,
+            "item_events": {"count": len(interactions), "first_five": interactions[:5]},
+        },
+        "candidate_ontology": {
+            "item_kc_projection": item_projection,
+            "q_edges": q_edges,
+            "projected_event": next(
+                (row for row in projected_interactions if event and row["event_id"] == event["event_id"]),
+                None,
+            ),
+            "item_projected_events": {
+                "count": len(projected_interactions),
+                "first_five": projected_interactions[:5],
+            },
+        },
+        "oracle_model_boundary": "KT reads base events plus candidate KC projection; it never reads oracle artifacts",
     }
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Inspect one saved experimental unit.")
-    parser.add_argument("kind", choices=("normalisation", "kc", "item", "qmatrix", "kt", "trace"))
+    parser.add_argument("kind", choices=("normalisation", "kc", "item", "qmatrix", "event", "kt", "trace"))
     parser.add_argument("identifier")
     parser.add_argument("--run", default="base")
     args = parser.parse_args()
@@ -182,7 +250,7 @@ def main() -> int:
         result = inspect_item(run, args.identifier)
     elif args.kind == "qmatrix":
         result = inspect_qmatrix(run, args.identifier)
-    elif args.kind == "kt":
+    elif args.kind in {"event", "kt"}:
         result = inspect_kt(run, args.identifier)
     else:
         result = inspect_trace(run, args.identifier)

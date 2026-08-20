@@ -20,7 +20,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Show one scientific component's input and output.")
     parser.add_argument(
         "stage",
-        choices=("source", "normalisation", "canonical", "realisation", "kc_selection", "kc", "items", "simulation"),
+        choices=("source", "normalisation", "canonical", "realisation", "items", "simulation", "kc_selection", "kc"),
     )
     inputs = parser.add_mutually_exclusive_group()
     inputs.add_argument("--fixture", nargs="?", const="", help="fixture label; omit the label for the first fixture")
@@ -39,9 +39,14 @@ def main() -> int:
             parser.error("simulation uses its declared fixture files; choose a learner with --learner")
         fixture_dir = ROOT / "modules" / "simulation" / "fixtures"
         fixture_items = read_jsonl(fixture_dir / "accepted_items.jsonl")
-        kc_ids, q_by_item = simulation.read_q_matrix(fixture_dir / "q_matrix.csv")
         parameters = read_json(settings["simulation"]["parameters"])
         parameters["seed"] = int(settings["simulation"]["seed"])
+        # This fixture exercises the fixed-oracle response equation directly;
+        # neither a candidate KC policy nor a Q-matrix is an input.
+        oracle_feature_ids = ["ORACLE_FINITE_FORM"]
+        oracle_by_item = {
+            row["item_id"]: list(oracle_feature_ids) for row in fixture_items
+        }
         event_count = len(fixture_items) * int(parameters["item_passes_per_learner"])
         train_end, validation_end = simulation.split_boundaries(
             event_count,
@@ -51,8 +56,8 @@ def main() -> int:
         observed, _oracle, learners, _learner_oracle = simulation.simulate_records(
             parameters,
             {row["item_id"]: row for row in fixture_items},
-            q_by_item,
-            kc_ids,
+            oracle_by_item,
+            oracle_feature_ids,
             train_end,
             validation_end,
             target_learner=args.learner,
@@ -60,12 +65,12 @@ def main() -> int:
         before = {
             "learner_id": args.learner,
             "items": str(fixture_dir / "accepted_items.jsonl"),
-            "q_matrix": str(fixture_dir / "q_matrix.csv"),
+            "fixed_oracle_projection": oracle_by_item,
             "parameters": settings["simulation"],
         }
         after = {
             "learner": learners[0],
-            "observable_interactions": observed,
+            "base_events": observed,
             "oracle_retained_separately": True,
             "fixture_items": len(fixture_items),
         }

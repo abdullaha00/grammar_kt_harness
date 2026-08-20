@@ -28,7 +28,6 @@ kc_selection:
 
 kc:
   policy: modules/kc/policies/factorized.json
-  selected_policy: kc_selection/selected_policy.json
 
 items:
   family_prompt: modules/items/families/controlled_transformation.txt
@@ -41,7 +40,7 @@ items:
     repeated_diagnostics: 5
 
 simulation:
-  parameters: modules/simulation/configs/default.json
+  parameters: modules/simulation/configs/structural_oracle_v0.json
   seed: 20260817
 
 kt:

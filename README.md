@@ -4,7 +4,7 @@ This repository is a small research laboratory for the fixed pipeline:
 
 ```text
 source → normalisation → canonical → realisation → fixed item bank
-       → kc_selection → kc → policy-projected Q-matrix → simulation → KT
+       → fixed simulation → kc_selection → kc → Q-matrix → KT
 ```
 
 The scientific methodology remains explicit and replaceable:
@@ -85,9 +85,9 @@ factorized, interaction, and transductive full-cell policies remain explicit
 baselines, and selection evaluation also constructs an honest full-cell policy
 from development cells only.
 
-KC selection deliberately does not use item, Q-matrix, simulation, or KT
-metrics. Phase B makes item generation ontology-independent; simulated latent
-variables remain ontology-dependent until the separate Phase C redesign.
+KC selection deliberately does not read item-bank, simulation, Q-matrix, or KT
+artifacts. The simulator now runs before selection, so selection and every
+ontology variant reuse the same fixed learner-item outcomes by construction.
 
 ## Fixed item bank and KC projection
 
@@ -97,12 +97,13 @@ copular operator sources, and representative finite-agreement profiles. Item
 existence, lexical conditions, prompts, answers, IDs, canonical split, validation,
 and the saved bank SHA-256 contain no KC labels.
 
-After a policy is frozen, `qmatrix` applies it to every accepted concrete item
-realization and writes `item_kc_projection.jsonl`, `projected_kc_inventory.jsonl`,
-the edge list, and the matrix. Operation rules can therefore vary across two
+After a policy is frozen, `kc` applies it to every accepted concrete item
+realization and writes `item_kc_projection.jsonl` and
+`projected_kc_inventory.jsonl`. `qmatrix` mechanically converts that projection
+to its edge list and matrix. Operation rules can therefore vary across two
 items from the same cell while cell-scope rules remain invariant. To compare
-ontologies on the exact parent bank, run variants from `kc_selection`; the item
-stage is copied and its reuse is recorded:
+ontologies on the exact parent data, run variants from `kc_selection`; both the
+item bank and simulation are copied and their reuse is recorded:
 
 ```bash
 python scripts/run.py kc_selected_structural --from kc_selection
@@ -113,9 +114,41 @@ python scripts/compare.py base kc_selected_structural --stage qmatrix
 
 `kc_full_cell_dev_frozen` is the honest exact-cell control compiled from
 development cells only. Its held-out bank rows remain present with zero active
-KCs. The current simulator cannot model a zero-KC row, so it reports and excludes
-those rows as a temporary compatibility measure; this is a remaining Phase C
-confound, not item-bank filtering.
+KCs, and all fixed events for those items remain present. KT reports ontology
+coverage separately and uses a learner-global smoothed pre-event prior as the
+same fallback for every technique on zero-KC events.
+
+## Fixed structural simulation oracle
+
+The simulation stage reads only accepted items, canonical cells, the declared
+simulation config, and its seed. `STRUCTURAL_ORACLE_v0` deterministically maps
+items to ten controlled data-generating dimensions: finite form, finite
+agreement, perfect, progressive and passive dependencies, negation, operator
+inversion, do-support, central modal structure, and imperative structure. These
+are simulation primitives, not claimed human KCs. WH is absent because the
+current fixed inventory has no observed WH item; speculative dimensions are not
+added.
+
+For an item with active oracle set `A`, the pre-response score is the mean of
+the logits of the learner's pre-event mastery over `A`, minus the item-ID-hashed
+difficulty and `oracle_complexity_penalty × (|A|-1)`. The configured sigmoid,
+floor, and span turn that score into a probability. Only oracle mastery is
+updated after an outcome. Evaluated policies, Q columns, and candidate KC counts
+are never inputs.
+
+The public `base_events.jsonl` contains event, learner, item, canonical and
+temporal split identities, timestamp, difficulty, and correctness—no KC or
+oracle fields. Private `oracle_interactions.jsonl` and
+`learner_parameters.oracle.jsonl` retain reproducibility evidence. After KC
+materialisation, KT joins `base_events.jsonl` with
+`kc/item_kc_projection.jsonl` and derives candidate-specific KC opportunity
+indices in `kt/projected_interactions.jsonl`. The fixed event-stream SHA-256 is
+persisted in `simulation/audit.json` and surfaced by `compare.py`.
+
+The current two-pass chronological train/validation/test split is still only a
+technical KT split: compositional-holdout items can occur in temporal training.
+Phase D must enforce a canonical compositional training boundary before any
+claim about KT compositional generalisation.
 
 ## Predefined KC policy experiment example
 
@@ -172,10 +205,10 @@ loader has one interface: `settings, parent = load_experiment("kc_full_cell")`.
 
 Item generation makes one deterministic construction pass per grammatical/item
 opportunity and retains its concrete realization evidence and coverage reason.
-The simulator derives events per learner from the covered Q rows and configured
-item passes, then derives train/validation boundaries from fractions. Q-matrix
-integrity errors remain fatal; uncovered rows, redundancy, density, support,
-scope, and wide rows are saved as scientific diagnostics so policy variants can
-complete without changing the accepted bank.
+The simulator derives events per learner from every fixed accepted item and the
+configured item passes, then derives train/validation boundaries from fractions.
+Q-matrix integrity errors remain fatal; uncovered rows, redundancy, density,
+support, scope, and wide rows are saved as scientific diagnostics so policy
+variants can complete without changing the accepted bank or event stream.
 
 The reference numbers in `reference/current/expected_counts.json` are operational/technical checks, not evidence of human learning, KC cognitive validity, or acquisition order.

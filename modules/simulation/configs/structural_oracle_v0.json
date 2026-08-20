@@ -1,0 +1,62 @@
+{
+  "oracle_representation_id": "STRUCTURAL_ORACLE_v0",
+  "claim_boundary": "Controlled structural data-generating dimensions; not claimed human KCs.",
+  "oracle_features": [
+    {
+      "oracle_feature_id": "ORACLE_FINITE_FORM",
+      "definition": "A finite non-modal clause requires an overt finite-form choice."
+    },
+    {
+      "oracle_feature_id": "ORACLE_FINITE_AGREEMENT",
+      "definition": "The finite site has a person/number-sensitive form in these realization conditions."
+    },
+    {
+      "oracle_feature_id": "ORACLE_PERFECT_DEPENDENCY",
+      "definition": "Perfect HAVE licenses a following past-participle relation."
+    },
+    {
+      "oracle_feature_id": "ORACLE_PROGRESSIVE_DEPENDENCY",
+      "definition": "Progressive BE licenses a following present-participle relation."
+    },
+    {
+      "oracle_feature_id": "ORACLE_PASSIVE_DEPENDENCY",
+      "definition": "Passive BE licenses a lexical past participle and patient realization."
+    },
+    {
+      "oracle_feature_id": "ORACLE_NEGATION",
+      "definition": "Negative polarity requires deterministic NOT placement."
+    },
+    {
+      "oracle_feature_id": "ORACLE_OPERATOR_INVERSION",
+      "definition": "The realized clause places the finite operator before the subject."
+    },
+    {
+      "oracle_feature_id": "ORACLE_DO_SUPPORT",
+      "definition": "The realization inserts DO because no inherent operator is available."
+    },
+    {
+      "oracle_feature_id": "ORACLE_CENTRAL_MODAL",
+      "definition": "A central modal licenses the following base-form chain."
+    },
+    {
+      "oracle_feature_id": "ORACLE_IMPERATIVE",
+      "definition": "The item realizes a source-licensed imperative construction."
+    }
+  ],
+  "learners_per_profile": 60,
+  "item_passes_per_learner": 2,
+  "train_fraction": 0.6,
+  "validation_fraction": 0.2,
+  "difficulty_min": -0.8,
+  "difficulty_max": 0.8,
+  "oracle_complexity_penalty": 0.08,
+  "probability_floor": 0.1,
+  "probability_span": 0.8,
+  "correct_gain": 0.6,
+  "incorrect_gain": 0.35,
+  "profiles": {
+    "low": {"beta_alpha": 2.0, "beta_beta": 6.0, "learning_rate": 0.06},
+    "mixed": {"beta_alpha": 2.0, "beta_beta": 2.0, "learning_rate": 0.05},
+    "high": {"beta_alpha": 6.0, "beta_beta": 2.0, "learning_rate": 0.035}
+  }
+}

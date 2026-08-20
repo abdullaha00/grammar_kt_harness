@@ -20,10 +20,10 @@ PIPELINE = [
     ("canonical", canonical.run),
     ("realisation", realisation.run),
     ("items", items.run),
+    ("simulation", simulation.run),
     ("kc_selection", kc_selection.run),
     ("kc", kc.run),
     ("qmatrix", qmatrix.run),
-    ("simulation", simulation.run),
     ("kt", kt.run),
 ]
 STAGE_NAMES = [name for name, _run_stage in PIPELINE]

@@ -1,11 +1,13 @@
 {
   "metric": "test_auc",
-  "expectation_type": "legacy_only_recompute_after_phase_b",
+  "expectation_type": "informative_phase_c_fixed_data_reference",
   "tolerance": 0.02,
-  "empirical": 0.6216185639374046,
-  "bkt": 0.6141172220157728,
-  "logistic": 0.6668355423427887,
-  "reference_basis": "legacy ontology-dependent 45-item bank; values are not acceptance thresholds for the fixed Phase-B item bank",
-  "current_fixed_bank_metrics_available": false,
+  "empirical": 0.6023206239864594,
+  "bkt": 0.6069967992208443,
+  "logistic": 0.6482325387332101,
+  "reference_basis": "CURRENT_FACTORIZED projected onto the Phase-C 58-item/20880-event STRUCTURAL_ORACLE_v0 fixed dataset; values are descriptive, not ontology-selection thresholds",
+  "item_bank_sha256": "16a220cff3af8c87c2be1fbe13aab990146a38d91b3c0c5b20f64bfa8ae4fbb2",
+  "base_event_stream_sha256": "bf947f559a9e0a686bdc767e9f21ca8512ecfbc393228275b32dd6f85a3cb96e",
+  "current_fixed_bank_metrics_available": true,
   "not_an_ontology_selection_objective": true
 }

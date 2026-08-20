@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .io import read_jsonl, repo_path, stable_id, write_jsonl
+from .io import read_jsonl, write_jsonl
 from .records import kc_opportunity
 
 
@@ -139,52 +139,87 @@ def materialize_inventory(
     return projections, cards
 
 
+def project_items(
+    items: list[dict[str, Any]],
+    cells: list[dict[str, Any]],
+    policy: dict[str, Any],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Materialize one frozen policy over accepted concrete item realizations."""
+
+    cells_by_id = {row["canonical_cell_id"]: row for row in cells}
+    opportunities = []
+    item_id_by_opportunity: dict[str, str] = {}
+    for item in sorted(items, key=lambda row: row["item_id"]):
+        cell_row = cells_by_id.get(item["canonical_cell_id"])
+        if cell_row is None:
+            raise RuntimeError(f"item refers to unknown canonical cell: {item['item_id']}")
+        opportunity_id = item["item_opportunity_id"]
+        if opportunity_id in item_id_by_opportunity:
+            raise RuntimeError(f"duplicate item opportunity: {opportunity_id}")
+        item_id_by_opportunity[opportunity_id] = item["item_id"]
+        opportunities.append(
+            kc_opportunity(
+                {
+                    "opportunity_id": opportunity_id,
+                    "split": item["generation_metadata"]["canonical_split"],
+                    "canonical_cell_id": item["canonical_cell_id"],
+                    "cell": cell_row["cell"],
+                    "realization_spec": item["realization_spec"],
+                    "realization_operations": item["realization_evidence"]["operations"],
+                    "source_descriptor_ids": item["source_descriptor_ids"],
+                    "source_mapping_notes": cell_row["source_mapping_notes"],
+                },
+                label=f"item opportunity {opportunity_id}",
+            )
+        )
+    materialized, cards = materialize_inventory(policy, opportunities)
+    projections = [
+        {
+            "item_id": item_id_by_opportunity[row["opportunity_id"]],
+            "item_opportunity_id": row["opportunity_id"],
+            "canonical_cell_id": row["canonical_cell_id"],
+            "canonical_split": row["split"],
+            "realization_id": row["realization_spec"]["realization_id"],
+            "realization_operations": row["realization_operations"],
+            "kc_ids": row["kc_ids"],
+        }
+        for row in materialized
+    ]
+    return sorted(projections, key=lambda row: row["item_id"]), cards
+
+
 # Full stage
 
 def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     output = run_dir / "kc"
     output.mkdir(parents=True, exist_ok=False)
-    cells = {row["canonical_cell_id"]: row for row in read_jsonl(run_dir / "canonical" / "canonical_cells.jsonl")}
-    selected: dict[str, dict[str, Any]] = {}
-    for row in sorted(read_jsonl(run_dir / "realisation" / "realisations.jsonl"), key=lambda value: value["spec"]["realization_id"]):
-        selected.setdefault(row["spec"]["canonical_cell_id"], row)
-    if set(selected) != set(cells):
-        raise RuntimeError("KC opportunities do not cover every canonical cell")
-    opportunities = []
-    for cell_id in sorted(selected):
-        realisation = selected[cell_id]
-        opportunities.append(kc_opportunity({
-            "opportunity_id": stable_id("OPP", cell_id, realisation["spec"]["realization_id"]),
-            "split": realisation["split"],
-            "canonical_cell_id": cell_id,
-            "cell": cells[cell_id]["cell"],
-            "realization_spec": realisation["spec"],
-            "realization_operations": realisation["derivation"]["operations"],
-            "source_descriptor_ids": cells[cell_id]["source_descriptor_ids"],
-            "source_mapping_notes": cells[cell_id]["source_mapping_notes"],
-        }))
-    selected_policy = settings.get("selected_policy")
-    selected_path = run_dir / selected_policy if selected_policy else None
-    policy_path = selected_path if selected_path is not None and selected_path.is_file() else repo_path(settings["policy"])
+    policy_path = run_dir / "kc_selection" / "selected_policy.json"
+    if not policy_path.is_file():
+        raise FileNotFoundError(
+            "full KC materialization requires kc_selection/selected_policy.json; "
+            "use run_one.py for direct hand-policy application"
+        )
+    items = read_jsonl(run_dir / "items" / "validation" / "accepted_items.jsonl")
+    cells = read_jsonl(run_dir / "canonical" / "canonical_cells.jsonl")
     policy = load_policy(policy_path)
-    projections, cards = materialize_inventory(policy, opportunities)
-    empty_development = [
-        row["canonical_cell_id"]
+    projections, cards = project_items(items, cells, policy)
+    empty_development = sorted(
+        row["item_id"]
         for row in projections
-        if row["split"] == "development" and not row["kc_ids"]
-    ]
+        if row["canonical_split"] == "development" and not row["kc_ids"]
+    )
     if empty_development:
-        raise RuntimeError(f"KC policy leaves development cells uncovered: {empty_development}")
-    empty_holdout = [
-        row["canonical_cell_id"]
+        raise RuntimeError(f"KC policy leaves development items uncovered: {empty_development}")
+    empty_holdout = sorted(
+        row["item_id"]
         for row in projections
-        if row["split"] != "development" and not row["kc_ids"]
-    ]
-    write_jsonl(output / "cell_kc_projection.jsonl", sorted(projections, key=lambda row: row["opportunity_id"]))
-    write_jsonl(output / "kc_inventory.jsonl", sorted(cards, key=lambda row: row["kc_id"]))
+        if row["canonical_split"] != "development" and not row["kc_ids"]
+    )
+    write_jsonl(output / "item_kc_projection.jsonl", projections)
+    write_jsonl(output / "projected_kc_inventory.jsonl", sorted(cards, key=lambda row: row["kc_id"]))
     return {
         "policy": str(policy_path),
-        "opportunities": len(projections),
+        "item_opportunities": len(projections),
         "kcs": len(cards),
-        "uncovered_holdout_cells": empty_holdout,
+        "uncovered_holdout_items": empty_holdout,
     }

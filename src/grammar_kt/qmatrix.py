@@ -1,4 +1,4 @@
-"""Project a frozen KC policy onto the fixed item bank and build its Q-matrix."""
+"""Mechanically convert a frozen item-KC projection into a diagnosed Q-matrix."""
 
 from __future__ import annotations
 
@@ -7,15 +7,13 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from . import kc
 from .io import read_jsonl, write_json, write_jsonl
-from .records import kc_opportunity
 
 
 LOW_SUPPORT_ITEM_COUNT = 5
 
 
-# Frozen policy projection
+# Frozen projection metadata
 
 def _rule_scope(expression: dict[str, Any]) -> str:
     if "operation" in expression:
@@ -23,56 +21,6 @@ def _rule_scope(expression: dict[str, Any]) -> str:
     if "all" in expression and any(_rule_scope(part) == "realisation" for part in expression["all"]):
         return "realisation"
     return "cell"
-
-
-def project_policy(
-    items: list[dict[str, Any]],
-    cells: list[dict[str, Any]],
-    policy: dict[str, Any],
-) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    """Apply one already-frozen policy to each concrete accepted realization."""
-
-    cells_by_id = {row["canonical_cell_id"]: row for row in cells}
-    opportunities = []
-    item_id_by_opportunity: dict[str, str] = {}
-    for item in sorted(items, key=lambda row: row["item_id"]):
-        cell_row = cells_by_id.get(item["canonical_cell_id"])
-        if cell_row is None:
-            raise RuntimeError(f"item refers to unknown canonical cell: {item['item_id']}")
-        opportunity_id = item["item_opportunity_id"]
-        if opportunity_id in item_id_by_opportunity:
-            raise RuntimeError(f"duplicate item opportunity: {opportunity_id}")
-        item_id_by_opportunity[opportunity_id] = item["item_id"]
-        opportunities.append(
-            kc_opportunity(
-                {
-                    "opportunity_id": opportunity_id,
-                    "split": item["generation_metadata"]["canonical_split"],
-                    "canonical_cell_id": item["canonical_cell_id"],
-                    "cell": cell_row["cell"],
-                    "realization_spec": item["realization_spec"],
-                    "realization_operations": item["realization_evidence"]["operations"],
-                    "source_descriptor_ids": item["source_descriptor_ids"],
-                    "source_mapping_notes": cell_row["source_mapping_notes"],
-                },
-                label=f"item opportunity {opportunity_id}",
-            )
-        )
-
-    materialized, cards = kc.materialize_inventory(policy, opportunities)
-    projections = [
-        {
-            "item_id": item_id_by_opportunity[row["opportunity_id"]],
-            "item_opportunity_id": row["opportunity_id"],
-            "canonical_cell_id": row["canonical_cell_id"],
-            "canonical_split": row["split"],
-            "realization_id": row["realization_spec"]["realization_id"],
-            "realization_operations": row["realization_operations"],
-            "kc_ids": row["kc_ids"],
-        }
-        for row in materialized
-    ]
-    return sorted(projections, key=lambda row: row["item_id"]), cards
 
 
 # Matrix integrity and scientific diagnostics
@@ -202,9 +150,8 @@ def build(
 
 def run(run_dir: Path, _settings: dict[str, Any] | None = None) -> dict[str, Any]:
     items = read_jsonl(run_dir / "items" / "validation" / "accepted_items.jsonl")
-    cells = read_jsonl(run_dir / "canonical" / "canonical_cells.jsonl")
-    policy = kc.load_policy(run_dir / "kc_selection" / "selected_policy.json")
-    projections, cards = project_policy(items, cells, policy)
+    projections = read_jsonl(run_dir / "kc" / "item_kc_projection.jsonl")
+    cards = read_jsonl(run_dir / "kc" / "projected_kc_inventory.jsonl")
     kc_ids, rows, edges, audit = build(items, cards, projections)
     if audit["status"] != "PASS":
         raise RuntimeError(
@@ -218,8 +165,6 @@ def run(run_dir: Path, _settings: dict[str, Any] | None = None) -> dict[str, Any
         writer.writerow(["item_id", *kc_ids])
         for item_id, values in rows:
             writer.writerow([item_id, *values])
-    write_jsonl(output / "item_kc_projection.jsonl", projections)
-    write_jsonl(output / "projected_kc_inventory.jsonl", sorted(cards, key=lambda row: row["kc_id"]))
     write_jsonl(
         output / "item_kc_edges.jsonl",
         sorted(edges, key=lambda row: (row["item_id"], row["kc_id"])),

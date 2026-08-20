@@ -12,7 +12,7 @@ from pathlib import Path
 sys.path.remove(str(Path(__file__).resolve().parent))
 
 from grammar_kt.io import ROOT, read_json, read_jsonl
-from grammar_kt.records import grammar_cell, observable_interaction
+from grammar_kt.records import grammar_cell, observable_base_event, projected_kt_interaction
 from grammar_kt.runner import STAGE_NAMES
 
 
@@ -38,10 +38,16 @@ def validate(run: Path) -> dict:
             audit = read_json(audit_file)
             if audit.get("status") != "PASS":
                 errors.append(f"{label} audit failed: {audit.get('structural_errors', audit.get('errors', []))}")
-    if (run / "simulation/observable_interactions.jsonl").is_file():
-        for row in read_jsonl(run / "simulation/observable_interactions.jsonl"):
+    if (run / "simulation/base_events.jsonl").is_file():
+        for row in read_jsonl(run / "simulation/base_events.jsonl"):
             try:
-                observable_interaction(row, label=row.get("event_id", "interaction"))
+                observable_base_event(row, label=row.get("event_id", "base event"))
+            except ValueError as error:
+                errors.append(str(error))
+    if (run / "kt/projected_interactions.jsonl").is_file():
+        for row in read_jsonl(run / "kt/projected_interactions.jsonl"):
+            try:
+                projected_kt_interaction(row, label=row.get("event_id", "KT interaction"))
             except ValueError as error:
                 errors.append(str(error))
     return {"status": "PASS" if not errors else "FAIL", "errors": errors, "error_count": len(errors)}

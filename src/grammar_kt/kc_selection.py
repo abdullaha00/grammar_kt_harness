@@ -737,7 +737,7 @@ def evaluate_after_freeze(
         "selected_ontology": selected,
         "baselines": baselines,
         "post_freeze_equivalence_diagnostics": post_freeze_equivalence_diagnostics,
-        "claim_boundary": "Phase-A structural and compositional diagnostics only; downstream item, simulation, and KT metrics do not influence selection.",
+        "claim_boundary": "Phase-A structural and compositional diagnostics only; item-bank, simulation, Q-matrix, and KT artifacts do not influence selection.",
     }
 
 

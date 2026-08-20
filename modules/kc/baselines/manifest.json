@@ -7,7 +7,7 @@
     "policy": "modules/kc/policies/factorized_plus_interactions.json",
     "status": "predefined expert interaction baseline"
   },
-  "FULL_CELL_ALL": {
+  "FULL_CELL_ALL_TRANSDUCTIVE": {
     "policy": "modules/kc/policies/full_cell.json",
     "status": "transductive full-inventory resolution baseline; not compositional"
   },

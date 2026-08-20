@@ -17,7 +17,7 @@ from grammar_kt.config import load_experiment
 from grammar_kt.io import read_json, read_jsonl, sha256_file, write_json, write_jsonl
 from grammar_kt.normalisation import normalise_one
 from grammar_kt.normalisation_validation import validate_mapping, validate_phase2_transition
-from grammar_kt.records import FORBIDDEN_OBSERVABLE_FIELDS, kc_opportunity
+from grammar_kt.records import FORBIDDEN_BASE_EVENT_FIELDS, kc_opportunity, observable_base_event
 from grammar_kt.runner import PIPELINE, STAGE_NAMES, run_experiment
 
 
@@ -46,7 +46,7 @@ class ExperimentTests(unittest.TestCase):
             load_experiment("experiments/base.yaml")
 
     def test_pipeline_order_is_defined_once_without_numbered_modules(self) -> None:
-        self.assertEqual(STAGE_NAMES, ["source", "normalisation", "canonical", "realisation", "items", "kc_selection", "kc", "qmatrix", "simulation", "kt"])
+        self.assertEqual(STAGE_NAMES, ["source", "normalisation", "canonical", "realisation", "items", "simulation", "kc_selection", "kc", "qmatrix", "kt"])
         self.assertEqual([name for name, _run in PIPELINE], STAGE_NAMES)
         self.assertFalse(list((ROOT / "modules").glob("stage_*")), "legacy numbered modules remain")
 
@@ -94,6 +94,7 @@ class ExperimentTests(unittest.TestCase):
             self.assertEqual(metadata["reused_from"]["run"], "base")
             self.assertEqual(metadata["stages"]["realisation"]["status"], "reused")
             self.assertEqual(metadata["stages"]["items"]["status"], "reused")
+            self.assertEqual(metadata["stages"]["simulation"]["status"], "reused")
             self.assertEqual(metadata["stages"]["kc_selection"]["status"], "executed")
 
     def test_full_fixture_pipeline(self) -> None:
@@ -416,10 +417,10 @@ class ComponentTests(unittest.TestCase):
         selected_bank = copy.deepcopy(accepted_bank)
         factorized_bank = copy.deepcopy(accepted_bank)
 
-        selected_projection, selected_cards = qmatrix.project_policy(
+        selected_projection, selected_cards = kc.project_items(
             selected_bank, fixture["canonical_cells"], selected
         )
-        factorized_projection, factorized_cards = qmatrix.project_policy(
+        factorized_projection, factorized_cards = kc.project_items(
             factorized_bank, fixture["canonical_cells"], factorized
         )
         _sc, selected_rows, selected_edges, selected_audit = qmatrix.build(
@@ -482,7 +483,7 @@ class ComponentTests(unittest.TestCase):
             (ROOT / "modules/items/families/controlled_transformation.txt").read_text(encoding="utf-8"),
         )
         policy = kc.load_policy(ROOT / "modules/kc/policies/factorized_plus_interactions.json")
-        projections, _cards = qmatrix.project_policy(bank, [negative], policy)
+        projections, _cards = kc.project_items(bank, [negative], policy)
         lexical = next(row for row in projections if "do_support" in row["realization_operations"])
         copular = next(
             row
@@ -499,9 +500,12 @@ class ComponentTests(unittest.TestCase):
         settings = settings["simulation"]
         fixture_dir = ROOT / "modules/simulation/fixtures"
         fixture_items = read_jsonl(fixture_dir / "accepted_items.jsonl")
-        kc_ids, q_by_item = simulation.read_q_matrix(fixture_dir / "q_matrix.csv")
         parameters = read_json(settings["parameters"])
         parameters["seed"] = settings["seed"]
+        oracle_feature_ids = ["ORACLE_FINITE_FORM"]
+        oracle_by_item = {
+            row["item_id"]: list(oracle_feature_ids) for row in fixture_items
+        }
         event_count = len(fixture_items) * parameters["item_passes_per_learner"]
         train_end, validation_end = simulation.split_boundaries(
             event_count, parameters["train_fraction"], parameters["validation_fraction"]
@@ -509,14 +513,186 @@ class ComponentTests(unittest.TestCase):
         observed, _oracle, _learners, _learner_oracle = simulation.simulate_records(
             parameters,
             {row["item_id"]: row for row in fixture_items},
-            q_by_item,
-            kc_ids,
+            oracle_by_item,
+            oracle_feature_ids,
             train_end,
             validation_end,
             target_learner="L0001",
         )
         for row in observed:
-            self.assertFalse(FORBIDDEN_OBSERVABLE_FIELDS & set(row))
+            self.assertFalse(FORBIDDEN_BASE_EVENT_FIELDS & set(row))
+            observable_base_event(row)
+
+    def test_five_ontologies_share_fixed_events_but_change_candidate_annotations(self) -> None:
+        fixture = read_json(ROOT / "modules/kc_selection/fixtures/core.json")
+        frames = {
+            row["predicate_frame_id"]: row for row in read_jsonl(realisation.LEXICON)
+        }
+        opportunities = items.build_item_opportunities(
+            fixture["canonical_cells"],
+            fixture["cell_splits"],
+            frames,
+            read_json(ROOT / "modules/items/configs/fixed_bank_v0.json"),
+        )
+        bank = items.construct_items(
+            opportunities,
+            frames,
+            (ROOT / "modules/items/families/controlled_transformation.txt").read_text(
+                encoding="utf-8"
+            ),
+        )
+        params = read_json(ROOT / "modules/simulation/configs/structural_oracle_v0.json")
+        params.update(
+            {
+                "seed": 20260817,
+                "learners_per_profile": 2,
+                "profiles": {
+                    "fixture": {
+                        "beta_alpha": 2.0,
+                        "beta_beta": 2.0,
+                        "learning_rate": 0.05,
+                    }
+                },
+            }
+        )
+        oracle_projection, oracle_feature_ids = simulation.project_oracle_items(
+            bank, fixture["canonical_cells"], params
+        )
+        oracle_by_item = {
+            row["item_id"]: row["oracle_feature_ids"] for row in oracle_projection
+        }
+        item_by_id = {row["item_id"]: row for row in bank}
+        event_count = len(bank) * params["item_passes_per_learner"]
+        train_end, validation_end = simulation.split_boundaries(
+            event_count, params["train_fraction"], params["validation_fraction"]
+        )
+
+        selected = kc_selection.evaluate_fixture(
+            copy.deepcopy(fixture),
+            read_json(ROOT / "modules/kc_selection/configs/deterministic_v0.json"),
+        )["selected_policy"]
+        policies = {
+            "SELECTED_STRUCTURAL": selected,
+            "CURRENT_FACTORIZED": kc.load_policy(
+                ROOT / "modules/kc/policies/factorized.json"
+            ),
+            "CURRENT_FACTORIZED_PLUS_INTERACTIONS": kc.load_policy(
+                ROOT / "modules/kc/policies/factorized_plus_interactions.json"
+            ),
+            "FULL_CELL_DEV_FROZEN": kc_selection.development_frozen_full_cell_policy(
+                [
+                    row
+                    for row in fixture["canonical_cells"]
+                    if next(
+                        split["split"]
+                        for split in fixture["cell_splits"]
+                        if split["canonical_cell_id"] == row["canonical_cell_id"]
+                    )
+                    == "development"
+                ]
+            ),
+            "FULL_CELL_ALL_TRANSDUCTIVE": kc.load_policy(
+                ROOT / "modules/kc/policies/full_cell.json"
+            ),
+        }
+
+        fixed_hashes = {}
+        fixed_rows = {}
+        q_columns = {}
+        q_edges = {}
+        histories = {}
+        uncovered_events = {}
+        for label, policy in policies.items():
+            base_events, _oracle, _learners, _parameters = simulation.simulate_records(
+                params,
+                item_by_id,
+                oracle_by_item,
+                oracle_feature_ids,
+                train_end,
+                validation_end,
+            )
+            fixed_hashes[label] = simulation.event_stream_fingerprint(base_events)
+            fixed_rows[label] = [
+                (
+                    row["event_id"],
+                    row["learner_id"],
+                    row["item_id"],
+                    row["sequence_index"],
+                    row["timestamp"],
+                    row["item_difficulty"],
+                    row["correct"],
+                    row["dataset_split"],
+                    row["canonical_split"],
+                )
+                for row in base_events
+            ]
+            item_projection, cards = kc.project_items(
+                bank, fixture["canonical_cells"], policy
+            )
+            columns, _rows, edges, audit = qmatrix.build(bank, cards, item_projection)
+            self.assertEqual(audit["status"], "PASS")
+            projected = kt.project_interactions(base_events, item_projection)
+            self.assertEqual(len(projected), len(base_events))
+            for base, annotated in zip(base_events, projected, strict=True):
+                self.assertEqual(
+                    base,
+                    {
+                        key: value
+                        for key, value in annotated.items()
+                        if key not in {"kc_ids", "opportunity_indices"}
+                    },
+                )
+            q_columns[label] = tuple(columns)
+            q_edges[label] = frozenset((row["item_id"], row["kc_id"]) for row in edges)
+            histories[label] = tuple(
+                (row["event_id"], tuple(row["kc_ids"]), tuple(row["opportunity_indices"].items()))
+                for row in projected
+            )
+            uncovered_events[label] = sum(not row["kc_ids"] for row in projected)
+
+        self.assertEqual(len(set(fixed_hashes.values())), 1)
+        self.assertEqual(len({tuple(rows) for rows in fixed_rows.values()}), 1)
+        self.assertEqual(items.item_bank_fingerprint(bank), items.item_bank_fingerprint(copy.deepcopy(bank)))
+        self.assertNotEqual(q_columns["SELECTED_STRUCTURAL"], q_columns["CURRENT_FACTORIZED"])
+        self.assertNotEqual(
+            q_edges["CURRENT_FACTORIZED"],
+            q_edges["CURRENT_FACTORIZED_PLUS_INTERACTIONS"],
+        )
+        self.assertNotEqual(
+            histories["CURRENT_FACTORIZED"],
+            histories["CURRENT_FACTORIZED_PLUS_INTERACTIONS"],
+        )
+        self.assertGreater(
+            uncovered_events["FULL_CELL_DEV_FROZEN"],
+            uncovered_events["FULL_CELL_ALL_TRANSDUCTIVE"],
+        )
+        self.assertEqual(uncovered_events["FULL_CELL_ALL_TRANSDUCTIVE"], 0)
+
+    def test_zero_kc_event_is_retained_with_empty_opportunity_history(self) -> None:
+        base = {
+            "event_id": "EVENT_L1_001",
+            "learner_id": "L1",
+            "item_id": "ITEM_UNCOVERED",
+            "canonical_cell_id": "CELL_HELDOUT",
+            "canonical_split": "compositional_holdout",
+            "sequence_index": 1,
+            "timestamp": "2026-01-01T00:01:00+00:00",
+            "correct": 0,
+            "item_difficulty": 0.25,
+            "dataset_split": "test",
+        }
+        projected = kt.project_interactions(
+            [base], [{"item_id": "ITEM_UNCOVERED", "kc_ids": []}]
+        )
+        self.assertEqual(len(projected), 1)
+        self.assertEqual(projected[0]["kc_ids"], [])
+        self.assertEqual(projected[0]["opportunity_indices"], {})
+        self.assertEqual(
+            kt.coverage_report(projected, [{"item_id": "ITEM_UNCOVERED", "kc_ids": []}])[
+                "uncovered_events"
+            ],
+            1,
+        )
 
     def test_simulation_split_boundaries_scale_with_item_count(self) -> None:
         self.assertEqual(simulation.split_boundaries(90, 0.6, 0.2), (54, 72))
@@ -525,14 +701,20 @@ class ComponentTests(unittest.TestCase):
     def test_kt_rejects_oracle_fields(self) -> None:
         row = {
             "event_id": "EVENT_1", "learner_id": "L1", "item_id": "I1",
+            "canonical_cell_id": "CELL_1", "canonical_split": "development",
             "sequence_index": 1, "timestamp": "2026-01-01T00:00:00+00:00",
-            "correct": 1, "kc_ids": ["K1"], "opportunity_indices": {"K1": 1},
             "dataset_split": "train", "item_difficulty": 0.0, "pre_mastery": {"K1": 0.5},
+            "correct": 1,
         }
         with tempfile.TemporaryDirectory() as temporary:
             run = Path(temporary)
             (run / "simulation").mkdir()
-            write_jsonl(run / "simulation/observable_interactions.jsonl", [row])
+            write_jsonl(run / "simulation/base_events.jsonl", [row])
+            (run / "kc").mkdir()
+            write_jsonl(
+                run / "kc/item_kc_projection.jsonl",
+                [{"item_id": "I1", "kc_ids": ["K1"]}],
+            )
             with self.assertRaisesRegex(ValueError, "leakage"):
                 settings, _ = load_experiment("base")
                 kt.run(run, settings["kt"])
@@ -563,10 +745,10 @@ class ComponentTests(unittest.TestCase):
             candidates = read_jsonl(run / "items/generation/candidate_items.jsonl")
             (run / "items/validation").mkdir()
             write_jsonl(run / "items/validation/accepted_items.jsonl", candidates)
+            simulation_summary = simulation.run(run, settings["simulation"])
             kc_selection.run(run, settings["kc_selection"])
             kc.run(run, settings["kc"])
             q_summary = qmatrix.run(run)
-            simulation_summary = simulation.run(run, settings["simulation"])
             kt_summary = kt.run(run, {**settings["kt"], "techniques": ["empirical", "bkt"]})
             self.assertEqual(generated["candidate_items"], 3)
             self.assertEqual(q_summary, {"rows": 3, "covered_rows": 3, "uncovered_rows": 0, "columns": 1, "edges": 3})

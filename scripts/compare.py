@@ -135,11 +135,13 @@ def kc_selection_stage(a: Path, b: Path) -> dict[str, Any]:
 
 
 def kc_stage(a: Path, b: Path) -> dict[str, Any]:
-    left_cards = keyed(a / "kc/kc_inventory.jsonl", "kc_id")
-    right_cards = keyed(b / "kc/kc_inventory.jsonl", "kc_id")
-    left = keyed(a / "kc/cell_kc_projection.jsonl", "canonical_cell_id")
-    right = keyed(b / "kc/cell_kc_projection.jsonl", "canonical_cell_id")
-    changed = sorted(key for key in set(left) & set(right) if left[key]["kc_ids"] != right[key]["kc_ids"])
+    left_cards = keyed(a / "kc/projected_kc_inventory.jsonl", "kc_id")
+    right_cards = keyed(b / "kc/projected_kc_inventory.jsonl", "kc_id")
+    left = keyed(a / "kc/item_kc_projection.jsonl", "item_id")
+    right = keyed(b / "kc/item_kc_projection.jsonl", "item_id")
+    changed = sorted(
+        key for key in set(left) & set(right) if left[key]["kc_ids"] != right[key]["kc_ids"]
+    )
     return {
         "kc_count": {"run_a": len(left_cards), "run_b": len(right_cards)},
         "inventory": delta(left_cards, right_cards),
@@ -151,8 +153,8 @@ def kc_stage(a: Path, b: Path) -> dict[str, Any]:
             "run_a": dict(Counter(len(row["kc_ids"]) for row in left.values())),
             "run_b": dict(Counter(len(row["kc_ids"]) for row in right.values())),
         },
-        "changed_activations": [
-            {"canonical_cell_id": key, "from": left[key]["kc_ids"], "to": right[key]["kc_ids"]}
+        "changed_item_activations": [
+            {"item_id": key, "from": left[key]["kc_ids"], "to": right[key]["kc_ids"]}
             for key in changed
         ],
     }
@@ -202,25 +204,56 @@ def qmatrix_stage(a: Path, b: Path) -> dict[str, Any]:
     left, right = item_kc_pairs(a), item_kc_pairs(b)
     rows_a, columns_a = matrix_shape(a)
     rows_b, columns_b = matrix_shape(b)
+    audit_a = read_json(a / "qmatrix/audit.json")
+    audit_b = read_json(b / "qmatrix/audit.json")
     return {
         "shape": {"run_a": [len(rows_a), len(columns_a)], "run_b": [len(rows_b), len(columns_b)]},
         "added_rows": sorted(rows_b - rows_a), "removed_rows": sorted(rows_a - rows_b),
         "added_columns": sorted(columns_b - columns_a), "removed_columns": sorted(columns_a - columns_b),
         "edges": {"run_a": len(left), "run_b": len(right)}, "added_edges": sorted(right - left), "removed_edges": sorted(left - right),
+        "uncovered_items": {
+            "run_a": audit_a["uncovered_items"],
+            "run_b": audit_b["uncovered_items"],
+        },
     }
 
 
 def simulation_stage(a: Path, b: Path) -> dict[str, Any]:
     def interaction_summary(run: Path) -> dict[str, Any]:
-        filename = run / "simulation/observable_interactions.jsonl"
+        filename = run / "simulation/base_events.jsonl"
         rows = read_jsonl(filename) if filename.is_file() else []
+        audit = read_json(run / "simulation/audit.json") if (run / "simulation/audit.json").is_file() else {}
         return {
             "interactions": len(rows), "learners": len({row["learner_id"] for row in rows}),
             "items": len({row["item_id"] for row in rows}),
             "correct_rate": statistics.fmean(row["correct"] for row in rows) if rows else None,
-            "multi_kc_rows": sum(len(row["kc_ids"]) > 1 for row in rows),
+            "base_event_stream_sha256": audit.get("base_event_stream_sha256"),
+            "item_bank_sha256": audit.get("item_bank_sha256"),
+            "rows": rows,
         }
-    return {"run_a": interaction_summary(a), "run_b": interaction_summary(b)}
+    left, right = interaction_summary(a), interaction_summary(b)
+    left_rows, right_rows = left.pop("rows"), right.pop("rows")
+    def values(rows: list[dict[str, Any]], fields: tuple[str, ...]) -> list[tuple[Any, ...]]:
+        return [tuple(row[field] for field in fields) for row in rows]
+    invariance = {
+        "event_stream_hash_equal": left["base_event_stream_sha256"] is not None and left["base_event_stream_sha256"] == right["base_event_stream_sha256"],
+        "item_bank_hash_equal": left["item_bank_sha256"] is not None and left["item_bank_sha256"] == right["item_bank_sha256"],
+        "event_ids_equal": bool(left_rows) and values(left_rows, ("event_id",)) == values(right_rows, ("event_id",)),
+        "learner_ids_equal": values(left_rows, ("learner_id",)) == values(right_rows, ("learner_id",)),
+        "item_ids_and_order_equal": values(left_rows, ("item_id", "sequence_index")) == values(right_rows, ("item_id", "sequence_index")),
+        "learner_item_order_equal": values(left_rows, ("learner_id", "sequence_index", "item_id")) == values(right_rows, ("learner_id", "sequence_index", "item_id")),
+        "timestamps_equal": values(left_rows, ("timestamp",)) == values(right_rows, ("timestamp",)),
+        "difficulties_equal": values(left_rows, ("item_difficulty",)) == values(right_rows, ("item_difficulty",)),
+        "correctness_equal": values(left_rows, ("correct",)) == values(right_rows, ("correct",)),
+        "temporal_splits_equal": values(left_rows, ("dataset_split",)) == values(right_rows, ("dataset_split",)),
+        "canonical_splits_equal": values(left_rows, ("canonical_split",)) == values(right_rows, ("canonical_split",)),
+    }
+    return {
+        "run_a": left,
+        "run_b": right,
+        "all_fixed_data_equal": all(invariance.values()),
+        "invariance": invariance,
+    }
 
 
 def kt_stage(a: Path, b: Path) -> dict[str, Any]:
@@ -229,14 +262,20 @@ def kt_stage(a: Path, b: Path) -> dict[str, Any]:
     result = {"techniques": {"run_a": sorted(left.get("techniques", {})), "run_b": sorted(right.get("techniques", {}))}, "metric_differences": []}
     for technique in sorted(set(left.get("techniques", {})) & set(right.get("techniques", {}))):
         for split in ("validation", "test"):
-            for metric in ("auc", "log_loss", "accuracy_at_0_5"):
-                before = left["techniques"][technique][split][metric]
-                after = right["techniques"][technique][split][metric]
-                result["metric_differences"].append({"technique": technique, "split": split, "metric": metric, "run_a": before, "run_b": after, "difference": after - before})
+            for scope in ("covered_events", "all_events_fixed_fallback"):
+                for metric in ("auc", "log_loss", "accuracy_at_0_5"):
+                    before = left["techniques"][technique][split][scope][metric]
+                    after = right["techniques"][technique][split][scope][metric]
+                    difference = after - before if before is not None and after is not None else None
+                    result["metric_differences"].append({"technique": technique, "split": split, "scope": scope, "metric": metric, "run_a": before, "run_b": after, "difference": difference})
+    result["coverage"] = {
+        "run_a": left.get("coverage"),
+        "run_b": right.get("coverage"),
+    }
     return result
 
 
-COMPARISON_STAGES = ("normalisation", "canonical", "realisation", "kc_selection", "kc", "items", "qmatrix", "simulation", "kt")
+COMPARISON_STAGES = ("normalisation", "canonical", "realisation", "items", "simulation", "kc_selection", "kc", "qmatrix", "kt")
 
 
 def compare(a: Path, b: Path, stage: str | None = None) -> dict[str, Any]:
