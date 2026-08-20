@@ -248,12 +248,19 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     q_kcs, q_by_item = read_q_matrix(q_path)
     if not q_kcs or set(q_by_item) != set(item_by_id):
         raise RuntimeError("Q-matrix dimensions do not match the accepted item inputs")
-    if any(not active for active in q_by_item.values()):
-        raise RuntimeError("Q-matrix contains an item with no active KC")
-    for item_id_value, item in item_by_id.items():
-        if item["all_kc_ids"] != q_by_item[item_id_value]:
-            raise RuntimeError(f"accepted item labels differ from Q row: {item_id_value}")
-    event_total = len(items) * int(params["item_passes_per_learner"])
+    # Phase B preserves uncovered OOD items in the shared bank and Q-matrix.  The
+    # current Phase-C-era simulator cannot form a response model with zero active
+    # latent skills, so exclude only those rows here and report the exclusion.
+    uncovered_item_ids = sorted(item_id for item_id, active in q_by_item.items() if not active)
+    simulated_item_by_id = {
+        item_id: item for item_id, item in item_by_id.items() if item_id not in uncovered_item_ids
+    }
+    simulated_q_by_item = {
+        item_id: active for item_id, active in q_by_item.items() if item_id in simulated_item_by_id
+    }
+    if not simulated_item_by_id:
+        raise RuntimeError("Q-matrix has no covered items for the legacy simulator")
+    event_total = len(simulated_item_by_id) * int(params["item_passes_per_learner"])
     train_end, validation_end = split_boundaries(
         event_total,
         float(params["train_fraction"]),
@@ -261,9 +268,17 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     )
 
     observed, oracle, learners, learner_oracle = simulate_records(
-        params, item_by_id, q_by_item, q_kcs, train_end, validation_end
+        params, simulated_item_by_id, simulated_q_by_item, q_kcs, train_end, validation_end
     )
-    audit = audit_simulation(observed, oracle, learners, item_by_id, event_total)
+    audit = audit_simulation(
+        observed, oracle, learners, simulated_item_by_id, event_total
+    )
+    audit["accepted_item_bank_count"] = len(item_by_id)
+    audit["simulated_covered_item_count"] = len(simulated_item_by_id)
+    audit["excluded_uncovered_item_ids"] = uncovered_item_ids
+    audit["phase_b_compatibility_only"] = (
+        "uncovered Q rows are retained in the bank and Q-matrix but excluded from the legacy simulator"
+    )
     if audit["status"] != "PASS":
         raise RuntimeError(f"simulation audit failed: {audit['errors'][:5]}")
     observed_path = output / "observable_interactions.jsonl"
@@ -281,6 +296,9 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     return {
         "seed": params["seed"],
         "learners": len(learners),
+        "accepted_item_bank": len(item_by_id),
+        "simulated_covered_items": len(simulated_item_by_id),
+        "excluded_uncovered_items": len(uncovered_item_ids),
         "events_per_learner": event_total,
         "split_boundaries": {"train_end": train_end, "validation_end": validation_end},
         "interactions": len(observed),

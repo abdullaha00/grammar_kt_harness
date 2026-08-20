@@ -255,7 +255,11 @@ def imperative_subtype(note: str | None) -> str:
     return "ordinary"
 
 
-def build_cases(cells: list[dict[str, Any]], edges: list[dict[str, Any]], held_out: set[str]) -> list[dict[str, Any]]:
+def build_cases(
+    cells: list[dict[str, Any]],
+    edges: list[dict[str, Any]],
+    split_by_cell: dict[str, str],
+) -> list[dict[str, Any]]:
     """Choose the deterministic lexical conditions used to realise each cell."""
 
     by_cell: dict[str, list[dict[str, Any]]] = {}
@@ -299,7 +303,7 @@ def build_cases(cells: list[dict[str, Any]], edges: list[dict[str, Any]], held_o
         basis = f"{cell_row['canonical_cell_id']}|{edge['egp_id']}|{frame}|{subtype}|{serial}"
         cases.append(
             {
-                "split": "held_out" if cell_row["canonical_cell_id"] in held_out else "development",
+                "split": split_by_cell[cell_row["canonical_cell_id"]],
                 "spec": {
                     "realization_id": stable_id("REAL", basis),
                     "canonical_cell_id": cell_row["canonical_cell_id"],
@@ -323,14 +327,46 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     cells = read_jsonl(run_dir / "canonical" / "canonical_cells.jsonl")
     edges = read_jsonl(run_dir / "canonical" / "source_cell_edges.jsonl")
     choices = read_json(repo_path(settings["split_config"]))
-    held_out = set(choices["held_out_cell_ids"])
+    cell_ids = {row["canonical_cell_id"] for row in cells}
+    if "compositional_holdout_cell_ids" in choices or "novel_feature_holdout_cell_ids" in choices:
+        development = set(choices.get("development_cell_ids", []))
+        compositional = set(choices.get("compositional_holdout_cell_ids", []))
+        novel_feature = set(choices.get("novel_feature_holdout_cell_ids", []))
+    else:
+        # Backward-compatible interpretation for small external fixtures.
+        development = set()
+        compositional = set(choices.get("held_out_cell_ids", []))
+        novel_feature = set()
+    overlaps = (development & compositional) | (development & novel_feature) | (compositional & novel_feature)
+    if overlaps:
+        raise RuntimeError(f"declared realization splits overlap: {sorted(overlaps)}")
+    declared = development | compositional | novel_feature
+    unknown = declared - cell_ids
+    if unknown and choices.get("require_all_declared_cells", False):
+        raise RuntimeError(f"declared split cells are absent from the canonical inventory: {sorted(unknown)}")
+    if choices.get("require_exact_inventory", False) and declared != cell_ids:
+        raise RuntimeError(
+            "declared realization split must exactly cover the canonical inventory: "
+            f"unassigned={sorted(cell_ids - declared)}, absent={sorted(declared - cell_ids)}"
+        )
+    development &= cell_ids
+    compositional &= cell_ids
+    novel_feature &= cell_ids
+    split_by_cell = {
+        cell_id: (
+            "compositional_holdout" if cell_id in compositional
+            else "novel_feature_holdout" if cell_id in novel_feature
+            else "development"
+        )
+        for cell_id in cell_ids
+    }
     frames = {row["predicate_frame_id"]: row for row in read_jsonl(LEXICON)}
     cell_by_id = {row["canonical_cell_id"]: grammar_cell(row["cell"]) for row in cells}
     by_cell: dict[str, list[dict[str, Any]]] = {}
     for edge in edges:
         by_cell.setdefault(edge["canonical_cell_id"], []).append(edge)
     realised = []
-    for case in sorted(build_cases(cells, edges, held_out), key=lambda row: row["spec"]["realization_id"]):
+    for case in sorted(build_cases(cells, edges, split_by_cell), key=lambda row: row["spec"]["realization_id"]):
         spec = case["spec"]
         cell, frame = cell_by_id[spec["canonical_cell_id"]], frames[spec["predicate_frame_id"]]
         edge = next(row for row in by_cell[spec["canonical_cell_id"]] if row["egp_id"] == spec["source_descriptor_id"])
@@ -339,5 +375,22 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
             raise RuntimeError(f"invalid realisation {spec['realization_id']}: {'; '.join(errors)}")
         realised.append({"split": case["split"], "spec": spec, "cell": cell, "source_note": edge.get("source_note"), "derivation": realise(spec, cell, frame)})
     write_jsonl(output / "realisations.jsonl", realised)
-    write_jsonl(output / "cell_splits.jsonl", [{"canonical_cell_id": cell_id, "split": "held_out" if cell_id in held_out else "development"} for cell_id in sorted(cell_by_id)])
-    return {"realisations": len(realised), "canonical_cells": len(cell_by_id), "held_out_cells": len(held_out)}
+    write_jsonl(
+        output / "cell_splits.jsonl",
+        [
+            {
+                "canonical_cell_id": cell_id,
+                "split": split_by_cell[cell_id],
+                "holdout_kind": None if split_by_cell[cell_id] == "development" else split_by_cell[cell_id],
+            }
+            for cell_id in sorted(cell_by_id)
+        ],
+    )
+    return {
+        "realisations": len(realised),
+        "canonical_cells": len(cell_by_id),
+        "development_cells": sum(value == "development" for value in split_by_cell.values()),
+        "compositional_holdout_cells": len(compositional),
+        "novel_feature_holdout_cells": len(novel_feature),
+        "held_out_cells": len(compositional | novel_feature),
+    }

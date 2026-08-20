@@ -1,10 +1,11 @@
 {
   "metric": "test_auc",
-  "expectation_type": "approximate_technical_sanity",
+  "expectation_type": "legacy_only_recompute_after_phase_b",
   "tolerance": 0.02,
   "empirical": 0.6216185639374046,
   "bkt": 0.6141172220157728,
   "logistic": 0.6668355423427887,
-  "reference_basis": "deterministic downstream replay from the archived accepted 24-cell, 9-KC pilot inputs",
+  "reference_basis": "legacy ontology-dependent 45-item bank; values are not acceptance thresholds for the fixed Phase-B item bank",
+  "current_fixed_bank_metrics_available": false,
   "not_an_ontology_selection_objective": true
 }

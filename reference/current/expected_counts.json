@@ -9,11 +9,11 @@
   "source_cell_edges": 48,
   "canonical_cells": 24,
   "kcs": 9,
-  "accepted_items": 45,
-  "q_rows": 45,
+  "accepted_items": 58,
+  "q_rows": 58,
   "q_columns": 9,
-  "q_edges": 99,
+  "q_edges": 123,
   "learners": 180,
-  "events_per_learner": 90,
-  "interactions": 16200
+  "events_per_learner": 116,
+  "interactions": 20880
 }

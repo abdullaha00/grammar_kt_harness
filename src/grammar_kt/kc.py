@@ -163,11 +163,28 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
             "source_descriptor_ids": cells[cell_id]["source_descriptor_ids"],
             "source_mapping_notes": cells[cell_id]["source_mapping_notes"],
         }))
-    policy = load_policy(repo_path(settings["policy"]))
+    selected_policy = settings.get("selected_policy")
+    selected_path = run_dir / selected_policy if selected_policy else None
+    policy_path = selected_path if selected_path is not None and selected_path.is_file() else repo_path(settings["policy"])
+    policy = load_policy(policy_path)
     projections, cards = materialize_inventory(policy, opportunities)
-    empty = [row["canonical_cell_id"] for row in projections if not row["kc_ids"]]
-    if empty:
-        raise RuntimeError(f"KC policy leaves cells uncovered: {empty}")
+    empty_development = [
+        row["canonical_cell_id"]
+        for row in projections
+        if row["split"] == "development" and not row["kc_ids"]
+    ]
+    if empty_development:
+        raise RuntimeError(f"KC policy leaves development cells uncovered: {empty_development}")
+    empty_holdout = [
+        row["canonical_cell_id"]
+        for row in projections
+        if row["split"] != "development" and not row["kc_ids"]
+    ]
     write_jsonl(output / "cell_kc_projection.jsonl", sorted(projections, key=lambda row: row["opportunity_id"]))
     write_jsonl(output / "kc_inventory.jsonl", sorted(cards, key=lambda row: row["kc_id"]))
-    return {"policy": settings["policy"], "opportunities": len(projections), "kcs": len(cards)}
+    return {
+        "policy": str(policy_path),
+        "opportunities": len(projections),
+        "kcs": len(cards),
+        "uncovered_holdout_cells": empty_holdout,
+    }

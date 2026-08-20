@@ -1,5 +1,6 @@
 extends: base
 experiment: kc_interactions
 
-kc:
+kc_selection:
+  mode: predefined
   policy: modules/kc/policies/factorized_plus_interactions.json

@@ -16,9 +16,19 @@ def build(mappings: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[di
     edges_by_cell: dict[str, list[dict[str, Any]]] = defaultdict(list)
 
     # Validate every exact cell in complete mappings, derive its stable ID, and deduplicate it.
+    # Example mapping:
+    # {
+    #     "egp_id": "FIX_CANONICAL",
+    #     "result": "complete",
+    #     "cells": [{"tense": "past", "aspect": "none", "voice": "passive",
+    #                "polarity": "positive", "clause": "declarative", "modal": "none"}],
+    #     "note": None,
+    # }
     for mapping in mappings:
         if mapping["result"] != "complete":
             continue
+        # `source_index` is the cell's position in the source mapping; `raw` is one
+        # six-dimensional cell such as {"tense": "past", ..., "modal": "none"}.
         for source_index, raw in enumerate(mapping["cells"]):
             cell = grammar_cell({key: raw[key] for key in DIMENSIONS}, label=f"{mapping['egp_id']} cell")
             canonical_json = json.dumps(
@@ -28,6 +38,8 @@ def build(mappings: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[di
             )
             cell_id = stable_id("CELL", canonical_json)
             cells_by_id[cell_id] = cell
+            # Keep the source descriptor and its original cell position even when
+            # several sources collapse to the same canonical cell ID.
             edges_by_cell[cell_id].append({
                 "egp_id": mapping["egp_id"],
                 "source_mapping_result": mapping["result"],
@@ -39,6 +51,8 @@ def build(mappings: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[di
     # Aggregate all descriptor support onto each deduplicated GrammarCell.
     cells = []
     for cell_id in sorted(cells_by_id):
+        # For example, `rows` may contain edges from descriptors EGP_A and EGP_B
+        # that both specify the same past/passive/positive/declarative cell.
         rows = edges_by_cell[cell_id]
         ids = sorted({row["egp_id"] for row in rows})
         cells.append({

@@ -11,7 +11,7 @@ from pathlib import Path
 # Prevent this directory's inspect.py from shadowing Python's standard inspect module.
 sys.path.remove(str(Path(__file__).resolve().parent))
 
-from grammar_kt import canonical, items, kc, normalisation, realisation, simulation, source
+from grammar_kt import canonical, items, kc, kc_selection, normalisation, realisation, simulation, source
 from grammar_kt.io import ROOT, read_json, read_jsonl, read_yaml, repo_path, write_json
 from grammar_kt.records import grammar_cell, kc_opportunity
 
@@ -20,7 +20,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Show one scientific component's input and output.")
     parser.add_argument(
         "stage",
-        choices=("source", "normalisation", "canonical", "realisation", "kc", "items", "simulation"),
+        choices=("source", "normalisation", "canonical", "realisation", "kc_selection", "kc", "items", "simulation"),
     )
     inputs = parser.add_mutually_exclusive_group()
     inputs.add_argument("--fixture", nargs="?", const="", help="fixture label; omit the label for the first fixture")
@@ -97,6 +97,12 @@ def main() -> int:
                 "cells": [realisation_fixture["cell"]],
                 "note": None,
             }
+        elif args.stage == "kc_selection":
+            before = read_json(ROOT / "modules" / "kc_selection" / "fixtures" / "core.json")
+            if args.fixture not in {None, "", before["fixture_label"]}:
+                raise KeyError(
+                    f"fixture {args.fixture!r} not found; available: {[before['fixture_label']]}"
+                )
         else:
             fixture_dir = ROOT / "modules" / args.stage / "fixtures"
             if args.stage == "kc":
@@ -133,7 +139,7 @@ def main() -> int:
                 before,
                 phase1_template=repo_path(method["phase1_prompt"]).read_text(encoding="utf-8"),
                 phase2_template=repo_path(method["phase2_prompt"]).read_text(encoding="utf-8"),
-                backend_settings=read_yaml(method["backend"]),
+                backend_config=read_yaml(method["backend_config"]),
                 max_attempts=int(method["max_attempts"]),
                 output=args.output,
                 phase1_only=args.phase1_only,
@@ -196,6 +202,12 @@ def main() -> int:
                 "kc_specs": cards,
                 "explanation": kc.apply_policy(policy, opportunity),
             }
+        elif args.stage == "kc_selection":
+            selection_settings = settings["kc_selection"]
+            after = kc_selection.evaluate_fixture(
+                before,
+                read_json(selection_settings["config"]),
+            )
         elif args.stage == "items":
             after = items.evaluate_fixture(before)
         else:

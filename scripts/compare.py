@@ -16,6 +16,7 @@ from typing import Any
 sys.path.remove(str(Path(__file__).resolve().parent))
 
 from grammar_kt.io import ROOT, read_json, read_jsonl, read_yaml
+from grammar_kt.items import item_bank_fingerprint
 
 
 def keyed(path: Path, key: str) -> dict[str, dict[str, Any]]:
@@ -93,6 +94,46 @@ def realisation_stage(a: Path, b: Path) -> dict[str, Any]:
     return delta(realisations_by_id(a), realisations_by_id(b))
 
 
+def kc_selection_stage(a: Path, b: Path) -> dict[str, Any]:
+    def summary(run: Path) -> dict[str, Any]:
+        directory = run / "kc_selection"
+        candidates = keyed(directory / "candidates.jsonl", "candidate_id")
+        policy = read_json(directory / "selected_policy.json")
+        evaluation = read_json(directory / "evaluation.json")
+        selected = sorted(rule["kc_id"] for rule in policy.get("rules", []))
+        selected_eval = evaluation["selected_ontology"]
+        return {
+            "policy_id": policy["policy_id"],
+            "selection_mode": policy.get("selection_metadata", {}).get("selector"),
+            "candidate_count": len(candidates),
+            "selected_kc_ids": selected,
+            "unidentifiable_equivalence_classes": len(
+                evaluation.get("unidentifiable_equivalence_classes", [])
+            ),
+            "split_audit_status": evaluation.get("split_audit", {}).get("status"),
+            "development_objective": evaluation.get("development_selection_objective"),
+            "compositional_holdout": {
+                key: selected_eval["compositional_holdout"].get(key)
+                for key in (
+                    "coverage", "fact_recall", "component_reuse",
+                    "signature_contrast_preservation", "dimension_witness_preservation",
+                )
+            },
+            "novel_feature_holdout": {
+                key: selected_eval["novel_feature_holdout"].get(key)
+                for key in ("coverage", "fact_recall", "component_reuse")
+            },
+        }
+
+    left, right = summary(a), summary(b)
+    return {
+        "run_a": left,
+        "run_b": right,
+        "added_selected_kcs": sorted(set(right["selected_kc_ids"]) - set(left["selected_kc_ids"])),
+        "removed_selected_kcs": sorted(set(left["selected_kc_ids"]) - set(right["selected_kc_ids"])),
+    }
+
+
 def kc_stage(a: Path, b: Path) -> dict[str, Any]:
     left_cards = keyed(a / "kc/kc_inventory.jsonl", "kc_id")
     right_cards = keyed(b / "kc/kc_inventory.jsonl", "kc_id")
@@ -133,7 +174,17 @@ def item_stage(a: Path, b: Path) -> dict[str, Any]:
         for key in sorted(set(validation_a) & set(validation_b))
         if validation_a[key]["status"] != validation_b[key]["status"]
     ]
-    return {"accepted_count": {"run_a": len(left), "run_b": len(right)}, **changes, "generation": generated, "status_changes": status_changes, "answer_changes": answer_changes}
+    left_hash = item_bank_fingerprint(list(left.values())) if left else None
+    right_hash = item_bank_fingerprint(list(right.values())) if right else None
+    return {
+        "accepted_count": {"run_a": len(left), "run_b": len(right)},
+        "item_bank_sha256": {"run_a": left_hash, "run_b": right_hash},
+        "identical_item_bank": left_hash is not None and left_hash == right_hash,
+        **changes,
+        "generation": generated,
+        "status_changes": status_changes,
+        "answer_changes": answer_changes,
+    }
 
 
 def qmatrix_stage(a: Path, b: Path) -> dict[str, Any]:
@@ -185,7 +236,7 @@ def kt_stage(a: Path, b: Path) -> dict[str, Any]:
     return result
 
 
-COMPARISON_STAGES = ("normalisation", "canonical", "realisation", "kc", "items", "qmatrix", "simulation", "kt")
+COMPARISON_STAGES = ("normalisation", "canonical", "realisation", "kc_selection", "kc", "items", "qmatrix", "simulation", "kt")
 
 
 def compare(a: Path, b: Path, stage: str | None = None) -> dict[str, Any]:
@@ -199,6 +250,8 @@ def compare(a: Path, b: Path, stage: str | None = None) -> dict[str, Any]:
                 output[name] = canonical_stage(a, b)
             elif name == "realisation":
                 output[name] = realisation_stage(a, b)
+            elif name == "kc_selection":
+                output[name] = kc_selection_stage(a, b)
             elif name == "kc":
                 output[name] = kc_stage(a, b)
             elif name == "items":

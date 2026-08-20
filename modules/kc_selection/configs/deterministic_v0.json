@@ -1,0 +1,63 @@
+{
+  "selector_id": "greedy_backward_v0",
+  "minimum_candidate_cell_support": 1,
+  "minimum_candidate_descriptor_support": 1,
+  "minimum_interaction_cell_support": 2,
+  "interaction_candidates": [
+    {
+      "kc_id": "KC_INT_PERFECT_PROGRESSIVE_CHAIN",
+      "name": "perfect-progressive chain interaction",
+      "definition": "Test whether the perfect-to-progressive chain contributes residual dependency structure.",
+      "parents": ["KC_ASPECT_PERFECT", "KC_ASPECT_PROGRESSIVE"],
+      "hypothesis_group": "aspect_granularity",
+      "residual_fact_patterns": ["chain_edge:perfect>progressive"]
+    },
+    {
+      "kc_id": "KC_INT_PERFECT_PASSIVE_CHAIN",
+      "name": "perfect-passive chain interaction",
+      "definition": "Test whether the perfect-to-passive chain contributes residual dependency structure.",
+      "parents": ["KC_ASPECT_PERFECT", "KC_BE_PASSIVE"],
+      "residual_fact_patterns": ["chain_edge:perfect>passive"]
+    },
+    {
+      "kc_id": "KC_INT_PROGRESSIVE_PASSIVE_CHAIN",
+      "name": "progressive-passive chain interaction",
+      "definition": "Test whether the progressive-to-passive chain contributes residual dependency structure.",
+      "parents": ["KC_ASPECT_PROGRESSIVE", "KC_BE_PASSIVE"],
+      "residual_fact_patterns": ["chain_edge:progressive>passive"]
+    },
+    {
+      "kc_id": "KC_INT_MODAL_PASSIVE_CHAIN",
+      "name": "modal-passive chain interaction",
+      "definition": "Test whether a modal-to-passive chain contributes residual dependency structure.",
+      "parents": ["KC_MODAL_CENTRAL", "KC_BE_PASSIVE"],
+      "residual_fact_patterns": ["chain_edge:modal>passive"]
+    },
+    {
+      "kc_id": "KC_INT_QUESTION_NEGATION",
+      "name": "question-negation interaction",
+      "definition": "Test whether inverted negative questions contribute residual operator structure.",
+      "parents": ["KC_QUESTION_GENERIC", "KC_NEGATION"],
+      "residual_fact_patterns": ["dependency:inverted_negative_operator"]
+    },
+    {
+      "kc_id": "KC_INT_DO_QUESTION",
+      "name": "DO-support inversion interaction",
+      "definition": "Test whether DO-support plus inversion contributes a residual operator dependency.",
+      "parents": ["KC_OP_DO_SUPPORT", "KC_OP_OPERATOR_INVERSION"],
+      "residual_fact_patterns": ["dependency:inverted_operator:do"]
+    },
+    {
+      "kc_id": "KC_INT_DO_NEGATION",
+      "name": "DO-support negation interaction",
+      "definition": "Test whether DO-support plus negation contributes a residual hosting dependency.",
+      "parents": ["KC_OP_DO_SUPPORT", "KC_OP_NEGATION_PLACEMENT"],
+      "residual_fact_patterns": ["dependency:negation_host:do"]
+    }
+  ],
+  "baseline_policies": [
+    {"label": "CURRENT_FACTORIZED", "policy": "modules/kc/policies/factorized.json"},
+    {"label": "CURRENT_FACTORIZED_PLUS_INTERACTIONS", "policy": "modules/kc/policies/factorized_plus_interactions.json"},
+    {"label": "FULL_CELL_ALL_TRANSDUCTIVE", "policy": "modules/kc/policies/full_cell.json"}
+  ]
+}

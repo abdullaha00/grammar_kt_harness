@@ -12,7 +12,7 @@ source:
 normalisation:
   phase1_prompt: modules/normalisation/prompts/phase1.txt
   phase2_prompt: modules/normalisation/prompts/phase2.txt
-  backend: modules/normalisation/configs/backend.yaml
+  backend_config: modules/normalisation/configs/backend.yaml
   workers: 3
   max_attempts: 2
 
@@ -21,16 +21,21 @@ canonical: {}
 realisation:
   split_config: modules/realisation/configs/default.json
 
+kc_selection:
+  mode: predefined
+  config: modules/kc_selection/configs/deterministic_v0.json
+  policy: modules/kc/policies/factorized.json
+
 kc:
   policy: modules/kc/policies/factorized.json
+  selected_policy: kc_selection/selected_policy.json
 
 items:
   family_prompt: modules/items/families/controlled_transformation.txt
-  replicates_per_kc: 5
-  development_replicates: 2
+  bank_config: modules/items/configs/fixed_bank_v0.json
   validation:
     acceptance: modules/items/validation/model_acceptance.json
-    backend: modules/items/validation/backend.yaml
+    backend_config: modules/items/validation/backend.yaml
     workers: 6
     max_attempts: 2
     repeated_diagnostics: 5

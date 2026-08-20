@@ -3,8 +3,8 @@
 This repository is a small research laboratory for the fixed pipeline:
 
 ```text
-source → normalisation → canonical → realisation → KC selection
-       → items → deterministic Q-matrix → simulation → KT
+source → normalisation → canonical → realisation → fixed item bank
+       → kc_selection → kc → policy-projected Q-matrix → simulation → KT
 ```
 
 The scientific methodology remains explicit and replaceable:
@@ -33,6 +33,7 @@ Run one example without constructing an experiment:
 
 ```bash
 python scripts/run_one.py realisation --fixture lexical_present_question
+python scripts/run_one.py kc_selection --fixture structural_selection
 python scripts/run_one.py kc --fixture perfect_progressive --policy factorized
 python scripts/run_one.py items --fixture valid_deterministic_item
 python scripts/run_one.py simulation
@@ -54,7 +55,69 @@ python scripts/run_one.py kc --input /tmp/opportunity.json
 
 Use `--output /tmp/my-debug-run` to retain one-off evidence at a chosen location.
 
-## KC experiment example
+## KC selection and policy baselines
+
+`kc_selection` is the development-only Phase-A structural selector. It builds
+canonical and operation-evidence candidates, checks operation candidates over a
+deterministic nuisance-realisation grid, collapses identical development
+activation columns, covers salient facts and Hamming-one contrasts, and freezes
+an ordinary KC policy before inspecting either holdout. Run the declared
+structural condition with:
+
+```bash
+python scripts/run.py kc_selected_structural --from kc_selection
+python scripts/compare.py base kc_selected_structural --stage kc_selection
+```
+
+Its inspectable outputs are `candidates.jsonl`, `activations.jsonl`,
+`diagnostics.jsonl`, `selection_trace.jsonl`, `selected_policy.json`, and
+`evaluation.json`. `kc.py` still performs deterministic policy application and
+materialisation; it reads the frozen `selected_policy.json` without selecting
+or inventing KCs.
+
+The realisation split distinguishes `compositional_holdout` (only development-
+seen salient facts in new combinations) from `novel_feature_holdout` (at least
+one unseen fact). All 24 cell assignments are explicit and exact-inventory
+validation prevents new cells from silently defaulting into development.
+Candidate discovery, support, equivalence classes, scope
+checks, contrasts, and selection use development cells only. The current
+factorized, interaction, and transductive full-cell policies remain explicit
+baselines, and selection evaluation also constructs an honest full-cell policy
+from development cells only.
+
+KC selection deliberately does not use item, Q-matrix, simulation, or KT
+metrics. Phase B makes item generation ontology-independent; simulated latent
+variables remain ontology-dependent until the separate Phase C redesign.
+
+## Fixed item bank and KC projection
+
+The item stage now runs before KC selection. It deterministically covers every
+canonical cell, source-licensed imperative subtypes, WH roles, lexical versus
+copular operator sources, and representative finite-agreement profiles. Item
+existence, lexical conditions, prompts, answers, IDs, canonical split, validation,
+and the saved bank SHA-256 contain no KC labels.
+
+After a policy is frozen, `qmatrix` applies it to every accepted concrete item
+realization and writes `item_kc_projection.jsonl`, `projected_kc_inventory.jsonl`,
+the edge list, and the matrix. Operation rules can therefore vary across two
+items from the same cell while cell-scope rules remain invariant. To compare
+ontologies on the exact parent bank, run variants from `kc_selection`; the item
+stage is copied and its reuse is recorded:
+
+```bash
+python scripts/run.py kc_selected_structural --from kc_selection
+python scripts/run.py kc_interactions --from kc_selection
+python scripts/compare.py base kc_selected_structural --stage items
+python scripts/compare.py base kc_selected_structural --stage qmatrix
+```
+
+`kc_full_cell_dev_frozen` is the honest exact-cell control compiled from
+development cells only. Its held-out bank rows remain present with zero active
+KCs. The current simulator cannot model a zero-KC row, so it reports and excludes
+those rows as a temporary compatibility measure; this is a remaining Phase C
+confound, not item-bank filtering.
+
+## Predefined KC policy experiment example
 
 1. Copy `modules/kc/policies/factorized.json` to `modules/kc/policies/new_policy.json` and edit its rules. Supported rule primitives are `cell`, `operation`, and `all`; no Python change is needed for a policy using those primitives.
 2. Test one case:
@@ -69,16 +132,21 @@ Use `--output /tmp/my-debug-run` to retain one-off evidence at a chosen location
    extends: base
    experiment: kc_new_policy
 
-   kc:
+   kc_selection:
+     mode: predefined
      policy: modules/kc/policies/new_policy.json
    ```
 
-4. With `runs/base/` already present, explicitly reuse its pre-KC outputs and execute KC onward:
+4. With `runs/base/` already present, explicitly reuse its pre-selection outputs and execute selection onward:
 
    ```bash
-   python scripts/run.py kc_new_policy --from kc
-   python scripts/compare.py base kc_new_policy --stage kc
+   python scripts/run.py kc_new_policy --from kc_selection
+   python scripts/compare.py base kc_new_policy --stage kc_selection
    ```
+
+   Runs created before the split redesign contain the legacy `held_out` label;
+   use `--from realisation` once to regenerate explicit compositional/OOD split
+   artifacts before running `kc_selection`.
 
 `--from` is intentionally explicit. It copies earlier stage outputs from the parent run and records that fact in `metadata.json`; it does not infer reuse from hashes.
 
@@ -97,16 +165,17 @@ python scripts/compare.py base kc_full_cell --stage kc
 python scripts/validate.py base
 ```
 
-Experiment variants inherit recursively and deep-merge mappings; lists replace atomically. For example, `experiments/kc_full_cell.yaml` changes only `kc.policy`, while `experiments/kt_bkt_only.yaml` changes only `kt.techniques`. Run the latter with `--from kt` to consume the exact parent observable dataset without rerunning upstream stages.
+Experiment variants inherit recursively and deep-merge mappings; lists replace atomically. For example, `experiments/kc_full_cell.yaml` changes only `kc_selection.policy`, while `experiments/kt_bkt_only.yaml` changes only `kt.techniques`. Run the latter with `--from kt` to consume the exact parent observable dataset without rerunning upstream stages.
 
 Experiment execution accepts only short names from `experiments/*.yaml`. The
 loader has one interface: `settings, parent = load_experiment("kc_full_cell")`.
 
-Item generation makes one deterministic construction pass per KC and retains
-the selected opportunity, replicate, split, and lexical search offset. The
-simulator derives events per learner from the accepted item count and configured
+Item generation makes one deterministic construction pass per grammatical/item
+opportunity and retains its concrete realization evidence and coverage reason.
+The simulator derives events per learner from the covered Q rows and configured
 item passes, then derives train/validation boundaries from fractions. Q-matrix
-integrity errors remain fatal; redundancy, density, support, and wide rows are
-saved as scientific diagnostics so policy variants can complete.
+integrity errors remain fatal; uncovered rows, redundancy, density, support,
+scope, and wide rows are saved as scientific diagnostics so policy variants can
+complete without changing the accepted bank.
 
 The reference numbers in `reference/current/expected_counts.json` are operational/technical checks, not evidence of human learning, KC cognitive validity, or acquisition order.

@@ -32,7 +32,7 @@ def invoke_and_validate(
     prompt: str,
     evidence_input: dict[str, Any],
     unit_root: Path,
-    backend_settings: dict[str, Any],
+    backend_config: dict[str, Any],
     max_attempts: int,
     phase1_mapping: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
@@ -47,7 +47,7 @@ def invoke_and_validate(
             output_schema=OUTPUT_SCHEMA,
             instructions=MODEL_INSTRUCTIONS,
             unit_dir=attempt,
-            settings=backend_settings,
+            backend_config=backend_config,
         )
         mapping, errors = parse_raw_mapping(raw_path.read_text(encoding="utf-8"))
         if returncode:
@@ -70,7 +70,7 @@ def normalise_one(
     *,
     phase1_template: str,
     phase2_template: str,
-    backend_settings: dict[str, Any],
+    backend_config: dict[str, Any],
     max_attempts: int,
     output: Path | None = None,
     phase1_only: bool = False,
@@ -105,7 +105,7 @@ def normalise_one(
         prompt=method_context + phase1_prompt,
         evidence_input={"egp_id": phase1_record["egp_id"], "record": phase1_record},
         unit_root=unit_root,
-        backend_settings=backend_settings,
+        backend_config=backend_config,
         max_attempts=max_attempts,
     )
 
@@ -145,7 +145,7 @@ def normalise_one(
                 "examples": examples,
             },
             unit_root=unit_root,
-            backend_settings=backend_settings,
+            backend_config=backend_config,
             max_attempts=max_attempts,
             phase1_mapping=first["mapping"],
         )
@@ -180,7 +180,7 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
 
     phase1_template = repo_path(settings["phase1_prompt"]).read_text(encoding="utf-8")
     phase2_template = repo_path(settings["phase2_prompt"]).read_text(encoding="utf-8")
-    backend_settings = read_yaml(settings["backend"])
+    backend_config = read_yaml(settings["backend_config"])
     max_attempts = int(settings.get("max_attempts", 2))
 
     results: list[tuple[dict[str, Any], dict[str, Any]]] = []
@@ -195,7 +195,7 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
                 output=output,
                 phase1_template=phase1_template,
                 phase2_template=phase2_template,
-                backend_settings=backend_settings,
+                backend_config=backend_config,
                 max_attempts=max_attempts,
             )
             futures[future] = unit

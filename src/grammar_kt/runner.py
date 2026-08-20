@@ -9,7 +9,7 @@ from typing import Any
 
 import yaml
 
-from . import canonical, items, kc, kt, normalisation, qmatrix, realisation, simulation, source
+from . import canonical, items, kc, kc_selection, kt, normalisation, qmatrix, realisation, simulation, source
 from .config import load_experiment
 from .io import ROOT, utc_now, write_json
 
@@ -19,8 +19,9 @@ PIPELINE = [
     ("normalisation", normalisation.run),
     ("canonical", canonical.run),
     ("realisation", realisation.run),
-    ("kc", kc.run),
     ("items", items.run),
+    ("kc_selection", kc_selection.run),
+    ("kc", kc.run),
     ("qmatrix", qmatrix.run),
     ("simulation", simulation.run),
     ("kt", kt.run),

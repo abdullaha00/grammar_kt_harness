@@ -1,0 +1,8 @@
+{
+  "bank_version": "FIXED_ITEM_BANK_v0",
+  "baseline_frame_id": "FRAME_WRITE",
+  "would_frame_id": "FRAME_LIKE",
+  "operator_contrast_frame_id": "FRAME_COPULAR_READY",
+  "include_operator_source_contrasts": true,
+  "include_agreement_variants": true
+}

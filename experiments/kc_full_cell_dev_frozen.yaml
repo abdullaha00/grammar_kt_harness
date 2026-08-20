@@ -1,0 +1,5 @@
+extends: base
+experiment: kc_full_cell_dev_frozen
+
+kc_selection:
+  mode: development_frozen_full_cell

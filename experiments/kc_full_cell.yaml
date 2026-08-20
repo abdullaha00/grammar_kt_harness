@@ -1,5 +1,6 @@
 extends: base
 experiment: kc_full_cell
 
-kc:
+kc_selection:
+  mode: predefined
   policy: modules/kc/policies/full_cell.json

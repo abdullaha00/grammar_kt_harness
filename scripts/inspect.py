@@ -84,18 +84,22 @@ def inspect_kt(run: Path, identifier: str) -> dict[str, Any]:
 
 
 def inspect_qmatrix(run: Path, identifier: str) -> dict[str, Any]:
+    projection = one(
+        read_jsonl(run / "qmatrix" / "item_kc_projection.jsonl"),
+        "item_id",
+        identifier,
+    )
     edges = [
         row
         for row in read_jsonl(run / "qmatrix" / "item_kc_edges.jsonl")
         if row["item_id"] == identifier
     ]
-    if not edges:
-        raise KeyError(identifier)
     return {
         "item_id": identifier,
-        "kc_ids": [row["kc_id"] for row in edges],
+        "kc_ids": projection["kc_ids"],
+        "projection": projection,
         "edges": edges,
-        "reason": "copied deterministically from the item's frozen cell KC projection",
+        "reason": "derived by applying the frozen KC policy to this accepted item realization",
     }
 
 
@@ -127,7 +131,16 @@ def inspect_trace(run: Path, identifier: str) -> dict[str, Any]:
         for row in read_jsonl(run / "realisation" / "realisations.jsonl")
         if row["spec"]["canonical_cell_id"] == cell_id
     ]
-    projection = one(read_jsonl(run / "kc" / "cell_kc_projection.jsonl"), "canonical_cell_id", cell_id)
+    cell_projection = one(
+        read_jsonl(run / "kc" / "cell_kc_projection.jsonl"),
+        "canonical_cell_id",
+        cell_id,
+    )
+    item_projection = one(
+        read_jsonl(run / "qmatrix" / "item_kc_projection.jsonl"),
+        "item_id",
+        identifier,
+    )
     q_edges = [
         row
         for row in read_jsonl(run / "qmatrix" / "item_kc_edges.jsonl")
@@ -144,7 +157,8 @@ def inspect_trace(run: Path, identifier: str) -> dict[str, Any]:
         "canonical_cell": canonical_cell,
         "source_cell_edges": source_edges,
         "supporting_realisations": realisations,
-        "kc_projection": projection,
+        "cell_kc_projection": cell_projection,
+        "item_kc_projection": item_projection,
         "item": item,
         "q_edges": q_edges,
         "interactions": {"count": len(interactions), "first_five": interactions[:5]},

@@ -24,9 +24,13 @@ def invoke_model(
     output_schema: Path,
     instructions: Path,
     unit_dir: Path,
-    settings: dict[str, Any],
+    backend_config: dict[str, Any],
 ) -> tuple[Path, int]:
-    """Invoke the selected backend and retain all transport evidence."""
+    """Invoke one explicitly configured transport and retain all evidence.
+
+    ``fixture_file`` requires ``response_file``; ``codex_exec`` instead
+    requires its model, reasoning, timeout, and isolation configuration.
+    """
 
     unit_dir.mkdir(parents=True, exist_ok=True)
     prompt_path, raw_path, events_path, stderr_path, metadata_path = (
@@ -45,10 +49,10 @@ def invoke_model(
     ):
         raise RuntimeError(f"refusing to overwrite model evidence: {unit_dir}")
     prompt_path.write_text(prompt, encoding="utf-8")
-    backend = settings["backend"]
+    kind = backend_config["kind"]
 
-    if backend == "fixture_file":
-        response = repo_path(settings["response_file"])
+    if kind == "fixture_file":
+        response = repo_path(backend_config["response_file"])
         shutil.copy2(response, raw_path)
         events_path.write_text("", encoding="utf-8")
         stderr_path.write_text("", encoding="utf-8")
@@ -56,26 +60,26 @@ def invoke_model(
         command = ["fixture_file", str(response)]
         returncode = 0
         timed_out = False
-    elif backend == "codex_exec":
+    elif kind == "codex_exec":
         timed_out = False
         with tempfile.TemporaryDirectory(prefix="grammar-kt-model-") as temporary:
             workspace = Path(temporary)
             subprocess.run(["git", "init", "-q", "-b", "main", str(workspace)], check=True)
             shutil.copy2(instructions, workspace / "AGENTS.md")
-            command = ["codex", "--ask-for-approval", settings.get("approval_policy", "never"), "exec"]
-            if settings.get("ignore_user_config", True):
+            command = ["codex", "--ask-for-approval", backend_config.get("approval_policy", "never"), "exec"]
+            if backend_config.get("ignore_user_config", True):
                 command.append("--ignore-user-config")
-            if settings.get("ephemeral", True):
+            if backend_config.get("ephemeral", True):
                 command.append("--ephemeral")
             command += [
                 "--sandbox",
-                settings.get("sandbox", "read-only"),
+                backend_config.get("sandbox", "read-only"),
                 "--model",
-                settings["model"],
+                backend_config["model"],
                 "--config",
-                f'model_reasoning_effort="{settings["reasoning_effort"]}"',
+                f'model_reasoning_effort="{backend_config["reasoning_effort"]}"',
             ]
-            for key, value in sorted(settings.get("reasoning_options", {}).items()):
+            for key, value in sorted(backend_config.get("reasoning_options", {}).items()):
                 command += ["--config", f"{key}={json.dumps(value, sort_keys=True)}"]
             command += [
                 "--json",
@@ -95,7 +99,7 @@ def invoke_model(
                     text=True,
                     capture_output=True,
                     env={**os.environ, "NO_COLOR": "1"},
-                    timeout=settings.get("timeout_seconds"),
+                    timeout=backend_config.get("timeout_seconds"),
                     check=False,
                 )
                 stdout, stderr, returncode = result.stdout, result.stderr, result.returncode
@@ -114,16 +118,16 @@ def invoke_model(
         if not raw_path.exists():
             raw_path.write_text("", encoding="utf-8")
     else:
-        raise ValueError(f"unknown model backend: {backend}")
+        raise ValueError(f"unknown model backend kind: {kind}")
 
     write_json(
         metadata_path,
         {
-            "backend": settings["backend"],
-            "model": settings.get("model"),
-            "reasoning_effort": settings.get("reasoning_effort"),
-            "reasoning_options": settings.get("reasoning_options", {}),
-            "timeout_seconds": settings.get("timeout_seconds"),
+            "backend": kind,
+            "model": backend_config.get("model"),
+            "reasoning_effort": backend_config.get("reasoning_effort"),
+            "reasoning_options": backend_config.get("reasoning_options", {}),
+            "timeout_seconds": backend_config.get("timeout_seconds"),
             "command": command,
             "output_schema": str(output_schema),
             "instructions": str(instructions),
@@ -132,13 +136,13 @@ def invoke_model(
             "returncode": returncode,
             "timed_out": timed_out,
             "execution_isolation": {
-                "sandbox": settings.get("sandbox"),
-                "approval_policy": settings.get("approval_policy"),
-                "ignore_user_config": settings.get("ignore_user_config", True),
-                "ephemeral": settings.get("ephemeral", True),
+                "sandbox": backend_config.get("sandbox"),
+                "approval_policy": backend_config.get("approval_policy"),
+                "ignore_user_config": backend_config.get("ignore_user_config", True),
+                "ephemeral": backend_config.get("ephemeral", True),
             },
-            "model_snapshot_pinned": bool(settings.get("model_snapshot_pinned", False)),
-            "decoding_parameters_pinned": bool(settings.get("decoding_parameters_pinned", False)),
+            "model_snapshot_pinned": bool(backend_config.get("model_snapshot_pinned", False)),
+            "decoding_parameters_pinned": bool(backend_config.get("decoding_parameters_pinned", False)),
         },
     )
     return raw_path, returncode
