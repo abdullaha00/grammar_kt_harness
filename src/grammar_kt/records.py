@@ -4,22 +4,11 @@ from __future__ import annotations
 
 from typing import Any
 
+from .canonical_schema import DIMENSION_ORDER, DIMENSION_VALUES, cross_field_errors
 
-GRAMMAR_VALUES = {
-    "tense": {"present", "past", "NA"},
-    "aspect": {"none", "progressive", "perfect", "perfect_progressive"},
-    "voice": {"active", "passive"},
-    "polarity": {"positive", "negative"},
-    "clause": {
-        "declarative",
-        "polar_question",
-        "subject_wh_question",
-        "non_subject_wh_question",
-        "imperative",
-    },
-    "modal": {"none", "can", "could", "may", "might", "must", "shall", "should", "will", "would"},
-}
-DIMENSIONS = tuple(GRAMMAR_VALUES)
+
+GRAMMAR_VALUES = DIMENSION_VALUES
+DIMENSIONS = DIMENSION_ORDER
 CENTRAL_MODALS = GRAMMAR_VALUES["modal"] - {"none"}
 MORPHOLOGICAL_TENSES = {"present", "past"}
 
@@ -80,10 +69,9 @@ def grammar_cell(value: Any, *, label: str = "GrammarCell") -> dict[str, str]:
     for field in DIMENSIONS:
         if not isinstance(value[field], str) or value[field] not in GRAMMAR_VALUES[field]:
             raise ValueError(f"{label}.{field}: invalid value {value[field]!r}")
-    if value["clause"] == "imperative" and (value["tense"] != "NA" or value["modal"] != "none"):
-        raise ValueError(f"{label}: imperatives require tense=NA and modal=none")
-    if value["modal"] != "none" and value["tense"] != "NA":
-        raise ValueError(f"{label}: modal cells require tense=NA")
+    constraints = cross_field_errors(value)
+    if constraints:
+        raise ValueError(f"{label}: {'; '.join(constraints)}")
     return value
 
 

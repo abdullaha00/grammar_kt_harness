@@ -181,7 +181,7 @@ def item_stage(a: Path, b: Path) -> dict[str, Any]:
     right_hash = item_bank_fingerprint(list(right.values())) if right else None
     return {
         "accepted_count": {"run_a": len(left), "run_b": len(right)},
-        "item_bank_sha256": {"run_a": left_hash, "run_b": right_hash},
+        "intrinsic_item_bank_sha256": {"run_a": left_hash, "run_b": right_hash},
         "identical_item_bank": left_hash is not None and left_hash == right_hash,
         **changes,
         "generation": generated,
@@ -229,7 +229,9 @@ def simulation_stage(a: Path, b: Path) -> dict[str, Any]:
             "items": len({row["item_id"] for row in rows}),
             "correct_rate": statistics.fmean(row["correct"] for row in rows) if rows else None,
             "base_event_stream_sha256": audit.get("base_event_stream_sha256"),
-            "item_bank_sha256": audit.get("item_bank_sha256"),
+            "intrinsic_item_bank_sha256": audit.get(
+                "intrinsic_item_bank_sha256", audit.get("item_bank_sha256")
+            ),
             "rows": rows,
         }
     left, right = interaction_summary(a), interaction_summary(b)
@@ -238,7 +240,7 @@ def simulation_stage(a: Path, b: Path) -> dict[str, Any]:
         return [tuple(row[field] for field in fields) for row in rows]
     invariance = {
         "event_stream_hash_equal": left["base_event_stream_sha256"] is not None and left["base_event_stream_sha256"] == right["base_event_stream_sha256"],
-        "item_bank_hash_equal": left["item_bank_sha256"] is not None and left["item_bank_sha256"] == right["item_bank_sha256"],
+        "item_bank_hash_equal": left["intrinsic_item_bank_sha256"] is not None and left["intrinsic_item_bank_sha256"] == right["intrinsic_item_bank_sha256"],
         "event_ids_equal": bool(left_rows) and values(left_rows, ("event_id",)) == values(right_rows, ("event_id",)),
         "learner_ids_equal": values(left_rows, ("learner_id",)) == values(right_rows, ("learner_id",)),
         "item_ids_and_order_equal": values(left_rows, ("item_id", "sequence_index")) == values(right_rows, ("item_id", "sequence_index")),

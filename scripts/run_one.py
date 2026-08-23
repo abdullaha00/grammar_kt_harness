@@ -11,7 +11,7 @@ from pathlib import Path
 # Prevent this directory's inspect.py from shadowing Python's standard inspect module.
 sys.path.remove(str(Path(__file__).resolve().parent))
 
-from grammar_kt import canonical, items, kc, kc_selection, normalisation, realisation, simulation, source
+from grammar_kt import canonical, items, kc, kc_selection, kt, normalisation, realisation, simulation, source
 from grammar_kt.io import ROOT, read_json, read_jsonl, read_yaml, repo_path, write_json
 from grammar_kt.records import grammar_cell, kc_opportunity
 
@@ -20,7 +20,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Show one scientific component's input and output.")
     parser.add_argument(
         "stage",
-        choices=("source", "normalisation", "canonical", "realisation", "items", "simulation", "kc_selection", "kc"),
+        choices=("source", "normalisation", "canonical", "realisation", "items", "simulation", "kc_selection", "kc", "kt"),
     )
     inputs = parser.add_mutually_exclusive_group()
     inputs.add_argument("--fixture", nargs="?", const="", help="fixture label; omit the label for the first fixture")
@@ -38,7 +38,10 @@ def main() -> int:
         if args.input or args.egp_id or args.fixture not in {None, ""}:
             parser.error("simulation uses its declared fixture files; choose a learner with --learner")
         fixture_dir = ROOT / "modules" / "simulation" / "fixtures"
-        fixture_items = read_jsonl(fixture_dir / "accepted_items.jsonl")
+        fixture_items = [
+            {**row, "canonical_split": "development"}
+            for row in read_jsonl(fixture_dir / "accepted_items.jsonl")
+        ]
         parameters = read_json(settings["simulation"]["parameters"])
         parameters["seed"] = int(settings["simulation"]["seed"])
         # This fixture exercises the fixed-oracle response equation directly;
@@ -74,6 +77,37 @@ def main() -> int:
             "oracle_retained_separately": True,
             "fixture_items": len(fixture_items),
         }
+    elif args.stage == "kt":
+        if args.input or args.egp_id or args.fixture not in {None, "", "frozen_compositional_probe"}:
+            parser.error("kt uses the frozen_compositional_probe fixture")
+        before = read_json(ROOT / "modules" / "kt" / "fixtures" / "compositional_probe.json")
+        acquisition, probes, supported, frozen_counts = kt.project_compositional_interactions(
+            before["acquisition_events"], before["probe_events"], before["item_projections"]
+        )
+        states = kt.frozen_development_statistics(acquisition)
+        parameters = read_json(settings["kt"]["parameters"])
+        alpha = float(parameters["empirical"]["alpha"])
+        beta = float(parameters["empirical"]["beta"])
+        _features, targets, empirical, fallback = kt.frozen_probe_features(
+            probes,
+            ["KC_COMPONENT"],
+            states,
+            alpha=alpha,
+            beta=beta,
+            cold_prior=float(parameters["compositional"]["cold_kc_prior"]),
+        )
+        after = {
+            "acquisition_projection": acquisition,
+            "probe_projection": probes,
+            "development_supported_kc_ids": sorted(supported),
+            "frozen_opportunity_counts": {
+                learner: dict(counts) for learner, counts in frozen_counts.items()
+            },
+            "probe_target": int(targets[0]),
+            "empirical_probe_prediction": float(empirical[0]),
+            "zero_kc_fallback_prediction": float(fallback[0]),
+            "probe_updates_candidate_state": False,
+        }
     else:
         if args.input:
             before = read_json(args.input)
@@ -82,7 +116,7 @@ def main() -> int:
                 parser.error("--egp-id is only valid for source or normalisation")
             source_settings = settings["source"]
             selected, _metadata, _units = source.select_records(
-                source_settings["path"],
+                source.resolve_source_path(source_settings),
                 expected_sha256=source_settings["sha256"],
                 expected_record_count=int(source_settings["records"]),
                 sample_ids_path=source_settings["sample_ids"],

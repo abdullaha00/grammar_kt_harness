@@ -2,11 +2,16 @@
 
 from __future__ import annotations
 
-import re
 from pathlib import Path
 from typing import Any
 
-from .io import ROOT, read_json, read_jsonl, repo_path, stable_id, write_jsonl
+from .io import ROOT, read_jsonl, write_jsonl
+from .realisation_space import (
+    make_valid_spec,
+    representative_source_conditions,
+    validate_spec,
+    wh_conditions,
+)
 from .records import grammar_cell
 
 
@@ -104,52 +109,6 @@ def inflect_chain(cell: dict, spec: dict, frame: dict, imperative: bool = False)
     return words, agreement_site
 
 
-# RealizationSpec validation
-
-def validate_spec(spec: dict, cell: dict, frame: dict, source_note: str | None) -> list[str]:
-    errors: list[str] = []
-    expected = {
-        "realization_id", "canonical_cell_id", "source_descriptor_id", "predicate_frame_id",
-        "subject", "wh", "imperative_subtype", "let_pronoun",
-    }
-    if set(spec) != expected:
-        errors.append("RealizationSpec fields differ from the schema")
-    if not re.fullmatch(r"REAL_[A-F0-9]{16}", str(spec.get("realization_id", ""))):
-        errors.append("invalid realization_id")
-    subject = spec.get("subject", {})
-    if set(subject) != {"text", "person", "number"} or subject.get("person") not in {1, 2, 3} or subject.get("number") not in {"singular", "plural"}:
-        errors.append("invalid subject conditions")
-    clause, wh = cell["clause"], spec.get("wh")
-    if clause == "subject_wh_question" and (not isinstance(wh, dict) or wh.get("role") != "subject"):
-        errors.append("subject-WH clause requires subject WH conditions")
-    elif clause == "non_subject_wh_question" and (not isinstance(wh, dict) or wh.get("role") not in {"object", "adjunct"}):
-        errors.append("non-subject-WH clause requires object/adjunct WH conditions")
-    elif clause not in {"subject_wh_question", "non_subject_wh_question"} and wh is not None:
-        errors.append("WH conditions supplied to non-WH clause")
-    subtype = spec.get("imperative_subtype")
-    if clause == "imperative" and subtype not in {"ordinary", "emphatic_do", "lets", "lets_not", "let_pronoun"}:
-        errors.append("imperative subtype missing")
-    if clause != "imperative" and subtype is not None:
-        errors.append("imperative subtype supplied to non-imperative")
-    if (subtype == "let_pronoun") != (spec.get("let_pronoun") is not None):
-        errors.append("let_pronoun conditional value invalid")
-    if cell["voice"] == "passive" and not frame["passive_compatible"]:
-        errors.append("predicate frame is not passive-compatible")
-    note = source_note or ""
-    noted = None
-    if "LET'S NOT" in note:
-        noted = "lets_not"
-    elif "LET'S" in note:
-        noted = "lets"
-    elif "emphatic-DO" in note:
-        noted = "emphatic_do"
-    elif "LET + third-person pronoun" in note:
-        noted = "let_pronoun"
-    if noted and subtype != noted:
-        errors.append(f"imperative subtype does not preserve source note: {noted}")
-    return errors
-
-
 # Clause realization
 
 def realise(spec: dict, cell: dict, frame: dict) -> dict:
@@ -240,25 +199,10 @@ def realise(spec: dict, cell: dict, frame: dict) -> dict:
     return {"surface": surface, "auxiliary_chain": auxiliary_chain, "agreement_site": agreement_site, "operations": sorted(set(operations)), "tokens": tokens}
 
 
-# RealizationSpec construction
-
-def imperative_subtype(note: str | None) -> str:
-    text = note or ""
-    if "LET'S NOT" in text:
-        return "lets_not"
-    if "LET'S" in text:
-        return "lets"
-    if "emphatic-DO" in text:
-        return "emphatic_do"
-    if "LET + third-person pronoun" in text:
-        return "let_pronoun"
-    return "ordinary"
-
-
 def build_cases(
     cells: list[dict[str, Any]],
     edges: list[dict[str, Any]],
-    split_by_cell: dict[str, str],
+    frames: dict[str, dict[str, Any]],
 ) -> list[dict[str, Any]]:
     """Choose the deterministic lexical conditions used to realise each cell."""
 
@@ -266,32 +210,32 @@ def build_cases(
     for edge in edges:
         by_cell.setdefault(edge["canonical_cell_id"], []).append(edge)
 
-    # Give every canonical cell one realization from its first supporting descriptor.
+    # Give every canonical cell one source-preserving representative.
     selected: list[tuple[dict[str, Any], dict[str, Any]]] = []
     for cell_row in sorted(cells, key=lambda row: row["canonical_cell_id"]):
-        edge = sorted(by_cell[cell_row["canonical_cell_id"]], key=lambda row: row["egp_id"])[0]
-        selected.append((cell_row, edge))
+        source = representative_source_conditions(
+            cell_row, by_cell[cell_row["canonical_cell_id"]]
+        )[0]
+        selected.append((cell_row, source))
 
     # Preserve additional source-noted imperative subtypes as separate realizations.
-    existing = {
-        (cell_row["canonical_cell_id"], edge["egp_id"])
-        for cell_row, edge in selected
-    }
     for cell_row in cells:
         if cell_row["cell"]["clause"] != "imperative":
             continue
-        for edge in sorted(by_cell[cell_row["canonical_cell_id"]], key=lambda row: row["egp_id"]):
-            key = (cell_row["canonical_cell_id"], edge["egp_id"])
-            if edge.get("source_note") and key not in existing:
-                selected.append((cell_row, edge))
+        selected.extend(
+            (cell_row, source)
+            for source in representative_source_conditions(
+                cell_row, by_cell[cell_row["canonical_cell_id"]]
+            )[1:]
+        )
 
     # Construct each complete RealizationSpec in the same chronological pass.
     cases = []
-    for serial, (cell_row, edge) in enumerate(selected, 1):
+    for serial, (cell_row, source) in enumerate(selected, 1):
         cell = cell_row["cell"]
         frame = (
-            "FRAME_LIKE" if cell["modal"] == "would" else
             "FRAME_REPAIR" if cell["voice"] == "passive" else
+            "FRAME_LIKE" if cell["modal"] == "would" else
             "FRAME_WORK" if cell["aspect"] in {"progressive", "perfect_progressive"} else
             "FRAME_WRITE" if serial % 2 else "FRAME_INSPECT"
         )
@@ -299,21 +243,17 @@ def build_cases(
             {"text": "The technician", "person": 3, "number": "singular"} if serial % 2 else
             {"text": "The technicians", "person": 3, "number": "plural"}
         )
-        subtype = imperative_subtype(edge.get("source_note")) if cell["clause"] == "imperative" else None
-        basis = f"{cell_row['canonical_cell_id']}|{edge['egp_id']}|{frame}|{subtype}|{serial}"
+        subtype = source["imperative_subtype"]
+        frame_row = frames[frame]
+        wh = wh_conditions(cell, frame_row)[0]
+        if wh and wh["role"] == "subject":
+            subject = {"text": wh["phrase"], "person": 3, "number": "singular"}
+        basis = f"{cell_row['canonical_cell_id']}|{source['source_descriptor_id']}|{frame}|{subtype}|{serial}"
         cases.append(
             {
-                "split": split_by_cell[cell_row["canonical_cell_id"]],
-                "spec": {
-                    "realization_id": stable_id("REAL", basis),
-                    "canonical_cell_id": cell_row["canonical_cell_id"],
-                    "source_descriptor_id": edge["egp_id"],
-                    "predicate_frame_id": frame,
-                    "subject": subject,
-                    "wh": None,
-                    "imperative_subtype": subtype,
-                    "let_pronoun": "them" if subtype == "let_pronoun" else None,
-                },
+                "spec": make_valid_spec(
+                    cell_row, frame_row, source, subject, wh, identity_parts=(basis,)
+                )
             }
         )
     return cases
@@ -326,71 +266,27 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     output.mkdir(parents=True, exist_ok=False)
     cells = read_jsonl(run_dir / "canonical" / "canonical_cells.jsonl")
     edges = read_jsonl(run_dir / "canonical" / "source_cell_edges.jsonl")
-    choices = read_json(repo_path(settings["split_config"]))
-    cell_ids = {row["canonical_cell_id"] for row in cells}
-    if "compositional_holdout_cell_ids" in choices or "novel_feature_holdout_cell_ids" in choices:
-        development = set(choices.get("development_cell_ids", []))
-        compositional = set(choices.get("compositional_holdout_cell_ids", []))
-        novel_feature = set(choices.get("novel_feature_holdout_cell_ids", []))
-    else:
-        # Backward-compatible interpretation for small external fixtures.
-        development = set()
-        compositional = set(choices.get("held_out_cell_ids", []))
-        novel_feature = set()
-    overlaps = (development & compositional) | (development & novel_feature) | (compositional & novel_feature)
-    if overlaps:
-        raise RuntimeError(f"declared realization splits overlap: {sorted(overlaps)}")
-    declared = development | compositional | novel_feature
-    unknown = declared - cell_ids
-    if unknown and choices.get("require_all_declared_cells", False):
-        raise RuntimeError(f"declared split cells are absent from the canonical inventory: {sorted(unknown)}")
-    if choices.get("require_exact_inventory", False) and declared != cell_ids:
-        raise RuntimeError(
-            "declared realization split must exactly cover the canonical inventory: "
-            f"unassigned={sorted(cell_ids - declared)}, absent={sorted(declared - cell_ids)}"
-        )
-    development &= cell_ids
-    compositional &= cell_ids
-    novel_feature &= cell_ids
-    split_by_cell = {
-        cell_id: (
-            "compositional_holdout" if cell_id in compositional
-            else "novel_feature_holdout" if cell_id in novel_feature
-            else "development"
-        )
-        for cell_id in cell_ids
+    frames = {
+        row["predicate_frame_id"]: row
+        for row in read_jsonl(settings.get("lexicon", LEXICON))
     }
-    frames = {row["predicate_frame_id"]: row for row in read_jsonl(LEXICON)}
     cell_by_id = {row["canonical_cell_id"]: grammar_cell(row["cell"]) for row in cells}
     by_cell: dict[str, list[dict[str, Any]]] = {}
     for edge in edges:
         by_cell.setdefault(edge["canonical_cell_id"], []).append(edge)
     realised = []
-    for case in sorted(build_cases(cells, edges, split_by_cell), key=lambda row: row["spec"]["realization_id"]):
+    # The fold is deliberately absent: these are intrinsic grammatical realisations.
+    for case in sorted(build_cases(cells, edges, frames), key=lambda row: row["spec"]["realization_id"]):
         spec = case["spec"]
         cell, frame = cell_by_id[spec["canonical_cell_id"]], frames[spec["predicate_frame_id"]]
         edge = next(row for row in by_cell[spec["canonical_cell_id"]] if row["egp_id"] == spec["source_descriptor_id"])
         errors = validate_spec(spec, cell, frame, edge.get("source_note"))
         if errors:
             raise RuntimeError(f"invalid realisation {spec['realization_id']}: {'; '.join(errors)}")
-        realised.append({"split": case["split"], "spec": spec, "cell": cell, "source_note": edge.get("source_note"), "derivation": realise(spec, cell, frame)})
+        realised.append({"spec": spec, "cell": cell, "source_note": edge.get("source_note"), "derivation": realise(spec, cell, frame)})
     write_jsonl(output / "realisations.jsonl", realised)
-    write_jsonl(
-        output / "cell_splits.jsonl",
-        [
-            {
-                "canonical_cell_id": cell_id,
-                "split": split_by_cell[cell_id],
-                "holdout_kind": None if split_by_cell[cell_id] == "development" else split_by_cell[cell_id],
-            }
-            for cell_id in sorted(cell_by_id)
-        ],
-    )
     return {
         "realisations": len(realised),
         "canonical_cells": len(cell_by_id),
-        "development_cells": sum(value == "development" for value in split_by_cell.values()),
-        "compositional_holdout_cells": len(compositional),
-        "novel_feature_holdout_cells": len(novel_feature),
-        "held_out_cells": len(compositional | novel_feature),
+        "fold_inputs_read": False,
     }

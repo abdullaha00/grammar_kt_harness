@@ -1,0 +1,55 @@
+schema_id: GRAMMAR_CELL_v1
+description: >-
+  Pilot canonical representation for single-clause English verbal
+  morphosyntax. This file is the authoritative machine-readable declaration.
+
+dimension_order: [tense, aspect, voice, polarity, clause, modal]
+
+dimensions:
+  tense:
+    allowed_values: [present, past, NA]
+    interpretation: Morphological finite tense; NA is used when tense is not licensed by the construction.
+    exclusions: [future tense]
+  aspect:
+    allowed_values: [none, progressive, perfect, perfect_progressive]
+    interpretation: Grammatical aspect encoded by the auxiliary chain.
+    exclusions: [lexical aspect, habituality]
+  voice:
+    allowed_values: [active, passive]
+    interpretation: Canonical active/non-passive versus BE-passive voice.
+    exclusions: [GET-passive, middle voice]
+  polarity:
+    allowed_values: [positive, negative]
+    interpretation: Clause-level positive versus negative polarity.
+    exclusions: [lexical negation, negative concord]
+  clause:
+    allowed_values:
+      [declarative, polar_question, subject_wh_question, non_subject_wh_question, imperative]
+    interpretation: Matrix clause type within the supported single-clause domain.
+    exclusions: [question tags, embedded questions, indirect questions]
+  modal:
+    allowed_values: [none, can, could, may, might, must, shall, should, will, would]
+    interpretation: No central modal or one explicitly represented central modal.
+    exclusions: [semi-modals, periphrastic modals]
+
+cross_field_constraints:
+  - constraint_id: imperative_tense_modal
+    if:
+      clause: imperative
+    then:
+      tense: NA
+      modal: none
+    interpretation: Imperatives are non-finite for this representation and do not host a central modal.
+  - constraint_id: central_modal_tense
+    if:
+      modal: [can, could, may, might, must, shall, should, will, would]
+    then:
+      tense: NA
+    interpretation: A central modal occupies the finite position; morphological tense is not separately represented.
+
+scope:
+  included: single-clause English verbal morphosyntax in the declared values
+  excluded:
+    - multi-clause and relational constructions not representable as one cell
+    - non-verbal grammar
+    - source uncertainty; lists and null belong to normalisation constraints, not exact GrammarCells

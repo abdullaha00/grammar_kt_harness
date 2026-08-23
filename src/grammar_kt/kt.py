@@ -11,6 +11,7 @@ import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, log_loss, roc_auc_score
 
+from .folds import assignment_for_cells, fold_path, load_fold
 from .io import read_json, read_jsonl, repo_path, write_json, write_jsonl
 from .records import (
     compositional_base_event,
@@ -955,7 +956,20 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     output = run_dir / "kt"
     output.mkdir(parents=True, exist_ok=False)
     base_events = read_jsonl(run_dir / "simulation" / "base_events.jsonl")
+    # Reject oracle leakage before consulting any ontology or fold artifact.
+    for row in base_events:
+        observable_base_event(row, label=row.get("event_id", "base event"))
     item_projections = read_jsonl(run_dir / "kc" / "item_kc_projection.jsonl")
+    cells = read_jsonl(run_dir / "canonical" / "canonical_cells.jsonl")
+    manifest = load_fold(fold_path(settings))
+    assignment = assignment_for_cells(cells, manifest)
+    mismatches = [
+        row["item_id"]
+        for row in item_projections
+        if row["canonical_split"] != assignment[row["canonical_cell_id"]]
+    ]
+    if mismatches:
+        raise RuntimeError(f"KT item projections disagree with fold {manifest['fold_id']}: {mismatches[:5]}")
     rows = project_interactions(base_events, item_projections)
 
     technique_settings = read_json(repo_path(settings["parameters"]))

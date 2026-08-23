@@ -12,23 +12,11 @@ from typing import Any
 
 import numpy as np
 
+from .folds import annotate_items, assignment_for_cells, fold_path, load_fold
 from .io import read_json, read_jsonl, repo_path, write_json, write_jsonl
 from .items import item_bank_fingerprint
+from .kc import evaluate_rule
 from .records import compositional_base_event, oracle_interaction, observable_base_event
-
-
-ORACLE_RULES = {
-    "ORACLE_FINITE_FORM",
-    "ORACLE_FINITE_AGREEMENT",
-    "ORACLE_PERFECT_DEPENDENCY",
-    "ORACLE_PROGRESSIVE_DEPENDENCY",
-    "ORACLE_PASSIVE_DEPENDENCY",
-    "ORACLE_NEGATION",
-    "ORACLE_OPERATOR_INVERSION",
-    "ORACLE_DO_SUPPORT",
-    "ORACLE_CENTRAL_MODAL",
-    "ORACLE_IMPERATIVE",
-}
 
 
 # Fixed difficulty, response, and split equations
@@ -117,47 +105,15 @@ def _frame_type(item: dict[str, Any]) -> str:
     return values[0]
 
 
-def _feature_active(
-    feature_id: str, item: dict[str, Any], cell: dict[str, str]
-) -> tuple[bool, str]:
-    operations = set(item["realization_evidence"]["operations"])
-    agreement_site = item["realization_evidence"]["agreement_site"]
-    frame_type = _frame_type(item)
-    if feature_id == "ORACLE_FINITE_FORM":
-        active = cell["tense"] in {"present", "past"}
-        return active, f"tense={cell['tense']}"
-    if feature_id == "ORACLE_FINITE_AGREEMENT":
-        active = (
-            agreement_site == "be"
-            or (
-                cell["tense"] == "present"
-                and agreement_site in {"main_verb", "do", "have"}
-            )
-            or (frame_type == "copular" and cell["tense"] == "past")
-        )
-        return active, (
-            f"tense={cell['tense']};agreement_site={agreement_site};frame_type={frame_type}"
-        )
-    if feature_id == "ORACLE_PERFECT_DEPENDENCY":
-        active = cell["aspect"] in {"perfect", "perfect_progressive"}
-        return active, f"aspect={cell['aspect']}"
-    if feature_id == "ORACLE_PROGRESSIVE_DEPENDENCY":
-        active = cell["aspect"] in {"progressive", "perfect_progressive"}
-        return active, f"aspect={cell['aspect']}"
-    if feature_id == "ORACLE_PASSIVE_DEPENDENCY":
-        return cell["voice"] == "passive", f"voice={cell['voice']}"
-    if feature_id == "ORACLE_NEGATION":
-        return cell["polarity"] == "negative", f"polarity={cell['polarity']}"
-    if feature_id == "ORACLE_OPERATOR_INVERSION":
-        return "operator_inversion" in operations, f"operations={sorted(operations)}"
-    if feature_id == "ORACLE_DO_SUPPORT":
-        active = bool({"do_support", "do_support_negation"} & operations)
-        return active, f"operations={sorted(operations)}"
-    if feature_id == "ORACLE_CENTRAL_MODAL":
-        return cell["modal"] != "none", f"modal={cell['modal']}"
-    if feature_id == "ORACLE_IMPERATIVE":
-        return cell["clause"] == "imperative", f"clause={cell['clause']}"
-    raise ValueError(f"unknown simulation primitive: {feature_id}")
+def load_simulation_parameters(path: str | Path) -> dict[str, Any]:
+    """Resolve the one-level compatibility alias used by the former default path."""
+
+    selected = repo_path(path)
+    params = read_json(selected)
+    if "extends" in params:
+        base = read_json(selected.parent / params["extends"])
+        params = {**base, **{key: value for key, value in params.items() if key != "extends"}}
+    return params
 
 
 def project_oracle_items(
@@ -171,23 +127,32 @@ def project_oracle_items(
     feature_ids = [row["oracle_feature_id"] for row in definitions]
     if len(feature_ids) != len(set(feature_ids)):
         raise ValueError("simulation oracle feature IDs are duplicated")
-    if set(feature_ids) != ORACLE_RULES:
-        raise ValueError(
-            "structural oracle config must declare exactly the implemented v0 primitives: "
-            f"missing={sorted(ORACLE_RULES - set(feature_ids))}, "
-            f"unknown={sorted(set(feature_ids) - ORACLE_RULES)}"
-        )
+    if not feature_ids or any("activation_rule" not in row for row in definitions):
+        raise ValueError("simulation oracle features require declarative activation_rule values")
     cell_by_id = {row["canonical_cell_id"]: row["cell"] for row in cells}
     projections = []
     for item in sorted(items, key=lambda row: row["item_id"]):
         cell = cell_by_id.get(item["canonical_cell_id"])
         if cell is None:
             raise RuntimeError(f"oracle item projection has unknown cell: {item['item_id']}")
+        opportunity = {
+            "cell": cell,
+            "realization_operations": item["realization_evidence"]["operations"],
+            "agreement_site": item["realization_evidence"]["agreement_site"],
+            "frame_type": _frame_type(item),
+        }
         evidence = {}
         active = []
-        for feature_id in feature_ids:
-            activated, reason = _feature_active(feature_id, item, cell)
-            evidence[feature_id] = {"activated": activated, "reason": reason}
+        for definition in definitions:
+            feature_id = definition["oracle_feature_id"]
+            activated, rule_evidence = evaluate_rule(
+                definition["activation_rule"], opportunity
+            )
+            evidence[feature_id] = {
+                "activated": activated,
+                "activation_rule": definition["activation_rule"],
+                "evidence": rule_evidence,
+            }
             if activated:
                 active.append(feature_id)
         if not active:
@@ -196,7 +161,7 @@ def project_oracle_items(
             {
                 "item_id": item["item_id"],
                 "canonical_cell_id": item["canonical_cell_id"],
-                "canonical_split": item["generation_metadata"]["canonical_split"],
+                "canonical_split": item["canonical_split"],
                 "oracle_representation_id": params["oracle_representation_id"],
                 "oracle_feature_ids": active,
                 "activation_evidence": evidence,
@@ -302,7 +267,7 @@ def simulate_records(
                             "learner_id": learner_id,
                             "item_id": item_id_value,
                             "canonical_cell_id": item["canonical_cell_id"],
-                            "canonical_split": item["generation_metadata"]["canonical_split"],
+                            "canonical_split": item["canonical_split"],
                             "sequence_index": sequence,
                             "timestamp": timestamp,
                             "correct": correct,
@@ -374,17 +339,17 @@ def simulate_compositional_records(
     development_ids = sorted(
         item_id
         for item_id, item in item_by_id.items()
-        if item["generation_metadata"]["canonical_split"] == "development"
+        if item["canonical_split"] == "development"
     )
     compositional_ids = sorted(
         item_id
         for item_id, item in item_by_id.items()
-        if item["generation_metadata"]["canonical_split"] == "compositional_holdout"
+        if item["canonical_split"] == "compositional_holdout"
     )
     novel_ids = sorted(
         item_id
         for item_id, item in item_by_id.items()
-        if item["generation_metadata"]["canonical_split"] == "novel_feature_holdout"
+        if item["canonical_split"] == "novel_feature_holdout"
     )
     if not development_ids:
         raise RuntimeError("Phase-D protocol requires development items")
@@ -594,17 +559,17 @@ def audit_compositional_simulation(
     expected_development = {
         item_id
         for item_id, item in item_by_id.items()
-        if item["generation_metadata"]["canonical_split"] == "development"
+        if item["canonical_split"] == "development"
     }
     expected_comp = {
         item_id
         for item_id, item in item_by_id.items()
-        if item["generation_metadata"]["canonical_split"] == "compositional_holdout"
+        if item["canonical_split"] == "compositional_holdout"
     }
     expected_novel = {
         item_id
         for item_id, item in item_by_id.items()
-        if item["generation_metadata"]["canonical_split"] == "novel_feature_holdout"
+        if item["canonical_split"] == "novel_feature_holdout"
     }
     learner_ids = {row["learner_id"] for row in rows["learners"]}
     repetitions = int(protocol.get("probe_repetitions", 1))
@@ -718,10 +683,12 @@ def audit_simulation(
 def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     output = run_dir / "simulation"
     output.mkdir(parents=True, exist_ok=False)
-    params = read_json(repo_path(settings["parameters"]))
+    params = load_simulation_parameters(settings["parameters"])
     params["seed"] = int(settings["seed"])
     items = read_jsonl(run_dir / "items" / "validation" / "accepted_items.jsonl")
     cells = read_jsonl(run_dir / "canonical" / "canonical_cells.jsonl")
+    manifest = load_fold(fold_path(settings))
+    items = annotate_items(items, assignment_for_cells(cells, manifest))
     item_by_id = {row["item_id"]: row for row in items}
     projections, feature_ids = project_oracle_items(items, cells, params)
     oracle_by_item = {row["item_id"]: row["oracle_feature_ids"] for row in projections}
@@ -755,7 +722,8 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
                     ).items()
                 )
             ),
-            "item_bank_sha256": item_bank_fingerprint(items),
+            "intrinsic_item_bank_sha256": item_bank_fingerprint(items),
+            "fold_id": manifest["fold_id"],
             "base_event_stream_sha256": event_stream_fingerprint(observed),
             "temporal_split_warning": (
                 "two complete shuffled item passes are split chronologically; canonical holdout items "
@@ -794,7 +762,8 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
         compositional_output / "audit.json",
         {
             **compositional_audit,
-            "item_bank_sha256": audit["item_bank_sha256"],
+            "intrinsic_item_bank_sha256": audit["intrinsic_item_bank_sha256"],
+            "fold_id": manifest["fold_id"],
             "oracle_representation_id": params["oracle_representation_id"],
             "fixed_post_development_oracle_state": True,
             "probe_draws_order_independent": True,

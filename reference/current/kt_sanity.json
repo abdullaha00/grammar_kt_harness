@@ -6,7 +6,8 @@
   "bkt": 0.6069967992208443,
   "logistic": 0.6482325387332101,
   "reference_basis": "CURRENT_FACTORIZED projected onto the Phase-C 58-item/20880-event STRUCTURAL_ORACLE_v0 fixed dataset; values are descriptive, not ontology-selection thresholds",
-  "item_bank_sha256": "16a220cff3af8c87c2be1fbe13aab990146a38d91b3c0c5b20f64bfa8ae4fbb2",
+  "intrinsic_item_bank_sha256": "ad5eed4498eb9fcb236a41ae8d0d2b8f3751e4c0cb30854e5b5a2eb1855bc02e",
+  "fingerprint_migration": "canonical_split was removed from intrinsic item records; all 58 item IDs, prompts, answers, RealizationSpecs and lexical conditions are unchanged",
   "base_event_stream_sha256": "bf947f559a9e0a686bdc767e9f21ca8512ecfbc393228275b32dd6f85a3cb96e",
   "current_fixed_bank_metrics_available": true,
   "not_an_ontology_selection_objective": true

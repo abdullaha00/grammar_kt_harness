@@ -11,10 +11,14 @@ The scientific methodology remains explicit and replaceable:
 
 - `modules/` — prompts, rulebooks, policies, item families, lexicons, parameters, and tiny fixtures;
 - `src/grammar_kt/` — Python that executes those choices;
-- `scripts/` — the five researcher-facing commands;
+- `scripts/` — researcher-facing run, sampling, inspection, comparison, and validation commands;
 - `experiments/` — small combinations of scientific choices;
 - `runs/` — generated observations and model evidence;
 - `tests/` — software and boundary tests.
+
+Start with the [research map](docs/research-map.md) and the concise
+[component method guides](docs/modules/) to see which files correspond to each
+paper question.
 
 Q-matrix generation is implementation, not a separate scientific choice. Run metadata records the Git commit/dirty state, resolved experiment, seed, and external source SHA-256. There is no provenance stage, fingerprint graph, or automatic cache.
 
@@ -27,7 +31,11 @@ python -m pip install -e .
 python scripts/run.py base
 ```
 
-The baseline needs the external EGP source declared in `experiments/base.yaml` and invokes the configured models for normalisation and item diagnostics. Model evidence is retained under the relevant unit directory as `input.json`, `rendered_prompt.txt`, `invocation.json`, `raw_output.txt`, `parsed_output.json`, and `validation.json`.
+The baseline needs the external EGP source identity declared in
+`experiments/base.yaml`. Set `GRAMMAR_KT_EGP_SOURCE` to the exact JSONL file, or
+set `GRAMMAR_KT_DATA_ROOT` to its directory. The declared SHA-256 remains
+mandatory. The configured models are invoked for normalisation and item
+diagnostics; their evidence is retained under the relevant unit directory.
 
 Run one example without constructing an experiment:
 
@@ -37,6 +45,7 @@ python scripts/run_one.py kc_selection --fixture structural_selection
 python scripts/run_one.py kc --fixture perfect_progressive --policy factorized
 python scripts/run_one.py items --fixture valid_deterministic_item
 python scripts/run_one.py simulation
+python scripts/run_one.py kt --fixture frozen_compositional_probe
 ```
 
 For a compact, executable tour with one fixed input and real call per pipeline
@@ -75,9 +84,9 @@ Its inspectable outputs are `candidates.jsonl`, `activations.jsonl`,
 materialisation; it reads the frozen `selected_policy.json` without selecting
 or inventing KCs.
 
-The realisation split distinguishes `compositional_holdout` (only development-
+The explicit fold manifest distinguishes `compositional_holdout` (only development-
 seen salient facts in new combinations) from `novel_feature_holdout` (at least
-one unseen fact). All 24 cell assignments are explicit and exact-inventory
+one unseen fact). The fold is separate from realisations and items. All 24 cell assignments are explicit and exact-inventory
 validation prevents new cells from silently defaulting into development.
 Candidate discovery, support, equivalence classes, scope
 checks, contrasts, and selection use development cells only. The current
@@ -102,8 +111,18 @@ ontology variant reuse the same fixed learner-item outcomes by construction.
 The item stage now runs before KC selection. It deterministically covers every
 canonical cell, source-licensed imperative subtypes, WH roles, lexical versus
 copular operator sources, and representative finite-agreement profiles. Item
-existence, lexical conditions, prompts, answers, IDs, canonical split, validation,
-and the saved bank SHA-256 contain no KC labels.
+existence, lexical conditions, prompts, answers, IDs, validation, and the saved
+intrinsic bank SHA-256 contain neither fold assignments nor KC labels. A fold is
+applied as a runtime view only when selection, simulation, materialisation, or
+KT needs experimental roles.
+
+Removing the old intrinsic `canonical_split` field intentionally migrates the
+reference bank fingerprint from
+`16a220cff3af8c87c2be1fbe13aab990146a38d91b3c0c5b20f64bfa8ae4fbb2` to
+`ad5eed4498eb9fcb236a41ae8d0d2b8f3751e4c0cb30854e5b5a2eb1855bc02e`.
+The 58 item IDs, RealizationSpecs, prompts, answers, frames, and lexical
+conditions are unchanged. The new hash identifies the reusable
+split-independent bank.
 
 After a policy is frozen, `kc` applies it to every accepted concrete item
 realization and writes `item_kc_projection.jsonl` and
@@ -134,8 +153,10 @@ items to ten controlled data-generating dimensions: finite form, finite
 agreement, perfect, progressive and passive dependencies, negation, operator
 inversion, do-support, central modal structure, and imperative structure. These
 are simulation primitives, not claimed human KCs. WH is absent because the
-current fixed inventory has no observed WH item; speculative dimensions are not
-added.
+current fixed inventory has no observed WH item; subject- and non-subject-WH
+realisation support is nevertheless covered by explicit regression fixtures.
+Each oracle feature's activation rule is declared in the JSON config rather
+than dispatched by a Python feature-name table.
 
 For an item with active oracle set `A`, the pre-response score is the mean of
 the logits of the learner's pre-event mastery over `A`, minus the item-ID-hashed
@@ -183,7 +204,7 @@ a cognitively correct model of human grammar learning.
 
 ## Predefined KC policy experiment example
 
-1. Copy `modules/kc/policies/factorized.json` to `modules/kc/policies/new_policy.json` and edit its rules. Supported rule primitives are `cell`, `operation`, and `all`; no Python change is needed for a policy using those primitives.
+1. Copy `modules/kc/policies/factorized.json` to `modules/kc/policies/new_policy.json` and edit its rules. KC policies can use `cell`, `operation`, `all`, and `any`; the oracle compiler additionally supplies `agreement_site` and `frame_type`. No Python change is needed for a policy using the KC primitives.
 2. Test one case:
 
    ```bash
@@ -208,11 +229,14 @@ a cognitively correct model of human grammar learning.
    python scripts/compare.py base kc_new_policy --stage kc_selection
    ```
 
-   Runs created before the split redesign contain the legacy `held_out` label;
-   use `--from realisation` once to regenerate explicit compositional/OOD split
-   artifacts before running `kc_selection`.
+   Runs created before fold/item decoupling must be regenerated from
+   `realisation` or earlier; their intrinsic item records contain obsolete fold
+   metadata and intentionally have the legacy bank hash.
 
-`--from` is intentionally explicit. It copies earlier stage outputs from the parent run and records that fact in `metadata.json`; it does not infer reuse from hashes.
+`--from` is intentionally explicit. Before copying earlier stage outputs, it
+compares the parent and child inputs for every reused stage, recursively hashing
+referenced module configs. A mismatch refuses reuse with the affected stage and
+hashes. This is a safety check, not hidden caching or a workflow DAG.
 
 ## Inspect, compare, validate
 

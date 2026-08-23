@@ -9,13 +9,14 @@ from pathlib import Path
 from typing import Any
 
 from .backend import invoke_model, save_model_result
+from .canonical_schema import prompt_declaration
 from .io import ROOT, read_jsonl, read_yaml, repo_path, write_json, write_jsonl
 from .normalisation_validation import RESULTS, parse_raw_mapping, validate_mapping, validate_phase2_transition
+from .normalisation_reliability import analyse_repeated_normalisations
 
 
 NORMALISATION_DIR = ROOT / "modules" / "normalisation"
 WRAPPER = NORMALISATION_DIR / "prompts" / "wrapper.txt"
-GRAMMAR_DIMENSIONS = NORMALISATION_DIR / "rules" / "grammar_dimensions.txt"
 RULEBOOK = NORMALISATION_DIR / "rules" / "rulebook.md"
 MODEL_INSTRUCTIONS = NORMALISATION_DIR / "rules" / "model_instructions.md"
 OUTPUT_SCHEMA = NORMALISATION_DIR / "configs" / "mapping_schema.json"
@@ -86,7 +87,7 @@ def normalise_one(
     phase1_record = {key: record.get(key) for key in PHASE1_FIELDS}
     method_context = WRAPPER.read_text(encoding="utf-8")
     for key, replacement in {
-        "schema": GRAMMAR_DIMENSIONS.read_text(encoding="utf-8"),
+        "schema": prompt_declaration(),
         "rulebook": RULEBOOK.read_text(encoding="utf-8"),
         "phase": "1",
     }.items():
@@ -115,7 +116,7 @@ def normalise_one(
         examples = record.get("examples", [])
         method_context = WRAPPER.read_text(encoding="utf-8")
         for key, replacement in {
-            "schema": GRAMMAR_DIMENSIONS.read_text(encoding="utf-8"),
+            "schema": prompt_declaration(),
             "rulebook": RULEBOOK.read_text(encoding="utf-8"),
             "phase": "2",
         }.items():
@@ -210,4 +211,11 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
         write_jsonl(output / f"{name}.jsonl", [row for row in final if row["result"] == name], sort_keys=False)
     counts = {name: sum(row["result"] == name for row in final) for name in sorted(RESULTS)}
     write_json(output / "summary.json", {"records": len(final), "result_counts": counts})
-    return {"records": len(final), "result_counts": counts}
+    reliability, comparisons = analyse_repeated_normalisations(units, by_unit)
+    write_json(output / "reliability.json", reliability)
+    write_jsonl(output / "repeated_comparisons.jsonl", comparisons, sort_keys=False)
+    return {
+        "records": len(final),
+        "result_counts": counts,
+        "repeated_pairs": reliability["repeated_pairs"],
+    }

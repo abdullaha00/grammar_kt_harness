@@ -9,7 +9,8 @@ from pathlib import Path
 from typing import Any
 
 from .io import read_json, read_jsonl, read_yaml, repo_path, stable_id, write_json, write_jsonl
-from .realisation import LEXICON, imperative_subtype, realise, validate_spec
+from .realisation import LEXICON, realise, validate_spec
+from .realisation_space import make_valid_spec, source_conditions, wh_conditions
 
 
 ITEM_FAMILY = "controlled_transformation"
@@ -95,7 +96,7 @@ def item_bank_record(item: dict[str, Any]) -> dict[str, Any]:
 
 
 def item_bank_fingerprint(items: list[dict[str, Any]]) -> str:
-    """SHA-256 of sorted ontology-independent records, excluding validator evidence."""
+    """SHA-256 of intrinsic bank records, excluding folds and validator evidence."""
 
     records = [item_bank_record(row) for row in sorted(items, key=lambda value: value["item_id"])]
     payload = json.dumps(records, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
@@ -103,17 +104,6 @@ def item_bank_fingerprint(items: list[dict[str, Any]]) -> str:
 
 
 # Opportunity construction
-
-def _wh_conditions(cell: dict[str, str]) -> list[dict[str, str] | None]:
-    if cell["clause"] == "subject_wh_question":
-        return [{"phrase": "who", "role": "subject"}]
-    if cell["clause"] == "non_subject_wh_question":
-        return [
-            {"phrase": "what", "role": "object"},
-            {"phrase": "when", "role": "adjunct"},
-        ]
-    return [None]
-
 
 def _base_frame_id(cell: dict[str, str], config: dict[str, Any]) -> str:
     if cell["modal"] == "would":
@@ -135,7 +125,6 @@ def _base_subject(
 
 def _make_opportunity(
     cell_row: dict[str, Any],
-    split: str,
     source_id: str,
     source_note: str | None,
     frame_id: str,
@@ -148,22 +137,19 @@ def _make_opportunity(
     cell_id = cell_row["canonical_cell_id"]
     cell = cell_row["cell"]
     frame = frames[frame_id]
-    realization_id = stable_id(
-        "REAL", "item_bank_v0", cell_id, source_id, frame_id, subject, wh, subtype
-    )
-    spec = {
-        "realization_id": realization_id,
-        "canonical_cell_id": cell_id,
+    source = {
         "source_descriptor_id": source_id,
-        "predicate_frame_id": frame_id,
-        "subject": subject,
-        "wh": wh,
+        "source_note": source_note,
         "imperative_subtype": subtype,
-        "let_pronoun": "them" if subtype == "let_pronoun" else None,
     }
-    errors = validate_spec(spec, cell, frame, source_note)
-    if errors:
-        raise RuntimeError(f"invalid item opportunity {realization_id}: {'; '.join(errors)}")
+    spec = make_valid_spec(
+        cell_row,
+        frame,
+        source,
+        subject,
+        wh,
+        identity_parts=("item_bank_v0", cell_id, source_id, frame_id, subject, wh, subtype),
+    )
     derivation = realise(spec, cell, frame)
     coverage_tags = sorted(
         {
@@ -181,7 +167,6 @@ def _make_opportunity(
         "item_opportunity_id": opportunity_id,
         "canonical_cell_id": cell_id,
         "cell": cell,
-        "canonical_split": split,
         "source_descriptor_ids": cell_row["source_descriptor_ids"],
         "source_mapping_notes": cell_row["source_mapping_notes"],
         "realization_spec": spec,
@@ -196,36 +181,14 @@ def _make_opportunity(
     }
 
 
-def _source_cases(cell_row: dict[str, Any]) -> list[tuple[str, str | None, str | None]]:
-    """Select one source normally and one per licensed imperative subtype."""
-
-    notes = cell_row["source_mapping_notes"]
-    if cell_row["cell"]["clause"] != "imperative":
-        source_id = sorted(cell_row["source_descriptor_ids"])[0]
-        return [(source_id, notes[source_id], None)]
-    by_subtype: dict[str, tuple[str, str | None]] = {}
-    for source_id in sorted(cell_row["source_descriptor_ids"]):
-        note = notes[source_id]
-        subtype = imperative_subtype(note)
-        by_subtype.setdefault(subtype, (source_id, note))
-    return [
-        (source_id, note, subtype)
-        for subtype, (source_id, note) in sorted(by_subtype.items())
-    ]
-
-
 def build_item_opportunities(
     cells: list[dict[str, Any]],
-    split_rows: list[dict[str, Any]],
     frames: dict[str, dict[str, Any]],
     config: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """Cover cells and important realization conditions without consulting a KC policy."""
 
-    split_by_cell = {row["canonical_cell_id"]: row["split"] for row in split_rows}
     cell_by_id = {row["canonical_cell_id"]: row for row in cells}
-    if set(split_by_cell) != set(cell_by_id):
-        raise RuntimeError("item-bank splits must exactly cover the canonical inventory")
 
     opportunities: dict[str, dict[str, Any]] = {}
 
@@ -241,7 +204,6 @@ def build_item_opportunities(
     ) -> dict[str, Any]:
         row = _make_opportunity(
             cell_row,
-            split_by_cell[cell_row["canonical_cell_id"]],
             source_id,
             source_note,
             frame_id,
@@ -265,8 +227,11 @@ def build_item_opportunities(
         cell = cell_row["cell"]
         frame_id = _base_frame_id(cell, config)
         frame = frames[frame_id]
-        for source_id, source_note, subtype in _source_cases(cell_row):
-            for wh in _wh_conditions(cell):
+        for source in source_conditions(cell_row):
+            source_id = source["source_descriptor_id"]
+            source_note = source["source_note"]
+            subtype = source["imperative_subtype"]
+            for wh in wh_conditions(cell, frame):
                 reason = (
                     f"imperative_subtype:{subtype}"
                     if subtype is not None
@@ -302,8 +267,11 @@ def build_item_opportunities(
             )
             if not eligible:
                 continue
-            source_id, source_note, subtype = _source_cases(cell_row)[0]
-            for wh in _wh_conditions(cell):
+            source = source_conditions(cell_row)[0]
+            source_id = source["source_descriptor_id"]
+            source_note = source["source_note"]
+            subtype = source["imperative_subtype"]
+            for wh in wh_conditions(cell, copular):
                 add(
                     cell_row,
                     source_id,
@@ -315,33 +283,57 @@ def build_item_opportunities(
                     "operator_source_contrast",
                 )
 
-    # Sample subject agreement by observed realization profile, not per cell.
+    # Sample the explicit, split-independent measurement representatives.
     if config.get("include_agreement_variants", True):
-        representatives: dict[tuple[str, str, str, str], dict[str, Any]] = {}
-        for row in sorted(
-            opportunities.values(),
-            key=lambda value: (
-                value["canonical_cell_id"],
-                value["realization_spec"]["predicate_frame_id"],
-                json.dumps(value["realization_spec"]["wh"], sort_keys=True),
-                value["realization_spec"]["imperative_subtype"] or "",
-                value["realization_spec"]["source_descriptor_id"],
-            ),
-        ):
-            cell = row["cell"]
-            site = row["realization_evidence"]["agreement_site"]
-            frame_type = frames[row["realization_spec"]["predicate_frame_id"]]["frame_type"]
-            if (
-                site in {"none", "modal"}
-                or cell["voice"] == "passive"
-                or cell["clause"] in {"imperative", "subject_wh_question"}
-            ):
-                continue
-            # Keep nuisance coverage in each canonical split rather than letting
-            # one arbitrary cell supply agreement evidence for every split.
-            profile = (row["canonical_split"], site, cell["tense"], frame_type)
-            representatives.setdefault(profile, row)
-        for profile, representative in sorted(representatives.items()):
+        declared = config.get("agreement_representatives", [])
+        if not isinstance(declared, list):
+            raise ValueError("agreement_representatives must be a list")
+        applicable = [
+            row for row in declared if row["canonical_cell_id"] in cell_by_id
+        ]
+        # The declared profile freezes the pilot bank.  A smaller fixture or a
+        # future source sample gets its own deterministic intrinsic profile;
+        # partial overlap is not evidence that the pilot declaration applies.
+        if len(applicable) != len(declared):
+            generic: dict[tuple[str, str, str], dict[str, str]] = {}
+            for row in sorted(opportunities.values(), key=lambda value: value["item_opportunity_id"]):
+                cell = row["cell"]
+                site = row["realization_evidence"]["agreement_site"]
+                frame_id = row["realization_spec"]["predicate_frame_id"]
+                if (
+                    site in {"none", "modal"}
+                    or cell["voice"] == "passive"
+                    or cell["clause"] in {"imperative", "subject_wh_question"}
+                ):
+                    continue
+                key = (site, cell["tense"], frames[frame_id]["frame_type"])
+                generic.setdefault(
+                    key,
+                    {
+                        "canonical_cell_id": row["canonical_cell_id"],
+                        "predicate_frame_id": frame_id,
+                    },
+                )
+            applicable = [generic[key] for key in sorted(generic)]
+        for index, profile in enumerate(applicable, 1):
+            cell_id = profile["canonical_cell_id"]
+            frame_id = profile["predicate_frame_id"]
+            matches = [
+                row
+                for row in opportunities.values()
+                if row["canonical_cell_id"] == cell_id
+                and row["realization_spec"]["predicate_frame_id"] == frame_id
+                and row["realization_spec"]["wh"] is None
+                and row["realization_spec"]["imperative_subtype"] is None
+            ]
+            if len(matches) != 1:
+                raise RuntimeError(
+                    f"agreement representative {index} resolves to {len(matches)} baselines"
+                )
+            representative = matches[0]
+            site = representative["realization_evidence"]["agreement_site"]
+            if site in {"none", "modal"}:
+                raise RuntimeError(f"agreement representative {index} has site={site}")
             cell_row = cell_by_id[representative["canonical_cell_id"]]
             spec = representative["realization_spec"]
             note = cell_row["source_mapping_notes"][spec["source_descriptor_id"]]
@@ -354,7 +346,7 @@ def build_item_opportunities(
                     spec["predicate_frame_id"],
                     dict(subject),
                     spec["wh"],
-                    f"agreement_profile:{':'.join(profile)}",
+                    f"agreement_measurement:{index:02d}:{site}",
                 )
 
     ordered = sorted(opportunities.values(), key=lambda row: row["item_opportunity_id"])
@@ -390,7 +382,6 @@ def construct_items(
             "accepted_answers": [opportunity["target_answer"]],
             "contrast_set_id": None,
             "generation_metadata": {
-                "canonical_split": opportunity["canonical_split"],
                 "coverage_reasons": opportunity["coverage_reasons"],
                 "deterministic": True,
             },
@@ -432,17 +423,18 @@ def generate_items(
     family_prompt_path: str | Path,
     bank_config_path: str | Path,
     repeated_diagnostics: int,
+    lexicon_path: str | Path = LEXICON,
 ) -> dict[str, Any]:
     output = items_dir / "generation"
     output.mkdir(parents=True, exist_ok=False)
     cells = read_jsonl(run_dir / "canonical" / "canonical_cells.jsonl")
-    split_rows = read_jsonl(run_dir / "realisation" / "cell_splits.jsonl")
-    frames = {row["predicate_frame_id"]: row for row in read_jsonl(LEXICON)}
+    lexicon = repo_path(lexicon_path)
+    frames = {row["predicate_frame_id"]: row for row in read_jsonl(lexicon)}
     template_path = repo_path(family_prompt_path)
     template = template_path.read_text(encoding="utf-8")
     config = read_json(repo_path(bank_config_path))
 
-    opportunities = build_item_opportunities(cells, split_rows, frames, config)
+    opportunities = build_item_opportunities(cells, frames, config)
     candidates = construct_items(opportunities, frames, template)
     write_jsonl(output / "item_opportunities.jsonl", opportunities)
     write_jsonl(output / "candidate_items.jsonl", candidates)
@@ -451,10 +443,7 @@ def generate_items(
         {"validation_unit_id": f"IV1{index:03d}", "item_id": row["item_id"], "duplicate_of": None}
         for index, row in enumerate(candidates, 1)
     ]
-    repeated = [
-        row for row in candidates
-        if row["generation_metadata"]["canonical_split"] != "development"
-    ][:repeated_diagnostics]
+    repeated = candidates[:repeated_diagnostics]
     originals = {unit["item_id"]: unit["validation_unit_id"] for unit in units}
     for index, row in enumerate(repeated, len(units) + 1):
         units.append(
@@ -477,7 +466,7 @@ def generate_items(
                 "implementation": "deterministic ontology-independent item bank v0",
                 "bank_config": str(repo_path(bank_config_path)),
                 "template": str(template_path),
-                "lexicon": str(LEXICON),
+                "lexicon": str(lexicon),
                 "model_invoked": False,
                 "kc_policy_consulted": False,
             },
@@ -487,22 +476,22 @@ def generate_items(
     tags = Counter(
         tag for row in candidates for tag in row["realization_evidence"]["coverage_tags"]
     )
-    splits = Counter(row["generation_metadata"]["canonical_split"] for row in candidates)
     report = {
         "bank_version": config["bank_version"],
-        "item_bank_sha256": item_bank_fingerprint(candidates),
+        "intrinsic_item_bank_sha256": item_bank_fingerprint(candidates),
         "canonical_cells": len(cells),
         "opportunities": len(opportunities),
         "items": len(candidates),
-        "items_by_canonical_split": dict(sorted(splits.items())),
         "coverage_tag_support": dict(sorted(tags.items())),
         "ontology_fields_present": [],
+        "fold_fields_present": [],
+        "fold_inputs_read": False,
     }
     write_json(output / "bank_report.json", report)
     return {
         "candidate_items": len(candidates),
         "diagnostic_units": len(units),
-        "item_bank_sha256": report["item_bank_sha256"],
+        "intrinsic_item_bank_sha256": report["intrinsic_item_bank_sha256"],
     }
 
 
@@ -550,6 +539,7 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
         family_prompt_path=settings["family_prompt"],
         bank_config_path=settings["bank_config"],
         repeated_diagnostics=int(validation_settings.get("repeated_diagnostics", 5)),
+        lexicon_path=settings.get("lexicon", LEXICON),
     )
     validation = run_validation(
         output,
@@ -559,5 +549,6 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
         backend_config=read_yaml(validation_settings["backend_config"]),
         workers=int(validation_settings.get("workers", 6)),
         max_attempts=int(validation_settings.get("max_attempts", 2)),
+        lexicon_path=settings.get("lexicon", LEXICON),
     )
     return {**generation, **validation}

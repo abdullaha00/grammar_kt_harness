@@ -115,7 +115,7 @@ def build(
         "uncovered_items_by_canonical_split": dict(
             sorted(
                 Counter(
-                    item["generation_metadata"]["canonical_split"]
+                    projection_by_item[item["item_id"]]["canonical_split"]
                     for item in items
                     if item["item_id"] in set(uncovered_item_ids)
                 ).items()

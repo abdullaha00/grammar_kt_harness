@@ -8,8 +8,14 @@ from pathlib import Path
 from typing import Any
 
 from .io import read_json, read_jsonl, repo_path, stable_id, write_json, write_jsonl
+from .folds import annotate_items, fold_path, fold_rows, load_fold
 from .kc import apply_policy, evaluate_rule, load_policy, project_items
-from .kc_candidates import discover_candidates, nuisance_opportunities, salient_facts
+from .kc_candidates import (
+    discover_candidates,
+    load_obligation_policy,
+    nuisance_opportunities,
+    salient_facts,
+)
 from .realisation import LEXICON
 from .records import DIMENSIONS
 
@@ -399,7 +405,10 @@ def compile_predefined_policy(path: Path, development_cell_ids: list[str]) -> di
     }
 
 
-def development_frozen_full_cell_policy(development_cells: list[dict[str, Any]]) -> dict[str, Any]:
+def development_frozen_full_cell_policy(
+    development_cells: list[dict[str, Any]],
+    obligation_policy: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     rules = []
     for row in sorted(development_cells, key=lambda value: value["canonical_cell_id"]):
         suffix = row["canonical_cell_id"].removeprefix("CELL_")
@@ -415,7 +424,7 @@ def development_frozen_full_cell_policy(development_cells: list[dict[str, Any]])
                 "realization_dependencies": [],
                 "near_neighbours": [],
                 "rationale": "Honest full-cell baseline frozen before held-out application.",
-                "represents": salient_facts(row["cell"]),
+                "represents": salient_facts(row["cell"], obligation_policy),
                 "canonical_dimensions": list(DIMENSIONS),
                 "interaction_order": 1,
             }
@@ -450,7 +459,7 @@ def development_frozen_factorized_policy(
         row["canonical_cell_id"] for row in development_cells
     }
     if any(
-        item["generation_metadata"]["canonical_split"] != "development"
+        item["canonical_split"] != "development"
         or item["canonical_cell_id"] not in development_cell_ids
         for item in development_items
     ):
@@ -558,6 +567,7 @@ def evaluate_policy(
     split_by_id: dict[str, str],
     opportunities: dict[str, dict[str, Any]],
     candidate_metadata: list[dict[str, Any]],
+    obligation_policy: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     by_id = {row["canonical_cell_id"]: row for row in cells}
     metadata = _rule_metadata(policy, candidate_metadata)
@@ -569,7 +579,7 @@ def evaluate_policy(
         for cell_id in projection:
             for kc_id in projection[cell_id]:
                 metadata[kc_id] = {
-                    "represents": salient_facts(by_id[cell_id]["cell"]),
+                    "represents": salient_facts(by_id[cell_id]["cell"], obligation_policy),
                     "dimensions": list(DIMENSIONS),
                     "interaction_order": 1,
                 }
@@ -585,7 +595,7 @@ def evaluate_policy(
         reused_assignments = 0
         active_assignments = 0
         for cell_id in ids:
-            facts = salient_facts(by_id[cell_id]["cell"])
+            facts = salient_facts(by_id[cell_id]["cell"], obligation_policy)
             active = projection[cell_id]
             represented = sorted({fact for kc_id in active for fact in metadata.get(kc_id, {}).get("represents", [])})
             covered = sorted(set(facts) & set(represented))
@@ -689,6 +699,7 @@ def evaluate_after_freeze(
 ) -> dict[str, Any]:
     opportunities = _opportunities_by_cell(cells, realisations, frames)
     split_by_id = partition["split_by_id"]
+    obligation_policy = load_obligation_policy(config.get("obligation_policy"))
     selected = evaluate_policy(
         selected_policy,
         label={
@@ -700,6 +711,7 @@ def evaluate_after_freeze(
         split_by_id=split_by_id,
         opportunities=opportunities,
         candidate_metadata=discovery["candidates"],
+        obligation_policy=obligation_policy,
     )
     baselines = []
     for baseline in config.get("baseline_policies", []):
@@ -712,9 +724,12 @@ def evaluate_after_freeze(
                 split_by_id=split_by_id,
                 opportunities=opportunities,
                 candidate_metadata=discovery["candidates"],
+                obligation_policy=obligation_policy,
             )
         )
-    frozen_full = development_frozen_full_cell_policy(partition["development_cells"])
+    frozen_full = development_frozen_full_cell_policy(
+        partition["development_cells"], obligation_policy
+    )
     baselines.append(
         evaluate_policy(
             frozen_full,
@@ -723,6 +738,7 @@ def evaluate_after_freeze(
             split_by_id=split_by_id,
             opportunities=opportunities,
             candidate_metadata=discovery["candidates"],
+            obligation_policy=obligation_policy,
         )
     )
 
@@ -768,7 +784,9 @@ def evaluate_after_freeze(
         )
 
     development_fact_vocabulary = {
-        fact for row in partition["development_cells"] for fact in salient_facts(row["cell"])
+        fact
+        for row in partition["development_cells"]
+        for fact in salient_facts(row["cell"], obligation_policy)
     }
     by_id = {row["canonical_cell_id"]: row for row in cells}
     split_audit: dict[str, Any] = {}
@@ -779,7 +797,7 @@ def evaluate_after_freeze(
     ):
         rows = []
         for cell_id in ids:
-            facts = salient_facts(by_id[cell_id]["cell"])
+            facts = salient_facts(by_id[cell_id]["cell"], obligation_policy)
             rows.append(
                 {
                     "canonical_cell_id": cell_id,
@@ -862,8 +880,12 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
 
     cells = read_jsonl(run_dir / "canonical" / "canonical_cells.jsonl")
     realisations = read_jsonl(run_dir / "realisation" / "realisations.jsonl")
-    split_rows = read_jsonl(run_dir / "realisation" / "cell_splits.jsonl")
-    frames = {row["predicate_frame_id"]: row for row in read_jsonl(LEXICON)}
+    manifest = load_fold(fold_path(settings))
+    split_rows = fold_rows(cells, manifest)
+    frames = {
+        row["predicate_frame_id"]: row
+        for row in read_jsonl(settings.get("lexicon", LEXICON))
+    }
     partition = partition_inputs(cells, realisations, split_rows)
 
     # Candidate generation and every selection decision receive development rows only.
@@ -896,11 +918,12 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
         objective = None
     elif mode == "development_frozen_factorized":
         all_items = read_jsonl(run_dir / "items" / "validation" / "accepted_items.jsonl")
+        all_items = annotate_items(all_items, partition["split_by_id"])
         # Split labels and IDs establish the boundary before rule activation sees item content.
         development_items = [
             row
             for row in all_items
-            if row["generation_metadata"]["canonical_split"] == "development"
+            if row["canonical_split"] == "development"
             and row["canonical_cell_id"] in set(partition["development_cell_ids"])
         ]
         policy_path = repo_path(settings["policy"])
@@ -939,7 +962,9 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
         ]
         objective = None
     else:
-        policy = development_frozen_full_cell_policy(partition["development_cells"])
+        policy = development_frozen_full_cell_policy(
+            partition["development_cells"], discovery["obligation_policy"]
+        )
         diagnostics = discovery["diagnostics"]
         for row in diagnostics:
             row["selection_status"] = "not_selected_full_cell_control"
@@ -955,6 +980,8 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
         objective = None
 
     write_jsonl(output / "candidates.jsonl", discovery["candidates"])
+    write_json(output / "fold_manifest.json", manifest)
+    write_jsonl(output / "cell_splits.jsonl", split_rows)
     write_jsonl(output / "activations.jsonl", discovery["activations"])
     write_jsonl(output / "diagnostics.jsonl", diagnostics)
     write_jsonl(output / "selection_trace.jsonl", trace)

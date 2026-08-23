@@ -1,0 +1,184 @@
+{
+  "candidate_family_id": "STRUCTURAL_CANDIDATES_v0",
+  "description": "Reference Phase-A structural, granularity, operation, and pairwise-interaction hypothesis space.",
+  "default_rationale": "Declared Phase-A structural hypothesis compiled deterministically from this module.",
+  "candidates": [
+    {
+      "kc_id": "KC_FINITE_PRESENT", "name": "present finite-form selection",
+      "definition": "Select present finite morphology and agreement conditions.",
+      "activation_rule": {"cell": {"tense": "present"}},
+      "represents": ["tense:present"], "canonical_dimensions": ["tense"],
+      "hypothesis_group": "finite_tense", "required_conditions": ["tense=present"],
+      "includes": ["present finite cells"], "excludes": ["past", "modal clauses", "imperatives"],
+      "realization_dependencies": ["finite agreement site"], "near_neighbours": ["KC_FINITE_PAST"]
+    },
+    {
+      "kc_id": "KC_FINITE_PAST", "name": "past finite-form selection",
+      "definition": "Select past finite morphology on the operator or main verb.",
+      "activation_rule": {"cell": {"tense": "past"}},
+      "represents": ["tense:past"], "canonical_dimensions": ["tense"],
+      "hypothesis_group": "finite_tense", "required_conditions": ["tense=past"],
+      "includes": ["past finite cells"], "excludes": ["present", "modal clauses", "imperatives"],
+      "realization_dependencies": ["finite agreement site"], "near_neighbours": ["KC_FINITE_PRESENT"]
+    },
+    {
+      "kc_id": "KC_ASPECT_PERFECT", "name": "perfect component",
+      "definition": "Construct perfect HAVE and its participial dependency.",
+      "activation_rule": {"cell": {"aspect": ["perfect", "perfect_progressive"]}},
+      "represents": ["aspect:perfect"], "canonical_dimensions": ["aspect"],
+      "hypothesis_group": "aspect_granularity", "required_conditions": ["aspect contains perfect"],
+      "includes": ["perfect", "perfect_progressive"], "excludes": ["none", "progressive-only"],
+      "realization_dependencies": ["perfect>past_participle"]
+    },
+    {
+      "kc_id": "KC_ASPECT_PROGRESSIVE", "name": "progressive component",
+      "definition": "Construct progressive BE and its participial dependency.",
+      "activation_rule": {"cell": {"aspect": ["progressive", "perfect_progressive"]}},
+      "represents": ["aspect:progressive"], "canonical_dimensions": ["aspect"],
+      "hypothesis_group": "aspect_granularity", "required_conditions": ["aspect contains progressive"],
+      "includes": ["progressive", "perfect_progressive"], "excludes": ["none", "perfect-only"],
+      "realization_dependencies": ["progressive>present_participle"]
+    },
+    {
+      "kc_id": "KC_ASPECT_PERFECT_PROGRESSIVE_ATOMIC", "name": "atomic perfect-progressive",
+      "definition": "Treat perfect-progressive as one atomic aspect hypothesis rather than only as two components.",
+      "activation_rule": {"cell": {"aspect": "perfect_progressive"}},
+      "represents": ["aspect:perfect", "aspect:progressive"], "canonical_dimensions": ["aspect"],
+      "hypothesis_group": "aspect_granularity", "rule_complexity": 2, "granularity_rank": 1,
+      "required_conditions": ["aspect=perfect_progressive"], "includes": ["perfect_progressive"],
+      "excludes": ["perfect-only", "progressive-only"], "realization_dependencies": ["multi-auxiliary chain"]
+    },
+    {
+      "kc_id": "KC_BE_PASSIVE", "name": "canonical BE-passive",
+      "definition": "Construct passive BE and a lexical past participle.",
+      "activation_rule": {"cell": {"voice": "passive"}},
+      "represents": ["voice:passive"], "canonical_dimensions": ["voice"],
+      "required_conditions": ["voice=passive"], "includes": ["BE-passive"], "excludes": ["active"],
+      "realization_dependencies": ["passive>past_participle"]
+    },
+    {
+      "kc_id": "KC_NEGATION", "name": "negative polarity",
+      "definition": "Express canonical negative polarity.",
+      "activation_rule": {"cell": {"polarity": "negative"}},
+      "represents": ["polarity:negative"], "canonical_dimensions": ["polarity"],
+      "required_conditions": ["polarity=negative"], "includes": ["negative clauses"],
+      "excludes": ["positive clauses"], "realization_dependencies": ["negation host or imperative negative construction"]
+    },
+    {
+      "kc_id": "KC_QUESTION_GENERIC", "name": "generic question formation",
+      "definition": "Treat all direct question types as one parent KC.",
+      "activation_rule": {"cell": {"clause": ["polar_question", "subject_wh_question", "non_subject_wh_question"]}},
+      "represents": ["clause:polar_question", "clause:subject_wh_question", "clause:non_subject_wh_question"],
+      "canonical_dimensions": ["clause"], "hypothesis_group": "question_granularity",
+      "required_conditions": ["clause is a direct question"],
+      "includes": ["polar_question", "subject_wh_question", "non_subject_wh_question"],
+      "excludes": ["declarative", "imperative"], "realization_dependencies": ["question clause structure"]
+    },
+    {
+      "kc_id": "KC_POLAR_QUESTION", "name": "polar-question formation",
+      "definition": "Form a direct yes/no question.",
+      "activation_rule": {"cell": {"clause": "polar_question"}},
+      "represents": ["clause:polar_question"], "canonical_dimensions": ["clause"],
+      "hypothesis_group": "question_granularity", "taxonomy_parent_kc_ids": ["KC_QUESTION_GENERIC"],
+      "granularity_rank": 1, "required_conditions": ["clause=polar_question"],
+      "includes": ["polar_question"], "excludes": ["WH questions"],
+      "realization_dependencies": ["operator-subject order"]
+    },
+    {
+      "kc_id": "KC_SUBJECT_WH", "name": "subject-WH formation",
+      "definition": "Realize a WH phrase as grammatical subject.",
+      "activation_rule": {"cell": {"clause": "subject_wh_question"}},
+      "represents": ["clause:subject_wh_question"], "canonical_dimensions": ["clause"],
+      "hypothesis_group": "question_granularity", "taxonomy_parent_kc_ids": ["KC_QUESTION_GENERIC"],
+      "granularity_rank": 1, "required_conditions": ["clause=subject_wh_question"],
+      "includes": ["subject WH"], "excludes": ["non-subject WH"],
+      "realization_dependencies": ["WH subject realization"]
+    },
+    {
+      "kc_id": "KC_NON_SUBJECT_WH", "name": "non-subject-WH formation",
+      "definition": "Front an object or adjunct WH phrase.",
+      "activation_rule": {"cell": {"clause": "non_subject_wh_question"}},
+      "represents": ["clause:non_subject_wh_question"], "canonical_dimensions": ["clause"],
+      "hypothesis_group": "question_granularity", "taxonomy_parent_kc_ids": ["KC_QUESTION_GENERIC"],
+      "granularity_rank": 1, "required_conditions": ["clause=non_subject_wh_question"],
+      "includes": ["object and adjunct WH"], "excludes": ["subject WH"],
+      "realization_dependencies": ["WH fronting", "question order"]
+    },
+    {
+      "kc_id": "KC_IMPERATIVE", "name": "imperative clause formation",
+      "definition": "Realize a base-form imperative construction.",
+      "activation_rule": {"cell": {"clause": "imperative"}},
+      "represents": ["clause:imperative"], "canonical_dimensions": ["clause"],
+      "required_conditions": ["clause=imperative"], "includes": ["source-licensed imperative subtypes"],
+      "excludes": ["declaratives", "questions"], "realization_dependencies": ["imperative subtype"]
+    },
+    {
+      "kc_id": "KC_OP_DO_SUPPORT", "name": "realisation evidence: DO-support",
+      "definition": "Insert finite DO when the realization lacks an inherent operator.",
+      "activation_rule": {"operation": "do_support"}, "represents": [],
+      "canonical_dimensions": ["clause", "polarity"], "origin": "operation",
+      "hypothesis_group": "operator_realisation", "realization_dependencies": ["predicate frame", "operator availability"]
+    },
+    {
+      "kc_id": "KC_OP_OPERATOR_INVERSION", "name": "realisation evidence: operator inversion",
+      "definition": "Place the finite operator before the subject.",
+      "activation_rule": {"operation": "operator_inversion"},
+      "represents": ["clause:polar_question", "clause:non_subject_wh_question"],
+      "canonical_dimensions": ["clause"], "origin": "operation",
+      "hypothesis_group": "question_granularity", "granularity_rank": 2,
+      "realization_dependencies": ["finite operator", "subject"]
+    },
+    {
+      "kc_id": "KC_OP_NEGATION_PLACEMENT", "name": "realisation evidence: operator negation",
+      "definition": "Place NOT after a finite operator.",
+      "activation_rule": {"operation": "negation"}, "represents": ["polarity:negative"],
+      "canonical_dimensions": ["polarity"], "origin": "operation",
+      "hypothesis_group": "negation_realisation", "granularity_rank": 2,
+      "realization_dependencies": ["finite operator"]
+    },
+    {
+      "kc_id": "KC_OP_BE_PASSIVE", "name": "realisation evidence: BE-passive",
+      "definition": "Observe the BE-passive auxiliary/participle operation.",
+      "activation_rule": {"operation": "be_passive"}, "represents": ["voice:passive"],
+      "canonical_dimensions": ["voice"], "origin": "operation",
+      "hypothesis_group": "passive_realisation", "granularity_rank": 2,
+      "realization_dependencies": ["passive-compatible predicate"]
+    },
+    {
+      "kc_id": "KC_OP_CENTRAL_MODAL", "name": "realisation evidence: central modal",
+      "definition": "Observe a central-modal base-chain operation.",
+      "activation_rule": {"operation": "central_modal"},
+      "represents": ["modal:can", "modal:could", "modal:may", "modal:might", "modal:must", "modal:shall", "modal:should", "modal:will", "modal:would"],
+      "canonical_dimensions": ["modal"], "origin": "operation",
+      "hypothesis_group": "modal_granularity", "granularity_rank": 2,
+      "realization_dependencies": ["modal>base_form"]
+    }
+  ],
+  "modal_alternatives": {
+    "values": ["can", "could", "may", "might", "must", "shall", "should", "will", "would"],
+    "generic": {
+      "kc_id": "KC_MODAL_CENTRAL", "name": "generic central modal",
+      "definition": "Use any central modal followed by a base-form chain.",
+      "hypothesis_group": "modal_granularity", "granularity_rank": 0,
+      "required_conditions": ["modal is central"], "excludes": ["modal=none"],
+      "realization_dependencies": ["modal>base_form"]
+    },
+    "per_value": {
+      "kc_id_template": "KC_MODAL_{VALUE_UPPER}",
+      "name_template": "central modal {VALUE_UPPER}",
+      "definition_template": "Use central modal {VALUE_UPPER} followed by a base-form chain.",
+      "taxonomy_parent_kc_ids": ["KC_MODAL_CENTRAL"], "hypothesis_group": "modal_granularity",
+      "granularity_rank": 1, "excludes": ["other modal values"],
+      "realization_dependencies": ["modal>base_form"]
+    }
+  },
+  "interaction_candidates": [
+    {"kc_id": "KC_INT_PERFECT_PROGRESSIVE_CHAIN", "name": "perfect-progressive chain interaction", "definition": "Test whether the perfect-to-progressive chain contributes residual dependency structure.", "parents": ["KC_ASPECT_PERFECT", "KC_ASPECT_PROGRESSIVE"], "hypothesis_group": "aspect_granularity", "residual_fact_patterns": ["chain_edge:perfect>progressive"]},
+    {"kc_id": "KC_INT_PERFECT_PASSIVE_CHAIN", "name": "perfect-passive chain interaction", "definition": "Test whether the perfect-to-passive chain contributes residual dependency structure.", "parents": ["KC_ASPECT_PERFECT", "KC_BE_PASSIVE"], "residual_fact_patterns": ["chain_edge:perfect>passive"]},
+    {"kc_id": "KC_INT_PROGRESSIVE_PASSIVE_CHAIN", "name": "progressive-passive chain interaction", "definition": "Test whether the progressive-to-passive chain contributes residual dependency structure.", "parents": ["KC_ASPECT_PROGRESSIVE", "KC_BE_PASSIVE"], "residual_fact_patterns": ["chain_edge:progressive>passive"]},
+    {"kc_id": "KC_INT_MODAL_PASSIVE_CHAIN", "name": "modal-passive chain interaction", "definition": "Test whether a modal-to-passive chain contributes residual dependency structure.", "parents": ["KC_MODAL_CENTRAL", "KC_BE_PASSIVE"], "residual_fact_patterns": ["chain_edge:modal>passive"]},
+    {"kc_id": "KC_INT_QUESTION_NEGATION", "name": "question-negation interaction", "definition": "Test whether inverted negative questions contribute residual operator structure.", "parents": ["KC_QUESTION_GENERIC", "KC_NEGATION"], "residual_fact_patterns": ["dependency:inverted_negative_operator"]},
+    {"kc_id": "KC_INT_DO_QUESTION", "name": "DO-support inversion interaction", "definition": "Test whether DO-support plus inversion contributes a residual operator dependency.", "parents": ["KC_OP_DO_SUPPORT", "KC_OP_OPERATOR_INVERSION"], "residual_fact_patterns": ["dependency:inverted_operator:do"]},
+    {"kc_id": "KC_INT_DO_NEGATION", "name": "DO-support negation interaction", "definition": "Test whether DO-support plus negation contributes a residual hosting dependency.", "parents": ["KC_OP_DO_SUPPORT", "KC_OP_NEGATION_PLACEMENT"], "residual_fact_patterns": ["dependency:negation_host:do"]}
+  ]
+}

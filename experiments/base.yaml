@@ -1,7 +1,13 @@
 experiment: base
 
+fold:
+  manifest: modules/folds/reference_v0.json
+
 source:
-  path: /home/abdullah/urop-aug/sources/parsed_final/egp_entries.jsonl
+  path: egp_entries.jsonl
+  data_root: data/external
+  data_root_env: GRAMMAR_KT_DATA_ROOT
+  source_path_env: GRAMMAR_KT_EGP_SOURCE
   sha256: e38c4f959f188150dae7b88f21e35d77828048772e222191818dc0c2488486cd
   records: 1222
   selected_descriptors: 139
@@ -19,12 +25,13 @@ normalisation:
 canonical: {}
 
 realisation:
-  split_config: modules/realisation/configs/default.json
+  lexicon: modules/realisation/lexicons/default.jsonl
 
 kc_selection:
   mode: predefined
   config: modules/kc_selection/configs/deterministic_v0.json
   policy: modules/kc/policies/factorized.json
+  lexicon: modules/realisation/lexicons/default.jsonl
 
 kc:
   policy: modules/kc/policies/factorized.json
@@ -32,6 +39,7 @@ kc:
 items:
   family_prompt: modules/items/families/controlled_transformation.txt
   bank_config: modules/items/configs/fixed_bank_v0.json
+  lexicon: modules/realisation/lexicons/default.jsonl
   validation:
     acceptance: modules/items/validation/model_acceptance.json
     backend_config: modules/items/validation/backend.yaml

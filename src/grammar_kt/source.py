@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 from typing import Any
 
@@ -9,6 +10,19 @@ from .io import read_jsonl, repo_path, sha256_file, write_jsonl
 
 
 PHASE1_FIELDS = ("egp_id", "supercategory", "subcategory", "guideword", "can_do")
+
+
+def resolve_source_path(settings: dict[str, Any]) -> Path:
+    direct_env = settings.get("source_path_env", "GRAMMAR_KT_EGP_SOURCE")
+    if direct_env and os.environ.get(direct_env):
+        return Path(os.environ[direct_env]).expanduser().resolve()
+    configured = Path(settings["path"]).expanduser()
+    if configured.is_absolute():
+        return configured.resolve()
+    root_env = settings.get("data_root_env", "GRAMMAR_KT_DATA_ROOT")
+    data_root = os.environ.get(root_env) if root_env else None
+    selected_root = Path(data_root or settings.get("data_root", "data/external"))
+    return repo_path(selected_root / configured)
 
 
 def phase1_record(record: dict[str, Any]) -> dict[str, Any]:
@@ -64,7 +78,7 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
     output = run_dir / "source"
     output.mkdir(parents=True, exist_ok=False)
     selected, metadata, units = select_records(
-        settings["path"],
+        resolve_source_path(settings),
         expected_sha256=settings["sha256"],
         expected_record_count=int(settings["records"]),
         sample_ids_path=settings["sample_ids"],

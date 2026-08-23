@@ -1,0 +1,17 @@
+{
+  "design_id": "FILL_BEFORE_MAIN_SAMPLE",
+  "description": "Executable template only. It deliberately declares no MAIN quotas.",
+  "allowed": {},
+  "excluded": {},
+  "ordering": ["supercategory", "subcategory", "cefr_band", "egp_id"],
+  "seed": null,
+  "strata": [
+    {
+      "stratum_id": "REPLACE_WITH_PREREGISTERED_STRATUM",
+      "match": {},
+      "minimum": 0,
+      "quota": 0,
+      "rationale": "Set scope, strata, minima, and quotas before constructing the MAIN sample."
+    }
+  ]
+}

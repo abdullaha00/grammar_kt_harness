@@ -18,6 +18,7 @@ from .items import (
     nuisance_signature,
     render_prompt,
 )
+from .item_diagnostic_reliability import analyse_repeated_diagnostics
 from .realisation import LEXICON, realise, validate_spec
 
 
@@ -37,7 +38,6 @@ DIAGNOSTIC_FIELDS = {
     "unsupported_construction", "answer_ambiguity_suspected", "note",
 }
 GENERATION_FIELDS = {
-    "canonical_split",
     "coverage_reasons",
     "deterministic",
 }
@@ -122,9 +122,6 @@ def deterministic_results(
         if (
             not isinstance(metadata, dict)
             or set(metadata) != GENERATION_FIELDS
-            or metadata.get("canonical_split") not in {
-                "development", "compositional_holdout", "novel_feature_holdout"
-            }
             or metadata.get("deterministic") is not True
             or not isinstance(metadata.get("coverage_reasons"), list)
             or not metadata.get("coverage_reasons")
@@ -136,7 +133,7 @@ def deterministic_results(
         if prompt_counts[row["prompt"]] != 1:
             errors.append("duplicate prompt")
         errors.extend(contrast_errors.get(row["contrast_set_id"], []))
-        results.append({"item_id": row["item_id"], "split": row["generation_metadata"]["canonical_split"], "status": "accepted" if not errors else "rejected", "errors": errors})
+        results.append({"item_id": row["item_id"], "canonical_cell_id": row["canonical_cell_id"], "status": "accepted" if not errors else "rejected", "errors": errors})
     return results
 
 
@@ -191,13 +188,14 @@ def run_validation(
     backend_config: dict[str, Any],
     workers: int,
     max_attempts: int,
+    lexicon_path: str | Path = LEXICON,
 ) -> dict[str, Any]:
     output = items_dir / "validation"
     output.mkdir(parents=True, exist_ok=False)
     candidates = read_jsonl(items_dir / "generation" / "candidate_items.jsonl")
     units = read_jsonl(items_dir / "generation" / "validation_units.jsonl")
     canonical_rows = read_jsonl(run_dir / "canonical" / "canonical_cells.jsonl")
-    frames = {row["predicate_frame_id"]: row for row in read_jsonl(LEXICON)}
+    frames = {row["predicate_frame_id"]: row for row in read_jsonl(lexicon_path)}
     cells = {row["canonical_cell_id"]: row["cell"] for row in canonical_rows}
     edge_sources = {
         row["canonical_cell_id"]: set(row["source_descriptor_ids"])
@@ -242,6 +240,13 @@ def run_validation(
     if any(row["status"] == "exhausted" for row in diagnostics):
         raise RuntimeError("one or more item diagnostics exhausted all attempts")
     write_jsonl(output / "diagnostics.jsonl", diagnostics)
+    reliability, repeated_comparisons = analyse_repeated_diagnostics(
+        [unit for unit in units if unit["item_id"] in eligible],
+        diagnostics,
+        acceptance,
+    )
+    write_json(output / "reliability.json", reliability)
+    write_jsonl(output / "repeated_comparisons.jsonl", repeated_comparisons)
     diagnostics_by_uid = {row["validation_unit_id"]: row for row in diagnostics}
     primary_uid = {row["item_id"]: row["validation_unit_id"] for row in units if row["duplicate_of"] is None}
     accepted, rejected, result_rows = [], [], []
@@ -271,11 +276,12 @@ def run_validation(
     write_json(
         output / "bank_report.json",
         {
-            "accepted_item_bank_sha256": accepted_hash,
+            "accepted_intrinsic_item_bank_sha256": accepted_hash,
             "candidate_items": len(candidates),
             "accepted_items": len(accepted),
             "rejected_items": len(rejected),
             "kc_policy_consulted": False,
+            "model_check_role": reliability["model_check_role"],
         },
     )
     return {
@@ -283,5 +289,6 @@ def run_validation(
         "accepted": len(accepted),
         "rejected": len(rejected),
         "diagnostic_units": len(diagnostics),
-        "accepted_item_bank_sha256": accepted_hash,
+        "repeated_diagnostic_pairs": reliability["repeated_pairs"],
+        "accepted_intrinsic_item_bank_sha256": accepted_hash,
     }

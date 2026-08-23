@@ -12,6 +12,8 @@ from pathlib import Path
 sys.path.remove(str(Path(__file__).resolve().parent))
 
 from grammar_kt.io import ROOT, read_json, read_jsonl
+from grammar_kt.canonical_schema import consistency_report
+from grammar_kt.items import item_bank_fingerprint
 from grammar_kt.records import (
     compositional_base_event,
     compositional_projected_interaction,
@@ -24,6 +26,10 @@ from grammar_kt.runner import STAGE_NAMES
 
 def validate(run: Path) -> dict:
     errors = []
+    metadata = read_json(run / "metadata.json") if (run / "metadata.json").is_file() else {}
+    schema_consistency = consistency_report()
+    if schema_consistency["status"] != "PASS":
+        errors.append(f"canonical schema sources disagree: {schema_consistency}")
     for required in ("experiment.yaml", "metadata.json"):
         if not (run / required).is_file():
             errors.append(f"missing {required}")
@@ -36,6 +42,34 @@ def validate(run: Path) -> dict:
                 grammar_cell(row["cell"], label=row["canonical_cell_id"])
             except ValueError as error:
                 errors.append(str(error))
+    for stage, required_artifact in (
+        ("normalisation", "normalisation/reliability.json"),
+        ("canonical", "canonical/audit.json"),
+        ("items", "items/validation/reliability.json"),
+    ):
+        if stage in metadata.get("stages", {}) and not (run / required_artifact).is_file():
+            errors.append(f"missing research audit: {required_artifact}")
+    accepted_path = run / "items/validation/accepted_items.jsonl"
+    if accepted_path.is_file():
+        accepted = read_jsonl(accepted_path)
+        contaminated = [
+            row["item_id"]
+            for row in accepted
+            if "canonical_split" in row
+            or "canonical_split" in row.get("generation_metadata", {})
+        ]
+        if contaminated:
+            errors.append(f"intrinsic item bank contains fold metadata: {contaminated[:5]}")
+        report_path = run / "items/validation/bank_report.json"
+        if report_path.is_file():
+            expected = read_json(report_path).get(
+                "accepted_intrinsic_item_bank_sha256"
+            )
+            actual = item_bank_fingerprint(accepted)
+            if expected != actual:
+                errors.append(
+                    f"accepted intrinsic item-bank fingerprint mismatch: {expected} != {actual}"
+                )
     for audit_file, label in (
         (run / "qmatrix" / "audit.json", "Q-matrix"),
         (run / "simulation" / "audit.json", "simulation"),

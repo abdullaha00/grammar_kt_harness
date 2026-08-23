@@ -11,7 +11,7 @@ from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 
-from grammar_kt import canonical, items, kc, kc_candidates, kc_selection, kt, qmatrix, realisation, simulation, source
+from grammar_kt import canonical, folds, items, kc, kc_candidates, kc_selection, kt, qmatrix, realisation, simulation, source
 from grammar_kt.backend import invoke_model, save_model_result
 from grammar_kt.config import load_experiment
 from grammar_kt.io import read_json, read_jsonl, sha256_file, write_json, write_jsonl
@@ -23,10 +23,18 @@ from grammar_kt.records import (
     kc_opportunity,
     observable_base_event,
 )
-from grammar_kt.runner import PIPELINE, STAGE_NAMES, run_experiment
+from grammar_kt.runner import PIPELINE, STAGE_NAMES, run_experiment, stage_input_signatures
 
 
 CELL = {"tense": "past", "aspect": "none", "voice": "active", "polarity": "positive", "clause": "declarative", "modal": "none"}
+
+
+def fixture_assignment(fixture: dict) -> dict[str, str]:
+    return {row["canonical_cell_id"]: row["split"] for row in fixture["cell_splits"]}
+
+
+def fixture_runtime_items(rows: list[dict], fixture: dict) -> list[dict]:
+    return folds.annotate_items(rows, fixture_assignment(fixture))
 
 
 class ExperimentTests(unittest.TestCase):
@@ -74,8 +82,8 @@ class ExperimentTests(unittest.TestCase):
         self.assertEqual(expected["accepted_items"] * parameters["item_passes_per_learner"], expected["events_per_learner"])
         self.assertNotIn("events_per_learner", settings["simulation"])
 
-    def test_realisation_split_explicitly_partitions_the_24_cell_inventory(self) -> None:
-        split = read_json(ROOT / "modules/realisation/configs/default.json")
+    def test_fold_explicitly_partitions_the_24_cell_inventory(self) -> None:
+        split = read_json(ROOT / "modules/folds/reference_v0.json")
         groups = [
             set(split["development_cell_ids"]),
             set(split["compositional_holdout_cell_ids"]),
@@ -93,6 +101,10 @@ class ExperimentTests(unittest.TestCase):
             for stage in STAGE_NAMES[:STAGE_NAMES.index("kc_selection")]:
                 (parent / stage).mkdir(parents=True)
                 (parent / stage / "marker.txt").write_text(stage, encoding="utf-8")
+            write_json(
+                parent / "metadata.json",
+                {"stage_input_signatures": stage_input_signatures(resolution[0])},
+            )
 
             def fake(stage: str):
                 def execute(run: Path, _config: dict) -> dict:
@@ -128,10 +140,23 @@ class ExperimentTests(unittest.TestCase):
             write_json(diagnostic_response, {"structurally_plausible": True, "natural": True, "world_knowledge_required": False, "unsupported_construction": False, "answer_ambiguity_suspected": False, "note": "fixture"})
             normalisation_backend = root / "normalisation_backend.yaml"
             item_backend = root / "item_backend.yaml"
-            split_config = root / "cell_splits.json"
+            fold_manifest = root / "fold.json"
             write_json(normalisation_backend, {"kind": "fixture_file", "response_file": str(normalisation_response)})
             write_json(item_backend, {"kind": "fixture_file", "response_file": str(diagnostic_response)})
-            write_json(split_config, {"require_all_declared_cells": True, "compositional_holdout_cell_ids": [], "novel_feature_holdout_cell_ids": []})
+            fixture_cell_id = canonical.build(
+                [{"egp_id": "E", "result": "complete", "cells": [CELL], "note": None}]
+            )[0][0]["canonical_cell_id"]
+            write_json(
+                fold_manifest,
+                {
+                    "fold_id": "FIXTURE_FOLD",
+                    "require_exact_inventory": True,
+                    "development_cell_ids": [fixture_cell_id],
+                    "compositional_holdout_cell_ids": [],
+                    "novel_feature_holdout_cell_ids": [],
+                },
+            )
+            fold_setting = {"fold_manifest": str(fold_manifest)}
             fixture_settings = {
                 "experiment": "fixture_e2e",
                 "source": {
@@ -146,13 +171,15 @@ class ExperimentTests(unittest.TestCase):
                     "backend_config": str(normalisation_backend), "workers": 1, "max_attempts": 1,
                 },
                 "canonical": {},
-                "realisation": {"split_config": str(split_config)},
+                "realisation": {},
                 "kc_selection": {
+                    **fold_setting,
                     "mode": "predefined",
                     "config": "modules/kc_selection/configs/deterministic_v0.json",
                     "policy": "modules/kc/policies/factorized.json",
                 },
                 "kc": {
+                    **fold_setting,
                     "policy": "modules/kc/policies/factorized.json",
                     "selected_policy": "kc_selection/selected_policy.json",
                 },
@@ -165,8 +192,8 @@ class ExperimentTests(unittest.TestCase):
                         "repeated_diagnostics": 2,
                     },
                 },
-                "simulation": {"parameters": "modules/simulation/configs/default.json", "seed": 20260817},
-                "kt": {"parameters": "modules/kt/configs/default.json", "techniques": ["empirical", "bkt"]},
+                "simulation": {**fold_setting, "parameters": "modules/simulation/configs/default.json", "seed": 20260817},
+                "kt": {**fold_setting, "parameters": "modules/kt/configs/default.json", "techniques": ["empirical", "bkt"]},
             }
             with patch("grammar_kt.runner.load_experiment", return_value=(fixture_settings, None)):
                 run = run_experiment("fixture_e2e", runs_root=root / "runs")
@@ -179,6 +206,15 @@ class ExperimentTests(unittest.TestCase):
             self.assertEqual(read_json(run / "qmatrix/audit.json")["status"], "PASS")
             self.assertEqual(read_json(run / "simulation/audit.json")["status"], "PASS")
             self.assertFalse(read_json(run / "kt/metrics.json")["oracle_used"])
+            validation = subprocess.run(
+                [sys.executable, "scripts/validate.py", str(run)],
+                cwd=ROOT,
+                text=True,
+                capture_output=True,
+            )
+            self.assertEqual(
+                validation.returncode, 0, validation.stdout + validation.stderr
+            )
 
 
 class NormalisationTests(unittest.TestCase):
@@ -361,7 +397,7 @@ class ComponentTests(unittest.TestCase):
         self.assertIn('"selection_data_partition": "development"', result.stdout)
 
     def test_qmatrix_is_derived_from_item_level_frozen_projection(self) -> None:
-        item = {"item_id": "ITEM_A", "canonical_cell_id": "CELL_A", "realization_spec": {"realization_id": "REAL_A"}, "source_descriptor_ids": ["E"], "generation_metadata": {"canonical_split": "development"}}
+        item = {"item_id": "ITEM_A", "canonical_cell_id": "CELL_A", "realization_spec": {"realization_id": "REAL_A"}, "source_descriptor_ids": ["E"], "generation_metadata": {"deterministic": True}}
         card = {"kc_id": "KC_A", "activation_rule": {"cell": {"tense": "past"}}}
         projection = {"item_id": "ITEM_A", "canonical_cell_id": "CELL_A", "realization_id": "REAL_A", "kc_ids": ["KC_A"]}
         columns, rows, edges, audit = qmatrix.build([item], [card], [projection])
@@ -369,7 +405,7 @@ class ComponentTests(unittest.TestCase):
         self.assertNotIn("edge_id", edges[0])
 
     def test_qmatrix_redundancy_is_diagnostic_not_failure(self) -> None:
-        item = {"item_id": "ITEM_A", "canonical_cell_id": "CELL_A", "realization_spec": {"realization_id": "REAL_A"}, "source_descriptor_ids": ["E"], "generation_metadata": {"canonical_split": "development"}}
+        item = {"item_id": "ITEM_A", "canonical_cell_id": "CELL_A", "realization_spec": {"realization_id": "REAL_A"}, "source_descriptor_ids": ["E"], "generation_metadata": {"deterministic": True}}
         cards = [
             {"kc_id": "KC_A", "activation_rule": {"cell": {"tense": "past"}}},
             {"kc_id": "KC_B", "activation_rule": {"cell": {"tense": "past"}}},
@@ -395,7 +431,6 @@ class ComponentTests(unittest.TestCase):
         frames = {row["predicate_frame_id"]: row for row in read_jsonl(ROOT / "modules/realisation/lexicons/default.jsonl")}
         opportunities = items.build_item_opportunities(
             [cell_row],
-            [{"canonical_cell_id": "CELL_PAST", "split": "development"}],
             frames,
             read_json(ROOT / "modules/items/configs/fixed_bank_v0.json"),
         )
@@ -416,12 +451,13 @@ class ComponentTests(unittest.TestCase):
         }
         opportunities = items.build_item_opportunities(
             fixture["canonical_cells"],
-            fixture["cell_splits"],
             frames,
             read_json(ROOT / "modules/items/configs/fixed_bank_v0.json"),
         )
         template = (ROOT / "modules/items/families/controlled_transformation.txt").read_text(encoding="utf-8")
-        accepted_bank = items.construct_items(opportunities, frames, template)
+        accepted_bank = fixture_runtime_items(
+            items.construct_items(opportunities, frames, template), fixture
+        )
         selected = kc_selection.evaluate_fixture(
             copy.deepcopy(fixture),
             read_json(ROOT / "modules/kc_selection/configs/deterministic_v0.json"),
@@ -479,22 +515,20 @@ class ComponentTests(unittest.TestCase):
             for row in fixture["canonical_cells"]
             if row["canonical_cell_id"] == "CELL_FIX_NEGATIVE"
         )
-        split = [{"canonical_cell_id": "CELL_FIX_NEGATIVE", "split": "development"}]
         frames = {
             row["predicate_frame_id"]: row
             for row in read_jsonl(ROOT / "modules/realisation/lexicons/default.jsonl")
         }
         opportunities = items.build_item_opportunities(
             [negative],
-            split,
             frames,
             read_json(ROOT / "modules/items/configs/fixed_bank_v0.json"),
         )
-        bank = items.construct_items(
+        bank = folds.annotate_items(items.construct_items(
             opportunities,
             frames,
             (ROOT / "modules/items/families/controlled_transformation.txt").read_text(encoding="utf-8"),
-        )
+        ), {"CELL_FIX_NEGATIVE": "development"})
         policy = kc.load_policy(ROOT / "modules/kc/policies/factorized_plus_interactions.json")
         projections, _cards = kc.project_items(bank, [negative], policy)
         lexical = next(row for row in projections if "do_support" in row["realization_operations"])
@@ -512,7 +546,10 @@ class ComponentTests(unittest.TestCase):
         settings, _ = load_experiment("base")
         settings = settings["simulation"]
         fixture_dir = ROOT / "modules/simulation/fixtures"
-        fixture_items = read_jsonl(fixture_dir / "accepted_items.jsonl")
+        fixture_items = folds.annotate_items(
+            read_jsonl(fixture_dir / "accepted_items.jsonl"),
+            {"CELL_0000000000000001": "development"},
+        )
         parameters = read_json(settings["parameters"])
         parameters["seed"] = settings["seed"]
         oracle_feature_ids = ["ORACLE_FINITE_FORM"]
@@ -543,17 +580,16 @@ class ComponentTests(unittest.TestCase):
         }
         opportunities = items.build_item_opportunities(
             fixture["canonical_cells"],
-            fixture["cell_splits"],
             frames,
             read_json(ROOT / "modules/items/configs/fixed_bank_v0.json"),
         )
-        bank = items.construct_items(
+        bank = fixture_runtime_items(items.construct_items(
             opportunities,
             frames,
             (ROOT / "modules/items/families/controlled_transformation.txt").read_text(
                 encoding="utf-8"
             ),
-        )
+        ), fixture)
         params = read_json(ROOT / "modules/simulation/configs/structural_oracle_v0.json")
         params.update(
             {
@@ -597,7 +633,7 @@ class ComponentTests(unittest.TestCase):
         development_items = [
             row
             for row in bank
-            if row["generation_metadata"]["canonical_split"] == "development"
+            if row["canonical_split"] == "development"
         ]
         factorized_dev_frozen, _support = (
             kc_selection.development_frozen_factorized_policy(
@@ -774,17 +810,16 @@ class ComponentTests(unittest.TestCase):
         frames = {row["predicate_frame_id"]: row for row in read_jsonl(realisation.LEXICON)}
         opportunities = items.build_item_opportunities(
             fixture["canonical_cells"],
-            fixture["cell_splits"],
             frames,
             read_json(ROOT / "modules/items/configs/fixed_bank_v0.json"),
         )
-        bank = items.construct_items(
+        bank = fixture_runtime_items(items.construct_items(
             opportunities,
             frames,
             (ROOT / "modules/items/families/controlled_transformation.txt").read_text(
                 encoding="utf-8"
             ),
-        )
+        ), fixture)
         params = read_json(ROOT / "modules/simulation/configs/structural_oracle_v0.json")
         params.update(
             seed=20260817,
@@ -851,7 +886,6 @@ class ComponentTests(unittest.TestCase):
         bank = items.construct_items(
             items.build_item_opportunities(
                 fixture["canonical_cells"],
-                fixture["cell_splits"],
                 frames,
                 read_json(ROOT / "modules/items/configs/fixed_bank_v0.json"),
             ),
@@ -860,6 +894,7 @@ class ComponentTests(unittest.TestCase):
                 encoding="utf-8"
             ),
         )
+        bank = fixture_runtime_items(bank, fixture)
         params = read_json(ROOT / "modules/simulation/configs/structural_oracle_v0.json")
         params.update(
             seed=20260817,
@@ -1012,9 +1047,20 @@ class ComponentTests(unittest.TestCase):
             (run / "normalisation").mkdir()
             write_jsonl(run / "normalisation/final_mappings.jsonl", [{"egp_id": "FIX", "result": "complete", "cells": [CELL], "note": None}], sort_keys=False)
             canonical.run(run, {})
-            split_config = run / "split.json"
-            write_json(split_config, {"require_all_declared_cells": True, "compositional_holdout_cell_ids": [], "novel_feature_holdout_cell_ids": []})
-            realisation.run(run, {"split_config": str(split_config)})
+            cell_id = read_jsonl(run / "canonical/canonical_cells.jsonl")[0]["canonical_cell_id"]
+            fold_manifest = run / "fold.json"
+            write_json(
+                fold_manifest,
+                {
+                    "fold_id": "SMALL_FIXTURE_FOLD",
+                    "require_exact_inventory": True,
+                    "development_cell_ids": [cell_id],
+                    "compositional_holdout_cell_ids": [],
+                    "novel_feature_holdout_cell_ids": [],
+                },
+            )
+            fold_setting = {"fold_manifest": str(fold_manifest)}
+            realisation.run(run, {})
             (run / "items").mkdir()
             item_settings = settings["items"]
             generated = items.generate_items(
@@ -1027,11 +1073,11 @@ class ComponentTests(unittest.TestCase):
             candidates = read_jsonl(run / "items/generation/candidate_items.jsonl")
             (run / "items/validation").mkdir()
             write_jsonl(run / "items/validation/accepted_items.jsonl", candidates)
-            simulation_summary = simulation.run(run, settings["simulation"])
-            kc_selection.run(run, settings["kc_selection"])
-            kc.run(run, settings["kc"])
+            simulation_summary = simulation.run(run, {**settings["simulation"], **fold_setting})
+            kc_selection.run(run, {**settings["kc_selection"], **fold_setting})
+            kc.run(run, {**settings["kc"], **fold_setting})
             q_summary = qmatrix.run(run)
-            kt_summary = kt.run(run, {**settings["kt"], "techniques": ["empirical", "bkt"]})
+            kt_summary = kt.run(run, {**settings["kt"], **fold_setting, "techniques": ["empirical", "bkt"]})
             self.assertEqual(generated["candidate_items"], 3)
             self.assertEqual(q_summary, {"rows": 3, "covered_rows": 3, "uncovered_rows": 0, "columns": 1, "edges": 3})
             self.assertEqual(simulation_summary["events_per_learner"], 6)
@@ -1107,21 +1153,20 @@ class KCSelectionTests(unittest.TestCase):
         partition, _discovery = self.discover()
         opportunities = items.build_item_opportunities(
             self.fixture["canonical_cells"],
-            self.fixture["cell_splits"],
             self.frames,
             read_json(ROOT / "modules/items/configs/fixed_bank_v0.json"),
         )
-        bank = items.construct_items(
+        bank = fixture_runtime_items(items.construct_items(
             opportunities,
             self.frames,
             (ROOT / "modules/items/families/controlled_transformation.txt").read_text(
                 encoding="utf-8"
             ),
-        )
+        ), self.fixture)
         development_items = [
             row
             for row in bank
-            if row["generation_metadata"]["canonical_split"] == "development"
+            if row["canonical_split"] == "development"
         ]
         first, support = kc_selection.development_frozen_factorized_policy(
             ROOT / "modules/kc/policies/factorized.json",
@@ -1130,7 +1175,7 @@ class KCSelectionTests(unittest.TestCase):
         )
         heldout_mutated = copy.deepcopy(bank)
         for row in heldout_mutated:
-            if row["generation_metadata"]["canonical_split"] != "development":
+            if row["canonical_split"] != "development":
                 row["realization_evidence"]["operations"] = ["heldout_only_operation"]
                 row["source_descriptor_ids"] = ["HELDOUT_MUTATION"]
         second, second_support = kc_selection.development_frozen_factorized_policy(
@@ -1139,7 +1184,7 @@ class KCSelectionTests(unittest.TestCase):
             [
                 row
                 for row in heldout_mutated
-                if row["generation_metadata"]["canonical_split"] == "development"
+                if row["canonical_split"] == "development"
             ],
         )
         self.assertEqual(first, second)

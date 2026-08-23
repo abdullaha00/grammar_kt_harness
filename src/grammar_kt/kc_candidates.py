@@ -7,25 +7,12 @@ from typing import Any
 
 from .io import stable_id
 from .kc import evaluate_rule
-from .realisation import imperative_subtype, lexical_nodes, realise, validate_spec
-from .records import CENTRAL_MODALS, DIMENSIONS
-
-
-QUESTION_VALUES = ("polar_question", "subject_wh_question", "non_subject_wh_question")
-SUBJECTS = (
-    {"text": "I", "person": 1, "number": "singular"},
-    {"text": "we", "person": 1, "number": "plural"},
-    {"text": "you", "person": 2, "number": "singular"},
-    {"text": "you all", "person": 2, "number": "plural"},
-    {"text": "the technician", "person": 3, "number": "singular"},
-    {"text": "the technicians", "person": 3, "number": "plural"},
+from .realisation import lexical_nodes, realise
+from .realisation_space import enumerate_valid_realisations
+from .records import DIMENSIONS
+DEFAULT_OBLIGATION_POLICY = (
+    "modules/kc_selection/obligations/marked_operational_v0.json"
 )
-PASSIVE_SUBJECTS = (
-    {"text": "the machine", "person": 3, "number": "singular"},
-    {"text": "the machines", "person": 3, "number": "plural"},
-)
-
-
 # Candidate declarations
 
 def _candidate(
@@ -79,157 +66,102 @@ def _candidate(
     }
 
 
-def canonical_candidates() -> list[dict[str, Any]]:
-    """Return the small declared canonical and operation-evidence candidate pool."""
+def load_candidate_family(path: str | None = None) -> dict[str, Any]:
+    from .io import ROOT, read_json, repo_path
 
+    selected = path or str(
+        ROOT / "modules" / "kc_selection" / "candidate_families" / "structural_v0.json"
+    )
+    family = read_json(repo_path(selected))
+    if not isinstance(family.get("candidates"), list):
+        raise ValueError("candidate family requires a candidates list")
+    return family
+
+
+def _compile_declared_candidate(record: dict[str, Any], rationale: str) -> dict[str, Any]:
+    return _candidate(
+        record["kc_id"],
+        record["name"],
+        record["definition"],
+        record["activation_rule"],
+        represents=record.get("represents", []),
+        dimensions=record.get("canonical_dimensions", []),
+        origin=record.get("origin", "canonical"),
+        hypothesis_group=record.get("hypothesis_group"),
+        taxonomy_parent_kc_ids=record.get("taxonomy_parent_kc_ids"),
+        requires_selected_kc_ids=record.get("requires_selected_kc_ids"),
+        interaction_order=int(record.get("interaction_order", 1)),
+        rule_complexity=int(record.get("rule_complexity", 1)),
+        granularity_rank=int(record.get("granularity_rank", 0)),
+        residual_fact_patterns=record.get("residual_fact_patterns"),
+        required_conditions=record.get("required_conditions"),
+        includes=record.get("includes"),
+        excludes=record.get("excludes"),
+        realization_dependencies=record.get("realization_dependencies"),
+        near_neighbours=record.get("near_neighbours"),
+        rationale=record.get("rationale", rationale),
+    )
+
+
+def canonical_candidates(family: dict[str, Any] | None = None) -> list[dict[str, Any]]:
+    """Compile the explicit reference family without declaring hypotheses in Python."""
+
+    selected = family or load_candidate_family()
+    rationale = selected.get(
+        "default_rationale", "Declared Phase-A structural hypothesis."
+    )
     candidates = [
-        _candidate(
-            "KC_FINITE_PRESENT", "present finite-form selection",
-            "Select present finite morphology and agreement conditions.",
-            {"cell": {"tense": "present"}}, represents=["tense:present"], dimensions=["tense"],
-            hypothesis_group="finite_tense", required_conditions=["tense=present"],
-            includes=["present finite cells"], excludes=["past", "modal clauses", "imperatives"],
-            realization_dependencies=["finite agreement site"], near_neighbours=["KC_FINITE_PAST"],
-        ),
-        _candidate(
-            "KC_FINITE_PAST", "past finite-form selection",
-            "Select past finite morphology on the operator or main verb.",
-            {"cell": {"tense": "past"}}, represents=["tense:past"], dimensions=["tense"],
-            hypothesis_group="finite_tense", required_conditions=["tense=past"],
-            includes=["past finite cells"], excludes=["present", "modal clauses", "imperatives"],
-            realization_dependencies=["finite agreement site"], near_neighbours=["KC_FINITE_PRESENT"],
-        ),
-        _candidate(
-            "KC_ASPECT_PERFECT", "perfect component", "Construct perfect HAVE and its participial dependency.",
-            {"cell": {"aspect": ["perfect", "perfect_progressive"]}},
-            represents=["aspect:perfect"], dimensions=["aspect"], hypothesis_group="aspect_granularity",
-            required_conditions=["aspect contains perfect"], includes=["perfect", "perfect_progressive"],
-            excludes=["none", "progressive-only"], realization_dependencies=["perfect>past_participle"],
-        ),
-        _candidate(
-            "KC_ASPECT_PROGRESSIVE", "progressive component", "Construct progressive BE and its participial dependency.",
-            {"cell": {"aspect": ["progressive", "perfect_progressive"]}},
-            represents=["aspect:progressive"], dimensions=["aspect"], hypothesis_group="aspect_granularity",
-            required_conditions=["aspect contains progressive"], includes=["progressive", "perfect_progressive"],
-            excludes=["none", "perfect-only"], realization_dependencies=["progressive>present_participle"],
-        ),
-        _candidate(
-            "KC_ASPECT_PERFECT_PROGRESSIVE_ATOMIC", "atomic perfect-progressive",
-            "Treat perfect-progressive as one atomic aspect hypothesis rather than only as two components.",
-            {"cell": {"aspect": "perfect_progressive"}},
-            represents=["aspect:perfect", "aspect:progressive"], dimensions=["aspect"],
-            hypothesis_group="aspect_granularity", rule_complexity=2, granularity_rank=1,
-            required_conditions=["aspect=perfect_progressive"], includes=["perfect_progressive"],
-            excludes=["perfect-only", "progressive-only"], realization_dependencies=["multi-auxiliary chain"],
-        ),
-        _candidate(
-            "KC_BE_PASSIVE", "canonical BE-passive", "Construct passive BE and a lexical past participle.",
-            {"cell": {"voice": "passive"}}, represents=["voice:passive"], dimensions=["voice"],
-            required_conditions=["voice=passive"], includes=["BE-passive"], excludes=["active"],
-            realization_dependencies=["passive>past_participle"],
-        ),
-        _candidate(
-            "KC_NEGATION", "negative polarity", "Express canonical negative polarity.",
-            {"cell": {"polarity": "negative"}}, represents=["polarity:negative"], dimensions=["polarity"],
-            required_conditions=["polarity=negative"], includes=["negative clauses"], excludes=["positive clauses"],
-            realization_dependencies=["negation host or imperative negative construction"],
-        ),
-        _candidate(
-            "KC_QUESTION_GENERIC", "generic question formation", "Treat all direct question types as one parent KC.",
-            {"cell": {"clause": list(QUESTION_VALUES)}},
-            represents=[f"clause:{value}" for value in QUESTION_VALUES], dimensions=["clause"],
-            hypothesis_group="question_granularity", granularity_rank=0,
-            required_conditions=["clause is a direct question"], includes=list(QUESTION_VALUES),
-            excludes=["declarative", "imperative"], realization_dependencies=["question clause structure"],
-        ),
-        _candidate(
-            "KC_POLAR_QUESTION", "polar-question formation", "Form a direct yes/no question.",
-            {"cell": {"clause": "polar_question"}}, represents=["clause:polar_question"], dimensions=["clause"],
-            hypothesis_group="question_granularity", taxonomy_parent_kc_ids=["KC_QUESTION_GENERIC"], granularity_rank=1,
-            required_conditions=["clause=polar_question"], includes=["polar_question"],
-            excludes=["WH questions"], realization_dependencies=["operator-subject order"],
-        ),
-        _candidate(
-            "KC_SUBJECT_WH", "subject-WH formation", "Realize a WH phrase as grammatical subject.",
-            {"cell": {"clause": "subject_wh_question"}}, represents=["clause:subject_wh_question"], dimensions=["clause"],
-            hypothesis_group="question_granularity", taxonomy_parent_kc_ids=["KC_QUESTION_GENERIC"], granularity_rank=1,
-            required_conditions=["clause=subject_wh_question"], includes=["subject WH"],
-            excludes=["non-subject WH"], realization_dependencies=["WH subject realization"],
-        ),
-        _candidate(
-            "KC_NON_SUBJECT_WH", "non-subject-WH formation", "Front an object or adjunct WH phrase.",
-            {"cell": {"clause": "non_subject_wh_question"}}, represents=["clause:non_subject_wh_question"], dimensions=["clause"],
-            hypothesis_group="question_granularity", taxonomy_parent_kc_ids=["KC_QUESTION_GENERIC"], granularity_rank=1,
-            required_conditions=["clause=non_subject_wh_question"], includes=["object and adjunct WH"],
-            excludes=["subject WH"], realization_dependencies=["WH fronting", "question order"],
-        ),
-        _candidate(
-            "KC_IMPERATIVE", "imperative clause formation", "Realize a base-form imperative construction.",
-            {"cell": {"clause": "imperative"}}, represents=["clause:imperative"], dimensions=["clause"],
-            required_conditions=["clause=imperative"], includes=["source-licensed imperative subtypes"],
-            excludes=["declaratives", "questions"], realization_dependencies=["imperative subtype"],
-        ),
+        _compile_declared_candidate(record, rationale)
+        for record in selected["candidates"]
     ]
-
-    modal_values = sorted(CENTRAL_MODALS)
+    modal = selected["modal_alternatives"]
+    values = sorted(modal["values"])
+    generic = modal["generic"]
     candidates.append(
         _candidate(
-            "KC_MODAL_CENTRAL", "generic central modal", "Use any central modal followed by a base-form chain.",
-            {"cell": {"modal": modal_values}}, represents=[f"modal:{value}" for value in modal_values], dimensions=["modal"],
-            hypothesis_group="modal_granularity", granularity_rank=0,
-            required_conditions=["modal is central"], includes=modal_values, excludes=["modal=none"],
-            realization_dependencies=["modal>base_form"],
+            generic["kc_id"],
+            generic["name"],
+            generic["definition"],
+            {"cell": {"modal": values}},
+            represents=[f"modal:{value}" for value in values],
+            dimensions=["modal"],
+            hypothesis_group=generic.get("hypothesis_group"),
+            granularity_rank=int(generic.get("granularity_rank", 0)),
+            required_conditions=generic.get("required_conditions"),
+            includes=values,
+            excludes=generic.get("excludes"),
+            realization_dependencies=generic.get("realization_dependencies"),
+            rationale=generic.get("rationale", rationale),
         )
     )
-    for value in modal_values:
+    template = modal["per_value"]
+    for value in values:
+        replacements = {"{VALUE}": value, "{VALUE_UPPER}": value.upper()}
+
+        def render(text: str) -> str:
+            for pattern, replacement in replacements.items():
+                text = text.replace(pattern, replacement)
+            return text
+
         candidates.append(
             _candidate(
-                f"KC_MODAL_{value.upper()}", f"central modal {value.upper()}",
-                f"Use central modal {value.upper()} followed by a base-form chain.",
-                {"cell": {"modal": value}}, represents=[f"modal:{value}"], dimensions=["modal"],
-                hypothesis_group="modal_granularity", taxonomy_parent_kc_ids=["KC_MODAL_CENTRAL"], granularity_rank=1,
-                required_conditions=[f"modal={value}"], includes=[value], excludes=["other modal values"],
-                realization_dependencies=["modal>base_form"],
+                render(template["kc_id_template"]),
+                render(template["name_template"]),
+                render(template["definition_template"]),
+                {"cell": {"modal": value}},
+                represents=[f"modal:{value}"],
+                dimensions=["modal"],
+                hypothesis_group=template.get("hypothesis_group"),
+                taxonomy_parent_kc_ids=template.get("taxonomy_parent_kc_ids"),
+                granularity_rank=int(template.get("granularity_rank", 0)),
+                required_conditions=[f"modal={value}"],
+                includes=[value],
+                excludes=template.get("excludes"),
+                realization_dependencies=template.get("realization_dependencies"),
+                rationale=template.get("rationale", rationale),
             )
         )
-
-    # Operation-derived alternatives are evaluated over nuisance-realisation grids.
-    candidates.extend(
-        [
-            _candidate(
-                "KC_OP_DO_SUPPORT", "realisation evidence: DO-support", "Insert finite DO when the realization lacks an inherent operator.",
-                {"operation": "do_support"}, represents=[], dimensions=["clause", "polarity"], origin="operation",
-                hypothesis_group="operator_realisation", realization_dependencies=["predicate frame", "operator availability"],
-            ),
-            _candidate(
-                "KC_OP_OPERATOR_INVERSION", "realisation evidence: operator inversion", "Place the finite operator before the subject.",
-                {"operation": "operator_inversion"},
-                represents=["clause:polar_question", "clause:non_subject_wh_question"], dimensions=["clause"], origin="operation",
-                hypothesis_group="question_granularity", granularity_rank=2,
-                realization_dependencies=["finite operator", "subject"],
-            ),
-            _candidate(
-                "KC_OP_NEGATION_PLACEMENT", "realisation evidence: operator negation", "Place NOT after a finite operator.",
-                {"operation": "negation"}, represents=["polarity:negative"], dimensions=["polarity"], origin="operation",
-                hypothesis_group="negation_realisation", granularity_rank=2,
-                realization_dependencies=["finite operator"],
-            ),
-            _candidate(
-                "KC_OP_BE_PASSIVE", "realisation evidence: BE-passive", "Observe the BE-passive auxiliary/participle operation.",
-                {"operation": "be_passive"}, represents=["voice:passive"], dimensions=["voice"], origin="operation",
-                hypothesis_group="passive_realisation", granularity_rank=2,
-                realization_dependencies=["passive-compatible predicate"],
-            ),
-            _candidate(
-                "KC_OP_CENTRAL_MODAL", "realisation evidence: central modal", "Observe a central-modal base-chain operation.",
-                {"operation": "central_modal"}, represents=[f"modal:{value}" for value in modal_values], dimensions=["modal"],
-                origin="operation", hypothesis_group="modal_granularity", granularity_rank=2,
-                realization_dependencies=["modal>base_form"],
-            ),
-        ]
-    )
     return candidates
-
 
 def add_interaction_candidates(
     candidates: list[dict[str, Any]], config: dict[str, Any]
@@ -268,22 +200,31 @@ def add_interaction_candidates(
 
 # Canonical facts and contrasts
 
-def salient_facts(cell: dict[str, str]) -> list[str]:
-    facts: list[str] = []
-    if cell["tense"] in {"present", "past"}:
-        facts.append(f"tense:{cell['tense']}")
-    if cell["aspect"] in {"perfect", "perfect_progressive"}:
-        facts.append("aspect:perfect")
-    if cell["aspect"] in {"progressive", "perfect_progressive"}:
-        facts.append("aspect:progressive")
-    if cell["voice"] == "passive":
-        facts.append("voice:passive")
-    if cell["polarity"] == "negative":
-        facts.append("polarity:negative")
-    if cell["clause"] != "declarative":
-        facts.append(f"clause:{cell['clause']}")
-    if cell["modal"] != "none":
-        facts.append(f"modal:{cell['modal']}")
+def load_obligation_policy(path: str | None = None) -> dict[str, Any]:
+    from .io import read_json, repo_path
+
+    policy = read_json(repo_path(path or DEFAULT_OBLIGATION_POLICY))
+    if not isinstance(policy.get("fact_rules"), list):
+        raise ValueError("obligation policy requires fact_rules")
+    return policy
+
+
+def salient_facts(
+    cell: dict[str, str], policy: dict[str, Any] | None = None
+) -> list[str]:
+    """Compile facts from an explicit, replaceable obligation policy."""
+
+    selected = policy or load_obligation_policy()
+    opportunity = {"cell": cell, "realization_operations": []}
+    facts = []
+    for rule in selected["fact_rules"]:
+        active, _evidence = evaluate_rule(rule["activation_rule"], opportunity)
+        if not active:
+            continue
+        fact = rule.get("fact")
+        if fact is None:
+            fact = rule["fact_template"].format(**cell)
+        facts.append(fact)
     return sorted(facts)
 
 
@@ -336,62 +277,22 @@ def nuisance_opportunities(
     """Enumerate a deterministic valid grid without consulting held-out cells."""
 
     cell_id, cell = cell_row["canonical_cell_id"], cell_row["cell"]
-    source_ids = list(cell_row.get("source_descriptor_ids") or ["SOURCE_FIXTURE"])
-    notes = cell_row.get("source_mapping_notes") or {source_ids[0]: None}
-    source_cases = [(source_id, notes.get(source_id)) for source_id in source_ids]
-    if cell["clause"] == "imperative":
-        unique: dict[str, tuple[str, str | None]] = {}
-        for source_id, note in source_cases:
-            unique.setdefault(imperative_subtype(note), (source_id, note))
-        source_cases = [unique[key] for key in sorted(unique)]
-    else:
-        source_cases = [source_cases[0]]
-
-    if cell["clause"] == "subject_wh_question":
-        wh_values = [{"phrase": "who", "role": "subject"}]
-    elif cell["clause"] == "non_subject_wh_question":
-        wh_values = [{"phrase": "what", "role": "object"}, {"phrase": "when", "role": "adjunct"}]
-    else:
-        wh_values = [None]
-
     opportunities = []
-    for frame_id in sorted(frames):
-        frame = frames[frame_id]
-        for source_id, note in source_cases:
-            subtype = imperative_subtype(note) if cell["clause"] == "imperative" else None
-            for wh in wh_values:
-                subjects = SUBJECTS
-                if cell["voice"] == "passive":
-                    subjects = PASSIVE_SUBJECTS
-                elif cell["clause"] == "imperative":
-                    subjects = ({"text": "you", "person": 2, "number": "singular"},)
-                elif cell["clause"] == "subject_wh_question":
-                    subjects = ({"text": "who", "person": 3, "number": "singular"},)
-                for subject in subjects:
-                    spec = {
-                        "realization_id": stable_id("REAL", "kc-selection-grid", cell_id, frame_id, source_id, subject, wh, subtype),
-                        "canonical_cell_id": cell_id,
-                        "source_descriptor_id": source_id,
-                        "predicate_frame_id": frame_id,
-                        "subject": dict(subject),
-                        "wh": wh,
-                        "imperative_subtype": subtype,
-                        "let_pronoun": "them" if subtype == "let_pronoun" else None,
-                    }
-                    errors = validate_spec(spec, cell, frame, note)
-                    if errors:
-                        continue
-                    derivation = realise(spec, cell, frame)
-                    operation_facts = normalized_realisation_facts(cell, derivation)
-                    opportunities.append(
-                        {
-                            "canonical_cell_id": cell_id,
-                            "cell": cell,
-                            "realization_spec": spec,
-                            "realization_operations": operation_facts,
-                            "operation_facts": operation_facts,
-                        }
-                    )
+    for row in enumerate_valid_realisations(
+        cell_row, frames, identity_namespace="kc-selection-grid"
+    ):
+        spec, frame = row["spec"], row["frame"]
+        derivation = realise(spec, cell, frame)
+        operation_facts = normalized_realisation_facts(cell, derivation)
+        opportunities.append(
+            {
+                "canonical_cell_id": cell_id,
+                "cell": cell,
+                "realization_spec": spec,
+                "realization_operations": operation_facts,
+                "operation_facts": operation_facts,
+            }
+        )
     if not opportunities:
         raise RuntimeError(f"no valid nuisance realizations for development cell {cell_id}")
     return opportunities
@@ -422,7 +323,9 @@ def discover_candidates(
     if leaked:
         raise ValueError(f"non-development realizations supplied to candidate discovery: {leaked}")
 
-    candidates = add_interaction_candidates(canonical_candidates(), config)
+    family = load_candidate_family(config.get("candidate_family"))
+    obligation_policy = load_obligation_policy(config.get("obligation_policy"))
+    candidates = add_interaction_candidates(canonical_candidates(family), family)
     grids = {
         row["canonical_cell_id"]: nuisance_opportunities(row, frames)
         for row in sorted(development_cells, key=lambda value: value["canonical_cell_id"])
@@ -639,7 +542,9 @@ def discover_candidates(
         "equivalence_classes": equivalence_classes,
         "minimal_contrasts": minimal_contrasts(development_cells),
         "development_cell_facts": {
-            row["canonical_cell_id"]: salient_facts(row["cell"])
+            row["canonical_cell_id"]: salient_facts(row["cell"], obligation_policy)
             for row in sorted(development_cells, key=lambda value: value["canonical_cell_id"])
         },
+        "candidate_family_id": family["candidate_family_id"],
+        "obligation_policy": obligation_policy,
     }

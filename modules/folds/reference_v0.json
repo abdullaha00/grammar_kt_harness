@@ -1,4 +1,5 @@
 {
+  "fold_id": "REFERENCE_FOLD_v0",
   "require_all_declared_cells": true,
   "require_exact_inventory": true,
   "development_cell_ids": [

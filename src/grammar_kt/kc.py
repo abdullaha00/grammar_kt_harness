@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 from typing import Any
 
+from .folds import annotate_items, assignment_for_cells, fold_path, load_fold
 from .io import read_jsonl, write_jsonl
 from .records import kc_opportunity
 
@@ -33,6 +34,14 @@ def evaluate_rule(expression: dict[str, Any], opportunity: dict[str, Any]) -> tu
             "operator": "all",
             "parts": [evidence for _result, evidence in evaluated],
         }
+    if "any" in expression:
+        evaluated = [evaluate_rule(part, opportunity) for part in expression["any"]]
+        matched = any(result for result, _evidence in evaluated)
+        return matched, {
+            "matched": matched,
+            "operator": "any",
+            "parts": [evidence for _result, evidence in evaluated],
+        }
     if "operation" in expression:
         expected = expression["operation"]
         actual = opportunity["realization_operations"]
@@ -51,6 +60,17 @@ def evaluate_rule(expression: dict[str, Any], opportunity: dict[str, Any]) -> tu
             checks.append({"field": f"cell.{key}", "expected": expected, "actual": actual, "matched": matched})
         matched = all(check["matched"] for check in checks)
         return matched, {"matched": matched, "operator": "cell", "checks": checks}
+    for field in ("agreement_site", "frame_type"):
+        if field in expression:
+            expected = expression[field]
+            actual = opportunity[field]
+            matched = actual in expected if isinstance(expected, list) else actual == expected
+            return matched, {
+                "matched": matched,
+                "field": field,
+                "expected": expected,
+                "actual": actual,
+            }
     raise ValueError(f"unknown KC activation expression: {expression}")
 
 
@@ -161,7 +181,7 @@ def project_items(
             kc_opportunity(
                 {
                     "opportunity_id": opportunity_id,
-                    "split": item["generation_metadata"]["canonical_split"],
+                    "split": item["canonical_split"],
                     "canonical_cell_id": item["canonical_cell_id"],
                     "cell": cell_row["cell"],
                     "realization_spec": item["realization_spec"],
@@ -201,6 +221,8 @@ def run(run_dir: Path, settings: dict[str, Any]) -> dict[str, Any]:
         )
     items = read_jsonl(run_dir / "items" / "validation" / "accepted_items.jsonl")
     cells = read_jsonl(run_dir / "canonical" / "canonical_cells.jsonl")
+    manifest = load_fold(fold_path(settings))
+    items = annotate_items(items, assignment_for_cells(cells, manifest))
     policy = load_policy(policy_path)
     projections, cards = project_items(items, cells, policy)
     empty_development = sorted(

@@ -4,5 +4,20 @@
   "would_frame_id": "FRAME_LIKE",
   "operator_contrast_frame_id": "FRAME_COPULAR_READY",
   "include_operator_source_contrasts": true,
-  "include_agreement_variants": true
+  "include_agreement_variants": true,
+  "agreement_representatives": [
+    {"canonical_cell_id": "CELL_0A7F3FA2D498D97D", "predicate_frame_id": "FRAME_WRITE"},
+    {"canonical_cell_id": "CELL_0D017AFB2B3A3DB5", "predicate_frame_id": "FRAME_WRITE"},
+    {"canonical_cell_id": "CELL_607B0B91B1CEB860", "predicate_frame_id": "FRAME_WRITE"},
+    {"canonical_cell_id": "CELL_6C685909760672EA", "predicate_frame_id": "FRAME_WRITE"},
+    {"canonical_cell_id": "CELL_868FF555B70CAE2A", "predicate_frame_id": "FRAME_COPULAR_READY"},
+    {"canonical_cell_id": "CELL_868FF555B70CAE2A", "predicate_frame_id": "FRAME_WRITE"},
+    {"canonical_cell_id": "CELL_C20140C7DAD62DB2", "predicate_frame_id": "FRAME_COPULAR_READY"},
+    {"canonical_cell_id": "CELL_C20140C7DAD62DB2", "predicate_frame_id": "FRAME_WRITE"},
+    {"canonical_cell_id": "CELL_CEBF57A9F5C2F00A", "predicate_frame_id": "FRAME_WRITE"},
+    {"canonical_cell_id": "CELL_D02189D0DFD84070", "predicate_frame_id": "FRAME_COPULAR_READY"},
+    {"canonical_cell_id": "CELL_D02189D0DFD84070", "predicate_frame_id": "FRAME_WRITE"},
+    {"canonical_cell_id": "CELL_D88738F5F0FBE1EB", "predicate_frame_id": "FRAME_WRITE"},
+    {"canonical_cell_id": "CELL_EA48447107868B2C", "predicate_frame_id": "FRAME_WRITE"}
+  ]
 }

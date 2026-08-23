@@ -3,11 +3,11 @@
 from __future__ import annotations
 
 import json
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
-from .io import read_jsonl, stable_id, write_jsonl
+from .io import read_jsonl, stable_id, write_json, write_jsonl
 from .records import DIMENSIONS, grammar_cell
 
 
@@ -72,7 +72,47 @@ def build(mappings: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[di
 def run(run_dir: Path, _settings: dict[str, Any]) -> dict[str, Any]:
     output = run_dir / "canonical"
     output.mkdir(parents=True, exist_ok=False)
-    cells, edges = build(read_jsonl(run_dir / "normalisation" / "final_mappings.jsonl"))
+    mappings = read_jsonl(run_dir / "normalisation" / "final_mappings.jsonl")
+    cells, edges = build(mappings)
     write_jsonl(output / "canonical_cells.jsonl", cells, sort_keys=False)
     write_jsonl(output / "source_cell_edges.jsonl", edges, sort_keys=False)
-    return {"canonical_cells": len(cells), "source_cell_edges": len(edges)}
+    counts = Counter(row["result"] for row in mappings)
+    contributing = sorted(
+        row["egp_id"]
+        for row in mappings
+        if row["result"] == "complete" and row.get("cells")
+    )
+    non_contributing = [
+        {
+            "egp_id": row["egp_id"],
+            "reason": (
+                "complete_without_cells"
+                if row["result"] == "complete"
+                else row["result"]
+            ),
+        }
+        for row in mappings
+        if row["egp_id"] not in set(contributing)
+    ]
+    audit = {
+        "source_descriptors": len(mappings),
+        "normalisation_result_classes": {
+            name: counts.get(name, 0)
+            for name in ("complete", "partial", "out_of_scope", "unresolved", "schema_failure")
+        },
+        "complete_descriptors_contributing_cells": len(contributing),
+        "contributing_descriptor_ids": contributing,
+        "non_contributing_descriptors": non_contributing,
+        "source_cell_edges": len(edges),
+        "canonical_cell_count": len(cells),
+        "edge_to_unique_cell_ratio": len(edges) / len(cells) if cells else None,
+        "deduplication_ratio": len(cells) / len(edges) if edges else None,
+        "deduplication_reduction": 1.0 - (len(cells) / len(edges)) if edges else None,
+        "partial_mappings_contribute_exact_cells": False,
+    }
+    write_json(output / "audit.json", audit)
+    return {
+        "canonical_cells": len(cells),
+        "source_cell_edges": len(edges),
+        "contributing_descriptors": len(contributing),
+    }

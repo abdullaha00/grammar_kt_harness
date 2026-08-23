@@ -1,92 +1,9 @@
-EGP normalization schema version: v1-pilot-frozen
+This former value declaration is retained only as a migration pointer.
 
-GrammarCell:
-  tense:
-    present | past | NA
-    | list[present | past | NA]
-    | null
+The authoritative machine-readable GrammarCell declaration is now:
 
-  aspect:
-    none | progressive | perfect | perfect_progressive
-    | list[none | progressive | perfect | perfect_progressive]
-    | null
+  modules/canonical/grammar_schema.yaml
 
-  voice:
-    active | passive
-    | list[active | passive]
-    | null
-
-  polarity:
-    positive | negative
-    | list[positive | negative]
-    | null
-
-  clause:
-    declarative
-    | polar_question
-    | subject_wh_question
-    | non_subject_wh_question
-    | imperative
-    | list[
-        declarative,
-        polar_question,
-        subject_wh_question,
-        non_subject_wh_question,
-        imperative
-      ]
-    | null
-
-  modal:
-    none
-    | can | could | may | might | must
-    | shall | should | will | would
-    | list[
-        none,
-        can, could, may, might, must,
-        shall, should, will, would
-      ]
-    | null
-
-
-EGPMapping:
-  egp_id: string
-
-  result:
-    complete
-    | partial
-    | out_of_scope
-    | schema_failure
-    | unresolved
-
-  cells: list[GrammarCell]
-
-  note: string | null
-
-
-SEMANTICS
-
-- scalar = exact value established by the source
-- list = source constrains the value to this set; members are NOT independently
-  asserted as supported
-- null = source does not establish this dimension
-- dimensions inside a cell are AND constraints
-- cells in `cells` are OR branches
-- never infer Cartesian combinations
-
-Result invariants:
-
-complete:
-  - cells is non-empty
-  - every value in every cell is scalar
-
-partial:
-  - cells is non-empty
-  - at least one value is a list or null
-
-out_of_scope | schema_failure | unresolved:
-  - cells = []
-  - note briefly explains why
-
-Important:
-  modal:none != modal:null
-  tense:NA != tense:null
+Normalisation renders its prompt declaration directly from that YAML. The
+structured-output JSON schema is a checked derived mirror. See
+modules/canonical/rationale.md for scientific scope and exclusions.
