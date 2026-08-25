@@ -1,0 +1,119 @@
+\section{Experimental Design}
+\label{sec:experimental-design}
+
+\subsection{Canonical fold and ontology conditions}
+
+The canonical fold is declared independently of the item bank.  It assigns
+all 24 cells in the reference inventory explicitly: 16 development cells,
+seven compositional holdouts, and one novel-feature holdout.  Exact-inventory
+validation prevents a new or changed cell from defaulting silently into the
+development set.  In a compositional holdout, every salient marked fact occurs
+in at least one development cell but their conjunction is new.  The
+novel-feature holdout contains at least one salient fact absent from
+development.  These definitions concern canonical content, not random item
+rows.
+
+Table~\ref{tab:ontology-conditions} lists the six representations to report.
+They answer different questions and are therefore labelled by their access to
+prior information.  The selected structural, factorised-development-frozen,
+and full-cell-development-frozen conditions are inductive: their inventories
+are fixed using development evidence.  The two predefined factor policies
+encode expert priors over the full declared grammar domain.  Full-cell--all is
+transductive because its KC inventory includes the exact held-out cells.  It is
+useful as a resolution extreme, not as a fair inductive competitor.
+
+\input{tables/ontology_conditions}
+
+The item-bank fingerprint and fixed-event fingerprint must match across all
+conditions.  A condition changes only the selected policy, item--KC
+projection, Q-matrix, candidate learner histories, and predictions.  This
+fixed-data requirement is checked before any pairwise result is interpreted.
+
+\subsection{Independent structural simulation oracle}
+
+The simulator maps each accepted item to a subset of ten data-generating
+features: finite form, finite agreement, perfect, progressive, and passive
+dependencies, negation, operator inversion, DO-support, central-modal
+structure, and imperative structure.  Activation rules use the same observable
+cell and realisation evidence available before KC selection, but the features
+have a separate namespace and configuration.  They are controlled simulator
+primitives, not candidate KCs and not proposed cognitive atoms.
+
+For each of three profile settings, 60 learners are generated.  Initial
+masteries are independent draws from $\operatorname{Beta}(2,6)$,
+$\operatorname{Beta}(2,2)$, or $\operatorname{Beta}(6,2)$; the corresponding
+learning rates are $.06$, $.05$, and $.035$.  Item difficulty $d_i$ is a
+deterministic hash of item identity mapped to $[-.8,.8]$.  If $O(i)$ is the
+active oracle set and $m_{lo}^{(t)}$ is learner $l$'s pre-event mastery, then
+\begin{align}
+ z_{li}^{(t)} &= \frac{1}{|O(i)|}\sum_{o\in O(i)}
+   \operatorname{logit}\!\left(m_{lo}^{(t)}\right)\notag\\
+   &\quad-d_i-.08\bigl(|O(i)|-1\bigr),\\
+ p_{li}^{(t)} &= .1+.8\,\sigma\!\left(z_{li}^{(t)}\right).
+\end{align}
+After drawing $y_{li}^{(t)}\sim\operatorname{Bernoulli}(p_{li}^{(t)})$, each
+active oracle mastery is updated by
+\begin{equation}
+ m' = \min\{.999,\max[.001,
+ m+\eta_l(1-m)g_y]\},
+\end{equation}
+where $g_1=.60$ and $g_0=.35$.  This is deliberately simple and monotonic; an
+incorrect response still creates a smaller learning opportunity.
+
+The ordinary technical stream gives every learner two independently shuffled
+passes through the whole accepted bank and assigns chronological 60/20/20
+train, validation, and test portions.  Its public event record contains item,
+cell, timestamp, split, difficulty, and correctness, but no oracle or candidate
+KC fields.  Initial states, probabilities, draws, and updates are held in
+separate private oracle artifacts for audit.  Evaluated KC rules and counts are
+never simulator inputs.
+
+\subsection{Development acquisition and frozen probes}
+
+The primary representation comparison uses a separate compositional protocol.
+Each learner receives two shuffled passes over development items only.  The
+oracle state is then frozen.  Every compositional-holdout and novel-feature
+item is probed once from that same post-development state; probe responses do
+not update it.  Random draws are keyed by learner and item, making outcomes
+invariant to probe ordering.
+
+For each ontology, candidate-KC opportunity counts, empirical histories, BKT
+mastery, and logistic features are learned from development acquisition and
+then frozen before all probes.  Each held-out item is classified as
+\emph{covered} (at least one KC activates), \emph{fully development-supported}
+(all active KCs occurred on development items), \emph{cold} (at least one
+active KC did not), or \emph{uncovered}.  A cold KC receives a fixed $.5$
+prior.  An uncovered event receives the same learner-global Beta-smoothed
+development success rate under every model and stays in the all-probe metric.
+Coverage and predictive performance are consequently reported separately;
+dismissing uncovered rows would reward narrow policies by changing the test
+set.
+
+\subsection{Technical KT baselines and evaluation}
+
+Three deliberately modest KT baselines test what the representation makes
+available.  The empirical baseline predicts the mean Beta$(1,1)$-smoothed
+pre-event success rate over active KCs.  BKT uses fixed learning, guessing, and
+slipping parameters $.04$, $.20$, and $.10$; initial KC mastery is the clipped
+smoothed training rate.  Logistic regression uses $L_2$ regularisation
+($C=1$, \texttt{lbfgs}, at most 300 iterations) and only pre-event information:
+learner-global success, active-KC success, mean log prior opportunities, fixed
+item difficulty, active-KC count, and one-hot KC indicators.  No model reads
+the private oracle artifacts.
+
+Log loss on fixed compositional probes is the primary metric because it is a
+proper scoring rule and penalises unjustified confidence.  Brier score, AUC,
+accuracy at $.5$, and ten-bin expected calibration error are secondary.
+Every table must include item and event coverage, development-supported
+coverage, and cold-KC rate.  Metrics are shown for all probes with the declared
+fallback, covered probes, and fully development-supported probes; the latter
+two are diagnostic subsets, not replacements for the primary test set.
+
+Pairwise ontology contrasts use the same model technique and identical probe
+events.  The estimand is mean event-level log loss for ontology A minus B.  A
+paired learner bootstrap resamples learners with replacement 1,000 times,
+retaining all probes for each sampled learner, and reports the observed
+difference with a percentile 95\% interval.  The novel-feature split is
+reported separately and treated as exploratory because it contains one cell.
+The ordinary chronological benchmark remains a software sanity check, not the
+main answer to RQ3.

@@ -1,0 +1,292 @@
+Complete each independent controlled English generation case. Return exactly one sentence per case in the required JSON shape. Do not explain, number, quote, or add alternatives. Predicate frame IDs have their ordinary repository meanings: FRAME_WRITE means WRITE with object 'the report'; FRAME_LIKE means LIKE with object 'the new plan'; FRAME_COPULAR_READY means copular BE with complement 'ready'.
+
+[
+  {
+    "case_id": "GEN_001",
+    "canonical_structure": {
+      "tense": "present",
+      "aspect": "perfect",
+      "voice": "active",
+      "polarity": "negative",
+      "clause": "declarative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=present; aspect=perfect; voice=active; polarity=negative; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the technician\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_002",
+    "canonical_structure": {
+      "tense": "NA",
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "would"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=NA; aspect=none; voice=active; polarity=positive; clause=declarative; modal=would; imperative subtype=NONE.\nUse exactly: subject=\"the technician\"; verb lemma=LIKE; object=\"the new plan\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_003",
+    "canonical_structure": {
+      "tense": "past",
+      "aspect": "perfect_progressive",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=past; aspect=perfect_progressive; voice=active; polarity=positive; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the technicians\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_004",
+    "canonical_structure": {
+      "tense": "present",
+      "aspect": "none",
+      "voice": "passive",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=present; aspect=none; voice=passive; polarity=positive; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the report\"; verb lemma=WRITE; object=\"NONE\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_005",
+    "canonical_structure": {
+      "tense": "present",
+      "aspect": "progressive",
+      "voice": "passive",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=present; aspect=progressive; voice=passive; polarity=positive; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the report\"; verb lemma=WRITE; object=\"NONE\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_006",
+    "canonical_structure": {
+      "tense": "past",
+      "aspect": "perfect_progressive",
+      "voice": "active",
+      "polarity": "negative",
+      "clause": "declarative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=past; aspect=perfect_progressive; voice=active; polarity=negative; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the technician\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_007",
+    "canonical_structure": {
+      "tense": "past",
+      "aspect": "perfect",
+      "voice": "active",
+      "polarity": "negative",
+      "clause": "declarative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=past; aspect=perfect; voice=active; polarity=negative; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the technician\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_008",
+    "canonical_structure": {
+      "tense": "present",
+      "aspect": "progressive",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=present; aspect=progressive; voice=active; polarity=positive; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"I\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_009",
+    "canonical_structure": {
+      "tense": "present",
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "polar_question",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=present; aspect=none; voice=active; polarity=positive; clause=polar_question; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"I\"; verb lemma=BE; object=\"NONE\"; complement=\"ready\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a question mark (?). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_010",
+    "canonical_structure": {
+      "tense": "present",
+      "aspect": "perfect",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=present; aspect=perfect; voice=active; polarity=positive; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the technician\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_011",
+    "canonical_structure": {
+      "tense": "present",
+      "aspect": "none",
+      "voice": "passive",
+      "polarity": "negative",
+      "clause": "declarative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=present; aspect=none; voice=passive; polarity=negative; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the report\"; verb lemma=WRITE; object=\"NONE\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_012",
+    "canonical_structure": {
+      "tense": "present",
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "negative",
+      "clause": "declarative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=present; aspect=none; voice=active; polarity=negative; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the technician\"; verb lemma=BE; object=\"NONE\"; complement=\"ready\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_013",
+    "canonical_structure": {
+      "tense": "past",
+      "aspect": "perfect",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=past; aspect=perfect; voice=active; polarity=positive; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the technician\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_014",
+    "canonical_structure": {
+      "tense": "past",
+      "aspect": "none",
+      "voice": "passive",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=past; aspect=none; voice=passive; polarity=positive; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the report\"; verb lemma=WRITE; object=\"NONE\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_015",
+    "canonical_structure": {
+      "tense": "past",
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "negative",
+      "clause": "declarative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=past; aspect=none; voice=active; polarity=negative; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the technicians\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_016",
+    "canonical_structure": {
+      "tense": "past",
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=past; aspect=none; voice=active; polarity=positive; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"I\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_017",
+    "canonical_structure": {
+      "tense": "past",
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "polar_question",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=past; aspect=none; voice=active; polarity=positive; clause=polar_question; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the technicians\"; verb lemma=BE; object=\"NONE\"; complement=\"ready\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a question mark (?). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_018",
+    "canonical_structure": {
+      "tense": "present",
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=present; aspect=none; voice=active; polarity=positive; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"I\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_019",
+    "canonical_structure": {
+      "tense": "present",
+      "aspect": "perfect_progressive",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=present; aspect=perfect_progressive; voice=active; polarity=positive; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the technician\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_020",
+    "canonical_structure": {
+      "tense": "present",
+      "aspect": "progressive",
+      "voice": "active",
+      "polarity": "negative",
+      "clause": "declarative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=present; aspect=progressive; voice=active; polarity=negative; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the technician\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_021",
+    "canonical_structure": {
+      "tense": "past",
+      "aspect": "progressive",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=past; aspect=progressive; voice=active; polarity=positive; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the technician\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_022",
+    "canonical_structure": {
+      "tense": "NA",
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "negative",
+      "clause": "imperative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=NA; aspect=none; voice=active; polarity=negative; clause=imperative; modal=none; imperative subtype=lets_not.\nUse exactly: subject=\"IMPLICIT YOU\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_023",
+    "canonical_structure": {
+      "tense": "past",
+      "aspect": "perfect",
+      "voice": "passive",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=past; aspect=perfect; voice=passive; polarity=positive; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the report\"; verb lemma=WRITE; object=\"NONE\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  },
+  {
+    "case_id": "GEN_024",
+    "canonical_structure": {
+      "tense": "NA",
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "imperative",
+      "modal": "none"
+    },
+    "realization_constraints": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=NA; aspect=none; voice=active; polarity=positive; clause=imperative; modal=none; imperative subtype=lets.\nUse exactly: subject=\"IMPLICIT YOU\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+  }
+]

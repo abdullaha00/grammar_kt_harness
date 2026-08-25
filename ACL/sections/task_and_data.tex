@@ -1,0 +1,40 @@
+\section{Task Formulation and Source Data}
+\label{sec:task-data}
+
+\subsection{Grammar-cell representation}
+
+For descriptor $d$, normalization returns a status, cells, and a note.  A cell
+has six dimensions,
+\begin{equation}
+  c=(t,a,v,p,q,m),
+\end{equation}
+for tense, aspect, voice, polarity, clause type, and modal choice.
+Table~\ref{tab:grammar-domains} gives the domains.  Scalars record exact
+evidence, lists bounded unresolved alternatives, and null no usable constraint.
+Dimensions within a cell are conjunctive; separate cells are source-supported
+alternatives.  Lists are not expanded into unsupported Cartesian products.
+
+Mappings are \emph{complete} only when all values are scalar.  Partial mappings
+contain a list or null.  Zero-cell statuses distinguish out-of-scope,
+schema-failure, and unresolved cases.  Compatibility constraints include
+$m\neq\text{none}\Rightarrow t=\text{NA}$ and imperative
+clauses requiring $t=\text{NA}$ and $m=\text{none}$.  Only complete cells enter
+the downstream canonical inventory.
+
+\input{tables/grammar_dimensions}
+
+\subsection{Declared source subset}
+
+The input is a consult-only parsed EGP snapshot that is not redistributed.  Its
+declared SHA-256 digest and size are checked before execution.  From 1,222
+records, an ordered list selects 139 descriptors: 23 regression controls and
+116 fresh cases stratified over tense--aspect combinations, passive voice,
+negation, questions, imperatives, central modals, and out-of-scope phenomena.
+
+The design contains 139 primary annotation units and eight blinded repeats.
+Every unit retains model evidence; only primaries feed canonicalization.
+
+Phase~1 exposes the identifier, category fields, guideword, and can-do
+statement.  Source examples remain hidden unless a partial result is eligible
+for Phase~2, preventing examples from silently replacing the descriptor as the
+definition of coverage.

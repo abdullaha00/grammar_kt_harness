@@ -1,0 +1,167 @@
+\begin{thebibliography}{20}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Abdelrahman et~al.(2023)Abdelrahman, Wang, and
+  Nunes}]{abdelrahman-etal-2023}
+Ghodai Abdelrahman, Qing Wang, and Bernardo~Pereira Nunes. 2023.
+\newblock \href {https://doi.org/10.1145/3569576} {Knowledge tracing: A
+  survey}.
+\newblock \emph{ACM Computing Surveys}, 55(11):1--37.
+
+\bibitem[{Bitew et~al.(2023)Bitew, Deleu, Do{\u{g}}ru{\"o}z, Develder, and
+  Demeester}]{bitew-etal-2023-learning}
+Semere~Kiros Bitew, Johannes Deleu, A.~Seza Do{\u{g}}ru{\"o}z, Chris Develder,
+  and Thomas Demeester. 2023.
+\newblock \href {https://doi.org/10.18653/v1/2023.bea-1.51} {Learning from
+  partially annotated data: Example-aware creation of gap-filling exercises for
+  language learning}.
+\newblock In \emph{Proceedings of the 18th Workshop on Innovative Use of {NLP}
+  for Building Educational Applications}, pages 598--609. Association for
+  Computational Linguistics.
+
+\bibitem[{Caines et~al.(2022)Caines, Yannakoudakis, Allen, P{\'e}rez-Paredes,
+  Byrne, and Buttery}]{caines-etal-2022-teacher}
+Andrew Caines, Helen Yannakoudakis, Helen Allen, Pascual P{\'e}rez-Paredes,
+  Bill Byrne, and Paula Buttery. 2022.
+\newblock \href {https://aclanthology.org/2022.nlp4call-1.3/} {The
+  teacher-student chatroom corpus version 2: More lessons, new annotation,
+  automatic detection of sequence shifts}.
+\newblock In \emph{Proceedings of the 11th Workshop on {NLP} for Computer
+  Assisted Language Learning}, pages 23--35. LiU Electronic Press.
+
+\bibitem[{Cen et~al.(2006)Cen, Koedinger, and Junker}]{cen-etal-2006}
+Hao Cen, Kenneth~R. Koedinger, and Brian Junker. 2006.
+\newblock \href {https://doi.org/10.1007/11774303_17} {Learning factors
+  analysis: A general method for cognitive model evaluation and improvement}.
+\newblock In \emph{Intelligent Tutoring Systems}, volume 4053 of \emph{Lecture
+  Notes in Computer Science}, pages 164--175. Springer.
+
+\bibitem[{Chan et~al.(2022)Chan, Somasundaran, Ghosh, and
+  Zhao}]{chan-etal-2022-agree}
+Sophia Chan, Swapna Somasundaran, Debanjan Ghosh, and Mengxuan Zhao. 2022.
+\newblock \href {https://doi.org/10.18653/v1/2022.emnlp-demos.17} {{AGR}e{E}: A
+  system for generating automated grammar reading exercises}.
+\newblock In \emph{Proceedings of the 2022 Conference on Empirical Methods in
+  Natural Language Processing: System Demonstrations}, pages 169--177.
+  Association for Computational Linguistics.
+
+\bibitem[{Corbett and Anderson(1995)}]{corbett-anderson-1995}
+Albert~T. Corbett and John~R. Anderson. 1995.
+\newblock \href {https://doi.org/10.1007/BF01099821} {Knowledge tracing:
+  Modeling the acquisition of procedural knowledge}.
+\newblock \emph{User Modeling and User-Adapted Interaction}, 4(4):253--278.
+
+\bibitem[{{Council of Europe}(2020)}]{coe-2020-cefr}
+{Council of Europe}. 2020.
+\newblock \href
+  {https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-companion-volume}
+  {\emph{Common European Framework of Reference for Languages: Learning,
+  Teaching, Assessment---Companion Volume}}.
+\newblock Council of Europe Publishing, Strasbourg.
+
+\bibitem[{Cui and Sachan(2023)}]{cui-sachan-2023-adaptive}
+Peng Cui and Mrinmaya Sachan. 2023.
+\newblock \href {https://doi.org/10.18653/v1/2023.acl-long.567} {Adaptive and
+  personalized exercise generation for online language learning}.
+\newblock In \emph{Proceedings of the 61st Annual Meeting of the Association
+  for Computational Linguistics (Volume 1: Long Papers)}, pages 10184--10198.
+  Association for Computational Linguistics.
+
+\bibitem[{de~la Torre and Chiu(2016)}]{de-la-torre-chiu-2016}
+Jimmy de~la Torre and Chia-Yi Chiu. 2016.
+\newblock \href {https://doi.org/10.1007/s11336-015-9467-8} {A general method
+  of empirical {Q}-matrix validation}.
+\newblock \emph{Psychometrika}, 81(2):253--273.
+
+\bibitem[{Huang et~al.(2026)Huang, Scarlatos, Lee, and
+  Lan}]{huang-etal-2026-interpretable}
+Shuyan Huang, Alexander Scarlatos, Jaewook Lee, and Andrew Lan. 2026.
+\newblock \href {https://doi.org/10.18653/v1/2026.bea-1.43} {Interpretable
+  difficulty-aware knowledge tracing in tutor-student dialogues}.
+\newblock In \emph{Proceedings of the 21st Workshop on Innovative Use of {NLP}
+  for Building Educational Applications}, pages 612--623. Association for
+  Computational Linguistics.
+
+\bibitem[{Koedinger et~al.(2012)Koedinger, Corbett, and
+  Perfetti}]{koedinger-etal-2012}
+Kenneth~R. Koedinger, Albert~T. Corbett, and Charles Perfetti. 2012.
+\newblock \href {https://doi.org/10.1111/j.1551-6709.2012.01245.x} {The
+  knowledge-learning-instruction framework: Bridging the science-practice chasm
+  to enhance robust student learning}.
+\newblock \emph{Cognitive Science}, 36(5):757--798.
+
+\bibitem[{O'Keeffe and Mark(2017)}]{okeeffe-mark-2017}
+Anne O'Keeffe and Geraldine Mark. 2017.
+\newblock \href {https://doi.org/10.1075/ijcl.14086.oke} {The {English Grammar
+  Profile} of learner competence: Methodology and key findings}.
+\newblock \emph{International Journal of Corpus Linguistics}, 22(4):457--489.
+
+\bibitem[{Pagonis et~al.(2024)Pagonis, Hartung, Wu, Georges, and
+  Gr{\"o}ttrup}]{pagonis-etal-2024}
+Panagiotis Pagonis, Kai Hartung, Di~Wu, Munir Georges, and S{\"o}ren
+  Gr{\"o}ttrup. 2024.
+\newblock \href {https://doi.org/10.48550/arXiv.2401.16832} {Analysis of
+  knowledge tracing performance on synthesised student data}.
+\newblock \emph{arXiv preprint arXiv:2401.16832}.
+
+\bibitem[{Pardos and Dadu(2018)}]{pardos-dadu-2018}
+Zachary~A. Pardos and Anant Dadu. 2018.
+\newblock \href
+  {https://jedm.educationaldatamining.org/index.php/JEDM/article/view/159}
+  {{dAFM}: Fusing psychometric and connectionist modeling for {Q}-matrix
+  refinement}.
+\newblock \emph{Journal of Educational Data Mining}, 10(2):1--27.
+
+\bibitem[{Pavlik et~al.(2009)Pavlik, Cen, and Koedinger}]{pavlik-etal-2009}
+Philip~I. Pavlik, Hao Cen, and Kenneth~R. Koedinger. 2009.
+\newblock \href {https://doi.org/10.3233/978-1-60750-028-5-531} {Performance
+  factors analysis---a new alternative to knowledge tracing}.
+\newblock In \emph{Proceedings of the 14th International Conference on
+  Artificial Intelligence in Education}, volume 200 of \emph{Frontiers in
+  Artificial Intelligence and Applications}, pages 531--538.
+
+\bibitem[{Piech et~al.(2015)Piech, Bassen, Huang, Ganguli, Sahami, Guibas, and
+  Sohl-Dickstein}]{piech-etal-2015}
+Chris Piech, Jonathan Bassen, Jonathan Huang, Surya Ganguli, Mehran Sahami,
+  Leonidas Guibas, and Jascha Sohl-Dickstein. 2015.
+\newblock \href
+  {https://proceedings.neurips.cc/paper/2015/hash/bac9162b47c56fc8a4d2a519803d51b3-Abstract.html}
+  {Deep knowledge tracing}.
+\newblock In \emph{Advances in Neural Information Processing Systems 28}, pages
+  505--513.
+
+\bibitem[{Scarlatos et~al.(2025)Scarlatos, Baker, and
+  Lan}]{scarlatos-etal-2025-dialogue}
+Alexander Scarlatos, Ryan~S. Baker, and Andrew Lan. 2025.
+\newblock \href {https://doi.org/10.1145/3706468.3706501} {Exploring knowledge
+  tracing in tutor-student dialogues using {LLM}s}.
+\newblock In \emph{Proceedings of the 15th International Learning Analytics and
+  Knowledge Conference}, pages 249--259. ACM.
+
+\bibitem[{Scarlatos et~al.(2026)Scarlatos, Lee, Woodhead, and
+  Lan}]{scarlatos-etal-2026-simulated}
+Alexander Scarlatos, Jaewook Lee, Simon Woodhead, and Andrew Lan. 2026.
+\newblock \href {https://doi.org/10.18653/v1/2026.acl-long.1960} {Simulated
+  students in tutoring dialogues: Substance or illusion?}
+\newblock In \emph{Proceedings of the 64th Annual Meeting of the Association
+  for Computational Linguistics (Volume 1: Long Papers)}, pages 42349--42385.
+  Association for Computational Linguistics.
+
+\bibitem[{Srivastava and Goodman(2021)}]{srivastava-goodman-2021-question}
+Megha Srivastava and Noah Goodman. 2021.
+\newblock \href {https://doi.org/10.18653/v1/2021.acl-short.88} {Question
+  generation for adaptive education}.
+\newblock In \emph{Proceedings of the 59th Annual Meeting of the Association
+  for Computational Linguistics and the 11th International Joint Conference on
+  Natural Language Processing (Volume 2: Short Papers)}, pages 692--701.
+  Association for Computational Linguistics.
+
+\bibitem[{Verratti-Souto et~al.(2025)Verratti-Souto, Sagirov, and
+  Chen}]{verratti-souto-etal-2025}
+Daniela Verratti-Souto, Nelly Sagirov, and Xiaobin Chen. 2025.
+\newblock \href {https://doi.org/10.1017/S0267190525100093} {{NLP}-powered
+  quantitative verification of the {English Grammar Profile}'s structure-level
+  assignment}.
+\newblock \emph{Annual Review of Applied Linguistics}, 45:109--130.
+
+\end{thebibliography}

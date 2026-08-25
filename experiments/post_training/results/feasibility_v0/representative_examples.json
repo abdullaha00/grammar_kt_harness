@@ -1,0 +1,598 @@
+{
+  "dialogue": [
+    {
+      "data_split": "evaluation_compositional",
+      "evaluation_only": {
+        "gold_answer": "I did not write the report."
+      },
+      "labels": {
+        "actual_error_dimension": "aspect",
+        "feedback_target_match": true,
+        "label_strength": "weak_template_demonstration",
+        "pedagogical_quality_validated": false,
+        "reveals_answer": false
+      },
+      "model_input": {
+        "exercise": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=past; aspect=none; voice=active; polarity=negative; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"I\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only.",
+        "learner_response": "I had not been writing the report.",
+        "learner_state": null,
+        "system": "You are tutoring an English learner. Give a targeted hint without revealing the answer."
+      },
+      "provenance": {
+        "builder_version": "POST_TRAINING_RECORD_BUILDER_v0",
+        "canonical_cell_id": "CELL_C20140C7DAD62DB2",
+        "item_id": "ITEM_2FF87AEF31338F50",
+        "item_opportunity_id": "ITEMOPP_2716EB121FCF669D",
+        "kc_policy_id": "FACTORIZED_v0",
+        "realization_id": "REAL_26E1653D47215FD5",
+        "source_descriptor_ids": [
+          "1741163712739x998605611367738000"
+        ],
+        "source_run": "runs/base",
+        "target_kc_ids": [
+          "KC_FINITE_PAST",
+          "KC_NEGATION"
+        ]
+      },
+      "record_id": "PT_156039B565247D84",
+      "record_type": "dialogue",
+      "response": "Check the requested auxiliary chain and verb form, then try the sentence again.",
+      "task": "corrective_feedback"
+    },
+    {
+      "data_split": "evaluation_compositional",
+      "evaluation_only": {
+        "gold_answer": "The technician has been writing the report."
+      },
+      "labels": {
+        "actual_error_dimension": "aspect",
+        "feedback_target_match": true,
+        "label_strength": "weak_template_demonstration",
+        "pedagogical_quality_validated": false,
+        "reveals_answer": false
+      },
+      "model_input": {
+        "exercise": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=present; aspect=perfect_progressive; voice=active; polarity=positive; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the technician\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only.",
+        "learner_response": "The technician writes the report.",
+        "learner_state": null,
+        "system": "You are tutoring an English learner. Give a targeted hint without revealing the answer."
+      },
+      "provenance": {
+        "builder_version": "POST_TRAINING_RECORD_BUILDER_v0",
+        "canonical_cell_id": "CELL_E1030A4919D1A060",
+        "item_id": "ITEM_2971A4A50C99EA78",
+        "item_opportunity_id": "ITEMOPP_AA835FF08840B7AE",
+        "kc_policy_id": "FACTORIZED_v0",
+        "realization_id": "REAL_C80C243C9551D25F",
+        "source_descriptor_ids": [
+          "1741163712744x517808240803915500"
+        ],
+        "source_run": "runs/base",
+        "target_kc_ids": [
+          "KC_ASPECT_PERFECT",
+          "KC_ASPECT_PROGRESSIVE",
+          "KC_FINITE_PRESENT"
+        ]
+      },
+      "record_id": "PT_6B42553726622D90",
+      "record_type": "dialogue",
+      "response": "Check the requested auxiliary chain and verb form, then try the sentence again.",
+      "task": "corrective_feedback"
+    }
+  ],
+  "preference": [
+    {
+      "chosen": "I did not write the report.",
+      "context": {
+        "canonical_structure": {
+          "aspect": "none",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "negative",
+          "tense": "past",
+          "voice": "active"
+        },
+        "exercise_prompt": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=past; aspect=none; voice=active; polarity=negative; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"I\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only.",
+        "instruction": "Produce exactly one sentence satisfying the target grammar and fixed realization constraints.",
+        "target_kcs": [
+          "KC_FINITE_PAST",
+          "KC_NEGATION"
+        ]
+      },
+      "data_split": "evaluation_compositional",
+      "hidden_generation_metadata": {
+        "nuisance_group_id": "NUISANCE_005",
+        "rejected_canonical_cell_id": "CELL_607B0B91B1CEB860",
+        "rejected_item_id": "ITEM_E815541460C5A65A"
+      },
+      "interaction_format": "controlled_transformation",
+      "preference_label": {
+        "chosen_exact_target": true,
+        "differing_dimension": "aspect",
+        "distinction": "canonical_dimension:aspect",
+        "extraneous_kcs": [
+          "KC_ASPECT_PERFECT",
+          "KC_ASPECT_PROGRESSIVE"
+        ],
+        "hamming_distance": 1,
+        "missing_target_kcs": [],
+        "rejected_exact_target": false,
+        "rejected_is_valid_for_alternative_cell": true,
+        "rejected_value": "perfect_progressive",
+        "relation": "chosen_over_rejected",
+        "same_realization_nuisance_signature": true,
+        "target_value": "none"
+      },
+      "provenance": {
+        "builder_version": "POST_TRAINING_RECORD_BUILDER_v0",
+        "canonical_cell_id": "CELL_C20140C7DAD62DB2",
+        "item_id": "ITEM_2FF87AEF31338F50",
+        "item_opportunity_id": "ITEMOPP_2716EB121FCF669D",
+        "kc_policy_id": "FACTORIZED_v0",
+        "realization_id": "REAL_26E1653D47215FD5",
+        "source_descriptor_ids": [
+          "1741163712739x998605611367738000"
+        ],
+        "source_run": "runs/base",
+        "target_kc_ids": [
+          "KC_FINITE_PAST",
+          "KC_NEGATION"
+        ]
+      },
+      "record_id": "PT_006F5883279E965B",
+      "record_type": "preference",
+      "rejected": "I had not been writing the report.",
+      "task": "grammar_controlled_generation"
+    },
+    {
+      "chosen": "The technician has been writing the report.",
+      "context": {
+        "canonical_structure": {
+          "aspect": "perfect_progressive",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "positive",
+          "tense": "present",
+          "voice": "active"
+        },
+        "exercise_prompt": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=present; aspect=perfect_progressive; voice=active; polarity=positive; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the technician\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only.",
+        "instruction": "Produce exactly one sentence satisfying the target grammar and fixed realization constraints.",
+        "target_kcs": [
+          "KC_ASPECT_PERFECT",
+          "KC_ASPECT_PROGRESSIVE",
+          "KC_FINITE_PRESENT"
+        ]
+      },
+      "data_split": "evaluation_compositional",
+      "hidden_generation_metadata": {
+        "nuisance_group_id": "NUISANCE_007",
+        "rejected_canonical_cell_id": "CELL_D88738F5F0FBE1EB",
+        "rejected_item_id": "ITEM_256D77F2BA9210AB"
+      },
+      "interaction_format": "controlled_transformation",
+      "preference_label": {
+        "chosen_exact_target": true,
+        "differing_dimension": "aspect",
+        "distinction": "canonical_dimension:aspect",
+        "extraneous_kcs": [],
+        "hamming_distance": 1,
+        "missing_target_kcs": [
+          "KC_ASPECT_PERFECT",
+          "KC_ASPECT_PROGRESSIVE"
+        ],
+        "rejected_exact_target": false,
+        "rejected_is_valid_for_alternative_cell": true,
+        "rejected_value": "none",
+        "relation": "chosen_over_rejected",
+        "same_realization_nuisance_signature": true,
+        "target_value": "perfect_progressive"
+      },
+      "provenance": {
+        "builder_version": "POST_TRAINING_RECORD_BUILDER_v0",
+        "canonical_cell_id": "CELL_E1030A4919D1A060",
+        "item_id": "ITEM_2971A4A50C99EA78",
+        "item_opportunity_id": "ITEMOPP_AA835FF08840B7AE",
+        "kc_policy_id": "FACTORIZED_v0",
+        "realization_id": "REAL_C80C243C9551D25F",
+        "source_descriptor_ids": [
+          "1741163712744x517808240803915500"
+        ],
+        "source_run": "runs/base",
+        "target_kc_ids": [
+          "KC_ASPECT_PERFECT",
+          "KC_ASPECT_PROGRESSIVE",
+          "KC_FINITE_PRESENT"
+        ]
+      },
+      "record_id": "PT_01F92CA89D170C72",
+      "record_type": "preference",
+      "rejected": "The technician writes the report.",
+      "task": "grammar_controlled_generation"
+    }
+  ],
+  "sft": [
+    {
+      "data_split": "evaluation_compositional",
+      "evaluation_only": {
+        "canonical_structure": {
+          "aspect": "none",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "negative",
+          "tense": "present",
+          "voice": "passive"
+        },
+        "target_kcs": [
+          "KC_BE_PASSIVE",
+          "KC_FINITE_PRESENT",
+          "KC_NEGATION"
+        ]
+      },
+      "interaction_format": "controlled_transformation",
+      "labels": {
+        "accepted_answers": [
+          "The report is not written."
+        ]
+      },
+      "model_input": {
+        "exercise": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=present; aspect=none; voice=passive; polarity=negative; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the report\"; verb lemma=WRITE; object=\"NONE\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only."
+      },
+      "provenance": {
+        "builder_version": "POST_TRAINING_RECORD_BUILDER_v0",
+        "canonical_cell_id": "CELL_9556E3A49EFD0300",
+        "item_id": "ITEM_D2FA87B101C99C80",
+        "item_opportunity_id": "ITEMOPP_45ACBA3D09CDDE07",
+        "kc_policy_id": "FACTORIZED_v0",
+        "realization_id": "REAL_CA256E932F195B74",
+        "source_descriptor_ids": [
+          "1741163712049x855374993067916200"
+        ],
+        "source_run": "runs/base",
+        "target_kc_ids": [
+          "KC_BE_PASSIVE",
+          "KC_FINITE_PRESENT",
+          "KC_NEGATION"
+        ]
+      },
+      "record_id": "PT_0032ADA76BDA40A0",
+      "record_type": "sft",
+      "response": "The report is not written.",
+      "task": "exercise_solving"
+    },
+    {
+      "data_split": "evaluation_compositional",
+      "evaluation_only": {
+        "gold_answer": "The technicians wrote the report."
+      },
+      "interaction_format": "controlled_transformation",
+      "labels": {
+        "gold_answer_hidden_from_model": true,
+        "label_source": "deterministic_hamming_one_contrast"
+      },
+      "model_input": {
+        "exercise": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=past; aspect=none; voice=active; polarity=positive; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the technicians\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only.",
+        "learner_response": "The technicians write the report."
+      },
+      "provenance": {
+        "builder_version": "POST_TRAINING_RECORD_BUILDER_v0",
+        "canonical_cell_id": "CELL_CEBF57A9F5C2F00A",
+        "item_id": "ITEM_BE6E10D5871FF9D4",
+        "item_opportunity_id": "ITEMOPP_DD6478EB3568CA37",
+        "kc_policy_id": "FACTORIZED_v0",
+        "realization_id": "REAL_6E3E77CA9D8C9ECD",
+        "source_descriptor_ids": [
+          "1741163708330x678606711578176000",
+          "1741163712739x218459335733744320",
+          "1741163712739x256584265013129380",
+          "1741163712740x655374430632900200"
+        ],
+        "source_run": "runs/base",
+        "target_kc_ids": [
+          "KC_FINITE_PAST"
+        ]
+      },
+      "record_id": "PT_01008BB3258834CB",
+      "record_type": "sft",
+      "response": {
+        "correct": false,
+        "error_dimension": "tense",
+        "extraneous_kcs": [
+          "KC_FINITE_PRESENT"
+        ],
+        "missing_target_kcs": [
+          "KC_FINITE_PAST"
+        ],
+        "target_kcs": [
+          "KC_FINITE_PAST"
+        ]
+      },
+      "task": "error_diagnosis"
+    }
+  ],
+  "trajectory": [
+    {
+      "data_split": "evaluation_compositional",
+      "evaluation_only": {
+        "action_optimality_label_available": false,
+        "oracle_feature_ids": [
+          "ORACLE_FINITE_FORM",
+          "ORACLE_PERFECT_DEPENDENCY",
+          "ORACLE_PROGRESSIVE_DEPENDENCY",
+          "ORACLE_NEGATION"
+        ],
+        "oracle_pre_mastery": {
+          "ORACLE_FINITE_FORM": 0.2051576355139042,
+          "ORACLE_NEGATION": 0.2106757068716694,
+          "ORACLE_PERFECT_DEPENDENCY": 0.26970514999511996,
+          "ORACLE_PROGRESSIVE_DEPENDENCY": 0.13219958925053193
+        }
+      },
+      "interaction_format": "controlled_transformation",
+      "learner_response_t": {
+        "correct": 1
+      },
+      "learner_state_t": {
+        "estimator": "Beta(1,1)-smoothed observable KC success rate",
+        "history_length": 0,
+        "kc_mastery_proxy": {
+          "KC_ASPECT_PERFECT": 0.5,
+          "KC_ASPECT_PROGRESSIVE": 0.5,
+          "KC_BE_PASSIVE": 0.5,
+          "KC_FINITE_PAST": 0.5,
+          "KC_FINITE_PRESENT": 0.5,
+          "KC_IMPERATIVE": 0.5,
+          "KC_MODAL_WOULD": 0.5,
+          "KC_NEGATION": 0.5,
+          "KC_POLAR_QUESTION": 0.5
+        }
+      },
+      "learner_state_t_plus_1": {
+        "estimator": "Beta(1,1)-smoothed observable KC success rate",
+        "history_length": 1,
+        "kc_mastery_proxy": {
+          "KC_ASPECT_PERFECT": 0.6666666666666666,
+          "KC_ASPECT_PROGRESSIVE": 0.6666666666666666,
+          "KC_BE_PASSIVE": 0.5,
+          "KC_FINITE_PAST": 0.6666666666666666,
+          "KC_FINITE_PRESENT": 0.5,
+          "KC_IMPERATIVE": 0.5,
+          "KC_MODAL_WOULD": 0.5,
+          "KC_NEGATION": 0.6666666666666666,
+          "KC_POLAR_QUESTION": 0.5
+        }
+      },
+      "provenance": {
+        "builder_version": "POST_TRAINING_RECORD_BUILDER_v0",
+        "canonical_cell_id": "CELL_607B0B91B1CEB860",
+        "item_id": "ITEM_E815541460C5A65A",
+        "item_opportunity_id": "ITEMOPP_21F20CCE9867EBC4",
+        "kc_policy_id": "FACTORIZED_v0",
+        "realization_id": "REAL_08469DEBE9574F4F",
+        "source_descriptor_ids": [
+          "1741163712328x422695616724010100"
+        ],
+        "source_run": "runs/base",
+        "target_kc_ids": [
+          "KC_ASPECT_PERFECT",
+          "KC_ASPECT_PROGRESSIVE",
+          "KC_FINITE_PAST",
+          "KC_NEGATION"
+        ]
+      },
+      "record_id": "PT_7F330312FEB52337",
+      "record_type": "trajectory",
+      "task": "observed_tutoring_transition",
+      "teaching_action_t": {
+        "action_type": "present_existing_item",
+        "item_format": "controlled_transformation",
+        "item_id": "ITEM_E815541460C5A65A",
+        "selection_policy": "simulator shuffled pass; not an expert action",
+        "target_kcs": [
+          "KC_ASPECT_PERFECT",
+          "KC_ASPECT_PROGRESSIVE",
+          "KC_FINITE_PAST",
+          "KC_NEGATION"
+        ]
+      }
+    },
+    {
+      "data_split": "train_development",
+      "evaluation_only": {
+        "action_optimality_label_available": false,
+        "oracle_feature_ids": [
+          "ORACLE_FINITE_FORM",
+          "ORACLE_FINITE_AGREEMENT",
+          "ORACLE_PASSIVE_DEPENDENCY"
+        ],
+        "oracle_pre_mastery": {
+          "ORACLE_FINITE_AGREEMENT": 0.1541877024864514,
+          "ORACLE_FINITE_FORM": 0.23377196063540365,
+          "ORACLE_PASSIVE_DEPENDENCY": 0.1699620643602034
+        }
+      },
+      "interaction_format": "controlled_transformation",
+      "learner_response_t": {
+        "correct": 0
+      },
+      "learner_state_t": {
+        "estimator": "Beta(1,1)-smoothed observable KC success rate",
+        "history_length": 1,
+        "kc_mastery_proxy": {
+          "KC_ASPECT_PERFECT": 0.6666666666666666,
+          "KC_ASPECT_PROGRESSIVE": 0.6666666666666666,
+          "KC_BE_PASSIVE": 0.5,
+          "KC_FINITE_PAST": 0.6666666666666666,
+          "KC_FINITE_PRESENT": 0.5,
+          "KC_IMPERATIVE": 0.5,
+          "KC_MODAL_WOULD": 0.5,
+          "KC_NEGATION": 0.6666666666666666,
+          "KC_POLAR_QUESTION": 0.5
+        }
+      },
+      "learner_state_t_plus_1": {
+        "estimator": "Beta(1,1)-smoothed observable KC success rate",
+        "history_length": 2,
+        "kc_mastery_proxy": {
+          "KC_ASPECT_PERFECT": 0.6666666666666666,
+          "KC_ASPECT_PROGRESSIVE": 0.6666666666666666,
+          "KC_BE_PASSIVE": 0.3333333333333333,
+          "KC_FINITE_PAST": 0.5,
+          "KC_FINITE_PRESENT": 0.5,
+          "KC_IMPERATIVE": 0.5,
+          "KC_MODAL_WOULD": 0.5,
+          "KC_NEGATION": 0.6666666666666666,
+          "KC_POLAR_QUESTION": 0.5
+        }
+      },
+      "provenance": {
+        "builder_version": "POST_TRAINING_RECORD_BUILDER_v0",
+        "canonical_cell_id": "CELL_B6AF2E896B998C79",
+        "item_id": "ITEM_31FEFCA652A45927",
+        "item_opportunity_id": "ITEMOPP_D283D46693BA0F09",
+        "kc_policy_id": "FACTORIZED_v0",
+        "realization_id": "REAL_221E37BCDF03101B",
+        "source_descriptor_ids": [
+          "1741163712047x352927366474730100",
+          "1741163712048x581247857975133000"
+        ],
+        "source_run": "runs/base",
+        "target_kc_ids": [
+          "KC_BE_PASSIVE",
+          "KC_FINITE_PAST"
+        ]
+      },
+      "record_id": "PT_D08427A3D3FBBE68",
+      "record_type": "trajectory",
+      "task": "observed_tutoring_transition",
+      "teaching_action_t": {
+        "action_type": "present_existing_item",
+        "item_format": "controlled_transformation",
+        "item_id": "ITEM_31FEFCA652A45927",
+        "selection_policy": "simulator shuffled pass; not an expert action",
+        "target_kcs": [
+          "KC_BE_PASSIVE",
+          "KC_FINITE_PAST"
+        ]
+      }
+    }
+  ],
+  "verifier": [
+    {
+      "candidate": "The report is not written.",
+      "context": {
+        "canonical_structure": {
+          "aspect": "none",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "negative",
+          "tense": "present",
+          "voice": "passive"
+        },
+        "exercise_prompt": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=present; aspect=none; voice=passive; polarity=negative; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the report\"; verb lemma=WRITE; object=\"NONE\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only.",
+        "instruction": "Produce exactly one sentence satisfying the target grammar and fixed realization constraints.",
+        "target_kcs": [
+          "KC_BE_PASSIVE",
+          "KC_FINITE_PRESENT",
+          "KC_NEGATION"
+        ]
+      },
+      "data_split": "evaluation_compositional",
+      "labels": {
+        "candidate_role": "chosen",
+        "differing_dimension": "polarity"
+      },
+      "provenance": {
+        "builder_version": "POST_TRAINING_RECORD_BUILDER_v0",
+        "canonical_cell_id": "CELL_9556E3A49EFD0300",
+        "item_id": "ITEM_D2FA87B101C99C80",
+        "item_opportunity_id": "ITEMOPP_45ACBA3D09CDDE07",
+        "kc_policy_id": "FACTORIZED_v0",
+        "realization_id": "REAL_CA256E932F195B74",
+        "source_descriptor_ids": [
+          "1741163712049x855374993067916200"
+        ],
+        "source_run": "runs/base",
+        "target_kc_ids": [
+          "KC_BE_PASSIVE",
+          "KC_FINITE_PRESENT",
+          "KC_NEGATION"
+        ]
+      },
+      "record_id": "PT_00D0AFCB80CBE796",
+      "record_type": "verifier",
+      "reward_dimensions": {
+        "difficulty_appropriateness": null,
+        "exact_requested_realization": 1,
+        "grammatical_under_some_controlled_cell": 1,
+        "pedagogical_quality": null,
+        "target_kc_alignment": 1
+      },
+      "rubric_sources": {
+        "difficulty_appropriateness": "not identified by current artifacts",
+        "exact_requested_realization": "deterministic_realizer",
+        "grammatical_under_some_controlled_cell": "alternative deterministic realizer",
+        "pedagogical_quality": "requires human or validated model judge",
+        "target_kc_alignment": "deterministic_KC_projection"
+      },
+      "task": "grammar_controlled_generation"
+    },
+    {
+      "candidate": "The technician had been writing the report.",
+      "context": {
+        "canonical_structure": {
+          "aspect": "none",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "positive",
+          "tense": "past",
+          "voice": "active"
+        },
+        "exercise_prompt": "Produce exactly one sentence from the fixed frame.\nGrammar: tense=past; aspect=none; voice=active; polarity=positive; clause=declarative; modal=none; imperative subtype=NONE.\nUse exactly: subject=\"the technician\"; verb lemma=WRITE; object=\"the report\"; complement=\"NONE\"; WH phrase=\"NONE\"; LET pronoun=\"NONE\".\nDo not add lexical words, a modal not named above, an adjunct, or a contraction. Preserve the supplied noun phrases and constituent order except for the inversion/fronting required by the named clause type. End with exactly a period (.). Return one sentence only.",
+        "instruction": "Produce exactly one sentence satisfying the target grammar and fixed realization constraints.",
+        "target_kcs": [
+          "KC_FINITE_PAST"
+        ]
+      },
+      "data_split": "train_development",
+      "labels": {
+        "candidate_role": "rejected",
+        "differing_dimension": "aspect"
+      },
+      "provenance": {
+        "builder_version": "POST_TRAINING_RECORD_BUILDER_v0",
+        "canonical_cell_id": "CELL_CEBF57A9F5C2F00A",
+        "item_id": "ITEM_99F77467F817F882",
+        "item_opportunity_id": "ITEMOPP_EA85CCA5E43F91F5",
+        "kc_policy_id": "FACTORIZED_v0",
+        "realization_id": "REAL_683E9E0B54B61558",
+        "source_descriptor_ids": [
+          "1741163708330x678606711578176000",
+          "1741163712739x218459335733744320",
+          "1741163712739x256584265013129380",
+          "1741163712740x655374430632900200"
+        ],
+        "source_run": "runs/base",
+        "target_kc_ids": [
+          "KC_FINITE_PAST"
+        ]
+      },
+      "record_id": "PT_012C0A0F19ED9019",
+      "record_type": "verifier",
+      "reward_dimensions": {
+        "difficulty_appropriateness": null,
+        "exact_requested_realization": 0,
+        "grammatical_under_some_controlled_cell": 1,
+        "pedagogical_quality": null,
+        "target_kc_alignment": 0
+      },
+      "rubric_sources": {
+        "difficulty_appropriateness": "not identified by current artifacts",
+        "exact_requested_realization": "deterministic_realizer",
+        "grammatical_under_some_controlled_cell": "alternative deterministic realizer",
+        "pedagogical_quality": "requires human or validated model judge",
+        "target_kc_alignment": "deterministic_KC_projection"
+      },
+      "task": "grammar_controlled_generation"
+    }
+  ]
+}

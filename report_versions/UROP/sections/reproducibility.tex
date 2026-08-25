@@ -1,0 +1,52 @@
+\section{Reproducibility and Audit Trail}
+\label{sec:reproducibility}
+
+Scientific choices are stored as data rather than hidden in the report text.
+The canonical schema, normalisation prompts, transition rules, lexical frames,
+item-bank design, diagnostic acceptance rule, fold, candidate family,
+selection obligations, predefined policies, oracle, and KT parameters are
+independently versioned.  Executors validate these artifacts before applying
+them.  Appendix~\ref{sec:artifact-map} maps each conceptual component to its
+repository location.
+
+Every run records the resolved experiment, random seed, external source
+identity, Git commit and dirty state, and signatures of upstream inputs.  Stage
+reuse is opt-in: a child experiment names a parent and starting stage, and the
+runner refuses to copy earlier outputs if any recursively referenced input has
+changed.  There is no implicit cache.  Model-assisted stages additionally
+retain prompts, raw and parsed responses, invocation metadata, and errors for
+each attempt.
+
+The source contract declares a SHA-256 beginning
+\texttt{e38c4f959f188150\ldots} and ending \texttt{c2488486cd}, and a total of
+1,222 records; the full digest remains in the executable experiment file.
+Because the snapshot is consult-only, it is located through
+\texttt{GRAMMAR\_KT\_EGP\_SOURCE} or a declared data-root variable and is not
+redistributed.  A digest or record-count mismatch is fatal.
+
+The working model configuration currently requests
+\texttt{gpt-5.6-sol} at medium reasoning effort in a fresh read-only context
+for both normalisation and item diagnostics.  The service snapshot and all
+decoding parameters are not pinned.  Exact external re-execution is therefore
+not guaranteed even with identical local files.  Retaining every response and
+repeating selected units makes this limitation inspectable; it does not remove
+it.
+
+The final verification boundary comprises four command-level checks:
+\begin{itemize}
+  \raggedright
+  \item execute the complete \texttt{unittest} discovery suite with
+        \texttt{PYTHONPATH=src};
+  \item generate \texttt{base} with \texttt{scripts/run.py} and require a
+        clean result from \texttt{scripts/validate.py};
+  \item run each child condition explicitly from \texttt{kc\_selection}; and
+  \item use \texttt{scripts/compare.py} at the compositional stage to verify
+        fixed inputs and calculate paired contrasts.
+\end{itemize}
+Equivalent runs are required for the other conditions in
+Table~\ref{tab:ontology-conditions}.  Inspection commands trace a descriptor,
+cell, item, Q-matrix row, ordinary event, or probe through its saved evidence.
+Automated tests verify implementation and leakage boundaries; the research
+audit notebook separately records linguistic and methodological review.  A
+green test suite does not override an unreviewed notebook or a failed run
+validator.

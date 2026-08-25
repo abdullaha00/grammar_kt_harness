@@ -1,0 +1,35 @@
+\section{Related Work}
+
+\paragraph{Proficiency-scale grammar resources.}
+The CEFR provides proficiency scales across language activities
+\citep{coe-2020-cefr}.  The EGP specializes this programme for English grammar,
+using learner-corpus frequency, accuracy, and dispersion to associate
+competence statements with CEFR levels \citep{okeeffe-mark-2017}.  Recent work
+uses NLP to quantitatively re-examine EGP level assignments
+\citep{verratti-souto-etal-2025}.  We do not reassess those levels.  Our problem
+is complementary: converting descriptor content into a bounded structural
+representation while preserving uncertainty and provenance.
+
+\paragraph{Exercise generation for language learning.}
+Adaptive question generation has conditioned generation on learner history and
+target difficulty \citep{srivastava-goodman-2021-question,
+cui-sachan-2023-adaptive}.  Grammar-focused systems generate multiple-choice or
+gap-filling exercises from passages or examples
+\citep{chan-etal-2022-agree,bitew-etal-2023-learning}.  These studies highlight
+both the cost of authoring and the need to evaluate correctness and answer
+uniqueness.  Our controlled transformations sacrifice open-ended diversity for
+an exact, replayable relation among a cell, its realization, and its KC labels.
+
+\paragraph{Domain models and knowledge tracing.}
+KCs describe acquired units inferred from performance on related tasks
+\citep{koedinger-etal-2012}.  Classical BKT tracks a latent learned/unlearned
+state with learning, guess, and slip parameters
+\citep{corbett-anderson-1995}; factor models instead use logistic predictors and
+practice features \citep{pavlik-etal-2009}.  A Q-matrix supplies the assumed
+item--KC mapping, but expert matrices can be refined or learned from response
+data \citep{pardos-dadu-2018}.  \citet{picones-etal-2022} combine domain-model
+induction and student modelling in one pipeline.  In contrast, we derive the
+domain model from linguistic specifications before responses exist, then freeze
+it before simulation.  Synthetic KT data have supported controlled model tests
+\citep{piech-etal-2015,pagonis-etal-2024}; here they test software behavior, not
+the cognitive truth of the generating policy.

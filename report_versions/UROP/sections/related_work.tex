@@ -1,0 +1,99 @@
+\section{Related Work}
+
+\subsection{Proficiency resources and grammatical representation}
+
+The CEFR provides proficiency scales across language activities rather than a
+machine-readable inventory of grammatical skills \citep{coe-2020-cefr}.  The
+English Profile programme complements these scales with empirical descriptions
+of grammatical and lexical competence.  The EGP draws on learner-corpus
+frequency, accuracy, and dispersion to associate grammar competence statements
+with CEFR levels \citep{okeeffe-mark-2017}.  Its level assignments have also
+been revisited quantitatively using NLP methods
+\citep{verratti-souto-etal-2025}.  The present work does not reassess CEFR
+levels.  It instead asks how the grammatical content of a bounded EGP subset
+can be represented without converting prose descriptors directly into KCs or
+silently completing information that the source does not provide.
+
+This distinction separates a \emph{curriculum source} from a \emph{domain
+model}.  Multiple descriptors can support one grammatical configuration, one
+descriptor can explicitly support alternatives, and many descriptors do not
+fully determine all properties required by a closed ontology.  \system retains
+those cases as partial or out of scope rather than forcing them into an exact
+cell.
+
+\subsection{Knowledge components, Q-matrices, and model selection}
+
+Classical Bayesian Knowledge Tracing (BKT) models mastery as a latent binary
+skill state updated after each opportunity \citep{corbett-anderson-1995}; Deep
+Knowledge Tracing replaces explicit Bayesian state transitions with a neural
+sequence model \citep{piech-etal-2015}.  Broader surveys show that modern KT
+architectures differ substantially in their state representations and use of
+item information \citep{abdelrahman-etal-2023}.  All nevertheless require a
+definition of the content whose learning is being traced.
+
+KCs are not necessarily natural atoms waiting to be annotated.  The
+Knowledge--Learning--Instruction framework treats them as explanatory units
+linking tasks, learning processes, and instruction \citep{koedinger-etal-2012}.
+Learning Factors Analysis evaluates and refines a tutor's cognitive model using
+student data and explicit complexity trade-offs \citep{cen-etal-2006}.  Related
+factor models likewise express performance through skill difficulty and
+practice terms \citep{pavlik-etal-2009}.  These approaches motivate treating a
+KC inventory as a hypothesis rather than administrative metadata.
+
+In cognitive diagnosis, the Q-matrix specifies which latent attributes are
+required by each item.  Expert construction is subjective, and
+misspecification can affect learner classification; empirical validation and
+refinement methods therefore examine the adequacy of proposed entries
+\citep{de-la-torre-chiu-2016,pardos-dadu-2018}.  \system intervenes before human
+response data are available.  It tests the structural support, scope, and
+identifiability of declared candidate rules, freezes a policy, and leaves later
+learner-data validation as a separate stage.
+
+\subsection{Knowledge tracing in tutoring dialogue}
+
+Open-ended tutoring dialogue does not arrive with question identifiers,
+correctness labels, or a fixed KC set.  \citet{scarlatos-etal-2025-dialogue}
+frame tutor--student dialogue as a sequence of formative assessments and use
+LLMs to annotate turn-level KCs and correctness for CoMTA and MathDial.  Their
+pipeline retrieves mathematics standards as candidate KCs and evaluates the
+automatic annotations against expert labels.  \citet{huang-etal-2026-interpretable}
+extend conversational KT by explicitly modelling student ability and task
+difficulty through an LLM and item-response-theoretic representation.
+
+\system addresses a complementary, upstream problem.  Rather than assigning a
+turn to an already available skill standard, it constructs and compares the
+skill representation itself.  TSCCv2 provides a plausible eventual test bed
+because it includes learner language and grammatical corrections
+\citep{caines-etal-2022-teacher}; however, applying the present ontology to
+TSCCv2 would still require a separate definition of assessment opportunities,
+context-sensitive correctness, and multi-phenomenon turn annotation.
+
+\subsection{Exercise generation for language learning}
+
+Prior work has generated educational questions conditioned on learner history
+or target difficulty \citep{srivastava-goodman-2021-question,cui-sachan-2023-adaptive}.
+Grammar-oriented systems generate reading, multiple-choice, or gap-filling
+exercises from passages and examples
+\citep{chan-etal-2022-agree,bitew-etal-2023-learning}.  Such work demonstrates
+both the cost of manual authoring and the importance of correctness,
+naturalness, and answer uniqueness.
+
+The present item generator deliberately makes a different trade-off.  It uses
+controlled transformations with fixed lexical frames so that the relationship
+among a canonical cell, a concrete surface derivation, and a later KC
+projection remains inspectable.  This reduces lexical and discourse diversity
+but avoids using unconstrained generation to hide changes in the experimental
+content model.
+
+\subsection{Synthetic learners and controlled evaluation}
+
+Synthetic data can test whether a KT implementation recovers known patterns or
+responds to controlled changes \citep{pagonis-etal-2024}.  It is also easy to
+overinterpret.  Recent evaluation of LLM-simulated students finds substantial
+behavioural and cognitive limitations even when linguistic output appears
+plausible \citep{scarlatos-etal-2026-simulated}.  \system therefore uses a
+transparent numerical structural oracle rather than an LLM role-play student,
+and calls its outputs an experimental world rather than human learner data.
+The oracle is useful for testing leakage, component reuse, cold-start behaviour,
+and compositional transfer; it cannot establish the cognitive validity or
+acquisition order of grammar KCs.

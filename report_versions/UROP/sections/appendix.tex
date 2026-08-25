@@ -1,0 +1,88 @@
+\section{Artifact Map}
+\label{sec:artifact-map}
+
+\begin{center}
+  \footnotesize
+  \begin{tabularx}{\columnwidth}{@{}l >{\raggedright\arraybackslash}X@{}}
+    \toprule
+    Component & Declaration, executor, and retained evidence \\
+    \midrule
+    Source
+      & \texttt{experiments/base.yaml}; source sampling manifests and annotation
+        units; \texttt{source.py}; selection and digest audit \\
+    Normalisation
+      & Phase prompts, rules, schema, and backend; \texttt{normalisation.py};
+        per-unit calls and \texttt{reliability.json} \\
+    Canonical representation
+      & \texttt{grammar\_schema.yaml}; \texttt{canonical.py}; cells, source
+        edges, and attrition audit \\
+    Realisation
+      & Ten-frame lexicon and rules; \texttt{realisation.py}; specifications
+        and derivations \\
+    Item bank
+      & Bank design, transformation, and diagnostic acceptance;
+        \texttt{items.py}; intrinsic bank, fingerprint, and repeat reliability \\
+    Canonical fold
+      & \texttt{reference\_v0.json}; runtime join and exact-inventory audit \\
+    Structural selection
+      & Candidates, obligations, and selector; \texttt{kc\_candidates.py};
+        diagnostics, equivalence classes, trace, and frozen policy \\
+    KC policies
+      & Factorised, interaction, full-cell, and generated policies;
+        \texttt{kc.py}; item projection and inventory \\
+    Q-matrix
+      & Frozen projection; \texttt{qmatrix.py}; edge list, matrix, and diagnostics \\
+    Simulation
+      & Structural oracle, profiles, protocol, and seed; \texttt{simulation.py};
+        fixed events, private evidence, fingerprints, and probes \\
+    KT evaluation
+      & Baseline and bootstrap settings; \texttt{kt.py}; histories,
+        predictions, coverage, metrics, and comparisons \\
+    \bottomrule
+  \end{tabularx}
+  \captionsetup{hypcap=false}
+  \captionof{table}{Conceptual choices and the repository artifacts that make
+  them inspectable.  Paths are relative to the project root.}
+  \label{tab:artifact-map}
+\end{center}
+
+\section{Fresh-Run Completion Checklist}
+\label{sec:completion-checklist}
+
+The following checklist is the remaining route from this methodological draft
+to a quantitative report.
+
+\begin{enumerate}
+  \raggedright
+  \item Restore the consult-only EGP JSONL outside version control and verify
+        its declared digest and record count before allowing model calls.
+  \item Run \texttt{base} from the source stage and require a clean
+        \texttt{scripts/validate.py base} result.  Do not use archived outputs
+        to fill missing audits.
+  \item Complete every checkpoint in
+        \texttt{notebooks/research\_audit.ipynb}, including Phase-1/Phase-2
+        transitions, source--cell traces, item naturalness and ambiguity, fold
+        logic, oracle separation, and probe freezing.  Record reviewer,
+        decision, and adjudication evidence.
+  \item From the same validated pre-selection parent, execute
+        \texttt{kc\_selected\_structural},
+        \texttt{kc\_factorized\_dev\_frozen},
+        \texttt{kc\_full\_cell\_dev\_frozen},
+        \texttt{base}, \texttt{kc\_interactions}, and
+        \texttt{kc\_full\_cell}.  Validate every child run.
+  \item Compare intrinsic item-bank, ordinary event-stream, acquisition-stream,
+        and probe-stream fingerprints across all six conditions.  Stop if any
+        differ.
+  \item Populate RQ1 from \texttt{normalisation/reliability.json} and
+        \texttt{canonical/audit.json}; RQ2 from
+        \texttt{kc\_selection/evaluation.json} and Q-matrix diagnostics; and
+        RQ3 from \texttt{kt/compositional/metrics.json} plus paired comparison
+        artifacts.  Preserve zero-KC rows and report denominators.
+  \item Re-run the complete test suite and compile the report from a recorded
+        commit.  Archive the resolved experiment files and the exact tables
+        used in the PDF.
+\end{enumerate}
+
+The checklist deliberately ends with table population rather than narrative
+selection.  Any unexpected failure, mapping disagreement, rejected item, cold
+KC, or uncovered probe is part of the result and should remain visible.

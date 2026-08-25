@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "results": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "case_id": {
+            "enum": [
+              "JUDGE_001",
+              "JUDGE_002",
+              "JUDGE_003",
+              "JUDGE_004",
+              "JUDGE_005",
+              "JUDGE_006",
+              "JUDGE_007",
+              "JUDGE_008",
+              "JUDGE_009",
+              "JUDGE_010",
+              "JUDGE_011",
+              "JUDGE_012",
+              "JUDGE_013",
+              "JUDGE_014",
+              "JUDGE_015",
+              "JUDGE_016",
+              "JUDGE_017",
+              "JUDGE_018",
+              "JUDGE_019",
+              "JUDGE_020",
+              "JUDGE_021",
+              "JUDGE_022",
+              "JUDGE_023",
+              "JUDGE_024",
+              "JUDGE_025",
+              "JUDGE_026",
+              "JUDGE_027",
+              "JUDGE_028",
+              "JUDGE_029",
+              "JUDGE_030",
+              "JUDGE_031",
+              "JUDGE_032",
+              "JUDGE_033",
+              "JUDGE_034",
+              "JUDGE_035",
+              "JUDGE_036",
+              "JUDGE_037",
+              "JUDGE_038",
+              "JUDGE_039",
+              "JUDGE_040",
+              "JUDGE_041",
+              "JUDGE_042",
+              "JUDGE_043",
+              "JUDGE_044",
+              "JUDGE_045",
+              "JUDGE_046",
+              "JUDGE_047",
+              "JUDGE_048"
+            ],
+            "type": "string"
+          },
+          "error_dimension": {
+            "enum": [
+              "tense",
+              "aspect",
+              "voice",
+              "polarity",
+              "clause",
+              "modal",
+              "unknown"
+            ],
+            "type": "string"
+          },
+          "preferred": {
+            "enum": [
+              "A",
+              "B"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "case_id",
+          "preferred",
+          "error_dimension"
+        ],
+        "type": "object"
+      },
+      "maxItems": 48,
+      "minItems": 48,
+      "type": "array"
+    }
+  },
+  "required": [
+    "results"
+  ],
+  "type": "object"
+}

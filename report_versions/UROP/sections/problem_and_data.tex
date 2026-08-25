@@ -1,0 +1,110 @@
+\section{Task Formulation and Pilot Data}
+\label{sec:task-data}
+
+\subsection{From descriptors to candidate annotations}
+
+Let $D=\{d_1,\ldots,d_n\}$ be a set of source grammar descriptors.  A
+conventional KT event is a tuple
+\begin{equation}
+  e_t=(l_t,i_t,y_t,K(i_t)),
+\end{equation}
+where $l_t$ is a learner, $i_t$ is an item or assessment event,
+$y_t\in\{0,1\}$ is the observed outcome, and $K(i_t)$ is the associated KC
+set.  A prose grammar resource directly supplies neither $i_t$ nor $K(i_t)$.
+
+Normalisation maps a descriptor to a status and zero or more constrained
+grammar cells.  For complete mappings, define
+\begin{equation}
+ C(d)=\{c_1,\ldots,c_m\}, \qquad
+ C:D\rightarrow\mathcal{P}(\mathcal{C}),
+\end{equation}
+where each $c\in\mathcal{C}$ is an exact assignment over the declared
+dimensions.  A descriptor can support multiple independently asserted cells,
+and several descriptors can converge on the same cell.  Partial, unresolved,
+out-of-scope, and schema-failure mappings contribute no exact downstream cell;
+their retained records remain part of the attrition and reliability evidence.
+The canonical inventory is the content-deduplicated union
+\begin{equation}
+ \mathcal{C}_D=\bigcup_{d\in D}C(d),
+\end{equation}
+with separate source--cell edges preserving provenance.
+
+For each exact cell, a deterministic grammar defines a set of admissible
+realisations $\mathcal{R}(c)$.  A realisation specifies lexical frame, subject
+features, any WH role or imperative subtype, the surface answer, and named
+operations such as DO-support or operator inversion.  The item constructor
+selects from this space using a fixed measurement design:
+\begin{equation}
+ I=B\!\left(\mathcal{C}_D,\{\mathcal{R}(c):c\in\mathcal{C}_D\}\right).
+\end{equation}
+Crucially, the bank function $B$ receives neither a KC policy nor a fold label.
+Each accepted item $i$ exposes an opportunity $x_i$ containing its cell,
+realisation, and operation evidence.
+
+A KC policy $\pi$ is a frozen set of activation rules.  For a candidate KC
+$k$, let $a_{\pi k}(x_i)\in\{0,1\}$ denote rule activation.  The policy-specific
+annotation and Q-matrix are
+\begin{align}
+ K_\pi(i) &= \{k:a_{\pi k}(x_i)=1\},\\
+ Q^\pi_{ik} &= \mathbb{I}[k\in K_\pi(i)].
+\end{align}
+This definition permits two items from the same canonical cell to differ when
+a rule depends on a surface operation, while purely cell-scoped rules remain
+invariant across realisations.
+
+The simulation uses a separate mapping $O(i)$ from items to structural oracle
+features.  It generates learner identities, item order, difficulty, and
+outcomes before $\pi$ is selected.  Alternative policies therefore annotate
+the same event stream
+\begin{equation}
+ E=\{(l_t,i_t,y_t,d_{i_t},s_t)\}_{t=1}^{T}
+\end{equation}
+rather than defining different synthetic worlds.  The distinction between
+$O(i)$ and $K_\pi(i)$ is the central internal-validity boundary of the
+experiment.
+
+\subsection{The \grammarcell representation}
+
+The pilot ontology covers single-clause English verbal morphosyntax.  An exact
+\grammarcell is the ordered tuple
+\begin{equation}
+ c=(\text{tense},\text{aspect},\text{voice},\text{polarity},
+    \text{clause},\text{modal}).
+\end{equation}
+Table~\ref{tab:grammar-dimensions} gives the closed domains.  The representation
+excludes lexical aspect, argument structure as a canonical dimension,
+contractions, semi-modals, embedded questions, non-BE passives, and multi-clause
+relations.  These exclusions are modelling choices, not claims about which
+phenomena matter to language learners.
+
+\input{tables/grammar_dimensions}
+
+Two cross-field constraints prevent impossible combinations in the declared
+space.  Imperatives take \texttt{tense=NA} and \texttt{modal=none}; a central
+modal occupies the finite position and likewise requires \texttt{tense=NA}.
+Lists and null values are permitted while representing source uncertainty, but
+only scalar assignments become exact canonical cells.
+
+\subsection{Frozen pilot source design}
+
+The external input is a consult-only parsed EGP snapshot declared to contain
+1,222 JSONL records and identified by SHA-256.  The source stage refuses a file
+with a different digest or record count.  The frozen pilot contains 139 unique
+descriptors: 23 controls inherited from an earlier narrow regression suite and
+116 fresh records selected in declared structural strata.  Table~\ref{tab:sample-design}
+groups those strata.  The design intentionally includes seven negative controls
+for constructions outside the canonical scope.
+
+\input{tables/sample_design}
+
+The 139 primary descriptors are expanded to 147 isolated annotation units by
+repeating eight descriptors.  These repeats support explicit agreement
+diagnostics for result category, exact cell set, each dimension, Phase-2
+routing, and downstream canonical contribution.  They are a small reliability
+probe rather than a basis for a general inter-annotator agreement claim.
+
+This is a purposive pilot sample, not a probability sample of the EGP.  It was
+constructed to exercise targeted tense, aspect, voice, polarity, clause, modal,
+and out-of-scope cases.  The repository contains an executable sampling
+utility, but its MAIN-study quota file remains deliberately unset.  Accordingly,
+the present report makes methodological and within-pilot claims only.

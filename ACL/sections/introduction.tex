@@ -1,0 +1,42 @@
+\section{Introduction}
+
+Knowledge tracing (KT) estimates a learner's changing knowledge from a
+chronological sequence of item responses \citep{corbett-anderson-1995,
+abdelrahman-etal-2023}.  Its inputs normally associate each item with one or
+more knowledge components (KCs), often through a binary Q-matrix.  That matrix
+presupposes decisions that are easy to hide: what counts as a skill, how a
+curriculum description becomes that representation, and whether an item really
+exercises the selected components.  These are scientific choices, not file
+formatting.
+
+Grammar resources pose a sharp version of the problem.  The English Grammar
+Profile (EGP) contains over 1,200 corpus-derived competence descriptions mapped
+to CEFR levels \citep{okeeffe-mark-2017}.  A description can combine tense,
+aspect, voice, polarity, clause type, and modality, state bounded alternatives,
+or fall outside a selected ontology.  Treating every descriptor as one KC
+obscures reusable operations; decomposing it without explicit rules can invent
+unsupported distinctions or erase the source connection.
+
+We introduce \system, a research harness that makes this path explicit.
+Figure~\ref{fig:pipeline} separates source selection, model-assisted
+normalization, canonicalization, realization, KC projection, item construction,
+Q-matrix derivation, simulation, and KT evaluation.  Prompts, rulebooks,
+policies, templates, and parameters remain replaceable versioned artifacts.
+
+We ask:
+\begin{enumerate}
+  \item[RQ1] How completely and consistently can EGP prose be normalized into
+        a closed grammar representation?
+  \item[RQ2] How do factorized, interaction-augmented, and whole-cell policies
+        change item--KC structure?
+  \item[RQ3] Do all three resulting datasets support reproducible end-to-end KT
+        checks, and what can those checks legitimately show?
+\end{enumerate}
+
+Our contributions are a conservative six-dimensional representation, a
+provenance path from prose to Q-matrix entries, and an executable comparison of
+three KC policies.  Unlike a human-data evaluation, this study cannot establish
+that any KC is cognitively atomic or that predictive differences transfer to
+learners; technical integrity and educational validity are kept separate.
+
+\input{figures/pipeline}

@@ -1,0 +1,47 @@
+\begin{figure*}[t]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tikzpicture}[
+    node distance=5mm and 5mm,
+    box/.style={draw, rounded corners=1.5pt, align=center, minimum height=9mm,
+      text width=24mm, font=\sffamily\footnotesize, inner sep=3pt},
+    source/.style={box, fill=gray!12},
+    model/.style={box, fill=orange!17},
+    fixed/.style={box, fill=blue!10},
+    policy/.style={box, fill=green!13},
+    arrow/.style={-{Latex[length=2mm]}, semithick},
+    boundary/.style={draw, dashed, rounded corners=2pt, inner sep=3mm}
+  ]
+    \node[source] (src) {frozen EGP\\sample};
+    \node[model, right=of src] (norm) {two-phase\\normalisation};
+    \node[fixed, right=of norm] (canon) {canonical\\grammar cells};
+    \node[fixed, right=of canon] (real) {deterministic\\realisations};
+    \node[fixed, right=of real] (items) {KC-independent\\item bank};
+    \node[fixed, right=of items] (sim) {fixed structural\\simulation};
+
+    \node[policy, below=10mm of canon] (select) {development-only\\KC selection};
+    \node[policy, right=of select] (freeze) {frozen KC\\policy};
+    \node[fixed, right=of freeze] (q) {item projection\\and Q-matrix};
+    \node[fixed, right=of q] (kt) {KT and frozen\\probe evaluation};
+
+    \draw[arrow] (src) -- (norm);
+    \draw[arrow] (norm) -- (canon);
+    \draw[arrow] (canon) -- (real);
+    \draw[arrow] (real) -- (items);
+    \draw[arrow] (items) -- (sim);
+    \draw[arrow] (canon.south) -- (select.north);
+    \draw[arrow] (select) -- (freeze);
+    \draw[arrow] (freeze) -- (q);
+    \draw[arrow] (items.south) |- (q.north);
+    \draw[arrow] (q) -- (kt);
+    \draw[arrow] (sim.south) |- (kt.north);
+
+    \node[boundary, fit=(src)(norm)(canon)(real)(items)(sim),
+      label={[font=\sffamily\scriptsize]above:fixed content and outcomes before policy comparison}] {};
+  \end{tikzpicture}}
+  \caption{The implemented experimental order.  Orange denotes isolated
+  model-assisted judgements, green denotes the ontology intervention, and blue
+  denotes deterministic or fixed-data stages.  The simulator uses its own
+  structural oracle, never an evaluated KC policy.}
+  \label{fig:pipeline}
+\end{figure*}

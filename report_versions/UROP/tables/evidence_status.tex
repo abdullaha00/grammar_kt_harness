@@ -1,0 +1,35 @@
+\begin{table*}[t]
+  \centering
+  \small
+  \begin{tabularx}{\textwidth}{@{}
+    >{\raggedright\arraybackslash}p{.29\textwidth}
+    >{\raggedright\arraybackslash}p{.27\textwidth}
+    >{\raggedright\arraybackslash}X@{}}
+    \toprule
+    Evidence layer & Current status & Consequence for this report \\
+    \midrule
+    Executable specifications and boundary tests
+      & Available; 54/54 tests pass
+      & The declared transformations, leakage guards, frozen-probe behaviour,
+        and six-policy fixed-data fixture can be described as implemented. \\
+    Archived \texttt{runs/base} output
+      & Predates the final pipeline; current validation fails four gates
+      & Its normalisation, item, policy, and KT counts are not reported as
+        results of the present method. \\
+    External EGP snapshot
+      & Consult-only and intentionally not redistributed
+      & A fresh run requires the separately held file matching the declared
+        SHA-256 and 1,222-record count. \\
+    Model-assisted manual audit
+      & Audit notebook checkpoints remain \textsc{not reviewed}
+      & Automated validity and repeat diagnostics cannot yet be promoted to
+        expert linguistic validation. \\
+    Current full experimental run
+      & Not yet generated and validated
+      & RQ1--RQ3 quantitative estimates and ontology rankings remain pending. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Evidence boundary at the report revision.  ``Implemented'' and
+  ``empirically supported'' are deliberately treated as different statuses.}
+  \label{tab:evidence-status}
+\end{table*}

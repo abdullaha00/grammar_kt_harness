@@ -1,0 +1,8 @@
+{
+  "audit": "Resolution of the external source declared by experiments/base.yaml",
+  "command": ".venv/bin/python -c \"from grammar_kt.config import load_experiment; from grammar_kt.source import resolve_source_path; s,_=load_experiment('base'); p=resolve_source_path(s['source']); print(p); print('exists', p.exists())\"",
+  "resolved_path": "/home/abdullah/grammar_kt_harness/data/external/egp_entries.jsonl",
+  "exists": false,
+  "declared_sha256": "e38c4f959f188150dae7b88f21e35d77828048772e222191818dc0c2488486cd",
+  "interpretation": "A fresh full source-to-KT run cannot be performed in this workspace without the externally managed EGP snapshot."
+}

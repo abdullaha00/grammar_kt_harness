@@ -1,0 +1,52 @@
+\documentclass[11pt]{article}
+
+% Use the review option for the anonymous submission draft.
+\usepackage[review]{acl}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{inconsolata}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,fit,positioning}
+
+\newcommand{\system}{Grammar--KT}
+\newcommand{\grammarcell}{\textsc{GrammarCell}}
+
+\title{From Grammar Descriptors to Knowledge-Tracing Benchmarks:\
+An Auditable Grammar--KT Pipeline}
+
+\author{Anonymous ACL submission}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/task_and_data}
+\input{sections/method}
+\input{sections/experimental_setup}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/reproducibility}
+\input{sections/limitations}
+\input{sections/conclusion}
+
+\bibliography{paper}
+
+\appendix
+\input{sections/appendix}
+
+\end{document}

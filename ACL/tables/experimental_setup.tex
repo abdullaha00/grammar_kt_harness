@@ -1,0 +1,25 @@
+\begin{table*}[t]
+  \centering
+  \small
+  \begin{tabularx}{\textwidth}{@{}lXl@{}}
+    \toprule
+    Component & Configuration & Status in this manuscript \\
+    \midrule
+    KC variants & Factorized; factorized plus declared interactions; full
+      canonical cell & Completed for all three policies \\
+    Item construction & Five replicates per activated KC; first two assigned
+      to development and remaining replicates held out & Defined by base config \\
+    Synthetic population & Three Beta-initialized profiles, 60 learners each;
+      two complete item passes & Defined by simulator config \\
+    Chronological split & 60\% train, 20\% validation, 20\% test per learner &
+      Defined by simulator config \\
+    KT baselines & Smoothed empirical rate, fixed-parameter BKT, logistic
+      regression & Implemented \\
+    Metrics & ROC AUC, log loss, accuracy at 0.5, sample and calibration
+      summaries & Implemented \\
+    Repetition & Five seeds per policy & Completed \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Experimental design and completion status.}
+  \label{tab:experimental-setup}
+\end{table*}

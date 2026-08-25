@@ -1,0 +1,52 @@
+\section{Results}
+
+\subsection{Normalization and stability}
+
+Phase~1 returned 42 complete, 80 partial, 16 out-of-scope, and one unresolved
+primary mapping.  Of the 80 partial cases routed to Phase~2, two became
+complete, 77 remained partial, and one became unresolved.  The final outcome
+was therefore 44/139 complete mappings (31.7\%), 77 partial, 16 out-of-scope,
+two unresolved, and no schema failures.  Conservative filtering admitted 48
+source-cell edges into 24 unique canonical cells.  Thirteen cells had one
+supporting descriptor, six had two, four had four, and one had seven.
+
+\input{tables/normalization_results}
+
+All eight repeated annotation units matched their primary unit exactly in
+status, cells, and note.  The five repeated item diagnostics likewise agreed on
+all decision flags, although their free-text notes differed.  These small
+repeat sets show deterministic-looking behavior for the sampled calls, not a
+general reliability estimate.
+
+\subsection{Policy and item structure}
+
+\input{tables/policy_results}
+
+Table~\ref{tab:policy-results} shows that policy choice materially changes the
+benchmark.  Factorization shares nine KCs across the 24 cells and yields a mean
+row width of 2.20.  Adding interactions increases this to 14 KCs and 2.91; the
+DO-question interaction is identical to the polar-question column on this
+sample, so it adds no observed distinction.  Whole-cell encoding produces 24
+orthogonal columns and unit-width rows.
+
+Deterministic checks rejected no candidate.  The automated diagnostic accepted
+all 45 factorized and all 120 whole-cell items.  It rejected one of 70
+interaction items for suspected answer ambiguity: the negative past
+perfect-progressive target placed \emph{not} after the first auxiliary, while
+the diagnostic identified a marked alternative placement consistent with the
+literal prompt.  This case illustrates why deterministic realization alone
+does not establish a unique pedagogically acceptable answer.
+
+\subsection{Synthetic KT checks}
+
+\input{tables/kt_results}
+
+Every run passed Q-matrix integrity and observable/oracle separation checks.
+The policy-specific simulations contained 16,200, 24,840, and 43,200 events per
+seed for factorized, interaction, and whole-cell policies.  Within each dataset,
+logistic regression achieved the highest mean test AUC and lowest log loss
+(Table~\ref{tab:kt-results}); fixed-parameter BKT had the highest log loss.
+These results establish that the generated artifacts support chronological KT
+evaluation and respond consistently across seeds.  They do not rank the KC
+policies: the item counts, row widths, response-generating states, and outcome
+rates all change with the policy.

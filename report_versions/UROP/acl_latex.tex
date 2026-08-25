@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+
+% A named-author, paginated draft suitable for the UROP report.
+\usepackage[preprint]{acl}
+
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{xspace}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{inconsolata}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,fit,positioning}
+
+\newcommand{\system}{Grammar--KT\xspace}
+\newcommand{\grammarcell}{\textsc{GrammarCell}\xspace}
+
+\title{\system: Operationalising Grammar Knowledge Components for
+Knowledge Tracing}
+
+\author{Abdullah Akram \\
+  University of Cambridge \\
+  \texttt{aa2527@cam.ac.uk}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/problem_and_data}
+\input{sections/method}
+\input{sections/experimental_design}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/reproducibility}
+\input{sections/limitations}
+\input{sections/conclusion}
+
+\bibliography{paper}
+
+\appendix
+\input{sections/appendix}
+
+\end{document}

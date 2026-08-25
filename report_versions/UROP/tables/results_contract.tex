@@ -1,0 +1,34 @@
+\begin{table*}[t]
+  \centering
+  \small
+  \begin{tabularx}{\textwidth}{@{}l X X@{}}
+    \toprule
+    Question & Required reported evidence & Interpretation guard \\
+    \midrule
+    RQ1: normalisation
+      & Phase-1 and final status counts; Phase-2 transition table; admitted
+        source edges and unique cells; repeat agreement by decision type;
+        manually reviewed error categories and examples
+      & Exact-cell yield measures conservatism and coverage, not correctness;
+        automated repeats are not inter-annotator agreement. \\
+    RQ2: structural support
+      & Candidate support and scope diagnostics; equivalence classes; unmet
+        and satisfied obligations; complete selection trace; retained KCs;
+        development versus holdout activation; Q-matrix coverage, density,
+        width, support, and redundancy for every condition
+      & Deterministic representative choice does not distinguish equivalent
+        hypotheses; a feasible inclusion-minimal cover is not a global or
+        cognitive optimum. \\
+    RQ3: compositional transfer
+      & Identical item/event fingerprints; covered, fully supported, cold, and
+        uncovered rates; all-probe log loss; secondary metrics; paired
+        learner-bootstrap differences and 95\% intervals; novel-feature
+        results separately
+      & Comparisons are conditional on the declared synthetic oracle and
+        baseline models; subset metrics cannot replace the all-probe metric. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Result-reporting contract for the first fresh validated run.  These
+  fields replace ad hoc selection of favourable counts or metrics.}
+  \label{tab:results-contract}
+\end{table*}

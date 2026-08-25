@@ -1,0 +1,128 @@
+\section{Grammar-to-KT Method}
+\label{sec:method}
+
+Figure~\ref{fig:pipeline} shows the implemented order and the two separations
+that make the comparison interpretable.  First, normalisation converts source
+claims into canonical content without consulting items or KCs.  Second, item
+identities and synthetic outcomes are fixed before a KC policy is selected.
+The later policy intervention can consequently change annotations and learner
+state representations, but not the questions asked or the answers observed.
+
+\input{figures/pipeline}
+
+\subsection{Constrained, two-phase normalisation}
+
+Every annotation unit is handled in an isolated model context and must return a
+single schema-valid record.  Phase~1 exposes only the EGP identifier,
+supercategory, subcategory, guideword, and competence statement.  Examples,
+CEFR level, other descriptors and mappings, running counts, item designs, and
+KT outputs are withheld.  For each dimension, the rules assign an exact scalar
+when directly supported, separate cells for explicitly independent
+alternatives, a bounded list for a stated superclass, and null when the text
+provides no usable constraint.  Lists never license their members, and the
+procedure does not manufacture Cartesian combinations.
+
+Phase~2 is a bounded repair pass.  Only a partial Phase~1 record is normally
+eligible, and its note must name the dimensions that examples may refine.
+Phase~2 receives the unchanged descriptor, Phase~1 record, and that
+descriptor's examples.  A transition validator freezes exact and ineligible
+dimensions, preserves branch relationships, and requires every revised cell
+to descend from a Phase~1 cell.  Examples can supply positive evidence for
+declared alternatives; frequency or absence cannot narrow the mapping.  A
+direct contradiction turns the record into \texttt{unresolved} rather than
+silently broadening or replacing an exact value.
+
+Both phases apply JSON-schema, domain, status, and cross-field checks.  The
+artifact retains the complete prompt, raw response, parsed record, invocation
+metadata, attempt number, and validation errors.  The primary and repeated
+units are executed independently.  Reliability is reported separately for
+result status, exact cell set, individual dimensions, Phase-2 routing, and
+canonical contribution; a single headline coefficient would conceal which
+decision disagreed.
+
+Complete mappings are serialised in the schema's fixed dimension order and
+assigned content-derived identifiers.  Equal tuples therefore deduplicate
+regardless of descriptor identity or processing order.  A separate edge table
+retains every source-to-cell path, so deduplication does not discard
+many-to-one provenance.
+
+\subsection{Deterministic realisation and fixed items}
+
+The realiser combines an exact cell with one of ten declared predicate frames,
+subject person and number, and any WH role or imperative subtype.  It first
+constructs the ordered verbal chain
+\begin{align}
+ \mathcal{V}={}&[\textsc{modal}][\textsc{perfect have}]\notag\\
+               & [\textsc{progressive be}][\textsc{passive be}]\;\textsc{main},
+\end{align}
+then assigns finiteness and agreement and applies deterministic rules for
+negation, operator inversion, DO-support, WH placement, and imperatives.  The
+retained realisation record includes its tokens, finite site, auxiliary chain,
+lexical conditions, and named operations.  Invalid cell--frame combinations
+are rejected explicitly.
+
+The fixed bank design creates a baseline opportunity for every realisable
+cell and adds declared coverage for source-licensed imperative subtypes, WH
+roles, lexical-versus-copular operator contrasts, and representative agreement
+conditions.  Item identifiers are derived without a KC label or experimental
+fold.  Each item is a controlled transformation with fixed lexical material
+and a deterministic target answer.  Fold membership is joined only when an
+experimental stage needs it; it cannot influence whether an item exists.
+
+Deterministic validation checks record shape, item identity, provenance,
+surface derivation, punctuation, uniqueness, and target agreement.  A separate
+model diagnostic then records five binary judgements: structural plausibility,
+naturalness, dependence on world knowledge, unsupported construction, and
+suspected answer ambiguity.  Acceptance requires the declared target pattern
+across all five fields.  Five calls are repeated to expose diagnostic
+instability.  This automated gate is a reproducible screening device, not a
+substitute for expert item review.
+
+\subsection{Development-only structural KC selection}
+\label{sec:selection}
+
+The structural selector starts from a versioned hypothesis family containing
+canonical rules at several granularities, surface-operation rules, nine
+per-modal alternatives, and seven declared pairwise interactions.  Marked
+obligations cover finite present and past, perfect and progressive structure,
+passive voice, negative polarity, supported non-declarative clauses, and each
+central modal.  Active, positive, declarative, no-modal, and no-aspect values
+are treated as background under this policy.  This markedness declaration is
+an explicit modelling prior rather than a linguistic universal.
+
+All discovery and selection use development cells only.  The selector expands
+each development cell over a deterministic nuisance-realisation grid.  A rule
+that is invariant across the grid is diagnosed as cell-scoped; a rule that
+changes with lexical frame or surface operation is realisation-scoped.  A
+mixed operation rule is retained as useful item evidence but is not allowed to
+stand in for a cell-level coverage obligation.  Candidates must also meet
+minimum cell and descriptor support.  An interaction needs at least two
+development cells, an activation set strictly narrower than both parents, and
+a declared residual structural fact.
+
+Candidates with identical development activation columns are observationally
+equivalent for this sample.  The implementation collapses each such class and
+chooses a deterministic representative; that tie-break is bookkeeping, not
+empirical evidence for one interpretation.  Eligible candidates must jointly
+cover every development cell, every salient marked fact, and declared
+Hamming-one or minimal structural contrasts.  A lexicographic greedy pass
+constructs a feasible cover, after which backward deletion removes every
+redundant selected rule.  The result is therefore inclusion-minimal under the
+declared obligations, but is not claimed to be a globally smallest ontology.
+The selected rules and trace are written as a frozen ordinary policy before
+either holdout is evaluated.
+
+\subsection{KC materialisation and Q-matrix construction}
+
+Once policy $\pi$ is frozen, its rules are applied to each concrete item
+opportunity.  This preserves an important scope distinction: two items from
+one cell can differ under an operation rule, whereas a cell rule must activate
+identically.  The Q-matrix is a mechanical conversion of this projection, not
+an additional inference stage.
+
+Integrity checks reject duplicate identities, unknown cells or KCs, missing
+item projections, and disagreement between the edge list and dense matrix.
+Zero-KC rows are deliberately retained for inductive exact-cell controls on
+unseen cells.  Density, row-width distribution, duplicate columns, low-support
+columns, uncovered rows, and cell-versus-realisation edge counts are reported
+as scientific diagnostics instead of being repaired silently.

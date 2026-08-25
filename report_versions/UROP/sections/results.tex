@@ -1,0 +1,51 @@
+\section{Current Evidence Status and Results Contract}
+\label{sec:results}
+
+No quantitative research result from RQ1--RQ3 is claimed in this revision.
+This is a substantive boundary rather than an unwritten section.  The archived
+pilot outputs were generated under an earlier pipeline in which item pools and
+the response-generating representation could vary with the evaluated KC
+policy.  The current method instead fixes both before policy selection.  The
+old counts therefore answer a different, confounded question and cannot be
+carried forward selectively.
+
+Table~\ref{tab:evidence-status} distinguishes what has been verified from what
+still requires execution or review.  At this revision, the complete automated
+suite passes 54 tests, including fixed-bank equality across ontologies,
+observable/oracle separation, development-only selection, zero-KC event
+retention, and non-updating probes.  These tests establish implementation
+properties on controlled fixtures.  They do not estimate normalisation quality
+or KT performance on the frozen EGP pilot.
+
+\input{tables/evidence_status}
+
+The archived \texttt{base} directory does not pass the current run validator.
+It lacks the new \texttt{kc\_selection} stage and the required normalisation,
+canonical-attrition, and repeated-item-diagnostic audit files.  The expected
+external EGP file is also not distributed in the repository, and every manual
+checkpoint in the research-audit notebook remains unreviewed.  Consequently:
+
+\begin{itemize}
+  \item RQ1 has an executable measurement procedure but no reportable final
+        mapping yield, transition counts, or reviewed error analysis;
+  \item RQ2 has a declared candidate family and selector but no validated
+        selected-policy artifact from the final pilot; and
+  \item RQ3 has fixture-level proof of the fixed-data and frozen-state
+        boundaries but no fresh pilot event stream or ontology comparison.
+\end{itemize}
+
+Table~\ref{tab:results-contract} specifies the outputs that must replace this
+status account after the first clean run.  All fields are generated from
+versioned audit artifacts.  Reporting them together prevents a high predictive
+score from obscuring low coverage, or a compact ontology from obscuring
+unsupported distinctions.
+
+\input{tables/results_contract}
+
+The acceptance gate for a quantitative revision is: a source digest match; a
+complete run of all six ontology conditions from the same accepted bank and
+event stream; \texttt{PASS} from the run validator; matching fixed-data
+fingerprints in every comparison; completion of the manual normalisation and
+item audits; and a result table populated directly from saved summaries.  A
+failed gate remains visible and is not repaired by copying values from an
+obsolete run.

@@ -1,0 +1,42 @@
+\begin{figure*}[t]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tikzpicture}[
+    node distance=2.7mm,
+    >=Latex,
+    box/.style={draw, rounded corners=1.5pt, align=center, minimum height=9mm,
+      text width=1.48cm, font=\scriptsize, inner sep=2pt},
+    data/.style={box, fill=gray!13},
+    assisted/.style={box, fill=orange!18, dashed},
+    deterministic/.style={box, fill=blue!10},
+    policy/.style={box, fill=green!13},
+    synthetic/.style={box, fill=violet!12, double},
+    arrow/.style={->, semithick}
+  ]
+    \node[data] (source) {source\\descriptors};
+    \node[assisted, right=of source] (norm) {two-phase\\normalization};
+    \node[deterministic, right=of norm] (canon) {canonical\\cells};
+    \node[deterministic, right=of canon] (real) {surface\\realization};
+    \node[policy, right=of real] (kc) {KC\\projection};
+    \node[assisted, right=of kc] (items) {items + model\\diagnostic};
+    \node[deterministic, right=of items] (q) {deterministic\\Q-matrix};
+    \node[synthetic, right=of q] (sim) {synthetic\\interactions};
+    \node[deterministic, right=of sim] (kt) {KT\\evaluation};
+
+    \draw[arrow] (source) -- (norm);
+    \draw[arrow] (norm) -- (canon);
+    \draw[arrow] (canon) -- (real);
+    \draw[arrow] (real) -- (kc);
+    \draw[arrow] (kc) -- (items);
+    \draw[arrow] (items) -- (q);
+    \draw[arrow] (q) -- (sim);
+    \draw[arrow] (sim) -- (kt);
+  \end{tikzpicture}
+  }
+  \caption{The \system{} pipeline.  Model assistance is confined to
+  normalization and an independent item diagnostic; canonicalization,
+  realization, KC rule evaluation, item construction, and Q-matrix derivation
+  have deterministic executors.  Simulation is explicitly separated from
+  claims about human learner data.}
+  \label{fig:pipeline}
+\end{figure*}

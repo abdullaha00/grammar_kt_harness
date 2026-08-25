@@ -1,0 +1,16 @@
+{
+  "audit": "Validation of the historical runs/base artifact with the current validator",
+  "command": ".venv/bin/python scripts/validate.py runs/base",
+  "exit_code": 1,
+  "result": {
+    "status": "FAIL",
+    "errors": [
+      "missing stage output: kc_selection",
+      "missing research audit: normalisation/reliability.json",
+      "missing research audit: canonical/audit.json",
+      "missing research audit: items/validation/reliability.json"
+    ],
+    "error_count": 4
+  },
+  "interpretation": "The canonical inventory remains usable as a declared historical input, but runs/base is not a valid current end-to-end run. Current downstream artifacts are regenerated rather than copied from it."
+}

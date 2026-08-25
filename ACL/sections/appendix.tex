@@ -1,0 +1,48 @@
+\section{Artifact Map}
+
+Table~\ref{tab:artifact-map} maps the principal conceptual choices to their
+repository artifacts.  The map is intended to keep the paper narrative aligned
+with executable inputs as the experiment evolves.
+
+\begin{table}[H]
+  \centering
+  \footnotesize
+  \begin{tabularx}{\columnwidth}{@{}lX@{}}
+    \toprule
+    Component & Scientific artifacts and executor \\
+    \midrule
+    Source & sample IDs, metadata, annotation units, and digest;
+      \texttt{source.py} \\
+    Normalization & phase prompts, grammar domains, rulebook, JSON schema,
+      and backend configuration; \texttt{normalisation.py} and
+      \texttt{normalisation\_validation.py} \\
+    Canonical cells & fixed dimension order and record constraints;
+      \texttt{canonical.py} and \texttt{records.py} \\
+    Realization & lexical frames, rules, and held-out cell list;
+      \texttt{realisation.py} \\
+    KC projection & factorized, interaction, and full-cell policies;
+      \texttt{kc.py} \\
+    Items & transformation template and diagnostic criteria;
+      \texttt{items.py} and \texttt{item\_validation.py} \\
+    Q-matrix & frozen cell--KC projection and integrity rules;
+      \texttt{qmatrix.py} \\
+    Simulation & learner-profile and response parameters;
+      \texttt{simulation.py} \\
+    KT & empirical, BKT, and logistic settings; \texttt{kt.py} \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Conceptual components, replaceable scientific artifacts, and their
+  executors. Paths are relative to the artifact repository.}
+  \label{tab:artifact-map}
+\end{table}
+
+\section{Evidence Retained for the Reported Runs}
+
+The archived run directories retain resolved configurations, clean source
+commit identifiers and digests, reuse boundaries, stage summaries, prompts,
+raw and parsed model responses, validation decisions, Q-matrices, simulated
+event tables, fitted-model predictions, and metric summaries.  The primary
+run and each policy variant use five declared simulation seeds.  Human
+evaluation is not part of the present evidence; adding it would require a
+predeclared sample, qualified annotators, instructions, adjudication,
+agreement measures, and uncertainty reporting.

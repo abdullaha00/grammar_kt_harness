@@ -1,0 +1,17 @@
+Knowledge tracing (KT) assumes an item--knowledge-component (KC) mapping, but
+proficiency resources commonly state grammatical targets in prose.  We present
+\system, an auditable pipeline from grammar descriptors to canonical
+representations, generated items, Q-matrices, and synthetic chronological KT
+data.  In a clean run over 139 English Grammar Profile descriptors, 44 yielded
+complete mappings to 24 unique six-dimensional grammar cells; all eight
+repeated annotation units produced identical outputs.  Factorized,
+interaction-augmented, and whole-cell policies produced respectively 9, 14,
+and 24 KCs, with sharply different Q-matrix structures.  Deterministic checks
+and an independent automated diagnostic accepted 45/45, 69/70, and 120/120
+generated items.  Across five simulation seeds, a logistic baseline had the
+best test AUC and log loss within every policy-specific dataset.  Because the
+simulator uses the evaluated KC assignments and each policy induces a
+different item pool, these scores are technical integration checks rather than
+evidence that one representation better models human learning.  The main
+contribution is therefore a provenance-preserving benchmark construction
+method that exposes, rather than hides, consequential representation choices.

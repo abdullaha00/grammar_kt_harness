@@ -1,0 +1,32 @@
+\section{Experimental Design}
+\label{sec:experimental-design}
+
+The base run uses the factorized policy.  Two variants reuse its frozen source,
+normalization, canonical, and realization artifacts, changing only the KC
+policy and downstream stages.  Because construction makes five items per KC,
+the resulting item pools are policy-specific; Q-matrix structure is directly
+comparable, whereas predictive scores are not a controlled estimate of a
+policy effect.
+
+The simulator is a transparent integration test.  It draws independent initial
+mastery for 60 learners from each of three profiles with
+$\mathrm{Beta}(2,6)$, $\mathrm{Beta}(2,2)$, and $\mathrm{Beta}(6,2)$ priors.
+Every learner receives two shuffled passes over the relevant accepted item
+pool.  For active KCs $A_i$, mastery $m_{lk}$, deterministic item difficulty
+$d_i\in[-0.8,0.8]$, and multi-KC penalty $0.15$, the response logit is
+\begin{equation}
+ z_{li}=|A_i|^{-1}\!\sum_{k\in A_i}\operatorname{logit}(m_{lk})
+       -d_i-0.15(|A_i|-1),
+\end{equation}
+and $p_{li}=0.1+0.8\sigma(z_{li})$.  Mastery increases after every response at
+a profile-specific rate.  Each learner is split chronologically 60/20/20.
+Latent mastery, probabilities, random draws, and profile labels are written to
+separate oracle files and rejected from KT input.
+
+We evaluate a Beta-smoothed empirical KC rate, fixed-parameter BKT
+($P(T)=.04$, $P(G)=.20$, $P(S)=.10$), and $L_2$-regularized logistic regression.
+The latter uses only pre-event learner success, active-KC success, prior
+opportunities, item difficulty, KC count, and one-hot KC indicators.  We run
+seeds 20260817--20260821 and report mean test AUC and log loss with 95\% $t$
+intervals over the five runs.  Accuracy and validation metrics are retained in
+the artifact but are secondary here.

@@ -1,0 +1,1705 @@
+{
+  "claim_boundary": "One unpinned hosted instruction model is a diagnostic instrument, not a general model comparison. Batched cases are not statistically independent.",
+  "exact_command": ".venv/bin/python experiments/post_training/scripts/evaluate_model_diagnostics.py",
+  "experiment_id": "POST_TRAINING_MODEL_DIAGNOSTICS_v0",
+  "generation": {
+    "best_condition": "natural_language_description",
+    "best_exact_accuracy": 1.0,
+    "best_improvement_over_natural_language_percentage_points": 0.0,
+    "conditions": {
+      "canonical_plus_realization_constraints": {
+        "cases": 24,
+        "exact": 24,
+        "exact_accuracy": 1.0,
+        "missing_case_ids": [],
+        "one_sentence_format_rate": 1.0,
+        "parse_errors": [],
+        "rows": [
+          {
+            "canonical_cell_id": "CELL_0A7F3FA2D498D97D",
+            "case_id": "GEN_001",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician has not written the report.",
+            "target": "The technician has not written the report."
+          },
+          {
+            "canonical_cell_id": "CELL_0ACC7E0377B19DC1",
+            "case_id": "GEN_002",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician would like the new plan.",
+            "target": "The technician would like the new plan."
+          },
+          {
+            "canonical_cell_id": "CELL_0D017AFB2B3A3DB5",
+            "case_id": "GEN_003",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technicians had been writing the report.",
+            "target": "The technicians had been writing the report."
+          },
+          {
+            "canonical_cell_id": "CELL_272348FAE26B290D",
+            "case_id": "GEN_004",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The report is written.",
+            "target": "The report is written."
+          },
+          {
+            "canonical_cell_id": "CELL_29BDABD4E976923A",
+            "case_id": "GEN_005",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The report is being written.",
+            "target": "The report is being written."
+          },
+          {
+            "canonical_cell_id": "CELL_607B0B91B1CEB860",
+            "case_id": "GEN_006",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician had not been writing the report.",
+            "target": "The technician had not been writing the report."
+          },
+          {
+            "canonical_cell_id": "CELL_6A3ADA0AB43D3DD7",
+            "case_id": "GEN_007",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician had not written the report.",
+            "target": "The technician had not written the report."
+          },
+          {
+            "canonical_cell_id": "CELL_6C685909760672EA",
+            "case_id": "GEN_008",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "I am writing the report.",
+            "target": "I am writing the report."
+          },
+          {
+            "canonical_cell_id": "CELL_868FF555B70CAE2A",
+            "case_id": "GEN_009",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "Am I ready?",
+            "target": "Am I ready?"
+          },
+          {
+            "canonical_cell_id": "CELL_94BE03426629218B",
+            "case_id": "GEN_010",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician has written the report.",
+            "target": "The technician has written the report."
+          },
+          {
+            "canonical_cell_id": "CELL_9556E3A49EFD0300",
+            "case_id": "GEN_011",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The report is not written.",
+            "target": "The report is not written."
+          },
+          {
+            "canonical_cell_id": "CELL_A24D66AAA38BC108",
+            "case_id": "GEN_012",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician is not ready.",
+            "target": "The technician is not ready."
+          },
+          {
+            "canonical_cell_id": "CELL_AE10928CE13553D8",
+            "case_id": "GEN_013",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician had written the report.",
+            "target": "The technician had written the report."
+          },
+          {
+            "canonical_cell_id": "CELL_B6AF2E896B998C79",
+            "case_id": "GEN_014",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The report was written.",
+            "target": "The report was written."
+          },
+          {
+            "canonical_cell_id": "CELL_C20140C7DAD62DB2",
+            "case_id": "GEN_015",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technicians did not write the report.",
+            "target": "The technicians did not write the report."
+          },
+          {
+            "canonical_cell_id": "CELL_CEBF57A9F5C2F00A",
+            "case_id": "GEN_016",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "I wrote the report.",
+            "target": "I wrote the report."
+          },
+          {
+            "canonical_cell_id": "CELL_D02189D0DFD84070",
+            "case_id": "GEN_017",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "Were the technicians ready?",
+            "target": "Were the technicians ready?"
+          },
+          {
+            "canonical_cell_id": "CELL_D88738F5F0FBE1EB",
+            "case_id": "GEN_018",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "I write the report.",
+            "target": "I write the report."
+          },
+          {
+            "canonical_cell_id": "CELL_E1030A4919D1A060",
+            "case_id": "GEN_019",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician has been writing the report.",
+            "target": "The technician has been writing the report."
+          },
+          {
+            "canonical_cell_id": "CELL_E7EC123EE518CC58",
+            "case_id": "GEN_020",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician is not writing the report.",
+            "target": "The technician is not writing the report."
+          },
+          {
+            "canonical_cell_id": "CELL_EA48447107868B2C",
+            "case_id": "GEN_021",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician was writing the report.",
+            "target": "The technician was writing the report."
+          },
+          {
+            "canonical_cell_id": "CELL_EE9DDB26E6C7D307",
+            "case_id": "GEN_022",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "Let's not write the report.",
+            "target": "Let's not write the report."
+          },
+          {
+            "canonical_cell_id": "CELL_FA8507A622E5E145",
+            "case_id": "GEN_023",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The report had been written.",
+            "target": "The report had been written."
+          },
+          {
+            "canonical_cell_id": "CELL_FB5F88ACD517600A",
+            "case_id": "GEN_024",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "Let's write the report.",
+            "target": "Let's write the report."
+          }
+        ],
+        "unknown_case_ids": []
+      },
+      "canonical_structure": {
+        "cases": 24,
+        "exact": 24,
+        "exact_accuracy": 1.0,
+        "missing_case_ids": [],
+        "one_sentence_format_rate": 1.0,
+        "parse_errors": [],
+        "rows": [
+          {
+            "canonical_cell_id": "CELL_0A7F3FA2D498D97D",
+            "case_id": "GEN_001",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician has not written the report.",
+            "target": "The technician has not written the report."
+          },
+          {
+            "canonical_cell_id": "CELL_0ACC7E0377B19DC1",
+            "case_id": "GEN_002",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician would like the new plan.",
+            "target": "The technician would like the new plan."
+          },
+          {
+            "canonical_cell_id": "CELL_0D017AFB2B3A3DB5",
+            "case_id": "GEN_003",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technicians had been writing the report.",
+            "target": "The technicians had been writing the report."
+          },
+          {
+            "canonical_cell_id": "CELL_272348FAE26B290D",
+            "case_id": "GEN_004",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The report is written.",
+            "target": "The report is written."
+          },
+          {
+            "canonical_cell_id": "CELL_29BDABD4E976923A",
+            "case_id": "GEN_005",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The report is being written.",
+            "target": "The report is being written."
+          },
+          {
+            "canonical_cell_id": "CELL_607B0B91B1CEB860",
+            "case_id": "GEN_006",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician had not been writing the report.",
+            "target": "The technician had not been writing the report."
+          },
+          {
+            "canonical_cell_id": "CELL_6A3ADA0AB43D3DD7",
+            "case_id": "GEN_007",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician had not written the report.",
+            "target": "The technician had not written the report."
+          },
+          {
+            "canonical_cell_id": "CELL_6C685909760672EA",
+            "case_id": "GEN_008",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "I am writing the report.",
+            "target": "I am writing the report."
+          },
+          {
+            "canonical_cell_id": "CELL_868FF555B70CAE2A",
+            "case_id": "GEN_009",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "Am I ready?",
+            "target": "Am I ready?"
+          },
+          {
+            "canonical_cell_id": "CELL_94BE03426629218B",
+            "case_id": "GEN_010",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician has written the report.",
+            "target": "The technician has written the report."
+          },
+          {
+            "canonical_cell_id": "CELL_9556E3A49EFD0300",
+            "case_id": "GEN_011",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The report is not written.",
+            "target": "The report is not written."
+          },
+          {
+            "canonical_cell_id": "CELL_A24D66AAA38BC108",
+            "case_id": "GEN_012",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician is not ready.",
+            "target": "The technician is not ready."
+          },
+          {
+            "canonical_cell_id": "CELL_AE10928CE13553D8",
+            "case_id": "GEN_013",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician had written the report.",
+            "target": "The technician had written the report."
+          },
+          {
+            "canonical_cell_id": "CELL_B6AF2E896B998C79",
+            "case_id": "GEN_014",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The report was written.",
+            "target": "The report was written."
+          },
+          {
+            "canonical_cell_id": "CELL_C20140C7DAD62DB2",
+            "case_id": "GEN_015",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technicians did not write the report.",
+            "target": "The technicians did not write the report."
+          },
+          {
+            "canonical_cell_id": "CELL_CEBF57A9F5C2F00A",
+            "case_id": "GEN_016",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "I wrote the report.",
+            "target": "I wrote the report."
+          },
+          {
+            "canonical_cell_id": "CELL_D02189D0DFD84070",
+            "case_id": "GEN_017",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "Were the technicians ready?",
+            "target": "Were the technicians ready?"
+          },
+          {
+            "canonical_cell_id": "CELL_D88738F5F0FBE1EB",
+            "case_id": "GEN_018",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "I write the report.",
+            "target": "I write the report."
+          },
+          {
+            "canonical_cell_id": "CELL_E1030A4919D1A060",
+            "case_id": "GEN_019",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician has been writing the report.",
+            "target": "The technician has been writing the report."
+          },
+          {
+            "canonical_cell_id": "CELL_E7EC123EE518CC58",
+            "case_id": "GEN_020",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician is not writing the report.",
+            "target": "The technician is not writing the report."
+          },
+          {
+            "canonical_cell_id": "CELL_EA48447107868B2C",
+            "case_id": "GEN_021",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician was writing the report.",
+            "target": "The technician was writing the report."
+          },
+          {
+            "canonical_cell_id": "CELL_EE9DDB26E6C7D307",
+            "case_id": "GEN_022",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "Let's not write the report.",
+            "target": "Let's not write the report."
+          },
+          {
+            "canonical_cell_id": "CELL_FA8507A622E5E145",
+            "case_id": "GEN_023",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The report had been written.",
+            "target": "The report had been written."
+          },
+          {
+            "canonical_cell_id": "CELL_FB5F88ACD517600A",
+            "case_id": "GEN_024",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "Let's write the report.",
+            "target": "Let's write the report."
+          }
+        ],
+        "unknown_case_ids": []
+      },
+      "natural_language_description": {
+        "cases": 24,
+        "exact": 24,
+        "exact_accuracy": 1.0,
+        "missing_case_ids": [],
+        "one_sentence_format_rate": 1.0,
+        "parse_errors": [],
+        "rows": [
+          {
+            "canonical_cell_id": "CELL_0A7F3FA2D498D97D",
+            "case_id": "GEN_001",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician has not written the report.",
+            "target": "The technician has not written the report."
+          },
+          {
+            "canonical_cell_id": "CELL_0ACC7E0377B19DC1",
+            "case_id": "GEN_002",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician would like the new plan.",
+            "target": "The technician would like the new plan."
+          },
+          {
+            "canonical_cell_id": "CELL_0D017AFB2B3A3DB5",
+            "case_id": "GEN_003",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technicians had been writing the report.",
+            "target": "The technicians had been writing the report."
+          },
+          {
+            "canonical_cell_id": "CELL_272348FAE26B290D",
+            "case_id": "GEN_004",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The report is written.",
+            "target": "The report is written."
+          },
+          {
+            "canonical_cell_id": "CELL_29BDABD4E976923A",
+            "case_id": "GEN_005",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The report is being written.",
+            "target": "The report is being written."
+          },
+          {
+            "canonical_cell_id": "CELL_607B0B91B1CEB860",
+            "case_id": "GEN_006",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician had not been writing the report.",
+            "target": "The technician had not been writing the report."
+          },
+          {
+            "canonical_cell_id": "CELL_6A3ADA0AB43D3DD7",
+            "case_id": "GEN_007",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician had not written the report.",
+            "target": "The technician had not written the report."
+          },
+          {
+            "canonical_cell_id": "CELL_6C685909760672EA",
+            "case_id": "GEN_008",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "I am writing the report.",
+            "target": "I am writing the report."
+          },
+          {
+            "canonical_cell_id": "CELL_868FF555B70CAE2A",
+            "case_id": "GEN_009",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "Am I ready?",
+            "target": "Am I ready?"
+          },
+          {
+            "canonical_cell_id": "CELL_94BE03426629218B",
+            "case_id": "GEN_010",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician has written the report.",
+            "target": "The technician has written the report."
+          },
+          {
+            "canonical_cell_id": "CELL_9556E3A49EFD0300",
+            "case_id": "GEN_011",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The report is not written.",
+            "target": "The report is not written."
+          },
+          {
+            "canonical_cell_id": "CELL_A24D66AAA38BC108",
+            "case_id": "GEN_012",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician is not ready.",
+            "target": "The technician is not ready."
+          },
+          {
+            "canonical_cell_id": "CELL_AE10928CE13553D8",
+            "case_id": "GEN_013",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician had written the report.",
+            "target": "The technician had written the report."
+          },
+          {
+            "canonical_cell_id": "CELL_B6AF2E896B998C79",
+            "case_id": "GEN_014",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The report was written.",
+            "target": "The report was written."
+          },
+          {
+            "canonical_cell_id": "CELL_C20140C7DAD62DB2",
+            "case_id": "GEN_015",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technicians did not write the report.",
+            "target": "The technicians did not write the report."
+          },
+          {
+            "canonical_cell_id": "CELL_CEBF57A9F5C2F00A",
+            "case_id": "GEN_016",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "I wrote the report.",
+            "target": "I wrote the report."
+          },
+          {
+            "canonical_cell_id": "CELL_D02189D0DFD84070",
+            "case_id": "GEN_017",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "Were the technicians ready?",
+            "target": "Were the technicians ready?"
+          },
+          {
+            "canonical_cell_id": "CELL_D88738F5F0FBE1EB",
+            "case_id": "GEN_018",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "I write the report.",
+            "target": "I write the report."
+          },
+          {
+            "canonical_cell_id": "CELL_E1030A4919D1A060",
+            "case_id": "GEN_019",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician has been writing the report.",
+            "target": "The technician has been writing the report."
+          },
+          {
+            "canonical_cell_id": "CELL_E7EC123EE518CC58",
+            "case_id": "GEN_020",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician is not writing the report.",
+            "target": "The technician is not writing the report."
+          },
+          {
+            "canonical_cell_id": "CELL_EA48447107868B2C",
+            "case_id": "GEN_021",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The technician was writing the report.",
+            "target": "The technician was writing the report."
+          },
+          {
+            "canonical_cell_id": "CELL_EE9DDB26E6C7D307",
+            "case_id": "GEN_022",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "Let's not write the report.",
+            "target": "Let's not write the report."
+          },
+          {
+            "canonical_cell_id": "CELL_FA8507A622E5E145",
+            "case_id": "GEN_023",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "The report had been written.",
+            "target": "The report had been written."
+          },
+          {
+            "canonical_cell_id": "CELL_FB5F88ACD517600A",
+            "case_id": "GEN_024",
+            "exact": true,
+            "one_sentence_format": true,
+            "prediction": "Let's write the report.",
+            "target": "Let's write the report."
+          }
+        ],
+        "unknown_case_ids": []
+      }
+    },
+    "representation_value_gate": false
+  },
+  "model": "gpt-5.6-luna",
+  "preference": {
+    "order_comparable_pairs": 48,
+    "order_consistency_rate": 1.0,
+    "order_inconsistency_rate": 0.0,
+    "orders": {
+      "reversed_order": {
+        "error_dimension_accuracy": 1.0,
+        "missing_case_ids": [],
+        "pairs": 48,
+        "parse_errors": [],
+        "preference_accuracy": 1.0,
+        "rows": [
+          {
+            "case_id": "JUDGE_001",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_006F5883279E965B",
+            "preferred": "A",
+            "selected_text": "I did not write the report."
+          },
+          {
+            "case_id": "JUDGE_002",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_01F92CA89D170C72",
+            "preferred": "A",
+            "selected_text": "The technician has been writing the report."
+          },
+          {
+            "case_id": "JUDGE_003",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_022BE743C4F18FF5",
+            "preferred": "B",
+            "selected_text": "The technician writes the report."
+          },
+          {
+            "case_id": "JUDGE_004",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_08505ADEF57C0C9A",
+            "preferred": "B",
+            "selected_text": "The technician writes the report."
+          },
+          {
+            "case_id": "JUDGE_005",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_099B6F4DAE0955B9",
+            "preferred": "A",
+            "selected_text": "The report is written."
+          },
+          {
+            "case_id": "JUDGE_006",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_0B72F898302C4A71",
+            "preferred": "B",
+            "selected_text": "The technician does not write the report."
+          },
+          {
+            "case_id": "JUDGE_007",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_0F51FF3B6106E684",
+            "preferred": "A",
+            "selected_text": "The technicians did not write the report."
+          },
+          {
+            "case_id": "JUDGE_008",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_13F1860C5FF656EA",
+            "preferred": "B",
+            "selected_text": "The technician wrote the report."
+          },
+          {
+            "case_id": "JUDGE_009",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_14368073477D8834",
+            "preferred": "A",
+            "selected_text": "The technician had not written the report."
+          },
+          {
+            "case_id": "JUDGE_010",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_1691DFA6F2B88EDA",
+            "preferred": "B",
+            "selected_text": "I wrote the report."
+          },
+          {
+            "case_id": "JUDGE_011",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_18AA449E5276561A",
+            "preferred": "A",
+            "selected_text": "The technicians wrote the report."
+          },
+          {
+            "case_id": "JUDGE_012",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_19D7B3E9E0635138",
+            "preferred": "B",
+            "selected_text": "The technician wrote the report."
+          },
+          {
+            "case_id": "JUDGE_013",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_1AF5615F37498853",
+            "preferred": "A",
+            "selected_text": "The technicians had not been writing the report."
+          },
+          {
+            "case_id": "JUDGE_014",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_1EF33FC886EB4DCE",
+            "preferred": "A",
+            "selected_text": "I wrote the report."
+          },
+          {
+            "case_id": "JUDGE_015",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_1F24797BB6F7BA41",
+            "preferred": "A",
+            "selected_text": "The technician was writing the report."
+          },
+          {
+            "case_id": "JUDGE_016",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_206CC7C1EED824E2",
+            "preferred": "B",
+            "selected_text": "The technician writes the report."
+          },
+          {
+            "case_id": "JUDGE_017",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_24CAAEDC26EEA127",
+            "preferred": "B",
+            "selected_text": "Did I write the report?"
+          },
+          {
+            "case_id": "JUDGE_018",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_2647C77B39A9C542",
+            "preferred": "A",
+            "selected_text": "The technicians did not write the report."
+          },
+          {
+            "case_id": "JUDGE_019",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_27DADAB0460754AB",
+            "preferred": "A",
+            "selected_text": "The technician writes the report."
+          },
+          {
+            "case_id": "JUDGE_020",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_2802B313265E625B",
+            "preferred": "A",
+            "selected_text": "Do the technicians write the report?"
+          },
+          {
+            "case_id": "JUDGE_021",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_2A1D0F3B207E93F5",
+            "preferred": "A",
+            "selected_text": "The report had been written."
+          },
+          {
+            "case_id": "JUDGE_022",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_3174C084B5F62C0C",
+            "preferred": "B",
+            "selected_text": "The technician had not been writing the report."
+          },
+          {
+            "case_id": "JUDGE_023",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_336D58F6D68C0DB5",
+            "preferred": "B",
+            "selected_text": "The technician had written the report."
+          },
+          {
+            "case_id": "JUDGE_024",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_3548B2A78787966A",
+            "preferred": "B",
+            "selected_text": "The technician had written the report."
+          },
+          {
+            "case_id": "JUDGE_025",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_356043B6436AE7A6",
+            "preferred": "A",
+            "selected_text": "The technician did not write the report."
+          },
+          {
+            "case_id": "JUDGE_026",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_3A5122601671AE71",
+            "preferred": "B",
+            "selected_text": "The technician had been writing the report."
+          },
+          {
+            "case_id": "JUDGE_027",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_4073088B7B057B4F",
+            "preferred": "B",
+            "selected_text": "The technician is writing the report."
+          },
+          {
+            "case_id": "JUDGE_028",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_42BA3708749527A3",
+            "preferred": "B",
+            "selected_text": "Was I ready?"
+          },
+          {
+            "case_id": "JUDGE_029",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_46DBDAD20C519A6B",
+            "preferred": "A",
+            "selected_text": "The technician has written the report."
+          },
+          {
+            "case_id": "JUDGE_030",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_4DF442F63DE555C0",
+            "preferred": "A",
+            "selected_text": "The technician has written the report."
+          },
+          {
+            "case_id": "JUDGE_031",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_5026820AC17856BA",
+            "preferred": "A",
+            "selected_text": "The technician is writing the report."
+          },
+          {
+            "case_id": "JUDGE_032",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_554EDF93B047952B",
+            "preferred": "A",
+            "selected_text": "I had not been writing the report."
+          },
+          {
+            "case_id": "JUDGE_033",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_5A8EA54B0A827E5D",
+            "preferred": "B",
+            "selected_text": "I am writing the report."
+          },
+          {
+            "case_id": "JUDGE_034",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_5D9ECFAC7BB7E6E9",
+            "preferred": "B",
+            "selected_text": "The technician has not written the report."
+          },
+          {
+            "case_id": "JUDGE_035",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_5E705889382B30B3",
+            "preferred": "B",
+            "selected_text": "Were the technicians ready?"
+          },
+          {
+            "case_id": "JUDGE_036",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_6048B04F5EC61959",
+            "preferred": "B",
+            "selected_text": "Do I write the report?"
+          },
+          {
+            "case_id": "JUDGE_037",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_625D483DC5DEAA52",
+            "preferred": "B",
+            "selected_text": "I did not write the report."
+          },
+          {
+            "case_id": "JUDGE_038",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_63A9A63DDEA1031C",
+            "preferred": "A",
+            "selected_text": "I wrote the report."
+          },
+          {
+            "case_id": "JUDGE_039",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_675B92135A67E041",
+            "preferred": "A",
+            "selected_text": "The technician wrote the report."
+          },
+          {
+            "case_id": "JUDGE_040",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_7577714AE4972689",
+            "preferred": "B",
+            "selected_text": "Do I write the report?"
+          },
+          {
+            "case_id": "JUDGE_041",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_759388578CCB910B",
+            "preferred": "A",
+            "selected_text": "The technicians wrote the report."
+          },
+          {
+            "case_id": "JUDGE_042",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_B194C5665E381883",
+            "preferred": "B",
+            "selected_text": "The technicians wrote the report."
+          },
+          {
+            "case_id": "JUDGE_043",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_B3F2FA0382354132",
+            "preferred": "B",
+            "selected_text": "The technicians write the report."
+          },
+          {
+            "case_id": "JUDGE_044",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_C3982512348F0092",
+            "preferred": "B",
+            "selected_text": "Does the technician write the report?"
+          },
+          {
+            "case_id": "JUDGE_045",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_C3CDC4F62146BE0B",
+            "preferred": "A",
+            "selected_text": "Did the technician write the report?"
+          },
+          {
+            "case_id": "JUDGE_046",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_DDD3625F147F8D97",
+            "preferred": "B",
+            "selected_text": "I write the report."
+          },
+          {
+            "case_id": "JUDGE_047",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_F1D95A14FE5FB969",
+            "preferred": "A",
+            "selected_text": "Did the technicians write the report?"
+          },
+          {
+            "case_id": "JUDGE_048",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_FF4241DE7375F4D0",
+            "preferred": "A",
+            "selected_text": "Did I write the report?"
+          }
+        ]
+      },
+      "seeded_order": {
+        "error_dimension_accuracy": 1.0,
+        "missing_case_ids": [],
+        "pairs": 48,
+        "parse_errors": [],
+        "preference_accuracy": 1.0,
+        "rows": [
+          {
+            "case_id": "JUDGE_001",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_006F5883279E965B",
+            "preferred": "B",
+            "selected_text": "I did not write the report."
+          },
+          {
+            "case_id": "JUDGE_002",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_01F92CA89D170C72",
+            "preferred": "B",
+            "selected_text": "The technician has been writing the report."
+          },
+          {
+            "case_id": "JUDGE_003",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_022BE743C4F18FF5",
+            "preferred": "A",
+            "selected_text": "The technician writes the report."
+          },
+          {
+            "case_id": "JUDGE_004",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_08505ADEF57C0C9A",
+            "preferred": "A",
+            "selected_text": "The technician writes the report."
+          },
+          {
+            "case_id": "JUDGE_005",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_099B6F4DAE0955B9",
+            "preferred": "B",
+            "selected_text": "The report is written."
+          },
+          {
+            "case_id": "JUDGE_006",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_0B72F898302C4A71",
+            "preferred": "A",
+            "selected_text": "The technician does not write the report."
+          },
+          {
+            "case_id": "JUDGE_007",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_0F51FF3B6106E684",
+            "preferred": "B",
+            "selected_text": "The technicians did not write the report."
+          },
+          {
+            "case_id": "JUDGE_008",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_13F1860C5FF656EA",
+            "preferred": "A",
+            "selected_text": "The technician wrote the report."
+          },
+          {
+            "case_id": "JUDGE_009",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_14368073477D8834",
+            "preferred": "B",
+            "selected_text": "The technician had not written the report."
+          },
+          {
+            "case_id": "JUDGE_010",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_1691DFA6F2B88EDA",
+            "preferred": "A",
+            "selected_text": "I wrote the report."
+          },
+          {
+            "case_id": "JUDGE_011",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_18AA449E5276561A",
+            "preferred": "B",
+            "selected_text": "The technicians wrote the report."
+          },
+          {
+            "case_id": "JUDGE_012",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_19D7B3E9E0635138",
+            "preferred": "A",
+            "selected_text": "The technician wrote the report."
+          },
+          {
+            "case_id": "JUDGE_013",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_1AF5615F37498853",
+            "preferred": "B",
+            "selected_text": "The technicians had not been writing the report."
+          },
+          {
+            "case_id": "JUDGE_014",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_1EF33FC886EB4DCE",
+            "preferred": "B",
+            "selected_text": "I wrote the report."
+          },
+          {
+            "case_id": "JUDGE_015",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_1F24797BB6F7BA41",
+            "preferred": "B",
+            "selected_text": "The technician was writing the report."
+          },
+          {
+            "case_id": "JUDGE_016",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_206CC7C1EED824E2",
+            "preferred": "A",
+            "selected_text": "The technician writes the report."
+          },
+          {
+            "case_id": "JUDGE_017",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_24CAAEDC26EEA127",
+            "preferred": "A",
+            "selected_text": "Did I write the report?"
+          },
+          {
+            "case_id": "JUDGE_018",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_2647C77B39A9C542",
+            "preferred": "B",
+            "selected_text": "The technicians did not write the report."
+          },
+          {
+            "case_id": "JUDGE_019",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_27DADAB0460754AB",
+            "preferred": "B",
+            "selected_text": "The technician writes the report."
+          },
+          {
+            "case_id": "JUDGE_020",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_2802B313265E625B",
+            "preferred": "B",
+            "selected_text": "Do the technicians write the report?"
+          },
+          {
+            "case_id": "JUDGE_021",
+            "dimension_correct": true,
+            "error_dimension": "aspect",
+            "expected_error_dimension": "aspect",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_2A1D0F3B207E93F5",
+            "preferred": "B",
+            "selected_text": "The report had been written."
+          },
+          {
+            "case_id": "JUDGE_022",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_3174C084B5F62C0C",
+            "preferred": "A",
+            "selected_text": "The technician had not been writing the report."
+          },
+          {
+            "case_id": "JUDGE_023",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_336D58F6D68C0DB5",
+            "preferred": "A",
+            "selected_text": "The technician had written the report."
+          },
+          {
+            "case_id": "JUDGE_024",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_3548B2A78787966A",
+            "preferred": "A",
+            "selected_text": "The technician had written the report."
+          },
+          {
+            "case_id": "JUDGE_025",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_356043B6436AE7A6",
+            "preferred": "B",
+            "selected_text": "The technician did not write the report."
+          },
+          {
+            "case_id": "JUDGE_026",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_3A5122601671AE71",
+            "preferred": "A",
+            "selected_text": "The technician had been writing the report."
+          },
+          {
+            "case_id": "JUDGE_027",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_4073088B7B057B4F",
+            "preferred": "A",
+            "selected_text": "The technician is writing the report."
+          },
+          {
+            "case_id": "JUDGE_028",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_42BA3708749527A3",
+            "preferred": "A",
+            "selected_text": "Was I ready?"
+          },
+          {
+            "case_id": "JUDGE_029",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_46DBDAD20C519A6B",
+            "preferred": "B",
+            "selected_text": "The technician has written the report."
+          },
+          {
+            "case_id": "JUDGE_030",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_4DF442F63DE555C0",
+            "preferred": "B",
+            "selected_text": "The technician has written the report."
+          },
+          {
+            "case_id": "JUDGE_031",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_5026820AC17856BA",
+            "preferred": "B",
+            "selected_text": "The technician is writing the report."
+          },
+          {
+            "case_id": "JUDGE_032",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_554EDF93B047952B",
+            "preferred": "B",
+            "selected_text": "I had not been writing the report."
+          },
+          {
+            "case_id": "JUDGE_033",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_5A8EA54B0A827E5D",
+            "preferred": "A",
+            "selected_text": "I am writing the report."
+          },
+          {
+            "case_id": "JUDGE_034",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_5D9ECFAC7BB7E6E9",
+            "preferred": "A",
+            "selected_text": "The technician has not written the report."
+          },
+          {
+            "case_id": "JUDGE_035",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_5E705889382B30B3",
+            "preferred": "A",
+            "selected_text": "Were the technicians ready?"
+          },
+          {
+            "case_id": "JUDGE_036",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_6048B04F5EC61959",
+            "preferred": "A",
+            "selected_text": "Do I write the report?"
+          },
+          {
+            "case_id": "JUDGE_037",
+            "dimension_correct": true,
+            "error_dimension": "polarity",
+            "expected_error_dimension": "polarity",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_625D483DC5DEAA52",
+            "preferred": "A",
+            "selected_text": "I did not write the report."
+          },
+          {
+            "case_id": "JUDGE_038",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_63A9A63DDEA1031C",
+            "preferred": "B",
+            "selected_text": "I wrote the report."
+          },
+          {
+            "case_id": "JUDGE_039",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_675B92135A67E041",
+            "preferred": "B",
+            "selected_text": "The technician wrote the report."
+          },
+          {
+            "case_id": "JUDGE_040",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_7577714AE4972689",
+            "preferred": "A",
+            "selected_text": "Do I write the report?"
+          },
+          {
+            "case_id": "JUDGE_041",
+            "dimension_correct": true,
+            "error_dimension": "tense",
+            "expected_error_dimension": "tense",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_759388578CCB910B",
+            "preferred": "B",
+            "selected_text": "The technicians wrote the report."
+          },
+          {
+            "case_id": "JUDGE_042",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_B194C5665E381883",
+            "preferred": "A",
+            "selected_text": "The technicians wrote the report."
+          },
+          {
+            "case_id": "JUDGE_043",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_B3F2FA0382354132",
+            "preferred": "A",
+            "selected_text": "The technicians write the report."
+          },
+          {
+            "case_id": "JUDGE_044",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_C3982512348F0092",
+            "preferred": "A",
+            "selected_text": "Does the technician write the report?"
+          },
+          {
+            "case_id": "JUDGE_045",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_C3CDC4F62146BE0B",
+            "preferred": "B",
+            "selected_text": "Did the technician write the report?"
+          },
+          {
+            "case_id": "JUDGE_046",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "A",
+            "preference_correct": true,
+            "preference_record_id": "PT_DDD3625F147F8D97",
+            "preferred": "A",
+            "selected_text": "I write the report."
+          },
+          {
+            "case_id": "JUDGE_047",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_F1D95A14FE5FB969",
+            "preferred": "B",
+            "selected_text": "Did the technicians write the report?"
+          },
+          {
+            "case_id": "JUDGE_048",
+            "dimension_correct": true,
+            "error_dimension": "clause",
+            "expected_error_dimension": "clause",
+            "expected_preferred": "B",
+            "preference_correct": true,
+            "preference_record_id": "PT_FF4241DE7375F4D0",
+            "preferred": "B",
+            "selected_text": "Did I write the report?"
+          }
+        ]
+      }
+    },
+    "preference_validity_gate": true
+  }
+}

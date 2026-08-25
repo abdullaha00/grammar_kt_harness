@@ -1,0 +1,12 @@
+\section{Reproducibility and Audit Trail}
+
+Prompts, rulebooks, schemas, lexicons, policies, templates, and parameters are
+versioned separately from their executors.  Each run stores the resolved
+experiment, source digest, seed, Git commit and dirty state, explicit reuse,
+stage summaries, and per-call prompts and responses.  The three primary runs
+used clean snapshot commit \texttt{d58834e}; seed variants used
+\texttt{dcfb8e8}.  Earlier stages were copied only through the declared
+parent-and-start-stage mechanism.  The two-commit clean history is retained as
+\texttt{runs/evidence\_snapshot.bundle}.  Exact external reruns remain limited because
+the consult-only EGP snapshot is not redistributed and the configured model
+family does not expose a pinned snapshot or all decoding parameters.

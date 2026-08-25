@@ -1,0 +1,60 @@
+\section{Interpretive Framework and Next Steps}
+\label{sec:discussion}
+
+Although results are pending, the implemented design clarifies what each
+eventual observation can and cannot mean.
+
+\paragraph{Normalisation trades coverage for warranted claims.}
+A low exact-cell yield would not by itself show poor annotation.  The closed
+representation requires six scalar properties, whereas an EGP descriptor may
+intentionally state only one contrast.  Retaining a partial mapping can be the
+correct outcome.  RQ1 must therefore combine attrition rates with a manually
+reviewed taxonomy: unsupported completion, missed evidence, wrong scope,
+branching error, schema error, and genuine source underspecification.  The
+right target is calibrated conservatism, not maximum downstream cell count.
+
+\paragraph{Structural selection establishes sample support, not cognitive
+truth.}
+If the selector retains a candidate, the result means that its activation
+pattern contributes to the declared development obligations after equivalence
+and scope checks.  It does not show that learners acquire that candidate as an
+indivisible skill.  Conversely, a rejected candidate may be meaningful outside
+the small inventory but unsupported or indistinguishable within it.  The
+selection trace, equivalence classes, and holdout activation patterns are at
+least as important as the final KC count.
+
+\paragraph{Coverage is part of predictive performance.}
+Exact-cell KCs offer high structural specificity but cannot transfer learner
+evidence to a new cell unless that cell was admitted in advance.  Reusable
+factors can cover new combinations, but may average evidence across cases whose
+difficulty or learning dynamics differ.  Interactions can express residual
+dependencies while increasing sparsity.  The fixed probe protocol exposes this
+trade-off by showing all-probe loss beside coverage, cold-start, and
+development-supported subsets.  No policy can improve its headline metric by
+discarding the items it fails to annotate.
+
+\paragraph{The simulation is a mechanism check.}
+The independent oracle removes the circularity of generating responses from
+the candidate KCs under evaluation.  It still favours representations capable
+of recovering its particular factorised structural regularities.  A policy
+that transfers well in this world has demonstrated information reuse under a
+known mechanism, not correspondence to human grammar acquisition.  Robustness
+to seeds and alternative declared oracles would test engineering dependence;
+human learner sequences are required for educational validity.
+
+\paragraph{Path to tutoring dialogue.}
+TSCCv2 motivates the project but is not an evaluation dataset in the present
+study.  Moving from controlled items to dialogue requires three new layers:
+identifying which turns are genuine assessment opportunities, assigning
+context-sensitive correctness, and allowing an utterance to instantiate
+multiple grammatical phenomena.  These labels should be created and audited
+without using downstream KT scores to decide the ontology.  The controlled
+benchmark can then serve as a unit-tested bridge, while real dialogue supplies
+the independent learner evidence the current simulation lacks.
+
+The immediate completion sequence is therefore empirical rather than
+editorial: restore the verified consult-only source, run and validate the
+reference condition, freeze its pre-selection outputs, execute the five
+remaining policy variants through KT, complete the manual audits, and populate
+Table~\ref{tab:results-contract}.  Only then should the discussion be revised
+to answer the three RQs with estimates rather than expectations.

@@ -1,0 +1,74 @@
+\section{Grammar-to-KT Pipeline}
+\label{sec:method}
+
+\subsection{Normalization and canonicalization}
+
+Each annotation unit is processed in a fresh model context containing the
+closed schema, rulebook, phase instructions, and JSON schema.  A validator
+checks fields, domains, status invariants, and tense--modal and imperative
+compatibility.  Every attempt retains its prompt, raw and parsed output,
+invocation metadata, and errors.
+
+Only a partial Phase~1 result can normally enter Phase~2.  Its note names the
+non-scalar dimensions eligible for refinement; Phase~2 additionally sees the
+source examples.  The transition validator freezes exact and ineligible
+dimensions, requires every new cell to descend from a Phase~1 cell, and forbids
+unlicensed list expansion.  Contradictory evidence produces an unresolved
+result rather than silently changing an exact value.
+
+Complete mappings are serialized in a fixed dimension order and assigned a
+content-derived identifier.  Equal tuples therefore deduplicate independently
+of source identity or order.  A canonical inventory stores each tuple once;
+an edge table separately records every source mapping cell, its descriptor and
+position.  Deduplication consequently preserves many-to-one provenance.
+
+\subsection{Realization and KC policies}
+
+The realizer pairs each canonical cell with a validated predicate frame,
+subject features, and any WH or imperative conditions.  A ten-frame lexicon
+supplies inflectional forms and argument structure.  An ordered procedure
+constructs modal, perfect, progressive, passive, and lexical chains before
+applying negation, DO-support, inversion, WH-fronting, or imperative rules.
+The retained derivation includes tokens, agreement site, auxiliary chain, and
+named operations.
+
+A KC opportunity joins a canonical cell, one realization, its operations,
+split, and source provenance.  We compare three declarative policies.  The
+\emph{factorized} policy names marked reusable decisions such as finite tense,
+aspect, passive voice, negation, questions, imperatives, and individual modals.
+The \emph{interaction} policy adds five named combinations: DO-support in
+questions and negation, perfect--progressive, progressive--passive, and
+perfect--passive chains.  The \emph{whole-cell} policy assigns one KC to each
+exact six-dimensional cell.  It is a high-resolution structural baseline, not
+a cognitive claim.  Every policy materializes a frozen cell--KC projection;
+leaving a cell without a KC is fatal.
+
+\subsection{Items and Q-matrices}
+
+For every activated KC, the constructor searches eligible cells, source
+conditions, predicate frames, and subjects in stable order to create five
+unique controlled-transformation items.  A prompt exposes the intended grammar
+and fixed lexical material; the accepted answer is the deterministic
+realization.  The first two replicates are development items and the remaining
+three are held out.
+
+Deterministic checks cover record shape, provenance, realization, punctuation,
+uniqueness, and agreement with the frozen projection.  Passing candidates
+receive an independent automated diagnostic for plausibility, naturalness,
+unsupported constructions, world-knowledge dependence, and answer ambiguity.
+This diagnostic is not human validation.  For accepted item $i$ and KC $k$,
+\begin{equation}
+  Q_{ik}=\mathbb{I}[k\in\mathcal{K}(c_i)],
+\end{equation}
+where $\mathcal{K}(c_i)$ is the frozen projection of the item's cell.  Unknown
+identifiers, empty rows, and label--projection disagreements are fatal;
+density, row width, repeated columns, and low support remain reportable
+diagnostics rather than triggers for hidden repair.
+
+For example, the source descriptor for affirmative lexical yes/no questions
+maps to a cell with present tense, no aspect, active voice, positive polarity,
+a polar-question clause, and no modal.  The canonicalizer assigns that tuple a
+content-derived identifier; one generated item is ``Does the technician review
+the proposal?''; and the factorized projection activates finite-present and
+polar-question KCs.  The edge record retains the original descriptor
+throughout this chain.

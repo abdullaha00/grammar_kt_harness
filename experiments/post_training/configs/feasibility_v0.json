@@ -1,0 +1,22 @@
+{
+  "experiment_id": "POST_TRAINING_FEASIBILITY_v0",
+  "source_run": "runs/base",
+  "canonical_cells": "runs/base/canonical/canonical_cells.jsonl",
+  "fold_manifest": "modules/folds/reference_v0.json",
+  "kc_policy": "modules/kc/policies/factorized.json",
+  "item_bank_config": "modules/items/configs/fixed_bank_v0.json",
+  "item_template": "modules/items/families/controlled_transformation.txt",
+  "lexicon": "modules/realisation/lexicons/default.jsonl",
+  "simulation_parameters": "modules/simulation/configs/structural_oracle_v0.json",
+  "seed": 20260825,
+  "trajectory_records": 64,
+  "dialogue_records_per_error_dimension": 12,
+  "shortcut_evaluation_folds": 5,
+  "decision_criteria": {
+    "minimum_preference_pairs": 100,
+    "minimum_pairs_per_observed_error_dimension": 10,
+    "required_deterministic_pair_validity": 1.0,
+    "maximum_response_only_shortcut_accuracy": 0.65
+  },
+  "claim_boundary": "This is a deterministic feasibility study over a historical canonical inventory and current code. It is not human validation, a fresh end-to-end pipeline run, or evidence of learner benefit."
+}

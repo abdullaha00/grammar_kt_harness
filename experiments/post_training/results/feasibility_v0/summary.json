@@ -1,0 +1,138 @@
+{
+  "all_pairs_have_reverse_orientation": true,
+  "candidate_sentences_seen_in_both_roles": 49,
+  "counts": {
+    "dialogue": 48,
+    "preference": 132,
+    "sft": 644,
+    "trajectory": 64,
+    "verifier": 264
+  },
+  "decision_criteria": {
+    "deterministic_pair_validity": true,
+    "minimum_dimension_support": true,
+    "minimum_pair_count": true,
+    "response_only_shortcut_below_threshold": true
+  },
+  "deterministic_pair_validity_rate": 1.0,
+  "deterministic_valid_pairs": 132,
+  "dialogue_warning": "Dialogue responses are weak templates with no human pedagogical validation.",
+  "exact_command": ".venv/bin/python experiments/post_training/scripts/evaluate_feasibility.py",
+  "experiment_id": "POST_TRAINING_FEASIBILITY_v0",
+  "leakage_warning": "Train only on records whose complete provenance chain is development. A pair involving a held-out target or rejected cell is evaluation-only.",
+  "overall_feasibility_gate": true,
+  "preference_contexts": 49,
+  "preference_dimensions": {
+    "aspect": 60,
+    "clause": 12,
+    "polarity": 24,
+    "tense": 36
+  },
+  "preference_splits": {
+    "evaluation_compositional": 64,
+    "train_development": 68
+  },
+  "response_only_shortcut": {
+    "accuracy": 0.5,
+    "chance_accuracy": 0.5,
+    "folds": [
+      {
+        "accuracy": 0.5,
+        "fold": 1,
+        "test_candidates": 132,
+        "test_nuisance_groups": [
+          "NUISANCE_007"
+        ],
+        "train_nuisance_groups": [
+          "NUISANCE_001",
+          "NUISANCE_002",
+          "NUISANCE_003",
+          "NUISANCE_005",
+          "NUISANCE_006",
+          "NUISANCE_008",
+          "NUISANCE_013"
+        ]
+      },
+      {
+        "accuracy": 0.5,
+        "fold": 2,
+        "test_candidates": 48,
+        "test_nuisance_groups": [
+          "NUISANCE_008"
+        ],
+        "train_nuisance_groups": [
+          "NUISANCE_001",
+          "NUISANCE_002",
+          "NUISANCE_003",
+          "NUISANCE_005",
+          "NUISANCE_006",
+          "NUISANCE_007",
+          "NUISANCE_013"
+        ]
+      },
+      {
+        "accuracy": 0.5,
+        "fold": 3,
+        "test_candidates": 48,
+        "test_nuisance_groups": [
+          "NUISANCE_005"
+        ],
+        "train_nuisance_groups": [
+          "NUISANCE_001",
+          "NUISANCE_002",
+          "NUISANCE_003",
+          "NUISANCE_006",
+          "NUISANCE_007",
+          "NUISANCE_008",
+          "NUISANCE_013"
+        ]
+      },
+      {
+        "accuracy": 0.5,
+        "fold": 4,
+        "test_candidates": 20,
+        "test_nuisance_groups": [
+          "NUISANCE_001",
+          "NUISANCE_006"
+        ],
+        "train_nuisance_groups": [
+          "NUISANCE_002",
+          "NUISANCE_003",
+          "NUISANCE_005",
+          "NUISANCE_007",
+          "NUISANCE_008",
+          "NUISANCE_013"
+        ]
+      },
+      {
+        "accuracy": 0.5,
+        "fold": 5,
+        "test_candidates": 16,
+        "test_nuisance_groups": [
+          "NUISANCE_002",
+          "NUISANCE_003",
+          "NUISANCE_013"
+        ],
+        "train_nuisance_groups": [
+          "NUISANCE_001",
+          "NUISANCE_005",
+          "NUISANCE_006",
+          "NUISANCE_007",
+          "NUISANCE_008"
+        ]
+      }
+    ],
+    "interpretation": "High accuracy would reveal a context-free chosen/rejected surface shortcut; it is not a measure of LLM tutoring quality.",
+    "method": "response-only char(2,5) TF-IDF + logistic regression",
+    "split": "GroupKFold by complete realization nuisance signature"
+  },
+  "sft_tasks": {
+    "error_correction": 132,
+    "error_diagnosis": 132,
+    "exercise_solving": 58,
+    "grammar_controlled_generation": 58,
+    "grammar_judgement": 264
+  },
+  "trajectory_warning": "Trajectory actions came from shuffled simulator passes and have no optimal-action label; they are schema examples, not policy demonstrations.",
+  "unique_candidate_sentences": 49
+}

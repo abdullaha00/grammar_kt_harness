@@ -1,0 +1,41 @@
+\begin{table*}[t]
+  \centering
+  \small
+  \begin{tabularx}{\textwidth}{@{}
+    >{\raggedright\arraybackslash}p{.09\textwidth}
+    >{\raggedright\arraybackslash}p{.33\textwidth}
+    >{\raggedright\arraybackslash}X@{}}
+    \toprule
+    Dimension & Closed values & Interpretation and principal exclusions \\
+    \midrule
+    Tense & \texttt{present}, \texttt{past}, \texttt{NA}
+      & Morphological finite tense.  Future is not analysed as a tense;
+        \texttt{NA} is required when an imperative or central modal occupies
+        the relevant structural position. \\
+    Aspect & \texttt{none}, \texttt{progressive}, \texttt{perfect},
+      \texttt{perfect\_progressive}
+      & Grammatical aspect expressed by the auxiliary chain; lexical aspect
+        and habituality are excluded. \\
+    Voice & \texttt{active}, \texttt{passive}
+      & Canonical active/non-passive versus BE-passive voice; GET-passives and
+        middle constructions are excluded. \\
+    Polarity & \texttt{positive}, \texttt{negative}
+      & Clause-level polarity; lexical negation and negative concord are
+        excluded. \\
+    Clause & \texttt{declarative}, \texttt{polar\_question},
+      \texttt{subject\_wh\_question}, \texttt{non\_subject\_wh\_question},
+      \texttt{imperative}
+      & Supported matrix-clause types; question tags, embedded questions, and
+        indirect questions are excluded. \\
+    Modal & \texttt{none}, \texttt{can}, \texttt{could}, \texttt{may},
+      \texttt{might}, \texttt{must}, \texttt{shall}, \texttt{should},
+      \texttt{will}, \texttt{would}
+      & No central modal or one named central modal; semi-modals and
+        periphrastic modal expressions are excluded. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Closed domains of \grammarcell version 1.  A list or null can occur
+  during normalisation, but it is uncertainty metadata rather than an exact
+  canonical value.}
+  \label{tab:grammar-dimensions}
+\end{table*}

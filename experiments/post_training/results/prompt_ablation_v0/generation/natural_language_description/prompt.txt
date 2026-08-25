@@ -1,0 +1,364 @@
+Complete each independent controlled English generation case. Return exactly one sentence per case in the required JSON shape. Do not explain, number, quote, or add alternatives. Predicate frame IDs have their ordinary repository meanings: FRAME_WRITE means WRITE with object 'the report'; FRAME_LIKE means LIKE with object 'the new plan'; FRAME_COPULAR_READY means copular BE with complement 'ready'.
+
+[
+  {
+    "case_id": "GEN_001",
+    "request": "use present tense; use perfect aspect; use active voice; make it negative; make it a declarative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 3,
+        "text": "the technician"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_002",
+    "request": "use none aspect; use active voice; make it positive; make it a declarative; use the modal would",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 3,
+        "text": "the technician"
+      },
+      "predicate_frame_id": "FRAME_LIKE",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_003",
+    "request": "use past tense; use perfect progressive aspect; use active voice; make it positive; make it a declarative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "plural",
+        "person": 3,
+        "text": "the technicians"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_004",
+    "request": "use present tense; use none aspect; use passive voice; make it positive; make it a declarative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 3,
+        "text": "the report"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_005",
+    "request": "use present tense; use progressive aspect; use passive voice; make it positive; make it a declarative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 3,
+        "text": "the report"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_006",
+    "request": "use past tense; use perfect progressive aspect; use active voice; make it negative; make it a declarative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 3,
+        "text": "the technician"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_007",
+    "request": "use past tense; use perfect aspect; use active voice; make it negative; make it a declarative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 3,
+        "text": "the technician"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_008",
+    "request": "use present tense; use progressive aspect; use active voice; make it positive; make it a declarative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 1,
+        "text": "I"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_009",
+    "request": "use present tense; use none aspect; use active voice; make it positive; make it a polar question",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 1,
+        "text": "I"
+      },
+      "predicate_frame_id": "FRAME_COPULAR_READY",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_010",
+    "request": "use present tense; use perfect aspect; use active voice; make it positive; make it a declarative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 3,
+        "text": "the technician"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_011",
+    "request": "use present tense; use none aspect; use passive voice; make it negative; make it a declarative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 3,
+        "text": "the report"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_012",
+    "request": "use present tense; use none aspect; use active voice; make it negative; make it a declarative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 3,
+        "text": "the technician"
+      },
+      "predicate_frame_id": "FRAME_COPULAR_READY",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_013",
+    "request": "use past tense; use perfect aspect; use active voice; make it positive; make it a declarative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 3,
+        "text": "the technician"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_014",
+    "request": "use past tense; use none aspect; use passive voice; make it positive; make it a declarative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 3,
+        "text": "the report"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_015",
+    "request": "use past tense; use none aspect; use active voice; make it negative; make it a declarative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "plural",
+        "person": 3,
+        "text": "the technicians"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_016",
+    "request": "use past tense; use none aspect; use active voice; make it positive; make it a declarative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 1,
+        "text": "I"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_017",
+    "request": "use past tense; use none aspect; use active voice; make it positive; make it a polar question",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "plural",
+        "person": 3,
+        "text": "the technicians"
+      },
+      "predicate_frame_id": "FRAME_COPULAR_READY",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_018",
+    "request": "use present tense; use none aspect; use active voice; make it positive; make it a declarative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 1,
+        "text": "I"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_019",
+    "request": "use present tense; use perfect progressive aspect; use active voice; make it positive; make it a declarative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 3,
+        "text": "the technician"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_020",
+    "request": "use present tense; use progressive aspect; use active voice; make it negative; make it a declarative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 3,
+        "text": "the technician"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_021",
+    "request": "use past tense; use progressive aspect; use active voice; make it positive; make it a declarative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 3,
+        "text": "the technician"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_022",
+    "request": "use none aspect; use active voice; make it negative; make it a imperative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 2,
+        "text": "you"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": "lets_not",
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_023",
+    "request": "use past tense; use perfect aspect; use passive voice; make it positive; make it a declarative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 3,
+        "text": "the report"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": null,
+      "let_pronoun": null
+    }
+  },
+  {
+    "case_id": "GEN_024",
+    "request": "use none aspect; use active voice; make it positive; make it a imperative",
+    "fixed_lexical_conditions": {
+      "subject": {
+        "number": "singular",
+        "person": 2,
+        "text": "you"
+      },
+      "predicate_frame_id": "FRAME_WRITE",
+      "wh": null,
+      "imperative_subtype": "lets",
+      "let_pronoun": null
+    }
+  }
+]

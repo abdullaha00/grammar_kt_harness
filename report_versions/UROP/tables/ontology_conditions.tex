@@ -1,0 +1,42 @@
+\begin{table*}[t]
+  \centering
+  \small
+  \begin{tabularx}{\textwidth}{@{}
+    >{\raggedright\arraybackslash}p{.17\textwidth}
+    >{\raggedright\arraybackslash}p{.22\textwidth}
+    >{\raggedright\arraybackslash}p{.18\textwidth}
+    >{\raggedright\arraybackslash}X@{}}
+    \toprule
+    Condition & Construction & Information category & Held-out behaviour \\
+    \midrule
+    Selected structural
+      & Greedy/backward cover of declared candidates
+      & Inductive; development cells only
+      & Frozen rules may activate on new combinations. \\
+    Factorised--development-frozen
+      & Expert factor rules retained only with development item support
+      & Inductive; expert hypothesis family
+      & Supported reusable factors may transfer; unsupported factors are absent. \\
+    Full-cell--development-frozen
+      & One KC for each exact development cell
+      & Inductive exact-cell control
+      & Held-out cells have zero active KCs and remain in evaluation. \\
+    Predefined factorised
+      & Versioned expert rules for reusable marked factors
+      & Expert prior over the full domain
+      & Factor rules activate wherever their predicates match. \\
+    Factorised plus interactions
+      & Predefined factors plus named structural interactions
+      & Expert interaction prior
+      & Both reusable factors and matching interactions can activate. \\
+    Full-cell--all
+      & One KC for every exact cell in the inventory
+      & Transductive inventory control
+      & Every held-out cell is known as its own KC; no component reuse. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Ontology conditions and their prior-information categories.  The
+  transductive control is descriptive and must not be compared with inductive
+  methods as if it had the same information.}
+  \label{tab:ontology-conditions}
+\end{table*}

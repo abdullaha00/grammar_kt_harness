@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "results": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "case_id": {
+            "enum": [
+              "GEN_001",
+              "GEN_002",
+              "GEN_003",
+              "GEN_004",
+              "GEN_005",
+              "GEN_006",
+              "GEN_007",
+              "GEN_008",
+              "GEN_009",
+              "GEN_010",
+              "GEN_011",
+              "GEN_012",
+              "GEN_013",
+              "GEN_014",
+              "GEN_015",
+              "GEN_016",
+              "GEN_017",
+              "GEN_018",
+              "GEN_019",
+              "GEN_020",
+              "GEN_021",
+              "GEN_022",
+              "GEN_023",
+              "GEN_024"
+            ],
+            "type": "string"
+          },
+          "response": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "case_id",
+          "response"
+        ],
+        "type": "object"
+      },
+      "maxItems": 24,
+      "minItems": 24,
+      "type": "array"
+    }
+  },
+  "required": [
+    "results"
+  ],
+  "type": "object"
+}

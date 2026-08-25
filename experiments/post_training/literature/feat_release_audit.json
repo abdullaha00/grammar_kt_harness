@@ -1,0 +1,32 @@
+{
+  "audit": "FEAT DIRECT-G base, five-criteria released split overlap",
+  "exact_command": ".venv/bin/python experiments/post_training/scripts/audit_feat_release.py",
+  "feat_commit": "c598a7b6f52e5b3b22fa31fd5c40024d93f37e3f",
+  "files": {
+    "test": {
+      "sha256": "0f5c3e5e37d44e4b06618e6128a003ef666a66bed2427c577af56e51ee4930cb",
+      "url": "https://raw.githubusercontent.com/hyenee/FEAT/c598a7b6f52e5b3b22fa31fd5c40024d93f37e3f/datasets/DIRECT-G/base/test.criteria_5.json"
+    },
+    "train": {
+      "sha256": "ccd648c6b8e8af5bcd526483a96e746a676edbb1d7a7b45e1a6615d89be38ad6",
+      "url": "https://raw.githubusercontent.com/hyenee/FEAT/c598a7b6f52e5b3b22fa31fd5c40024d93f37e3f/datasets/DIRECT-G/base/train.criteria_5.json"
+    }
+  },
+  "interpretation": "This describes the released DIRECT-G internal split only. FEAT evaluates DIRECT-G augmentation on the independently human-ranked DIRECT-M test set, so this audit does not invalidate the paper's main DG-to-DM result. It does mean the released DIRECT-G split should not be used as evidence of held-out context generalization.",
+  "overlap": {
+    "test_contexts": 399,
+    "test_contexts_also_in_train": 397,
+    "test_data_ids": 268,
+    "test_data_ids_also_in_train": 268
+  },
+  "test": {
+    "records": 444,
+    "unique_data_id_reply_id": 399,
+    "unique_data_ids": 268
+  },
+  "train": {
+    "records": 3996,
+    "unique_data_id_reply_id": 1478,
+    "unique_data_ids": 370
+  }
+}

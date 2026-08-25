@@ -1,0 +1,5 @@
+extends: kc_interactions
+experiment: kc_interactions_seed_20260821
+
+simulation:
+  seed: 20260821

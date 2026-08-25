@@ -1,0 +1,5 @@
+extends: kc_full_cell
+experiment: kc_full_cell_seed_20260818
+
+simulation:
+  seed: 20260818

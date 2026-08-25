@@ -1,0 +1,115 @@
+{
+  "artifact_sha256": {
+    "dialogue.jsonl": "30da64e7538a9cf4c982acd530aa2e8ba4800857919147819d9d28aee946c44d",
+    "item_kc_projection.jsonl": "d1d0d174559b9082c273e8fd04e6f11bcda2d80f440ababb458dc476c890c193",
+    "items.jsonl": "39fa2bdb3863230fbb1b289fcf5c17c4ef7f4b1ad9ec0405170545de61728678",
+    "kc_inventory.jsonl": "5a8d93c32b876635077b9b5392e1c30526d56409a3dd689e05255a0536713fec",
+    "preference.jsonl": "6abc1066d90e2d9fae3970113050b323be18294e9f5699c2b39245ad176e2198",
+    "qmatrix_edges.jsonl": "361dc5607146d5deaa2e68c40f8f2f320906de71b1077f08ae2bee662d7b0413",
+    "sft.jsonl": "eba3e8ab5d8e3baf9e38745a033daf123be11afe7ae93ebb6bf3be0084870fdc",
+    "trajectory.jsonl": "99e8b2e8e049570a4a80adbc1e03664af450cccc40f5fff716ae815cffe13382",
+    "verifier.jsonl": "3f67fdda4399baab7dfaa3da36d13526ae4392c7d7854fbb3a9b6bae965e52ea"
+  },
+  "builder_version": "POST_TRAINING_RECORD_BUILDER_v0",
+  "claim_boundary": "This is a deterministic feasibility study over a historical canonical inventory and current code. It is not human validation, a fresh end-to-end pipeline run, or evidence of learner benefit.",
+  "counts": {
+    "canonical_cells": 24,
+    "dialogue": 48,
+    "items": 58,
+    "kcs": 9,
+    "preference": 132,
+    "qmatrix_edges": 123,
+    "sft": 644,
+    "trajectory": 64,
+    "verifier": 264
+  },
+  "exact_command": ".venv/bin/python experiments/post_training/scripts/build_records.py",
+  "experiment_id": "POST_TRAINING_FEASIBILITY_v0",
+  "git": {
+    "commit": "f8e810e478d32c782649f5fa575a124e842d465c",
+    "dirty": true
+  },
+  "implementation": {
+    "builder": {
+      "path": "experiments/post_training/scripts/build_records.py",
+      "sha256": "26a09ac32dfe0a47ee3e40423b15b8d64ed530e8001470163dd9b934237617cd"
+    },
+    "config": {
+      "path": "experiments/post_training/configs/feasibility_v0.json",
+      "sha256": "8261ecbd77c1862597b5024cbdd1c8a82785afbed83031d53db660502e013f78"
+    }
+  },
+  "inputs": {
+    "canonical_cells": {
+      "path": "runs/base/canonical/canonical_cells.jsonl",
+      "sha256": "21c76144710c5aba84a103de563648d76074e816f8b4edb98f3ab531efa9f648"
+    },
+    "fold_manifest": {
+      "path": "modules/folds/reference_v0.json",
+      "sha256": "69eeac94fe7b0dd8525458e2e423ebb25552db81ff468ac48c82ff351ecfb46e"
+    },
+    "item_bank_config": {
+      "path": "modules/items/configs/fixed_bank_v0.json",
+      "sha256": "b423d5b416d65a2630db95836d6d4083b267f714a4b96aec38322dddc06785e0"
+    },
+    "item_template": {
+      "path": "modules/items/families/controlled_transformation.txt",
+      "sha256": "3bb52e7e1c7ca74a0470ef27698fcfaf94e176bd1a34099085ca5ffb4e190095"
+    },
+    "kc_policy": {
+      "path": "modules/kc/policies/factorized.json",
+      "sha256": "12cd918e0f6e9430bbefbb3ff27c96eb873933053abc9c483fac99495cfddbd9"
+    },
+    "lexicon": {
+      "path": "modules/realisation/lexicons/default.jsonl",
+      "sha256": "7713f3b8b248ac5ec213a24a35c34659e6de3552b48266cca39233acd7e61d2c"
+    },
+    "simulation_parameters": {
+      "path": "modules/simulation/configs/structural_oracle_v0.json",
+      "sha256": "ae740f41a2716722aa631d4e3493f413d44d5f2283149512636210318465a29f"
+    }
+  },
+  "qmatrix_audit": {
+    "covered_items": 58,
+    "item_labels_baked_into_generation": false,
+    "items": 58,
+    "kcs": 9,
+    "one_entries": 123,
+    "projection_unit": "accepted_item_realization",
+    "scientific_diagnostics": {
+      "cell_scope_edges": 123,
+      "density": 0.235632,
+      "identical_q_columns": [],
+      "items_above_four_kcs": [],
+      "kc_item_support": {
+        "KC_ASPECT_PERFECT": 14,
+        "KC_ASPECT_PROGRESSIVE": 15,
+        "KC_BE_PASSIVE": 5,
+        "KC_FINITE_PAST": 28,
+        "KC_FINITE_PRESENT": 23,
+        "KC_IMPERATIVE": 6,
+        "KC_MODAL_WOULD": 1,
+        "KC_NEGATION": 19,
+        "KC_POLAR_QUESTION": 12
+      },
+      "low_support_kcs": {
+        "KC_MODAL_WOULD": 1
+      },
+      "low_support_threshold": 5,
+      "max_row_sum": 4,
+      "realisation_scope_edges": 0,
+      "row_sum_distribution": {
+        "1": 11,
+        "2": 32,
+        "3": 12,
+        "4": 3
+      },
+      "uncovered_item_ids": [],
+      "uncovered_items_by_canonical_split": {}
+    },
+    "status": "PASS",
+    "structural_errors": [],
+    "uncovered_items": 0
+  },
+  "seed": 20260825
+}

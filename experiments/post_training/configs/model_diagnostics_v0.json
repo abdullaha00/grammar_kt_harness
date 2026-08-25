@@ -1,0 +1,18 @@
+{
+  "experiment_id": "POST_TRAINING_MODEL_DIAGNOSTICS_v0",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "model_snapshot_pinned": false,
+  "decoding_parameters_pinned": false,
+  "generation_conditions": [
+    "natural_language_description",
+    "canonical_structure",
+    "canonical_plus_realization_constraints"
+  ],
+  "generation_cases": 24,
+  "preference_judge_pairs_per_dimension": 12,
+  "preference_order_sensitivity_pairs": 48,
+  "seed": 20260825,
+  "timeout_seconds": 900,
+  "claim_boundary": "One unpinned hosted instruction model is a diagnostic instrument, not a general model comparison. Batched cases are not statistically independent."
+}

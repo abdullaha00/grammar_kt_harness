@@ -1,0 +1,87 @@
+\section{Introduction}
+
+Knowledge tracing (KT) estimates a learner's changing knowledge from a
+chronological sequence of educational interactions
+\citep{corbett-anderson-1995,abdelrahman-etal-2023}.  Although KT models vary in
+their assumptions and architectures, their inputs normally associate each item
+with one or more skills or \emph{knowledge components} (KCs).  A binary
+Q-matrix makes this content model explicit: its $(i,k)$ entry records whether
+item $i$ exercises KC $k$.  This matrix is often treated as supplied data, but
+it already embodies a consequential hypothesis about the boundaries of
+knowledge.
+
+That hypothesis is especially difficult to specify for open-ended language
+tutoring.  The Teacher--Student Chatroom Corpus version 2 (TSCCv2), for
+example, contains 260 written English lessons, 41.4K conversational turns, and
+approximately 363K word tokens from two teachers and thirteen learners.  Its
+annotations include discourse sequences, response relations, pedagogical
+focus, and grammatical-error corrections \citep{caines-etal-2022-teacher}.
+These annotations make TSCCv2 a motivating future application for dialogue KT,
+but they do not turn every learner utterance into a predefined assessment item.
+A turn may contain explanation, scaffolding, elicitation, correction, or
+several grammatical phenomena at once.  Neither the assessment opportunity nor
+its KC decomposition is therefore given by the corpus.
+
+Dialogue-based KT makes this missing representation visible.  \citet{scarlatos-etal-2025-dialogue}
+use large language models (LLMs) to identify KCs and correctness at individual
+turns in mathematics tutoring dialogues before applying KT models, with expert
+annotations used to assess the automatic labels.  More recent work additionally
+models the difficulty of tutor-posed tasks \citep{huang-etal-2026-interpretable}.
+These studies operate in domains where an existing mathematical standard
+provides a comparatively explicit candidate skill space.  Grammar raises an
+earlier question: how should that space itself be constructed?
+
+Consider the erroneous form \emph{Why didn't he went?}.  A coarse analysis
+might assign one \emph{past-question} KC.  A factorised analysis might instead
+identify finite-past selection, DO-support, negation placement, and
+non-subject-WH formation.  An interaction-sensitive analysis might additionally
+represent the dependency between DO-support and inversion.  These alternatives
+share the same observed sentence but imply different learner states,
+opportunity counts, and Q-matrices.  No decomposition is neutral.
+
+Proficiency resources offer curriculum evidence but do not solve this problem
+directly.  The Common European Framework of Reference for Languages (CEFR)
+organises proficiency through broad functional scales \citep{coe-2020-cefr},
+whereas the English Grammar Profile (EGP) associates more detailed grammatical
+competence statements with CEFR levels \citep{okeeffe-mark-2017}.  An EGP
+descriptor may nevertheless leave a grammatical property unspecified, cover
+several alternatives, or instantiate the same structural configuration as a
+different descriptor.  Treating each descriptor as a KC would conflate source
+wording, curriculum evidence, grammatical structure, and a cognitive modelling
+hypothesis.
+
+\system separates these layers.  It first maps source descriptors into a
+closed canonical representation, then constructs concrete grammatical items
+without consulting a KC ontology.  Synthetic learner outcomes are generated
+from a separate, declared structural oracle.  Only after both the item bank and
+event stream have been fixed are candidate KCs selected or supplied, projected
+onto items, and evaluated.  This order addresses an important confound: if a KC
+policy determines which items exist or how responses are generated, predictive
+differences between policies cannot be attributed to representation alone.
+
+This report asks three questions:
+\begin{enumerate}
+  \item[RQ1] How reliably can EGP descriptors be normalised into a declared
+        canonical representation of English verbal morphosyntax?
+  \item[RQ2] Which candidate grammar distinctions are supported,
+        identifiable, and retained using development-only structural evidence?
+  \item[RQ3] How do frozen KC representations differ in Q-matrix coverage and
+        transfer to unseen grammatical combinations under identical synthetic
+        learner--item outcomes?
+\end{enumerate}
+
+The main contributions are: (i) a conservative six-dimensional
+\grammarcell representation with explicit uncertainty and source provenance;
+(ii) a fixed, split-independent controlled item bank; (iii) a development-only
+KC selection procedure that diagnoses nuisance sensitivity and observational
+equivalence; and (iv) an ontology-independent simulation and frozen-probe
+protocol for controlled representation comparison.  These are methodological
+and software contributions.  The study does not claim that the selected
+dimensions are cognitively atomic, that the synthetic learners approximate
+human acquisition, or that results transfer directly to conversational
+language learning.
+
+The remainder of the report reviews the relevant literature, formalises the
+task and pilot data, describes the implemented pipeline and evaluation design,
+states the present evidence boundary, and discusses the interpretation and
+limitations of the framework.
