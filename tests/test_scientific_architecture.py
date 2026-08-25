@@ -94,6 +94,11 @@ class GenerationAndValidationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "forbidden"):
             generators.load_generator_config(config)
 
+    def test_live_blind_evaluator_uses_a_distinct_model(self) -> None:
+        generator_backend = read_yaml("modules/generation/generators/backend.yaml")
+        evaluator_backend = read_yaml("modules/generation/validation/backend.yaml")
+        self.assertNotEqual(generator_backend["model"], evaluator_backend["model"])
+
     def test_hard_validator_catches_changed_cell_reference(self) -> None:
         opportunity, item, _ = paired_accepted_items()
         changed = copy.deepcopy(item)
