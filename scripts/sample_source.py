@@ -11,7 +11,7 @@ from pathlib import Path
 sys.path.remove(str(Path(__file__).resolve().parent))
 
 from grammar_kt.io import read_json
-from grammar_kt.source_sampling import execute_sampling
+from grammar_kt.grammar.sampling import execute_sampling
 
 
 def main() -> int:

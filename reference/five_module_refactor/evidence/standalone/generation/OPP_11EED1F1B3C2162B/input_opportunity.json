@@ -1,0 +1,29 @@
+{
+  "canonical_cell_id": "CELL_FIX_PAST_NEGATIVE",
+  "cell": {
+    "aspect": "none",
+    "clause": "declarative",
+    "modal": "none",
+    "polarity": "negative",
+    "tense": "past",
+    "voice": "active"
+  },
+  "coverage_reasons": [
+    "canonical_cell_baseline"
+  ],
+  "expected_operations": [
+    "do_support",
+    "negation"
+  ],
+  "measurement_opportunity_id": "OPP_11EED1F1B3C2162B",
+  "source_descriptor_ids": [
+    "FIXTURE_EGP"
+  ],
+  "structural_conditions": {
+    "imperative_subtype": null,
+    "predicate_class": "lexical_transitive",
+    "subject_number": "singular",
+    "subject_person": 3,
+    "wh_role": null
+  }
+}

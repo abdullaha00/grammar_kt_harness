@@ -1,0 +1,541 @@
+{
+  "A_operation_dependence": {
+    "cell": {
+      "aspect": "none",
+      "clause": "polar_question",
+      "modal": "none",
+      "polarity": "positive",
+      "tense": "present",
+      "voice": "active"
+    },
+    "copular": [
+      "operator_inversion"
+    ],
+    "lexical_transitive": [
+      "do_support",
+      "operator_inversion"
+    ]
+  },
+  "B_generator_invariance": {
+    "canonical_cell_id": "CELL_FIX_PAST_NEGATIVE",
+    "dialogue_item_id": "ITEM_9F6BD302F468198F",
+    "different_item_ids": true,
+    "expected_operations": [
+      "do_support",
+      "negation"
+    ],
+    "measurement_opportunity_id": "OPP_11EED1F1B3C2162B",
+    "same_opportunity": true,
+    "standalone_item_id": "ITEM_8F5F8890C12BE6D3"
+  },
+  "C_validation": {
+    "accepted_reports": {
+      "dialogue": {
+        "accepted_item_bank_sha256": "a208507eaa5487bc8f1a3848da6ab76bbd857d5ee2c7184d6ea8421911e29773",
+        "accepted_items": 1,
+        "accepted_opportunity_coverage": 1.0,
+        "candidate_items": 1,
+        "candidate_opportunity_coverage": 1.0,
+        "failure_types": {},
+        "grammar_cell_exact_match_rate": 1.0,
+        "operation_exact_match_rate": 1.0,
+        "quality_evaluator_reliability": {
+          "comparisons": [
+            {
+              "evaluations": 2,
+              "exactly_stable": true,
+              "item_id": "ITEM_9F6BD302F468198F",
+              "signatures": [
+                "5",
+                "5"
+              ]
+            }
+          ],
+          "exact_agreement_rate": 1.0,
+          "interpretation": "automated evaluator stability; not human inter-rater reliability",
+          "repeated_items": 1
+        },
+        "rejected_items": 0,
+        "status": "PASS",
+        "structural_evaluator_reliability": {
+          "comparisons": [
+            {
+              "evaluations": 2,
+              "exactly_stable": true,
+              "item_id": "ITEM_9F6BD302F468198F",
+              "signatures": [
+                "{\"aspect\": \"none\", \"clause\": \"declarative\", \"modal\": \"none\", \"polarity\": \"negative\", \"tense\": \"past\", \"voice\": \"active\"}",
+                "{\"aspect\": \"none\", \"clause\": \"declarative\", \"modal\": \"none\", \"polarity\": \"negative\", \"tense\": \"past\", \"voice\": \"active\"}"
+              ]
+            }
+          ],
+          "exact_agreement_rate": 1.0,
+          "interpretation": "automated evaluator stability; not human inter-rater reliability",
+          "repeated_items": 1
+        }
+      },
+      "standalone": {
+        "accepted_item_bank_sha256": "0752baefae64bf585010fb9b11cba6fd680bf9fa12fb726a4be9846103de42be",
+        "accepted_items": 1,
+        "accepted_opportunity_coverage": 1.0,
+        "candidate_items": 1,
+        "candidate_opportunity_coverage": 1.0,
+        "failure_types": {},
+        "grammar_cell_exact_match_rate": 1.0,
+        "operation_exact_match_rate": 1.0,
+        "quality_evaluator_reliability": {
+          "comparisons": [
+            {
+              "evaluations": 2,
+              "exactly_stable": true,
+              "item_id": "ITEM_8F5F8890C12BE6D3",
+              "signatures": [
+                "5",
+                "5"
+              ]
+            }
+          ],
+          "exact_agreement_rate": 1.0,
+          "interpretation": "automated evaluator stability; not human inter-rater reliability",
+          "repeated_items": 1
+        },
+        "rejected_items": 0,
+        "status": "PASS",
+        "structural_evaluator_reliability": {
+          "comparisons": [
+            {
+              "evaluations": 2,
+              "exactly_stable": true,
+              "item_id": "ITEM_8F5F8890C12BE6D3",
+              "signatures": [
+                "{\"aspect\": \"none\", \"clause\": \"declarative\", \"modal\": \"none\", \"polarity\": \"negative\", \"tense\": \"past\", \"voice\": \"active\"}",
+                "{\"aspect\": \"none\", \"clause\": \"declarative\", \"modal\": \"none\", \"polarity\": \"negative\", \"tense\": \"past\", \"voice\": \"active\"}"
+              ]
+            }
+          ],
+          "exact_agreement_rate": 1.0,
+          "interpretation": "automated evaluator stability; not human inter-rater reliability",
+          "repeated_items": 1
+        }
+      }
+    },
+    "rejected_example": {
+      "blindly_recovered": {
+        "agreement_site": "main_verb",
+        "cell": {
+          "aspect": "none",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "positive",
+          "tense": "past",
+          "voice": "active"
+        },
+        "operations": [],
+        "predicate_class": "lexical_transitive"
+      },
+      "intended": {
+        "cell": {
+          "aspect": "none",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "negative",
+          "tense": "past",
+          "voice": "active"
+        },
+        "operations": [
+          "do_support",
+          "negation"
+        ],
+        "predicate_class": "lexical_transitive"
+      },
+      "item_id": "ITEM_5D5A4A12AF1B1A44",
+      "reasons": [
+        "blind reconstruction cell_mismatch: intended={'tense': 'past', 'aspect': 'none', 'voice': 'active', 'polarity': 'negative', 'clause': 'declarative', 'modal': 'none'}, recovered={'aspect': 'none', 'clause': 'declarative', 'modal': 'none', 'polarity': 'positive', 'tense': 'past', 'voice': 'active'}",
+        "blind reconstruction operations_mismatch: intended=['do_support', 'negation'], recovered=[]",
+        "blind reconstruction agreement_site_mismatch: intended='do', recovered='main_verb'"
+      ],
+      "target_answer": "Yesterday, the technician wrote the report."
+    },
+    "rejected_report": {
+      "accepted_item_bank_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "accepted_items": 0,
+      "accepted_opportunity_coverage": 0.0,
+      "candidate_items": 1,
+      "candidate_opportunity_coverage": 1.0,
+      "failure_types": {
+        "agreement_site_mismatch": 1,
+        "cell_mismatch": 1,
+        "operations_mismatch": 1
+      },
+      "grammar_cell_exact_match_rate": 0.0,
+      "operation_exact_match_rate": 0.0,
+      "quality_evaluator_reliability": {
+        "comparisons": [
+          {
+            "evaluations": 2,
+            "exactly_stable": true,
+            "item_id": "ITEM_5D5A4A12AF1B1A44",
+            "signatures": [
+              "5",
+              "5"
+            ]
+          }
+        ],
+        "exact_agreement_rate": 1.0,
+        "interpretation": "automated evaluator stability; not human inter-rater reliability",
+        "repeated_items": 1
+      },
+      "rejected_items": 1,
+      "status": "PARTIAL",
+      "structural_evaluator_reliability": {
+        "comparisons": [
+          {
+            "evaluations": 2,
+            "exactly_stable": true,
+            "item_id": "ITEM_5D5A4A12AF1B1A44",
+            "signatures": [
+              "{\"aspect\": \"none\", \"clause\": \"declarative\", \"modal\": \"none\", \"polarity\": \"positive\", \"tense\": \"past\", \"voice\": \"active\"}",
+              "{\"aspect\": \"none\", \"clause\": \"declarative\", \"modal\": \"none\", \"polarity\": \"positive\", \"tense\": \"past\", \"voice\": \"active\"}"
+            ]
+          }
+        ],
+        "exact_agreement_rate": 1.0,
+        "interpretation": "automated evaluator stability; not human inter-rater reliability",
+        "repeated_items": 1
+      }
+    }
+  },
+  "D_simulation_invariance": {
+    "dialogue_events": [
+      {
+        "canonical_cell_id": "CELL_FIX_PAST_NEGATIVE",
+        "canonical_split": "development",
+        "correct": 0,
+        "dataset_split": "train",
+        "event_id": "EVENT_L0001_001",
+        "item_difficulty": 0.38323484,
+        "item_id": "ITEM_9F6BD302F468198F",
+        "learner_id": "L0001",
+        "measurement_opportunity_id": "OPP_11EED1F1B3C2162B",
+        "sequence_index": 1,
+        "timestamp": "2026-01-02T00:01:00+00:00"
+      },
+      {
+        "canonical_cell_id": "CELL_FIX_PAST_NEGATIVE",
+        "canonical_split": "development",
+        "correct": 1,
+        "dataset_split": "validation",
+        "event_id": "EVENT_L0001_002",
+        "item_difficulty": 0.38323484,
+        "item_id": "ITEM_9F6BD302F468198F",
+        "learner_id": "L0001",
+        "measurement_opportunity_id": "OPP_11EED1F1B3C2162B",
+        "sequence_index": 2,
+        "timestamp": "2026-01-02T00:02:00+00:00"
+      }
+    ],
+    "dialogue_opportunity_outcome_sha256": "3f7bcc8664d3837a8078fd9681b1b7160f563e0a5cae3ef9554a232c201a090e",
+    "identical": true,
+    "standalone_events": [
+      {
+        "canonical_cell_id": "CELL_FIX_PAST_NEGATIVE",
+        "canonical_split": "development",
+        "correct": 0,
+        "dataset_split": "train",
+        "event_id": "EVENT_L0001_001",
+        "item_difficulty": 0.38323484,
+        "item_id": "ITEM_8F5F8890C12BE6D3",
+        "learner_id": "L0001",
+        "measurement_opportunity_id": "OPP_11EED1F1B3C2162B",
+        "sequence_index": 1,
+        "timestamp": "2026-01-02T00:01:00+00:00"
+      },
+      {
+        "canonical_cell_id": "CELL_FIX_PAST_NEGATIVE",
+        "canonical_split": "development",
+        "correct": 1,
+        "dataset_split": "validation",
+        "event_id": "EVENT_L0001_002",
+        "item_difficulty": 0.38323484,
+        "item_id": "ITEM_8F5F8890C12BE6D3",
+        "learner_id": "L0001",
+        "measurement_opportunity_id": "OPP_11EED1F1B3C2162B",
+        "sequence_index": 2,
+        "timestamp": "2026-01-02T00:02:00+00:00"
+      }
+    ],
+    "standalone_opportunity_outcome_sha256": "3f7bcc8664d3837a8078fd9681b1b7160f563e0a5cae3ef9554a232c201a090e"
+  },
+  "E_KC_invariance": {
+    "item_projections": [
+      {
+        "canonical_cell_id": "CELL_FIX_PAST_NEGATIVE",
+        "canonical_split": "development",
+        "item_id": "ITEM_8F5F8890C12BE6D3",
+        "kc_ids": [
+          "KC_FINITE_PAST",
+          "KC_NEGATION"
+        ],
+        "measurement_opportunity_id": "OPP_11EED1F1B3C2162B"
+      },
+      {
+        "canonical_cell_id": "CELL_FIX_PAST_NEGATIVE",
+        "canonical_split": "development",
+        "item_id": "ITEM_9F6BD302F468198F",
+        "kc_ids": [
+          "KC_FINITE_PAST",
+          "KC_NEGATION"
+        ],
+        "measurement_opportunity_id": "OPP_11EED1F1B3C2162B"
+      }
+    ],
+    "qmatrix": {
+      "audit": {
+        "covered_items": 2,
+        "items": 2,
+        "kcs": 2,
+        "one_entries": 4,
+        "projection_unit": "accepted_item_via_measurement_opportunity",
+        "scientific_diagnostics": {
+          "density": 1.0,
+          "identical_q_columns": [
+            [
+              "KC_FINITE_PAST",
+              "KC_NEGATION"
+            ]
+          ],
+          "kc_item_support": {
+            "KC_FINITE_PAST": 2,
+            "KC_NEGATION": 2
+          },
+          "low_support_kcs": {
+            "KC_FINITE_PAST": 2,
+            "KC_NEGATION": 2
+          },
+          "low_support_threshold": 5,
+          "max_row_width": 2,
+          "row_width_distribution": {
+            "2": 2
+          },
+          "uncovered_item_ids": []
+        },
+        "status": "PASS",
+        "structural_errors": [],
+        "uncovered_items": 0
+      },
+      "columns": [
+        "KC_FINITE_PAST",
+        "KC_NEGATION"
+      ],
+      "edge_count": 4,
+      "rows": [
+        [
+          "ITEM_8F5F8890C12BE6D3",
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          "ITEM_9F6BD302F468198F",
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "same_kcs_across_formats": true,
+    "selection_policy_fingerprint": "FROZEN_E7030EEA0562E8CF"
+  },
+  "F_KT_sanity": {
+    "development_supported_kc_ids": [
+      "KC_COMPONENT"
+    ],
+    "frozen_state": {
+      "L_FIX": {
+        "attempts": 2,
+        "correct": 2,
+        "kc_attempts": {
+          "KC_COMPONENT": 2
+        },
+        "kc_correct": {
+          "KC_COMPONENT": 2
+        }
+      }
+    },
+    "predictions": [
+      0.75,
+      0.75
+    ],
+    "probe_order_invariant_frozen_counts": true,
+    "probe_updates_state": false,
+    "targets": [
+      1,
+      1
+    ],
+    "zero_kc_fallback": [
+      0.75,
+      0.75
+    ]
+  },
+  "experiment_id": "FIVE_MODULE_REFACTOR_CHECKS_v1",
+  "representative_examples": {
+    "dialogue": {
+      "canonical_cell_id": "CELL_FIX_PAST_NEGATIVE",
+      "content": {
+        "learner_prompt": "B: No, ...",
+        "turns": [
+          {
+            "speaker": "A",
+            "text": "Did Maya finish her homework yesterday?"
+          }
+        ]
+      },
+      "evidence_directory": "/home/abdullah/grammar_kt_harness/reference/five_module_refactor/evidence/dialogue/generation/OPP_11EED1F1B3C2162B",
+      "generator_id": "llm_dialogue_v0",
+      "item_family": "dialogue_completion",
+      "item_id": "ITEM_9F6BD302F468198F",
+      "measurement_opportunity_id": "OPP_11EED1F1B3C2162B",
+      "quality_diagnostics": {
+        "answer_ambiguity": false,
+        "context_appropriateness": 5,
+        "dialogue_coherence": 5,
+        "lexical_cefr_appropriate": true,
+        "natural_speaker_turns": 5,
+        "naturalness": 5,
+        "note": "deterministic fixture diagnostic",
+        "pedagogical_suitability": 5,
+        "pragmatic_licensing": 5,
+        "world_knowledge_required": false
+      },
+      "target_answer": "No, she did not finish her homework.",
+      "validated_structure": {
+        "agreement_site": "do",
+        "cell": {
+          "aspect": "none",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "negative",
+          "tense": "past",
+          "voice": "active"
+        },
+        "operations": [
+          "do_support",
+          "negation"
+        ],
+        "predicate_class": "lexical_transitive"
+      }
+    },
+    "measurement_opportunity": {
+      "canonical_cell_id": "CELL_FIX_PAST_NEGATIVE",
+      "cell": {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "negative",
+        "tense": "past",
+        "voice": "active"
+      },
+      "coverage_reasons": [
+        "canonical_cell_baseline"
+      ],
+      "expected_operations": [
+        "do_support",
+        "negation"
+      ],
+      "measurement_opportunity_id": "OPP_11EED1F1B3C2162B",
+      "source_descriptor_ids": [
+        "FIXTURE_EGP"
+      ],
+      "structural_conditions": {
+        "imperative_subtype": null,
+        "predicate_class": "lexical_transitive",
+        "subject_number": "singular",
+        "subject_person": 3,
+        "wh_role": null
+      }
+    },
+    "rejected": {
+      "item_id": "ITEM_5D5A4A12AF1B1A44",
+      "reasons": [
+        "blind reconstruction cell_mismatch: intended={'tense': 'past', 'aspect': 'none', 'voice': 'active', 'polarity': 'negative', 'clause': 'declarative', 'modal': 'none'}, recovered={'aspect': 'none', 'clause': 'declarative', 'modal': 'none', 'polarity': 'positive', 'tense': 'past', 'voice': 'active'}",
+        "blind reconstruction operations_mismatch: intended=['do_support', 'negation'], recovered=[]",
+        "blind reconstruction agreement_site_mismatch: intended='do', recovered='main_verb'"
+      ],
+      "target_answer": "Yesterday, the technician wrote the report.",
+      "validated_structure": {
+        "agreement_site": "main_verb",
+        "cell": {
+          "aspect": "none",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "positive",
+          "tense": "past",
+          "voice": "active"
+        },
+        "operations": [],
+        "predicate_class": "lexical_transitive"
+      }
+    },
+    "standalone": {
+      "canonical_cell_id": "CELL_FIX_PAST_NEGATIVE",
+      "content": {
+        "prompt": "Complete the sentence: Yesterday, the technician ___ the report. (not/write)"
+      },
+      "evidence_directory": "/home/abdullah/grammar_kt_harness/reference/five_module_refactor/evidence/standalone/generation/OPP_11EED1F1B3C2162B",
+      "generator_id": "llm_standalone_v0",
+      "item_family": "standalone_completion",
+      "item_id": "ITEM_8F5F8890C12BE6D3",
+      "measurement_opportunity_id": "OPP_11EED1F1B3C2162B",
+      "quality_diagnostics": {
+        "answer_ambiguity": false,
+        "context_appropriateness": 5,
+        "dialogue_coherence": 5,
+        "lexical_cefr_appropriate": true,
+        "natural_speaker_turns": 5,
+        "naturalness": 5,
+        "note": "deterministic fixture diagnostic",
+        "pedagogical_suitability": 5,
+        "pragmatic_licensing": 5,
+        "world_knowledge_required": false
+      },
+      "target_answer": "Yesterday, the technician did not write the report.",
+      "validated_structure": {
+        "agreement_site": "do",
+        "cell": {
+          "aspect": "none",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "negative",
+          "tense": "past",
+          "voice": "active"
+        },
+        "operations": [
+          "do_support",
+          "negation"
+        ],
+        "predicate_class": "lexical_transitive"
+      }
+    }
+  },
+  "reproducibility": {
+    "accepted_counts": {
+      "dialogue": 1,
+      "standalone": 1
+    },
+    "generator_ids": {
+      "dialogue": "llm_dialogue_v0",
+      "standalone": "llm_standalone_v0"
+    },
+    "kc_policy_fingerprint": "FROZEN_12A16AF175A51F89",
+    "opportunity_bank_sha256": "a864a0979bce41b94f18cbd1622e47381515573921969b451b5759434c82927c",
+    "rejected_count": 1,
+    "seed": 77,
+    "selected_policy_fingerprint": "FROZEN_E7030EEA0562E8CF",
+    "simulation_fingerprints": {
+      "dialogue": "3f7bcc8664d3837a8078fd9681b1b7160f563e0a5cae3ef9554a232c201a090e",
+      "standalone": "3f7bcc8664d3837a8078fd9681b1b7160f563e0a5cae3ef9554a232c201a090e"
+    }
+  }
+}

@@ -1,18 +1,36 @@
 # Research map
 
-The harness treats representation choices as experimental inputs while keeping the stage sequence fixed.
+The active system is organised around five questions rather than historical implementation stages.
 
-| Paper question | Main editable modules | Primary run evidence |
+| Scientific module | Question | Code | Method resources | Primary artifacts |
+|---|---|---|---|---|
+| Grammar Representation | What grammatical structures exist? | `grammar/source.py`, `normalisation.py`, `canonical.py` | `modules/grammar/` | source subset, raw/repeated mappings, canonical cells, source edges |
+| Measurement | Under which structural conditions are they elicited? | `measurement/operations.py`, `opportunities.py` | `modules/measurement/opportunities/` | MeasurementOpportunities, operation derivations, opportunity fingerprint |
+| Dataset Generation | How are opportunities presented naturally? | `generation/generators.py`, `items.py`, `validation.py` | `modules/generation/` | prompts/raw outputs, candidate/accepted/rejected items, reconstruction and quality reports |
+| Knowledge Representation | Which KCs encode knowledge over opportunities? | `knowledge/candidates.py`, `selection.py`, `policy.py`, `qmatrix.py` | `modules/knowledge/` | candidates, activation vectors, selection trace, frozen policy, projections, Q-matrix |
+| Evaluation | Does the representation transfer and predict? | `evaluation/simulation.py`, `kt.py` | `modules/evaluation/` | opportunity-keyed events, oracle evidence, frozen probes, predictions and metrics |
+
+## Scientific invariants
+
+- Normalisation and Canonical are distinct transformations.
+- `operations = f(GrammarCell, structural_conditions)`.
+- Opportunity identity excludes surface wording, generator, KC policy, folds, and outcomes.
+- Generator inputs exclude KC/fold information; target grammar is fixed first.
+- Blind reconstruction never sees the intended target.
+- KC selection uses development cells/opportunities, not generated sentences.
+- The policy is frozen before holdout evaluation.
+- Q-matrix construction does not re-evaluate policy rules.
+- Simulation uses opportunity identity and never evaluated KCs.
+- KT probes read frozen development state and cannot update it.
+
+## Review surfaces
+
+| Surface | Purpose | Correctness boundary |
 |---|---|---|
-| RQ1 Normalisation reliability | `modules/normalisation/`, annotation-unit repeats | `normalisation/reliability.json`, `repeated_comparisons.jsonl` |
-| RQ2 Canonical adequacy | `modules/canonical/grammar_schema.yaml` | `canonical/audit.json`, cells and source edges |
-| RQ3 KC identifiability | candidate family, fold, lexicon | `kc_selection/diagnostics.jsonl`, equivalence classes |
-| RQ4 KC granularity | candidate family, obligation policy, selector config | selection trace and frozen policy |
-| RQ5 Representation level | cell and operation candidates, admissible realisations | activation/scope diagnostics and item projection |
-| RQ6 Compositionality | fold, oracle, frozen-probe protocol, KC condition | compositional KT coverage and metrics |
-| RQ7 Interaction necessity | declared interaction candidates and policy condition | paired fixed-probe comparisons |
-| RQ8 Robustness | sample design, repeats, folds, seeds and future oracle worlds | cross-run comparisons and reuse metadata |
+| `notebooks/module_unit_examples.ipynb` | Compact executable tour and paired-format invariant | Orientation and smoke testing |
+| `notebooks/research_audit.ipynb` | Manual audit of assumptions, contracts, leakage, failures, and metrics | Researcher judgement; never auto-certifies methodology |
+| `tests/` | Exhaustive software and scientific-boundary regression | Detects implementation drift; does not replace linguistic validation |
 
-The reference condition uses `REFERENCE_FOLD_v0`, `STRUCTURAL_CANDIDATES_v0`, `MARKED_OPERATIONAL_v0`, and `STRUCTURAL_ORACLE_v0`. Changing any of those is a named scientific intervention, not an implementation tweak.
+## Named interventions
 
-Component-specific guides are in [`docs/modules/`](modules/).
+The fold, measurement policy, generator config, candidate family, obligation policy, KC selector, oracle, and KT model configuration are explicit research inputs. Changing one is a named experimental intervention, not a hidden implementation tweak.

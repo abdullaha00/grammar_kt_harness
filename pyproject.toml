@@ -16,3 +16,7 @@ dependencies = [
 [tool.setuptools.packages.find]
 where = ["src"]
 include = ["grammar_kt*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = ["archived_code", ".git", ".venv"]

@@ -1,6 +1,6 @@
 extends: base
 experiment: kc_full_cell
 
-kc_selection:
+knowledge_selection:
   mode: predefined
-  policy: modules/kc/policies/full_cell.json
+  policy: modules/knowledge/policies/full_cell.json

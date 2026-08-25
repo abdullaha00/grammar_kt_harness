@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "Yesterday, the technician wrote the report."
+  ],
+  "content": {
+    "prompt": "Complete the sentence."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "Yesterday, the technician wrote the report."
+}

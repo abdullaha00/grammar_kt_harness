@@ -14,5 +14,5 @@ python scripts/run.py base
 
 Alternatively set `GRAMMAR_KT_DATA_ROOT` to a directory containing
 `egp_entries.jsonl`, or place it at `data/external/egp_entries.jsonl`. The
-frozen 139-descriptor pilot IDs remain under `modules/source/`; the executable
+frozen 139-descriptor pilot IDs remain under `modules/grammar/source/`; the executable
 sampling utility is `scripts/sample_source.py` and does not define MAIN quotas.

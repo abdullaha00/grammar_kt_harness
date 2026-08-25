@@ -1,0 +1,87 @@
+{
+  "item": {
+    "accepted_answers": [
+      "Yesterday, the technician wrote the report."
+    ],
+    "canonical_cell_id": "CELL_FIX_PAST_NEGATIVE",
+    "content": {
+      "prompt": "Complete the sentence."
+    },
+    "generation_metadata": {
+      "attempt": 1,
+      "attempt_history": [
+        {
+          "accepted": true,
+          "attempt": 1,
+          "rejection_reasons": []
+        }
+      ],
+      "backend": {
+        "kind": "fixture_file",
+        "model": null
+      },
+      "evidence_directory": "/home/abdullah/grammar_kt_harness/reference/five_module_refactor/evidence/rejected/generation/OPP_11EED1F1B3C2162B",
+      "generator_config": {
+        "constraints": {
+          "lexical_level": "A2",
+          "register": "neutral",
+          "response_type": "sentence_completion"
+        },
+        "generator_id": "llm_standalone_v0",
+        "mode": "llm_standalone"
+      },
+      "input_opportunity": {
+        "canonical_cell_id": "CELL_FIX_PAST_NEGATIVE",
+        "cell": {
+          "aspect": "none",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "negative",
+          "tense": "past",
+          "voice": "active"
+        },
+        "coverage_reasons": [
+          "canonical_cell_baseline"
+        ],
+        "expected_operations": [
+          "do_support",
+          "negation"
+        ],
+        "measurement_opportunity_id": "OPP_11EED1F1B3C2162B",
+        "source_descriptor_ids": [
+          "FIXTURE_EGP"
+        ],
+        "structural_conditions": {
+          "imperative_subtype": null,
+          "predicate_class": "lexical_transitive",
+          "subject_number": "singular",
+          "subject_person": 3,
+          "wh_role": null
+        }
+      },
+      "parsed_output": {
+        "accepted_answers": [
+          "Yesterday, the technician wrote the report."
+        ],
+        "content": {
+          "prompt": "Complete the sentence."
+        },
+        "target_answer": "Yesterday, the technician wrote the report."
+      },
+      "raw_output": "{\n  \"accepted_answers\": [\n    \"Yesterday, the technician wrote the report.\"\n  ],\n  \"content\": {\n    \"prompt\": \"Complete the sentence.\"\n  },\n  \"target_answer\": \"Yesterday, the technician wrote the report.\"\n}\n",
+      "rendered_prompt": "Create one natural standalone English completion item for the fixed structural target below.\n\nThe target grammar has already been chosen. Do not reinterpret it, weaken it, or select a different target. You may choose ordinary lexical content, names, and surface wording. Keep lexical difficulty simple (A2 where feasible), avoid specialist world knowledge, and make the intended answer unambiguous.\n\nFixed MeasurementOpportunity:\n{\n  \"canonical_cell_id\": \"CELL_FIX_PAST_NEGATIVE\",\n  \"cell\": {\n    \"aspect\": \"none\",\n    \"clause\": \"declarative\",\n    \"modal\": \"none\",\n    \"polarity\": \"negative\",\n    \"tense\": \"past\",\n    \"voice\": \"active\"\n  },\n  \"expected_operations\": [\n    \"do_support\",\n    \"negation\"\n  ],\n  \"structural_conditions\": {\n    \"imperative_subtype\": null,\n    \"predicate_class\": \"lexical_transitive\",\n    \"subject_number\": \"singular\",\n    \"subject_person\": 3,\n    \"wh_role\": null\n  }\n}\n\nGeneration constraints:\n{\n  \"lexical_level\": \"A2\",\n  \"register\": \"neutral\",\n  \"response_type\": \"sentence_completion\"\n}\n\nReturn only the JSON object required by the output schema. The content object must contain exactly a learner-facing prompt. The target answer must instantiate every declared cell value, structural condition, and expected operation.\n"
+    },
+    "generator_id": "llm_standalone_v0",
+    "item_family": "standalone_completion",
+    "item_id": "ITEM_5D5A4A12AF1B1A44",
+    "measurement_opportunity_id": "OPP_11EED1F1B3C2162B",
+    "quality_diagnostics": {},
+    "source_descriptor_ids": [
+      "FIXTURE_EGP"
+    ],
+    "target_answer": "Yesterday, the technician wrote the report.",
+    "validated_structure": {},
+    "validation_metadata": {}
+  },
+  "status": "candidate"
+}

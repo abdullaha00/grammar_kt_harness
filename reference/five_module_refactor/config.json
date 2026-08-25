@@ -1,0 +1,17 @@
+{
+  "experiment_id": "FIVE_MODULE_REFACTOR_CHECKS_v1",
+  "generators": {
+    "dialogue": "modules/generation/generators/llm_dialogue_fixture_v0.yaml",
+    "standalone": "modules/generation/generators/llm_standalone_fixture_v0.yaml"
+  },
+  "kc_policy": "modules/knowledge/policies/factorized.json",
+  "kc_selection": "modules/knowledge/selection/configs/deterministic_v0.json",
+  "kt": "modules/evaluation/kt/configs/default.json",
+  "measurement": {
+    "include_agreement_variants": false,
+    "include_predicate_class_contrasts": false
+  },
+  "seed": 77,
+  "simulation": "modules/evaluation/simulation/configs/structural_oracle_v0.json",
+  "validation": "modules/generation/validation/blind_fixture_v0.yaml"
+}

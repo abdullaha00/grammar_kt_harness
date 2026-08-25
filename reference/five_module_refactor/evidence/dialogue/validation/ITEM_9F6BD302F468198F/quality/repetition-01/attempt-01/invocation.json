@@ -1,0 +1,25 @@
+{
+  "backend": "fixture_file",
+  "command": [
+    "fixture_file",
+    "/home/abdullah/grammar_kt_harness/reference/five_module_refactor/evidence/dialogue/validation/ITEM_9F6BD302F468198F/quality/repetition-01/quality_fixture_response.json"
+  ],
+  "decoding_parameters_pinned": false,
+  "execution_isolation": {
+    "approval_policy": null,
+    "ephemeral": true,
+    "ignore_user_config": true,
+    "sandbox": null
+  },
+  "finished_utc": "2026-08-25T20:05:40.262238+00:00",
+  "instructions": "/home/abdullah/grammar_kt_harness/modules/generation/validation/evaluator_instructions.md",
+  "model": null,
+  "model_snapshot_pinned": false,
+  "output_schema": "/home/abdullah/grammar_kt_harness/modules/generation/validation/quality_schema.json",
+  "reasoning_effort": null,
+  "reasoning_options": {},
+  "returncode": 0,
+  "started_utc": "2026-08-25T20:05:40.262238+00:00",
+  "timed_out": false,
+  "timeout_seconds": null
+}

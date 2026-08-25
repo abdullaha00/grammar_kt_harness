@@ -1,0 +1,99 @@
+{
+  "item": {
+    "accepted_answers": [
+      "No, she did not finish her homework."
+    ],
+    "canonical_cell_id": "CELL_FIX_PAST_NEGATIVE",
+    "content": {
+      "learner_prompt": "B: No, ...",
+      "turns": [
+        {
+          "speaker": "A",
+          "text": "Did Maya finish her homework yesterday?"
+        }
+      ]
+    },
+    "generation_metadata": {
+      "attempt": 1,
+      "attempt_history": [
+        {
+          "accepted": true,
+          "attempt": 1,
+          "rejection_reasons": []
+        }
+      ],
+      "backend": {
+        "kind": "fixture_file",
+        "model": null
+      },
+      "evidence_directory": "/home/abdullah/grammar_kt_harness/reference/five_module_refactor/evidence/dialogue/generation/OPP_11EED1F1B3C2162B",
+      "generator_config": {
+        "constraints": {
+          "context_turns": 1,
+          "dialogue_act": "response",
+          "lexical_level": "A2"
+        },
+        "generator_id": "llm_dialogue_v0",
+        "mode": "llm_dialogue"
+      },
+      "input_opportunity": {
+        "canonical_cell_id": "CELL_FIX_PAST_NEGATIVE",
+        "cell": {
+          "aspect": "none",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "negative",
+          "tense": "past",
+          "voice": "active"
+        },
+        "coverage_reasons": [
+          "canonical_cell_baseline"
+        ],
+        "expected_operations": [
+          "do_support",
+          "negation"
+        ],
+        "measurement_opportunity_id": "OPP_11EED1F1B3C2162B",
+        "source_descriptor_ids": [
+          "FIXTURE_EGP"
+        ],
+        "structural_conditions": {
+          "imperative_subtype": null,
+          "predicate_class": "lexical_transitive",
+          "subject_number": "singular",
+          "subject_person": 3,
+          "wh_role": null
+        }
+      },
+      "parsed_output": {
+        "accepted_answers": [
+          "No, she did not finish her homework."
+        ],
+        "content": {
+          "learner_prompt": "B: No, ...",
+          "turns": [
+            {
+              "speaker": "A",
+              "text": "Did Maya finish her homework yesterday?"
+            }
+          ]
+        },
+        "target_answer": "No, she did not finish her homework."
+      },
+      "raw_output": "{\n  \"accepted_answers\": [\n    \"No, she did not finish her homework.\"\n  ],\n  \"content\": {\n    \"learner_prompt\": \"B: No, ...\",\n    \"turns\": [\n      {\n        \"speaker\": \"A\",\n        \"text\": \"Did Maya finish her homework yesterday?\"\n      }\n    ]\n  },\n  \"target_answer\": \"No, she did not finish her homework.\"\n}\n",
+      "rendered_prompt": "Create one short, natural English dialogue-completion item for the fixed structural target below.\n\nThe learner target grammar has already been chosen. Do not reinterpret it, weaken it, or select a different target. Context turns may establish a natural conversational situation, but the learner answer itself must instantiate the same fixed MeasurementOpportunity. Use simple lexical content, avoid specialist world knowledge, and make the response pragmatically licensed and unambiguous.\n\nFixed MeasurementOpportunity:\n{\n  \"canonical_cell_id\": \"CELL_FIX_PAST_NEGATIVE\",\n  \"cell\": {\n    \"aspect\": \"none\",\n    \"clause\": \"declarative\",\n    \"modal\": \"none\",\n    \"polarity\": \"negative\",\n    \"tense\": \"past\",\n    \"voice\": \"active\"\n  },\n  \"expected_operations\": [\n    \"do_support\",\n    \"negation\"\n  ],\n  \"structural_conditions\": {\n    \"imperative_subtype\": null,\n    \"predicate_class\": \"lexical_transitive\",\n    \"subject_number\": \"singular\",\n    \"subject_person\": 3,\n    \"wh_role\": null\n  }\n}\n\nGeneration constraints:\n{\n  \"context_turns\": 1,\n  \"dialogue_act\": \"response\",\n  \"lexical_level\": \"A2\"\n}\n\nReturn only the JSON object required by the output schema. The content object must contain context turns and a learner prompt. Do not place the answer in the context turns.\n"
+    },
+    "generator_id": "llm_dialogue_v0",
+    "item_family": "dialogue_completion",
+    "item_id": "ITEM_9F6BD302F468198F",
+    "measurement_opportunity_id": "OPP_11EED1F1B3C2162B",
+    "quality_diagnostics": {},
+    "source_descriptor_ids": [
+      "FIXTURE_EGP"
+    ],
+    "target_answer": "No, she did not finish her homework.",
+    "validated_structure": {},
+    "validation_metadata": {}
+  },
+  "status": "candidate"
+}

@@ -1,0 +1,10 @@
+generator_id: llm_standalone_v0
+mode: llm_standalone
+prompt: modules/generation/prompts/llm_standalone_v0.txt
+instructions: modules/generation/prompts/generator_instructions.md
+output_schema: modules/generation/generators/standalone_output_schema.json
+backend_config:
+  kind: fixture_map
+  response_file: modules/generation/fixtures/standalone_response.json
+max_attempts: 1
+constraints: {lexical_level: A2, response_type: sentence_completion, register: neutral}

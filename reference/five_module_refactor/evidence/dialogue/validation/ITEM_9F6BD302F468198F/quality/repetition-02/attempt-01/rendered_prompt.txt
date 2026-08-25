@@ -1,0 +1,21 @@
+Assess item quality independently of grammatical target correctness.
+
+Use only the visible generated exercise and learner response. Report naturalness, ambiguity, pedagogical suitability, world-knowledge dependence, lexical suitability, and (when applicable) dialogue quality. Dialogue-only fields must be null for standalone items. Return only schema-valid JSON.
+
+Generated exercise and response:
+{
+  "accepted_surface_variants": [
+    "No, she did not finish her homework."
+  ],
+  "content": {
+    "learner_prompt": "B: No, ...",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Did Maya finish her homework yesterday?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "No, she did not finish her homework."
+}

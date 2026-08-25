@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "No, she did not finish her homework."
+  ],
+  "content": {
+    "learner_prompt": "B: No, ...",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Did Maya finish her homework yesterday?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "No, she did not finish her homework."
+}

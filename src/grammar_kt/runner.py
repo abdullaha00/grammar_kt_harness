@@ -6,26 +6,31 @@ import shutil
 import subprocess
 import hashlib
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
 import yaml
 
-from . import canonical, items, kc, kc_selection, kt, normalisation, qmatrix, realisation, simulation, source
 from .config import load_experiment
+from .evaluation import kt, simulation
+from .generation import generators
+from .grammar import canonical, normalisation, source
 from .io import ROOT, repo_path, sha256_file, utc_now, write_json
+from .knowledge import policy, qmatrix, selection
+from .measurement import opportunities
 
 
 PIPELINE = [
     ("source", source.run),
     ("normalisation", normalisation.run),
     ("canonical", canonical.run),
-    ("realisation", realisation.run),
-    ("items", items.run),
-    ("simulation", simulation.run),
-    ("kc_selection", kc_selection.run),
-    ("kc", kc.run),
+    ("measurement", opportunities.run),
+    ("generation", generators.run),
+    ("knowledge_selection", selection.run),
+    ("knowledge", policy.run),
     ("qmatrix", qmatrix.run),
+    ("simulation", simulation.run),
     ("kt", kt.run),
 ]
 STAGE_NAMES = [name for name, _run_stage in PIPELINE]
@@ -34,17 +39,19 @@ STAGE_NAMES = [name for name, _run_stage in PIPELINE]
 # than experiment keys. Keeping this short list here makes reuse checks auditable.
 STAGE_MODULE_INPUTS = {
     "normalisation": [
-        "modules/canonical/grammar_schema.yaml",
-        "modules/normalisation/prompts/wrapper.txt",
-        "modules/normalisation/rules/rulebook.md",
-        "modules/normalisation/rules/model_instructions.md",
-        "modules/normalisation/configs/mapping_schema.json",
+        "modules/grammar/canonical/grammar_schema.yaml",
+        "modules/grammar/normalisation/prompts/wrapper.txt",
+        "modules/grammar/normalisation/rules/rulebook.md",
+        "modules/grammar/normalisation/rules/model_instructions.md",
+        "modules/grammar/normalisation/configs/mapping_schema.json",
     ],
-    "canonical": ["modules/canonical/grammar_schema.yaml"],
-    "items": [
-        "modules/items/validation/diagnostic_prompt.txt",
-        "modules/items/validation/diagnostic_instructions.md",
-        "modules/items/validation/diagnostic_schema.json",
+    "canonical": ["modules/grammar/canonical/grammar_schema.yaml"],
+    "measurement": ["modules/measurement/opportunities/default.json"],
+    "generation": [
+        "modules/generation/validation/structural_prompt.txt",
+        "modules/generation/validation/quality_prompt.txt",
+        "modules/generation/validation/structural_schema.json",
+        "modules/generation/validation/quality_schema.json",
     ],
 }
 
@@ -186,8 +193,10 @@ def run_experiment(name: str, *, from_stage: str | None = None, force: bool = Fa
         "git_commit": commit,
         "git_dirty": dirty,
         "timestamp": utc_now(),
+        "command": [sys.executable, *sys.argv],
         "seed": settings.get("simulation", {}).get("seed"),
         "source_sha256": settings.get("source", {}).get("sha256"),
+        "generator": settings.get("generation", {}).get("generator"),
         "from_stage": from_stage,
         "reused_from": None,
         "stage_input_signatures": stage_input_signatures(settings),

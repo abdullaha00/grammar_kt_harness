@@ -11,46 +11,37 @@ source:
   sha256: e38c4f959f188150dae7b88f21e35d77828048772e222191818dc0c2488486cd
   records: 1222
   selected_descriptors: 139
-  sample_ids: modules/source/sample_ids.txt
-  sample_metadata: modules/source/sample_metadata.jsonl
-  annotation_units: modules/source/annotation_units.jsonl
+  sample_ids: modules/grammar/source/sample_ids.txt
+  sample_metadata: modules/grammar/source/sample_metadata.jsonl
+  annotation_units: modules/grammar/source/annotation_units.jsonl
 
 normalisation:
-  phase1_prompt: modules/normalisation/prompts/phase1.txt
-  phase2_prompt: modules/normalisation/prompts/phase2.txt
-  backend_config: modules/normalisation/configs/backend.yaml
+  phase1_prompt: modules/grammar/normalisation/prompts/phase1.txt
+  phase2_prompt: modules/grammar/normalisation/prompts/phase2.txt
+  backend_config: modules/grammar/normalisation/configs/backend.yaml
   workers: 3
   max_attempts: 2
 
 canonical: {}
 
-realisation:
-  lexicon: modules/realisation/lexicons/default.jsonl
+measurement:
+  config: modules/measurement/opportunities/default.json
 
-kc_selection:
-  mode: predefined
-  config: modules/kc_selection/configs/deterministic_v0.json
-  policy: modules/kc/policies/factorized.json
-  lexicon: modules/realisation/lexicons/default.jsonl
+generation:
+  generator: modules/generation/generators/llm_standalone_v0.yaml
+  validation: modules/generation/validation/blind_v0.yaml
 
-kc:
-  policy: modules/kc/policies/factorized.json
+knowledge_selection:
+  mode: structural
+  config: modules/knowledge/selection/configs/deterministic_v0.json
 
-items:
-  family_prompt: modules/items/families/controlled_transformation.txt
-  bank_config: modules/items/configs/fixed_bank_v0.json
-  lexicon: modules/realisation/lexicons/default.jsonl
-  validation:
-    acceptance: modules/items/validation/model_acceptance.json
-    backend_config: modules/items/validation/backend.yaml
-    workers: 6
-    max_attempts: 2
-    repeated_diagnostics: 5
+knowledge: {}
+qmatrix: {}
 
 simulation:
-  parameters: modules/simulation/configs/structural_oracle_v0.json
+  parameters: modules/evaluation/simulation/configs/structural_oracle_v0.json
   seed: 20260817
 
 kt:
-  parameters: modules/kt/configs/default.json
+  parameters: modules/evaluation/kt/configs/default.json
   techniques: [empirical, bkt, logistic]

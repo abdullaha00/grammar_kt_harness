@@ -2,4 +2,4 @@ extends: base
 experiment: normalisation_phase1_demo
 
 normalisation:
-  phase1_prompt: modules/normalisation/prompts/phase1_demo.txt
+  phase1_prompt: modules/grammar/normalisation/prompts/phase1_demo.txt

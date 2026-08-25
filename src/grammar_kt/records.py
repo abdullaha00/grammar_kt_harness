@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
+import re
 from typing import Any
 
-from .canonical_schema import DIMENSION_ORDER, DIMENSION_VALUES, cross_field_errors
+from .grammar.schema import DIMENSION_ORDER, DIMENSION_VALUES, cross_field_errors
 
 
 GRAMMAR_VALUES = DIMENSION_VALUES
@@ -30,6 +31,7 @@ BASE_EVENT_FIELDS = {
     "event_id",
     "learner_id",
     "item_id",
+    "measurement_opportunity_id",
     "canonical_cell_id",
     "canonical_split",
     "sequence_index",
@@ -52,6 +54,7 @@ ORACLE_EVENT_FIELDS = {
     "event_id",
     "learner_id",
     "item_id",
+    "measurement_opportunity_id",
     "profile",
     "oracle_feature_ids",
     "oracle_opportunity_indices",
@@ -74,23 +77,43 @@ def grammar_cell(value: Any, *, label: str = "GrammarCell") -> dict[str, str]:
         raise ValueError(f"{label}: {'; '.join(constraints)}")
     return value
 
+def measurement_opportunity(
+    value: Any, *, label: str = "MeasurementOpportunity"
+) -> dict[str, Any]:
+    """Validate the surface-, fold-, and ontology-independent measurement record."""
 
-def kc_opportunity(value: Any, *, label: str = "KC opportunity") -> dict[str, Any]:
-    required = {
-        "opportunity_id",
-        "split",
+    expected = {
+        "measurement_opportunity_id",
         "canonical_cell_id",
         "cell",
-        "realization_spec",
-        "realization_operations",
+        "structural_conditions",
+        "expected_operations",
         "source_descriptor_ids",
-        "source_mapping_notes",
+        "coverage_reasons",
     }
-    if not isinstance(value, dict) or not required <= set(value):
-        raise ValueError(f"{label}: missing required fields {sorted(required - set(value or {}))}")
+    if not isinstance(value, dict) or set(value) != expected:
+        raise ValueError(f"{label}: fields differ from {sorted(expected)}")
+    if not re.fullmatch(r"OPP_[A-F0-9]{16}", str(value["measurement_opportunity_id"])):
+        raise ValueError(f"{label}: invalid measurement_opportunity_id")
+    if not re.fullmatch(r"CELL_[A-F0-9]{16}", str(value["canonical_cell_id"])):
+        # Explicit fixture IDs are accepted for unit tests, but production IDs
+        # must retain the CELL_ semantic prefix.
+        if not str(value["canonical_cell_id"]).startswith("CELL_"):
+            raise ValueError(f"{label}: invalid canonical_cell_id")
     grammar_cell(value["cell"], label=f"{label}.cell")
-    if set(value["source_mapping_notes"]) != set(value["source_descriptor_ids"]):
-        raise ValueError(f"{label}: source notes do not match source IDs")
+    from .measurement.operations import derive_operations, validate_structural_conditions
+
+    validate_structural_conditions(value["cell"], value["structural_conditions"])
+    expected_operations = derive_operations(value["cell"], value["structural_conditions"])
+    if value["expected_operations"] != expected_operations:
+        raise ValueError(
+            f"{label}: expected_operations differ from structural derivation "
+            f"({value['expected_operations']} != {expected_operations})"
+        )
+    for field in ("source_descriptor_ids", "coverage_reasons"):
+        rows = value[field]
+        if not isinstance(rows, list) or rows != sorted(set(rows)):
+            raise ValueError(f"{label}.{field}: expected a sorted duplicate-free list")
     return value
 
 
@@ -232,9 +255,3 @@ def oracle_interaction(value: Any, *, label: str = "OracleInteraction") -> dict[
     if set(value["post_mastery"]) != set(value["oracle_feature_ids"]):
         raise ValueError(f"{label}: post-mastery does not match features")
     return value
-
-
-# Compatibility names retain their former import surface while separating the
-# two record concepts explicitly.
-interaction = projected_kt_interaction
-observable_interaction = observable_base_event

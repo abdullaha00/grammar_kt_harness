@@ -1,0 +1,9 @@
+This former value declaration is retained only as a migration pointer.
+
+The authoritative machine-readable GrammarCell declaration is now:
+
+  modules/grammar/canonical/grammar_schema.yaml
+
+Normalisation renders its prompt declaration directly from that YAML. The
+structured-output JSON schema is a checked derived mirror. See
+modules/grammar/canonical/rationale.md for scientific scope and exclusions.

@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/home/abdullah/grammar_kt_harness/.venv/bin/python",
+    "scripts/run_scientific_checks.py",
+    "--force"
+  ],
+  "fixture_backends_only": true,
+  "paid_api_calls": false,
+  "seed": 77,
+  "timestamp_utc": "2026-08-25T20:05:40.247436+00:00"
+}

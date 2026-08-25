@@ -1,0 +1,25 @@
+{
+  "backend": "fixture_file",
+  "command": [
+    "fixture_file",
+    "/home/abdullah/grammar_kt_harness/reference/five_module_refactor/evidence/standalone/validation/ITEM_8F5F8890C12BE6D3/structural/repetition-02/structural_fixture_response.json"
+  ],
+  "decoding_parameters_pinned": false,
+  "execution_isolation": {
+    "approval_policy": null,
+    "ephemeral": true,
+    "ignore_user_config": true,
+    "sandbox": null
+  },
+  "finished_utc": "2026-08-25T20:05:40.255226+00:00",
+  "instructions": "/home/abdullah/grammar_kt_harness/modules/generation/validation/evaluator_instructions.md",
+  "model": null,
+  "model_snapshot_pinned": false,
+  "output_schema": "/home/abdullah/grammar_kt_harness/modules/generation/validation/structural_schema.json",
+  "reasoning_effort": null,
+  "reasoning_options": {},
+  "returncode": 0,
+  "started_utc": "2026-08-25T20:05:40.255226+00:00",
+  "timed_out": false,
+  "timeout_seconds": null
+}

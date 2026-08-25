@@ -1,5 +1,5 @@
 extends: base
 experiment: kc_selected_structural
 
-kc_selection:
+knowledge_selection:
   mode: structural

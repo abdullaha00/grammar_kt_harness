@@ -1,0 +1,5 @@
+extends: base
+experiment: dialogue
+
+generation:
+  generator: modules/generation/generators/llm_dialogue_v0.yaml

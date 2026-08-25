@@ -1,0 +1,30 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "errors": [],
+      "valid": true
+    }
+  ],
+  "intended_target_hidden": true,
+  "item_id": "ITEM_9F6BD302F468198F",
+  "label": "structural",
+  "repetition": 2,
+  "result": {
+    "agreement_site": "do",
+    "cell": {
+      "aspect": "none",
+      "clause": "declarative",
+      "modal": "none",
+      "polarity": "negative",
+      "tense": "past",
+      "voice": "active"
+    },
+    "operations": [
+      "do_support",
+      "negation"
+    ],
+    "predicate_class": "lexical_transitive"
+  },
+  "successful_attempt": 1
+}

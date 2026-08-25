@@ -49,6 +49,6 @@ def load_experiment(name: str = "base") -> tuple[dict[str, Any], str | None]:
     if fold:
         if not isinstance(fold, dict) or not isinstance(fold.get("manifest"), str):
             raise ValueError("experiment fold must declare one manifest path")
-        for stage in ("simulation", "kc_selection", "kc", "kt"):
+        for stage in ("knowledge_selection", "knowledge", "simulation", "kt"):
             settings.setdefault(stage, {})["fold_manifest"] = fold["manifest"]
     return settings, parent
