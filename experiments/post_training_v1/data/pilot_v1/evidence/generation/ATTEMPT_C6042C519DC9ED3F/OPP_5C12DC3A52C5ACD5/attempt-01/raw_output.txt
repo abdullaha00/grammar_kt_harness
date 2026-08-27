@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Why was Emma so tired?"}],"learner_prompt":"B: She ___ the whole house before the guests arrived. (clean)"},"target_answer":"had cleaned","accepted_answers":["had cleaned"]}

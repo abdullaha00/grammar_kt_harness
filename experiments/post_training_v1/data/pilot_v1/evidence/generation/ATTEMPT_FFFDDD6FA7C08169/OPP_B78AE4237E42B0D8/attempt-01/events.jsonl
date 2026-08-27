@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b06-afea-7e13-a686-2c5b2adf2eaa"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"What was Maria doing when you arrived?\"}],\"learner_prompt\":\"B: She ____ the dishes.\"},\"target_answer\":\"was washing\",\"accepted_answers\":[\"was washing\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12837,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":143,"reasoning_output_tokens":83}}

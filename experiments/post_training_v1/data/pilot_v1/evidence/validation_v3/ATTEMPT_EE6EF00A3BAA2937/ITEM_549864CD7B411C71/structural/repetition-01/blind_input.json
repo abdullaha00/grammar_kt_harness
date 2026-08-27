@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "Do I need this warm coat?"
+  ],
+  "content": {
+    "learner_prompt": "B: ______ I need this warm coat?",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "The weather looks cold today."
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "Do I need this warm coat?"
+}

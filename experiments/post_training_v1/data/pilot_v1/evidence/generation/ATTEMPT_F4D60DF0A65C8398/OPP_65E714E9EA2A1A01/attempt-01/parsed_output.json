@@ -1,0 +1,9 @@
+{
+  "accepted_answers": [
+    "Do not open the door."
+  ],
+  "content": {
+    "prompt": "_____ the door; it is locked."
+  },
+  "target_answer": "Don't open the door."
+}

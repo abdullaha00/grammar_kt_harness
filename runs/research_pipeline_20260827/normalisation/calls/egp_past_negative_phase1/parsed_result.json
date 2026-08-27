@@ -1,0 +1,15 @@
+{
+  "source_id": "egp_past_negative",
+  "result": "complete",
+  "cells": [
+    {
+      "tense": "past",
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "negative",
+      "clause": "declarative",
+      "modal": "none"
+    }
+  ],
+  "note": null
+}

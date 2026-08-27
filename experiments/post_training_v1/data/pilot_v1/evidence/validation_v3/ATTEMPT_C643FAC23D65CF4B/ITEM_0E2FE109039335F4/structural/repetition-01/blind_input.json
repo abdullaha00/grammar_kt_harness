@@ -1,0 +1,21 @@
+{
+  "accepted_surface_variants": [
+    "Let's open the window.",
+    "Lets open the window."
+  ],
+  "content": {
+    "learner_prompt": "Complete B's sentence with a natural suggestion.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "It's warm in here."
+      },
+      {
+        "speaker": "B",
+        "text": "Let's ___ the window."
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "Let's open the window."
+}

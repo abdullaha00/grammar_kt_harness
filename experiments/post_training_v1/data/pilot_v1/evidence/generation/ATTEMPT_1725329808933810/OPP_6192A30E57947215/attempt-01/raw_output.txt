@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Why was the kitchen so tidy when you arrived?"}],"learner_prompt":"B: The children ___ the kitchen for an hour before dinner."},"target_answer":"had been cleaning","accepted_answers":["had been cleaning"]}

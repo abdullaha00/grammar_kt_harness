@@ -1,0 +1,12 @@
+{
+  "audit_type": "author inspection of every initially derived preference pair",
+  "pairs_reviewed": 22,
+  "preferred_candidate_actually_better_for_the_stated_measurement_opportunity": 0,
+  "rejected_candidate_plausible_as_educational_output": 22,
+  "rejected_candidate_was_a_true_wrong-target_structural_near_miss": 0,
+  "primary_failure": "The blind evaluator recovered the correct GrammarCell but used free-form aliases for canonical operation labels, creating false exact-match rejections.",
+  "secondary_observation": "One rejected item was genuinely answer-ambiguous, but it was not a wrong-target structural negative and v1 did not preregister quality-only preference labels.",
+  "action": "Invalidated all initial pairs, repaired the evaluator ontology, retained pre-repair evidence, and reran validation before any model training.",
+  "post_repair_exported_preference_pairs": 0,
+  "interpretation": "The candidate texts were plausible, but the supposed preference distinction was not real. They must not be released or used for training."
+}

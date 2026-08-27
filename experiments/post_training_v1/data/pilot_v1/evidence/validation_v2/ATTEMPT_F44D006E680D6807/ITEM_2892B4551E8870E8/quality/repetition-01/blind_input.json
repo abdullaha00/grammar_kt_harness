@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "Did Tom buy the milk?"
+  ],
+  "content": {
+    "learner_prompt": "B: ___ Tom buy the milk?",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Tom went to the shop yesterday."
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "Did Tom buy the milk?"
+}

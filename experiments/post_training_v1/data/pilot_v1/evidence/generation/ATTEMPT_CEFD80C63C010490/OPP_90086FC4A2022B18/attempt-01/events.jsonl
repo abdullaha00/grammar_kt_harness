@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b04-d828-70c3-8e76-43857900ea47"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"Yesterday, I ____ the door before I went to bed.\"},\"target_answer\":\"closed\",\"accepted_answers\":[\"closed\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12764,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":156,"reasoning_output_tokens":115}}

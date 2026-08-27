@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "had finished"
+  ],
+  "content": {
+    "learner_prompt": "B: She ____ her homework.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why was Emma relaxed before dinner?"
+      }
+    ]
+  },
+  "target_answer": "had finished"
+}

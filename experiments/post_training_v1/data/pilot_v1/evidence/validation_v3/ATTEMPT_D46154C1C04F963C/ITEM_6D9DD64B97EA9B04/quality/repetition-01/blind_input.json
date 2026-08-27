@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "Does Anna read books?"
+  ],
+  "content": {
+    "prompt": "_____ Anna read books?"
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "Does Anna read books?"
+}

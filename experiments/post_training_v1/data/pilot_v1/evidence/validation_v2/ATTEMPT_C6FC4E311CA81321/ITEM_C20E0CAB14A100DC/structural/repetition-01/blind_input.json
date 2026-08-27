@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "isn't watching"
+  ],
+  "content": {
+    "learner_prompt": "B: She ______ the television.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why is Mia so quiet?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "isn't watching"
+}

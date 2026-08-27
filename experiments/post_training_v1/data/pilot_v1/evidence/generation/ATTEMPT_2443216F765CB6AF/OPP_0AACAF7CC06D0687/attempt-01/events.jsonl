@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b02-b032-7690-b740-b6a92d4a430f"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"I'm not sure if I need a ticket for the bus.\"}],\"learner_prompt\":\"B: ___ I need a ticket?\"},\"target_answer\":\"Do\",\"accepted_answers\":[\"Do\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12847,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":193,"reasoning_output_tokens":130}}

@@ -1,0 +1,9 @@
+{
+  "accepted_answers": [
+    "Don't open"
+  ],
+  "content": {
+    "prompt": "It’s cold outside. _____ the window."
+  },
+  "target_answer": "Don't open"
+}

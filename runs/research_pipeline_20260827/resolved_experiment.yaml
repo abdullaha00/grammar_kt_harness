@@ -1,0 +1,43 @@
+experiment: fixture
+resource:
+  data: data/fixtures/egp_pilot.jsonl
+  schema: modules/resource/egp/schema.yaml
+normalisation:
+  phase1_prompt: modules/resource/egp/normalisation/phase1.txt
+  phase2_prompt: modules/resource/egp/normalisation/phase2.txt
+  rulebook: modules/resource/egp/normalisation/rulebook.md
+  canonical_schema: modules/canonical/schema.yaml
+  model: fixture
+  reasoning_effort: deterministic
+  fixture_responses: data/fixtures/model_responses.yaml
+canonical:
+  schema: modules/canonical/schema.yaml
+generation:
+  prompt: modules/generation/prompt.txt
+  rulebook: modules/generation/rulebook.md
+  design: modules/generation/design.yaml
+  lexicon: modules/generation/lexicon.jsonl
+  format: modules/generation/formats/controlled_production.yaml
+  model: fixture
+  reasoning_effort: deterministic
+  fixture_responses: data/fixtures/model_responses.yaml
+validation:
+  prompt: modules/validation/prompt.txt
+  criteria: modules/validation/criteria.yaml
+  model: fixture
+  reasoning_effort: deterministic
+  fixture_responses: data/fixtures/model_responses.yaml
+fold:
+  manifest: modules/folds/reference.yaml
+simulation:
+  world: modules/simulation/world.yaml
+kc:
+  mode: predefined
+  policy: modules/kc/policies/factorized.yaml
+  candidates: modules/kc/candidates.yaml
+  obligations: modules/kc/obligations.yaml
+  selector: modules/kc/selector.yaml
+kt:
+  protocol: modules/kt/protocol.yaml
+evaluation:
+  protocol: modules/evaluation/protocol.yaml

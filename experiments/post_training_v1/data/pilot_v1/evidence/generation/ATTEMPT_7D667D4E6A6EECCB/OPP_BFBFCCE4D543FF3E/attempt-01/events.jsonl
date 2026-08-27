@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b02-2284-7fa3-96de-b53a8f00d1b5"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"Yesterday, I went to bed, but I ___ my homework.\"},\"target_answer\":\"had not finished\",\"accepted_answers\":[\"had not finished\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12774,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":133,"reasoning_output_tokens":87}}

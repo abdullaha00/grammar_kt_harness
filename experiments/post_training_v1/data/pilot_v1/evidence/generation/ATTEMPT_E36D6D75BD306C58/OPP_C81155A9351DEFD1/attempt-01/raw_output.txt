@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Did the package arrive before lunch?"}],"learner_prompt":"B: Yes, the package ___ before lunch."},"target_answer":"had been delivered","accepted_answers":["had been delivered"]}

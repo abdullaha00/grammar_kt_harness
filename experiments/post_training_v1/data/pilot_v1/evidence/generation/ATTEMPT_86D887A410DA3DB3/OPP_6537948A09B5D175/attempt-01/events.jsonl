@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b03-5eb1-7430-89ad-cb49f4c1585a"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Does the cleaner wash this window every day?\"}],\"learner_prompt\":\"B: No, it ______ every day.\"},\"target_answer\":\"isn't washed\",\"accepted_answers\":[\"isn't washed\",\"is not washed\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12845,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":243,"reasoning_output_tokens":174}}

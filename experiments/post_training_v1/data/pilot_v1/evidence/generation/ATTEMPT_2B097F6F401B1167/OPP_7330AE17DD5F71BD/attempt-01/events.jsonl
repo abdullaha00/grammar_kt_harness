@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b04-b5c3-7d21-b139-da1a75c61e3b"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"Yesterday, Maya ___ the window before dinner.\"},\"target_answer\":\"cleaned\",\"accepted_answers\":[\"cleaned\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12758,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":106,"reasoning_output_tokens":66}}

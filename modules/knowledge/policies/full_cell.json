@@ -1,6 +1,0 @@
-{
-  "policy_id": "FULL_CELL_v0",
-  "kind": "full_cell",
-  "description": "One exact six-dimensional GrammarCell per structural baseline KC.",
-  "defaults": "All values, including unmarked values, are part of cell identity; no cognitive atomicity is claimed."
-}

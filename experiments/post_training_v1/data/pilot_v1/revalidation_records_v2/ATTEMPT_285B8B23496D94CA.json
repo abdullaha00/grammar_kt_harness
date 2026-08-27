@@ -1,0 +1,227 @@
+{
+  "attempt_id": "ATTEMPT_285B8B23496D94CA",
+  "candidate": {
+    "accepted_answers": [
+      "is washed"
+    ],
+    "canonical_cell_id": "CELL_272348FAE26B290D",
+    "content": {
+      "prompt": "The car ______ every Sunday."
+    },
+    "generation_metadata": {
+      "attempt": 1,
+      "attempt_history": [
+        {
+          "accepted": true,
+          "attempt": 1,
+          "rejection_reasons": []
+        }
+      ],
+      "backend": {
+        "kind": "codex_exec",
+        "model": "gpt-5.6-luna"
+      },
+      "evidence_directory": "/home/abdullah/grammar_kt_harness/experiments/post_training_v1/data/pilot_v1/evidence/generation/ATTEMPT_285B8B23496D94CA/OPP_C800F6C91882408C",
+      "generator_config": {
+        "constraints": {
+          "lexical_level": "A2_where_feasible",
+          "register": "neutral",
+          "response_type": "sentence_completion"
+        },
+        "generator_id": "llm_standalone_v0",
+        "mode": "llm_standalone"
+      },
+      "input_opportunity": {
+        "canonical_cell_id": "CELL_272348FAE26B290D",
+        "cell": {
+          "aspect": "none",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "positive",
+          "tense": "present",
+          "voice": "passive"
+        },
+        "coverage_reasons": [
+          "canonical_cell_baseline"
+        ],
+        "expected_operations": [
+          "be_passive"
+        ],
+        "measurement_opportunity_id": "OPP_C800F6C91882408C",
+        "source_descriptor_ids": [
+          "1741163712047x585480674416874600",
+          "1741163712048x136041892375174060"
+        ],
+        "structural_conditions": {
+          "imperative_subtype": null,
+          "predicate_class": "lexical_transitive",
+          "subject_number": "singular",
+          "subject_person": 3,
+          "wh_role": null
+        }
+      },
+      "parsed_output": {
+        "accepted_answers": [
+          "is washed"
+        ],
+        "content": {
+          "prompt": "The car ______ every Sunday."
+        },
+        "target_answer": "is washed"
+      },
+      "raw_output": "{\"content\":{\"prompt\":\"The car ______ every Sunday.\"},\"target_answer\":\"is washed\",\"accepted_answers\":[\"is washed\"]}",
+      "rendered_prompt": "Create one natural standalone English completion item for the fixed structural target below.\n\nThe target grammar has already been chosen. Do not reinterpret it, weaken it, or select a different target. You may choose ordinary lexical content, names, and surface wording. Keep lexical difficulty simple (A2 where feasible), avoid specialist world knowledge, and make the intended answer unambiguous.\n\nFixed MeasurementOpportunity:\n{\n  \"canonical_cell_id\": \"CELL_272348FAE26B290D\",\n  \"cell\": {\n    \"aspect\": \"none\",\n    \"clause\": \"declarative\",\n    \"modal\": \"none\",\n    \"polarity\": \"positive\",\n    \"tense\": \"present\",\n    \"voice\": \"passive\"\n  },\n  \"expected_operations\": [\n    \"be_passive\"\n  ],\n  \"structural_conditions\": {\n    \"imperative_subtype\": null,\n    \"predicate_class\": \"lexical_transitive\",\n    \"subject_number\": \"singular\",\n    \"subject_person\": 3,\n    \"wh_role\": null\n  }\n}\n\nGeneration constraints:\n{\n  \"lexical_level\": \"A2_where_feasible\",\n  \"register\": \"neutral\",\n  \"response_type\": \"sentence_completion\"\n}\n\nReturn only the JSON object required by the output schema. The content object must contain exactly a learner-facing prompt. The target answer must instantiate every declared cell value, structural condition, and expected operation.\n"
+    },
+    "generator_id": "llm_standalone_v0",
+    "item_family": "standalone_completion",
+    "item_id": "ITEM_CA1762B5AF18D3DA",
+    "measurement_opportunity_id": "OPP_C800F6C91882408C",
+    "quality_diagnostics": {
+      "answer_ambiguity": false,
+      "context_appropriateness": null,
+      "dialogue_coherence": null,
+      "lexical_cefr_appropriate": true,
+      "natural_speaker_turns": null,
+      "naturalness": 5,
+      "note": "Clear, natural standalone passive-voice completion with an unambiguous accepted response.",
+      "pedagogical_suitability": 5,
+      "pragmatic_licensing": null,
+      "world_knowledge_required": false
+    },
+    "source_descriptor_ids": [
+      "1741163712047x585480674416874600",
+      "1741163712048x136041892375174060"
+    ],
+    "target_answer": "is washed",
+    "validated_structure": {
+      "agreement_site": "be",
+      "cell": {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "present",
+        "voice": "passive"
+      },
+      "operations": [
+        "be_passive"
+      ],
+      "predicate_class": "lexical_transitive"
+    },
+    "validation_metadata": {
+      "evaluator_id": "blind_reconstruction_v0_closed_operations_v2",
+      "hard_checks": {
+        "errors": [],
+        "item_id": "ITEM_CA1762B5AF18D3DA",
+        "measurement_opportunity_id": "OPP_C800F6C91882408C",
+        "status": "accepted"
+      },
+      "intended_target_hidden_from_evaluator": true,
+      "quality_not_conflated_with_grammar_acceptance": true,
+      "quality_repetitions": [
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "errors": [],
+              "valid": true
+            }
+          ],
+          "intended_target_hidden": true,
+          "item_id": "ITEM_CA1762B5AF18D3DA",
+          "label": "quality",
+          "repetition": 1,
+          "result": {
+            "answer_ambiguity": false,
+            "context_appropriateness": null,
+            "dialogue_coherence": null,
+            "lexical_cefr_appropriate": true,
+            "natural_speaker_turns": null,
+            "naturalness": 5,
+            "note": "Clear, natural standalone passive-voice completion with an unambiguous accepted response.",
+            "pedagogical_suitability": 5,
+            "pragmatic_licensing": null,
+            "world_knowledge_required": false
+          },
+          "successful_attempt": 1
+        }
+      ],
+      "structural_repetitions": [
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "errors": [],
+              "valid": true
+            }
+          ],
+          "intended_target_hidden": true,
+          "item_id": "ITEM_CA1762B5AF18D3DA",
+          "label": "structural",
+          "repetition": 1,
+          "result": {
+            "agreement_site": "be",
+            "cell": {
+              "aspect": "none",
+              "clause": "declarative",
+              "modal": "none",
+              "polarity": "positive",
+              "tense": "present",
+              "voice": "passive"
+            },
+            "operations": [
+              "be_passive"
+            ],
+            "predicate_class": "lexical_transitive"
+          },
+          "successful_attempt": 1
+        }
+      ]
+    }
+  },
+  "canonical_cell_id": "CELL_272348FAE26B290D",
+  "canonical_split": "development",
+  "collection_revision": 2,
+  "generation_evidence": "experiments/post_training_v1/data/pilot_v1/evidence/generation/ATTEMPT_285B8B23496D94CA",
+  "generation_model": "gpt-5.6-luna",
+  "item_format": "standalone",
+  "measurement_opportunity_id": "OPP_C800F6C91882408C",
+  "post_training_split": "train",
+  "runtime_seconds": 25.807024286998058,
+  "sample_index": 2,
+  "status": "validated",
+  "structurally_valid": true,
+  "validation_evidence": "experiments/post_training_v1/data/pilot_v1/evidence/validation_v2/ATTEMPT_285B8B23496D94CA",
+  "validation_evidence_v1_faulty_free_operations": "experiments/post_training_v1/data/pilot_v1/evidence/validation/ATTEMPT_285B8B23496D94CA",
+  "validation_reasons": [],
+  "validation_report": {
+    "accepted_item_bank_sha256": "5a6b54670f0d8396870f40ef65fdfec80116f82eac2352f9ca21e0653382d192",
+    "accepted_items": 1,
+    "accepted_opportunity_coverage": 1.0,
+    "candidate_items": 1,
+    "candidate_opportunity_coverage": 1.0,
+    "failure_types": {},
+    "grammar_cell_exact_match_rate": 1.0,
+    "independent_blind_reconstruction": true,
+    "missing_accepted_opportunity_ids": [],
+    "missing_candidate_opportunity_ids": [],
+    "operation_exact_match_rate": 1.0,
+    "quality_evaluator_reliability": {
+      "comparisons": [],
+      "exact_agreement_rate": null,
+      "interpretation": "automated evaluator stability; not human inter-rater reliability",
+      "repeated_items": 0
+    },
+    "quality_is_separate_diagnostic": true,
+    "rejected_items": 0,
+    "status": "PASS",
+    "structural_evaluator_reliability": {
+      "comparisons": [],
+      "exact_agreement_rate": null,
+      "interpretation": "automated evaluator stability; not human inter-rater reliability",
+      "repeated_items": 0
+    }
+  },
+  "validation_revision": 2,
+  "validator_model": "gpt-5.6-terra"
+}

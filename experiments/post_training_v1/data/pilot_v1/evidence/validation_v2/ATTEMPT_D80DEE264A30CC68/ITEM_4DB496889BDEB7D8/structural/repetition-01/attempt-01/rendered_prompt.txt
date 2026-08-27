@@ -1,0 +1,32 @@
+Blindly annotate the grammar expressed by the learner response in this generated exercise.
+
+Do not infer an intended target. Use only the visible exercise and response below. Recover exactly the six GrammarCell fields, the overt structural operations, predicate class, and finite agreement site.
+
+The `operations` field uses a closed annotation ontology. Emit only these exact labels, each at most once, in the order shown here when present:
+
+1. `perfect`: perfect HAVE plus past participle.
+2. `progressive`: progressive BE plus present participle.
+3. `be_passive`: passive BE plus past participle.
+4. `central_modal`: a central modal auxiliary.
+5. `do_support`: auxiliary DO inserted for negation or interrogation.
+6. `negation`: grammatical negation.
+7. `operator_inversion`: finite operator before the subject.
+8. `subject_wh`: a WH phrase functioning as subject.
+9. `wh_fronting`: a non-subject WH phrase fronted.
+10. `imperative`: imperative clause structure.
+11. `emphatic_do`: emphatic DO in a positive imperative.
+12. `let_imperative`: a LET/LET'S imperative construction.
+
+Do not emit descriptions, auxiliary names, tense inflection, agreement, or participle morphology as additional operation labels. Use an empty list when none of the closed labels applies. Return only schema-valid JSON.
+
+Generated exercise and response:
+{
+  "accepted_surface_variants": [
+    "Does Maria watch TV every evening?"
+  ],
+  "content": {
+    "prompt": "_____ Maria _____ TV every evening? (watch)"
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "Does Maria watch TV every evening?"
+}

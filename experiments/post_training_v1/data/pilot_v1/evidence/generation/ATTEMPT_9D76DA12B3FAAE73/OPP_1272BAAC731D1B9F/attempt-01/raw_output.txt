@@ -1,0 +1,1 @@
+{"content":{"prompt":"Look! Anna ______ a letter."},"target_answer":"is writing","accepted_answers":["is writing"]}

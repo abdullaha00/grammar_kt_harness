@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "unlocked"
+  ],
+  "content": {
+    "prompt": "Yesterday, Lena ___ the door with a key."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "unlocked"
+}

@@ -1,0 +1,43 @@
+{
+  "backend": "codex_exec",
+  "command": [
+    "codex",
+    "--ask-for-approval",
+    "never",
+    "exec",
+    "--ignore-user-config",
+    "--ephemeral",
+    "--sandbox",
+    "read-only",
+    "--model",
+    "gpt-5.6-luna",
+    "--config",
+    "model_reasoning_effort=\"low\"",
+    "--json",
+    "--output-schema",
+    "/home/abdullah/grammar_kt_harness/modules/generation/generators/dialogue_output_schema.json",
+    "--output-last-message",
+    "/home/abdullah/grammar_kt_harness/experiments/post_training_v1/data/pilot_v1/evidence/generation/ATTEMPT_A209E23FE824C3AC/OPP_435A5CC7157D625F/attempt-01/raw_output.txt",
+    "--cd",
+    "/tmp/grammar-kt-model-5825ic58",
+    "-"
+  ],
+  "decoding_parameters_pinned": false,
+  "execution_isolation": {
+    "approval_policy": "never",
+    "ephemeral": true,
+    "ignore_user_config": true,
+    "sandbox": "read-only"
+  },
+  "finished_utc": "2026-08-25T22:20:11.884397+00:00",
+  "instructions": "/home/abdullah/grammar_kt_harness/modules/generation/prompts/generator_instructions.md",
+  "model": "gpt-5.6-luna",
+  "model_snapshot_pinned": false,
+  "output_schema": "/home/abdullah/grammar_kt_harness/modules/generation/generators/dialogue_output_schema.json",
+  "reasoning_effort": "low",
+  "reasoning_options": {},
+  "returncode": 0,
+  "started_utc": "2026-08-25T22:20:01.929488+00:00",
+  "timed_out": false,
+  "timeout_seconds": 600
+}

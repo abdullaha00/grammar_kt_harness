@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "wash"
+  ],
+  "content": {
+    "prompt": "The children ____ their hands before dinner."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "wash"
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b09-9551-79e3-ac9e-003af6b1418e"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":5,\"answer_ambiguity\":false,\"pedagogical_suitability\":5,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":5,\"pragmatic_licensing\":5,\"natural_speaker_turns\":5,\"context_appropriateness\":5,\"note\":\"Natural, coherent dialogue completion with clear context and accessible vocabulary.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14259,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":201,"reasoning_output_tokens":104}}

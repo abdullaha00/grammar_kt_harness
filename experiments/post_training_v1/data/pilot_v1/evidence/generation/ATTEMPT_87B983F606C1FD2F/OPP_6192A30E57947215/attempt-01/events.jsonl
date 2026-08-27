@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b00-ea35-7851-affa-8bd53e0feabc"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Why were the windows so clean?\"}],\"learner_prompt\":\"B: The children ______ the windows all morning.\"},\"target_answer\":\"had been cleaning\",\"accepted_answers\":[\"had been cleaning\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12842,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":205,"reasoning_output_tokens":141}}

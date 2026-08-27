@@ -1,0 +1,17 @@
+{
+  "accepted_surface_variants": [
+    "had not finished",
+    "hadn't finished"
+  ],
+  "content": {
+    "learner_prompt": "B: No, she ___ it.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Had Mia finished her homework before class?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "hadn't finished"
+}

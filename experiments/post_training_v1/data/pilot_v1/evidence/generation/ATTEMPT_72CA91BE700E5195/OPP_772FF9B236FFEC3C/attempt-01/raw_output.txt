@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Did the school clean the classroom yesterday?"}],"learner_prompt":"B: Yes, the classroom ___ yesterday."},"target_answer":"was cleaned","accepted_answers":["was cleaned"]}

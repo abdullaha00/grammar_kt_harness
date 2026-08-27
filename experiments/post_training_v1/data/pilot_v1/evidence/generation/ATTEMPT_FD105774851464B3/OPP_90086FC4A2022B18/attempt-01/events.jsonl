@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b04-c5c0-7992-90e2-ea27f5950d6f"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"Yesterday, I ____ the window before dinner.\"},\"target_answer\":\"opened\",\"accepted_answers\":[\"opened\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12758,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":95,"reasoning_output_tokens":57}}

@@ -1,0 +1,1 @@
+{"naturalness":2,"answer_ambiguity":true,"pedagogical_suitability":2,"world_knowledge_required":false,"lexical_cefr_appropriate":true,"dialogue_coherence":3,"pragmatic_licensing":2,"natural_speaker_turns":2,"context_appropriateness":3,"note":"The accepted response is grammatical but unnatural in this dialogue; “wasn't reading” is the usual reply."}

@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "has cleaned"
+  ],
+  "content": {
+    "prompt": "Mia ______ her room."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "has cleaned"
+}

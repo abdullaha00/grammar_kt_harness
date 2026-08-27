@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Why was the room so clean when the guests arrived?"}],"learner_prompt":"B: The room __________ before the guests arrived."},"target_answer":"had been cleaned","accepted_answers":["had been cleaned"]}

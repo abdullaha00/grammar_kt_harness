@@ -1,0 +1,1 @@
+{"naturalness":4,"answer_ambiguity":true,"pedagogical_suitability":2,"world_knowledge_required":false,"lexical_cefr_appropriate":true,"dialogue_coherence":null,"pragmatic_licensing":null,"natural_speaker_turns":null,"context_appropriateness":null,"note":"The sentence is natural, but the context does not require past perfect; \"did not finish\" is also a plausible completion."}

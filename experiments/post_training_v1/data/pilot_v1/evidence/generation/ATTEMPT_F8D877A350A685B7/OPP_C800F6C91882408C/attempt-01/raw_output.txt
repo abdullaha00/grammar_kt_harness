@@ -1,0 +1,1 @@
+{"content":{"prompt":"The room ___ (clean) every morning."},"target_answer":"The room is cleaned every morning.","accepted_answers":["The room is cleaned every morning."]}

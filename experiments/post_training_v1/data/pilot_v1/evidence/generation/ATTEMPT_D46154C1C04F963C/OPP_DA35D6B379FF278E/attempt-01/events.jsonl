@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b02-904a-72c2-90da-221a7b11f358"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"_____ Anna read books?\"},\"target_answer\":\"Does Anna read books?\",\"accepted_answers\":[\"Does Anna read books?\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12778,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":116,"reasoning_output_tokens":74}}

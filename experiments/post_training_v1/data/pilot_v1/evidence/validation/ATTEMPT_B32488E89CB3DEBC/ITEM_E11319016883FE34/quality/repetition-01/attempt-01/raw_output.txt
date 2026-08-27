@@ -1,0 +1,1 @@
+{"naturalness":5,"answer_ambiguity":false,"pedagogical_suitability":5,"world_knowledge_required":false,"lexical_cefr_appropriate":true,"dialogue_coherence":null,"pragmatic_licensing":null,"natural_speaker_turns":null,"context_appropriateness":null,"note":"Natural, clear standalone past-perfect completion item with accessible vocabulary."}

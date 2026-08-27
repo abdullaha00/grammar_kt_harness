@@ -1,0 +1,101 @@
+{
+  "fixed_projection": [
+    {
+      "item_id": "item_001",
+      "kc_ids": [
+        "kc_present"
+      ]
+    },
+    {
+      "item_id": "item_002",
+      "kc_ids": [
+        "kc_past",
+        "kc_negation"
+      ]
+    },
+    {
+      "item_id": "item_003",
+      "kc_ids": [
+        "kc_past",
+        "kc_passive"
+      ]
+    },
+    {
+      "item_id": "item_004",
+      "kc_ids": [
+        "kc_present",
+        "kc_progressive"
+      ]
+    },
+    {
+      "item_id": "item_005",
+      "kc_ids": [
+        "kc_present",
+        "kc_progressive",
+        "kc_passive",
+        "kc_negation"
+      ]
+    },
+    {
+      "item_id": "item_006",
+      "kc_ids": [
+        "kc_polar_question",
+        "kc_modal_should"
+      ]
+    }
+  ],
+  "event_counts_by_technique": {
+    "empirical": 576,
+    "bkt": 576,
+    "logistic": 576
+  },
+  "first_event_id_by_technique": {
+    "empirical": "event_00001",
+    "bkt": "event_00001",
+    "logistic": "event_00001"
+  },
+  "last_event_id_by_technique": {
+    "empirical": "event_00576",
+    "bkt": "event_00576",
+    "logistic": "event_00576"
+  },
+  "same_event_stream": true,
+  "prediction_preview": [
+    {
+      "event_id": "event_00001",
+      "technique": "empirical",
+      "probability": 0.5,
+      "history_events": 0
+    },
+    {
+      "event_id": "event_00002",
+      "technique": "empirical",
+      "probability": 0.5,
+      "history_events": 1
+    },
+    {
+      "event_id": "event_00003",
+      "technique": "empirical",
+      "probability": 0.41666666666666663,
+      "history_events": 2
+    },
+    {
+      "event_id": "event_00004",
+      "technique": "empirical",
+      "probability": 0.5833333333333333,
+      "history_events": 3
+    },
+    {
+      "event_id": "event_00005",
+      "technique": "empirical",
+      "probability": 0.4583333333333333,
+      "history_events": 4
+    },
+    {
+      "event_id": "event_00006",
+      "technique": "empirical",
+      "probability": 0.5,
+      "history_events": 5
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "is being repaired"
+  ],
+  "content": {
+    "prompt": "The road ______ today."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "is being repaired"
+}

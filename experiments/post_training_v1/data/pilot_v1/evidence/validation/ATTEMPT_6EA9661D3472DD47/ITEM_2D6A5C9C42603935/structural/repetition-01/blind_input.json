@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "had packed their bags."
+  ],
+  "content": {
+    "prompt": "By the time the bus came, the children ____ their bags."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "had packed their bags."
+}

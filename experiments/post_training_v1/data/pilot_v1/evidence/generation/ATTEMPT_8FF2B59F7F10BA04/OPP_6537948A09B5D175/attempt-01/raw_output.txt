@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Does the store deliver this sofa on Sundays?"}],"learner_prompt":"B: No, this sofa ____ on Sundays."},"target_answer":"isn't delivered","accepted_answers":["is not delivered"]}

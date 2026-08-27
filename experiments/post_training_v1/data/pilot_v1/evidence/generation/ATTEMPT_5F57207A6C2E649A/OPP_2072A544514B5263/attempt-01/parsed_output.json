@@ -1,0 +1,10 @@
+{
+  "accepted_answers": [
+    "doesn't drink",
+    "does not drink"
+  ],
+  "content": {
+    "prompt": "Leo ___ (not / drink) coffee."
+  },
+  "target_answer": "doesn't drink"
+}

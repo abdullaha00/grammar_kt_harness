@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Why is Emma tired?"}],"learner_prompt":"B: She ______ the kitchen all morning."},"target_answer":"She has been cleaning the kitchen all morning.","accepted_answers":["She has been cleaning the kitchen all morning."]}

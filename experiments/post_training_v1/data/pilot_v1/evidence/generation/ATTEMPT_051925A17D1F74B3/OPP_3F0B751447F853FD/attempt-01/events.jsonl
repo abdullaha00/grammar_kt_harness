@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b06-c86f-7200-b5da-06b67bd0affb"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"At 7 p.m. yesterday, I ____ dinner for my family.\"},\"target_answer\":\"was cooking\",\"accepted_answers\":[\"was cooking\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12765,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":125,"reasoning_output_tokens":79}}

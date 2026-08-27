@@ -1,0 +1,106 @@
+{
+  "item": {
+    "accepted_answers": [
+      "isn't cooking",
+      "is not cooking"
+    ],
+    "canonical_cell_id": "CELL_E7EC123EE518CC58",
+    "content": {
+      "learner_prompt": "B: No, she ____ dinner.",
+      "turns": [
+        {
+          "speaker": "A",
+          "text": "Is Anna cooking dinner?"
+        }
+      ]
+    },
+    "generation_metadata": {
+      "attempt": 1,
+      "attempt_history": [
+        {
+          "accepted": true,
+          "attempt": 1,
+          "rejection_reasons": []
+        }
+      ],
+      "backend": {
+        "kind": "codex_exec",
+        "model": "gpt-5.6-luna"
+      },
+      "evidence_directory": "/home/abdullah/grammar_kt_harness/experiments/post_training_v1/data/pilot_v1/evidence/generation/ATTEMPT_7AA55D84B0F36966/OPP_F7951C4FFFDCB09A",
+      "generator_config": {
+        "constraints": {
+          "context_turns": 1,
+          "conversational_register": "neutral",
+          "dialogue_act": "response",
+          "lexical_level": "A2_where_feasible",
+          "response_type": "sentence_completion",
+          "target_learner_turn": "B"
+        },
+        "generator_id": "llm_dialogue_v0",
+        "mode": "llm_dialogue"
+      },
+      "input_opportunity": {
+        "canonical_cell_id": "CELL_E7EC123EE518CC58",
+        "cell": {
+          "aspect": "progressive",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "negative",
+          "tense": "present",
+          "voice": "active"
+        },
+        "coverage_reasons": [
+          "canonical_cell_baseline"
+        ],
+        "expected_operations": [
+          "progressive",
+          "negation"
+        ],
+        "measurement_opportunity_id": "OPP_F7951C4FFFDCB09A",
+        "source_descriptor_ids": [
+          "1741163713121x303053781636601900",
+          "1741163716068x574314163168649300"
+        ],
+        "structural_conditions": {
+          "imperative_subtype": null,
+          "predicate_class": "lexical_transitive",
+          "subject_number": "singular",
+          "subject_person": 3,
+          "wh_role": null
+        }
+      },
+      "parsed_output": {
+        "accepted_answers": [
+          "isn't cooking",
+          "is not cooking"
+        ],
+        "content": {
+          "learner_prompt": "B: No, she ____ dinner.",
+          "turns": [
+            {
+              "speaker": "A",
+              "text": "Is Anna cooking dinner?"
+            }
+          ]
+        },
+        "target_answer": "isn't cooking"
+      },
+      "raw_output": "{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Is Anna cooking dinner?\"}],\"learner_prompt\":\"B: No, she ____ dinner.\"},\"target_answer\":\"isn't cooking\",\"accepted_answers\":[\"isn't cooking\",\"is not cooking\"]}",
+      "rendered_prompt": "Create one short, natural English dialogue-completion item for the fixed structural target below.\n\nThe learner target grammar has already been chosen. Do not reinterpret it, weaken it, or select a different target. Context turns may establish a natural conversational situation, but the learner answer itself must instantiate the same fixed MeasurementOpportunity. Use simple lexical content, avoid specialist world knowledge, and make the response pragmatically licensed and unambiguous.\n\nFixed MeasurementOpportunity:\n{\n  \"canonical_cell_id\": \"CELL_E7EC123EE518CC58\",\n  \"cell\": {\n    \"aspect\": \"progressive\",\n    \"clause\": \"declarative\",\n    \"modal\": \"none\",\n    \"polarity\": \"negative\",\n    \"tense\": \"present\",\n    \"voice\": \"active\"\n  },\n  \"expected_operations\": [\n    \"progressive\",\n    \"negation\"\n  ],\n  \"structural_conditions\": {\n    \"imperative_subtype\": null,\n    \"predicate_class\": \"lexical_transitive\",\n    \"subject_number\": \"singular\",\n    \"subject_person\": 3,\n    \"wh_role\": null\n  }\n}\n\nGeneration constraints:\n{\n  \"context_turns\": 1,\n  \"conversational_register\": \"neutral\",\n  \"dialogue_act\": \"response\",\n  \"lexical_level\": \"A2_where_feasible\",\n  \"response_type\": \"sentence_completion\",\n  \"target_learner_turn\": \"B\"\n}\n\nReturn only the JSON object required by the output schema. The content object must contain context turns and a learner prompt. Do not place the answer in the context turns.\n"
+    },
+    "generator_id": "llm_dialogue_v0",
+    "item_family": "dialogue_completion",
+    "item_id": "ITEM_C95A7ED9DE8C567A",
+    "measurement_opportunity_id": "OPP_F7951C4FFFDCB09A",
+    "quality_diagnostics": {},
+    "source_descriptor_ids": [
+      "1741163713121x303053781636601900",
+      "1741163716068x574314163168649300"
+    ],
+    "target_answer": "isn't cooking",
+    "validated_structure": {},
+    "validation_metadata": {}
+  },
+  "status": "candidate"
+}

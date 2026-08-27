@@ -1,0 +1,1 @@
+{"content":{"prompt":"The baby is sleeping. __________ the door."},"target_answer":"Let's not open","accepted_answers": ["Let's not open"]}

@@ -1,0 +1,1 @@
+{"content":{"prompt":"_____ Maria play tennis?"},"target_answer":"Does Maria play tennis?","accepted_answers":["Does Maria play tennis?"]}

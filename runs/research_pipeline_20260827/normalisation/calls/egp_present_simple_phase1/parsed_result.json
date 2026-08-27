@@ -1,0 +1,15 @@
+{
+  "source_id": "egp_present_simple",
+  "result": "complete",
+  "cells": [
+    {
+      "tense": "present",
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "none"
+    }
+  ],
+  "note": null
+}

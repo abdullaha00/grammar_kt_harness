@@ -1,0 +1,9 @@
+design_id: one_controlled_item_per_cell
+format: controlled_production
+items_per_cell: 1
+lexical_choice: controlled
+lexical_diversity: rotate_frames_across_cells
+contrast_generation: none
+balancing:
+  require_distinct_contexts_across_cells: true
+  nuisance_condition: short_context

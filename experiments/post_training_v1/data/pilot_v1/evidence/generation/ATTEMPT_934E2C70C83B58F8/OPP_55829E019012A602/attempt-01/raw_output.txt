@@ -1,0 +1,1 @@
+{"content":{"prompt":"The children ____ their hands before dinner."},"target_answer":"wash","accepted_answers":["wash"]}

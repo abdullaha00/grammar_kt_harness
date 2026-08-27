@@ -1,0 +1,26 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "errors": [],
+      "valid": true
+    }
+  ],
+  "intended_target_hidden": true,
+  "item_id": "ITEM_F961AC13ECE83665",
+  "label": "quality",
+  "repetition": 1,
+  "result": {
+    "answer_ambiguity": true,
+    "context_appropriateness": null,
+    "dialogue_coherence": null,
+    "lexical_cefr_appropriate": true,
+    "natural_speaker_turns": null,
+    "naturalness": 1,
+    "note": "“Don't let's leave…” is highly unnatural; the blank permits multiple plausible completions without specifying the required form.",
+    "pedagogical_suitability": 1,
+    "pragmatic_licensing": null,
+    "world_knowledge_required": false
+  },
+  "successful_attempt": 1
+}

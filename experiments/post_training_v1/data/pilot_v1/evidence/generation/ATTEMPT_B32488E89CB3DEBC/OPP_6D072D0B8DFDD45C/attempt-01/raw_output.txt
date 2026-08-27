@@ -1,0 +1,1 @@
+{"content":{"prompt":"By the time their mother came home, the children ___ their homework."},"target_answer":"had finished","accepted_answers":["had finished"]}

@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Why were you late for the meeting?"}],"learner_prompt":"B: I was late because I ________ the time."},"target_answer":"hadn't been checking","accepted_answers":["hadn't been checking"]}

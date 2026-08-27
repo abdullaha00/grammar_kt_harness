@@ -1,0 +1,9 @@
+{
+  "prompt": "Every morning, Lina ___ to work by bus. (travel)",
+  "target_answer": "Every morning, Lina travels to work by bus.",
+  "accepted_answers": [
+    "Every morning, Lina travels to work by bus."
+  ],
+  "operation_tags": [],
+  "note": "Common A2 routine context."
+}

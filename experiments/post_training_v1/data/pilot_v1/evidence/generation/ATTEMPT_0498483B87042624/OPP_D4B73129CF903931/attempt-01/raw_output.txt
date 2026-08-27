@@ -1,0 +1,1 @@
+{"content":{"prompt":"The old house ___ (paint) right now."},"target_answer":"is being painted","accepted_answers":["is being painted"]}

@@ -1,0 +1,7 @@
+selector_id: deterministic_greedy_v1
+description: Greedily cover development obligations, then stop; holdout cells are never inspected.
+ranking:
+  - most_new_obligations
+  - fewest_activation_conditions
+  - lexical_kc_id
+backward_prune: true

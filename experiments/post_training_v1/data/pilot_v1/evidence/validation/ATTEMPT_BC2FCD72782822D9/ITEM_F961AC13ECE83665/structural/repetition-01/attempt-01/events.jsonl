@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b07-547a-7902-8d42-96e95d3558c3"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"cell\":{\"tense\":\"present\",\"aspect\":\"none\",\"voice\":\"active\",\"polarity\":\"negative\",\"clause\":\"imperative\",\"modal\":\"none\"},\"operations\":[\"do-support\",\"negative contraction\",\"let's construction\"],\"predicate_class\":\"lexical_transitive\",\"agreement_site\":\"do\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14273,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":202,"reasoning_output_tokens":132}}

@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Why can’t Tom find his keys?"}],"learner_prompt":"B: He ___ the keys in his bag."},"target_answer":"had not put","accepted_answers":["hadn't put"]}

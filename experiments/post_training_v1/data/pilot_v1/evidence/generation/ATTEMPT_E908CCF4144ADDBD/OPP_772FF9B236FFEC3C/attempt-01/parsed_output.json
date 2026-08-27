@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "was damaged"
+  ],
+  "content": {
+    "learner_prompt": "B: It ___ in the storm.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "What happened to the old bridge?"
+      }
+    ]
+  },
+  "target_answer": "was damaged"
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b06-462a-7451-ae49-83b47820bef9"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"What is Ben doing in the kitchen?\"}],\"learner_prompt\":\"B: Ben ________ (not / wash) the dishes.\"},\"target_answer\":\"Ben isn't washing the dishes.\",\"accepted_answers\":[\"Ben isn't washing the dishes.\",\"Ben is not washing the dishes.\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12835,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":221,"reasoning_output_tokens":141}}

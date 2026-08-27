@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b04-ff28-7621-b3c6-1ff305ce43d8"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":5,\"answer_ambiguity\":true,\"pedagogical_suitability\":3,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":null,\"pragmatic_licensing\":null,\"natural_speaker_turns\":null,\"context_appropriateness\":null,\"note\":\"The sentence is natural, but several verbs could plausibly complete it (for example, “opened”), so accepting only “unlocked” makes the item underdetermined.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14217,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":204,"reasoning_output_tokens":85}}

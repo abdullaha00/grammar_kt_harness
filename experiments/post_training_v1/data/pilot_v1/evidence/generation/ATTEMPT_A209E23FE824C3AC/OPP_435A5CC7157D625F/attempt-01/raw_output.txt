@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"What are you doing in the kitchen?"}],"learner_prompt":"B: I am ________."},"target_answer":"washing the dishes","accepted_answers":["washing the dishes"]}

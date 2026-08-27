@@ -1,0 +1,38 @@
+{
+  "candidate_items": 6,
+  "accepted_items": 6,
+  "acceptance_rate": 1.0,
+  "grammar_cells": 6,
+  "covered_cells": 6,
+  "items_per_cell": {
+    "cell_001": 1,
+    "cell_002": 1,
+    "cell_003": 1,
+    "cell_004": 1,
+    "cell_005": 1,
+    "cell_006": 1
+  },
+  "unique_prompt_rate": 1.0,
+  "duplicate_prompts": 0,
+  "lexical_types": 35,
+  "lexical_tokens": 45,
+  "lexical_diversity": 0.7777777777777778,
+  "format_distribution": {
+    "controlled_production": 6
+  },
+  "cefr_distribution": {
+    "A2": 1,
+    "A1": 5
+  },
+  "criterion_pass_rates": {
+    "target_fidelity": 1.0,
+    "grammaticality": 1.0,
+    "naturalness": 1.0,
+    "pedagogical_suitability": 1.0,
+    "determinacy": 1.0,
+    "cefr_appropriateness": 1.0,
+    "no_answer_leakage": 1.0,
+    "no_extraneous_grammar": 1.0,
+    "no_world_knowledge": 1.0
+  }
+}

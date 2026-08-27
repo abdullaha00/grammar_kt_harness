@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b07-2a3e-78c3-b179-761f670f0461"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"The baby is sleeping. __________ the door.\"},\"target_answer\":\"Let's not open\",\"accepted_answers\": [\"Let's not open\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12785,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":282,"reasoning_output_tokens":239}}

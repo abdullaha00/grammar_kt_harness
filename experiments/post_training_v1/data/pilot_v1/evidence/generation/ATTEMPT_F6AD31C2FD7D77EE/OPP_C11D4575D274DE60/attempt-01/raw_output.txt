@@ -1,0 +1,1 @@
+{"content":{"prompt":"Maria ___ her homework."},"target_answer":"has finished","accepted_answers":["has finished"]}

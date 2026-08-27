@@ -1,0 +1,89 @@
+{
+  "item": {
+    "accepted_answers": [
+      "aren't cleaning"
+    ],
+    "canonical_cell_id": "CELL_E7EC123EE518CC58",
+    "content": {
+      "prompt": "The children ______ the classroom now; they are outside. (clean)"
+    },
+    "generation_metadata": {
+      "attempt": 1,
+      "attempt_history": [
+        {
+          "accepted": true,
+          "attempt": 1,
+          "rejection_reasons": []
+        }
+      ],
+      "backend": {
+        "kind": "codex_exec",
+        "model": "gpt-5.6-luna"
+      },
+      "evidence_directory": "/home/abdullah/grammar_kt_harness/experiments/post_training_v1/data/pilot_v1/evidence/generation/ATTEMPT_5917A86B3844E6EC/OPP_7E1E0B371E1A07AD",
+      "generator_config": {
+        "constraints": {
+          "lexical_level": "A2_where_feasible",
+          "register": "neutral",
+          "response_type": "sentence_completion"
+        },
+        "generator_id": "llm_standalone_v0",
+        "mode": "llm_standalone"
+      },
+      "input_opportunity": {
+        "canonical_cell_id": "CELL_E7EC123EE518CC58",
+        "cell": {
+          "aspect": "progressive",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "negative",
+          "tense": "present",
+          "voice": "active"
+        },
+        "coverage_reasons": [
+          "agreement_measurement:be"
+        ],
+        "expected_operations": [
+          "progressive",
+          "negation"
+        ],
+        "measurement_opportunity_id": "OPP_7E1E0B371E1A07AD",
+        "source_descriptor_ids": [
+          "1741163713121x303053781636601900",
+          "1741163716068x574314163168649300"
+        ],
+        "structural_conditions": {
+          "imperative_subtype": null,
+          "predicate_class": "lexical_transitive",
+          "subject_number": "plural",
+          "subject_person": 3,
+          "wh_role": null
+        }
+      },
+      "parsed_output": {
+        "accepted_answers": [
+          "aren't cleaning"
+        ],
+        "content": {
+          "prompt": "The children ______ the classroom now; they are outside. (clean)"
+        },
+        "target_answer": "aren't cleaning"
+      },
+      "raw_output": "{\"content\":{\"prompt\":\"The children ______ the classroom now; they are outside. (clean)\"},\"target_answer\":\"aren't cleaning\",\"accepted_answers\":[\"aren't cleaning\"]}",
+      "rendered_prompt": "Create one natural standalone English completion item for the fixed structural target below.\n\nThe target grammar has already been chosen. Do not reinterpret it, weaken it, or select a different target. You may choose ordinary lexical content, names, and surface wording. Keep lexical difficulty simple (A2 where feasible), avoid specialist world knowledge, and make the intended answer unambiguous.\n\nFixed MeasurementOpportunity:\n{\n  \"canonical_cell_id\": \"CELL_E7EC123EE518CC58\",\n  \"cell\": {\n    \"aspect\": \"progressive\",\n    \"clause\": \"declarative\",\n    \"modal\": \"none\",\n    \"polarity\": \"negative\",\n    \"tense\": \"present\",\n    \"voice\": \"active\"\n  },\n  \"expected_operations\": [\n    \"progressive\",\n    \"negation\"\n  ],\n  \"structural_conditions\": {\n    \"imperative_subtype\": null,\n    \"predicate_class\": \"lexical_transitive\",\n    \"subject_number\": \"plural\",\n    \"subject_person\": 3,\n    \"wh_role\": null\n  }\n}\n\nGeneration constraints:\n{\n  \"lexical_level\": \"A2_where_feasible\",\n  \"register\": \"neutral\",\n  \"response_type\": \"sentence_completion\"\n}\n\nReturn only the JSON object required by the output schema. The content object must contain exactly a learner-facing prompt. The target answer must instantiate every declared cell value, structural condition, and expected operation.\n"
+    },
+    "generator_id": "llm_standalone_v0",
+    "item_family": "standalone_completion",
+    "item_id": "ITEM_4659E7E4E38B7D22",
+    "measurement_opportunity_id": "OPP_7E1E0B371E1A07AD",
+    "quality_diagnostics": {},
+    "source_descriptor_ids": [
+      "1741163713121x303053781636601900",
+      "1741163716068x574314163168649300"
+    ],
+    "target_answer": "aren't cleaning",
+    "validated_structure": {},
+    "validation_metadata": {}
+  },
+  "status": "candidate"
+}

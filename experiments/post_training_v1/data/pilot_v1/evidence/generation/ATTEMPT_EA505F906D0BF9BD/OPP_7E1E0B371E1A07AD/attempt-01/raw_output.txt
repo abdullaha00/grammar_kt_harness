@@ -1,0 +1,1 @@
+{"content":{"prompt":"Complete the sentence: The children ______ TV right now."},"target_answer":"The children are not watching TV.","accepted_answers":["are not watching","aren’t watching"]}

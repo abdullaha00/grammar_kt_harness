@@ -1,47 +1,50 @@
 experiment: base
 
-fold:
-  manifest: modules/folds/reference_v0.json
-
-source:
-  path: egp_entries.jsonl
-  data_root: data/external
-  data_root_env: GRAMMAR_KT_DATA_ROOT
-  source_path_env: GRAMMAR_KT_EGP_SOURCE
-  sha256: e38c4f959f188150dae7b88f21e35d77828048772e222191818dc0c2488486cd
-  records: 1222
-  selected_descriptors: 139
-  sample_ids: modules/grammar/source/sample_ids.txt
-  sample_metadata: modules/grammar/source/sample_metadata.jsonl
-  annotation_units: modules/grammar/source/annotation_units.jsonl
+resource:
+  data: data/fixtures/egp_pilot.jsonl
+  schema: modules/resource/egp/schema.yaml
 
 normalisation:
-  phase1_prompt: modules/grammar/normalisation/prompts/phase1.txt
-  phase2_prompt: modules/grammar/normalisation/prompts/phase2.txt
-  backend_config: modules/grammar/normalisation/configs/backend.yaml
-  workers: 3
-  max_attempts: 2
+  phase1_prompt: modules/resource/egp/normalisation/phase1.txt
+  phase2_prompt: modules/resource/egp/normalisation/phase2.txt
+  rulebook: modules/resource/egp/normalisation/rulebook.md
+  canonical_schema: modules/canonical/schema.yaml
+  model: gpt-5.6-sol
+  reasoning_effort: medium
 
-canonical: {}
-
-measurement:
-  config: modules/measurement/opportunities/default.json
+canonical:
+  schema: modules/canonical/schema.yaml
 
 generation:
-  generator: modules/generation/generators/llm_standalone_v0.yaml
-  validation: modules/generation/validation/blind_v0.yaml
+  prompt: modules/generation/prompt.txt
+  rulebook: modules/generation/rulebook.md
+  design: modules/generation/design.yaml
+  lexicon: modules/generation/lexicon.jsonl
+  format: modules/generation/formats/controlled_production.yaml
+  model: gpt-5.6-sol
+  reasoning_effort: medium
 
-knowledge_selection:
-  mode: structural
-  config: modules/knowledge/selection/configs/deterministic_v0.json
+validation:
+  prompt: modules/validation/prompt.txt
+  criteria: modules/validation/criteria.yaml
+  model: gpt-5.6-terra
+  reasoning_effort: medium
 
-knowledge: {}
-qmatrix: {}
+fold:
+  manifest: modules/folds/reference.yaml
 
 simulation:
-  parameters: modules/evaluation/simulation/configs/structural_oracle_v0.json
-  seed: 20260817
+  world: modules/simulation/world.yaml
+
+kc:
+  mode: predefined
+  policy: modules/kc/policies/factorized.yaml
+  candidates: modules/kc/candidates.yaml
+  obligations: modules/kc/obligations.yaml
+  selector: modules/kc/selector.yaml
 
 kt:
-  parameters: modules/evaluation/kt/configs/default.json
-  techniques: [empirical, bkt, logistic]
+  protocol: modules/kt/protocol.yaml
+
+evaluation:
+  protocol: modules/evaluation/protocol.yaml

@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "would visit"
+  ],
+  "content": {
+    "prompt": "If Mia had more free time, she ____ her grandmother every week."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "would visit"
+}

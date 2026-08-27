@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "have been cleaning"
+  ],
+  "content": {
+    "prompt": "I ________ the kitchen for an hour. (clean)"
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "have been cleaning"
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b01-07ba-71a3-b38a-ccd840df4eba"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"The room ___ (clean) every morning.\"},\"target_answer\":\"The room is cleaned every morning.\",\"accepted_answers\":[\"The room is cleaned every morning.\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12769,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":102,"reasoning_output_tokens":53}}

@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "have finished"
+  ],
+  "content": {
+    "learner_prompt": "B: Yes, they _____ their homework.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Are the children ready for dinner?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "have finished"
+}

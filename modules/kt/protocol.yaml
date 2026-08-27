@@ -1,0 +1,19 @@
+protocol_id: simple_online_kt_v1
+techniques: [empirical, bkt, logistic]
+history: learner events strictly before the predicted event
+evaluation_split: test
+
+empirical:
+  alpha: 1.0
+  beta: 1.0
+
+bkt:
+  initial_mastery: 0.35
+  learn: 0.12
+  guess: 0.18
+  slip: 0.10
+
+logistic:
+  regularization_c: 1.0
+  max_iterations: 300
+  random_seed: 20260827

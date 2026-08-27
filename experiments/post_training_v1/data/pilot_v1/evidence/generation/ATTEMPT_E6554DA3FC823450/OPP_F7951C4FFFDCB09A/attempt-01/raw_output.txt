@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"What is Ben doing in the kitchen?"}],"learner_prompt":"B: Ben ________ (not / wash) the dishes."},"target_answer":"Ben isn't washing the dishes.","accepted_answers":["Ben isn't washing the dishes.","Ben is not washing the dishes."]}

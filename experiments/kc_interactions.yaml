@@ -1,6 +1,0 @@
-extends: base
-experiment: kc_interactions
-
-knowledge_selection:
-  mode: predefined
-  policy: modules/knowledge/policies/factorized_plus_interactions.json

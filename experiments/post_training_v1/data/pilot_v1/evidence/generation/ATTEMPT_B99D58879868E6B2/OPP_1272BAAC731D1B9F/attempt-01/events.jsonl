@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b02-37d4-7ca0-8352-cd2fe93e7adb"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"Mia ______ dinner in the kitchen.\"},\"target_answer\":\"is cooking\",\"accepted_answers\":[\"is cooking\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12767,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":90,"reasoning_output_tokens":51}}

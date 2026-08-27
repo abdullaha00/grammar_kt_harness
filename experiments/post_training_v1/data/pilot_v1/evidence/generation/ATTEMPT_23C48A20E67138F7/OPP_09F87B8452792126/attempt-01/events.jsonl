@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b03-bd5e-7ad2-acf0-7de34e658ab6"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"The children ___ TV after dinner. (not / watch)\"},\"target_answer\":\"The children do not watch TV after dinner.\",\"accepted_answers\":[\"The children do not watch TV after dinner.\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12770,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":142,"reasoning_output_tokens":85}}

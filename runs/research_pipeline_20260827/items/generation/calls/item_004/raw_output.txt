@@ -1,0 +1,1 @@
+{"prompt": "Right now, Mia ___ a book. (read)", "target_answer": "Right now, Mia is reading a book.", "accepted_answers": ["Right now, Mia is reading a book."], "operation_tags": ["progressive"], "note": "Right-now cue determines progressive aspect."}

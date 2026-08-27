@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Does the cleaner wash this window every day?"}],"learner_prompt":"B: No, it ______ every day."},"target_answer":"isn't washed","accepted_answers":["isn't washed","is not washed"]}

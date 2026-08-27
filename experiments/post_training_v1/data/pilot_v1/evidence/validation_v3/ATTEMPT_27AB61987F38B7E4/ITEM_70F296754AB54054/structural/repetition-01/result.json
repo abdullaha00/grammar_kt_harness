@@ -1,0 +1,29 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "errors": [],
+      "valid": true
+    }
+  ],
+  "intended_target_hidden": true,
+  "item_id": "ITEM_70F296754AB54054",
+  "label": "structural",
+  "repetition": 1,
+  "result": {
+    "agreement_site": "modal",
+    "cell": {
+      "aspect": "none",
+      "clause": "declarative",
+      "modal": "would",
+      "polarity": "positive",
+      "tense": "NA",
+      "voice": "active"
+    },
+    "operations": [
+      "central_modal"
+    ],
+    "predicate_class": "lexical_transitive"
+  },
+  "successful_attempt": 1
+}

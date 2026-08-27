@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b01-77ab-7ac3-8239-7252e017f954"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"When I arrived at 8 p.m., Maria ___ dinner. She had already eaten and was watching TV.\"},\"target_answer\":\"had not been cooking\",\"accepted_answers\":[\"hadn't been cooking\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12780,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":211,"reasoning_output_tokens":154}}

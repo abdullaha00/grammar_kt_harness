@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b02-2bf6-79d1-a1c1-9f76739862e4"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"I ______ the letter before the bus arrived.\"},\"target_answer\":\"had not sent\",\"accepted_answers\":[\"hadn't sent\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12771,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":118,"reasoning_output_tokens":76}}

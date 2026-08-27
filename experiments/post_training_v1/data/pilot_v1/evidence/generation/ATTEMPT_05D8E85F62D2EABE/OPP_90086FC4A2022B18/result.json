@@ -1,0 +1,90 @@
+{
+  "item": {
+    "accepted_answers": [
+      "Yesterday, I cleaned the kitchen."
+    ],
+    "canonical_cell_id": "CELL_CEBF57A9F5C2F00A",
+    "content": {
+      "prompt": "Yesterday, I ___ the kitchen."
+    },
+    "generation_metadata": {
+      "attempt": 1,
+      "attempt_history": [
+        {
+          "accepted": true,
+          "attempt": 1,
+          "rejection_reasons": []
+        }
+      ],
+      "backend": {
+        "kind": "codex_exec",
+        "model": "gpt-5.6-luna"
+      },
+      "evidence_directory": "/home/abdullah/grammar_kt_harness/experiments/post_training_v1/data/pilot_v1/evidence/generation/ATTEMPT_05D8E85F62D2EABE/OPP_90086FC4A2022B18",
+      "generator_config": {
+        "constraints": {
+          "lexical_level": "A2_where_feasible",
+          "register": "neutral",
+          "response_type": "sentence_completion"
+        },
+        "generator_id": "llm_standalone_v0",
+        "mode": "llm_standalone"
+      },
+      "input_opportunity": {
+        "canonical_cell_id": "CELL_CEBF57A9F5C2F00A",
+        "cell": {
+          "aspect": "none",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "positive",
+          "tense": "past",
+          "voice": "active"
+        },
+        "coverage_reasons": [
+          "agreement_measurement:main_verb"
+        ],
+        "expected_operations": [],
+        "measurement_opportunity_id": "OPP_90086FC4A2022B18",
+        "source_descriptor_ids": [
+          "1741163708330x678606711578176000",
+          "1741163712739x218459335733744320",
+          "1741163712739x256584265013129380",
+          "1741163712740x655374430632900200"
+        ],
+        "structural_conditions": {
+          "imperative_subtype": null,
+          "predicate_class": "lexical_transitive",
+          "subject_number": "singular",
+          "subject_person": 1,
+          "wh_role": null
+        }
+      },
+      "parsed_output": {
+        "accepted_answers": [
+          "Yesterday, I cleaned the kitchen."
+        ],
+        "content": {
+          "prompt": "Yesterday, I ___ the kitchen."
+        },
+        "target_answer": "Yesterday, I cleaned the kitchen."
+      },
+      "raw_output": "{\"content\":{\"prompt\":\"Yesterday, I ___ the kitchen.\"},\"target_answer\":\"Yesterday, I cleaned the kitchen.\",\"accepted_answers\":[\"Yesterday, I cleaned the kitchen.\"]}",
+      "rendered_prompt": "Create one natural standalone English completion item for the fixed structural target below.\n\nThe target grammar has already been chosen. Do not reinterpret it, weaken it, or select a different target. You may choose ordinary lexical content, names, and surface wording. Keep lexical difficulty simple (A2 where feasible), avoid specialist world knowledge, and make the intended answer unambiguous.\n\nFixed MeasurementOpportunity:\n{\n  \"canonical_cell_id\": \"CELL_CEBF57A9F5C2F00A\",\n  \"cell\": {\n    \"aspect\": \"none\",\n    \"clause\": \"declarative\",\n    \"modal\": \"none\",\n    \"polarity\": \"positive\",\n    \"tense\": \"past\",\n    \"voice\": \"active\"\n  },\n  \"expected_operations\": [],\n  \"structural_conditions\": {\n    \"imperative_subtype\": null,\n    \"predicate_class\": \"lexical_transitive\",\n    \"subject_number\": \"singular\",\n    \"subject_person\": 1,\n    \"wh_role\": null\n  }\n}\n\nGeneration constraints:\n{\n  \"lexical_level\": \"A2_where_feasible\",\n  \"register\": \"neutral\",\n  \"response_type\": \"sentence_completion\"\n}\n\nReturn only the JSON object required by the output schema. The content object must contain exactly a learner-facing prompt. The target answer must instantiate every declared cell value, structural condition, and expected operation.\n"
+    },
+    "generator_id": "llm_standalone_v0",
+    "item_family": "standalone_completion",
+    "item_id": "ITEM_1A01CB8C82C637DB",
+    "measurement_opportunity_id": "OPP_90086FC4A2022B18",
+    "quality_diagnostics": {},
+    "source_descriptor_ids": [
+      "1741163708330x678606711578176000",
+      "1741163712739x218459335733744320",
+      "1741163712739x256584265013129380",
+      "1741163712740x655374430632900200"
+    ],
+    "target_answer": "Yesterday, I cleaned the kitchen.",
+    "validated_structure": {},
+    "validation_metadata": {}
+  },
+  "status": "candidate"
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b07-cc1f-7ee1-b0f2-80557c937eb5"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"It's warm in here.\"},{\"speaker\":\"B\",\"text\":\"Let's ___ the window.\"}],\"learner_prompt\":\"Complete B's sentence with a natural suggestion.\"},\"target_answer\":\"Let's open the window.\",\"accepted_answers\":[\"Let's open the window.\",\"Lets open the window.\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12846,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":242,"reasoning_output_tokens":161}}

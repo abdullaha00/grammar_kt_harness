@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "was cooking"
+  ],
+  "content": {
+    "prompt": "At 7 p.m. yesterday, I __________ dinner for my family."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "was cooking"
+}

@@ -1,0 +1,9 @@
+format_id: controlled_production
+task_goal: Produce the complete response licensed by a short context and lexical cue.
+required_fields: [prompt, target_answer, accepted_answers]
+answer_form: one complete English clause
+constraints:
+  - The prompt must visibly mark the response slot.
+  - The target answer must fill the task without additional explanation.
+  - Accepted answers must preserve the intended GrammarCell.
+  - The prompt must not reveal the completed target form.

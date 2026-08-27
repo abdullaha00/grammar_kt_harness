@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b03-88c6-7540-8d2f-e014953af9db"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"Mia ______ loud music. (not / like)\"},\"target_answer\":\"doesn't like\",\"accepted_answers\":[\"doesn't like\",\"does not like\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12771,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":96,"reasoning_output_tokens":47}}

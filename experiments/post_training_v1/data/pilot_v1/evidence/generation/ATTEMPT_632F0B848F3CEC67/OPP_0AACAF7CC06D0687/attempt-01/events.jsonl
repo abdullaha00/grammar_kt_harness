@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b02-e00b-70d3-9108-a615fc9682f7"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"The museum is free today.\"}],\"learner_prompt\":\"B: Do I need a ticket?\"},\"target_answer\":\"Do I need a ticket?\",\"accepted_answers\":[\"Do I need a ticket?\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12841,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":208,"reasoning_output_tokens":141}}

@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "The children do not watch TV before dinner."
+  ],
+  "content": {
+    "prompt": "The children ______ TV before dinner. (watch)"
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "The children do not watch TV before dinner."
+}

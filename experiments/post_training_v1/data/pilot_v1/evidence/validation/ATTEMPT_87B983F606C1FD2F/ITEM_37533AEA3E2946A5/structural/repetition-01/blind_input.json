@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "had been cleaning"
+  ],
+  "content": {
+    "learner_prompt": "B: The children ______ the windows all morning.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why were the windows so clean?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "had been cleaning"
+}

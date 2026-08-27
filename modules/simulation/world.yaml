@@ -1,0 +1,48 @@
+world_id: structural_synthetic_world_v1
+claim: Controlled synthetic data generator; hidden dimensions are not claimed to be human KCs.
+seed: 20260827
+learners: 24
+passes: 4
+item_order: rotate_each_pass
+
+hidden_dimensions:
+  - id: hidden_past
+    activation: {tense: past}
+    initial_mastery_beta: [3.0, 2.5]
+    learning_rate: 0.10
+  - id: hidden_progressive
+    activation: {aspect: progressive}
+    initial_mastery_beta: [2.5, 3.0]
+    learning_rate: 0.12
+  - id: hidden_passive
+    activation: {voice: passive}
+    initial_mastery_beta: [2.0, 3.5]
+    learning_rate: 0.09
+  - id: hidden_negative
+    activation: {polarity: negative}
+    initial_mastery_beta: [3.0, 2.5]
+    learning_rate: 0.11
+  - id: hidden_question
+    activation: {clause: [polar_question, subject_wh_question, non_subject_wh_question]}
+    initial_mastery_beta: [2.2, 3.2]
+    learning_rate: 0.10
+  - id: hidden_modal
+    activation: {modal: {not: none}}
+    initial_mastery_beta: [2.4, 3.1]
+    learning_rate: 0.10
+
+background_mastery_beta: [4.0, 2.0]
+difficulty:
+  base: -0.25
+  per_active_dimension: 0.22
+  passive_extra: 0.20
+  question_extra: 0.15
+response:
+  discrimination: 2.2
+  guess_floor: 0.08
+  slip_ceiling: 0.08
+learning_update: mastery_moves_toward_one_after_each_opportunity
+temporal_split:
+  train_fraction: 0.60
+  validation_fraction: 0.20
+  test_fraction: 0.20

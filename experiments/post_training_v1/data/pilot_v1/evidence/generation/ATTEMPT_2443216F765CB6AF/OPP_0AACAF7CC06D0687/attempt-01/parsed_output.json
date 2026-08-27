@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "Do"
+  ],
+  "content": {
+    "learner_prompt": "B: ___ I need a ticket?",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "I'm not sure if I need a ticket for the bus."
+      }
+    ]
+  },
+  "target_answer": "Do"
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b04-d456-79d0-b618-aa7be5cfb0ad"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"Yesterday, I ___ the kitchen.\"},\"target_answer\":\"Yesterday, I cleaned the kitchen.\",\"accepted_answers\":[\"Yesterday, I cleaned the kitchen.\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12761,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":145,"reasoning_output_tokens":98}}

@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "Do I need this warm coat?"
+  ],
+  "content": {
+    "learner_prompt": "B: ______ I need this warm coat?",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "The weather looks cold today."
+      }
+    ]
+  },
+  "target_answer": "Do I need this warm coat?"
+}

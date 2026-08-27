@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "am cooking"
+  ],
+  "content": {
+    "learner_prompt": "I ____ dinner now.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "What are you doing in the kitchen?"
+      }
+    ]
+  },
+  "target_answer": "am cooking"
+}

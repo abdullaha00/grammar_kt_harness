@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b04-a9dc-7e93-a314-f4ff5577b70e"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Did you clean your room yesterday?\"}],\"learner_prompt\":\"B: No, I _____ my room.\"},\"target_answer\":\"didn't clean\",\"accepted_answers\":[\"did not clean\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12836,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":162,"reasoning_output_tokens":99}}

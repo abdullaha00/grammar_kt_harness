@@ -1,0 +1,348 @@
+{
+  "intervention": "Prompt requests a short utterance or dialogue context.",
+  "same_grammar_cells": true,
+  "generated_prompt_pairs": [
+    {
+      "cell_id": "cell_001",
+      "baseline": "Every morning, Lina ___ to work by bus. (travel)",
+      "contextual": "Lina describes her routine: ‘Every morning, I ___ to work by bus.’ (travel)"
+    },
+    {
+      "cell_id": "cell_002",
+      "baseline": "Yesterday, Omar ___ the door because it was stuck. (not / open)",
+      "contextual": "A friend asks about yesterday. Reply: ‘Omar ___ the door because it was stuck.’ (not / open)"
+    },
+    {
+      "cell_id": "cell_003",
+      "baseline": "Yesterday, the meal ___ by Ana. (prepare)",
+      "contextual": "Who cooked? Complete the reply: ‘The meal ___ by Ana yesterday.’ (prepare)"
+    }
+  ],
+  "baseline_validation": [
+    {
+      "item_id": "item_001",
+      "judgments": {
+        "target_fidelity": {
+          "passed": true,
+          "note": "The response realises the declared cell."
+        },
+        "grammaticality": {
+          "passed": true,
+          "note": "The target response is grammatical."
+        },
+        "naturalness": {
+          "passed": true,
+          "note": "The prompt and answer form a natural short context."
+        },
+        "pedagogical_suitability": {
+          "passed": true,
+          "note": "The requested form is focused and visible."
+        },
+        "determinacy": {
+          "passed": true,
+          "note": "The cues sufficiently constrain the accepted answer."
+        },
+        "cefr_appropriateness": {
+          "passed": true,
+          "note": "Non-target vocabulary is common."
+        },
+        "no_answer_leakage": {
+          "passed": true,
+          "note": "The completed form is not displayed in the prompt."
+        },
+        "no_extraneous_grammar": {
+          "passed": true,
+          "note": "No unrelated advanced construction is required."
+        },
+        "no_world_knowledge": {
+          "passed": true,
+          "note": "No specialist knowledge is needed."
+        }
+      },
+      "accepted": true
+    },
+    {
+      "item_id": "item_002",
+      "judgments": {
+        "target_fidelity": {
+          "passed": true,
+          "note": "The response realises the declared cell."
+        },
+        "grammaticality": {
+          "passed": true,
+          "note": "The target response is grammatical."
+        },
+        "naturalness": {
+          "passed": true,
+          "note": "The prompt and answer form a natural short context."
+        },
+        "pedagogical_suitability": {
+          "passed": true,
+          "note": "The requested form is focused and visible."
+        },
+        "determinacy": {
+          "passed": true,
+          "note": "The cues sufficiently constrain the accepted answer."
+        },
+        "cefr_appropriateness": {
+          "passed": true,
+          "note": "Non-target vocabulary is common."
+        },
+        "no_answer_leakage": {
+          "passed": true,
+          "note": "The completed form is not displayed in the prompt."
+        },
+        "no_extraneous_grammar": {
+          "passed": true,
+          "note": "No unrelated advanced construction is required."
+        },
+        "no_world_knowledge": {
+          "passed": true,
+          "note": "No specialist knowledge is needed."
+        }
+      },
+      "accepted": true
+    },
+    {
+      "item_id": "item_003",
+      "judgments": {
+        "target_fidelity": {
+          "passed": true,
+          "note": "The response realises the declared cell."
+        },
+        "grammaticality": {
+          "passed": true,
+          "note": "The target response is grammatical."
+        },
+        "naturalness": {
+          "passed": true,
+          "note": "The prompt and answer form a natural short context."
+        },
+        "pedagogical_suitability": {
+          "passed": true,
+          "note": "The requested form is focused and visible."
+        },
+        "determinacy": {
+          "passed": true,
+          "note": "The cues sufficiently constrain the accepted answer."
+        },
+        "cefr_appropriateness": {
+          "passed": true,
+          "note": "Non-target vocabulary is common."
+        },
+        "no_answer_leakage": {
+          "passed": true,
+          "note": "The completed form is not displayed in the prompt."
+        },
+        "no_extraneous_grammar": {
+          "passed": true,
+          "note": "No unrelated advanced construction is required."
+        },
+        "no_world_knowledge": {
+          "passed": true,
+          "note": "No specialist knowledge is needed."
+        }
+      },
+      "accepted": true
+    }
+  ],
+  "contextual_validation": [
+    {
+      "item_id": "item_001",
+      "judgments": {
+        "target_fidelity": {
+          "passed": true,
+          "note": "The response realises the declared cell."
+        },
+        "grammaticality": {
+          "passed": true,
+          "note": "The target response is grammatical."
+        },
+        "naturalness": {
+          "passed": true,
+          "note": "The prompt and answer form a natural short context."
+        },
+        "pedagogical_suitability": {
+          "passed": true,
+          "note": "The requested form is focused and visible."
+        },
+        "determinacy": {
+          "passed": true,
+          "note": "The cues sufficiently constrain the accepted answer."
+        },
+        "cefr_appropriateness": {
+          "passed": true,
+          "note": "Non-target vocabulary is common."
+        },
+        "no_answer_leakage": {
+          "passed": true,
+          "note": "The completed form is not displayed in the prompt."
+        },
+        "no_extraneous_grammar": {
+          "passed": true,
+          "note": "No unrelated advanced construction is required."
+        },
+        "no_world_knowledge": {
+          "passed": true,
+          "note": "No specialist knowledge is needed."
+        }
+      },
+      "accepted": true
+    },
+    {
+      "item_id": "item_002",
+      "judgments": {
+        "target_fidelity": {
+          "passed": true,
+          "note": "The response realises the declared cell."
+        },
+        "grammaticality": {
+          "passed": true,
+          "note": "The target response is grammatical."
+        },
+        "naturalness": {
+          "passed": true,
+          "note": "The prompt and answer form a natural short context."
+        },
+        "pedagogical_suitability": {
+          "passed": true,
+          "note": "The requested form is focused and visible."
+        },
+        "determinacy": {
+          "passed": true,
+          "note": "The cues sufficiently constrain the accepted answer."
+        },
+        "cefr_appropriateness": {
+          "passed": true,
+          "note": "Non-target vocabulary is common."
+        },
+        "no_answer_leakage": {
+          "passed": true,
+          "note": "The completed form is not displayed in the prompt."
+        },
+        "no_extraneous_grammar": {
+          "passed": true,
+          "note": "No unrelated advanced construction is required."
+        },
+        "no_world_knowledge": {
+          "passed": true,
+          "note": "No specialist knowledge is needed."
+        }
+      },
+      "accepted": true
+    },
+    {
+      "item_id": "item_003",
+      "judgments": {
+        "target_fidelity": {
+          "passed": true,
+          "note": "The response realises the declared cell."
+        },
+        "grammaticality": {
+          "passed": true,
+          "note": "The target response is grammatical."
+        },
+        "naturalness": {
+          "passed": true,
+          "note": "The prompt and answer form a natural short context."
+        },
+        "pedagogical_suitability": {
+          "passed": true,
+          "note": "The requested form is focused and visible."
+        },
+        "determinacy": {
+          "passed": true,
+          "note": "The cues sufficiently constrain the accepted answer."
+        },
+        "cefr_appropriateness": {
+          "passed": true,
+          "note": "Non-target vocabulary is common."
+        },
+        "no_answer_leakage": {
+          "passed": true,
+          "note": "The completed form is not displayed in the prompt."
+        },
+        "no_extraneous_grammar": {
+          "passed": true,
+          "note": "No unrelated advanced construction is required."
+        },
+        "no_world_knowledge": {
+          "passed": true,
+          "note": "No specialist knowledge is needed."
+        }
+      },
+      "accepted": true
+    }
+  ],
+  "baseline_bank_summary": {
+    "candidate_items": 3,
+    "accepted_items": 3,
+    "acceptance_rate": 1.0,
+    "grammar_cells": 3,
+    "covered_cells": 3,
+    "items_per_cell": {
+      "cell_001": 1,
+      "cell_002": 1,
+      "cell_003": 1
+    },
+    "unique_prompt_rate": 1.0,
+    "duplicate_prompts": 0,
+    "lexical_types": 21,
+    "lexical_tokens": 24,
+    "lexical_diversity": 0.875,
+    "format_distribution": {
+      "controlled_production": 3
+    },
+    "cefr_distribution": {
+      "A2": 1,
+      "A1": 2
+    },
+    "criterion_pass_rates": {
+      "target_fidelity": 1.0,
+      "grammaticality": 1.0,
+      "naturalness": 1.0,
+      "pedagogical_suitability": 1.0,
+      "determinacy": 1.0,
+      "cefr_appropriateness": 1.0,
+      "no_answer_leakage": 1.0,
+      "no_extraneous_grammar": 1.0,
+      "no_world_knowledge": 1.0
+    }
+  },
+  "contextual_bank_summary": {
+    "candidate_items": 3,
+    "accepted_items": 3,
+    "acceptance_rate": 1.0,
+    "grammar_cells": 3,
+    "covered_cells": 3,
+    "items_per_cell": {
+      "cell_001": 1,
+      "cell_002": 1,
+      "cell_003": 1
+    },
+    "unique_prompt_rate": 1.0,
+    "duplicate_prompts": 0,
+    "lexical_types": 33,
+    "lexical_tokens": 38,
+    "lexical_diversity": 0.868421052631579,
+    "format_distribution": {
+      "controlled_production": 3
+    },
+    "cefr_distribution": {
+      "A2": 1,
+      "A1": 2
+    },
+    "criterion_pass_rates": {
+      "target_fidelity": 1.0,
+      "grammaticality": 1.0,
+      "naturalness": 1.0,
+      "pedagogical_suitability": 1.0,
+      "determinacy": 1.0,
+      "cefr_appropriateness": 1.0,
+      "no_answer_leakage": 1.0,
+      "no_extraneous_grammar": 1.0,
+      "no_world_knowledge": 1.0
+    }
+  },
+  "interpretation": "Fixture-scale responsiveness check; no prompt-quality claim is made."
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b03-4be2-7f93-9bb1-988261389027"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Is the front door locked?\"}],\"learner_prompt\":\"B: No, it ___ (lock).\"},\"target_answer\":\"is not locked\",\"accepted_answers\":[\"is not locked\",\"isn't locked\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12842,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":212,"reasoning_output_tokens":145}}

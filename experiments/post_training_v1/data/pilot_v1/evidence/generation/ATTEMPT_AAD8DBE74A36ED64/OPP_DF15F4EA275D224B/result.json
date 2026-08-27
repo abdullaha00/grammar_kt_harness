@@ -1,0 +1,86 @@
+{
+  "item": {
+    "accepted_answers": [
+      "would visit"
+    ],
+    "canonical_cell_id": "CELL_0ACC7E0377B19DC1",
+    "content": {
+      "prompt": "If Mia had more free time, she ____ her grandmother every week."
+    },
+    "generation_metadata": {
+      "attempt": 1,
+      "attempt_history": [
+        {
+          "accepted": true,
+          "attempt": 1,
+          "rejection_reasons": []
+        }
+      ],
+      "backend": {
+        "kind": "codex_exec",
+        "model": "gpt-5.6-luna"
+      },
+      "evidence_directory": "/home/abdullah/grammar_kt_harness/experiments/post_training_v1/data/pilot_v1/evidence/generation/ATTEMPT_AAD8DBE74A36ED64/OPP_DF15F4EA275D224B",
+      "generator_config": {
+        "constraints": {
+          "lexical_level": "A2_where_feasible",
+          "register": "neutral",
+          "response_type": "sentence_completion"
+        },
+        "generator_id": "llm_standalone_v0",
+        "mode": "llm_standalone"
+      },
+      "input_opportunity": {
+        "canonical_cell_id": "CELL_0ACC7E0377B19DC1",
+        "cell": {
+          "aspect": "none",
+          "clause": "declarative",
+          "modal": "would",
+          "polarity": "positive",
+          "tense": "NA",
+          "voice": "active"
+        },
+        "coverage_reasons": [
+          "canonical_cell_baseline"
+        ],
+        "expected_operations": [
+          "central_modal"
+        ],
+        "measurement_opportunity_id": "OPP_DF15F4EA275D224B",
+        "source_descriptor_ids": [
+          "1741163711300x444537304178034940"
+        ],
+        "structural_conditions": {
+          "imperative_subtype": null,
+          "predicate_class": "lexical_transitive",
+          "subject_number": "singular",
+          "subject_person": 3,
+          "wh_role": null
+        }
+      },
+      "parsed_output": {
+        "accepted_answers": [
+          "would visit"
+        ],
+        "content": {
+          "prompt": "If Mia had more free time, she ____ her grandmother every week."
+        },
+        "target_answer": "would visit"
+      },
+      "raw_output": "{\"content\":{\"prompt\":\"If Mia had more free time, she ____ her grandmother every week.\"},\"target_answer\":\"would visit\",\"accepted_answers\":[\"would visit\"]}",
+      "rendered_prompt": "Create one natural standalone English completion item for the fixed structural target below.\n\nThe target grammar has already been chosen. Do not reinterpret it, weaken it, or select a different target. You may choose ordinary lexical content, names, and surface wording. Keep lexical difficulty simple (A2 where feasible), avoid specialist world knowledge, and make the intended answer unambiguous.\n\nFixed MeasurementOpportunity:\n{\n  \"canonical_cell_id\": \"CELL_0ACC7E0377B19DC1\",\n  \"cell\": {\n    \"aspect\": \"none\",\n    \"clause\": \"declarative\",\n    \"modal\": \"would\",\n    \"polarity\": \"positive\",\n    \"tense\": \"NA\",\n    \"voice\": \"active\"\n  },\n  \"expected_operations\": [\n    \"central_modal\"\n  ],\n  \"structural_conditions\": {\n    \"imperative_subtype\": null,\n    \"predicate_class\": \"lexical_transitive\",\n    \"subject_number\": \"singular\",\n    \"subject_person\": 3,\n    \"wh_role\": null\n  }\n}\n\nGeneration constraints:\n{\n  \"lexical_level\": \"A2_where_feasible\",\n  \"register\": \"neutral\",\n  \"response_type\": \"sentence_completion\"\n}\n\nReturn only the JSON object required by the output schema. The content object must contain exactly a learner-facing prompt. The target answer must instantiate every declared cell value, structural condition, and expected operation.\n"
+    },
+    "generator_id": "llm_standalone_v0",
+    "item_family": "standalone_completion",
+    "item_id": "ITEM_119960EA6CC97E89",
+    "measurement_opportunity_id": "OPP_DF15F4EA275D224B",
+    "quality_diagnostics": {},
+    "source_descriptor_ids": [
+      "1741163711300x444537304178034940"
+    ],
+    "target_answer": "would visit",
+    "validated_structure": {},
+    "validation_metadata": {}
+  },
+  "status": "candidate"
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b01-4bca-7fa3-a7f5-a8979dc463bb"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"The window ______ every day.\"},\"target_answer\":\"is cleaned\",\"accepted_answers\":[\"is cleaned\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12763,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":104,"reasoning_output_tokens":67}}

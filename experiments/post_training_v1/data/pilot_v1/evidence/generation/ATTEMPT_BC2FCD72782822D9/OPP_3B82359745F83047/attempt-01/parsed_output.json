@@ -1,0 +1,9 @@
+{
+  "accepted_answers": [
+    "Don't let's leave the door open at night."
+  ],
+  "content": {
+    "prompt": "_____ leave the door open at night."
+  },
+  "target_answer": "Don't let's leave the door open at night."
+}

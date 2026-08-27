@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b05-eb0f-7de1-91fa-e74e1c3bc75c"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Why is Maya tired?\"}],\"learner_prompt\":\"B: She ______ the house all morning. (clean)\"},\"target_answer\":\"has been cleaning\",\"accepted_answers\":[\"has been cleaning\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12843,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":158,"reasoning_output_tokens":93}}

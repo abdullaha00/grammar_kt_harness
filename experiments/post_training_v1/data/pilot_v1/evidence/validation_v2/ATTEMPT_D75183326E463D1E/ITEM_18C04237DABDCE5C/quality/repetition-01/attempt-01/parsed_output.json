@@ -1,0 +1,12 @@
+{
+  "answer_ambiguity": true,
+  "context_appropriateness": null,
+  "dialogue_coherence": null,
+  "lexical_cefr_appropriate": true,
+  "natural_speaker_turns": null,
+  "naturalness": 5,
+  "note": "Natural sentence, but the blank permits many verbs without a base verb or other constraint.",
+  "pedagogical_suitability": 3,
+  "pragmatic_licensing": null,
+  "world_knowledge_required": false
+}

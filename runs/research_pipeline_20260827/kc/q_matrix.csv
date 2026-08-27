@@ -1,0 +1,7 @@
+item_id,kc_modal_should,kc_negation,kc_passive,kc_past,kc_polar_question,kc_present,kc_progressive
+item_001,0,0,0,0,0,1,0
+item_002,0,1,0,1,0,0,0
+item_003,0,0,1,1,0,0,0
+item_004,0,0,0,0,0,1,1
+item_005,0,1,1,0,0,1,1
+item_006,1,0,0,0,1,0,0

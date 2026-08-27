@@ -1,0 +1,26 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "errors": [],
+      "valid": true
+    }
+  ],
+  "intended_target_hidden": true,
+  "item_id": "ITEM_062553A07EF465E0",
+  "label": "quality",
+  "repetition": 1,
+  "result": {
+    "answer_ambiguity": true,
+    "context_appropriateness": null,
+    "dialogue_coherence": null,
+    "lexical_cefr_appropriate": true,
+    "natural_speaker_turns": null,
+    "naturalness": 5,
+    "note": "Natural, clear standalone present-perfect-continuous completion; other grammatical forms may be conceivable depending on the intended meaning.",
+    "pedagogical_suitability": 5,
+    "pragmatic_licensing": null,
+    "world_knowledge_required": false
+  },
+  "successful_attempt": 1
+}

@@ -1,0 +1,29 @@
+{
+  "canonical_cell_id": "CELL_9556E3A49EFD0300",
+  "cell": {
+    "aspect": "none",
+    "clause": "declarative",
+    "modal": "none",
+    "polarity": "negative",
+    "tense": "present",
+    "voice": "passive"
+  },
+  "coverage_reasons": [
+    "canonical_cell_baseline"
+  ],
+  "expected_operations": [
+    "be_passive",
+    "negation"
+  ],
+  "measurement_opportunity_id": "OPP_6537948A09B5D175",
+  "source_descriptor_ids": [
+    "1741163712049x855374993067916200"
+  ],
+  "structural_conditions": {
+    "imperative_subtype": null,
+    "predicate_class": "lexical_transitive",
+    "subject_number": "singular",
+    "subject_person": 3,
+    "wh_role": null
+  }
+}

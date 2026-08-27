@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b04-84cb-7333-afb9-f6ca5d0d8f22"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"Mia _____ the door yesterday.\"},\"target_answer\":\"did not open\",\"accepted_answers\":[\"didn't open\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12767,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":88,"reasoning_output_tokens":48}}

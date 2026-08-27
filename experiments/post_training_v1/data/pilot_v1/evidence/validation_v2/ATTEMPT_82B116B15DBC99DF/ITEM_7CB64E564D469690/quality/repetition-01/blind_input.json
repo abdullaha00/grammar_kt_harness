@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "was broken"
+  ],
+  "content": {
+    "learner_prompt": "B: The window ______ by the ball.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "What happened to the window?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "was broken"
+}

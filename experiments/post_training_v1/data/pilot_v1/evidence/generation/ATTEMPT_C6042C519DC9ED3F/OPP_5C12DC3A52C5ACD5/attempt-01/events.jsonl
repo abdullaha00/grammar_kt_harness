@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b03-e2e4-7250-8328-e1ab25f1944b"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Why was Emma so tired?\"}],\"learner_prompt\":\"B: She ___ the whole house before the guests arrived. (clean)\"},\"target_answer\":\"had cleaned\",\"accepted_answers\":[\"had cleaned\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12838,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":155,"reasoning_output_tokens":88}}

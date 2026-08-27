@@ -1,0 +1,9 @@
+{
+  "accepted_answers": [
+    "The children do not watch TV before dinner."
+  ],
+  "content": {
+    "prompt": "The children ______ TV before dinner. (watch)"
+  },
+  "target_answer": "The children do not watch TV before dinner."
+}

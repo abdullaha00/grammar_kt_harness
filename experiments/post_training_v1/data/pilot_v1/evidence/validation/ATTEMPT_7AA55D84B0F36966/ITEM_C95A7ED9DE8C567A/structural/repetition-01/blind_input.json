@@ -1,0 +1,17 @@
+{
+  "accepted_surface_variants": [
+    "isn't cooking",
+    "is not cooking"
+  ],
+  "content": {
+    "learner_prompt": "B: No, she ____ dinner.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Is Anna cooking dinner?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "isn't cooking"
+}

@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Why was Emma relaxed before dinner?"}],"learner_prompt":"B: She ____ her homework."},"target_answer":"had finished","accepted_answers":["had finished"]}

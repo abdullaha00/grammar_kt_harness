@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "clean the table"
+  ],
+  "content": {
+    "learner_prompt": "B: Please ___ the table.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "The table is very dirty."
+      }
+    ]
+  },
+  "target_answer": "clean the table"
+}

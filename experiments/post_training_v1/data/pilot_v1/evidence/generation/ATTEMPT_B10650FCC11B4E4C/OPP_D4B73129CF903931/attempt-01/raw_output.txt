@@ -1,0 +1,1 @@
+{"content":{"prompt":"The classroom door ___ (clean) right now."},"target_answer":"is being cleaned","accepted_answers":["is being cleaned"]}

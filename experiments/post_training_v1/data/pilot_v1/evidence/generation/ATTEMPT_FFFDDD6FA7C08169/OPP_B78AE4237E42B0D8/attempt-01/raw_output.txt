@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"What was Maria doing when you arrived?"}],"learner_prompt":"B: She ____ the dishes."},"target_answer":"was washing","accepted_answers":["was washing"]}

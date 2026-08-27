@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Tom went to the shop yesterday."}],"learner_prompt":"B: ___ Tom buy the milk?"},"target_answer":"Did Tom buy the milk?","accepted_answers":["Did Tom buy the milk?"]}

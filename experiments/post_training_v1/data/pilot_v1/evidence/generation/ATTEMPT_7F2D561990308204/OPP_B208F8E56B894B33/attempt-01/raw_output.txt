@@ -1,0 +1,1 @@
+{"content":{"prompt":"I ________ my homework yet. (not / finish)"},"target_answer":"have not finished","accepted_answers":["haven't finished"]}

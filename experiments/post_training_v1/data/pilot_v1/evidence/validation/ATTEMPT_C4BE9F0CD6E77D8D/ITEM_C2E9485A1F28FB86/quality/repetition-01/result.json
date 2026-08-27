@@ -1,0 +1,26 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "errors": [],
+      "valid": true
+    }
+  ],
+  "intended_target_hidden": true,
+  "item_id": "ITEM_C2E9485A1F28FB86",
+  "label": "quality",
+  "repetition": 1,
+  "result": {
+    "answer_ambiguity": true,
+    "context_appropriateness": null,
+    "dialogue_coherence": null,
+    "lexical_cefr_appropriate": true,
+    "natural_speaker_turns": null,
+    "naturalness": 4,
+    "note": "The response is grammatical and the sentence is understandable, though the present continuous is slightly less natural than a simple present form in this general-context sentence. Multiple plausible completions make the item somewhat ambiguous.",
+    "pedagogical_suitability": 3,
+    "pragmatic_licensing": null,
+    "world_knowledge_required": false
+  },
+  "successful_attempt": 1
+}

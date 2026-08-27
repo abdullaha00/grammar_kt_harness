@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "had been delivered"
+  ],
+  "content": {
+    "learner_prompt": "B: Yes, the package ___ before lunch.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Did the package arrive before lunch?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "had been delivered"
+}

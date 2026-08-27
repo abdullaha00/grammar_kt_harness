@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b02-0ea8-7690-bb53-330728bd3133"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"I was hungry because I ______ breakfast before school.\"},\"target_answer\":\"had not eaten\",\"accepted_answers\":[\"hadn't eaten\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12774,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":122,"reasoning_output_tokens":79}}

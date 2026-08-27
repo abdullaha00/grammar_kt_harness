@@ -1,0 +1,1 @@
+{"content":{"prompt":"Yesterday, Maria ___ the door."},"target_answer":"opened","accepted_answers":["opened"]}

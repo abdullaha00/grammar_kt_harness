@@ -1,0 +1,28 @@
+{
+  "canonical_cell_id": "CELL_EA48447107868B2C",
+  "cell": {
+    "aspect": "progressive",
+    "clause": "declarative",
+    "modal": "none",
+    "polarity": "positive",
+    "tense": "past",
+    "voice": "active"
+  },
+  "coverage_reasons": [
+    "canonical_cell_baseline"
+  ],
+  "expected_operations": [
+    "progressive"
+  ],
+  "measurement_opportunity_id": "OPP_B78AE4237E42B0D8",
+  "source_descriptor_ids": [
+    "1741163712321x293020264590759800"
+  ],
+  "structural_conditions": {
+    "imperative_subtype": null,
+    "predicate_class": "lexical_transitive",
+    "subject_number": "singular",
+    "subject_person": 3,
+    "wh_role": null
+  }
+}

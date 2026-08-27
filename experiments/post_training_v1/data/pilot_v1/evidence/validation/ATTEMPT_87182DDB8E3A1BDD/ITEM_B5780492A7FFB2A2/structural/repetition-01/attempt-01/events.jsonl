@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b00-8e51-73d1-b08a-90c60937f2aa"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"cell\":{\"tense\":\"present\",\"aspect\":\"perfect\",\"voice\":\"active\",\"polarity\":\"negative\",\"clause\":\"declarative\",\"modal\":\"none\"},\"operations\":[\"perfect auxiliary have\",\"negation with not\"],\"predicate_class\":\"lexical_transitive\",\"agreement_site\":\"have\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14265,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":122,"reasoning_output_tokens":52}}

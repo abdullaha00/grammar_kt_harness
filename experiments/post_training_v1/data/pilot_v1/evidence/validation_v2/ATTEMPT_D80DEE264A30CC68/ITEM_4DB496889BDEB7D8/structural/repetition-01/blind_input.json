@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "Does Maria watch TV every evening?"
+  ],
+  "content": {
+    "prompt": "_____ Maria _____ TV every evening? (watch)"
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "Does Maria watch TV every evening?"
+}

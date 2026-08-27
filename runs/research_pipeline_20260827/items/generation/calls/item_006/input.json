@@ -1,0 +1,55 @@
+{
+  "target_cell": {
+    "cell_id": "cell_006",
+    "features": {
+      "tense": "NA",
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "polar_question",
+      "modal": "should"
+    }
+  },
+  "source_support": {
+    "source_ids": [
+      "egp_should_question"
+    ]
+  },
+  "item_format": {
+    "format_id": "controlled_production",
+    "task_goal": "Produce the complete response licensed by a short context and lexical cue.",
+    "required_fields": [
+      "prompt",
+      "target_answer",
+      "accepted_answers"
+    ],
+    "answer_form": "one complete English clause",
+    "constraints": [
+      "The prompt must visibly mark the response slot.",
+      "The target answer must fill the task without additional explanation.",
+      "Accepted answers must preserve the intended GrammarCell.",
+      "The prompt must not reveal the completed target form."
+    ]
+  },
+  "design": {
+    "design_id": "one_controlled_item_per_cell",
+    "format": "controlled_production",
+    "items_per_cell": 1,
+    "lexical_choice": "controlled",
+    "lexical_diversity": "rotate_frames_across_cells",
+    "contrast_generation": "none",
+    "balancing": {
+      "require_distinct_contexts_across_cells": true,
+      "nuisance_condition": "short_context"
+    }
+  },
+  "lexical_material": {
+    "lexeme_id": "lex_take",
+    "lemma": "take",
+    "predicate_class": "transitive",
+    "cefr": "A1",
+    "passive_compatible": true,
+    "example_subject": "we",
+    "example_object": "the earlier train"
+  }
+}

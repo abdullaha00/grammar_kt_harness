@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "has been washing"
+  ],
+  "content": {
+    "learner_prompt": "B: She ___ (wash) the dishes since lunch.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why is Maya still in the kitchen?"
+      }
+    ]
+  },
+  "target_answer": "has been washing"
+}

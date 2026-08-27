@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b04-a4d5-70c2-a92e-d947206100f0"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Did you open the window last night?\"}],\"learner_prompt\":\"B: No, I ______ the window.\"},\"target_answer\":\"didn't open\",\"accepted_answers\":[\"did not open\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12842,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":142,"reasoning_output_tokens":78}}

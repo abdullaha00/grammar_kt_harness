@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "Did"
+  ],
+  "content": {
+    "prompt": "___ the children clean their room yesterday?"
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "Did"
+}

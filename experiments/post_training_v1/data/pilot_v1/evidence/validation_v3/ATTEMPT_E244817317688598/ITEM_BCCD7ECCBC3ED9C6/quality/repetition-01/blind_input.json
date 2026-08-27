@@ -1,0 +1,17 @@
+{
+  "accepted_surface_variants": [
+    "Bring the plates.",
+    "bring the plates."
+  ],
+  "content": {
+    "learner_prompt": "B: Please ______.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "The table is ready, but the plates are still in the kitchen."
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "bring the plates."
+}

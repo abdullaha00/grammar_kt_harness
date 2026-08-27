@@ -1,0 +1,4 @@
+policy_id: full_cell
+kind: full_cell
+description: Each exact six-dimensional GrammarCell is one KC; cognitive atomicity is not claimed.
+kc_id_pattern: kc_{cell_id}

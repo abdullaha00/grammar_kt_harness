@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"The kitchen is messy."}],"learner_prompt":"B: ________"},"target_answer":"Let's clean the kitchen.","accepted_answers":["Let's clean the kitchen."]}

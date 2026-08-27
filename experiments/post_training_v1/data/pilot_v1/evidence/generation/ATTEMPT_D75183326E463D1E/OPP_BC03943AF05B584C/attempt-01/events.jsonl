@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b05-8c97-7580-89a0-12764da552e5"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"Maya ___ the door every morning.\"},\"target_answer\":\"opens\",\"accepted_answers\":[\"opens\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12762,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":96,"reasoning_output_tokens":59}}

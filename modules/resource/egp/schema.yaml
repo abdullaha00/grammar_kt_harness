@@ -1,0 +1,26 @@
+resource_id: egp_english_pilot
+description: Evidence fields used from the English Grammar Profile pilot extract.
+
+id_field: source_id
+fields:
+  source_id:
+    required: true
+    description: Stable descriptor identifier in the selected EGP extract.
+  supercategory:
+    required: true
+    description: Broad EGP grammatical category.
+  subcategory:
+    required: true
+    description: Narrower EGP category.
+  guideword:
+    required: true
+    description: Short EGP statement of the grammatical target.
+  can_do:
+    required: true
+    description: Learner-facing description of the attested ability.
+  examples:
+    required: true
+    description: EGP examples, withheld from Phase 1 and eligible for Phase 2 only.
+  cefr:
+    required: false
+    description: CEFR label retained as source metadata, not canonical grammar.

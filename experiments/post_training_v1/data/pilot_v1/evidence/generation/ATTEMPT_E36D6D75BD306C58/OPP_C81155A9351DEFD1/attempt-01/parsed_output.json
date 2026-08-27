@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "had been delivered"
+  ],
+  "content": {
+    "learner_prompt": "B: Yes, the package ___ before lunch.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Did the package arrive before lunch?"
+      }
+    ]
+  },
+  "target_answer": "had been delivered"
+}

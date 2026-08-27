@@ -1,0 +1,14 @@
+{
+  "attempts": [
+    {
+      "accepted": false,
+      "attempt": 1,
+      "rejection_reasons": [
+        "accepted_answers must be unique strings containing target_answer"
+      ]
+    }
+  ],
+  "generator_id": "llm_standalone_v0",
+  "measurement_opportunity_id": "OPP_7E1E0B371E1A07AD",
+  "rejection_reason": "generation exhausted all attempts"
+}

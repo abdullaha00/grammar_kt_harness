@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b0c-da5e-7792-92bf-7382866e73c6"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":4,\"answer_ambiguity\":true,\"pedagogical_suitability\":2,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":null,\"pragmatic_licensing\":null,\"natural_speaker_turns\":null,\"context_appropriateness\":null,\"note\":\"The sentence is natural, but the context does not require past perfect; \\\"did not finish\\\" is also a plausible completion.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14225,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":272,"reasoning_output_tokens":162}}

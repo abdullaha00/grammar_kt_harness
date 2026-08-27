@@ -1,0 +1,17 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "errors": [
+        "blind reconstruction cell: imperative_tense_modal: tense must be one of ['NA']"
+      ],
+      "valid": false
+    }
+  ],
+  "intended_target_hidden": true,
+  "item_id": "ITEM_32817839611A2FF8",
+  "label": "structural",
+  "repetition": 1,
+  "result": null,
+  "successful_attempt": null
+}

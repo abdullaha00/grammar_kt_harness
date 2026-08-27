@@ -1,6 +1,0 @@
-extends: base
-experiment: kc_factorized_dev_frozen
-
-knowledge_selection:
-  mode: development_frozen_factorized
-  policy: modules/knowledge/policies/factorized.json

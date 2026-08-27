@@ -1,0 +1,1 @@
+{"content":{"prompt":"_____ Anna read books?"},"target_answer":"Does Anna read books?","accepted_answers":["Does Anna read books?"]}

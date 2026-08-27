@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "Let's clean the kitchen."
+  ],
+  "content": {
+    "learner_prompt": "B: ________",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "The kitchen is messy."
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "Let's clean the kitchen."
+}

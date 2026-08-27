@@ -1,0 +1,28 @@
+{
+  "class_counts": {
+    "test": {
+      "True": 28
+    },
+    "train": {
+      "True": 74
+    }
+  },
+  "demonstrated_downstream_gain": false,
+  "exact_command": "PYTHONPATH=src .venv/bin/python experiments/post_training_v1/scripts/run_pilot.py evaluate",
+  "experiment_id": "active_generation_preferences_v1",
+  "hypothesis_frozen_before_collection": true,
+  "interpretation": "The pilot cannot test learned ranking utility. Adding generation/API failures as negatives would violate the protocol and create a trivial task.",
+  "preregistered_decision_criteria": {
+    "bootstrap_ci_excludes_zero": false,
+    "pairwise_accuracy_above_chance": false,
+    "reranker_above_first": false,
+    "reranker_above_random": false
+  },
+  "reason": "After ontology repair and the scientific exclusion, every export-eligible schema-valid candidate is structurally valid; no negative training or evaluation class remains.",
+  "records": {
+    "preferences": 0,
+    "test": 28,
+    "train": 74
+  },
+  "status": "NOT_RUN_INSUFFICIENT_CLASS_VARIATION"
+}

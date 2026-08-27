@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "am washing"
+  ],
+  "content": {
+    "learner_prompt": "B: I ___ the dishes.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "What are you doing?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "am washing"
+}

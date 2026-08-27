@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b04-b304-7431-98e3-2f487f031dcb"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"Yesterday, Lena ___ the door with a key.\"},\"target_answer\":\"unlocked\",\"accepted_answers\":[\"unlocked\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12764,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":213,"reasoning_output_tokens":172}}

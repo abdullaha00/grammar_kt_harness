@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b12-9a62-79c3-9087-28ddab77c243"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":5,\"answer_ambiguity\":true,\"pedagogical_suitability\":4,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":5,\"pragmatic_licensing\":5,\"natural_speaker_turns\":5,\"context_appropriateness\":5,\"note\":\"The dialogue is natural and coherent. However, the context also permits alternatives such as the simple past (“opened”), so the expected form is not uniquely determined.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14246,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":220,"reasoning_output_tokens":104}}

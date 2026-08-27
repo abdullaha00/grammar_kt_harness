@@ -1,0 +1,21 @@
+Assess item quality independently of grammatical target correctness.
+
+Use only the visible generated exercise and learner response. Report naturalness, ambiguity, pedagogical suitability, world-knowledge dependence, lexical suitability, and (when applicable) dialogue quality. Dialogue-only fields must be null for standalone items. Return only schema-valid JSON.
+
+Generated exercise and response:
+{
+  "accepted_surface_variants": [
+    "hadn't been checking"
+  ],
+  "content": {
+    "learner_prompt": "B: I was late because I ________ the time.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why were you late for the meeting?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "hadn't been checking"
+}

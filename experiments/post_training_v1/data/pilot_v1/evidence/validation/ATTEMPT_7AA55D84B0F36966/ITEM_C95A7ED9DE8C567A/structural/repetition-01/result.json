@@ -1,0 +1,30 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "errors": [],
+      "valid": true
+    }
+  ],
+  "intended_target_hidden": true,
+  "item_id": "ITEM_C95A7ED9DE8C567A",
+  "label": "structural",
+  "repetition": 1,
+  "result": {
+    "agreement_site": "be",
+    "cell": {
+      "aspect": "progressive",
+      "clause": "declarative",
+      "modal": "none",
+      "polarity": "negative",
+      "tense": "present",
+      "voice": "active"
+    },
+    "operations": [
+      "negation",
+      "contraction"
+    ],
+    "predicate_class": "lexical_transitive"
+  },
+  "successful_attempt": 1
+}

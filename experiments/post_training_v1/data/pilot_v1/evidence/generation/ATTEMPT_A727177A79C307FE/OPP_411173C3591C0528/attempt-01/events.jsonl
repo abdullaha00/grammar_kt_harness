@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b00-6aeb-75f2-aaec-2e39b15d2aef"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"Maya ______ her homework yet.\"},\"target_answer\":\"has not finished\",\"accepted_answers\":[\"hasn't finished\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12772,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":111,"reasoning_output_tokens":71}}

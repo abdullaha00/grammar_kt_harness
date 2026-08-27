@@ -1,0 +1,26 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "errors": [],
+      "valid": true
+    }
+  ],
+  "intended_target_hidden": true,
+  "item_id": "ITEM_ED9177F224E99C9A",
+  "label": "quality",
+  "repetition": 1,
+  "result": {
+    "answer_ambiguity": false,
+    "context_appropriateness": 1,
+    "dialogue_coherence": 1,
+    "lexical_cefr_appropriate": true,
+    "natural_speaker_turns": 4,
+    "naturalness": 5,
+    "note": "The response is natural in isolation but contradicts the stated context: a cold room calls for closing, not opening, the window.",
+    "pedagogical_suitability": 2,
+    "pragmatic_licensing": 1,
+    "world_knowledge_required": false
+  },
+  "successful_attempt": 1
+}

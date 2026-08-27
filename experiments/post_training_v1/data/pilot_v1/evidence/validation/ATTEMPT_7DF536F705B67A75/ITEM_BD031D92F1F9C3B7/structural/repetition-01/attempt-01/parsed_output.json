@@ -1,0 +1,17 @@
+{
+  "agreement_site": "do",
+  "cell": {
+    "aspect": "none",
+    "clause": "polar_question",
+    "modal": "none",
+    "polarity": "positive",
+    "tense": "past",
+    "voice": "active"
+  },
+  "operations": [
+    "do_support",
+    "subject_auxiliary_inversion",
+    "bare_infinitive_after_do"
+  ],
+  "predicate_class": "lexical_transitive"
+}

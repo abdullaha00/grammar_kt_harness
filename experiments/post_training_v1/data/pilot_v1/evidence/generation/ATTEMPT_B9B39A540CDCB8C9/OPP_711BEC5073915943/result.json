@@ -1,0 +1,87 @@
+{
+  "item": {
+    "accepted_answers": [
+      "have been reading"
+    ],
+    "canonical_cell_id": "CELL_E1030A4919D1A060",
+    "content": {
+      "prompt": "I ______ this book for two hours. (read)"
+    },
+    "generation_metadata": {
+      "attempt": 1,
+      "attempt_history": [
+        {
+          "accepted": true,
+          "attempt": 1,
+          "rejection_reasons": []
+        }
+      ],
+      "backend": {
+        "kind": "codex_exec",
+        "model": "gpt-5.6-luna"
+      },
+      "evidence_directory": "/home/abdullah/grammar_kt_harness/experiments/post_training_v1/data/pilot_v1/evidence/generation/ATTEMPT_B9B39A540CDCB8C9/OPP_711BEC5073915943",
+      "generator_config": {
+        "constraints": {
+          "lexical_level": "A2_where_feasible",
+          "register": "neutral",
+          "response_type": "sentence_completion"
+        },
+        "generator_id": "llm_standalone_v0",
+        "mode": "llm_standalone"
+      },
+      "input_opportunity": {
+        "canonical_cell_id": "CELL_E1030A4919D1A060",
+        "cell": {
+          "aspect": "perfect_progressive",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "positive",
+          "tense": "present",
+          "voice": "active"
+        },
+        "coverage_reasons": [
+          "agreement_measurement:have"
+        ],
+        "expected_operations": [
+          "perfect",
+          "progressive"
+        ],
+        "measurement_opportunity_id": "OPP_711BEC5073915943",
+        "source_descriptor_ids": [
+          "1741163712744x517808240803915500"
+        ],
+        "structural_conditions": {
+          "imperative_subtype": null,
+          "predicate_class": "lexical_transitive",
+          "subject_number": "singular",
+          "subject_person": 1,
+          "wh_role": null
+        }
+      },
+      "parsed_output": {
+        "accepted_answers": [
+          "have been reading"
+        ],
+        "content": {
+          "prompt": "I ______ this book for two hours. (read)"
+        },
+        "target_answer": "have been reading"
+      },
+      "raw_output": "{\"content\":{\"prompt\":\"I ______ this book for two hours. (read)\"},\"target_answer\":\"have been reading\",\"accepted_answers\":[\"have been reading\"]}",
+      "rendered_prompt": "Create one natural standalone English completion item for the fixed structural target below.\n\nThe target grammar has already been chosen. Do not reinterpret it, weaken it, or select a different target. You may choose ordinary lexical content, names, and surface wording. Keep lexical difficulty simple (A2 where feasible), avoid specialist world knowledge, and make the intended answer unambiguous.\n\nFixed MeasurementOpportunity:\n{\n  \"canonical_cell_id\": \"CELL_E1030A4919D1A060\",\n  \"cell\": {\n    \"aspect\": \"perfect_progressive\",\n    \"clause\": \"declarative\",\n    \"modal\": \"none\",\n    \"polarity\": \"positive\",\n    \"tense\": \"present\",\n    \"voice\": \"active\"\n  },\n  \"expected_operations\": [\n    \"perfect\",\n    \"progressive\"\n  ],\n  \"structural_conditions\": {\n    \"imperative_subtype\": null,\n    \"predicate_class\": \"lexical_transitive\",\n    \"subject_number\": \"singular\",\n    \"subject_person\": 1,\n    \"wh_role\": null\n  }\n}\n\nGeneration constraints:\n{\n  \"lexical_level\": \"A2_where_feasible\",\n  \"register\": \"neutral\",\n  \"response_type\": \"sentence_completion\"\n}\n\nReturn only the JSON object required by the output schema. The content object must contain exactly a learner-facing prompt. The target answer must instantiate every declared cell value, structural condition, and expected operation.\n"
+    },
+    "generator_id": "llm_standalone_v0",
+    "item_family": "standalone_completion",
+    "item_id": "ITEM_4538A87EC402A199",
+    "measurement_opportunity_id": "OPP_711BEC5073915943",
+    "quality_diagnostics": {},
+    "source_descriptor_ids": [
+      "1741163712744x517808240803915500"
+    ],
+    "target_answer": "have been reading",
+    "validated_structure": {},
+    "validation_metadata": {}
+  },
+  "status": "candidate"
+}

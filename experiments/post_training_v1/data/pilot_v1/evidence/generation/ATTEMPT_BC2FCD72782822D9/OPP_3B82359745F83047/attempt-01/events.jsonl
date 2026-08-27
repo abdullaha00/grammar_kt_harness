@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b07-2747-7640-9ef5-0fe591f450fb"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"_____ leave the door open at night.\"},\"target_answer\":\"Don't let's leave the door open at night.\",\"accepted_answers\":[\"Don't let's leave the door open at night.\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12785,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":334,"reasoning_output_tokens":282}}

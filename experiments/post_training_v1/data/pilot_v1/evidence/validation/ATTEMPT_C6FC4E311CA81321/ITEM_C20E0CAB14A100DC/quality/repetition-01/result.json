@@ -1,0 +1,26 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "errors": [],
+      "valid": true
+    }
+  ],
+  "intended_target_hidden": true,
+  "item_id": "ITEM_C20E0CAB14A100DC",
+  "label": "quality",
+  "repetition": 1,
+  "result": {
+    "answer_ambiguity": false,
+    "context_appropriateness": 4,
+    "dialogue_coherence": 4,
+    "lexical_cefr_appropriate": true,
+    "natural_speaker_turns": 4,
+    "naturalness": 4,
+    "note": "The response is grammatical and coherent, though the explanation for being quiet is slightly less natural than a more direct activity-based answer.",
+    "pedagogical_suitability": 4,
+    "pragmatic_licensing": 4,
+    "world_knowledge_required": false
+  },
+  "successful_attempt": 1
+}

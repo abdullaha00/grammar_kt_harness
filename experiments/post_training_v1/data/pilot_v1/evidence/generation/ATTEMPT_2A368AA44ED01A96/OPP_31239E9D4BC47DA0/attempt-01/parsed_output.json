@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "Let's open"
+  ],
+  "content": {
+    "learner_prompt": "B: ______ the window.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "The room is warm."
+      }
+    ]
+  },
+  "target_answer": "Let's open"
+}

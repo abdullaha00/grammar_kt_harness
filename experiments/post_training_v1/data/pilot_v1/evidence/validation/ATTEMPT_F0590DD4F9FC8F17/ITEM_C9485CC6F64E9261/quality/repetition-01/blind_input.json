@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "is cleaned"
+  ],
+  "content": {
+    "prompt": "The window ______ every day."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "is cleaned"
+}

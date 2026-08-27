@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b05-3742-7073-a8ef-e023a06d62a0"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"___ the children clean their room yesterday?\"},\"target_answer\":\"Did\",\"accepted_answers\":[\"Did\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12768,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":100,"reasoning_output_tokens":63}}

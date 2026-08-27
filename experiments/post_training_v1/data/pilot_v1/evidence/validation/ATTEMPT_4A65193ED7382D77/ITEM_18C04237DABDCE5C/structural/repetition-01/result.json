@@ -1,0 +1,27 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "errors": [],
+      "valid": true
+    }
+  ],
+  "intended_target_hidden": true,
+  "item_id": "ITEM_18C04237DABDCE5C",
+  "label": "structural",
+  "repetition": 1,
+  "result": {
+    "agreement_site": "main_verb",
+    "cell": {
+      "aspect": "none",
+      "clause": "declarative",
+      "modal": "none",
+      "polarity": "positive",
+      "tense": "present",
+      "voice": "active"
+    },
+    "operations": [],
+    "predicate_class": "lexical_transitive"
+  },
+  "successful_attempt": 1
+}

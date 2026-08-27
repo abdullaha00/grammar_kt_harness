@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "The room is cleaned every morning."
+  ],
+  "content": {
+    "prompt": "The room ___ (clean) every morning."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "The room is cleaned every morning."
+}

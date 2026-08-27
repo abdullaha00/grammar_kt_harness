@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "Did Ben buy it at the shop?"
+  ],
+  "content": {
+    "learner_prompt": "B: _____ it at the shop?",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Ben came home with a new book yesterday."
+      }
+    ]
+  },
+  "target_answer": "Did Ben buy it at the shop?"
+}

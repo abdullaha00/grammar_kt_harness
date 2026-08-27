@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "has been washing"
+  ],
+  "content": {
+    "learner_prompt": "B: She ___ (wash) the dishes since lunch.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why is Maya still in the kitchen?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "has been washing"
+}

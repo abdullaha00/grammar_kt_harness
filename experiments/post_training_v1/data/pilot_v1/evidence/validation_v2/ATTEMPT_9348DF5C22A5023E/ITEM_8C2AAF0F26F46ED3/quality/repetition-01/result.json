@@ -1,0 +1,26 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "errors": [],
+      "valid": true
+    }
+  ],
+  "intended_target_hidden": true,
+  "item_id": "ITEM_8C2AAF0F26F46ED3",
+  "label": "quality",
+  "repetition": 1,
+  "result": {
+    "answer_ambiguity": true,
+    "context_appropriateness": 5,
+    "dialogue_coherence": 5,
+    "lexical_cefr_appropriate": true,
+    "natural_speaker_turns": 4,
+    "naturalness": 5,
+    "note": "The response is grammatically plausible, but the dialogue provides no clear reference point that requires past perfect; simple past ('finished') is also natural. The isolated B turn is somewhat unnatural as presented.",
+    "pedagogical_suitability": 5,
+    "pragmatic_licensing": 5,
+    "world_knowledge_required": false
+  },
+  "successful_attempt": 1
+}

@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "Don't let's leave the door open at night."
+  ],
+  "content": {
+    "prompt": "_____ leave the door open at night."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "Don't let's leave the door open at night."
+}

@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "am washing"
+  ],
+  "content": {
+    "learner_prompt": "B: I ___ the dishes.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "What are you doing?"
+      }
+    ]
+  },
+  "target_answer": "am washing"
+}

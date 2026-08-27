@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b05-3374-7551-9e26-3ddeeeabf229"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"_____ the children visit their grandmother yesterday?\"},\"target_answer\":\"Did\",\"accepted_answers\":[\"Did\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12768,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":113,"reasoning_output_tokens":76}}

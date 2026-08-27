@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b04-48e3-78a2-b90a-097075e84665"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Did the school clean the classroom yesterday?\"}],\"learner_prompt\":\"B: Yes, the classroom ___ yesterday.\"},\"target_answer\":\"was cleaned\",\"accepted_answers\":[\"was cleaned\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12836,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":148,"reasoning_output_tokens":86}}

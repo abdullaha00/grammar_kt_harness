@@ -1,0 +1,1 @@
+{"prompt": "___ we take the earlier train? (should)", "target_answer": "Should we take the earlier train?", "accepted_answers": ["Should we take the earlier train?"], "operation_tags": ["central_modal", "operator_inversion"], "note": "Modal cue and question mark determine form."}

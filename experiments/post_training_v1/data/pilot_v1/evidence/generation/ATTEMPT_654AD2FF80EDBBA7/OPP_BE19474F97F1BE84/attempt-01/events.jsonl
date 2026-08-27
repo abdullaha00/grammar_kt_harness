@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b01-ae15-7fa2-b228-922b64424501"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Were you reading the book when I called?\"}],\"learner_prompt\":\"B: No, I ___ the book when you called.\"},\"target_answer\":\"had not been reading\",\"accepted_answers\":[\"hadn't been reading\",\"had not been reading\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12846,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":287,"reasoning_output_tokens":212}}

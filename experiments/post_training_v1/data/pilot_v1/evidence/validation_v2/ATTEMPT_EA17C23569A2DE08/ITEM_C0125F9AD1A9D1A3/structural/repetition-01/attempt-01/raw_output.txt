@@ -1,0 +1,1 @@
+{"cell":{"tense":"present","aspect":"none","voice":"active","polarity":"negative","clause":"declarative","modal":"none"},"operations":["do_support","negation"],"predicate_class":"lexical_transitive","agreement_site":"do"}

@@ -1,0 +1,1 @@
+{"content":{"prompt":"Yesterday, I ____ the window before dinner."},"target_answer":"opened","accepted_answers":["opened"]}

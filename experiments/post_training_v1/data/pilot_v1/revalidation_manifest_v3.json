@@ -1,0 +1,10 @@
+{
+  "accepted": 102,
+  "candidates": 105,
+  "exact_command": "PYTHONPATH=src .venv/bin/python experiments/post_training_v1/scripts/run_pilot.py revalidate",
+  "intended_target_still_hidden": true,
+  "original_judgments_retained": "experiments/post_training_v1/data/pilot_v1/candidate_attempts_validation_v2_before_revision_3.jsonl",
+  "reason": "closed operation labels plus explicit canonical tense/agreement conventions",
+  "revalidated_utc": "2026-08-25T22:41:32.765109+00:00",
+  "validation_revision": 3
+}

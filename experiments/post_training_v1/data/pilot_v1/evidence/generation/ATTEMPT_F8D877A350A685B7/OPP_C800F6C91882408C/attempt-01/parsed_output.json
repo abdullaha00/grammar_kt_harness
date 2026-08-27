@@ -1,0 +1,9 @@
+{
+  "accepted_answers": [
+    "The room is cleaned every morning."
+  ],
+  "content": {
+    "prompt": "The room ___ (clean) every morning."
+  },
+  "target_answer": "The room is cleaned every morning."
+}

@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "Mia doesn't watch TV in the morning."
+  ],
+  "content": {
+    "prompt": "Mia ______ TV in the morning."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "Mia doesn't watch TV in the morning."
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b03-d8bd-7453-96b4-20f4f1e46e5a"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Why was Emma relaxed before dinner?\"}],\"learner_prompt\":\"B: She ____ her homework.\"},\"target_answer\":\"had finished\",\"accepted_answers\":[\"had finished\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12832,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":210,"reasoning_output_tokens":151}}

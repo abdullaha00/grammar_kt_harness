@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "opened"
+  ],
+  "content": {
+    "prompt": "Yesterday, Maria ___ the door."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "opened"
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b15-8bfe-7a30-bf7f-775e8b88b40d"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":5,\"answer_ambiguity\":false,\"pedagogical_suitability\":5,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":null,\"pragmatic_licensing\":null,\"natural_speaker_turns\":null,\"context_appropriateness\":null,\"note\":\"Natural, unambiguous standalone past-simple question completion; vocabulary is broadly CEFR-appropriate and no world knowledge is needed.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14234,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":108,"reasoning_output_tokens":0}}

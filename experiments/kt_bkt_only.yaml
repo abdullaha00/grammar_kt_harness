@@ -1,5 +1,0 @@
-extends: base
-experiment: kt_bkt_only
-
-kt:
-  techniques: [bkt]

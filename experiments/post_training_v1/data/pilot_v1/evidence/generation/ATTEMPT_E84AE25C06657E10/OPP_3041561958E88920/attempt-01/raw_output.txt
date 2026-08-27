@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Did you wash the dishes last night?"}],"learner_prompt":"B: No, I ____ the dishes last night."},"target_answer":"didn't wash","accepted_answers":["did not wash"]}

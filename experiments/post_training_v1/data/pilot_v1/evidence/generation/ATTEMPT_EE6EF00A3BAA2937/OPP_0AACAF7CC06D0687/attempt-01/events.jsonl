@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b02-b556-7571-8b14-39b592b4782b"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"The weather looks cold today.\"}],\"learner_prompt\":\"B: ______ I need this warm coat?\"},\"target_answer\":\"Do I need this warm coat?\",\"accepted_answers\":[\"Do I need this warm coat?\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12841,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":263,"reasoning_output_tokens":193}}

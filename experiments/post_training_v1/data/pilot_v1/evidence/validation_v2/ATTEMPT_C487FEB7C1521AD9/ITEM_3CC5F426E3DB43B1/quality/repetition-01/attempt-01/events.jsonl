@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b0a-977b-7050-b534-d42d7a184012"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":5,\"answer_ambiguity\":true,\"pedagogical_suitability\":4,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":null,\"pragmatic_licensing\":null,\"natural_speaker_turns\":null,\"context_appropriateness\":null,\"note\":\"Natural, simple standalone sentence with accessible vocabulary. The blank permits several plausible completions (e.g., past simple or other cooking verbs), so the expected response is not uniquely determined by the visible prompt.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14225,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":243,"reasoning_output_tokens":118}}

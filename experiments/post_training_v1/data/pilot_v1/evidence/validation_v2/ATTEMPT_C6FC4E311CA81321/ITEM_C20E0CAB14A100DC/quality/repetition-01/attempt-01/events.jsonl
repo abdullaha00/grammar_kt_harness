@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b0e-1bfb-7350-bb99-f6905103954c"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":4,\"answer_ambiguity\":false,\"pedagogical_suitability\":3,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":3,\"pragmatic_licensing\":3,\"natural_speaker_turns\":4,\"context_appropriateness\":3,\"note\":\"The language is natural and accessible, but the reason given does not strongly explain why Mia is quiet, since not watching television does not inherently imply quietness.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14254,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":231,"reasoning_output_tokens":115}}

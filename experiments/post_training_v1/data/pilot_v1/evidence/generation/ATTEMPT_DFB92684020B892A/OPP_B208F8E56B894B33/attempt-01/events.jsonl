@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b00-6a3c-7501-80e8-025e8bcfc73e"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"I ______ the email yet.\"},\"target_answer\":\"have not sent\",\"accepted_answers\":[\"haven't sent\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12775,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":125,"reasoning_output_tokens":86}}

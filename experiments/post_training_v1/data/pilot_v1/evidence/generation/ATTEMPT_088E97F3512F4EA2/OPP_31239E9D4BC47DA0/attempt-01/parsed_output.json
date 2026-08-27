@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "Let's clean the kitchen."
+  ],
+  "content": {
+    "learner_prompt": "B: ________",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "The kitchen is messy."
+      }
+    ]
+  },
+  "target_answer": "Let's clean the kitchen."
+}

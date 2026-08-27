@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "had been cleaning"
+  ],
+  "content": {
+    "learner_prompt": "B: The children ______ the windows all morning.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why were the windows so clean?"
+      }
+    ]
+  },
+  "target_answer": "had been cleaning"
+}

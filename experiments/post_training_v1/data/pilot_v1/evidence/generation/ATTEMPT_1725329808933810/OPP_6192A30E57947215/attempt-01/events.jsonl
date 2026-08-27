@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b01-05a0-7be1-ae40-c7b4c20e16da"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Why was the kitchen so tidy when you arrived?\"}],\"learner_prompt\":\"B: The children ___ the kitchen for an hour before dinner.\"},\"target_answer\":\"had been cleaning\",\"accepted_answers\":[\"had been cleaning\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12845,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":203,"reasoning_output_tokens":133}}

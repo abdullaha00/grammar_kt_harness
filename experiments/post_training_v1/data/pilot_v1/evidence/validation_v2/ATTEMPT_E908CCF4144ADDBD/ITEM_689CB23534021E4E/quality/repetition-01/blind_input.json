@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "was damaged"
+  ],
+  "content": {
+    "learner_prompt": "B: It ___ in the storm.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "What happened to the old bridge?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "was damaged"
+}

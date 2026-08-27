@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "was cleaned"
+  ],
+  "content": {
+    "learner_prompt": "B: Yes, the classroom ___ yesterday.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Did the school clean the classroom yesterday?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "was cleaned"
+}

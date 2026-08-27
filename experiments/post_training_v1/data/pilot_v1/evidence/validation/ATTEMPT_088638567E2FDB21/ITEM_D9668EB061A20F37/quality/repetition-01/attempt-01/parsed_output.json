@@ -1,0 +1,12 @@
+{
+  "answer_ambiguity": true,
+  "context_appropriateness": 5,
+  "dialogue_coherence": 5,
+  "lexical_cefr_appropriate": true,
+  "natural_speaker_turns": 5,
+  "naturalness": 3,
+  "note": "The response is grammatical but somewhat marked; more natural completions include “hadn't checked” or “didn't check.” Multiple plausible answers make the intended form ambiguous.",
+  "pedagogical_suitability": 3,
+  "pragmatic_licensing": 4,
+  "world_knowledge_required": false
+}

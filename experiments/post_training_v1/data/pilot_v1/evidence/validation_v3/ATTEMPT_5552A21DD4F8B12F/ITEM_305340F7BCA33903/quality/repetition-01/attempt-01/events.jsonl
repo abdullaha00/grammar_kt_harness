@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b14-7371-7f83-96b0-257e6c654312"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":2,\"answer_ambiguity\":false,\"pedagogical_suitability\":1,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":1,\"pragmatic_licensing\":1,\"natural_speaker_turns\":2,\"context_appropriateness\":1,\"note\":\"The response is grammatically formed but does not naturally answer the completed-action question; simple past (“didn't watch”) is expected.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14258,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":216,"reasoning_output_tokens":105}}

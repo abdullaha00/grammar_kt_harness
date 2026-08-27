@@ -1,0 +1,17 @@
+{
+  "agreement_site": "have",
+  "cell": {
+    "aspect": "perfect_progressive",
+    "clause": "declarative",
+    "modal": "none",
+    "polarity": "positive",
+    "tense": "past",
+    "voice": "active"
+  },
+  "operations": [
+    "past perfect auxiliary had",
+    "progressive auxiliary been",
+    "present participle cleaning"
+  ],
+  "predicate_class": "lexical_transitive"
+}

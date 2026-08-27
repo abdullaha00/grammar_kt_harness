@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b09-d101-7943-bc5d-4bbf9d3eee5a"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":5,\"answer_ambiguity\":false,\"pedagogical_suitability\":5,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":null,\"pragmatic_licensing\":null,\"natural_speaker_turns\":null,\"context_appropriateness\":null,\"note\":\"Natural, unambiguous present-continuous completion with basic, learner-appropriate vocabulary.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14218,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":145,"reasoning_output_tokens":42}}

@@ -1,0 +1,29 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "errors": [],
+      "valid": true
+    }
+  ],
+  "intended_target_hidden": true,
+  "item_id": "ITEM_689CB23534021E4E",
+  "label": "structural",
+  "repetition": 1,
+  "result": {
+    "agreement_site": "be",
+    "cell": {
+      "aspect": "none",
+      "clause": "declarative",
+      "modal": "none",
+      "polarity": "positive",
+      "tense": "past",
+      "voice": "passive"
+    },
+    "operations": [
+      "be_passive"
+    ],
+    "predicate_class": "lexical_transitive"
+  },
+  "successful_attempt": 1
+}

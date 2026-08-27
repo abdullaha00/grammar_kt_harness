@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b03-de6d-78b0-b1ef-263d5ae5514b"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Why didn't Leo need to buy a ticket at the station?\"}],\"learner_prompt\":\"B: He ____ his ticket before he left home.\"},\"target_answer\":\"had bought\",\"accepted_answers\":[\"had bought\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12835,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":302,"reasoning_output_tokens":234}}

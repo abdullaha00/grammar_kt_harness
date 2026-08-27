@@ -1,0 +1,39 @@
+Create one short, natural English dialogue-completion item for the fixed structural target below.
+
+The learner target grammar has already been chosen. Do not reinterpret it, weaken it, or select a different target. Context turns may establish a natural conversational situation, but the learner answer itself must instantiate the same fixed MeasurementOpportunity. Use simple lexical content, avoid specialist world knowledge, and make the response pragmatically licensed and unambiguous.
+
+Fixed MeasurementOpportunity:
+{
+  "canonical_cell_id": "CELL_FA8507A622E5E145",
+  "cell": {
+    "aspect": "perfect",
+    "clause": "declarative",
+    "modal": "none",
+    "polarity": "positive",
+    "tense": "past",
+    "voice": "passive"
+  },
+  "expected_operations": [
+    "perfect",
+    "be_passive"
+  ],
+  "structural_conditions": {
+    "imperative_subtype": null,
+    "predicate_class": "lexical_transitive",
+    "subject_number": "singular",
+    "subject_person": 3,
+    "wh_role": null
+  }
+}
+
+Generation constraints:
+{
+  "context_turns": 1,
+  "conversational_register": "neutral",
+  "dialogue_act": "response",
+  "lexical_level": "A2_where_feasible",
+  "response_type": "sentence_completion",
+  "target_learner_turn": "B"
+}
+
+Return only the JSON object required by the output schema. The content object must contain context turns and a learner prompt. Do not place the answer in the context turns.

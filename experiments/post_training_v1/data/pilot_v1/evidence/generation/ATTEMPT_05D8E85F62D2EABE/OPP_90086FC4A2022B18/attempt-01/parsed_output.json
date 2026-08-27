@@ -1,0 +1,9 @@
+{
+  "accepted_answers": [
+    "Yesterday, I cleaned the kitchen."
+  ],
+  "content": {
+    "prompt": "Yesterday, I ___ the kitchen."
+  },
+  "target_answer": "Yesterday, I cleaned the kitchen."
+}

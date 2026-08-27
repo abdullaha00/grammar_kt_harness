@@ -1,0 +1,29 @@
+{
+  "canonical_cell_id": "CELL_FB5F88ACD517600A",
+  "cell": {
+    "aspect": "none",
+    "clause": "imperative",
+    "modal": "none",
+    "polarity": "positive",
+    "tense": "NA",
+    "voice": "active"
+  },
+  "coverage_reasons": [
+    "imperative_subtype:lets"
+  ],
+  "expected_operations": [
+    "imperative",
+    "let_imperative"
+  ],
+  "measurement_opportunity_id": "OPP_31239E9D4BC47DA0",
+  "source_descriptor_ids": [
+    "1741163708331x843997098925344500"
+  ],
+  "structural_conditions": {
+    "imperative_subtype": "lets",
+    "predicate_class": "lexical_transitive",
+    "subject_number": "singular",
+    "subject_person": 2,
+    "wh_role": null
+  }
+}

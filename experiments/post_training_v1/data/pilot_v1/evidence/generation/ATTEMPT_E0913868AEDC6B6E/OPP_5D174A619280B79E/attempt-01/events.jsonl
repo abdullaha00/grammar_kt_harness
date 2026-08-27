@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b01-9e4f-7aa3-ab09-b3601a3f5e47"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"When I arrived, Anna ______ the dishes; they were still dirty.\"},\"target_answer\":\"had not been washing\",\"accepted_answers\":[\"had not been washing\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":14710,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":197,"reasoning_output_tokens":148}}

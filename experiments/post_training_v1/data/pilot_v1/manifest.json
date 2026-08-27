@@ -1,0 +1,25 @@
+{
+  "all_opportunity_bank_sha256": "d026a399e77f38b710e5c201b19f466ed59b54afbbf0b05608789ff761f3d539",
+  "config_sha256": "4e3fb526e70046896c70239cbe921bf8fdbb53df8dfebd3cf1fbfa4e317a3ffa",
+  "counts": {
+    "all_opportunities": 72,
+    "canonical_cells": 24,
+    "dialogue_opportunities": 17,
+    "selected_opportunities": 42,
+    "standalone_opportunities": 25,
+    "test_opportunities": 12,
+    "train_opportunities": 30
+  },
+  "experiment_id": "active_generation_preferences_v1",
+  "format_policy": "SHA-256(seed, opportunity_id) modulo configured modulus",
+  "git": {
+    "commit_sha": "c3e6508d39b3a3e5fa0a42a1f5079697f4fb37e1",
+    "dirty": true
+  },
+  "pre_candidate_selection": true,
+  "prepared_utc": "2026-08-25T22:17:48.485722+00:00",
+  "selected_opportunity_bank_sha256": "99bafddacc8aa3f325d75798393d3de694d562ecc1a10a2bc19b599164bcefe6",
+  "selection_rule": "up to two per canonical cell by preregistered structural priority",
+  "source_canonical_sha256": "21c76144710c5aba84a103de563648d76074e816f8b4edb98f3ab531efa9f648",
+  "split_policy": "frozen reference_v0 canonical-cell split"
+}

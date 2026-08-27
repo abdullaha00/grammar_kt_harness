@@ -1,0 +1,12 @@
+{
+  "answer_ambiguity": false,
+  "context_appropriateness": null,
+  "dialogue_coherence": null,
+  "lexical_cefr_appropriate": true,
+  "natural_speaker_turns": null,
+  "naturalness": 4,
+  "note": "The response is grammatically valid, but the prompt has no blank for a following object/complement: “I have not finished my homework yet” is natural, whereas inserting the response alone before “my homework” yields “I have not finished my homework yet” actually works. The exercise is somewhat artificial because the expected multiword answer is given as a single fixed variant, but it is clear and suitable for basic present perfect practice.",
+  "pedagogical_suitability": 3,
+  "pragmatic_licensing": null,
+  "world_knowledge_required": false
+}

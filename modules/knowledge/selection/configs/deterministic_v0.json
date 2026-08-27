@@ -1,8 +1,0 @@
-{
-  "selector_id": "greedy_backward_v1",
-  "candidate_family": "modules/knowledge/selection/candidate_families/structural_v0.json",
-  "obligation_policy": "modules/knowledge/selection/obligations/marked_operational_v0.json",
-  "minimum_candidate_opportunity_support": 1,
-  "minimum_candidate_descriptor_support": 1,
-  "minimum_interaction_cell_support": 2
-}

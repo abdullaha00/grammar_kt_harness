@@ -1,0 +1,1 @@
+{"content":{"prompt":"Look! Anna ___ (wash) the dishes."},"target_answer":"is washing","accepted_answers":["is washing"]}

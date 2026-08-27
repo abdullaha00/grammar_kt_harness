@@ -1,0 +1,12 @@
+{
+  "answer_ambiguity": false,
+  "context_appropriateness": 1,
+  "dialogue_coherence": 1,
+  "lexical_cefr_appropriate": true,
+  "natural_speaker_turns": 2,
+  "naturalness": 2,
+  "note": "The response is grammatically formed but does not naturally answer the completed-action question; simple past (“didn't watch”) is expected.",
+  "pedagogical_suitability": 1,
+  "pragmatic_licensing": 1,
+  "world_knowledge_required": false
+}

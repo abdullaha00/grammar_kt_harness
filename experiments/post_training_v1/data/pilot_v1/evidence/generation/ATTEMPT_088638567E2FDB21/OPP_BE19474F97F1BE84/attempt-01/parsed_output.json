@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "hadn't been checking"
+  ],
+  "content": {
+    "learner_prompt": "B: I was late because I ________ the time.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why were you late for the meeting?"
+      }
+    ]
+  },
+  "target_answer": "hadn't been checking"
+}

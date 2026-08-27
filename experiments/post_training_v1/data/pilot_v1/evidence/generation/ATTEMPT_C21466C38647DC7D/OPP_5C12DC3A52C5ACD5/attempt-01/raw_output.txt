@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Why didn't Leo need to buy a ticket at the station?"}],"learner_prompt":"B: He ____ his ticket before he left home."},"target_answer":"had bought","accepted_answers":["had bought"]}

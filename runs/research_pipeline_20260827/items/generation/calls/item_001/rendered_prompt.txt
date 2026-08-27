@@ -1,0 +1,99 @@
+Create one controlled-production English exercise for the supplied target.
+
+The GrammarCell is fixed. Do not choose, weaken, or reinterpret it. Realise
+every target feature in the target answer, follow the item-format contract, and
+use the supplied lexical material where it is compatible. Keep the context
+short, natural, pedagogically useful, and answer-determinate.
+
+Do not infer or mention grammar-fold labels, candidate KCs, learner outcomes,
+simulation assumptions, or KT models. Return one JSON object containing:
+prompt, target_answer, accepted_answers, operation_tags, and note.
+
+TARGET GRAMMAR CELL:
+{
+  "cell_id": "cell_001",
+  "features": {
+    "tense": "present",
+    "aspect": "none",
+    "voice": "active",
+    "polarity": "positive",
+    "clause": "declarative",
+    "modal": "none"
+  }
+}
+
+SOURCE SUPPORT:
+{
+  "source_ids": [
+    "egp_present_simple"
+  ]
+}
+
+ITEM FORMAT:
+{
+  "format_id": "controlled_production",
+  "task_goal": "Produce the complete response licensed by a short context and lexical cue.",
+  "required_fields": [
+    "prompt",
+    "target_answer",
+    "accepted_answers"
+  ],
+  "answer_form": "one complete English clause",
+  "constraints": [
+    "The prompt must visibly mark the response slot.",
+    "The target answer must fill the task without additional explanation.",
+    "Accepted answers must preserve the intended GrammarCell.",
+    "The prompt must not reveal the completed target form."
+  ]
+}
+
+GENERATION DESIGN:
+{
+  "design_id": "one_controlled_item_per_cell",
+  "format": "controlled_production",
+  "items_per_cell": 1,
+  "lexical_choice": "controlled",
+  "lexical_diversity": "rotate_frames_across_cells",
+  "contrast_generation": "none",
+  "balancing": {
+    "require_distinct_contexts_across_cells": true,
+    "nuisance_condition": "short_context"
+  }
+}
+
+LEXICAL MATERIAL:
+{
+  "lexeme_id": "lex_travel",
+  "lemma": "travel",
+  "predicate_class": "intransitive",
+  "cefr": "A2",
+  "passive_compatible": false,
+  "example_subject": "Lina"
+}
+
+ENGLISH GENERATION RULES:
+# English controlled-production generation rules
+
+- Make subject–verb agreement overt where the selected subject permits it.
+- Realise simple present/past on the finite main verb unless an auxiliary is
+  required; use DO-support for lexical-verb negation and interrogation.
+- Order the auxiliary chain as modal, perfect HAVE, progressive BE, passive BE,
+  lexical verb. Use the corresponding base, participle, or -ing forms.
+- Realise canonical passive with BE plus a past participle and a compatible
+  transitive predicate.
+- Place NOT after the finite operator. Insert DO only when no other operator is
+  present.
+- In polar and non-subject-WH questions, invert the finite operator and subject.
+  Subject-WH questions do not invert solely because the subject is WH.
+- Central modals take a base-form complement and never co-occur with
+  morphological present/past in the GrammarCell.
+- Imperatives use a base verb. Ordinary negative imperatives use DO-support;
+  LET'S NOT has `negation`, `imperative`, and `let_imperative` operation tags
+  but not `do_support`.
+- Use only these operation tags when relevant: `perfect`, `progressive`,
+  `be_passive`, `central_modal`, `do_support`, `negation`,
+  `operator_inversion`, `subject_wh`, `wh_fronting`, `imperative`,
+  `emphatic_do`, `let_imperative`.
+- Prefer common concrete vocabulary, avoid specialist knowledge, and keep all
+  accepted answers genuinely equivalent for the target.
+

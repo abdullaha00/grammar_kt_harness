@@ -1,0 +1,1 @@
+{"source_id": "egp_past_passive", "result": "complete", "cells": [{"tense": "past", "aspect": "none", "voice": "passive", "polarity": "positive", "clause": "declarative", "modal": "none"}], "note": null}

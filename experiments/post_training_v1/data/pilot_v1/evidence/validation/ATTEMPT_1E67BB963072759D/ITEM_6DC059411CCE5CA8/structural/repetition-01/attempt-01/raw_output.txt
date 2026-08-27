@@ -1,0 +1,1 @@
+{"cell":{"tense":"past","aspect":"none","voice":"active","polarity":"positive","clause":"polar_question","modal":"none"},"operations":["do_support","subject_auxiliary_inversion"],"predicate_class":"lexical_transitive","agreement_site":"do"}

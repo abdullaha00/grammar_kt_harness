@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b02-2c42-7cd1-9cad-4da6f2d6c633"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"Look! Anna ___ (wash) the dishes.\"},\"target_answer\":\"is washing\",\"accepted_answers\":[\"is washing\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12764,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":133,"reasoning_output_tokens":92}}

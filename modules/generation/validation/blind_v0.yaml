@@ -1,6 +1,0 @@
-evaluator_id: blind_reconstruction_v0
-structural_backend_config: modules/generation/validation/backend.yaml
-quality_backend_config: modules/generation/validation/backend.yaml
-known_generators: [llm_standalone_v0, llm_dialogue_v0]
-max_attempts: 2
-repeat_first_n: 5

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b01-bf4d-7b80-9643-d5a982ade819"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Why were you late for the meeting?\"}],\"learner_prompt\":\"B: I was late because I ________ the time.\"},\"target_answer\":\"hadn't been checking\",\"accepted_answers\":[\"hadn't been checking\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12849,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":217,"reasoning_output_tokens":148}}

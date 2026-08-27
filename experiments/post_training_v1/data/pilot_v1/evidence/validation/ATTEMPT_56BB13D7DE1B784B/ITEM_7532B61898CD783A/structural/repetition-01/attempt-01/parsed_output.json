@@ -1,0 +1,17 @@
+{
+  "agreement_site": "have",
+  "cell": {
+    "aspect": "perfect_progressive",
+    "clause": "declarative",
+    "modal": "none",
+    "polarity": "positive",
+    "tense": "present",
+    "voice": "active"
+  },
+  "operations": [
+    "perfect_have",
+    "progressive_be",
+    "present_participle"
+  ],
+  "predicate_class": "lexical_transitive"
+}

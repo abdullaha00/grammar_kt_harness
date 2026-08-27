@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b00-8b36-7873-8c4d-3d4d5b350303"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"If Maya had more time, she ___ her brother with his homework.\"},\"target_answer\":\"would help\",\"accepted_answers\":[\"would help\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12772,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":248,"reasoning_output_tokens":203}}

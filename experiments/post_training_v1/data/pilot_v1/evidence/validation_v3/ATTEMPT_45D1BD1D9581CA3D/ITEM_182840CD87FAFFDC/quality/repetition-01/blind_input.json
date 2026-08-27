@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "clean the table"
+  ],
+  "content": {
+    "learner_prompt": "B: Please ___ the table.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "The table is very dirty."
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "clean the table"
+}

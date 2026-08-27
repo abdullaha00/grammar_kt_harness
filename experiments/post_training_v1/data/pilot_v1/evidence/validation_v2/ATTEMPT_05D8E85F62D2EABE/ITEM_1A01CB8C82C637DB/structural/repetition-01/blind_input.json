@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "Yesterday, I cleaned the kitchen."
+  ],
+  "content": {
+    "prompt": "Yesterday, I ___ the kitchen."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "Yesterday, I cleaned the kitchen."
+}

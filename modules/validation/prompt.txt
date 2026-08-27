@@ -1,0 +1,17 @@
+Judge one generated exercise independently from the generator.
+
+Use the visible learner-facing prompt, target answer, accepted answers, intended
+GrammarCell, and the declared criteria. Do not rely on generation reasoning or
+generation metadata. Judge every criterion separately and give a short note.
+
+Return one JSON object with a `judgments` mapping. Every declared criterion must
+have exactly `passed` (true/false) and `note`.
+
+VISIBLE ITEM:
+{{visible_item}}
+
+INTENDED GRAMMAR CELL:
+{{target_cell}}
+
+VALIDATION CRITERIA:
+{{criteria}}

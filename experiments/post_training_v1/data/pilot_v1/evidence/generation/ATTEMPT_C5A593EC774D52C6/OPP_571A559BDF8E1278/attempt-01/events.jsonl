@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b03-162a-7c23-b140-6c089245181d"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Are the children ready for dinner?\"}],\"learner_prompt\":\"B: Yes, they _____ their homework.\"},\"target_answer\":\"have finished\",\"accepted_answers\":[\"have finished\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12833,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":176,"reasoning_output_tokens":115}}

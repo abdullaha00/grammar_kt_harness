@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b11-d23e-7423-b45d-b2f60f8eeb6c"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":5,\"answer_ambiguity\":false,\"pedagogical_suitability\":5,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":null,\"pragmatic_licensing\":null,\"natural_speaker_turns\":null,\"context_appropriateness\":null,\"note\":\"Natural, unambiguous standalone completion item; appropriate for practising present-simple negation with common A1 vocabulary.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14229,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":105,"reasoning_output_tokens":0}}

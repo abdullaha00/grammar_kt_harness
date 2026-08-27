@@ -1,0 +1,44 @@
+{
+  "intervention": "Phase-1 prompt adds a final evidence self-check.",
+  "changed_configuration": [
+    "normalisation.phase1_prompt"
+  ],
+  "mapping_differences": [
+    {
+      "baseline": {
+        "source_id": "egp_present_simple",
+        "result": "complete",
+        "cells": [
+          {
+            "tense": "present",
+            "aspect": "none",
+            "voice": "active",
+            "polarity": "positive",
+            "clause": "declarative",
+            "modal": "none"
+          }
+        ],
+        "note": null
+      },
+      "alternate": {
+        "source_id": "egp_present_simple",
+        "result": "complete",
+        "cells": [
+          {
+            "tense": "present",
+            "aspect": "none",
+            "voice": "active",
+            "polarity": "positive",
+            "clause": "declarative",
+            "modal": "none"
+          }
+        ],
+        "note": "self-check completed; exact values supported without examples"
+      }
+    }
+  ],
+  "canonical_cells_identical": true,
+  "downstream_items_identical": true,
+  "downstream_events_identical": true,
+  "interpretation": "Fixture-scale inspectability check; no superiority claim is made."
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b02-0b5e-79a2-8b1a-6a5274b073ff"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Why was the room so cold when she came back?\"}],\"learner_prompt\":\"B: She ______ the window before she left.\"},\"target_answer\":\"hadn't closed\",\"accepted_answers\":[\"had not closed\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12840,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":183,"reasoning_output_tokens":115}}

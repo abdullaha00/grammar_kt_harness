@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b03-5426-79d3-9e0a-449f0b430980"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Does the store deliver this sofa on Sundays?\"}],\"learner_prompt\":\"B: No, this sofa ____ on Sundays.\"},\"target_answer\":\"isn't delivered\",\"accepted_answers\":[\"is not delivered\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12848,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":154,"reasoning_output_tokens":88}}

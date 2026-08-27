@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b07-ad71-77a3-80bd-20eadc556f9a"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"The room is warm.\"}],\"learner_prompt\":\"B: ______ the window.\"},\"target_answer\":\"Let's open\",\"accepted_answers\":[\"Let's open\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12846,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":205,"reasoning_output_tokens":149}}

@@ -1,0 +1,1 @@
+{"prompt": "Yesterday, Omar ___ the door because it was stuck. (not / open)", "target_answer": "Yesterday, Omar did not open the door because it was stuck.", "accepted_answers": ["Yesterday, Omar did not open the door because it was stuck."], "operation_tags": ["do_support", "negation"], "note": "Past time cue and negative cue determine the response."}

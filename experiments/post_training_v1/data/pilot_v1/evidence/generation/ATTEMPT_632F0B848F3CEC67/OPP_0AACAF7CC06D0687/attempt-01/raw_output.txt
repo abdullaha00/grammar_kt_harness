@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"The museum is free today."}],"learner_prompt":"B: Do I need a ticket?"},"target_answer":"Do I need a ticket?","accepted_answers":["Do I need a ticket?"]}

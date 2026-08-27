@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "isn't watching"
+  ],
+  "content": {
+    "learner_prompt": "B: She ______ the television.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why is Mia so quiet?"
+      }
+    ]
+  },
+  "target_answer": "isn't watching"
+}

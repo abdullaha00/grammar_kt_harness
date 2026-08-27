@@ -1,0 +1,15 @@
+{
+  "agreement_site": "none",
+  "cell": {
+    "aspect": "none",
+    "clause": "imperative",
+    "modal": "none",
+    "polarity": "positive",
+    "tense": "NA",
+    "voice": "active"
+  },
+  "operations": [
+    "let's contraction"
+  ],
+  "predicate_class": "lexical_transitive"
+}

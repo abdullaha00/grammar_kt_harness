@@ -1,0 +1,1 @@
+{"content":{"prompt":"Tom is still hungry. He ______ breakfast. (not / eat)"},"target_answer":"has not eaten","accepted_answers":["hasn't eaten"]}

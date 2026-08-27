@@ -1,0 +1,232 @@
+{
+  "attempt_id": "ATTEMPT_154898012F208B94",
+  "candidate": {
+    "accepted_answers": [
+      "Does Maria play tennis?"
+    ],
+    "canonical_cell_id": "CELL_868FF555B70CAE2A",
+    "content": {
+      "prompt": "_____ Maria play tennis?"
+    },
+    "generation_metadata": {
+      "attempt": 1,
+      "attempt_history": [
+        {
+          "accepted": true,
+          "attempt": 1,
+          "rejection_reasons": []
+        }
+      ],
+      "backend": {
+        "kind": "codex_exec",
+        "model": "gpt-5.6-luna"
+      },
+      "evidence_directory": "/home/abdullah/grammar_kt_harness/experiments/post_training_v1/data/pilot_v1/evidence/generation/ATTEMPT_154898012F208B94/OPP_DA35D6B379FF278E",
+      "generator_config": {
+        "constraints": {
+          "lexical_level": "A2_where_feasible",
+          "register": "neutral",
+          "response_type": "sentence_completion"
+        },
+        "generator_id": "llm_standalone_v0",
+        "mode": "llm_standalone"
+      },
+      "input_opportunity": {
+        "canonical_cell_id": "CELL_868FF555B70CAE2A",
+        "cell": {
+          "aspect": "none",
+          "clause": "polar_question",
+          "modal": "none",
+          "polarity": "positive",
+          "tense": "present",
+          "voice": "active"
+        },
+        "coverage_reasons": [
+          "canonical_cell_baseline"
+        ],
+        "expected_operations": [
+          "do_support",
+          "operator_inversion"
+        ],
+        "measurement_opportunity_id": "OPP_DA35D6B379FF278E",
+        "source_descriptor_ids": [
+          "1741163708336x930002080700909000"
+        ],
+        "structural_conditions": {
+          "imperative_subtype": null,
+          "predicate_class": "lexical_transitive",
+          "subject_number": "singular",
+          "subject_person": 3,
+          "wh_role": null
+        }
+      },
+      "parsed_output": {
+        "accepted_answers": [
+          "Does Maria play tennis?"
+        ],
+        "content": {
+          "prompt": "_____ Maria play tennis?"
+        },
+        "target_answer": "Does Maria play tennis?"
+      },
+      "raw_output": "{\"content\":{\"prompt\":\"_____ Maria play tennis?\"},\"target_answer\":\"Does Maria play tennis?\",\"accepted_answers\":[\"Does Maria play tennis?\"]}",
+      "rendered_prompt": "Create one natural standalone English completion item for the fixed structural target below.\n\nThe target grammar has already been chosen. Do not reinterpret it, weaken it, or select a different target. You may choose ordinary lexical content, names, and surface wording. Keep lexical difficulty simple (A2 where feasible), avoid specialist world knowledge, and make the intended answer unambiguous.\n\nFixed MeasurementOpportunity:\n{\n  \"canonical_cell_id\": \"CELL_868FF555B70CAE2A\",\n  \"cell\": {\n    \"aspect\": \"none\",\n    \"clause\": \"polar_question\",\n    \"modal\": \"none\",\n    \"polarity\": \"positive\",\n    \"tense\": \"present\",\n    \"voice\": \"active\"\n  },\n  \"expected_operations\": [\n    \"do_support\",\n    \"operator_inversion\"\n  ],\n  \"structural_conditions\": {\n    \"imperative_subtype\": null,\n    \"predicate_class\": \"lexical_transitive\",\n    \"subject_number\": \"singular\",\n    \"subject_person\": 3,\n    \"wh_role\": null\n  }\n}\n\nGeneration constraints:\n{\n  \"lexical_level\": \"A2_where_feasible\",\n  \"register\": \"neutral\",\n  \"response_type\": \"sentence_completion\"\n}\n\nReturn only the JSON object required by the output schema. The content object must contain exactly a learner-facing prompt. The target answer must instantiate every declared cell value, structural condition, and expected operation.\n"
+    },
+    "generator_id": "llm_standalone_v0",
+    "item_family": "standalone_completion",
+    "item_id": "ITEM_725AD0837A3FC803",
+    "measurement_opportunity_id": "OPP_DA35D6B379FF278E",
+    "quality_diagnostics": {
+      "answer_ambiguity": false,
+      "context_appropriateness": null,
+      "dialogue_coherence": null,
+      "lexical_cefr_appropriate": true,
+      "natural_speaker_turns": null,
+      "naturalness": 5,
+      "note": "Clear, natural standalone question-completion item; the response fits exactly.",
+      "pedagogical_suitability": 5,
+      "pragmatic_licensing": null,
+      "world_knowledge_required": false
+    },
+    "source_descriptor_ids": [
+      "1741163708336x930002080700909000"
+    ],
+    "target_answer": "Does Maria play tennis?",
+    "validated_structure": {
+      "agreement_site": "do",
+      "cell": {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "present",
+        "voice": "active"
+      },
+      "operations": [
+        "do-support",
+        "subject-auxiliary inversion"
+      ],
+      "predicate_class": "lexical_transitive"
+    },
+    "validation_metadata": {
+      "evaluator_id": "blind_reconstruction_v0",
+      "hard_checks": {
+        "errors": [],
+        "item_id": "ITEM_725AD0837A3FC803",
+        "measurement_opportunity_id": "OPP_DA35D6B379FF278E",
+        "status": "accepted"
+      },
+      "intended_target_hidden_from_evaluator": true,
+      "quality_not_conflated_with_grammar_acceptance": true,
+      "quality_repetitions": [
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "errors": [],
+              "valid": true
+            }
+          ],
+          "intended_target_hidden": true,
+          "item_id": "ITEM_725AD0837A3FC803",
+          "label": "quality",
+          "repetition": 1,
+          "result": {
+            "answer_ambiguity": false,
+            "context_appropriateness": null,
+            "dialogue_coherence": null,
+            "lexical_cefr_appropriate": true,
+            "natural_speaker_turns": null,
+            "naturalness": 5,
+            "note": "Clear, natural standalone question-completion item; the response fits exactly.",
+            "pedagogical_suitability": 5,
+            "pragmatic_licensing": null,
+            "world_knowledge_required": false
+          },
+          "successful_attempt": 1
+        }
+      ],
+      "structural_repetitions": [
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "errors": [],
+              "valid": true
+            }
+          ],
+          "intended_target_hidden": true,
+          "item_id": "ITEM_725AD0837A3FC803",
+          "label": "structural",
+          "repetition": 1,
+          "result": {
+            "agreement_site": "do",
+            "cell": {
+              "aspect": "none",
+              "clause": "polar_question",
+              "modal": "none",
+              "polarity": "positive",
+              "tense": "present",
+              "voice": "active"
+            },
+            "operations": [
+              "do-support",
+              "subject-auxiliary inversion"
+            ],
+            "predicate_class": "lexical_transitive"
+          },
+          "successful_attempt": 1
+        }
+      ]
+    }
+  },
+  "canonical_cell_id": "CELL_868FF555B70CAE2A",
+  "canonical_split": "development",
+  "collection_revision": 2,
+  "generation_evidence": "experiments/post_training_v1/data/pilot_v1/evidence/generation/ATTEMPT_154898012F208B94",
+  "generation_model": "gpt-5.6-luna",
+  "item_format": "standalone",
+  "measurement_opportunity_id": "OPP_DA35D6B379FF278E",
+  "post_training_split": "train",
+  "runtime_seconds": 24.997745842996665,
+  "sample_index": 3,
+  "status": "validated",
+  "structurally_valid": false,
+  "validation_evidence": "experiments/post_training_v1/data/pilot_v1/evidence/validation/ATTEMPT_154898012F208B94",
+  "validation_reasons": [
+    "blind reconstruction operations_mismatch: intended=['do_support', 'operator_inversion'], recovered=['do-support', 'subject-auxiliary inversion']"
+  ],
+  "validation_report": {
+    "accepted_item_bank_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "accepted_items": 0,
+    "accepted_opportunity_coverage": 0.0,
+    "candidate_items": 1,
+    "candidate_opportunity_coverage": 1.0,
+    "failure_types": {
+      "operations_mismatch": 1
+    },
+    "grammar_cell_exact_match_rate": 0.0,
+    "independent_blind_reconstruction": true,
+    "missing_accepted_opportunity_ids": [
+      "OPP_DA35D6B379FF278E"
+    ],
+    "missing_candidate_opportunity_ids": [],
+    "operation_exact_match_rate": 0.0,
+    "quality_evaluator_reliability": {
+      "comparisons": [],
+      "exact_agreement_rate": null,
+      "interpretation": "automated evaluator stability; not human inter-rater reliability",
+      "repeated_items": 0
+    },
+    "quality_is_separate_diagnostic": true,
+    "rejected_items": 1,
+    "status": "PARTIAL",
+    "structural_evaluator_reliability": {
+      "comparisons": [],
+      "exact_agreement_rate": null,
+      "interpretation": "automated evaluator stability; not human inter-rater reliability",
+      "repeated_items": 0
+    }
+  },
+  "validator_model": "gpt-5.6-terra"
+}

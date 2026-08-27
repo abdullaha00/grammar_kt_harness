@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "Do I need a ticket?"
+  ],
+  "content": {
+    "learner_prompt": "B: Do I need a ticket?",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "The museum is free today."
+      }
+    ]
+  },
+  "target_answer": "Do I need a ticket?"
+}

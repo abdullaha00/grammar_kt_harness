@@ -1,0 +1,6 @@
+{"source_id": "egp_present_simple", "result": "complete", "cells": [{"tense": "present", "aspect": "none", "voice": "active", "polarity": "positive", "clause": "declarative", "modal": "none"}], "note": null}
+{"source_id": "egp_past_negative", "result": "complete", "cells": [{"tense": "past", "aspect": "none", "voice": "active", "polarity": "negative", "clause": "declarative", "modal": "none"}], "note": null}
+{"source_id": "egp_past_passive", "result": "complete", "cells": [{"tense": "past", "aspect": "none", "voice": "passive", "polarity": "positive", "clause": "declarative", "modal": "none"}], "note": null}
+{"source_id": "egp_present_progressive", "result": "complete", "cells": [{"tense": "present", "aspect": "progressive", "voice": "active", "polarity": "positive", "clause": "declarative", "modal": "none"}], "note": null}
+{"source_id": "egp_progressive_passive_negative", "result": "complete", "cells": [{"tense": "present", "aspect": "progressive", "voice": "passive", "polarity": "negative", "clause": "declarative", "modal": "none"}], "note": null}
+{"source_id": "egp_should_question", "result": "complete", "cells": [{"tense": "NA", "aspect": "none", "voice": "active", "polarity": "positive", "clause": "polar_question", "modal": "should"}], "note": null}

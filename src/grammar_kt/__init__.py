@@ -1,3 +1,13 @@
-"""Grammar-to-KT research harness organised around five scientific modules."""
+"""Readable stages for the GrammarCell-to-knowledge-tracing experiment."""
 
-__all__ = ["grammar", "measurement", "generation", "knowledge", "evaluation"]
+__all__ = [
+    "normalise",
+    "canonicalise",
+    "generate",
+    "validate_items",
+    "fold",
+    "simulate",
+    "kc",
+    "kt",
+    "evaluate",
+]

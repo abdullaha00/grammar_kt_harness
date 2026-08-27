@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b06-76ae-7443-bca5-64e5590e350f"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"The children ___ the window because it is cold.\"},\"target_answer\":\"are not opening\",\"accepted_answers\":[\"are not opening\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12771,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":120,"reasoning_output_tokens":77}}

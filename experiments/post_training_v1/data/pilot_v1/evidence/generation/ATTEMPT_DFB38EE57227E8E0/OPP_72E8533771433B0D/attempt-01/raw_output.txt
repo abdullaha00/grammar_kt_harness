@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Why was the room so cold when she came back?"}],"learner_prompt":"B: She ______ the window before she left."},"target_answer":"hadn't closed","accepted_answers":["had not closed"]}

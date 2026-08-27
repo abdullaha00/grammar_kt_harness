@@ -1,0 +1,17 @@
+{
+  "accepted_surface_variants": [
+    "Close the window, please.",
+    "Please close the window."
+  ],
+  "content": {
+    "learner_prompt": "B: ______ the window, please.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "The room is cold."
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "Close the window, please."
+}

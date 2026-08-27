@@ -1,0 +1,30 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "errors": [],
+      "valid": true
+    }
+  ],
+  "intended_target_hidden": true,
+  "item_id": "ITEM_B5780492A7FFB2A2",
+  "label": "structural",
+  "repetition": 1,
+  "result": {
+    "agreement_site": "have",
+    "cell": {
+      "aspect": "perfect",
+      "clause": "declarative",
+      "modal": "none",
+      "polarity": "negative",
+      "tense": "present",
+      "voice": "active"
+    },
+    "operations": [
+      "perfect",
+      "negation"
+    ],
+    "predicate_class": "lexical_transitive"
+  },
+  "successful_attempt": 1
+}

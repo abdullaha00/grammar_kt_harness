@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "am cooking"
+  ],
+  "content": {
+    "learner_prompt": "I ____ dinner now.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "What are you doing in the kitchen?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "am cooking"
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b13-7640-7872-8cb6-dd169c84e5e1"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":5,\"answer_ambiguity\":true,\"pedagogical_suitability\":4,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":null,\"pragmatic_licensing\":null,\"natural_speaker_turns\":null,\"context_appropriateness\":null,\"note\":\"Natural standalone past-tense completion; alternatives such as “opened” are plausible, so the blank is somewhat ambiguous.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14220,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":203,"reasoning_output_tokens":95}}

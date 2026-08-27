@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"The table is very dirty."}],"learner_prompt":"B: Please ___ the table."},"target_answer":"clean the table","accepted_answers":["clean the table"]}

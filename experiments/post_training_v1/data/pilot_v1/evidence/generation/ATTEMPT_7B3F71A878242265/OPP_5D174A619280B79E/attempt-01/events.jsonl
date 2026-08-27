@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b01-7b0f-7ca2-845b-d79af0541b1c"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"When I arrived at 6 p.m., Emma ___ the kitchen for two hours.\"},\"target_answer\":\"had not been cleaning\",\"accepted_answers\":[\"hadn't been cleaning\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12777,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":160,"reasoning_output_tokens":108}}

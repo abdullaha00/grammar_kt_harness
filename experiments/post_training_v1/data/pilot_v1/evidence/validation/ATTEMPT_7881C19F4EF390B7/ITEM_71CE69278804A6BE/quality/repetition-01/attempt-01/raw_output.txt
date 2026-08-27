@@ -1,0 +1,1 @@
+{"naturalness":5,"answer_ambiguity":false,"pedagogical_suitability":4,"world_knowledge_required":false,"lexical_cefr_appropriate":true,"dialogue_coherence":null,"pragmatic_licensing":null,"natural_speaker_turns":null,"context_appropriateness":null,"note":"The response completes the sentence naturally and is well supported by the context."}

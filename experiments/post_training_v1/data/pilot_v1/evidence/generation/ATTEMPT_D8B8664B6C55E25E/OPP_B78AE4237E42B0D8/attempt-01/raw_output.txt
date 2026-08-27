@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"I saw Anna in the yard yesterday afternoon. What was she doing?"}],"learner_prompt":"B: She ___ the car."},"target_answer":"was washing","accepted_answers":["was washing"]}

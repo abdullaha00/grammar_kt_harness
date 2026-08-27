@@ -1,0 +1,12 @@
+{
+  "answer_ambiguity": true,
+  "context_appropriateness": 4,
+  "dialogue_coherence": 4,
+  "lexical_cefr_appropriate": true,
+  "natural_speaker_turns": 5,
+  "naturalness": 4,
+  "note": "The learner response is grammatical and understandable, but the dialogue is slightly unnatural because “Yes, they have cleaned the kitchen” does not directly confirm that it is ready for dinner; alternatives such as “Yes, it is” or “Yes, they’ve cleaned it” are more natural. The blank is also ambiguous because several tense forms could fit depending on the intended meaning.",
+  "pedagogical_suitability": 4,
+  "pragmatic_licensing": 4,
+  "world_knowledge_required": false
+}

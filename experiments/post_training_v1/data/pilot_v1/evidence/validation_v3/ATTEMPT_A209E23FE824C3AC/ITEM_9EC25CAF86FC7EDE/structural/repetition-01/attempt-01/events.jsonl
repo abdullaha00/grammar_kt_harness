@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b12-2f4d-7142-a15a-a9088513a8df"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"cell\":{\"tense\":\"present\",\"aspect\":\"progressive\",\"voice\":\"active\",\"polarity\":\"positive\",\"clause\":\"declarative\",\"modal\":\"none\"},\"operations\":[\"progressive\"],\"predicate_class\":\"lexical_transitive\",\"agreement_site\":\"be\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":16658,"cached_input_tokens":9984,"cache_write_input_tokens":0,"output_tokens":105,"reasoning_output_tokens":40}}

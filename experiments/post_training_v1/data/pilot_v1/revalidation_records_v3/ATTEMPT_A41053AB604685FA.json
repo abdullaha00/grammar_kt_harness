@@ -1,0 +1,244 @@
+{
+  "attempt_id": "ATTEMPT_A41053AB604685FA",
+  "candidate": {
+    "accepted_answers": [
+      "had been painting"
+    ],
+    "canonical_cell_id": "CELL_0D017AFB2B3A3DB5",
+    "content": {
+      "learner_prompt": "B: The children ______ the fence for hours.",
+      "turns": [
+        {
+          "speaker": "A",
+          "text": "Why was the fence covered in paint when you arrived?"
+        }
+      ]
+    },
+    "generation_metadata": {
+      "attempt": 1,
+      "attempt_history": [
+        {
+          "accepted": true,
+          "attempt": 1,
+          "rejection_reasons": []
+        }
+      ],
+      "backend": {
+        "kind": "codex_exec",
+        "model": "gpt-5.6-luna"
+      },
+      "evidence_directory": "/home/abdullah/grammar_kt_harness/experiments/post_training_v1/data/pilot_v1/evidence/generation/ATTEMPT_A41053AB604685FA/OPP_6192A30E57947215",
+      "generator_config": {
+        "constraints": {
+          "context_turns": 1,
+          "conversational_register": "neutral",
+          "dialogue_act": "response",
+          "lexical_level": "A2_where_feasible",
+          "response_type": "sentence_completion",
+          "target_learner_turn": "B"
+        },
+        "generator_id": "llm_dialogue_v0",
+        "mode": "llm_dialogue"
+      },
+      "input_opportunity": {
+        "canonical_cell_id": "CELL_0D017AFB2B3A3DB5",
+        "cell": {
+          "aspect": "perfect_progressive",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "positive",
+          "tense": "past",
+          "voice": "active"
+        },
+        "coverage_reasons": [
+          "agreement_measurement:have"
+        ],
+        "expected_operations": [
+          "perfect",
+          "progressive"
+        ],
+        "measurement_opportunity_id": "OPP_6192A30E57947215",
+        "source_descriptor_ids": [
+          "1741163712328x669008360458158700"
+        ],
+        "structural_conditions": {
+          "imperative_subtype": null,
+          "predicate_class": "lexical_transitive",
+          "subject_number": "plural",
+          "subject_person": 3,
+          "wh_role": null
+        }
+      },
+      "parsed_output": {
+        "accepted_answers": [
+          "had been painting"
+        ],
+        "content": {
+          "learner_prompt": "B: The children ______ the fence for hours.",
+          "turns": [
+            {
+              "speaker": "A",
+              "text": "Why was the fence covered in paint when you arrived?"
+            }
+          ]
+        },
+        "target_answer": "had been painting"
+      },
+      "raw_output": "{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Why was the fence covered in paint when you arrived?\"}],\"learner_prompt\":\"B: The children ______ the fence for hours.\"},\"target_answer\":\"had been painting\",\"accepted_answers\":[\"had been painting\"]}",
+      "rendered_prompt": "Create one short, natural English dialogue-completion item for the fixed structural target below.\n\nThe learner target grammar has already been chosen. Do not reinterpret it, weaken it, or select a different target. Context turns may establish a natural conversational situation, but the learner answer itself must instantiate the same fixed MeasurementOpportunity. Use simple lexical content, avoid specialist world knowledge, and make the response pragmatically licensed and unambiguous.\n\nFixed MeasurementOpportunity:\n{\n  \"canonical_cell_id\": \"CELL_0D017AFB2B3A3DB5\",\n  \"cell\": {\n    \"aspect\": \"perfect_progressive\",\n    \"clause\": \"declarative\",\n    \"modal\": \"none\",\n    \"polarity\": \"positive\",\n    \"tense\": \"past\",\n    \"voice\": \"active\"\n  },\n  \"expected_operations\": [\n    \"perfect\",\n    \"progressive\"\n  ],\n  \"structural_conditions\": {\n    \"imperative_subtype\": null,\n    \"predicate_class\": \"lexical_transitive\",\n    \"subject_number\": \"plural\",\n    \"subject_person\": 3,\n    \"wh_role\": null\n  }\n}\n\nGeneration constraints:\n{\n  \"context_turns\": 1,\n  \"conversational_register\": \"neutral\",\n  \"dialogue_act\": \"response\",\n  \"lexical_level\": \"A2_where_feasible\",\n  \"response_type\": \"sentence_completion\",\n  \"target_learner_turn\": \"B\"\n}\n\nReturn only the JSON object required by the output schema. The content object must contain context turns and a learner prompt. Do not place the answer in the context turns.\n"
+    },
+    "generator_id": "llm_dialogue_v0",
+    "item_family": "dialogue_completion",
+    "item_id": "ITEM_6B06A9EF64518F3E",
+    "measurement_opportunity_id": "OPP_6192A30E57947215",
+    "quality_diagnostics": {
+      "answer_ambiguity": false,
+      "context_appropriateness": 5,
+      "dialogue_coherence": 5,
+      "lexical_cefr_appropriate": true,
+      "natural_speaker_turns": 5,
+      "naturalness": 5,
+      "note": "The completed response is natural, unambiguous, and well supported by the preceding question.",
+      "pedagogical_suitability": 5,
+      "pragmatic_licensing": 5,
+      "world_knowledge_required": false
+    },
+    "source_descriptor_ids": [
+      "1741163712328x669008360458158700"
+    ],
+    "target_answer": "had been painting",
+    "validated_structure": {
+      "agreement_site": "have",
+      "cell": {
+        "aspect": "perfect_progressive",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "past",
+        "voice": "active"
+      },
+      "operations": [
+        "perfect",
+        "progressive"
+      ],
+      "predicate_class": "lexical_transitive"
+    },
+    "validation_metadata": {
+      "evaluator_id": "blind_reconstruction_v0_closed_ontology_v3",
+      "hard_checks": {
+        "errors": [],
+        "item_id": "ITEM_6B06A9EF64518F3E",
+        "measurement_opportunity_id": "OPP_6192A30E57947215",
+        "status": "accepted"
+      },
+      "intended_target_hidden_from_evaluator": true,
+      "quality_not_conflated_with_grammar_acceptance": true,
+      "quality_repetitions": [
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "errors": [],
+              "valid": true
+            }
+          ],
+          "intended_target_hidden": true,
+          "item_id": "ITEM_6B06A9EF64518F3E",
+          "label": "quality",
+          "repetition": 1,
+          "result": {
+            "answer_ambiguity": false,
+            "context_appropriateness": 5,
+            "dialogue_coherence": 5,
+            "lexical_cefr_appropriate": true,
+            "natural_speaker_turns": 5,
+            "naturalness": 5,
+            "note": "The completed response is natural, unambiguous, and well supported by the preceding question.",
+            "pedagogical_suitability": 5,
+            "pragmatic_licensing": 5,
+            "world_knowledge_required": false
+          },
+          "successful_attempt": 1
+        }
+      ],
+      "structural_repetitions": [
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "errors": [],
+              "valid": true
+            }
+          ],
+          "intended_target_hidden": true,
+          "item_id": "ITEM_6B06A9EF64518F3E",
+          "label": "structural",
+          "repetition": 1,
+          "result": {
+            "agreement_site": "have",
+            "cell": {
+              "aspect": "perfect_progressive",
+              "clause": "declarative",
+              "modal": "none",
+              "polarity": "positive",
+              "tense": "past",
+              "voice": "active"
+            },
+            "operations": [
+              "perfect",
+              "progressive"
+            ],
+            "predicate_class": "lexical_transitive"
+          },
+          "successful_attempt": 1
+        }
+      ]
+    }
+  },
+  "canonical_cell_id": "CELL_0D017AFB2B3A3DB5",
+  "canonical_split": "development",
+  "collection_revision": 2,
+  "generation_evidence": "experiments/post_training_v1/data/pilot_v1/evidence/generation/ATTEMPT_A41053AB604685FA",
+  "generation_model": "gpt-5.6-luna",
+  "item_format": "dialogue",
+  "measurement_opportunity_id": "OPP_6192A30E57947215",
+  "post_training_split": "train",
+  "previous_validation_evidence": "experiments/post_training_v1/data/pilot_v1/evidence/validation_v2/ATTEMPT_A41053AB604685FA",
+  "runtime_seconds": 30.012228566996782,
+  "sample_index": 2,
+  "status": "validated",
+  "structurally_valid": true,
+  "validation_evidence": "experiments/post_training_v1/data/pilot_v1/evidence/validation_v3/ATTEMPT_A41053AB604685FA",
+  "validation_evidence_v1_faulty_free_operations": "experiments/post_training_v1/data/pilot_v1/evidence/validation/ATTEMPT_A41053AB604685FA",
+  "validation_reasons": [],
+  "validation_report": {
+    "accepted_item_bank_sha256": "bd1248d323a8042f8353f63296e601f76330b2f05aa84efe0069bab11842843a",
+    "accepted_items": 1,
+    "accepted_opportunity_coverage": 1.0,
+    "candidate_items": 1,
+    "candidate_opportunity_coverage": 1.0,
+    "failure_types": {},
+    "grammar_cell_exact_match_rate": 1.0,
+    "independent_blind_reconstruction": true,
+    "missing_accepted_opportunity_ids": [],
+    "missing_candidate_opportunity_ids": [],
+    "operation_exact_match_rate": 1.0,
+    "quality_evaluator_reliability": {
+      "comparisons": [],
+      "exact_agreement_rate": null,
+      "interpretation": "automated evaluator stability; not human inter-rater reliability",
+      "repeated_items": 0
+    },
+    "quality_is_separate_diagnostic": true,
+    "rejected_items": 0,
+    "status": "PASS",
+    "structural_evaluator_reliability": {
+      "comparisons": [],
+      "exact_agreement_rate": null,
+      "interpretation": "automated evaluator stability; not human inter-rater reliability",
+      "repeated_items": 0
+    }
+  },
+  "validation_revision": 3,
+  "validator_model": "gpt-5.6-terra"
+}

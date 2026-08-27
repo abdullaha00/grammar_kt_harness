@@ -1,0 +1,1 @@
+{"cell":{"tense":"present","aspect":"none","voice":"active","polarity":"negative","clause":"imperative","modal":"none"},"operations":["do-support","negative contraction","let's construction"],"predicate_class":"lexical_transitive","agreement_site":"do"}

@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"The room is cold."}],"learner_prompt":"B: ______ the window, please."},"target_answer":"Close the window, please.","accepted_answers":["Close the window, please.","Please close the window."]}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b07-a23e-7ba1-8c7f-43d1129f4a2b"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"The table is very dirty.\"}],\"learner_prompt\":\"B: Please ___ the table.\"},\"target_answer\":\"clean the table\",\"accepted_answers\":[\"clean the table\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12833,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":227,"reasoning_output_tokens":167}}

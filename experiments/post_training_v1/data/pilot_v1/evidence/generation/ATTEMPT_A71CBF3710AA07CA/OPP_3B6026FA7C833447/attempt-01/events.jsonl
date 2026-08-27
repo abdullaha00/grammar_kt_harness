@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b05-f83c-7763-97ed-d5c771c74200"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Why is Maya still in the kitchen?\"}],\"learner_prompt\":\"B: She ___ (wash) the dishes since lunch.\"},\"target_answer\":\"has been washing\",\"accepted_answers\":[\"has been washing\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12843,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":149,"reasoning_output_tokens":82}}

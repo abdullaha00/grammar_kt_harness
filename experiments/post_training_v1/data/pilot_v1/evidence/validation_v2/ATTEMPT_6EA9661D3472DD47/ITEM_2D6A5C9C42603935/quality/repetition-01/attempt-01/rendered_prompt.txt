@@ -1,0 +1,15 @@
+Assess item quality independently of grammatical target correctness.
+
+Use only the visible generated exercise and learner response. Report naturalness, ambiguity, pedagogical suitability, world-knowledge dependence, lexical suitability, and (when applicable) dialogue quality. Dialogue-only fields must be null for standalone items. Return only schema-valid JSON.
+
+Generated exercise and response:
+{
+  "accepted_surface_variants": [
+    "had packed their bags."
+  ],
+  "content": {
+    "prompt": "By the time the bus came, the children ____ their bags."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "had packed their bags."
+}

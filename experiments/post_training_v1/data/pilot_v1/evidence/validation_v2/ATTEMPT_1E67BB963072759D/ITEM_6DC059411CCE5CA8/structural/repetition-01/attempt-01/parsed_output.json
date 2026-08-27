@@ -1,0 +1,16 @@
+{
+  "agreement_site": "do",
+  "cell": {
+    "aspect": "none",
+    "clause": "polar_question",
+    "modal": "none",
+    "polarity": "positive",
+    "tense": "past",
+    "voice": "active"
+  },
+  "operations": [
+    "do_support",
+    "operator_inversion"
+  ],
+  "predicate_class": "lexical_transitive"
+}

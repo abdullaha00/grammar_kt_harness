@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"The weather looks cold today."}],"learner_prompt":"B: ______ I need this warm coat?"},"target_answer":"Do I need this warm coat?","accepted_answers":["Do I need this warm coat?"]}

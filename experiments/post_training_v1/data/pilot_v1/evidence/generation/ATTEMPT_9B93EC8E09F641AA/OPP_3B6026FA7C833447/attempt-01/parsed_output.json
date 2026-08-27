@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "has been cleaning"
+  ],
+  "content": {
+    "learner_prompt": "B: She ______ the house all morning. (clean)",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why is Maya tired?"
+      }
+    ]
+  },
+  "target_answer": "has been cleaning"
+}

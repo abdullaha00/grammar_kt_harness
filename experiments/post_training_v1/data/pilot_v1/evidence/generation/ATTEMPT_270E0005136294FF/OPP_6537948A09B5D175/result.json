@@ -1,0 +1,104 @@
+{
+  "item": {
+    "accepted_answers": [
+      "is not locked",
+      "isn't locked"
+    ],
+    "canonical_cell_id": "CELL_9556E3A49EFD0300",
+    "content": {
+      "learner_prompt": "B: No, it ___ (lock).",
+      "turns": [
+        {
+          "speaker": "A",
+          "text": "Is the front door locked?"
+        }
+      ]
+    },
+    "generation_metadata": {
+      "attempt": 1,
+      "attempt_history": [
+        {
+          "accepted": true,
+          "attempt": 1,
+          "rejection_reasons": []
+        }
+      ],
+      "backend": {
+        "kind": "codex_exec",
+        "model": "gpt-5.6-luna"
+      },
+      "evidence_directory": "/home/abdullah/grammar_kt_harness/experiments/post_training_v1/data/pilot_v1/evidence/generation/ATTEMPT_270E0005136294FF/OPP_6537948A09B5D175",
+      "generator_config": {
+        "constraints": {
+          "context_turns": 1,
+          "conversational_register": "neutral",
+          "dialogue_act": "response",
+          "lexical_level": "A2_where_feasible",
+          "response_type": "sentence_completion",
+          "target_learner_turn": "B"
+        },
+        "generator_id": "llm_dialogue_v0",
+        "mode": "llm_dialogue"
+      },
+      "input_opportunity": {
+        "canonical_cell_id": "CELL_9556E3A49EFD0300",
+        "cell": {
+          "aspect": "none",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "negative",
+          "tense": "present",
+          "voice": "passive"
+        },
+        "coverage_reasons": [
+          "canonical_cell_baseline"
+        ],
+        "expected_operations": [
+          "be_passive",
+          "negation"
+        ],
+        "measurement_opportunity_id": "OPP_6537948A09B5D175",
+        "source_descriptor_ids": [
+          "1741163712049x855374993067916200"
+        ],
+        "structural_conditions": {
+          "imperative_subtype": null,
+          "predicate_class": "lexical_transitive",
+          "subject_number": "singular",
+          "subject_person": 3,
+          "wh_role": null
+        }
+      },
+      "parsed_output": {
+        "accepted_answers": [
+          "is not locked",
+          "isn't locked"
+        ],
+        "content": {
+          "learner_prompt": "B: No, it ___ (lock).",
+          "turns": [
+            {
+              "speaker": "A",
+              "text": "Is the front door locked?"
+            }
+          ]
+        },
+        "target_answer": "is not locked"
+      },
+      "raw_output": "{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Is the front door locked?\"}],\"learner_prompt\":\"B: No, it ___ (lock).\"},\"target_answer\":\"is not locked\",\"accepted_answers\":[\"is not locked\",\"isn't locked\"]}",
+      "rendered_prompt": "Create one short, natural English dialogue-completion item for the fixed structural target below.\n\nThe learner target grammar has already been chosen. Do not reinterpret it, weaken it, or select a different target. Context turns may establish a natural conversational situation, but the learner answer itself must instantiate the same fixed MeasurementOpportunity. Use simple lexical content, avoid specialist world knowledge, and make the response pragmatically licensed and unambiguous.\n\nFixed MeasurementOpportunity:\n{\n  \"canonical_cell_id\": \"CELL_9556E3A49EFD0300\",\n  \"cell\": {\n    \"aspect\": \"none\",\n    \"clause\": \"declarative\",\n    \"modal\": \"none\",\n    \"polarity\": \"negative\",\n    \"tense\": \"present\",\n    \"voice\": \"passive\"\n  },\n  \"expected_operations\": [\n    \"be_passive\",\n    \"negation\"\n  ],\n  \"structural_conditions\": {\n    \"imperative_subtype\": null,\n    \"predicate_class\": \"lexical_transitive\",\n    \"subject_number\": \"singular\",\n    \"subject_person\": 3,\n    \"wh_role\": null\n  }\n}\n\nGeneration constraints:\n{\n  \"context_turns\": 1,\n  \"conversational_register\": \"neutral\",\n  \"dialogue_act\": \"response\",\n  \"lexical_level\": \"A2_where_feasible\",\n  \"response_type\": \"sentence_completion\",\n  \"target_learner_turn\": \"B\"\n}\n\nReturn only the JSON object required by the output schema. The content object must contain context turns and a learner prompt. Do not place the answer in the context turns.\n"
+    },
+    "generator_id": "llm_dialogue_v0",
+    "item_family": "dialogue_completion",
+    "item_id": "ITEM_3C9F245B6DA320C0",
+    "measurement_opportunity_id": "OPP_6537948A09B5D175",
+    "quality_diagnostics": {},
+    "source_descriptor_ids": [
+      "1741163712049x855374993067916200"
+    ],
+    "target_answer": "is not locked",
+    "validated_structure": {},
+    "validation_metadata": {}
+  },
+  "status": "candidate"
+}

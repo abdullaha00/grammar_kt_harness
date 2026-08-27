@@ -1,4 +1,0 @@
-{
-  "extends": "structural_oracle_v0.json",
-  "description": "Compatibility alias; structural_oracle_v0.json is the single reference oracle declaration."
-}

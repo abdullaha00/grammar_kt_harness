@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "is being cleaned"
+  ],
+  "content": {
+    "prompt": "The classroom door ___ (clean) right now."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "is being cleaned"
+}

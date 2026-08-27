@@ -1,0 +1,17 @@
+{
+  "accepted_surface_variants": [
+    "Ben isn't washing the dishes.",
+    "Ben is not washing the dishes."
+  ],
+  "content": {
+    "learner_prompt": "B: Ben ________ (not / wash) the dishes.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "What is Ben doing in the kitchen?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "Ben isn't washing the dishes."
+}

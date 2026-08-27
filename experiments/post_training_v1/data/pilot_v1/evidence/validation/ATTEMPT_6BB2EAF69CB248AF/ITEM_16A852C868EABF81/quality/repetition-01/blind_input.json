@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "Let's not open"
+  ],
+  "content": {
+    "prompt": "__________ the window; it is cold outside."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "Let's not open"
+}

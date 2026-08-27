@@ -1,0 +1,33 @@
+Create one natural standalone English completion item for the fixed structural target below.
+
+The target grammar has already been chosen. Do not reinterpret it, weaken it, or select a different target. You may choose ordinary lexical content, names, and surface wording. Keep lexical difficulty simple (A2 where feasible), avoid specialist world knowledge, and make the intended answer unambiguous.
+
+Fixed MeasurementOpportunity:
+{
+  "canonical_cell_id": "CELL_CEBF57A9F5C2F00A",
+  "cell": {
+    "aspect": "none",
+    "clause": "declarative",
+    "modal": "none",
+    "polarity": "positive",
+    "tense": "past",
+    "voice": "active"
+  },
+  "expected_operations": [],
+  "structural_conditions": {
+    "imperative_subtype": null,
+    "predicate_class": "lexical_transitive",
+    "subject_number": "singular",
+    "subject_person": 1,
+    "wh_role": null
+  }
+}
+
+Generation constraints:
+{
+  "lexical_level": "A2_where_feasible",
+  "register": "neutral",
+  "response_type": "sentence_completion"
+}
+
+Return only the JSON object required by the output schema. The content object must contain exactly a learner-facing prompt. The target answer must instantiate every declared cell value, structural condition, and expected operation.

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b02-95df-7ff3-9e91-64feffa026d9"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"_____ Maria _____ TV every evening? (watch)\"},\"target_answer\":\"Does Maria watch TV every evening?\",\"accepted_answers\":[\"Does Maria watch TV every evening?\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12766,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":138,"reasoning_output_tokens":86}}

@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"What happened to the window?"}],"learner_prompt":"B: The window ______ by the ball."},"target_answer":"was broken","accepted_answers":["was broken"]}

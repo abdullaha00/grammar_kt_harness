@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b05-2529-7d62-9b32-84d1ef0f3b89"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Tom went to the shop yesterday.\"}],\"learner_prompt\":\"B: ___ Tom buy the milk?\"},\"target_answer\":\"Did Tom buy the milk?\",\"accepted_answers\":[\"Did Tom buy the milk?\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12844,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":242,"reasoning_output_tokens":174}}

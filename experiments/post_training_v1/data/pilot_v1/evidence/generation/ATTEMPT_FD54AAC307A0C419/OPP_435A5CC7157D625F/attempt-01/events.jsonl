@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b02-4711-7923-ba07-f248964b6e89"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"What are you doing in the kitchen?\"}],\"learner_prompt\":\"I ____ dinner now.\"},\"target_answer\":\"am cooking\",\"accepted_answers\":[\"am cooking\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12836,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":216,"reasoning_output_tokens":158}}

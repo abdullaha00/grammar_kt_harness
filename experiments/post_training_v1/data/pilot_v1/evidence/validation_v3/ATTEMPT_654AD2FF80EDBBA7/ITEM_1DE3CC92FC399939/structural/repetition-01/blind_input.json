@@ -1,0 +1,17 @@
+{
+  "accepted_surface_variants": [
+    "hadn't been reading",
+    "had not been reading"
+  ],
+  "content": {
+    "learner_prompt": "B: No, I ___ the book when you called.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Were you reading the book when I called?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "had not been reading"
+}

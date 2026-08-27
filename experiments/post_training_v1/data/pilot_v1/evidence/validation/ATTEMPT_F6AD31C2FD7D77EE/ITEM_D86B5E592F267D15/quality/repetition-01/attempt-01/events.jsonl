@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b03-3cd0-7db0-bbe0-f4ad8b59e949"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":5,\"answer_ambiguity\":true,\"pedagogical_suitability\":3,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":null,\"pragmatic_licensing\":null,\"natural_speaker_turns\":null,\"context_appropriateness\":null,\"note\":\"The sentence is natural, but the isolated prompt does not provide enough context to uniquely determine the intended tense or aspect.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14212,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":200,"reasoning_output_tokens":92}}

@@ -1,0 +1,1 @@
+{"cell":{"tense":"present","aspect":"progressive","voice":"passive","polarity":"positive","clause":"declarative","modal":"none"},"operations":["progressive","be_passive"],"predicate_class":"lexical_transitive","agreement_site":"be"}

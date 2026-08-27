@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "had cleaned"
+  ],
+  "content": {
+    "learner_prompt": "B: She ___ the whole house before the guests arrived. (clean)",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why was Emma so tired?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "had cleaned"
+}

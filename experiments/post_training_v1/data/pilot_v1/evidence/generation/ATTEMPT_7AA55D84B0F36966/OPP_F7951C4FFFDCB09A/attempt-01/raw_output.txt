@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Is Anna cooking dinner?"}],"learner_prompt":"B: No, she ____ dinner."},"target_answer":"isn't cooking","accepted_answers":["isn't cooking","is not cooking"]}

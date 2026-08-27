@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "had been painting"
+  ],
+  "content": {
+    "learner_prompt": "B: The children ______ the fence for hours.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why was the fence covered in paint when you arrived?"
+      }
+    ]
+  },
+  "target_answer": "had been painting"
+}

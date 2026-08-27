@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "opened"
+  ],
+  "content": {
+    "prompt": "Yesterday, I ____ the window before dinner."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "opened"
+}

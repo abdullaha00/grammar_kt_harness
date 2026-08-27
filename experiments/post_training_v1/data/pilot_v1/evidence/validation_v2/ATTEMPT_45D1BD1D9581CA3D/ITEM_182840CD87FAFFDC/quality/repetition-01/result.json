@@ -1,0 +1,26 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "errors": [],
+      "valid": true
+    }
+  ],
+  "intended_target_hidden": true,
+  "item_id": "ITEM_182840CD87FAFFDC",
+  "label": "quality",
+  "repetition": 1,
+  "result": {
+    "answer_ambiguity": false,
+    "context_appropriateness": 5,
+    "dialogue_coherence": 4,
+    "lexical_cefr_appropriate": true,
+    "natural_speaker_turns": 1,
+    "naturalness": 1,
+    "note": "The response makes the completed prompt ungrammatical through repetition: “Please clean the table the table.” The dialogue context itself is coherent.",
+    "pedagogical_suitability": 1,
+    "pragmatic_licensing": 5,
+    "world_knowledge_required": false
+  },
+  "successful_attempt": 1
+}

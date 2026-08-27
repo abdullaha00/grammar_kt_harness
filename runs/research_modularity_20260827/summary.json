@@ -1,0 +1,19 @@
+{
+  "experiment_a": {
+    "mapping_differences": 1,
+    "downstream_events_identical": true
+  },
+  "experiment_b": {
+    "changed_prompts": 3,
+    "baseline_acceptance": 1.0,
+    "contextual_acceptance": 1.0
+  },
+  "experiment_c": {
+    "accepted_item_rows_identical": true,
+    "base_event_rows_identical": true,
+    "projection_rows_differ": true
+  },
+  "experiment_d": {
+    "same_event_stream": true
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "answer_ambiguity": false,
+  "context_appropriateness": 3,
+  "dialogue_coherence": 3,
+  "lexical_cefr_appropriate": true,
+  "natural_speaker_turns": 4,
+  "naturalness": 4,
+  "note": "The language is natural and accessible, but the reason given does not strongly explain why Mia is quiet, since not watching television does not inherently imply quietness.",
+  "pedagogical_suitability": 3,
+  "pragmatic_licensing": 3,
+  "world_knowledge_required": false
+}

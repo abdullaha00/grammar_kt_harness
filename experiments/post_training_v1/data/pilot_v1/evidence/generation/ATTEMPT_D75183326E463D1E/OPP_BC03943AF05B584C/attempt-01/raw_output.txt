@@ -1,0 +1,1 @@
+{"content":{"prompt":"Maya ___ the door every morning."},"target_answer":"opens","accepted_answers":["opens"]}

@@ -1,0 +1,54 @@
+schema_id: grammar_cell_english_v1
+description: Single-clause English verbal morphosyntax used in the pilot.
+dimension_order: [tense, aspect, voice, polarity, clause, modal]
+
+dimensions:
+  tense:
+    allowed_values: [present, past, NA]
+    interpretation: Morphological finite tense; NA when the construction does not license tense.
+    exclusions: [future tense]
+  aspect:
+    allowed_values: [none, progressive, perfect, perfect_progressive]
+    interpretation: Grammatical aspect encoded by the auxiliary chain.
+    exclusions: [lexical aspect, habituality]
+  voice:
+    allowed_values: [active, passive]
+    interpretation: Active/non-passive versus canonical BE-passive.
+    exclusions: [GET-passive, middle voice]
+  polarity:
+    allowed_values: [positive, negative]
+    interpretation: Clause-level grammatical polarity.
+  clause:
+    allowed_values: [declarative, polar_question, subject_wh_question, non_subject_wh_question, imperative]
+    interpretation: Main-clause type in the current single-clause scope.
+    exclusions: [tag_question, embedded_question]
+  modal:
+    allowed_values: [none, can, could, may, might, must, shall, should, will, would]
+    interpretation: Central modal identity, or none.
+    exclusions: [semi_modals, periphrastic_modals]
+
+constraints:
+  - description: Central modals do not carry the pilot's morphological tense value.
+    if:
+      modal:
+        not: none
+    then:
+      tense: NA
+  - description: Morphological present or past excludes central modals.
+    if:
+      tense: [present, past]
+    then:
+      modal: none
+  - description: Imperatives use the pilot's uninflected active simple representation.
+    if:
+      clause: imperative
+    then:
+      tense: NA
+      aspect: none
+      voice: active
+      modal: none
+
+scope:
+  unit: single main clause
+  language: English
+  resource: English Grammar Profile pilot

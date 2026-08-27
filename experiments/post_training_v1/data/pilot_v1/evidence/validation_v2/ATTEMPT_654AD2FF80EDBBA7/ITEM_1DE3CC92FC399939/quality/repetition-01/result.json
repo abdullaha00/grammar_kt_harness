@@ -1,0 +1,26 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "errors": [],
+      "valid": true
+    }
+  ],
+  "intended_target_hidden": true,
+  "item_id": "ITEM_1DE3CC92FC399939",
+  "label": "quality",
+  "repetition": 1,
+  "result": {
+    "answer_ambiguity": false,
+    "context_appropriateness": 3,
+    "dialogue_coherence": 3,
+    "lexical_cefr_appropriate": true,
+    "natural_speaker_turns": 4,
+    "naturalness": 3,
+    "note": "The response is grammatically understandable but less natural than “wasn't reading” for this direct question; the past perfect continuous can imply an earlier, extended non-reading period.",
+    "pedagogical_suitability": 3,
+    "pragmatic_licensing": 3,
+    "world_knowledge_required": false
+  },
+  "successful_attempt": 1
+}

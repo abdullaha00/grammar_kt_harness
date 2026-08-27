@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b04-375c-7103-8c9b-3116bae5c2d6"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"By the time their mother came home, the children ___ their homework.\"},\"target_answer\":\"had finished\",\"accepted_answers\":[\"had finished\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12767,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":131,"reasoning_output_tokens":86}}

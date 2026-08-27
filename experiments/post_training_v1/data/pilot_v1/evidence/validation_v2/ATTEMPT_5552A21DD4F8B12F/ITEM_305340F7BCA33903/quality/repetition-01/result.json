@@ -1,0 +1,26 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "errors": [],
+      "valid": true
+    }
+  ],
+  "intended_target_hidden": true,
+  "item_id": "ITEM_305340F7BCA33903",
+  "label": "quality",
+  "repetition": 1,
+  "result": {
+    "answer_ambiguity": true,
+    "context_appropriateness": 3,
+    "dialogue_coherence": 3,
+    "lexical_cefr_appropriate": true,
+    "natural_speaker_turns": 2,
+    "naturalness": 2,
+    "note": "The accepted response is grammatical but unnatural here; “wasn't watching it” or “didn't watch it” is more natural. The blank is also underdetermined by context.",
+    "pedagogical_suitability": 2,
+    "pragmatic_licensing": 2,
+    "world_knowledge_required": false
+  },
+  "successful_attempt": 1
+}

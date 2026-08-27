@@ -1,0 +1,6 @@
+{
+  "errors": [
+    "accepted_answers must be unique strings containing target_answer"
+  ],
+  "valid": false
+}

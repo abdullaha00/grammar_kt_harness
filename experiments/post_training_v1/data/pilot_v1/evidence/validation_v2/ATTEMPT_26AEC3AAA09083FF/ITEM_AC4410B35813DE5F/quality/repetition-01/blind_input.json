@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "Did she cook dinner?"
+  ],
+  "content": {
+    "learner_prompt": "B: _____ she _____ dinner?",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Mia came home late last night."
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "Did she cook dinner?"
+}

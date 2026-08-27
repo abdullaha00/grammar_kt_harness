@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Is the kitchen ready for dinner?"}],"learner_prompt":"B: Yes, they ______ the kitchen."},"target_answer":"have cleaned","accepted_answers":["have cleaned"]}

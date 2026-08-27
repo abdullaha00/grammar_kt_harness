@@ -1,0 +1,6 @@
+{"cell_id": "cell_001", "grammar_split": "development", "features": {"tense": "present", "aspect": "none", "voice": "active", "polarity": "positive", "clause": "declarative", "modal": "none"}}
+{"cell_id": "cell_002", "grammar_split": "development", "features": {"tense": "past", "aspect": "none", "voice": "active", "polarity": "negative", "clause": "declarative", "modal": "none"}}
+{"cell_id": "cell_003", "grammar_split": "development", "features": {"tense": "past", "aspect": "none", "voice": "passive", "polarity": "positive", "clause": "declarative", "modal": "none"}}
+{"cell_id": "cell_004", "grammar_split": "development", "features": {"tense": "present", "aspect": "progressive", "voice": "active", "polarity": "positive", "clause": "declarative", "modal": "none"}}
+{"cell_id": "cell_005", "grammar_split": "compositional_holdout", "features": {"tense": "present", "aspect": "progressive", "voice": "passive", "polarity": "negative", "clause": "declarative", "modal": "none"}}
+{"cell_id": "cell_006", "grammar_split": "novel_feature_holdout", "features": {"tense": "NA", "aspect": "none", "voice": "active", "polarity": "positive", "clause": "polar_question", "modal": "should"}}

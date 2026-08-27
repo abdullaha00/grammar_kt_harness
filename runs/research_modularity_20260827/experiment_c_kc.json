@@ -1,0 +1,652 @@
+{
+  "shared_accepted_items": "fixed_accepted_items.jsonl",
+  "shared_base_events": "fixed_events.jsonl",
+  "accepted_item_rows_identical": true,
+  "base_event_rows_identical": true,
+  "projection_rows_differ": true,
+  "conditions": {
+    "factorized": {
+      "policy": {
+        "policy_id": "factorized",
+        "description": "Marked English grammar features are separate KCs; background values are not asserted as KCs.",
+        "kcs": [
+          {
+            "id": "kc_present",
+            "definition": "Select present finite morphology.",
+            "activation": {
+              "cell": {
+                "tense": "present"
+              }
+            }
+          },
+          {
+            "id": "kc_past",
+            "definition": "Select past finite morphology.",
+            "activation": {
+              "cell": {
+                "tense": "past"
+              }
+            }
+          },
+          {
+            "id": "kc_progressive",
+            "definition": "Construct progressive BE plus an -ing complement.",
+            "activation": {
+              "cell": {
+                "aspect": "progressive"
+              }
+            }
+          },
+          {
+            "id": "kc_passive",
+            "definition": "Construct canonical BE-passive voice.",
+            "activation": {
+              "cell": {
+                "voice": "passive"
+              }
+            }
+          },
+          {
+            "id": "kc_negation",
+            "definition": "Realise grammatical negation and any required operator.",
+            "activation": {
+              "cell": {
+                "polarity": "negative"
+              }
+            }
+          },
+          {
+            "id": "kc_polar_question",
+            "definition": "Form a polar question with operator-subject order.",
+            "activation": {
+              "cell": {
+                "clause": "polar_question"
+              }
+            }
+          },
+          {
+            "id": "kc_modal_should",
+            "definition": "Use central modal SHOULD with a base-form complement.",
+            "activation": {
+              "cell": {
+                "modal": "should"
+              }
+            }
+          }
+        ],
+        "selection_metadata": {
+          "mode": "predefined",
+          "policy_declared_before_projection": true,
+          "items_or_outcomes_used": false
+        }
+      },
+      "projection": [
+        {
+          "item_id": "item_001",
+          "kc_ids": [
+            "kc_present"
+          ]
+        },
+        {
+          "item_id": "item_002",
+          "kc_ids": [
+            "kc_past",
+            "kc_negation"
+          ]
+        },
+        {
+          "item_id": "item_003",
+          "kc_ids": [
+            "kc_past",
+            "kc_passive"
+          ]
+        },
+        {
+          "item_id": "item_004",
+          "kc_ids": [
+            "kc_present",
+            "kc_progressive"
+          ]
+        },
+        {
+          "item_id": "item_005",
+          "kc_ids": [
+            "kc_present",
+            "kc_progressive",
+            "kc_passive",
+            "kc_negation"
+          ]
+        },
+        {
+          "item_id": "item_006",
+          "kc_ids": [
+            "kc_polar_question",
+            "kc_modal_should"
+          ]
+        }
+      ],
+      "kt": {
+        "empirical": {
+          "n": 96,
+          "log_loss": 0.7530307574460195,
+          "brier_score": 0.2769329262527547,
+          "auc": 0.4835089326614751,
+          "ece": 0.18377403846153845,
+          "accuracy": 0.4895833333333333,
+          "grammar_split_metrics": {
+            "development": {
+              "n": 72,
+              "log_loss": 0.7267680651441525,
+              "brier_score": 0.2653550127814507,
+              "auc": 0.5066889632107023,
+              "ece": 0.18456196581196577,
+              "accuracy": 0.5277777777777778
+            },
+            "compositional_holdout": {
+              "log_loss": null,
+              "brier_score": null,
+              "auc": null,
+              "ece": null,
+              "accuracy": null,
+              "n": 0
+            },
+            "novel_feature_holdout": {
+              "n": 24,
+              "log_loss": 0.8318188343516209,
+              "brier_score": 0.3116666666666667,
+              "auc": 0.4580419580419581,
+              "ece": 0.29166666666666663,
+              "accuracy": 0.375
+            }
+          }
+        },
+        "bkt": {
+          "n": 96,
+          "log_loss": 0.8224170182873891,
+          "brier_score": 0.2932340854931675,
+          "auc": 0.4892349977095739,
+          "ece": 0.2632527704056381,
+          "accuracy": 0.5833333333333334,
+          "grammar_split_metrics": {
+            "development": {
+              "n": 72,
+              "log_loss": 0.7954139710897449,
+              "brier_score": 0.282455161102659,
+              "auc": 0.49414715719063546,
+              "ece": 0.2566612995667819,
+              "accuracy": 0.5972222222222222
+            },
+            "compositional_holdout": {
+              "log_loss": null,
+              "brier_score": null,
+              "auc": null,
+              "ece": null,
+              "accuracy": null,
+              "n": 0
+            },
+            "novel_feature_holdout": {
+              "n": 24,
+              "log_loss": 0.9034261598803219,
+              "brier_score": 0.32557085866469315,
+              "auc": 0.4475524475524476,
+              "ece": 0.2830271829222067,
+              "accuracy": 0.5416666666666666
+            }
+          }
+        },
+        "logistic": {
+          "n": 96,
+          "log_loss": 0.6414395743483473,
+          "brier_score": 0.22604660905430232,
+          "auc": 0.6142922583600549,
+          "ece": 0.07886678458061484,
+          "accuracy": 0.5729166666666666,
+          "grammar_split_metrics": {
+            "development": {
+              "n": 72,
+              "log_loss": 0.6162271588683397,
+              "brier_score": 0.2140840547423051,
+              "auc": 0.6438127090301003,
+              "ece": 0.04581303332292726,
+              "accuracy": 0.6388888888888888
+            },
+            "compositional_holdout": {
+              "log_loss": null,
+              "brier_score": null,
+              "auc": null,
+              "ece": null,
+              "accuracy": null,
+              "n": 0
+            },
+            "novel_feature_holdout": {
+              "n": 24,
+              "log_loss": 0.7170768207883708,
+              "brier_score": 0.261934271990294,
+              "auc": 0.4545454545454546,
+              "ece": 0.17802803835367778,
+              "accuracy": 0.375
+            }
+          }
+        }
+      }
+    },
+    "full_cell": {
+      "policy": {
+        "policy_id": "full_cell",
+        "kind": "full_cell",
+        "description": "Each exact six-dimensional GrammarCell is one KC; cognitive atomicity is not claimed.",
+        "kc_id_pattern": "kc_{cell_id}",
+        "selection_metadata": {
+          "mode": "predefined",
+          "policy_declared_before_projection": true,
+          "items_or_outcomes_used": false
+        }
+      },
+      "projection": [
+        {
+          "item_id": "item_001",
+          "kc_ids": [
+            "kc_cell_001"
+          ]
+        },
+        {
+          "item_id": "item_002",
+          "kc_ids": [
+            "kc_cell_002"
+          ]
+        },
+        {
+          "item_id": "item_003",
+          "kc_ids": [
+            "kc_cell_003"
+          ]
+        },
+        {
+          "item_id": "item_004",
+          "kc_ids": [
+            "kc_cell_004"
+          ]
+        },
+        {
+          "item_id": "item_005",
+          "kc_ids": [
+            "kc_cell_005"
+          ]
+        },
+        {
+          "item_id": "item_006",
+          "kc_ids": [
+            "kc_cell_006"
+          ]
+        }
+      ],
+      "kt": {
+        "empirical": {
+          "n": 96,
+          "log_loss": 0.7848164157023622,
+          "brier_score": 0.2891666666666666,
+          "auc": 0.48419606046724695,
+          "ece": 0.20416666666666664,
+          "accuracy": 0.46875,
+          "grammar_split_metrics": {
+            "development": {
+              "n": 72,
+              "log_loss": 0.7691489428192759,
+              "brier_score": 0.2816666666666667,
+              "auc": 0.4945652173913044,
+              "ece": 0.17499999999999996,
+              "accuracy": 0.5
+            },
+            "compositional_holdout": {
+              "log_loss": null,
+              "brier_score": null,
+              "auc": null,
+              "ece": null,
+              "accuracy": null,
+              "n": 0
+            },
+            "novel_feature_holdout": {
+              "n": 24,
+              "log_loss": 0.8318188343516209,
+              "brier_score": 0.3116666666666667,
+              "auc": 0.4580419580419581,
+              "ece": 0.29166666666666663,
+              "accuracy": 0.375
+            }
+          }
+        },
+        "bkt": {
+          "n": 96,
+          "log_loss": 0.8097702510934631,
+          "brier_score": 0.2907223206015552,
+          "auc": 0.5004580852038478,
+          "ece": 0.24431587794693405,
+          "accuracy": 0.5729166666666666,
+          "grammar_split_metrics": {
+            "development": {
+              "n": 72,
+              "log_loss": 0.7785516148311769,
+              "brier_score": 0.27910614124717587,
+              "auc": 0.5196488294314381,
+              "ece": 0.23141210962184314,
+              "accuracy": 0.5833333333333334
+            },
+            "compositional_holdout": {
+              "log_loss": null,
+              "brier_score": null,
+              "auc": null,
+              "ece": null,
+              "accuracy": null,
+              "n": 0
+            },
+            "novel_feature_holdout": {
+              "n": 24,
+              "log_loss": 0.9034261598803219,
+              "brier_score": 0.32557085866469315,
+              "auc": 0.4475524475524476,
+              "ece": 0.2830271829222067,
+              "accuracy": 0.5416666666666666
+            }
+          }
+        },
+        "logistic": {
+          "n": 96,
+          "log_loss": 0.6396506182294875,
+          "brier_score": 0.22504071487526053,
+          "auc": 0.6062757672927164,
+          "ece": 0.07044937618768869,
+          "accuracy": 0.5729166666666666,
+          "grammar_split_metrics": {
+            "development": {
+              "n": 72,
+              "log_loss": 0.6194828680048311,
+              "brier_score": 0.2155543201698576,
+              "auc": 0.6291806020066889,
+              "ece": 0.046068868131357105,
+              "accuracy": 0.6388888888888888
+            },
+            "compositional_holdout": {
+              "log_loss": null,
+              "brier_score": null,
+              "auc": null,
+              "ece": null,
+              "accuracy": null,
+              "n": 0
+            },
+            "novel_feature_holdout": {
+              "n": 24,
+              "log_loss": 0.7001538689034573,
+              "brier_score": 0.2534998989914694,
+              "auc": 0.4545454545454546,
+              "ece": 0.14359090035668334,
+              "accuracy": 0.375
+            }
+          }
+        }
+      }
+    },
+    "interactions": {
+      "policy": {
+        "policy_id": "factorized_interactions",
+        "description": "The factorized baseline plus two explicit auxiliary-chain/operation interactions.",
+        "kcs": [
+          {
+            "id": "kc_present",
+            "definition": "Select present finite morphology.",
+            "activation": {
+              "cell": {
+                "tense": "present"
+              }
+            }
+          },
+          {
+            "id": "kc_past",
+            "definition": "Select past finite morphology.",
+            "activation": {
+              "cell": {
+                "tense": "past"
+              }
+            }
+          },
+          {
+            "id": "kc_progressive",
+            "definition": "Construct progressive BE plus an -ing complement.",
+            "activation": {
+              "cell": {
+                "aspect": "progressive"
+              }
+            }
+          },
+          {
+            "id": "kc_passive",
+            "definition": "Construct canonical BE-passive voice.",
+            "activation": {
+              "cell": {
+                "voice": "passive"
+              }
+            }
+          },
+          {
+            "id": "kc_negation",
+            "definition": "Realise grammatical negation and any required operator.",
+            "activation": {
+              "cell": {
+                "polarity": "negative"
+              }
+            }
+          },
+          {
+            "id": "kc_polar_question",
+            "definition": "Form a polar question with operator-subject order.",
+            "activation": {
+              "cell": {
+                "clause": "polar_question"
+              }
+            }
+          },
+          {
+            "id": "kc_modal_should",
+            "definition": "Use central modal SHOULD with a base-form complement.",
+            "activation": {
+              "cell": {
+                "modal": "should"
+              }
+            }
+          },
+          {
+            "id": "kc_progressive_passive",
+            "definition": "Coordinate progressive and passive BE in one auxiliary chain.",
+            "activation": {
+              "all": [
+                {
+                  "cell": {
+                    "aspect": "progressive"
+                  }
+                },
+                {
+                  "cell": {
+                    "voice": "passive"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "kc_past_negative",
+            "definition": "Coordinate past DO-support with negation for a lexical target.",
+            "activation": {
+              "all": [
+                {
+                  "cell": {
+                    "tense": "past"
+                  }
+                },
+                {
+                  "cell": {
+                    "polarity": "negative"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "selection_metadata": {
+          "mode": "predefined",
+          "policy_declared_before_projection": true,
+          "items_or_outcomes_used": false
+        }
+      },
+      "projection": [
+        {
+          "item_id": "item_001",
+          "kc_ids": [
+            "kc_present"
+          ]
+        },
+        {
+          "item_id": "item_002",
+          "kc_ids": [
+            "kc_past",
+            "kc_negation",
+            "kc_past_negative"
+          ]
+        },
+        {
+          "item_id": "item_003",
+          "kc_ids": [
+            "kc_past",
+            "kc_passive"
+          ]
+        },
+        {
+          "item_id": "item_004",
+          "kc_ids": [
+            "kc_present",
+            "kc_progressive"
+          ]
+        },
+        {
+          "item_id": "item_005",
+          "kc_ids": [
+            "kc_present",
+            "kc_progressive",
+            "kc_passive",
+            "kc_negation",
+            "kc_progressive_passive"
+          ]
+        },
+        {
+          "item_id": "item_006",
+          "kc_ids": [
+            "kc_polar_question",
+            "kc_modal_should"
+          ]
+        }
+      ],
+      "kt": {
+        "empirical": {
+          "n": 96,
+          "log_loss": 0.7550901267157096,
+          "brier_score": 0.2776889606677638,
+          "auc": 0.489234997709574,
+          "ece": 0.18452635327635325,
+          "accuracy": 0.4791666666666667,
+          "grammar_split_metrics": {
+            "development": {
+              "n": 72,
+              "log_loss": 0.7295138908370726,
+              "brier_score": 0.2663630586681295,
+              "auc": 0.5096153846153846,
+              "ece": 0.18556505223171887,
+              "accuracy": 0.5138888888888888
+            },
+            "compositional_holdout": {
+              "log_loss": null,
+              "brier_score": null,
+              "auc": null,
+              "ece": null,
+              "accuracy": null,
+              "n": 0
+            },
+            "novel_feature_holdout": {
+              "n": 24,
+              "log_loss": 0.8318188343516209,
+              "brier_score": 0.3116666666666667,
+              "auc": 0.4580419580419581,
+              "ece": 0.29166666666666663,
+              "accuracy": 0.375
+            }
+          }
+        },
+        "bkt": {
+          "n": 96,
+          "log_loss": 0.8157462283028613,
+          "brier_score": 0.29049042945077047,
+          "auc": 0.4956481905634448,
+          "ece": 0.22836584610180874,
+          "accuracy": 0.5729166666666666,
+          "grammar_split_metrics": {
+            "development": {
+              "n": 72,
+              "log_loss": 0.7865195844437074,
+              "brier_score": 0.2787969530461296,
+              "auc": 0.504180602006689,
+              "ece": 0.21014540049500932,
+              "accuracy": 0.5833333333333334
+            },
+            "compositional_holdout": {
+              "log_loss": null,
+              "brier_score": null,
+              "auc": null,
+              "ece": null,
+              "accuracy": null,
+              "n": 0
+            },
+            "novel_feature_holdout": {
+              "n": 24,
+              "log_loss": 0.9034261598803219,
+              "brier_score": 0.32557085866469315,
+              "auc": 0.4475524475524476,
+              "ece": 0.2830271829222067,
+              "accuracy": 0.5416666666666666
+            }
+          }
+        },
+        "logistic": {
+          "n": 96,
+          "log_loss": 0.6409548144087641,
+          "brier_score": 0.22578876940051004,
+          "auc": 0.6110856619331195,
+          "ece": 0.054942465273994955,
+          "accuracy": 0.59375,
+          "grammar_split_metrics": {
+            "development": {
+              "n": 72,
+              "log_loss": 0.6157051354318275,
+              "brier_score": 0.21380538915149097,
+              "auc": 0.6379598662207357,
+              "ece": 0.04166402135354319,
+              "accuracy": 0.6388888888888888
+            },
+            "compositional_holdout": {
+              "log_loss": null,
+              "brier_score": null,
+              "auc": null,
+              "ece": null,
+              "accuracy": null,
+              "n": 0
+            },
+            "novel_feature_holdout": {
+              "n": 24,
+              "log_loss": 0.7167038513395738,
+              "brier_score": 0.2617389101475672,
+              "auc": 0.4545454545454546,
+              "ece": 0.09477779703535051,
+              "accuracy": 0.4583333333333333
+            }
+          }
+        }
+      }
+    }
+  }
+}

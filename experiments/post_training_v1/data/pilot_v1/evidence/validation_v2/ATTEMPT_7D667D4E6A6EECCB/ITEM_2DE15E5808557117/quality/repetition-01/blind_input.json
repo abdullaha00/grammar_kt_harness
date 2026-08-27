@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "had not finished"
+  ],
+  "content": {
+    "prompt": "Yesterday, I went to bed, but I ___ my homework."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "had not finished"
+}

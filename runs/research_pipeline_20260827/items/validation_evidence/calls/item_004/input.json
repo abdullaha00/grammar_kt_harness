@@ -1,0 +1,57 @@
+{
+  "visible_item": {
+    "item_id": "item_004",
+    "format": "controlled_production",
+    "prompt": "Right now, Mia ___ a book. (read)",
+    "target_answer": "Right now, Mia is reading a book.",
+    "accepted_answers": [
+      "Right now, Mia is reading a book."
+    ]
+  },
+  "target_cell": {
+    "tense": "present",
+    "aspect": "progressive",
+    "voice": "active",
+    "polarity": "positive",
+    "clause": "declarative",
+    "modal": "none"
+  },
+  "criteria": {
+    "target_fidelity": {
+      "required": true,
+      "question": "Does the target answer express exactly the intended GrammarCell?"
+    },
+    "grammaticality": {
+      "required": true,
+      "question": "Is the target answer grammatical English?"
+    },
+    "naturalness": {
+      "required": true,
+      "question": "Is the prompt-answer pair natural and coherent?"
+    },
+    "pedagogical_suitability": {
+      "required": true,
+      "question": "Is the item suitable for focused grammar practice?"
+    },
+    "determinacy": {
+      "required": true,
+      "question": "Does the prompt sufficiently determine the accepted response set?"
+    },
+    "cefr_appropriateness": {
+      "required": true,
+      "question": "Is non-target language no harder than the stated A2 preference?"
+    },
+    "no_answer_leakage": {
+      "required": true,
+      "question": "Does the prompt avoid displaying the completed target form?"
+    },
+    "no_extraneous_grammar": {
+      "required": true,
+      "question": "Can the item be solved without unrelated advanced grammar?"
+    },
+    "no_world_knowledge": {
+      "required": true,
+      "question": "Can the item be answered without specialist world knowledge?"
+    }
+  }
+}

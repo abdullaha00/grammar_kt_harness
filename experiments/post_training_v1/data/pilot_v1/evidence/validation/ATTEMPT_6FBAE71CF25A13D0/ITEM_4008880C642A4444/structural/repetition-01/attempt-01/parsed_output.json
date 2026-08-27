@@ -1,0 +1,15 @@
+{
+  "agreement_site": "main_verb",
+  "cell": {
+    "aspect": "none",
+    "clause": "declarative",
+    "modal": "none",
+    "polarity": "positive",
+    "tense": "past",
+    "voice": "active"
+  },
+  "operations": [
+    "past_tense"
+  ],
+  "predicate_class": "lexical_transitive"
+}

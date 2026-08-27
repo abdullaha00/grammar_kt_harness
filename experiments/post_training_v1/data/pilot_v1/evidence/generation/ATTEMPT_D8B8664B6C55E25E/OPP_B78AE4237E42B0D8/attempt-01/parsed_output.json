@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "was washing"
+  ],
+  "content": {
+    "learner_prompt": "B: She ___ the car.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "I saw Anna in the yard yesterday afternoon. What was she doing?"
+      }
+    ]
+  },
+  "target_answer": "was washing"
+}

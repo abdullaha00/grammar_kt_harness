@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b07-3bfb-7bd3-94a7-a4003f33ec5b"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Why was the room so clean when the guests arrived?\"}],\"learner_prompt\":\"B: The room __________ before the guests arrived.\"},\"target_answer\":\"had been cleaned\",\"accepted_answers\":[\"had been cleaned\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12845,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":133,"reasoning_output_tokens":65}}

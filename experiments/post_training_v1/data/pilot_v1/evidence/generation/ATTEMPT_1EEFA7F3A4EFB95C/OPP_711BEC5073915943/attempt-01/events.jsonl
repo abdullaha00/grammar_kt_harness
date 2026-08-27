@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b06-1210-75b1-a188-38f7e80706e2"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"I ________ the kitchen for an hour. (clean)\"},\"target_answer\":\"have been cleaning\",\"accepted_answers\":[\"have been cleaning\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12777,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":164,"reasoning_output_tokens":118}}

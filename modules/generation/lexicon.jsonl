@@ -1,0 +1,6 @@
+{"lexeme_id":"lex_travel","lemma":"travel","predicate_class":"intransitive","cefr":"A2","passive_compatible":false,"example_subject":"Lina"}
+{"lexeme_id":"lex_open","lemma":"open","predicate_class":"transitive","cefr":"A1","passive_compatible":true,"example_subject":"Omar","example_object":"the door"}
+{"lexeme_id":"lex_prepare","lemma":"prepare","predicate_class":"transitive","cefr":"A2","passive_compatible":true,"example_subject":"Ana","example_object":"the meal"}
+{"lexeme_id":"lex_read","lemma":"read","predicate_class":"transitive","cefr":"A1","passive_compatible":true,"example_subject":"Mia","example_object":"a book"}
+{"lexeme_id":"lex_clean","lemma":"clean","predicate_class":"transitive","cefr":"A1","passive_compatible":true,"example_subject":"the team","example_object":"the rooms"}
+{"lexeme_id":"lex_take","lemma":"take","predicate_class":"transitive","cefr":"A1","passive_compatible":true,"example_subject":"we","example_object":"the earlier train"}

@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "opens"
+  ],
+  "content": {
+    "prompt": "Maya ___ the door every morning."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "opens"
+}

@@ -1,0 +1,1 @@
+{"cell":{"tense":"present","aspect":"none","voice":"active","polarity":"negative","clause":"imperative","modal":"none"},"operations":["let's_imperative","not_negation"],"predicate_class":"lexical_transitive","agreement_site":"main_verb"}

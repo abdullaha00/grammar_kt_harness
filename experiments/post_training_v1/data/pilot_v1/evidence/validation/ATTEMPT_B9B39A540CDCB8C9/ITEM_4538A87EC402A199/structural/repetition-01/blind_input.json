@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "have been reading"
+  ],
+  "content": {
+    "prompt": "I ______ this book for two hours. (read)"
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "have been reading"
+}

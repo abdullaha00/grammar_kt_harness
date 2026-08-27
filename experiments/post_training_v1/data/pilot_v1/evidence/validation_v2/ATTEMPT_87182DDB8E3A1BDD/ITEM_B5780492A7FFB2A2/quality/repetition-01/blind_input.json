@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "have not finished"
+  ],
+  "content": {
+    "prompt": "I ______ my homework yet."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "have not finished"
+}

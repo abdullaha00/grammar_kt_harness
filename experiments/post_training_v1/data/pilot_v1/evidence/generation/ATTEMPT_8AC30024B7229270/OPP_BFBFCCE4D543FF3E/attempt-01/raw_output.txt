@@ -1,0 +1,1 @@
+{"content":{"prompt":"I ______ the letter before the bus arrived."},"target_answer":"had not sent","accepted_answers":["hadn't sent"]}

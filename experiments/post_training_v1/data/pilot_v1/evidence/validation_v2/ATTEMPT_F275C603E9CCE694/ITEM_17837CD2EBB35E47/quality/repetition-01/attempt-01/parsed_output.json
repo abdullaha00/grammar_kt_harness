@@ -1,0 +1,12 @@
+{
+  "answer_ambiguity": false,
+  "context_appropriateness": 4,
+  "dialogue_coherence": 4,
+  "lexical_cefr_appropriate": true,
+  "natural_speaker_turns": 4,
+  "naturalness": 4,
+  "note": "The exchange is coherent and the response is a natural present-perfect answer, though “Yes, they’ve cleaned the kitchen” would be slightly more conversational.",
+  "pedagogical_suitability": 4,
+  "pragmatic_licensing": 4,
+  "world_knowledge_required": false
+}

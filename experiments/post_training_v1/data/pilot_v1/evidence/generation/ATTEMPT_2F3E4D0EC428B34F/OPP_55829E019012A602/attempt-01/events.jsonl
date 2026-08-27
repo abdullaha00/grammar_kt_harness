@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b05-9bf9-71d2-ac25-52d7d7083959"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"The children ___ their homework after dinner.\"},\"target_answer\":\"finish\",\"accepted_answers\":[\"finish\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12761,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":150,"reasoning_output_tokens":113}}

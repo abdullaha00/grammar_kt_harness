@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "hadn't put"
+  ],
+  "content": {
+    "learner_prompt": "B: He ___ the keys in his bag.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why can’t Tom find his keys?"
+      }
+    ]
+  },
+  "target_answer": "had not put"
+}

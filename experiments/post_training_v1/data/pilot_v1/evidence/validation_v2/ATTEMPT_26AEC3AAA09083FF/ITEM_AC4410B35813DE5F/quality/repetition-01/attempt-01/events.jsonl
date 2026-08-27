@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b0c-5e05-7152-b7bc-ffc34f1efda3"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":5,\"answer_ambiguity\":false,\"pedagogical_suitability\":4,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":4,\"pragmatic_licensing\":4,\"natural_speaker_turns\":4,\"context_appropriateness\":4,\"note\":\"The response is grammatical and a plausible follow-up to Mia arriving home late, though the context does not strongly predict dinner specifically.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14258,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":260,"reasoning_output_tokens":150}}

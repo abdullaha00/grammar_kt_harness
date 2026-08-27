@@ -1,0 +1,12 @@
+{
+  "answer_ambiguity": false,
+  "context_appropriateness": 5,
+  "dialogue_coherence": 5,
+  "lexical_cefr_appropriate": true,
+  "natural_speaker_turns": 5,
+  "naturalness": 5,
+  "note": "The response is natural, clearly licensed by the context, and requires no external knowledge.",
+  "pedagogical_suitability": 5,
+  "pragmatic_licensing": 5,
+  "world_knowledge_required": false
+}

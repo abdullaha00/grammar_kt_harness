@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "had bought"
+  ],
+  "content": {
+    "learner_prompt": "B: He ____ his ticket before he left home.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why didn't Leo need to buy a ticket at the station?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "had bought"
+}

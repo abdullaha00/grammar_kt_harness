@@ -1,0 +1,27 @@
+Normalise one typed English Grammar Profile descriptor.
+
+Use only the declared Phase-1 evidence: source_id, supercategory, subcategory,
+guideword, and can_do. Do not use examples or CEFR. Apply the supplied
+canonical schema and EGP normalisation rulebook.
+
+For each dimension, prefer an exact scalar; use separate cells for genuinely
+asserted alternatives; use a list for a bounded but unresolved set; and use
+null when the descriptor supplies no usable constraint. Do not invent a
+Cartesian product.
+
+For a partial result, begin the note with `phase2 eligible:` followed by the
+dimensions that examples are allowed to refine, or `none`.
+
+FINAL SELF-CHECK: before returning, verify that every exact value is supported
+by the declared descriptor evidence and that no example has entered Phase 1.
+
+Return one JSON object with exactly: source_id, result, cells, note.
+
+PHASE-1 DESCRIPTOR:
+{{descriptor}}
+
+CANONICAL GRAMMAR SCHEMA:
+{{canonical_schema}}
+
+EGP NORMALISATION RULEBOOK:
+{{rulebook}}

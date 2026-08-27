@@ -1,0 +1,1 @@
+{"content":{"prompt":"Yesterday, Maya ___ the window."},"target_answer":"did not open","accepted_answers":["didn't open"]}

@@ -1,0 +1,29 @@
+{
+  "canonical_cell_id": "CELL_D02189D0DFD84070",
+  "cell": {
+    "aspect": "none",
+    "clause": "polar_question",
+    "modal": "none",
+    "polarity": "positive",
+    "tense": "past",
+    "voice": "active"
+  },
+  "coverage_reasons": [
+    "agreement_measurement:do"
+  ],
+  "expected_operations": [
+    "do_support",
+    "operator_inversion"
+  ],
+  "measurement_opportunity_id": "OPP_F1BFD8A774DAED74",
+  "source_descriptor_ids": [
+    "1741163708336x930002080700909000"
+  ],
+  "structural_conditions": {
+    "imperative_subtype": null,
+    "predicate_class": "lexical_transitive",
+    "subject_number": "plural",
+    "subject_person": 3,
+    "wh_role": null
+  }
+}

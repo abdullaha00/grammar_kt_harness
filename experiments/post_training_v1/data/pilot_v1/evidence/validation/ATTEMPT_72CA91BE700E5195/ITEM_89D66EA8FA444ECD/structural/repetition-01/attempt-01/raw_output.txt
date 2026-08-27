@@ -1,0 +1,1 @@
+{"cell":{"tense":"past","aspect":"none","voice":"passive","polarity":"positive","clause":"declarative","modal":"none"},"operations":["passivization"],"predicate_class":"lexical_transitive","agreement_site":"be"}

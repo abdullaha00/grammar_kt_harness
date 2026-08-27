@@ -1,0 +1,12 @@
+{
+  "answer_ambiguity": true,
+  "context_appropriateness": 5,
+  "dialogue_coherence": 5,
+  "lexical_cefr_appropriate": true,
+  "natural_speaker_turns": 5,
+  "naturalness": 5,
+  "note": "The dialogue is grammatical and understandable, but the prompt provides no clear reason to require the past perfect continuous over other plausible forms (for example, “were cleaning” or “cleaned”). The first line also makes the intended result-context slightly unnatural: windows being “so clean” more directly supports a completed-action answer.",
+  "pedagogical_suitability": 4,
+  "pragmatic_licensing": 5,
+  "world_knowledge_required": false
+}

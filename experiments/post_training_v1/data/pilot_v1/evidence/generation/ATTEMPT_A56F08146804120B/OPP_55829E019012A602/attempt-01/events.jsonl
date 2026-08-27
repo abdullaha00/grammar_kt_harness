@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b05-a46d-7482-b560-234abb317482"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"The children ____ their hands before lunch. (wash)\"},\"target_answer\":\"wash\",\"accepted_answers\":[\"wash\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12758,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":130,"reasoning_output_tokens":89}}

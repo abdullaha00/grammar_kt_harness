@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b06-8825-76c0-8348-3927e1de6a33"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"What was Mia doing when you called her?\"}],\"learner_prompt\":\"B: She ____ dinner.\"},\"target_answer\":\"was cooking\",\"accepted_answers\":[\"was cooking\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12840,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":159,"reasoning_output_tokens":99}}

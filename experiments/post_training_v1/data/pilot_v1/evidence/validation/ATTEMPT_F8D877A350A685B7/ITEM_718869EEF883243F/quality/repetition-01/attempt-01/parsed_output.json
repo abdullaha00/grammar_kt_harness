@@ -1,0 +1,12 @@
+{
+  "answer_ambiguity": false,
+  "context_appropriateness": null,
+  "dialogue_coherence": null,
+  "lexical_cefr_appropriate": true,
+  "natural_speaker_turns": null,
+  "naturalness": 5,
+  "note": "Clear, natural standalone passive-voice completion item.",
+  "pedagogical_suitability": 5,
+  "pragmatic_licensing": null,
+  "world_knowledge_required": false
+}

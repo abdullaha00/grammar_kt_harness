@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "have cleaned"
+  ],
+  "content": {
+    "learner_prompt": "B: Yes, they ______ the kitchen.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Is the kitchen ready for dinner?"
+      }
+    ]
+  },
+  "target_answer": "have cleaned"
+}

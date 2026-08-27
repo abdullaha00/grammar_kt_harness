@@ -1,0 +1,102 @@
+{
+  "item": {
+    "accepted_answers": [
+      "had been cleaning"
+    ],
+    "canonical_cell_id": "CELL_0D017AFB2B3A3DB5",
+    "content": {
+      "learner_prompt": "B: The children ___ the kitchen for an hour before dinner.",
+      "turns": [
+        {
+          "speaker": "A",
+          "text": "Why was the kitchen so tidy when you arrived?"
+        }
+      ]
+    },
+    "generation_metadata": {
+      "attempt": 1,
+      "attempt_history": [
+        {
+          "accepted": true,
+          "attempt": 1,
+          "rejection_reasons": []
+        }
+      ],
+      "backend": {
+        "kind": "codex_exec",
+        "model": "gpt-5.6-luna"
+      },
+      "evidence_directory": "/home/abdullah/grammar_kt_harness/experiments/post_training_v1/data/pilot_v1/evidence/generation/ATTEMPT_1725329808933810/OPP_6192A30E57947215",
+      "generator_config": {
+        "constraints": {
+          "context_turns": 1,
+          "conversational_register": "neutral",
+          "dialogue_act": "response",
+          "lexical_level": "A2_where_feasible",
+          "response_type": "sentence_completion",
+          "target_learner_turn": "B"
+        },
+        "generator_id": "llm_dialogue_v0",
+        "mode": "llm_dialogue"
+      },
+      "input_opportunity": {
+        "canonical_cell_id": "CELL_0D017AFB2B3A3DB5",
+        "cell": {
+          "aspect": "perfect_progressive",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "positive",
+          "tense": "past",
+          "voice": "active"
+        },
+        "coverage_reasons": [
+          "agreement_measurement:have"
+        ],
+        "expected_operations": [
+          "perfect",
+          "progressive"
+        ],
+        "measurement_opportunity_id": "OPP_6192A30E57947215",
+        "source_descriptor_ids": [
+          "1741163712328x669008360458158700"
+        ],
+        "structural_conditions": {
+          "imperative_subtype": null,
+          "predicate_class": "lexical_transitive",
+          "subject_number": "plural",
+          "subject_person": 3,
+          "wh_role": null
+        }
+      },
+      "parsed_output": {
+        "accepted_answers": [
+          "had been cleaning"
+        ],
+        "content": {
+          "learner_prompt": "B: The children ___ the kitchen for an hour before dinner.",
+          "turns": [
+            {
+              "speaker": "A",
+              "text": "Why was the kitchen so tidy when you arrived?"
+            }
+          ]
+        },
+        "target_answer": "had been cleaning"
+      },
+      "raw_output": "{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Why was the kitchen so tidy when you arrived?\"}],\"learner_prompt\":\"B: The children ___ the kitchen for an hour before dinner.\"},\"target_answer\":\"had been cleaning\",\"accepted_answers\":[\"had been cleaning\"]}",
+      "rendered_prompt": "Create one short, natural English dialogue-completion item for the fixed structural target below.\n\nThe learner target grammar has already been chosen. Do not reinterpret it, weaken it, or select a different target. Context turns may establish a natural conversational situation, but the learner answer itself must instantiate the same fixed MeasurementOpportunity. Use simple lexical content, avoid specialist world knowledge, and make the response pragmatically licensed and unambiguous.\n\nFixed MeasurementOpportunity:\n{\n  \"canonical_cell_id\": \"CELL_0D017AFB2B3A3DB5\",\n  \"cell\": {\n    \"aspect\": \"perfect_progressive\",\n    \"clause\": \"declarative\",\n    \"modal\": \"none\",\n    \"polarity\": \"positive\",\n    \"tense\": \"past\",\n    \"voice\": \"active\"\n  },\n  \"expected_operations\": [\n    \"perfect\",\n    \"progressive\"\n  ],\n  \"structural_conditions\": {\n    \"imperative_subtype\": null,\n    \"predicate_class\": \"lexical_transitive\",\n    \"subject_number\": \"plural\",\n    \"subject_person\": 3,\n    \"wh_role\": null\n  }\n}\n\nGeneration constraints:\n{\n  \"context_turns\": 1,\n  \"conversational_register\": \"neutral\",\n  \"dialogue_act\": \"response\",\n  \"lexical_level\": \"A2_where_feasible\",\n  \"response_type\": \"sentence_completion\",\n  \"target_learner_turn\": \"B\"\n}\n\nReturn only the JSON object required by the output schema. The content object must contain context turns and a learner prompt. Do not place the answer in the context turns.\n"
+    },
+    "generator_id": "llm_dialogue_v0",
+    "item_family": "dialogue_completion",
+    "item_id": "ITEM_41C39A2C8A891B16",
+    "measurement_opportunity_id": "OPP_6192A30E57947215",
+    "quality_diagnostics": {},
+    "source_descriptor_ids": [
+      "1741163712328x669008360458158700"
+    ],
+    "target_answer": "had been cleaning",
+    "validated_structure": {},
+    "validation_metadata": {}
+  },
+  "status": "candidate"
+}

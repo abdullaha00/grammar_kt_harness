@@ -1,0 +1,8 @@
+{
+  "status": "retained_infrastructure_failure",
+  "collection_revision": 1,
+  "completed_units": 59,
+  "candidate_outputs_produced": 0,
+  "error": "HTTP 400 invalid_json_schema: uniqueItems is not permitted",
+  "action": "Stopped the run; retained all unit records and evidence; removed the unsupported transport keyword while preserving uniqueness checks in Python; retried under collection revision 2."
+}

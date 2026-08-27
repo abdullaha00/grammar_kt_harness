@@ -1,0 +1,1 @@
+{"content":{"prompt":"At 8 p.m. yesterday, I ______ dinner for my family."},"target_answer":"was cooking","accepted_answers":["was cooking"]}

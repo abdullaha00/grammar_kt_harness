@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b00-6b4c-72d3-8e64-0005d76a6789"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"I ________ my homework yet. (not / finish)\"},\"target_answer\":\"have not finished\",\"accepted_answers\":[\"haven't finished\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12769,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":99,"reasoning_output_tokens":53}}

@@ -1,0 +1,17 @@
+{
+  "accepted_surface_variants": [
+    "isn't washed",
+    "is not washed"
+  ],
+  "content": {
+    "learner_prompt": "B: No, it ______ every day.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Does the cleaner wash this window every day?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "isn't washed"
+}

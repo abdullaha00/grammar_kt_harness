@@ -1,0 +1,15 @@
+{
+  "agreement_site": "be",
+  "cell": {
+    "aspect": "none",
+    "clause": "declarative",
+    "modal": "none",
+    "polarity": "positive",
+    "tense": "present",
+    "voice": "passive"
+  },
+  "operations": [
+    "be_passive"
+  ],
+  "predicate_class": "lexical_transitive"
+}

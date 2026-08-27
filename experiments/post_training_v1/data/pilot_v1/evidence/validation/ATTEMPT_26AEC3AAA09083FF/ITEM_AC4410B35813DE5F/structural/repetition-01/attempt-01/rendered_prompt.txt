@@ -1,0 +1,21 @@
+Blindly annotate the grammar expressed by the learner response in this generated exercise.
+
+Do not infer an intended target. Use only the visible exercise and response below. Recover exactly the six GrammarCell fields, the overt structural operations, predicate class, and finite agreement site. Return only schema-valid JSON.
+
+Generated exercise and response:
+{
+  "accepted_surface_variants": [
+    "Did she cook dinner?"
+  ],
+  "content": {
+    "learner_prompt": "B: _____ she _____ dinner?",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Mia came home late last night."
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "Did she cook dinner?"
+}

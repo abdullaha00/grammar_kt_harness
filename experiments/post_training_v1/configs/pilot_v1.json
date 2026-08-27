@@ -1,0 +1,42 @@
+{
+  "experiment_id": "active_generation_preferences_v1",
+  "seed": 20260825,
+  "collection_revision": 2,
+  "validation_revision": 3,
+  "excluded_opportunity_ids": ["OPP_3B82359745F83047"],
+  "canonical_cells": "runs/base/canonical/canonical_cells.jsonl",
+  "fold_manifest": "modules/folds/reference_v0.json",
+  "max_opportunities_per_cell": 2,
+  "samples_per_opportunity": 3,
+  "dialogue_hash_modulus": 3,
+  "dialogue_hash_remainder": 0,
+  "workers": 6,
+  "generator_backend": {
+    "kind": "codex_exec",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "low",
+    "reasoning_options": {},
+    "timeout_seconds": 600,
+    "sandbox": "read-only",
+    "approval_policy": "never",
+    "ignore_user_config": true,
+    "ephemeral": true,
+    "model_snapshot_pinned": false,
+    "decoding_parameters_pinned": false
+  },
+  "validator_backend": {
+    "kind": "codex_exec",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "low",
+    "reasoning_options": {},
+    "timeout_seconds": 600,
+    "sandbox": "read-only",
+    "approval_policy": "never",
+    "ignore_user_config": true,
+    "ephemeral": true,
+    "model_snapshot_pinned": false,
+    "decoding_parameters_pinned": false
+  },
+  "bootstrap_resamples": 10000,
+  "random_choice_resamples": 10000
+}

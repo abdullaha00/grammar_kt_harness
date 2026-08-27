@@ -1,0 +1,16 @@
+obligation_policy_id: marked_english_distinctions
+description: Distinctions that must be preserved when they occur in development.
+required:
+  - {id: present, condition: [tense, present]}
+  - {id: past, condition: [tense, past]}
+  - {id: progressive, condition: [aspect, progressive]}
+  - {id: passive, condition: [voice, passive]}
+  - {id: negative, condition: [polarity, negative]}
+  - {id: polar_question, condition: [clause, polar_question]}
+  - {id: modal_should, condition: [modal, should]}
+background_conditions:
+  - [aspect, none]
+  - [voice, active]
+  - [polarity, positive]
+  - [clause, declarative]
+  - [modal, none]

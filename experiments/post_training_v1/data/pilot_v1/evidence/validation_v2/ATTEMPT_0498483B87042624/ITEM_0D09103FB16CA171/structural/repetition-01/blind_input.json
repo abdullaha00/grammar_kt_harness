@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "is being painted"
+  ],
+  "content": {
+    "prompt": "The old house ___ (paint) right now."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "is being painted"
+}

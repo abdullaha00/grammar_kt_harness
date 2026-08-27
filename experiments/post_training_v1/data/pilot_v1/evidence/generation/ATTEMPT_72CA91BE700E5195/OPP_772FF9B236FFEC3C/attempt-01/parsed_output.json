@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "was cleaned"
+  ],
+  "content": {
+    "learner_prompt": "B: Yes, the classroom ___ yesterday.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Did the school clean the classroom yesterday?"
+      }
+    ]
+  },
+  "target_answer": "was cleaned"
+}

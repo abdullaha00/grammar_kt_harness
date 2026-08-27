@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "Did Ben buy it at the shop?"
+  ],
+  "content": {
+    "learner_prompt": "B: _____ it at the shop?",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Ben came home with a new book yesterday."
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "Did Ben buy it at the shop?"
+}

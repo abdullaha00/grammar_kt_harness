@@ -1,0 +1,125 @@
+{
+  "acceptance_rate": 0.8095238095238095,
+  "canonical_splits": {
+    "compositional_holdout": 33,
+    "development": 90,
+    "novel_feature_holdout": 3
+  },
+  "counts": {
+    "accepted": 102,
+    "eligible_nontrivial_preference_pairs": 0,
+    "exact_duplicate_candidate_instances": 1,
+    "excluded_candidate_attempts": 3,
+    "excluded_measurement_opportunities": 1,
+    "generated_attempts": 126,
+    "generation_failures": 21,
+    "measurement_opportunities": 42,
+    "mixed_educational_validity_opportunities": 0,
+    "mixed_validity_opportunities": 7,
+    "possible_accepted_rejected_pairs": 0,
+    "rejected": 24,
+    "schema_valid_candidates": 105,
+    "unique_candidate_surfaces": 104,
+    "verifier_records": 102
+  },
+  "exact_command": "PYTHONPATH=src .venv/bin/python experiments/post_training_v1/scripts/run_pilot.py analyse",
+  "experiment_id": "active_generation_preferences_v1",
+  "feature_coverage": {
+    "aspect": {
+      "none": 60,
+      "perfect": 27,
+      "perfect_progressive": 18,
+      "progressive": 21
+    },
+    "clause": {
+      "declarative": 102,
+      "imperative": 12,
+      "polar_question": 12
+    },
+    "modal": {
+      "none": 123,
+      "would": 3
+    },
+    "polarity": {
+      "negative": 45,
+      "positive": 81
+    },
+    "tense": {
+      "NA": 15,
+      "past": 54,
+      "present": 57
+    },
+    "voice": {
+      "active": 111,
+      "passive": 15
+    }
+  },
+  "formats": {
+    "dialogue": {
+      "acceptance_rate": 0.8823529411764706,
+      "accepted": 45,
+      "attempts": 51
+    },
+    "standalone": {
+      "acceptance_rate": 0.76,
+      "accepted": 57,
+      "attempts": 75
+    }
+  },
+  "leakage_check": {
+    "cell_overlap": [],
+    "opportunity_overlap": [],
+    "policy": "all attempts and derived pairs inherit the frozen canonical-cell split",
+    "split_unit": "canonical_cell_id"
+  },
+  "lexical_diversity": {
+    "bigrams": 2443,
+    "distinct_bigram_ratio": 0.35366352844862875,
+    "tokens": 2444,
+    "type_token_ratio": 0.10106382978723404,
+    "types": 247
+  },
+  "model_usage": {
+    "cost_note": "The Codex research backend records token usage but exposes no monetary charge schedule for these invocations.",
+    "invocations": 330,
+    "monetary_cost": null,
+    "reported_token_usage": {
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 2903552,
+      "input_tokens": 4580821,
+      "output_tokens": 49475,
+      "reasoning_output_tokens": 25521
+    },
+    "summed_invocation_wall_seconds": 2955.2749759999997
+  },
+  "raw_taxonomy": {
+    "A_valid_target_realization": 81,
+    "D_structurally_unsupported": 2,
+    "E_quality_failure": 21,
+    "F_format_or_API_failure": 22
+  },
+  "readiness_preregistered_automatic_gates": {
+    "at_least_10_mixed_opportunities": false,
+    "at_least_20_pairs": false,
+    "at_least_3_error_dimensions": false,
+    "manual_audit_pass": false
+  },
+  "rejection_dimensions": {},
+  "release_eligible_acceptance_rate_all_attempts": 0.8292682926829268,
+  "release_eligible_structural_acceptance_rate_schema_valid": 1.0,
+  "release_eligible_taxonomy": {
+    "A_valid_target_realization": 81,
+    "E_quality_failure": 21,
+    "F_format_or_API_failure": 21
+  },
+  "scientific_exclusions": {
+    "measurement_opportunity_ids": [
+      "OPP_3B82359745F83047"
+    ],
+    "reason": "generation used the pre-fix erroneous lets_not do_support target; raw attempts remain retained but cannot support training/evaluation"
+  },
+  "splits": {
+    "test": 36,
+    "train": 90
+  }
+}

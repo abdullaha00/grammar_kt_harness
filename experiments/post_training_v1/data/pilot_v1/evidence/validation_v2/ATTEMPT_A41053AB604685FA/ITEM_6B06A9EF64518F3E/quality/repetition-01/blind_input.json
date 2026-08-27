@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "had been painting"
+  ],
+  "content": {
+    "learner_prompt": "B: The children ______ the fence for hours.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why was the fence covered in paint when you arrived?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "had been painting"
+}

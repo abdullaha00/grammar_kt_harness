@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "had cleaned"
+  ],
+  "content": {
+    "learner_prompt": "B: She ___ the whole house before the guests arrived. (clean)",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why was Emma so tired?"
+      }
+    ]
+  },
+  "target_answer": "had cleaned"
+}

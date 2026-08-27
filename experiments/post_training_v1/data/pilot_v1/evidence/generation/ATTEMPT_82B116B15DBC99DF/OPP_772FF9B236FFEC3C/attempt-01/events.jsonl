@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b04-4469-7d93-aff9-25fc6bd948e7"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"What happened to the window?\"}],\"learner_prompt\":\"B: The window ______ by the ball.\"},\"target_answer\":\"was broken\",\"accepted_answers\":[\"was broken\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12836,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":179,"reasoning_output_tokens":119}}

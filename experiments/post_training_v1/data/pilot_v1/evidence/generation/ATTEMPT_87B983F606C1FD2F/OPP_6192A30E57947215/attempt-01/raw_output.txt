@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Why were the windows so clean?"}],"learner_prompt":"B: The children ______ the windows all morning."},"target_answer":"had been cleaning","accepted_answers":["had been cleaning"]}

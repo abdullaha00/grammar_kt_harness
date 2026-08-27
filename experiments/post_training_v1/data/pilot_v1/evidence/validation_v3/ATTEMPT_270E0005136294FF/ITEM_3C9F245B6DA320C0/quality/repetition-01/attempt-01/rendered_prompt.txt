@@ -1,0 +1,22 @@
+Assess item quality independently of grammatical target correctness.
+
+Use only the visible generated exercise and learner response. Report naturalness, ambiguity, pedagogical suitability, world-knowledge dependence, lexical suitability, and (when applicable) dialogue quality. Dialogue-only fields must be null for standalone items. Return only schema-valid JSON.
+
+Generated exercise and response:
+{
+  "accepted_surface_variants": [
+    "is not locked",
+    "isn't locked"
+  ],
+  "content": {
+    "learner_prompt": "B: No, it ___ (lock).",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Is the front door locked?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "is not locked"
+}

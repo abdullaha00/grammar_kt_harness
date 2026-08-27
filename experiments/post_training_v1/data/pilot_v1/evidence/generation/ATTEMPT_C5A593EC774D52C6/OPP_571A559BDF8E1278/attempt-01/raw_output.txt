@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Are the children ready for dinner?"}],"learner_prompt":"B: Yes, they _____ their homework."},"target_answer":"have finished","accepted_answers":["have finished"]}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b01-6384-7e32-a021-a95e1aebc690"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"The road ______ today.\"},\"target_answer\":\"is being repaired\",\"accepted_answers\":[\"is being repaired\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12772,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":107,"reasoning_output_tokens":69}}

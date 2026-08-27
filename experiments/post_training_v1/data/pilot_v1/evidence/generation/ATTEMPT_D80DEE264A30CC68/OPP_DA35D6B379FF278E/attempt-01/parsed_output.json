@@ -1,0 +1,9 @@
+{
+  "accepted_answers": [
+    "Does Maria watch TV every evening?"
+  ],
+  "content": {
+    "prompt": "_____ Maria _____ TV every evening? (watch)"
+  },
+  "target_answer": "Does Maria watch TV every evening?"
+}

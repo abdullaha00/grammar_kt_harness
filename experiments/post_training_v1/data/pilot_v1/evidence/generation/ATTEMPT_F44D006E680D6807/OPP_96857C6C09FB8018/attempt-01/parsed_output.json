@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "Did Tom buy the milk?"
+  ],
+  "content": {
+    "learner_prompt": "B: ___ Tom buy the milk?",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Tom went to the shop yesterday."
+      }
+    ]
+  },
+  "target_answer": "Did Tom buy the milk?"
+}

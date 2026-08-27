@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "aren't cleaning"
+  ],
+  "content": {
+    "prompt": "The children ______ the classroom now; they are outside. (clean)"
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "aren't cleaning"
+}

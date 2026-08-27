@@ -1,0 +1,1 @@
+{"content":{"prompt":"When I arrived at 6 p.m., Emma ___ the kitchen for two hours."},"target_answer":"had not been cleaning","accepted_answers":["hadn't been cleaning"]}

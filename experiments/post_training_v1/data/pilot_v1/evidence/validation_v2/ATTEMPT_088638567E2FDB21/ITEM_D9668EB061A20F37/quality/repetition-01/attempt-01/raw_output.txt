@@ -1,0 +1,1 @@
+{"naturalness":4,"answer_ambiguity":true,"pedagogical_suitability":4,"world_knowledge_required":false,"lexical_cefr_appropriate":true,"dialogue_coherence":5,"pragmatic_licensing":4,"natural_speaker_turns":4,"context_appropriateness":5,"note":"The response is grammatical and contextually coherent, though several other tense/aspect forms could also fit naturally."}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b01-71e1-7903-8219-53b4fe348b1f"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"The classroom door ___ (clean) right now.\"},\"target_answer\":\"is being cleaned\",\"accepted_answers\":[\"is being cleaned\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12772,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":122,"reasoning_output_tokens":79}}

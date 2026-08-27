@@ -1,0 +1,13 @@
+{
+  "agreement_site": "be",
+  "cell": {
+    "aspect": "progressive",
+    "clause": "declarative",
+    "modal": "none",
+    "polarity": "positive",
+    "tense": "past",
+    "voice": "active"
+  },
+  "operations": [],
+  "predicate_class": "lexical_transitive"
+}

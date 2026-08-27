@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "Do I need a ticket?"
+  ],
+  "content": {
+    "learner_prompt": "B: Do I need a ticket?",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "The museum is free today."
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "Do I need a ticket?"
+}

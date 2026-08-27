@@ -1,0 +1,18 @@
+{
+  "agreement_site": "do",
+  "cell": {
+    "aspect": "none",
+    "clause": "imperative",
+    "modal": "none",
+    "polarity": "negative",
+    "tense": "NA",
+    "voice": "active"
+  },
+  "operations": [
+    "do-support",
+    "negation",
+    "subject omission",
+    "do-not contraction"
+  ],
+  "predicate_class": "lexical_transitive"
+}

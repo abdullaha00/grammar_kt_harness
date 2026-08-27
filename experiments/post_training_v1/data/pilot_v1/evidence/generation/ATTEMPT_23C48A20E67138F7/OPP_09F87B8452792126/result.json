@@ -1,0 +1,89 @@
+{
+  "item": {
+    "accepted_answers": [
+      "The children do not watch TV after dinner."
+    ],
+    "canonical_cell_id": "CELL_A24D66AAA38BC108",
+    "content": {
+      "prompt": "The children ___ TV after dinner. (not / watch)"
+    },
+    "generation_metadata": {
+      "attempt": 1,
+      "attempt_history": [
+        {
+          "accepted": true,
+          "attempt": 1,
+          "rejection_reasons": []
+        }
+      ],
+      "backend": {
+        "kind": "codex_exec",
+        "model": "gpt-5.6-luna"
+      },
+      "evidence_directory": "/home/abdullah/grammar_kt_harness/experiments/post_training_v1/data/pilot_v1/evidence/generation/ATTEMPT_23C48A20E67138F7/OPP_09F87B8452792126",
+      "generator_config": {
+        "constraints": {
+          "lexical_level": "A2_where_feasible",
+          "register": "neutral",
+          "response_type": "sentence_completion"
+        },
+        "generator_id": "llm_standalone_v0",
+        "mode": "llm_standalone"
+      },
+      "input_opportunity": {
+        "canonical_cell_id": "CELL_A24D66AAA38BC108",
+        "cell": {
+          "aspect": "none",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "negative",
+          "tense": "present",
+          "voice": "active"
+        },
+        "coverage_reasons": [
+          "agreement_measurement:do"
+        ],
+        "expected_operations": [
+          "do_support",
+          "negation"
+        ],
+        "measurement_opportunity_id": "OPP_09F87B8452792126",
+        "source_descriptor_ids": [
+          "1741163713626x335670389512142900",
+          "1741163716067x101148462288360720"
+        ],
+        "structural_conditions": {
+          "imperative_subtype": null,
+          "predicate_class": "lexical_transitive",
+          "subject_number": "plural",
+          "subject_person": 3,
+          "wh_role": null
+        }
+      },
+      "parsed_output": {
+        "accepted_answers": [
+          "The children do not watch TV after dinner."
+        ],
+        "content": {
+          "prompt": "The children ___ TV after dinner. (not / watch)"
+        },
+        "target_answer": "The children do not watch TV after dinner."
+      },
+      "raw_output": "{\"content\":{\"prompt\":\"The children ___ TV after dinner. (not / watch)\"},\"target_answer\":\"The children do not watch TV after dinner.\",\"accepted_answers\":[\"The children do not watch TV after dinner.\"]}",
+      "rendered_prompt": "Create one natural standalone English completion item for the fixed structural target below.\n\nThe target grammar has already been chosen. Do not reinterpret it, weaken it, or select a different target. You may choose ordinary lexical content, names, and surface wording. Keep lexical difficulty simple (A2 where feasible), avoid specialist world knowledge, and make the intended answer unambiguous.\n\nFixed MeasurementOpportunity:\n{\n  \"canonical_cell_id\": \"CELL_A24D66AAA38BC108\",\n  \"cell\": {\n    \"aspect\": \"none\",\n    \"clause\": \"declarative\",\n    \"modal\": \"none\",\n    \"polarity\": \"negative\",\n    \"tense\": \"present\",\n    \"voice\": \"active\"\n  },\n  \"expected_operations\": [\n    \"do_support\",\n    \"negation\"\n  ],\n  \"structural_conditions\": {\n    \"imperative_subtype\": null,\n    \"predicate_class\": \"lexical_transitive\",\n    \"subject_number\": \"plural\",\n    \"subject_person\": 3,\n    \"wh_role\": null\n  }\n}\n\nGeneration constraints:\n{\n  \"lexical_level\": \"A2_where_feasible\",\n  \"register\": \"neutral\",\n  \"response_type\": \"sentence_completion\"\n}\n\nReturn only the JSON object required by the output schema. The content object must contain exactly a learner-facing prompt. The target answer must instantiate every declared cell value, structural condition, and expected operation.\n"
+    },
+    "generator_id": "llm_standalone_v0",
+    "item_family": "standalone_completion",
+    "item_id": "ITEM_2E70EE55542EE7B3",
+    "measurement_opportunity_id": "OPP_09F87B8452792126",
+    "quality_diagnostics": {},
+    "source_descriptor_ids": [
+      "1741163713626x335670389512142900",
+      "1741163716067x101148462288360720"
+    ],
+    "target_answer": "The children do not watch TV after dinner.",
+    "validated_structure": {},
+    "validation_metadata": {}
+  },
+  "status": "candidate"
+}

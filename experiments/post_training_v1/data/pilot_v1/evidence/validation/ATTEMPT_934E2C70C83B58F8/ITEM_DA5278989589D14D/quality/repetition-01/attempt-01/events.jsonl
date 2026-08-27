@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b05-dbe3-7581-a2e3-63130dda89cc"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":5,\"answer_ambiguity\":true,\"pedagogical_suitability\":4,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":null,\"pragmatic_licensing\":null,\"natural_speaker_turns\":null,\"context_appropriateness\":null,\"note\":\"The sentence is natural and uses basic vocabulary, but the prompt alone permits other grammatical tense/aspect forms (for example, “washed” or “are washing”) without further context.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14213,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":224,"reasoning_output_tokens":103}}

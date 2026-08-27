@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b03-7af9-7501-ad93-aa32edbb05e2"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"Leo ___ (not / drink) coffee.\"},\"target_answer\":\"doesn't drink\",\"accepted_answers\":[\"doesn't drink\",\"does not drink\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12771,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":184,"reasoning_output_tokens":138}}

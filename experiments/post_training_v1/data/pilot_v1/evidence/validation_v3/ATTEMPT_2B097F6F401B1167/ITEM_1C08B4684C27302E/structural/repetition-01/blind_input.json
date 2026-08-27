@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "cleaned"
+  ],
+  "content": {
+    "prompt": "Yesterday, Maya ___ the window before dinner."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "cleaned"
+}

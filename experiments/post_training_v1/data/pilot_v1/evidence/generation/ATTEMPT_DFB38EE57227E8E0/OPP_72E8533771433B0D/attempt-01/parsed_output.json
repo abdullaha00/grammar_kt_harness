@@ -1,0 +1,15 @@
+{
+  "accepted_answers": [
+    "had not closed"
+  ],
+  "content": {
+    "learner_prompt": "B: She ______ the window before she left.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why was the room so cold when she came back?"
+      }
+    ]
+  },
+  "target_answer": "hadn't closed"
+}

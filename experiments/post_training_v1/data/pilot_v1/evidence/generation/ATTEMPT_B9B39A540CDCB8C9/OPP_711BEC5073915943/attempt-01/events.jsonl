@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b05-fd54-77e0-9092-7d33ab6c06b4"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"I ______ this book for two hours. (read)\"},\"target_answer\":\"have been reading\",\"accepted_answers\":[\"have been reading\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12774,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":124,"reasoning_output_tokens":79}}

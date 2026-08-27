@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b06-5b9a-7cf0-af39-cdbd745898ed"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Why is Mia so quiet?\"}],\"learner_prompt\":\"B: She ______ the television.\"},\"target_answer\":\"isn't watching\",\"accepted_answers\":[\"isn't watching\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12841,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":176,"reasoning_output_tokens":116}}

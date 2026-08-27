@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b0c-3745-7721-8403-1287a1317305"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":5,\"answer_ambiguity\":true,\"pedagogical_suitability\":4,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":null,\"pragmatic_licensing\":null,\"natural_speaker_turns\":null,\"context_appropriateness\":null,\"note\":\"Natural standalone sentence, but multiple plausible completions (e.g. “locked” or “shut”) make a single accepted answer restrictive.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14217,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":223,"reasoning_output_tokens":110}}

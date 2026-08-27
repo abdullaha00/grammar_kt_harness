@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "has finished"
+  ],
+  "content": {
+    "prompt": "Maria ___ her homework."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "has finished"
+}

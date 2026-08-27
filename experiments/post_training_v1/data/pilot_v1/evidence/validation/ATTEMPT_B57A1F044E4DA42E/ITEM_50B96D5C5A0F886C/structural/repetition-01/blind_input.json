@@ -1,0 +1,11 @@
+{
+  "accepted_surface_variants": [
+    "doesn't like",
+    "does not like"
+  ],
+  "content": {
+    "prompt": "Mia ______ loud music. (not / like)"
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "doesn't like"
+}

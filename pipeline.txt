@@ -1,0 +1,12 @@
+(1) Filter source
+-> Filtered Type_Resource
+
+(2) Normalise
+adjust phase1.txt, phase2.txt, rulebook.md
+
+-> EGPMapping; filter only complete cells and deduplicate
+
+(3) Item Generation
+adjust generationprompt.txt, rulebook.md
+adjust format; definitions, etc.
+adjust lexicon (?)

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b03-d53b-7dc2-bbbd-d9f7d81ca6a3"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"The children ______ vegetables at dinner. (not / eat)\"},\"target_answer\":\"do not eat\",\"accepted_answers\":[\"do not eat\",\"don't eat\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12770,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":209,"reasoning_output_tokens":160}}

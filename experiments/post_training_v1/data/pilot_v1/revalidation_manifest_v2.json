@@ -1,0 +1,9 @@
+{
+  "accepted": 99,
+  "candidates": 105,
+  "exact_command": "PYTHONPATH=src .venv/bin/python experiments/post_training_v1/scripts/run_pilot.py revalidate",
+  "intended_target_still_hidden": true,
+  "original_judgments_retained": "experiments/post_training_v1/data/pilot_v1/candidate_attempts_validation_v1_faulty_free_operations.jsonl",
+  "reason": "closed the blind evaluator operation-label ontology after audit exposed free-form alias false negatives",
+  "revalidated_utc": "2026-08-25T22:33:03.406642+00:00"
+}

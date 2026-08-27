@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b07-93bb-7db1-8137-efdaf30a29b1"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":5,\"answer_ambiguity\":false,\"pedagogical_suitability\":4,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":null,\"pragmatic_licensing\":null,\"natural_speaker_turns\":null,\"context_appropriateness\":null,\"note\":\"The response completes the sentence naturally and is well supported by the context.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14224,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":194,"reasoning_output_tokens":95}}

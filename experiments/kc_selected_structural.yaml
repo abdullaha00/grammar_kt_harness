@@ -1,5 +1,0 @@
-extends: base
-experiment: kc_selected_structural
-
-knowledge_selection:
-  mode: structural

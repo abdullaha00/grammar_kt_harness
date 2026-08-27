@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b02-ea70-7f30-bd91-e1a7a95e4c51"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"Maya ____ her room.\"},\"target_answer\":\"has cleaned\",\"accepted_answers\":[\"has cleaned\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12765,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":102,"reasoning_output_tokens":65}}

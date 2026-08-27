@@ -1,0 +1,11 @@
+{
+  "accepted_surface_variants": [
+    "doesn't drink",
+    "does not drink"
+  ],
+  "content": {
+    "prompt": "Leo ___ (not / drink) coffee."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "doesn't drink"
+}

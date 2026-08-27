@@ -1,0 +1,9 @@
+{
+  "descriptor": {
+    "source_id": "egp_should_question",
+    "supercategory": "MODALITY",
+    "subcategory": "should",
+    "guideword": "SHOULD QUESTIONS",
+    "can_do": "Can use should in yes/no questions."
+  }
+}

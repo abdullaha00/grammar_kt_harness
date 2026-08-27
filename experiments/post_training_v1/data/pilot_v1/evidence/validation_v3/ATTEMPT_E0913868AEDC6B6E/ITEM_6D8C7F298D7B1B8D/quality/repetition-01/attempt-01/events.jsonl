@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b12-d2f5-7af1-9e75-fece61540e07"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":5,\"answer_ambiguity\":false,\"pedagogical_suitability\":4,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":null,\"pragmatic_licensing\":null,\"natural_speaker_turns\":null,\"context_appropriateness\":null,\"note\":\"The sentence is natural and provides a clear contextual cue for the negative past perfect continuous form.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14228,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":202,"reasoning_output_tokens":99}}

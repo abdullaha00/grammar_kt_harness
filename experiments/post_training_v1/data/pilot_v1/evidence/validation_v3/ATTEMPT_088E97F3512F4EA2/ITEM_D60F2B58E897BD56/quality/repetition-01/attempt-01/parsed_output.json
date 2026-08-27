@@ -1,0 +1,12 @@
+{
+  "answer_ambiguity": true,
+  "context_appropriateness": 5,
+  "dialogue_coherence": 5,
+  "lexical_cefr_appropriate": true,
+  "natural_speaker_turns": 5,
+  "naturalness": 5,
+  "note": "The response is natural and well licensed, but the prompt permits many equally plausible replies.",
+  "pedagogical_suitability": 4,
+  "pragmatic_licensing": 5,
+  "world_knowledge_required": false
+}

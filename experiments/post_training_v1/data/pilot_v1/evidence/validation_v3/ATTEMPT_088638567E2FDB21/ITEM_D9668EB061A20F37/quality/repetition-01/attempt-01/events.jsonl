@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b14-7dd3-7501-80d7-ca6706cecd52"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":4,\"answer_ambiguity\":true,\"pedagogical_suitability\":3,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":5,\"pragmatic_licensing\":5,\"natural_speaker_turns\":4,\"context_appropriateness\":5,\"note\":\"The dialogue is clear and natural overall, but the blank admits several valid alternatives (for example, “hadn't checked” or “didn't check”), so a single expected form is underdetermined.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14260,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":280,"reasoning_output_tokens":155}}

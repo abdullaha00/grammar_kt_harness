@@ -1,0 +1,112 @@
+{
+  "item": {
+    "accepted_answers": [
+      "Let's open the window.",
+      "Lets open the window."
+    ],
+    "canonical_cell_id": "CELL_FB5F88ACD517600A",
+    "content": {
+      "learner_prompt": "Complete B's sentence with a natural suggestion.",
+      "turns": [
+        {
+          "speaker": "A",
+          "text": "It's warm in here."
+        },
+        {
+          "speaker": "B",
+          "text": "Let's ___ the window."
+        }
+      ]
+    },
+    "generation_metadata": {
+      "attempt": 1,
+      "attempt_history": [
+        {
+          "accepted": true,
+          "attempt": 1,
+          "rejection_reasons": []
+        }
+      ],
+      "backend": {
+        "kind": "codex_exec",
+        "model": "gpt-5.6-luna"
+      },
+      "evidence_directory": "/home/abdullah/grammar_kt_harness/experiments/post_training_v1/data/pilot_v1/evidence/generation/ATTEMPT_C643FAC23D65CF4B/OPP_31239E9D4BC47DA0",
+      "generator_config": {
+        "constraints": {
+          "context_turns": 1,
+          "conversational_register": "neutral",
+          "dialogue_act": "response",
+          "lexical_level": "A2_where_feasible",
+          "response_type": "sentence_completion",
+          "target_learner_turn": "B"
+        },
+        "generator_id": "llm_dialogue_v0",
+        "mode": "llm_dialogue"
+      },
+      "input_opportunity": {
+        "canonical_cell_id": "CELL_FB5F88ACD517600A",
+        "cell": {
+          "aspect": "none",
+          "clause": "imperative",
+          "modal": "none",
+          "polarity": "positive",
+          "tense": "NA",
+          "voice": "active"
+        },
+        "coverage_reasons": [
+          "imperative_subtype:lets"
+        ],
+        "expected_operations": [
+          "imperative",
+          "let_imperative"
+        ],
+        "measurement_opportunity_id": "OPP_31239E9D4BC47DA0",
+        "source_descriptor_ids": [
+          "1741163708331x843997098925344500"
+        ],
+        "structural_conditions": {
+          "imperative_subtype": "lets",
+          "predicate_class": "lexical_transitive",
+          "subject_number": "singular",
+          "subject_person": 2,
+          "wh_role": null
+        }
+      },
+      "parsed_output": {
+        "accepted_answers": [
+          "Let's open the window.",
+          "Lets open the window."
+        ],
+        "content": {
+          "learner_prompt": "Complete B's sentence with a natural suggestion.",
+          "turns": [
+            {
+              "speaker": "A",
+              "text": "It's warm in here."
+            },
+            {
+              "speaker": "B",
+              "text": "Let's ___ the window."
+            }
+          ]
+        },
+        "target_answer": "Let's open the window."
+      },
+      "raw_output": "{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"It's warm in here.\"},{\"speaker\":\"B\",\"text\":\"Let's ___ the window.\"}],\"learner_prompt\":\"Complete B's sentence with a natural suggestion.\"},\"target_answer\":\"Let's open the window.\",\"accepted_answers\":[\"Let's open the window.\",\"Lets open the window.\"]}",
+      "rendered_prompt": "Create one short, natural English dialogue-completion item for the fixed structural target below.\n\nThe learner target grammar has already been chosen. Do not reinterpret it, weaken it, or select a different target. Context turns may establish a natural conversational situation, but the learner answer itself must instantiate the same fixed MeasurementOpportunity. Use simple lexical content, avoid specialist world knowledge, and make the response pragmatically licensed and unambiguous.\n\nFixed MeasurementOpportunity:\n{\n  \"canonical_cell_id\": \"CELL_FB5F88ACD517600A\",\n  \"cell\": {\n    \"aspect\": \"none\",\n    \"clause\": \"imperative\",\n    \"modal\": \"none\",\n    \"polarity\": \"positive\",\n    \"tense\": \"NA\",\n    \"voice\": \"active\"\n  },\n  \"expected_operations\": [\n    \"imperative\",\n    \"let_imperative\"\n  ],\n  \"structural_conditions\": {\n    \"imperative_subtype\": \"lets\",\n    \"predicate_class\": \"lexical_transitive\",\n    \"subject_number\": \"singular\",\n    \"subject_person\": 2,\n    \"wh_role\": null\n  }\n}\n\nGeneration constraints:\n{\n  \"context_turns\": 1,\n  \"conversational_register\": \"neutral\",\n  \"dialogue_act\": \"response\",\n  \"lexical_level\": \"A2_where_feasible\",\n  \"response_type\": \"sentence_completion\",\n  \"target_learner_turn\": \"B\"\n}\n\nReturn only the JSON object required by the output schema. The content object must contain context turns and a learner prompt. Do not place the answer in the context turns.\n"
+    },
+    "generator_id": "llm_dialogue_v0",
+    "item_family": "dialogue_completion",
+    "item_id": "ITEM_0E2FE109039335F4",
+    "measurement_opportunity_id": "OPP_31239E9D4BC47DA0",
+    "quality_diagnostics": {},
+    "source_descriptor_ids": [
+      "1741163708331x843997098925344500"
+    ],
+    "target_answer": "Let's open the window.",
+    "validated_structure": {},
+    "validation_metadata": {}
+  },
+  "status": "candidate"
+}

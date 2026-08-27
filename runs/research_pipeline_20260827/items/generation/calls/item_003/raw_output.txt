@@ -1,0 +1,1 @@
+{"prompt": "Yesterday, the meal ___ by Ana. (prepare)", "target_answer": "Yesterday, the meal was prepared by Ana.", "accepted_answers": ["Yesterday, the meal was prepared by Ana."], "operation_tags": ["be_passive"], "note": "Agent phrase makes passive voice determinate."}

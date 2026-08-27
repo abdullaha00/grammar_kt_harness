@@ -1,0 +1,28 @@
+{
+  "seeds": {
+    "simulation": 20260827,
+    "logistic": 20260827,
+    "bootstrap": 20260827
+  },
+  "models": {
+    "normalisation": {
+      "model": "fixture",
+      "reasoning_effort": "deterministic"
+    },
+    "generation": {
+      "model": "fixture",
+      "reasoning_effort": "deterministic"
+    },
+    "validation": {
+      "model": "fixture",
+      "reasoning_effort": "deterministic"
+    }
+  },
+  "final_outputs": {
+    "accepted_items": "items/accepted.jsonl",
+    "events": "simulation/events.jsonl",
+    "frozen_policy": "kc/frozen_policy.yaml",
+    "predictions": "kt/predictions.jsonl",
+    "evaluation": "evaluation/results.json"
+  }
+}

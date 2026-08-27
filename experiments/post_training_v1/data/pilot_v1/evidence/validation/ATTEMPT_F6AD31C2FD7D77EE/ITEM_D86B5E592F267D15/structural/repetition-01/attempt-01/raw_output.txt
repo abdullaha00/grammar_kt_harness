@@ -1,0 +1,1 @@
+{"cell":{"tense":"present","aspect":"perfect","voice":"active","polarity":"positive","clause":"declarative","modal":"none"},"operations":["perfect_have"],"predicate_class":"lexical_transitive","agreement_site":"have"}

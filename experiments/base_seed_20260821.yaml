@@ -1,5 +1,0 @@
-extends: base
-experiment: base_seed_20260821
-
-simulation:
-  seed: 20260821

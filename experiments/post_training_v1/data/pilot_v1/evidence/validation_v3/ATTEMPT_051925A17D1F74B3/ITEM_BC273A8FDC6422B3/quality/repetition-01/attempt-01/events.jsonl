@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b12-35f9-72e2-b473-234eba4422a2"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":5,\"answer_ambiguity\":false,\"pedagogical_suitability\":5,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":null,\"pragmatic_licensing\":null,\"natural_speaker_turns\":null,\"context_appropriateness\":null,\"note\":\"Natural, unambiguous standalone past-continuous completion item with appropriate everyday vocabulary.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":16155,"cached_input_tokens":15104,"cache_write_input_tokens":0,"output_tokens":149,"reasoning_output_tokens":47}}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b07-99c7-71f2-91a7-dbcab727e28f"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"The table is ready, but the plates are still in the kitchen.\"}],\"learner_prompt\":\"B: Please ______.\"},\"target_answer\":\"bring the plates.\",\"accepted_answers\":[\"Bring the plates.\",\"bring the plates.\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12833,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":186,"reasoning_output_tokens":115}}

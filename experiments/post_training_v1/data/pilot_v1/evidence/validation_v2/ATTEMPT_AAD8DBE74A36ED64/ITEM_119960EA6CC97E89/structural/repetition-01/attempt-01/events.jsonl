@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b0d-76dd-7921-96a4-8c2040643617"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"cell\":{\"tense\":\"NA\",\"aspect\":\"none\",\"voice\":\"active\",\"polarity\":\"positive\",\"clause\":\"declarative\",\"modal\":\"would\"},\"operations\":[\"central_modal\"],\"predicate_class\":\"lexical_transitive\",\"agreement_site\":\"modal\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14536,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":117,"reasoning_output_tokens":53}}

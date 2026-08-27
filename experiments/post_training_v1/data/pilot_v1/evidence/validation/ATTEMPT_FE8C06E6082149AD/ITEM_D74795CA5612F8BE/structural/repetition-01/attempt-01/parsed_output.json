@@ -1,0 +1,15 @@
+{
+  "agreement_site": "modal",
+  "cell": {
+    "aspect": "none",
+    "clause": "declarative",
+    "modal": "would",
+    "polarity": "positive",
+    "tense": "past",
+    "voice": "active"
+  },
+  "operations": [
+    "modal_auxiliary"
+  ],
+  "predicate_class": "lexical_transitive"
+}

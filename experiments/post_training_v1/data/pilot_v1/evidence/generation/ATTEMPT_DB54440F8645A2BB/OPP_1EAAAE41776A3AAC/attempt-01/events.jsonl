@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b00-917a-7eb3-8030-7bc2a26c9d53"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"By the time I got home, Anna ___ the kitchen for an hour. (clean)\"},\"target_answer\":\"had been cleaning\",\"accepted_answers\":[\"had been cleaning\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12777,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":219,"reasoning_output_tokens":167}}

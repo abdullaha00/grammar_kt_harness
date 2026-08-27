@@ -1,0 +1,1 @@
+{"content":{"prompt":"The window ______ every day."},"target_answer":"is cleaned","accepted_answers":["is cleaned"]}

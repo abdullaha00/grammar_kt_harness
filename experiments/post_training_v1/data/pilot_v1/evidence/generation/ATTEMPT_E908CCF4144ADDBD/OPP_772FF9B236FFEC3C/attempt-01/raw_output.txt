@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"What happened to the old bridge?"}],"learner_prompt":"B: It ___ in the storm."},"target_answer":"was damaged","accepted_answers":["was damaged"]}

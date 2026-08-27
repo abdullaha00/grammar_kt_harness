@@ -1,0 +1,90 @@
+{
+  "item": {
+    "accepted_answers": [
+      "opens"
+    ],
+    "canonical_cell_id": "CELL_D88738F5F0FBE1EB",
+    "content": {
+      "prompt": "Maya ___ the door every morning."
+    },
+    "generation_metadata": {
+      "attempt": 1,
+      "attempt_history": [
+        {
+          "accepted": true,
+          "attempt": 1,
+          "rejection_reasons": []
+        }
+      ],
+      "backend": {
+        "kind": "codex_exec",
+        "model": "gpt-5.6-luna"
+      },
+      "evidence_directory": "/home/abdullah/grammar_kt_harness/experiments/post_training_v1/data/pilot_v1/evidence/generation/ATTEMPT_4A65193ED7382D77/OPP_BC03943AF05B584C",
+      "generator_config": {
+        "constraints": {
+          "lexical_level": "A2_where_feasible",
+          "register": "neutral",
+          "response_type": "sentence_completion"
+        },
+        "generator_id": "llm_standalone_v0",
+        "mode": "llm_standalone"
+      },
+      "input_opportunity": {
+        "canonical_cell_id": "CELL_D88738F5F0FBE1EB",
+        "cell": {
+          "aspect": "none",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "positive",
+          "tense": "present",
+          "voice": "active"
+        },
+        "coverage_reasons": [
+          "canonical_cell_baseline"
+        ],
+        "expected_operations": [],
+        "measurement_opportunity_id": "OPP_BC03943AF05B584C",
+        "source_descriptor_ids": [
+          "1741163708330x678606711578176000",
+          "1741163713626x133661684035994100",
+          "1741163713626x414037782388433340",
+          "1741163713626x486355013779909760"
+        ],
+        "structural_conditions": {
+          "imperative_subtype": null,
+          "predicate_class": "lexical_transitive",
+          "subject_number": "singular",
+          "subject_person": 3,
+          "wh_role": null
+        }
+      },
+      "parsed_output": {
+        "accepted_answers": [
+          "opens"
+        ],
+        "content": {
+          "prompt": "Maya ___ the door every morning."
+        },
+        "target_answer": "opens"
+      },
+      "raw_output": "{\"content\":{\"prompt\":\"Maya ___ the door every morning.\"},\"target_answer\":\"opens\",\"accepted_answers\":[\"opens\"]}",
+      "rendered_prompt": "Create one natural standalone English completion item for the fixed structural target below.\n\nThe target grammar has already been chosen. Do not reinterpret it, weaken it, or select a different target. You may choose ordinary lexical content, names, and surface wording. Keep lexical difficulty simple (A2 where feasible), avoid specialist world knowledge, and make the intended answer unambiguous.\n\nFixed MeasurementOpportunity:\n{\n  \"canonical_cell_id\": \"CELL_D88738F5F0FBE1EB\",\n  \"cell\": {\n    \"aspect\": \"none\",\n    \"clause\": \"declarative\",\n    \"modal\": \"none\",\n    \"polarity\": \"positive\",\n    \"tense\": \"present\",\n    \"voice\": \"active\"\n  },\n  \"expected_operations\": [],\n  \"structural_conditions\": {\n    \"imperative_subtype\": null,\n    \"predicate_class\": \"lexical_transitive\",\n    \"subject_number\": \"singular\",\n    \"subject_person\": 3,\n    \"wh_role\": null\n  }\n}\n\nGeneration constraints:\n{\n  \"lexical_level\": \"A2_where_feasible\",\n  \"register\": \"neutral\",\n  \"response_type\": \"sentence_completion\"\n}\n\nReturn only the JSON object required by the output schema. The content object must contain exactly a learner-facing prompt. The target answer must instantiate every declared cell value, structural condition, and expected operation.\n"
+    },
+    "generator_id": "llm_standalone_v0",
+    "item_family": "standalone_completion",
+    "item_id": "ITEM_18C04237DABDCE5C",
+    "measurement_opportunity_id": "OPP_BC03943AF05B584C",
+    "quality_diagnostics": {},
+    "source_descriptor_ids": [
+      "1741163708330x678606711578176000",
+      "1741163713626x133661684035994100",
+      "1741163713626x414037782388433340",
+      "1741163713626x486355013779909760"
+    ],
+    "target_answer": "opens",
+    "validated_structure": {},
+    "validation_metadata": {}
+  },
+  "status": "candidate"
+}

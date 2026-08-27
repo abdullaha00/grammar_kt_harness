@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "had been cleaning"
+  ],
+  "content": {
+    "learner_prompt": "B: The children ___ the kitchen for an hour before dinner.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why was the kitchen so tidy when you arrived?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "had been cleaning"
+}

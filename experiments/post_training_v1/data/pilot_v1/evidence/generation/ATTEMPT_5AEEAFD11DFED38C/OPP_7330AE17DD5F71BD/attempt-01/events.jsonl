@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b04-c1b1-7530-ad28-4cb52243edaa"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"Yesterday, Maria ___ the door.\"},\"target_answer\":\"opened\",\"accepted_answers\":[\"opened\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12758,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":99,"reasoning_output_tokens":63}}

@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "She has been cleaning the kitchen all morning."
+  ],
+  "content": {
+    "learner_prompt": "B: She ______ the kitchen all morning.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why is Emma tired?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "She has been cleaning the kitchen all morning."
+}

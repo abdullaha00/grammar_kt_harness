@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"I'm not sure if I need a ticket for the bus."}],"learner_prompt":"B: ___ I need a ticket?"},"target_answer":"Do","accepted_answers":["Do"]}

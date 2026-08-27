@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b02-4ea9-7812-8a34-42b923d08578"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"What are you doing in the kitchen?\"}],\"learner_prompt\":\"B: I am ________.\"},\"target_answer\":\"washing the dishes\",\"accepted_answers\":[\"washing the dishes\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12833,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":224,"reasoning_output_tokens":162}}

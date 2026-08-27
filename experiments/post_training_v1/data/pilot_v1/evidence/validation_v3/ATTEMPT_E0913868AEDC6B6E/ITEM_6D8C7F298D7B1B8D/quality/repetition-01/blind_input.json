@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "had not been washing"
+  ],
+  "content": {
+    "prompt": "When I arrived, Anna ______ the dishes; they were still dirty."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "had not been washing"
+}

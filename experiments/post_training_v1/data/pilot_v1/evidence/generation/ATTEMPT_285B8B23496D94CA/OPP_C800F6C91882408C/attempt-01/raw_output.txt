@@ -1,0 +1,1 @@
+{"content":{"prompt":"The car ______ every Sunday."},"target_answer":"is washed","accepted_answers":["is washed"]}

@@ -1,0 +1,1 @@
+{"content":{"prompt":"Yesterday, Maya ___ the window before dinner."},"target_answer":"cleaned","accepted_answers":["cleaned"]}

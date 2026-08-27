@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b07-3613-75a3-a872-b9797984bbf3"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Did the package arrive before lunch?\"}],\"learner_prompt\":\"B: Yes, the package ___ before lunch.\"},\"target_answer\":\"had been delivered\",\"accepted_answers\":[\"had been delivered\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12842,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":184,"reasoning_output_tokens":120}}

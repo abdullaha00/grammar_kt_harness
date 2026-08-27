@@ -1,0 +1,1 @@
+{"content":{"prompt":"Maya ____ her room."},"target_answer":"has cleaned","accepted_answers":["has cleaned"]}

@@ -1,0 +1,1 @@
+{"content":{"prompt":"By the time I arrived home, Maria ___ (clean) the kitchen for an hour."},"target_answer":"had been cleaning","accepted_answers":["had been cleaning"]}

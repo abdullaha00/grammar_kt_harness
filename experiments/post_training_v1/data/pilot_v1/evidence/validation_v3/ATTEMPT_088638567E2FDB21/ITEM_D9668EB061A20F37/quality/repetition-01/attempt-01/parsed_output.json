@@ -1,0 +1,12 @@
+{
+  "answer_ambiguity": true,
+  "context_appropriateness": 5,
+  "dialogue_coherence": 5,
+  "lexical_cefr_appropriate": true,
+  "natural_speaker_turns": 4,
+  "naturalness": 4,
+  "note": "The dialogue is clear and natural overall, but the blank admits several valid alternatives (for example, “hadn't checked” or “didn't check”), so a single expected form is underdetermined.",
+  "pedagogical_suitability": 3,
+  "pragmatic_licensing": 5,
+  "world_knowledge_required": false
+}

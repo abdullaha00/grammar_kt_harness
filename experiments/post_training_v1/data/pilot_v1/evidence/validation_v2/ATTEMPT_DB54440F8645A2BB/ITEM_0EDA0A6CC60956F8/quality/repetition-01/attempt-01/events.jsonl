@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b09-e15c-7a60-baee-39095798f644"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":5,\"answer_ambiguity\":false,\"pedagogical_suitability\":5,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":null,\"pragmatic_licensing\":null,\"natural_speaker_turns\":null,\"context_appropriateness\":null,\"note\":\"Natural standalone past-perfect-continuous completion; the duration phrase clearly supports the response.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":16156,"cached_input_tokens":9984,"cache_write_input_tokens":0,"output_tokens":178,"reasoning_output_tokens":76}}

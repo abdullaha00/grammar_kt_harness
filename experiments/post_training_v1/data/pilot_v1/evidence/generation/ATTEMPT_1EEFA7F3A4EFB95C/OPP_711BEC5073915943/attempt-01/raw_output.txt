@@ -1,0 +1,1 @@
+{"content":{"prompt":"I ________ the kitchen for an hour. (clean)"},"target_answer":"have been cleaning","accepted_answers":["have been cleaning"]}

@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "is washing"
+  ],
+  "content": {
+    "prompt": "Look! Anna ___ (wash) the dishes."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "is washing"
+}

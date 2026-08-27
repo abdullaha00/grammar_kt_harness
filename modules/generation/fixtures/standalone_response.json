@@ -1,7 +1,0 @@
-{
-  "default": {
-    "content": {"prompt": "Complete the sentence: Yesterday, the technician ___ the report. (not/write)"},
-    "target_answer": "Yesterday, the technician did not write the report.",
-    "accepted_answers": ["Yesterday, the technician did not write the report."]
-  }
-}

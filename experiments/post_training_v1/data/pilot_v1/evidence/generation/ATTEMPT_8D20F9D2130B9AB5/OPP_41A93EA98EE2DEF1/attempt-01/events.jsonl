@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b04-9485-7420-98f0-95d0896447cc"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"prompt\":\"Yesterday, Maya ___ the window.\"},\"target_answer\":\"did not open\",\"accepted_answers\":[\"didn't open\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12773,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":103,"reasoning_output_tokens":63}}

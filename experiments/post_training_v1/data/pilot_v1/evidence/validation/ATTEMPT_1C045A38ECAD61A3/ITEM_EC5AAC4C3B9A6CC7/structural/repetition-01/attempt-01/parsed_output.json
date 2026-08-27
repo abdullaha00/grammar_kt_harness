@@ -1,0 +1,16 @@
+{
+  "agreement_site": "have",
+  "cell": {
+    "aspect": "perfect",
+    "clause": "declarative",
+    "modal": "none",
+    "polarity": "positive",
+    "tense": "present",
+    "voice": "active"
+  },
+  "operations": [
+    "perfect_have",
+    "past_participle"
+  ],
+  "predicate_class": "lexical_transitive"
+}

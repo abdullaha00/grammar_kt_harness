@@ -1,0 +1,17 @@
+{
+  "accepted_surface_variants": [
+    "is not locked",
+    "isn't locked"
+  ],
+  "content": {
+    "learner_prompt": "B: No, it ___ (lock).",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Is the front door locked?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "is not locked"
+}

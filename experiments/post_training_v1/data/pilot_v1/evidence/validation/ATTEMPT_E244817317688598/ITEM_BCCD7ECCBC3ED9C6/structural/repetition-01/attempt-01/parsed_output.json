@@ -1,0 +1,15 @@
+{
+  "agreement_site": "main_verb",
+  "cell": {
+    "aspect": "none",
+    "clause": "imperative",
+    "modal": "none",
+    "polarity": "positive",
+    "tense": "NA",
+    "voice": "active"
+  },
+  "operations": [
+    "imperative"
+  ],
+  "predicate_class": "lexical_transitive"
+}

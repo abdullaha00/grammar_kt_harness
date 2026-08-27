@@ -1,0 +1,6 @@
+{"item_id": "item_001", "kc_ids": ["kc_present"]}
+{"item_id": "item_002", "kc_ids": ["kc_past", "kc_negation"]}
+{"item_id": "item_003", "kc_ids": ["kc_past", "kc_passive"]}
+{"item_id": "item_004", "kc_ids": ["kc_present", "kc_progressive"]}
+{"item_id": "item_005", "kc_ids": ["kc_present", "kc_progressive", "kc_passive", "kc_negation"]}
+{"item_id": "item_006", "kc_ids": ["kc_polar_question", "kc_modal_should"]}

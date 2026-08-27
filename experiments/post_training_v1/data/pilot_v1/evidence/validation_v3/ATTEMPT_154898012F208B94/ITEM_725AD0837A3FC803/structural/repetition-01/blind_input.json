@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "Does Maria play tennis?"
+  ],
+  "content": {
+    "prompt": "_____ Maria play tennis?"
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "Does Maria play tennis?"
+}

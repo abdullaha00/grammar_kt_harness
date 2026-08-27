@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b05-1b74-7210-84bb-49afc21d5834"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Ben came home with a new book yesterday.\"}],\"learner_prompt\":\"B: _____ it at the shop?\"},\"target_answer\":\"Did Ben buy it at the shop?\",\"accepted_answers\":[\"Did Ben buy it at the shop?\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12844,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":334,"reasoning_output_tokens":260}}

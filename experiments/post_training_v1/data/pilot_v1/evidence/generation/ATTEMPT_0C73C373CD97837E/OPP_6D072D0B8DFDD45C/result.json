@@ -1,0 +1,88 @@
+{
+  "item": {
+    "accepted_answers": [
+      "had finished"
+    ],
+    "canonical_cell_id": "CELL_AE10928CE13553D8",
+    "content": {
+      "prompt": "By the time the teacher arrived, the students ______ their homework."
+    },
+    "generation_metadata": {
+      "attempt": 1,
+      "attempt_history": [
+        {
+          "accepted": true,
+          "attempt": 1,
+          "rejection_reasons": []
+        }
+      ],
+      "backend": {
+        "kind": "codex_exec",
+        "model": "gpt-5.6-luna"
+      },
+      "evidence_directory": "/home/abdullah/grammar_kt_harness/experiments/post_training_v1/data/pilot_v1/evidence/generation/ATTEMPT_0C73C373CD97837E/OPP_6D072D0B8DFDD45C",
+      "generator_config": {
+        "constraints": {
+          "lexical_level": "A2_where_feasible",
+          "register": "neutral",
+          "response_type": "sentence_completion"
+        },
+        "generator_id": "llm_standalone_v0",
+        "mode": "llm_standalone"
+      },
+      "input_opportunity": {
+        "canonical_cell_id": "CELL_AE10928CE13553D8",
+        "cell": {
+          "aspect": "perfect",
+          "clause": "declarative",
+          "modal": "none",
+          "polarity": "positive",
+          "tense": "past",
+          "voice": "active"
+        },
+        "coverage_reasons": [
+          "agreement_measurement:have"
+        ],
+        "expected_operations": [
+          "perfect"
+        ],
+        "measurement_opportunity_id": "OPP_6D072D0B8DFDD45C",
+        "source_descriptor_ids": [
+          "1741163712332x475879228502143170",
+          "1741163712333x761860144866407300"
+        ],
+        "structural_conditions": {
+          "imperative_subtype": null,
+          "predicate_class": "lexical_transitive",
+          "subject_number": "plural",
+          "subject_person": 3,
+          "wh_role": null
+        }
+      },
+      "parsed_output": {
+        "accepted_answers": [
+          "had finished"
+        ],
+        "content": {
+          "prompt": "By the time the teacher arrived, the students ______ their homework."
+        },
+        "target_answer": "had finished"
+      },
+      "raw_output": "{\"content\":{\"prompt\":\"By the time the teacher arrived, the students ______ their homework.\"},\"target_answer\":\"had finished\",\"accepted_answers\":[\"had finished\"]}",
+      "rendered_prompt": "Create one natural standalone English completion item for the fixed structural target below.\n\nThe target grammar has already been chosen. Do not reinterpret it, weaken it, or select a different target. You may choose ordinary lexical content, names, and surface wording. Keep lexical difficulty simple (A2 where feasible), avoid specialist world knowledge, and make the intended answer unambiguous.\n\nFixed MeasurementOpportunity:\n{\n  \"canonical_cell_id\": \"CELL_AE10928CE13553D8\",\n  \"cell\": {\n    \"aspect\": \"perfect\",\n    \"clause\": \"declarative\",\n    \"modal\": \"none\",\n    \"polarity\": \"positive\",\n    \"tense\": \"past\",\n    \"voice\": \"active\"\n  },\n  \"expected_operations\": [\n    \"perfect\"\n  ],\n  \"structural_conditions\": {\n    \"imperative_subtype\": null,\n    \"predicate_class\": \"lexical_transitive\",\n    \"subject_number\": \"plural\",\n    \"subject_person\": 3,\n    \"wh_role\": null\n  }\n}\n\nGeneration constraints:\n{\n  \"lexical_level\": \"A2_where_feasible\",\n  \"register\": \"neutral\",\n  \"response_type\": \"sentence_completion\"\n}\n\nReturn only the JSON object required by the output schema. The content object must contain exactly a learner-facing prompt. The target answer must instantiate every declared cell value, structural condition, and expected operation.\n"
+    },
+    "generator_id": "llm_standalone_v0",
+    "item_family": "standalone_completion",
+    "item_id": "ITEM_F9561B38A45F2935",
+    "measurement_opportunity_id": "OPP_6D072D0B8DFDD45C",
+    "quality_diagnostics": {},
+    "source_descriptor_ids": [
+      "1741163712332x475879228502143170",
+      "1741163712333x761860144866407300"
+    ],
+    "target_answer": "had finished",
+    "validated_structure": {},
+    "validation_metadata": {}
+  },
+  "status": "candidate"
+}

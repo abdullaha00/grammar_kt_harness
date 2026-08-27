@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "had finished"
+  ],
+  "content": {
+    "prompt": "By the time their mother came home, the children ___ their homework."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "had finished"
+}

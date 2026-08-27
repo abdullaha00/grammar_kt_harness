@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b07-bce8-7e21-81be-e46ee94191bb"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"The kitchen is messy.\"}],\"learner_prompt\":\"B: ________\"},\"target_answer\":\"Let's clean the kitchen.\",\"accepted_answers\":[\"Let's clean the kitchen.\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12843,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":214,"reasoning_output_tokens":154}}

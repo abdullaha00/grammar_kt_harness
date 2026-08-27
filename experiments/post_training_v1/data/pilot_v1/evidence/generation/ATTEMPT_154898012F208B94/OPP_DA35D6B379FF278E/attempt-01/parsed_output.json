@@ -1,0 +1,9 @@
+{
+  "accepted_answers": [
+    "Does Maria play tennis?"
+  ],
+  "content": {
+    "prompt": "_____ Maria play tennis?"
+  },
+  "target_answer": "Does Maria play tennis?"
+}

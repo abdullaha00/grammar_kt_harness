@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Did you open the window last night?"}],"learner_prompt":"B: No, I ______ the window."},"target_answer":"didn't open","accepted_answers":["did not open"]}

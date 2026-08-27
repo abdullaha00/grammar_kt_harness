@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b14-50b2-7c91-91c7-7f98127e1bbd"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"naturalness\":5,\"answer_ambiguity\":false,\"pedagogical_suitability\":5,\"world_knowledge_required\":false,\"lexical_cefr_appropriate\":true,\"dialogue_coherence\":null,\"pragmatic_licensing\":null,\"natural_speaker_turns\":null,\"context_appropriateness\":null,\"note\":\"Natural, unambiguous present-simple completion with common A1-level vocabulary; the learner response is correct.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":14213,"cached_input_tokens":12032,"cache_write_input_tokens":0,"output_tokens":104,"reasoning_output_tokens":0}}

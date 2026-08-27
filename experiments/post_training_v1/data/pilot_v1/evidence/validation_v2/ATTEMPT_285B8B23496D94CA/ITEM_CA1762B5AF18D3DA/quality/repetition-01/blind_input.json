@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "is washed"
+  ],
+  "content": {
+    "prompt": "The car ______ every Sunday."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "is washed"
+}

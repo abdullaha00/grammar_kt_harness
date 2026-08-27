@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "Let's open"
+  ],
+  "content": {
+    "learner_prompt": "B: ______ the window.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "The room is warm."
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "Let's open"
+}

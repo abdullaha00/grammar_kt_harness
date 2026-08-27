@@ -1,0 +1,15 @@
+Assess item quality independently of grammatical target correctness.
+
+Use only the visible generated exercise and learner response. Report naturalness, ambiguity, pedagogical suitability, world-knowledge dependence, lexical suitability, and (when applicable) dialogue quality. Dialogue-only fields must be null for standalone items. Return only schema-valid JSON.
+
+Generated exercise and response:
+{
+  "accepted_surface_variants": [
+    "closed"
+  ],
+  "content": {
+    "prompt": "Yesterday, I ____ the door before I went to bed."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "closed"
+}

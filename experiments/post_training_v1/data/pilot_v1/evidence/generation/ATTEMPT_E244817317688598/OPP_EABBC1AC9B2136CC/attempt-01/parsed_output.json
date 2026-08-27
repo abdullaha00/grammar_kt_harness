@@ -1,0 +1,16 @@
+{
+  "accepted_answers": [
+    "Bring the plates.",
+    "bring the plates."
+  ],
+  "content": {
+    "learner_prompt": "B: Please ______.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "The table is ready, but the plates are still in the kitchen."
+      }
+    ]
+  },
+  "target_answer": "bring the plates."
+}

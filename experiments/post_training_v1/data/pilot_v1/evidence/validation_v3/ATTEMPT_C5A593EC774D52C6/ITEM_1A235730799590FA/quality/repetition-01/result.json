@@ -1,0 +1,26 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "errors": [],
+      "valid": true
+    }
+  ],
+  "intended_target_hidden": true,
+  "item_id": "ITEM_1A235730799590FA",
+  "label": "quality",
+  "repetition": 1,
+  "result": {
+    "answer_ambiguity": false,
+    "context_appropriateness": 5,
+    "dialogue_coherence": 5,
+    "lexical_cefr_appropriate": true,
+    "natural_speaker_turns": 5,
+    "naturalness": 5,
+    "note": "The response is fully natural and coherent in the dialogue; the vocabulary is common and the context clearly supports the present perfect.",
+    "pedagogical_suitability": 5,
+    "pragmatic_licensing": 5,
+    "world_knowledge_required": false
+  },
+  "successful_attempt": 1
+}

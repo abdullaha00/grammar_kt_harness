@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "closed"
+  ],
+  "content": {
+    "prompt": "Yesterday, I ____ the door before I went to bed."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "closed"
+}

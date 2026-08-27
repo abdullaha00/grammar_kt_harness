@@ -1,0 +1,13 @@
+{
+  "prompt": "Right now, the rooms ___ by the team. (not / clean)",
+  "target_answer": "Right now, the rooms are not being cleaned by the team.",
+  "accepted_answers": [
+    "Right now, the rooms are not being cleaned by the team."
+  ],
+  "operation_tags": [
+    "progressive",
+    "be_passive",
+    "negation"
+  ],
+  "note": "Agent and time cues control the auxiliary chain."
+}

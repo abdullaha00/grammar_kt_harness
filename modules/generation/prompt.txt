@@ -1,0 +1,28 @@
+Create one controlled-production English exercise for the supplied target.
+
+The GrammarCell is fixed. Do not choose, weaken, or reinterpret it. Realise
+every target feature in the target answer, follow the item-format contract, and
+use the supplied lexical material where it is compatible. Keep the context
+short, natural, pedagogically useful, and answer-determinate.
+
+Do not infer or mention grammar-fold labels, candidate KCs, learner outcomes,
+simulation assumptions, or KT models. Return one JSON object containing:
+prompt, target_answer, accepted_answers, operation_tags, and note.
+
+TARGET GRAMMAR CELL:
+{{target_cell}}
+
+SOURCE SUPPORT:
+{{source_support}}
+
+ITEM FORMAT:
+{{item_format}}
+
+GENERATION DESIGN:
+{{design}}
+
+LEXICAL MATERIAL:
+{{lexical_material}}
+
+ENGLISH GENERATION RULES:
+{{rulebook}}

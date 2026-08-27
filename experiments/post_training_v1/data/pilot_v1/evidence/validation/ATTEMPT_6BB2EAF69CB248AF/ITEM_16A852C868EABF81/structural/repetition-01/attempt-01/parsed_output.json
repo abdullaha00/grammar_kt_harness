@@ -1,0 +1,16 @@
+{
+  "agreement_site": "none",
+  "cell": {
+    "aspect": "none",
+    "clause": "imperative",
+    "modal": "none",
+    "polarity": "negative",
+    "tense": "NA",
+    "voice": "active"
+  },
+  "operations": [
+    "let_imperative",
+    "negation"
+  ],
+  "predicate_class": "lexical_transitive"
+}

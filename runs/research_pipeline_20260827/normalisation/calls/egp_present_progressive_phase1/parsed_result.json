@@ -1,0 +1,15 @@
+{
+  "source_id": "egp_present_progressive",
+  "result": "complete",
+  "cells": [
+    {
+      "tense": "present",
+      "aspect": "progressive",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "none"
+    }
+  ],
+  "note": null
+}

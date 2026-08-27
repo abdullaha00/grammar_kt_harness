@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a03b03-48ab-7613-9e33-c2e8dbcc992b"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"content\":{\"turns\":[{\"speaker\":\"A\",\"text\":\"Is the kitchen ready for dinner?\"}],\"learner_prompt\":\"B: Yes, they ______ the kitchen.\"},\"target_answer\":\"have cleaned\",\"accepted_answers\":[\"have cleaned\"]}"}}
+{"type":"turn.completed","usage":{"input_tokens":12833,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":143,"reasoning_output_tokens":82}}

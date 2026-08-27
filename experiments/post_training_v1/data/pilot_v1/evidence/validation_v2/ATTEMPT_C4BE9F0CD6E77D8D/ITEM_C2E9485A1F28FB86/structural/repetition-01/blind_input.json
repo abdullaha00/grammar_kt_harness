@@ -1,0 +1,10 @@
+{
+  "accepted_surface_variants": [
+    "are not opening"
+  ],
+  "content": {
+    "prompt": "The children ___ the window because it is cold."
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "are not opening"
+}

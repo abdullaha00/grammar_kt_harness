@@ -1,0 +1,11 @@
+{
+  "accepted_surface_variants": [
+    "do not eat",
+    "don't eat"
+  ],
+  "content": {
+    "prompt": "The children ______ vegetables at dinner. (not / eat)"
+  },
+  "item_family": "standalone_completion",
+  "learner_response": "do not eat"
+}

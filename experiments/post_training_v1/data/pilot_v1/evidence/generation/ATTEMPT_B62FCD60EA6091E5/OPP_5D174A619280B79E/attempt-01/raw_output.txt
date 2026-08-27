@@ -1,0 +1,1 @@
+{"content":{"prompt":"When I arrived at 8 p.m., Maria ___ dinner. She had already eaten and was watching TV."},"target_answer":"had not been cooking","accepted_answers":["hadn't been cooking"]}

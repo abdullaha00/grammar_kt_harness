@@ -1,0 +1,12 @@
+{
+  "answer_ambiguity": false,
+  "context_appropriateness": 4,
+  "dialogue_coherence": 4,
+  "lexical_cefr_appropriate": true,
+  "natural_speaker_turns": 4,
+  "naturalness": 5,
+  "note": "The response is a natural, unambiguous completion and fits the preceding context.",
+  "pedagogical_suitability": 5,
+  "pragmatic_licensing": 4,
+  "world_knowledge_required": false
+}

@@ -1,0 +1,16 @@
+{
+  "accepted_surface_variants": [
+    "have opened"
+  ],
+  "content": {
+    "learner_prompt": "B: The children ______ it.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "Why is the door open?"
+      }
+    ]
+  },
+  "item_family": "dialogue_completion",
+  "learner_response": "have opened"
+}

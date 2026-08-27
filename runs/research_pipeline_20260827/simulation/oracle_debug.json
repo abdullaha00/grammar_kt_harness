@@ -1,0 +1,4326 @@
+{
+  "warning": "Private simulation evidence; never supplied to KC selection or KT.",
+  "world_id": "structural_synthetic_world_v1",
+  "events": [
+    {
+      "event_id": "event_00001",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.53950457
+    },
+    {
+      "event_id": "event_00002",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.50912464
+    },
+    {
+      "event_id": "event_00003",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.4001666
+    },
+    {
+      "event_id": "event_00004",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.62909754
+    },
+    {
+      "event_id": "event_00005",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.38929114
+    },
+    {
+      "event_id": "event_00006",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.30091312
+    },
+    {
+      "event_id": "event_00007",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.54560962
+    },
+    {
+      "event_id": "event_00008",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.44276767
+    },
+    {
+      "event_id": "event_00009",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.64994149
+    },
+    {
+      "event_id": "event_00010",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.4286227
+    },
+    {
+      "event_id": "event_00011",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.33127196
+    },
+    {
+      "event_id": "event_00012",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.55874432
+    },
+    {
+      "event_id": "event_00013",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.47454979
+    },
+    {
+      "event_id": "event_00014",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.66552806
+    },
+    {
+      "event_id": "event_00015",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.45603557
+    },
+    {
+      "event_id": "event_00016",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.36053441
+    },
+    {
+      "event_id": "event_00017",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.57622747
+    },
+    {
+      "event_id": "event_00018",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.58615095
+    },
+    {
+      "event_id": "event_00019",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.67724138
+    },
+    {
+      "event_id": "event_00020",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.47736183
+    },
+    {
+      "event_id": "event_00021",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.38825102
+    },
+    {
+      "event_id": "event_00022",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.59207575
+    },
+    {
+      "event_id": "event_00023",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.60267164
+    },
+    {
+      "event_id": "event_00024",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.51858053
+    },
+    {
+      "event_id": "event_00025",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.62738615
+    },
+    {
+      "event_id": "event_00026",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.57117491
+    },
+    {
+      "event_id": "event_00027",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.46072515
+    },
+    {
+      "event_id": "event_00028",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.45679106
+    },
+    {
+      "event_id": "event_00029",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.38255412
+    },
+    {
+      "event_id": "event_00030",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.40267514
+    },
+    {
+      "event_id": "event_00031",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.59433141
+    },
+    {
+      "event_id": "event_00032",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.49363912
+    },
+    {
+      "event_id": "event_00033",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.51994007
+    },
+    {
+      "event_id": "event_00034",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.4247375
+    },
+    {
+      "event_id": "event_00035",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.42748112
+    },
+    {
+      "event_id": "event_00036",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.63832674
+    },
+    {
+      "event_id": "event_00037",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.51833286
+    },
+    {
+      "event_id": "event_00038",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.56837427
+    },
+    {
+      "event_id": "event_00039",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.45592124
+    },
+    {
+      "event_id": "event_00040",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.45026697
+    },
+    {
+      "event_id": "event_00041",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.64820991
+    },
+    {
+      "event_id": "event_00042",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.61986211
+    },
+    {
+      "event_id": "event_00043",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.60470545
+    },
+    {
+      "event_id": "event_00044",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.47969307
+    },
+    {
+      "event_id": "event_00045",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.47103535
+    },
+    {
+      "event_id": "event_00046",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.65714013
+    },
+    {
+      "event_id": "event_00047",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.63047274
+    },
+    {
+      "event_id": "event_00048",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.55093517
+    },
+    {
+      "event_id": "event_00049",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.63872812
+    },
+    {
+      "event_id": "event_00050",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.56034204
+    },
+    {
+      "event_id": "event_00051",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.46453758
+    },
+    {
+      "event_id": "event_00052",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.68124535
+    },
+    {
+      "event_id": "event_00053",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.51184635
+    },
+    {
+      "event_id": "event_00054",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.44384633
+    },
+    {
+      "event_id": "event_00055",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.5849286
+    },
+    {
+      "event_id": "event_00056",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.49778112
+    },
+    {
+      "event_id": "event_00057",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.68912349
+    },
+    {
+      "event_id": "event_00058",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.52884113
+    },
+    {
+      "event_id": "event_00059",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.46519728
+    },
+    {
+      "event_id": "event_00060",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.64857253
+    },
+    {
+      "event_id": "event_00061",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.51867308
+    },
+    {
+      "event_id": "event_00062",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.69511217
+    },
+    {
+      "event_id": "event_00063",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.54104985
+    },
+    {
+      "event_id": "event_00064",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.48457251
+    },
+    {
+      "event_id": "event_00065",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.65746785
+    },
+    {
+      "event_id": "event_00066",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.61238838
+    },
+    {
+      "event_id": "event_00067",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.69968152
+    },
+    {
+      "event_id": "event_00068",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.54916589
+    },
+    {
+      "event_id": "event_00069",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.50206899
+    },
+    {
+      "event_id": "event_00070",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.66550914
+    },
+    {
+      "event_id": "event_00071",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.62122033
+    },
+    {
+      "event_id": "event_00072",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.55212409
+    },
+    {
+      "event_id": "event_00073",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.63780506
+    },
+    {
+      "event_id": "event_00074",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.39230911
+    },
+    {
+      "event_id": "event_00075",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.44432162
+    },
+    {
+      "event_id": "event_00076",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.45306223
+    },
+    {
+      "event_id": "event_00077",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.37390699
+    },
+    {
+      "event_id": "event_00078",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.47813214
+    },
+    {
+      "event_id": "event_00079",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.45030159
+    },
+    {
+      "event_id": "event_00080",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.48145834
+    },
+    {
+      "event_id": "event_00081",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.51702446
+    },
+    {
+      "event_id": "event_00082",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.41901433
+    },
+    {
+      "event_id": "event_00083",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.49626121
+    },
+    {
+      "event_id": "event_00084",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.64773861
+    },
+    {
+      "event_id": "event_00085",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.50319921
+    },
+    {
+      "event_id": "event_00086",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.56617008
+    },
+    {
+      "event_id": "event_00087",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.44866007
+    },
+    {
+      "event_id": "event_00088",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.51259123
+    },
+    {
+      "event_id": "event_00089",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.65671419
+    },
+    {
+      "event_id": "event_00090",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.51854329
+    },
+    {
+      "event_id": "event_00091",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.60306076
+    },
+    {
+      "event_id": "event_00092",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.47732111
+    },
+    {
+      "event_id": "event_00093",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.52725714
+    },
+    {
+      "event_id": "event_00094",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.66482767
+    },
+    {
+      "event_id": "event_00095",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.54565626
+    },
+    {
+      "event_id": "event_00096",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.54119404
+    },
+    {
+      "event_id": "event_00097",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.64579991
+    },
+    {
+      "event_id": "event_00098",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.45903216
+    },
+    {
+      "event_id": "event_00099",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.46989997
+    },
+    {
+      "event_id": "event_00100",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.51477958
+    },
+    {
+      "event_id": "event_00101",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.40840126
+    },
+    {
+      "event_id": "event_00102",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.43559201
+    },
+    {
+      "event_id": "event_00103",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.50535603
+    },
+    {
+      "event_id": "event_00104",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.50231723
+    },
+    {
+      "event_id": "event_00105",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.56447125
+    },
+    {
+      "event_id": "event_00106",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.44717261
+    },
+    {
+      "event_id": "event_00107",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.45767603
+    },
+    {
+      "event_id": "event_00108",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.65496219
+    },
+    {
+      "event_id": "event_00109",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.52220138
+    },
+    {
+      "event_id": "event_00110",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.60179275
+    },
+    {
+      "event_id": "event_00111",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.47266388
+    },
+    {
+      "event_id": "event_00112",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.47775952
+    },
+    {
+      "event_id": "event_00113",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.66324362
+    },
+    {
+      "event_id": "event_00114",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.55780889
+    },
+    {
+      "event_id": "event_00115",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.62959804
+    },
+    {
+      "event_id": "event_00116",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.49609665
+    },
+    {
+      "event_id": "event_00117",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.49592496
+    },
+    {
+      "event_id": "event_00118",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.67073292
+    },
+    {
+      "event_id": "event_00119",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.57840679
+    },
+    {
+      "event_id": "event_00120",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.55481252
+    },
+    {
+      "event_id": "event_00121",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.70166657
+    },
+    {
+      "event_id": "event_00122",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.47381448
+    },
+    {
+      "event_id": "event_00123",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.46669414
+    },
+    {
+      "event_id": "event_00124",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.53264638
+    },
+    {
+      "event_id": "event_00125",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.39927681
+    },
+    {
+      "event_id": "event_00126",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.44133514
+    },
+    {
+      "event_id": "event_00127",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.51747375
+    },
+    {
+      "event_id": "event_00128",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.49933616
+    },
+    {
+      "event_id": "event_00129",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.57795324
+    },
+    {
+      "event_id": "event_00130",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.43915583
+    },
+    {
+      "event_id": "event_00131",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.46291105
+    },
+    {
+      "event_id": "event_00132",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.70556843
+    },
+    {
+      "event_id": "event_00133",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.52073766
+    },
+    {
+      "event_id": "event_00134",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.61184724
+    },
+    {
+      "event_id": "event_00135",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.46559822
+    },
+    {
+      "event_id": "event_00136",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.4825029
+    },
+    {
+      "event_id": "event_00137",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.70911743
+    },
+    {
+      "event_id": "event_00138",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.56653436
+    },
+    {
+      "event_id": "event_00139",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.63708383
+    },
+    {
+      "event_id": "event_00140",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.48941446
+    },
+    {
+      "event_id": "event_00141",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.50020349
+    },
+    {
+      "event_id": "event_00142",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.71234782
+    },
+    {
+      "event_id": "event_00143",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.5863712
+    },
+    {
+      "event_id": "event_00144",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.55342218
+    },
+    {
+      "event_id": "event_00145",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.72328285
+    },
+    {
+      "event_id": "event_00146",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.34071723
+    },
+    {
+      "event_id": "event_00147",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.34182728
+    },
+    {
+      "event_id": "event_00148",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.46336751
+    },
+    {
+      "event_id": "event_00149",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.3591235
+    },
+    {
+      "event_id": "event_00150",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.39686781
+    },
+    {
+      "event_id": "event_00151",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.40491234
+    },
+    {
+      "event_id": "event_00152",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.39359868
+    },
+    {
+      "event_id": "event_00153",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.52506459
+    },
+    {
+      "event_id": "event_00154",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.40554533
+    },
+    {
+      "event_id": "event_00155",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.42211654
+    },
+    {
+      "event_id": "event_00156",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.72526661
+    },
+    {
+      "event_id": "event_00157",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.42553448
+    },
+    {
+      "event_id": "event_00158",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.57224261
+    },
+    {
+      "event_id": "event_00159",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.43748901
+    },
+    {
+      "event_id": "event_00160",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.44535594
+    },
+    {
+      "event_id": "event_00161",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.7270793
+    },
+    {
+      "event_id": "event_00162",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.48415437
+    },
+    {
+      "event_id": "event_00163",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.60759061
+    },
+    {
+      "event_id": "event_00164",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.46607363
+    },
+    {
+      "event_id": "event_00165",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.46657086
+    },
+    {
+      "event_id": "event_00166",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.72873648
+    },
+    {
+      "event_id": "event_00167",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.51401585
+    },
+    {
+      "event_id": "event_00168",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.48336447
+    },
+    {
+      "event_id": "event_00169",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.6840677
+    },
+    {
+      "event_id": "event_00170",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.4570313
+    },
+    {
+      "event_id": "event_00171",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.40093278
+    },
+    {
+      "event_id": "event_00172",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.5039965
+    },
+    {
+      "event_id": "event_00173",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.41160541
+    },
+    {
+      "event_id": "event_00174",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.4041367
+    },
+    {
+      "event_id": "event_00175",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.5029591
+    },
+    {
+      "event_id": "event_00176",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.44472123
+    },
+    {
+      "event_id": "event_00177",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.55628916
+    },
+    {
+      "event_id": "event_00178",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.44918545
+    },
+    {
+      "event_id": "event_00179",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.42882934
+    },
+    {
+      "event_id": "event_00180",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.68959064
+    },
+    {
+      "event_id": "event_00181",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.47196971
+    },
+    {
+      "event_id": "event_00182",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.59568032
+    },
+    {
+      "event_id": "event_00183",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.4757119
+    },
+    {
+      "event_id": "event_00184",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.45149985
+    },
+    {
+      "event_id": "event_00185",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.6946001
+    },
+    {
+      "event_id": "event_00186",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.55529939
+    },
+    {
+      "event_id": "event_00187",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.62504809
+    },
+    {
+      "event_id": "event_00188",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.49704399
+    },
+    {
+      "event_id": "event_00189",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.47215518
+    },
+    {
+      "event_id": "event_00190",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.69914743
+    },
+    {
+      "event_id": "event_00191",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.57370732
+    },
+    {
+      "event_id": "event_00192",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.51793299
+    },
+    {
+      "event_id": "event_00193",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.5906574
+    },
+    {
+      "event_id": "event_00194",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.47324058
+    },
+    {
+      "event_id": "event_00195",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.48218518
+    },
+    {
+      "event_id": "event_00196",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.67828978
+    },
+    {
+      "event_id": "event_00197",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.45084927
+    },
+    {
+      "event_id": "event_00198",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.37849108
+    },
+    {
+      "event_id": "event_00199",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.51704918
+    },
+    {
+      "event_id": "event_00200",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.51218173
+    },
+    {
+      "event_id": "event_00201",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.6868828
+    },
+    {
+      "event_id": "event_00202",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.48048182
+    },
+    {
+      "event_id": "event_00203",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.40505663
+    },
+    {
+      "event_id": "event_00204",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.60513519
+    },
+    {
+      "event_id": "event_00205",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.53142703
+    },
+    {
+      "event_id": "event_00206",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.69340639
+    },
+    {
+      "event_id": "event_00207",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.49809836
+    },
+    {
+      "event_id": "event_00208",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.42967755
+    },
+    {
+      "event_id": "event_00209",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.6182243
+    },
+    {
+      "event_id": "event_00210",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.56627502
+    },
+    {
+      "event_id": "event_00211",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.69837844
+    },
+    {
+      "event_id": "event_00212",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.51540509
+    },
+    {
+      "event_id": "event_00213",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.45227522
+    },
+    {
+      "event_id": "event_00214",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.63005064
+    },
+    {
+      "event_id": "event_00215",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.58627546
+    },
+    {
+      "event_id": "event_00216",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.56133034
+    },
+    {
+      "event_id": "event_00217",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.58020008
+    },
+    {
+      "event_id": "event_00218",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.53016124
+    },
+    {
+      "event_id": "event_00219",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.35414913
+    },
+    {
+      "event_id": "event_00220",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.67241298
+    },
+    {
+      "event_id": "event_00221",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.42726379
+    },
+    {
+      "event_id": "event_00222",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.39158034
+    },
+    {
+      "event_id": "event_00223",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.56136962
+    },
+    {
+      "event_id": "event_00224",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.4030726
+    },
+    {
+      "event_id": "event_00225",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.68243644
+    },
+    {
+      "event_id": "event_00226",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.45905434
+    },
+    {
+      "event_id": "event_00227",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.4172214
+    },
+    {
+      "event_id": "event_00228",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.59567271
+    },
+    {
+      "event_id": "event_00229",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.43891283
+    },
+    {
+      "event_id": "event_00230",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.69002738
+    },
+    {
+      "event_id": "event_00231",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.48266848
+    },
+    {
+      "event_id": "event_00232",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.44086691
+    },
+    {
+      "event_id": "event_00233",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.60967072
+    },
+    {
+      "event_id": "event_00234",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.59620702
+    },
+    {
+      "event_id": "event_00235",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.69580086
+    },
+    {
+      "event_id": "event_00236",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.49760914
+    },
+    {
+      "event_id": "event_00237",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.46248458
+    },
+    {
+      "event_id": "event_00238",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.62232283
+    },
+    {
+      "event_id": "event_00239",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.60823232
+    },
+    {
+      "event_id": "event_00240",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.49204694
+    },
+    {
+      "event_id": "event_00241",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.60399148
+    },
+    {
+      "event_id": "event_00242",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.37591644
+    },
+    {
+      "event_id": "event_00243",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.34116186
+    },
+    {
+      "event_id": "event_00244",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.49699814
+    },
+    {
+      "event_id": "event_00245",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.35577828
+    },
+    {
+      "event_id": "event_00246",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.49651337
+    },
+    {
+      "event_id": "event_00247",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.43581382
+    },
+    {
+      "event_id": "event_00248",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.39250584
+    },
+    {
+      "event_id": "event_00249",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.55095793
+    },
+    {
+      "event_id": "event_00250",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.40192457
+    },
+    {
+      "event_id": "event_00251",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.51281798
+    },
+    {
+      "event_id": "event_00252",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.61719067
+    },
+    {
+      "event_id": "event_00253",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.42623684
+    },
+    {
+      "event_id": "event_00254",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.59169221
+    },
+    {
+      "event_id": "event_00255",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.43420858
+    },
+    {
+      "event_id": "event_00256",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.52746053
+    },
+    {
+      "event_id": "event_00257",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.62911688
+    },
+    {
+      "event_id": "event_00258",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.50738385
+    },
+    {
+      "event_id": "event_00259",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.62207927
+    },
+    {
+      "event_id": "event_00260",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.46187566
+    },
+    {
+      "event_id": "event_00261",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.54058277
+    },
+    {
+      "event_id": "event_00262",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.63989012
+    },
+    {
+      "event_id": "event_00263",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.53440793
+    },
+    {
+      "event_id": "event_00264",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.48339011
+    },
+    {
+      "event_id": "event_00265",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.6379716
+    },
+    {
+      "event_id": "event_00266",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.49587538
+    },
+    {
+      "event_id": "event_00267",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.44583264
+    },
+    {
+      "event_id": "event_00268",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.59031958
+    },
+    {
+      "event_id": "event_00269",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.46466315
+    },
+    {
+      "event_id": "event_00270",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.34365248
+    },
+    {
+      "event_id": "event_00271",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.53412929
+    },
+    {
+      "event_id": "event_00272",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.48258777
+    },
+    {
+      "event_id": "event_00273",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.62105739
+    },
+    {
+      "event_id": "event_00274",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.49212614
+    },
+    {
+      "event_id": "event_00275",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.37231448
+    },
+    {
+      "event_id": "event_00276",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.64788907
+    },
+    {
+      "event_id": "event_00277",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.50459154
+    },
+    {
+      "event_id": "event_00278",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.64394547
+    },
+    {
+      "event_id": "event_00279",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.51093035
+    },
+    {
+      "event_id": "event_00280",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.39929189
+    },
+    {
+      "event_id": "event_00281",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.65685017
+    },
+    {
+      "event_id": "event_00282",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.57715268
+    },
+    {
+      "event_id": "event_00283",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.66103673
+    },
+    {
+      "event_id": "event_00284",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.52605553
+    },
+    {
+      "event_id": "event_00285",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.42435729
+    },
+    {
+      "event_id": "event_00286",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.66495062
+    },
+    {
+      "event_id": "event_00287",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.59199269
+    },
+    {
+      "event_id": "event_00288",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.54209433
+    },
+    {
+      "event_id": "event_00289",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.69578548
+    },
+    {
+      "event_id": "event_00290",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.41317431
+    },
+    {
+      "event_id": "event_00291",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.37584469
+    },
+    {
+      "event_id": "event_00292",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.46958899
+    },
+    {
+      "event_id": "event_00293",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.35152226
+    },
+    {
+      "event_id": "event_00294",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.43453321
+    },
+    {
+      "event_id": "event_00295",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.46759105
+    },
+    {
+      "event_id": "event_00296",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.42274926
+    },
+    {
+      "event_id": "event_00297",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.52989268
+    },
+    {
+      "event_id": "event_00298",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.39852667
+    },
+    {
+      "event_id": "event_00299",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.45670991
+    },
+    {
+      "event_id": "event_00300",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.70022399
+    },
+    {
+      "event_id": "event_00301",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.45401282
+    },
+    {
+      "event_id": "event_00302",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.57588081
+    },
+    {
+      "event_id": "event_00303",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.43165844
+    },
+    {
+      "event_id": "event_00304",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.47688345
+    },
+    {
+      "event_id": "event_00305",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.70425696
+    },
+    {
+      "event_id": "event_00306",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.53079746
+    },
+    {
+      "event_id": "event_00307",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.6103028
+    },
+    {
+      "event_id": "event_00308",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.46011344
+    },
+    {
+      "event_id": "event_00309",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.49513427
+    },
+    {
+      "event_id": "event_00310",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.70792427
+    },
+    {
+      "event_id": "event_00311",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.55522242
+    },
+    {
+      "event_id": "event_00312",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.50413046
+    },
+    {
+      "event_id": "event_00313",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.67459571
+    },
+    {
+      "event_id": "event_00314",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.5197196
+    },
+    {
+      "event_id": "event_00315",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.38125501
+    },
+    {
+      "event_id": "event_00316",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.57262411
+    },
+    {
+      "event_id": "event_00317",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.44062155
+    },
+    {
+      "event_id": "event_00318",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.33992471
+    },
+    {
+      "event_id": "event_00319",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.55270013
+    },
+    {
+      "event_id": "event_00320",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.42744661
+    },
+    {
+      "event_id": "event_00321",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.60787507
+    },
+    {
+      "event_id": "event_00322",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.47162953
+    },
+    {
+      "event_id": "event_00323",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.36877612
+    },
+    {
+      "event_id": "event_00324",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.68100775
+    },
+    {
+      "event_id": "event_00325",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.45810582
+    },
+    {
+      "event_id": "event_00326",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.63412605
+    },
+    {
+      "event_id": "event_00327",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.49504464
+    },
+    {
+      "event_id": "event_00328",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.39598208
+    },
+    {
+      "event_id": "event_00329",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.68681681
+    },
+    {
+      "event_id": "event_00330",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.58973516
+    },
+    {
+      "event_id": "event_00331",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.6536954
+    },
+    {
+      "event_id": "event_00332",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.51054891
+    },
+    {
+      "event_id": "event_00333",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.42129727
+    },
+    {
+      "event_id": "event_00334",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.69208366
+    },
+    {
+      "event_id": "event_00335",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.60140137
+    },
+    {
+      "event_id": "event_00336",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.5072113
+    },
+    {
+      "event_id": "event_00337",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.6983624
+    },
+    {
+      "event_id": "event_00338",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.45520693
+    },
+    {
+      "event_id": "event_00339",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.41195693
+    },
+    {
+      "event_id": "event_00340",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.43435268
+    },
+    {
+      "event_id": "event_00341",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.35664543
+    },
+    {
+      "event_id": "event_00342",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.34619963
+    },
+    {
+      "event_id": "event_00343",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.50220456
+    },
+    {
+      "event_id": "event_00344",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.45355292
+    },
+    {
+      "event_id": "event_00345",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.5022774
+    },
+    {
+      "event_id": "event_00346",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.40332354
+    },
+    {
+      "event_id": "event_00347",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.37472807
+    },
+    {
+      "event_id": "event_00348",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.70256508
+    },
+    {
+      "event_id": "event_00349",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.48143142
+    },
+    {
+      "event_id": "event_00350",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.55498118
+    },
+    {
+      "event_id": "event_00351",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.43659571
+    },
+    {
+      "event_id": "event_00352",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.40154646
+    },
+    {
+      "event_id": "event_00353",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.70638545
+    },
+    {
+      "event_id": "event_00354",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.55553155
+    },
+    {
+      "event_id": "event_00355",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.59470229
+    },
+    {
+      "event_id": "event_00356",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.46482258
+    },
+    {
+      "event_id": "event_00357",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.42643944
+    },
+    {
+      "event_id": "event_00358",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.70986089
+    },
+    {
+      "event_id": "event_00359",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.57632286
+    },
+    {
+      "event_id": "event_00360",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.52443242
+    },
+    {
+      "event_id": "event_00361",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.72657883
+    },
+    {
+      "event_id": "event_00362",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.55451669
+    },
+    {
+      "event_id": "event_00363",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.45830078
+    },
+    {
+      "event_id": "event_00364",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.38150419
+    },
+    {
+      "event_id": "event_00365",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.40971465
+    },
+    {
+      "event_id": "event_00366",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.47852651
+    },
+    {
+      "event_id": "event_00367",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.58046317
+    },
+    {
+      "event_id": "event_00368",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.49252156
+    },
+    {
+      "event_id": "event_00369",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.45934137
+    },
+    {
+      "event_id": "event_00370",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.44855185
+    },
+    {
+      "event_id": "event_00371",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.49661706
+    },
+    {
+      "event_id": "event_00372",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.72827887
+    },
+    {
+      "event_id": "event_00373",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.51448954
+    },
+    {
+      "event_id": "event_00374",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.52192996
+    },
+    {
+      "event_id": "event_00375",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.47804789
+    },
+    {
+      "event_id": "event_00376",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.51291122
+    },
+    {
+      "event_id": "event_00377",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.72983359
+    },
+    {
+      "event_id": "event_00378",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.60939906
+    },
+    {
+      "event_id": "event_00379",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.56987723
+    },
+    {
+      "event_id": "event_00380",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.49990331
+    },
+    {
+      "event_id": "event_00381",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.52754417
+    },
+    {
+      "event_id": "event_00382",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.73125603
+    },
+    {
+      "event_id": "event_00383",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.61906856
+    },
+    {
+      "event_id": "event_00384",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.54896199
+    },
+    {
+      "event_id": "event_00385",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.7186274
+    },
+    {
+      "event_id": "event_00386",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.40163951
+    },
+    {
+      "event_id": "event_00387",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.38665764
+    },
+    {
+      "event_id": "event_00388",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.53064743
+    },
+    {
+      "event_id": "event_00389",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.42204277
+    },
+    {
+      "event_id": "event_00390",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.45533807
+    },
+    {
+      "event_id": "event_00391",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.45715395
+    },
+    {
+      "event_id": "event_00392",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.43300533
+    },
+    {
+      "event_id": "event_00393",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.57644902
+    },
+    {
+      "event_id": "event_00394",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.4580062
+    },
+    {
+      "event_id": "event_00395",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.47563909
+    },
+    {
+      "event_id": "event_00396",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.72101617
+    },
+    {
+      "event_id": "event_00397",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.46001304
+    },
+    {
+      "event_id": "event_00398",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.61072628
+    },
+    {
+      "event_id": "event_00399",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.48228212
+    },
+    {
+      "event_id": "event_00400",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.49401095
+    },
+    {
+      "event_id": "event_00401",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.72319652
+    },
+    {
+      "event_id": "event_00402",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.52241562
+    },
+    {
+      "event_id": "event_00403",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.63624906
+    },
+    {
+      "event_id": "event_00404",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.50321867
+    },
+    {
+      "event_id": "event_00405",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.51056726
+    },
+    {
+      "event_id": "event_00406",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.72518775
+    },
+    {
+      "event_id": "event_00407",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.54543216
+    },
+    {
+      "event_id": "event_00408",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.50952516
+    },
+    {
+      "event_id": "event_00409",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.70395016
+    },
+    {
+      "event_id": "event_00410",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.60243797
+    },
+    {
+      "event_id": "event_00411",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.45737262
+    },
+    {
+      "event_id": "event_00412",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.67327151
+    },
+    {
+      "event_id": "event_00413",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.44261767
+    },
+    {
+      "event_id": "event_00414",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.37111583
+    },
+    {
+      "event_id": "event_00415",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.61884944
+    },
+    {
+      "event_id": "event_00416",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.49053446
+    },
+    {
+      "event_id": "event_00417",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.68308529
+    },
+    {
+      "event_id": "event_00418",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.47217135
+    },
+    {
+      "event_id": "event_00419",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.39817128
+    },
+    {
+      "event_id": "event_00420",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.70764518
+    },
+    {
+      "event_id": "event_00421",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.51673833
+    },
+    {
+      "event_id": "event_00422",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.69052
+    },
+    {
+      "event_id": "event_00423",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.49331857
+    },
+    {
+      "event_id": "event_00424",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.4233217
+    },
+    {
+      "event_id": "event_00425",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.71100746
+    },
+    {
+      "event_id": "event_00426",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.6369407
+    },
+    {
+      "event_id": "event_00427",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.69617634
+    },
+    {
+      "event_id": "event_00428",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.50773188
+    },
+    {
+      "event_id": "event_00429",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.44645997
+    },
+    {
+      "event_id": "event_00430",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.71406916
+    },
+    {
+      "event_id": "event_00431",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.64485019
+    },
+    {
+      "event_id": "event_00432",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.5494532
+    },
+    {
+      "event_id": "event_00433",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.64727559
+    },
+    {
+      "event_id": "event_00434",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.48168376
+    },
+    {
+      "event_id": "event_00435",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.42471019
+    },
+    {
+      "event_id": "event_00436",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.56961081
+    },
+    {
+      "event_id": "event_00437",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.47211975
+    },
+    {
+      "event_id": "event_00438",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.47785046
+    },
+    {
+      "event_id": "event_00439",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.52237767
+    },
+    {
+      "event_id": "event_00440",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.46524173
+    },
+    {
+      "event_id": "event_00441",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.60562788
+    },
+    {
+      "event_id": "event_00442",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.49831439
+    },
+    {
+      "event_id": "event_00443",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.49600702
+    },
+    {
+      "event_id": "event_00444",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.65629574
+    },
+    {
+      "event_id": "event_00445",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.48854585
+    },
+    {
+      "event_id": "event_00446",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.63245301
+    },
+    {
+      "event_id": "event_00447",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.51680097
+    },
+    {
+      "event_id": "event_00448",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.51236264
+    },
+    {
+      "event_id": "event_00449",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.66444932
+    },
+    {
+      "event_id": "event_00450",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.56849455
+    },
+    {
+      "event_id": "event_00451",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.65244606
+    },
+    {
+      "event_id": "event_00452",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.53106295
+    },
+    {
+      "event_id": "event_00453",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.52705209
+    },
+    {
+      "event_id": "event_00454",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.6718237
+    },
+    {
+      "event_id": "event_00455",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.5833389
+    },
+    {
+      "event_id": "event_00456",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.53058836
+    },
+    {
+      "event_id": "event_00457",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.62440436
+    },
+    {
+      "event_id": "event_00458",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.42763672
+    },
+    {
+      "event_id": "event_00459",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.39593334
+    },
+    {
+      "event_id": "event_00460",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.3907231
+    },
+    {
+      "event_id": "event_00461",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.31079974
+    },
+    {
+      "event_id": "event_00462",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.35134722
+    },
+    {
+      "event_id": "event_00463",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.48016106
+    },
+    {
+      "event_id": "event_00464",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.43957846
+    },
+    {
+      "event_id": "event_00465",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.46698802
+    },
+    {
+      "event_id": "event_00466",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.36320156
+    },
+    {
+      "event_id": "event_00467",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.37959569
+    },
+    {
+      "event_id": "event_00468",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.63563329
+    },
+    {
+      "event_id": "event_00469",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.47035526
+    },
+    {
+      "event_id": "event_00470",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.52787651
+    },
+    {
+      "event_id": "event_00471",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.40131722
+    },
+    {
+      "event_id": "event_00472",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.40608589
+    },
+    {
+      "event_id": "event_00473",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.64577663
+    },
+    {
+      "event_id": "event_00474",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.54042418
+    },
+    {
+      "event_id": "event_00475",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.57436226
+    },
+    {
+      "event_id": "event_00476",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.4349865
+    },
+    {
+      "event_id": "event_00477",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.43062622
+    },
+    {
+      "event_id": "event_00478",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.65494116
+    },
+    {
+      "event_id": "event_00479",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.56531029
+    },
+    {
+      "event_id": "event_00480",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.51587768
+    },
+    {
+      "event_id": "event_00481",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.68802222
+    },
+    {
+      "event_id": "event_00482",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.48347323
+    },
+    {
+      "event_id": "event_00483",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.42138686
+    },
+    {
+      "event_id": "event_00484",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.5109538
+    },
+    {
+      "event_id": "event_00485",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.35474393
+    },
+    {
+      "event_id": "event_00486",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.50534944
+    },
+    {
+      "event_id": "event_00487",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.5254398
+    },
+    {
+      "event_id": "event_00488",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.46092412
+    },
+    {
+      "event_id": "event_00489",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.56157255
+    },
+    {
+      "event_id": "event_00490",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.40075598
+    },
+    {
+      "event_id": "event_00491",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.52075783
+    },
+    {
+      "event_id": "event_00492",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.6931771
+    },
+    {
+      "event_id": "event_00493",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.48977977
+    },
+    {
+      "event_id": "event_00494",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.59962833
+    },
+    {
+      "event_id": "event_00495",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.43310365
+    },
+    {
+      "event_id": "event_00496",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.53457883
+    },
+    {
+      "event_id": "event_00497",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.69785533
+    },
+    {
+      "event_id": "event_00498",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.57234553
+    },
+    {
+      "event_id": "event_00499",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.62798689
+    },
+    {
+      "event_id": "event_00500",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.46042016
+    },
+    {
+      "event_id": "event_00501",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.54695445
+    },
+    {
+      "event_id": "event_00502",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.70210433
+    },
+    {
+      "event_id": "event_00503",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.59196523
+    },
+    {
+      "event_id": "event_00504",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.53003373
+    },
+    {
+      "event_id": "event_00505",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.74499339
+    },
+    {
+      "event_id": "event_00506",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.51918433
+    },
+    {
+      "event_id": "event_00507",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.53246708
+    },
+    {
+      "event_id": "event_00508",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.62636531
+    },
+    {
+      "event_id": "event_00509",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.45548389
+    },
+    {
+      "event_id": "event_00510",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.47148576
+    },
+    {
+      "event_id": "event_00511",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.55375232
+    },
+    {
+      "event_id": "event_00512",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.55309213
+    },
+    {
+      "event_id": "event_00513",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.64790314
+    },
+    {
+      "event_id": "event_00514",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.48498885
+    },
+    {
+      "event_id": "event_00515",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.4902594
+    },
+    {
+      "event_id": "event_00516",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.7451601
+    },
+    {
+      "event_id": "event_00517",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.56666518
+    },
+    {
+      "event_id": "event_00518",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.66400042
+    },
+    {
+      "event_id": "event_00519",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.50299784
+    },
+    {
+      "event_id": "event_00520",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.50719118
+    },
+    {
+      "event_id": "event_00521",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.74531337
+    },
+    {
+      "event_id": "event_00522",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.59200259
+    },
+    {
+      "event_id": "event_00523",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.67609059
+    },
+    {
+      "event_id": "event_00524",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.52055502
+    },
+    {
+      "event_id": "event_00525",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.52241139
+    },
+    {
+      "event_id": "event_00526",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.7454543
+    },
+    {
+      "event_id": "event_00527",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.60815587
+    },
+    {
+      "event_id": "event_00528",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.58693278
+    },
+    {
+      "event_id": "event_00529",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.50292764
+    },
+    {
+      "event_id": "event_00530",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.4826511
+    },
+    {
+      "event_id": "event_00531",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.38305837
+    },
+    {
+      "event_id": "event_00532",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.33207875
+    },
+    {
+      "event_id": "event_00533",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.33743017
+    },
+    {
+      "event_id": "event_00534",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.35122444
+    },
+    {
+      "event_id": "event_00535",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.52384298
+    },
+    {
+      "event_id": "event_00536",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.42878107
+    },
+    {
+      "event_id": "event_00537",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.41692603
+    },
+    {
+      "event_id": "event_00538",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.38698854
+    },
+    {
+      "event_id": "event_00539",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.37947975
+    },
+    {
+      "event_id": "event_00540",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.52534265
+    },
+    {
+      "event_id": "event_00541",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.46001819
+    },
+    {
+      "event_id": "event_00542",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.48834617
+    },
+    {
+      "event_id": "event_00543",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.42498566
+    },
+    {
+      "event_id": "event_00544",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.40597788
+    },
+    {
+      "event_id": "event_00545",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.54584026
+    },
+    {
+      "event_id": "event_00546",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.57024514
+    },
+    {
+      "event_id": "event_00547",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.54434198
+    },
+    {
+      "event_id": "event_00548",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.45479999
+    },
+    {
+      "event_id": "event_00549",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.43052669
+    },
+    {
+      "event_id": "event_00550",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.56450718
+    },
+    {
+      "event_id": "event_00551",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.58710208
+    },
+    {
+      "event_id": "event_00552",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.50842214
+    },
+    {
+      "event_id": "event_00553",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.50450622
+    },
+    {
+      "event_id": "event_00554",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.46557759
+    },
+    {
+      "event_id": "event_00555",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.37971697
+    },
+    {
+      "event_id": "event_00556",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.43714938
+    },
+    {
+      "event_id": "event_00557",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.35445428
+    },
+    {
+      "event_id": "event_00558",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.40562618
+    },
+    {
+      "event_id": "event_00559",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.5103134
+    },
+    {
+      "event_id": "event_00560",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.42584293
+    },
+    {
+      "event_id": "event_00561",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.50449492
+    },
+    {
+      "event_id": "event_00562",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.40092264
+    },
+    {
+      "event_id": "event_00563",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.43020255
+    },
+    {
+      "event_id": "event_00564",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.52678947
+    },
+    {
+      "event_id": "event_00565",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.45760434
+    },
+    {
+      "event_id": "event_00566",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.5566682
+    },
+    {
+      "event_id": "event_00567",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.43508792
+    },
+    {
+      "event_id": "event_00568",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.45275504
+    },
+    {
+      "event_id": "event_00569",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.5471601
+    },
+    {
+      "event_id": "event_00570",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.56094976
+    },
+    {
+      "event_id": "event_00571",
+      "active_hidden_dimensions": [
+        "hidden_progressive"
+      ],
+      "response_probability": 0.59596369
+    },
+    {
+      "event_id": "event_00572",
+      "active_hidden_dimensions": [
+        "hidden_progressive",
+        "hidden_passive",
+        "hidden_negative"
+      ],
+      "response_probability": 0.46236198
+    },
+    {
+      "event_id": "event_00573",
+      "active_hidden_dimensions": [
+        "hidden_question",
+        "hidden_modal"
+      ],
+      "response_probability": 0.47329489
+    },
+    {
+      "event_id": "event_00574",
+      "active_hidden_dimensions": [],
+      "response_probability": 0.56570696
+    },
+    {
+      "event_id": "event_00575",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_negative"
+      ],
+      "response_probability": 0.57993622
+    },
+    {
+      "event_id": "event_00576",
+      "active_hidden_dimensions": [
+        "hidden_past",
+        "hidden_passive"
+      ],
+      "response_probability": 0.50656424
+    }
+  ]
+}

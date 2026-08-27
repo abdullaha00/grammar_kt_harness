@@ -1,0 +1,1 @@
+{"naturalness":5,"answer_ambiguity":false,"pedagogical_suitability":2,"world_knowledge_required":false,"lexical_cefr_appropriate":true,"dialogue_coherence":1,"pragmatic_licensing":1,"natural_speaker_turns":4,"context_appropriateness":1,"note":"The response is natural in isolation but contradicts the stated context: a cold room calls for closing, not opening, the window."}

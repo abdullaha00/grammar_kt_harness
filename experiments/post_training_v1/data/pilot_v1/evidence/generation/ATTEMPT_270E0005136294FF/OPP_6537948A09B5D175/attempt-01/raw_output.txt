@@ -1,0 +1,1 @@
+{"content":{"turns":[{"speaker":"A","text":"Is the front door locked?"}],"learner_prompt":"B: No, it ___ (lock)."},"target_answer":"is not locked","accepted_answers":["is not locked","isn't locked"]}

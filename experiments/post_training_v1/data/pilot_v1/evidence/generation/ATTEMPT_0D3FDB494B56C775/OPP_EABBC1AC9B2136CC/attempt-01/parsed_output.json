@@ -1,0 +1,16 @@
+{
+  "accepted_answers": [
+    "Close the window, please.",
+    "Please close the window."
+  ],
+  "content": {
+    "learner_prompt": "B: ______ the window, please.",
+    "turns": [
+      {
+        "speaker": "A",
+        "text": "The room is cold."
+      }
+    ]
+  },
+  "target_answer": "Close the window, please."
+}

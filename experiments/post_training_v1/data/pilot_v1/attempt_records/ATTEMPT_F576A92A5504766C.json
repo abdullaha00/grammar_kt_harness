@@ -1,0 +1,32 @@
+{
+  "attempt_id": "ATTEMPT_F576A92A5504766C",
+  "candidate": null,
+  "canonical_cell_id": "CELL_0A7F3FA2D498D97D",
+  "canonical_split": "development",
+  "collection_revision": 2,
+  "generation_evidence": "experiments/post_training_v1/data/pilot_v1/evidence/generation/ATTEMPT_F576A92A5504766C",
+  "generation_model": "gpt-5.6-luna",
+  "generation_rejection": {
+    "attempts": [
+      {
+        "accepted": false,
+        "attempt": 1,
+        "rejection_reasons": [
+          "accepted_answers must be unique strings containing target_answer"
+        ]
+      }
+    ],
+    "generator_id": "llm_standalone_v0",
+    "measurement_opportunity_id": "OPP_411173C3591C0528",
+    "rejection_reason": "generation exhausted all attempts"
+  },
+  "item_format": "standalone",
+  "measurement_opportunity_id": "OPP_411173C3591C0528",
+  "post_training_split": "train",
+  "runtime_seconds": 8.429772588999185,
+  "sample_index": 1,
+  "status": "generation_failure",
+  "structurally_valid": false,
+  "validation_reasons": [],
+  "validator_model": "gpt-5.6-terra"
+}
