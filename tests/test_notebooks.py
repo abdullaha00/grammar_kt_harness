@@ -117,6 +117,9 @@ class NotebookSmokeTests(unittest.TestCase):
         ):
             self.assertIn(heading, markdown)
         self.assertIn("The five boxes are scientific groupings", markdown)
+        self.assertIn("Research modularity: which files are intended to change?", markdown)
+        self.assertIn("A new language should version the whole bundle coherently", markdown)
+        self.assertIn("there is intentionally no independent Q-matrix policy file", markdown)
         self.assertIn("Controlled methodology demonstration (not derived from the five EGP records)", markdown)
         self.assertIn("simulation oracle features ≠ candidate KCs", markdown)
         self.assertIn("LIVE_MODE = False", code)

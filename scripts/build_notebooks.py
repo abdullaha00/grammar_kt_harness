@@ -126,6 +126,39 @@ unit_cells = [
     ),
     markdown(
         r'''
+        ## Research modularity: which files are intended to change?
+
+        In this notebook, **research-modular** means an explicitly named, versioned input that
+        can be exchanged to define a new experimental condition—another language, source sample,
+        measurement policy, generator, KC hypothesis family, oracle, or KT configuration.
+        Swapping one is a scientific intervention and should produce a new manifest/fingerprint.
+
+        Python modules implement the contracts and transformations. They are normally held
+        stable across comparisons. Where a language change requires different derivation logic
+        rather than different declarations, the table says so explicitly: that is a versioned
+        code-level intervention, not a hidden configuration tweak.
+
+        | Executable stage | Intended research-modular files/artifacts | What can be changed without rewriting the stage contract? |
+        | --- | --- | --- |
+        | `source` | [`base.yaml`](../experiments/base.yaml), external snapshot selected through `GRAMMAR_KT_EGP_SOURCE`, [`sample_ids.txt`](../modules/grammar/source/sample_ids.txt), [`sample_metadata.jsonl`](../modules/grammar/source/sample_metadata.jsonl), [`annotation_units.jsonl`](../modules/grammar/source/annotation_units.jsonl) | Source language/resource, verified snapshot, sampling frame, strata, and reliability design. `source.py` remains the verification/projection mechanism. |
+        | `normalisation` | [`phase1.txt`](../modules/grammar/normalisation/prompts/phase1.txt), [`phase2.txt`](../modules/grammar/normalisation/prompts/phase2.txt), [`wrapper.txt`](../modules/grammar/normalisation/prompts/wrapper.txt), [`rulebook.md`](../modules/grammar/normalisation/rules/rulebook.md), [`model_instructions.md`](../modules/grammar/normalisation/rules/model_instructions.md), [`mapping_schema.json`](../modules/grammar/normalisation/configs/mapping_schema.json), [`backend.yaml`](../modules/grammar/normalisation/configs/backend.yaml) | The annotation protocol, linguistic guidance, model/backend, and response contract. Phase prompt paths and backend are configured by the experiment today; wrapper/rulebook/instructions/schema are versionable research files currently resolved from their standard module paths. A new language should version the whole bundle coherently. |
+        | `canonical` | [`grammar_schema.yaml`](../modules/grammar/canonical/grammar_schema.yaml) | Canonical dimensions, values, and cross-field constraints. `schema.py` and `canonical.py` are stable validation/deduplication mechanics; a language with different categories needs a new versioned schema and compatible mapping contract. |
+        | `measurement` | [`default.json`](../modules/measurement/opportunities/default.json) | Which declared opportunity expansions are active. The English operation and agreement rules currently live in `operations.py`/`opportunities.py`; a language requiring different derivations needs a named code-level implementation plus tests, because those rules are not yet a data-only plug-in. |
+        | `generation` | [`llm_standalone_v0.yaml`](../modules/generation/generators/llm_standalone_v0.yaml), [`llm_dialogue_v0.yaml`](../modules/generation/generators/llm_dialogue_v0.yaml), generation prompts/instructions/output schemas, [`blind_v0.yaml`](../modules/generation/validation/blind_v0.yaml), validation prompts/schemas, and backend YAML files | Surface language, exercise format, lexical/register constraints, generator/evaluator models, and validation protocol—while retaining the fixed MeasurementOpportunity interface and blind-target boundary. |
+        | `knowledge_selection` | [`deterministic_v0.json`](../modules/knowledge/selection/configs/deterministic_v0.json), [`structural_v0.json`](../modules/knowledge/selection/candidate_families/structural_v0.json), [`marked_operational_v0.json`](../modules/knowledge/selection/obligations/marked_operational_v0.json), and the fold manifest | Candidate KC hypotheses, eligibility/support thresholds, obligation vocabulary, selector inputs, and development/holdout design. `selection.py` remains the deterministic selection/freeze algorithm. |
+        | `knowledge` | The frozen selected-policy artifact or a declared predefined policy such as [`factorized.json`](../modules/knowledge/policies/factorized.json), plus the fold manifest | Which already-frozen ontology is projected. `policy.py` is intentionally a generic structural rule evaluator; generated text is not a modular input here. |
+        | `qmatrix` | Accepted item bank and frozen item→KC projection artifacts | No independent research configuration is intended. `qmatrix.py` is deliberately mechanical: changing the matrix requires changing the upstream bank or frozen policy, not adding an unrecorded Q-matrix rule. |
+        | `simulation` | [`structural_oracle_v0.json`](../modules/evaluation/simulation/configs/structural_oracle_v0.json), seed/scale in experiment config, and fold manifest | Oracle feature declaration, learner profiles, learning/noise parameters, scale, and protocol. A different response/update equation is a named code-level simulator version, not merely a seed change. |
+        | `kt` | [`default.json`](../modules/evaluation/kt/configs/default.json), technique list and fold manifest in experiment config | Smoothing, BKT/logistic parameters, enabled baselines, calibration/bootstrap settings, and evaluation partition. `kt.py` keeps observable pre-event projection/fitting mechanics fixed. |
+
+        The five conceptual boxes therefore expose different kinds of modularity. Some modules
+        are declaration-driven; some deliberately have no local knob because they must remain
+        mechanical; and some current English assumptions are explicit code-level research
+        definitions that require a new implementation version for cross-linguistic work.
+        '''
+    ),
+    markdown(
+        r'''
         ## Evidence mode and reproducibility
 
         The safe default is **replay mode**. It passes retained real model outputs back through
@@ -333,6 +366,26 @@ unit_cells = [
         - [`grammar_schema.yaml`](../modules/grammar/canonical/grammar_schema.yaml): authoritative six dimensions, values, and cross-field constraints.
         - [`schema.py`](../src/grammar_kt/grammar/schema.py): loads and cross-checks the declarative schema.
         - [`canonical.py`](../src/grammar_kt/grammar/canonical.py): retains complete mappings, deduplicates cells, and writes source edges.
+
+        ### Intended research-modular inputs
+
+        - **Source/sample module:** external snapshot, sample IDs, sampling metadata, and
+          annotation units may be exchanged to study another resource, language, population of
+          descriptors, or reliability design.
+        - **Normalisation protocol module:** Phase-1/Phase-2 prompts, wrapper, rulebook, model
+          instructions, output schema, and backend are a coherent versioned bundle. For a new
+          language, these are the primary adaptation surface: the rulebook defines the linguistic
+          analysis and the prompts operationalise it. The Phase prompt paths and backend are
+          experiment-configurable today. The wrapper, rulebook, instructions, and mapping schema
+          are currently loaded from standard paths in `normalisation.py`; they are intended to be
+          versioned research resources, but parallel language bundles would require exposing
+          those paths in configuration rather than silently overwriting the English files.
+        - **Canonical ontology module:** `grammar_schema.yaml` is the authoritative research
+          declaration. A cross-linguistic study may replace it, but must update the mapping
+          schema/prompts coherently and create a new experiment fingerprint.
+        - **Stable mechanics:** `source.py`, `normalisation.py`, `schema.py`, and `canonical.py`
+          enforce isolation, validation, provenance, and exact deduplication. They are not
+          intended to be edited merely to select a new language or prompt.
         '''
     ),
     markdown(
@@ -618,6 +671,20 @@ unit_cells = [
         [`build_measurement_opportunities`](../src/grammar_kt/measurement/opportunities.py),
         [`derive_operations`](../src/grammar_kt/measurement/operations.py), and
         [`derive_agreement_site`](../src/grammar_kt/measurement/operations.py).
+
+        ### Intended research-modular inputs
+
+        - `default.json` is the current data-level measurement-policy module: it selects
+          predicate-class contrasts and agreement variants.
+        - The canonical schema inherited from Grammar defines which structural categories can
+          reach Measurement.
+        - English operation, agreement, WH, and imperative derivations currently reside in
+          `operations.py` and `opportunities.py`. They are scientifically modular in the sense
+          that another language can supply a versioned implementation, but they are **not**
+          currently runtime-swappable JSON. Such a port should add tests and an explicit
+          implementation/version identifier rather than conditionals hidden in the notebook.
+        - Opportunity IDs and record validation are stable mechanics; generator prompts are
+          deliberately not measurement inputs.
         '''
     ),
     markdown(
@@ -773,6 +840,19 @@ unit_cells = [
         - [`structural_prompt.txt`](../modules/generation/validation/structural_prompt.txt) and [`structural_schema.json`](../modules/generation/validation/structural_schema.json): blind structural reconstruction.
         - [`quality_prompt.txt`](../modules/generation/validation/quality_prompt.txt) and [`quality_schema.json`](../modules/generation/validation/quality_schema.json): non-acceptance quality diagnostics.
         - [`evaluator_instructions.md`](../modules/generation/validation/evaluator_instructions.md): evaluator constraints.
+
+        ### Intended research-modular inputs
+
+        - **Generator condition:** each generator YAML chooses a mode, prompt, instructions,
+          output schema, constraints, and backend. New languages or exercise formats should be
+          introduced as new named configurations while preserving the opportunity interface.
+        - **Validation condition:** evaluator config, blind structural prompt/schema, quality
+          prompt/schema, and evaluator instructions are separately replaceable. A language port
+          must keep the structural evaluator's ontology aligned with the Grammar/Measurement
+          declarations without exposing the intended target.
+        - **Stable mechanics:** `generators.py`, `items.py`, and `validation.py` enforce the fixed
+          target, candidate identity, hard checks, blind boundary, and acceptance comparison.
+          KC policy, folds, and simulation state are never legitimate generator modules.
         '''
     ),
     markdown(
@@ -1095,6 +1175,21 @@ unit_cells = [
         - [`core.json`](../modules/knowledge/selection/fixtures/core.json): controlled 12-cell development/holdout selection demonstration.
         - [`factorized.json`](../modules/knowledge/policies/factorized.json), [`factorized_plus_interactions.json`](../modules/knowledge/policies/factorized_plus_interactions.json), and [`full_cell.json`](../modules/knowledge/policies/full_cell.json): predefined comparison policies; they are linked controls, not silently substituted below.
         - [`fold_manifest.json`](../reference/pipeline_walkthrough/fold_manifest.json): exact structural split for this five-cell mini-run.
+
+        ### Intended research-modular inputs
+
+        - **Selection hypotheses:** candidate-family JSON, obligation-policy JSON, selector config,
+          and structural fold are the intended discovery/selection interventions. They can vary
+          across ontology experiments while `selection.py` holds the algorithm fixed.
+        - **Frozen ontology:** `knowledge_selection` produces a selected-policy artifact. The
+          `knowledge` stage may instead receive a named predefined control policy, but it must
+          never switch policies implicitly or refit on holdouts.
+        - **Projection:** `policy.py` is stable rule-application machinery. The accepted item bank
+          enters only through MeasurementOpportunity references; generated wording is not a
+          configurable KC-discovery input.
+        - **Q-matrix:** there is intentionally no independent Q-matrix policy file. `qmatrix.py`
+          mechanically materializes the frozen projection, so any research change must be
+          attributed upstream to the item bank or ontology.
         '''
     ),
     markdown(
@@ -1463,6 +1558,18 @@ unit_cells = [
         - [`fold_manifest.json`](../reference/pipeline_walkthrough/fold_manifest.json): canonical structural split reused unchanged.
         - [`compare.py`](../scripts/compare.py): learner-level comparison/uncertainty workflow for full experiments.
         - [`run_scientific_checks.py`](../scripts/run_scientific_checks.py): repository-level scientific audit entry point.
+
+        ### Intended research-modular inputs
+
+        - **Simulation condition:** oracle declaration, learner profiles, response/learning
+          parameters, protocol scale, seed, and structural fold are named research inputs. A new
+          language normally changes oracle activation rules to match its structural evidence;
+          changing the response equation itself requires a versioned simulator implementation.
+        - **KT condition:** KT parameter JSON, enabled technique list, calibration/bootstrap
+          settings, and fold are replaceable comparison inputs.
+        - **Stable boundaries:** `simulation.py` must remain independent of candidate KCs, and
+          `kt.py` must consume only observable pre-event data plus frozen item→KC projection.
+          Private oracle state is never a valid KT configuration.
         '''
     ),
     markdown(
