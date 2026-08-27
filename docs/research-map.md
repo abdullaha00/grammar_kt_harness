@@ -27,7 +27,7 @@ The active system is organised around five questions rather than historical impl
 
 | Surface | Purpose | Correctness boundary |
 |---|---|---|
-| `notebooks/module_unit_examples.ipynb` | Compact executable tour and paired-format invariant | Orientation and smoke testing |
+| `notebooks/module_unit_examples.ipynb` | Primary sequential methodology walkthrough over five authentic EGP descriptors and retained real model evidence | Researcher orientation, audit, explanation, and smoke testing |
 | `notebooks/research_audit.ipynb` | Manual audit of assumptions, contracts, leakage, failures, and metrics | Researcher judgement; never auto-certifies methodology |
 | `tests/` | Exhaustive software and scientific-boundary regression | Detects implementation drift; does not replace linguistic validation |
 

@@ -1,0 +1,25 @@
+{
+  "kind": "fixture_map",
+  "responses": {
+    "u001": {
+      "phase1": {"egp_id":"1741163708336x930002080700909000","result":"partial","cells":[{"tense":["present","past"],"aspect":"none","voice":"active","polarity":"positive","clause":"polar_question","modal":"none"}],"note":"phase2 eligible: tense"},
+      "phase2": {"egp_id":"1741163708336x930002080700909000","result":"complete","cells":[{"tense":"present","aspect":"none","voice":"active","polarity":"positive","clause":"polar_question","modal":"none"},{"tense":"past","aspect":"none","voice":"active","polarity":"positive","clause":"polar_question","modal":"none"}],"note":"phase2 eligible: tense"}
+    },
+    "u033": {
+      "phase1": {"egp_id":"1741163713121x303053781636601900","result":"complete","cells":[{"tense":"present","aspect":"progressive","voice":"active","polarity":"negative","clause":"declarative","modal":"none"}],"note":null}
+    },
+    "u075": {
+      "phase1": {"egp_id":"1741163712047x352927366474730100","result":"complete","cells":[{"tense":"past","aspect":"none","voice":"passive","polarity":"positive","clause":"declarative","modal":"none"}],"note":null}
+    },
+    "u079": {
+      "phase1": {"egp_id":"1741163712048x581247857975133000","result":"complete","cells":[{"tense":"past","aspect":"none","voice":"passive","polarity":"positive","clause":"declarative","modal":"none"}],"note":null}
+    },
+    "u113": {
+      "phase1": {"egp_id":"1741163711300x444537304178034940","result":"complete","cells":[{"tense":"NA","aspect":"none","voice":"active","polarity":"positive","clause":"declarative","modal":"would"}],"note":null}
+    },
+    "u140": {
+      "phase1": {"egp_id":"1741163708336x930002080700909000","result":"partial","cells":[{"tense":["present","past"],"aspect":"none","voice":"active","polarity":"positive","clause":"polar_question","modal":"none"}],"note":"phase2 eligible: tense"},
+      "phase2": {"egp_id":"1741163708336x930002080700909000","result":"complete","cells":[{"tense":"present","aspect":"none","voice":"active","polarity":"positive","clause":"polar_question","modal":"none"},{"tense":"past","aspect":"none","voice":"active","polarity":"positive","clause":"polar_question","modal":"none"}],"note":"phase2 eligible: tense"}
+    }
+  }
+}

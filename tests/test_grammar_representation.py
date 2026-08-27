@@ -111,6 +111,51 @@ class SourceAndNormalisationTests(unittest.TestCase):
         changed_aspect["cells"][0]["aspect"] = "perfect"
         self.assertTrue(validate_phase2_transition(first, changed_aspect))
 
+    def test_phase_specific_fixture_map_replays_two_phase_evidence(self) -> None:
+        record = {
+            "egp_id": "E",
+            "supercategory": "CLAUSES",
+            "subcategory": "interrogatives",
+            "guideword": "AFFIRMATIVE INTERROGATIVE",
+            "can_do": "Can form present or past polar questions.",
+            "examples": ["Do you agree?", "Did you agree?"],
+        }
+        phase1 = {
+            "egp_id": "E",
+            "result": "partial",
+            "cells": [{**PAST_POSITIVE, "tense": ["present", "past"], "clause": "polar_question"}],
+            "note": "phase2 eligible: tense",
+        }
+        phase2 = {
+            "egp_id": "E",
+            "result": "complete",
+            "cells": [
+                {**PAST_POSITIVE, "tense": "present", "clause": "polar_question"},
+                {**PAST_POSITIVE, "tense": "past", "clause": "polar_question"},
+            ],
+            "note": "phase2 eligible: tense",
+        }
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            result = normalisation.normalise_one(
+                record,
+                phase1_template=(ROOT / "modules/grammar/normalisation/prompts/phase1.txt").read_text(),
+                phase2_template=(ROOT / "modules/grammar/normalisation/prompts/phase2.txt").read_text(),
+                backend_config={
+                    "kind": "fixture_map",
+                    "responses": {"U1": {"phase1": phase1, "phase2": phase2}},
+                },
+                max_attempts=1,
+                output=root / "normalisation",
+                unit_id="U1",
+            )
+            self.assertEqual(result["phase1"], phase1)
+            self.assertEqual(result["phase2"], phase2)
+            self.assertEqual(result["output"], phase2)
+            self.assertTrue(
+                (root / "normalisation/units/U1/phase2_fixture_response.json").is_file()
+            )
+
     def test_zero_cell_unresolved_never_routes_to_phase2(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

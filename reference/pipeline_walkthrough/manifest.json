@@ -1,0 +1,66 @@
+{
+  "reference_id": "PIPELINE_WALKTHROUGH_REAL_EVIDENCE_v1",
+  "claim_boundary": "Five authentic source rows and retained model outputs replayed through active contracts; illustrative notebook execution, not paper evidence or fresh model inference.",
+  "source": {
+    "snapshot_sha256": "e38c4f959f188150dae7b88f21e35d77828048772e222191818dc0c2488486cd",
+    "snapshot_records": 1222,
+    "declared_sample_descriptors": 139,
+    "retained_source_run_git_commit": "d58834e0ffc32bd1ee86866bc75506247a6d7c50",
+    "retained_source_run_clean": true
+  },
+  "selection": {
+    "count": 5,
+    "criterion": "Complete real annotations maximizing coverage of tense, negation, progressive aspect, questions, passive voice, and central modality; include repeated annotation and real deduplication; require accepted active-generation evidence; break ties by declared sample order.",
+    "egp_ids": [
+      "1741163708336x930002080700909000",
+      "1741163713121x303053781636601900",
+      "1741163712047x352927366474730100",
+      "1741163712048x581247857975133000",
+      "1741163711300x444537304178034940"
+    ]
+  },
+  "normalisation": {
+    "backend": "codex_exec",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "collected_utc_range": ["2026-08-20T12:21:25.186863+00:00", "2026-08-20T12:32:07.283267+00:00"],
+    "primary_units": ["u001", "u033", "u075", "u079", "u113"],
+    "repeated_units": ["u140"]
+  },
+  "generation": {
+    "candidate_count": 6,
+    "accepted_count": 6,
+    "standalone": 4,
+    "dialogue": 2,
+    "retained_pilot": {
+      "experiment_id": "active_generation_preferences_v1",
+      "git_commit": "c3e6508d39b3a3e5fa0a42a1f5079697f4fb37e1",
+      "git_dirty": true,
+      "generation_model": "gpt-5.6-luna",
+      "validator_model": "gpt-5.6-terra",
+      "items_used": 5
+    },
+    "walkthrough_pair": {
+      "collected_utc": "2026-08-27T02:54:00.263797+00:00",
+      "generation_model": "gpt-5.6-sol",
+      "validator_model": "gpt-5.6-terra",
+      "model_snapshot_pinned": false,
+      "decoding_parameters_pinned": false,
+      "item_id": "ITEM_66561BFD664029B8",
+      "measurement_opportunity_id": "OPP_DA35D6B379FF278E"
+    }
+  },
+  "paid_calls_during_replay": false,
+  "artifact_sha256": {
+    "README.md": "574b63b25840ff9389c67cb1e7dcf561f31e7119e84f0260c18dbd21f3cb4ac4",
+    "sample_ids.txt": "5534cfa44a2d41988f908b8408d741d43a1228a7ee8ff891a36905dd9357a34f",
+    "sample_metadata.jsonl": "f8a852cb33cbd34b6d9b1aed5c21eb2731726ecf0bdec195b93768ce0b29334d",
+    "annotation_units.jsonl": "f357d8bfc5f247c4e2dd3c728702376d5f1e8a9370d61d3102168c2b1c10f36e",
+    "source_records.jsonl": "2555b577aadb20245733d8b5c57c4808cef2d0c12cd5341820faf8ad14c844e5",
+    "normalisation_replay.json": "447426b3f411078a7b100cb64f3576e710763ba666bb174a1169e47d20b55964",
+    "generation_replay.json": "7836209895423799170e97c762985261bbd98c9eb6c012e90944d07865ddd67c",
+    "validation_replay.json": "234548cc38200aede1e24ea2612ba1bfda3b138572b49fc11a8316940a03a492",
+    "fold_manifest.json": "8decef6797bac65e9133f1270a8e1b99fa959eaefb152bae6459e7d2339ff46d",
+    "simulation_config.json": "4a85be0c8c92b1a4b89fd45aa70d370d2cafa654765933ce5a2757b0e6bdca4d"
+  }
+}

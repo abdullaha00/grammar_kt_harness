@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any
 
 from ..backend import invoke_model, save_model_result
-from ..io import ROOT, read_jsonl, read_yaml, repo_path, write_json, write_jsonl
+from ..io import ROOT, read_json, read_jsonl, read_yaml, repo_path, write_json, write_jsonl
 from .normalisation_validation import RESULTS, parse_raw_mapping, validate_mapping, validate_phase2_transition
 from .normalisation_reliability import analyse_repeated_normalisations
 from .schema import prompt_declaration
@@ -25,6 +25,34 @@ PHASE1_FIELDS = ("egp_id", "supercategory", "subcategory", "guideword", "can_do"
 
 # Model invocation and validation
 
+
+def _fixture_backend(
+    backend_config: dict[str, Any], unit_id: str, phase: int, unit_root: Path
+) -> dict[str, Any]:
+    """Resolve retained, phase-specific model evidence for offline replay."""
+
+    if backend_config.get("kind") != "fixture_map":
+        return backend_config
+    fixture_data = (
+        backend_config
+        if "responses" in backend_config or "default" in backend_config
+        else read_json(repo_path(backend_config["response_file"]))
+    )
+    unit_responses = fixture_data.get("responses", {}).get(unit_id)
+    response = (
+        unit_responses.get(f"phase{phase}")
+        if isinstance(unit_responses, dict)
+        else None
+    )
+    if response is None:
+        default = fixture_data.get("default")
+        response = default.get(f"phase{phase}") if isinstance(default, dict) else default
+    if response is None:
+        raise KeyError(f"normalisation fixture lacks {unit_id} phase {phase}")
+    response_path = unit_root / f"phase{phase}_fixture_response.json"
+    write_json(response_path, response)
+    return {"kind": "fixture_file", "response_file": str(response_path)}
+
 def invoke_and_validate(
     *,
     phase: int,
@@ -39,6 +67,9 @@ def invoke_and_validate(
 ) -> dict[str, Any]:
     phase_dir = unit_root / f"phase{phase}"
     phase_dir.mkdir(parents=True, exist_ok=False)
+    selected_backend = _fixture_backend(
+        backend_config, unit_id, phase, unit_root
+    )
     attempts = []
     for number in range(1, max_attempts + 1):
         attempt = phase_dir / f"attempt-{number:02d}"
@@ -48,7 +79,7 @@ def invoke_and_validate(
             output_schema=OUTPUT_SCHEMA,
             instructions=MODEL_INSTRUCTIONS,
             unit_dir=attempt,
-            backend_config=backend_config,
+            backend_config=selected_backend,
         )
         mapping, errors = parse_raw_mapping(raw_path.read_text(encoding="utf-8"))
         if returncode:

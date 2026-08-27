@@ -1,0 +1,12 @@
+{
+  "standalone": {
+    "OPP_DA35D6B379FF278E": {"content":{"prompt":"_____ Maria _____ TV every evening? (watch)"},"target_answer":"Does Maria watch TV every evening?","accepted_answers":["Does Maria watch TV every evening?"]},
+    "OPP_7E1E0B371E1A07AD": {"content":{"prompt":"The children ______ the classroom now; they are outside. (clean)"},"target_answer":"aren't cleaning","accepted_answers":["aren't cleaning"]},
+    "OPP_DF15F4EA275D224B": {"content":{"prompt":"If Mia had more free time, she ____ her grandmother every week."},"target_answer":"would visit","accepted_answers":["would visit"]},
+    "OPP_F1BFD8A774DAED74": {"content":{"prompt":"_____ the children watch the film yesterday?"},"target_answer":"Did the children watch the film yesterday?","accepted_answers":["Did the children watch the film yesterday?"]}
+  },
+  "dialogue": {
+    "OPP_DA35D6B379FF278E": {"content":{"turns":[{"speaker":"A","text":"Mia has a drink with breakfast, but I don't know which one."}],"learner_prompt":"B: ______ coffee?"},"target_answer":"Does she drink","accepted_answers":["Does she drink"]},
+    "OPP_772FF9B236FFEC3C": {"content":{"learner_prompt":"B: The window ______ by the ball.","turns":[{"speaker":"A","text":"What happened to the window?"}]},"target_answer":"was broken","accepted_answers":["was broken"]}
+  }
+}

@@ -166,11 +166,11 @@ Run and retain the small A–F scientific checks:
 
 ## Research notebooks and automated tests
 
-- [`module_unit_examples.ipynb`](notebooks/module_unit_examples.ipynb) is the compact executable five-module tour.
+- [`module_unit_examples.ipynb`](notebooks/module_unit_examples.ipynb) is the primary researcher-facing executable walkthrough: five authentic EGP descriptors, retained real model evidence, all five scientific modules, and end-to-end provenance.
 - [`research_audit.ipynb`](notebooks/research_audit.ipynb) audits configuration, contracts, assumptions, leakage boundaries, examples, failures, and metrics for every box.
 - [`tests/`](tests/) checks software and scientific boundaries; tests do not establish linguistic or cognitive validity.
 
-Both notebooks execute with deterministic fixture transports. The smoke test executes every code cell in order, so public scientific-interface drift fails the suite.
+The walkthrough defaults to cost-free replay of fingerprinted real model evidence; live mode is explicit and requires the verified external EGP snapshot. Both notebooks execute with deterministic transports in smoke tests. The smoke test executes every code cell in order, so public scientific-interface drift fails the suite.
 
 ```bash
 .venv/bin/python -m pytest -q

@@ -1,0 +1,5 @@
+{
+  "extends": "../../modules/evaluation/simulation/configs/structural_oracle_v0.json",
+  "learners_per_profile": 1,
+  "item_passes_per_learner": 2
+}

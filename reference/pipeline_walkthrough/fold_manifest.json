@@ -1,0 +1,16 @@
+{
+  "fold_id": "PIPELINE_WALKTHROUGH_FOLD_v1",
+  "require_all_declared_cells": true,
+  "require_exact_inventory": true,
+  "development_cell_ids": [
+    "CELL_868FF555B70CAE2A",
+    "CELL_B6AF2E896B998C79",
+    "CELL_E7EC123EE518CC58"
+  ],
+  "compositional_holdout_cell_ids": [
+    "CELL_D02189D0DFD84070"
+  ],
+  "novel_feature_holdout_cell_ids": [
+    "CELL_0ACC7E0377B19DC1"
+  ]
+}

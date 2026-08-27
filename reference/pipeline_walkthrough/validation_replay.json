@@ -1,0 +1,52 @@
+{
+  "records": [
+    {
+      "measurement_opportunity_id": "OPP_DA35D6B379FF278E",
+      "generator_id": "llm_standalone_v0",
+      "origin_item_id": "ITEM_4DB496889BDEB7D8",
+      "structural": {"agreement_site":"do","cell":{"aspect":"none","clause":"polar_question","modal":"none","polarity":"positive","tense":"present","voice":"active"},"operations":["do_support","operator_inversion"],"predicate_class":"lexical_transitive"},
+      "quality": {"answer_ambiguity":false,"context_appropriateness":null,"dialogue_coherence":null,"lexical_cefr_appropriate":true,"natural_speaker_turns":null,"naturalness":5,"note":"Natural, unambiguous present-simple question completion; vocabulary is basic and requires no world knowledge.","pedagogical_suitability":5,"pragmatic_licensing":null,"world_knowledge_required":false},
+      "provenance": {"attempt_id":"ATTEMPT_D80DEE264A30CC68","generation_model":"gpt-5.6-luna","validator_model":"gpt-5.6-terra","source":"active_generation_preferences_v1"}
+    },
+    {
+      "measurement_opportunity_id": "OPP_DA35D6B379FF278E",
+      "generator_id": "llm_dialogue_v0",
+      "origin_item_id": "ITEM_66561BFD664029B8",
+      "structural": {"cell":{"tense":"present","aspect":"none","voice":"active","polarity":"positive","clause":"polar_question","modal":"none"},"operations":["do_support","operator_inversion"],"predicate_class":"lexical_transitive","agreement_site":"do"},
+      "quality": {"naturalness":5,"answer_ambiguity":false,"pedagogical_suitability":5,"world_knowledge_required":false,"lexical_cefr_appropriate":true,"dialogue_coherence":5,"pragmatic_licensing":5,"natural_speaker_turns":5,"context_appropriateness":5,"note":"Natural, clear dialogue completion with simple, level-appropriate vocabulary."},
+      "provenance": {"attempt_id":"walkthrough-live-20260827","generation_model":"gpt-5.6-sol","validator_model":"gpt-5.6-terra","source":"controlled_walkthrough_pair"}
+    },
+    {
+      "measurement_opportunity_id": "OPP_7E1E0B371E1A07AD",
+      "generator_id": "llm_standalone_v0",
+      "origin_item_id": "ITEM_4659E7E4E38B7D22",
+      "structural": {"agreement_site":"be","cell":{"aspect":"progressive","clause":"declarative","modal":"none","polarity":"negative","tense":"present","voice":"active"},"operations":["progressive","negation"],"predicate_class":"lexical_transitive"},
+      "quality": {"answer_ambiguity":false,"context_appropriateness":null,"dialogue_coherence":null,"lexical_cefr_appropriate":true,"natural_speaker_turns":null,"naturalness":5,"note":"Natural, clear standalone present-continuous completion; the response fits the context.","pedagogical_suitability":5,"pragmatic_licensing":null,"world_knowledge_required":false},
+      "provenance": {"attempt_id":"ATTEMPT_5917A86B3844E6EC","generation_model":"gpt-5.6-luna","validator_model":"gpt-5.6-terra","source":"active_generation_preferences_v1"}
+    },
+    {
+      "measurement_opportunity_id": "OPP_772FF9B236FFEC3C",
+      "generator_id": "llm_dialogue_v0",
+      "origin_item_id": "ITEM_7CB64E564D469690",
+      "structural": {"agreement_site":"be","cell":{"aspect":"none","clause":"declarative","modal":"none","polarity":"positive","tense":"past","voice":"passive"},"operations":["be_passive"],"predicate_class":"lexical_transitive"},
+      "quality": {"answer_ambiguity":false,"context_appropriateness":5,"dialogue_coherence":5,"lexical_cefr_appropriate":true,"natural_speaker_turns":5,"naturalness":5,"note":"Natural, coherent dialogue completion with a clear and contextually appropriate answer.","pedagogical_suitability":5,"pragmatic_licensing":5,"world_knowledge_required":false},
+      "provenance": {"attempt_id":"ATTEMPT_82B116B15DBC99DF","generation_model":"gpt-5.6-luna","validator_model":"gpt-5.6-terra","source":"active_generation_preferences_v1"}
+    },
+    {
+      "measurement_opportunity_id": "OPP_DF15F4EA275D224B",
+      "generator_id": "llm_standalone_v0",
+      "origin_item_id": "ITEM_119960EA6CC97E89",
+      "structural": {"agreement_site":"modal","cell":{"aspect":"none","clause":"declarative","modal":"would","polarity":"positive","tense":"NA","voice":"active"},"operations":["central_modal"],"predicate_class":"lexical_transitive"},
+      "quality": {"answer_ambiguity":false,"context_appropriateness":null,"dialogue_coherence":null,"lexical_cefr_appropriate":true,"natural_speaker_turns":null,"naturalness":5,"note":"Natural, clear standalone conditional-completion item; the response fits the sentence.","pedagogical_suitability":5,"pragmatic_licensing":null,"world_knowledge_required":false},
+      "provenance": {"attempt_id":"ATTEMPT_AAD8DBE74A36ED64","generation_model":"gpt-5.6-luna","validator_model":"gpt-5.6-terra","source":"active_generation_preferences_v1"}
+    },
+    {
+      "measurement_opportunity_id": "OPP_F1BFD8A774DAED74",
+      "generator_id": "llm_standalone_v0",
+      "origin_item_id": "ITEM_BD031D92F1F9C3B7",
+      "structural": {"agreement_site":"do","cell":{"aspect":"none","clause":"polar_question","modal":"none","polarity":"positive","tense":"past","voice":"active"},"operations":["do_support","operator_inversion"],"predicate_class":"lexical_transitive"},
+      "quality": {"answer_ambiguity":false,"context_appropriateness":null,"dialogue_coherence":null,"lexical_cefr_appropriate":true,"natural_speaker_turns":null,"naturalness":5,"note":"Natural, unambiguous standalone past-simple question completion; vocabulary is broadly CEFR-appropriate and no world knowledge is needed.","pedagogical_suitability":5,"pragmatic_licensing":null,"world_knowledge_required":false},
+      "provenance": {"attempt_id":"ATTEMPT_7DF536F705B67A75","generation_model":"gpt-5.6-luna","validator_model":"gpt-5.6-terra","source":"active_generation_preferences_v1"}
+    }
+  ]
+}
