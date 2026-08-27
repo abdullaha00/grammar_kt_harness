@@ -3,6 +3,7 @@ from __future__ import annotations
 import ast
 import json
 from pathlib import Path
+from unittest.mock import patch
 
 from grammar_kt.io import ROOT, load_experiment, repo_path
 
@@ -47,12 +48,48 @@ def test_runner_reads_as_the_pipeline_without_registry_or_hashes() -> None:
     assert "registry" not in lowered and "sha256" not in lowered and "fingerprint" not in lowered
 
 
-def test_walkthrough_notebook_executes_current_pipeline(tmp_path) -> None:
-    notebook = json.loads((ROOT / "notebooks/walkthrough.ipynb").read_text(encoding="utf-8"))
+def test_pipeline_walkthrough_notebook_executes_current_pipeline_without_live_calls() -> None:
+    path = ROOT / "notebooks/pipeline_walkthrough.ipynb"
+    assert path.is_file()
+    notebook = json.loads(path.read_text(encoding="utf-8"))
+    source_text = "\n".join(
+        "".join(cell["source"]) if isinstance(cell["source"], list) else cell["source"]
+        for cell in notebook["cells"]
+    )
+    required_calls = [
+        "load_typed_resource(", "normalise(", "canonicalise(", "generate_items(",
+        "validate_items(", "bank_summary(", "apply_fold(", "simulate(",
+        "build_or_select_kcs(", "project_kcs(", "run_kt(", "evaluate(",
+    ]
+    assert all(call in source_text for call in required_calls)
+    assert "LIVE_MODE = False" in source_text
+    code_cells = [cell for cell in notebook["cells"] if cell["cell_type"] == "code"]
+    assert all(cell["execution_count"] is not None for cell in code_cells)
+    assert not any(
+        output.get("output_type") == "error"
+        for cell in code_cells
+        for output in cell["outputs"]
+    )
+
     namespace = {"__name__": "__notebook_test__"}
-    for index, cell in enumerate(notebook["cells"]):
-        if cell["cell_type"] == "code":
-            source = "".join(cell["source"]) if isinstance(cell["source"], list) else cell["source"]
-            exec(compile(source, f"walkthrough.ipynb:{index}", "exec"), namespace)
-    assert namespace["items"][0]["item_id"] == "item_001"
-    assert namespace["events"]
+    with patch("grammar_kt.io.subprocess.run", side_effect=AssertionError("live model call")):
+        for index, cell in enumerate(notebook["cells"]):
+            if cell["cell_type"] == "code":
+                source = "".join(cell["source"]) if isinstance(cell["source"], list) else cell["source"]
+                exec(compile(source, f"pipeline_walkthrough.ipynb:{index}", "exec"), namespace)
+
+    assert namespace["LIVE_MODE"] is False
+    assert namespace["config"]["normalisation"]["model"] == "fixture"
+    assert namespace["accepted_items"][0]["item_id"] == "item_001"
+    assert namespace["WALKTHROUGH_SUMMARY"] == {
+        "live_mode": False,
+        "source_descriptors": 6,
+        "mappings": 6,
+        "canonical_cells": 6,
+        "candidate_items": 6,
+        "accepted_items": 6,
+        "learners": 8,
+        "events": 96,
+        "baseline_kcs": 7,
+        "kt_techniques": ["empirical", "bkt", "logistic"],
+    }

@@ -7,6 +7,8 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
+from tqdm.auto import tqdm
+
 from .io import ModelCall, call_model, read_text, read_yaml, render
 
 
@@ -17,6 +19,7 @@ def validate_items(
     *,
     model_call: ModelCall = call_model,
     evidence_dir: Path | None = None,
+    show_progress: bool = False,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """Judge candidates independently; accept only items passing every required criterion."""
 
@@ -26,7 +29,13 @@ def validate_items(
     cells_by_id = {cell["cell_id"]: cell for cell in cells}
     accepted = []
     judgments = []
-    for candidate in candidates:
+    candidate_rows = tqdm(
+        candidates,
+        desc="Validating items",
+        disable=not show_progress,
+        unit="item",
+    )
+    for candidate in candidate_rows:
         if candidate["cell_id"] not in cells_by_id:
             raise ValueError(f"item refers to unknown GrammarCell: {candidate['item_id']}")
         visible_item = {name: candidate[name] for name in ("item_id", "format", "prompt", "target_answer", "accepted_answers")}

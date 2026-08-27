@@ -6,6 +6,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from tqdm.auto import tqdm
+
 from .io import ModelCall, call_model, read_text, read_yaml, render
 
 
@@ -72,6 +74,7 @@ def normalise(
     *,
     model_call: ModelCall = call_model,
     evidence_dir: Path | None = None,
+    show_progress: bool = False,
 ) -> list[dict[str, Any]]:
     """Normalise typed descriptors in source order using the declared two phases."""
 
@@ -82,7 +85,13 @@ def normalise(
     schema_text = read_text(config["canonical_schema"])
     mappings = []
 
-    for resource in resources:
+    resource_rows = tqdm(
+        resources,
+        desc="Normalising descriptors",
+        disable=not show_progress,
+        unit="descriptor",
+    )
+    for resource in resource_rows:
         source_id = resource["source_id"]
         phase1_descriptor = {name: resource[name] for name in PHASE1_FIELDS}
         prompt = render(
