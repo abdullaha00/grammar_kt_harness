@@ -4,15 +4,13 @@ from __future__ import annotations
 
 from typing import Any
 
-from .io import read_yaml
-
-
 SPLITS = {"development", "compositional_holdout", "novel_feature_holdout"}
 
 
-def apply_fold(cells: list[dict[str, Any]], config: dict[str, Any]) -> list[dict[str, Any]]:
-    manifest = read_yaml(config["manifest"])
-    declared = manifest["assignments"]
+def apply_fold(
+    cells: list[dict[str, Any]], fold_spec: dict[str, Any]
+) -> list[dict[str, Any]]:
+    declared = fold_spec["assignments"]
     cell_ids = {cell["cell_id"] for cell in cells}
     if set(declared) != cell_ids:
         raise ValueError("fold manifest must assign every and only canonical cell")

@@ -8,7 +8,7 @@ from typing import Any
 
 import numpy as np
 
-from .io import read_yaml, write_json
+from .io import write_json
 
 
 def _matches(features: dict[str, str], condition: dict[str, Any]) -> bool:
@@ -27,9 +27,9 @@ def _difficulty(features: dict[str, str], world: dict[str, Any], active_count: i
     policy = world["difficulty"]
     value = policy["base"] + policy["per_active_dimension"] * active_count
     if features["voice"] == "passive":
-        value += policy.get("passive_extra", 0.0)
+        value += policy["passive_extra"]
     if features["clause"] != "declarative":
-        value += policy.get("question_extra", 0.0)
+        value += policy["question_extra"]
     return float(value)
 
 
@@ -45,14 +45,13 @@ def _temporal_split(sequence_index: int, event_count: int, policy: dict[str, flo
 def simulate(
     accepted_items: list[dict[str, Any]],
     fold: list[dict[str, Any]],
-    config: dict[str, Any],
+    world: dict[str, Any],
     *,
     oracle_path: Path | None = None,
 ) -> list[dict[str, Any]]:
     """Generate fixed BaseEvents without reading candidate KC definitions."""
 
-    world = read_yaml(config["world"])
-    rng = np.random.default_rng(int(world["seed"]))
+    rng = np.random.default_rng(world["seed"])
     fold_by_cell = {row["cell_id"]: row for row in fold}
     if {item["cell_id"] for item in accepted_items} - set(fold_by_cell):
         raise ValueError("accepted item bank contains an unknown GrammarCell")
@@ -60,8 +59,8 @@ def simulate(
     hidden = world["hidden_dimensions"]
     events = []
     oracle_rows = []
-    total_per_learner = len(accepted_items) * int(world["passes"])
-    for learner_number in range(1, int(world["learners"]) + 1):
+    total_per_learner = len(accepted_items) * world["passes"]
+    for learner_number in range(1, world["learners"] + 1):
         learner_id = f"learner_{learner_number:03d}"
         mastery = {
             dimension["id"]: float(rng.beta(*dimension["initial_mastery_beta"]))
@@ -69,7 +68,7 @@ def simulate(
         }
         background = float(rng.beta(*world["background_mastery_beta"]))
         sequence_index = 0
-        for pass_number in range(int(world["passes"])):
+        for pass_number in range(world["passes"]):
             offset = pass_number % len(accepted_items)
             ordered_items = accepted_items[offset:] + accepted_items[:offset]
             for item in ordered_items:

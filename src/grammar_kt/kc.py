@@ -6,8 +6,6 @@ import csv
 from pathlib import Path
 from typing import Any
 
-from .io import read_yaml, repo_path
-
 
 def _cell_matches(features: dict[str, str], conditions: dict[str, Any]) -> bool:
     for field, expected in conditions.items():
@@ -65,7 +63,10 @@ def _discover_candidates(
     for declaration in candidate_space["families"]["interactions"]["allowed"]:
         conditions = declaration["conditions"]
         cell_condition = {field: value for field, value in conditions}
-        if any(_cell_matches(cell["features"], cell_condition) for cell in development_cells):
+        if any(
+            _cell_matches(cell["features"], cell_condition)
+            for cell in development_cells
+        ):
             candidates.append(
                 {
                     "id": declaration["id"],
@@ -93,53 +94,66 @@ def _select_candidates(
                 continue
             new = set(candidate["represents"]) & obligations - covered
             if new:
-                ranked.append((-len(new), len(candidate["conditions"]), candidate["id"], candidate, new))
+                ranked.append(
+                    (
+                        -len(new),
+                        len(candidate["conditions"]),
+                        candidate["id"],
+                        candidate,
+                        new,
+                    )
+                )
         if not ranked:
-            raise ValueError(f"candidate space cannot cover obligations: {sorted(obligations - covered)}")
-        _count, _complexity, _name, chosen, newly_covered = sorted(ranked, key=lambda row: row[:3])[0]
+            raise ValueError(
+                "candidate space cannot cover obligations: "
+                f"{sorted(obligations - covered)}"
+            )
+        _count, _complexity, _name, chosen, newly_covered = sorted(
+            ranked, key=lambda row: row[:3]
+        )[0]
         selected.append(chosen)
         covered.update(newly_covered)
-        trace.append({"step": len(trace) + 1, "selected": chosen["id"], "new_obligations": sorted(newly_covered)})
+        trace.append(
+            {
+                "step": len(trace) + 1,
+                "selected": chosen["id"],
+                "new_obligations": sorted(newly_covered),
+            }
+        )
 
-    if selector.get("backward_prune"):
+    if selector["backward_prune"]:
         for candidate in list(reversed(selected)):
             remaining = [row for row in selected if row is not candidate]
-            remaining_coverage = set().union(*(set(row["represents"]) for row in remaining)) if remaining else set()
+            remaining_coverage = (
+                set().union(*(set(row["represents"]) for row in remaining))
+                if remaining
+                else set()
+            )
             if obligations <= remaining_coverage:
                 selected = remaining
                 trace.append({"step": len(trace) + 1, "pruned": candidate["id"]})
     return selected, trace
 
 
-def build_or_select_kcs(
+def select_kcs(
     cells: list[dict[str, Any]],
     items: list[dict[str, Any]],
     fold: list[dict[str, Any]],
-    config: dict[str, Any],
+    candidate_space: dict[str, Any],
+    obligation_policy: dict[str, Any],
+    selector: dict[str, Any],
 ) -> dict[str, Any]:
-    """Load a predefined hypothesis or select one from development records only."""
+    """Select and freeze a KC policy from development grammar records only."""
 
-    if config["mode"] == "predefined":
-        policy = read_yaml(config["policy"])
-        return {
-            **policy,
-            "selection_metadata": {
-                "mode": "predefined",
-                "policy_declared_before_projection": True,
-                "items_or_outcomes_used": False,
-            },
-        }
-    if config["mode"] != "selected":
-        raise ValueError(f"unknown KC mode: {config['mode']}")
-
-    development_ids = {row["cell_id"] for row in fold if row["grammar_split"] == "development"}
+    development_ids = {
+        row["cell_id"]
+        for row in fold
+        if row["grammar_split"] == "development"
+    }
     # Held-out cells are excluded before candidate discovery so that selection
     # cannot use their grammatical content or generated wording.
     development_cells = [cell for cell in cells if cell["cell_id"] in development_ids]
     development_items = [item for item in items if item["cell_id"] in development_ids]
-    candidate_space = read_yaml(config["candidates"])
-    obligation_policy = read_yaml(config["obligations"])
-    selector = read_yaml(config["selector"])
     obligations = {
         f"{field}={value}"
         for row in obligation_policy["required"]
@@ -154,7 +168,10 @@ def build_or_select_kcs(
     ]
     return {
         "policy_id": "development_selected",
-        "description": "Deterministic policy selected on development grammar records and then frozen.",
+        "description": (
+            "Deterministic policy selected on development grammar records "
+            "and then frozen."
+        ),
         "kcs": kcs,
         "selection_metadata": {
             "mode": "selected",
@@ -177,22 +194,33 @@ def project_kcs(
     rows = []
     for item in items:
         if item["cell_id"] not in cells_by_id:
-            raise ValueError(f"KC projection refers to unknown GrammarCell: {item['item_id']}")
+            raise ValueError(
+                f"KC projection refers to unknown GrammarCell: {item['item_id']}"
+            )
         features = cells_by_id[item["cell_id"]]["features"]
         if policy.get("kind") == "full_cell":
             kc_ids = [policy["kc_id_pattern"].format(cell_id=item["cell_id"])]
         else:
-            kc_ids = [row["id"] for row in policy["kcs"] if activation_matches(features, row["activation"])]
+            kc_ids = [
+                row["id"]
+                for row in policy["kcs"]
+                if activation_matches(features, row["activation"])
+            ]
         rows.append({"item_id": item["item_id"], "kc_ids": kc_ids})
     return rows
 
 
 def write_q_matrix(path: str | Path, projection: list[dict[str, Any]]) -> None:
     kc_ids = sorted({kc_id for row in projection for kc_id in row["kc_ids"]})
-    target = repo_path(path)
+    target = Path(path)
     target.parent.mkdir(parents=True, exist_ok=True)
     with target.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.writer(handle)
         writer.writerow(["item_id", *kc_ids])
         for row in projection:
-            writer.writerow([row["item_id"], *(int(kc_id in row["kc_ids"]) for kc_id in kc_ids)])
+            writer.writerow(
+                [
+                    row["item_id"],
+                    *(int(kc_id in row["kc_ids"]) for kc_id in kc_ids),
+                ]
+            )

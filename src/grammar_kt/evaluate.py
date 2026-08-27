@@ -7,7 +7,6 @@ from typing import Any
 import numpy as np
 from sklearn.metrics import roc_auc_score
 
-from .io import read_yaml
 from .validate_items import bank_summary
 
 
@@ -27,7 +26,7 @@ def _prediction_metrics(targets: np.ndarray, probabilities: np.ndarray, bins: in
         if np.any(mask):
             ece += float(np.mean(mask)) * abs(float(np.mean(probabilities[mask])) - float(np.mean(targets[mask])))
     return {
-        "n": int(len(targets)),
+        "n": len(targets),
         "log_loss": log_loss,
         "brier_score": brier,
         "auc": auc,
@@ -118,9 +117,8 @@ def evaluate(
     policy: dict[str, Any],
     projection: list[dict[str, Any]],
     predictions: list[dict[str, Any]],
-    config: dict[str, Any],
+    protocol: dict[str, Any],
 ) -> dict[str, Any]:
-    protocol = read_yaml(config["protocol"])
     dataset = bank_summary(candidates, accepted_items, judgments, cells)
     dataset["grammar_cell_coverage"] = (
         dataset["covered_cells"] / dataset["grammar_cells"] if dataset["grammar_cells"] else 0.0

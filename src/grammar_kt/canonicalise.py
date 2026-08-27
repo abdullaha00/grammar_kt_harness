@@ -4,8 +4,6 @@ from __future__ import annotations
 
 from typing import Any
 
-from .io import read_yaml
-
 
 def _condition_matches(features: dict[str, str], condition: dict[str, Any]) -> bool:
     for field, expected in condition.items():
@@ -21,30 +19,30 @@ def _condition_matches(features: dict[str, str], condition: dict[str, Any]) -> b
 
 def validate_cell(features: dict[str, str], schema: dict[str, Any]) -> None:
     dimensions = schema["dimensions"]
-    if list(features) != schema["dimension_order"]:
-        raise ValueError("GrammarCell dimensions must follow canonical schema order")
-    for name, value in features.items():
+    for name in schema["dimension_order"]:
+        value = features[name]
         if not isinstance(value, str) or value not in dimensions[name]["allowed_values"]:
             raise ValueError(f"invalid exact GrammarCell value: {name}={value}")
-    for constraint in schema.get("constraints", []):
+    for constraint in schema["constraints"]:
         if _condition_matches(features, constraint["if"]):
             for field, required in constraint["then"].items():
                 if features[field] != required:
                     raise ValueError(f"GrammarCell violates constraint: {constraint['description']}")
 
 
-def canonicalise(mappings: list[dict[str, Any]], schema_path: str) -> list[dict[str, Any]]:
+def canonicalise(
+    mappings: list[dict[str, Any]], grammar_schema: dict[str, Any]
+) -> list[dict[str, Any]]:
     """Keep complete mappings, validate exact cells, deduplicate, and number them."""
 
-    schema = read_yaml(schema_path)
-    dimensions = schema["dimension_order"]
+    dimensions = grammar_schema["dimension_order"]
     unique: dict[tuple[str, ...], dict[str, Any]] = {}
     for mapping in mappings:
         if mapping["result"] != "complete":
             continue
         for raw_cell in mapping["cells"]:
             features = {name: raw_cell[name] for name in dimensions}
-            validate_cell(features, schema)
+            validate_cell(features, grammar_schema)
             key = tuple(features[name] for name in dimensions)
             if key not in unique:
                 unique[key] = {"features": features, "source_ids": []}
@@ -53,5 +51,11 @@ def canonicalise(mappings: list[dict[str, Any]], schema_path: str) -> list[dict[
 
     cells = []
     for number, row in enumerate(unique.values(), 1):
-        cells.append({"cell_id": f"cell_{number:03d}", "features": row["features"], "source_ids": row["source_ids"]})
+        cells.append(
+            {
+                "cell_id": f"cell_{number:03d}",
+                "features": row["features"],
+                "source_ids": row["source_ids"],
+            }
+        )
     return cells

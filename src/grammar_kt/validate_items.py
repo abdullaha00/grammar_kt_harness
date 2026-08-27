@@ -9,23 +9,24 @@ from typing import Any
 
 from tqdm.auto import tqdm
 
-from .io import ModelCall, call_model, read_text, read_yaml, render
+from .io import ModelCall, call_model, render
 
 
 def validate_items(
     candidates: list[dict[str, Any]],
     cells: list[dict[str, Any]],
-    config: dict[str, Any],
+    prompt: str,
+    validation_criteria: dict[str, Any],
     *,
+    model: str,
+    reasoning_effort: str,
     model_call: ModelCall = call_model,
     evidence_dir: Path | None = None,
     show_progress: bool = False,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """Judge candidates independently; accept only items passing every required criterion."""
 
-    template = read_text(config["prompt"])
-    policy = read_yaml(config["criteria"])
-    criteria = policy["criteria"]
+    criteria = validation_criteria["criteria"]
     cells_by_id = {cell["cell_id"]: cell for cell in cells}
     accepted = []
     judgments = []
@@ -38,22 +39,46 @@ def validate_items(
     for candidate in candidate_rows:
         if candidate["cell_id"] not in cells_by_id:
             raise ValueError(f"item refers to unknown GrammarCell: {candidate['item_id']}")
-        visible_item = {name: candidate[name] for name in ("item_id", "format", "prompt", "target_answer", "accepted_answers")}
-        model_input = {"visible_item": visible_item, "target_cell": cells_by_id[candidate["cell_id"]]["features"], "criteria": criteria}
-        prompt = render(template, model_input)
+        visible_item = {
+            name: candidate[name]
+            for name in (
+                "item_id",
+                "format",
+                "prompt",
+                "target_answer",
+                "accepted_answers",
+            )
+        }
+        model_input = {
+            "visible_item": visible_item,
+            "target_cell": cells_by_id[candidate["cell_id"]]["features"],
+            "criteria": criteria,
+        }
+        prompt_text = render(prompt, model_input)
         parsed = model_call(
-            prompt,
-            model_input,
-            config,
-            "validation",
-            candidate["item_id"],
-            evidence_dir / "calls" / candidate["item_id"] if evidence_dir else None,
+            prompt_text,
+            model=model,
+            reasoning_effort=reasoning_effort,
+            input_data=model_input,
+            stage="validation",
+            call_key=candidate["item_id"],
+            evidence_dir=evidence_dir / "calls" / candidate["item_id"] if evidence_dir else None,
         )
         result = parsed["judgments"]
         if set(result) != set(criteria):
             raise ValueError("validator did not judge every declared criterion")
-        passed = all(result[name]["passed"] for name, declaration in criteria.items() if declaration["required"])
-        judgments.append({"item_id": candidate["item_id"], "judgments": result, "accepted": passed})
+        passed = all(
+            result[name]["passed"]
+            for name, declaration in criteria.items()
+            if declaration["required"]
+        )
+        judgments.append(
+            {
+                "item_id": candidate["item_id"],
+                "judgments": result,
+                "accepted": passed,
+            }
+        )
         if passed:
             accepted.append(candidate.copy())
     return accepted, judgments
@@ -82,9 +107,16 @@ def bank_summary(
         "lexical_tokens": len(tokens),
         "lexical_diversity": len(set(tokens)) / len(tokens) if tokens else 0.0,
         "format_distribution": dict(Counter(row["format"] for row in accepted)),
-        "cefr_distribution": dict(Counter(row["generation_metadata"].get("cefr") for row in accepted)),
+        "cefr_distribution": dict(
+            Counter(row["generation_metadata"]["cefr"] for row in accepted)
+        ),
         "criterion_pass_rates": {
-            name: sum(row["judgments"][name]["passed"] for row in judgments) / len(judgments) if judgments else 0.0
+            name: (
+                sum(row["judgments"][name]["passed"] for row in judgments)
+                / len(judgments)
+                if judgments
+                else 0.0
+            )
             for name in criteria
         },
     }

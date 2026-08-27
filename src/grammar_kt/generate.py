@@ -7,14 +7,14 @@ from typing import Any
 
 from tqdm.auto import tqdm
 
-from .io import ModelCall, call_model, read_jsonl, read_text, read_yaml, render
+from .io import ModelCall, call_model, render
 
 
-FORBIDDEN_CONFIG_WORDS = {"kc", "policy", "fold", "simulation", "learner", "event", "kt"}
-MODEL_FIELDS = {"prompt", "target_answer", "accepted_answers", "operation_tags", "note"}
-
-
-def _lexical_material(cell: dict[str, Any], lexicon: list[dict[str, Any]], index: int) -> dict[str, Any]:
+def _lexical_material(
+    cell: dict[str, Any],
+    lexicon: list[dict[str, Any]],
+    index: int,
+) -> dict[str, Any]:
     choices = lexicon
     if cell["features"]["voice"] == "passive":
         choices = [row for row in choices if row["passive_compatible"]]
@@ -23,23 +23,21 @@ def _lexical_material(cell: dict[str, Any], lexicon: list[dict[str, Any]], index
 
 def generate_items(
     cells: list[dict[str, Any]],
-    config: dict[str, Any],
+    prompt: str,
+    rulebook: str,
+    design: dict[str, Any],
+    item_format: dict[str, Any],
+    lexicon: list[dict[str, Any]],
     *,
+    model: str,
+    reasoning_effort: str,
     model_call: ModelCall = call_model,
     evidence_dir: Path | None = None,
     show_progress: bool = False,
 ) -> list[dict[str, Any]]:
     """Generate the declared number of item variants for every GrammarCell."""
 
-    lowered_keys = {key.lower() for key in config}
-    if lowered_keys & FORBIDDEN_CONFIG_WORDS:
-        raise ValueError("item generation config contains forbidden downstream inputs")
-    template = read_text(config["prompt"])
-    rulebook = read_text(config["rulebook"])
-    design = read_yaml(config["design"])
-    item_format = read_yaml(config["format"])
-    lexicon = read_jsonl(config["lexicon"])
-    count = int(design["items_per_cell"])
+    count = design["items_per_cell"]
     items = []
 
     work = [
@@ -62,20 +60,19 @@ def generate_items(
             "design": design,
             "lexical_material": lexical,
         }
-        prompt = render(template, {**model_input, "rulebook": rulebook})
+        prompt_text = render(prompt, {**model_input, "rulebook": rulebook})
         item_id = f"item_{len(items) + 1:03d}"
         parsed = model_call(
-            prompt,
-            model_input,
-            config,
-            "generation",
-            f"{cell['cell_id']}_{variant}",
-            evidence_dir / "calls" / item_id if evidence_dir else None,
+            prompt_text,
+            model=model,
+            reasoning_effort=reasoning_effort,
+            input_data=model_input,
+            stage="generation",
+            call_key=f"{cell['cell_id']}_{variant}",
+            evidence_dir=(
+                evidence_dir / "calls" / item_id if evidence_dir else None
+            ),
         )
-        if set(parsed) != MODEL_FIELDS:
-            raise ValueError("generation result has unexpected fields")
-        if not parsed["prompt"] or not parsed["target_answer"] or not parsed["accepted_answers"]:
-            raise ValueError("generation result lacks a required item field")
         items.append(
             {
                 "item_id": item_id,
@@ -88,8 +85,8 @@ def generate_items(
                 "generation_metadata": {
                     "variant": variant,
                     "lexeme_id": lexical["lexeme_id"],
-                    "cefr": lexical.get("cefr"),
-                    "model": config["model"],
+                    "cefr": lexical["cefr"],
+                    "model": model,
                     "note": parsed["note"],
                 },
             }

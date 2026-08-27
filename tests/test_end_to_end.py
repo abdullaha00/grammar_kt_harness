@@ -8,14 +8,14 @@ import sys
 def test_tiny_pipeline_runs_in_literal_stage_order(tmp_path) -> None:
     output = tmp_path / "run"
     result = subprocess.run(
-        [sys.executable, "scripts/run.py", "fixture", "--output", str(output)],
+        [sys.executable, "scripts/run.py", "--fixture", "--output", str(output)],
         text=True,
         capture_output=True,
         check=False,
     )
     assert result.returncode == 0, result.stdout + result.stderr
     expected = [
-        "resolved_experiment.yaml",
+        "run_settings.json",
         "normalisation/mappings.jsonl",
         "canonical/cells.jsonl",
         "items/candidates.jsonl",
@@ -24,6 +24,7 @@ def test_tiny_pipeline_runs_in_literal_stage_order(tmp_path) -> None:
         "items/bank_summary.json",
         "fold/assignments.jsonl",
         "simulation/events.jsonl",
+        "simulation/oracle_debug.json",
         "kc/frozen_policy.yaml",
         "kc/projection.jsonl",
         "kc/q_matrix.csv",

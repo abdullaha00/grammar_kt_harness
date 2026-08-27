@@ -8,16 +8,18 @@ from typing import Any
 
 from tqdm.auto import tqdm
 
-from .io import ModelCall, call_model, read_text, read_yaml, render
+from .io import ModelCall, call_model, render
 
 
 RESULTS = {"complete", "partial", "out_of_scope", "unresolved"}
 PHASE1_FIELDS = ("source_id", "supercategory", "subcategory", "guideword", "can_do")
 
 
-def _validate_mapping(mapping: dict[str, Any], source_id: str, schema: dict[str, Any]) -> None:
-    if set(mapping) != {"source_id", "result", "cells", "note"}:
-        raise ValueError("NormalisedMapping must contain source_id, result, cells, and note")
+def _validate_mapping(
+    mapping: dict[str, Any],
+    source_id: str,
+    schema: dict[str, Any],
+) -> None:
     if mapping["source_id"] != source_id or mapping["result"] not in RESULTS:
         raise ValueError(f"invalid normalisation result for {source_id}")
     if mapping["result"] in {"out_of_scope", "unresolved"}:
@@ -45,44 +47,56 @@ def _validate_mapping(mapping: dict[str, Any], source_id: str, schema: dict[str,
     if mapping["result"] == "partial":
         if not has_uncertainty:
             raise ValueError(f"{source_id}: partial mapping must retain uncertainty")
-        if not isinstance(mapping["note"], str) or not mapping["note"].startswith("phase2 eligible: "):
+        if not isinstance(mapping["note"], str) or not mapping["note"].startswith(
+            "phase2 eligible: "
+        ):
             raise ValueError(f"{source_id}: partial mapping lacks Phase-2 eligibility note")
 
 
 def _eligible_dimensions(mapping: dict[str, Any]) -> list[str]:
-    note = mapping.get("note") or ""
+    note = mapping["note"] or ""
     if not note.startswith("phase2 eligible: "):
         return []
     declaration = note.removeprefix("phase2 eligible: ").split(";", 1)[0]
-    return [] if declaration == "none" else [value.strip() for value in declaration.split(",")]
+    return (
+        []
+        if declaration == "none"
+        else [value.strip() for value in declaration.split(",")]
+    )
 
 
 def _field_evidence(cells: list[dict[str, Any]], field: str) -> set[str]:
     return {json.dumps(cell[field], sort_keys=True) for cell in cells}
 
 
-def _validate_phase2_transition(first: dict[str, Any], second: dict[str, Any], dimensions: list[str]) -> None:
+def _validate_phase2_transition(
+    first: dict[str, Any],
+    second: dict[str, Any],
+    dimensions: list[str],
+) -> None:
     eligible = set(_eligible_dimensions(first))
     for field in dimensions:
-        if field not in eligible and _field_evidence(first["cells"], field) != _field_evidence(second["cells"], field):
+        if field not in eligible and _field_evidence(
+            first["cells"], field
+        ) != _field_evidence(second["cells"], field):
             raise ValueError(f"Phase 2 changed ineligible dimension: {field}")
 
 
 def normalise(
     resources: list[dict[str, Any]],
-    config: dict[str, Any],
+    phase1_prompt: str,
+    phase2_prompt: str,
+    rulebook: str,
+    grammar_schema: dict[str, Any],
     *,
+    model: str,
+    reasoning_effort: str,
     model_call: ModelCall = call_model,
     evidence_dir: Path | None = None,
     show_progress: bool = False,
 ) -> list[dict[str, Any]]:
     """Normalise typed descriptors in source order using the declared two phases."""
 
-    schema = read_yaml(config["canonical_schema"])
-    rulebook = read_text(config["rulebook"])
-    phase1_template = read_text(config["phase1_prompt"])
-    phase2_template = read_text(config["phase2_prompt"])
-    schema_text = read_text(config["canonical_schema"])
     mappings = []
 
     resource_rows = tqdm(
@@ -95,42 +109,64 @@ def normalise(
         source_id = resource["source_id"]
         phase1_descriptor = {name: resource[name] for name in PHASE1_FIELDS}
         prompt = render(
-            phase1_template,
-            {"descriptor": phase1_descriptor, "canonical_schema": schema_text, "rulebook": rulebook},
+            phase1_prompt,
+            {
+                "descriptor": phase1_descriptor,
+                "canonical_schema": grammar_schema,
+                "rulebook": rulebook,
+            },
         )
         first = model_call(
             prompt,
-            {"descriptor": phase1_descriptor},
-            config,
-            "normalisation.phase1",
-            source_id,
-            evidence_dir / "calls" / f"{source_id}_phase1" if evidence_dir else None,
+            model=model,
+            reasoning_effort=reasoning_effort,
+            input_data={"descriptor": phase1_descriptor},
+            stage="normalisation.phase1",
+            call_key=source_id,
+            evidence_dir=(
+                evidence_dir / "calls" / f"{source_id}_phase1"
+                if evidence_dir
+                else None
+            ),
         )
-        _validate_mapping(first, source_id, schema)
+        _validate_mapping(first, source_id, grammar_schema)
 
         final = first
         eligible = _eligible_dimensions(first)
         if first["result"] == "partial" and eligible and resource["examples"]:
             prompt = render(
-                phase2_template,
+                phase2_prompt,
                 {
                     "descriptor": phase1_descriptor,
                     "phase1_mapping": first,
                     "examples": resource["examples"],
-                    "canonical_schema": schema_text,
+                    "canonical_schema": grammar_schema,
                     "rulebook": rulebook,
                 },
             )
             final = model_call(
                 prompt,
-                {"descriptor": phase1_descriptor, "phase1_mapping": first, "examples": resource["examples"]},
-                config,
-                "normalisation.phase2",
-                source_id,
-                evidence_dir / "calls" / f"{source_id}_phase2" if evidence_dir else None,
+                model=model,
+                reasoning_effort=reasoning_effort,
+                input_data={
+                    "descriptor": phase1_descriptor,
+                    "phase1_mapping": first,
+                    "examples": resource["examples"],
+                },
+                stage="normalisation.phase2",
+                call_key=source_id,
+                evidence_dir=(
+                    evidence_dir / "calls" / f"{source_id}_phase2"
+                    if evidence_dir
+                    else None
+                ),
             )
-            _validate_mapping(final, source_id, schema)
+            _validate_mapping(final, source_id, grammar_schema)
             if final["result"] not in {"unresolved", "out_of_scope"}:
-                _validate_phase2_transition(first, final, schema["dimension_order"])
+                _validate_phase2_transition(
+                    first,
+                    final,
+                    grammar_schema["dimension_order"],
+                )
         mappings.append(final)
     return mappings

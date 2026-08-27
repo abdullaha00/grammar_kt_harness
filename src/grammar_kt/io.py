@@ -1,46 +1,35 @@
-"""Small serialization and model-call helpers used by the chronological stages."""
+"""Small serialization, prompt, and model-call helpers."""
 
 from __future__ import annotations
 
 import json
 import subprocess
-from copy import deepcopy
 from pathlib import Path
 from typing import Any, Callable, Iterable
 
 import yaml
 
-
-ROOT = Path(__file__).resolve().parents[2]
-ModelCall = Callable[[str, dict[str, Any], dict[str, Any], str, str, Path | None], dict[str, Any]]
-
-
-def repo_path(path: str | Path) -> Path:
-    value = Path(path)
-    return value if value.is_absolute() else ROOT / value
+ModelCall = Callable[..., dict[str, Any]]
 
 
 def read_jsonl(path: str | Path) -> list[dict[str, Any]]:
-    rows = []
-    for line in repo_path(path).read_text(encoding="utf-8").splitlines():
-        if line.strip():
-            rows.append(json.loads(line))
-    return rows
+    return [
+        json.loads(line)
+        for line in Path(path).read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
 
 
-def read_yaml(path: str | Path) -> dict[str, Any]:
-    value = yaml.safe_load(repo_path(path).read_text(encoding="utf-8"))
-    if not isinstance(value, dict):
-        raise ValueError(f"expected a YAML mapping: {path}")
-    return value
+def read_yaml(path: str | Path) -> Any:
+    return yaml.safe_load(Path(path).read_text(encoding="utf-8"))
 
 
 def read_text(path: str | Path) -> str:
-    return repo_path(path).read_text(encoding="utf-8")
+    return Path(path).read_text(encoding="utf-8")
 
 
 def write_json(path: str | Path, value: Any) -> None:
-    target = repo_path(path)
+    target = Path(path)
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(
         json.dumps(value, ensure_ascii=False, indent=2, sort_keys=False) + "\n",
@@ -49,7 +38,7 @@ def write_json(path: str | Path, value: Any) -> None:
 
 
 def write_jsonl(path: str | Path, rows: Iterable[dict[str, Any]]) -> None:
-    target = repo_path(path)
+    target = Path(path)
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(
         "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows),
@@ -58,26 +47,18 @@ def write_jsonl(path: str | Path, rows: Iterable[dict[str, Any]]) -> None:
 
 
 def write_yaml(path: str | Path, value: Any) -> None:
-    target = repo_path(path)
+    target = Path(path)
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(
         yaml.safe_dump(value, sort_keys=False, allow_unicode=True), encoding="utf-8"
     )
 
 
-def load_experiment(path_or_name: str | Path = "base") -> dict[str, Any]:
-    """Load one self-contained experiment file; there is no inheritance graph."""
-
-    path = Path(path_or_name)
-    if not path.suffix:
-        path = Path("experiments") / f"{path}.yaml"
-    return read_yaml(path)
-
-
-def load_typed_resource(data_path: str | Path, schema_path: str | Path) -> list[dict[str, Any]]:
+def load_typed_resource(
+    data_path: str | Path, schema: dict[str, Any]
+) -> list[dict[str, Any]]:
     """Read the selected EGP extract and validate its declared evidence fields once."""
 
-    schema = read_yaml(schema_path)
     fields = schema["fields"]
     allowed = set(fields)
     required = {name for name, declaration in fields.items() if declaration["required"]}
@@ -96,7 +77,11 @@ def load_typed_resource(data_path: str | Path, schema_path: str | Path) -> list[
 def render(template: str, values: dict[str, Any]) -> str:
     rendered = template
     for name, value in values.items():
-        replacement = value if isinstance(value, str) else json.dumps(value, ensure_ascii=False, indent=2)
+        replacement = (
+            value
+            if isinstance(value, str)
+            else json.dumps(value, ensure_ascii=False, indent=2)
+        )
         rendered = rendered.replace("{{" + name + "}}", replacement)
     unresolved = [part.split("}}", 1)[0] for part in rendered.split("{{")[1:]]
     if unresolved:
@@ -104,30 +89,39 @@ def render(template: str, values: dict[str, Any]) -> str:
     return rendered
 
 
-def _fixture_response(prompt: str, config: dict[str, Any], stage: str, call_key: str) -> dict[str, Any]:
-    fixtures = read_yaml(config["fixture_responses"])
-    section = fixtures[stage]
+def _fixture_response(
+    prompt: str,
+    fixture_responses: dict[str, Any],
+    stage: str,
+    call_key: str,
+) -> dict[str, Any]:
+    section = fixture_responses[stage]
     entry = section.get(call_key, section.get("default"))
     if entry is None:
         raise KeyError(f"fixture responses lack {stage}/{call_key}")
     for variant in entry.get("variants", []):
         if variant["prompt_contains"] in prompt:
-            return deepcopy(variant["response"])
-    return deepcopy(entry["response"])
+            return variant["response"]
+    return entry["response"]
 
 
 def call_model(
     prompt: str,
+    *,
+    model: str,
+    reasoning_effort: str,
     input_data: dict[str, Any],
-    config: dict[str, Any],
     stage: str,
     call_key: str,
-    evidence_dir: Path | None,
+    evidence_dir: Path | None = None,
+    fixture_responses: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Make one JSON model call and retain the evidence a researcher needs."""
 
-    if config["model"] == "fixture":
-        parsed = _fixture_response(prompt, config, stage, call_key)
+    if model == "fixture":
+        if fixture_responses is None:
+            raise ValueError("fixture model calls require fixture responses")
+        parsed = _fixture_response(prompt, fixture_responses, stage, call_key)
         raw = json.dumps(parsed, ensure_ascii=False)
     else:
         command = [
@@ -137,9 +131,9 @@ def call_model(
             "--sandbox",
             "read-only",
             "--model",
-            config["model"],
+            model,
             "--config",
-            f'model_reasoning_effort="{config.get("reasoning_effort", "medium")}"',
+            f'model_reasoning_effort="{reasoning_effort}"',
             "-",
         ]
         result = subprocess.run(
@@ -154,17 +148,17 @@ def call_model(
 
     if evidence_dir is not None:
         write_json(evidence_dir / "input.json", input_data)
-        target = repo_path(evidence_dir / "rendered_prompt.txt")
+        target = evidence_dir / "rendered_prompt.txt"
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(prompt, encoding="utf-8")
-        raw_target = repo_path(evidence_dir / "raw_output.txt")
+        raw_target = evidence_dir / "raw_output.txt"
         raw_target.write_text(raw + "\n", encoding="utf-8")
         write_json(evidence_dir / "parsed_result.json", parsed)
         write_json(
             evidence_dir / "model_settings.json",
             {
-                "model": config["model"],
-                "reasoning_effort": config.get("reasoning_effort"),
+                "model": model,
+                "reasoning_effort": reasoning_effort,
             },
         )
     return parsed

@@ -15,7 +15,7 @@ clean, versioned, and retained.
 | E07 | Phase 2 is restricted to licensed refinement of partial Phase-1 mappings. | `src/grammar_kt/normalisation.py`, `src/grammar_kt/normalisation_validation.py`, `modules/normalisation/rules/rulebook.md` | implementation and scientific specification |
 | E08 | Canonical cell IDs are content-derived and equal cells are deduplicated while source edges remain explicit. | `src/grammar_kt/canonical.py`, `src/grammar_kt/io.py` | implementation |
 | E09 | Realization is deterministic over a ten-frame lexicon and records operations. | `src/grammar_kt/realisation.py`, `modules/realisation/lexicons/default.jsonl`, `modules/realisation/rules/default.md` | implementation |
-| E10 | Three KC policy families are available: factorized, interaction-augmented, and full-cell. | `modules/kc/policies/*.json`, `src/grammar_kt/kc.py` | scientific specification and implementation |
+| E10 | Three KC policy families are available: factorized, interaction-augmented, and full-cell. | `modules/kcs/policies/*.yaml`, `src/grammar_kt/kc.py` | scientific specification and implementation |
 | E11 | Item generation is deterministic; acceptance combines deterministic checks with an automated, non-human model diagnostic. | `src/grammar_kt/items.py`, `src/grammar_kt/item_validation.py`, `modules/items/validation/*` | implementation |
 | E12 | The Q-matrix is derived from the frozen cell--KC projection; integrity errors are fatal and descriptive diagnostics are retained. | `src/grammar_kt/qmatrix.py` | implementation |
 | E13 | The simulator uses three 60-learner profiles, two item passes, chronological 60/20/20 splits, and separate observable/oracle records. | `runs/base/simulation/audit.json`, `runs/*/metadata.json` | completed-run evidence |
