@@ -1,0 +1,27 @@
+design_id: english_generator_kcs_v1
+method: declared_reusable_grammar_operations
+description: >-
+  Construct the synthetic generator ontology before learner simulation from
+  explicitly declared, reusable English grammatical operations. The
+  declaration decomposes perfect-progressive cells into shared perfect and
+  progressive operations and does not add response-selected interactions.
+
+support:
+  minimum_cells_per_kc: 1
+  minimum_items_per_kc_before_simulation: 2
+  rare_kc_cell_threshold: 3
+  rare_kc_item_threshold: 6
+
+identifiability:
+  require_nonempty_item_projection: true
+  require_unique_q_columns: true
+  require_full_column_rank: true
+
+interaction_policy:
+  baseline_interactions: []
+  optional_pilot_ids: [perfect_progressive_chain]
+  rationale: >-
+    No interaction is planted in the simplest baseline. The only
+    preregistered optional interaction is the perfect-progressive chain,
+    because it has an a-priori auxiliary-ordering interpretation; it must pass
+    the outcome-free support and independent-recovery pilot before inclusion.

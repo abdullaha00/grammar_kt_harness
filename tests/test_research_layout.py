@@ -68,6 +68,10 @@ def test_active_source_is_one_cohesive_file_per_stage() -> None:
         "kc_selection.py",
         "kt.py",
         "evaluate.py",
+        "full_normalisation.py",
+        "generator_kcs.py",
+        "measurement.py",
+        "model_evidence.py",
     }
     actual = {path.name for path in (ROOT / "src/grammar_kt").glob("*.py")}
     assert actual == expected
@@ -314,11 +318,10 @@ def test_baseline_generation_has_no_controlled_lexicon_dependency() -> None:
         text = path.read_text(encoding="utf-8")
         assert "generation/lexicon.jsonl" not in text
 
+    # Resource provenance such as CEFR is allowed in the upstream EGP adapter,
+    # but it must not leak into item generation or its experiment runners.
     active_source = "\n".join(
-        [
-            *(path.read_text(encoding="utf-8") for path in (ROOT / "src/grammar_kt").glob("*.py")),
-            *(path.read_text(encoding="utf-8") for path in active_paths[:3]),
-        ]
+        path.read_text(encoding="utf-8") for path in active_paths
     )
     for legacy_name in ("passive_compatible", "lexeme_id", '"cefr"'):
         assert legacy_name not in active_source

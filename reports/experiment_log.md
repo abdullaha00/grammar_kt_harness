@@ -1149,3 +1149,53 @@ experiment:
   `reports/backend_thinking/artifacts/live_v1/`,
   `modules/model_backends.yaml`, `scripts/run_backend_thinking_audit.py`, and
   `scripts/analyze_backend_thinking_reviews.py`.
+
+## FULL-AUDIT-001 — revised-framing repository and evidence audit
+
+- **Date:** 2026-08-29
+- **Research question:** What existing artifacts remain valid under the strict
+  `GrammarCell != K* != K_hat` distinction, and what blocks a full baseline?
+- **Motivation:** The retained repository called an outcome-selected,
+  medium-scale experimental pipeline complete, while the revised programme
+  requires an explicit pre-simulation generator ontology and full source
+  census.
+- **Hypothesis:** Linguistic/item/KT components and historical evidence would
+  remain reusable, but the baseline ordering and dataset package would require
+  a new K*/Q*/simulator boundary.
+- **Methodology:** Read-only inspection of git state/branches, every active
+  source module/config/script family, persistent reports, medium artifacts,
+  ignored historical runs, notebooks, tests, manuscript, and the locally
+  available full source. Three independent audits covered linguistic scope,
+  generator-KC design, and code/reproducibility architecture.
+- **Manipulated variable:** None; evidence audit.
+- **Held fixed:** Repository revision `c2e1d21e`, existing working tree, and
+  retained artifacts.
+- **Exact commands:** `git status --short --branch`; `rg --files`; targeted
+  `sed`/`rg`/hash/count inspections; `.venv/bin/python -m pytest -q`; tracked
+  notebook execution checks; ACL force-build and regression checks.
+- **Models/settings:** No live research-model calls. Parallel audit agents used
+  the active Codex environment for independent critique.
+- **Seeds:** None.
+- **Data:** Repository at `c2e1d21e`; exact 1,222-row EGP snapshot with SHA-256
+  `e38c4f...c2488486cd`.
+- **Results:** The old pipeline simulates an implicit world before selecting
+  KCs from outcomes; those KCs are `K_hat`, not K*. The medium dataset has 139
+  descriptors, 24 cells, 44 items, and 204,000 events but no top-level K*, true
+  Q*, or revised interaction schema. The full source is available and exact,
+  but the documented runner is stale, fixture-hardcoded, sequential, and not
+  resumable. Existing normalisation, item, KT, paired-evaluation, and historical
+  experiment evidence remain reusable in their proper layers. All 112 initial
+  Pytest contracts pass; notebooks and the ACL package remain executable.
+- **Uncertainty/failure analysis:** Live model aliases are mutable/unseeded;
+  the source is consult-only; old final reports and paper embody the superseded
+  framing. Dirty user-authored files must remain untouched.
+- **Interpretation:** The programme is not complete under the revised RQs. The
+  minimal scientific repair is a full stage-separated linguistic census,
+  declared K*, deterministic Q* audit, and K*/Q*-consuming simulator before any
+  downstream experiment.
+- **Methodological consequence:** Reopened the programme on
+  `agent/full-dataset-research-program`; classified the medium work as pilot
+  evidence; began `scripts/build_dataset.py`, `modules/kcs/generator/`, and
+  generic generator/Q audit modules.
+- **Artifact paths:** `reports/research_state.md`,
+  `reports/full_v1_protocols/`, and the new full-v1 construction code/config.

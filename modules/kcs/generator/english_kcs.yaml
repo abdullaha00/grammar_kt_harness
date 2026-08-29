@@ -1,0 +1,127 @@
+declaration_id: english_reusable_operations_v1
+language: English
+language_specific: true
+description: >-
+  English generator-KC declarations for the single-clause verbal
+  morphosyntax GrammarCell. Reference values are measurement conditions, not
+  latent KCs. Each rule is projected mechanically from a fixed GrammarCell.
+
+reference_conditions:
+  tense: [NA]
+  aspect: [none]
+  voice: [active]
+  polarity: [positive]
+  clause: [declarative]
+  modal: [none]
+
+fixed_kcs:
+  - id: gkc_finite_present
+    name: present finite-form selection
+    description: Select present finite morphology and agreement conditions.
+    activation_rule: {cell: {tense: present}}
+    linguistic_rationale: >-
+      Present is a reusable finite-form decision across aspect, voice,
+      polarity, and clause type.
+    source_dimensions: [tense]
+
+  - id: gkc_finite_past
+    name: past finite-form selection
+    description: Select past finite morphology on the operator or main verb.
+    activation_rule: {cell: {tense: past}}
+    linguistic_rationale: >-
+      Past is a reusable finite-form decision across aspect, voice, polarity,
+      and clause type.
+    source_dimensions: [tense]
+
+  - id: gkc_aspect_perfect
+    name: perfect construction
+    description: Construct perfect HAVE and its participial dependency.
+    activation_rule:
+      cell: {aspect: [perfect, perfect_progressive]}
+    linguistic_rationale: >-
+      Perfect and perfect-progressive constructions share the perfect HAVE
+      relation; perfect-progressive is therefore compositionally activated.
+    source_dimensions: [aspect]
+  - id: gkc_aspect_progressive
+    name: progressive construction
+    description: Construct progressive BE and its -ing dependency.
+    activation_rule:
+      cell: {aspect: [progressive, perfect_progressive]}
+    linguistic_rationale: >-
+      Progressive and perfect-progressive constructions share the
+      progressive BE relation; perfect-progressive activates both aspect KCs.
+    source_dimensions: [aspect]
+
+  - id: gkc_be_passive
+    name: canonical BE-passive
+    description: Construct passive BE and the lexical past participle.
+    activation_rule: {cell: {voice: passive}}
+    linguistic_rationale: >-
+      Canonical BE-passive adds an auxiliary-participle dependency and changes
+      argument realization.
+    source_dimensions: [voice]
+
+  - id: gkc_negation
+    name: verbal negation
+    description: Place NOT after the finite operator, inserting DO when needed.
+    activation_rule: {cell: {polarity: negative}}
+    linguistic_rationale: >-
+      Negative polarity requires a reusable operator-placement decision.
+    source_dimensions: [polarity]
+
+  - id: gkc_imperative
+    name: imperative clause formation
+    description: Realize an English imperative main clause.
+    activation_rule: {cell: {clause: imperative}}
+    linguistic_rationale: >-
+      Imperative formation is a reusable clause operation distinct from the
+      declarative reference condition.
+    source_dimensions: [clause]
+
+  - id: gkc_polar_question
+    name: polar-question formation
+    description: Form a yes/no question with finite-operator inversion.
+    activation_rule: {cell: {clause: polar_question}}
+    linguistic_rationale: >-
+      Polar questions require a reusable operator-subject ordering operation.
+    source_dimensions: [clause]
+
+  - id: gkc_subject_wh_question
+    name: subject-WH question formation
+    description: Form a main-clause question whose WH expression is the subject.
+    activation_rule: {cell: {clause: subject_wh_question}}
+    linguistic_rationale: >-
+      Subject-WH questions require WH selection without question-triggered
+      operator inversion.
+    source_dimensions: [clause]
+
+  - id: gkc_non_subject_wh_question
+    name: non-subject-WH question formation
+    description: Front a non-subject WH expression and invert the finite operator.
+    activation_rule: {cell: {clause: non_subject_wh_question}}
+    linguistic_rationale: >-
+      Non-subject-WH questions combine WH fronting with operator inversion as
+      one declared baseline clause operation.
+    source_dimensions: [clause]
+
+expanded_dimension_kcs:
+  - dimension: modal
+    excluded_values: [none]
+    id_template: gkc_modal_{value}
+    name_template: central modal {value_upper}
+    description_template: Select central modal {value_upper} and its base-form complement.
+    linguistic_rationale_template: >-
+      The canonical schema distinguishes {value_upper} as a source-defined
+      central-modal meaning/form choice reusable across compatible clauses.
+
+optional_interactions:
+  - id: perfect_progressive_chain
+    kc_id: gkc_interaction_perfect_progressive_chain
+    name: perfect-progressive auxiliary chain
+    description: Order and inflect HAVE + BEEN + present participle as one chain.
+    activation_rule: {cell: {aspect: perfect_progressive}}
+    linguistic_rationale: >-
+      The construction combines the perfect and progressive dependencies in a
+      fixed auxiliary order. It is not part of K* unless its separate mastery
+      is structurally supported and recoverable in the preregistered pilot.
+    source_dimensions: [aspect]

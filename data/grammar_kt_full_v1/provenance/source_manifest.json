@@ -1,0 +1,17 @@
+{
+  "dataset_id": "grammar_kt_full_v1",
+  "resource": "English Grammar Profile consult-only snapshot",
+  "raw_source_sha256": "e38c4f959f188150dae7b88f21e35d77828048772e222191818dc0c2488486cd",
+  "raw_source_rows": 1222,
+  "unique_source_ids": 1222,
+  "extractor_usable": {
+    "False": 4,
+    "True": 1218
+  },
+  "typed_stream_sha256": "c24f43f336adb53a35cd64650a117ac82a0db242c14c7611a86ab53f5f250225",
+  "scope_policy": "All 1,222 descriptors enter Phase 1; each is classified against the declared single-main-clause English verbal-morphosyntax scope.",
+  "redistribution": "Raw descriptor text and rendered model prompts are restricted and not included in the publishable dataset tree.",
+  "resource_schema": "modules/grammar/resource/egp/schema.yaml",
+  "code_revision_at_stage_start": "c2e1d21e893f0e993fb6e3a78ff4e849045a6224",
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/build_dataset.py --stage prepare-source --source /home/abdullah/urop-aug/sources/parsed_final/egp_entries.jsonl"
+}
