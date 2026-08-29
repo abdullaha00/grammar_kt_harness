@@ -56,6 +56,17 @@ def _required(mapping: Mapping[str, Any], key: str, context: str) -> Any:
     return mapping[key]
 
 
+def _exact_keys(
+    mapping: Mapping[str, Any], expected: set[str], context: str
+) -> None:
+    actual = set(mapping)
+    if actual != expected:
+        raise ValueError(
+            f"{context} fields differ: missing={sorted(expected - actual)}, "
+            f"unknown={sorted(actual - expected)}"
+        )
+
+
 def _positive_int(value: Any, context: str) -> int:
     if isinstance(value, bool) or not isinstance(value, int) or value < 1:
         raise ValueError(f"{context} must be a positive integer")
@@ -74,9 +85,44 @@ def _finite_number(value: Any, context: str) -> float:
 def validate_baseline_config(config: Mapping[str, Any]) -> None:
     """Reject configuration that changes the declared baseline semantics."""
 
+    _exact_keys(
+        config,
+        {
+            "simulation_id",
+            "description",
+            "seed",
+            "learners",
+            "initial_mastery",
+            "response",
+            "learning",
+            "schedule",
+            "rng",
+            "learner_ids",
+            "observable_schema",
+            "oracle_mastery_scope",
+        },
+        "simulation config",
+    )
+    if not isinstance(config["simulation_id"], str) or not config["simulation_id"]:
+        raise ValueError("simulation_id must be a non-empty string")
+    if not isinstance(config["description"], str) or not config["description"]:
+        raise ValueError("description must be a non-empty string")
+    configured_seed = config["seed"]
+    if (
+        isinstance(configured_seed, bool)
+        or not isinstance(configured_seed, int)
+        or configured_seed < 0
+    ):
+        raise ValueError("seed must be a non-negative integer")
+
     _positive_int(_required(config, "learners", "simulation config"), "learners")
 
     initial = _required(config, "initial_mastery", "simulation config")
+    _exact_keys(
+        initial,
+        {"distribution", "alpha", "beta", "background_mastery"},
+        "initial_mastery",
+    )
     if initial.get("distribution") != "beta":
         raise ValueError("baseline initial mastery distribution must be beta")
     beta_alpha = _finite_number(
@@ -93,6 +139,11 @@ def validate_baseline_config(config: Mapping[str, Any]) -> None:
         raise ValueError("baseline simulation has no background mastery")
 
     response = _required(config, "response", "simulation config")
+    _exact_keys(
+        response,
+        {"aggregation", "guess", "slip", "item_difficulty"},
+        "response",
+    )
     if response.get("aggregation") != "minimum":
         raise ValueError("baseline response aggregation must be minimum")
     guess = _finite_number(
@@ -107,6 +158,11 @@ def validate_baseline_config(config: Mapping[str, Any]) -> None:
         raise ValueError("baseline simulation has no item difficulty")
 
     learning = _required(config, "learning", "simulation config")
+    _exact_keys(
+        learning,
+        {"rule", "rate", "correctness_conditioned", "forgetting"},
+        "learning",
+    )
     if learning.get("rule") != "all_active_opportunity":
         raise ValueError("baseline learning rule must be all_active_opportunity")
     rate = _finite_number(
@@ -120,6 +176,17 @@ def validate_baseline_config(config: Mapping[str, Any]) -> None:
         raise ValueError("baseline simulation has no forgetting")
 
     schedule = _required(config, "schedule", "simulation config")
+    _exact_keys(
+        schedule,
+        {
+            "grammar_regimes",
+            "acquisition_regime",
+            "acquisition_passes",
+            "item_order",
+            "probe",
+        },
+        "schedule",
+    )
     regimes = _required(schedule, "grammar_regimes", "schedule")
     if (
         not isinstance(regimes, list)
@@ -138,6 +205,11 @@ def validate_baseline_config(config: Mapping[str, Any]) -> None:
         raise ValueError("baseline item order must be keyed_rank")
 
     probe = _required(schedule, "probe", "schedule")
+    _exact_keys(
+        probe,
+        {"timing", "item_scope", "updates_mastery", "repeats"},
+        "schedule.probe",
+    )
     if probe.get("timing") != "terminal":
         raise ValueError("baseline probes must be terminal")
     if probe.get("item_scope") != "all_regimes":
@@ -147,10 +219,12 @@ def validate_baseline_config(config: Mapping[str, Any]) -> None:
     _positive_int(_required(probe, "repeats", "probe"), "probe.repeats")
 
     rng = _required(config, "rng", "simulation config")
+    _exact_keys(rng, {"scheme", "rationale"}, "rng")
     if rng.get("scheme") != "keyed_sha256_v1":
         raise ValueError("baseline RNG scheme must be keyed_sha256_v1")
 
     learner_ids = _required(config, "learner_ids", "simulation config")
+    _exact_keys(learner_ids, {"prefix", "zero_pad_width"}, "learner_ids")
     prefix = learner_ids.get("prefix")
     if not isinstance(prefix, str) or not prefix:
         raise ValueError("learner_ids.prefix must be a non-empty string")
@@ -158,6 +232,10 @@ def validate_baseline_config(config: Mapping[str, Any]) -> None:
         _required(learner_ids, "zero_pad_width", "learner_ids"),
         "learner_ids.zero_pad_width",
     )
+    if list(config["observable_schema"]) != list(OBSERVABLE_FIELDS):
+        raise ValueError("observable_schema differs from the frozen baseline schema")
+    if config["oracle_mastery_scope"] != "active_generator_kcs":
+        raise ValueError("oracle_mastery_scope must be active_generator_kcs")
 
 
 def _generator_kc_ids(
@@ -337,6 +415,8 @@ def simulate_baseline(
 
     if isinstance(seed, bool) or not isinstance(seed, int) or seed < 0:
         raise ValueError("seed must be a non-negative integer")
+    if seed != config["seed"]:
+        raise ValueError("explicit seed differs from simulation config seed")
     ordered_bank, kc_ids, active_by_item = _validate_inputs(
         items, generator_kcs, q_rows, grammar_regime_by_cell, config
     )

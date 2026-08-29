@@ -60,6 +60,7 @@ def _toy_inputs() -> tuple[list[dict], dict, list[dict], dict[str, str], dict]:
 
 def test_generic_explicit_kstar_simulation_has_separate_exact_schemas() -> None:
     items, inventory, q_rows, regimes, config = _toy_inputs()
+    config["seed"] = 917
     interactions, oracle = simulate_baseline(
         items, inventory, q_rows, regimes, config, seed=917
     )
@@ -86,6 +87,7 @@ def test_minimum_response_and_all_active_opportunity_update_are_exact() -> None:
     items, inventory, q_rows, regimes, config = _toy_inputs()
     config["learners"] = 1
     config["schedule"]["acquisition_passes"] = 1
+    config["seed"] = 71
     interactions, oracle = simulate_baseline(
         items, inventory, q_rows, regimes, config, seed=71
     )
@@ -113,6 +115,7 @@ def test_minimum_response_and_all_active_opportunity_update_are_exact() -> None:
 
 def test_keyed_streams_preserve_learner_prefix_and_ignore_input_order() -> None:
     items, inventory, q_rows, regimes, config = _toy_inputs()
+    config["seed"] = 1229
     two_interactions, two_oracle = simulate_baseline(
         items, inventory, q_rows, regimes, config, seed=1229
     )
@@ -134,6 +137,7 @@ def test_keyed_streams_preserve_learner_prefix_and_ignore_input_order() -> None:
 def test_terminal_probe_repeats_share_snapshot_and_keyed_first_draws() -> None:
     items, inventory, q_rows, regimes, config = _toy_inputs()
     config["learners"] = 1
+    config["seed"] = 2027
     one_interactions, one_oracle = simulate_baseline(
         items, inventory, q_rows, regimes, config, seed=2027
     )
@@ -167,6 +171,7 @@ def test_terminal_probe_repeats_share_snapshot_and_keyed_first_draws() -> None:
 
 def test_baseline_rejects_empty_q_edges_and_nonterminal_updates() -> None:
     items, inventory, q_rows, regimes, config = _toy_inputs()
+    config["seed"] = 1
     broken_q = deepcopy(q_rows)
     broken_q[0]["generator_kc_ids"] = []
     with pytest.raises(ValueError, match="at least one KC"):
@@ -176,3 +181,11 @@ def test_baseline_rejects_empty_q_edges_and_nonterminal_updates() -> None:
     broken_config["schedule"]["probe"]["updates_mastery"] = True
     with pytest.raises(ValueError, match="must not update mastery"):
         simulate_baseline(items, inventory, q_rows, regimes, broken_config, seed=1)
+
+    unknown_config = deepcopy(config)
+    unknown_config["unused_scientific_knob"] = True
+    with pytest.raises(ValueError, match="unknown=.*unused_scientific_knob"):
+        simulate_baseline(items, inventory, q_rows, regimes, unknown_config, seed=1)
+
+    with pytest.raises(ValueError, match="explicit seed differs"):
+        simulate_baseline(items, inventory, q_rows, regimes, config, seed=2)

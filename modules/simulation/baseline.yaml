@@ -6,7 +6,7 @@ description: >-
 
 # The dataset construction runner should pass this value explicitly to
 # simulate_baseline(..., seed=...).
-seed: 20250829
+seed: 20260829
 learners: 1000
 
 initial_mastery:
