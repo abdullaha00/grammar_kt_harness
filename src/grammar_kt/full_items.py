@@ -24,6 +24,10 @@ from .validate_items import answer_span_consistency
 
 
 ACTIVE_CANDIDATES_PER_CELL = 3
+UNCHANGED_RESCUE_CANDIDATES_PER_CELL = 2
+DETERMINACY_INTERVENTION_CANDIDATES_PER_CELL = 2
+UNCHANGED_RESCUE_ID = "unchanged_prompt_zero_coverage_rescue_v1"
+DETERMINACY_INTERVENTION_ID = "explicit_construction_determinacy_intervention_v1"
 _CANDIDATE_PAYLOAD_FIELDS = {"prompt", "target_answer", "accepted_answers"}
 _VISIBLE_ITEM_FIELDS = (
     "item_id",
@@ -57,6 +61,23 @@ def _generation_fingerprint(generation_call: dict[str, Any]) -> str:
     return _sha256(
         {
             "stage": "full_v1.item_generation",
+            "candidate_id": generation_call["candidate_id"],
+            "model": generation_call["model"],
+            "reasoning_effort": generation_call["reasoning_effort"],
+            "model_input": generation_call["model_input"],
+            "rendered_prompt": generation_call["rendered_prompt"],
+        }
+    )
+
+
+def _campaign_generation_fingerprint(generation_call: dict[str, Any]) -> str:
+    """Fingerprint one separately declared post-N=3 campaign input."""
+
+    return _sha256(
+        {
+            "stage": "full_v1.item_campaign_generation",
+            "campaign_id": generation_call["campaign_id"],
+            "campaign_declaration": generation_call["campaign_declaration"],
             "candidate_id": generation_call["candidate_id"],
             "model": generation_call["model"],
             "reasoning_effort": generation_call["reasoning_effort"],
@@ -131,6 +152,67 @@ def stable_candidate_id(cell_id: str, candidate_index: int) -> str:
             f"{ACTIVE_CANDIDATES_PER_CELL}"
         )
     return f"candidate_{cell_id}_{candidate_index:02d}"
+
+
+def _campaign_spec(campaign_id: str) -> dict[str, Any]:
+    specs = {
+        UNCHANGED_RESCUE_ID: {
+            "prefix": "unchanged_rescue",
+            "count": UNCHANGED_RESCUE_CANDIDATES_PER_CELL,
+            "selection_offset": ACTIVE_CANDIDATES_PER_CELL,
+            "trigger": "zero_validator_accepted_after_baseline_n3",
+            "cohort": "all_zero_accepted_cells_after_baseline_n3",
+            "generation_prompt": "baseline_unchanged",
+        },
+        DETERMINACY_INTERVENTION_ID: {
+            "prefix": "determinacy_intervention",
+            "count": DETERMINACY_INTERVENTION_CANDIDATES_PER_CELL,
+            "selection_offset": (
+                ACTIVE_CANDIDATES_PER_CELL
+                + UNCHANGED_RESCUE_CANDIDATES_PER_CELL
+            ),
+            "trigger": "residual_zero_coverage_with_determinacy_dominant",
+            "cohort": "all_eligible_residual_zero_coverage_cells",
+            "generation_prompt": "explicit_construction",
+        },
+    }
+    if campaign_id not in specs:
+        raise ValueError(f"unknown item campaign: {campaign_id}")
+    return specs[campaign_id]
+
+
+def stable_campaign_candidate_id(
+    cell_id: str, campaign_index: int, campaign_id: str
+) -> str:
+    """Return a stable ID disjoint across baseline and both rescue campaigns."""
+
+    _nonempty_string(cell_id, "cell_id")
+    if not _SAFE_ID.fullmatch(cell_id):
+        raise ValueError("cell_id contains characters unsafe for a stable candidate ID")
+    spec = _campaign_spec(campaign_id)
+    if isinstance(campaign_index, bool) or not isinstance(campaign_index, int):
+        raise ValueError("campaign_index must be an integer")
+    if not 1 <= campaign_index <= spec["count"]:
+        raise ValueError(
+            "campaign_index must be between 1 and " f"{spec['count']}"
+        )
+    return f"{spec['prefix']}_{cell_id}_{campaign_index:02d}"
+
+
+def stable_unchanged_rescue_candidate_id(
+    cell_id: str, campaign_index: int
+) -> str:
+    return stable_campaign_candidate_id(
+        cell_id, campaign_index, UNCHANGED_RESCUE_ID
+    )
+
+
+def stable_determinacy_intervention_candidate_id(
+    cell_id: str, campaign_index: int
+) -> str:
+    return stable_campaign_candidate_id(
+        cell_id, campaign_index, DETERMINACY_INTERVENTION_ID
+    )
 
 
 def _neutral_validation_item_id(candidate_id: str) -> str:
@@ -222,6 +304,120 @@ def build_generation_call(
     return generation_call
 
 
+def _validate_campaign_declaration(
+    declaration: dict[str, Any], item_format: dict[str, Any]
+) -> tuple[dict[str, Any], str]:
+    if not isinstance(declaration, dict):
+        raise ValueError("item-campaign declaration must be an object")
+    campaign_id = declaration.get("campaign_id")
+    spec = _campaign_spec(campaign_id)
+    if declaration.get("trigger") != spec["trigger"]:
+        raise ValueError("unexpected item-campaign trigger")
+    if declaration.get("cohort") != spec["cohort"]:
+        raise ValueError("unexpected item-campaign cohort")
+    if declaration.get("generation_prompt") != spec["generation_prompt"]:
+        raise ValueError("unexpected item-campaign generation prompt policy")
+    generation = declaration.get("generation")
+    if not isinstance(generation, dict):
+        raise ValueError("item-campaign declaration must contain generation settings")
+    if generation.get("candidates_per_cell") != spec["count"]:
+        raise ValueError("full-v1 post-N=3 campaigns are frozen to two candidates")
+    if generation.get("candidate_calls") != "independent":
+        raise ValueError("item-campaign candidates must use independent calls")
+    expected_prompt_change = campaign_id == DETERMINACY_INTERVENTION_ID
+    if generation.get("only_generation_prompt_changes") is not expected_prompt_change:
+        raise ValueError("item-campaign prompt-change declaration is inconsistent")
+    validation = declaration.get("validation")
+    if not isinstance(validation, dict) or validation != {
+        "reuse_baseline_prompt": True,
+        "reuse_baseline_criteria": True,
+        "independent_and_blinded": True,
+    }:
+        raise ValueError("item campaigns must reuse unchanged independent validation")
+
+    if not isinstance(item_format, dict):
+        raise ValueError("item format must be an object")
+    format_id = _nonempty_string(item_format.get("format_id"), "format_id")
+    required_fields = item_format.get("required_fields")
+    if (
+        not isinstance(required_fields, list)
+        or len(required_fields) != len(_CANDIDATE_PAYLOAD_FIELDS)
+        or set(required_fields) != _CANDIDATE_PAYLOAD_FIELDS
+    ):
+        raise ValueError(
+            "active item format must require exactly prompt, target_answer, "
+            "and accepted_answers"
+        )
+    if declaration.get("format") != format_id:
+        raise ValueError("item-campaign declaration and item format IDs disagree")
+    return deepcopy(declaration), format_id
+
+
+def build_campaign_generation_call(
+    cell: dict[str, Any],
+    prompt: str,
+    rulebook: str,
+    design: dict[str, Any],
+    declaration: dict[str, Any],
+    item_format: dict[str, Any],
+    *,
+    campaign_index: int,
+    model: str,
+    reasoning_effort: str,
+) -> dict[str, Any]:
+    """Build one frozen post-N=3 campaign call without invoking a model.
+
+    Positions are local to their frozen campaign.  Their
+    public IDs and fingerprints are disjoint from the original N=3 evidence.
+    Selection indices preserve baseline, unchanged-rescue, intervention order.
+    """
+
+    cell_id, features = _cell_identity(cell)
+    active_design, _ = _validate_generation_declarations(design, item_format)
+    active_declaration, _ = _validate_campaign_declaration(
+        declaration, item_format
+    )
+    campaign_id = active_declaration["campaign_id"]
+    spec = _campaign_spec(campaign_id)
+    candidate_id = stable_campaign_candidate_id(
+        cell_id, campaign_index, campaign_id
+    )
+    prompt = _nonblank_text(prompt, "item-campaign generation prompt")
+    rulebook = _nonblank_text(rulebook, "generation rulebook")
+    model = _nonempty_string(model, "generation model")
+    reasoning_effort = _nonempty_string(
+        reasoning_effort, "generation reasoning_effort"
+    )
+    model_input = {
+        "target_cell": {"cell_id": cell_id, "features": features},
+        "candidate_position": {
+            "index": campaign_index,
+            "count": spec["count"],
+        },
+        "item_format": deepcopy(item_format),
+        # Keep the original generation design in model-visible input.  The
+        # campaign declaration is fingerprinted/provenance-only and therefore
+        # cannot itself change model behaviour.
+        "design": active_design,
+    }
+    rendered_prompt = render(prompt, {**model_input, "rulebook": rulebook})
+    generation_call = {
+        "candidate_id": candidate_id,
+        "cell_id": cell_id,
+        "campaign_index": campaign_index,
+        "campaign_id": campaign_id,
+        "campaign_declaration": active_declaration,
+        "model": model,
+        "reasoning_effort": reasoning_effort,
+        "model_input": model_input,
+        "rendered_prompt": rendered_prompt,
+    }
+    generation_call["input_sha256"] = _campaign_generation_fingerprint(
+        generation_call
+    )
+    return generation_call
+
+
 def _validate_candidate_payload(parsed: Any) -> None:
     if not isinstance(parsed, dict) or set(parsed) != _CANDIDATE_PAYLOAD_FIELDS:
         raise ValueError(
@@ -274,6 +470,49 @@ def recover_generated_candidate(
     }
 
 
+def recover_campaign_candidate(
+    parsed: Any, generation_call: dict[str, Any]
+) -> dict[str, Any]:
+    """Strictly reconstruct one candidate from a frozen post-N=3 campaign."""
+
+    _validate_candidate_payload(parsed)
+    campaign_id = generation_call.get("campaign_id")
+    spec = _campaign_spec(campaign_id)
+    campaign_index = generation_call.get("campaign_index")
+    candidate_id = stable_campaign_candidate_id(
+        generation_call["cell_id"], campaign_index, campaign_id
+    )
+    if generation_call.get("candidate_id") != candidate_id:
+        raise ValueError("item-campaign generation call candidate ID drift")
+    _assert_fingerprint(
+        generation_call,
+        _campaign_generation_fingerprint(generation_call),
+        "item-campaign generation",
+    )
+    format_id = generation_call["model_input"]["item_format"]["format_id"]
+    return {
+        "item_id": candidate_id,
+        "cell_id": generation_call["cell_id"],
+        "format": format_id,
+        "prompt": parsed["prompt"],
+        "target_answer": parsed["target_answer"],
+        "accepted_answers": deepcopy(parsed["accepted_answers"]),
+        "generation_metadata": {
+            "candidate_index": spec["selection_offset"] + campaign_index,
+            "candidate_count": (
+                ACTIVE_CANDIDATES_PER_CELL
+                + UNCHANGED_RESCUE_CANDIDATES_PER_CELL
+                + DETERMINACY_INTERVENTION_CANDIDATES_PER_CELL
+            ),
+            "campaign": campaign_id,
+            "campaign_candidate_index": campaign_index,
+            "model": generation_call["model"],
+            "reasoning_effort": generation_call["reasoning_effort"],
+            "input_sha256": generation_call["input_sha256"],
+        },
+    }
+
+
 def generate_one_candidate(
     generation_call: dict[str, Any],
     *,
@@ -297,6 +536,31 @@ def generate_one_candidate(
         evidence_dir=evidence_dir,
     )
     return recover_generated_candidate(parsed, generation_call)
+
+
+def generate_one_campaign_candidate(
+    generation_call: dict[str, Any],
+    *,
+    model_call: ModelCall,
+    evidence_dir: Path | None = None,
+) -> dict[str, Any]:
+    """Invoke an injectable backend for one frozen post-N=3 position."""
+
+    _assert_fingerprint(
+        generation_call,
+        _campaign_generation_fingerprint(generation_call),
+        "item-campaign generation",
+    )
+    parsed = model_call(
+        generation_call["rendered_prompt"],
+        model=generation_call["model"],
+        reasoning_effort=generation_call["reasoning_effort"],
+        input_data=generation_call["model_input"],
+        stage="generation",
+        call_key=generation_call["candidate_id"],
+        evidence_dir=evidence_dir,
+    )
+    return recover_campaign_candidate(parsed, generation_call)
 
 
 def _validate_criteria(validation_criteria: dict[str, Any]) -> dict[str, Any]:
@@ -460,9 +724,30 @@ def build_validation_call(
     cell_id, features = _cell_identity(cell)
     if candidate.get("cell_id") != cell_id:
         raise ValueError("candidate and validation GrammarCell disagree")
-    expected_candidate_id = stable_candidate_id(
-        cell_id, candidate["generation_metadata"]["candidate_index"]
-    )
+    metadata = candidate.get("generation_metadata")
+    if not isinstance(metadata, dict):
+        raise ValueError("candidate lacks generation_metadata")
+    campaign_id = metadata.get("campaign")
+    if campaign_id in {UNCHANGED_RESCUE_ID, DETERMINACY_INTERVENTION_ID}:
+        campaign_index = metadata.get("campaign_candidate_index")
+        spec = _campaign_spec(campaign_id)
+        expected_candidate_id = stable_campaign_candidate_id(
+            cell_id, campaign_index, campaign_id
+        )
+        if metadata.get("candidate_index") != (
+            spec["selection_offset"] + campaign_index
+        ):
+            raise ValueError("item-campaign candidate selection index drift")
+        if metadata.get("candidate_count") != (
+            ACTIVE_CANDIDATES_PER_CELL
+            + UNCHANGED_RESCUE_CANDIDATES_PER_CELL
+            + DETERMINACY_INTERVENTION_CANDIDATES_PER_CELL
+        ):
+            raise ValueError("item-campaign candidate count drift")
+    else:
+        expected_candidate_id = stable_candidate_id(
+            cell_id, metadata["candidate_index"]
+        )
     if candidate["item_id"] != expected_candidate_id:
         raise ValueError("candidate item_id does not match its cell and index")
     visible["item_id"] = _neutral_validation_item_id(candidate["item_id"])

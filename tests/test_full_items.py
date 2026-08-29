@@ -5,17 +5,23 @@ from copy import deepcopy
 import pytest
 
 from grammar_kt.full_items import (
+    DETERMINACY_INTERVENTION_ID,
+    UNCHANGED_RESCUE_ID,
+    build_campaign_generation_call,
     build_generation_call,
     build_validation_call,
     candidate_audit_summary,
     deterministic_candidate_checks,
+    generate_one_campaign_candidate,
     generate_one_candidate,
     item_construction_audit,
     merge_completed_candidate_rows,
     merge_completed_judgment_rows,
     pending_generation_calls,
+    recover_campaign_candidate,
     recover_generated_candidate,
     reconstruct_validation_judgment,
+    stable_campaign_candidate_id,
     stable_candidate_id,
     validate_one_candidate,
 )
@@ -32,6 +38,9 @@ ITEM_FORMAT = read_yaml(
 )
 VALIDATION_PROMPT = read_text(ROOT / "modules/items/validation/prompt.txt")
 VALIDATION_CRITERIA = read_yaml(ROOT / "modules/items/validation/criteria.yaml")
+RESCUE_PROTOCOL = read_yaml(
+    ROOT / "modules/items/generation/interventions/full_v1_rescue.yaml"
+)
 
 
 def _cell(cell_id: str = "toy_cell") -> dict:
@@ -67,6 +76,34 @@ def _generation_call(cell_id: str = "toy_cell", index: int = 1) -> dict:
 
 def _candidate(cell_id: str = "toy_cell", index: int = 1) -> dict:
     return recover_generated_candidate(_payload(), _generation_call(cell_id, index))
+
+
+def _campaign_call(campaign_id: str, index: int = 1) -> dict:
+    key = (
+        "unchanged_rescue"
+        if campaign_id == UNCHANGED_RESCUE_ID
+        else "determinacy_intervention"
+    )
+    prompt = (
+        GENERATION_PROMPT
+        if campaign_id == UNCHANGED_RESCUE_ID
+        else read_text(
+            ROOT
+            / "modules/items/generation/ablations/"
+            "determinacy_explicit_construction_prompt.txt"
+        )
+    )
+    return build_campaign_generation_call(
+        _cell(),
+        prompt,
+        GENERATION_RULEBOOK,
+        GENERATION_DESIGN,
+        RESCUE_PROTOCOL["campaigns"][key],
+        ITEM_FORMAT,
+        campaign_index=index,
+        model="fixture-generator",
+        reasoning_effort="medium",
+    )
 
 
 def _passing_judgments() -> dict:
@@ -165,6 +202,54 @@ def test_generation_backend_is_injected_with_exact_active_input() -> None:
     assert captured["call_key"] == candidate["item_id"]
     assert captured["input_data"] == call["model_input"]
     assert captured["prompt"] == call["rendered_prompt"]
+
+
+def test_post_n3_campaigns_have_disjoint_ids_fingerprints_and_blinded_validation() -> None:
+    unchanged = _campaign_call(UNCHANGED_RESCUE_ID, 1)
+    intervention = _campaign_call(DETERMINACY_INTERVENTION_ID, 1)
+    assert unchanged["candidate_id"] == stable_campaign_candidate_id(
+        "toy_cell", 1, UNCHANGED_RESCUE_ID
+    )
+    assert intervention["candidate_id"] == stable_campaign_candidate_id(
+        "toy_cell", 1, DETERMINACY_INTERVENTION_ID
+    )
+    assert unchanged["candidate_id"] != intervention["candidate_id"]
+    assert unchanged["input_sha256"] != intervention["input_sha256"]
+    flattened = str(unchanged["model_input"])
+    assert "learner_outcomes" not in flattened
+    assert "generator_kc_ids" not in flattened
+    assert "campaign_id" not in unchanged["model_input"]
+
+    captured = {}
+
+    def fake_model(prompt, **kwargs):
+        captured.update(kwargs)
+        return _payload()
+
+    candidate = generate_one_campaign_candidate(
+        intervention, model_call=fake_model
+    )
+    assert candidate == recover_campaign_candidate(_payload(), intervention)
+    assert candidate["generation_metadata"]["campaign"] == (
+        DETERMINACY_INTERVENTION_ID
+    )
+    validation = build_validation_call(
+        candidate,
+        _cell(),
+        VALIDATION_PROMPT,
+        VALIDATION_CRITERIA,
+        model="fixture-validator",
+        reasoning_effort="medium",
+    )
+    visible = str(validation["model_input"])
+    assert candidate["item_id"] not in visible
+    assert DETERMINACY_INTERVENTION_ID not in visible
+    assert "campaign_candidate_index" not in visible
+
+    drifted = deepcopy(intervention)
+    drifted["campaign_declaration"]["trigger"] = "changed"
+    with pytest.raises(ValueError, match="input drift"):
+        recover_campaign_candidate(_payload(), drifted)
 
 
 def test_deterministic_rejection_never_calls_validator() -> None:

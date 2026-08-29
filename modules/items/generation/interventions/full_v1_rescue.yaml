@@ -1,0 +1,36 @@
+protocol_id: full_v1_two_campaign_item_rescue_v1
+campaigns:
+  unchanged_rescue:
+    campaign_id: unchanged_prompt_zero_coverage_rescue_v1
+    trigger: zero_validator_accepted_after_baseline_n3
+    cohort: all_zero_accepted_cells_after_baseline_n3
+    generation_prompt: baseline_unchanged
+    format: controlled_production
+    generation:
+      candidates_per_cell: 2
+      candidate_calls: independent
+      only_generation_prompt_changes: false
+    validation:
+      reuse_baseline_prompt: true
+      reuse_baseline_criteria: true
+      independent_and_blinded: true
+  determinacy_intervention:
+    campaign_id: explicit_construction_determinacy_intervention_v1
+    trigger: residual_zero_coverage_with_determinacy_dominant
+    cohort: all_eligible_residual_zero_coverage_cells
+    generation_prompt: explicit_construction
+    format: controlled_production
+    generation:
+      candidates_per_cell: 2
+      candidate_calls: independent
+      only_generation_prompt_changes: true
+    validation:
+      reuse_baseline_prompt: true
+      reuse_baseline_criteria: true
+      independent_and_blinded: true
+curation:
+  evidence_priority:
+    - baseline_n3
+    - unchanged_rescue
+    - determinacy_intervention
+  maximum_items_per_cell: 2

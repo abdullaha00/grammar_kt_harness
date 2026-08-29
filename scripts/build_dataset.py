@@ -34,17 +34,25 @@ from grammar_kt.full_normalisation import (
     stable_canonicalise,
 )
 from grammar_kt.full_items import (
+    DETERMINACY_INTERVENTION_CANDIDATES_PER_CELL,
+    DETERMINACY_INTERVENTION_ID,
+    UNCHANGED_RESCUE_CANDIDATES_PER_CELL,
+    UNCHANGED_RESCUE_ID,
+    build_campaign_generation_call,
     build_generation_call,
     build_validation_call,
     candidate_audit_summary,
+    generate_one_campaign_candidate,
     generate_one_candidate,
     item_construction_audit,
     merge_completed_candidate_rows,
     merge_completed_judgment_rows,
     reconstruct_validation_judgment,
+    recover_campaign_candidate,
     recover_generated_candidate,
     recover_validator_judgment,
     validate_one_candidate,
+    validation_audit_summary,
 )
 from grammar_kt.generator_kcs import construct_generator_kcs
 from grammar_kt.io import (
@@ -93,6 +101,15 @@ ITEM_FORMAT_PATH = (
 )
 VALIDATION_PROMPT_PATH = ROOT / "modules/items/validation/prompt.txt"
 VALIDATION_CRITERIA_PATH = ROOT / "modules/items/validation/criteria.yaml"
+RESCUE_PROTOCOL_PATH = (
+    ROOT
+    / "modules/items/generation/interventions/full_v1_rescue.yaml"
+)
+DETERMINACY_INTERVENTION_PROMPT_PATH = (
+    ROOT
+    / "modules/items/generation/ablations/"
+    "determinacy_explicit_construction_prompt.txt"
+)
 PUBLIC_NORMALISATION_NOTE = (
     "Unsanitised model note retained in restricted normalisation evidence."
 )
@@ -998,6 +1015,14 @@ def _freeze_public_jsonl(path: Path, rows: list[dict[str, Any]], label: str) -> 
     write_jsonl(path, rows)
 
 
+def _freeze_public_json(path: Path, value: dict[str, Any], label: str) -> None:
+    if path.exists():
+        if _read_json(path) != value:
+            raise ValueError(f"frozen {label} changed")
+        return
+    write_json(path, value)
+
+
 def _unique_rows(
     path: Path, id_field: str
 ) -> tuple[list[dict[str, Any]], dict[str, dict[str, Any]]]:
@@ -1103,6 +1128,23 @@ def _recover_generation_evidence(
             continue
         try:
             candidate = recover_generated_candidate(_read_json(parsed_path), call)
+        except (KeyError, OSError, TypeError, UnicodeError, ValueError):
+            continue
+        return candidate, _attempt_number(attempt_dir)
+    return None
+
+
+def _recover_campaign_generation_evidence(
+    call: dict[str, Any], evidence_base: Path
+) -> tuple[dict[str, Any], int] | None:
+    """Recover only evidence matching a frozen post-N=3 campaign call."""
+
+    for parsed_path in sorted(evidence_base.glob("attempt-*/parsed_result.json")):
+        attempt_dir = parsed_path.parent
+        if not _evidence_context_matches(call, attempt_dir, "generation"):
+            continue
+        try:
+            candidate = recover_campaign_candidate(_read_json(parsed_path), call)
         except (KeyError, OSError, TypeError, UnicodeError, ValueError):
             continue
         return candidate, _attempt_number(attempt_dir)
@@ -1562,6 +1604,769 @@ def validate_items_full(
         )
 
 
+def _load_complete_baseline_item_evidence(
+    dataset_dir: Path,
+) -> tuple[
+    list[dict[str, Any]],
+    list[dict[str, Any]],
+    list[dict[str, Any]],
+]:
+    """Load the immutable N=3 candidates and their complete judgments."""
+
+    cells, _generation_call_rows, candidates = _load_complete_generation(dataset_dir)
+    calls = _validation_calls(cells, candidates)
+    plan_path = dataset_dir / "provenance/items/validation_plan.jsonl"
+    if not plan_path.exists() or read_jsonl(plan_path) != _public_validation_plan(calls):
+        raise ValueError("frozen baseline validation plan is missing or changed")
+    judgments_path = dataset_dir / "provenance/items/validation_judgments.jsonl"
+    if not judgments_path.exists():
+        raise FileNotFoundError("baseline validation judgments do not exist")
+    judgments = merge_completed_judgment_rows(
+        read_jsonl(judgments_path), [], calls
+    )
+    if len(judgments) != len(candidates):
+        raise ValueError("baseline validation must be complete before a campaign")
+    audit_path = dataset_dir / "provenance/items/validation_audit.json"
+    if not audit_path.exists():
+        raise FileNotFoundError("successful baseline validation audit does not exist")
+    audit = _read_json(audit_path)
+    if audit.get("status") != "PASS" or audit.get(
+        "judgment_checkpoint_sha256"
+    ) != _json_sha256(judgments):
+        raise ValueError("baseline validation audit does not match its checkpoint")
+    accepted = [
+        candidate
+        for candidate in candidates
+        if next(
+            row for row in judgments if row["item_id"] == candidate["item_id"]
+        )["accepted"]
+    ]
+    accepted_path = (
+        dataset_dir / "provenance/items/validator_accepted_candidates.jsonl"
+    )
+    if not accepted_path.exists() or read_jsonl(accepted_path) != accepted:
+        raise ValueError("baseline validator-accepted checkpoint is missing or changed")
+    return cells, candidates, judgments
+
+
+def _campaign_slug(campaign_id: str) -> str:
+    if campaign_id == UNCHANGED_RESCUE_ID:
+        return "unchanged_rescue"
+    if campaign_id == DETERMINACY_INTERVENTION_ID:
+        return "determinacy_intervention"
+    raise ValueError(f"unknown item campaign: {campaign_id}")
+
+
+def _campaign_protocol() -> tuple[dict[str, Any], dict[str, dict[str, Any]]]:
+    protocol = read_yaml(RESCUE_PROTOCOL_PATH)
+    if not isinstance(protocol, dict) or set(protocol) != {
+        "protocol_id",
+        "campaigns",
+        "curation",
+    }:
+        raise ValueError("full-v1 item-rescue protocol fields changed")
+    if protocol.get("protocol_id") != "full_v1_two_campaign_item_rescue_v1":
+        raise ValueError("unexpected full-v1 item-rescue protocol ID")
+    campaigns = protocol.get("campaigns")
+    if not isinstance(campaigns, dict) or set(campaigns) != {
+        "unchanged_rescue",
+        "determinacy_intervention",
+    }:
+        raise ValueError("full-v1 item-rescue campaigns changed")
+    declarations = {
+        UNCHANGED_RESCUE_ID: campaigns["unchanged_rescue"],
+        DETERMINACY_INTERVENTION_ID: campaigns["determinacy_intervention"],
+    }
+    for campaign_id, declaration in declarations.items():
+        if not isinstance(declaration, dict) or declaration.get(
+            "campaign_id"
+        ) != campaign_id:
+            raise ValueError(f"invalid item-campaign declaration: {campaign_id}")
+    return protocol, declarations
+
+
+def _accepted_cell_ids(
+    candidates: list[dict[str, Any]], judgments: list[dict[str, Any]]
+) -> set[str]:
+    candidate_by_id = {row["item_id"]: row for row in candidates}
+    if len(candidate_by_id) != len(candidates):
+        raise ValueError("candidate IDs must be unique when computing coverage")
+    accepted: set[str] = set()
+    for judgment in judgments:
+        if judgment.get("item_id") not in candidate_by_id:
+            raise ValueError("judgment refers to an unknown candidate")
+        if judgment.get("accepted") is True:
+            accepted.add(candidate_by_id[judgment["item_id"]]["cell_id"])
+    return accepted
+
+
+def _determinacy_eligibility(
+    cell_ids: list[str],
+    candidates: list[dict[str, Any]],
+    judgments: list[dict[str, Any]],
+) -> dict[str, dict[str, Any]]:
+    """Audit the preregistered recurring/dominant determinacy trigger."""
+
+    candidate_cell = {row["item_id"]: row["cell_id"] for row in candidates}
+    results: dict[str, dict[str, Any]] = {}
+    for cell_id in cell_ids:
+        rows = [
+            row
+            for row in judgments
+            if candidate_cell.get(row.get("item_id")) == cell_id
+        ]
+        failure_counts: Counter[str] = Counter()
+        model_judgments = 0
+        for row in rows:
+            if row.get("rejection_stage") == "independent_model_judgment":
+                model_judgments += 1
+            for name, value in row.get("judgments", {}).items():
+                if value.get("passed") is False:
+                    failure_counts[name] += 1
+        determinacy = failure_counts.get("determinacy", 0)
+        other_maximum = max(
+            (count for name, count in failure_counts.items() if name != "determinacy"),
+            default=0,
+        )
+        eligible = determinacy >= 2 and determinacy > other_maximum
+        results[cell_id] = {
+            "prior_terminal_judgments": len(rows),
+            "prior_model_judgments": model_judgments,
+            "criterion_failure_counts": dict(sorted(failure_counts.items())),
+            "determinacy_failures": determinacy,
+            "maximum_other_criterion_failures": other_maximum,
+            "eligible": eligible,
+            "rule": (
+                "determinacy failures >= 2 and strictly exceed every other "
+                "criterion's failure count"
+            ),
+        }
+    return results
+
+
+def _prepare_campaign_plan(
+    dataset_dir: Path,
+    cells: list[dict[str, Any]],
+    prior_candidates: list[dict[str, Any]],
+    prior_judgments: list[dict[str, Any]],
+    campaign_id: str,
+) -> dict[str, Any]:
+    """Freeze the complete conditional cohort before its first model call."""
+
+    protocol, declarations = _campaign_protocol()
+    declaration = declarations[campaign_id]
+    all_cell_ids = sorted(cell["cell_id"] for cell in cells)
+    accepted = _accepted_cell_ids(prior_candidates, prior_judgments)
+    residual = sorted(set(all_cell_ids) - accepted)
+    if campaign_id == UNCHANGED_RESCUE_ID:
+        eligibility: dict[str, dict[str, Any]] = {}
+    else:
+        eligibility = _determinacy_eligibility(
+            residual, prior_candidates, prior_judgments
+        )
+        ineligible = sorted(
+            cell_id for cell_id, row in eligibility.items() if not row["eligible"]
+        )
+        if ineligible:
+            blocker_path = (
+                dataset_dir
+                / "provenance/items/campaigns/determinacy_intervention/"
+                "eligibility_blocker.json"
+            )
+            write_json(
+                blocker_path,
+                {
+                    "status": "INELIGIBLE_RESIDUAL_CELLS",
+                    "cell_ids": ineligible,
+                    "eligibility": eligibility,
+                    "model_calls_made": False,
+                },
+            )
+            raise RuntimeError(
+                "determinacy intervention blocked: residual cells do not all "
+                f"meet the frozen trigger ({len(ineligible)} ineligible)"
+            )
+
+    prompt_path = (
+        GENERATION_PROMPT_PATH
+        if campaign_id == UNCHANGED_RESCUE_ID
+        else DETERMINACY_INTERVENTION_PROMPT_PATH
+    )
+    count = (
+        UNCHANGED_RESCUE_CANDIDATES_PER_CELL
+        if campaign_id == UNCHANGED_RESCUE_ID
+        else DETERMINACY_INTERVENTION_CANDIDATES_PER_CELL
+    )
+    plan = {
+        "dataset_id": DATASET_ID,
+        "protocol_id": protocol["protocol_id"],
+        "protocol_path": str(RESCUE_PROTOCOL_PATH.relative_to(ROOT)),
+        "protocol_sha256": sha256_file(RESCUE_PROTOCOL_PATH),
+        "campaign_id": campaign_id,
+        "trigger": declaration["trigger"],
+        "cell_ids": residual,
+        "candidates_per_cell": count,
+        "planned_generation_calls": len(residual) * count,
+        "prior_candidates": len(prior_candidates),
+        "prior_candidates_sha256": _json_sha256(prior_candidates),
+        "prior_judgments": len(prior_judgments),
+        "prior_judgments_sha256": _json_sha256(prior_judgments),
+        "generation_prompt_path": str(prompt_path.relative_to(ROOT)),
+        "generation_prompt_sha256": sha256_file(prompt_path),
+        "eligibility": eligibility,
+        "uses_learner_data": False,
+        "uses_q_matrix": False,
+        "uses_discovered_kcs": False,
+        "stops_after_early_acceptance": False,
+    }
+    plan_path = (
+        dataset_dir
+        / "provenance/items/campaigns"
+        / _campaign_slug(campaign_id)
+        / "plan.json"
+    )
+    _freeze_public_json(plan_path, plan, f"{campaign_id} cohort plan")
+    return plan
+
+
+def _campaign_generation_calls(
+    cells: list[dict[str, Any]], plan: dict[str, Any]
+) -> list[dict[str, Any]]:
+    _, declarations = _campaign_protocol()
+    campaign_id = plan["campaign_id"]
+    declaration = declarations[campaign_id]
+    cells_by_id = {row["cell_id"]: row for row in cells}
+    unknown = set(plan["cell_ids"]) - set(cells_by_id)
+    if unknown:
+        raise ValueError(f"item-campaign plan contains unknown cells: {sorted(unknown)}")
+    prompt_path = (
+        GENERATION_PROMPT_PATH
+        if campaign_id == UNCHANGED_RESCUE_ID
+        else DETERMINACY_INTERVENTION_PROMPT_PATH
+    )
+    if plan.get("generation_prompt_sha256") != sha256_file(prompt_path):
+        raise ValueError("item-campaign generation prompt changed")
+    backend = read_yaml(MODEL_BACKENDS_PATH)["generation"]
+    design = read_yaml(GENERATION_DESIGN_PATH)
+    item_format = read_yaml(ITEM_FORMAT_PATH)
+    prompt = read_text(prompt_path)
+    rulebook = read_text(GENERATION_RULEBOOK_PATH)
+    return [
+        build_campaign_generation_call(
+            cells_by_id[cell_id],
+            prompt,
+            rulebook,
+            design,
+            declaration,
+            item_format,
+            campaign_index=index,
+            model=backend["model"],
+            reasoning_effort=backend["reasoning_effort"],
+        )
+        for cell_id in plan["cell_ids"]
+        for index in range(1, int(plan["candidates_per_cell"]) + 1)
+    ]
+
+
+def _public_campaign_generation_plan(
+    calls: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    return [
+        {
+            "campaign_id": call["campaign_id"],
+            "candidate_id": call["candidate_id"],
+            "cell_id": call["cell_id"],
+            "campaign_index": call["campaign_index"],
+            "input_sha256": call["input_sha256"],
+            "model": call["model"],
+            "reasoning_effort": call["reasoning_effort"],
+        }
+        for call in calls
+    ]
+
+
+def _campaign_generation_audit(
+    plan: dict[str, Any], candidates: list[dict[str, Any]]
+) -> dict[str, Any]:
+    by_cell = Counter(row["cell_id"] for row in candidates)
+    expected = int(plan["candidates_per_cell"])
+    return {
+        "campaign_id": plan["campaign_id"],
+        "planned_candidates": plan["planned_generation_calls"],
+        "completed_candidates": len(candidates),
+        "completion_rate": (
+            len(candidates) / plan["planned_generation_calls"]
+            if plan["planned_generation_calls"]
+            else 1.0
+        ),
+        "cells": len(plan["cell_ids"]),
+        "cells_with_all_candidates": sum(
+            by_cell[cell_id] == expected for cell_id in plan["cell_ids"]
+        ),
+        "zero_candidate_cells": [
+            cell_id for cell_id in plan["cell_ids"] if by_cell[cell_id] == 0
+        ],
+        "by_cell": {
+            cell_id: {"completed_candidates": by_cell[cell_id]}
+            for cell_id in plan["cell_ids"]
+        },
+    }
+
+
+def _run_campaign_generation(
+    dataset_dir: Path,
+    private_dir: Path,
+    cells: list[dict[str, Any]],
+    plan: dict[str, Any],
+    *,
+    workers: int,
+    max_attempts: int,
+    retry_failures: bool,
+    exact_command: str,
+    model_call: Callable[..., dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    campaign_id = plan["campaign_id"]
+    slug = _campaign_slug(campaign_id)
+    public_dir = dataset_dir / "provenance/items/campaigns" / slug
+    private_base = private_dir / "items/campaigns" / slug / "generation"
+    calls = _campaign_generation_calls(cells, plan)
+    order = [call["candidate_id"] for call in calls]
+    _freeze_public_jsonl(
+        public_dir / "generation_plan.jsonl",
+        _public_campaign_generation_plan(calls),
+        f"{campaign_id} generation plan",
+    )
+
+    candidates_path = public_dir / "candidates.jsonl"
+    existing = read_jsonl(candidates_path) if candidates_path.exists() else []
+    merged = merge_completed_candidate_rows(existing, [], calls)
+    candidates = {row["item_id"]: row for row in merged}
+    attempts_path = public_dir / "generation_attempts.jsonl"
+    _attempt_rows, attempts = _unique_rows(attempts_path, "candidate_id")
+    _validate_attempt_rows(attempts, calls)
+
+    for call in calls:
+        candidate_id = call["candidate_id"]
+        recovered = _recover_campaign_generation_evidence(
+            call, private_base / candidate_id
+        )
+        if candidate_id in candidates:
+            if recovered is not None and recovered[0] != candidates[candidate_id]:
+                raise ValueError(
+                    "public item-campaign candidate differs from immutable private "
+                    f"evidence: {candidate_id}"
+                )
+            if candidate_id not in attempts:
+                attempts[candidate_id] = _public_attempt(
+                    call,
+                    {
+                        "status": "success",
+                        "attempt_count": recovered[1] if recovered is not None else 0,
+                        "runtime_seconds": None,
+                        "errors": [],
+                    },
+                    recovered=recovered is not None,
+                )
+            continue
+        if recovered is None:
+            continue
+        candidate, attempt_count = recovered
+        merged = merge_completed_candidate_rows(
+            list(candidates.values()), [candidate], calls
+        )
+        candidates = {row["item_id"]: row for row in merged}
+        attempts[candidate_id] = _public_attempt(
+            call,
+            {
+                "status": "success",
+                "attempt_count": attempt_count,
+                "runtime_seconds": None,
+                "errors": [],
+            },
+            recovered=True,
+        )
+    _write_item_checkpoint(candidates_path, candidates, order)
+    _write_item_checkpoint(attempts_path, attempts, order)
+
+    tasks = [
+        call
+        for call in calls
+        if call["candidate_id"] not in candidates
+        and (
+            retry_failures
+            or attempts.get(call["candidate_id"], {}).get("status")
+            != "technical_failure"
+        )
+    ]
+
+    def execute(call: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any]]:
+        result = _call_with_technical_retries(
+            lambda evidence_dir: generate_one_campaign_candidate(
+                call, model_call=model_call, evidence_dir=evidence_dir
+            ),
+            private_base / call["candidate_id"],
+            max_attempts=max_attempts,
+        )
+        return call, result
+
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = {executor.submit(execute, call): call for call in tasks}
+        for completed, future in enumerate(as_completed(futures), 1):
+            call, result = future.result()
+            candidate_id = call["candidate_id"]
+            candidate = result.pop("mapping")
+            if candidate is not None:
+                merged = merge_completed_candidate_rows(
+                    list(candidates.values()), [candidate], calls
+                )
+                candidates = {row["item_id"]: row for row in merged}
+            attempts[candidate_id] = _public_attempt(call, result, recovered=False)
+            _write_item_checkpoint(candidates_path, candidates, order)
+            _write_item_checkpoint(attempts_path, attempts, order)
+            if completed % 10 == 0 or completed == len(tasks):
+                print(
+                    f"{slug} generation terminal calls: {completed}/{len(tasks)}; "
+                    f"valid total={len(candidates)}/{len(calls)}",
+                    flush=True,
+                )
+
+    candidate_rows = [candidates[item_id] for item_id in order if item_id in candidates]
+    failures = sorted(set(order) - set(candidates))
+    audit = _campaign_generation_audit(plan, candidate_rows)
+    audit.update(
+        {
+            "dataset_id": DATASET_ID,
+            "status": "PASS" if not failures else "FAIL",
+            "technical_failure_candidate_ids": failures,
+            "candidate_checkpoint_sha256": _json_sha256(candidate_rows),
+            "models": read_yaml(MODEL_BACKENDS_PATH)["generation"],
+            "max_technical_attempts": max_attempts,
+            "code_revision_at_stage_start": _git_revision(),
+            "exact_command": exact_command,
+        }
+    )
+    write_json(public_dir / "generation_audit.json", audit)
+    if failures:
+        raise RuntimeError(
+            f"{slug} generation has {len(failures)} terminal technical failures"
+        )
+    return calls, candidate_rows
+
+
+def _run_campaign_validation(
+    dataset_dir: Path,
+    private_dir: Path,
+    cells: list[dict[str, Any]],
+    plan: dict[str, Any],
+    candidates: list[dict[str, Any]],
+    *,
+    workers: int,
+    max_attempts: int,
+    retry_failures: bool,
+    exact_command: str,
+    model_call: Callable[..., dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    campaign_id = plan["campaign_id"]
+    slug = _campaign_slug(campaign_id)
+    public_dir = dataset_dir / "provenance/items/campaigns" / slug
+    private_base = private_dir / "items/campaigns" / slug / "validation"
+    calls = _validation_calls(cells, candidates)
+    order = [call["candidate_id"] for call in calls]
+    _freeze_public_jsonl(
+        public_dir / "validation_plan.jsonl",
+        _public_validation_plan(calls),
+        f"{campaign_id} validation plan",
+    )
+    judgments_path = public_dir / "validation_judgments.jsonl"
+    existing = read_jsonl(judgments_path) if judgments_path.exists() else []
+    merged = merge_completed_judgment_rows(existing, [], calls)
+    judgments = {row["item_id"]: row for row in merged}
+    attempts_path = public_dir / "validation_attempts.jsonl"
+    _attempt_rows, attempts = _unique_rows(attempts_path, "candidate_id")
+    _validate_attempt_rows(attempts, calls)
+
+    for call in calls:
+        candidate_id = call["candidate_id"]
+        if not call["call_required"]:
+            if candidate_id not in judgments:
+                judgment = reconstruct_validation_judgment(call)
+                merged = merge_completed_judgment_rows(
+                    list(judgments.values()), [judgment], calls
+                )
+                judgments = {row["item_id"]: row for row in merged}
+            attempts.setdefault(
+                candidate_id,
+                {
+                    "candidate_id": candidate_id,
+                    "input_sha256": call["input_sha256"],
+                    "status": "deterministic_rejection",
+                    "attempt_count": 0,
+                    "runtime_seconds": 0.0,
+                    "error_types": [],
+                    "recovered_from_private_evidence": False,
+                },
+            )
+            continue
+        recovered = _recover_validation_evidence(call, private_base / candidate_id)
+        if candidate_id in judgments:
+            if recovered is not None and recovered[0] != judgments[candidate_id]:
+                raise ValueError(
+                    "public item-campaign judgment differs from immutable private "
+                    f"evidence: {candidate_id}"
+                )
+            if candidate_id not in attempts:
+                attempts[candidate_id] = _public_attempt(
+                    call,
+                    {
+                        "status": "success",
+                        "attempt_count": recovered[1] if recovered is not None else 0,
+                        "runtime_seconds": None,
+                        "errors": [],
+                    },
+                    recovered=recovered is not None,
+                )
+            continue
+        if recovered is None:
+            continue
+        judgment, attempt_count = recovered
+        merged = merge_completed_judgment_rows(
+            list(judgments.values()), [judgment], calls
+        )
+        judgments = {row["item_id"]: row for row in merged}
+        attempts[candidate_id] = _public_attempt(
+            call,
+            {
+                "status": "success",
+                "attempt_count": attempt_count,
+                "runtime_seconds": None,
+                "errors": [],
+            },
+            recovered=True,
+        )
+    _write_item_checkpoint(judgments_path, judgments, order)
+    _write_item_checkpoint(attempts_path, attempts, order)
+
+    tasks = [
+        call
+        for call in calls
+        if call["candidate_id"] not in judgments
+        and call["call_required"]
+        and (
+            retry_failures
+            or attempts.get(call["candidate_id"], {}).get("status")
+            != "technical_failure"
+        )
+    ]
+
+    def execute(call: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any]]:
+        result = _call_with_technical_retries(
+            lambda evidence_dir: validate_one_candidate(
+                call, model_call=model_call, evidence_dir=evidence_dir
+            ),
+            private_base / call["candidate_id"],
+            max_attempts=max_attempts,
+        )
+        return call, result
+
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = {executor.submit(execute, call): call for call in tasks}
+        for completed, future in enumerate(as_completed(futures), 1):
+            call, result = future.result()
+            candidate_id = call["candidate_id"]
+            judgment = result.pop("mapping")
+            if judgment is not None:
+                merged = merge_completed_judgment_rows(
+                    list(judgments.values()), [judgment], calls
+                )
+                judgments = {row["item_id"]: row for row in merged}
+            attempts[candidate_id] = _public_attempt(call, result, recovered=False)
+            _write_item_checkpoint(judgments_path, judgments, order)
+            _write_item_checkpoint(attempts_path, attempts, order)
+            if completed % 10 == 0 or completed == len(tasks):
+                print(
+                    f"{slug} validation terminal calls: {completed}/{len(tasks)}; "
+                    f"complete total={len(judgments)}/{len(calls)}",
+                    flush=True,
+                )
+
+    judgment_rows = [judgments[item_id] for item_id in order if item_id in judgments]
+    failures = sorted(set(order) - set(judgments))
+    cohort_ids = set(plan["cell_ids"])
+    cohort_cells = [cell for cell in cells if cell["cell_id"] in cohort_ids]
+    audit = validation_audit_summary(
+        cohort_cells,
+        candidates,
+        judgment_rows,
+        read_yaml(VALIDATION_CRITERIA_PATH),
+    )
+    accepted = [
+        candidate
+        for candidate in candidates
+        if judgments.get(candidate["item_id"], {}).get("accepted") is True
+    ]
+    audit.update(
+        {
+            "dataset_id": DATASET_ID,
+            "campaign_id": campaign_id,
+            "status": "PASS" if not failures else "FAIL",
+            "technical_failure_candidate_ids": failures,
+            "judgment_checkpoint_sha256": _json_sha256(judgment_rows),
+            "models": read_yaml(MODEL_BACKENDS_PATH)["validation"],
+            "max_technical_attempts": max_attempts,
+            "code_revision_at_stage_start": _git_revision(),
+            "exact_command": exact_command,
+        }
+    )
+    write_jsonl(public_dir / "validator_accepted_candidates.jsonl", accepted)
+    write_json(public_dir / "validation_audit.json", audit)
+    if failures:
+        raise RuntimeError(
+            f"{slug} validation has {len(failures)} terminal technical failures"
+        )
+    return judgment_rows, accepted
+
+
+def _load_complete_campaign(
+    dataset_dir: Path,
+    cells: list[dict[str, Any]],
+    campaign_id: str,
+    prior_candidates: list[dict[str, Any]],
+    prior_judgments: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Reload a campaign while revalidating its frozen upstream boundary."""
+
+    slug = _campaign_slug(campaign_id)
+    public_dir = dataset_dir / "provenance/items/campaigns" / slug
+    plan_path = public_dir / "plan.json"
+    if not plan_path.exists():
+        raise FileNotFoundError(f"{slug} plan does not exist")
+    plan = _read_json(plan_path)
+    if plan.get("prior_candidates_sha256") != _json_sha256(
+        prior_candidates
+    ) or plan.get("prior_judgments_sha256") != _json_sha256(prior_judgments):
+        raise ValueError(f"{slug} upstream item evidence changed")
+    calls = _campaign_generation_calls(cells, plan)
+    if read_jsonl(public_dir / "generation_plan.jsonl") != (
+        _public_campaign_generation_plan(calls)
+    ):
+        raise ValueError(f"{slug} generation plan changed")
+    candidates = merge_completed_candidate_rows(
+        read_jsonl(public_dir / "candidates.jsonl"), [], calls
+    )
+    generation_audit = _read_json(public_dir / "generation_audit.json")
+    if len(candidates) != len(calls) or generation_audit.get("status") != "PASS":
+        raise ValueError(f"{slug} generation is incomplete")
+    if generation_audit.get("candidate_checkpoint_sha256") != _json_sha256(
+        candidates
+    ):
+        raise ValueError(f"{slug} candidate checkpoint changed")
+
+    validation_calls = _validation_calls(cells, candidates)
+    if read_jsonl(public_dir / "validation_plan.jsonl") != _public_validation_plan(
+        validation_calls
+    ):
+        raise ValueError(f"{slug} validation plan changed")
+    judgments = merge_completed_judgment_rows(
+        read_jsonl(public_dir / "validation_judgments.jsonl"), [], validation_calls
+    )
+    validation_audit = _read_json(public_dir / "validation_audit.json")
+    if len(judgments) != len(candidates) or validation_audit.get("status") != "PASS":
+        raise ValueError(f"{slug} validation is incomplete")
+    if validation_audit.get("judgment_checkpoint_sha256") != _json_sha256(
+        judgments
+    ):
+        raise ValueError(f"{slug} judgment checkpoint changed")
+    return candidates, judgments
+
+
+def run_item_campaign(
+    dataset_dir: Path,
+    private_dir: Path,
+    campaign_id: str,
+    *,
+    workers: int,
+    max_attempts: int,
+    retry_failures: bool,
+    exact_command: str,
+    model_call: Callable[..., dict[str, Any]] = audited_model_call,
+) -> None:
+    """Run one frozen post-N=3 generation-and-validation campaign."""
+
+    _assert_private_dir(private_dir)
+    cells, baseline_candidates, baseline_judgments = (
+        _load_complete_baseline_item_evidence(dataset_dir)
+    )
+    prior_candidates = list(baseline_candidates)
+    prior_judgments = list(baseline_judgments)
+    if campaign_id == DETERMINACY_INTERVENTION_ID:
+        rescue_candidates, rescue_judgments = _load_complete_campaign(
+            dataset_dir,
+            cells,
+            UNCHANGED_RESCUE_ID,
+            baseline_candidates,
+            baseline_judgments,
+        )
+        prior_candidates = sorted(
+            [*prior_candidates, *rescue_candidates], key=lambda row: row["item_id"]
+        )
+        prior_judgments = sorted(
+            [*prior_judgments, *rescue_judgments], key=lambda row: row["item_id"]
+        )
+    plan = _prepare_campaign_plan(
+        dataset_dir,
+        cells,
+        prior_candidates,
+        prior_judgments,
+        campaign_id,
+    )
+    _generation_calls_rows, candidates = _run_campaign_generation(
+        dataset_dir,
+        private_dir,
+        cells,
+        plan,
+        workers=workers,
+        max_attempts=max_attempts,
+        retry_failures=retry_failures,
+        exact_command=exact_command,
+        model_call=model_call,
+    )
+    judgments, accepted = _run_campaign_validation(
+        dataset_dir,
+        private_dir,
+        cells,
+        plan,
+        candidates,
+        workers=workers,
+        max_attempts=max_attempts,
+        retry_failures=retry_failures,
+        exact_command=exact_command,
+        model_call=model_call,
+    )
+    accepted_before = _accepted_cell_ids(prior_candidates, prior_judgments)
+    accepted_after = accepted_before | {row["cell_id"] for row in accepted}
+    write_json(
+        dataset_dir
+        / "provenance/items/campaigns"
+        / _campaign_slug(campaign_id)
+        / "coverage_effect.json",
+        {
+            "dataset_id": DATASET_ID,
+            "campaign_id": campaign_id,
+            "cohort_cells": len(plan["cell_ids"]),
+            "candidates": len(candidates),
+            "judgments": len(judgments),
+            "accepted_candidates": len(accepted),
+            "covered_cells_before": len(accepted_before),
+            "newly_covered_cell_ids": sorted(accepted_after - accepted_before),
+            "newly_covered_cells": len(accepted_after - accepted_before),
+            "covered_cells_after": len(accepted_after),
+            "remaining_zero_coverage_cell_ids": sorted(
+                set(cell["cell_id"] for cell in cells) - accepted_after
+            ),
+        },
+    )
+
+
 def _selection_for_maximum(
     accepted: list[dict[str, Any]], design: dict[str, Any], maximum: int
 ) -> list[dict[str, Any]]:
@@ -1571,11 +2376,55 @@ def _selection_for_maximum(
         return select_item_bank(accepted, selected_design)
     if maximum != 3:
         raise ValueError("curation comparison supports maxima 1, 2, and 3")
+    selected = _selection_for_maximum(accepted, design, 2)
+    selected_by_cell: dict[str, list[dict[str, Any]]] = {}
+    for row in selected:
+        selected_by_cell.setdefault(row["cell_id"], []).append(row)
+    accepted_by_cell: dict[str, list[dict[str, Any]]] = {}
+    for row in accepted:
+        accepted_by_cell.setdefault(row["cell_id"], []).append(row)
+
+    def tokens(row: dict[str, Any]) -> set[str]:
+        return set(
+            re.findall(
+                r"[^\W_]+",
+                f"{row['prompt']} {row['target_answer']}".casefold(),
+            )
+        )
+
+    def distance(left: dict[str, Any], right: dict[str, Any]) -> float:
+        left_tokens, right_tokens = tokens(left), tokens(right)
+        union = left_tokens | right_tokens
+        return 1.0 - len(left_tokens & right_tokens) / len(union) if union else 0.0
+
+    for cell_id, rows in sorted(accepted_by_cell.items()):
+        existing = selected_by_cell.get(cell_id, [])
+        existing_ids = {row["item_id"] for row in existing}
+        remaining = [row for row in rows if row["item_id"] not in existing_ids]
+        if len(existing) < 2 or not remaining:
+            continue
+        third = min(
+            remaining,
+            key=lambda row: (
+                -min(distance(row, chosen) for chosen in existing),
+                int(row["generation_metadata"]["candidate_index"]),
+                row["item_id"],
+            ),
+        )
+        third_selected = dict(third)
+        third_selected["selection_metadata"] = {
+            "rank": 3,
+            "rule": "maximum_minimum_token_set_distance_from_first_two",
+            "minimum_token_set_distance_from_prior": min(
+                distance(third, chosen) for chosen in existing
+            ),
+        }
+        selected.append(third_selected)
     return sorted(
-        accepted,
+        selected,
         key=lambda row: (
             row["cell_id"],
-            int(row["generation_metadata"]["candidate_index"]),
+            int(row["selection_metadata"]["rank"]),
             row["item_id"],
         ),
     )
@@ -1624,37 +2473,109 @@ def _selection_scale_row(
 def curate_items_full(dataset_dir: Path, exact_command: str) -> None:
     """Freeze the current max-two diverse bank without response evidence."""
 
-    cells, _generation_call_rows, candidates = _load_complete_generation(dataset_dir)
-    validation_calls = _validation_calls(cells, candidates)
-    validation_plan_path = dataset_dir / "provenance/items/validation_plan.jsonl"
-    if not validation_plan_path.exists():
-        raise FileNotFoundError("frozen item-validation plan does not exist")
-    if read_jsonl(validation_plan_path) != _public_validation_plan(validation_calls):
-        raise ValueError("frozen validation plan changed")
-    judgments_path = dataset_dir / "provenance/items/validation_judgments.jsonl"
-    if not judgments_path.exists():
-        raise FileNotFoundError("validation judgments do not exist")
-    judgments = merge_completed_judgment_rows(
-        read_jsonl(judgments_path), [], validation_calls
+    cells, baseline_candidates, baseline_judgments = (
+        _load_complete_baseline_item_evidence(dataset_dir)
     )
-    if len(judgments) != len(candidates):
-        raise ValueError("validation must complete every recovered candidate first")
-    validation_audit_path = dataset_dir / "provenance/items/validation_audit.json"
-    if not validation_audit_path.exists():
-        raise FileNotFoundError("successful item-validation audit does not exist")
-    validation_audit = _read_json(validation_audit_path)
-    if validation_audit.get("status") != "PASS" or validation_audit.get(
-        "judgment_checkpoint_sha256"
-    ) != _json_sha256(judgments):
-        raise ValueError("item-validation audit does not match the complete checkpoint")
+    candidates = list(baseline_candidates)
+    judgments = list(baseline_judgments)
+    campaigns_used: list[dict[str, Any]] = []
+    baseline_zero = sorted(
+        set(cell["cell_id"] for cell in cells)
+        - _accepted_cell_ids(candidates, judgments)
+    )
+    unchanged_plan = (
+        dataset_dir
+        / "provenance/items/campaigns/unchanged_rescue/plan.json"
+    )
+    if baseline_zero and not unchanged_plan.exists():
+        write_json(
+            dataset_dir / "provenance/items/curation_blockers.json",
+            {
+                "status": "UNCHANGED_RESCUE_REQUIRED",
+                "zero_accepted_candidate_cell_ids": baseline_zero,
+                "automatic_rescue_or_repair_performed": False,
+                "next_stage": "rescue-items",
+            },
+        )
+        raise RuntimeError(
+            "curation blocked: "
+            f"{len(baseline_zero)} cells have zero accepted candidates and "
+            "require the frozen rescue"
+        )
+    if unchanged_plan.exists():
+        rescue_candidates, rescue_judgments = _load_complete_campaign(
+            dataset_dir,
+            cells,
+            UNCHANGED_RESCUE_ID,
+            baseline_candidates,
+            baseline_judgments,
+        )
+        candidates = sorted(
+            [*candidates, *rescue_candidates], key=lambda row: row["item_id"]
+        )
+        judgments = sorted(
+            [*judgments, *rescue_judgments], key=lambda row: row["item_id"]
+        )
+        campaigns_used.append(
+            {
+                "campaign_id": UNCHANGED_RESCUE_ID,
+                "candidates": len(rescue_candidates),
+                "accepted": sum(row["accepted"] for row in rescue_judgments),
+            }
+        )
+
+    residual_after_rescue = sorted(
+        set(cell["cell_id"] for cell in cells)
+        - _accepted_cell_ids(candidates, judgments)
+    )
+    intervention_plan = (
+        dataset_dir
+        / "provenance/items/campaigns/determinacy_intervention/plan.json"
+    )
+    if residual_after_rescue and not intervention_plan.exists():
+        write_json(
+            dataset_dir / "provenance/items/curation_blockers.json",
+            {
+                "status": "DETERMINACY_INTERVENTION_REQUIRED",
+                "zero_accepted_candidate_cell_ids": residual_after_rescue,
+                "automatic_rescue_or_repair_performed": False,
+                "next_stage": "intervene-items",
+            },
+        )
+        raise RuntimeError(
+            "curation blocked: "
+            f"{len(residual_after_rescue)} cells remain after unchanged rescue"
+        )
+    if intervention_plan.exists():
+        prior_candidates = list(candidates)
+        prior_judgments = list(judgments)
+        intervention_candidates, intervention_judgments = _load_complete_campaign(
+            dataset_dir,
+            cells,
+            DETERMINACY_INTERVENTION_ID,
+            prior_candidates,
+            prior_judgments,
+        )
+        candidates = sorted(
+            [*candidates, *intervention_candidates], key=lambda row: row["item_id"]
+        )
+        judgments = sorted(
+            [*judgments, *intervention_judgments], key=lambda row: row["item_id"]
+        )
+        campaigns_used.append(
+            {
+                "campaign_id": DETERMINACY_INTERVENTION_ID,
+                "candidates": len(intervention_candidates),
+                "accepted": sum(row["accepted"] for row in intervention_judgments),
+            }
+        )
 
     candidate_by_id = {row["item_id"]: row for row in candidates}
     accepted = [
         candidate_by_id[row["item_id"]] for row in judgments if row["accepted"]
     ]
-    accepted_path = dataset_dir / "provenance/items/validator_accepted_candidates.jsonl"
-    if not accepted_path.exists() or read_jsonl(accepted_path) != accepted:
-        raise ValueError("validator-accepted checkpoint is missing or changed")
+    if len(candidate_by_id) != len(candidates):
+        raise ValueError("combined item-campaign candidates contain duplicate IDs")
     accepted_cells = {row["cell_id"] for row in accepted}
     zero_accepted = sorted(
         cell["cell_id"] for cell in cells if cell["cell_id"] not in accepted_cells
@@ -1663,18 +2584,23 @@ def curate_items_full(dataset_dir: Path, exact_command: str) -> None:
         write_json(
             dataset_dir / "provenance/items/curation_blockers.json",
             {
-                "status": "DECLARED_RESCUE_DECISION_REQUIRED",
+                "status": "UNRESOLVED_AFTER_DECLARED_CAMPAIGNS",
                 "zero_accepted_candidate_cell_ids": zero_accepted,
                 "automatic_rescue_or_repair_performed": False,
                 "next_step": (
-                    "Inspect failures and freeze a separate rescue decision before "
-                    "making any additional generation calls."
+                    "Retain this negative result and freeze a new methodological "
+                    "decision before making any additional generation calls."
                 ),
             },
         )
         raise RuntimeError(
             f"curation blocked: {len(zero_accepted)} cells have zero accepted candidates"
         )
+
+    write_jsonl(
+        dataset_dir / "provenance/items/all_validator_accepted_candidates.jsonl",
+        accepted,
+    )
 
     design = read_yaml(GENERATION_DESIGN_PATH)
     selections = {
@@ -1708,6 +2634,7 @@ def curate_items_full(dataset_dir: Path, exact_command: str) -> None:
             "dataset_id": DATASET_ID,
             "comparison": comparison,
             "selection_rules": design["bank_selection"],
+            "declared_campaigns_used": campaigns_used,
             "uses_learner_data": False,
             "uses_kt_or_predictive_metrics": False,
             "uses_discovered_kcs": False,
@@ -1729,6 +2656,9 @@ def curate_items_full(dataset_dir: Path, exact_command: str) -> None:
             "final_bank_sha256": _json_sha256(final_items),
             "selection_design_path": str(GENERATION_DESIGN_PATH.relative_to(ROOT)),
             "automatic_rescue_or_repair_performed": False,
+            "declared_post_n3_campaigns": campaigns_used,
+            "original_n3_candidates_retained": len(baseline_candidates),
+            "original_n3_judgments_retained": len(baseline_judgments),
             "code_revision_at_stage_start": _git_revision(),
             "exact_command": exact_command,
         },
@@ -1748,6 +2678,8 @@ def parse_args() -> argparse.Namespace:
             "construct-k-star",
             "generate-items",
             "validate-items",
+            "rescue-items",
+            "intervene-items",
             "curate-items",
         ],
     )
@@ -1819,6 +2751,26 @@ def main() -> int:
         validate_items_full(
             dataset_dir,
             private_dir,
+            workers=arguments.workers,
+            max_attempts=arguments.max_attempts,
+            retry_failures=arguments.retry_failures,
+            exact_command=exact_command,
+        )
+    elif arguments.stage == "rescue-items":
+        run_item_campaign(
+            dataset_dir,
+            private_dir,
+            UNCHANGED_RESCUE_ID,
+            workers=arguments.workers,
+            max_attempts=arguments.max_attempts,
+            retry_failures=arguments.retry_failures,
+            exact_command=exact_command,
+        )
+    elif arguments.stage == "intervene-items":
+        run_item_campaign(
+            dataset_dir,
+            private_dir,
+            DETERMINACY_INTERVENTION_ID,
             workers=arguments.workers,
             max_attempts=arguments.max_attempts,
             retry_failures=arguments.retry_failures,

@@ -580,3 +580,167 @@ def test_curation_fails_closed_for_zero_accepted_cell(tmp_path) -> None:
     assert blocker["zero_accepted_candidate_cell_ids"] == ["gc_fixture"]
     assert blocker["automatic_rescue_or_repair_performed"] is False
     assert not (dataset_dir / "items/items.jsonl").exists()
+
+
+def test_two_campaign_rescue_freezes_cohorts_resumes_and_curates(tmp_path) -> None:
+    dataset_dir, private_dir = _prepare_dataset(tmp_path)
+    build_dataset.generate_items_full(
+        dataset_dir,
+        private_dir,
+        workers=1,
+        max_attempts=1,
+        retry_failures=False,
+        exact_command="fixture generation",
+        model_call=_generation_model(),
+    )
+    build_dataset.validate_items_full(
+        dataset_dir,
+        private_dir,
+        workers=1,
+        max_attempts=1,
+        retry_failures=False,
+        exact_command="fixture rejecting baseline validation",
+        model_call=_validator_model(failing=True),
+    )
+
+    criteria = read_yaml(
+        ROOT / "modules/items/validation/criteria.yaml"
+    )["criteria"]
+    rescue_calls = []
+
+    def rescue_model(prompt, **kwargs):
+        rescue_calls.append((kwargs["stage"], kwargs["call_key"], prompt))
+        if kwargs["stage"] == "generation":
+            parsed = _generation_payload(
+                kwargs["input_data"]["candidate_position"]["index"]
+            )
+        else:
+            parsed = {
+                "judgments": {
+                    name: {
+                        "passed": name != "determinacy",
+                        "note": "Frozen rescue fixture judgment.",
+                    }
+                    for name in criteria
+                }
+            }
+        _write_fake_evidence(
+            kwargs["evidence_dir"],
+            prompt=prompt,
+            input_data=kwargs["input_data"],
+            parsed=parsed,
+            model=kwargs["model"],
+            reasoning_effort=kwargs["reasoning_effort"],
+            stage=kwargs["stage"],
+            call_key=kwargs["call_key"],
+        )
+        return parsed
+
+    build_dataset.run_item_campaign(
+        dataset_dir,
+        private_dir,
+        build_dataset.UNCHANGED_RESCUE_ID,
+        workers=2,
+        max_attempts=1,
+        retry_failures=False,
+        exact_command="fixture unchanged rescue",
+        model_call=rescue_model,
+    )
+    rescue_dir = (
+        dataset_dir / "provenance/items/campaigns/unchanged_rescue"
+    )
+    rescue_plan = json.loads((rescue_dir / "plan.json").read_text())
+    assert rescue_plan["cell_ids"] == ["gc_fixture"]
+    assert rescue_plan["planned_generation_calls"] == 2
+    assert rescue_plan["stops_after_early_acceptance"] is False
+    assert len(read_jsonl(rescue_dir / "candidates.jsonl")) == 2
+    assert len([row for row in rescue_calls if row[0] == "generation"]) == 2
+    assert len([row for row in rescue_calls if row[0] == "validation"]) == 2
+    effect = json.loads((rescue_dir / "coverage_effect.json").read_text())
+    assert effect["newly_covered_cells"] == 0
+    assert effect["remaining_zero_coverage_cell_ids"] == ["gc_fixture"]
+
+    # Exact-context resume may not recall either backend and may not shrink the
+    # already-frozen two-position cohort.
+    build_dataset.run_item_campaign(
+        dataset_dir,
+        private_dir,
+        build_dataset.UNCHANGED_RESCUE_ID,
+        workers=1,
+        max_attempts=1,
+        retry_failures=False,
+        exact_command="fixture unchanged rescue resume",
+        model_call=lambda *args, **kwargs: pytest.fail("must resume without calls"),
+    )
+    assert json.loads((rescue_dir / "plan.json").read_text()) == rescue_plan
+
+    intervention_calls = []
+
+    def intervention_model(prompt, **kwargs):
+        intervention_calls.append((kwargs["stage"], kwargs["call_key"], prompt))
+        if kwargs["stage"] == "generation":
+            parsed = _generation_payload(
+                kwargs["input_data"]["candidate_position"]["index"]
+            )
+        else:
+            parsed = {
+                "judgments": {
+                    name: {
+                        "passed": True,
+                        "note": "Frozen intervention fixture judgment.",
+                    }
+                    for name in criteria
+                }
+            }
+        _write_fake_evidence(
+            kwargs["evidence_dir"],
+            prompt=prompt,
+            input_data=kwargs["input_data"],
+            parsed=parsed,
+            model=kwargs["model"],
+            reasoning_effort=kwargs["reasoning_effort"],
+            stage=kwargs["stage"],
+            call_key=kwargs["call_key"],
+        )
+        return parsed
+
+    build_dataset.run_item_campaign(
+        dataset_dir,
+        private_dir,
+        build_dataset.DETERMINACY_INTERVENTION_ID,
+        workers=2,
+        max_attempts=1,
+        retry_failures=False,
+        exact_command="fixture determinacy intervention",
+        model_call=intervention_model,
+    )
+    intervention_dir = (
+        dataset_dir
+        / "provenance/items/campaigns/determinacy_intervention"
+    )
+    intervention_plan = json.loads((intervention_dir / "plan.json").read_text())
+    assert intervention_plan["cell_ids"] == ["gc_fixture"]
+    assert intervention_plan["eligibility"]["gc_fixture"]["eligible"] is True
+    generation_prompts = [
+        row[2] for row in intervention_calls if row[0] == "generation"
+    ]
+    assert len(generation_prompts) == 2
+    assert all("DETERMINACY INTERVENTION" in prompt for prompt in generation_prompts)
+    assert len([row for row in intervention_calls if row[0] == "validation"]) == 2
+    effect = json.loads((intervention_dir / "coverage_effect.json").read_text())
+    assert effect["newly_covered_cell_ids"] == ["gc_fixture"]
+    assert effect["remaining_zero_coverage_cell_ids"] == []
+
+    build_dataset.curate_items_full(dataset_dir, "fixture campaign curation")
+    items = read_jsonl(dataset_dir / "items/items.jsonl")
+    assert len(items) == 2
+    assert all(
+        row["generation_metadata"]["campaign"]
+        == build_dataset.DETERMINACY_INTERVENTION_ID
+        for row in items
+    )
+    curation = json.loads(
+        (dataset_dir / "provenance/items/curation.json").read_text()
+    )
+    assert len(curation["declared_post_n3_campaigns"]) == 2
+    assert curation["automatic_rescue_or_repair_performed"] is False
