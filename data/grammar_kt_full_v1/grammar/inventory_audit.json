@@ -1,0 +1,57 @@
+{
+  "dataset_id": "grammar_kt_full_v1",
+  "declared_scope": "Single-clause English verbal morphosyntax used in the pilot.",
+  "source_dispositions": {
+    "complete": 211,
+    "out_of_scope": 675,
+    "partial": 327,
+    "unresolved": 9
+  },
+  "complete_source_descriptors": 211,
+  "canonical_cells": 75,
+  "source_cell_relations": 228,
+  "canonical_value_support": {
+    "tense": {
+      "NA": 45,
+      "past": 13,
+      "present": 17
+    },
+    "aspect": {
+      "none": 34,
+      "perfect": 24,
+      "perfect_progressive": 6,
+      "progressive": 11
+    },
+    "voice": {
+      "active": 62,
+      "passive": 13
+    },
+    "polarity": {
+      "negative": 32,
+      "positive": 43
+    },
+    "clause": {
+      "declarative": 64,
+      "imperative": 2,
+      "non_subject_wh_question": 1,
+      "polar_question": 8
+    },
+    "modal": {
+      "can": 4,
+      "could": 5,
+      "may": 5,
+      "might": 3,
+      "must": 5,
+      "none": 32,
+      "shall": 4,
+      "should": 4,
+      "will": 9,
+      "would": 4
+    }
+  },
+  "schema_id": "grammar_cell_english_v1",
+  "schema_path": "modules/grammar/canonical/schema.yaml",
+  "stable_cell_id_method": "sha256(canonical feature JSON), first 16 hex",
+  "code_revision_at_stage_start": "d95f6ee10c05c1012e88c6c1bf9ed9443e5877a5",
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/build_dataset.py --stage canonicalise"
+}

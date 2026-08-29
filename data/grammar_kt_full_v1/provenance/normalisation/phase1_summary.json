@@ -1,0 +1,20 @@
+{
+  "dataset_id": "grammar_kt_full_v1",
+  "source_descriptors": 1222,
+  "valid_mappings": 1222,
+  "technical_failure_source_ids": [],
+  "result_counts": {
+    "complete": 170,
+    "out_of_scope": 675,
+    "partial": 375,
+    "unresolved": 2
+  },
+  "phase2_eligible": 106,
+  "models": {
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high"
+  },
+  "max_technical_attempts": 2,
+  "code_revision_at_stage_start": "d95f6ee10c05c1012e88c6c1bf9ed9443e5877a5",
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/build_dataset.py --stage normalise-phase1 --source /home/abdullah/urop-aug/sources/parsed_final/egp_entries.jsonl --workers 8 --max-attempts 2"
+}

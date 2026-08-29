@@ -1,0 +1,41 @@
+{
+  "stage": "run",
+  "status": "complete",
+  "cohort_id": "full_v1_phase1_repeat_75e3a19b917b2956",
+  "cohort_content_sha256": "75e3a19b917b2956fc54a703e8bfa31ac65b0103c18510c814eb763bbf4aee7f",
+  "selected_descriptors": 120,
+  "valid_repeat_mappings": 120,
+  "missing_source_ids": [],
+  "repeat_result_counts": {
+    "complete": 39,
+    "out_of_scope": 43,
+    "partial": 38
+  },
+  "attempt_status_counts": {
+    "success": 120
+  },
+  "technical_error_type_counts": {},
+  "model_settings": {
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high"
+  },
+  "max_total_technical_attempts_per_descriptor": 2,
+  "retry_policy": "Retry only model/transport/JSON/schema-contract failures; never retry because a valid annotation disagrees with the primary annotation.",
+  "provider_sampling_seed": {
+    "available": false,
+    "value": null,
+    "consequence": "The Codex CLI backend exposes no provider sampling seed; this is a fresh-call empirical repeat, not a seeded replay."
+  },
+  "input_hashes": {
+    "typed_source_file_sha256": "a911d99bde077e145a6dfeb46e6a47766a8657460cd3498ab54f7252c26c6563",
+    "typed_source_stream_sha256": "c24f43f336adb53a35cd64650a117ac82a0db242c14c7611a86ab53f5f250225",
+    "primary_phase1_file_sha256": "a67d7f52a7807eef359a9d576044348409f4f2e96fe77eebbb40034e6de4ed69",
+    "primary_phase1_stream_sha256": "93b24ccafa707ccdaf57dadfcb643d3d658f5f502a596411171980dcdf8521cb",
+    "grammar_schema_sha256": "a3e8d4f1c419eff10c4498db4b3b243fddf51b708ad569c652a9caaa3a8f0aaf",
+    "phase1_prompt_sha256": "677bd037996116768ece539987ebe4a54eff8e520a1fc50249ecd3cf71931407",
+    "rulebook_sha256": "036d7a334473f2ba0b83ae20ac5e742f6e8d38cd174b7ff93b7030661bb0bc95",
+    "backend_declaration_sha256": "0e44414d243f2a1a1d72b37d69f010466fad06e848faca6a42fdee0a0fe76b99"
+  },
+  "code_revision_at_stage_start": "f125a2420a687f7141e09b600582b1956c929fd7",
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/run_full_normalisation_stability.py --stage run --typed-source runs/grammar_kt_full_v1_private/source/descriptors.jsonl --primary-phase1 data/grammar_kt_full_v1/provenance/normalisation/phase1_mappings.jsonl --workers 8 --max-attempts 2"
+}

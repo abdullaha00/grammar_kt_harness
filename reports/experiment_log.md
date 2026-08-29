@@ -1314,7 +1314,13 @@ experiment:
   unspecified polarity and combinations of voice/aspect/clause/tense. One
   Phase-1-eligible row lacked an example and was not silently called. A
   duplicate branch remains inside a partial mapping and does not enter the
-  canonical inventory.
+  canonical inventory. A publication-boundary audit found that the first
+  public checkpoints still contained model-written `note` fields. Immutable
+  private parsed results were retained unchanged; the public checkpoints were
+  deterministically regenerated with a fixed redaction marker and technical
+  error types only. Exact private input, prompt, model, stage, and structured
+  mapping equality are now required on resume. This packaging correction made
+  no new model call and changed no result, cell, relation, or rate.
 - **Interpretation:** The declared schema represents a defensible exact
   verbal-morphosyntax subset of the full source without adding dimensions for
   coverage alone. Perfect agreement for jointly complete rows supports the

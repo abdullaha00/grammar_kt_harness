@@ -1,0 +1,26 @@
+{
+  "inventory_id": "english_generator_kcs_v1",
+  "grammar_schema_id": "grammar_cell_english_v1",
+  "language_declaration_id": "english_reusable_operations_v1",
+  "excluded_declarations": [
+    {
+      "id": "gkc_subject_wh_question",
+      "reason": "below_minimum_cell_support",
+      "cell_support": 0,
+      "minimum_cell_support": 1
+    }
+  ],
+  "activation_equivalence_classes": [],
+  "metadata": {
+    "canonical_cell_count": 75,
+    "generator_kc_count": 18,
+    "optional_interactions_included": [],
+    "learner_outcomes_read": false,
+    "items_read": false,
+    "discovered_kcs_read": false
+  },
+  "design_path": "modules/kcs/generator/design.yaml",
+  "language_declaration_path": "modules/kcs/generator/english_kcs.yaml",
+  "code_revision_at_stage_start": "d95f6ee10c05c1012e88c6c1bf9ed9443e5877a5",
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/build_dataset.py --stage construct-k-star"
+}
