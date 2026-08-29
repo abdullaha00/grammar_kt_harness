@@ -1490,6 +1490,57 @@ experiment:
   validation calls/judgments, audits, and private raw evidence under the
   full-v1 item provenance directories.
 
+## FULL-ITEM-003-PREREG — frozen append-only answer-package correction
+
+- **Date frozen:** 2026-08-29, after both declared generation campaigns and
+  before any correction revalidation call.
+- **Research question:** Can the final three zero-coverage cells be measured by
+  already generated, target-faithful candidates once narrowly omitted natural
+  equivalents are represented in the accepted-answer package?
+- **Motivation:** The unchanged rescue added 10 accepted candidates and nine
+  cells, taking coverage from 57/75 to 66/75. The separately labelled explicit-
+  construction intervention added nine accepted candidates and six cells,
+  taking coverage to 72/75. For one candidate in each remaining cell, the
+  independent validator's only failed criterion named a finite equivalent form
+  absent from `accepted_answers`; the prompt, target, grammar, naturalness,
+  pedagogy, simplicity, leakage, extraneous-grammar, and world-knowledge
+  criteria otherwise passed.
+- **Hypothesis:** Appending only the validator-named equivalent forms will make
+  all three copied packages determinate under unchanged independent validation,
+  without modifying learner-facing prompts or target answers.
+- **Frozen corrections:** Preserve every raw candidate and original judgment.
+  Create provenance-linked copied candidates with new stable IDs and exactly
+  these append-only changes:
+  - `determinacy_intervention_gc_019f7fb10012b606_01`: append
+    `The children mustn't enter the kitchen.`;
+  - `determinacy_intervention_gc_04a854582c08aa84_02`: append
+    `Don't touch it.`, `Do not touch it.`, `Don't touch that wall.`, and
+    `Do not touch that wall.`;
+  - `determinacy_intervention_gc_bb4f472f992ab76b_01`: append
+    `Turn the light off.`.
+- **Manipulated variable:** Accepted-answer enumeration in three copied item
+  packages.
+- **Held fixed:** GrammarCell, K*, learner-facing prompt, target answer, item
+  type, all existing accepted answers, generation provenance, validator prompt,
+  criteria, validator model/effort, and retry policy. No learner, Q-matrix, KC-
+  discovery, or KT evidence is permitted.
+- **Primary outcome:** Independent acceptance of each corrected copy and final
+  cell coverage. All validation criteria remain safeguards.
+- **Decision rule:** Curation may use a corrected copy only if it passes the
+  unchanged independent validator. A failed correction remains a negative
+  result; no further answer, prompt, or target repair is allowed without a new
+  declared decision. The correction plan and before-state hashes must be
+  verified on every run, and raw evidence must remain immutable.
+- **Planned exact command:**
+
+  ```bash
+  .venv/bin/python scripts/build_dataset.py --stage correct-items --workers 3 --max-attempts 2
+  ```
+- **Planned artifacts:** Frozen correction declaration, plan, corrected copied
+  candidates, independent judgments, audit, and private raw validation evidence
+  under `data/grammar_kt_full_v1/provenance/items/packaging_corrections/` and
+  `runs/grammar_kt_full_v1_private/items/packaging_corrections/`.
+
 ## FULL-SIM-001-PREREG — baseline simulator assumption and schedule audit
 
 - **Date frozen:** 2026-08-29, before the full-v1 simulator pilot or learner
