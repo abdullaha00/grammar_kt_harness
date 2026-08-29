@@ -98,7 +98,7 @@ construction.
   ACL manuscript. They remain retained until full-v1 evidence supports their
   replacements.
 
-## Full linguistic scope
+## Full linguistic scope and completed census
 
 - Consult-only source:
   `/home/abdullah/urop-aug/sources/parsed_final/egp_entries.jsonl`
@@ -109,7 +109,21 @@ construction.
 - Scope decision: process all 1,222 rows, then classify them against the
   existing explicit boundary: single-main-clause English verbal morphosyntax
   over tense, aspect, voice, polarity, clause type, and central-modal identity.
-- No schema expansion is justified before the full disposition audit.
+- The frozen all-row Phase-1 census completed without a technical failure:
+  170 complete, 375 partial, two unresolved, and 675 out-of-scope mappings.
+- Of 106 Phase-2-eligible partials, 105 had licensed examples and were called;
+  41 became complete, 57 remained partial, and seven became unresolved. The
+  final census is therefore 211 complete, 327 partial, nine unresolved, and
+  675 out-of-scope descriptors.
+- Complete mappings yield 75 exact canonical GrammarCells and 228 immutable
+  source-cell relations. No schema constraint failed and no schema expansion
+  is justified by the observed failure groups; remaining uncertainty is
+  concentrated in unspecified polarity, clause, voice, aspect, and tense.
+- A balanced fresh 120-descriptor Phase-1 repeat obtained 93.3% result
+  agreement and 95.8% Phase-2-eligibility agreement. All 38 descriptors judged
+  complete in both runs had exactly the same canonical cell set. Lower
+  agreement in partial branch multisets (79.0% among mappings with any branch)
+  supports retaining explicit uncertainty rather than default completion.
 - Raw source text and rendered prompts remain restricted under ignored
   `runs/`; only source identity and derived artifacts enter the publishable
   dataset tree.
@@ -118,9 +132,9 @@ The previous 139 rows were a purposive sample and omit both WH clause values
 and every central modal except `would`; they cannot establish final linguistic
 coverage.
 
-## Generator-KC working hypothesis
+## Generator-KC decision before item construction
 
-The outcome-free structural pilot starts from the earlier reusable-operation
+The frozen outcome-free generator inventory uses the reusable-operation
 hybrid:
 
 - present and past finite-form selection;
@@ -135,17 +149,15 @@ Reference active/positive/declarative/simple/modal-free/tenseless conditions
 are not separate latent KCs. Perfect-progressive activates both shared aspect
 operations instead of an atomic feature KC.
 
-On the medium bank, this declaration reproduces nine supported KCs, Q rank 9,
-24/24 distinct cell rows, and no duplicate columns. Feature-plus-operation
-addition was rejected structurally because its 13 columns have rank 10; the
-superordinate operations are exact linear combinations of feature columns.
-Exact-cell KCs have no reuse. Generic interactions are excluded from the
-baseline working hypothesis.
-
-The perfect-progressive-chain interaction is the sole preregistered optional
-pilot. It will enter K* only if full-bank support and independent-mastery
-recovery justify a distinct latent state. No learner-response prediction on the
-final dataset will choose K*.
+On the 75-cell full inventory, this declaration yields 18 KCs, full column
+rank, 75 distinct cell-activation rows, and no identical or near-identical
+columns. Seventeen KCs recur across cells. The feature-only control needs 19
+KCs; the exact-cell diagnostic needs 75 non-reusable KCs. Adding a
+perfect-progressive-chain KC also retains full rank, but its six cells are
+strictly nested inside both component operations and it adds no linguistic
+operation absent from the compositional declaration. It is excluded on
+parsimony grounds, not predictive fit. The final item bank will rerun support
+and geometry checks before K* and Q* pass their measurement gate.
 
 ## Established evidence retained from the medium programme
 
@@ -173,17 +185,15 @@ final dataset will choose K*.
 
 ## Current unresolved construction questions
 
-1. Full Phase-1/Phase-2 disposition and canonical-cell coverage.
-2. Systematic full-scale normalisation failure groups and repeat stability.
-3. Whether the perfect-progressive-chain interaction is independently
-   measurable; default is exclusion.
-4. Full-bank items per KC, Q rank, near-equivalence, and rare-KC support.
-5. Full grammar-regime split with materially larger unseen-combination and
+1. Full-bank candidate acceptance, zero-coverage cells, and whether a declared
+   narrow rescue is needed.
+2. Full-bank items per KC, Q rank, near-equivalence, and rare-KC support.
+3. Full grammar-regime split with materially larger unseen-combination and
    unseen-value cohorts.
-6. Baseline multi-KC response aggregation and learning update after the
+4. Baseline multi-KC response aggregation and learning update after the
    preregistered simulator pilot.
-7. Final item count, learner count, acquisition passes, and probe schedule.
-8. Automatic item validation remains non-human evidence.
+5. Final item count, learner count, acquisition schedule, and probe schedule.
+6. Automatic item validation remains non-human evidence.
 
 ## Important active paths
 
@@ -199,6 +209,7 @@ final dataset will choose K*.
 
 ## Current next action
 
-Run the frozen all-1,222 Phase-1 census with resumable private evidence, inspect
-the Phase-2 cohort before calling it, complete canonicalisation, and then rerun
-the outcome-free K* structural alternatives on the full cell inventory.
+Generate the frozen N=3 candidate plan for all 75 GrammarCells, apply
+deterministic checks and independent validation, inspect any zero-coverage
+cells before a declared rescue, curate the full bank, and run the mandatory
+K*/Q* support and identifiability audit before any learner simulation.

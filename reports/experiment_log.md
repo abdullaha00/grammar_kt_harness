@@ -1256,3 +1256,126 @@ experiment:
   `reports/full_v1_artifacts/kc/generator_alternatives_medium.json`,
   `scripts/investigate_generator_kcs.py`, and
   `modules/kcs/generator/`.
+
+## FULL-LING-001 — full-source normalisation, canonicalisation, and repeat audit
+
+- **Date:** 2026-08-29
+- **Research question:** RQ1: can the complete available grammar resource be
+  dispositioned reproducibly into an explicit declared canonical scope rather
+  than a purposive medium sample?
+- **Motivation:** The retained 139-descriptor pilot did not establish source
+  coverage and omitted most modal values and WH structure. The revised
+  baseline requires every source row to receive an auditable disposition.
+- **Hypothesis:** The existing six-dimensional single-main-clause verbal-
+  morphosyntax schema will support a meaningful exact subset without schema
+  expansion, while explicit partial/out-of-scope results will absorb genuinely
+  underspecified or unrelated descriptors.
+- **Methodology:** Verified the consult-only 1,222-row EGP snapshot by hash;
+  sent every typed descriptor through descriptor-only Phase 1; froze the
+  declared example-licensed Phase-2 cohort; retained every branch and result;
+  canonicalised only mappings declared complete; and independently repeated a
+  category/CEFR-balanced 120-row Phase-1 cohort. The repeat comparison is
+  source-ID paired and ignores branch order. Raw descriptors, prompts, model
+  outputs, and notes remain in ignored private evidence.
+- **Manipulated variable:** Phase-2 example assistance for its frozen eligible
+  cohort; fresh annotation instance for the repeat audit.
+- **Held fixed:** Source hash, typed boundary, schema, rulebook, prompts,
+  backend, effort, and canonicalisation rules.
+- **Exact commands:**
+
+  ```bash
+  .venv/bin/python scripts/build_dataset.py --stage prepare-source --source /home/abdullah/urop-aug/sources/parsed_final/egp_entries.jsonl
+  .venv/bin/python scripts/build_dataset.py --stage normalise-phase1 --source /home/abdullah/urop-aug/sources/parsed_final/egp_entries.jsonl --workers 8 --max-attempts 2
+  .venv/bin/python scripts/build_dataset.py --stage normalise-phase2 --source /home/abdullah/urop-aug/sources/parsed_final/egp_entries.jsonl --workers 8 --max-attempts 2
+  .venv/bin/python scripts/build_dataset.py --stage canonicalise
+  .venv/bin/python scripts/run_full_normalisation_stability.py --stage run --typed-source runs/grammar_kt_full_v1_private/source/descriptors.jsonl --primary-phase1 data/grammar_kt_full_v1/provenance/normalisation/phase1_mappings.jsonl --workers 8 --max-attempts 2
+  .venv/bin/python scripts/audit_full_normalisation.py --source runs/grammar_kt_full_v1_private/source/descriptors.jsonl --phase1 data/grammar_kt_full_v1/provenance/normalisation/phase1_mappings.jsonl --phase2 data/grammar_kt_full_v1/provenance/normalisation/phase2_mappings.jsonl --phase1-attempts data/grammar_kt_full_v1/provenance/normalisation/phase1_attempts.jsonl --phase2-attempts data/grammar_kt_full_v1/provenance/normalisation/phase2_attempts.jsonl --cells data/grammar_kt_full_v1/grammar/cells.jsonl --relations data/grammar_kt_full_v1/grammar/source_cell_relations.jsonl --repeat-mappings data/grammar_kt_full_v1/provenance/normalisation/stability/repeat_mappings.jsonl --allow-incomplete --output data/grammar_kt_full_v1/provenance/normalisation/full_audit.json
+  ```
+- **Models/settings:** `gpt-5.6-sol`, high reasoning; eight parallel workers;
+  two maximum technical attempts. Provider sampling seed and token count were
+  unavailable. All 1,447 calls used one attempt and returned valid contracts;
+  aggregate call runtimes were 18,402.58 seconds for Phase 1, 1,531.30 seconds
+  for Phase 2, and 1,827.04 seconds for repeats.
+- **Seeds:** Deterministic cohort seed `20260829`; provider seed unavailable.
+- **Data:** All 1,222 source rows, SHA-256
+  `e38c4f959f188150dae7b88f21e35d77828048772e222191818dc0c2488486cd`.
+- **Results:** Phase 1 produced 170 complete, 375 partial, two unresolved, and
+  675 out-of-scope mappings. Of 106 eligible partials, 105 had licensed
+  examples; Phase 2 resolved 41/105 (39.05%) to complete, retained 57 partial,
+  and made seven unresolved, with 124→137 branches. The final census is 211
+  complete, 327 partial, nine unresolved, and 675 out-of-scope descriptors.
+  Canonicalisation produced 75 exact cells and 228 source-cell relations with
+  exact feature/support agreement and no schema violation. On the balanced
+  repeat, result agreement was 112/120 (93.3%), eligibility agreement 115/120
+  (95.8%), and exact complete-cell-set agreement 38/38 (100%). Partial/uncertain
+  branch-multiset agreement was lower: 64/81 (79.0%) among rows with branches.
+- **Uncertainty/failure analysis:** Automatic normalisation is not human gold;
+  model sampling is not provider-seeded. Remaining uncertainty clusters in
+  unspecified polarity and combinations of voice/aspect/clause/tense. One
+  Phase-1-eligible row lacked an example and was not silently called. A
+  duplicate branch remains inside a partial mapping and does not enter the
+  canonical inventory.
+- **Interpretation:** The declared schema represents a defensible exact
+  verbal-morphosyntax subset of the full source without adding dimensions for
+  coverage alone. Perfect agreement for jointly complete rows supports the
+  canonical inventory; weaker partial agreement supports the conservative
+  completeness gate.
+- **Methodological consequence:** Freeze the 75-cell inventory and keep all
+  non-complete dispositions as provenance, not measurement cells. No schema
+  expansion or default filling was adopted.
+- **Artifact paths:** `data/grammar_kt_full_v1/grammar/` and
+  `data/grammar_kt_full_v1/provenance/normalisation/`.
+
+## FULL-KC-001-FULL-PREITEM — generator ontology decision on all exact cells
+
+- **Date:** 2026-08-29
+- **Research question:** RQ1/RQ2: which outcome-free ontology is a parsimonious,
+  reusable, structurally distinguishable generator truth on the full exact
+  grammar inventory?
+- **Motivation:** The medium structural pilot needed confirmation after the
+  full inventory introduced nine additional modal identities and WH structure.
+- **Hypothesis:** The reusable-operation hybrid will remain full-rank; an
+  explicit perfect-progressive-chain interaction will be measurable only as a
+  nested skill and exact-cell KCs will remain non-reusable.
+- **Methodology:** Projected one structural pseudo-item per fixed GrammarCell
+  onto the hybrid, hybrid-plus-chain, non-reference feature-value control, and
+  exact-cell diagnostic. Compared rank, activation rows, support, isolation,
+  equivalence, pair geometry, and reuse. No item text, learner outcome,
+  simulator state, selector, or KT metric was accepted.
+- **Manipulated variable:** Generator-KC construction principle.
+- **Held fixed:** All 75 exact cells, schema, declarations, deterministic
+  activation projection, and support/rank audit implementation.
+- **Exact commands:**
+
+  ```bash
+  .venv/bin/python scripts/build_dataset.py --stage construct-k-star
+  .venv/bin/python scripts/investigate_generator_kcs.py --cells data/grammar_kt_full_v1/grammar/cells.jsonl --items /tmp/grammar_kt_full_v1_structural_items.jsonl --output reports/full_v1_artifacts/kc/generator_alternatives_full_cells_preitem.json
+  ```
+- **Models/settings:** None; deterministic structural analysis.
+- **Seeds:** None.
+- **Data:** 75 frozen full-v1 GrammarCells; one declared structural row per
+  cell solely for pre-item geometry.
+- **Results:** The hybrid has 18 KCs, rank 18, 75 distinct activation rows, no
+  identical or near-identical columns, 151/153 two-sided KC-pair contrasts,
+  and 17/18 KCs reused across cells. The feature control has 19 full-rank KCs.
+  Hybrid-plus-chain has 19 full-rank KCs, but the added chain is supported by
+  only the six perfect-progressive cells and is strictly nested inside both
+  component KCs. Exact-cell uses 75 KCs and has zero cross-cell reuse. All
+  alternatives fail only the two-item support gate because this pre-item audit
+  deliberately uses one pseudo-item/cell.
+- **Uncertainty/failure analysis:** Full bank acceptance may leave rare cells
+  with fewer than two valid items, so final support must be rerun on curated
+  items. Rank is a structural diagnostic, not proof of finite-sample or human
+  cognitive identifiability. The single non-subject-WH cell is nested within
+  present and negation in this inventory.
+- **Interpretation:** The chain adds a nonseparable latent state without an
+  independent linguistic operation or item contrast. The feature control adds
+  an atomic perfect-progressive value where the hybrid gives a compositional
+  account. Exact-cell KCs violate reuse.
+- **Methodological consequence:** Freeze the 18-KC hybrid before item calls;
+  exclude the chain on linguistic parsimony, not outcome fit. Reopen K* only if
+  the final measurement audit exposes a genuine structural failure, never
+  because of learner-response performance.
+- **Artifact paths:** `data/grammar_kt_full_v1/kcs.jsonl`,
+  `data/grammar_kt_full_v1/provenance/kcs/construction.json`, and
+  `reports/full_v1_artifacts/kc/generator_alternatives_full_cells_preitem.json`.
