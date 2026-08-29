@@ -1490,6 +1490,50 @@ experiment:
   validation calls/judgments, audits, and private raw evidence under the
   full-v1 item provenance directories.
 
+### Execution result (post-freeze)
+
+- **Exact commands:**
+
+  ```bash
+  .venv/bin/python scripts/build_dataset.py --stage rescue-items --workers 8 --max-attempts 2
+  .venv/bin/python scripts/build_dataset.py --stage intervene-items --workers 8 --max-attempts 2
+  ```
+- **Models/settings:** Generation `gpt-5.6-sol`/medium and unchanged independent
+  validation `gpt-5.6-terra`/medium; eight workers; at most two technical
+  attempts; provider sampling seed unavailable. All 54 generation payloads
+  completed, and only one of the 50 validator calls that passed deterministic
+  prechecks required a second technical attempt.
+- **Results:** The unchanged campaign generated 36/36 candidates, accepted
+  10/36 (27.8%), and added nine cells, so coverage rose 57→66/75. Three
+  candidates failed deterministic packaging checks; among 33 judged candidates,
+  determinacy passed 10 and failed 23. The explicit-construction campaign then
+  generated 18/18 candidates, accepted 9/18 (50.0%), and added six cells, so
+  coverage rose 66→72/75. One candidate failed deterministic checks; among 17
+  judged candidates, determinacy passed nine and failed eight. Aggregate model-
+  call runtimes were 439.85 and 487.54 seconds for unchanged generation and
+  validation, then 220.95 and 234.87 seconds for intervention generation and
+  validation.
+- **Failure analysis:** Fresh sampling alone recovered only half the original
+  18-cell gap and retained the same determinacy bottleneck. Explicitly naming
+  the requested construction doubled candidate acceptance while retaining
+  perfect judged fidelity, grammaticality, naturalness, non-target simplicity,
+  extraneous-grammar, and world-knowledge results. It did not guarantee
+  determinacy: three cells remained uncovered. In one strongest residual
+  candidate per cell, every required criterion except determinacy passed and
+  the judge identified a finite omitted equivalent rather than an ambiguous
+  grammatical target.
+- **Interpretation:** The two campaigns distinguish sampling error from a
+  systematic learner-facing measurement problem. Explicit construction is a
+  useful narrow intervention for determinacy-dominated cells, but answer-package
+  completeness remains a separate audit dimension.
+- **Methodological consequence:** Do not make further generation calls. Preserve
+  both campaigns as labelled evidence and apply only the separately
+  preregistered, append-only correction in `FULL-ITEM-003-PREREG` before
+  curation.
+- **Artifacts:**
+  `data/grammar_kt_full_v1/provenance/items/campaigns/unchanged_rescue/` and
+  `data/grammar_kt_full_v1/provenance/items/campaigns/determinacy_intervention/`.
+
 ## FULL-ITEM-003-PREREG — frozen append-only answer-package correction
 
 - **Date frozen:** 2026-08-29, after both declared generation campaigns and

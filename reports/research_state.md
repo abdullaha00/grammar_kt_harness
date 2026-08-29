@@ -183,16 +183,44 @@ and geometry checks before K* and Q* pass their measurement gate.
   and Terra/medium validation; all strict critical-error gates remained
   inconclusive.
 
+## Full item-construction status
+
+- The frozen N=3 campaign generated 225/225 valid candidates and independently
+  accepted 102 (45.3%), covering 57/75 cells. Determinacy accounted for 117 of
+  123 model-judged rejections and is the dominant full-scale measurement
+  bottleneck; fidelity, grammaticality, simplicity, and world-knowledge checks
+  passed every judged candidate.
+- The preregistered two-draw unchanged-prompt rescue accepted 10/36 candidates
+  and added nine cells, raising coverage to 66/75. The separately frozen
+  explicit-construction intervention accepted 9/18 and added six cells, raising
+  coverage to 72/75. Original and campaign evidence remain immutable and
+  separately labelled.
+- For one candidate in each of the final three cells, the unchanged validator's
+  sole objection names a finite natural equivalent omitted from the declared
+  answer set. `FULL-ITEM-003-PREREG` therefore freezes an append-only correction
+  of those exact three copied packages before independent revalidation; prompts
+  and targets cannot change.
+- The structural grammar-regime pilot supports 54 `seen`, 15
+  `unseen_combination`, and six `unseen_value` cells. Every unseen combination
+  is pairwise-seen/full-tuple-unseen; perfect-progressive aspect defines the
+  unseen-value cohort without creating an unseen-value-only generator KC. Final
+  assignments wait for the curated item bank.
+- The baseline simulator decision is weakest-link/minimum response aggregation,
+  all-active opportunity learning, independent Beta(2,2) initial mastery,
+  fixed synthetic guess/slip 0.10/0.10, no forgetting or item difficulty, and
+  terminal non-updating probes. Production now uses one exhaustive seen-item
+  occurrence followed by deterministic Q*-balanced top-up. The provisional
+  20-opportunity target must pass the preregistered final-bank pilot.
+
 ## Current unresolved construction questions
 
-1. Full-bank candidate acceptance, zero-coverage cells, and whether a declared
-   narrow rescue is needed.
+1. Whether the three frozen answer-package corrections independently pass and
+   permit full 75-cell curation.
 2. Full-bank items per KC, Q rank, near-equivalence, and rare-KC support.
-3. Full grammar-regime split with materially larger unseen-combination and
-   unseen-value cohorts.
-4. Baseline multi-KC response aggregation and learning update after the
-   preregistered simulator pilot.
-5. Final item count, learner count, acquisition schedule, and probe schedule.
+3. Final-bank confirmation of the 54/15/6 semantic grammar regimes.
+4. Whether the provisional 20-opportunity simulator schedule passes its frozen
+   informativeness and saturation gates.
+5. Final observable/oracle packaging, hashes, and reconstruction verification.
 6. Automatic item validation remains non-human evidence.
 
 ## Important active paths
@@ -209,7 +237,7 @@ and geometry checks before K* and Q* pass their measurement gate.
 
 ## Current next action
 
-Generate the frozen N=3 candidate plan for all 75 GrammarCells, apply
-deterministic checks and independent validation, inspect any zero-coverage
-cells before a declared rescue, curate the full bank, and run the mandatory
-K*/Q* support and identifiability audit before any learner simulation.
+Apply and independently revalidate the three preregistered append-only answer-
+package corrections. If they pass, curate the fixed max-two bank, assign the
+structural grammar regimes, and run the mandatory K*/Q* support and
+identifiability gate before the preregistered simulator pilot.
