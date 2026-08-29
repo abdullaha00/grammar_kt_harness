@@ -36,12 +36,14 @@ from grammar_kt.full_normalisation import (
 from grammar_kt.full_items import (
     DETERMINACY_INTERVENTION_CANDIDATES_PER_CELL,
     DETERMINACY_INTERVENTION_ID,
+    PACKAGING_CORRECTION_ID,
     UNCHANGED_RESCUE_CANDIDATES_PER_CELL,
     UNCHANGED_RESCUE_ID,
     build_campaign_generation_call,
     build_generation_call,
     build_validation_call,
     candidate_audit_summary,
+    construct_packaging_corrected_candidate,
     generate_one_campaign_candidate,
     generate_one_candidate,
     item_construction_audit,
@@ -109,6 +111,12 @@ DETERMINACY_INTERVENTION_PROMPT_PATH = (
     ROOT
     / "modules/items/generation/ablations/"
     "determinacy_explicit_construction_prompt.txt"
+)
+PACKAGING_CORRECTIONS_PATH = (
+    ROOT / "modules/items/corrections/full_v1_packaging_corrections.yaml"
+)
+EXPECTED_PACKAGING_CORRECTIONS_SHA256 = (
+    "3bd85b52db7d0f5679bc24e142657c6a35bb42bc08250aa364e40123ef6037e6"
 )
 PUBLIC_NORMALISATION_NOTE = (
     "Unsanitised model note retained in restricted normalisation evidence."
@@ -2367,6 +2375,510 @@ def run_item_campaign(
     )
 
 
+def _packaging_correction_config() -> dict[str, Any]:
+    if sha256_file(PACKAGING_CORRECTIONS_PATH) != (
+        EXPECTED_PACKAGING_CORRECTIONS_SHA256
+    ):
+        raise ValueError("full-v1 packaging-correction declaration hash changed")
+    config = read_yaml(PACKAGING_CORRECTIONS_PATH)
+    if not isinstance(config, dict) or set(config) != {
+        "protocol_id",
+        "scope",
+        "source_campaign",
+        "validation",
+        "corrections",
+    }:
+        raise ValueError("full-v1 packaging-correction config fields changed")
+    if config.get("protocol_id") != PACKAGING_CORRECTION_ID:
+        raise ValueError("unexpected packaging-correction protocol ID")
+    if config.get("scope") != "append_only_validator_named_accepted_answers":
+        raise ValueError("packaging-correction scope changed")
+    if config.get("source_campaign") != DETERMINACY_INTERVENTION_ID:
+        raise ValueError("packaging corrections must copy intervention candidates")
+    if config.get("validation") != {
+        "reuse_baseline_prompt": True,
+        "reuse_baseline_criteria": True,
+        "independent_and_blinded": True,
+    }:
+        raise ValueError("packaging corrections must reuse unchanged validation")
+    corrections = config.get("corrections")
+    if not isinstance(corrections, list) or len(corrections) != 3:
+        raise ValueError("full-v1 packaging correction must contain exactly three rows")
+    source_ids = [row.get("source_item_id") for row in corrections]
+    expected_sources = {
+        "determinacy_intervention_gc_019f7fb10012b606_01",
+        "determinacy_intervention_gc_04a854582c08aa84_02",
+        "determinacy_intervention_gc_bb4f472f992ab76b_01",
+    }
+    if set(source_ids) != expected_sources or len(source_ids) != len(set(source_ids)):
+        raise ValueError("full-v1 packaging-correction source cohort changed")
+    expected_additions = {
+        "determinacy_intervention_gc_019f7fb10012b606_01": [
+            "The children mustn't enter the kitchen."
+        ],
+        "determinacy_intervention_gc_04a854582c08aa84_02": [
+            "Don't touch it.",
+            "Do not touch it.",
+            "Don't touch that wall.",
+            "Do not touch that wall.",
+        ],
+        "determinacy_intervention_gc_bb4f472f992ab76b_01": [
+            "Turn the light off."
+        ],
+    }
+    if {
+        row["source_item_id"]: row.get("append_accepted_answers")
+        for row in corrections
+    } != expected_additions:
+        raise ValueError("full-v1 packaging-correction answer additions changed")
+    if len({row.get("correction_id") for row in corrections}) != 3:
+        raise ValueError("packaging correction IDs must be unique")
+    return config
+
+
+def _load_complete_pre_correction_evidence(
+    dataset_dir: Path,
+) -> tuple[
+    list[dict[str, Any]],
+    list[dict[str, Any]],
+    list[dict[str, Any]],
+]:
+    """Load all immutable raw item campaigns without accepting corrected rows."""
+
+    cells, baseline_candidates, baseline_judgments = (
+        _load_complete_baseline_item_evidence(dataset_dir)
+    )
+    rescue_candidates, rescue_judgments = _load_complete_campaign(
+        dataset_dir,
+        cells,
+        UNCHANGED_RESCUE_ID,
+        baseline_candidates,
+        baseline_judgments,
+    )
+    prior_candidates = sorted(
+        [*baseline_candidates, *rescue_candidates], key=lambda row: row["item_id"]
+    )
+    prior_judgments = sorted(
+        [*baseline_judgments, *rescue_judgments], key=lambda row: row["item_id"]
+    )
+    intervention_candidates, intervention_judgments = _load_complete_campaign(
+        dataset_dir,
+        cells,
+        DETERMINACY_INTERVENTION_ID,
+        prior_candidates,
+        prior_judgments,
+    )
+    candidates = sorted(
+        [*prior_candidates, *intervention_candidates],
+        key=lambda row: row["item_id"],
+    )
+    judgments = sorted(
+        [*prior_judgments, *intervention_judgments],
+        key=lambda row: row["item_id"],
+    )
+    if len({row["item_id"] for row in candidates}) != len(candidates):
+        raise ValueError("pre-correction candidate IDs are not unique")
+    return cells, candidates, judgments
+
+
+def _expected_packaging_correction(
+    cells: list[dict[str, Any]],
+    prior_candidates: list[dict[str, Any]],
+    prior_judgments: list[dict[str, Any]],
+) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    config = _packaging_correction_config()
+    config_sha256 = sha256_file(PACKAGING_CORRECTIONS_PATH)
+    candidate_by_id = {row["item_id"]: row for row in prior_candidates}
+    judgment_by_id = {row["item_id"]: row for row in prior_judgments}
+    residual_cells = sorted(
+        set(cell["cell_id"] for cell in cells)
+        - _accepted_cell_ids(prior_candidates, prior_judgments)
+    )
+    declared_source_cells: set[str] = set()
+    corrected: list[dict[str, Any]] = []
+    plan_rows: list[dict[str, Any]] = []
+    required_criteria = {
+        name
+        for name, declaration in read_yaml(VALIDATION_CRITERIA_PATH)[
+            "criteria"
+        ].items()
+        if declaration["required"]
+    }
+    for declaration in config["corrections"]:
+        source_id = declaration["source_item_id"]
+        if source_id not in candidate_by_id or source_id not in judgment_by_id:
+            raise ValueError(f"packaging correction source evidence missing: {source_id}")
+        source = candidate_by_id[source_id]
+        judgment = judgment_by_id[source_id]
+        if _json_sha256(judgment) != declaration["source_judgment_sha256"]:
+            raise ValueError(f"packaging correction source judgment drift: {source_id}")
+        failed_required = {
+            name
+            for name in required_criteria
+            if judgment.get("judgments", {}).get(name, {}).get("passed") is False
+        }
+        if (
+            judgment.get("accepted") is not False
+            or judgment.get("rejection_stage") != "independent_model_judgment"
+            or failed_required != {"determinacy"}
+        ):
+            raise ValueError(
+                "packaging correction source must have determinacy as its sole "
+                f"failed required criterion: {source_id}"
+            )
+        declared_source_cells.add(source["cell_id"])
+        row = construct_packaging_corrected_candidate(
+            source, declaration, config_sha256=config_sha256
+        )
+        corrected.append(row)
+        plan_rows.append(
+            {
+                "correction_id": declaration["correction_id"],
+                "source_item_id": source_id,
+                "corrected_item_id": row["item_id"],
+                "cell_id": row["cell_id"],
+                "source_candidate_sha256": declaration[
+                    "source_candidate_sha256"
+                ],
+                "source_judgment_sha256": declaration[
+                    "source_judgment_sha256"
+                ],
+                "append_accepted_answers": declaration[
+                    "append_accepted_answers"
+                ],
+                "corrected_candidate_sha256": _json_sha256(row),
+                "correction_input_sha256": row["correction_metadata"][
+                    "input_sha256"
+                ],
+            }
+        )
+    if sorted(declared_source_cells) != residual_cells:
+        raise ValueError(
+            "packaging-correction cells differ from the frozen residual cohort"
+        )
+    corrected.sort(key=lambda row: row["item_id"])
+    plan_rows.sort(key=lambda row: row["corrected_item_id"])
+    plan = {
+        "dataset_id": DATASET_ID,
+        "protocol_id": PACKAGING_CORRECTION_ID,
+        "config_path": (
+            str(PACKAGING_CORRECTIONS_PATH.relative_to(ROOT))
+            if ROOT in PACKAGING_CORRECTIONS_PATH.parents
+            else str(PACKAGING_CORRECTIONS_PATH)
+        ),
+        "config_sha256": config_sha256,
+        "operation": "append_accepted_answers_only",
+        "corrections": plan_rows,
+        "source_candidate_checkpoint_sha256": _json_sha256(prior_candidates),
+        "source_judgment_checkpoint_sha256": _json_sha256(prior_judgments),
+        "corrected_candidate_checkpoint_sha256": _json_sha256(corrected),
+        "validation_prompt_path": str(VALIDATION_PROMPT_PATH.relative_to(ROOT)),
+        "validation_prompt_sha256": sha256_file(VALIDATION_PROMPT_PATH),
+        "validation_criteria_path": str(
+            VALIDATION_CRITERIA_PATH.relative_to(ROOT)
+        ),
+        "validation_criteria_sha256": sha256_file(VALIDATION_CRITERIA_PATH),
+        "validation_backend": read_yaml(MODEL_BACKENDS_PATH)["validation"],
+        "uses_learner_data": False,
+        "uses_q_matrix": False,
+        "uses_discovered_kcs": False,
+        "raw_candidates_modified": False,
+        "raw_judgments_modified": False,
+    }
+    return plan, corrected
+
+
+def _run_packaging_correction_validation(
+    dataset_dir: Path,
+    private_dir: Path,
+    cells: list[dict[str, Any]],
+    corrected: list[dict[str, Any]],
+    *,
+    workers: int,
+    max_attempts: int,
+    retry_failures: bool,
+    exact_command: str,
+    model_call: Callable[..., dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    public_dir = dataset_dir / "provenance/items/packaging_corrections"
+    private_base = private_dir / "items/packaging_corrections/validation"
+    calls = _validation_calls(cells, corrected)
+    order = [call["candidate_id"] for call in calls]
+    _freeze_public_jsonl(
+        public_dir / "validation_plan.jsonl",
+        _public_validation_plan(calls),
+        "packaging-correction validation plan",
+    )
+    judgments_path = public_dir / "validation_judgments.jsonl"
+    existing = read_jsonl(judgments_path) if judgments_path.exists() else []
+    merged = merge_completed_judgment_rows(existing, [], calls)
+    judgments = {row["item_id"]: row for row in merged}
+    attempts_path = public_dir / "validation_attempts.jsonl"
+    _attempt_rows, attempts = _unique_rows(attempts_path, "candidate_id")
+    _validate_attempt_rows(attempts, calls)
+
+    for call in calls:
+        candidate_id = call["candidate_id"]
+        if candidate_id in judgments:
+            recovered = (
+                _recover_validation_evidence(
+                    call, private_base / candidate_id
+                )
+                if call["call_required"]
+                else None
+            )
+            if recovered is not None and recovered[0] != judgments[candidate_id]:
+                raise ValueError(
+                    "public packaging-correction judgment differs from immutable "
+                    f"private evidence: {candidate_id}"
+                )
+            if candidate_id not in attempts:
+                attempts[candidate_id] = {
+                    "candidate_id": candidate_id,
+                    "input_sha256": call["input_sha256"],
+                    "status": (
+                        "success"
+                        if call["call_required"]
+                        else "deterministic_rejection"
+                    ),
+                    "attempt_count": recovered[1] if recovered is not None else 0,
+                    "runtime_seconds": None,
+                    "error_types": [],
+                    "recovered_from_private_evidence": recovered is not None,
+                }
+            continue
+        if not call["call_required"]:
+            judgment = reconstruct_validation_judgment(call)
+            merged = merge_completed_judgment_rows(
+                list(judgments.values()), [judgment], calls
+            )
+            judgments = {row["item_id"]: row for row in merged}
+            attempts[candidate_id] = {
+                "candidate_id": candidate_id,
+                "input_sha256": call["input_sha256"],
+                "status": "deterministic_rejection",
+                "attempt_count": 0,
+                "runtime_seconds": 0.0,
+                "error_types": [],
+                "recovered_from_private_evidence": False,
+            }
+            continue
+        recovered = _recover_validation_evidence(
+            call, private_base / candidate_id
+        )
+        if recovered is None:
+            continue
+        judgment, attempt_count = recovered
+        merged = merge_completed_judgment_rows(
+            list(judgments.values()), [judgment], calls
+        )
+        judgments = {row["item_id"]: row for row in merged}
+        attempts[candidate_id] = _public_attempt(
+            call,
+            {
+                "status": "success",
+                "attempt_count": attempt_count,
+                "runtime_seconds": None,
+                "errors": [],
+            },
+            recovered=True,
+        )
+    _write_item_checkpoint(judgments_path, judgments, order)
+    _write_item_checkpoint(attempts_path, attempts, order)
+
+    tasks = [
+        call
+        for call in calls
+        if call["candidate_id"] not in judgments
+        and call["call_required"]
+        and (
+            retry_failures
+            or attempts.get(call["candidate_id"], {}).get("status")
+            != "technical_failure"
+        )
+    ]
+
+    def execute(call: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any]]:
+        result = _call_with_technical_retries(
+            lambda evidence_dir: validate_one_candidate(
+                call, model_call=model_call, evidence_dir=evidence_dir
+            ),
+            private_base / call["candidate_id"],
+            max_attempts=max_attempts,
+        )
+        return call, result
+
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = {executor.submit(execute, call): call for call in tasks}
+        for completed, future in enumerate(as_completed(futures), 1):
+            call, result = future.result()
+            candidate_id = call["candidate_id"]
+            judgment = result.pop("mapping")
+            if judgment is not None:
+                merged = merge_completed_judgment_rows(
+                    list(judgments.values()), [judgment], calls
+                )
+                judgments = {row["item_id"]: row for row in merged}
+            attempts[candidate_id] = _public_attempt(call, result, recovered=False)
+            _write_item_checkpoint(judgments_path, judgments, order)
+            _write_item_checkpoint(attempts_path, attempts, order)
+            print(
+                "packaging-correction validation terminal calls: "
+                f"{completed}/{len(tasks)}; complete total={len(judgments)}/{len(calls)}",
+                flush=True,
+            )
+
+    judgment_rows = [judgments[item_id] for item_id in order if item_id in judgments]
+    failures = sorted(set(order) - set(judgments))
+    cell_ids = {row["cell_id"] for row in corrected}
+    correction_cells = [row for row in cells if row["cell_id"] in cell_ids]
+    audit = validation_audit_summary(
+        correction_cells,
+        corrected,
+        judgment_rows,
+        read_yaml(VALIDATION_CRITERIA_PATH),
+    )
+    accepted = [
+        row
+        for row in corrected
+        if judgments.get(row["item_id"], {}).get("accepted") is True
+    ]
+    audit.update(
+        {
+            "dataset_id": DATASET_ID,
+            "protocol_id": PACKAGING_CORRECTION_ID,
+            "status": "PASS" if not failures else "FAIL",
+            "technical_failure_candidate_ids": failures,
+            "corrected_candidate_checkpoint_sha256": _json_sha256(corrected),
+            "judgment_checkpoint_sha256": _json_sha256(judgment_rows),
+            "models": read_yaml(MODEL_BACKENDS_PATH)["validation"],
+            "max_technical_attempts": max_attempts,
+            "raw_candidates_modified": False,
+            "raw_judgments_modified": False,
+            "code_revision_at_stage_start": _git_revision(),
+            "exact_command": exact_command,
+        }
+    )
+    write_jsonl(public_dir / "validator_accepted_candidates.jsonl", accepted)
+    write_json(public_dir / "validation_audit.json", audit)
+    if failures:
+        raise RuntimeError(
+            "packaging-correction validation has "
+            f"{len(failures)} terminal technical failures"
+        )
+    return judgment_rows, accepted
+
+
+def correct_items_full(
+    dataset_dir: Path,
+    private_dir: Path,
+    *,
+    workers: int,
+    max_attempts: int,
+    retry_failures: bool,
+    exact_command: str,
+    model_call: Callable[..., dict[str, Any]] = audited_model_call,
+) -> None:
+    """Freeze, copy, append, and independently revalidate three packages."""
+
+    _assert_private_dir(private_dir)
+    cells, prior_candidates, prior_judgments = (
+        _load_complete_pre_correction_evidence(dataset_dir)
+    )
+    plan, corrected = _expected_packaging_correction(
+        cells, prior_candidates, prior_judgments
+    )
+    public_dir = dataset_dir / "provenance/items/packaging_corrections"
+    # Both files are frozen before the first validator call.  Reaching this
+    # point never mutates any raw candidate or raw judgment checkpoint.
+    _freeze_public_json(public_dir / "plan.json", plan, "packaging-correction plan")
+    _freeze_public_jsonl(
+        public_dir / "corrected_candidates.jsonl",
+        corrected,
+        "packaging-correction candidate checkpoint",
+    )
+    judgments, accepted = _run_packaging_correction_validation(
+        dataset_dir,
+        private_dir,
+        cells,
+        corrected,
+        workers=workers,
+        max_attempts=max_attempts,
+        retry_failures=retry_failures,
+        exact_command=exact_command,
+        model_call=model_call,
+    )
+    write_json(
+        public_dir / "coverage_effect.json",
+        {
+            "dataset_id": DATASET_ID,
+            "protocol_id": PACKAGING_CORRECTION_ID,
+            "corrected_candidates": len(corrected),
+            "validation_judgments": len(judgments),
+            "accepted_corrected_candidates": len(accepted),
+            "newly_covered_cell_ids": sorted(
+                {row["cell_id"] for row in accepted}
+            ),
+            "remaining_zero_coverage_cell_ids": sorted(
+                set(row["cell_id"] for row in cells)
+                - (
+                    _accepted_cell_ids(prior_candidates, prior_judgments)
+                    | {row["cell_id"] for row in accepted}
+                )
+            ),
+            "raw_candidates_modified": False,
+            "raw_judgments_modified": False,
+        },
+    )
+
+
+def _load_complete_packaging_corrections(
+    dataset_dir: Path,
+    cells: list[dict[str, Any]],
+    prior_candidates: list[dict[str, Any]],
+    prior_judgments: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    public_dir = dataset_dir / "provenance/items/packaging_corrections"
+    expected_plan, expected_corrected = _expected_packaging_correction(
+        cells, prior_candidates, prior_judgments
+    )
+    if not (public_dir / "plan.json").exists() or _read_json(
+        public_dir / "plan.json"
+    ) != expected_plan:
+        raise ValueError("packaging-correction plan is missing or changed")
+    if not (public_dir / "corrected_candidates.jsonl").exists():
+        raise FileNotFoundError("corrected candidate checkpoint does not exist")
+    corrected = read_jsonl(public_dir / "corrected_candidates.jsonl")
+    if corrected != expected_corrected:
+        raise ValueError("packaging-correction candidate checkpoint changed")
+    calls = _validation_calls(cells, corrected)
+    if read_jsonl(public_dir / "validation_plan.jsonl") != _public_validation_plan(
+        calls
+    ):
+        raise ValueError("packaging-correction validation plan changed")
+    judgments = merge_completed_judgment_rows(
+        read_jsonl(public_dir / "validation_judgments.jsonl"), [], calls
+    )
+    audit = _read_json(public_dir / "validation_audit.json")
+    if len(judgments) != len(corrected) or audit.get("status") != "PASS":
+        raise ValueError("packaging-correction validation is incomplete")
+    if audit.get("judgment_checkpoint_sha256") != _json_sha256(judgments):
+        raise ValueError("packaging-correction judgment checkpoint changed")
+    accepted = [
+        row
+        for row in corrected
+        if next(
+            judgment
+            for judgment in judgments
+            if judgment["item_id"] == row["item_id"]
+        )["accepted"]
+    ]
+    accepted_path = public_dir / "validator_accepted_candidates.jsonl"
+    if not accepted_path.exists() or read_jsonl(accepted_path) != accepted:
+        raise ValueError("packaging-correction accepted checkpoint changed")
+    return corrected, judgments
+
+
 def _selection_for_maximum(
     accepted: list[dict[str, Any]], design: dict[str, Any], maximum: int
 ) -> list[dict[str, Any]]:
@@ -2479,6 +2991,7 @@ def curate_items_full(dataset_dir: Path, exact_command: str) -> None:
     candidates = list(baseline_candidates)
     judgments = list(baseline_judgments)
     campaigns_used: list[dict[str, Any]] = []
+    corrections_used: list[dict[str, Any]] = []
     baseline_zero = sorted(
         set(cell["cell_id"] for cell in cells)
         - _accepted_cell_ids(candidates, judgments)
@@ -2570,6 +3083,53 @@ def curate_items_full(dataset_dir: Path, exact_command: str) -> None:
             }
         )
 
+    residual_after_campaigns = sorted(
+        set(cell["cell_id"] for cell in cells)
+        - _accepted_cell_ids(candidates, judgments)
+    )
+    correction_plan = (
+        dataset_dir / "provenance/items/packaging_corrections/plan.json"
+    )
+    if residual_after_campaigns and not correction_plan.exists():
+        write_json(
+            dataset_dir / "provenance/items/curation_blockers.json",
+            {
+                "status": "PACKAGING_CORRECTION_REQUIRED",
+                "zero_accepted_candidate_cell_ids": residual_after_campaigns,
+                "automatic_rescue_or_repair_performed": False,
+                "next_stage": "correct-items",
+            },
+        )
+        raise RuntimeError(
+            "curation blocked: "
+            f"{len(residual_after_campaigns)} cells require the frozen "
+            "packaging correction"
+        )
+    if correction_plan.exists():
+        prior_candidates = list(candidates)
+        prior_judgments = list(judgments)
+        corrected_candidates, corrected_judgments = (
+            _load_complete_packaging_corrections(
+                dataset_dir,
+                cells,
+                prior_candidates,
+                prior_judgments,
+            )
+        )
+        candidates = sorted(
+            [*candidates, *corrected_candidates], key=lambda row: row["item_id"]
+        )
+        judgments = sorted(
+            [*judgments, *corrected_judgments], key=lambda row: row["item_id"]
+        )
+        corrections_used.append(
+            {
+                "protocol_id": PACKAGING_CORRECTION_ID,
+                "corrected_candidates": len(corrected_candidates),
+                "accepted": sum(row["accepted"] for row in corrected_judgments),
+            }
+        )
+
     candidate_by_id = {row["item_id"]: row for row in candidates}
     accepted = [
         candidate_by_id[row["item_id"]] for row in judgments if row["accepted"]
@@ -2635,6 +3195,7 @@ def curate_items_full(dataset_dir: Path, exact_command: str) -> None:
             "comparison": comparison,
             "selection_rules": design["bank_selection"],
             "declared_campaigns_used": campaigns_used,
+            "declared_packaging_corrections_used": corrections_used,
             "uses_learner_data": False,
             "uses_kt_or_predictive_metrics": False,
             "uses_discovered_kcs": False,
@@ -2657,6 +3218,7 @@ def curate_items_full(dataset_dir: Path, exact_command: str) -> None:
             "selection_design_path": str(GENERATION_DESIGN_PATH.relative_to(ROOT)),
             "automatic_rescue_or_repair_performed": False,
             "declared_post_n3_campaigns": campaigns_used,
+            "declared_packaging_corrections": corrections_used,
             "original_n3_candidates_retained": len(baseline_candidates),
             "original_n3_judgments_retained": len(baseline_judgments),
             "code_revision_at_stage_start": _git_revision(),
@@ -2680,6 +3242,7 @@ def parse_args() -> argparse.Namespace:
             "validate-items",
             "rescue-items",
             "intervene-items",
+            "correct-items",
             "curate-items",
         ],
     )
@@ -2771,6 +3334,15 @@ def main() -> int:
             dataset_dir,
             private_dir,
             DETERMINACY_INTERVENTION_ID,
+            workers=arguments.workers,
+            max_attempts=arguments.max_attempts,
+            retry_failures=arguments.retry_failures,
+            exact_command=exact_command,
+        )
+    elif arguments.stage == "correct-items":
+        correct_items_full(
+            dataset_dir,
+            private_dir,
             workers=arguments.workers,
             max_attempts=arguments.max_attempts,
             retry_failures=arguments.retry_failures,

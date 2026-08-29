@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from collections import Counter
+from copy import deepcopy
 from pathlib import Path
 
 import pytest
@@ -744,3 +745,313 @@ def test_two_campaign_rescue_freezes_cohorts_resumes_and_curates(tmp_path) -> No
     )
     assert len(curation["declared_post_n3_campaigns"]) == 2
     assert curation["automatic_rescue_or_repair_performed"] is False
+
+
+def test_packaging_correction_declaration_is_exactly_preregistered(
+    tmp_path, monkeypatch
+) -> None:
+    config = read_yaml(build_dataset.PACKAGING_CORRECTIONS_PATH)
+    assert build_dataset.sha256_file(build_dataset.PACKAGING_CORRECTIONS_PATH) == (
+        build_dataset.EXPECTED_PACKAGING_CORRECTIONS_SHA256
+    )
+    assert {
+        row["source_item_id"]: row["append_accepted_answers"]
+        for row in config["corrections"]
+    } == {
+        "determinacy_intervention_gc_019f7fb10012b606_01": [
+            "The children mustn't enter the kitchen."
+        ],
+        "determinacy_intervention_gc_04a854582c08aa84_02": [
+            "Don't touch it.",
+            "Do not touch it.",
+            "Don't touch that wall.",
+            "Do not touch that wall.",
+        ],
+        "determinacy_intervention_gc_bb4f472f992ab76b_01": [
+            "Turn the light off."
+        ],
+    }
+
+    changed = tmp_path / "changed_corrections.yaml"
+    changed.write_text(
+        build_dataset.PACKAGING_CORRECTIONS_PATH.read_text(encoding="utf-8")
+        + "\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(build_dataset, "PACKAGING_CORRECTIONS_PATH", changed)
+    with pytest.raises(ValueError, match="declaration hash changed"):
+        build_dataset._packaging_correction_config()
+
+
+def _packaging_correction_fixture() -> tuple[list[dict], list[dict], list[dict], dict]:
+    specifications = [
+        (
+            "gc_019f7fb10012b606",
+            "determinacy_intervention_gc_019f7fb10012b606_01",
+            (
+                "Use a negative declarative clause with must and the cue "
+                "the children / enter the kitchen: ____"
+            ),
+            "The children must not enter the kitchen.",
+            ["The children must not enter the kitchen."],
+            ["The children mustn't enter the kitchen."],
+            1,
+        ),
+        (
+            "gc_04a854582c08aa84",
+            "determinacy_intervention_gc_04a854582c08aa84_02",
+            "The paint is wet. [____]",
+            "Don't touch the wall.",
+            ["Don't touch the wall.", "Do not touch the wall."],
+            [
+                "Don't touch it.",
+                "Do not touch it.",
+                "Don't touch that wall.",
+                "Do not touch that wall.",
+            ],
+            2,
+        ),
+        (
+            "gc_bb4f472f992ab76b",
+            "determinacy_intervention_gc_bb4f472f992ab76b_01",
+            "The light is on. ____",
+            "Turn off the light.",
+            ["Turn off the light."],
+            ["Turn the light off."],
+            1,
+        ),
+    ]
+    cells = []
+    candidates = []
+    judgments = []
+    criteria = read_yaml(
+        ROOT / "modules/items/validation/criteria.yaml"
+    )["criteria"]
+    for cell_id, item_id, prompt, target, answers, _additions, index in specifications:
+        cells.append(_cell(cell_id))
+        candidates.append(
+            {
+                "item_id": item_id,
+                "cell_id": cell_id,
+                "format": "controlled_production",
+                "prompt": prompt,
+                "target_answer": target,
+                "accepted_answers": answers,
+                "generation_metadata": {
+                    "candidate_index": 5 + index,
+                    "candidate_count": 7,
+                    "campaign": build_dataset.DETERMINACY_INTERVENTION_ID,
+                    "campaign_candidate_index": index,
+                    "model": "fixture-generator",
+                    "reasoning_effort": "medium",
+                    "input_sha256": str(index) * 64,
+                },
+            }
+        )
+        judgments.append(
+            {
+                "item_id": item_id,
+                "deterministic_checks": {},
+                "judgments": {
+                    name: {
+                        "passed": name != "determinacy",
+                        "note": "Fixture source judgment.",
+                    }
+                    for name in criteria
+                },
+                "accepted": False,
+                "rejection_stage": "independent_model_judgment",
+                "validation_metadata": {
+                    "policy_id": "independent_item_judgment_v1",
+                    "model": "fixture-validator",
+                    "reasoning_effort": "medium",
+                    "input_sha256": str(index + 2) * 64,
+                },
+            }
+        )
+    candidates.sort(key=lambda row: row["item_id"])
+    judgments.sort(key=lambda row: row["item_id"])
+    additions = {row[1]: row[5] for row in specifications}
+    config = {
+        "protocol_id": build_dataset.PACKAGING_CORRECTION_ID,
+        "scope": "append_only_validator_named_accepted_answers",
+        "source_campaign": build_dataset.DETERMINACY_INTERVENTION_ID,
+        "validation": {
+            "reuse_baseline_prompt": True,
+            "reuse_baseline_criteria": True,
+            "independent_and_blinded": True,
+        },
+        "corrections": [
+            {
+                "correction_id": f"fixture_{index}",
+                "source_item_id": candidate["item_id"],
+                "corrected_item_id": f"packaging_correction_{candidate['item_id']}",
+                "source_candidate_sha256": build_dataset._json_sha256(candidate),
+                "source_judgment_sha256": build_dataset._json_sha256(
+                    next(
+                        row
+                        for row in judgments
+                        if row["item_id"] == candidate["item_id"]
+                    )
+                ),
+                "append_accepted_answers": additions[candidate["item_id"]],
+            }
+            for index, candidate in enumerate(candidates, 1)
+        ],
+    }
+    return cells, candidates, judgments, config
+
+
+def test_packaging_correction_freezes_resumes_and_curates_without_raw_mutation(
+    tmp_path, monkeypatch
+) -> None:
+    dataset_dir, private_dir = _prepare_dataset(tmp_path)
+    cells, source_candidates, source_judgments, config = (
+        _packaging_correction_fixture()
+    )
+    config_path = tmp_path / "fixture-corrections.yaml"
+    config_path.write_text("frozen fixture correction declaration\n", encoding="utf-8")
+    monkeypatch.setattr(build_dataset, "PACKAGING_CORRECTIONS_PATH", config_path)
+    monkeypatch.setattr(build_dataset, "_packaging_correction_config", lambda: config)
+    monkeypatch.setattr(
+        build_dataset,
+        "_load_complete_pre_correction_evidence",
+        lambda _dataset_dir: (cells, source_candidates, source_judgments),
+    )
+    monkeypatch.setattr(build_dataset, "_git_revision", lambda: "fixture-revision")
+    raw_candidates_before = deepcopy(source_candidates)
+    raw_judgments_before = deepcopy(source_judgments)
+    calls = []
+
+    def passing_validator(prompt, **kwargs):
+        calls.append(kwargs["call_key"])
+        public_dir = dataset_dir / "provenance/items/packaging_corrections"
+        assert (public_dir / "plan.json").is_file()
+        assert (public_dir / "corrected_candidates.jsonl").is_file()
+        parsed = {
+            "judgments": {
+                name: {"passed": True, "note": "Independent correction fixture."}
+                for name in read_yaml(
+                    ROOT / "modules/items/validation/criteria.yaml"
+                )["criteria"]
+            }
+        }
+        _write_fake_evidence(
+            kwargs["evidence_dir"],
+            prompt=prompt,
+            input_data=kwargs["input_data"],
+            parsed=parsed,
+            model=kwargs["model"],
+            reasoning_effort=kwargs["reasoning_effort"],
+            stage=kwargs["stage"],
+            call_key=kwargs["call_key"],
+        )
+        return parsed
+
+    build_dataset.correct_items_full(
+        dataset_dir,
+        private_dir,
+        workers=3,
+        max_attempts=1,
+        retry_failures=False,
+        exact_command="fixture correct-items",
+        model_call=passing_validator,
+    )
+    assert len(calls) == 3
+    assert source_candidates == raw_candidates_before
+    assert source_judgments == raw_judgments_before
+    correction_dir = dataset_dir / "provenance/items/packaging_corrections"
+    corrected = read_jsonl(correction_dir / "corrected_candidates.jsonl")
+    assert len(corrected) == 3
+    assert all(row["item_id"].startswith("packaging_correction_") for row in corrected)
+    assert all(
+        row["generation_metadata"]["campaign"]
+        == build_dataset.PACKAGING_CORRECTION_ID
+        for row in corrected
+    )
+    assert len(read_jsonl(correction_dir / "validation_judgments.jsonl")) == 3
+
+    build_dataset.correct_items_full(
+        dataset_dir,
+        private_dir,
+        workers=1,
+        max_attempts=1,
+        retry_failures=False,
+        exact_command="fixture correct-items resume",
+        model_call=lambda *args, **kwargs: pytest.fail("resume must make no call"),
+    )
+
+    drifted = deepcopy(config)
+    drifted["corrections"][0]["append_accepted_answers"] = ["Changed answer."]
+    monkeypatch.setattr(
+        build_dataset, "_packaging_correction_config", lambda: drifted
+    )
+    with pytest.raises(ValueError, match="frozen packaging-correction plan changed"):
+        build_dataset.correct_items_full(
+            dataset_dir,
+            private_dir,
+            workers=1,
+            max_attempts=1,
+            retry_failures=False,
+            exact_command="fixture correction drift",
+            model_call=lambda *args, **kwargs: pytest.fail("drift must precede calls"),
+        )
+    monkeypatch.setattr(build_dataset, "_packaging_correction_config", lambda: config)
+
+    # Curation consumes accepted copies while the raw campaign remains a
+    # separate immutable input.
+    write_json(
+        dataset_dir / "provenance/items/campaigns/unchanged_rescue/plan.json", {}
+    )
+    write_json(
+        dataset_dir
+        / "provenance/items/campaigns/determinacy_intervention/plan.json",
+        {},
+    )
+    monkeypatch.setattr(
+        build_dataset,
+        "_load_complete_baseline_item_evidence",
+        lambda _dataset_dir: (cells, [], []),
+    )
+
+    def campaign_loader(_dataset_dir, _cells, campaign_id, _prior_c, _prior_j):
+        if campaign_id == build_dataset.UNCHANGED_RESCUE_ID:
+            return [], []
+        return source_candidates, source_judgments
+
+    monkeypatch.setattr(build_dataset, "_load_complete_campaign", campaign_loader)
+    build_dataset.curate_items_full(dataset_dir, "fixture corrected curation")
+    items = read_jsonl(dataset_dir / "items/items.jsonl")
+    assert len(items) == 3
+    assert all(row["item_id"].startswith("packaging_correction_") for row in items)
+    curation = json.loads(
+        (dataset_dir / "provenance/items/curation.json").read_text()
+    )
+    assert curation["declared_packaging_corrections"] == [
+        {
+            "protocol_id": build_dataset.PACKAGING_CORRECTION_ID,
+            "corrected_candidates": 3,
+            "accepted": 3,
+        }
+    ]
+
+
+def test_packaging_correction_requires_determinacy_as_sole_failure(
+    tmp_path, monkeypatch
+) -> None:
+    cells, candidates, judgments, config = _packaging_correction_fixture()
+    judgments = deepcopy(judgments)
+    judgments[0]["judgments"]["naturalness"]["passed"] = False
+    source_id = judgments[0]["item_id"]
+    declaration = next(
+        row for row in config["corrections"] if row["source_item_id"] == source_id
+    )
+    declaration["source_judgment_sha256"] = build_dataset._json_sha256(
+        judgments[0]
+    )
+    config_path = tmp_path / "fixture-corrections.yaml"
+    config_path.write_text("frozen fixture correction declaration\n", encoding="utf-8")
+    monkeypatch.setattr(build_dataset, "PACKAGING_CORRECTIONS_PATH", config_path)
+    monkeypatch.setattr(build_dataset, "_packaging_correction_config", lambda: config)
+    with pytest.raises(ValueError, match="sole failed required criterion"):
+        build_dataset._expected_packaging_correction(cells, candidates, judgments)

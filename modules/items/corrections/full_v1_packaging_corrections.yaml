@@ -1,0 +1,32 @@
+protocol_id: full_v1_validator_named_answer_packaging_correction_v1
+scope: append_only_validator_named_accepted_answers
+source_campaign: explicit_construction_determinacy_intervention_v1
+validation:
+  reuse_baseline_prompt: true
+  reuse_baseline_criteria: true
+  independent_and_blinded: true
+corrections:
+  - correction_id: must_not_contraction
+    source_item_id: determinacy_intervention_gc_019f7fb10012b606_01
+    corrected_item_id: packaging_correction_determinacy_intervention_gc_019f7fb10012b606_01
+    source_candidate_sha256: 3365c38a8cc8d6be06b2c6ee9e875acfae0dcaa3b8c0f5009012a434300ff469
+    source_judgment_sha256: 79795824a8ce3235555342ced0c49fd8a52f46731f1a5519d4748bbcae90561a
+    append_accepted_answers:
+      - "The children mustn't enter the kitchen."
+  - correction_id: negative_imperative_references
+    source_item_id: determinacy_intervention_gc_04a854582c08aa84_02
+    corrected_item_id: packaging_correction_determinacy_intervention_gc_04a854582c08aa84_02
+    source_candidate_sha256: 7dc04169fb65fe6c1654f3738c1e9cdb606dc1cb885404880f87dce55d10f254
+    source_judgment_sha256: fb68cdb3c752f7a75b72cd7a78e8ef728bd0a626b2e1240e13f61aaeeaee0ebb
+    append_accepted_answers:
+      - "Don't touch it."
+      - "Do not touch it."
+      - "Don't touch that wall."
+      - "Do not touch that wall."
+  - correction_id: particle_placement
+    source_item_id: determinacy_intervention_gc_bb4f472f992ab76b_01
+    corrected_item_id: packaging_correction_determinacy_intervention_gc_bb4f472f992ab76b_01
+    source_candidate_sha256: 8fbc7c80b5dbf498134f6f63dff65d9a3f313000106d9ce08666f1ec41ed0533
+    source_judgment_sha256: f1f2e4b040a970e61ad1f1b4fe9a6cc4512f946ae8e67431297e65e49a9b54e9
+    append_accepted_answers:
+      - "Turn the light off."

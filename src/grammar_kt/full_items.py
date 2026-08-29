@@ -28,6 +28,7 @@ UNCHANGED_RESCUE_CANDIDATES_PER_CELL = 2
 DETERMINACY_INTERVENTION_CANDIDATES_PER_CELL = 2
 UNCHANGED_RESCUE_ID = "unchanged_prompt_zero_coverage_rescue_v1"
 DETERMINACY_INTERVENTION_ID = "explicit_construction_determinacy_intervention_v1"
+PACKAGING_CORRECTION_ID = "full_v1_validator_named_answer_packaging_correction_v1"
 _CANDIDATE_PAYLOAD_FIELDS = {"prompt", "target_answer", "accepted_answers"}
 _VISIBLE_ITEM_FIELDS = (
     "item_id",
@@ -213,6 +214,13 @@ def stable_determinacy_intervention_candidate_id(
     return stable_campaign_candidate_id(
         cell_id, campaign_index, DETERMINACY_INTERVENTION_ID
     )
+
+
+def stable_packaging_correction_item_id(source_item_id: str) -> str:
+    _nonempty_string(source_item_id, "source_item_id")
+    if not _SAFE_ID.fullmatch(source_item_id):
+        raise ValueError("source_item_id contains characters unsafe for a stable ID")
+    return f"packaging_correction_{source_item_id}"
 
 
 def _neutral_validation_item_id(candidate_id: str) -> str:
@@ -513,6 +521,94 @@ def recover_campaign_candidate(
     }
 
 
+def construct_packaging_corrected_candidate(
+    source_candidate: dict[str, Any],
+    correction: dict[str, Any],
+    *,
+    config_sha256: str,
+) -> dict[str, Any]:
+    """Copy one frozen candidate and append only declared accepted answers."""
+
+    if not isinstance(correction, dict) or set(correction) != {
+        "correction_id",
+        "source_item_id",
+        "corrected_item_id",
+        "source_candidate_sha256",
+        "source_judgment_sha256",
+        "append_accepted_answers",
+    }:
+        raise ValueError("packaging correction declaration fields changed")
+    source_visible = _visible_item(source_candidate)
+    source_item_id = correction["source_item_id"]
+    if source_visible["item_id"] != source_item_id:
+        raise ValueError("packaging correction source item mismatch")
+    if _sha256(source_candidate) != correction["source_candidate_sha256"]:
+        raise ValueError("packaging correction source candidate drift")
+    expected_id = stable_packaging_correction_item_id(source_item_id)
+    if correction["corrected_item_id"] != expected_id:
+        raise ValueError("packaging correction copied ID drift")
+    _nonempty_string(correction["correction_id"], "correction_id")
+    _nonempty_string(config_sha256, "config_sha256")
+    additions = correction["append_accepted_answers"]
+    if not isinstance(additions, list) or not additions:
+        raise ValueError("packaging correction must append at least one answer")
+    for index, answer in enumerate(additions):
+        _nonempty_string(answer, f"append_accepted_answers[{index}]")
+    original_answers = source_visible["accepted_answers"]
+    if len(additions) != len(set(additions)) or set(additions) & set(original_answers):
+        raise ValueError("packaging correction answers must be new and unique")
+    source_metadata = source_candidate.get("generation_metadata")
+    if (
+        not isinstance(source_metadata, dict)
+        or source_metadata.get("campaign") != DETERMINACY_INTERVENTION_ID
+    ):
+        raise ValueError("packaging correction source must be an intervention item")
+    correction_input = {
+        "protocol_id": PACKAGING_CORRECTION_ID,
+        "config_sha256": config_sha256,
+        "declaration": correction,
+        "source_candidate_sha256": _sha256(source_candidate),
+    }
+    corrected = {
+        "item_id": expected_id,
+        "cell_id": source_candidate["cell_id"],
+        "format": source_visible["format"],
+        "prompt": source_visible["prompt"],
+        "target_answer": source_visible["target_answer"],
+        "accepted_answers": [*deepcopy(original_answers), *deepcopy(additions)],
+        "generation_metadata": {
+            "candidate_index": source_metadata["candidate_index"],
+            "candidate_count": source_metadata["candidate_count"],
+            "campaign": PACKAGING_CORRECTION_ID,
+            "source_item_id": source_item_id,
+            "source_campaign": DETERMINACY_INTERVENTION_ID,
+            "model": source_metadata["model"],
+            "reasoning_effort": source_metadata["reasoning_effort"],
+            "input_sha256": _sha256(correction_input),
+        },
+        "correction_metadata": {
+            "protocol_id": PACKAGING_CORRECTION_ID,
+            "correction_id": correction["correction_id"],
+            "source_item_id": source_item_id,
+            "source_candidate_sha256": correction["source_candidate_sha256"],
+            "source_judgment_sha256": correction["source_judgment_sha256"],
+            "config_sha256": config_sha256,
+            "operation": "append_accepted_answers_only",
+            "appended_accepted_answers": deepcopy(additions),
+            "input_sha256": _sha256(correction_input),
+        },
+    }
+    _validate_candidate_payload(
+        {name: corrected[name] for name in _CANDIDATE_PAYLOAD_FIELDS}
+    )
+    # Guard the central scientific contract explicitly: no prompt, target,
+    # format, or cell field can be altered by this operation.
+    for name in ("cell_id", "format", "prompt", "target_answer"):
+        if corrected[name] != source_candidate[name]:  # pragma: no cover
+            raise AssertionError(f"packaging correction altered {name}")
+    return corrected
+
+
 def generate_one_candidate(
     generation_call: dict[str, Any],
     *,
@@ -728,7 +824,21 @@ def build_validation_call(
     if not isinstance(metadata, dict):
         raise ValueError("candidate lacks generation_metadata")
     campaign_id = metadata.get("campaign")
-    if campaign_id in {UNCHANGED_RESCUE_ID, DETERMINACY_INTERVENTION_ID}:
+    if campaign_id == PACKAGING_CORRECTION_ID:
+        source_item_id = metadata.get("source_item_id")
+        expected_candidate_id = stable_packaging_correction_item_id(source_item_id)
+        if metadata.get("source_campaign") != DETERMINACY_INTERVENTION_ID:
+            raise ValueError("packaging correction source campaign drift")
+        correction_metadata = candidate.get("correction_metadata")
+        if (
+            not isinstance(correction_metadata, dict)
+            or correction_metadata.get("protocol_id") != PACKAGING_CORRECTION_ID
+            or correction_metadata.get("source_item_id") != source_item_id
+            or correction_metadata.get("input_sha256")
+            != metadata.get("input_sha256")
+        ):
+            raise ValueError("packaging correction provenance drift")
+    elif campaign_id in {UNCHANGED_RESCUE_ID, DETERMINACY_INTERVENTION_ID}:
         campaign_index = metadata.get("campaign_candidate_index")
         spec = _campaign_spec(campaign_id)
         expected_candidate_id = stable_campaign_candidate_id(

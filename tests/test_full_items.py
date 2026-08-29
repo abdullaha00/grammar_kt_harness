@@ -1,16 +1,20 @@
 from __future__ import annotations
 
+import hashlib
+import json
 from copy import deepcopy
 
 import pytest
 
 from grammar_kt.full_items import (
     DETERMINACY_INTERVENTION_ID,
+    PACKAGING_CORRECTION_ID,
     UNCHANGED_RESCUE_ID,
     build_campaign_generation_call,
     build_generation_call,
     build_validation_call,
     candidate_audit_summary,
+    construct_packaging_corrected_candidate,
     deterministic_candidate_checks,
     generate_one_campaign_candidate,
     generate_one_candidate,
@@ -23,6 +27,7 @@ from grammar_kt.full_items import (
     reconstruct_validation_judgment,
     stable_campaign_candidate_id,
     stable_candidate_id,
+    stable_packaging_correction_item_id,
     validate_one_candidate,
 )
 from grammar_kt.io import read_text, read_yaml
@@ -160,6 +165,64 @@ def test_generation_call_is_stable_n3_and_reads_only_canonical_cell() -> None:
             candidate_index=1,
             model="fixture-generator",
             reasoning_effort="medium",
+        )
+
+
+def test_packaging_correction_is_append_only_stable_and_revalidatable() -> None:
+    call = _campaign_call(DETERMINACY_INTERVENTION_ID)
+    source = recover_campaign_candidate(_payload(), call)
+    source_hash = hashlib.sha256(
+        json.dumps(
+            source,
+            ensure_ascii=False,
+            sort_keys=True,
+            separators=(",", ":"),
+        ).encode("utf-8")
+    ).hexdigest()
+    declaration = {
+        "correction_id": "fixture_append",
+        "source_item_id": source["item_id"],
+        "corrected_item_id": stable_packaging_correction_item_id(
+            source["item_id"]
+        ),
+        "source_candidate_sha256": source_hash,
+        "source_judgment_sha256": "a" * 64,
+        "append_accepted_answers": ["labour"],
+    }
+    corrected = construct_packaging_corrected_candidate(
+        source, declaration, config_sha256="b" * 64
+    )
+
+    assert corrected["item_id"] != source["item_id"]
+    assert corrected["accepted_answers"] == ["work", "labour"]
+    assert corrected["generation_metadata"]["campaign"] == PACKAGING_CORRECTION_ID
+    assert corrected["correction_metadata"]["source_item_id"] == source["item_id"]
+    for field in ("cell_id", "format", "prompt", "target_answer"):
+        assert corrected[field] == source[field]
+    assert source["accepted_answers"] == ["work"]
+
+    validation = build_validation_call(
+        corrected,
+        _cell(),
+        VALIDATION_PROMPT,
+        VALIDATION_CRITERIA,
+        model="fixture-validator",
+        reasoning_effort="medium",
+    )
+    assert validation["call_required"] is True
+    flattened = str(validation["model_input"])
+    assert source["item_id"] not in flattened
+    assert "correction_metadata" not in flattened
+    assert "campaign" not in flattened
+
+    drifted = deepcopy(declaration)
+    drifted["append_accepted_answers"] = ["different"]
+    with pytest.raises(ValueError, match="source candidate drift|copied ID drift"):
+        # The declaration's frozen source hash remains valid, but a copied-ID
+        # mutation cannot silently retarget a different source package.
+        drifted["corrected_item_id"] = "packaging_correction_wrong"
+        construct_packaging_corrected_candidate(
+            source, drifted, config_sha256="b" * 64
         )
 
 
