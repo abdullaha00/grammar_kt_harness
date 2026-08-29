@@ -6,6 +6,10 @@ import sys
 
 import pytest
 
+from grammar_kt.baseline_simulation import (
+    build_acquisition_occurrences,
+    order_acquisition_occurrences,
+)
 from scripts.investigate_baseline_simulator import (
     AGGREGATIONS,
     EXHAUSTIVE_PASSES,
@@ -226,6 +230,76 @@ def test_q_balanced_targets_kcs_while_exhaustive_passes_balance_item_exposure() 
     assert exhaustive_diagnostics["item_exposure_imbalance"] == 0
     assert exhaustive_diagnostics["item_exposure_minimum"] == 2
     assert len(exhaustive) == 4
+
+
+def test_q_balanced_reference_schedule_matches_production_protocol() -> None:
+    items, kcs, q_rows, regimes = _toy_inputs()
+    normalized = normalize_inputs(items, kcs, q_rows, regimes)
+    seen_items = [
+        row
+        for row in normalized["items"]
+        if normalized["grammar_regime_by_cell"][row["cell_id"]] == "seen"
+    ]
+    reference = next(
+        row
+        for row in build_conditions()
+        if row["schedule_mode"] == "q_balanced"
+        and row["target_opportunities_per_seen_kc"] == 20
+    )
+
+    pilot_schedule, pilot_diagnostics = build_acquisition_schedule(
+        seen_items,
+        normalized["seen_kc_ids"],
+        normalized["active_by_item"],
+        reference,
+        seed=401,
+        learner_number=3,
+    )
+    fixed, production_diagnostics = build_acquisition_occurrences(
+        seen_items,
+        normalized["active_by_item"],
+        target_opportunities_per_seen_kc=20,
+    )
+    production_schedule = order_acquisition_occurrences(
+        fixed, seed=401, learner_number=3
+    )
+
+    assert pilot_schedule == production_schedule
+    assert pilot_diagnostics == production_diagnostics
+    assert pilot_diagnostics["item_exposure_minimum"] == 1
+    assert pilot_diagnostics["kc_opportunity_minimum"] >= 20
+
+
+def test_absent_unseen_value_only_kcs_are_explicitly_not_applicable() -> None:
+    items, kcs, q_rows, regimes = _toy_inputs()
+    # The unseen-value item now composes a KC that also occurs in seen grammar.
+    # There is therefore no KC whose unchanged-state gate can be instantiated.
+    q_without_unseen_only = deepcopy(q_rows)
+    q_without_unseen_only[1]["generator_kc_ids"].append("destreza_valor_nuevo")
+    normalized = normalize_inputs(items, kcs, q_without_unseen_only, regimes)
+    assert normalized["unseen_value_only_kc_ids"] == []
+    reference = next(
+        row
+        for row in build_conditions()
+        if row["schedule_mode"] == "q_balanced"
+        and row["target_opportunities_per_seen_kc"] == 20
+        and row["aggregation"] == "minimum"
+        and row["learning_rule"] == "all_active_opportunity"
+    )
+
+    result = simulate_condition(normalized, reference, learners=8, seed=409)
+    gates = result["simulation_gates"]
+    assert result["metrics"]["unseen_value_only_kc_gate_applicable"] is False
+    assert result["metrics"][
+        "maximum_unseen_value_only_kc_absolute_change"
+    ] is None
+    assert gates["checks"]["unseen_value_only_kcs_unchanged"] is True
+    assert gates["check_status"]["unseen_value_only_kcs_unchanged"] == (
+        "not_applicable_vacuously_satisfied"
+    )
+    assert gates["not_applicable_checks"] == ["unseen_value_only_kcs_unchanged"]
+    assert "unseen_value_only_kcs_unchanged" not in gates["failures"]
+    assert result["metrics"]["seen_only_acquisition_verified"] is True
 
 
 def test_non_english_pilot_uses_seen_acquisition_and_frozen_terminal_probes() -> None:

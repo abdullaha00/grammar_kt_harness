@@ -33,8 +33,11 @@ schedule:
     - unseen_combination
     - unseen_value
   acquisition_regime: seen
-  acquisition_passes: 5
-  item_order: keyed_rank
+  acquisition:
+    mode: exhaustive_then_q_balanced
+    exhaustive_coverage_passes: 1
+    target_opportunities_per_seen_kc: 20
+  item_order: keyed_occurrence_rank
   probe:
     timing: terminal
     repeats: 1
@@ -44,8 +47,10 @@ schedule:
 rng:
   scheme: keyed_sha256_v1
   rationale: >-
-    Stable independent streams are keyed by learner, KC, phase, pass, and item
-    so learner prefixes and terminal probes do not depend on unrelated draws.
+    Stable independent streams are keyed by learner and KC for initial states,
+    by learner/item/item-exposure for acquisition responses, and by
+    learner/probe-repeat/item for terminal responses. Learner prefixes and
+    terminal probes therefore do not depend on unrelated draws.
 
 learner_ids:
   prefix: learner_

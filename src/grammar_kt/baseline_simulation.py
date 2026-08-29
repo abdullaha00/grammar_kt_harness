@@ -16,7 +16,9 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+from collections import Counter
 from collections.abc import Mapping, Sequence
+from statistics import median
 from typing import Any
 
 import numpy as np
@@ -181,7 +183,7 @@ def validate_baseline_config(config: Mapping[str, Any]) -> None:
         {
             "grammar_regimes",
             "acquisition_regime",
-            "acquisition_passes",
+            "acquisition",
             "item_order",
             "probe",
         },
@@ -197,12 +199,41 @@ def validate_baseline_config(config: Mapping[str, Any]) -> None:
         raise ValueError("schedule.grammar_regimes must contain unique strings")
     if schedule.get("acquisition_regime") not in regimes:
         raise ValueError("schedule.acquisition_regime must be a declared regime")
-    _positive_int(
-        _required(schedule, "acquisition_passes", "schedule"),
-        "schedule.acquisition_passes",
+
+    acquisition = _required(schedule, "acquisition", "schedule")
+    _exact_keys(
+        acquisition,
+        {
+            "mode",
+            "exhaustive_coverage_passes",
+            "target_opportunities_per_seen_kc",
+        },
+        "schedule.acquisition",
     )
-    if schedule.get("item_order") != "keyed_rank":
-        raise ValueError("baseline item order must be keyed_rank")
+    if acquisition.get("mode") != "exhaustive_then_q_balanced":
+        raise ValueError(
+            "baseline acquisition mode must be exhaustive_then_q_balanced"
+        )
+    coverage_passes = _positive_int(
+        _required(
+            acquisition,
+            "exhaustive_coverage_passes",
+            "schedule.acquisition",
+        ),
+        "schedule.acquisition.exhaustive_coverage_passes",
+    )
+    if coverage_passes != 1:
+        raise ValueError("baseline acquisition must have exactly one coverage pass")
+    _positive_int(
+        _required(
+            acquisition,
+            "target_opportunities_per_seen_kc",
+            "schedule.acquisition",
+        ),
+        "schedule.acquisition.target_opportunities_per_seen_kc",
+    )
+    if schedule.get("item_order") != "keyed_occurrence_rank":
+        raise ValueError("baseline item order must be keyed_occurrence_rank")
 
     probe = _required(schedule, "probe", "schedule")
     _exact_keys(
@@ -390,6 +421,218 @@ def _ordered_items(
     )
 
 
+def build_acquisition_occurrences(
+    seen_items: Sequence[Mapping[str, str]],
+    active_by_item: Mapping[str, Sequence[str]],
+    *,
+    target_opportunities_per_seen_kc: int,
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """Build one fixed coverage-plus-Q-balanced occurrence multiset.
+
+    Every seen item first receives exactly one occurrence. A deterministic
+    greedy top-up then selects additional occurrences until every KC activated
+    by seen items reaches the configured opportunity target. The resulting
+    multiset depends only on fixed items, Q*, and the target, so all learners
+    receive identical item and KC opportunity counts.
+
+    Top-up selection maximizes the number of still-deficient KCs covered,
+    prefers the least-exposed item, and finally uses stable item-ID order.
+    Learner-specific keyed ordering is a separate operation.
+    """
+
+    target = _positive_int(
+        target_opportunities_per_seen_kc,
+        "target_opportunities_per_seen_kc",
+    )
+    if not seen_items:
+        raise ValueError("acquisition scheduling needs at least one seen item")
+
+    normalized_items: list[dict[str, str]] = []
+    for index, item in enumerate(seen_items):
+        if not isinstance(item, Mapping):
+            raise ValueError(f"seen item row {index} must be a mapping")
+        item_id = item.get("item_id")
+        cell_id = item.get("cell_id")
+        if not isinstance(item_id, str) or not item_id:
+            raise ValueError(f"seen item row {index} has an invalid item_id")
+        if not isinstance(cell_id, str) or not cell_id:
+            raise ValueError(f"seen item {item_id} has an invalid cell_id")
+        normalized_items.append({"item_id": item_id, "cell_id": cell_id})
+    normalized_items.sort(key=lambda row: row["item_id"])
+    item_ids = [row["item_id"] for row in normalized_items]
+    if len(item_ids) != len(set(item_ids)):
+        raise ValueError("seen item bank contains duplicate item IDs")
+
+    active_seen_by_item: dict[str, tuple[str, ...]] = {}
+    for item_id in item_ids:
+        if item_id not in active_by_item:
+            raise ValueError(f"seen item is missing from Q*: {item_id}")
+        active = active_by_item[item_id]
+        if (
+            not isinstance(active, Sequence)
+            or isinstance(active, (str, bytes))
+            or not active
+            or any(not isinstance(kc_id, str) or not kc_id for kc_id in active)
+        ):
+            raise ValueError(f"seen item {item_id} must activate at least one KC")
+        active_seen_by_item[item_id] = tuple(sorted(set(active)))
+
+    seen_kc_ids = sorted(
+        {
+            kc_id
+            for active in active_seen_by_item.values()
+            for kc_id in active
+        }
+    )
+    if not seen_kc_ids:
+        raise ValueError("acquisition scheduling needs at least one seen KC")
+
+    item_exposures = Counter({item_id: 0 for item_id in item_ids})
+    kc_opportunities = Counter({kc_id: 0 for kc_id in seen_kc_ids})
+    occurrences: list[dict[str, Any]] = []
+
+    def append_item(item: Mapping[str, str], schedule_stage: str) -> None:
+        item_id = item["item_id"]
+        item_exposures[item_id] += 1
+        kc_opportunities.update(active_seen_by_item[item_id])
+        occurrences.append(
+            {
+                "item": dict(item),
+                "schedule_stage": schedule_stage,
+                # Top-up is not a complete bank pass. Public pass_index has
+                # item-local semantics: this item's exposure number.
+                "pass_index": item_exposures[item_id],
+                "item_exposure_index": item_exposures[item_id],
+            }
+        )
+
+    # Exactly one exhaustive pass remains mandatory even when it already
+    # exceeds a deliberately small KC target.
+    for item in normalized_items:
+        append_item(item, "exhaustive_coverage")
+
+    maximum_occurrences = len(normalized_items) + target * len(seen_kc_ids)
+    while min(kc_opportunities.values()) < target:
+        scored: list[tuple[int, int, str, dict[str, str]]] = []
+        for item in normalized_items:
+            item_id = item["item_id"]
+            deficit_reduction = sum(
+                kc_opportunities[kc_id] < target
+                for kc_id in active_seen_by_item[item_id]
+            )
+            if deficit_reduction:
+                scored.append(
+                    (
+                        -deficit_reduction,
+                        item_exposures[item_id],
+                        item_id,
+                        item,
+                    )
+                )
+        if not scored:
+            raise ValueError("Q-balanced top-up cannot reduce a seen-KC deficit")
+        append_item(min(scored)[-1], "q_balanced_top_up")
+        if len(occurrences) > maximum_occurrences:
+            raise AssertionError("Q-balanced top-up exceeded its deficit bound")
+
+    opportunity_values = list(kc_opportunities.values())
+    exposure_values = list(item_exposures.values())
+    diagnostics = {
+        "schedule_mode": "exhaustive_then_q_balanced",
+        "schedule_length": len(occurrences),
+        "exhaustive_coverage_occurrences": len(normalized_items),
+        "q_balanced_top_up_occurrences": len(occurrences) - len(normalized_items),
+        "target_opportunities_per_seen_kc": target,
+        "seen_kc_ids": seen_kc_ids,
+        "kc_opportunities": dict(sorted(kc_opportunities.items())),
+        "kc_opportunity_minimum": min(opportunity_values),
+        "kc_opportunity_median": median(opportunity_values),
+        "kc_opportunity_maximum": max(opportunity_values),
+        "item_exposures": dict(sorted(item_exposures.items())),
+        "item_exposure_minimum": min(exposure_values),
+        "item_exposure_median": median(exposure_values),
+        "item_exposure_maximum": max(exposure_values),
+        "item_exposure_imbalance": max(exposure_values) - min(exposure_values),
+    }
+    return occurrences, diagnostics
+
+
+def order_acquisition_occurrences(
+    occurrences: Sequence[Mapping[str, Any]],
+    *,
+    seed: int,
+    learner_number: int,
+) -> list[dict[str, Any]]:
+    """Key-rank a fixed acquisition occurrence multiset for one learner.
+
+    Occurrences are grouped by item-local exposure index. Thus the exhaustive
+    first exposure precedes every top-up and an item's third exposure cannot
+    precede its second. Within each exposure layer, unique occurrence tuples
+    receive a stable learner-keyed rank.
+    """
+
+    normalized: list[dict[str, Any]] = []
+    occurrence_keys: set[tuple[str, int]] = set()
+    for index, occurrence in enumerate(occurrences):
+        if not isinstance(occurrence, Mapping):
+            raise ValueError(f"acquisition occurrence {index} must be a mapping")
+        item = occurrence.get("item")
+        if not isinstance(item, Mapping):
+            raise ValueError(f"acquisition occurrence {index} has no item")
+        item_id = item.get("item_id")
+        cell_id = item.get("cell_id")
+        exposure = occurrence.get("item_exposure_index")
+        stage = occurrence.get("schedule_stage")
+        if not isinstance(item_id, str) or not item_id:
+            raise ValueError(f"acquisition occurrence {index} has invalid item_id")
+        if not isinstance(cell_id, str) or not cell_id:
+            raise ValueError(f"acquisition occurrence {index} has invalid cell_id")
+        exposure = _positive_int(
+            exposure, f"acquisition occurrence {index} item_exposure_index"
+        )
+        expected_stage = (
+            "exhaustive_coverage" if exposure == 1 else "q_balanced_top_up"
+        )
+        if stage != expected_stage:
+            raise ValueError(
+                f"acquisition occurrence {item_id}/{exposure} has invalid stage"
+            )
+        occurrence_key = (item_id, exposure)
+        if occurrence_key in occurrence_keys:
+            raise ValueError(f"duplicate acquisition occurrence: {occurrence_key}")
+        occurrence_keys.add(occurrence_key)
+        normalized.append(
+            {
+                "item": {"item_id": item_id, "cell_id": cell_id},
+                "schedule_stage": stage,
+                "pass_index": exposure,
+                "item_exposure_index": exposure,
+            }
+        )
+
+    ordered = sorted(
+        normalized,
+        key=lambda row: (
+            row["item_exposure_index"],
+            float(
+                _keyed_rng(
+                    seed,
+                    "item_order",
+                    learner_number,
+                    "acquisition",
+                    row["item_exposure_index"],
+                    row["item"]["item_id"],
+                ).random()
+            ),
+            row["item"]["item_id"],
+        ),
+    )
+    return [
+        {**row, "schedule_step": schedule_step}
+        for schedule_step, row in enumerate(ordered, start=1)
+    ]
+
+
 def simulate_baseline(
     items: Sequence[Mapping[str, Any]],
     generator_kcs: Mapping[str, Any] | Sequence[Mapping[str, Any]],
@@ -429,7 +672,9 @@ def simulate_baseline(
     learning_rate = float(config["learning"]["rate"])
     schedule = config["schedule"]
     acquisition_regime = schedule["acquisition_regime"]
-    acquisition_passes = int(schedule["acquisition_passes"])
+    target_opportunities = int(
+        schedule["acquisition"]["target_opportunities_per_seen_kc"]
+    )
     probe_repeats = int(schedule["probe"]["repeats"])
     prefix = config["learner_ids"]["prefix"]
     zero_pad_width = int(config["learner_ids"]["zero_pad_width"])
@@ -439,6 +684,11 @@ def simulate_baseline(
         for item in ordered_bank
         if grammar_regime_by_cell[item["cell_id"]] == acquisition_regime
     ]
+    acquisition_occurrences, _schedule_diagnostics = build_acquisition_occurrences(
+        acquisition_items,
+        active_by_item,
+        target_opportunities_per_seen_kc=target_opportunities,
+    )
     interactions: list[dict[str, Any]] = []
     oracle_rows: list[dict[str, Any]] = []
 
@@ -454,78 +704,92 @@ def simulate_baseline(
         }
         sequence_index = 0
 
-        schedule_rows: list[tuple[str, int, bool, Sequence[dict[str, str]]]] = [
-            ("acquisition", pass_index, True, acquisition_items)
-            for pass_index in range(1, acquisition_passes + 1)
-        ]
-        schedule_rows.extend(
-            ("probe", pass_index, False, ordered_bank)
-            for pass_index in range(1, probe_repeats + 1)
+        learner_acquisition = order_acquisition_occurrences(
+            acquisition_occurrences,
+            seed=seed,
+            learner_number=learner_number,
         )
-
-        for phase, pass_index, updates_mastery, phase_items in schedule_rows:
+        schedule_rows: list[tuple[str, int, bool, dict[str, str], int]] = [
+            (
+                "acquisition",
+                int(occurrence["pass_index"]),
+                True,
+                occurrence["item"],
+                int(occurrence["item_exposure_index"]),
+            )
+            for occurrence in learner_acquisition
+        ]
+        for pass_index in range(1, probe_repeats + 1):
             for item in _ordered_items(
-                phase_items,
+                ordered_bank,
                 seed=seed,
                 learner_number=learner_number,
-                phase=phase,
+                phase="probe",
                 pass_index=pass_index,
             ):
-                sequence_index += 1
-                item_id = item["item_id"]
-                active_kcs = active_by_item[item_id]
-                mastery_before = {kc_id: mastery[kc_id] for kc_id in active_kcs}
-                aggregated = min(mastery_before.values())
-                probability = guess + (1.0 - guess - slip) * aggregated
-                response_draw = float(
-                    _keyed_rng(
-                        seed,
-                        "response",
-                        learner_number,
-                        phase,
-                        pass_index,
-                        item_id,
-                    ).random()
+                schedule_rows.append(
+                    ("probe", pass_index, False, item, pass_index)
                 )
-                correct = int(response_draw < probability)
 
-                if updates_mastery:
-                    for kc_id in active_kcs:
-                        current = mastery[kc_id]
-                        mastery[kc_id] = current + learning_rate * (1.0 - current)
-                mastery_after = {kc_id: mastery[kc_id] for kc_id in active_kcs}
-                grammar_regime = grammar_regime_by_cell[item["cell_id"]]
+        for phase, pass_index, updates_mastery, item, draw_index in schedule_rows:
+            sequence_index += 1
+            item_id = item["item_id"]
+            active_kcs = active_by_item[item_id]
+            mastery_before = {kc_id: mastery[kc_id] for kc_id in active_kcs}
+            aggregated = min(mastery_before.values())
+            probability = guess + (1.0 - guess - slip) * aggregated
+            response_keys = (
+                (phase, item_id, draw_index)
+                if phase == "acquisition"
+                else (phase, draw_index, item_id)
+            )
+            response_draw = float(
+                _keyed_rng(
+                    seed,
+                    "response",
+                    learner_number,
+                    *response_keys,
+                ).random()
+            )
+            correct = int(response_draw < probability)
 
-                interaction = {
-                    "learner_id": learner_id,
-                    "item_id": item_id,
-                    "sequence_index": sequence_index,
-                    "correct": correct,
-                    "phase": phase,
-                    "pass_index": pass_index,
-                    "grammar_regime": grammar_regime,
-                }
-                oracle = {
-                    "learner_id": learner_id,
-                    "item_id": item_id,
-                    "sequence_index": sequence_index,
-                    "phase": phase,
-                    "pass_index": pass_index,
-                    "grammar_regime": grammar_regime,
-                    "active_generator_kc_ids": list(active_kcs),
-                    "mastery_before": mastery_before,
-                    "aggregated_mastery_before": aggregated,
-                    "response_probability": probability,
-                    "response_draw": response_draw,
-                    "correct": correct,
-                    "updates_mastery": updates_mastery,
-                    "mastery_after": mastery_after,
-                }
-                if tuple(interaction) != OBSERVABLE_FIELDS:
-                    raise AssertionError("internal observable schema drift")
-                if tuple(oracle) != ORACLE_FIELDS:
-                    raise AssertionError("internal oracle schema drift")
-                interactions.append(interaction)
-                oracle_rows.append(oracle)
+            if updates_mastery:
+                for kc_id in active_kcs:
+                    current = mastery[kc_id]
+                    mastery[kc_id] = current + learning_rate * (1.0 - current)
+            mastery_after = {kc_id: mastery[kc_id] for kc_id in active_kcs}
+            grammar_regime = grammar_regime_by_cell[item["cell_id"]]
+
+            interaction = {
+                "learner_id": learner_id,
+                "item_id": item_id,
+                "sequence_index": sequence_index,
+                "correct": correct,
+                "phase": phase,
+                "pass_index": pass_index,
+                "grammar_regime": grammar_regime,
+            }
+            oracle = {
+                "learner_id": learner_id,
+                "item_id": item_id,
+                "sequence_index": sequence_index,
+                "phase": phase,
+                "pass_index": pass_index,
+                "grammar_regime": grammar_regime,
+                "active_generator_kc_ids": list(active_kcs),
+                "mastery_before": mastery_before,
+                "aggregated_mastery_before": aggregated,
+                "response_probability": probability,
+                "response_draw": response_draw,
+                "correct": correct,
+                "updates_mastery": updates_mastery,
+                "mastery_after": mastery_after,
+            }
+            if tuple(interaction) != OBSERVABLE_FIELDS:
+                raise AssertionError("internal observable schema drift")
+            if tuple(oracle) != ORACLE_FIELDS:
+                raise AssertionError("internal oracle schema drift")
+            interactions.append(interaction)
+            oracle_rows.append(oracle)
 
     return interactions, oracle_rows

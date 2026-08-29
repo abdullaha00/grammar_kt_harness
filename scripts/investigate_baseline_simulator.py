@@ -36,6 +36,10 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from grammar_kt.io import read_jsonl, write_json
+from grammar_kt.baseline_simulation import (
+    build_acquisition_occurrences as build_production_acquisition_occurrences,
+    order_acquisition_occurrences as order_production_acquisition_occurrences,
+)
 
 
 PILOT_ID = "baseline_simulator_assumptions_v1"
@@ -98,6 +102,11 @@ GATE_DECLARATION = {
     },
     "unseen_value_only_kcs_unchanged": {
         "absolute_tolerance": 1e-12,
+        "applicability": (
+            "Only applies when at least one generator KC occurs exclusively "
+            "in unseen-value items; otherwise it is vacuously satisfied and "
+            "reported as not applicable."
+        ),
         "rationale": "KCs exclusive to unseen-value items receive no acquisition update.",
     },
 }
@@ -564,10 +573,11 @@ def build_acquisition_schedule(
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     """Build one deterministic exhaustive or Q-balanced acquisition schedule.
 
-    Q-balanced selection greedily chooses the item covering the largest number
-    of currently deficient seen KCs.  Ties prefer the least-exposed item, then
-    a keyed random rank, then item ID.  The loop ends as soon as every seen KC
-    reaches the declared target; co-activation may overshoot other KCs.
+    The Q-balanced condition is the production candidate: one exhaustive
+    coverage occurrence per seen item followed by deterministic Q-balanced
+    top-up. The fixed occurrence multiset is then learner-key ordered. The loop
+    ends as soon as every seen KC reaches the declared target; co-activation
+    may overshoot other KCs.
     """
 
     if not seen_items or not seen_kc_ids:
@@ -622,43 +632,17 @@ def build_acquisition_schedule(
             or condition["exhaustive_passes"] is not None
         ):
             raise ValueError("Q-balanced schedule needs a positive target and no passes")
-        maximum_steps = target * len(seen_kc_ids)
-        while min(kc_opportunities.values()) < target:
-            step = len(schedule) + 1
-            scored = []
-            for item in seen_items:
-                item_id = item["item_id"]
-                active_seen = set(active_by_item[item_id]) & seen_set
-                deficit_reduction = sum(
-                    kc_opportunities[kc_id] < target for kc_id in active_seen
-                )
-                if not deficit_reduction:
-                    continue
-                keyed_tie = float(
-                    _keyed_rng(
-                        seed,
-                        "q_balanced_tie",
-                        learner_number,
-                        step,
-                        item_id,
-                    ).random()
-                )
-                scored.append(
-                    (
-                        -deficit_reduction,
-                        item_exposures[item_id],
-                        keyed_tie,
-                        item_id,
-                        item,
-                    )
-                )
-            if not scored:
-                raise ValueError("Q-balanced scheduler cannot reduce a seen-KC deficit")
-            selected = min(scored)[-1]
-            pseudo_pass = 1 + (len(schedule) // len(seen_items))
-            append_item(selected, pseudo_pass)
-            if len(schedule) > maximum_steps:
-                raise AssertionError("Q-balanced scheduler exceeded its deficit bound")
+        fixed_occurrences, diagnostics = build_production_acquisition_occurrences(
+            seen_items,
+            active_by_item,
+            target_opportunities_per_seen_kc=target,
+        )
+        schedule = order_production_acquisition_occurrences(
+            fixed_occurrences,
+            seed=seed,
+            learner_number=learner_number,
+        )
+        return schedule, diagnostics
     else:
         raise ValueError(f"unknown schedule mode: {mode}")
 
@@ -693,6 +677,9 @@ def _rounded_mapping(values: Mapping[str, float]) -> dict[str, float]:
 
 
 def _gate_results(metrics: Mapping[str, Any]) -> dict[str, Any]:
+    unseen_value_gate_applicable = bool(
+        metrics["unseen_value_only_kc_gate_applicable"]
+    )
     gates = {
         "minimum_seen_kc_opportunities_per_learner": (
             metrics["minimum_seen_kc_opportunities_per_learner"]
@@ -722,21 +709,39 @@ def _gate_results(metrics: Mapping[str, Any]) -> dict[str, Any]:
             ]["maximum"]
         ),
         "unseen_value_only_kcs_unchanged": (
-            metrics["unseen_value_only_kc_gate_applicable"]
-            and metrics["maximum_unseen_value_only_kc_absolute_change"]
-            <= GATE_DECLARATION["unseen_value_only_kcs_unchanged"][
-                "absolute_tolerance"
-            ]
+            not unseen_value_gate_applicable
+            or (
+                metrics["maximum_unseen_value_only_kc_absolute_change"]
+                <= GATE_DECLARATION["unseen_value_only_kcs_unchanged"][
+                    "absolute_tolerance"
+                ]
+            )
         ),
         "seen_only_acquisition": metrics["seen_only_acquisition_verified"],
         "terminal_probes_non_updating": metrics[
             "terminal_non_updating_probe_verified"
         ],
     }
+    not_applicable = (
+        ["unseen_value_only_kcs_unchanged"]
+        if not unseen_value_gate_applicable
+        else []
+    )
+    check_status = {
+        name: (
+            "not_applicable_vacuously_satisfied"
+            if name in not_applicable
+            else "passed" if passed
+            else "failed"
+        )
+        for name, passed in gates.items()
+    }
     return {
         "passed": all(gates.values()),
         "checks": gates,
         "failures": sorted(name for name, passed in gates.items() if not passed),
+        "not_applicable_checks": not_applicable,
+        "check_status": check_status,
     }
 
 
@@ -1297,7 +1302,7 @@ def investigate_baseline_simulator(
                 "common_random_number_keys": [
                     "initial_mastery: learner + generator KC",
                     "exhaustive order: learner + pass + item",
-                    "Q-balanced tie: learner + schedule step + item",
+                    "production schedule order: learner + item exposure + item",
                     "acquisition response: learner + item + item exposure index",
                     "probe response: learner + probe repeat + item",
                 ],
@@ -1315,9 +1320,10 @@ def investigate_baseline_simulator(
                     "q_balanced": {
                         "targets_per_seen_kc": list(Q_BALANCED_TARGETS),
                         "algorithm": (
-                            "Greedily maximize currently deficient KC coverage; "
-                            "then minimize prior item exposure; then keyed random "
-                            "tie-break; then item ID."
+                            "Present every seen item once, then greedily maximize "
+                            "currently deficient KC coverage; minimize prior item "
+                            "exposure; use item ID as the fixed-multiset tie-break; "
+                            "then learner-key order each exposure layer."
                         ),
                     },
                     "exhaustive_passes": {
@@ -1330,9 +1336,8 @@ def investigate_baseline_simulator(
                 "probe_item_scope": "all_regimes",
                 "probe_updates_mastery": False,
                 "balanced_pass_index_semantics": (
-                    "For audit rows only, pass_index is the one-based pseudo-cycle "
-                    "ceil(schedule_step / seen_item_count); random draws use the "
-                    "item exposure index instead."
+                    "pass_index is item-local and equals item_exposure_index: one "
+                    "for exhaustive coverage and two or more for top-up."
                 ),
             },
             "aggregation_values": list(AGGREGATIONS),

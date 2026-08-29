@@ -1489,3 +1489,62 @@ experiment:
 - **Planned artifacts:** Immutable campaign plans, generation calls/candidates,
   validation calls/judgments, audits, and private raw evidence under the
   full-v1 item provenance directories.
+
+## FULL-SIM-001-PREREG — baseline simulator assumption and schedule audit
+
+- **Date frozen:** 2026-08-29, before the full-v1 simulator pilot or learner
+  dataset is generated.
+- **Research question:** Which simple explicit response, learning, initial-
+  mastery, noise, and acquisition assumptions produce an informative baseline
+  without turning the simulator into a fitted model of human learners?
+- **Hypothesis:** A weakest-link response rule and outcome-independent learning
+  update give the clearest semantics for a required multi-KC item. One
+  exhaustive seen-item occurrence followed by Q*-balanced top-up should avoid
+  both missing rare-KC practice and excessive repetition of already common
+  KCs. A target near 20 opportunities per seen KC should create visible but
+  nonsaturated learning under a 0.02 fractional update.
+- **Frozen analytical checks:** Compare minimum, product, arithmetic-mean, and
+  mean-logit aggregation on monotonicity, permutation invariance, invariance to
+  the number of equally mastered active KCs, and noncompensation for mastery
+  `[.95,.05]`. Compare opportunity-based all-active updates with correct-only
+  and incorrect-only alternatives, retaining the simplest defensible rule
+  rather than whichever gives a preferred KT result. No KT model, K-hat,
+  response-prediction score, or final learner outcome may enter this choice.
+- **Frozen simulation pilot:** On final items/Q*/regimes, run 128 learners with
+  targets 12/20/30, rates .01/.02, initial `Beta(2,2)`/`Beta(2,3)`, symmetric
+  guess-slip .05/.10/.20, the four aggregators, and the three update rules in
+  the script's compact staged design. Acquisition uses seen grammar only; one
+  terminal all-bank probe never updates mastery. Select the lowest target that
+  passes every gate under the declared baseline aggregation/update/noise
+  condition. Repeat seeds `20260830` and `20260831` only if a selected metric is
+  within .02 of a declared gate boundary.
+- **Primary gates:** Every seen item has at least one acquisition occurrence;
+  every seen KC reaches its target; initial seen median response probability
+  .25--.60; terminal median .55--.80; median gain .10--.30; no more than 10%
+  of terminal seen-KC states exceed .95; acquisition is seen-only; probes do
+  not update. If no KC occurs exclusively in unseen-value grammar, the
+  corresponding unchanged-state check is explicitly not applicable rather
+  than a failure.
+- **Provisional baseline condition:** Minimum aggregation;
+  all-active opportunity learning at .02; independent learner×KC `Beta(2,2)`;
+  fixed synthetic guess/slip .10/.10; no forgetting or item difficulty; one
+  exhaustive coverage pass followed by Q*-balanced top-up; keyed occurrence
+  order; one non-updating terminal all-bank probe; seed `20260829`; 1,000
+  learners. The opportunity target remains provisional until the pilot gate.
+- **Schedule negative control:** Five exhaustive passes are rejected as the
+  default design before outcomes: with the 54-cell structural regime pilot and
+  one item/cell they give only five opportunities to the rare non-subject-WH
+  KC but 130 to negation. From mastery .5, 0.02 fractional learning yields
+  about .548 after five, .666 after 20, and .964 after 130 opportunities.
+- **Planned exact command:**
+
+  ```bash
+  .venv/bin/python scripts/investigate_baseline_simulator.py --items data/grammar_kt_full_v1/items/items.jsonl --kcs data/grammar_kt_full_v1/kcs.jsonl --q-matrix data/grammar_kt_full_v1/q_matrix.csv --regimes data/grammar_kt_full_v1/grammar/regime_assignments.jsonl --learners 128 --seed 20260829 --output reports/baseline/artifacts/full_simulator_v1/pilot_seed_20260829.json
+  ```
+- **Methodological consequence before execution:** Production scheduling now
+  constructs one fixed occurrence multiset from items and Q*, gives every seen
+  item one occurrence, tops up deficient KCs deterministically, and only then
+  learner-key-orders the occurrences. Acquisition response draws are keyed by
+  learner, item, and item-local exposure so target extensions preserve aligned
+  draws. The final learner dataset remains blocked on item/Q/regime completion
+  and this pilot.
