@@ -1585,6 +1585,48 @@ experiment:
   under `data/grammar_kt_full_v1/provenance/items/packaging_corrections/` and
   `runs/grammar_kt_full_v1_private/items/packaging_corrections/`.
 
+## FULL-REGIME-Q-001-PREREG — semantic regimes and pre-simulation Q* gate
+
+- **Date frozen:** 2026-08-29, before final-item regime assignment and Q*
+  construction.
+- **Research question:** Does the fixed full bank support all declared generator
+  KCs and meaningful structural grammar holdouts without activation-equivalent
+  or rank-deficient Q* columns?
+- **Hypothesis:** The structural declaration will retain 54 `seen`, 15
+  pairwise-seen/full-tuple-unseen `unseen_combination`, and six
+  `unseen_value` cells after item curation. The max-two bank will preserve the
+  18-KC full-rank geometry seen in the pre-item audit and give every KC at least
+  two items.
+- **Frozen methodology:** Apply
+  `modules/simulation/grammar_regimes_full_v1.yaml` to the complete fixed cell
+  and item inventories. The unseen-value search may withhold one schema value
+  only when four to eight cells use it, no generator KC occurs solely in that
+  cohort, and all KCs retain seen support. Select 15 exact unseen combinations
+  only when every individual value and every lower-order dimension pair remains
+  seen. Derive every Q* edge deterministically from the already frozen K*
+  activation declarations; learner data, oracle truth, K-hat, and KT results
+  are prohibited inputs.
+- **Manipulated variable:** None; this is the mandatory structural quality gate
+  on the fixed bank.
+- **Held fixed:** 75 canonical cells, 18 declared generator KCs, curated item
+  bank, regime design, activation rules, thresholds, and canonical order.
+- **Required PASS conditions:** Every canonical cell measured; every item has at
+  least one active KC; every K* has at least two items; Q* columns unique; and
+  Q* has full column rank. Near-equivalent columns, pairs without two-sided
+  contrasts, rare KCs, isolating opportunities, items/KC, cells/KC, KCs/item,
+  and regime support remain mandatory reported diagnostics even when they are
+  not hard rejection criteria.
+- **Decision rule:** No learner simulation may proceed on a failed gate. If a
+  weakness is modestly fixable with natural targeted measurement, preregister
+  that intervention; otherwise retain and document it. Do not change K* or
+  items in response to simulated outcomes.
+- **Planned exact commands:**
+
+  ```bash
+  .venv/bin/python scripts/design_grammar_regimes.py --schema modules/grammar/canonical/schema.yaml --cells data/grammar_kt_full_v1/grammar/cells.jsonl --kcs data/grammar_kt_full_v1/kcs.jsonl --items data/grammar_kt_full_v1/items/items.jsonl --design modules/simulation/grammar_regimes_full_v1.yaml --assignments-output data/grammar_kt_full_v1/grammar/regime_assignments.jsonl --audit-output data/grammar_kt_full_v1/provenance/grammar_regimes/audit.json
+  .venv/bin/python scripts/build_true_q_matrix.py --cells data/grammar_kt_full_v1/grammar/cells.jsonl --items data/grammar_kt_full_v1/items/items.jsonl --kcs data/grammar_kt_full_v1/kcs.jsonl --design modules/kcs/generator/design.yaml --regimes data/grammar_kt_full_v1/grammar/regime_assignments.jsonl --dense-q-matrix data/grammar_kt_full_v1/q_matrix.csv --sparse-q-matrix data/grammar_kt_full_v1/oracle/q_matrix_sparse.jsonl --audit data/grammar_kt_full_v1/provenance/measurement/audit.json --manifest data/grammar_kt_full_v1/provenance/measurement/manifest.json
+  ```
+
 ## FULL-SIM-001-PREREG — baseline simulator assumption and schedule audit
 
 - **Date frozen:** 2026-08-29, before the full-v1 simulator pilot or learner
