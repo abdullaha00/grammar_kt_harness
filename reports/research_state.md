@@ -195,11 +195,17 @@ and geometry checks before K* and Q* pass their measurement gate.
   explicit-construction intervention accepted 9/18 and added six cells, raising
   coverage to 72/75. Original and campaign evidence remain immutable and
   separately labelled.
-- For one candidate in each of the final three cells, the unchanged validator's
-  sole objection names a finite natural equivalent omitted from the declared
-  answer set. `FULL-ITEM-003-PREREG` therefore freezes an append-only correction
-  of those exact three copied packages before independent revalidation; prompts
-  and targets cannot change.
+- The frozen append-only correction passed one of three copied packages, adding
+  the missing `mustn't` answer and raising coverage to 73/75. Both imperative
+  copies again failed only determinacy because the judge found new polite and
+  referential variants. This is a retained negative result: open full-sentence
+  imperatives do not have a finite natural answer set under the current prompt.
+- The two residual cells are the only structural support for
+  `gkc_imperative`; dropping them would leave that frozen KC unmeasured. A final
+  preregistered N=2 campaign therefore retains controlled production but bounds
+  responses with unordered lexical chunks and an all-and-only-use contract.
+  Negative cues omit `do not`, so learners still produce uncontracted
+  DO-support. No further answer repair or prompt campaign is allowed.
 - The structural grammar-regime pilot supports 54 `seen`, 15
   `unseen_combination`, and six `unseen_value` cells. Every unseen combination
   is pairwise-seen/full-tuple-unseen; perfect-progressive aspect defines the
@@ -214,8 +220,8 @@ and geometry checks before K* and Q* pass their measurement gate.
 
 ## Current unresolved construction questions
 
-1. Whether the three frozen answer-package corrections independently pass and
-   permit full 75-cell curation.
+1. Whether cue-bounded imperative production covers the final two cells and
+   permits full 75-cell curation.
 2. Full-bank items per KC, Q rank, near-equivalence, and rare-KC support.
 3. Final-bank confirmation of the 54/15/6 semantic grammar regimes.
 4. Whether the provisional 20-opportunity simulator schedule passes its frozen
@@ -237,7 +243,7 @@ and geometry checks before K* and Q* pass their measurement gate.
 
 ## Current next action
 
-Apply and independently revalidate the three preregistered append-only answer-
-package corrections. If they pass, curate the fixed max-two bank, assign the
+Generate and independently validate the four frozen cue-bounded imperative
+candidates. If both cells pass, curate the fixed max-two bank, assign the
 structural grammar regimes, and run the mandatory K*/Q* support and
 identifiability gate before the preregistered simulator pilot.
