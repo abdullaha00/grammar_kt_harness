@@ -1618,6 +1618,62 @@ experiment:
   `944e24e9814d3a931da4e714ac7c26874a7d33132593b455fef907cbe863287a`,
   and `57c5bcc47d9f5219b042fc5925a945960127d36c52a9110ab5ad94da03d34e0d`.
 
+## FULL-ITEM-004-PREREG — cue-bounded imperative production
+
+- **Date frozen:** 2026-08-29, after the negative `FULL-ITEM-003` result and
+  before any new generation or validation call.
+- **Research question:** Can the two structurally necessary imperative cells be
+  measured by narrowing the response space while retaining production of
+  imperative word order and negative DO-support?
+- **Motivation:** Seven independently generated open-production candidates per
+  cell yielded zero accepted imperative items. The strongest candidate in each
+  cell and its append-only copy passed every criterion except determinacy; the
+  second judgment produced new valid polite/referential variants. This rules
+  out another finite answer-list expansion. Excluding the cells would leave
+  `gkc_imperative` with zero item support: the positive cell is imperative-only,
+  the negative cell is imperative+negation, and declarative negatives provide
+  the complementary negation-only measurement contrast.
+- **Hypothesis:** An all-and-only unordered-cue contract will close the lexical
+  and politeness response space. At least one of two independently generated
+  candidates per cell will pass unchanged validation, yielding at least two
+  imperative items and preserving the A-only/A+B/B-only Q* contrast.
+- **Frozen methodology:** Freeze exactly two independent generation calls for
+  each residual imperative cell before execution. Retain the existing
+  `controlled_production` item format, common transparent model-selected
+  lexical material, generation model/effort, rulebook, and independent
+  validator. The separately labelled prompt variant must:
+  - name positive or ordinary uncontracted negative imperative as appropriate;
+  - show lexical chunks in deliberately non-target order;
+  - require every chunk exactly once and forbid additions, omissions,
+    substitutions, politeness markers, vocatives, pronouns, and adverbs;
+  - place final punctuation outside the response slot and require initial
+    capitalization;
+  - for negative items, omit `do` and `not` from the cues and allow only the
+    function words required for ordinary uncontracted DO-support.
+- **Manipulated variable:** A cue-bounded response-space instruction applied
+  only to the two residual imperative cells.
+- **Held fixed:** GrammarCells, K*, all 282 prior candidate/correction rows and
+  judgments, target item format, original prompts/evidence, generation backend,
+  N=2 cohort size, validation prompt/criteria/backend, technical retries, and
+  absence of learner/Q/K-hat/KT evidence.
+- **Primary outcome:** Independently accepted candidates and newly covered
+  imperative cells. Determinacy is the focal criterion; all eight other
+  required criteria remain safeguards.
+- **Decision rule:** Success requires at least one accepted candidate in each
+  cell and at least two accepted imperative candidates overall. No post-call
+  repair, answer expansion, early stopping, multiple choice, or further prompt
+  campaign is allowed. On success, curate up to two items/cell and run the
+  already frozen Q* gate; on failure, retain the negative result and explicitly
+  rescope/version the baseline rather than changing K* silently.
+- **Planned exact command:**
+
+  ```bash
+  .venv/bin/python scripts/build_dataset.py --stage constrain-imperatives --workers 4 --max-attempts 2
+  ```
+- **Planned artifacts:** Immutable plan, four calls/candidates, unchanged
+  independent judgments, audit, coverage effect, and private raw evidence under
+  a separately labelled full-v1 imperative-constraint campaign.
+
 ## FULL-REGIME-Q-001-PREREG — semantic regimes and pre-simulation Q* gate
 
 - **Date frozen:** 2026-08-29, before final-item regime assignment and Q*
