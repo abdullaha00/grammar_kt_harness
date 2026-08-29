@@ -1,0 +1,71 @@
+{
+  "item_id": "candidate_cell_017_02",
+  "audit_id": "validation_live_2ad76b0cd392",
+  "cell_id": "cell_017",
+  "effort": "medium",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_2ad76b0cd392",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "Uses past perfect progressive, active voice, negative polarity, declarative clause, and no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The context and answer are coherent, though the phrasing is slightly formal."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "The intended form is not uniquely motivated by the prompt, reducing its value for focused practice."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "Other plausible forms, such as “had not practiced,” fit the context, so it does not sufficiently determine the accepted past perfect progressive response."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and scenario are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed target verb form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "It can be answered using the targeted tense/aspect construction without unrelated advanced grammar."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 13.883359136001673,
+  "model_calls": 1,
+  "tokens_used": 2766,
+  "model_runtime_seconds": 13.882537584000602,
+  "model_call_failures": 0
+}

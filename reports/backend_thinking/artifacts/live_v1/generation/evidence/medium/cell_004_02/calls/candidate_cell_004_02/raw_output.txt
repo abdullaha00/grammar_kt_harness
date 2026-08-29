@@ -1,0 +1,1 @@
+{"prompt":"Yesterday, Mia had one letter to send. Complete the sentence using the cue (send): Mia ____ the letter.","target_answer":"Mia sent the letter.","accepted_answers":["sent"]}

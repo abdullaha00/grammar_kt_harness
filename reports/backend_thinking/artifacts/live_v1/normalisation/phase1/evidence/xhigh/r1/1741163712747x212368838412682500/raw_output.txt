@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163712747x212368838412682500",
+  "result": "complete",
+  "cells": [
+    {
+      "tense": "present",
+      "aspect": "perfect_progressive",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": [],
+  "note": "The present perfect continuous target fixes present tense and perfect-progressive aspect. The affirmative auxiliary establishes positive polarity, while focus-triggered inversion remains declarative rather than interrogative."
+}

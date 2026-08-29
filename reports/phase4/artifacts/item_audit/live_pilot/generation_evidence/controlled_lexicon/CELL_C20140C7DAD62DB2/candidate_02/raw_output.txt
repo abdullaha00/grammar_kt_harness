@@ -1,0 +1,1 @@
+{"prompt":"Lina stayed home last weekend. Complete the sentence using “travel”: Lina ____ last weekend.","target_answer":"Lina did not travel last weekend.","accepted_answers":["Lina did not travel last weekend.","Lina didn't travel last weekend."],"operation_tags":["do_support","negation"],"note":"Use the cue to write one complete clause."}

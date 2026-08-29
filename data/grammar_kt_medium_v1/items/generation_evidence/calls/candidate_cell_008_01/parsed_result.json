@@ -1,0 +1,7 @@
+{
+  "prompt": "Maya has a brush in her hand. Complete the sentence using “paint”: She [____] the wall.",
+  "target_answer": "She is painting the wall.",
+  "accepted_answers": [
+    "is painting"
+  ]
+}

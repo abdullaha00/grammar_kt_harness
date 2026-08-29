@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "“Had been traveling” is past perfect progressive, active, positive, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The arrival context coherently supports an ongoing journey before that past point."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The cue and context provide focused practice of the target verb form."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The context also naturally permits “Lina was traveling,” so it does not sufficiently force the past perfect progressive response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and scenario are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The completed target form is not shown in the prompt."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Only straightforward past-time context is needed to attempt the target form."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No factual or specialist knowledge is required."
+    }
+  }
+}

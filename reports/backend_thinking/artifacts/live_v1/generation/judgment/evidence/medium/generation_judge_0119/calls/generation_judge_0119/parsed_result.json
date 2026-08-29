@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "“is being painted” is present progressive passive, positive declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target sentence is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and answer form a natural, coherent description of an action in progress."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of the present progressive passive."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "“Right now” and the door as receiver of the action clearly cue “is being painted.”"
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "“Painting a door” uses common, transparent vocabulary."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the base-form cue “paint,” not the completed passive progressive form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The response requires only the targeted present progressive passive construction."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

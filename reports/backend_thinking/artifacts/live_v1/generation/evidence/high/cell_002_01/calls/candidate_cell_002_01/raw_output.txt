@@ -1,0 +1,1 @@
+{"prompt":"Sam needed to know whether Mia opened the window yesterday. Complete his question using the verb “open”: Did Mia ____ the window yesterday?","target_answer":"Did Mia open the window yesterday?","accepted_answers":["open"]}

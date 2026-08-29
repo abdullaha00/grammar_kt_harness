@@ -1,0 +1,91 @@
+{
+  "status": "complete",
+  "protocol": "frozen_item_packaging_correction_v1",
+  "plan": "items/packaging_correction_plan.json",
+  "plan_sha256": "bbed7be77c2d326bd7133308ea22d637bed5de8d44cd4bb470a2421c4ebe0dc5",
+  "model": "gpt-5.6-terra",
+  "reasoning_effort": "medium",
+  "raw_candidates_sha256": "0317d2b0cf36ea24b5ff55775374e03034e233b41208d1ecebd83f658537d88a",
+  "raw_validation_sha256": "0d3aa8ef46df1ed49a50cc1c61fd53d4de2d67764b012f621f558b6a70b758a9",
+  "curated_candidates_sha256": "f862603e50fb339d37ffe2268e6c9d07c5af5015ed875b225c7247d69ac98bd8",
+  "correction_judgments_sha256": "77c04b7a1a639c03e4df7daf19eb150ba29d53cea74a1027b7bd2fb62b9f3d06",
+  "curated_validation_sha256": "f43000423b1146f0e6bdd3b31e53e50ebf1faca744120a3ef5d7d67c61671044",
+  "selected_bank_sha256": "b30fbe0c70ea4a522ebca17cc4859f8cc28a08997ad86ac469f884c051a5b1da",
+  "raw_candidate_count": 77,
+  "corrected_item_count": 6,
+  "correction_outcomes": [
+    {
+      "item_id": "candidate_cell_003_01",
+      "original_accepted": true,
+      "corrected_accepted": true,
+      "selected_before_curation": true,
+      "selected_after_curation": true
+    },
+    {
+      "item_id": "candidate_cell_005_01",
+      "original_accepted": true,
+      "corrected_accepted": false,
+      "selected_before_curation": true,
+      "selected_after_curation": false
+    },
+    {
+      "item_id": "candidate_cell_017_06",
+      "original_accepted": false,
+      "corrected_accepted": true,
+      "selected_before_curation": false,
+      "selected_after_curation": true
+    },
+    {
+      "item_id": "candidate_cell_018_01",
+      "original_accepted": true,
+      "corrected_accepted": false,
+      "selected_before_curation": true,
+      "selected_after_curation": false
+    },
+    {
+      "item_id": "candidate_cell_018_03",
+      "original_accepted": true,
+      "corrected_accepted": true,
+      "selected_before_curation": true,
+      "selected_after_curation": true
+    },
+    {
+      "item_id": "candidate_cell_019_03",
+      "original_accepted": true,
+      "corrected_accepted": true,
+      "selected_before_curation": true,
+      "selected_after_curation": true
+    }
+  ],
+  "selected_bank_items_before": 45,
+  "selected_bank_items_after": 44,
+  "covered_cells_after": 24,
+  "uncovered_cell_ids_after": [],
+  "archive": {
+    "status": "stale_pre_curation_artifacts_archived",
+    "protocol": "frozen_item_packaging_correction_v1",
+    "plan_sha256": "bbed7be77c2d326bd7133308ea22d637bed5de8d44cd4bb470a2421c4ebe0dc5",
+    "archive_path": "superseded_pre_curation/2026-08-27_f36_packaging_correction",
+    "archived_paths": [
+      "manifest.json",
+      "finalization_manifest.json",
+      "fold",
+      "simulation",
+      "kc",
+      "kt",
+      "evaluation",
+      "items/validator_accepted.jsonl",
+      "items/selected_bank.jsonl",
+      "items/bank_summary.json",
+      "items/missing_cells.jsonl"
+    ],
+    "raw_artifacts_preserved_in_place": [
+      "items/candidates.jsonl",
+      "items/validation.jsonl",
+      "items/generation_attempts.jsonl",
+      "items/generation_evidence",
+      "items/validation_evidence"
+    ]
+  },
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/curate_item_packaging.py --dataset-dir data/grammar_kt_medium_v1 --workers 4 --validation-model gpt-5.6-terra --reasoning-effort medium"
+}

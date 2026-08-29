@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The answer is a positive active declarative clause using the modal “would,” exactly matching the intended GrammarCell."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "“She would visit her friend” is grammatically correct English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The response naturally and coherently states the imagined result of the condition."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The item provides focused practice producing a second-conditional result clause with “would.”"
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The condition, subject, and cue sufficiently determine the accepted response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and scenario are common, clear, and lexically straightforward."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies the lexical cue but does not display the completed target form with “would.”"
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Producing the answer requires no unrelated advanced grammar."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The response follows entirely from the prompt and requires no external knowledge."
+    }
+  }
+}

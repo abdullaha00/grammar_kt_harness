@@ -1,20 +1,43 @@
-\begin{table}[t]
+\begin{table*}[t]
   \centering
   \small
-  \begin{tabular}{@{}lrr@{}}
-    \toprule
-    Status & Phase 1 & Final \\
-    \midrule
-    Complete & 42 & 44 \\
-    Partial & 80 & 77 \\
-    Out of scope & 16 & 16 \\
-    Unresolved & 1 & 2 \\
-    Schema failure & 0 & 0 \\
-    \midrule
-    Total & 139 & 139 \\
-    \bottomrule
-  \end{tabular}
-  \caption{Primary normalization outcomes before and after Phase 2.  Only the
-  80 partial Phase~1 cases were eligible for refinement.}
+  \begin{minipage}[t]{.37\textwidth}
+    \centering
+    \begin{tabular}{@{}lrr@{}}
+      \toprule
+      Mapping outcome & Count & Share \\
+      \midrule
+      Complete & 44 & 31.7\% \\
+      Partial & 77 & 55.4\% \\
+      Out of scope & 16 & 11.5\% \\
+      Unresolved & 2 & 1.4\% \\
+      \midrule
+      Source--cell edges & 48 & -- \\
+      Unique cells & 24 & -- \\
+      \bottomrule
+    \end{tabular}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{.60\textwidth}
+    \centering
+    \begin{tabular}{@{}lrrrr@{}}
+      \toprule
+      Item cohort & Attempts & Payloads & Accepted & Cells \\
+      \midrule
+      Curated $N=1$ prefix & 24 & 24 & 16 & 16 \\
+      Curated $N=2$ prefix & 48 & 48 & 33 & 19 \\
+      Curated $N=3$ prefix & 72 & 71 & 51 & 22 \\
+      Unchanged-prompt rescue & 4 & 4 & 1 & 1 \\
+      Explicit-cue intervention & 2 & 2 & 2 & 1 \\
+      \midrule
+      Final curated & 78 & 77 & 54 & 24 \\
+      Selected fixed bank & -- & -- & 44 & 24 \\
+      \bottomrule
+    \end{tabular}
+  \end{minipage}
+  \caption{Source normalization (left) and item construction (right).
+  Prefix rows reuse the same first $N$ default draws after the frozen six-item
+  correction/rejudgment.  Initial pre-correction coverage was 18/21/22 cells.
+  Rescue/intervention cohorts have separate provenance; accepted denotes model,
+  not human, validation.}
   \label{tab:normalization-results}
-\end{table}
+\end{table*}

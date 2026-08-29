@@ -1,0 +1,80 @@
+{
+  "source_id": "1741163708343x587422418001030500",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708343x587422418001030500",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "subject_wh_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "The examples positively attest both licensed tense alternatives: past in “What happened?” and present in “Who cares?” and “Who knows?”. Therefore tense cannot be narrowed. All ineligible dimensions remain exactly fixed, including unresolved polarity."
+  },
+  "fixed_phase1_mapping": {
+    "source_id": "1741163708343x587422418001030500",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "subject_wh_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "retained_phase2_mapping": {
+    "source_id": "1741163708343x587422418001030500",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "subject_wh_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "present",
+        "voice": "active"
+      },
+      {
+        "aspect": "none",
+        "clause": "subject_wh_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "past",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 10.593750080999598,
+  "model_calls": 1,
+  "tokens_used": 6234,
+  "model_runtime_seconds": 10.593006061000779,
+  "model_call_failures": 0
+}

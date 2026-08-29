@@ -1,0 +1,7 @@
+{
+  "prompt": "You want to know whether Anna walks to work every day. Ask using the words “Anna / walk to work every day”: ____?",
+  "target_answer": "Does Anna walk to work every day?",
+  "accepted_answers": [
+    "Does Anna walk to work every day"
+  ]
+}

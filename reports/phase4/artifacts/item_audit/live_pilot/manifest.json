@@ -1,0 +1,75 @@
+{
+  "experiment": "phase4_item_generation_validation_audit",
+  "artifact_status": "live_model_evidence",
+  "scientific_evidence": true,
+  "scope": "pilot_8_cells",
+  "frozen_cell_count": 8,
+  "frozen_cell_ids": [
+    "CELL_0A7F3FA2D498D97D",
+    "CELL_0ACC7E0377B19DC1",
+    "CELL_0D017AFB2B3A3DB5",
+    "CELL_29BDABD4E976923A",
+    "CELL_868FF555B70CAE2A",
+    "CELL_B6AF2E896B998C79",
+    "CELL_C20140C7DAD62DB2",
+    "CELL_EE9DDB26E6C7D307"
+  ],
+  "recoverable_readable_source_cells": [
+    "CELL_0ACC7E0377B19DC1",
+    "CELL_868FF555B70CAE2A",
+    "CELL_B6AF2E896B998C79"
+  ],
+  "conditions": {
+    "model_selected": {
+      "maximum_n": 5,
+      "prefixes": [
+        1,
+        3,
+        5
+      ],
+      "readable_source_evidence": false,
+      "controlled_lexicon": false
+    },
+    "controlled_lexicon": {
+      "maximum_n": 5,
+      "prefixes": [
+        1,
+        3,
+        5
+      ],
+      "readable_source_evidence": false,
+      "controlled_lexicon": true
+    },
+    "readable_source_evidence": {
+      "maximum_n": 3,
+      "prefixes": [
+        1,
+        3
+      ],
+      "readable_source_evidence": true,
+      "controlled_lexicon": false
+    }
+  },
+  "blinding_seed": 20260827,
+  "candidate_reuse": "maximum N generated and validated once; N=1/3/5 are prefixes",
+  "selection": {
+    "first": "earliest valid candidate",
+    "second": "maximum token-set distance from first"
+  },
+  "models": {
+    "generation": "gpt-5.6-sol",
+    "validation": "gpt-5.6-terra",
+    "reasoning_effort": "medium"
+  },
+  "planned_generation_calls": 89,
+  "inputs": {
+    "legacy_cells": "experiments/post_training_v1/data/pilot_v1/opportunities.jsonl",
+    "readable_sources": "reference/pipeline_walkthrough/source_records.jsonl",
+    "controlled_lexicon": "modules/items/generation/ablations/controlled_lexicon.jsonl",
+    "generation_prompt": "modules/items/generation/prompt.txt",
+    "generation_rulebook": "modules/items/generation/rulebook.md",
+    "validation_prompt": "modules/items/validation/prompt.txt",
+    "validation_criteria": "modules/items/validation/criteria.yaml"
+  },
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/run_item_audit.py --pilot --select-second --workers 4 --generation-model gpt-5.6-sol --validation-model gpt-5.6-terra --reasoning-effort medium --output-dir reports/phase4/artifacts/item_audit/live_pilot"
+}

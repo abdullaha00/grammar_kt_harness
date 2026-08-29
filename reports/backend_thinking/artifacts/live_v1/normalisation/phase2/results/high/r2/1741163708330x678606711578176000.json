@@ -1,0 +1,85 @@
+{
+  "source_id": "1741163708330x678606711578176000",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708330x678606711578176000",
+    "result": "complete",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "present",
+        "voice": "active"
+      },
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "past",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "Present emphatic do is positively established by examples such as 'I do miss you', while past emphatic did is established by 'you did say'. The original closed present-or-past branch is therefore refined into two scalar descendants; all other Phase-1 constraints remain fixed."
+  },
+  "fixed_phase1_mapping": {
+    "source_id": "1741163708330x678606711578176000",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "retained_phase2_mapping": {
+    "source_id": "1741163708330x678606711578176000",
+    "result": "complete",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "present",
+        "voice": "active"
+      },
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "past",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 11.64747718200124,
+  "model_calls": 1,
+  "tokens_used": 6410,
+  "model_runtime_seconds": 11.646588813999188,
+  "model_call_failures": 0
+}

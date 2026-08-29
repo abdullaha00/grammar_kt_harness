@@ -1,0 +1,11 @@
+{
+  "prompt": "Yesterday, workers painted the door. Complete the response using the cue (the door / paint): ____",
+  "target_answer": "The door was painted yesterday.",
+  "accepted_answers": [
+    "The door was painted yesterday."
+  ],
+  "operation_tags": [
+    "be_passive"
+  ],
+  "note": "Use the simple past passive."
+}

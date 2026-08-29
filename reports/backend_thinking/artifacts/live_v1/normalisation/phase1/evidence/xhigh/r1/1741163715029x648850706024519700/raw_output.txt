@@ -1,0 +1,1 @@
+{"source_id":"1741163715029x648850706024519700","result":"out_of_scope","cells":[],"phase2_eligible":[],"note":"Question tags are explicitly outside the single-main-clause pilot scope."}

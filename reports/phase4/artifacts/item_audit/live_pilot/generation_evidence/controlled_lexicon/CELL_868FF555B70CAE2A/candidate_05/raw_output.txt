@@ -1,0 +1,12 @@
+{
+  "prompt": "You want to know whether this is Omar’s usual task. Use: Omar / open / the door. ___",
+  "target_answer": "Does Omar open the door?",
+  "accepted_answers": [
+    "Does Omar open the door?"
+  ],
+  "operation_tags": [
+    "do_support",
+    "operator_inversion"
+  ],
+  "note": "A complete simple-present yes/no question."
+}

@@ -1,0 +1,1 @@
+{"prompt":"The kitchen floor was dirty, but it is clean now. Complete the sentence using “clean”: My brother ____ the kitchen floor.","target_answer":"My brother has cleaned the kitchen floor.","accepted_answers":["has cleaned"]}

@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "“had been washed” is past perfect, passive, positive, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The context and answer form a coherent, natural explanation."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of the past perfect passive using a clear cue."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The arrival-time context and cue sufficiently support the prior completed action form."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "“Windows,” “clean,” and “wash” are common and unambiguous."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the target past-perfect passive form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed to complete the item."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The item requires no external or specialist knowledge."
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "prompt": "Mia planned to read a book this week, but she has not started it. Complete the sentence: Mia _____.",
+  "target_answer": "Mia has not read a book.",
+  "accepted_answers": [
+    "Mia has not read a book.",
+    "Mia hasn't read a book."
+  ],
+  "operation_tags": [
+    "perfect",
+    "negation"
+  ],
+  "note": "Use the cue read with Mia and a book to write a complete clause."
+}

@@ -1,0 +1,8 @@
+{
+  "prompt": "Sam stayed home yesterday, so he ___ the bus to work. (take)",
+  "target_answer": "Sam did not take the bus to work.",
+  "accepted_answers": [
+    "did not take",
+    "didn't take"
+  ]
+}

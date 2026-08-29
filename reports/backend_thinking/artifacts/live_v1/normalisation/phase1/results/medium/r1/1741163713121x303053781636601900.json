@@ -1,0 +1,45 @@
+{
+  "source_id": "1741163713121x303053781636601900",
+  "stratum": "complete_noneligible",
+  "effort": "medium",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163713121x303053781636601900",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "The descriptor explicitly targets the negative present continuous, an ordinary active declarative progressive form."
+  },
+  "retained_mapping": {
+    "source_id": "1741163713121x303053781636601900",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": null
+  },
+  "task_runtime_seconds": 7.542572791000566,
+  "model_calls": 1,
+  "tokens_used": 3892,
+  "model_runtime_seconds": 7.541909703000783,
+  "model_call_failures": 0
+}

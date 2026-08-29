@@ -1,0 +1,1 @@
+{"prompt":"You want to know about Mia's visit yesterday. Complete the question using “call her sister”: [_____]","target_answer":"Did Mia call her sister?","accepted_answers":["Did Mia call her sister?"]}

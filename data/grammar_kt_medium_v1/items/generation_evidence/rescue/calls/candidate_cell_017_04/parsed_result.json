@@ -1,0 +1,8 @@
+{
+  "prompt": "Mia arrived at the bus stop at 9:55. Complete the sentence using “wait”: By 10:00, Mia [____] for an hour.",
+  "target_answer": "By 10:00, Mia had not been waiting for an hour.",
+  "accepted_answers": [
+    "had not been waiting",
+    "hadn't been waiting"
+  ]
+}

@@ -1,0 +1,1 @@
+{"prompt":"Mia arrived at the office at 9:00. The cleaner came at 10:00. Complete the sentence using the verb “clean”: At 9:00, the cleaner ____ the office.","target_answer":"At 9:00, the cleaner had not cleaned the office.","accepted_answers":["had not cleaned","hadn't cleaned"]}

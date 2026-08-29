@@ -1,0 +1,66 @@
+{
+  "source_id": "1741163715031x898125206259626100",
+  "stratum": "phase2_eligible",
+  "effort": "medium",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163715031x898125206259626100",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "none",
+        "voice": "active",
+        "polarity": null,
+        "clause": "non_subject_wh_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "The finite main-verb BE formula establishes a simple active non-modal question; placing the subject after BE identifies a non-subject WH question. Tense and polarity are not specified."
+  },
+  "retained_mapping": {
+    "source_id": "1741163715031x898125206259626100",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": null,
+        "clause": [
+          "subject_wh_question",
+          "non_subject_wh_question"
+        ],
+        "modal": "none"
+      },
+      {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": null,
+        "clause": [
+          "subject_wh_question",
+          "non_subject_wh_question"
+        ],
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 12.95141678300024,
+  "model_calls": 1,
+  "tokens_used": 6161,
+  "model_runtime_seconds": 12.950780011999086,
+  "model_call_failures": 0
+}

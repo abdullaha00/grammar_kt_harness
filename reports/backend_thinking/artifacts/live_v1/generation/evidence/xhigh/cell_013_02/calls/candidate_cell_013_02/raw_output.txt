@@ -1,0 +1,1 @@
+{"prompt":"The kitchen floor was dirty, but it is clean now. Complete with the present perfect form of “clean”: Emma ____ the kitchen floor.","target_answer":"Emma has cleaned the kitchen floor.","accepted_answers":["has cleaned"]}

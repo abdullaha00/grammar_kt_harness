@@ -1,0 +1,206 @@
+{
+  "cell_counts": {
+    "development": 18,
+    "compositional_holdout": 5,
+    "novel_feature_holdout": 1
+  },
+  "accepted_item_counts": {
+    "development": 33,
+    "compositional_holdout": 8,
+    "novel_feature_holdout": 1
+  },
+  "accepted_items_per_cell": {
+    "development": {
+      "minimum": 1,
+      "median": 2.0,
+      "maximum": 2
+    },
+    "compositional_holdout": {
+      "minimum": 1,
+      "median": 2,
+      "maximum": 2
+    },
+    "novel_feature_holdout": {
+      "minimum": 1,
+      "median": 1,
+      "maximum": 1
+    }
+  },
+  "cells_without_accepted_items": 0,
+  "compositional_target": 5,
+  "compositional_achieved": 5,
+  "compositional_target_shortfall": 0,
+  "development_value_cell_support": {
+    "tense": {
+      "present": 9,
+      "past": 7,
+      "NA": 2
+    },
+    "aspect": {
+      "none": 7,
+      "progressive": 3,
+      "perfect": 5,
+      "perfect_progressive": 3
+    },
+    "voice": {
+      "active": 15,
+      "passive": 3
+    },
+    "polarity": {
+      "positive": 12,
+      "negative": 6
+    },
+    "clause": {
+      "declarative": 14,
+      "polar_question": 2,
+      "imperative": 2
+    },
+    "modal": {
+      "none": 18
+    }
+  },
+  "compositional_value_contract": {
+    "cells_with_any_unseen_development_value": 0,
+    "minimum_constituent_support_observed": 3
+  },
+  "novel_feature_contract": {
+    "cells_with_unseen_development_value": 1,
+    "unseen_values": [
+      [
+        "modal",
+        "would"
+      ]
+    ]
+  },
+  "pairwise_coverage": {
+    "development_unique_value_pairs": 72,
+    "compositional_unique_value_pairs": 37,
+    "compositional_pairs_seen_in_development": 36,
+    "compositional_pairs_unseen_in_development": 1,
+    "novel_unique_value_pairs": 15,
+    "novel_pairs_seen_in_development": 9,
+    "novel_pairs_unseen_in_development": 6
+  },
+  "compositional_cells": [
+    {
+      "cell_id": "CELL_272348FAE26B290D",
+      "features": {
+        "tense": "present",
+        "aspect": "none",
+        "voice": "passive",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "accepted_item_support": 1,
+      "development_constituent_support": {
+        "tense": 9,
+        "aspect": 7,
+        "voice": 3,
+        "polarity": 12,
+        "clause": 14,
+        "modal": 18
+      }
+    },
+    {
+      "cell_id": "CELL_A24D66AAA38BC108",
+      "features": {
+        "tense": "present",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "accepted_item_support": 2,
+      "development_constituent_support": {
+        "tense": 9,
+        "aspect": 7,
+        "voice": 15,
+        "polarity": 6,
+        "clause": 14,
+        "modal": 18
+      }
+    },
+    {
+      "cell_id": "CELL_EA48447107868B2C",
+      "features": {
+        "tense": "past",
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "accepted_item_support": 2,
+      "development_constituent_support": {
+        "tense": 7,
+        "aspect": 3,
+        "voice": 15,
+        "polarity": 12,
+        "clause": 14,
+        "modal": 18
+      }
+    },
+    {
+      "cell_id": "CELL_B6AF2E896B998C79",
+      "features": {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "passive",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "accepted_item_support": 1,
+      "development_constituent_support": {
+        "tense": 7,
+        "aspect": 7,
+        "voice": 3,
+        "polarity": 12,
+        "clause": 14,
+        "modal": 18
+      }
+    },
+    {
+      "cell_id": "CELL_C20140C7DAD62DB2",
+      "features": {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "accepted_item_support": 2,
+      "development_constituent_support": {
+        "tense": 7,
+        "aspect": 7,
+        "voice": 15,
+        "polarity": 6,
+        "clause": 14,
+        "modal": 18
+      }
+    }
+  ],
+  "novel_feature_cells": [
+    {
+      "cell_id": "CELL_0ACC7E0377B19DC1",
+      "features": {
+        "tense": "NA",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "would"
+      },
+      "accepted_item_support": 1,
+      "unseen_development_values": [
+        {
+          "dimension": "modal",
+          "value": "would"
+        }
+      ]
+    }
+  ]
+}

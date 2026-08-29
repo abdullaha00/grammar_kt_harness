@@ -1,0 +1,55 @@
+{
+  "source_id": "1741163708336x903931402154698900",
+  "stratum": "phase2_eligible",
+  "effort": "medium",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708336x903931402154698900",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": null,
+        "voice": null,
+        "polarity": "positive",
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "Affirmative yes/no interrogatives with finite auxiliary BE or HAVE establish positive polarity, polar-question clause type, and a nonmodal present-or-past form. The broad auxiliary wording does not determine the aspect or distinguish active from passive voice."
+  },
+  "retained_mapping": {
+    "source_id": "1741163708336x903931402154698900",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": null,
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 22.06824993400005,
+  "model_calls": 1,
+  "tokens_used": 6457,
+  "model_runtime_seconds": 22.06746344199928,
+  "model_call_failures": 0
+}

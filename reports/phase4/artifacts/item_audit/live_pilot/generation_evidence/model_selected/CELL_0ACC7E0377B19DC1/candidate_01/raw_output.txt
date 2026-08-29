@@ -1,0 +1,11 @@
+{
+  "prompt": "Ben offered to help with the move. Use the cue “carry the boxes” to complete his response: ____.",
+  "target_answer": "He would carry the boxes.",
+  "accepted_answers": [
+    "He would carry the boxes."
+  ],
+  "operation_tags": [
+    "central_modal"
+  ],
+  "note": "Use “would” followed by the base form “carry.”"
+}

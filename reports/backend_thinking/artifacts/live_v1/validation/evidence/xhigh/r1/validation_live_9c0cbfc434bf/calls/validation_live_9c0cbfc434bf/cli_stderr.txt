@@ -1,0 +1,86 @@
+OpenAI Codex v0.150.1
+--------
+workdir: /home/abdullah/grammar_kt_harness/reports/backend_thinking/artifacts/live_v1/validation/evidence/xhigh/r1/validation_live_9c0cbfc434bf/calls/validation_live_9c0cbfc434bf
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: xhigh
+reasoning summaries: none
+session id: 01a0468a-b898-7ba2-bdf7-3964a8d9428c
+--------
+user
+Judge one generated exercise independently from the generator.
+
+Use the visible learner-facing prompt, target answer, accepted answers, intended
+GrammarCell, and the declared criteria. Do not rely on generation reasoning or
+generation metadata. Judge every criterion separately and give a short note.
+
+Return one JSON object with a `judgments` mapping. Every declared criterion must
+have exactly `passed` (true/false) and `note`.
+
+VISIBLE ITEM:
+{
+  "item_id": "validation_live_9c0cbfc434bf",
+  "format": "controlled_production",
+  "prompt": "Resolve the garden-path relative and then render its presupposed event as a passive: ______",
+  "target_answer": "The report was filed yesterday.",
+  "accepted_answers": [
+    "The report was filed yesterday."
+  ]
+}
+
+INTENDED GRAMMAR CELL:
+{
+  "tense": "past",
+  "aspect": "none",
+  "voice": "passive",
+  "polarity": "positive",
+  "clause": "declarative",
+  "modal": "none"
+}
+
+VALIDATION CRITERIA:
+{
+  "target_fidelity": {
+    "required": true,
+    "question": "Does the target answer express exactly the intended GrammarCell?"
+  },
+  "grammaticality": {
+    "required": true,
+    "question": "Is the target answer grammatical English?"
+  },
+  "naturalness": {
+    "required": true,
+    "question": "Is the prompt-answer pair natural and coherent?"
+  },
+  "pedagogical_suitability": {
+    "required": true,
+    "question": "Is the item suitable for focused grammar practice?"
+  },
+  "determinacy": {
+    "required": true,
+    "question": "Does the prompt sufficiently determine the accepted response set?"
+  },
+  "non_target_language_simplicity": {
+    "required": true,
+    "question": "Is the vocabulary and context sufficiently common, transparent, and lexically unambiguous that lexical knowledge is unlikely to determine the learner's response?"
+  },
+  "no_answer_leakage": {
+    "required": true,
+    "question": "Does the prompt avoid displaying the completed target form?"
+  },
+  "no_extraneous_grammar": {
+    "required": true,
+    "question": "Can the item be solved without unrelated advanced grammar?"
+  },
+  "no_world_knowledge": {
+    "required": true,
+    "question": "Can the item be answered without external factual or specialist knowledge?"
+  }
+}
+
+codex
+{"judgments":{"target_fidelity":{"passed":true,"note":"Past simple positive passive declarative with no modal."},"grammaticality":{"passed":true,"note":"The target is grammatical English."},"naturalness":{"passed":false,"note":"The prompt does not provide a garden-path relative or a recoverable event, so the answer is not coherently motivated."},"pedagogical_suitability":{"passed":false,"note":"It does not present enough material for focused passive-voice practice."},"determinacy":{"passed":false,"note":"The prompt leaves the event and wording entirely unspecified; many answers could fit."},"non_target_language_simplicity":{"passed":false,"note":"“Garden-path relative” and “presupposed event” are technical, non-transparent terms."},"no_answer_leakage":{"passed":true,"note":"The completed target form is not displayed in the prompt."},"no_extraneous_grammar":{"passed":false,"note":"Solving it requires interpreting an unspecified garden-path relative, beyond the intended passive form."},"no_world_knowledge":{"passed":true,"note":"No external factual or specialist knowledge is needed."}}}
+tokens used
+2,639

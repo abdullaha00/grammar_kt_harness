@@ -1,0 +1,1 @@
+{"prompt":"Maya started cleaning the kitchen before dinner, but she stopped to answer a phone call. Complete the sentence using the cue (clean): Before dinner, Maya ____ the kitchen.","target_answer":"Before dinner, Maya had not been cleaning the kitchen.","accepted_answers":["had not been cleaning"]}

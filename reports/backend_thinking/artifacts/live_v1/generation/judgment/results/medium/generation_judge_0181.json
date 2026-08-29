@@ -1,0 +1,65 @@
+{
+  "blind_id": "generation_judge_0181",
+  "experiment_item_id": "generation_medium_cell_006_01",
+  "generation_effort": "medium",
+  "cell_id": "cell_006",
+  "candidate_index": 1,
+  "judge_effort": "medium",
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "generation_judge_0181",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "It is an active, negative imperative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The warning is coherent and natural in the stated situation."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of negative imperatives."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The prompt permits other equally natural answers, such as “Stay out of the kitchen” or “Don’t enter the kitchen,” which are not accepted."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and context are common and clear."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed target form is not displayed in the prompt."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "It can be answered using only a basic negative imperative."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "task_runtime_seconds": 9.37056441400091,
+  "model_calls": 1,
+  "tokens_used": 2544,
+  "model_runtime_seconds": 9.36976188799963,
+  "model_call_failures": 0
+}

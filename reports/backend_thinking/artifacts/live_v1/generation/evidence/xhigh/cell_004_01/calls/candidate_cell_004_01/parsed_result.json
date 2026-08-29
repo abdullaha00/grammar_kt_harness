@@ -1,0 +1,7 @@
+{
+  "prompt": "Yesterday, the children wanted to play outside, so they ___ after lunch. (visit / the park)",
+  "target_answer": "They visited the park after lunch.",
+  "accepted_answers": [
+    "visited the park"
+  ]
+}

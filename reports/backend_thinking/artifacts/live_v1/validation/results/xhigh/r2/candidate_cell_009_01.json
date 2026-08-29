@@ -1,0 +1,69 @@
+{
+  "item_id": "candidate_cell_009_01",
+  "audit_id": "validation_live_2c2d9e3a6367",
+  "cell_id": "cell_009",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_2c2d9e3a6367",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The target is present progressive, active, negative, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The quiet-sitting context coherently supports the statement that they are not playing outside."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It clearly focuses practice on negative present progressive formation."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The cue, subject, context, and intended negative completion sufficiently determine the response."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary is common and the context is transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt supplies only the base-form cue, not the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The item can be solved using only the target negative present progressive structure."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external factual or specialist knowledge is needed."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": true,
+  "retained_failed_criteria": [],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 11.12338423700021,
+  "model_calls": 1,
+  "tokens_used": 2648,
+  "model_runtime_seconds": 11.122585850000178,
+  "model_call_failures": 0
+}

@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_024_02",
+  "cell_id": "cell_024",
+  "candidate_index": 2,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_024_02",
+    "cell_id": "cell_024",
+    "format": "controlled_production",
+    "prompt": "Maya does not have a car, so she cannot drive to work. If she had a car, _____. (drive to work)",
+    "target_answer": "She would drive to work.",
+    "accepted_answers": [
+      "she would drive to work"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 5.967483815000378,
+  "model_calls": 1,
+  "tokens_used": 2978,
+  "model_runtime_seconds": 5.966759758999615,
+  "model_call_failures": 0
+}

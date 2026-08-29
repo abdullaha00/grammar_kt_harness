@@ -1,0 +1,7 @@
+{
+  "prompt": "Mia has the same morning routine every day. Complete the sentence using the cue (walk): Mia ___ to school.",
+  "target_answer": "Mia walks to school.",
+  "accepted_answers": [
+    "walks"
+  ]
+}

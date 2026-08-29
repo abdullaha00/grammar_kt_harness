@@ -1,0 +1,1 @@
+{"prompt":"The baker checked the cake at noon. It was already ready. Complete the sentence using the cue (bake): The cake _____.","target_answer":"The cake had been baked.","accepted_answers":["had been baked"]}

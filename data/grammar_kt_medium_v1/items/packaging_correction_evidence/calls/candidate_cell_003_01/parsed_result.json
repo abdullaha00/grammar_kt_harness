@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target is present simple, active, positive, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "Walking a dog every morning before breakfast is coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused present-simple third-person singular practice."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The subject, time expression, and supplied words clearly determine “walks the dog.”"
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The completed inflected target form is not shown in the prompt."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "It can be solved with basic present-simple subject-verb agreement."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is required."
+    }
+  }
+}

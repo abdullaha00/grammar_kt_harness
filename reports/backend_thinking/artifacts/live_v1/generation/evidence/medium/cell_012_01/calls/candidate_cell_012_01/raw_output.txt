@@ -1,0 +1,1 @@
+{"prompt":"The cups are still dirty. Complete the sentence using “wash”: Sam ____ the cups today.","target_answer":"Sam has not washed the cups today.","accepted_answers":["has not washed","hasn't washed"]}

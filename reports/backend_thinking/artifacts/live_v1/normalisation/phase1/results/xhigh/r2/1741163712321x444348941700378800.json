@@ -1,0 +1,45 @@
+{
+  "source_id": "1741163712321x444348941700378800",
+  "stratum": "partial_noneligible",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712321x444348941700378800",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "past",
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": null,
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "The descriptor specifies an active past-progressive question form, but generic ‘questions’ do not determine question subtype or polarity."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712321x444348941700378800",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "past",
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": null,
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "phase2 eligible: none"
+  },
+  "task_runtime_seconds": 10.310154717000842,
+  "model_calls": 1,
+  "tokens_used": 6003,
+  "model_runtime_seconds": 10.30948109900055,
+  "model_call_failures": 0
+}

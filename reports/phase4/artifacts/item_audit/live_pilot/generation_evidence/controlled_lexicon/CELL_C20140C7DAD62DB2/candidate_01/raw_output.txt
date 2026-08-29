@@ -1,0 +1,13 @@
+{
+  "prompt": "Yesterday, Mia watched a film instead. Complete the sentence using the cue (Mia / read / a book): ____",
+  "target_answer": "Mia did not read a book.",
+  "accepted_answers": [
+    "Mia did not read a book.",
+    "Mia didn't read a book."
+  ],
+  "operation_tags": [
+    "do_support",
+    "negation"
+  ],
+  "note": "Both the full and contracted negative forms are accepted."
+}

@@ -1,0 +1,1 @@
+{"prompt":"Lena is busy today, but she has offered to help tomorrow. Complete the sentence using “help”: Lena ____ tomorrow.","target_answer":"Lena would help tomorrow.","accepted_answers":["would help"]}

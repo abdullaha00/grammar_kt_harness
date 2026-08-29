@@ -1,0 +1,1196 @@
+{
+  "candidate_design_id": "schema_structural_candidates_v1",
+  "grammar_schema_id": "grammar_cell_english_v1",
+  "development_cell_ids": [
+    "cell_001",
+    "cell_002",
+    "cell_003",
+    "cell_004"
+  ],
+  "development_item_ids": [
+    "item_001",
+    "item_002",
+    "item_003",
+    "item_004"
+  ],
+  "candidate_counts": {
+    "feature_value": 5,
+    "operation": 10,
+    "interaction": 3,
+    "full_cell": 4,
+    "raw_total": 22,
+    "support_eligible": 13,
+    "selection_eligible": 7,
+    "activation_equivalence_classes": 8,
+    "activation_duplicate_candidates": 14
+  },
+  "support_thresholds": {
+    "minimum_interaction_cell_support": 2,
+    "minimum_interaction_item_support": 3
+  },
+  "candidates": [
+    {
+      "id": "kc_cell__tense_past__aspect_none__voice_active__polarity_negative__clause_declarative__modal_none",
+      "family": "full_cell",
+      "definition": "Represent the exact development GrammarCell tense=past, aspect=none, voice=active, polarity=negative, clause=declarative, modal=none.",
+      "activation": {
+        "cell": {
+          "tense": "past",
+          "aspect": "none",
+          "voice": "active",
+          "polarity": "negative",
+          "clause": "declarative",
+          "modal": "none"
+        }
+      },
+      "dimensions": [
+        "tense",
+        "aspect",
+        "voice",
+        "polarity",
+        "clause",
+        "modal"
+      ],
+      "conditions": [
+        [
+          "tense",
+          "past"
+        ],
+        [
+          "aspect",
+          "none"
+        ],
+        [
+          "voice",
+          "active"
+        ],
+        [
+          "polarity",
+          "negative"
+        ],
+        [
+          "clause",
+          "declarative"
+        ],
+        [
+          "modal",
+          "none"
+        ]
+      ],
+      "development_cell_id": "cell_002",
+      "supporting_development_cell_ids": [
+        "cell_002"
+      ],
+      "supporting_development_item_ids": [
+        "item_002"
+      ],
+      "cell_support": 1,
+      "item_support": 1,
+      "activation_vector": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "meets_support_threshold": true,
+      "equivalence_class_id": "activation_class_004",
+      "equivalent_to": "kc_feature__polarity__negative",
+      "is_equivalence_representative": false,
+      "selection_eligible": false,
+      "exclusion_reasons": [
+        "activation_equivalent_on_development_items"
+      ]
+    },
+    {
+      "id": "kc_cell__tense_past__aspect_none__voice_passive__polarity_positive__clause_declarative__modal_none",
+      "family": "full_cell",
+      "definition": "Represent the exact development GrammarCell tense=past, aspect=none, voice=passive, polarity=positive, clause=declarative, modal=none.",
+      "activation": {
+        "cell": {
+          "tense": "past",
+          "aspect": "none",
+          "voice": "passive",
+          "polarity": "positive",
+          "clause": "declarative",
+          "modal": "none"
+        }
+      },
+      "dimensions": [
+        "tense",
+        "aspect",
+        "voice",
+        "polarity",
+        "clause",
+        "modal"
+      ],
+      "conditions": [
+        [
+          "tense",
+          "past"
+        ],
+        [
+          "aspect",
+          "none"
+        ],
+        [
+          "voice",
+          "passive"
+        ],
+        [
+          "polarity",
+          "positive"
+        ],
+        [
+          "clause",
+          "declarative"
+        ],
+        [
+          "modal",
+          "none"
+        ]
+      ],
+      "development_cell_id": "cell_003",
+      "supporting_development_cell_ids": [
+        "cell_003"
+      ],
+      "supporting_development_item_ids": [
+        "item_003"
+      ],
+      "cell_support": 1,
+      "item_support": 1,
+      "activation_vector": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "meets_support_threshold": true,
+      "equivalence_class_id": "activation_class_003",
+      "equivalent_to": "kc_feature__voice__passive",
+      "is_equivalence_representative": false,
+      "selection_eligible": false,
+      "exclusion_reasons": [
+        "activation_equivalent_on_development_items"
+      ]
+    },
+    {
+      "id": "kc_cell__tense_present__aspect_none__voice_active__polarity_positive__clause_declarative__modal_none",
+      "family": "full_cell",
+      "definition": "Represent the exact development GrammarCell tense=present, aspect=none, voice=active, polarity=positive, clause=declarative, modal=none.",
+      "activation": {
+        "cell": {
+          "tense": "present",
+          "aspect": "none",
+          "voice": "active",
+          "polarity": "positive",
+          "clause": "declarative",
+          "modal": "none"
+        }
+      },
+      "dimensions": [
+        "tense",
+        "aspect",
+        "voice",
+        "polarity",
+        "clause",
+        "modal"
+      ],
+      "conditions": [
+        [
+          "tense",
+          "present"
+        ],
+        [
+          "aspect",
+          "none"
+        ],
+        [
+          "voice",
+          "active"
+        ],
+        [
+          "polarity",
+          "positive"
+        ],
+        [
+          "clause",
+          "declarative"
+        ],
+        [
+          "modal",
+          "none"
+        ]
+      ],
+      "development_cell_id": "cell_001",
+      "supporting_development_cell_ids": [
+        "cell_001"
+      ],
+      "supporting_development_item_ids": [
+        "item_001"
+      ],
+      "cell_support": 1,
+      "item_support": 1,
+      "activation_vector": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "meets_support_threshold": true,
+      "equivalence_class_id": "activation_class_006",
+      "equivalent_to": null,
+      "is_equivalence_representative": true,
+      "selection_eligible": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "kc_cell__tense_present__aspect_progressive__voice_active__polarity_positive__clause_declarative__modal_none",
+      "family": "full_cell",
+      "definition": "Represent the exact development GrammarCell tense=present, aspect=progressive, voice=active, polarity=positive, clause=declarative, modal=none.",
+      "activation": {
+        "cell": {
+          "tense": "present",
+          "aspect": "progressive",
+          "voice": "active",
+          "polarity": "positive",
+          "clause": "declarative",
+          "modal": "none"
+        }
+      },
+      "dimensions": [
+        "tense",
+        "aspect",
+        "voice",
+        "polarity",
+        "clause",
+        "modal"
+      ],
+      "conditions": [
+        [
+          "tense",
+          "present"
+        ],
+        [
+          "aspect",
+          "progressive"
+        ],
+        [
+          "voice",
+          "active"
+        ],
+        [
+          "polarity",
+          "positive"
+        ],
+        [
+          "clause",
+          "declarative"
+        ],
+        [
+          "modal",
+          "none"
+        ]
+      ],
+      "development_cell_id": "cell_004",
+      "supporting_development_cell_ids": [
+        "cell_004"
+      ],
+      "supporting_development_item_ids": [
+        "item_004"
+      ],
+      "cell_support": 1,
+      "item_support": 1,
+      "activation_vector": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "meets_support_threshold": true,
+      "equivalence_class_id": "activation_class_002",
+      "equivalent_to": "kc_feature__aspect__progressive",
+      "is_equivalence_representative": false,
+      "selection_eligible": false,
+      "exclusion_reasons": [
+        "activation_equivalent_on_development_items"
+      ]
+    },
+    {
+      "id": "kc_feature__aspect__progressive",
+      "family": "feature_value",
+      "definition": "Represent canonical aspect=progressive.",
+      "activation": {
+        "cell": {
+          "aspect": "progressive"
+        }
+      },
+      "dimensions": [
+        "aspect"
+      ],
+      "conditions": [
+        [
+          "aspect",
+          "progressive"
+        ]
+      ],
+      "supporting_development_cell_ids": [
+        "cell_004"
+      ],
+      "supporting_development_item_ids": [
+        "item_004"
+      ],
+      "cell_support": 1,
+      "item_support": 1,
+      "activation_vector": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "meets_support_threshold": true,
+      "equivalence_class_id": "activation_class_002",
+      "equivalent_to": null,
+      "is_equivalence_representative": true,
+      "selection_eligible": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "kc_feature__polarity__negative",
+      "family": "feature_value",
+      "definition": "Represent canonical polarity=negative.",
+      "activation": {
+        "cell": {
+          "polarity": "negative"
+        }
+      },
+      "dimensions": [
+        "polarity"
+      ],
+      "conditions": [
+        [
+          "polarity",
+          "negative"
+        ]
+      ],
+      "supporting_development_cell_ids": [
+        "cell_002"
+      ],
+      "supporting_development_item_ids": [
+        "item_002"
+      ],
+      "cell_support": 1,
+      "item_support": 1,
+      "activation_vector": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "meets_support_threshold": true,
+      "equivalence_class_id": "activation_class_004",
+      "equivalent_to": null,
+      "is_equivalence_representative": true,
+      "selection_eligible": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "kc_feature__tense__past",
+      "family": "feature_value",
+      "definition": "Represent canonical tense=past.",
+      "activation": {
+        "cell": {
+          "tense": "past"
+        }
+      },
+      "dimensions": [
+        "tense"
+      ],
+      "conditions": [
+        [
+          "tense",
+          "past"
+        ]
+      ],
+      "supporting_development_cell_ids": [
+        "cell_002",
+        "cell_003"
+      ],
+      "supporting_development_item_ids": [
+        "item_002",
+        "item_003"
+      ],
+      "cell_support": 2,
+      "item_support": 2,
+      "activation_vector": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "meets_support_threshold": true,
+      "equivalence_class_id": "activation_class_005",
+      "equivalent_to": null,
+      "is_equivalence_representative": true,
+      "selection_eligible": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "kc_feature__tense__present",
+      "family": "feature_value",
+      "definition": "Represent canonical tense=present.",
+      "activation": {
+        "cell": {
+          "tense": "present"
+        }
+      },
+      "dimensions": [
+        "tense"
+      ],
+      "conditions": [
+        [
+          "tense",
+          "present"
+        ]
+      ],
+      "supporting_development_cell_ids": [
+        "cell_001",
+        "cell_004"
+      ],
+      "supporting_development_item_ids": [
+        "item_001",
+        "item_004"
+      ],
+      "cell_support": 2,
+      "item_support": 2,
+      "activation_vector": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "meets_support_threshold": true,
+      "equivalence_class_id": "activation_class_007",
+      "equivalent_to": null,
+      "is_equivalence_representative": true,
+      "selection_eligible": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "kc_feature__voice__passive",
+      "family": "feature_value",
+      "definition": "Represent canonical voice=passive.",
+      "activation": {
+        "cell": {
+          "voice": "passive"
+        }
+      },
+      "dimensions": [
+        "voice"
+      ],
+      "conditions": [
+        [
+          "voice",
+          "passive"
+        ]
+      ],
+      "supporting_development_cell_ids": [
+        "cell_003"
+      ],
+      "supporting_development_item_ids": [
+        "item_003"
+      ],
+      "cell_support": 1,
+      "item_support": 1,
+      "activation_vector": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "meets_support_threshold": true,
+      "equivalence_class_id": "activation_class_003",
+      "equivalent_to": null,
+      "is_equivalence_representative": true,
+      "selection_eligible": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "kc_interaction__aspect_progressive__and__tense_present",
+      "family": "interaction",
+      "definition": "Represent the supported interaction aspect=progressive and tense=present.",
+      "activation": {
+        "cell": {
+          "aspect": "progressive",
+          "tense": "present"
+        }
+      },
+      "dimensions": [
+        "aspect",
+        "tense"
+      ],
+      "conditions": [
+        [
+          "aspect",
+          "progressive"
+        ],
+        [
+          "tense",
+          "present"
+        ]
+      ],
+      "parent_ids": [
+        "kc_feature__aspect__progressive",
+        "kc_feature__tense__present"
+      ],
+      "supporting_development_cell_ids": [
+        "cell_004"
+      ],
+      "supporting_development_item_ids": [
+        "item_004"
+      ],
+      "cell_support": 1,
+      "item_support": 1,
+      "activation_vector": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "meets_support_threshold": false,
+      "equivalence_class_id": "activation_class_002",
+      "equivalent_to": "kc_feature__aspect__progressive",
+      "is_equivalence_representative": false,
+      "selection_eligible": false,
+      "exclusion_reasons": [
+        "below_interaction_support_threshold",
+        "activation_equivalent_on_development_items"
+      ]
+    },
+    {
+      "id": "kc_interaction__polarity_negative__and__tense_past",
+      "family": "interaction",
+      "definition": "Represent the supported interaction polarity=negative and tense=past.",
+      "activation": {
+        "cell": {
+          "polarity": "negative",
+          "tense": "past"
+        }
+      },
+      "dimensions": [
+        "polarity",
+        "tense"
+      ],
+      "conditions": [
+        [
+          "polarity",
+          "negative"
+        ],
+        [
+          "tense",
+          "past"
+        ]
+      ],
+      "parent_ids": [
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past"
+      ],
+      "supporting_development_cell_ids": [
+        "cell_002"
+      ],
+      "supporting_development_item_ids": [
+        "item_002"
+      ],
+      "cell_support": 1,
+      "item_support": 1,
+      "activation_vector": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "meets_support_threshold": false,
+      "equivalence_class_id": "activation_class_004",
+      "equivalent_to": "kc_feature__polarity__negative",
+      "is_equivalence_representative": false,
+      "selection_eligible": false,
+      "exclusion_reasons": [
+        "below_interaction_support_threshold",
+        "activation_equivalent_on_development_items"
+      ]
+    },
+    {
+      "id": "kc_interaction__tense_past__and__voice_passive",
+      "family": "interaction",
+      "definition": "Represent the supported interaction tense=past and voice=passive.",
+      "activation": {
+        "cell": {
+          "tense": "past",
+          "voice": "passive"
+        }
+      },
+      "dimensions": [
+        "tense",
+        "voice"
+      ],
+      "conditions": [
+        [
+          "tense",
+          "past"
+        ],
+        [
+          "voice",
+          "passive"
+        ]
+      ],
+      "parent_ids": [
+        "kc_feature__tense__past",
+        "kc_feature__voice__passive"
+      ],
+      "supporting_development_cell_ids": [
+        "cell_003"
+      ],
+      "supporting_development_item_ids": [
+        "item_003"
+      ],
+      "cell_support": 1,
+      "item_support": 1,
+      "activation_vector": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "meets_support_threshold": false,
+      "equivalence_class_id": "activation_class_003",
+      "equivalent_to": "kc_feature__voice__passive",
+      "is_equivalence_representative": false,
+      "selection_eligible": false,
+      "exclusion_reasons": [
+        "below_interaction_support_threshold",
+        "activation_equivalent_on_development_items"
+      ]
+    },
+    {
+      "id": "kc_operation__central_modal",
+      "family": "operation",
+      "definition": "Realise a central modal and base-form complement.",
+      "activation": {
+        "cell": {
+          "modal": {
+            "not": "none"
+          }
+        }
+      },
+      "dimensions": [
+        "modal"
+      ],
+      "conditions": [],
+      "operation_id": "central_modal",
+      "supporting_development_cell_ids": [],
+      "supporting_development_item_ids": [],
+      "cell_support": 0,
+      "item_support": 0,
+      "activation_vector": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "meets_support_threshold": false,
+      "equivalence_class_id": "activation_class_001",
+      "equivalent_to": null,
+      "is_equivalence_representative": true,
+      "selection_eligible": false,
+      "exclusion_reasons": [
+        "no_development_item_support"
+      ]
+    },
+    {
+      "id": "kc_operation__finite_tense_form",
+      "family": "operation",
+      "definition": "Realise a morphologically present- or past-tense finite form.",
+      "activation": {
+        "any": [
+          {
+            "cell": {
+              "tense": "present"
+            }
+          },
+          {
+            "cell": {
+              "tense": "past"
+            }
+          }
+        ]
+      },
+      "dimensions": [
+        "tense"
+      ],
+      "conditions": [],
+      "operation_id": "finite_tense_form",
+      "supporting_development_cell_ids": [
+        "cell_001",
+        "cell_002",
+        "cell_003",
+        "cell_004"
+      ],
+      "supporting_development_item_ids": [
+        "item_001",
+        "item_002",
+        "item_003",
+        "item_004"
+      ],
+      "cell_support": 4,
+      "item_support": 4,
+      "activation_vector": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "meets_support_threshold": true,
+      "equivalence_class_id": "activation_class_008",
+      "equivalent_to": null,
+      "is_equivalence_representative": true,
+      "selection_eligible": true,
+      "exclusion_reasons": []
+    },
+    {
+      "id": "kc_operation__imperative",
+      "family": "operation",
+      "definition": "Realise an imperative main clause.",
+      "activation": {
+        "cell": {
+          "clause": "imperative"
+        }
+      },
+      "dimensions": [
+        "clause"
+      ],
+      "conditions": [],
+      "operation_id": "imperative",
+      "supporting_development_cell_ids": [],
+      "supporting_development_item_ids": [],
+      "cell_support": 0,
+      "item_support": 0,
+      "activation_vector": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "meets_support_threshold": false,
+      "equivalence_class_id": "activation_class_001",
+      "equivalent_to": "kc_operation__central_modal",
+      "is_equivalence_representative": false,
+      "selection_eligible": false,
+      "exclusion_reasons": [
+        "no_development_item_support",
+        "activation_equivalent_on_development_items"
+      ]
+    },
+    {
+      "id": "kc_operation__negation",
+      "family": "operation",
+      "definition": "Realise clause-level grammatical negation.",
+      "activation": {
+        "cell": {
+          "polarity": "negative"
+        }
+      },
+      "dimensions": [
+        "polarity"
+      ],
+      "conditions": [],
+      "operation_id": "negation",
+      "supporting_development_cell_ids": [
+        "cell_002"
+      ],
+      "supporting_development_item_ids": [
+        "item_002"
+      ],
+      "cell_support": 1,
+      "item_support": 1,
+      "activation_vector": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "meets_support_threshold": true,
+      "equivalence_class_id": "activation_class_004",
+      "equivalent_to": "kc_feature__polarity__negative",
+      "is_equivalence_representative": false,
+      "selection_eligible": false,
+      "exclusion_reasons": [
+        "activation_equivalent_on_development_items"
+      ]
+    },
+    {
+      "id": "kc_operation__operator_inversion",
+      "family": "operation",
+      "definition": "Realise finite-operator and subject inversion.",
+      "activation": {
+        "any": [
+          {
+            "cell": {
+              "clause": "polar_question"
+            }
+          },
+          {
+            "cell": {
+              "clause": "non_subject_wh_question"
+            }
+          }
+        ]
+      },
+      "dimensions": [
+        "clause"
+      ],
+      "conditions": [],
+      "operation_id": "operator_inversion",
+      "supporting_development_cell_ids": [],
+      "supporting_development_item_ids": [],
+      "cell_support": 0,
+      "item_support": 0,
+      "activation_vector": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "meets_support_threshold": false,
+      "equivalence_class_id": "activation_class_001",
+      "equivalent_to": "kc_operation__central_modal",
+      "is_equivalence_representative": false,
+      "selection_eligible": false,
+      "exclusion_reasons": [
+        "no_development_item_support",
+        "activation_equivalent_on_development_items"
+      ]
+    },
+    {
+      "id": "kc_operation__passive_dependency",
+      "family": "operation",
+      "definition": "Realise passive BE and a past-participle dependency.",
+      "activation": {
+        "cell": {
+          "voice": "passive"
+        }
+      },
+      "dimensions": [
+        "voice"
+      ],
+      "conditions": [],
+      "operation_id": "passive_dependency",
+      "supporting_development_cell_ids": [
+        "cell_003"
+      ],
+      "supporting_development_item_ids": [
+        "item_003"
+      ],
+      "cell_support": 1,
+      "item_support": 1,
+      "activation_vector": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "meets_support_threshold": true,
+      "equivalence_class_id": "activation_class_003",
+      "equivalent_to": "kc_feature__voice__passive",
+      "is_equivalence_representative": false,
+      "selection_eligible": false,
+      "exclusion_reasons": [
+        "activation_equivalent_on_development_items"
+      ]
+    },
+    {
+      "id": "kc_operation__perfect_dependency",
+      "family": "operation",
+      "definition": "Realise perfect HAVE and its participial dependency.",
+      "activation": {
+        "any": [
+          {
+            "cell": {
+              "aspect": "perfect"
+            }
+          },
+          {
+            "cell": {
+              "aspect": "perfect_progressive"
+            }
+          }
+        ]
+      },
+      "dimensions": [
+        "aspect"
+      ],
+      "conditions": [],
+      "operation_id": "perfect_dependency",
+      "supporting_development_cell_ids": [],
+      "supporting_development_item_ids": [],
+      "cell_support": 0,
+      "item_support": 0,
+      "activation_vector": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "meets_support_threshold": false,
+      "equivalence_class_id": "activation_class_001",
+      "equivalent_to": "kc_operation__central_modal",
+      "is_equivalence_representative": false,
+      "selection_eligible": false,
+      "exclusion_reasons": [
+        "no_development_item_support",
+        "activation_equivalent_on_development_items"
+      ]
+    },
+    {
+      "id": "kc_operation__progressive_dependency",
+      "family": "operation",
+      "definition": "Realise progressive BE and its -ing dependency.",
+      "activation": {
+        "any": [
+          {
+            "cell": {
+              "aspect": "progressive"
+            }
+          },
+          {
+            "cell": {
+              "aspect": "perfect_progressive"
+            }
+          }
+        ]
+      },
+      "dimensions": [
+        "aspect"
+      ],
+      "conditions": [],
+      "operation_id": "progressive_dependency",
+      "supporting_development_cell_ids": [
+        "cell_004"
+      ],
+      "supporting_development_item_ids": [
+        "item_004"
+      ],
+      "cell_support": 1,
+      "item_support": 1,
+      "activation_vector": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "meets_support_threshold": true,
+      "equivalence_class_id": "activation_class_002",
+      "equivalent_to": "kc_feature__aspect__progressive",
+      "is_equivalence_representative": false,
+      "selection_eligible": false,
+      "exclusion_reasons": [
+        "activation_equivalent_on_development_items"
+      ]
+    },
+    {
+      "id": "kc_operation__subject_wh",
+      "family": "operation",
+      "definition": "Realise a subject-WH main clause without question-triggered inversion.",
+      "activation": {
+        "cell": {
+          "clause": "subject_wh_question"
+        }
+      },
+      "dimensions": [
+        "clause"
+      ],
+      "conditions": [],
+      "operation_id": "subject_wh",
+      "supporting_development_cell_ids": [],
+      "supporting_development_item_ids": [],
+      "cell_support": 0,
+      "item_support": 0,
+      "activation_vector": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "meets_support_threshold": false,
+      "equivalence_class_id": "activation_class_001",
+      "equivalent_to": "kc_operation__central_modal",
+      "is_equivalence_representative": false,
+      "selection_eligible": false,
+      "exclusion_reasons": [
+        "no_development_item_support",
+        "activation_equivalent_on_development_items"
+      ]
+    },
+    {
+      "id": "kc_operation__wh_fronting",
+      "family": "operation",
+      "definition": "Front a non-subject WH constituent in a main-clause question.",
+      "activation": {
+        "cell": {
+          "clause": "non_subject_wh_question"
+        }
+      },
+      "dimensions": [
+        "clause"
+      ],
+      "conditions": [],
+      "operation_id": "wh_fronting",
+      "supporting_development_cell_ids": [],
+      "supporting_development_item_ids": [],
+      "cell_support": 0,
+      "item_support": 0,
+      "activation_vector": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "meets_support_threshold": false,
+      "equivalence_class_id": "activation_class_001",
+      "equivalent_to": "kc_operation__central_modal",
+      "is_equivalence_representative": false,
+      "selection_eligible": false,
+      "exclusion_reasons": [
+        "no_development_item_support",
+        "activation_equivalent_on_development_items"
+      ]
+    }
+  ],
+  "equivalence_classes": [
+    {
+      "equivalence_class_id": "activation_class_001",
+      "representative_id": "kc_operation__central_modal",
+      "member_ids": [
+        "kc_operation__central_modal",
+        "kc_operation__imperative",
+        "kc_operation__operator_inversion",
+        "kc_operation__perfect_dependency",
+        "kc_operation__subject_wh",
+        "kc_operation__wh_fronting"
+      ],
+      "activation_vector": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "equivalence_class_id": "activation_class_002",
+      "representative_id": "kc_feature__aspect__progressive",
+      "member_ids": [
+        "kc_feature__aspect__progressive",
+        "kc_operation__progressive_dependency",
+        "kc_interaction__aspect_progressive__and__tense_present",
+        "kc_cell__tense_present__aspect_progressive__voice_active__polarity_positive__clause_declarative__modal_none"
+      ],
+      "activation_vector": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "equivalence_class_id": "activation_class_003",
+      "representative_id": "kc_feature__voice__passive",
+      "member_ids": [
+        "kc_feature__voice__passive",
+        "kc_operation__passive_dependency",
+        "kc_interaction__tense_past__and__voice_passive",
+        "kc_cell__tense_past__aspect_none__voice_passive__polarity_positive__clause_declarative__modal_none"
+      ],
+      "activation_vector": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "equivalence_class_id": "activation_class_004",
+      "representative_id": "kc_feature__polarity__negative",
+      "member_ids": [
+        "kc_feature__polarity__negative",
+        "kc_operation__negation",
+        "kc_interaction__polarity_negative__and__tense_past",
+        "kc_cell__tense_past__aspect_none__voice_active__polarity_negative__clause_declarative__modal_none"
+      ],
+      "activation_vector": [
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "equivalence_class_id": "activation_class_005",
+      "representative_id": "kc_feature__tense__past",
+      "member_ids": [
+        "kc_feature__tense__past"
+      ],
+      "activation_vector": [
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "equivalence_class_id": "activation_class_006",
+      "representative_id": "kc_cell__tense_present__aspect_none__voice_active__polarity_positive__clause_declarative__modal_none",
+      "member_ids": [
+        "kc_cell__tense_present__aspect_none__voice_active__polarity_positive__clause_declarative__modal_none"
+      ],
+      "activation_vector": [
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "equivalence_class_id": "activation_class_007",
+      "representative_id": "kc_feature__tense__present",
+      "member_ids": [
+        "kc_feature__tense__present"
+      ],
+      "activation_vector": [
+        1,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "equivalence_class_id": "activation_class_008",
+      "representative_id": "kc_operation__finite_tense_form",
+      "member_ids": [
+        "kc_operation__finite_tense_form"
+      ],
+      "activation_vector": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "metadata": {
+    "item_fields_read": [
+      "item_id",
+      "cell_id"
+    ],
+    "learner_outcomes_read": false,
+    "held_out_grammar_read": false,
+    "equivalence_scope": "development_item_bank_only"
+  }
+}

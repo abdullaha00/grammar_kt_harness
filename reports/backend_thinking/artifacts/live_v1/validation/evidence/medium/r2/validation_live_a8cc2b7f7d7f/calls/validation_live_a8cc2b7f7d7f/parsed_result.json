@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is an active, negative imperative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "“Don't touch the pan.” is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The warning context and response are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It clearly practises forming a negative imperative."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The cue and context allow other valid responses, such as “Don't touch it” or “Don't touch the hot pan,” beyond the declared answers."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and safety context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the base-verb cue, not the completed negative imperative."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "It can be answered using only the target negative-imperative structure."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

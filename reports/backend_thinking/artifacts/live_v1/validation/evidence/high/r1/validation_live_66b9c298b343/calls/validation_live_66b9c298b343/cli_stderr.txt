@@ -1,0 +1,86 @@
+OpenAI Codex v0.150.1
+--------
+workdir: /home/abdullah/grammar_kt_harness/reports/backend_thinking/artifacts/live_v1/validation/evidence/high/r1/validation_live_66b9c298b343/calls/validation_live_66b9c298b343
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: high
+reasoning summaries: none
+session id: 01a04693-46c0-7712-b74b-46c3fd0d267a
+--------
+user
+Judge one generated exercise independently from the generator.
+
+Use the visible learner-facing prompt, target answer, accepted answers, intended
+GrammarCell, and the declared criteria. Do not rely on generation reasoning or
+generation metadata. Judge every criterion separately and give a short note.
+
+Return one JSON object with a `judgments` mapping. Every declared criterion must
+have exactly `passed` (true/false) and `note`.
+
+VISIBLE ITEM:
+{
+  "item_id": "validation_live_66b9c298b343",
+  "format": "controlled_production",
+  "prompt": "State what happened to the abstruse tract: ______",
+  "target_answer": "The antidisestablishmentarian tract was promulgated yesternight.",
+  "accepted_answers": [
+    "The antidisestablishmentarian tract was promulgated yesternight."
+  ]
+}
+
+INTENDED GRAMMAR CELL:
+{
+  "tense": "past",
+  "aspect": "none",
+  "voice": "passive",
+  "polarity": "positive",
+  "clause": "declarative",
+  "modal": "none"
+}
+
+VALIDATION CRITERIA:
+{
+  "target_fidelity": {
+    "required": true,
+    "question": "Does the target answer express exactly the intended GrammarCell?"
+  },
+  "grammaticality": {
+    "required": true,
+    "question": "Is the target answer grammatical English?"
+  },
+  "naturalness": {
+    "required": true,
+    "question": "Is the prompt-answer pair natural and coherent?"
+  },
+  "pedagogical_suitability": {
+    "required": true,
+    "question": "Is the item suitable for focused grammar practice?"
+  },
+  "determinacy": {
+    "required": true,
+    "question": "Does the prompt sufficiently determine the accepted response set?"
+  },
+  "non_target_language_simplicity": {
+    "required": true,
+    "question": "Is the vocabulary and context sufficiently common, transparent, and lexically unambiguous that lexical knowledge is unlikely to determine the learner's response?"
+  },
+  "no_answer_leakage": {
+    "required": true,
+    "question": "Does the prompt avoid displaying the completed target form?"
+  },
+  "no_extraneous_grammar": {
+    "required": true,
+    "question": "Can the item be solved without unrelated advanced grammar?"
+  },
+  "no_world_knowledge": {
+    "required": true,
+    "question": "Can the item be answered without external factual or specialist knowledge?"
+  }
+}
+
+codex
+{"judgments":{"target_fidelity":{"passed":true,"note":"It is a positive past-tense passive declarative with no modal."},"grammaticality":{"passed":true,"note":"The sentence is grammatical, though “yesternight” is archaic."},"naturalness":{"passed":false,"note":"The prompt and answer use mismatched descriptions of the tract and highly unnatural, obscure wording."},"pedagogical_suitability":{"passed":false,"note":"Obscure vocabulary and an under-specified task distract from focused grammar practice."},"determinacy":{"passed":false,"note":"The prompt does not determine the subject wording, verb, or time expression in the sole accepted answer."},"non_target_language_simplicity":{"passed":false,"note":"“Abstruse,” “antidisestablishmentarian,” “promulgated,” and “yesternight” are not common or transparent vocabulary."},"no_answer_leakage":{"passed":true,"note":"The prompt does not display the completed target sentence or passive verb form."},"no_extraneous_grammar":{"passed":true,"note":"The target construction itself does not require unrelated advanced grammar."},"no_world_knowledge":{"passed":true,"note":"No external factual or specialist knowledge is needed."}}}
+tokens used
+2,689

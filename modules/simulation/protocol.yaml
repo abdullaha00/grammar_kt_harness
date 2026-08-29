@@ -1,0 +1,9 @@
+protocol_id: development_acquisition_frozen_probes_v1
+mode: frozen_probe
+description: >-
+  Learners acquire only development grammar, then receive non-updating probes
+  from development, compositional, and novel-feature cells at one frozen state.
+acquisition_passes: 5
+selection_train_passes: 4
+probe_repeats: 1
+item_order: counterbalanced_rotate_by_learner_and_pass

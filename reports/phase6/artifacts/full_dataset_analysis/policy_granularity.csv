@@ -1,0 +1,5 @@
+policy,policy_id,kcs,feature_kcs,operation_kcs,interaction_kcs,development_full_cell_kcs,oracle_full_cell_kcs,q_matrix_density,kcs_per_item,item_coverage,minimum_item_support,median_item_support,maximum_item_support,activation_redundant_pairs,compositional_coverage
+automated,selected__forward_predictive_parsimony_v1,10,9,0,1,0,0,0.21818181818181817,2.1818181818181817,0.9545454545454546,3,8.0,22,0,1.0
+factorized,medium_v1_factorized,9,9,0,0,0,0,0.23232323232323232,2.090909090909091,0.9545454545454546,3,8.0,22,0,1.0
+oracle_all_cell,medium_v1_oracle_exact_all_cell,24,0,0,0,0,24,0.041666666666666664,1.0,1.0,1,2.0,2,0,0.0
+supported_interactions,medium_v1_factorized_plus_all_supported_interactions,16,9,0,7,0,0,0.18039772727272727,2.8863636363636362,0.9545454545454546,3,6.0,22,0,1.0

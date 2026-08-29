@@ -1,0 +1,13 @@
+{
+  "prompt": "Mia planned to read a book this week, but she still has not done it. Complete the response using the cue: Mia / read / a book. Response: ____",
+  "target_answer": "Mia has not read a book.",
+  "accepted_answers": [
+    "Mia has not read a book.",
+    "Mia hasn't read a book."
+  ],
+  "operation_tags": [
+    "perfect",
+    "negation"
+  ],
+  "note": "The response uses the present perfect active negative in a complete declarative clause."
+}

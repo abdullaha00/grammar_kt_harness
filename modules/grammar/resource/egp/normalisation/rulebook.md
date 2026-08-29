@@ -83,17 +83,22 @@ a modal superclass does not rule out perfect or progressive structure.
 
 ## Phase 2
 
-Examples may be consulted only for a Phase-1 `partial` mapping whose note names
-an eligible dimension. Bare generic “questions” do not by themselves license
-example-based narrowing. Exact Phase-1 values cannot be silently broadened or
-replaced. A direct contradiction produces `unresolved`.
+Examples may be consulted only for a Phase-1 `partial` mapping whose explicit
+`phase2_eligible` list names an eligible dimension. Bare generic “questions” do
+not by themselves license example-based narrowing. Exact Phase-1 values cannot
+be silently broadened or replaced. A direct contradiction produces
+`unresolved`.
 
-Every Phase-1 partial note begins `phase2 eligible: ` followed by `none` or a
-comma-separated subset of the six dimensions. A dimension is eligible only
-when the descriptor establishes a closed broader alternative space, examples
-could positively distinguish members, and refinement would not claim that the
-examples exhaust an open class. Phase 2 may change only named dimensions;
-unmentioned constraints and source correlations remain fixed.
+`phase2_eligible` is a list in canonical dimension order, and is empty when
+examples cannot safely refine the mapping. A dimension is eligible only when
+it is uncertain in at least one Phase-1 cell, the descriptor establishes a
+closed broader alternative space, examples could positively distinguish
+members, and refinement would not claim that the examples exhaust an open
+class. `note` remains free-text linguistic explanation. Phase 2 may only
+narrow named dimensions. Every output cell must descend from a single Phase-1
+OR branch, every Phase-1 branch must remain represented, and exact/unmentioned
+constraints and within-branch correlations remain fixed. Phase 2 copies the
+eligibility list unchanged as provenance.
 
 `complete` means every field in every cell is one allowed scalar.
 `partial` preserves at least one list or null. `out_of_scope` and `unresolved`

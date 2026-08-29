@@ -1,0 +1,7 @@
+{
+  "prompt": "Tom began making dinner at six. At half past six, what was happening? Use the words in brackets to complete the sentence.\nTom [____] dinner. (cook)",
+  "target_answer": "Tom was cooking dinner.",
+  "accepted_answers": [
+    "was cooking"
+  ]
+}

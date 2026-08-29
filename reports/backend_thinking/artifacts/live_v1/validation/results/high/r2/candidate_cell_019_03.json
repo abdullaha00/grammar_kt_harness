@@ -1,0 +1,69 @@
+{
+  "item_id": "candidate_cell_019_03",
+  "audit_id": "validation_live_c1b094891b37",
+  "cell_id": "cell_019",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_c1b094891b37",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "It is a positive past simple passive declarative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt and answer form a coherent, natural transformation."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of the past passive."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The sentence and cue clearly determine the intended passive response."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary is common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives only the cue words, not the completed passive form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Solving it requires only the target passive construction."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": true,
+  "retained_failed_criteria": [],
+  "packaging_correction": true,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 7.580783919000169,
+  "model_calls": 1,
+  "tokens_used": 2471,
+  "model_runtime_seconds": 7.5799920549998205,
+  "model_call_failures": 0
+}

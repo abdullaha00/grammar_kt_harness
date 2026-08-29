@@ -1,0 +1,85 @@
+{
+  "source_id": "1741163708343x587422418001030500",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708343x587422418001030500",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "subject_wh_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "present",
+        "voice": "active"
+      },
+      {
+        "aspect": "none",
+        "clause": "subject_wh_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "past",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "The examples positively establish both licensed tense alternatives: present ('cares', 'knows') and past ('happened'). Tense is therefore resolved into two descendant OR cells. Polarity remains null and cannot narrow because it is not phase2-eligible, so the mapping remains partial."
+  },
+  "fixed_phase1_mapping": {
+    "source_id": "1741163708343x587422418001030500",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "subject_wh_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "retained_phase2_mapping": {
+    "source_id": "1741163708343x587422418001030500",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "subject_wh_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "present",
+        "voice": "active"
+      },
+      {
+        "aspect": "none",
+        "clause": "subject_wh_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "past",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 14.498634616000345,
+  "model_calls": 1,
+  "tokens_used": 4309,
+  "model_runtime_seconds": 14.497929523999119,
+  "model_call_failures": 0
+}

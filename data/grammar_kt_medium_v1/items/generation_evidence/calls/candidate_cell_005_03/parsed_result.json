@@ -1,0 +1,7 @@
+{
+  "prompt": "The room is dark. Tell your friend what to do. Use the cue: turn on / the light\n[____]",
+  "target_answer": "Turn on the light.",
+  "accepted_answers": [
+    "Turn on the light."
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "item_id": "candidate_cell_007_03",
+  "audit_id": "validation_live_5abc38883115",
+  "cell_id": "cell_007",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_5abc38883115",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The target is present simple, active, negative, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "“Mia does not drink coffee.” is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt and answer form a coherent contrast between tea and coffee."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice with present-simple negation using do-support."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The tea/coffee contrast and sentence frame sufficiently cue “does not/doesn't drink.”"
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary is common and semantically transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed negative target form is not shown in the prompt."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The item can be answered with basic present-simple negative formation."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 13.848648425000647,
+  "model_calls": 1,
+  "tokens_used": 2793,
+  "model_runtime_seconds": 13.847883194999667,
+  "model_call_failures": 0
+}

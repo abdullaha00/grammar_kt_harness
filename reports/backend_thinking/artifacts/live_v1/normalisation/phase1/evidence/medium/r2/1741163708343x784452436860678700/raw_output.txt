@@ -1,0 +1,1 @@
+{"source_id":"1741163708343x784452436860678700","result":"partial","cells":[{"tense":null,"aspect":null,"voice":null,"polarity":null,"clause":null,"modal":null}],"phase2_eligible":[],"note":"The descriptor establishes interrogative form with a mid-position adverb but does not specify a closed question subtype or constrain the other canonical dimensions."}

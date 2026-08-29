@@ -1,0 +1,14 @@
+{
+  "prompt": "The floor is wet. Warn your friend: “_____.” (run)",
+  "target_answer": "Don't run.",
+  "accepted_answers": [
+    "Don't run.",
+    "Do not run."
+  ],
+  "operation_tags": [
+    "do_support",
+    "negation",
+    "imperative"
+  ],
+  "note": "A negative imperative warning using the base verb “run”."
+}

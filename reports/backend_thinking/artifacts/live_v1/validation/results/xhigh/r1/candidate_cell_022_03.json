@@ -1,0 +1,71 @@
+{
+  "item_id": "candidate_cell_022_03",
+  "audit_id": "validation_live_1bf90aae3b38",
+  "cell_id": "cell_022",
+  "effort": "xhigh",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_1bf90aae3b38",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "“Had been set” is past perfect, passive, positive, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The preparation of tables before guests arrive is coherent and natural."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of the past perfect passive."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "“Were set” is also a plausible completion in context, so the prompt does not fully force the sole accepted form."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and setting are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives only the base verb “set,” not the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "No unrelated advanced grammar is needed beyond the target construction."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "The item can be answered using ordinary context alone."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 11.656167371000265,
+  "model_calls": 1,
+  "tokens_used": 2720,
+  "model_runtime_seconds": 11.655369848000191,
+  "model_call_failures": 0
+}

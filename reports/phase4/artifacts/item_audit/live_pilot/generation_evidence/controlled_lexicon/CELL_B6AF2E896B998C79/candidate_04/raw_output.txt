@@ -1,0 +1,11 @@
+{
+  "prompt": "The guests arrived at noon. Ana had finished cooking before they arrived. Use the cue “the meal / prepare / by Ana” to complete the sentence: ______.",
+  "target_answer": "The meal was prepared by Ana.",
+  "accepted_answers": [
+    "The meal was prepared by Ana."
+  ],
+  "operation_tags": [
+    "be_passive"
+  ],
+  "note": "Complete the response with one declarative clause."
+}

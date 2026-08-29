@@ -1,42 +1,52 @@
 \section{Introduction}
 
-Knowledge tracing (KT) estimates a learner's changing knowledge from a
-chronological sequence of item responses \citep{corbett-anderson-1995,
-abdelrahman-etal-2023}.  Its inputs normally associate each item with one or
-more knowledge components (KCs), often through a binary Q-matrix.  That matrix
-presupposes decisions that are easy to hide: what counts as a skill, how a
-curriculum description becomes that representation, and whether an item really
-exercises the selected components.  These are scientific choices, not file
-formatting.
+Knowledge tracing (KT) estimates changing learner knowledge from chronological
+responses \citep{corbett-anderson-1995,abdelrahman-etal-2023}.  Its inputs
+normally associate each item with one or more knowledge components (KCs), often
+through a binary Q-matrix.  That matrix embeds consequential decisions: what
+counts as reusable knowledge, which interactions deserve separate state, and
+whether evidence from one grammatical construction should transfer to another.
+These are scientific choices, not data formatting.
 
 Grammar resources pose a sharp version of the problem.  The English Grammar
 Profile (EGP) contains over 1,200 corpus-derived competence descriptions mapped
 to CEFR levels \citep{okeeffe-mark-2017}.  A description can combine tense,
 aspect, voice, polarity, clause type, and modality, state bounded alternatives,
 or fall outside a selected ontology.  Treating every descriptor as one KC
-obscures reusable operations; decomposing it without explicit rules can invent
-unsupported distinctions or erase the source connection.
+obscures reuse; decomposing it without explicit rules can invent unsupported
+distinctions.  Even after canonicalization, granularity remains empirical:
+feature KCs transfer broadly, conjunctions represent dependencies, and exact
+cells can memorize combinations.
 
-We introduce \system, a research harness that makes this path explicit.
-Figure~\ref{fig:pipeline} separates source selection, model-assisted
-normalization, canonicalization, realization, KC projection, item construction,
-Q-matrix derivation, simulation, and KT evaluation.  Prompts, rulebooks,
-policies, templates, and parameters remain replaceable versioned artifacts.
+We introduce \system, a dataset and research pipeline that makes this path
+explicit (Figure~\ref{fig:pipeline}).  It first fixes grammar cells and items
+without access to KCs or learner outcomes.  It then constructs a
+development-only KC hypothesis space from a declared schema and selects
+supported hypotheses using observable learner history.  The resulting policy
+is frozen before compositional and novel-value probes.  This ordering makes
+leakage, support, and representation complexity inspectable.
 
-We ask:
+We ask four paper-level questions:
 \begin{enumerate}
-  \item[RQ1] How completely and consistently can EGP prose be normalized into
-        a closed grammar representation?
-  \item[RQ2] How do factorized, interaction-augmented, and whole-cell policies
-        change item--KC structure?
-  \item[RQ3] Do all three resulting datasets support reproducible end-to-end KT
-        checks, and what can those checks legitimately show?
+  \item[RQ1] What dataset results from conservative source normalization and
+        independently screened item generation?
+  \item[RQ2] What interpretable KC hypothesis space follows from development
+        grammar, and which granularity does predictive--parsimonious selection
+        retain?
+  \item[RQ3] Does the frozen selection improve prediction on development,
+        compositional, and novel-value probes?
+  \item[RQ4] How sensitive are selection and prediction to learner support,
+        complexity penalty, KT model, and plausible latent learner worlds?
 \end{enumerate}
 
-Our contributions are a conservative six-dimensional representation, a
-provenance path from prose to Q-matrix entries, and an executable comparison of
-three KC policies.  Unlike a human-data evaluation, this study cannot establish
-that any KC is cognitively atomic or that predictive differences transfer to
-learners; technical integrity and educational validity are kept separate.
+Our contributions are: (i) a retained medium-scale grammar-KT dataset with a
+provenance path from descriptors to 44 fixed items and 204,000 chronological
+events; (ii) a direct candidate procedure spanning reusable features,
+language-declared operations, supported interactions, and exact cells; (iii) an
+automated development-evidence selector with a simple predictive--parsimony
+objective; and (iv) controlled fold, latent-world, support, and validation
+audits that delimit the contribution.  The learners are synthetic and item
+quality is model-judged, so our results validate method behavior under declared
+worlds, not cognitive atomicity or classroom efficacy.
 
 \input{figures/pipeline}

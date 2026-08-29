@@ -1,0 +1,8 @@
+{
+  "prompt": "The kitchen is clean now. Ask whether Mia cleaned it yesterday. Use: Mia / clean the kitchen / yesterday. Response: ____",
+  "target_answer": "Did Mia clean the kitchen yesterday?",
+  "accepted_answers": [
+    "Did Mia clean the kitchen yesterday?",
+    "Did Mia clean the kitchen yesterday"
+  ]
+}

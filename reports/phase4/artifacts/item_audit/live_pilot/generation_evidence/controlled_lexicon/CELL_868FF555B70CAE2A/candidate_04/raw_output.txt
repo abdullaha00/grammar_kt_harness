@@ -1,0 +1,12 @@
+{
+  "prompt": "You want to know about Omar’s morning routine. Use: Omar / open / the door every morning. ___",
+  "target_answer": "Does Omar open the door every morning?",
+  "accepted_answers": [
+    "Does Omar open the door every morning?"
+  ],
+  "operation_tags": [
+    "do_support",
+    "operator_inversion"
+  ],
+  "note": "A simple-present yes/no question about a regular action."
+}

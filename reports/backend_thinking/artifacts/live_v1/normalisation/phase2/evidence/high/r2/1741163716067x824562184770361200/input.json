@@ -1,0 +1,36 @@
+{
+  "descriptor": {
+    "source_id": "1741163716067x824562184770361200",
+    "supercategory": "NEGATION",
+    "subcategory": "negation",
+    "guideword": "FORM: MAIN VERB 'BE'",
+    "can_do": "Can form negative statements of main verb 'be', with contracted and uncontracted forms."
+  },
+  "phase1_mapping": {
+    "source_id": "1741163716067x824562184770361200",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "negative",
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "examples": [
+    "My college is not very big. (A1 BREAKTHROUGH; 2007; Polish; Pass)",
+    "I know you are not well. (A1 BREAKTHROUGH; 2009; French; Pass)",
+    "I'm not a good swimmer. (A1 BREAKTHROUGH; 2011; Romanian; Pass)",
+    "This place isn't big. (A1 BREAKTHROUGH; 2007; Lithuanian; Pass)"
+  ]
+}

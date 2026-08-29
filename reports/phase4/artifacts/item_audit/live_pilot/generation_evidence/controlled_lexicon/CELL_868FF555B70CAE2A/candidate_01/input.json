@@ -1,0 +1,98 @@
+{
+  "target_cell": {
+    "cell_id": "CELL_868FF555B70CAE2A",
+    "features": {
+      "tense": "present",
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "polar_question",
+      "modal": "none"
+    }
+  },
+  "source_support": {
+    "available": false,
+    "evidence": [],
+    "instruction": "No source evidence is supplied in this condition."
+  },
+  "item_format": {
+    "format_id": "controlled_production",
+    "task_goal": "Produce the complete response licensed by a short context and lexical cue.",
+    "required_fields": [
+      "prompt",
+      "target_answer",
+      "accepted_answers"
+    ],
+    "answer_form": "one complete English clause",
+    "constraints": [
+      "The prompt must visibly mark the response slot.",
+      "The target answer must fill the task without additional explanation.",
+      "Accepted answers must preserve the intended GrammarCell.",
+      "The prompt must not reveal the completed target form."
+    ]
+  },
+  "design": {
+    "design_id": "one_generated_item_per_cell",
+    "format": "controlled_production",
+    "items_per_cell": 1,
+    "lexical_choice": "model_generated",
+    "lexical_constraint": "simple_non_target_language",
+    "diversity": {
+      "vary_lexical_context_across_cells": true
+    },
+    "balancing": {
+      "nuisance_condition": "short_context"
+    }
+  },
+  "candidate_position": {
+    "index": 1,
+    "count": 5
+  },
+  "lexical_intervention": {
+    "mode": "controlled_six_entry_lexicon",
+    "instruction": "Choose a grammatically compatible predicate and arguments only from these six entries. Inflect the selected lemma as required.",
+    "entries": [
+      {
+        "lemma": "travel",
+        "predicate_class": "intransitive",
+        "passive_compatible": false,
+        "example_subject": "Lina"
+      },
+      {
+        "lemma": "open",
+        "predicate_class": "transitive",
+        "passive_compatible": true,
+        "example_subject": "Omar",
+        "example_object": "the door"
+      },
+      {
+        "lemma": "prepare",
+        "predicate_class": "transitive",
+        "passive_compatible": true,
+        "example_subject": "Ana",
+        "example_object": "the meal"
+      },
+      {
+        "lemma": "read",
+        "predicate_class": "transitive",
+        "passive_compatible": true,
+        "example_subject": "Mia",
+        "example_object": "a book"
+      },
+      {
+        "lemma": "clean",
+        "predicate_class": "transitive",
+        "passive_compatible": true,
+        "example_subject": "the team",
+        "example_object": "the rooms"
+      },
+      {
+        "lemma": "take",
+        "predicate_class": "transitive",
+        "passive_compatible": true,
+        "example_subject": "we",
+        "example_object": "the earlier train"
+      }
+    ]
+  }
+}

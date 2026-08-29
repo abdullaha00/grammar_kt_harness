@@ -1,0 +1,1 @@
+{"prompt":"Mia usually takes the bus, but today her brother is driving her. Complete the sentence using “take”: Mia ____ the bus today.","target_answer":"Mia is not taking the bus today.","accepted_answers":["is not taking","isn't taking"]}

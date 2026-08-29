@@ -1,0 +1,1 @@
+{"prompt":"Tom started washing the car at nine. At eleven, he was still doing it. Complete the sentence using the verb \"wash\": Tom [____] the car for two hours.","target_answer":"Tom had been washing the car for two hours.","accepted_answers":["had been washing"]}

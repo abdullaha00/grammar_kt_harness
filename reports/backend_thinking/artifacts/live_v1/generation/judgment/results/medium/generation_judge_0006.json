@@ -1,0 +1,65 @@
+{
+  "blind_id": "generation_judge_0006",
+  "experiment_item_id": "generation_high_cell_001_02",
+  "generation_effort": "high",
+  "cell_id": "cell_001",
+  "candidate_index": 2,
+  "judge_effort": "medium",
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "generation_judge_0006",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "It is a positive active present-simple polar question with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt and question form a natural, coherent exchange."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of present-simple do-support questions."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The prompt also naturally permits “Does Mia take the bus to work every day?”, which is not accepted."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and context are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives a declarative sentence, not the completed question form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "It can be answered using the targeted present-simple question formation alone."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "task_runtime_seconds": 10.700479422999706,
+  "model_calls": 1,
+  "tokens_used": 2591,
+  "model_runtime_seconds": 10.699627210999097,
+  "model_call_failures": 0
+}

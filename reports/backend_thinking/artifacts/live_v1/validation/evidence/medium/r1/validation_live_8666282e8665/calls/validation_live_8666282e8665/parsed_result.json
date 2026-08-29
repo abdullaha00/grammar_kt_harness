@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses a positive declarative simple past passive construction ('was sealed')."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and answer form a coherent historical-fact completion."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "Success depends chiefly on recalling a specific historical fact rather than practicing the target grammar."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The prompt does not supply enough information to determine the exact sentence or location/date."
+    },
+    "non_target_language_simplicity": {
+      "passed": false,
+      "note": "'Magna Carta' and 'Runnymede' are specialized historical proper nouns."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The response can use the target simple past passive without unrelated advanced grammar."
+    },
+    "no_world_knowledge": {
+      "passed": false,
+      "note": "Answering requires external knowledge of the Magna Carta's sealing location and date."
+    }
+  }
+}

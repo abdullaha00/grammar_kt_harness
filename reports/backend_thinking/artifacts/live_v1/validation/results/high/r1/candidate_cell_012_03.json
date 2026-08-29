@@ -1,0 +1,71 @@
+{
+  "item_id": "candidate_cell_012_03",
+  "audit_id": "validation_live_635bee1fa465",
+  "cell_id": "cell_012",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_635bee1fa465",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The target is a present perfect, active, negative declarative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt context and answer form a coherent, natural exchange."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "The prompt does not explicitly constrain the required tense, weakening its focus as a present-perfect exercise."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The cue and context allow other plausible completions, including different tense choices or additional words such as “yet,” beyond the accepted set."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "“Cups,” “wash,” and “unwashed” are common and transparent vocabulary."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives lexical cues but does not display the completed present-perfect negative form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "No unrelated advanced grammar is needed."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external factual or specialist knowledge is required."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 12.775902793000569,
+  "model_calls": 1,
+  "tokens_used": 4821,
+  "model_runtime_seconds": 12.775073810998947,
+  "model_call_failures": 0
+}

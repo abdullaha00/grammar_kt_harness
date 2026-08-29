@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_014_01",
+  "cell_id": "cell_014",
+  "candidate_index": 1,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_014_01",
+    "cell_id": "cell_014",
+    "format": "controlled_production",
+    "prompt": "Maya skipped breakfast and later arrived at work hungry. Complete the sentence using the cue “eat”: She ___ breakfast.",
+    "target_answer": "She had not eaten breakfast.",
+    "accepted_answers": [
+      "had not eaten",
+      "hadn't eaten"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 14.912485773000299,
+  "model_calls": 1,
+  "tokens_used": 5357,
+  "model_runtime_seconds": 14.911349447000248,
+  "model_call_failures": 0
+}

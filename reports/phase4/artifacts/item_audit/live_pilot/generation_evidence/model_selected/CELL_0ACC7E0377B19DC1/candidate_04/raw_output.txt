@@ -1,0 +1,11 @@
+{
+  "prompt": "If Maya had a free afternoon, what is the imagined result? Cue: visit her friend. Response: ___",
+  "target_answer": "She would visit her friend.",
+  "accepted_answers": [
+    "She would visit her friend."
+  ],
+  "operation_tags": [
+    "central_modal"
+  ],
+  "note": "The response is a complete positive declarative clause."
+}

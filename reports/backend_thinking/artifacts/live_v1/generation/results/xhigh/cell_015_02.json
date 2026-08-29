@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_015_02",
+  "cell_id": "cell_015",
+  "candidate_index": 2,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_015_02",
+    "cell_id": "cell_015",
+    "format": "controlled_production",
+    "prompt": "The table was ready when the guests arrived. Complete the sentence using “set / the table”: Leo [____] before the guests arrived.",
+    "target_answer": "Leo had set the table before the guests arrived.",
+    "accepted_answers": [
+      "had set the table"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 14.883266642998933,
+  "model_calls": 1,
+  "tokens_used": 3236,
+  "model_runtime_seconds": 14.882521601000917,
+  "model_call_failures": 0
+}

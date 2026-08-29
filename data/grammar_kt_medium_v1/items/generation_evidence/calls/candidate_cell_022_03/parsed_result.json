@@ -1,0 +1,7 @@
+{
+  "prompt": "By the time the guests arrived, the dining room was ready. Complete with the verb “set”: The tables _____.",
+  "target_answer": "The tables had been set.",
+  "accepted_answers": [
+    "had been set"
+  ]
+}

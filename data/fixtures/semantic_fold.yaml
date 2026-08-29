@@ -1,0 +1,10 @@
+fold_id: fixture_semantic_grammar_coverage_v1
+description: >-
+  Software-contract counterpart of the active semantic fold: the sole modal
+  cell is novel and one constituent-covered tuple is compositional.
+compositional_holdout_fraction: 0.20
+minimum_development_value_cell_support: 2
+minimum_accepted_items_per_holdout_cell: 1
+semantic_sampling_seed: 20260827
+novel_feature_values:
+  modal: [should]

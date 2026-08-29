@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_medium_cell_007_01",
+  "cell_id": "cell_007",
+  "candidate_index": 1,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_007_01",
+    "cell_id": "cell_007",
+    "format": "controlled_production",
+    "prompt": "Mia works at the library, not at the café. Complete the sentence with the correct form of “work”: Mia ____ at the café.",
+    "target_answer": "Mia does not work at the café.",
+    "accepted_answers": [
+      "does not work",
+      "doesn't work"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 7.58236845600004,
+  "model_calls": 1,
+  "tokens_used": 5031,
+  "model_runtime_seconds": 7.581617021000056,
+  "model_call_failures": 0
+}

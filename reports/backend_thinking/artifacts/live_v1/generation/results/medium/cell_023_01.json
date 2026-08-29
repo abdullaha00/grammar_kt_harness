@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_medium_cell_023_01",
+  "cell_id": "cell_023",
+  "candidate_index": 1,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_023_01",
+    "cell_id": "cell_023",
+    "format": "controlled_production",
+    "prompt": "The bakery receives bread from Monday to Saturday, but no delivery comes on Sunday. Complete using the verb in brackets: Bread ____ on Sundays. (deliver)",
+    "target_answer": "Bread is not delivered on Sundays.",
+    "accepted_answers": [
+      "is not delivered",
+      "isn't delivered"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 13.44050327900004,
+  "model_calls": 1,
+  "tokens_used": 3187,
+  "model_runtime_seconds": 13.439704514999903,
+  "model_call_failures": 0
+}

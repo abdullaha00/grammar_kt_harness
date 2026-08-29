@@ -1,0 +1,92 @@
+{
+  "source_id": "1741163715031x898125206259626100",
+  "effort": "medium",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163715031x898125206259626100",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": [
+          "subject_wh_question",
+          "non_subject_wh_question"
+        ],
+        "modal": "none",
+        "polarity": null,
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "No tense narrowing: the examples positively establish both past ('was') and present ('are'), preserving the Phase-1 [present, past] alternative."
+  },
+  "fixed_phase1_mapping": {
+    "source_id": "1741163715031x898125206259626100",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": [
+          "subject_wh_question",
+          "non_subject_wh_question"
+        ],
+        "modal": "none",
+        "polarity": null,
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "retained_phase2_mapping": {
+    "source_id": "1741163715031x898125206259626100",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": [
+          "subject_wh_question",
+          "non_subject_wh_question"
+        ],
+        "modal": "none",
+        "polarity": null,
+        "tense": "present",
+        "voice": "active"
+      },
+      {
+        "aspect": "none",
+        "clause": [
+          "subject_wh_question",
+          "non_subject_wh_question"
+        ],
+        "modal": "none",
+        "polarity": null,
+        "tense": "past",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 10.756735782999385,
+  "model_calls": 1,
+  "tokens_used": 4158,
+  "model_runtime_seconds": 10.755989883000439,
+  "model_call_failures": 0
+}

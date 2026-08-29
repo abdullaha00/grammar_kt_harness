@@ -1,0 +1,11 @@
+{
+  "prompt": "The team finished cleaning the rooms yesterday. Complete the sentence using the cue (the rooms / clean): ____",
+  "target_answer": "The rooms were cleaned yesterday.",
+  "accepted_answers": [
+    "The rooms were cleaned yesterday."
+  ],
+  "operation_tags": [
+    "be_passive"
+  ],
+  "note": "Use the cue to write one complete clause."
+}

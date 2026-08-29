@@ -1,0 +1,57 @@
+{
+  "sample_order": 1,
+  "blind_item_id": "reliability_item_0001",
+  "candidate_id": "candidate_controlled_lexicon_CELL_B6AF2E896B998C79_04",
+  "condition": "controlled_lexicon",
+  "cell_id": "CELL_B6AF2E896B998C79",
+  "candidate_index": 4,
+  "original_accepted": false,
+  "original_failed_criteria": [
+    "determinacy",
+    "naturalness",
+    "no_extraneous_grammar",
+    "pedagogical_suitability"
+  ],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The answer is a positive past simple passive declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and answer form a coherent, natural account of the meal's preparation."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The prior past-perfect sentence strongly encourages “The meal had been prepared by Ana,” distracting from focused past-simple passive practice."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The prompt does not specify the required tense, and the context also supports the unaccepted past-perfect passive response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common, transparent, and unambiguous."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies lexical cues but does not display the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Producing the target requires no unrelated advanced grammar, although the context contains a past-perfect form."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external factual or specialist knowledge is needed."
+    }
+  },
+  "accepted": false,
+  "runtime_seconds": 18.190782455989392
+}

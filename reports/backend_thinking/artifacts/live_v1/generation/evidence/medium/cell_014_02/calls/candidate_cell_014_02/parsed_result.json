@@ -1,0 +1,8 @@
+{
+  "prompt": "The door was still open when Maya left at noon. Complete the sentence using the verb in brackets: By noon, Maya ___ the door. (lock)",
+  "target_answer": "By noon, Maya had not locked the door.",
+  "accepted_answers": [
+    "had not locked",
+    "hadn't locked"
+  ]
+}

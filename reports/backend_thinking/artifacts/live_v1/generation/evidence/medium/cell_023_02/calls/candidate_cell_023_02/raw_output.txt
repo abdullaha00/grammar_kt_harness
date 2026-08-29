@@ -1,0 +1,1 @@
+{"prompt":"The café has stopped serving soup on Mondays. Complete the sentence using the cue (serve): Soup ______ on Mondays.","target_answer":"Soup is not served on Mondays.","accepted_answers":["is not served","isn't served"]}

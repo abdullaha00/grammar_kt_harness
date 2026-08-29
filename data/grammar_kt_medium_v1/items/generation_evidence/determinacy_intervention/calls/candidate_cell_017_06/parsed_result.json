@@ -1,0 +1,8 @@
+{
+  "prompt": "Nina was tired because she [____] well for several nights. Use the negative past perfect continuous form of “sleep.”",
+  "target_answer": "she had not been sleeping well for several nights.",
+  "accepted_answers": [
+    "had not been sleeping",
+    "hadn't been sleeping"
+  ]
+}

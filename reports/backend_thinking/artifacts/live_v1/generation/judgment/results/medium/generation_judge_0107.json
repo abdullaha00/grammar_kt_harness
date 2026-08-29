@@ -1,0 +1,65 @@
+{
+  "blind_id": "generation_judge_0107",
+  "experiment_item_id": "generation_xhigh_cell_017_02",
+  "generation_effort": "xhigh",
+  "cell_id": "cell_017",
+  "candidate_index": 2,
+  "judge_effort": "medium",
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "generation_judge_0107",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "“had not been working” is past perfect progressive, active, negative, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The noon start time coherently supports saying he had not been working before noon."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides a clear, focused contrast between a past reference point and an earlier ongoing activity."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The context also naturally permits alternatives such as “had not worked” or “was not working,” so it does not uniquely determine the accepted perfect-progressive forms."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and situation are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed target form is not displayed in the prompt."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The item can be answered using the target tense/aspect pattern without unrelated advanced grammar."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "task_runtime_seconds": 12.711279467999702,
+  "model_calls": 1,
+  "tokens_used": 2753,
+  "model_runtime_seconds": 12.710424842000066,
+  "model_call_failures": 0
+}

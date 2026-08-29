@@ -1,0 +1,1 @@
+{"prompt":"The table is still dirty. Complete the sentence using the cue (clean): She ____ the table.","target_answer":"She has not cleaned the table.","accepted_answers":["has not cleaned","hasn't cleaned"]}

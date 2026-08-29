@@ -1,0 +1,64 @@
+{
+  "source_id": "1741163712049x547897454512315650",
+  "stratum": "partial_noneligible",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712049x547897454512315650",
+    "result": "unresolved",
+    "cells": [],
+    "phase2_eligible": [],
+    "note": "The inseparable construction combines morphological present-perfect evidence with central-modal evidence, which requires tense NA under the canonical schema."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712049x547897454512315650",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "NA",
+        "aspect": "perfect",
+        "voice": "passive",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": [
+          "can",
+          "could",
+          "may",
+          "might",
+          "must",
+          "shall",
+          "should",
+          "will",
+          "would"
+        ]
+      },
+      {
+        "tense": "NA",
+        "aspect": "perfect",
+        "voice": "passive",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": [
+          "can",
+          "could",
+          "may",
+          "might",
+          "must",
+          "shall",
+          "should",
+          "will",
+          "would"
+        ]
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "phase2 eligible: none"
+  },
+  "task_runtime_seconds": 39.018062273000396,
+  "model_calls": 1,
+  "tokens_used": 7234,
+  "model_runtime_seconds": 39.01738651500091,
+  "model_call_failures": 0
+}

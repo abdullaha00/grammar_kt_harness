@@ -1,0 +1,80 @@
+{
+  "source_id": "1741163715033x199281404596736400",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163715033x199281404596736400",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "The examples positively attest both licensed tense alternatives: present DO-support ('Do you know/like/remember') and past DO-support ('Did you see'). Therefore tense cannot be narrowed; all other Phase-1 constraints remain fixed."
+  },
+  "fixed_phase1_mapping": {
+    "source_id": "1741163715033x199281404596736400",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "retained_phase2_mapping": {
+    "source_id": "1741163715033x199281404596736400",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "present",
+        "voice": "active"
+      },
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "past",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 9.332060732998798,
+  "model_calls": 1,
+  "tokens_used": 6268,
+  "model_runtime_seconds": 9.32978050299971,
+  "model_call_failures": 0
+}

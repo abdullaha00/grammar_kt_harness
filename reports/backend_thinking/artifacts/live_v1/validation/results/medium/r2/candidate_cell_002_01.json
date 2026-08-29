@@ -1,0 +1,69 @@
+{
+  "item_id": "candidate_cell_002_01",
+  "audit_id": "validation_live_5ca9c58e3001",
+  "cell_id": "cell_002",
+  "effort": "medium",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_5ca9c58e3001",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "It is an active, positive, past simple polar question with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt and resulting question are coherent and natural."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice forming a past simple yes/no question."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The cue phrase and context clearly determine the accepted question."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and context are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives only the phrase to use, not the completed question form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Solving it requires only past simple question formation."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external knowledge is needed."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": true,
+  "retained_failed_criteria": [],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 9.596210208999764,
+  "model_calls": 1,
+  "tokens_used": 2558,
+  "model_runtime_seconds": 9.595405547001064,
+  "model_call_failures": 0
+}

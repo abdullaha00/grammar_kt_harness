@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a negative past perfect progressive active declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "Starting the job on Monday coherently supports not having been working there before then."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The item provides focused practice of the negative past perfect progressive."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "Other grammatical responses, such as “had not worked,” are also plausible from the prompt but are not accepted."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The context and vocabulary are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the base verb “work,” not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it requires only the targeted tense/aspect construction and basic time reference."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

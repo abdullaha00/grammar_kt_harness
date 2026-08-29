@@ -1,0 +1,69 @@
+{
+  "item_id": "candidate_cell_016_01",
+  "audit_id": "validation_live_9650a5ae0d5f",
+  "cell_id": "cell_016",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_9650a5ae0d5f",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "“has been washing” is present perfect progressive, active, positive, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The ongoing action and one-hour duration make the prompt-answer pair coherent and natural."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It gives focused practice of the present perfect progressive with a clear duration cue."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "“Started … an hour ago” and “is still doing it,” plus “for an hour,” clearly determine the intended form."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and situation are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed target verb form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The item can be solved through the target tense-aspect construction alone."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": true,
+  "retained_failed_criteria": [],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 8.808289996000894,
+  "model_calls": 1,
+  "tokens_used": 2543,
+  "model_runtime_seconds": 8.807486042000164,
+  "model_call_failures": 0
+}

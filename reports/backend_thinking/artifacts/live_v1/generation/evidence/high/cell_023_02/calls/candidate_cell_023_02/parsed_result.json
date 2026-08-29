@@ -1,0 +1,8 @@
+{
+  "prompt": "The café is closed on Mondays. Complete the sentence using “serve”: Lunch [____] on Mondays.",
+  "target_answer": "Lunch is not served on Mondays.",
+  "accepted_answers": [
+    "is not served",
+    "isn't served"
+  ]
+}

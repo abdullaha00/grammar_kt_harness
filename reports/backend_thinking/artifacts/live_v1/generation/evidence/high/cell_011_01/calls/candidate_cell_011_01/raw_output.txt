@@ -1,0 +1,1 @@
+{"prompt":"The rain started while Mia was outside. Complete the sentence using “walk home”: Mia _____.","target_answer":"Mia was walking home.","accepted_answers":["was walking home"]}

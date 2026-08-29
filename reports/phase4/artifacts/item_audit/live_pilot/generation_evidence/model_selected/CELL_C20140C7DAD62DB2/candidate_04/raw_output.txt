@@ -1,0 +1,13 @@
+{
+  "prompt": "Yesterday, Ben planned to wash the car, but he left it dirty. Complete the sentence using the cue (Ben / wash / the car): ____",
+  "target_answer": "Ben did not wash the car.",
+  "accepted_answers": [
+    "Ben did not wash the car.",
+    "Ben didn't wash the car."
+  ],
+  "operation_tags": [
+    "do_support",
+    "negation"
+  ],
+  "note": "The response states what Ben failed to do yesterday."
+}

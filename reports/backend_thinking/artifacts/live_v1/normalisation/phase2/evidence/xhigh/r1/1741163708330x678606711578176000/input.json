@@ -1,0 +1,36 @@
+{
+  "descriptor": {
+    "source_id": "1741163708330x678606711578176000",
+    "supercategory": "CLAUSES",
+    "subcategory": "declarative",
+    "guideword": "FORM/USE: AUXILIARY 'DO', FOR EMPHASIS",
+    "can_do": "Can use the auxiliary verb 'do' in an affirmative declarative clause, for emphasis and affirmation."
+  },
+  "phase1_mapping": {
+    "source_id": "1741163708330x678606711578176000",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "examples": [
+    "Yes, I do have a favorite restaurant. (Mexico; B1 THRESHOLD; 2005; Spanish - Latin American; Pass)",
+    "I do miss you. (Syria; B1 THRESHOLD; 2002; Arabic - Levant; Pass)",
+    "I do apologise for the change but I can't be there on the 28th of June. (Italy; B1 THRESHOLD; 2003; Italian; Pass)",
+    "After all, you did say that you wanted go somewhere with your friends. (Turkey; B1 THRESHOLD; 2008; Turkish; Pass)"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163708343x587422418001030500",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": ["present", "past"],
+      "aspect": "none",
+      "voice": "active",
+      "polarity": null,
+      "clause": "subject_wh_question",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": ["tense"],
+  "note": "A subject WH-question without an auxiliary uses a finite active main verb; the descriptor does not distinguish present from past or specify polarity."
+}

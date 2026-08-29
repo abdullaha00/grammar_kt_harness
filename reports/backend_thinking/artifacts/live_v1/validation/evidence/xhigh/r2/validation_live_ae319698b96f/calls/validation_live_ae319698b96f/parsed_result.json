@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target is a positive active past perfect progressive declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The context and response form a coherent, natural description of an ongoing past activity."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It clearly practices the past perfect progressive with a duration phrase."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "Other equally valid responses, such as “She had been painting the fence since eight,” are supported but not accepted."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and scenario are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the lexical cue, not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "It can be answered using the target tense and straightforward duration language."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is required."
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "item_id": "candidate_cell_005_01",
+  "audit_id": "validation_live_be421ac65d98",
+  "cell_id": "cell_005",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_be421ac65d98",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The target is a positive active imperative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "“Turn on the light.” is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The dark-room context naturally supports the instruction."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice producing an imperative."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The cue and context clearly elicit the intended instruction."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "All vocabulary is common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives word cues but does not display the completed target sentence."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Only straightforward imperative formation is needed."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is required."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy"
+  ],
+  "packaging_correction": true,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 9.878498608999507,
+  "model_calls": 1,
+  "tokens_used": 2540,
+  "model_runtime_seconds": 9.87769663600011,
+  "model_call_failures": 0
+}

@@ -1,0 +1,87 @@
+OpenAI Codex v0.150.1
+--------
+workdir: /home/abdullah/grammar_kt_harness/reports/backend_thinking/artifacts/live_v1/validation/evidence/high/r2/validation_live_2ad76b0cd392/calls/validation_live_2ad76b0cd392
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: high
+reasoning summaries: none
+session id: 01a04690-bc44-7011-acc6-8464e3f0e33e
+--------
+user
+Judge one generated exercise independently from the generator.
+
+Use the visible learner-facing prompt, target answer, accepted answers, intended
+GrammarCell, and the declared criteria. Do not rely on generation reasoning or
+generation metadata. Judge every criterion separately and give a short note.
+
+Return one JSON object with a `judgments` mapping. Every declared criterion must
+have exactly `passed` (true/false) and `note`.
+
+VISIBLE ITEM:
+{
+  "item_id": "validation_live_2ad76b0cd392",
+  "format": "controlled_production",
+  "prompt": "Maya began piano lessons last month. Before then, she ____ the piano. (practice)",
+  "target_answer": "Before then, she had not been practicing the piano.",
+  "accepted_answers": [
+    "had not been practicing",
+    "hadn't been practicing"
+  ]
+}
+
+INTENDED GRAMMAR CELL:
+{
+  "tense": "past",
+  "aspect": "perfect_progressive",
+  "voice": "active",
+  "polarity": "negative",
+  "clause": "declarative",
+  "modal": "none"
+}
+
+VALIDATION CRITERIA:
+{
+  "target_fidelity": {
+    "required": true,
+    "question": "Does the target answer express exactly the intended GrammarCell?"
+  },
+  "grammaticality": {
+    "required": true,
+    "question": "Is the target answer grammatical English?"
+  },
+  "naturalness": {
+    "required": true,
+    "question": "Is the prompt-answer pair natural and coherent?"
+  },
+  "pedagogical_suitability": {
+    "required": true,
+    "question": "Is the item suitable for focused grammar practice?"
+  },
+  "determinacy": {
+    "required": true,
+    "question": "Does the prompt sufficiently determine the accepted response set?"
+  },
+  "non_target_language_simplicity": {
+    "required": true,
+    "question": "Is the vocabulary and context sufficiently common, transparent, and lexically unambiguous that lexical knowledge is unlikely to determine the learner's response?"
+  },
+  "no_answer_leakage": {
+    "required": true,
+    "question": "Does the prompt avoid displaying the completed target form?"
+  },
+  "no_extraneous_grammar": {
+    "required": true,
+    "question": "Can the item be solved without unrelated advanced grammar?"
+  },
+  "no_world_knowledge": {
+    "required": true,
+    "question": "Can the item be answered without external factual or specialist knowledge?"
+  }
+}
+
+codex
+{"judgments":{"target_fidelity":{"passed":true,"note":"The target is past perfect progressive, active, negative, declarative, with no modal."},"grammaticality":{"passed":true,"note":"The target sentence is grammatical English."},"naturalness":{"passed":true,"note":"The context and answer form a coherent, natural statement."},"pedagogical_suitability":{"passed":true,"note":"It provides a clear, short context for practicing the intended tense-aspect form."},"determinacy":{"passed":false,"note":"The context also permits plausible alternatives such as “had not practiced” or “did not practice,” so it does not uniquely determine the accepted progressive form."},"non_target_language_simplicity":{"passed":true,"note":"The vocabulary and situation are common and transparent."},"no_answer_leakage":{"passed":true,"note":"The completed target verb form is not shown in the prompt."},"no_extraneous_grammar":{"passed":true,"note":"Solving it requires no unrelated advanced grammar."},"no_world_knowledge":{"passed":true,"note":"No external factual or specialist knowledge is needed."}}}
+tokens used
+2,795

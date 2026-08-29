@@ -1,0 +1,36 @@
+{
+  "source_id": "1741163711055x245124661514512830",
+  "stratum": "unresolved",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163711055x245124661514512830",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "NA",
+        "aspect": null,
+        "voice": null,
+        "polarity": null,
+        "clause": null,
+        "modal": "shall"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "The exact central modal 'shall' fixes tense as NA; the descriptor does not explicitly constrain the auxiliary chain, voice, polarity, or clause type."
+  },
+  "retained_mapping": {
+    "source_id": "1741163711055x245124661514512830",
+    "result": "unresolved",
+    "cells": [],
+    "phase2_eligible": [],
+    "note": "phase2 contradiction: clause=declarative; evidence: examples use interrogative 'Shall we ...?' forms."
+  },
+  "task_runtime_seconds": 36.618884311999864,
+  "model_calls": 1,
+  "tokens_used": 7243,
+  "model_runtime_seconds": 36.618246317999365,
+  "model_call_failures": 0
+}

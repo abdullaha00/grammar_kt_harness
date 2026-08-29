@@ -1,0 +1,7 @@
+{
+  "prompt": "Today is not over. Complete the sentence using “open”: Leo ____ the window three times so far today.",
+  "target_answer": "Leo has opened the window three times so far today.",
+  "accepted_answers": [
+    "has opened"
+  ]
+}

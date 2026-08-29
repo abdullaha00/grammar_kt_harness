@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "“has cleaned” is present perfect, active, positive, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The completed target sentence is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The context of a completed earlier action with a present result coherently supports the sentence."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of the present perfect with a clear result context."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The context favors the present perfect, but past simple (“Mia cleaned the kitchen”) is also a natural grammatical completion, so the accepted set is too narrow."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the base-form cue “clean,” not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it requires no unrelated advanced grammar."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

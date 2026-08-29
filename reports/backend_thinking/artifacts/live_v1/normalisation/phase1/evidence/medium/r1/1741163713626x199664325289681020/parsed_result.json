@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163713626x199664325289681020",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": "present",
+      "aspect": "none",
+      "voice": "active",
+      "polarity": null,
+      "clause": "declarative",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": [],
+  "note": "The target is an ordinary active present-simple declarative within an if-clause; real versus imagined describes situation type rather than a canonical grammatical dimension. Polarity is unspecified."
+}

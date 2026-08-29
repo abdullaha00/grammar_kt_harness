@@ -1,0 +1,12 @@
+{
+  "prompt": "Mia is thirsty. Complete the sentence using the words in brackets: ___ (she / like / some water)",
+  "target_answer": "She would like some water.",
+  "accepted_answers": [
+    "She would like some water.",
+    "She'd like some water."
+  ],
+  "operation_tags": [
+    "central_modal"
+  ],
+  "note": "A positive declarative clause with would followed by the base form like."
+}

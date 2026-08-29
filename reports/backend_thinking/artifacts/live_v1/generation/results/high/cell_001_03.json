@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_high_cell_001_03",
+  "cell_id": "cell_001",
+  "candidate_index": 3,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: no text immediately precedes the response slot",
+  "candidate": {
+    "item_id": "candidate_cell_001_03",
+    "cell_id": "cell_001",
+    "format": "controlled_production",
+    "prompt": "Mia is asking about Ben's morning routine. Complete her question using the cue: Ben / walk to school\nMia: \"_____?\"",
+    "target_answer": "Does Ben walk to school?",
+    "accepted_answers": [
+      "Does Ben walk to school"
+    ],
+    "generation_metadata": {
+      "candidate_index": 3,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 6.488372800000434,
+  "model_calls": 1,
+  "tokens_used": 2978,
+  "model_runtime_seconds": 6.487508829000944,
+  "model_call_failures": 0
+}

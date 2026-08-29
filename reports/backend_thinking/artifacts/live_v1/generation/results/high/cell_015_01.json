@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_high_cell_015_01",
+  "cell_id": "cell_015",
+  "candidate_index": 1,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_015_01",
+    "cell_id": "cell_015",
+    "format": "controlled_production",
+    "prompt": "When Ben reached the bus stop, the bus was no longer there. Complete the sentence using the cue “leave”: The bus ____.",
+    "target_answer": "The bus had left.",
+    "accepted_answers": [
+      "had left"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 35.38847709100082,
+  "model_calls": 1,
+  "tokens_used": 1143,
+  "model_runtime_seconds": 35.387632259000384,
+  "model_call_failures": 0
+}

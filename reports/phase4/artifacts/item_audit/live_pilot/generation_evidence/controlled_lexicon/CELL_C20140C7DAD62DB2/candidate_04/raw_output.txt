@@ -1,0 +1,1 @@
+{"prompt":"Omar planned to open the door, but he changed his mind. Complete the sentence: Omar _____.","target_answer":"Omar did not open the door.","accepted_answers":["Omar did not open the door.","Omar didn't open the door."],"operation_tags":["do_support","negation"],"note":"The response is a complete negative declarative clause in the simple past."}

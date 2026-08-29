@@ -1,0 +1,60 @@
+{
+  "source_id": "1741163708336x930002080700909000",
+  "stratum": "phase2_eligible",
+  "effort": "xhigh",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708336x930002080700909000",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "Affirmative yes/no questions with lexical verbs use nonmodal DO-support; the descriptor does not distinguish present do/does from past did."
+  },
+  "retained_mapping": {
+    "source_id": "1741163708336x930002080700909000",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "polar_question",
+        "modal": "none"
+      },
+      {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 8.938729458001035,
+  "model_calls": 1,
+  "tokens_used": 6032,
+  "model_runtime_seconds": 8.93778317900069,
+  "model_call_failures": 0
+}

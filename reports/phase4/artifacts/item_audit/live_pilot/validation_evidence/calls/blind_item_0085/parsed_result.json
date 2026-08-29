@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a positive present-simple active polar question with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "“Does Lina travel?” is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and answer form a coherent question about Lina’s usual activity."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It directly practices present-simple question formation with do-support."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The cue and instruction clearly determine the intended response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "“Lina” and “travel” are common and unambiguous."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt provides only the cue, not the completed question form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Only basic present-simple question formation is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external knowledge is required."
+    }
+  }
+}

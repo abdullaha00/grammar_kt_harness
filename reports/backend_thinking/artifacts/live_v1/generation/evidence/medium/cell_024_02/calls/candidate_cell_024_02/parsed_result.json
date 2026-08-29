@@ -1,0 +1,7 @@
+{
+  "prompt": "If the rain stopped, Anna had a plan. Complete the sentence using the cue “walk”: Anna ____ to the store.",
+  "target_answer": "Anna would walk to the store.",
+  "accepted_answers": [
+    "would walk"
+  ]
+}

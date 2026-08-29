@@ -1,0 +1,8 @@
+{
+  "prompt": "Mia has a sore foot today. Complete the sentence using “walk”: She ____ to school.",
+  "target_answer": "She isn't walking to school.",
+  "accepted_answers": [
+    "isn't walking",
+    "is not walking"
+  ]
+}

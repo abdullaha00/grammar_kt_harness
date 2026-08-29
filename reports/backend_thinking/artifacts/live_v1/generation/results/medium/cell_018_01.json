@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_medium_cell_018_01",
+  "cell_id": "cell_018",
+  "candidate_index": 1,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_018_01",
+    "cell_id": "cell_018",
+    "format": "controlled_production",
+    "prompt": "Tom started washing the car at nine. At eleven, he was still doing it. Complete the sentence using the verb \"wash\": Tom [____] the car for two hours.",
+    "target_answer": "Tom had been washing the car for two hours.",
+    "accepted_answers": [
+      "had been washing"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 5.461547406001046,
+  "model_calls": 1,
+  "tokens_used": 2989,
+  "model_runtime_seconds": 5.460817044999203,
+  "model_call_failures": 0
+}

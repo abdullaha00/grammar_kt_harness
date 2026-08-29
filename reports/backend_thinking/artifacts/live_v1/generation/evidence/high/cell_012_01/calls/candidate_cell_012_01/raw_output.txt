@@ -1,0 +1,1 @@
+{"prompt":"Leo's hands are still dirty. Complete the sentence using the cue “wash”: Leo ___ his hands yet.","target_answer":"Leo has not washed his hands yet.","accepted_answers":["has not washed","hasn't washed"]}

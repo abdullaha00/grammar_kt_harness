@@ -1,0 +1,26 @@
+{
+  "source_id": "1741163708343x587422418001030500",
+  "result": "partial",
+  "cells": [
+    {
+      "aspect": "none",
+      "clause": "subject_wh_question",
+      "modal": "none",
+      "polarity": null,
+      "tense": "present",
+      "voice": "active"
+    },
+    {
+      "aspect": "none",
+      "clause": "subject_wh_question",
+      "modal": "none",
+      "polarity": null,
+      "tense": "past",
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "The examples positively establish both morphological present ('cares', 'knows') and past ('happened'), supporting separate tense refinements of the original branch. Polarity remains null because it was not Phase-2 eligible."
+}

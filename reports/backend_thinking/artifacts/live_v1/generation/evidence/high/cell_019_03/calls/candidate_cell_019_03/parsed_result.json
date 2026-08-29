@@ -1,0 +1,7 @@
+{
+  "prompt": "The window was open before the storm. After the storm, it was shut. Complete the sentence using the cue (close): The window ____.",
+  "target_answer": "The window was closed.",
+  "accepted_answers": [
+    "was closed"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target is active, positive, declarative past perfect progressive with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The timeline and response are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The item provides focused practice of the past perfect progressive."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The prompt does not explicitly require the target tense; alternatives such as simple past or past progressive could also fit the cues."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The completed target form is not displayed in the prompt."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it does not require unrelated advanced grammar."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

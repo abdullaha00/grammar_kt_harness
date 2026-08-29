@@ -1,0 +1,1 @@
+{"prompt":"Mia takes the bus to work every day. Ask about Mia's daily travel: [____]","target_answer":"Does Mia take the bus to work?","accepted_answers":["Does Mia take the bus to work?"]}

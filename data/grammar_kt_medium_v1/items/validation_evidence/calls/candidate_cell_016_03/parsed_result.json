@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses present perfect progressive, active, positive declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target sentence is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The context and completed sentence are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It clearly focuses practice on the present perfect progressive for an action continuing to now."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "“Started ... an hour ago” and “is still doing it” strongly determine “has been washing.”"
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed target verb form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving requires only the targeted tense-aspect choice."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

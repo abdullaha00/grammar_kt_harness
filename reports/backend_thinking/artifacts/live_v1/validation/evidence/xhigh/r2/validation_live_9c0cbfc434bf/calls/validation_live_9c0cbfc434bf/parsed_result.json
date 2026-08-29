@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a positive declarative in the simple past passive."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": false,
+      "note": "The prompt refers to a garden-path relative and a presupposed event without providing either, so the pair is incoherent."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "It does not provide usable material for the learner to transform into the target passive."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The blank prompt does not determine the subject, verb, or time expression of the accepted answer."
+    },
+    "non_target_language_simplicity": {
+      "passed": false,
+      "note": "“Garden-path relative” and “presupposed event” are technical, potentially opaque terms."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The completed target sentence is not shown in the prompt."
+    },
+    "no_extraneous_grammar": {
+      "passed": false,
+      "note": "Solving the stated task would require interpreting an unrelated advanced garden-path relative construction."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external factual or specialist knowledge is needed for the target sentence itself."
+    }
+  }
+}

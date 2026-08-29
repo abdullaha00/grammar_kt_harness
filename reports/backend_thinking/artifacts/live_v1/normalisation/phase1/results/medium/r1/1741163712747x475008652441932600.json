@@ -1,0 +1,45 @@
+{
+  "source_id": "1741163712747x475008652441932600",
+  "stratum": "complete_noneligible",
+  "effort": "medium",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712747x475008652441932600",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "Present perfect simple with “haven’t” marks a negative active declarative with present tense and perfect aspect."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712747x475008652441932600",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": null
+  },
+  "task_runtime_seconds": 13.591561997000099,
+  "model_calls": 1,
+  "tokens_used": 5950,
+  "model_runtime_seconds": 13.59085007900103,
+  "model_call_failures": 0
+}

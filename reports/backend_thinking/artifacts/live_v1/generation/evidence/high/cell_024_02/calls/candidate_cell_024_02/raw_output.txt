@@ -1,0 +1,1 @@
+{"prompt":"Leo has a choice between taking the bus and walking. The bus is faster, so complete the sentence using “take”: Leo ____ the bus.","target_answer":"Leo would take the bus.","accepted_answers":["would take"]}

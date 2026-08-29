@@ -1,0 +1,126 @@
+OpenAI Codex v0.150.1
+--------
+workdir: /home/abdullah/grammar_kt_harness/reports/backend_thinking/artifacts/live_v1/generation/evidence/xhigh/cell_012_01/calls/candidate_cell_012_01
+model: gpt-5.6-sol
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: xhigh
+reasoning summaries: none
+session id: 01a04698-02f8-7400-911e-417f5a604a7f
+--------
+user
+Create one controlled-production English exercise candidate for the supplied
+target.
+
+The GrammarCell is fixed. Do not choose, weaken, or reinterpret it. Realise
+every target feature in the target answer, follow the item-format contract, and
+choose your own lexical material and short context. Ordinary lexical content is
+treated as known background knowledge, not as a learner skill. Use common,
+concrete, high-frequency vocabulary that is unlikely to be the source of
+learner difficulty. Avoid specialist terms, idioms, rare senses, obscure proper
+nouns, culturally specific knowledge, and unnecessary lexical complexity.
+Choose predicates and argument structures compatible with the fixed target
+GrammarCell. Keep the context short, natural, pedagogically useful, and
+answer-determinate, and vary lexical and contextual material naturally across
+items.
+
+`target_answer` must be the complete grammatical clause obtained when the
+response slot is filled. Each string in `accepted_answers` must contain only
+the text a learner should enter in the visible response slot. Do not repeat
+words that are already printed immediately before or after the slot.
+
+Do not infer or mention KC information, grammar-fold labels, simulation
+information or assumptions, learner outcomes, or KT models. Generate this
+candidate independently. The candidate position is an experimental index, not
+learner-facing content: do not mention it in the exercise. Return exactly one
+JSON object containing: prompt, target_answer, and accepted_answers.
+
+TARGET GRAMMAR CELL:
+{
+  "cell_id": "cell_012",
+  "features": {
+    "tense": "present",
+    "aspect": "perfect",
+    "voice": "active",
+    "polarity": "negative",
+    "clause": "declarative",
+    "modal": "none"
+  }
+}
+
+CANDIDATE POSITION:
+{
+  "index": 1,
+  "count": 3
+}
+
+ITEM FORMAT:
+{
+  "format_id": "controlled_production",
+  "task_goal": "Produce the complete response licensed by a short context and lexical cue.",
+  "required_fields": [
+    "prompt",
+    "target_answer",
+    "accepted_answers"
+  ],
+  "answer_form": "text replacing the single visible response slot",
+  "constraints": [
+    "The prompt must visibly mark the response slot.",
+    "The target answer must show the complete clause after slot replacement.",
+    "Each accepted answer must contain only text entered in the response slot.",
+    "Accepted answers must preserve the intended GrammarCell.",
+    "The prompt must not reveal the completed target form."
+  ]
+}
+
+GENERATION DESIGN:
+{
+  "design_id": "best_of_three_model_selected_v1",
+  "candidates_per_cell": 3,
+  "candidate_calls": "independent",
+  "lexical_choice": "model_generated",
+  "lexical_constraint": "simple_non_target_language",
+  "nuisance_condition": "short_context"
+}
+
+ENGLISH GENERATION RULES:
+# English controlled-production generation rules
+
+- Make subject–verb agreement overt where the selected subject permits it.
+- Realise simple present/past on the finite main verb unless an auxiliary is
+  required; use DO-support for lexical-verb negation and interrogation.
+- Order the auxiliary chain as modal, perfect HAVE, progressive BE, passive BE,
+  lexical verb. Use the corresponding base, participle, or -ing forms.
+- Realise canonical passive with BE plus a past participle and a compatible
+  transitive predicate.
+- Place NOT after the finite operator. Insert DO only when no other operator is
+  present.
+- In polar and non-subject-WH questions, invert the finite operator and subject.
+  Subject-WH questions do not invert solely because the subject is WH.
+- Central modals take a base-form complement and never co-occur with
+  morphological present/past in the GrammarCell.
+- Imperatives use a base verb. Ordinary negative imperatives use DO-support;
+  LET'S NOT does not use DO-support.
+- Keep all accepted answers genuinely equivalent for the target.
+- Keep the complete realised clause in `target_answer`, but put only valid
+  response-slot spans in `accepted_answers`; never repeat text already visible
+  outside the slot.
+
+## Lexical/contextual material
+
+- Choose common, concrete, transparent vocabulary; vocabulary should not be the
+  intended source of difficulty.
+- Avoid specialist terms, idioms, rare meanings, obscure proper-noun knowledge,
+  culturally specific knowledge, and other world-knowledge dependencies.
+- Select a predicate with plausible argument structure that is compatible with
+  the grammatical construction.
+- Passive targets require a naturally transitive, passivisable predicate.
+- Keep contexts short and natural.
+- Vary lexical and contextual material across items where possible.
+
+
+codex
+{"prompt":"Mia's lunch is still untouched. Complete the sentence using “eat”: Mia [________] her lunch.","target_answer":"Mia has not eaten her lunch.","accepted_answers":["has not eaten","hasn't eaten"]}
+tokens used
+5,225

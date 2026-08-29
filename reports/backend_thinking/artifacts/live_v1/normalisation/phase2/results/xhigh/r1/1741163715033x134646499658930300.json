@@ -1,0 +1,72 @@
+{
+  "source_id": "1741163715033x134646499658930300",
+  "effort": "xhigh",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163715033x134646499658930300",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "progressive",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "present",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "All eligible examples positively establish present-tense auxiliary 'are', narrowing the licensed present/past tense space to present. Polarity remains null and cannot be refined because it is not phase2-eligible."
+  },
+  "fixed_phase1_mapping": {
+    "source_id": "1741163715033x134646499658930300",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "progressive",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "retained_phase2_mapping": {
+    "source_id": "1741163715033x134646499658930300",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "progressive",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 19.416681544000312,
+  "model_calls": 1,
+  "tokens_used": 4261,
+  "model_runtime_seconds": 19.415780330000416,
+  "model_call_failures": 0
+}

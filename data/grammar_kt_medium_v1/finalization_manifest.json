@@ -1,0 +1,82 @@
+{
+  "dataset_id": "grammar_kt_medium_v1",
+  "status": "downstream_finalized",
+  "input_bank_status": "fixed_item_bank_complete",
+  "scale": {
+    "cells": 24,
+    "selected_items": 44,
+    "learners": 1000,
+    "events": 204000,
+    "development_events_supplied_to_selector": 160000
+  },
+  "grammar_fold": {
+    "fold_id": "semantic_grammar_coverage_v1",
+    "cell_counts": {
+      "compositional_holdout": 5,
+      "development": 18,
+      "novel_feature_holdout": 1
+    }
+  },
+  "simulation": {
+    "world_id": "phase4_mixed_v1",
+    "protocol_id": "development_acquisition_frozen_probes_v1",
+    "seed": 20260827,
+    "events_are_identical_across_policies": true
+  },
+  "kc": {
+    "candidate_design_id": "schema_structural_candidates_v1",
+    "candidate_counts": {
+      "feature_value": 9,
+      "operation": 10,
+      "interaction": 18,
+      "full_cell": 18,
+      "raw_total": 55,
+      "support_eligible": 42,
+      "selection_eligible": 28,
+      "activation_equivalence_classes": 38,
+      "activation_duplicate_candidates": 17
+    },
+    "selection_id": "forward_predictive_parsimony_v1",
+    "complexity_penalty": 0.0005,
+    "policies": {
+      "factorized": {
+        "policy_id": "medium_v1_factorized",
+        "kc_count": 9,
+        "q_matrix_density": 0.23232323232323232,
+        "logistic_test_log_loss": 0.6437307892727746
+      },
+      "supported_interactions": {
+        "policy_id": "medium_v1_factorized_plus_all_supported_interactions",
+        "kc_count": 16,
+        "q_matrix_density": 0.18039772727272727,
+        "logistic_test_log_loss": 0.6433337328844257
+      },
+      "automated": {
+        "policy_id": "selected__forward_predictive_parsimony_v1",
+        "kc_count": 10,
+        "q_matrix_density": 0.21818181818181817,
+        "logistic_test_log_loss": 0.6433557926927006
+      },
+      "oracle_all_cell": {
+        "policy_id": "medium_v1_oracle_exact_all_cell",
+        "kc_count": 24,
+        "q_matrix_density": 0.041666666666666664,
+        "logistic_test_log_loss": 0.6575072912310627
+      }
+    }
+  },
+  "kt_protocol_id": "simple_online_kt_v1",
+  "evaluation_protocol_id": "grammar_kt_evaluation_v1",
+  "paired_logistic": {
+    "repeats": 5000,
+    "seed": 20260827,
+    "comparison_count": 12
+  },
+  "large_artifact_storage": {
+    "events": "simulation/events.jsonl.gz",
+    "private_oracle": "simulation/oracle_debug.json.gz",
+    "predictions": "kt/{policy}/predictions.jsonl.gz",
+    "gzip_mtime": 0
+  },
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/finalize_full_dataset.py --dataset-dir data/grammar_kt_medium_v1 --learners 1000 --seed 20260827 --bootstrap-repeats 5000"
+}

@@ -1,0 +1,24 @@
+{
+  "source_id": "1741163715031x898125206259626100",
+  "result": "partial",
+  "cells": [
+    {
+      "aspect": "none",
+      "clause": [
+        "subject_wh_question",
+        "non_subject_wh_question"
+      ],
+      "modal": "none",
+      "polarity": null,
+      "tense": [
+        "present",
+        "past"
+      ],
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "The examples positively attest both present ('are') and past ('was'), so the eligible tense range cannot be narrowed. All other Phase-1 constraints remain fixed."
+}

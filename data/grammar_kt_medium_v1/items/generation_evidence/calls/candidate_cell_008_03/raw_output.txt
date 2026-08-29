@@ -1,0 +1,1 @@
+{"prompt":"The children are outside with a ball. Complete the sentence using “play”: The children ____ in the garden.","target_answer":"The children are playing in the garden.","accepted_answers":["are playing"]}

@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is an active negative imperative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The warning fits the wet-floor context naturally."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It gives focused practice producing a negative imperative."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "Many equally natural warnings fit the prompt, such as “Don't run.” or “Don't run here.”, beyond the accepted set."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and clear."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not show the completed imperative."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Only basic imperative negation is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No specialist or external knowledge is required."
+    }
+  }
+}

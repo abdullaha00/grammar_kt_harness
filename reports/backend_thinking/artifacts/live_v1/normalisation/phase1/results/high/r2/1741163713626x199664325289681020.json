@@ -1,0 +1,27 @@
+{
+  "source_id": "1741163713626x199664325289681020",
+  "stratum": "out_of_scope",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163713626x199664325289681020",
+    "result": "out_of_scope",
+    "cells": [],
+    "phase2_eligible": [],
+    "note": "The target is a present-simple clause introduced by 'if', a linked conditional relation outside the single-main-clause scope."
+  },
+  "retained_mapping": {
+    "source_id": "1741163713626x199664325289681020",
+    "result": "out_of_scope",
+    "cells": [],
+    "phase2_eligible": [],
+    "note": "Linked conditional construction is out of scope."
+  },
+  "task_runtime_seconds": 15.677023823998752,
+  "model_calls": 1,
+  "tokens_used": 6223,
+  "model_runtime_seconds": 15.676400420999926,
+  "model_call_failures": 0
+}

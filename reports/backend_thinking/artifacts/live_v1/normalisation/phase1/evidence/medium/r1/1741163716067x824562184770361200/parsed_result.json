@@ -1,0 +1,21 @@
+{
+  "source_id": "1741163716067x824562184770361200",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": [
+        "present",
+        "past"
+      ],
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "negative",
+      "clause": "declarative",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "Negative declarative clauses with main-verb BE; contracted and uncontracted forms are surface variants. Tense is bounded to present or past but is not distinguished by the descriptor."
+}

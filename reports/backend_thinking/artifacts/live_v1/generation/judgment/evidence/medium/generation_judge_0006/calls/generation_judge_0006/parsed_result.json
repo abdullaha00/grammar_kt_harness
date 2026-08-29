@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a positive active present-simple polar question with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and question form a natural, coherent exchange."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of present-simple do-support questions."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The prompt also naturally permits “Does Mia take the bus to work every day?”, which is not accepted."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives a declarative sentence, not the completed question form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "It can be answered using the targeted present-simple question formation alone."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

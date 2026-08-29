@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163712048x834192566226660200",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": "NA",
+      "aspect": "none",
+      "voice": "passive",
+      "polarity": null,
+      "clause": null,
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": [],
+  "note": "The target is the simple passive infinitive; its listed licensing forms are not central modals in the canonical schema. Polarity and main-clause type are not specified."
+}

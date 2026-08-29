@@ -1,0 +1,16 @@
+fold_id: semantic_grammar_coverage_v1
+description: >-
+  Outcome-free semantic split. Explicit novel values are withheld completely;
+  compositional cells are sampled by feature tuple while retaining repeated
+  development support for every constituent value.
+
+compositional_holdout_fraction: 0.20
+minimum_development_value_cell_support: 2
+minimum_accepted_items_per_holdout_cell: 1
+semantic_sampling_seed: 20260827
+
+# Language/resource-specific experimental intervention. Every cell containing
+# one of these values is excluded from development, so the value is genuinely
+# novel at evaluation time.
+novel_feature_values:
+  modal: [would]

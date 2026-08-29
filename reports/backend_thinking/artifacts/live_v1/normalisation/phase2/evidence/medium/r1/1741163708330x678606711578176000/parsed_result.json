@@ -1,0 +1,26 @@
+{
+  "source_id": "1741163708330x678606711578176000",
+  "result": "complete",
+  "cells": [
+    {
+      "aspect": "none",
+      "clause": "declarative",
+      "modal": "none",
+      "polarity": "positive",
+      "tense": "present",
+      "voice": "active"
+    },
+    {
+      "aspect": "none",
+      "clause": "declarative",
+      "modal": "none",
+      "polarity": "positive",
+      "tense": "past",
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "The emphatic-DO descriptor licenses the closed nonmodal present/past space. The examples positively establish present forms with 'do' and a past form with 'did', so the original branch is refined into correlated present and past scalar descendants; all other Phase-1 constraints remain fixed."
+}

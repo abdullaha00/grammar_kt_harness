@@ -1,0 +1,17 @@
+{
+  "sample_order": 19,
+  "blind_item_id": "reliability_item_0019",
+  "candidate_id": "candidate_model_selected_CELL_0ACC7E0377B19DC1_02",
+  "condition": "model_selected",
+  "cell_id": "CELL_0ACC7E0377B19DC1",
+  "candidate_index": 2,
+  "original_accepted": true,
+  "original_failed_criteria": [],
+  "validator_output_valid": false,
+  "validation_errors": [
+    "JSONDecodeError: Expecting ',' delimiter: line 1 column 394 (char 393)"
+  ],
+  "judgments": {},
+  "accepted": false,
+  "runtime_seconds": 9.841919861006318
+}

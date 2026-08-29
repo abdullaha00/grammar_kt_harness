@@ -1,0 +1,66 @@
+{
+  "source_id": "1741163715031x898125206259626100",
+  "stratum": "phase2_eligible",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163715031x898125206259626100",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "none",
+        "voice": "active",
+        "polarity": null,
+        "clause": "non_subject_wh_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "The finite main verb BE permits present or past; its inversion before the stated subject marks a non-subject WH question. Question wording alone does not determine polarity."
+  },
+  "retained_mapping": {
+    "source_id": "1741163715031x898125206259626100",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": null,
+        "clause": [
+          "subject_wh_question",
+          "non_subject_wh_question"
+        ],
+        "modal": "none"
+      },
+      {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": null,
+        "clause": [
+          "subject_wh_question",
+          "non_subject_wh_question"
+        ],
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 15.802758690999326,
+  "model_calls": 1,
+  "tokens_used": 4292,
+  "model_runtime_seconds": 15.8019943829986,
+  "model_call_failures": 0
+}

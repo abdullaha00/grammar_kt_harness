@@ -1,0 +1,14 @@
+design_id: fixture_one_candidate_per_cell
+format: controlled_production
+generation:
+  candidates_per_cell: 1
+  candidate_calls: independent
+  lexical_choice: model_generated
+  lexical_constraint: simple_non_target_language
+  nuisance_condition: short_context
+bank_selection:
+  maximum_items_per_cell: 1
+  first_item: earliest_valid
+  second_item: maximum_token_set_distance_from_first
+  distance_text: prompt_and_target_answer
+  tie_break: earliest_candidate

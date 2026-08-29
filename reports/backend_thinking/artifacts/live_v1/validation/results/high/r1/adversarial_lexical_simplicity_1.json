@@ -1,0 +1,71 @@
+{
+  "item_id": "adversarial_lexical_simplicity_1",
+  "audit_id": "validation_live_0319fbff795b",
+  "cell_id": "cell_003",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_0319fbff795b",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The answer is present simple, active, positive, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The sentence is grammatically well formed."
+      },
+      "naturalness": {
+        "passed": false,
+        "note": "Although interpretable, the unusually obscure noun phrase and verb make the prompt-answer pair unnatural."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "Highly specialized vocabulary distracts from the intended simple-present grammar focus."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The broad prompt permits many possible descriptions and does not determine this exact response."
+      },
+      "non_target_language_simplicity": {
+        "passed": false,
+        "note": "Words such as “sesquipedalian,” “logomachist,” and “tergiversates” are uncommon and opaque."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed target sentence or target verb form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Producing the target structure does not require unrelated advanced grammar."
+      },
+      "no_world_knowledge": {
+        "passed": false,
+        "note": "Specialist lexical knowledge is needed to understand and independently produce the response."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "non_target_language_simplicity"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": true,
+  "reference_source": "authored_adversarial_negative_control",
+  "task_runtime_seconds": 12.965582368000469,
+  "model_calls": 1,
+  "tokens_used": 2763,
+  "model_runtime_seconds": 12.964808435001032,
+  "model_call_failures": 0
+}

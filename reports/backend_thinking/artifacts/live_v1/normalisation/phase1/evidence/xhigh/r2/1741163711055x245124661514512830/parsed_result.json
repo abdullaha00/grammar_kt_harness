@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163711055x245124661514512830",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": "NA",
+      "aspect": null,
+      "voice": null,
+      "polarity": null,
+      "clause": "polar_question",
+      "modal": "shall"
+    }
+  ],
+  "phase2_eligible": [],
+  "note": "The suggestion construction with 'shall' and subject 'we' is a polar question. The descriptor does not constrain the auxiliary chain, voice, or polarity."
+}

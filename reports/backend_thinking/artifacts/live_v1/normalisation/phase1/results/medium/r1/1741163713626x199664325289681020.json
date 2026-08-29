@@ -1,0 +1,36 @@
+{
+  "source_id": "1741163713626x199664325289681020",
+  "stratum": "out_of_scope",
+  "effort": "medium",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163713626x199664325289681020",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": null,
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "The target is an ordinary active present-simple declarative within an if-clause; real versus imagined describes situation type rather than a canonical grammatical dimension. Polarity is unspecified."
+  },
+  "retained_mapping": {
+    "source_id": "1741163713626x199664325289681020",
+    "result": "out_of_scope",
+    "cells": [],
+    "phase2_eligible": [],
+    "note": "Linked conditional construction is out of scope."
+  },
+  "task_runtime_seconds": 12.383978986999864,
+  "model_calls": 1,
+  "tokens_used": 6159,
+  "model_runtime_seconds": 12.383308745998875,
+  "model_call_failures": 0
+}

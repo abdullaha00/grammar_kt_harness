@@ -1,0 +1,8 @@
+{
+  "prompt": "Mia always walks to school. Complete the sentence using the cue in brackets: She ___ the bus. (take)",
+  "target_answer": "She does not take the bus.",
+  "accepted_answers": [
+    "does not take",
+    "doesn't take"
+  ]
+}

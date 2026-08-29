@@ -1,0 +1,7 @@
+{
+  "prompt": "Mia started painting the fence at 9:00 and was still doing it at noon. Complete the sentence using “paint”: By noon, Mia ____ the fence for three hours.",
+  "target_answer": "By noon, Mia had been painting the fence for three hours.",
+  "accepted_answers": [
+    "had been painting"
+  ]
+}

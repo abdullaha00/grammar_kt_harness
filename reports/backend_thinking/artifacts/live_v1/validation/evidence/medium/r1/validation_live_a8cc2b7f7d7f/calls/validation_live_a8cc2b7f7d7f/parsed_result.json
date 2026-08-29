@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "A negative active imperative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The warning context and response are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It gives focused practice producing a negative imperative."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The TOUCH cue and context strongly determine the intended warning."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "All vocabulary and context are common and clear."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the cue, not the completed form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated or advanced grammar is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "It relies only on an everyday safety situation."
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_023_03",
+  "cell_id": "cell_023",
+  "candidate_index": 3,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_023_03",
+    "cell_id": "cell_023",
+    "format": "controlled_production",
+    "prompt": "The café serves tea, but it does not serve soup. Complete the sentence using the verb in brackets: Soup [____] at the café. (serve)",
+    "target_answer": "Soup is not served at the café.",
+    "accepted_answers": [
+      "is not served"
+    ],
+    "generation_metadata": {
+      "candidate_index": 3,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 10.43882411300001,
+  "model_calls": 1,
+  "tokens_used": 3143,
+  "model_runtime_seconds": 10.438071602999116,
+  "model_call_failures": 0
+}

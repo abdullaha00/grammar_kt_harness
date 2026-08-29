@@ -6,14 +6,11 @@ import inspect
 import pytest
 
 from grammar_kt import simulate as simulation_module
-from grammar_kt.kc import project_kcs, select_kcs
-from grammar_kt.simulate import simulate
+from grammar_kt.kc import project_kcs
+from grammar_kt.simulate import _response_probability, simulate
 
 from .helpers import (
-    CANDIDATE_SPACE,
     FACTORIZED_POLICY,
-    OBLIGATION_POLICY,
-    SELECTOR,
     SIMULATION_WORLD,
     base_bank,
 )
@@ -62,12 +59,34 @@ def test_simulation_uses_fixed_accepted_bank_and_is_seed_deterministic() -> None
     assert "q_matrix" not in source
 
 
+def test_counterbalanced_item_order_changes_start_across_learners() -> None:
+    _mappings, _cells, _candidates, accepted, _judgments, fold = base_bank()
+    world = copy.deepcopy(SIMULATION_WORLD)
+    world["learners"] = 2
+    world["passes"] = 1
+    world["item_order"] = "counterbalanced_rotate_by_learner_and_pass"
+    events = simulate(accepted, fold, world)
+    first_items = [
+        next(row for row in events if row["learner_id"] == learner)["item_id"]
+        for learner in ("learner_001", "learner_002")
+    ]
+    assert first_items == [accepted[0]["item_id"], accepted[1]["item_id"]]
+
+
+def test_simulated_probability_increases_with_mastery_and_decreases_with_difficulty() -> None:
+    response = {"discrimination": 2.2, "guess_floor": 0.08, "slip_ceiling": 0.08}
+    baseline = _response_probability(0.5, 0.0, response)
+    assert _response_probability(0.8, 0.0, response) > baseline
+    assert _response_probability(0.2, 0.0, response) < baseline
+    assert _response_probability(0.5, 0.4, response) < baseline
+
+
 def test_predefined_policy_and_projection_contract() -> None:
     _mappings, cells, _candidates, accepted, _judgments, _fold = base_bank()
     projection = project_kcs(accepted, cells, FACTORIZED_POLICY)
     by_item = {row["item_id"]: row["kc_ids"] for row in projection}
-    assert by_item["item_002"] == ["kc_past", "kc_negation"]
-    assert by_item["item_005"] == [
+    assert by_item["candidate_cell_002_01"] == ["kc_past", "kc_negation"]
+    assert by_item["candidate_cell_005_01"] == [
         "kc_present",
         "kc_progressive",
         "kc_passive",
@@ -81,51 +100,3 @@ def test_predefined_policy_and_projection_contract() -> None:
     unknown = [{**accepted[0], "cell_id": "cell_unknown"}]
     with pytest.raises(ValueError, match="unknown GrammarCell"):
         project_kcs(unknown, cells, FACTORIZED_POLICY)
-
-
-def test_selected_policy_uses_development_only_and_prefers_covering_interaction() -> None:
-    _mappings, cells, _candidates, accepted, _judgments, fold = base_bank()
-    first = select_kcs(
-        cells,
-        accepted,
-        fold,
-        CANDIDATE_SPACE,
-        OBLIGATION_POLICY,
-        SELECTOR,
-    )
-    holdout_ids = {
-        row["cell_id"]
-        for row in fold
-        if row["grammar_split"] != "development"
-    }
-    changed = copy.deepcopy(cells)
-    for cell in changed:
-        if cell["cell_id"] in holdout_ids:
-            cell["features"] = {
-                name: "UNREAD_HOLDOUT" for name in cell["features"]
-            }
-            cell["source_ids"] = ["mutated_holdout"]
-    second = select_kcs(
-        changed,
-        accepted,
-        fold,
-        CANDIDATE_SPACE,
-        OBLIGATION_POLICY,
-        SELECTOR,
-    )
-    assert first == second
-    metadata = first["selection_metadata"]
-    assert metadata["holdout_content_read"] is False
-    assert set(metadata["development_cell_ids"]) == {
-        "cell_001",
-        "cell_002",
-        "cell_003",
-        "cell_004",
-    }
-    assert all(
-        item_id in {"item_001", "item_002", "item_003", "item_004"}
-        for item_id in metadata["development_item_ids"]
-    )
-    selected_ids = {row["id"] for row in first["kcs"]}
-    assert "kc_past_negative" in selected_ids
-    assert not {"kc_past", "kc_negation"} & selected_ids

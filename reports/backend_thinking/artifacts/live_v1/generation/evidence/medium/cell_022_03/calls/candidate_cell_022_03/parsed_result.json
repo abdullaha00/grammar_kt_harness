@@ -1,0 +1,7 @@
+{
+  "prompt": "The guests arrived at noon. By then, the windows [_____]. (clean)",
+  "target_answer": "The windows had been cleaned.",
+  "accepted_answers": [
+    "had been cleaned"
+  ]
+}

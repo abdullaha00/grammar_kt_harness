@@ -1,0 +1,12 @@
+{
+  "prompt": "You want to know whether Mia feeds the cat every morning. Use: Mia / feed the cat every morning. Response: ______",
+  "target_answer": "Does Mia feed the cat every morning?",
+  "accepted_answers": [
+    "Does Mia feed the cat every morning?"
+  ],
+  "operation_tags": [
+    "do_support",
+    "operator_inversion"
+  ],
+  "note": "Use the cues to write a complete yes-or-no question."
+}

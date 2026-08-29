@@ -1,0 +1,45 @@
+{
+  "source_id": "1741163712321x444348941700378800",
+  "stratum": "partial_noneligible",
+  "effort": "xhigh",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712321x444348941700378800",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "past",
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": null,
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "Past continuous fixes past tense, progressive aspect, active voice, and no modal. Bare generic questions establish neither polarity nor a closed question subtype."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712321x444348941700378800",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "past",
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": null,
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "phase2 eligible: none"
+  },
+  "task_runtime_seconds": 10.34541218800041,
+  "model_calls": 1,
+  "tokens_used": 6065,
+  "model_runtime_seconds": 10.344742158998997,
+  "model_call_failures": 0
+}

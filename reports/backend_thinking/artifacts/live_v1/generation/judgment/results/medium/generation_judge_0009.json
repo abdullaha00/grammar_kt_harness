@@ -1,0 +1,65 @@
+{
+  "blind_id": "generation_judge_0009",
+  "experiment_item_id": "generation_high_cell_021_03",
+  "generation_effort": "high",
+  "cell_id": "cell_021",
+  "candidate_index": 3,
+  "judge_effort": "medium",
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "generation_judge_0009",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "Uses present progressive passive: 'is being painted'."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt and answer form a coherent, natural paraphrase."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It directly practises the present progressive passive."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The context, cue, and blank clearly determine 'is being painted'."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary is common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed passive form is not displayed in the prompt."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Only the target passive progressive construction is needed."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external knowledge is required."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "task_runtime_seconds": 7.454039956000997,
+  "model_calls": 1,
+  "tokens_used": 2459,
+  "model_runtime_seconds": 7.453247785000713,
+  "model_call_failures": 0
+}

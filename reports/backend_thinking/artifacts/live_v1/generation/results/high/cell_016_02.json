@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_high_cell_016_02",
+  "cell_id": "cell_016",
+  "candidate_index": 2,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_016_02",
+    "cell_id": "cell_016",
+    "format": "controlled_production",
+    "prompt": "Mia started cleaning the kitchen an hour ago, and she is still doing it. Complete the sentence: Mia ____ the kitchen for an hour.",
+    "target_answer": "Mia has been cleaning the kitchen for an hour.",
+    "accepted_answers": [
+      "has been cleaning"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 5.128479410001091,
+  "model_calls": 1,
+  "tokens_used": 5029,
+  "model_runtime_seconds": 5.127770638999209,
+  "model_call_failures": 0
+}

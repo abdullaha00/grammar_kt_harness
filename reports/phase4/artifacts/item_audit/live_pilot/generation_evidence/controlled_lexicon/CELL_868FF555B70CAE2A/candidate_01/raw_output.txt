@@ -1,0 +1,12 @@
+{
+  "prompt": "You want to know about Lina's usual activity. Use the cue (Lina / travel) to write a complete question: ____",
+  "target_answer": "Does Lina travel?",
+  "accepted_answers": [
+    "Does Lina travel?"
+  ],
+  "operation_tags": [
+    "do_support",
+    "operator_inversion"
+  ],
+  "note": "Use a simple present yes/no question."
+}

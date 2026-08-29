@@ -1,0 +1,7 @@
+{
+  "prompt": "At 8:00 last night, Ben was in the kitchen. Complete the sentence using “cook dinner”: Ben ____.",
+  "target_answer": "Ben was cooking dinner.",
+  "accepted_answers": [
+    "was cooking dinner"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "source_id": "1741163712739x998605611367738000",
+  "stratum": "complete_noneligible",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712739x998605611367738000",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "Past simple negative declaratives with ordinary active verbs."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712739x998605611367738000",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": null
+  },
+  "task_runtime_seconds": 8.634472183999605,
+  "model_calls": 1,
+  "tokens_used": 5999,
+  "model_runtime_seconds": 8.63380421399961,
+  "model_call_failures": 0
+}

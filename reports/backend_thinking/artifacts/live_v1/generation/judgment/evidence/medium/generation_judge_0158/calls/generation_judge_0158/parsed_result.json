@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses present perfect progressive, active, positive declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target sentence is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "Wet ground and an ongoing/recent two-hour rain form a coherent context."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It clearly practices the present perfect progressive with a duration phrase."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The duration and present-result context strongly determine “has been raining.”"
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies only the base word “rain,” not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external knowledge is required."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target is a negative past perfect progressive active declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target sentence is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The context and answer are coherent and reasonably natural."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The prompt does not clearly signal the required progressive aspect, weakening its value as focused practice."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "“Had not worked” is also a grammatical, contextually valid completion but is not accepted."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and work context are common and clear."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the base verb “work,” not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed to understand or complete the item."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The item requires no external or specialist knowledge."
+    }
+  }
+}

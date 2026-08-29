@@ -1,0 +1,8 @@
+{
+  "prompt": "Tom usually drinks tea, but he dislikes coffee. Complete the sentence using the verb “drink”: Tom ____ coffee.",
+  "target_answer": "Tom does not drink coffee.",
+  "accepted_answers": [
+    "does not drink",
+    "doesn't drink"
+  ]
+}

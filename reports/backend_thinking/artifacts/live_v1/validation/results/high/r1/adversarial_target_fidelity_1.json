@@ -1,0 +1,71 @@
+{
+  "item_id": "adversarial_target_fidelity_1",
+  "audit_id": "validation_live_7faf0081aef2",
+  "cell_id": "cell_003",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_7faf0081aef2",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": false,
+        "note": "The target is past simple negative, not present positive."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt and answer are broadly coherent, though “routine” is slightly awkward with “yesterday.”"
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "It does not practice the declared present-positive GrammarCell."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The prompt gives no information that determines the exact sentence or accepted response."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and context are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed target form is not shown in the prompt."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The target uses only basic past-simple negation."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external knowledge is required."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "target_fidelity"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": true,
+  "reference_source": "authored_adversarial_negative_control",
+  "task_runtime_seconds": 9.93120051599908,
+  "model_calls": 1,
+  "tokens_used": 2613,
+  "model_runtime_seconds": 9.930383007000273,
+  "model_call_failures": 0
+}

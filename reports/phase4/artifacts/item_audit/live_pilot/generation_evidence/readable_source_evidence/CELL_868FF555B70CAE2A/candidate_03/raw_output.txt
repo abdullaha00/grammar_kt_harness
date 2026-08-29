@@ -1,0 +1,12 @@
+{
+  "prompt": "You want to know how Maya usually gets to school. Use the cue (Maya / walk to school) to complete the question: ____",
+  "target_answer": "Does Maya walk to school?",
+  "accepted_answers": [
+    "Does Maya walk to school?"
+  ],
+  "operation_tags": [
+    "do_support",
+    "operator_inversion"
+  ],
+  "note": "The question asks about Maya's usual way of getting to school."
+}

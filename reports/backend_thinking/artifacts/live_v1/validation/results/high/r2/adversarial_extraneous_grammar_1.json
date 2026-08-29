@@ -1,0 +1,71 @@
+{
+  "item_id": "adversarial_extraneous_grammar_1",
+  "audit_id": "validation_live_24b1fa46b8c1",
+  "cell_id": "cell_003",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_24b1fa46b8c1",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The target is a present-tense, active, positive declarative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "“Mia closes the window.” is grammatical English."
+      },
+      "naturalness": {
+        "passed": false,
+        "note": "The prompt is highly unnatural and provides no coherent conditional context for the answer."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "It does not provide enough linguistic material for focused practice of the intended form."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "Nothing in the prompt determines Mia, closing, or the window as the required consequence."
+      },
+      "non_target_language_simplicity": {
+        "passed": false,
+        "note": "“Counterfactual protasis” and “ellipsis” are advanced metalinguistic terms."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed target sentence."
+      },
+      "no_extraneous_grammar": {
+        "passed": false,
+        "note": "Solving it requires understanding advanced conditional and ellipsis terminology unrelated to the target GrammarCell."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external factual or specialist knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "no_extraneous_grammar"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": true,
+  "reference_source": "authored_adversarial_negative_control",
+  "task_runtime_seconds": 10.901042262999908,
+  "model_calls": 1,
+  "tokens_used": 2665,
+  "model_runtime_seconds": 10.900220093999451,
+  "model_call_failures": 0
+}

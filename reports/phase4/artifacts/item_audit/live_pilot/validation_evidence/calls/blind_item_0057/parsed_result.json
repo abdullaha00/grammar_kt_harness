@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target is present perfect, active, negative, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "“Mia has not read a book.” is grammatical English."
+    },
+    "naturalness": {
+      "passed": false,
+      "note": "The sentence-completion prompt already supplies “Mia,” so inserting the accepted full sentence produces “Mia Mia has not read a book.”"
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The mismatch between the prompt stem and accepted full-sentence answers makes the exercise confusing."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The prompt calls for completion after “Mia,” but the accepted answers include “Mia,” so the expected response form is not clearly determined."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and straightforward."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed present-perfect negative form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it only requires the intended present perfect negative structure."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

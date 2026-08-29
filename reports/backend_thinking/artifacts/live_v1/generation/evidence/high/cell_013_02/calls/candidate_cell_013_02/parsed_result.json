@@ -1,0 +1,7 @@
+{
+  "prompt": "The kitchen is clean now. Complete the sentence with the present perfect form of “clean”: My brother ____ the kitchen.",
+  "target_answer": "My brother has cleaned the kitchen.",
+  "accepted_answers": [
+    "has cleaned"
+  ]
+}

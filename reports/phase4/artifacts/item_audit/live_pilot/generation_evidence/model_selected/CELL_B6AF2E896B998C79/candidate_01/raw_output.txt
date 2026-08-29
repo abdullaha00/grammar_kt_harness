@@ -1,0 +1,1 @@
+{"prompt":"The workers painted the gate yesterday. Complete the sentence about the gate: _____.","target_answer":"The gate was painted yesterday.","accepted_answers":["The gate was painted yesterday."],"operation_tags":["be_passive"],"note":"Use the simple past passive."}

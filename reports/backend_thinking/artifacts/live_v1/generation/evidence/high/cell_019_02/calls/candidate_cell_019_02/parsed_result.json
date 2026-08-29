@@ -1,0 +1,7 @@
+{
+  "prompt": "Yesterday, the staff washed all the windows before the shop opened. Complete the sentence using the cue (wash): The windows ____.",
+  "target_answer": "The windows were washed yesterday.",
+  "accepted_answers": [
+    "were washed yesterday"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "prompt": "The dishes are still dirty. Complete the response using the cue (Emma / not wash / the dishes): ____",
+  "target_answer": "Emma has not washed the dishes.",
+  "accepted_answers": [
+    "Emma has not washed the dishes.",
+    "Emma hasn't washed the dishes."
+  ],
+  "operation_tags": [
+    "perfect",
+    "negation"
+  ],
+  "note": "The response slot requires one complete English clause."
+}

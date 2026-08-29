@@ -1,0 +1,7 @@
+{
+  "prompt": "The café is getting ready to open. Complete the sentence using the verb in brackets: Right now, the tables _____. (clean)",
+  "target_answer": "Right now, the tables are being cleaned.",
+  "accepted_answers": [
+    "are being cleaned"
+  ]
+}

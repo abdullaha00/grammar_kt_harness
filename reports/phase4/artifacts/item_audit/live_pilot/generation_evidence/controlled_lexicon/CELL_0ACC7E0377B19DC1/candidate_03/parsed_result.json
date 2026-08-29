@@ -1,0 +1,11 @@
+{
+  "prompt": "Lina does not have enough money for a plane ticket. What does she say? Use the cue: travel / if I had enough money\nResponse: ______",
+  "target_answer": "I would travel if I had enough money.",
+  "accepted_answers": [
+    "I would travel if I had enough money."
+  ],
+  "operation_tags": [
+    "central_modal"
+  ],
+  "note": "The response is a positive declarative clause with would followed by the base-form verb travel."
+}

@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163716067x824562184770361200",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": ["present", "past"],
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "negative",
+      "clause": "declarative",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": ["tense"],
+  "note": "Main-verb BE forms a negative declarative in either present or past; contracted versus uncontracted form does not alter the canonical dimensions."
+}

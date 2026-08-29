@@ -1,0 +1,8 @@
+{
+  "prompt": "Lena planned to bake all morning, but the broken oven stopped her from starting. Complete the sentence using the cue “bake”: By noon, Lena ___.",
+  "target_answer": "By noon, Lena had not been baking.",
+  "accepted_answers": [
+    "had not been baking",
+    "hadn't been baking"
+  ]
+}

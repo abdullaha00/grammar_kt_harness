@@ -1,0 +1,18 @@
+{
+  "source_id": "1741163716067x824562184770361200",
+  "result": "complete",
+  "cells": [
+    {
+      "aspect": "none",
+      "clause": "declarative",
+      "modal": "none",
+      "polarity": "negative",
+      "tense": "present",
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "All eligible examples positively establish present-tense main-verb BE negation, narrowing the licensed present/past alternative to present."
+}

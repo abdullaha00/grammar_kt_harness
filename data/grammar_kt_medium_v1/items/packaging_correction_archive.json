@@ -1,0 +1,26 @@
+{
+  "status": "stale_pre_curation_artifacts_archived",
+  "protocol": "frozen_item_packaging_correction_v1",
+  "plan_sha256": "bbed7be77c2d326bd7133308ea22d637bed5de8d44cd4bb470a2421c4ebe0dc5",
+  "archive_path": "superseded_pre_curation/2026-08-27_f36_packaging_correction",
+  "archived_paths": [
+    "manifest.json",
+    "finalization_manifest.json",
+    "fold",
+    "simulation",
+    "kc",
+    "kt",
+    "evaluation",
+    "items/validator_accepted.jsonl",
+    "items/selected_bank.jsonl",
+    "items/bank_summary.json",
+    "items/missing_cells.jsonl"
+  ],
+  "raw_artifacts_preserved_in_place": [
+    "items/candidates.jsonl",
+    "items/validation.jsonl",
+    "items/generation_attempts.jsonl",
+    "items/generation_evidence",
+    "items/validation_evidence"
+  ]
+}

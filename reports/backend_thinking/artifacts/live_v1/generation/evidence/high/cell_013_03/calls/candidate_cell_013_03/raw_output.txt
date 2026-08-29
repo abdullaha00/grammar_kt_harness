@@ -1,0 +1,1 @@
+{"prompt":"The kitchen is clean now. Use the words (Maya / clean / the kitchen) to complete the sentence in the present perfect: ____","target_answer":"Maya has cleaned the kitchen.","accepted_answers":["Maya has cleaned the kitchen."]}

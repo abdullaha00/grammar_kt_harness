@@ -1,0 +1,12 @@
+{
+  "prompt": "At noon, the car was still soapy. Complete the sentence using the cues (Maya / wash / the car / for an hour): ____",
+  "target_answer": "Maya had been washing the car for an hour.",
+  "accepted_answers": [
+    "Maya had been washing the car for an hour."
+  ],
+  "operation_tags": [
+    "perfect",
+    "progressive"
+  ],
+  "note": "The activity continued over a period before a stated past time."
+}

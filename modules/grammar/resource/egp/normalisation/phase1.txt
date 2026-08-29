@@ -9,10 +9,13 @@ asserted alternatives; use a list for a bounded but unresolved set; and use
 null when the descriptor supplies no usable constraint. Do not invent a
 Cartesian product.
 
-For a partial result, begin the note with `phase2 eligible:` followed by the
-dimensions that examples are allowed to refine, or `none`.
+Set `phase2_eligible` to the canonical dimensions that examples are allowed to
+refine, in canonical order. Every named dimension must contain uncertainty in
+at least one cell. Use an empty list when no dimension is eligible. Keep `note`
+for a short linguistic explanation, not machine-readable routing.
 
-Return one JSON object with exactly: source_id, result, cells, note.
+Return one JSON object with exactly: source_id, result, cells,
+phase2_eligible, note.
 
 PHASE-1 DESCRIPTOR:
 {{descriptor}}

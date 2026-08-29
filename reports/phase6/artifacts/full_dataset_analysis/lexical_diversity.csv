@@ -1,0 +1,4 @@
+material,items,unique_prompts,unique_prompt_rate,prompt_lexical_tokens,prompt_lexical_types,prompt_type_token_ratio,median_prompt_tokens,rank2_items,median_rank2_token_set_distance
+all_validator_accepted,54,54,1.0,976,253,0.25922131147540983,17.0,0,
+selected_bank,44,44,1.0,795,242,0.30440251572327043,17.0,20,0.7386363636363636
+selected_rank1_only,24,24,1.0,442,174,0.3936651583710407,17.0,0,

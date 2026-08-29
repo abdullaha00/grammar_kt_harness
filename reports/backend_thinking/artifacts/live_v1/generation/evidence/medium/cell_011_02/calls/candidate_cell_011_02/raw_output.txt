@@ -1,0 +1,1 @@
+{"prompt":"At 7:00 yesterday evening, Mia was in the kitchen. Complete the sentence using “cook dinner”: Mia _____.","target_answer":"Mia was cooking dinner.","accepted_answers":["was cooking dinner"]}

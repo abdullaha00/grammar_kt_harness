@@ -1,0 +1,72 @@
+{
+  "source_id": "1741163716067x824562184770361200",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163716067x824562184770361200",
+    "result": "complete",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "negative",
+        "tense": "present",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "All eligible examples positively establish present-tense main-verb BE negation, narrowing the licensed present/past alternative to present."
+  },
+  "fixed_phase1_mapping": {
+    "source_id": "1741163716067x824562184770361200",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "negative",
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "retained_phase2_mapping": {
+    "source_id": "1741163716067x824562184770361200",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "negative",
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 10.678673107999202,
+  "model_calls": 1,
+  "tokens_used": 4248,
+  "model_runtime_seconds": 10.677923564000594,
+  "model_call_failures": 0
+}

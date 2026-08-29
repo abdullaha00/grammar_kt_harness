@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_high_cell_004_03",
+  "cell_id": "cell_004",
+  "candidate_index": 3,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_004_03",
+    "cell_id": "cell_004",
+    "format": "controlled_production",
+    "prompt": "Mia usually walks to work. Yesterday, it rained, so she ___ instead. (take the bus)",
+    "target_answer": "She took the bus instead.",
+    "accepted_answers": [
+      "took the bus"
+    ],
+    "generation_metadata": {
+      "candidate_index": 3,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 5.872609830999863,
+  "model_calls": 1,
+  "tokens_used": 5018,
+  "model_runtime_seconds": 5.871858082000472,
+  "model_call_failures": 0
+}

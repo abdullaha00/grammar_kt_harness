@@ -1,0 +1,71 @@
+{
+  "item_id": "adversarial_target_fidelity_2",
+  "audit_id": "validation_live_e8fe198f358d",
+  "cell_id": "cell_019",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_e8fe198f358d",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": false,
+        "note": "The target is present simple active, not past passive."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt and answer form a coherent, natural sentence."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "It does not practise the intended past passive form."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The prompt permits multiple plausible sentences and does not specify the intended tense or voice."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary is common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed target sentence."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The target uses only straightforward grammar."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external factual or specialist knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "target_fidelity"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": true,
+  "reference_source": "authored_adversarial_negative_control",
+  "task_runtime_seconds": 8.05954350400134,
+  "model_calls": 1,
+  "tokens_used": 2463,
+  "model_runtime_seconds": 8.058770289000677,
+  "model_call_failures": 0
+}

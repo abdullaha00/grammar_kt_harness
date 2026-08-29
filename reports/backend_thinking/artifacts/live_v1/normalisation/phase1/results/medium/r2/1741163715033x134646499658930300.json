@@ -1,0 +1,56 @@
+{
+  "source_id": "1741163715033x134646499658930300",
+  "stratum": "phase2_eligible",
+  "effort": "medium",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163715033x134646499658930300",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": null,
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense",
+      "polarity"
+    ],
+    "note": "Auxiliary BE with an -ing form marks progressive aspect and subject–auxiliary inversion marks a polar question; the descriptor does not distinguish present from past BE or specify polarity."
+  },
+  "retained_mapping": {
+    "source_id": "1741163715033x134646499658930300",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": null,
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 11.331886812999073,
+  "model_calls": 1,
+  "tokens_used": 4059,
+  "model_runtime_seconds": 11.331154792000234,
+  "model_call_failures": 0
+}

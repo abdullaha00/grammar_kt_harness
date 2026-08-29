@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_medium_cell_011_01",
+  "cell_id": "cell_011",
+  "candidate_index": 1,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_011_01",
+    "cell_id": "cell_011",
+    "format": "controlled_production",
+    "prompt": "At 8:00 last night, Ben was in the kitchen. Complete the sentence using “cook dinner”: Ben ____.",
+    "target_answer": "Ben was cooking dinner.",
+    "accepted_answers": [
+      "was cooking dinner"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 7.905293628999061,
+  "model_calls": 1,
+  "tokens_used": 5021,
+  "model_runtime_seconds": 7.904457627000738,
+  "model_call_failures": 0
+}

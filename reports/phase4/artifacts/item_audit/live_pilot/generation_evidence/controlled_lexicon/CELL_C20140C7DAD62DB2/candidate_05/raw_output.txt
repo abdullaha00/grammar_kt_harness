@@ -1,0 +1,1 @@
+{"prompt":"The earlier train was full, so complete the sentence with the cue (we / take / the earlier train): ____","target_answer":"We did not take the earlier train.","accepted_answers":["We did not take the earlier train.","We didn't take the earlier train."],"operation_tags":["do_support","negation"],"note":"Use the cue to write one complete clause that matches the context."}

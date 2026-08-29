@@ -1,0 +1,1 @@
+{"prompt":"The floor was dirty earlier, but it is clean now. Complete the sentence using the cue “clean”: She ____ the floor.","target_answer":"She has cleaned the floor.","accepted_answers":["has cleaned"]}

@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a positive past simple passive declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and response form a coherent active-to-passive transformation."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of the past passive."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "Other natural responses, such as adding “yesterday” or an agent phrase, are also supported but are not accepted."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the noun and verb cues, not the completed passive form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving requires only the intended past passive construction."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No factual or specialist knowledge is needed."
+    }
+  }
+}

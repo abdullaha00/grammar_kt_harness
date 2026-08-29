@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_medium_cell_002_02",
+  "cell_id": "cell_002",
+  "candidate_index": 2,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: no text immediately precedes the response slot",
+  "candidate": {
+    "item_id": "candidate_cell_002_02",
+    "cell_id": "cell_002",
+    "format": "controlled_production",
+    "prompt": "You want to know whether Mia used the bus yesterday. Complete the question: ___ the bus yesterday?",
+    "target_answer": "Did Mia take the bus yesterday?",
+    "accepted_answers": [
+      "Did Mia take"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 7.696241587000259,
+  "model_calls": 1,
+  "tokens_used": 2969,
+  "model_runtime_seconds": 7.695379310000135,
+  "model_call_failures": 0
+}

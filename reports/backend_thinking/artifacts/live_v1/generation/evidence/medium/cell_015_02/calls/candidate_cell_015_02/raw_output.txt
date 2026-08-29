@@ -1,0 +1,1 @@
+{"prompt":"Tom arrived at the café at noon, but Mia was already there. Complete the sentence using the cue (leave home): By noon, Mia ____.","target_answer":"By noon, Mia had left home.","accepted_answers":["had left home"]}

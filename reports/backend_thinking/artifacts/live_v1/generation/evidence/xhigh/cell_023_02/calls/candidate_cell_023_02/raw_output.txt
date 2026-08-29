@@ -1,0 +1,1 @@
+{"prompt":"This shop only sells books. Complete the sentence using “sell”: Shoes ___ here.","target_answer":"Shoes are not sold here.","accepted_answers":["are not sold","aren't sold"]}

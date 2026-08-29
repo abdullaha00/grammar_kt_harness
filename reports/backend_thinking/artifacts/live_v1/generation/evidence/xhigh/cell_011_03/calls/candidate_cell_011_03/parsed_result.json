@@ -1,0 +1,7 @@
+{
+  "prompt": "The rain started before lunch. At noon, it _____. (fall)",
+  "target_answer": "At noon, it was falling.",
+  "accepted_answers": [
+    "was falling"
+  ]
+}

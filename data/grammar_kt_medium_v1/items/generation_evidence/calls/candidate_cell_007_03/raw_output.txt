@@ -1,0 +1,1 @@
+{"prompt":"Mia drinks tea, but she avoids coffee. Complete the sentence: Mia ____ coffee.","target_answer":"Mia does not drink coffee.","accepted_answers":["does not drink","doesn't drink"]}

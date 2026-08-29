@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_high_cell_007_02",
+  "cell_id": "cell_007",
+  "candidate_index": 2,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_007_02",
+    "cell_id": "cell_007",
+    "format": "controlled_production",
+    "prompt": "Mia always walks to school. Complete the sentence using the cue in brackets: She ___ the bus. (take)",
+    "target_answer": "She does not take the bus.",
+    "accepted_answers": [
+      "does not take",
+      "doesn't take"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 11.670643752000615,
+  "model_calls": 1,
+  "tokens_used": 5233,
+  "model_runtime_seconds": 11.669804701999965,
+  "model_call_failures": 0
+}

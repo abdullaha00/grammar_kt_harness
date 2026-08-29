@@ -1,0 +1,65 @@
+{
+  "blind_id": "generation_judge_0119",
+  "experiment_item_id": "generation_xhigh_cell_021_02",
+  "generation_effort": "xhigh",
+  "cell_id": "cell_021",
+  "candidate_index": 2,
+  "judge_effort": "medium",
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "generation_judge_0119",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "“is being painted” is present progressive passive, positive declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt and answer form a natural, coherent description of an action in progress."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of the present progressive passive."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "“Right now” and the door as receiver of the action clearly cue “is being painted.”"
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "“Painting a door” uses common, transparent vocabulary."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives only the base-form cue “paint,” not the completed passive progressive form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The response requires only the targeted present progressive passive construction."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "task_runtime_seconds": 8.894107017998977,
+  "model_calls": 1,
+  "tokens_used": 2488,
+  "model_runtime_seconds": 8.893295440999282,
+  "model_call_failures": 0
+}

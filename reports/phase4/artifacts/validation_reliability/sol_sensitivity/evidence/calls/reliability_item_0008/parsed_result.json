@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The answer is present progressive passive, positive, declarative, and contains no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatically correct English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The response naturally and coherently restates the ongoing action from the fence's perspective."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The active context and word cue provide focused practice forming the present progressive passive."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The context, cue, and ongoing-time signal sufficiently determine the accepted sentence."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and painting context are common, transparent, and unambiguous."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed passive form 'is being painted.'"
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed to produce the response."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The item can be answered entirely from the supplied context and cue."
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "item_id": "candidate_cell_017_06",
+  "audit_id": "validation_live_60931ab93d0b",
+  "cell_id": "cell_017",
+  "effort": "medium",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_60931ab93d0b",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "“had not been sleeping” is negative past perfect continuous, active declarative."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The cause-and-duration context is coherent and natural."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It directly practices the requested form in a clear context."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The verb, polarity, tense-aspect form, and blank position determine the accepted response."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "Vocabulary is common and context is transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed target form is not shown in the prompt."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "No unrelated advanced grammar is needed to complete the blank."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external knowledge is required."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": true,
+  "retained_failed_criteria": [],
+  "packaging_correction": true,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 8.279955040999994,
+  "model_calls": 1,
+  "tokens_used": 2507,
+  "model_runtime_seconds": 8.27914470900032,
+  "model_call_failures": 0
+}

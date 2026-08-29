@@ -1,0 +1,34 @@
+{
+  "item_id": "candidate_cell_019_01",
+  "audit_id": "validation_live_fc1390064b86",
+  "cell_id": "cell_019",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_fc1390064b86",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": false,
+        "note": "accepted answer repeats punctuation already printed immediately after the response slot: '.'"
+      }
+    },
+    "judgments": {},
+    "accepted": false,
+    "rejection_stage": "deterministic_precheck"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 6.872700032545254e-05,
+  "model_calls": 0,
+  "tokens_used": 0,
+  "model_runtime_seconds": 0,
+  "model_call_failures": 0
+}

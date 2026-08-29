@@ -1,0 +1,1 @@
+{"prompt":"You want to know about a friend's daily routine. Use these words to ask a question: her brother / walk / to school. [____]","target_answer":"Does her brother walk to school?","accepted_answers":["Does her brother walk to school?"]}

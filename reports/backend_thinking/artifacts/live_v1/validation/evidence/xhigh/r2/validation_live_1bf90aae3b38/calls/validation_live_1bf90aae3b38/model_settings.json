@@ -1,0 +1,7 @@
+{
+  "model": "gpt-5.6-terra",
+  "reasoning_effort": "xhigh",
+  "stage": "validation",
+  "call_key": "validation_live_1bf90aae3b38",
+  "codex_version": "codex-cli 0.150.1"
+}

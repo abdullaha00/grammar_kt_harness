@@ -1,0 +1,32 @@
+{
+  "source_id": "1741163715031x898125206259626100",
+  "result": "partial",
+  "cells": [
+    {
+      "aspect": "none",
+      "clause": [
+        "subject_wh_question",
+        "non_subject_wh_question"
+      ],
+      "modal": "none",
+      "polarity": null,
+      "tense": "present",
+      "voice": "active"
+    },
+    {
+      "aspect": "none",
+      "clause": [
+        "subject_wh_question",
+        "non_subject_wh_question"
+      ],
+      "modal": "none",
+      "polarity": null,
+      "tense": "past",
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "The descriptor licenses finite main-BE wh-questions across the closed present/past tense space. The examples positively establish present forms ('are') and a past form ('was'), so the original branch is narrowed into corresponding present and past descendants. Clause subtype and polarity remain unchanged because they are not Phase-2 eligible."
+}

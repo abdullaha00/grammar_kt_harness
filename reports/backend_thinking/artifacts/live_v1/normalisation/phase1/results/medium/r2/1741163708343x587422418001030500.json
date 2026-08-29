@@ -1,0 +1,60 @@
+{
+  "source_id": "1741163708343x587422418001030500",
+  "stratum": "phase2_eligible",
+  "effort": "medium",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708343x587422418001030500",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "none",
+        "voice": "active",
+        "polarity": null,
+        "clause": "subject_wh_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "The descriptor specifies a subject-WH question with a finite main verb and no auxiliary, establishing simple active nonmodal structure but not present versus past tense or polarity."
+  },
+  "retained_mapping": {
+    "source_id": "1741163708343x587422418001030500",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": null,
+        "clause": "subject_wh_question",
+        "modal": "none"
+      },
+      {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": null,
+        "clause": "subject_wh_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 12.18432450399996,
+  "model_calls": 1,
+  "tokens_used": 6099,
+  "model_runtime_seconds": 12.183601077000276,
+  "model_call_failures": 0
+}

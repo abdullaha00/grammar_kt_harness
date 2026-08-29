@@ -1,0 +1,1 @@
+{"prompt":"Emma is standing beside her bicycle and has not started her trip. Complete the sentence using the words in brackets: Emma _____. (ride / her bicycle)","target_answer":"Emma is not riding her bicycle.","accepted_answers":["is not riding her bicycle","isn't riding her bicycle"]}

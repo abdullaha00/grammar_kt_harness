@@ -1,0 +1,45 @@
+{
+  "source_id": "1741163712747x475008652441932600",
+  "stratum": "complete_noneligible",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712747x475008652441932600",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "The present perfect negative formula with “haven’t” establishes present tense, perfect aspect, active voice, negative polarity, and an ordinary declarative clause without a central modal."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712747x475008652441932600",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": null
+  },
+  "task_runtime_seconds": 9.705673127999034,
+  "model_calls": 1,
+  "tokens_used": 6007,
+  "model_runtime_seconds": 9.705021992000184,
+  "model_call_failures": 0
+}

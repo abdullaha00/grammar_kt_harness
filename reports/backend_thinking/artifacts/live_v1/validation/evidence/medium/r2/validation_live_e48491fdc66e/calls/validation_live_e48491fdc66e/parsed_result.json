@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses past perfect progressive, active positive declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The timing context and response are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It clearly practices the past perfect progressive with a duration."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The cue, arrival time, and waiting start time determine the intended response and duration."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "Vocabulary and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the base cue, not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "It requires no unrelated advanced grammar."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "All needed information is provided in the prompt."
+    }
+  }
+}

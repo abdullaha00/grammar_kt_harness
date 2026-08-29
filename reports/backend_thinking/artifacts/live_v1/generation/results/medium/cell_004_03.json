@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_medium_cell_004_03",
+  "cell_id": "cell_004",
+  "candidate_index": 3,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_004_03",
+    "cell_id": "cell_004",
+    "format": "controlled_production",
+    "prompt": "Yesterday, Ben needed some food. Complete the sentence using the cue (cook): Ben ____ dinner.",
+    "target_answer": "Ben cooked dinner.",
+    "accepted_answers": [
+      "cooked"
+    ],
+    "generation_metadata": {
+      "candidate_index": 3,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 5.9413679629997205,
+  "model_calls": 1,
+  "tokens_used": 2964,
+  "model_runtime_seconds": 5.940584910000325,
+  "model_call_failures": 0
+}

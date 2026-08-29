@@ -1,0 +1,7 @@
+{
+  "prompt": "The café uses this table every day, so it must stay clean. Complete the sentence with the correct form of “clean”: The table ____ every morning.",
+  "target_answer": "The table is cleaned every morning.",
+  "accepted_answers": [
+    "is cleaned"
+  ]
+}

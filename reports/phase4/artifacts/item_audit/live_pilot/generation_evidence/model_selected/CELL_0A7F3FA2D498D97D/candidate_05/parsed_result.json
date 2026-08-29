@@ -1,0 +1,13 @@
+{
+  "prompt": "The cups are still dirty. Complete the sentence using “Maya / wash / the cups”: ____",
+  "target_answer": "Maya has not washed the cups.",
+  "accepted_answers": [
+    "Maya has not washed the cups.",
+    "Maya hasn't washed the cups."
+  ],
+  "operation_tags": [
+    "perfect",
+    "negation"
+  ],
+  "note": "The response states that the action remains incomplete."
+}

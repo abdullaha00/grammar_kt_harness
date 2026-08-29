@@ -1,0 +1,11 @@
+{
+  "prompt": "Yesterday, Omar opened the door. Complete the sentence using the cue (open): The door ____.",
+  "target_answer": "The door was opened.",
+  "accepted_answers": [
+    "The door was opened."
+  ],
+  "operation_tags": [
+    "be_passive"
+  ],
+  "note": "Use the simple past passive."
+}

@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target is a past simple active declarative with negative polarity and no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The context and negative response are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of past simple negation with did not."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The statement that Tom stayed home yesterday and the cue sufficiently indicate the negative past response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "All vocabulary and context are common and unambiguous."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The item requires only basic past simple negation."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external factual or specialist knowledge is needed."
+    }
+  }
+}

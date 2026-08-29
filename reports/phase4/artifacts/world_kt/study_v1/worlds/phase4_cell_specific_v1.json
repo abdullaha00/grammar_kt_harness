@@ -1,0 +1,485 @@
+{
+  "world_id": "phase4_cell_specific_v1",
+  "claim": "Each exact canonical GrammarCell has an independent latent state. Development acquisition therefore cannot transfer mastery to an unseen cell tuple.",
+  "seed": 20260827,
+  "learners": 240,
+  "passes": 6,
+  "item_order": "counterbalanced_rotate_by_learner_and_pass",
+  "latent_structure": {
+    "components": [
+      {
+        "kind": "exact_cells",
+        "scope": "all_cells",
+        "initial_mastery_beta": [
+          2.3,
+          3.7
+        ],
+        "learning_rate": 0.06,
+        "weight": 1.0
+      }
+    ]
+  },
+  "background_mastery_beta": [
+    4.0,
+    2.0
+  ],
+  "background_learning_rate": 0.08,
+  "difficulty": {
+    "base": 0.0,
+    "per_active_dimension": 0.0,
+    "adjustments": [
+      {
+        "activation": {
+          "voice": "passive"
+        },
+        "amount": 0.3
+      },
+      {
+        "activation": {
+          "aspect": [
+            "perfect_progressive"
+          ]
+        },
+        "amount": 0.2
+      },
+      {
+        "activation": {
+          "clause": [
+            "polar_question",
+            "imperative"
+          ]
+        },
+        "amount": 0.15
+      },
+      {
+        "activation": {
+          "modal": {
+            "not": "none"
+          }
+        },
+        "amount": 0.25
+      }
+    ]
+  },
+  "response": {
+    "discrimination": 3.0,
+    "guess_floor": 0.08,
+    "slip_ceiling": 0.08
+  },
+  "learning_update": "mastery_moves_toward_one_after_each_acquisition_opportunity",
+  "temporal_split": {
+    "train_fraction": 0.6,
+    "validation_fraction": 0.2,
+    "test_fraction": 0.2
+  },
+  "hidden_dimensions": [
+    {
+      "id": "hidden_cell__tense_na__aspect_none__voice_active__polarity_negative__clause_imperative__modal_none",
+      "activation": {
+        "tense": "NA",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "imperative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_na__aspect_none__voice_active__polarity_positive__clause_declarative__modal_would",
+      "activation": {
+        "tense": "NA",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "would"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_na__aspect_none__voice_active__polarity_positive__clause_imperative__modal_none",
+      "activation": {
+        "tense": "NA",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "imperative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_past__aspect_none__voice_active__polarity_negative__clause_declarative__modal_none",
+      "activation": {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_past__aspect_none__voice_active__polarity_positive__clause_declarative__modal_none",
+      "activation": {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_past__aspect_none__voice_active__polarity_positive__clause_polar_question__modal_none",
+      "activation": {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "polar_question",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_past__aspect_none__voice_passive__polarity_positive__clause_declarative__modal_none",
+      "activation": {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "passive",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_past__aspect_perfect__voice_active__polarity_negative__clause_declarative__modal_none",
+      "activation": {
+        "tense": "past",
+        "aspect": "perfect",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_past__aspect_perfect__voice_active__polarity_positive__clause_declarative__modal_none",
+      "activation": {
+        "tense": "past",
+        "aspect": "perfect",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_past__aspect_perfect__voice_passive__polarity_positive__clause_declarative__modal_none",
+      "activation": {
+        "tense": "past",
+        "aspect": "perfect",
+        "voice": "passive",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_past__aspect_perfect_progressive__voice_active__polarity_negative__clause_declarative__modal_none",
+      "activation": {
+        "tense": "past",
+        "aspect": "perfect_progressive",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_past__aspect_perfect_progressive__voice_active__polarity_positive__clause_declarative__modal_none",
+      "activation": {
+        "tense": "past",
+        "aspect": "perfect_progressive",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_past__aspect_progressive__voice_active__polarity_positive__clause_declarative__modal_none",
+      "activation": {
+        "tense": "past",
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_present__aspect_none__voice_active__polarity_negative__clause_declarative__modal_none",
+      "activation": {
+        "tense": "present",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_present__aspect_none__voice_active__polarity_positive__clause_declarative__modal_none",
+      "activation": {
+        "tense": "present",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_present__aspect_none__voice_active__polarity_positive__clause_polar_question__modal_none",
+      "activation": {
+        "tense": "present",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "polar_question",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_present__aspect_none__voice_passive__polarity_negative__clause_declarative__modal_none",
+      "activation": {
+        "tense": "present",
+        "aspect": "none",
+        "voice": "passive",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_present__aspect_none__voice_passive__polarity_positive__clause_declarative__modal_none",
+      "activation": {
+        "tense": "present",
+        "aspect": "none",
+        "voice": "passive",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_present__aspect_perfect__voice_active__polarity_negative__clause_declarative__modal_none",
+      "activation": {
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_present__aspect_perfect__voice_active__polarity_positive__clause_declarative__modal_none",
+      "activation": {
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_present__aspect_perfect_progressive__voice_active__polarity_positive__clause_declarative__modal_none",
+      "activation": {
+        "tense": "present",
+        "aspect": "perfect_progressive",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_present__aspect_progressive__voice_active__polarity_negative__clause_declarative__modal_none",
+      "activation": {
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_present__aspect_progressive__voice_active__polarity_positive__clause_declarative__modal_none",
+      "activation": {
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    },
+    {
+      "id": "hidden_cell__tense_present__aspect_progressive__voice_passive__polarity_positive__clause_declarative__modal_none",
+      "activation": {
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "passive",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      "initial_mastery_beta": [
+        2.3,
+        3.7
+      ],
+      "learning_rate": 0.06,
+      "weight": 1.0
+    }
+  ]
+}

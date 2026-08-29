@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_high_cell_014_01",
+  "cell_id": "cell_014",
+  "candidate_index": 1,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_014_01",
+    "cell_id": "cell_014",
+    "format": "controlled_production",
+    "prompt": "The kitchen was still dirty when the guests arrived. Complete the sentence using the cue: she / clean / it. She ____.",
+    "target_answer": "She had not cleaned it.",
+    "accepted_answers": [
+      "had not cleaned it",
+      "hadn't cleaned it"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 7.720008409000002,
+  "model_calls": 1,
+  "tokens_used": 2978,
+  "model_runtime_seconds": 7.719035632999294,
+  "model_call_failures": 0
+}

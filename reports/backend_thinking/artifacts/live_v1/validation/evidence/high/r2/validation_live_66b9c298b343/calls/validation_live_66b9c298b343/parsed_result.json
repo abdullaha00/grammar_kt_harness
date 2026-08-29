@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "“was promulgated” is a positive past simple passive declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target sentence is grammatically well formed, though highly unusual in diction."
+    },
+    "naturalness": {
+      "passed": false,
+      "note": "The prompt and answer use conspicuously obscure, mismatched wording (“abstruse” versus “antidisestablishmentarian”), making the pair unnatural."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "Extreme vocabulary difficulty distracts from the intended passive-voice practice."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The open prompt does not determine the exact accepted wording, especially the obscure modifier and verb choice."
+    },
+    "non_target_language_simplicity": {
+      "passed": false,
+      "note": "“antidisestablishmentarian,” “promulgated,” and “yesternight” are uncommon and lexically burdensome."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed passive target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Producing the target structure requires only the intended past passive construction; the main issue is vocabulary, not additional grammar."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external factual or specialist knowledge is needed to understand the intended event."
+    }
+  }
+}

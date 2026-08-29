@@ -1,0 +1,1 @@
+{"prompt":"Leo began a letter before lunch. At noon, he was still writing it. Complete the sentence using the cue “finish”: At noon, Leo ____ the letter.","target_answer":"At noon, Leo had not finished the letter.","accepted_answers":["had not finished","hadn't finished"]}

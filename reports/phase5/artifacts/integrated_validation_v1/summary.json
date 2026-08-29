@@ -1,0 +1,4729 @@
+{
+  "experiment_id": "P5-INTEGRATED-VALIDATION-001",
+  "evidence_status": "scientific_replay",
+  "study_design": {
+    "date": "2026-08-27",
+    "exact_command": ".venv/bin/python scripts/run_phase5_integrated_validation.py",
+    "source_experiment": "P4-WORLD-KT-001",
+    "source_artifact": "reports/phase4/artifacts/world_kt/study_v1",
+    "frozen_inputs": [
+      "24 canonical cells",
+      "42 structural item identifiers",
+      "semantic 18/5/1 grammar fold",
+      "four latent-world event streams for three seeds",
+      "reference-seed primary-logistic predictions"
+    ],
+    "interventions": {
+      "learner_support": [
+        30,
+        60,
+        120,
+        240
+      ],
+      "active_complexity_penalty": 0.0005,
+      "lambda_grid_on_diagnostic_worlds": [
+        0.0,
+        0.00025,
+        0.0005,
+        0.001,
+        0.002
+      ],
+      "diagnostic_worlds": [
+        "phase4_factorized_v1",
+        "phase4_interaction_heavy_v1"
+      ],
+      "paired_bootstrap_repeats": 5000,
+      "paired_bootstrap_seed": 20260827,
+      "paired_bootstrap_unit": "learner"
+    },
+    "selection_config": "modules/kcs/selection.yaml",
+    "selection_config_sha256": "75b572a4931236c7b4e351d8ed86aeb3a2c3b58f5e13c3d4d7b526b81f58bbcd",
+    "source_event_sha256": {
+      "reports/phase4/artifacts/world_kt/study_v1/events/phase4_cell_specific_v1__20260827__frozen_probe.jsonl.gz": "c50cbbc1e57a44f55d999da84abde4bd792fbe35c2fe2b0e29c5b348d90c2df5",
+      "reports/phase4/artifacts/world_kt/study_v1/events/phase4_cell_specific_v1__20260828__frozen_probe.jsonl.gz": "5a10618a9a82646e0ad2a82ddd79b92e92a89044d0a935c0789d53e26bdb82d9",
+      "reports/phase4/artifacts/world_kt/study_v1/events/phase4_cell_specific_v1__20260829__frozen_probe.jsonl.gz": "d8127c65551704d1d5f60caef02fff87e7cb1767644f4e57ac77eebcf0e572da",
+      "reports/phase4/artifacts/world_kt/study_v1/events/phase4_factorized_v1__20260827__frozen_probe.jsonl.gz": "3ac1622881f78f549a3ec95a0a986d7e3ded8a424006eb50992799a74efbd33a",
+      "reports/phase4/artifacts/world_kt/study_v1/events/phase4_factorized_v1__20260828__frozen_probe.jsonl.gz": "97ead538d10ecabc220a13bb2ecfa078e9846bf16cac088b2cbbbf3a723c5b89",
+      "reports/phase4/artifacts/world_kt/study_v1/events/phase4_factorized_v1__20260829__frozen_probe.jsonl.gz": "ee384274b4c5ddd958d7b2714f6ea282792d1962e8724834334f52ae9a048f5d",
+      "reports/phase4/artifacts/world_kt/study_v1/events/phase4_interaction_heavy_v1__20260827__frozen_probe.jsonl.gz": "86b93caa11767bd5badc5a82c3ba33a418d6974f1eadd97d5bc2b518edbc9fc3",
+      "reports/phase4/artifacts/world_kt/study_v1/events/phase4_interaction_heavy_v1__20260828__frozen_probe.jsonl.gz": "bd71d19fc3332acd2c2d9019c1e93a81767ad12976e1caf0a2db429891cd2741",
+      "reports/phase4/artifacts/world_kt/study_v1/events/phase4_interaction_heavy_v1__20260829__frozen_probe.jsonl.gz": "e979f0a99208002cb6f8cc81a8d79e5a50bdcba2504f6c2a1f7ec1aaa1c88c8b",
+      "reports/phase4/artifacts/world_kt/study_v1/events/phase4_mixed_v1__20260827__frozen_probe.jsonl.gz": "be4334caadb7232c07039a3ac9ac90902ec1b711e65efbf645351e4b5843693f",
+      "reports/phase4/artifacts/world_kt/study_v1/events/phase4_mixed_v1__20260828__frozen_probe.jsonl.gz": "d7816a04071a640b57d26509b421df4506d73c4a9b254b0bb9ecb39e3307a5e3",
+      "reports/phase4/artifacts/world_kt/study_v1/events/phase4_mixed_v1__20260829__frozen_probe.jsonl.gz": "90f8139a44156ab9ed9b717fd43b6de16382b3d3d3ecf637dbc34ba5ff15f820"
+    },
+    "language_model_calls": null,
+    "new_simulation": false,
+    "new_item_generation": false,
+    "new_kt_fits_for_policy_comparison": false
+  },
+  "learner_support": [
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "learner_count": 30,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        13,
+        10,
+        9
+      ],
+      "selected_addition_counts": [
+        4,
+        1,
+        0
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          0.6428571428571429,
+          0.6923076923076923,
+          0.9
+        ],
+        "mean": 0.7450549450549451
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "addition_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1,
+        "kc_interaction__aspect_perfect__and__tense_present": 1,
+        "kc_interaction__aspect_perfect_progressive__and__tense_past": 1,
+        "kc_operation__finite_tense_form": 1,
+        "kc_operation__progressive_dependency": 1
+      },
+      "interaction_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1,
+        "kc_interaction__aspect_perfect__and__tense_present": 1,
+        "kc_interaction__aspect_perfect_progressive__and__tense_past": 1
+      },
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1,
+        "kc_interaction__polarity_negative__and__tense_present": 0
+      },
+      "mean_validation_log_loss": 0.6900036597048156
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "learner_count": 60,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        11,
+        9,
+        9
+      ],
+      "selected_addition_counts": [
+        2,
+        0,
+        0
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          0.8181818181818182,
+          0.8181818181818182,
+          1.0
+        ],
+        "mean": 0.8787878787878788
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "mean": 0.3333333333333333
+      },
+      "addition_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1,
+        "kc_operation__finite_tense_form": 1
+      },
+      "interaction_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1
+      },
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1,
+        "kc_interaction__polarity_negative__and__tense_present": 0
+      },
+      "mean_validation_log_loss": 0.6851586501969261
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "learner_count": 120,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        10,
+        9,
+        9
+      ],
+      "selected_addition_counts": [
+        1,
+        0,
+        0
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          0.9,
+          0.9,
+          1.0
+        ],
+        "mean": 0.9333333333333333
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "mean": 0.3333333333333333
+      },
+      "addition_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1
+      },
+      "interaction_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1
+      },
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1,
+        "kc_interaction__polarity_negative__and__tense_present": 0
+      },
+      "mean_validation_log_loss": 0.6860120858819517
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "learner_count": 240,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        9,
+        9,
+        9
+      ],
+      "selected_addition_counts": [
+        0,
+        0,
+        0
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "addition_frequency": {},
+      "interaction_frequency": {},
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 0,
+        "kc_interaction__polarity_negative__and__tense_present": 0
+      },
+      "mean_validation_log_loss": 0.6850234408296045
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "learner_count": 30,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        11,
+        10,
+        9
+      ],
+      "selected_addition_counts": [
+        2,
+        1,
+        0
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          0.75,
+          0.8181818181818182,
+          0.9
+        ],
+        "mean": 0.8227272727272728
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "addition_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1,
+        "kc_interaction__aspect_perfect_progressive__and__tense_past": 1,
+        "kc_interaction__polarity_negative__and__tense_past": 1
+      },
+      "interaction_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1,
+        "kc_interaction__aspect_perfect_progressive__and__tense_past": 1,
+        "kc_interaction__polarity_negative__and__tense_past": 1
+      },
+      "factorized_null_false_addition_runs": 2,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1,
+        "kc_interaction__polarity_negative__and__tense_present": 0
+      },
+      "mean_validation_log_loss": 0.5921112631368296
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "learner_count": 60,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        9,
+        9,
+        9
+      ],
+      "selected_addition_counts": [
+        0,
+        0,
+        0
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "addition_frequency": {},
+      "interaction_frequency": {},
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 0,
+        "kc_interaction__polarity_negative__and__tense_present": 0
+      },
+      "mean_validation_log_loss": 0.5925112577877117
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "learner_count": 120,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        9,
+        9,
+        9
+      ],
+      "selected_addition_counts": [
+        0,
+        0,
+        0
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "addition_frequency": {},
+      "interaction_frequency": {},
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 0,
+        "kc_interaction__polarity_negative__and__tense_present": 0
+      },
+      "mean_validation_log_loss": 0.5965581149161027
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "learner_count": 240,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        9,
+        9,
+        9
+      ],
+      "selected_addition_counts": [
+        0,
+        0,
+        0
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "addition_frequency": {},
+      "interaction_frequency": {},
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 0,
+        "kc_interaction__polarity_negative__and__tense_present": 0
+      },
+      "mean_validation_log_loss": 0.5949146700478039
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "learner_count": 30,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        10,
+        11,
+        12
+      ],
+      "selected_addition_counts": [
+        1,
+        2,
+        3
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          0.9090909090909091,
+          0.8333333333333334,
+          0.9166666666666666
+        ],
+        "mean": 0.8863636363636364
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          0.5,
+          0.3333333333333333,
+          0.6666666666666666
+        ],
+        "mean": 0.5
+      },
+      "addition_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 2,
+        "kc_interaction__aspect_perfect__and__tense_present": 1,
+        "kc_interaction__polarity_negative__and__tense_present": 3
+      },
+      "interaction_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 2,
+        "kc_interaction__aspect_perfect__and__tense_present": 1,
+        "kc_interaction__polarity_negative__and__tense_present": 3
+      },
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 2,
+        "kc_interaction__polarity_negative__and__tense_present": 3
+      },
+      "mean_validation_log_loss": 0.6185760001366974
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "learner_count": 60,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        11,
+        12,
+        11
+      ],
+      "selected_addition_counts": [
+        2,
+        3,
+        2
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          0.9166666666666666,
+          0.8333333333333334,
+          0.9166666666666666
+        ],
+        "mean": 0.8888888888888888
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          0.6666666666666666,
+          0.3333333333333333,
+          0.6666666666666666
+        ],
+        "mean": 0.5555555555555556
+      },
+      "addition_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 2,
+        "kc_interaction__polarity_negative__and__tense_past": 2,
+        "kc_interaction__polarity_negative__and__tense_present": 3
+      },
+      "interaction_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 2,
+        "kc_interaction__polarity_negative__and__tense_past": 2,
+        "kc_interaction__polarity_negative__and__tense_present": 3
+      },
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 2,
+        "kc_interaction__polarity_negative__and__tense_present": 3
+      },
+      "mean_validation_log_loss": 0.611479869868775
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "learner_count": 120,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        11,
+        11,
+        11
+      ],
+      "selected_addition_counts": [
+        2,
+        2,
+        2
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          1.0,
+          0.8333333333333334,
+          0.8333333333333334
+        ],
+        "mean": 0.888888888888889
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          1.0,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "mean": 0.5555555555555556
+      },
+      "addition_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 2,
+        "kc_interaction__polarity_negative__and__tense_past": 1,
+        "kc_interaction__polarity_negative__and__tense_present": 3
+      },
+      "interaction_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 2,
+        "kc_interaction__polarity_negative__and__tense_past": 1,
+        "kc_interaction__polarity_negative__and__tense_present": 3
+      },
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 2,
+        "kc_interaction__polarity_negative__and__tense_present": 3
+      },
+      "mean_validation_log_loss": 0.6096209609025585
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "learner_count": 240,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        11,
+        12,
+        11
+      ],
+      "selected_addition_counts": [
+        2,
+        3,
+        2
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          0.9166666666666666,
+          1.0,
+          0.9166666666666666
+        ],
+        "mean": 0.9444444444444444
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          0.6666666666666666,
+          1.0,
+          0.6666666666666666
+        ],
+        "mean": 0.7777777777777778
+      },
+      "addition_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 3,
+        "kc_interaction__polarity_negative__and__tense_present": 3,
+        "kc_operation__progressive_dependency": 1
+      },
+      "interaction_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 3,
+        "kc_interaction__polarity_negative__and__tense_present": 3
+      },
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 3,
+        "kc_interaction__polarity_negative__and__tense_present": 3
+      },
+      "mean_validation_log_loss": 0.6098953656883666
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "learner_count": 30,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        10,
+        10,
+        9
+      ],
+      "selected_addition_counts": [
+        1,
+        1,
+        0
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          0.8181818181818182,
+          0.9,
+          0.9
+        ],
+        "mean": 0.8727272727272728
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "addition_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1,
+        "kc_interaction__polarity_negative__and__tense_present": 1
+      },
+      "interaction_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1,
+        "kc_interaction__polarity_negative__and__tense_present": 1
+      },
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1,
+        "kc_interaction__polarity_negative__and__tense_present": 1
+      },
+      "mean_validation_log_loss": 0.6520918899855055
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "learner_count": 60,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        9,
+        11,
+        10
+      ],
+      "selected_addition_counts": [
+        0,
+        2,
+        1
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          0.8181818181818182,
+          0.9,
+          0.9090909090909091
+        ],
+        "mean": 0.8757575757575757
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          0.0,
+          0.0,
+          0.5
+        ],
+        "mean": 0.16666666666666666
+      },
+      "addition_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 2,
+        "kc_operation__progressive_dependency": 1
+      },
+      "interaction_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 2
+      },
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 2,
+        "kc_interaction__polarity_negative__and__tense_present": 0
+      },
+      "mean_validation_log_loss": 0.6391872990661921
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "learner_count": 120,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        9,
+        10,
+        10
+      ],
+      "selected_addition_counts": [
+        0,
+        1,
+        1
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          0.9,
+          0.9,
+          0.8181818181818182
+        ],
+        "mean": 0.8727272727272728
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "addition_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1,
+        "kc_operation__progressive_dependency": 1
+      },
+      "interaction_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1
+      },
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1,
+        "kc_interaction__polarity_negative__and__tense_present": 0
+      },
+      "mean_validation_log_loss": 0.6413089898449084
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "learner_count": 240,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        9,
+        9,
+        10
+      ],
+      "selected_addition_counts": [
+        0,
+        0,
+        1
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          1.0,
+          0.9,
+          0.9
+        ],
+        "mean": 0.9333333333333333
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.3333333333333333
+      },
+      "addition_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1
+      },
+      "interaction_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1
+      },
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 1,
+        "kc_interaction__polarity_negative__and__tense_present": 0
+      },
+      "mean_validation_log_loss": 0.6431798540934628
+    }
+  ],
+  "nested_agreement_with_240": [
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260827,
+      "learner_count": 30,
+      "all_kc_jaccard_with_240": 0.6923076923076923,
+      "addition_jaccard_with_240": 0.0,
+      "exact_inventory_match_with_240": false
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260828,
+      "learner_count": 30,
+      "all_kc_jaccard_with_240": 0.9,
+      "addition_jaccard_with_240": 0.0,
+      "exact_inventory_match_with_240": false
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260829,
+      "learner_count": 30,
+      "all_kc_jaccard_with_240": 1.0,
+      "addition_jaccard_with_240": 1.0,
+      "exact_inventory_match_with_240": true
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260827,
+      "learner_count": 30,
+      "all_kc_jaccard_with_240": 0.8181818181818182,
+      "addition_jaccard_with_240": 0.0,
+      "exact_inventory_match_with_240": false
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260828,
+      "learner_count": 30,
+      "all_kc_jaccard_with_240": 0.9,
+      "addition_jaccard_with_240": 0.0,
+      "exact_inventory_match_with_240": false
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260829,
+      "learner_count": 30,
+      "all_kc_jaccard_with_240": 1.0,
+      "addition_jaccard_with_240": 1.0,
+      "exact_inventory_match_with_240": true
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260827,
+      "learner_count": 30,
+      "all_kc_jaccard_with_240": 0.9090909090909091,
+      "addition_jaccard_with_240": 0.5,
+      "exact_inventory_match_with_240": false
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260828,
+      "learner_count": 30,
+      "all_kc_jaccard_with_240": 0.9166666666666666,
+      "addition_jaccard_with_240": 0.6666666666666666,
+      "exact_inventory_match_with_240": false
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260829,
+      "learner_count": 30,
+      "all_kc_jaccard_with_240": 0.9166666666666666,
+      "addition_jaccard_with_240": 0.6666666666666666,
+      "exact_inventory_match_with_240": false
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260827,
+      "learner_count": 30,
+      "all_kc_jaccard_with_240": 0.9,
+      "addition_jaccard_with_240": 0.0,
+      "exact_inventory_match_with_240": false
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260828,
+      "learner_count": 30,
+      "all_kc_jaccard_with_240": 0.9,
+      "addition_jaccard_with_240": 0.0,
+      "exact_inventory_match_with_240": false
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260829,
+      "learner_count": 30,
+      "all_kc_jaccard_with_240": 0.9,
+      "addition_jaccard_with_240": 0.0,
+      "exact_inventory_match_with_240": false
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260827,
+      "learner_count": 60,
+      "all_kc_jaccard_with_240": 0.8181818181818182,
+      "addition_jaccard_with_240": 0.0,
+      "exact_inventory_match_with_240": false
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260828,
+      "learner_count": 60,
+      "all_kc_jaccard_with_240": 1.0,
+      "addition_jaccard_with_240": 1.0,
+      "exact_inventory_match_with_240": true
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260829,
+      "learner_count": 60,
+      "all_kc_jaccard_with_240": 1.0,
+      "addition_jaccard_with_240": 1.0,
+      "exact_inventory_match_with_240": true
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260827,
+      "learner_count": 60,
+      "all_kc_jaccard_with_240": 1.0,
+      "addition_jaccard_with_240": 1.0,
+      "exact_inventory_match_with_240": true
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260828,
+      "learner_count": 60,
+      "all_kc_jaccard_with_240": 1.0,
+      "addition_jaccard_with_240": 1.0,
+      "exact_inventory_match_with_240": true
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260829,
+      "learner_count": 60,
+      "all_kc_jaccard_with_240": 1.0,
+      "addition_jaccard_with_240": 1.0,
+      "exact_inventory_match_with_240": true
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260827,
+      "learner_count": 60,
+      "all_kc_jaccard_with_240": 1.0,
+      "addition_jaccard_with_240": 1.0,
+      "exact_inventory_match_with_240": true
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260828,
+      "learner_count": 60,
+      "all_kc_jaccard_with_240": 0.8461538461538461,
+      "addition_jaccard_with_240": 0.5,
+      "exact_inventory_match_with_240": false
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260829,
+      "learner_count": 60,
+      "all_kc_jaccard_with_240": 0.8333333333333334,
+      "addition_jaccard_with_240": 0.3333333333333333,
+      "exact_inventory_match_with_240": false
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260827,
+      "learner_count": 60,
+      "all_kc_jaccard_with_240": 1.0,
+      "addition_jaccard_with_240": 1.0,
+      "exact_inventory_match_with_240": true
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260828,
+      "learner_count": 60,
+      "all_kc_jaccard_with_240": 0.8181818181818182,
+      "addition_jaccard_with_240": 0.0,
+      "exact_inventory_match_with_240": false
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260829,
+      "learner_count": 60,
+      "all_kc_jaccard_with_240": 1.0,
+      "addition_jaccard_with_240": 1.0,
+      "exact_inventory_match_with_240": true
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260827,
+      "learner_count": 120,
+      "all_kc_jaccard_with_240": 0.9,
+      "addition_jaccard_with_240": 0.0,
+      "exact_inventory_match_with_240": false
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260828,
+      "learner_count": 120,
+      "all_kc_jaccard_with_240": 1.0,
+      "addition_jaccard_with_240": 1.0,
+      "exact_inventory_match_with_240": true
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260829,
+      "learner_count": 120,
+      "all_kc_jaccard_with_240": 1.0,
+      "addition_jaccard_with_240": 1.0,
+      "exact_inventory_match_with_240": true
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260827,
+      "learner_count": 120,
+      "all_kc_jaccard_with_240": 1.0,
+      "addition_jaccard_with_240": 1.0,
+      "exact_inventory_match_with_240": true
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260828,
+      "learner_count": 120,
+      "all_kc_jaccard_with_240": 1.0,
+      "addition_jaccard_with_240": 1.0,
+      "exact_inventory_match_with_240": true
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260829,
+      "learner_count": 120,
+      "all_kc_jaccard_with_240": 1.0,
+      "addition_jaccard_with_240": 1.0,
+      "exact_inventory_match_with_240": true
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260827,
+      "learner_count": 120,
+      "all_kc_jaccard_with_240": 1.0,
+      "addition_jaccard_with_240": 1.0,
+      "exact_inventory_match_with_240": true
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260828,
+      "learner_count": 120,
+      "all_kc_jaccard_with_240": 0.9166666666666666,
+      "addition_jaccard_with_240": 0.6666666666666666,
+      "exact_inventory_match_with_240": false
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260829,
+      "learner_count": 120,
+      "all_kc_jaccard_with_240": 0.8333333333333334,
+      "addition_jaccard_with_240": 0.3333333333333333,
+      "exact_inventory_match_with_240": false
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260827,
+      "learner_count": 120,
+      "all_kc_jaccard_with_240": 1.0,
+      "addition_jaccard_with_240": 1.0,
+      "exact_inventory_match_with_240": true
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260828,
+      "learner_count": 120,
+      "all_kc_jaccard_with_240": 0.9,
+      "addition_jaccard_with_240": 0.0,
+      "exact_inventory_match_with_240": false
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260829,
+      "learner_count": 120,
+      "all_kc_jaccard_with_240": 1.0,
+      "addition_jaccard_with_240": 1.0,
+      "exact_inventory_match_with_240": true
+    }
+  ],
+  "lambda_sensitivity": [
+    {
+      "world_id": "phase4_factorized_v1",
+      "complexity_penalty": 0.0,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        14,
+        14,
+        11
+      ],
+      "selected_addition_counts": [
+        5,
+        5,
+        2
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          0.6470588235294118,
+          0.6666666666666666,
+          0.6666666666666666
+        ],
+        "mean": 0.6601307189542484
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          0.25,
+          0.16666666666666666,
+          0.16666666666666666
+        ],
+        "mean": 0.19444444444444445
+      },
+      "addition_frequency": {
+        "kc_interaction__aspect_perfect__and__tense_past": 2,
+        "kc_interaction__aspect_perfect__and__tense_present": 2,
+        "kc_interaction__aspect_perfect_progressive__and__tense_past": 1,
+        "kc_interaction__polarity_negative__and__tense_past": 1,
+        "kc_interaction__polarity_negative__and__tense_present": 1,
+        "kc_operation__finite_tense_form": 2,
+        "kc_operation__perfect_dependency": 1,
+        "kc_operation__progressive_dependency": 2
+      },
+      "interaction_frequency": {
+        "kc_interaction__aspect_perfect__and__tense_past": 2,
+        "kc_interaction__aspect_perfect__and__tense_present": 2,
+        "kc_interaction__aspect_perfect_progressive__and__tense_past": 1,
+        "kc_interaction__polarity_negative__and__tense_past": 1,
+        "kc_interaction__polarity_negative__and__tense_present": 1
+      },
+      "factorized_null_false_addition_runs": 3,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 0,
+        "kc_interaction__polarity_negative__and__tense_present": 1
+      },
+      "mean_validation_log_loss": 0.5944455085497573
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "complexity_penalty": 0.00025,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        9,
+        10,
+        10
+      ],
+      "selected_addition_counts": [
+        0,
+        1,
+        1
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          0.9,
+          0.9,
+          0.8181818181818182
+        ],
+        "mean": 0.8727272727272728
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "addition_frequency": {
+        "kc_interaction__aspect_perfect__and__tense_past": 1,
+        "kc_operation__finite_tense_form": 1
+      },
+      "interaction_frequency": {
+        "kc_interaction__aspect_perfect__and__tense_past": 1
+      },
+      "factorized_null_false_addition_runs": 2,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 0,
+        "kc_interaction__polarity_negative__and__tense_present": 0
+      },
+      "mean_validation_log_loss": 0.5946676509058416
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "complexity_penalty": 0.0005,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        9,
+        9,
+        9
+      ],
+      "selected_addition_counts": [
+        0,
+        0,
+        0
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "addition_frequency": {},
+      "interaction_frequency": {},
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 0,
+        "kc_interaction__polarity_negative__and__tense_present": 0
+      },
+      "mean_validation_log_loss": 0.5949146700478039
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "complexity_penalty": 0.001,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        9,
+        9,
+        9
+      ],
+      "selected_addition_counts": [
+        0,
+        0,
+        0
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "addition_frequency": {},
+      "interaction_frequency": {},
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 0,
+        "kc_interaction__polarity_negative__and__tense_present": 0
+      },
+      "mean_validation_log_loss": 0.5949146700478039
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "complexity_penalty": 0.002,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        9,
+        9,
+        9
+      ],
+      "selected_addition_counts": [
+        0,
+        0,
+        0
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "addition_frequency": {},
+      "interaction_frequency": {},
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 0,
+        "kc_interaction__polarity_negative__and__tense_present": 0
+      },
+      "mean_validation_log_loss": 0.5949146700478039
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "complexity_penalty": 0.0,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        13,
+        15,
+        13
+      ],
+      "selected_addition_counts": [
+        4,
+        6,
+        4
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          0.8666666666666667,
+          0.8571428571428571,
+          0.75
+        ],
+        "mean": 0.8246031746031746
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          0.6666666666666666,
+          0.6,
+          0.42857142857142855
+        ],
+        "mean": 0.5650793650793651
+      },
+      "addition_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 3,
+        "kc_interaction__aspect_perfect__and__tense_past": 1,
+        "kc_interaction__aspect_perfect__and__tense_present": 1,
+        "kc_interaction__polarity_negative__and__tense_past": 3,
+        "kc_interaction__polarity_negative__and__tense_present": 3,
+        "kc_operation__finite_tense_form": 1,
+        "kc_operation__progressive_dependency": 2
+      },
+      "interaction_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 3,
+        "kc_interaction__aspect_perfect__and__tense_past": 1,
+        "kc_interaction__aspect_perfect__and__tense_present": 1,
+        "kc_interaction__polarity_negative__and__tense_past": 3,
+        "kc_interaction__polarity_negative__and__tense_present": 3
+      },
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 3,
+        "kc_interaction__polarity_negative__and__tense_present": 3
+      },
+      "mean_validation_log_loss": 0.6095881832609488
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "complexity_penalty": 0.00025,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        11,
+        13,
+        12
+      ],
+      "selected_addition_counts": [
+        2,
+        4,
+        3
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          0.8461538461538461,
+          0.9166666666666666,
+          0.9230769230769231
+        ],
+        "mean": 0.8952991452991453
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          0.5,
+          0.6666666666666666,
+          0.75
+        ],
+        "mean": 0.6388888888888888
+      },
+      "addition_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 3,
+        "kc_interaction__polarity_negative__and__tense_past": 2,
+        "kc_interaction__polarity_negative__and__tense_present": 3,
+        "kc_operation__progressive_dependency": 1
+      },
+      "interaction_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 3,
+        "kc_interaction__polarity_negative__and__tense_past": 2,
+        "kc_interaction__polarity_negative__and__tense_present": 3
+      },
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 3,
+        "kc_interaction__polarity_negative__and__tense_present": 3
+      },
+      "mean_validation_log_loss": 0.6097118558634436
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "complexity_penalty": 0.0005,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        11,
+        12,
+        11
+      ],
+      "selected_addition_counts": [
+        2,
+        3,
+        2
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          0.9166666666666666,
+          1.0,
+          0.9166666666666666
+        ],
+        "mean": 0.9444444444444444
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          0.6666666666666666,
+          1.0,
+          0.6666666666666666
+        ],
+        "mean": 0.7777777777777778
+      },
+      "addition_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 3,
+        "kc_interaction__polarity_negative__and__tense_present": 3,
+        "kc_operation__progressive_dependency": 1
+      },
+      "interaction_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 3,
+        "kc_interaction__polarity_negative__and__tense_present": 3
+      },
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 3,
+        "kc_interaction__polarity_negative__and__tense_present": 3
+      },
+      "mean_validation_log_loss": 0.6098953656883666
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "complexity_penalty": 0.001,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        11,
+        11,
+        10
+      ],
+      "selected_addition_counts": [
+        2,
+        2,
+        1
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          1.0,
+          0.9090909090909091,
+          0.9090909090909091
+        ],
+        "mean": 0.9393939393939393
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          1.0,
+          0.5,
+          0.5
+        ],
+        "mean": 0.6666666666666666
+      },
+      "addition_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 3,
+        "kc_interaction__polarity_negative__and__tense_present": 2
+      },
+      "interaction_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 3,
+        "kc_interaction__polarity_negative__and__tense_present": 2
+      },
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 3,
+        "kc_interaction__polarity_negative__and__tense_present": 2
+      },
+      "mean_validation_log_loss": 0.6103968917009012
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "complexity_penalty": 0.002,
+      "runs": 3,
+      "simulation_seeds": [
+        20260827,
+        20260828,
+        20260829
+      ],
+      "selected_kc_counts": [
+        9,
+        10,
+        10
+      ],
+      "selected_addition_counts": [
+        0,
+        1,
+        1
+      ],
+      "all_kc_pairwise_jaccard": {
+        "values": [
+          0.9,
+          0.9,
+          1.0
+        ],
+        "mean": 0.9333333333333333
+      },
+      "addition_pairwise_jaccard": {
+        "values": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "mean": 0.3333333333333333
+      },
+      "addition_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 2
+      },
+      "interaction_frequency": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 2
+      },
+      "factorized_null_false_addition_runs": 0,
+      "interaction_heavy_recovery": {
+        "kc_interaction__aspect_perfect__and__polarity_negative": 2,
+        "kc_interaction__polarity_negative__and__tense_present": 0
+      },
+      "mean_validation_log_loss": 0.6121317114186549
+    }
+  ],
+  "paired_primary_logistic": [
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "all_test",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 10080,
+      "events_per_learner": {
+        "minimum": 42,
+        "median": 42.0,
+        "maximum": 42
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6863417609282202,
+          "brier_score": 0.24660628995142775
+        },
+        "candidate": {
+          "log_loss": 0.6863417609282202,
+          "brier_score": 0.24660628995142775
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "all_test",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 10080,
+      "events_per_learner": {
+        "minimum": 42,
+        "median": 42.0,
+        "maximum": 42
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6863417609282202,
+          "brier_score": 0.24660628995142775
+        },
+        "candidate": {
+          "log_loss": 0.686185364239081,
+          "brier_score": 0.2465278427358575
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.0001563966891413509,
+        "interval_95": [
+          -0.0004449022761909183,
+          0.00014130632311290658
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -7.84472155699038e-05,
+        "interval_95": [
+          -0.00022099640120349626,
+          6.88424017699893e-05
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "all_test",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 10080,
+      "events_per_learner": {
+        "minimum": 42,
+        "median": 42.0,
+        "maximum": 42
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6863417609282202,
+          "brier_score": 0.24660628995142775
+        },
+        "candidate": {
+          "log_loss": 0.6793490755644154,
+          "brier_score": 0.24314339019845752
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.0069926853638040305,
+        "interval_95": [
+          -0.009385275734853146,
+          -0.004552492041230158
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.0034628997529702267,
+        "interval_95": [
+          -0.00464703459019996,
+          -0.002255258823446594
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "development",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 7920,
+      "events_per_learner": {
+        "minimum": 33,
+        "median": 33.0,
+        "maximum": 33
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6824349633674467,
+          "brier_score": 0.24466097497241662
+        },
+        "candidate": {
+          "log_loss": 0.6824349633674467,
+          "brier_score": 0.24466097497241662
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "development",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 7920,
+      "events_per_learner": {
+        "minimum": 33,
+        "median": 33.0,
+        "maximum": 33
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6824349633674467,
+          "brier_score": 0.24466097497241662
+        },
+        "candidate": {
+          "log_loss": 0.6821844893500866,
+          "brier_score": 0.24453731699874637
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.0002504740173624029,
+        "interval_95": [
+          -0.0005704104535270278,
+          6.536714181250251e-05
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.00012365797367034408,
+        "interval_95": [
+          -0.000282055000527407,
+          3.353083646465851e-05
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "development",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 7920,
+      "events_per_learner": {
+        "minimum": 33,
+        "median": 33.0,
+        "maximum": 33
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6824349633674467,
+          "brier_score": 0.24466097497241662
+        },
+        "candidate": {
+          "log_loss": 0.6791001404839131,
+          "brier_score": 0.2430250925090531
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.003334822883538836,
+        "interval_95": [
+          -0.004561144221494396,
+          -0.002075129108640512
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.0016358824633631976,
+        "interval_95": [
+          -0.0022401379953199685,
+          -0.001015729902737444
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "compositional_holdout",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 1920,
+      "events_per_learner": {
+        "minimum": 8,
+        "median": 8.0,
+        "maximum": 8
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.7048014907220266,
+          "brier_score": 0.2557963000176777
+        },
+        "candidate": {
+          "log_loss": 0.7048014907220266,
+          "brier_score": 0.2557963000176777
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "compositional_holdout",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 1920,
+      "events_per_learner": {
+        "minimum": 8,
+        "median": 8.0,
+        "maximum": 8
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.7048014907220266,
+          "brier_score": 0.2557963000176777
+        },
+        "candidate": {
+          "log_loss": 0.7049458762736264,
+          "brier_score": 0.25586377023267626
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.0001443855516015399,
+        "interval_95": [
+          -0.0005324269473666573,
+          0.0007956488656373904
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 6.747021499789675e-05,
+        "interval_95": [
+          -0.0002661320021083856,
+          0.00038958505057632976
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "compositional_holdout",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 1920,
+      "events_per_learner": {
+        "minimum": 8,
+        "median": 8.0,
+        "maximum": 8
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.7048014907220266,
+          "brier_score": 0.2557963000176777
+        },
+        "candidate": {
+          "log_loss": 0.6820068922069819,
+          "brier_score": 0.2444381088286138
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.02279459851504551,
+        "interval_95": [
+          -0.03396652756813416,
+          -0.011445538949664403
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.011358191189065102,
+        "interval_95": [
+          -0.01687568545501381,
+          -0.005742585251087624
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "novel_feature_holdout",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 240,
+      "events_per_learner": {
+        "minimum": 1,
+        "median": 1.0,
+        "maximum": 1
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6675882420832208,
+          "brier_score": 0.23728160372882173
+        },
+        "candidate": {
+          "log_loss": 0.6675882420832208,
+          "brier_score": 0.23728160372882173
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "novel_feature_holdout",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 240,
+      "events_per_learner": {
+        "minimum": 1,
+        "median": 1.0,
+        "maximum": 1
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6675882420832208,
+          "brier_score": 0.23728160372882173
+        },
+        "candidate": {
+          "log_loss": 0.6681301392994311,
+          "brier_score": 0.2375277720860242
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.0005418972162102386,
+        "interval_95": [
+          -0.001109328293754693,
+          0.002185084156945331
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0002461683572022204,
+        "interval_95": [
+          -0.0005197170985590855,
+          0.0010088597631952513
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "novel_feature_holdout",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 240,
+      "events_per_learner": {
+        "minimum": 1,
+        "median": 1.0,
+        "maximum": 1
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6675882420832208,
+          "brier_score": 0.23728160372882173
+        },
+        "candidate": {
+          "log_loss": 0.666301400080597,
+          "brier_score": 0.23668946490757886
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.0012868420026236136,
+        "interval_95": [
+          -0.009876348561238108,
+          0.00721352268713436
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.0005921388212432203,
+        "interval_95": [
+          -0.004653303328124484,
+          0.0034260748549382117
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "all_test",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 10080,
+      "events_per_learner": {
+        "minimum": 42,
+        "median": 42.0,
+        "maximum": 42
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.5858637572584636,
+          "brier_score": 0.1984193309677085
+        },
+        "candidate": {
+          "log_loss": 0.5858637572584636,
+          "brier_score": 0.1984193309677085
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "all_test",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 10080,
+      "events_per_learner": {
+        "minimum": 42,
+        "median": 42.0,
+        "maximum": 42
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.5858637572584636,
+          "brier_score": 0.1984193309677085
+        },
+        "candidate": {
+          "log_loss": 0.5856621262145463,
+          "brier_score": 0.19833236738964474
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.00020163104391968456,
+        "interval_95": [
+          -0.0005095930881490082,
+          9.927434829686253e-05
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -8.696357806484981e-05,
+        "interval_95": [
+          -0.00020508779521323818,
+          2.8716306880216067e-05
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "all_test",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 10080,
+      "events_per_learner": {
+        "minimum": 42,
+        "median": 42.0,
+        "maximum": 42
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.5858637572584636,
+          "brier_score": 0.1984193309677085
+        },
+        "candidate": {
+          "log_loss": 0.6079100478891145,
+          "brier_score": 0.20889772241508073
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.022046290630649213,
+        "interval_95": [
+          0.017701826525292983,
+          0.02643301707474231
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.010478391447373291,
+        "interval_95": [
+          0.008513249654038288,
+          0.012471186163578363
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "development",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 7920,
+      "events_per_learner": {
+        "minimum": 33,
+        "median": 33.0,
+        "maximum": 33
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.5840075334475299,
+          "brier_score": 0.19749435519848743
+        },
+        "candidate": {
+          "log_loss": 0.5840075334475299,
+          "brier_score": 0.19749435519848743
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "development",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 7920,
+      "events_per_learner": {
+        "minimum": 33,
+        "median": 33.0,
+        "maximum": 33
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.5840075334475299,
+          "brier_score": 0.19749435519848743
+        },
+        "candidate": {
+          "log_loss": 0.5840460645479554,
+          "brier_score": 0.19749833617175702
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 3.853110042438196e-05,
+        "interval_95": [
+          -0.00021647263829696888,
+          0.00029515561998140884
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 3.980973268512586e-06,
+        "interval_95": [
+          -9.891712979163384e-05,
+          0.00010789919969862749
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "development",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 7920,
+      "events_per_learner": {
+        "minimum": 33,
+        "median": 33.0,
+        "maximum": 33
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.5840075334475299,
+          "brier_score": 0.19749435519848743
+        },
+        "candidate": {
+          "log_loss": 0.5847912826841523,
+          "brier_score": 0.19775186918917356
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.0007837492366215867,
+        "interval_95": [
+          -1.4475612624456846e-05,
+          0.0016141297883031079
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.00025751399068510894,
+        "interval_95": [
+          -5.7341864153801765e-05,
+          0.0005830711478798191
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "compositional_holdout",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 1920,
+      "events_per_learner": {
+        "minimum": 8,
+        "median": 8.0,
+        "maximum": 8
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.5830573402714645,
+          "brier_score": 0.19725129225669885
+        },
+        "candidate": {
+          "log_loss": 0.5830573402714645,
+          "brier_score": 0.19725129225669885
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "compositional_holdout",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 1920,
+      "events_per_learner": {
+        "minimum": 8,
+        "median": 8.0,
+        "maximum": 8
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.5830573402714645,
+          "brier_score": 0.19725129225669885
+        },
+        "candidate": {
+          "log_loss": 0.5819207322664841,
+          "brier_score": 0.1968176297994651
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.0011366080049829209,
+        "interval_95": [
+          -0.002416562663033546,
+          9.993455770493808e-05
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.00043366245723427607,
+        "interval_95": [
+          -0.0009046900633160923,
+          2.586611459301445e-05
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "compositional_holdout",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 1920,
+      "events_per_learner": {
+        "minimum": 8,
+        "median": 8.0,
+        "maximum": 8
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.5830573402714645,
+          "brier_score": 0.19725129225669885
+        },
+        "candidate": {
+          "log_loss": 0.6926702710388196,
+          "brier_score": 0.24976156157453422
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.10961293076735419,
+        "interval_95": [
+          0.08755458270262291,
+          0.1322201854060718
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.05251026931783615,
+        "interval_95": [
+          0.042511751670238886,
+          0.06284834941485444
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "novel_feature_holdout",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 240,
+      "events_per_learner": {
+        "minimum": 1,
+        "median": 1.0,
+        "maximum": 1
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6695704789152757,
+          "brier_score": 0.23828784104007775
+        },
+        "candidate": {
+          "log_loss": 0.6695704789152757,
+          "brier_score": 0.23828784104007775
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "novel_feature_holdout",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 240,
+      "events_per_learner": {
+        "minimum": 1,
+        "median": 1.0,
+        "maximum": 1
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6695704789152757,
+          "brier_score": 0.23828784104007775
+        },
+        "candidate": {
+          "log_loss": 0.6689233127965075,
+          "brier_score": 0.23797329830136746
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.0006471661187679903,
+        "interval_95": [
+          -0.0017974664657907649,
+          0.0005288996841574345
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.0003145427387104003,
+        "interval_95": [
+          -0.0008753745832281595,
+          0.0002612416522156104
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "novel_feature_holdout",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 240,
+      "events_per_learner": {
+        "minimum": 1,
+        "median": 1.0,
+        "maximum": 1
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6695704789152757,
+          "brier_score": 0.23828784104007775
+        },
+        "candidate": {
+          "log_loss": 0.6927475144551966,
+          "brier_score": 0.24980016559445833
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.023177035539921214,
+        "interval_95": [
+          0.003837138169251665,
+          0.04203660477881934
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.011512324554380449,
+        "interval_95": [
+          0.0019238788040224575,
+          0.020875849095173333
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "all_test",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 10080,
+      "events_per_learner": {
+        "minimum": 42,
+        "median": 42.0,
+        "maximum": 42
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6159382186505442,
+          "brier_score": 0.21266045528772706
+        },
+        "candidate": {
+          "log_loss": 0.6132720018744082,
+          "brier_score": 0.2115339137508062
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.0026662167761377126,
+        "interval_95": [
+          -0.00424385964989659,
+          -0.001102948034588356
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.0011265415369201045,
+        "interval_95": [
+          -0.001795043793694747,
+          -0.00047067432344613037
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "all_test",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 10080,
+      "events_per_learner": {
+        "minimum": 42,
+        "median": 42.0,
+        "maximum": 42
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6159382186505442,
+          "brier_score": 0.21266045528772706
+        },
+        "candidate": {
+          "log_loss": 0.6134955275461621,
+          "brier_score": 0.21161884217952004
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.0024426911043853587,
+        "interval_95": [
+          -0.003954294035240465,
+          -0.0009589108479774109
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.0010416131082060774,
+        "interval_95": [
+          -0.0016749472605164155,
+          -0.0004165164162656447
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "all_test",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 10080,
+      "events_per_learner": {
+        "minimum": 42,
+        "median": 42.0,
+        "maximum": 42
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6159382186505442,
+          "brier_score": 0.21266045528772706
+        },
+        "candidate": {
+          "log_loss": 0.6268267984456282,
+          "brier_score": 0.21791642518678717
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.010888579795081104,
+        "interval_95": [
+          0.0074135955200108706,
+          0.01431076128237802
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.005255969899060134,
+        "interval_95": [
+          0.0036644922729255356,
+          0.006813517808183737
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "development",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 7920,
+      "events_per_learner": {
+        "minimum": 33,
+        "median": 33.0,
+        "maximum": 33
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6097813688301786,
+          "brier_score": 0.20968246101780239
+        },
+        "candidate": {
+          "log_loss": 0.6067461242125732,
+          "brier_score": 0.208377371677311
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.0030352446176014412,
+        "interval_95": [
+          -0.004767828387408049,
+          -0.0013083975733052546
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.0013050893404903084,
+        "interval_95": [
+          -0.0020525076628958167,
+          -0.0005559058394061728
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "development",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 7920,
+      "events_per_learner": {
+        "minimum": 33,
+        "median": 33.0,
+        "maximum": 33
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6097813688301786,
+          "brier_score": 0.20968246101780239
+        },
+        "candidate": {
+          "log_loss": 0.6068876545889766,
+          "brier_score": 0.2084283284819176
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.0028937142412017148,
+        "interval_95": [
+          -0.004654703125138283,
+          -0.0010886687849647047
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.0012541325358837406,
+        "interval_95": [
+          -0.0020071877042630395,
+          -0.0004941337396474546
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "development",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 7920,
+      "events_per_learner": {
+        "minimum": 33,
+        "median": 33.0,
+        "maximum": 33
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6097813688301786,
+          "brier_score": 0.20968246101780239
+        },
+        "candidate": {
+          "log_loss": 0.6085613906874445,
+          "brier_score": 0.20907734600525818
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.0012199781427342253,
+        "interval_95": [
+          -0.0033817701879183277,
+          0.0008931850391104862
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.0006051150125437659,
+        "interval_95": [
+          -0.0015027804814449148,
+          0.00028440611897286223
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "compositional_holdout",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 1920,
+      "events_per_learner": {
+        "minimum": 8,
+        "median": 8.0,
+        "maximum": 8
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6322287754330695,
+          "brier_score": 0.2205494278446754
+        },
+        "candidate": {
+          "log_loss": 0.6307909819872038,
+          "brier_score": 0.2200382670658229
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.0014377934458679024,
+        "interval_95": [
+          -0.005286261833871254,
+          0.002517679834357817
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.0005111607788521057,
+        "interval_95": [
+          -0.00207482045372711,
+          0.0010819620214596677
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "compositional_holdout",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 1920,
+      "events_per_learner": {
+        "minimum": 8,
+        "median": 8.0,
+        "maximum": 8
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6322287754330695,
+          "brier_score": 0.2205494278446754
+        },
+        "candidate": {
+          "log_loss": 0.6314511805569443,
+          "brier_score": 0.2203091099674668
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.0007775948761240645,
+        "interval_95": [
+          -0.0036059534470099185,
+          0.002016905349865095
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.000240317877208197,
+        "interval_95": [
+          -0.0014249507890536188,
+          0.0009496051626314903
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "compositional_holdout",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 1920,
+      "events_per_learner": {
+        "minimum": 8,
+        "median": 8.0,
+        "maximum": 8
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6322287754330695,
+          "brier_score": 0.2205494278446754
+        },
+        "candidate": {
+          "log_loss": 0.6938812881167606,
+          "brier_score": 0.25036704471103594
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.06165251268368721,
+        "interval_95": [
+          0.04583356133006022,
+          0.07797277553363462
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.029817616866360013,
+        "interval_95": [
+          0.022425455364971127,
+          0.03746760257504422
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "novel_feature_holdout",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 240,
+      "events_per_learner": {
+        "minimum": 1,
+        "median": 1.0,
+        "maximum": 1
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6887898084625662,
+          "brier_score": 0.2478224857396605
+        },
+        "candidate": {
+          "log_loss": 0.6884741238125728,
+          "brier_score": 0.2476649756560133
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.000315684649993186,
+        "interval_95": [
+          -0.0010830983361703166,
+          0.0004674781370335742
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.0001575100836473531,
+        "interval_95": [
+          -0.0005403685454605371,
+          0.00023295232315536242
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "novel_feature_holdout",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 240,
+      "events_per_learner": {
+        "minimum": 1,
+        "median": 1.0,
+        "maximum": 1
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6887898084625662,
+          "brier_score": 0.2478224857396605
+        },
+        "candidate": {
+          "log_loss": 0.6879101110470305,
+          "brier_score": 0.24738365189683442
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.000879697415535972,
+        "interval_95": [
+          -0.0026306003350716374,
+          0.0008927397452427738
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.00043883384282623384,
+        "interval_95": [
+          -0.001311838155979276,
+          0.00044484024209832837
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "novel_feature_holdout",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 240,
+      "events_per_learner": {
+        "minimum": 1,
+        "median": 1.0,
+        "maximum": 1
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6887898084625662,
+          "brier_score": 0.2478224857396605
+        },
+        "candidate": {
+          "log_loss": 0.6931493370967043,
+          "brier_score": 0.25000108198325033
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.004359528634138168,
+        "interval_95": [
+          -0.0010212264803144292,
+          0.009714115395561771
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0021785962435898155,
+        "interval_95": [
+          -0.0005101955460607591,
+          0.004854073034050118
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "all_test",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 10080,
+      "events_per_learner": {
+        "minimum": 42,
+        "median": 42.0,
+        "maximum": 42
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6379261586416439,
+          "brier_score": 0.2229470981671039
+        },
+        "candidate": {
+          "log_loss": 0.6379261586416439,
+          "brier_score": 0.2229470981671039
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "all_test",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 10080,
+      "events_per_learner": {
+        "minimum": 42,
+        "median": 42.0,
+        "maximum": 42
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6379261586416439,
+          "brier_score": 0.2229470981671039
+        },
+        "candidate": {
+          "log_loss": 0.637671829320143,
+          "brier_score": 0.22282233135377333
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.00025432932149962133,
+        "interval_95": [
+          -0.001005168271885197,
+          0.0004867231100017948
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.0001247668133321814,
+        "interval_95": [
+          -0.0004616626474383572,
+          0.0002036222720257263
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "all_test",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 10080,
+      "events_per_learner": {
+        "minimum": 42,
+        "median": 42.0,
+        "maximum": 42
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6379261586416439,
+          "brier_score": 0.2229470981671039
+        },
+        "candidate": {
+          "log_loss": 0.6505794299182893,
+          "brier_score": 0.22917728859068495
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.01265327127664214,
+        "interval_95": [
+          0.009213644647039335,
+          0.016095715495712558
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.006230190423579967,
+        "interval_95": [
+          0.0045916034426726005,
+          0.007873852197035049
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "development",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 7920,
+      "events_per_learner": {
+        "minimum": 33,
+        "median": 33.0,
+        "maximum": 33
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6350175121894854,
+          "brier_score": 0.22153281437930855
+        },
+        "candidate": {
+          "log_loss": 0.6350175121894854,
+          "brier_score": 0.22153281437930855
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "development",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 7920,
+      "events_per_learner": {
+        "minimum": 33,
+        "median": 33.0,
+        "maximum": 33
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6350175121894854,
+          "brier_score": 0.22153281437930855
+        },
+        "candidate": {
+          "log_loss": 0.6349308886750212,
+          "brier_score": 0.22147983042691102
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -8.66235144611646e-05,
+        "interval_95": [
+          -0.0010313774856414337,
+          0.0008163119908747406
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -5.298395239836925e-05,
+        "interval_95": [
+          -0.00047689766542803326,
+          0.0003468986887156862
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "development",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 7920,
+      "events_per_learner": {
+        "minimum": 33,
+        "median": 33.0,
+        "maximum": 33
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6350175121894854,
+          "brier_score": 0.22153281437930855
+        },
+        "candidate": {
+          "log_loss": 0.6347510645329159,
+          "brier_score": 0.2213920335771669
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.00026644765656887924,
+        "interval_95": [
+          -0.001492855699014151,
+          0.0009613153658475065
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.00014078080214280847,
+        "interval_95": [
+          -0.0006836235642905677,
+          0.00039726463296730876
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "compositional_holdout",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 1920,
+      "events_per_learner": {
+        "minimum": 8,
+        "median": 8.0,
+        "maximum": 8
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6476016319867369,
+          "brier_score": 0.22766756130903834
+        },
+        "candidate": {
+          "log_loss": 0.6476016319867369,
+          "brier_score": 0.22766756130903834
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "compositional_holdout",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 1920,
+      "events_per_learner": {
+        "minimum": 8,
+        "median": 8.0,
+        "maximum": 8
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6476016319867369,
+          "brier_score": 0.22766756130903834
+        },
+        "candidate": {
+          "log_loss": 0.6467026091108864,
+          "brier_score": 0.22726896294395502
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.0008990228758541716,
+        "interval_95": [
+          -0.0024572186280556944,
+          0.0006397294024607579
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.0003985983650835152,
+        "interval_95": [
+          -0.001107227388369186,
+          0.00030425145922450143
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "compositional_holdout",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 1920,
+      "events_per_learner": {
+        "minimum": 8,
+        "median": 8.0,
+        "maximum": 8
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6476016319867369,
+          "brier_score": 0.22766756130903834
+        },
+        "candidate": {
+          "log_loss": 0.7125449800745441,
+          "brier_score": 0.2596845941159811
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.06494334808780489,
+        "interval_95": [
+          0.047490372436570887,
+          0.0816754816677127
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.03201703280694193,
+        "interval_95": [
+          0.02369537932260591,
+          0.04005972690396564
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "novel_feature_holdout",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 240,
+      "events_per_learner": {
+        "minimum": 1,
+        "median": 1.0,
+        "maximum": 1
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6565077048021456,
+          "brier_score": 0.23185475802890337
+        },
+        "candidate": {
+          "log_loss": 0.6565077048021456,
+          "brier_score": 0.23185475802890337
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0,
+        "interval_95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "novel_feature_holdout",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 240,
+      "events_per_learner": {
+        "minimum": 1,
+        "median": 1.0,
+        "maximum": 1
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6565077048021456,
+          "brier_score": 0.23185475802890337
+        },
+        "candidate": {
+          "log_loss": 0.6558766322832127,
+          "brier_score": 0.2315518092187659
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.0006310725189322878,
+        "interval_95": [
+          -0.0015947329442648475,
+          0.00035829292418816937
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.0003029488101373127,
+        "interval_95": [
+          -0.000763628428873963,
+          0.00017064023752141837
+        ]
+      }
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "simulation_seed": 20260827,
+      "grammar_regime": "novel_feature_holdout",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 240,
+      "n_events": 240,
+      "events_per_learner": {
+        "minimum": 1,
+        "median": 1.0,
+        "maximum": 1
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6565077048021456,
+          "brier_score": 0.23185475802890337
+        },
+        "candidate": {
+          "log_loss": 0.6771910863854492,
+          "brier_score": 0.24203225983443918
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.02068338158330383,
+        "interval_95": [
+          0.00374681001333379,
+          0.03672839269686555
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.010177501805535841,
+        "interval_95": [
+          0.0018610104712933366,
+          0.018044883542470753
+        ]
+      }
+    }
+  ],
+  "three_seed_primary_logistic": [
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "protocol": "frozen_probe",
+      "representation": "factorized",
+      "grammar_regime": "all_test",
+      "events_per_seed": [
+        10080,
+        10080,
+        10080
+      ],
+      "mean_log_loss": 0.6867148688502336,
+      "mean_brier_score": 0.24679431544797065
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "protocol": "frozen_probe",
+      "representation": "factorized",
+      "grammar_regime": "development",
+      "events_per_seed": [
+        7920,
+        7920,
+        7920
+      ],
+      "mean_log_loss": 0.6829744452832114,
+      "mean_brier_score": 0.24493298238628805
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "protocol": "frozen_probe",
+      "representation": "factorized",
+      "grammar_regime": "compositional_holdout",
+      "events_per_seed": [
+        1920,
+        1920,
+        1920
+      ],
+      "mean_log_loss": 0.7044058326222155,
+      "mean_brier_score": 0.25559344315855137
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "protocol": "frozen_probe",
+      "representation": "factorized",
+      "grammar_regime": "novel_feature_holdout",
+      "events_per_seed": [
+        240,
+        240,
+        240
+      ],
+      "mean_log_loss": 0.6686211363861084,
+      "mean_brier_score": 0.23782528479885076
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "protocol": "frozen_probe",
+      "representation": "supported_interactions",
+      "grammar_regime": "all_test",
+      "events_per_seed": [
+        10080,
+        10080,
+        10080
+      ],
+      "mean_log_loss": 0.6863792195875308,
+      "mean_brier_score": 0.24662719058970112
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "protocol": "frozen_probe",
+      "representation": "supported_interactions",
+      "grammar_regime": "development",
+      "events_per_seed": [
+        7920,
+        7920,
+        7920
+      ],
+      "mean_log_loss": 0.6824823869539913,
+      "mean_brier_score": 0.2446899225149054
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "protocol": "frozen_probe",
+      "representation": "supported_interactions",
+      "grammar_regime": "compositional_holdout",
+      "events_per_seed": [
+        1920,
+        1920,
+        1920
+      ],
+      "mean_log_loss": 0.7046284271457496,
+      "mean_brier_score": 0.25569781122971397
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "protocol": "frozen_probe",
+      "representation": "supported_interactions",
+      "grammar_regime": "novel_feature_holdout",
+      "events_per_seed": [
+        240,
+        240,
+        240
+      ],
+      "mean_log_loss": 0.6689810360285833,
+      "mean_brier_score": 0.23799207193785665
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "protocol": "frozen_probe",
+      "representation": "automated",
+      "grammar_regime": "all_test",
+      "events_per_seed": [
+        10080,
+        10080,
+        10080
+      ],
+      "mean_log_loss": 0.6867148688502336,
+      "mean_brier_score": 0.24679431544797065
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "protocol": "frozen_probe",
+      "representation": "automated",
+      "grammar_regime": "development",
+      "events_per_seed": [
+        7920,
+        7920,
+        7920
+      ],
+      "mean_log_loss": 0.6829744452832114,
+      "mean_brier_score": 0.24493298238628805
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "protocol": "frozen_probe",
+      "representation": "automated",
+      "grammar_regime": "compositional_holdout",
+      "events_per_seed": [
+        1920,
+        1920,
+        1920
+      ],
+      "mean_log_loss": 0.7044058326222155,
+      "mean_brier_score": 0.25559344315855137
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "protocol": "frozen_probe",
+      "representation": "automated",
+      "grammar_regime": "novel_feature_holdout",
+      "events_per_seed": [
+        240,
+        240,
+        240
+      ],
+      "mean_log_loss": 0.6686211363861084,
+      "mean_brier_score": 0.23782528479885076
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "protocol": "frozen_probe",
+      "representation": "oracle_all_cell",
+      "grammar_regime": "all_test",
+      "events_per_seed": [
+        10080,
+        10080,
+        10080
+      ],
+      "mean_log_loss": 0.6794386845726148,
+      "mean_brier_score": 0.24318790516319888
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "protocol": "frozen_probe",
+      "representation": "oracle_all_cell",
+      "grammar_regime": "development",
+      "events_per_seed": [
+        7920,
+        7920,
+        7920
+      ],
+      "mean_log_loss": 0.6793352307649495,
+      "mean_brier_score": 0.24314101599985896
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "protocol": "frozen_probe",
+      "representation": "oracle_all_cell",
+      "grammar_regime": "compositional_holdout",
+      "events_per_seed": [
+        1920,
+        1920,
+        1920
+      ],
+      "mean_log_loss": 0.6812443149679842,
+      "mean_brier_score": 0.24406352462545064
+    },
+    {
+      "world_id": "phase4_cell_specific_v1",
+      "protocol": "frozen_probe",
+      "representation": "oracle_all_cell",
+      "grammar_regime": "novel_feature_holdout",
+      "events_per_seed": [
+        240,
+        240,
+        240
+      ],
+      "mean_log_loss": 0.6684076170626179,
+      "mean_brier_score": 0.2377302918554027
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "protocol": "frozen_probe",
+      "representation": "factorized",
+      "grammar_regime": "all_test",
+      "events_per_seed": [
+        10080,
+        10080,
+        10080
+      ],
+      "mean_log_loss": 0.5783105644386932,
+      "mean_brier_score": 0.19497134368447633
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "protocol": "frozen_probe",
+      "representation": "factorized",
+      "grammar_regime": "development",
+      "events_per_seed": [
+        7920,
+        7920,
+        7920
+      ],
+      "mean_log_loss": 0.5762782523709656,
+      "mean_brier_score": 0.19398825638061787
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "protocol": "frozen_probe",
+      "representation": "factorized",
+      "grammar_regime": "compositional_holdout",
+      "events_per_seed": [
+        1920,
+        1920,
+        1920
+      ],
+      "mean_log_loss": 0.5748942323260654,
+      "mean_brier_score": 0.19341804518557423
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "protocol": "frozen_probe",
+      "representation": "factorized",
+      "grammar_regime": "novel_feature_holdout",
+      "events_per_seed": [
+        240,
+        240,
+        240
+      ],
+      "mean_log_loss": 0.6727075195747295,
+      "mean_brier_score": 0.23983961270302223
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "protocol": "frozen_probe",
+      "representation": "supported_interactions",
+      "grammar_regime": "all_test",
+      "events_per_seed": [
+        10080,
+        10080,
+        10080
+      ],
+      "mean_log_loss": 0.5783339022308411,
+      "mean_brier_score": 0.19497691959179764
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "protocol": "frozen_probe",
+      "representation": "supported_interactions",
+      "grammar_regime": "development",
+      "events_per_seed": [
+        7920,
+        7920,
+        7920
+      ],
+      "mean_log_loss": 0.5762885566095058,
+      "mean_brier_score": 0.1939847364649166
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "protocol": "frozen_probe",
+      "representation": "supported_interactions",
+      "grammar_regime": "compositional_holdout",
+      "events_per_seed": [
+        1920,
+        1920,
+        1920
+      ],
+      "mean_log_loss": 0.5749941034497876,
+      "mean_brier_score": 0.1934718444540115
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "protocol": "frozen_probe",
+      "representation": "supported_interactions",
+      "grammar_regime": "novel_feature_holdout",
+      "events_per_seed": [
+        240,
+        240,
+        240
+      ],
+      "mean_log_loss": 0.6725486979833316,
+      "mean_brier_score": 0.23975956388116088
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "protocol": "frozen_probe",
+      "representation": "automated",
+      "grammar_regime": "all_test",
+      "events_per_seed": [
+        10080,
+        10080,
+        10080
+      ],
+      "mean_log_loss": 0.5783105644386932,
+      "mean_brier_score": 0.19497134368447633
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "protocol": "frozen_probe",
+      "representation": "automated",
+      "grammar_regime": "development",
+      "events_per_seed": [
+        7920,
+        7920,
+        7920
+      ],
+      "mean_log_loss": 0.5762782523709656,
+      "mean_brier_score": 0.19398825638061787
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "protocol": "frozen_probe",
+      "representation": "automated",
+      "grammar_regime": "compositional_holdout",
+      "events_per_seed": [
+        1920,
+        1920,
+        1920
+      ],
+      "mean_log_loss": 0.5748942323260654,
+      "mean_brier_score": 0.19341804518557423
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "protocol": "frozen_probe",
+      "representation": "automated",
+      "grammar_regime": "novel_feature_holdout",
+      "events_per_seed": [
+        240,
+        240,
+        240
+      ],
+      "mean_log_loss": 0.6727075195747295,
+      "mean_brier_score": 0.23983961270302223
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "protocol": "frozen_probe",
+      "representation": "oracle_all_cell",
+      "grammar_regime": "all_test",
+      "events_per_seed": [
+        10080,
+        10080,
+        10080
+      ],
+      "mean_log_loss": 0.6030037575142634,
+      "mean_brier_score": 0.20675301114341152
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "protocol": "frozen_probe",
+      "representation": "oracle_all_cell",
+      "grammar_regime": "development",
+      "events_per_seed": [
+        7920,
+        7920,
+        7920
+      ],
+      "mean_log_loss": 0.5768312098713188,
+      "mean_brier_score": 0.19416478835585102
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "protocol": "frozen_probe",
+      "representation": "oracle_all_cell",
+      "grammar_regime": "compositional_holdout",
+      "events_per_seed": [
+        1920,
+        1920,
+        1920
+      ],
+      "mean_log_loss": 0.6999767339613843,
+      "mean_brier_score": 0.25341305100906164
+    },
+    {
+      "world_id": "phase4_factorized_v1",
+      "protocol": "frozen_probe",
+      "representation": "oracle_all_cell",
+      "grammar_regime": "novel_feature_holdout",
+      "events_per_seed": [
+        240,
+        240,
+        240
+      ],
+      "mean_log_loss": 0.6909140181544672,
+      "mean_brier_score": 0.2488840442077069
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "protocol": "frozen_probe",
+      "representation": "factorized",
+      "grammar_regime": "all_test",
+      "events_per_seed": [
+        10080,
+        10080,
+        10080
+      ],
+      "mean_log_loss": 0.6093531476128997,
+      "mean_brier_score": 0.20960567691071474
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "protocol": "frozen_probe",
+      "representation": "factorized",
+      "grammar_regime": "development",
+      "events_per_seed": [
+        7920,
+        7920,
+        7920
+      ],
+      "mean_log_loss": 0.6042551422246452,
+      "mean_brier_score": 0.20715879787107364
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "protocol": "frozen_probe",
+      "representation": "factorized",
+      "grammar_regime": "compositional_holdout",
+      "events_per_seed": [
+        1920,
+        1920,
+        1920
+      ],
+      "mean_log_loss": 0.6202698281119575,
+      "mean_brier_score": 0.2148305339802518
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "protocol": "frozen_probe",
+      "representation": "factorized",
+      "grammar_regime": "novel_feature_holdout",
+      "events_per_seed": [
+        240,
+        240,
+        240
+      ],
+      "mean_log_loss": 0.6902538814328378,
+      "mean_brier_score": 0.24855382866257494
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "protocol": "frozen_probe",
+      "representation": "supported_interactions",
+      "grammar_regime": "all_test",
+      "events_per_seed": [
+        10080,
+        10080,
+        10080
+      ],
+      "mean_log_loss": 0.60722479884566,
+      "mean_brier_score": 0.20868294729494674
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "protocol": "frozen_probe",
+      "representation": "supported_interactions",
+      "grammar_regime": "development",
+      "events_per_seed": [
+        7920,
+        7920,
+        7920
+      ],
+      "mean_log_loss": 0.6020520996029921,
+      "mean_brier_score": 0.2061698966779925
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "protocol": "frozen_probe",
+      "representation": "supported_interactions",
+      "grammar_regime": "compositional_holdout",
+      "events_per_seed": [
+        1920,
+        1920,
+        1920
+      ],
+      "mean_log_loss": 0.618226413232695,
+      "mean_brier_score": 0.21408682261939135
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "protocol": "frozen_probe",
+      "representation": "supported_interactions",
+      "grammar_regime": "novel_feature_holdout",
+      "events_per_seed": [
+        240,
+        240,
+        240
+      ],
+      "mean_log_loss": 0.689910958757421,
+      "mean_brier_score": 0.24838261505887974
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "protocol": "frozen_probe",
+      "representation": "automated",
+      "grammar_regime": "all_test",
+      "events_per_seed": [
+        10080,
+        10080,
+        10080
+      ],
+      "mean_log_loss": 0.607096880125903,
+      "mean_brier_score": 0.20864647741274814
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "protocol": "frozen_probe",
+      "representation": "automated",
+      "grammar_regime": "development",
+      "events_per_seed": [
+        7920,
+        7920,
+        7920
+      ],
+      "mean_log_loss": 0.6020108741048055,
+      "mean_brier_score": 0.20616671510225015
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "protocol": "frozen_probe",
+      "representation": "automated",
+      "grammar_regime": "compositional_holdout",
+      "events_per_seed": [
+        1920,
+        1920,
+        1920
+      ],
+      "mean_log_loss": 0.6176409253861458,
+      "mean_brier_score": 0.21386653691151408
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "protocol": "frozen_probe",
+      "representation": "automated",
+      "grammar_regime": "novel_feature_holdout",
+      "events_per_seed": [
+        240,
+        240,
+        240
+      ],
+      "mean_log_loss": 0.6905827167401799,
+      "mean_brier_score": 0.2487181576690542
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "protocol": "frozen_probe",
+      "representation": "oracle_all_cell",
+      "grammar_regime": "all_test",
+      "events_per_seed": [
+        10080,
+        10080,
+        10080
+      ],
+      "mean_log_loss": 0.6219029297361093,
+      "mean_brier_score": 0.21566894022343372
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "protocol": "frozen_probe",
+      "representation": "oracle_all_cell",
+      "grammar_regime": "development",
+      "events_per_seed": [
+        7920,
+        7920,
+        7920
+      ],
+      "mean_log_loss": 0.6022290875912586,
+      "mean_brier_score": 0.20618413226984836
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "protocol": "frozen_probe",
+      "representation": "oracle_all_cell",
+      "grammar_regime": "compositional_holdout",
+      "events_per_seed": [
+        1920,
+        1920,
+        1920
+      ],
+      "mean_log_loss": 0.694094590489859,
+      "mean_brier_score": 0.25047369016344656
+    },
+    {
+      "world_id": "phase4_interaction_heavy_v1",
+      "protocol": "frozen_probe",
+      "representation": "oracle_all_cell",
+      "grammar_regime": "novel_feature_holdout",
+      "events_per_seed": [
+        240,
+        240,
+        240
+      ],
+      "mean_log_loss": 0.6936064344861874,
+      "mean_brier_score": 0.2502296031716481
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "protocol": "frozen_probe",
+      "representation": "factorized",
+      "grammar_regime": "all_test",
+      "events_per_seed": [
+        10080,
+        10080,
+        10080
+      ],
+      "mean_log_loss": 0.6415585427407747,
+      "mean_brier_score": 0.2247017667663697
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "protocol": "frozen_probe",
+      "representation": "factorized",
+      "grammar_regime": "development",
+      "events_per_seed": [
+        7920,
+        7920,
+        7920
+      ],
+      "mean_log_loss": 0.6376745446374908,
+      "mean_brier_score": 0.22281108934384458
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "protocol": "frozen_probe",
+      "representation": "factorized",
+      "grammar_regime": "compositional_holdout",
+      "events_per_seed": [
+        1920,
+        1920,
+        1920
+      ],
+      "mean_log_loss": 0.6544896017711979,
+      "mean_brier_score": 0.23100340062790592
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "protocol": "frozen_probe",
+      "representation": "factorized",
+      "grammar_regime": "novel_feature_holdout",
+      "events_per_seed": [
+        240,
+        240,
+        240
+      ],
+      "mean_log_loss": 0.6662820079057571,
+      "mean_brier_score": 0.23668105081740945
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "protocol": "frozen_probe",
+      "representation": "supported_interactions",
+      "grammar_regime": "all_test",
+      "events_per_seed": [
+        10080,
+        10080,
+        10080
+      ],
+      "mean_log_loss": 0.6412725619441125,
+      "mean_brier_score": 0.22456028163866906
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "protocol": "frozen_probe",
+      "representation": "supported_interactions",
+      "grammar_regime": "development",
+      "events_per_seed": [
+        7920,
+        7920,
+        7920
+      ],
+      "mean_log_loss": 0.6373260805118489,
+      "mean_brier_score": 0.22263585959065668
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "protocol": "frozen_probe",
+      "representation": "supported_interactions",
+      "grammar_regime": "compositional_holdout",
+      "events_per_seed": [
+        1920,
+        1920,
+        1920
+      ],
+      "mean_log_loss": 0.6544514302165729,
+      "mean_brier_score": 0.23099582408778666
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "protocol": "frozen_probe",
+      "representation": "supported_interactions",
+      "grammar_regime": "novel_feature_holdout",
+      "events_per_seed": [
+        240,
+        240,
+        240
+      ],
+      "mean_log_loss": 0.6660755030291344,
+      "mean_brier_score": 0.236581869630137
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "protocol": "frozen_probe",
+      "representation": "automated",
+      "grammar_regime": "all_test",
+      "events_per_seed": [
+        10080,
+        10080,
+        10080
+      ],
+      "mean_log_loss": 0.641574726877556,
+      "mean_brier_score": 0.22470268137601593
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "protocol": "frozen_probe",
+      "representation": "automated",
+      "grammar_regime": "development",
+      "events_per_seed": [
+        7920,
+        7920,
+        7920
+      ],
+      "mean_log_loss": 0.6375799296768643,
+      "mean_brier_score": 0.22276281721597377
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "protocol": "frozen_probe",
+      "representation": "automated",
+      "grammar_regime": "compositional_holdout",
+      "events_per_seed": [
+        1920,
+        1920,
+        1920
+      ],
+      "mean_log_loss": 0.6549662683068059,
+      "mean_brier_score": 0.23120799958908708
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "protocol": "frozen_probe",
+      "representation": "automated",
+      "grammar_regime": "novel_feature_holdout",
+      "events_per_seed": [
+        240,
+        240,
+        240
+      ],
+      "mean_log_loss": 0.6662707030663813,
+      "mean_brier_score": 0.23667565295283896
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "protocol": "frozen_probe",
+      "representation": "oracle_all_cell",
+      "grammar_regime": "all_test",
+      "events_per_seed": [
+        10080,
+        10080,
+        10080
+      ],
+      "mean_log_loss": 0.6528863976387639,
+      "mean_brier_score": 0.23026302294837828
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "protocol": "frozen_probe",
+      "representation": "oracle_all_cell",
+      "grammar_regime": "development",
+      "events_per_seed": [
+        7920,
+        7920,
+        7920
+      ],
+      "mean_log_loss": 0.637611647705274,
+      "mean_brier_score": 0.22273684293389914
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "protocol": "frozen_probe",
+      "representation": "oracle_all_cell",
+      "grammar_regime": "compositional_holdout",
+      "events_per_seed": [
+        1920,
+        1920,
+        1920
+      ],
+      "mean_log_loss": 0.712526805793483,
+      "mean_brier_score": 0.2596724731793244
+    },
+    {
+      "world_id": "phase4_mixed_v1",
+      "protocol": "frozen_probe",
+      "representation": "oracle_all_cell",
+      "grammar_regime": "novel_feature_holdout",
+      "events_per_seed": [
+        240,
+        240,
+        240
+      ],
+      "mean_log_loss": 0.6798298802061767,
+      "mean_brier_score": 0.243351361578621
+    }
+  ],
+  "full_results": "reports/phase5/artifacts/integrated_validation_v1/results.json"
+}

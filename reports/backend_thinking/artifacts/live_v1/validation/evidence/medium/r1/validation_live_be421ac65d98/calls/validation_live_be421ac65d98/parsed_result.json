@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Positive active imperative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The dark-room context coherently motivates the instruction."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice producing an imperative."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The cue and context sufficiently specify the expected response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "All vocabulary is common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives a cue, not the completed sentence."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external knowledge is required."
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "source_id": "1741163712048x834192566226660200",
+  "stratum": "out_of_scope",
+  "effort": "medium",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712048x834192566226660200",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "NA",
+        "aspect": "none",
+        "voice": "passive",
+        "polarity": null,
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "The target is a simple passive infinitive, which is non-finite and contains no central modal. The listed governing forms are periphrastic or lexical and do not constrain polarity or main-clause type."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712048x834192566226660200",
+    "result": "out_of_scope",
+    "cells": [],
+    "phase2_eligible": [],
+    "note": "Passive infinitives governed by forms including the deferred periphrastic modals 'be going to' and 'have to' are outside the single-clause ontology."
+  },
+  "task_runtime_seconds": 13.363696153001001,
+  "model_calls": 1,
+  "tokens_used": 4177,
+  "model_runtime_seconds": 13.363030017999336,
+  "model_call_failures": 0
+}

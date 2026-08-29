@@ -1,0 +1,26 @@
+{
+  "source_id": "1741163708336x930002080700909000",
+  "result": "complete",
+  "cells": [
+    {
+      "aspect": "none",
+      "clause": "polar_question",
+      "modal": "none",
+      "polarity": "positive",
+      "tense": "present",
+      "voice": "active"
+    },
+    {
+      "aspect": "none",
+      "clause": "polar_question",
+      "modal": "none",
+      "polarity": "positive",
+      "tense": "past",
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "The descriptor licenses affirmative yes/no questions with nonmodal DO-support, and the examples positively establish both present ('Do you remember...?') and past ('Did you buy...?'). The original Phase-1 branch is therefore refined into correlated present and past descendants; all non-eligible dimensions remain fixed."
+}

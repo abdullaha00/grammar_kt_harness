@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The answer is a positive, active, declarative clause in the past perfect progressive with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatically correct."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The waiting interval and the bus's arrival form a natural, coherent scenario."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The item can practice the target form, but the prompt does not explicitly require it and permits simpler tense choices."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "Responses such as \"Maya waited for the bus for twenty minutes\" are equally natural, so the single accepted answer is not sufficiently determined."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary, time calculation, and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed past perfect progressive form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "Only the explicitly provided times and basic elapsed-time reasoning are needed."
+    }
+  }
+}

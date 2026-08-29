@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses positive active past perfect progressive in a declarative clause, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The timeline and response form a coherent, natural context."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The item clearly focuses on forming the past perfect progressive."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The prompt permits equally valid variants such as “since 8:00” or “for 20 minutes,” but only one exact wording is accepted."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only a cue and does not display the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "It can be completed using the target tense plus simple, familiar duration language."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is required."
+    }
+  }
+}

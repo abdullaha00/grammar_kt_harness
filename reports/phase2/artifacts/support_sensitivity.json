@@ -1,0 +1,174 @@
+{
+  "fixture": {
+    "note": "Item support counts structural opportunities in this Phase 2 run; cell support prevents repeated opportunities in one cell from masquerading as reusable structural evidence.",
+    "settings": [
+      {
+        "label": "item_threshold_1",
+        "minimum_interaction_cell_support": 1,
+        "minimum_interaction_item_support": 1,
+        "raw_interactions": 3,
+        "support_eligible_interactions": 3,
+        "selection_eligible_interactions": 0,
+        "total_selection_eligible_candidates": 7
+      },
+      {
+        "label": "item_threshold_2",
+        "minimum_interaction_cell_support": 1,
+        "minimum_interaction_item_support": 2,
+        "raw_interactions": 3,
+        "support_eligible_interactions": 0,
+        "selection_eligible_interactions": 0,
+        "total_selection_eligible_candidates": 7
+      },
+      {
+        "label": "item_threshold_3",
+        "minimum_interaction_cell_support": 1,
+        "minimum_interaction_item_support": 3,
+        "raw_interactions": 3,
+        "support_eligible_interactions": 0,
+        "selection_eligible_interactions": 0,
+        "total_selection_eligible_candidates": 7
+      },
+      {
+        "label": "item_threshold_5",
+        "minimum_interaction_cell_support": 1,
+        "minimum_interaction_item_support": 5,
+        "raw_interactions": 3,
+        "support_eligible_interactions": 0,
+        "selection_eligible_interactions": 0,
+        "total_selection_eligible_candidates": 7
+      },
+      {
+        "label": "cell_threshold_1",
+        "minimum_interaction_cell_support": 1,
+        "minimum_interaction_item_support": 1,
+        "raw_interactions": 3,
+        "support_eligible_interactions": 3,
+        "selection_eligible_interactions": 0,
+        "total_selection_eligible_candidates": 7
+      },
+      {
+        "label": "cell_threshold_2",
+        "minimum_interaction_cell_support": 2,
+        "minimum_interaction_item_support": 1,
+        "raw_interactions": 3,
+        "support_eligible_interactions": 0,
+        "selection_eligible_interactions": 0,
+        "total_selection_eligible_candidates": 7
+      },
+      {
+        "label": "cell_threshold_3",
+        "minimum_interaction_cell_support": 3,
+        "minimum_interaction_item_support": 1,
+        "raw_interactions": 3,
+        "support_eligible_interactions": 0,
+        "selection_eligible_interactions": 0,
+        "total_selection_eligible_candidates": 7
+      },
+      {
+        "label": "cell_threshold_5",
+        "minimum_interaction_cell_support": 5,
+        "minimum_interaction_item_support": 1,
+        "raw_interactions": 3,
+        "support_eligible_interactions": 0,
+        "selection_eligible_interactions": 0,
+        "total_selection_eligible_candidates": 7
+      },
+      {
+        "label": "active_joint_threshold",
+        "minimum_interaction_cell_support": 2,
+        "minimum_interaction_item_support": 3,
+        "raw_interactions": 3,
+        "support_eligible_interactions": 0,
+        "selection_eligible_interactions": 0,
+        "total_selection_eligible_candidates": 7
+      }
+    ]
+  },
+  "legacy_development": {
+    "note": "Item support counts structural opportunities in this Phase 2 run; cell support prevents repeated opportunities in one cell from masquerading as reusable structural evidence.",
+    "settings": [
+      {
+        "label": "item_threshold_1",
+        "minimum_interaction_cell_support": 1,
+        "minimum_interaction_item_support": 1,
+        "raw_interactions": 13,
+        "support_eligible_interactions": 13,
+        "selection_eligible_interactions": 12,
+        "total_selection_eligible_candidates": 32
+      },
+      {
+        "label": "item_threshold_2",
+        "minimum_interaction_cell_support": 1,
+        "minimum_interaction_item_support": 2,
+        "raw_interactions": 13,
+        "support_eligible_interactions": 11,
+        "selection_eligible_interactions": 10,
+        "total_selection_eligible_candidates": 30
+      },
+      {
+        "label": "item_threshold_3",
+        "minimum_interaction_cell_support": 1,
+        "minimum_interaction_item_support": 3,
+        "raw_interactions": 13,
+        "support_eligible_interactions": 6,
+        "selection_eligible_interactions": 6,
+        "total_selection_eligible_candidates": 26
+      },
+      {
+        "label": "item_threshold_5",
+        "minimum_interaction_cell_support": 1,
+        "minimum_interaction_item_support": 5,
+        "raw_interactions": 13,
+        "support_eligible_interactions": 1,
+        "selection_eligible_interactions": 1,
+        "total_selection_eligible_candidates": 21
+      },
+      {
+        "label": "cell_threshold_1",
+        "minimum_interaction_cell_support": 1,
+        "minimum_interaction_item_support": 1,
+        "raw_interactions": 13,
+        "support_eligible_interactions": 13,
+        "selection_eligible_interactions": 12,
+        "total_selection_eligible_candidates": 32
+      },
+      {
+        "label": "cell_threshold_2",
+        "minimum_interaction_cell_support": 2,
+        "minimum_interaction_item_support": 1,
+        "raw_interactions": 13,
+        "support_eligible_interactions": 6,
+        "selection_eligible_interactions": 6,
+        "total_selection_eligible_candidates": 26
+      },
+      {
+        "label": "cell_threshold_3",
+        "minimum_interaction_cell_support": 3,
+        "minimum_interaction_item_support": 1,
+        "raw_interactions": 13,
+        "support_eligible_interactions": 1,
+        "selection_eligible_interactions": 1,
+        "total_selection_eligible_candidates": 21
+      },
+      {
+        "label": "cell_threshold_5",
+        "minimum_interaction_cell_support": 5,
+        "minimum_interaction_item_support": 1,
+        "raw_interactions": 13,
+        "support_eligible_interactions": 0,
+        "selection_eligible_interactions": 0,
+        "total_selection_eligible_candidates": 20
+      },
+      {
+        "label": "active_joint_threshold",
+        "minimum_interaction_cell_support": 2,
+        "minimum_interaction_item_support": 3,
+        "raw_interactions": 13,
+        "support_eligible_interactions": 6,
+        "selection_eligible_interactions": 6,
+        "total_selection_eligible_candidates": 26
+      }
+    ]
+  }
+}

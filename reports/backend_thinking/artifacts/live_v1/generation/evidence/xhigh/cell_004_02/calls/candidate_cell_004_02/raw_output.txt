@@ -1,0 +1,1 @@
+{"prompt":"Yesterday, Mia needed bread for lunch. Complete the sentence using the cue (buy): Mia ___ bread at the shop.","target_answer":"Mia bought bread at the shop.","accepted_answers":["bought"]}

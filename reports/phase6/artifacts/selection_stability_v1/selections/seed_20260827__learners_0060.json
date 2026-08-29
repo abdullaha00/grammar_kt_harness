@@ -1,0 +1,35 @@
+{
+  "status": "complete",
+  "condition_id": "seed_20260827__learners_0060",
+  "simulation_seed": 20260827,
+  "learner_count": 60,
+  "selection_source": "verified_retained_stability_policy",
+  "method_fingerprint": "d235af8ebe55dabca38266a03cd9a680eca7c122bc96d1db60be7fb5c99127c0",
+  "event_content_sha256": "59f530eb5a33be9f6739ddb6bed489d67bcd19ea72e026b36cdf01f07119ae2c",
+  "selection_events": 9600,
+  "holdout_events_supplied": 0,
+  "reserved_test_events_supplied": 0,
+  "selected_candidate_ids": [
+    "kc_feature__aspect__perfect",
+    "kc_feature__aspect__perfect_progressive",
+    "kc_feature__aspect__progressive",
+    "kc_feature__clause__imperative",
+    "kc_feature__clause__polar_question",
+    "kc_feature__polarity__negative",
+    "kc_feature__tense__past",
+    "kc_feature__tense__present",
+    "kc_feature__voice__passive",
+    "kc_interaction__aspect_perfect__and__polarity_negative"
+  ],
+  "selected_addition_ids": [
+    "kc_interaction__aspect_perfect__and__polarity_negative"
+  ],
+  "exact_selected_inventory_match_finalized_reference": true,
+  "policy_file": "policies/seed_20260827__learners_0060.yaml",
+  "policy_file_sha256": "e4c9de66f60a5a03a56cd5a90ac41d868dd8e1d98f343b817849bdd821f0b0fe",
+  "provenance": {
+    "model_calls": 0,
+    "models": [],
+    "description": "Deterministic synthetic-event replay and learner-evidence KC selection over the already fixed, model-validated item bank; no LM is invoked."
+  }
+}

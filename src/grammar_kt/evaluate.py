@@ -107,6 +107,186 @@ def _bootstrap(
     return output
 
 
+def paired_policy_bootstrap(
+    events: list[dict[str, Any]],
+    reference_predictions: list[dict[str, Any]],
+    candidate_predictions: list[dict[str, Any]],
+    *,
+    repeats: int,
+    seed: int,
+    reference_policy_id: str = "reference",
+    candidate_policy_id: str = "candidate",
+) -> dict[str, Any]:
+    """Paired learner-cluster bootstrap of candidate-minus-reference losses.
+
+    ``events`` should already be restricted to the evaluation regime/split.
+    Negative deltas favour the candidate KC policy. Whole learners are sampled
+    with replacement and their events retain their natural event weighting.
+    """
+
+    if repeats < 1:
+        raise ValueError("paired policy bootstrap repeats must be positive")
+    if not events:
+        return {
+            "available": False,
+            "reason": "no_evaluation_events",
+            "reference_policy_id": reference_policy_id,
+            "candidate_policy_id": candidate_policy_id,
+            "sign_convention": "candidate_minus_reference; negative favours candidate",
+            "sampling_unit": "learner",
+            "aggregation": "event_weighted",
+            "n_learners": 0,
+            "n_events": 0,
+            "repeats": repeats,
+            "seed": seed,
+        }
+
+    ordered_events = sorted(
+        events,
+        key=lambda row: (
+            str(row["learner_id"]),
+            int(row.get("sequence_index", 0)),
+            str(row["event_id"]),
+        ),
+    )
+    event_ids = [row["event_id"] for row in ordered_events]
+    if len(event_ids) != len(set(event_ids)):
+        raise ValueError("paired policy bootstrap event IDs must be unique")
+    invalid_targets = [
+        row["event_id"]
+        for row in ordered_events
+        if isinstance(row.get("correct"), bool)
+        or row.get("correct") not in (0, 1)
+    ]
+    if invalid_targets:
+        raise ValueError(
+            "paired policy bootstrap outcomes must be binary 0/1: "
+            f"{invalid_targets[:5]}"
+        )
+
+    def lookup(rows: list[dict[str, Any]], side: str) -> dict[str, float]:
+        values: dict[str, float] = {}
+        for row in rows:
+            event_id = row["event_id"]
+            if event_id in values:
+                raise ValueError(f"{side} predictions contain duplicate event IDs")
+            probability = float(row["probability"])
+            if not np.isfinite(probability) or not 0.0 <= probability <= 1.0:
+                raise ValueError(
+                    f"{side} prediction probability must be finite and in [0, 1]: "
+                    f"{event_id}={probability}"
+                )
+            values[event_id] = probability
+        if set(values) != set(event_ids):
+            raise ValueError(
+                f"{side} predictions do not exactly cover evaluation events"
+            )
+        return {
+            event_id: float(np.clip(probability, 1e-6, 1 - 1e-6))
+            for event_id, probability in values.items()
+        }
+
+    reference = lookup(reference_predictions, "reference")
+    candidate = lookup(candidate_predictions, "candidate")
+    learner_ids = sorted({str(row["learner_id"]) for row in ordered_events})
+    learner_index = {
+        learner_id: index for index, learner_id in enumerate(learner_ids)
+    }
+    counts = np.zeros(len(learner_ids), dtype=float)
+    delta_log_loss_sums = np.zeros(len(learner_ids), dtype=float)
+    delta_brier_sums = np.zeros(len(learner_ids), dtype=float)
+    reference_log_loss_sum = 0.0
+    candidate_log_loss_sum = 0.0
+    reference_brier_sum = 0.0
+    candidate_brier_sum = 0.0
+    for event in ordered_events:
+        event_id = event["event_id"]
+        target = float(event["correct"])
+        reference_probability = reference[event_id]
+        candidate_probability = candidate[event_id]
+        reference_loss = -(
+            target * np.log(reference_probability)
+            + (1.0 - target) * np.log(1.0 - reference_probability)
+        )
+        candidate_loss = -(
+            target * np.log(candidate_probability)
+            + (1.0 - target) * np.log(1.0 - candidate_probability)
+        )
+        reference_brier = (reference_probability - target) ** 2
+        candidate_brier = (candidate_probability - target) ** 2
+        index = learner_index[str(event["learner_id"])]
+        counts[index] += 1
+        delta_log_loss_sums[index] += candidate_loss - reference_loss
+        delta_brier_sums[index] += candidate_brier - reference_brier
+        reference_log_loss_sum += reference_loss
+        candidate_log_loss_sum += candidate_loss
+        reference_brier_sum += reference_brier
+        candidate_brier_sum += candidate_brier
+
+    total_events = int(counts.sum())
+    rng = np.random.default_rng(seed)
+    sampled_indices = rng.integers(
+        0,
+        len(learner_ids),
+        size=(repeats, len(learner_ids)),
+        endpoint=False,
+    )
+    sampled_counts = counts[sampled_indices].sum(axis=1)
+    sampled_log_loss = (
+        delta_log_loss_sums[sampled_indices].sum(axis=1) / sampled_counts
+    )
+    sampled_brier = (
+        delta_brier_sums[sampled_indices].sum(axis=1) / sampled_counts
+    )
+
+    def interval(values: np.ndarray) -> list[float] | None:
+        if len(learner_ids) < 2:
+            return None
+        return [
+            float(np.quantile(values, 0.025, method="linear")),
+            float(np.quantile(values, 0.975, method="linear")),
+        ]
+
+    event_counts = sorted(int(value) for value in counts)
+
+    return {
+        "available": True,
+        "reference_policy_id": reference_policy_id,
+        "candidate_policy_id": candidate_policy_id,
+        "sign_convention": "candidate_minus_reference; negative favours candidate",
+        "sampling_unit": "learner",
+        "aggregation": "event_weighted",
+        "percentile_method": "linear",
+        "n_learners": len(learner_ids),
+        "n_events": total_events,
+        "events_per_learner": {
+            "minimum": event_counts[0],
+            "median": float(np.median(event_counts)),
+            "maximum": event_counts[-1],
+        },
+        "repeats": repeats,
+        "seed": seed,
+        "observed": {
+            "reference": {
+                "log_loss": float(reference_log_loss_sum / total_events),
+                "brier_score": float(reference_brier_sum / total_events),
+            },
+            "candidate": {
+                "log_loss": float(candidate_log_loss_sum / total_events),
+                "brier_score": float(candidate_brier_sum / total_events),
+            },
+        },
+        "delta_log_loss": {
+            "point_estimate": float(delta_log_loss_sums.sum() / total_events),
+            "interval_95": interval(sampled_log_loss),
+        },
+        "delta_brier_score": {
+            "point_estimate": float(delta_brier_sums.sum() / total_events),
+            "interval_95": interval(sampled_brier),
+        },
+    }
+
+
 def evaluate(
     candidates: list[dict[str, Any]],
     judgments: list[dict[str, Any]],
@@ -118,8 +298,20 @@ def evaluate(
     projection: list[dict[str, Any]],
     predictions: list[dict[str, Any]],
     protocol: dict[str, Any],
+    *,
+    validator_accepted_items: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
-    dataset = bank_summary(candidates, accepted_items, judgments, cells)
+    dataset = bank_summary(
+        candidates,
+        (
+            accepted_items
+            if validator_accepted_items is None
+            else validator_accepted_items
+        ),
+        judgments,
+        cells,
+        selected_items=accepted_items,
+    )
     dataset["grammar_cell_coverage"] = (
         dataset["covered_cells"] / dataset["grammar_cells"] if dataset["grammar_cells"] else 0.0
     )

@@ -1,0 +1,52 @@
+{
+  "sample_order": 4,
+  "blind_item_id": "reliability_item_0004",
+  "candidate_id": "candidate_controlled_lexicon_CELL_29BDABD4E976923A_01",
+  "condition": "controlled_lexicon",
+  "cell_id": "CELL_29BDABD4E976923A",
+  "candidate_index": 1,
+  "original_accepted": true,
+  "original_failed_criteria": [],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The answer is present progressive passive, positive, declarative, and contains no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and completed sentence form a natural, coherent transformation."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The item clearly focuses learners on forming the present progressive passive."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The active context, given subject, and required verb sufficiently determine “is being prepared.”"
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and meal-preparation context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt provides the base verb but does not display the completed passive form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammatical knowledge is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The answer requires no external factual or specialist knowledge."
+    }
+  },
+  "accepted": true,
+  "runtime_seconds": 12.11639896100678
+}

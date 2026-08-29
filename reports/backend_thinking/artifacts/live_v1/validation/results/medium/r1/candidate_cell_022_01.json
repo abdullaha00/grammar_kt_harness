@@ -1,0 +1,71 @@
+{
+  "item_id": "candidate_cell_022_01",
+  "audit_id": "validation_live_1bf89856f7cb",
+  "cell_id": "cell_022",
+  "effort": "medium",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_1bf89856f7cb",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "“Had been cleaned” is past perfect, passive, positive, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The sentence coherently explains why the kitchen was clean when Maya arrived."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of the past perfect passive."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The prompt does not explicitly require the past perfect passive; alternatives such as “was clean” are also supported by the context."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and situation are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed target form is not displayed; “clean” is presented only as the cue."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The item can be completed without unrelated advanced grammar."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 14.11513525600094,
+  "model_calls": 1,
+  "tokens_used": 2788,
+  "model_runtime_seconds": 14.114241160999882,
+  "model_call_failures": 0
+}

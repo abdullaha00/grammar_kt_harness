@@ -1,0 +1,13 @@
+{
+  "prompt": "Mia had a book yesterday, but she left it closed all day. Complete the sentence using the cue (Mia / read / a book): ____",
+  "target_answer": "Mia did not read a book.",
+  "accepted_answers": [
+    "Mia did not read a book.",
+    "Mia didn't read a book."
+  ],
+  "operation_tags": [
+    "do_support",
+    "negation"
+  ],
+  "note": "The full and contracted forms are accepted."
+}

@@ -1,28 +1,40 @@
-Create one controlled-production English exercise for the supplied target.
+Create one controlled-production English exercise candidate for the supplied
+target.
 
 The GrammarCell is fixed. Do not choose, weaken, or reinterpret it. Realise
 every target feature in the target answer, follow the item-format contract, and
-use the supplied lexical material where it is compatible. Keep the context
-short, natural, pedagogically useful, and answer-determinate.
+choose your own lexical material and short context. Ordinary lexical content is
+treated as known background knowledge, not as a learner skill. Use common,
+concrete, high-frequency vocabulary that is unlikely to be the source of
+learner difficulty. Avoid specialist terms, idioms, rare senses, obscure proper
+nouns, culturally specific knowledge, and unnecessary lexical complexity.
+Choose predicates and argument structures compatible with the fixed target
+GrammarCell. Keep the context short, natural, pedagogically useful, and
+answer-determinate, and vary lexical and contextual material naturally across
+items.
 
-Do not infer or mention grammar-fold labels, candidate KCs, learner outcomes,
-simulation assumptions, or KT models. Return one JSON object containing:
-prompt, target_answer, accepted_answers, operation_tags, and note.
+`target_answer` must be the complete grammatical clause obtained when the
+response slot is filled. Each string in `accepted_answers` must contain only
+the text a learner should enter in the visible response slot. Do not repeat
+words that are already printed immediately before or after the slot.
+
+Do not infer or mention KC information, grammar-fold labels, simulation
+information or assumptions, learner outcomes, or KT models. Generate this
+candidate independently. The candidate position is an experimental index, not
+learner-facing content: do not mention it in the exercise. Return exactly one
+JSON object containing: prompt, target_answer, and accepted_answers.
 
 TARGET GRAMMAR CELL:
 {{target_cell}}
 
-SOURCE SUPPORT:
-{{source_support}}
+CANDIDATE POSITION:
+{{candidate_position}}
 
 ITEM FORMAT:
 {{item_format}}
 
 GENERATION DESIGN:
 {{design}}
-
-LEXICAL MATERIAL:
-{{lexical_material}}
 
 ENGLISH GENERATION RULES:
 {{rulebook}}

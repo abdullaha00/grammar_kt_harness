@@ -1,0 +1,86 @@
+OpenAI Codex v0.150.1
+--------
+workdir: /home/abdullah/grammar_kt_harness/reports/backend_thinking/artifacts/live_v1/validation/evidence/medium/r2/validation_live_4378e9c17840/calls/validation_live_4378e9c17840
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a0468a-3d53-77d0-9fb2-7fcae7f7d568
+--------
+user
+Judge one generated exercise independently from the generator.
+
+Use the visible learner-facing prompt, target answer, accepted answers, intended
+GrammarCell, and the declared criteria. Do not rely on generation reasoning or
+generation metadata. Judge every criterion separately and give a short note.
+
+Return one JSON object with a `judgments` mapping. Every declared criterion must
+have exactly `passed` (true/false) and `note`.
+
+VISIBLE ITEM:
+{
+  "item_id": "validation_live_4378e9c17840",
+  "format": "controlled_production",
+  "prompt": "The floor is wet near the door. Tell your friend what to do: ____.",
+  "target_answer": "Walk carefully.",
+  "accepted_answers": [
+    "Walk carefully"
+  ]
+}
+
+INTENDED GRAMMAR CELL:
+{
+  "tense": "NA",
+  "aspect": "none",
+  "voice": "active",
+  "polarity": "positive",
+  "clause": "imperative",
+  "modal": "none"
+}
+
+VALIDATION CRITERIA:
+{
+  "target_fidelity": {
+    "required": true,
+    "question": "Does the target answer express exactly the intended GrammarCell?"
+  },
+  "grammaticality": {
+    "required": true,
+    "question": "Is the target answer grammatical English?"
+  },
+  "naturalness": {
+    "required": true,
+    "question": "Is the prompt-answer pair natural and coherent?"
+  },
+  "pedagogical_suitability": {
+    "required": true,
+    "question": "Is the item suitable for focused grammar practice?"
+  },
+  "determinacy": {
+    "required": true,
+    "question": "Does the prompt sufficiently determine the accepted response set?"
+  },
+  "non_target_language_simplicity": {
+    "required": true,
+    "question": "Is the vocabulary and context sufficiently common, transparent, and lexically unambiguous that lexical knowledge is unlikely to determine the learner's response?"
+  },
+  "no_answer_leakage": {
+    "required": true,
+    "question": "Does the prompt avoid displaying the completed target form?"
+  },
+  "no_extraneous_grammar": {
+    "required": true,
+    "question": "Can the item be solved without unrelated advanced grammar?"
+  },
+  "no_world_knowledge": {
+    "required": true,
+    "question": "Can the item be answered without external factual or specialist knowledge?"
+  }
+}
+
+codex
+{"judgments":{"target_fidelity":{"passed":true,"note":"“Walk carefully.” is a positive active imperative with no modal."},"grammaticality":{"passed":true,"note":"The target is grammatical English."},"naturalness":{"passed":true,"note":"The wet-floor context naturally supports the advice."},"pedagogical_suitability":{"passed":true,"note":"It provides focused practice producing an imperative."},"determinacy":{"passed":false,"note":"Many equally appropriate imperatives are possible, such as “Be careful” or “Don’t slip,” but they are not accepted."},"non_target_language_simplicity":{"passed":true,"note":"The vocabulary and situation are common and clear."},"no_answer_leakage":{"passed":true,"note":"The prompt does not display the completed target form."},"no_extraneous_grammar":{"passed":true,"note":"The item can be answered using a simple imperative without unrelated grammar."},"no_world_knowledge":{"passed":true,"note":"No external or specialist knowledge is needed."}}}
+tokens used
+4,594

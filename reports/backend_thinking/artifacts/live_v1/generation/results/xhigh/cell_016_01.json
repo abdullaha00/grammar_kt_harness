@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_016_01",
+  "cell_id": "cell_016",
+  "candidate_index": 1,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_016_01",
+    "cell_id": "cell_016",
+    "format": "controlled_production",
+    "prompt": "The ground is still wet. Complete the sentence using “rain”: It ______ for two hours.",
+    "target_answer": "It has been raining for two hours.",
+    "accepted_answers": [
+      "has been raining"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 5.827575461000379,
+  "model_calls": 1,
+  "tokens_used": 2970,
+  "model_runtime_seconds": 5.826815639000415,
+  "model_call_failures": 0
+}

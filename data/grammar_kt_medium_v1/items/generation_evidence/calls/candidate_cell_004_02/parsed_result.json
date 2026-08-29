@@ -1,0 +1,7 @@
+{
+  "prompt": "Yesterday, Leo needed some fruit for breakfast. Complete the sentence using “buy”: Leo ____ some apples at the shop.",
+  "target_answer": "Leo bought some apples at the shop.",
+  "accepted_answers": [
+    "bought"
+  ]
+}

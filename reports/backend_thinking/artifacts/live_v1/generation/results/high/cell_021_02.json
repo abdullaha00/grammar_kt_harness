@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_high_cell_021_02",
+  "cell_id": "cell_021",
+  "candidate_index": 2,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_021_02",
+    "cell_id": "cell_021",
+    "format": "controlled_production",
+    "prompt": "Lunch is being prepared now. Complete the sentence using the words in brackets: Lunch ____ now. (prepare)",
+    "target_answer": "Lunch is being prepared now.",
+    "accepted_answers": [
+      "is being prepared"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 5.993319082001108,
+  "model_calls": 1,
+  "tokens_used": 5018,
+  "model_runtime_seconds": 5.992574063000575,
+  "model_call_failures": 0
+}

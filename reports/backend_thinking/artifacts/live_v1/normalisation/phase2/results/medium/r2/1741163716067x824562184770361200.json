@@ -1,0 +1,72 @@
+{
+  "source_id": "1741163716067x824562184770361200",
+  "effort": "medium",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163716067x824562184770361200",
+    "result": "complete",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "negative",
+        "tense": "present",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "The descriptor licenses present and past negative forms of main verb BE; the eligible examples positively establish present-tense forms, so tense narrows to present."
+  },
+  "fixed_phase1_mapping": {
+    "source_id": "1741163716067x824562184770361200",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "negative",
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "retained_phase2_mapping": {
+    "source_id": "1741163716067x824562184770361200",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "negative",
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 8.96228485499887,
+  "model_calls": 1,
+  "tokens_used": 4167,
+  "model_runtime_seconds": 8.961501992000194,
+  "model_call_failures": 0
+}

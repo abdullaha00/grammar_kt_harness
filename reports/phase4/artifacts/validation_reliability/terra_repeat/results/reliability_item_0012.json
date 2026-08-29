@@ -1,0 +1,52 @@
+{
+  "sample_order": 12,
+  "blind_item_id": "reliability_item_0012",
+  "candidate_id": "candidate_model_selected_CELL_0A7F3FA2D498D97D_01",
+  "condition": "model_selected",
+  "cell_id": "CELL_0A7F3FA2D498D97D",
+  "candidate_index": 1,
+  "original_accepted": true,
+  "original_failed_criteria": [],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is present perfect, active, negative, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The noon context coherently supports the statement about an untouched breakfast."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The cue provides focused practice of negative present perfect."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The cue and context sufficiently support the accepted full and contracted negative present-perfect forms."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and context are common and clear."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving requires only the targeted tense, aspect, and negative form."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  },
+  "accepted": true,
+  "runtime_seconds": 8.820842442000867
+}

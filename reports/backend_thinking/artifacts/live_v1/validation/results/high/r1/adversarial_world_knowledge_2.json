@@ -1,0 +1,71 @@
+{
+  "item_id": "adversarial_world_knowledge_2",
+  "audit_id": "validation_live_8666282e8665",
+  "cell_id": "cell_019",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_8666282e8665",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "Uses a positive past simple passive declarative: “was sealed.”"
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt and answer form a coherent historical-fact completion."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "It primarily tests recall of a historical fact rather than focused grammar production."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The prompt gives insufficient information to determine the exact fact, place, and date."
+      },
+      "non_target_language_simplicity": {
+        "passed": false,
+        "note": "“Magna Carta” and “Runnymede” are specialist historical terms."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "No unrelated advanced grammar is needed to produce the target structure."
+      },
+      "no_world_knowledge": {
+        "passed": false,
+        "note": "Answering requires external historical knowledge about the Magna Carta."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "no_world_knowledge"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": true,
+  "reference_source": "authored_adversarial_negative_control",
+  "task_runtime_seconds": 9.870439801999964,
+  "model_calls": 1,
+  "tokens_used": 2631,
+  "model_runtime_seconds": 9.869629459999487,
+  "model_call_failures": 0
+}

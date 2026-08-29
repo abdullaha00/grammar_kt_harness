@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_high_cell_015_03",
+  "cell_id": "cell_015",
+  "candidate_index": 3,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_015_03",
+    "cell_id": "cell_015",
+    "format": "controlled_production",
+    "prompt": "The kitchen is tidy now. Complete the sentence using the cue (clean): Mia ____ the kitchen.",
+    "target_answer": "Mia had cleaned the kitchen.",
+    "accepted_answers": [
+      "had cleaned"
+    ],
+    "generation_metadata": {
+      "candidate_index": 3,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 5.435114309999335,
+  "model_calls": 1,
+  "tokens_used": 2965,
+  "model_runtime_seconds": 5.434350943998652,
+  "model_call_failures": 0
+}

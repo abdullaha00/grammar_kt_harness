@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_high_cell_020_02",
+  "cell_id": "cell_020",
+  "candidate_index": 2,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_020_02",
+    "cell_id": "cell_020",
+    "format": "controlled_production",
+    "prompt": "The café makes fresh soup every morning. Complete the sentence using the cue (serve): The soup ____ at noon.",
+    "target_answer": "The soup is served at noon.",
+    "accepted_answers": [
+      "is served"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 7.8209124019995215,
+  "model_calls": 1,
+  "tokens_used": 5017,
+  "model_runtime_seconds": 7.820169354999962,
+  "model_call_failures": 0
+}

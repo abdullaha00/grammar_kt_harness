@@ -1,0 +1,7 @@
+{
+  "prompt": "The café makes fresh soup every morning. Complete the sentence using the cue (serve): The soup ____ at noon.",
+  "target_answer": "The soup is served at noon.",
+  "accepted_answers": [
+    "is served"
+  ]
+}

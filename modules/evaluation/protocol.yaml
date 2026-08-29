@@ -1,12 +1,4 @@
 protocol_id: grammar_kt_evaluation_v1
-primary_metrics:
-  dataset: [acceptance_rate, grammar_cell_coverage]
-  representation: [item_coverage, q_matrix_density, compositional_coverage]
-  kt: [log_loss, brier_score]
-diagnostic_metrics:
-  dataset: [criterion_pass_rates, unique_prompt_rate, lexical_diversity, duplicate_prompts, cefr_distribution]
-  representation: [event_coverage, kc_support, redundant_kcs, kcs_per_item]
-  kt: [auc, ece, accuracy, grammar_split_metrics]
 ece_bins: 8
 paired_bootstrap:
   enabled: true

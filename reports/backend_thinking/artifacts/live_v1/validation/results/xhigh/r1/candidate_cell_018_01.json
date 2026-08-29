@@ -1,0 +1,71 @@
+{
+  "item_id": "candidate_cell_018_01",
+  "audit_id": "validation_live_ae319698b96f",
+  "cell_id": "cell_018",
+  "effort": "xhigh",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_ae319698b96f",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "Uses past perfect progressive, active, positive declarative form with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The timeline and answer coherently describe an ongoing activity from eight until noon."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of the past perfect progressive with duration."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The start time, noon reference point, ongoing action, and cue support the intended response."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and situation are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives only the lexical cue, not the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The item can be solved using the target tense and simple duration expression."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is required."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy"
+  ],
+  "packaging_correction": true,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 13.070093731999805,
+  "model_calls": 1,
+  "tokens_used": 2772,
+  "model_runtime_seconds": 13.06930139799988,
+  "model_call_failures": 0
+}

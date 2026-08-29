@@ -1,0 +1,1 @@
+{"prompt":"The kitchen was still dirty when the guests arrived. Complete the sentence using the cue: she / clean / it. She ____.","target_answer":"She had not cleaned it.","accepted_answers":["had not cleaned it","hadn't cleaned it"]}

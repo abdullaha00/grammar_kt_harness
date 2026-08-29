@@ -1,0 +1,72 @@
+{
+  "item_id": "candidate_cell_017_01",
+  "audit_id": "validation_live_f41a0607a9dd",
+  "cell_id": "cell_017",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_f41a0607a9dd",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "“Had not been working” is past perfect progressive, active, negative, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "Starting work on Monday coherently supports saying she had not been working there before then."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "The context does not clearly elicit the progressive aspect over the simpler past perfect form."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "“Had not worked at the shop” also fits the prompt naturally, so the accepted progressive response is not sufficiently determined."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and workplace context are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt provides only the base verb “work,” not the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "No unrelated advanced grammar is needed beyond selecting the intended verb form."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "The item can be answered using only the information in the prompt."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy",
+    "pedagogical_suitability"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 13.723027751999325,
+  "model_calls": 1,
+  "tokens_used": 2768,
+  "model_runtime_seconds": 13.722191033000854,
+  "model_call_failures": 0
+}

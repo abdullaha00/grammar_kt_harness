@@ -1,0 +1,71 @@
+{
+  "item_id": "adversarial_world_knowledge_2",
+  "audit_id": "validation_live_8666282e8665",
+  "cell_id": "cell_019",
+  "effort": "xhigh",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_8666282e8665",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "Uses a positive past-simple passive declarative: “was sealed.”"
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt and answer form a coherent historical-fact completion task."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "Success depends mainly on recalling a specific historical fact, not focused grammar practice."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The prompt does not provide enough language context to uniquely determine the exact accepted sentence."
+      },
+      "non_target_language_simplicity": {
+        "passed": false,
+        "note": "“Magna Carta” and “Runnymede” are specialist historical proper nouns."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The sentence can be produced without unrelated advanced grammar."
+      },
+      "no_world_knowledge": {
+        "passed": false,
+        "note": "Answering requires external knowledge of where and when Magna Carta was sealed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "no_world_knowledge"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": true,
+  "reference_source": "authored_adversarial_negative_control",
+  "task_runtime_seconds": 10.878439998999966,
+  "model_calls": 1,
+  "tokens_used": 2648,
+  "model_runtime_seconds": 10.877683265000087,
+  "model_call_failures": 0
+}

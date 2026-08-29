@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_medium_cell_023_02",
+  "cell_id": "cell_023",
+  "candidate_index": 2,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_023_02",
+    "cell_id": "cell_023",
+    "format": "controlled_production",
+    "prompt": "The café has stopped serving soup on Mondays. Complete the sentence using the cue (serve): Soup ______ on Mondays.",
+    "target_answer": "Soup is not served on Mondays.",
+    "accepted_answers": [
+      "is not served",
+      "isn't served"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 7.829717886999788,
+  "model_calls": 1,
+  "tokens_used": 2976,
+  "model_runtime_seconds": 7.828946646999611,
+  "model_call_failures": 0
+}

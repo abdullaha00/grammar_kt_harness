@@ -1,0 +1,1 @@
+{"prompt":"Look at Mia in the kitchen. Complete the sentence using the verb in brackets: Mia ___ dinner now. (cook)","target_answer":"Mia is cooking dinner now.","accepted_answers":["is cooking"]}

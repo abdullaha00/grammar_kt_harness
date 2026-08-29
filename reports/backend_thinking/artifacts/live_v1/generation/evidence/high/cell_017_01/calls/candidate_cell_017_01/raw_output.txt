@@ -1,0 +1,1 @@
+{"prompt":"Ben spent the morning resting. Complete the sentence using the verb “work”: Before noon, Ben ____.","target_answer":"Before noon, Ben had not been working.","accepted_answers":["had not been working","hadn't been working"]}

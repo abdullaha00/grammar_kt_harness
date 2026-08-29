@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target is active, positive, declarative, and uses the modal “would.”"
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "“Mia would read a book.” is grammatical English."
+    },
+    "naturalness": {
+      "passed": false,
+      "note": "The prompt asks to report Mia’s conditional plan, but the target omits the stated condition about having time."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The mismatch between the full quoted plan and the shortened target makes the focused reporting task unclear."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "A natural reported response would include the condition, so the prompt does not sufficiently determine the sole accepted shortened answer."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed target form or the modal “would.”"
+    },
+    "no_extraneous_grammar": {
+      "passed": false,
+      "note": "Reporting the full conditional plan naturally introduces additional conditional backshifting beyond producing “would.”"
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

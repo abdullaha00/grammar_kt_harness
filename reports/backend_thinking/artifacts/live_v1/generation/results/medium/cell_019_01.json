@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_medium_cell_019_01",
+  "cell_id": "cell_019",
+  "candidate_index": 1,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_019_01",
+    "cell_id": "cell_019",
+    "format": "controlled_production",
+    "prompt": "The door looked fresh this morning. Complete the sentence using the verb in brackets: Yesterday, the door _____. (paint)",
+    "target_answer": "Yesterday, the door was painted.",
+    "accepted_answers": [
+      "was painted"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 8.10369686499871,
+  "model_calls": 1,
+  "tokens_used": 3111,
+  "model_runtime_seconds": 8.102959331999955,
+  "model_call_failures": 0
+}

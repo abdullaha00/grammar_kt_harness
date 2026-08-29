@@ -1,0 +1,1 @@
+{"prompt":"Every morning, a worker opens the park gate. Complete the sentence using the cue (open): The park gate ____ every morning.","target_answer":"The park gate is opened every morning.","accepted_answers":["is opened"]}

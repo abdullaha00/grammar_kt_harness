@@ -1,0 +1,1 @@
+{"prompt":"At noon, Mia's hands were covered in flour. Complete the sentence using the verb in brackets: She ___ bread all morning. (make)","target_answer":"She had been making bread all morning.","accepted_answers":["had been making"]}

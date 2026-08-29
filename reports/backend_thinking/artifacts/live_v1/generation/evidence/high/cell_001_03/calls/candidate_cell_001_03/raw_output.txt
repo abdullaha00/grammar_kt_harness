@@ -1,0 +1,1 @@
+{"prompt":"Mia is asking about Ben's morning routine. Complete her question using the cue: Ben / walk to school\nMia: \"_____?\"","target_answer":"Does Ben walk to school?","accepted_answers":["Does Ben walk to school"]}

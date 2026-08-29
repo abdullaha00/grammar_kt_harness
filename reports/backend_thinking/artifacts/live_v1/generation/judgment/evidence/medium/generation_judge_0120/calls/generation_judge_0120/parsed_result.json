@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses simple past, active voice, positive declarative form with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "“Ben washed the cup.” is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The context and completed sentence are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of the regular past-tense form."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "“Yesterday” and the supplied verb clearly determine “washed.”"
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives the base verb “wash” but not the completed form “washed.”"
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Only simple past formation is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is required."
+    }
+  }
+}

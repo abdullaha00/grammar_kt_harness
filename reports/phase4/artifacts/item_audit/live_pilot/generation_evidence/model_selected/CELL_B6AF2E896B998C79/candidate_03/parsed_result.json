@@ -1,0 +1,11 @@
+{
+  "prompt": "Yesterday, a worker painted the fence. Complete the sentence using the cue (the fence / paint): _____.",
+  "target_answer": "The fence was painted.",
+  "accepted_answers": [
+    "The fence was painted."
+  ],
+  "operation_tags": [
+    "be_passive"
+  ],
+  "note": "The response uses the simple past passive."
+}

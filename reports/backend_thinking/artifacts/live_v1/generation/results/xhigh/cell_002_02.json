@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_002_02",
+  "cell_id": "cell_002",
+  "candidate_index": 2,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: no text immediately precedes the response slot",
+  "candidate": {
+    "item_id": "candidate_cell_002_02",
+    "cell_id": "cell_002",
+    "format": "controlled_production",
+    "prompt": "You want to know whether Mia cleaned the table after dinner. Complete the question with the words in brackets.\n___ the table after dinner? (Mia / clean)",
+    "target_answer": "Did Mia clean the table after dinner?",
+    "accepted_answers": [
+      "Did Mia clean"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 5.97450947499965,
+  "model_calls": 1,
+  "tokens_used": 2984,
+  "model_runtime_seconds": 5.973663459999443,
+  "model_call_failures": 0
+}

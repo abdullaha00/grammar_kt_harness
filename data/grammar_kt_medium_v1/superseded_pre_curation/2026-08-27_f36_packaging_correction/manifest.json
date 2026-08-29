@@ -1,0 +1,172 @@
+{
+  "dataset_id": "grammar_kt_medium_v1",
+  "status": "fixed_item_bank_complete",
+  "artifact_scope": "source_through_fixed_item_bank",
+  "static_summary": {
+    "descriptors": 139,
+    "unique_source_ids": 139,
+    "normalisation_results": {
+      "complete": 44,
+      "out_of_scope": 16,
+      "partial": 77,
+      "unresolved": 2
+    },
+    "explicit_phase2_eligible": 9,
+    "canonical_cells": 24,
+    "source_cell_relations": 48,
+    "descriptors_contributing_cells": 44,
+    "complete_descriptors_per_cell": 1.8333333333333333,
+    "source_cell_relations_per_cell": 2.0,
+    "legacy_equivalence": {
+      "legacy_cell_count": 24,
+      "current_cell_count": 24,
+      "feature_inventory_exact_match": true,
+      "source_memberships_exact_match": true
+    }
+  },
+  "item_summary": {
+    "generated_candidates": 77,
+    "validator_accepted_candidates": 55,
+    "validator_acceptance_rate": 0.7142857142857143,
+    "selected_bank_items": 45,
+    "selection_rate_among_accepted": 0.8181818181818182,
+    "deterministic_precheck_rejections": 2,
+    "grammar_cells": 24,
+    "validator_covered_cells": 24,
+    "covered_cells": 24,
+    "selected_items_per_cell": {
+      "cell_001": 2,
+      "cell_002": 2,
+      "cell_003": 2,
+      "cell_004": 2,
+      "cell_005": 2,
+      "cell_006": 2,
+      "cell_007": 2,
+      "cell_008": 2,
+      "cell_009": 2,
+      "cell_010": 2,
+      "cell_011": 2,
+      "cell_012": 2,
+      "cell_013": 2,
+      "cell_014": 2,
+      "cell_015": 1,
+      "cell_016": 2,
+      "cell_017": 1,
+      "cell_018": 2,
+      "cell_019": 2,
+      "cell_020": 2,
+      "cell_021": 2,
+      "cell_022": 1,
+      "cell_023": 2,
+      "cell_024": 2
+    },
+    "unique_prompt_rate": 1.0,
+    "duplicate_prompts": 0,
+    "lexical_types": 235,
+    "lexical_tokens": 816,
+    "lexical_diversity": 0.28799019607843135,
+    "format_distribution": {
+      "controlled_production": 45
+    },
+    "criterion_pass_rates": {
+      "target_fidelity": 1.0,
+      "grammaticality": 1.0,
+      "naturalness": 0.961038961038961,
+      "pedagogical_suitability": 0.961038961038961,
+      "determinacy": 0.7402597402597403,
+      "non_target_language_simplicity": 1.0,
+      "no_answer_leakage": 1.0,
+      "no_extraneous_grammar": 1.0,
+      "no_world_knowledge": 1.0
+    },
+    "generation_attempts": 78,
+    "structurally_invalid_attempts": 1,
+    "attempted_cells": 24
+  },
+  "missing_generation_cells": [],
+  "missing_generation_positions": [],
+  "uncovered_cell_ids": [],
+  "item_construction_counts": {
+    "default": {
+      "candidate_positions_per_cell": 3,
+      "attempts": 72,
+      "structurally_valid_candidates": 71,
+      "validation_judgments": 71,
+      "validator_accepted": 53
+    },
+    "conditional_rescue": {
+      "activated": true,
+      "protocol": "conditional_zero_coverage_rescue_v1",
+      "cell_ids": [
+        "cell_017",
+        "cell_022"
+      ],
+      "candidate_indices": [
+        4,
+        5
+      ],
+      "planned_attempts": 4,
+      "attempts": 4,
+      "structurally_valid_candidates": 4,
+      "validation_judgments": 4,
+      "validator_accepted": 1
+    },
+    "determinacy_intervention": {
+      "activated": true,
+      "protocol": "explicit_construction_determinacy_intervention_v1",
+      "cell_ids": [
+        "cell_017"
+      ],
+      "candidate_indices": [
+        6,
+        7
+      ],
+      "planned_attempts": 2,
+      "attempts": 2,
+      "structurally_valid_candidates": 2,
+      "validation_judgments": 2,
+      "validator_accepted": 1
+    }
+  },
+  "models": {
+    "normalisation": "retained gpt-5.6-sol, medium, 2026-08-20",
+    "generation": "gpt-5.6-sol",
+    "validation": "gpt-5.6-terra",
+    "reasoning_effort": "medium"
+  },
+  "item_method": {
+    "default_candidates_per_cell": 3,
+    "independent_validation": true,
+    "maximum_selected_items_per_cell": 2,
+    "conditional_rescue": {
+      "trigger": "zero accepted items after all default N=3 positions",
+      "candidate_indices": [
+        4,
+        5
+      ],
+      "calls_per_uncovered_cell": 2,
+      "prompt_models_and_validation_criteria_unchanged": true
+    },
+    "determinacy_intervention": {
+      "trigger": "zero accepted items after the completed unchanged-prompt rescue, with determinacy failure in every prior terminal item judgment",
+      "candidate_indices": [
+        6,
+        7
+      ],
+      "calls_per_uncovered_cell": 2,
+      "generation_prompt": "modules/items/generation/ablations/determinacy_explicit_construction_prompt.txt",
+      "only_generation_prompt_changes": true,
+      "models_rulebook_format_and_validation_criteria_unchanged": true
+    },
+    "pilot_reuse": "first-three prefix of the Phase-4 live model-selected condition, translated only by exact GrammarCell feature tuple",
+    "construction_boundary": "No grammar fold, learner evidence, KC, simulation, outcome, or KT information enters generation or validation."
+  },
+  "inputs": {
+    "grammar_schema": "modules/grammar/canonical/schema.yaml",
+    "resource_schema": "modules/grammar/resource/egp/schema.yaml",
+    "generation_design": "modules/items/generation/design.yaml",
+    "determinacy_intervention_prompt": "modules/items/generation/ablations/determinacy_explicit_construction_prompt.txt",
+    "phase4_pilot": "reports/phase4/artifacts/item_audit/live_pilot"
+  },
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/run_full_dataset.py --determinacy-intervention --workers 4 --generation-model gpt-5.6-sol --validation-model gpt-5.6-terra --reasoning-effort medium --output-dir data/grammar_kt_medium_v1"
+}

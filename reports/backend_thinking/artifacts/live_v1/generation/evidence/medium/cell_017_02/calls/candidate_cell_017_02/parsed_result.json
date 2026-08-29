@@ -1,0 +1,7 @@
+{
+  "prompt": "Maya began waiting at 8:55, and the bus arrived at 9:00. Complete with the verb in brackets: By 9:00, Maya ___ for an hour. (wait)",
+  "target_answer": "By 9:00, Maya had not been waiting for an hour.",
+  "accepted_answers": [
+    "had not been waiting"
+  ]
+}

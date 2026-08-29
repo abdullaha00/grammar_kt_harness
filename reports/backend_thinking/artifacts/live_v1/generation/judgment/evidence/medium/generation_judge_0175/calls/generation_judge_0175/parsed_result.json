@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses past simple active positive polar-question form: 'Did Ben finish ...?'."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt context and question are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of past simple question formation."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The cue and yesterday context clearly determine 'Did Ben finish the task yesterday?'."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "All vocabulary is common and unambiguous."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The completed question is not displayed in the prompt."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Only basic past simple question formation is required."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external knowledge is needed."
+    }
+  }
+}

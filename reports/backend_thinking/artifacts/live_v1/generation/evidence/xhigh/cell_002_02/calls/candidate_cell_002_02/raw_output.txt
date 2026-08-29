@@ -1,0 +1,1 @@
+{"prompt":"You want to know whether Mia cleaned the table after dinner. Complete the question with the words in brackets.\n___ the table after dinner? (Mia / clean)","target_answer":"Did Mia clean the table after dinner?","accepted_answers":["Did Mia clean"]}

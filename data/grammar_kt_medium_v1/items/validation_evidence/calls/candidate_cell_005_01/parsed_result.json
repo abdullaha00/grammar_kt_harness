@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "“Turn on the light.” is a positive active imperative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The dark-room context and instruction are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice producing an imperative."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The cue and context directly determine the accepted response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "All vocabulary is common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives a cue but does not display the completed target sentence."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated or advanced grammar is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external knowledge is required."
+    }
+  }
+}

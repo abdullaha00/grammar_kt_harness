@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a positive active past-simple polar question with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and question form a coherent, natural exchange."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It clearly focuses practice on forming a past-simple yes/no question."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The context and required words sufficiently cue the intended question."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "All vocabulary and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies the required phrase but does not display the completed question form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it requires only the targeted past-question formation."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external knowledge is needed."
+    }
+  }
+}

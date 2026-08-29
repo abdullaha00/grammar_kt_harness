@@ -1,0 +1,1 @@
+{"prompt":"When Maya arrived at the office, the cleaners had already finished. Complete the sentence using the cue: clean. The office _____.","target_answer":"The office had been cleaned.","accepted_answers":["had been cleaned"]}

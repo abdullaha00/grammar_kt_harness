@@ -1,0 +1,7 @@
+{
+  "prompt": "Mia has a book open in front of her. Complete the sentence using “read”: Mia ____ a book.",
+  "target_answer": "Mia is reading a book.",
+  "accepted_answers": [
+    "is reading"
+  ]
+}

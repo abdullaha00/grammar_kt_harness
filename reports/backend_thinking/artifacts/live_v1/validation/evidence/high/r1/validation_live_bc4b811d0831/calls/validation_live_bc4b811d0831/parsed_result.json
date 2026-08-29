@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a present-simple, positive declarative passive with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and response are coherent, though the task is simple copying."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "Displaying the full answer removes the need to produce or practice the target form."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The displayed answer and sole accepted answer determine the response exactly."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": false,
+      "note": "The prompt explicitly displays the completed target sentence."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed beyond the target passive construction."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is required."
+    }
+  }
+}

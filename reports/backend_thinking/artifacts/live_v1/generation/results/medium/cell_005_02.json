@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_medium_cell_005_02",
+  "cell_id": "cell_005",
+  "candidate_index": 2,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: no text immediately precedes the response slot",
+  "candidate": {
+    "item_id": "candidate_cell_005_02",
+    "cell_id": "cell_005",
+    "format": "controlled_production",
+    "prompt": "The room is dark. Tell your friend what to do, using the cue “turn on the light”: ____",
+    "target_answer": "Turn on the light.",
+    "accepted_answers": [
+      "Turn on the light."
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 6.050972140999875,
+  "model_calls": 1,
+  "tokens_used": 2970,
+  "model_runtime_seconds": 6.050208614000439,
+  "model_call_failures": 0
+}

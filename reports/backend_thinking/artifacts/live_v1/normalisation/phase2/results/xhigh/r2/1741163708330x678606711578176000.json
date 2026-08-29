@@ -1,0 +1,85 @@
+{
+  "source_id": "1741163708330x678606711578176000",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708330x678606711578176000",
+    "result": "complete",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "present",
+        "voice": "active"
+      },
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "past",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "The examples positively establish both licensed tense alternatives: present emphatic 'do' and past emphatic 'did'. The original Phase-1 branch is therefore represented by two independently attested scalar descendants; all ineligible dimensions remain fixed."
+  },
+  "fixed_phase1_mapping": {
+    "source_id": "1741163708330x678606711578176000",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "retained_phase2_mapping": {
+    "source_id": "1741163708330x678606711578176000",
+    "result": "complete",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "present",
+        "voice": "active"
+      },
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "past",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 11.969084010001097,
+  "model_calls": 1,
+  "tokens_used": 6454,
+  "model_runtime_seconds": 11.968357707000905,
+  "model_call_failures": 0
+}

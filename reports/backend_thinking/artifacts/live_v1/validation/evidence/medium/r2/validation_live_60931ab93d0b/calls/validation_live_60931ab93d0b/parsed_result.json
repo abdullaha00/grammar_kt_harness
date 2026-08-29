@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "“had not been sleeping” is negative past perfect continuous, active declarative."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target sentence is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The cause-and-duration context is coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It directly practices the requested form in a clear context."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The verb, polarity, tense-aspect form, and blank position determine the accepted response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "Vocabulary is common and context is transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The completed target form is not shown in the prompt."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed to complete the blank."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external knowledge is required."
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "prompt": "Lena wants to know about Tom's daily trip to school. Complete the question using these words: Tom / walk / to school every day. ______",
+  "target_answer": "Does Tom walk to school every day?",
+  "accepted_answers": [
+    "Does Tom walk to school every day?"
+  ],
+  "operation_tags": [
+    "do_support",
+    "operator_inversion"
+  ],
+  "note": "A simple-present yes/no question about a daily routine."
+}

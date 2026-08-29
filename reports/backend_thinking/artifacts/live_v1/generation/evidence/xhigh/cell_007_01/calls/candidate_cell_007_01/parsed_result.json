@@ -1,0 +1,8 @@
+{
+  "prompt": "Mia usually drinks tea, but she dislikes coffee. Complete the sentence with the cue “drink coffee”: Mia _____.",
+  "target_answer": "Mia does not drink coffee.",
+  "accepted_answers": [
+    "does not drink coffee",
+    "doesn't drink coffee"
+  ]
+}

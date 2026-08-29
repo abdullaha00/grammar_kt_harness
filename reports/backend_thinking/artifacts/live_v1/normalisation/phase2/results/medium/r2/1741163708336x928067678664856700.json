@@ -1,0 +1,72 @@
+{
+  "source_id": "1741163708336x928067678664856700",
+  "effort": "medium",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708336x928067678664856700",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": null,
+        "clause": null,
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "present",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "Both examples positively establish present-tense forms of BE, narrowing the licensed present/past tense alternative to present. Unnamed dimensions remain unchanged, so the mapping remains partial."
+  },
+  "fixed_phase1_mapping": {
+    "source_id": "1741163708336x928067678664856700",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": null,
+        "clause": null,
+        "modal": "none",
+        "polarity": "positive",
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "retained_phase2_mapping": {
+    "source_id": "1741163708336x928067678664856700",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": null,
+        "clause": null,
+        "modal": "none",
+        "polarity": "positive",
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 8.742177648000506,
+  "model_calls": 1,
+  "tokens_used": 6154,
+  "model_runtime_seconds": 8.74143796700082,
+  "model_call_failures": 0
+}

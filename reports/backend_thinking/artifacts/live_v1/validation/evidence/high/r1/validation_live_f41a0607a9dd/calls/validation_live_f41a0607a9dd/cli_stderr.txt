@@ -1,0 +1,87 @@
+OpenAI Codex v0.150.1
+--------
+workdir: /home/abdullah/grammar_kt_harness/reports/backend_thinking/artifacts/live_v1/validation/evidence/high/r1/validation_live_f41a0607a9dd/calls/validation_live_f41a0607a9dd
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0468f-4e21-72a2-8eed-f561213d1ed2
+--------
+user
+Judge one generated exercise independently from the generator.
+
+Use the visible learner-facing prompt, target answer, accepted answers, intended
+GrammarCell, and the declared criteria. Do not rely on generation reasoning or
+generation metadata. Judge every criterion separately and give a short note.
+
+Return one JSON object with a `judgments` mapping. Every declared criterion must
+have exactly `passed` (true/false) and `note`.
+
+VISIBLE ITEM:
+{
+  "item_id": "validation_live_f41a0607a9dd",
+  "format": "controlled_production",
+  "prompt": "Maya started her job at the shop on Monday. Complete the sentence using “work”: Before Monday, she [____] at the shop.",
+  "target_answer": "Before Monday, she had not been working at the shop.",
+  "accepted_answers": [
+    "had not been working",
+    "hadn't been working"
+  ]
+}
+
+INTENDED GRAMMAR CELL:
+{
+  "tense": "past",
+  "aspect": "perfect_progressive",
+  "voice": "active",
+  "polarity": "negative",
+  "clause": "declarative",
+  "modal": "none"
+}
+
+VALIDATION CRITERIA:
+{
+  "target_fidelity": {
+    "required": true,
+    "question": "Does the target answer express exactly the intended GrammarCell?"
+  },
+  "grammaticality": {
+    "required": true,
+    "question": "Is the target answer grammatical English?"
+  },
+  "naturalness": {
+    "required": true,
+    "question": "Is the prompt-answer pair natural and coherent?"
+  },
+  "pedagogical_suitability": {
+    "required": true,
+    "question": "Is the item suitable for focused grammar practice?"
+  },
+  "determinacy": {
+    "required": true,
+    "question": "Does the prompt sufficiently determine the accepted response set?"
+  },
+  "non_target_language_simplicity": {
+    "required": true,
+    "question": "Is the vocabulary and context sufficiently common, transparent, and lexically unambiguous that lexical knowledge is unlikely to determine the learner's response?"
+  },
+  "no_answer_leakage": {
+    "required": true,
+    "question": "Does the prompt avoid displaying the completed target form?"
+  },
+  "no_extraneous_grammar": {
+    "required": true,
+    "question": "Can the item be solved without unrelated advanced grammar?"
+  },
+  "no_world_knowledge": {
+    "required": true,
+    "question": "Can the item be answered without external factual or specialist knowledge?"
+  }
+}
+
+codex
+{"judgments":{"target_fidelity":{"passed":true,"note":"“Had not been working” is past perfect progressive, active, negative, declarative, with no modal."},"grammaticality":{"passed":true,"note":"The target answer is grammatical English."},"naturalness":{"passed":true,"note":"Starting work on Monday coherently supports saying she had not been working there before then."},"pedagogical_suitability":{"passed":false,"note":"The context does not clearly elicit the progressive aspect over the simpler past perfect form."},"determinacy":{"passed":false,"note":"“Had not worked at the shop” also fits the prompt naturally, so the accepted progressive response is not sufficiently determined."},"non_target_language_simplicity":{"passed":true,"note":"The vocabulary and workplace context are common and transparent."},"no_answer_leakage":{"passed":true,"note":"The prompt provides only the base verb “work,” not the completed target form."},"no_extraneous_grammar":{"passed":true,"note":"No unrelated advanced grammar is needed beyond selecting the intended verb form."},"no_world_knowledge":{"passed":true,"note":"The item can be answered using only the information in the prompt."}}}
+tokens used
+2,768

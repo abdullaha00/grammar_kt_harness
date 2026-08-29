@@ -1,0 +1,7 @@
+{
+  "prompt": "Look at Mia in the kitchen. Complete the sentence using “wash”: Mia ____ the dishes.",
+  "target_answer": "Mia is washing the dishes.",
+  "accepted_answers": [
+    "is washing"
+  ]
+}

@@ -1,0 +1,10 @@
+# Operational settings selected by the retained backend-effort audit.
+normalisation:
+  model: gpt-5.6-sol
+  reasoning_effort: high
+generation:
+  model: gpt-5.6-sol
+  reasoning_effort: medium
+validation:
+  model: gpt-5.6-terra
+  reasoning_effort: medium

@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "“Maya has washed the dishes” is present perfect, active, positive, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target sentence is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The present-perfect answer coherently explains why the dishes are clean now."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of the present perfect with common language."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The context also permits the simple past, “Maya washed the dishes,” so it does not uniquely determine the accepted present-perfect form."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "“Dishes,” “clean,” and “wash” are common, transparent vocabulary."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the base-form cue “wash,” not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it requires no advanced grammar beyond selecting the target verb form."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No factual or specialist knowledge is required."
+    }
+  }
+}

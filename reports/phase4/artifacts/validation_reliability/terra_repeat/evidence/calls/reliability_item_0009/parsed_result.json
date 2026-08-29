@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses past perfect progressive, active, positive declarative form."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The timeline and answer are coherent, though past progressive would also be natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of a tense-aspect form."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The prompt also naturally permits “Maya was painting the fence for four hours,” so it does not uniquely determine the accepted form."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and scenario are common and clear."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The completed target form is not shown in the prompt."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is required."
+    }
+  }
+}

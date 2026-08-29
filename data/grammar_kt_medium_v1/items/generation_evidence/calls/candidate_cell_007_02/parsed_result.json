@@ -1,0 +1,8 @@
+{
+  "prompt": "Mia usually takes the bus to work, so she ___ to work. (walk)",
+  "target_answer": "She does not walk to work.",
+  "accepted_answers": [
+    "does not walk",
+    "doesn't walk"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "sample_order": 23,
+  "blind_item_id": "reliability_item_0023",
+  "candidate_id": "candidate_controlled_lexicon_CELL_0D017AFB2B3A3DB5_05",
+  "condition": "controlled_lexicon",
+  "cell_id": "CELL_0D017AFB2B3A3DB5",
+  "candidate_index": 5,
+  "original_accepted": true,
+  "original_failed_criteria": [],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The answer uses the positive active past perfect progressive in a declarative clause with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is fully grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The timeline and two-hour duration coherently support the completed sentence."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The item clearly focuses learners on forming the past perfect progressive."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The stated start and end times, continuation at nine, and lexical cue strongly determine the accepted response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and reading scenario are common, transparent, and unambiguous."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies context and a base-form cue but does not display the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed to complete the sentence."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "Only the explicitly given timeline is needed; no external knowledge is required."
+    }
+  },
+  "accepted": true,
+  "runtime_seconds": 14.99069805900217
+}

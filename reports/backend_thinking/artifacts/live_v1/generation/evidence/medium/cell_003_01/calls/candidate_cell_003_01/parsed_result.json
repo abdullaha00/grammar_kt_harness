@@ -1,0 +1,7 @@
+{
+  "prompt": "Mia gives food to her cat every morning. Complete the sentence using “feed”: Mia [____] before school.",
+  "target_answer": "Mia feeds her cat before school.",
+  "accepted_answers": [
+    "feeds her cat"
+  ]
+}

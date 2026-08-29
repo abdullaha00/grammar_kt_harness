@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_high_cell_024_01",
+  "cell_id": "cell_024",
+  "candidate_index": 1,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_024_01",
+    "cell_id": "cell_024",
+    "format": "controlled_production",
+    "prompt": "Mia has a car, so she could drive to the store. Complete the sentence using the cue “drive”: Mia ____ to the store.",
+    "target_answer": "Mia would drive to the store.",
+    "accepted_answers": [
+      "would drive"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 8.286162283000522,
+  "model_calls": 1,
+  "tokens_used": 2975,
+  "model_runtime_seconds": 8.285403899999437,
+  "model_call_failures": 0
+}

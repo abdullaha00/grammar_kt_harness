@@ -1,0 +1,1 @@
+{"prompt":"Workers are cleaning the windows right now. Complete the sentence using the verb in brackets: The windows _____. (clean)","target_answer":"The windows are being cleaned.","accepted_answers":["are being cleaned"]}

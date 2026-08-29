@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is present simple, passive, negative, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The contrast between washing outdoor tables and leaving indoor tables dirty is coherent."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of the present simple negative passive."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The prompt and verb cue clearly support the intended negative passive response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The context and vocabulary are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The completed passive form is not displayed in the prompt."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The item can be solved using only the targeted passive construction."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

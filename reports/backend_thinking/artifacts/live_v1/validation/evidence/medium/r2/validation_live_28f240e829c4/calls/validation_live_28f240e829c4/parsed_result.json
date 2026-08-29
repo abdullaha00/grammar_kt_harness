@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses present simple, passive voice, negative polarity, and a declarative clause with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The café context and statement about breakfast not being served on Sundays are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of the present simple negative passive."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The prompt supplies the required words and context, clearly directing the intended passive negative response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The completed target form is not displayed in the prompt."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it requires only the targeted negative passive construction."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

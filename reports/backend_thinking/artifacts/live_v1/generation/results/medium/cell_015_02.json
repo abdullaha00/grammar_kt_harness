@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_medium_cell_015_02",
+  "cell_id": "cell_015",
+  "candidate_index": 2,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_015_02",
+    "cell_id": "cell_015",
+    "format": "controlled_production",
+    "prompt": "Tom arrived at the café at noon, but Mia was already there. Complete the sentence using the cue (leave home): By noon, Mia ____.",
+    "target_answer": "By noon, Mia had left home.",
+    "accepted_answers": [
+      "had left home"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 6.695488166000359,
+  "model_calls": 1,
+  "tokens_used": 5028,
+  "model_runtime_seconds": 6.6947381800000585,
+  "model_call_failures": 0
+}

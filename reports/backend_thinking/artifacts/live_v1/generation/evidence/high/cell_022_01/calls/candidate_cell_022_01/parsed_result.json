@@ -1,0 +1,7 @@
+{
+  "prompt": "When the guests arrived, the room was ready. Complete the sentence using “prepare”: The room ______ before the guests arrived.",
+  "target_answer": "The room had been prepared before the guests arrived.",
+  "accepted_answers": [
+    "had been prepared"
+  ]
+}

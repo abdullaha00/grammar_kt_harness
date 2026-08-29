@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_003_03",
+  "cell_id": "cell_003",
+  "candidate_index": 3,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_003_03",
+    "cell_id": "cell_003",
+    "format": "controlled_production",
+    "prompt": "Mia has a job at the town library. Complete the sentence using “work”: Mia ____ at the library.",
+    "target_answer": "Mia works at the library.",
+    "accepted_answers": [
+      "works"
+    ],
+    "generation_metadata": {
+      "candidate_index": 3,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 7.089963750999232,
+  "model_calls": 1,
+  "tokens_used": 5017,
+  "model_runtime_seconds": 7.089237494999907,
+  "model_call_failures": 0
+}

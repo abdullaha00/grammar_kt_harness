@@ -1,0 +1,8 @@
+{
+  "prompt": "The children are sitting quietly. Use the cue “play” to complete the sentence: They ____ outside.",
+  "target_answer": "They are not playing outside.",
+  "accepted_answers": [
+    "are not playing",
+    "aren't playing"
+  ]
+}

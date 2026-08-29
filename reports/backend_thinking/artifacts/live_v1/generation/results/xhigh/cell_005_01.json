@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_005_01",
+  "cell_id": "cell_005",
+  "candidate_index": 1,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: no text immediately precedes the response slot",
+  "candidate": {
+    "item_id": "candidate_cell_005_01",
+    "cell_id": "cell_005",
+    "format": "controlled_production",
+    "prompt": "Rain is coming in through the open window. Use the cue “close / window”: ____",
+    "target_answer": "Close the window.",
+    "accepted_answers": [
+      "Close the window.",
+      "Close the window"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 10.309653330999936,
+  "model_calls": 1,
+  "tokens_used": 5137,
+  "model_runtime_seconds": 10.308875636001176,
+  "model_call_failures": 0
+}

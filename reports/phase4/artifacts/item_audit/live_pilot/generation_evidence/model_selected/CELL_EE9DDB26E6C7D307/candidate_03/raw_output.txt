@@ -1,0 +1,14 @@
+{
+  "prompt": "The floor is wet. Tell your friend what to avoid. Use the cue “run.” Response: _____",
+  "target_answer": "Don't run on the wet floor.",
+  "accepted_answers": [
+    "Don't run on the wet floor.",
+    "Do not run on the wet floor."
+  ],
+  "operation_tags": [
+    "do_support",
+    "negation",
+    "imperative"
+  ],
+  "note": "A warning about unsafe behavior."
+}

@@ -1,0 +1,1 @@
+{"prompt":"At this café, a worker cleans the tables every morning. Complete the sentence using “clean”: The tables ____ every morning.","target_answer":"The tables are cleaned every morning.","accepted_answers":["are cleaned"]}

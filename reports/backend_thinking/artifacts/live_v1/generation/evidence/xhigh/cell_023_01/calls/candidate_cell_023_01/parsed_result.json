@@ -1,0 +1,7 @@
+{
+  "prompt": "The café cleans only the blue tables each morning. Complete the sentence using the verb in brackets: The red tables _____. (clean)",
+  "target_answer": "The red tables are not cleaned.",
+  "accepted_answers": [
+    "are not cleaned"
+  ]
+}

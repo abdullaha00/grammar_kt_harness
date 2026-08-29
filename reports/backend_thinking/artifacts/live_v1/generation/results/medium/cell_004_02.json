@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_medium_cell_004_02",
+  "cell_id": "cell_004",
+  "candidate_index": 2,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_004_02",
+    "cell_id": "cell_004",
+    "format": "controlled_production",
+    "prompt": "Yesterday, Mia had one letter to send. Complete the sentence using the cue (send): Mia ____ the letter.",
+    "target_answer": "Mia sent the letter.",
+    "accepted_answers": [
+      "sent"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 5.206416390999948,
+  "model_calls": 1,
+  "tokens_used": 5016,
+  "model_runtime_seconds": 5.205392199000926,
+  "model_call_failures": 0
+}

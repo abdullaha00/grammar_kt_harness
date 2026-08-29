@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target uses past perfect progressive, active, positive, declarative form."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": false,
+      "note": "The prompt already supplies “At noon,”, while the target repeats it, yielding an unnatural duplicated phrase if inserted."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The cue and timeline provide focused practice of the intended form."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "Past continuous (“Maya was painting the fence for four hours”) is also a plausible response in this context."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The completed target form is not displayed in the prompt."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The task can be completed without unrelated advanced grammar."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is required."
+    }
+  }
+}

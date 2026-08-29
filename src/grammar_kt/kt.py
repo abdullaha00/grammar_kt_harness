@@ -8,6 +8,7 @@ from typing import Any
 
 import numpy as np
 from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import StandardScaler
 
 
 def history_features(
@@ -15,9 +16,23 @@ def history_features(
     projection: list[dict[str, Any]],
     alpha: float,
     beta: float,
+    feature_design: dict[str, Any] | None = None,
 ) -> tuple[list[dict[str, Any]], list[str]]:
     """Build observable features, updating counts only after each event's row."""
 
+    if alpha <= 0 or beta <= 0:
+        raise ValueError("history priors must be positive")
+    item_ids = [row["item_id"] for row in projection]
+    if len(item_ids) != len(set(item_ids)):
+        raise ValueError("KC projection contains duplicate item IDs")
+    event_ids = [row["event_id"] for row in events]
+    if len(event_ids) != len(set(event_ids)):
+        raise ValueError("KT events contain duplicate event IDs")
+    design = feature_design or {
+        "include_item_difficulty": False,
+        "include_kc_count": False,
+        "include_kc_indicators": True,
+    }
     by_item = {row["item_id"]: row["kc_ids"] for row in projection}
     event_items = {row["item_id"] for row in events}
     if event_items - set(by_item):
@@ -48,19 +63,27 @@ def history_features(
             if active
             else 0.0
         )
-        vector = [overall, active_rate, mean_log_attempts, event["item_difficulty"], len(active)]
-        vector.extend(int(kc_id in active) for kc_id in kc_ids)
+        vector = [overall, active_rate, mean_log_attempts]
+        if design["include_item_difficulty"]:
+            if "item_difficulty" not in event:
+                raise ValueError("oracle-difficulty logistic requires item_difficulty")
+            vector.append(float(event["item_difficulty"]))
+        if design["include_kc_count"]:
+            vector.append(float(len(active)))
+        if design["include_kc_indicators"]:
+            vector.extend(int(kc_id in active) for kc_id in kc_ids)
         rows_by_event[event["event_id"]] = {
             "event_id": event["event_id"],
             "vector": vector,
             "empirical_probability": active_rate,
             "history_events": learner_attempts[learner],
         }
-        learner_attempts[learner] += 1
-        learner_correct[learner] += event["correct"]
-        for kc_id in active:
-            kc_attempts[(learner, kc_id)] += 1
-            kc_correct[(learner, kc_id)] += event["correct"]
+        if event.get("updates_history", True):
+            learner_attempts[learner] += 1
+            learner_correct[learner] += event["correct"]
+            for kc_id in active:
+                kc_attempts[(learner, kc_id)] += 1
+                kc_correct[(learner, kc_id)] += event["correct"]
     return [rows_by_event[event["event_id"]] for event in events], kc_ids
 
 
@@ -90,19 +113,22 @@ def _bkt(
         else:
             probability = (learner_correct[learner] + 1) / (learner_attempts[learner] + 2)
         predictions[event["event_id"]] = probability
-        for kc_id in active:
-            prior = state[learner][kc_id]
-            if event["correct"]:
-                posterior = prior * (1 - parameters["slip"]) / (
-                    prior * (1 - parameters["slip"]) + (1 - prior) * parameters["guess"]
-                )
-            else:
-                posterior = prior * parameters["slip"] / (
-                    prior * parameters["slip"] + (1 - prior) * (1 - parameters["guess"])
-                )
-            state[learner][kc_id] = posterior + (1 - posterior) * parameters["learn"]
-        learner_attempts[learner] += 1
-        learner_correct[learner] += event["correct"]
+        if event.get("updates_history", True):
+            for kc_id in active:
+                prior = state[learner][kc_id]
+                if event["correct"]:
+                    posterior = prior * (1 - parameters["slip"]) / (
+                        prior * (1 - parameters["slip"])
+                        + (1 - prior) * parameters["guess"]
+                    )
+                else:
+                    posterior = prior * parameters["slip"] / (
+                        prior * parameters["slip"]
+                        + (1 - prior) * (1 - parameters["guess"])
+                    )
+                state[learner][kc_id] = posterior + (1 - posterior) * parameters["learn"]
+            learner_attempts[learner] += 1
+            learner_correct[learner] += event["correct"]
     return predictions
 
 
@@ -112,11 +138,13 @@ def run_kt(
     protocol: dict[str, Any],
 ) -> list[dict[str, Any]]:
     empirical = protocol["empirical"]
+    primary_logistic = protocol.get("logistic", {})
     features, _kc_ids = history_features(
         events,
         projection,
         empirical["alpha"],
         empirical["beta"],
+        primary_logistic,
     )
     feature_by_event = {row["event_id"]: row for row in features}
     predictions_by_technique: dict[str, dict[str, float]] = {}
@@ -127,19 +155,38 @@ def run_kt(
         }
     if "bkt" in protocol["techniques"]:
         predictions_by_technique["bkt"] = _bkt(events, projection, protocol["bkt"])
-    if "logistic" in protocol["techniques"]:
-        x = np.asarray([row["vector"] for row in features], dtype=float)
+    for technique in [
+        name for name in protocol["techniques"] if name.startswith("logistic")
+    ]:
+        parameters = protocol[technique]
+        logistic_features, _kc_ids = history_features(
+            events,
+            projection,
+            empirical["alpha"],
+            empirical["beta"],
+            parameters,
+        )
+        x = np.asarray([row["vector"] for row in logistic_features], dtype=float)
         y = np.asarray([event["correct"] for event in events], dtype=int)
         train = np.asarray([event["dataset_split"] == "train" for event in events])
-        parameters = protocol["logistic"]
+        if not np.any(train):
+            raise ValueError("logistic KT has no training events")
+        if len(set(y[train].tolist())) < 2:
+            raise ValueError("logistic KT training outcomes need both classes")
+        if parameters["standardize"]:
+            scaler = StandardScaler()
+            x_train = scaler.fit_transform(x[train])
+            x = scaler.transform(x)
+        else:
+            x_train = x[train]
         model = LogisticRegression(
             C=parameters["regularization_c"],
             max_iter=parameters["max_iterations"],
             random_state=parameters["random_seed"],
         )
-        model.fit(x[train], y[train])
+        model.fit(x_train, y[train])
         probabilities = model.predict_proba(x)[:, 1]
-        predictions_by_technique["logistic"] = {
+        predictions_by_technique[technique] = {
             event["event_id"]: float(probability)
             for event, probability in zip(events, probabilities, strict=True)
         }

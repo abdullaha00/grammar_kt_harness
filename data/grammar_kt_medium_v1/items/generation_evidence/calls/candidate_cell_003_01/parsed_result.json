@@ -1,0 +1,7 @@
+{
+  "prompt": "Emma has a dog. Every morning, she ___ before breakfast. (walk / the dog)",
+  "target_answer": "She walks the dog before breakfast.",
+  "accepted_answers": [
+    "walks the dog"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "prompt": "Leo usually walks to work, but he has a broken leg. Complete the sentence using “walk”: Leo ____ to work this week.",
+  "target_answer": "Leo is not walking to work this week.",
+  "accepted_answers": [
+    "is not walking",
+    "isn't walking"
+  ]
+}

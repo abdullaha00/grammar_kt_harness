@@ -1,0 +1,13 @@
+{
+  "prompt": "It is noon, but Emma's breakfast is still untouched. Use the cue “Emma / eat / breakfast” to complete the response: ____",
+  "target_answer": "Emma has not eaten breakfast.",
+  "accepted_answers": [
+    "Emma has not eaten breakfast.",
+    "Emma hasn't eaten breakfast."
+  ],
+  "operation_tags": [
+    "perfect",
+    "negation"
+  ],
+  "note": "The untouched breakfast makes the response clear."
+}

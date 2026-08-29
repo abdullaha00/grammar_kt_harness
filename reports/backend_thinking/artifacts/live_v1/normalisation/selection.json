@@ -1,0 +1,52 @@
+{
+  "experiment_id": "BACKEND-THINKING-001",
+  "stage": "normalisation",
+  "date": "2026-08-28",
+  "strict_frozen_rule_status": "inconclusive",
+  "strict_frozen_rule_reason": "Every effort produced at least one blind-adjudicated critical mapping error, so no effort passed the zero-critical-error interpretation of the gate.",
+  "operational_setting": "high",
+  "operational_decision": "Use high: high and xhigh tie on adjudicated semantic acceptability and critical-error count; high is more repeatable, faster, and lower-token than xhigh. Medium's paired lower confidence bound against high crosses the frozen five-point non-inferiority margin.",
+  "quality_rate": {
+    "medium": 0.8939393939393939,
+    "high": 0.9242424242424242,
+    "xhigh": 0.9242424242424242
+  },
+  "confirmed_critical_errors": {
+    "medium": 3,
+    "high": 2,
+    "xhigh": 2
+  },
+  "repeat_structural_agreement_rate": {
+    "medium": 0.7878787878787878,
+    "high": 0.8787878787878788,
+    "xhigh": 0.8181818181818182
+  },
+  "paired_quality_delta": {
+    "medium_minus_high": {
+      "delta": -0.030303030303030304,
+      "ci_95": [-0.0967741935483871, 0.02857142857142857]
+    },
+    "high_minus_xhigh": {
+      "delta": 0.0,
+      "ci_95": [-0.04549005681818179, 0.045454545454545456]
+    }
+  },
+  "total_tokens": {
+    "medium": 369231,
+    "high": 376624,
+    "xhigh": 387343
+  },
+  "median_call_seconds": {
+    "medium": 11.041301584000394,
+    "high": 11.372195123998608,
+    "xhigh": 12.39564075599992
+  },
+  "claim_boundary": "Operational choice on a 24-descriptor challenge-enriched Phase-1 cohort and nine fixed-input Phase-2 transitions. Reviews are research-agent judgments rather than human or expert gold labels; Phase 2 is not an end-to-end effort-specific chain.",
+  "evidence": [
+    "analysis/review_analysis.json",
+    "automated_summary.json",
+    "reviews/reviewer_a_normalisation.jsonl",
+    "reviews/reviewer_b_normalisation.jsonl",
+    "reviews/adjudicator_normalisation.jsonl"
+  ]
+}

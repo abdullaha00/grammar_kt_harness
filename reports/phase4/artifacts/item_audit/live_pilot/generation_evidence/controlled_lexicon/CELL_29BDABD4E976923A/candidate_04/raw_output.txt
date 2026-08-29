@@ -1,0 +1,12 @@
+{
+  "prompt": "The team started cleaning the rooms a few minutes ago, and the work is still in progress. Complete the sentence using the words in brackets: ____ (the rooms / clean / by the team)",
+  "target_answer": "The rooms are being cleaned by the team.",
+  "accepted_answers": [
+    "The rooms are being cleaned by the team."
+  ],
+  "operation_tags": [
+    "progressive",
+    "be_passive"
+  ],
+  "note": "The sentence describes a positive action currently in progress, with the rooms as the passive subject."
+}

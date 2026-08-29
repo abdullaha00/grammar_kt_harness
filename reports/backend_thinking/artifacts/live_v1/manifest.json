@@ -1,0 +1,119 @@
+{
+  "experiment_id": "BACKEND-THINKING-001",
+  "date": "2026-08-28",
+  "status": "complete",
+  "claim_boundary": "Fresh matched live-model effort audit. Provider sampling seeds and model snapshots are unavailable; two replicates estimate ordinary call variability. Research-agent reviews are not human or expert gold labels.",
+  "efforts": [
+    "medium",
+    "high",
+    "xhigh"
+  ],
+  "models": {
+    "normalisation": "gpt-5.6-sol",
+    "generation": "gpt-5.6-sol",
+    "validation": "gpt-5.6-terra"
+  },
+  "replicates": {
+    "normalisation": 2,
+    "validation": 2,
+    "generation": 1
+  },
+  "scale": {
+    "normalisation_phase1_descriptors": 24,
+    "normalisation_phase2_fixed_transitions": 9,
+    "validation_items": 36,
+    "generation_cells": 24,
+    "generation_candidates_per_cell": 3
+  },
+  "supplementary_scale": {
+    "validation_adversarial_safety_items": 12
+  },
+  "supplementary_hashes": {
+    "supplementary/validation_adversarial_safety.jsonl": "aceae452dd34638114092a31eac42396a2d2374e21462a8797805afcacc1e36e"
+  },
+  "seed_use": {
+    "seed": 20260828,
+    "uses": [
+      "cohort blinding",
+      "interleaved call ordering",
+      "bootstrap"
+    ],
+    "provider_sampling_seed_available": false
+  },
+  "selection_rule": {
+    "principle": "lowest admissible effort non-inferior to the best quality setting",
+    "normalisation_margin": 0.05,
+    "validation_margin": 0.05,
+    "generation_margin": 0.05,
+    "generation_coverage_tolerance_cells": 1,
+    "critical_error_gate": true
+  },
+  "declaration_hashes": {
+    "modules/grammar/resource/egp/normalisation/phase1.txt": "677bd037996116768ece539987ebe4a54eff8e520a1fc50249ecd3cf71931407",
+    "modules/grammar/resource/egp/normalisation/phase2.txt": "7829bad0deeecd95585d6ebddbd9fe05eac6b6f49fbbef4ef31bd6b6e6a697b9",
+    "modules/grammar/resource/egp/normalisation/rulebook.md": "036d7a334473f2ba0b83ae20ac5e742f6e8d38cd174b7ff93b7030661bb0bc95",
+    "modules/grammar/canonical/schema.yaml": "a3e8d4f1c419eff10c4498db4b3b243fddf51b708ad569c652a9caaa3a8f0aaf",
+    "modules/items/generation/prompt.txt": "571d5e13b30ca65eefdc0fd07831382a038e2f3e13d0435d201b9a3626995b39",
+    "modules/items/generation/rulebook.md": "3539401fa99acdf921bc90f39eb6b326bbc09cea7c82793111ded3f4b1979d26",
+    "modules/items/generation/design.yaml": "d944d2b4b16cc9787c5ae0ea7de09d9720585db030f8d14033b84cd8000add81",
+    "modules/items/generation/formats/controlled_production.yaml": "ec944d6cdc1ffdcdddff24359c303e9f0c3b0f2bebe64641ed69e86e22eaca30",
+    "modules/items/validation/prompt.txt": "9252f92c8d711d06ad10456f1ba7c83169d47d6b64720dbb13cce86f2a01e96b",
+    "modules/items/validation/criteria.yaml": "da9ca74c3b2eb4b1835cb1d569830c8d1e4dc006a86a7829b0ddc47b041b9b85",
+    "cohorts/generation_cells.jsonl": "af181630c092ba9e71a38b6e385339dafedb10161f7989b6df97590b20c5c63c",
+    "cohorts/normalisation_phase1.jsonl": "8167cdd0c5e8b5d478b8b9bf8596e0b0c0a04815657522f0899e5bd15f952217",
+    "cohorts/normalisation_phase2.jsonl": "4c04cddcbde5900084f80209bcbe962ad7771e4d107bc4def1c9d9191a7b5ff7",
+    "cohorts/validation_items_with_retained_labels.jsonl": "89e1af3be495eaeb89af6815bd2824486a5982dff9b0d1e587e9fe696e08bda2"
+  },
+  "codex_version": "codex-cli 0.150.1",
+  "exact_commands": [
+    "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/run_backend_thinking_audit.py --stage prepare --output-dir reports/backend_thinking/artifacts/live_v1",
+    "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/run_backend_thinking_audit.py --stage normalisation --output-dir reports/backend_thinking/artifacts/live_v1 --workers 4",
+    "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/run_backend_thinking_audit.py --stage analyze --output-dir reports/backend_thinking/artifacts/live_v1",
+    "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/run_backend_thinking_audit.py --stage validation --output-dir reports/backend_thinking/artifacts/live_v1 --workers 4",
+    "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/run_backend_thinking_audit.py --stage generation --output-dir reports/backend_thinking/artifacts/live_v1 --workers 4",
+    "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/run_backend_thinking_audit.py --stage generation --output-dir reports/backend_thinking/artifacts/live_v1 --workers 4 --judge-effort medium",
+    "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/analyze_backend_thinking_reviews.py --output-dir reports/backend_thinking/artifacts/live_v1 --bootstrap-replicates 10000"
+  ],
+  "generation_judge": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium"
+  },
+  "completion": {
+    "date": "2026-08-28",
+    "stage_evaluations": 918,
+    "live_model_calls": 905,
+    "deterministic_precheck_decisions": 13,
+    "codex_cli_tokens_used": 3351258,
+    "summed_model_runtime_seconds": 10109.316402929988,
+    "nonzero_cli_return_codes": 0,
+    "malformed_model_outputs": 1,
+    "blind_review_rows_per_reviewer": 318,
+    "blind_adjudication_rows": 26
+  },
+  "operational_settings": {
+    "normalisation": {
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "high",
+      "strict_rule_status": "inconclusive"
+    },
+    "generation": {
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "medium",
+      "strict_rule_status": "inconclusive"
+    },
+    "validation": {
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "strict_rule_status": "inconclusive"
+    }
+  },
+  "result_hashes": {
+    "scripts/run_backend_thinking_audit.py": "6fb059d6347221c85b923fec343551d4b5b10af71f8dbebe266b9166fd5c6a5c",
+    "scripts/analyze_backend_thinking_reviews.py": "0c0ad5dec7a9d689e26fddc1539ba2f7fdb1a4a0972fac5f9e3e4e5f45bde2d6",
+    "reports/backend_thinking/review_protocol.md": "34076a031b3bdcf5a7d6d7cc83153a6140553c69c85e37647ecd5d4029063f5a",
+    "normalisation/selection.json": "70b8d10d414bc1d377e8a05efe3a978ca2806a6aa52404e27d8a6b4aadaa3bfb",
+    "validation/selection.json": "1a39004f8fce345334f9ec8cd38525e678bd7995cbbff44d603ad2f6ad9d51d1",
+    "generation/selection.json": "93afcf16a7f9905ef23c883d672f8f942dd8ce0db08bb2e8f69cfe888084aff3",
+    "analysis/review_analysis.json": "d958b1c41d9fc120abf58eaee2be14fe9162e2d98e1ac2547dcf1a1669ae4c97"
+  }
+}

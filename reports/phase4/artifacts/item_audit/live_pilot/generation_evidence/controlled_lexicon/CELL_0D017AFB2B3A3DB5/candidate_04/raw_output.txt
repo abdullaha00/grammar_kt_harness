@@ -1,0 +1,13 @@
+{
+  "prompt": "When Omar arrived, he saw that Lina was still on her journey. Complete the sentence using the cue: Lina / travel → ______.",
+  "target_answer": "Lina had been traveling.",
+  "accepted_answers": [
+    "Lina had been traveling.",
+    "Lina had been travelling."
+  ],
+  "operation_tags": [
+    "perfect",
+    "progressive"
+  ],
+  "note": "Both US and UK spellings are accepted."
+}

@@ -1,0 +1,65 @@
+{
+  "blind_id": "generation_judge_0142",
+  "experiment_item_id": "generation_medium_cell_016_01",
+  "generation_effort": "medium",
+  "cell_id": "cell_016",
+  "candidate_index": 1,
+  "judge_effort": "medium",
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "generation_judge_0142",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "“has been washing” is present perfect progressive, active, positive, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt context naturally supports the answer."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of the present perfect progressive."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "Starting an hour ago and still continuing clearly cues the accepted form."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and situation are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives only the base verb “wash,” not the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "No unrelated advanced grammar is needed to complete the item."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is required."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "task_runtime_seconds": 8.991232665999632,
+  "model_calls": 1,
+  "tokens_used": 2483,
+  "model_runtime_seconds": 8.99034801400012,
+  "model_call_failures": 0
+}

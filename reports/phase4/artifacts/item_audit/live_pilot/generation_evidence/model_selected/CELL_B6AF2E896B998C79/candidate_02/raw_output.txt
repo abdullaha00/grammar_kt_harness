@@ -1,0 +1,11 @@
+{
+  "prompt": "Yesterday, someone repaired the broken gate. Report what happened, starting with “The broken gate.” Response: ____",
+  "target_answer": "The broken gate was repaired.",
+  "accepted_answers": [
+    "The broken gate was repaired."
+  ],
+  "operation_tags": [
+    "be_passive"
+  ],
+  "note": "The context and required opening make the response determinate."
+}

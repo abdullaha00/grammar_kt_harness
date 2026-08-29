@@ -1,0 +1,549 @@
+{
+  "selection_id": "forward_predictive_parsimony_v1",
+  "candidate_design_id": "schema_structural_candidates_v1",
+  "development_cell_ids": [
+    "cell_001",
+    "cell_002",
+    "cell_003",
+    "cell_004",
+    "cell_005",
+    "cell_006",
+    "cell_008",
+    "cell_009",
+    "cell_012",
+    "cell_013",
+    "cell_014",
+    "cell_015",
+    "cell_016",
+    "cell_017",
+    "cell_018",
+    "cell_021",
+    "cell_022",
+    "cell_023"
+  ],
+  "development_item_ids": [
+    "candidate_cell_001_01",
+    "candidate_cell_001_02",
+    "candidate_cell_002_01",
+    "candidate_cell_002_03",
+    "candidate_cell_003_01",
+    "candidate_cell_003_03",
+    "candidate_cell_004_01",
+    "candidate_cell_004_02",
+    "candidate_cell_005_03",
+    "candidate_cell_006_01",
+    "candidate_cell_006_03",
+    "candidate_cell_008_01",
+    "candidate_cell_008_02",
+    "candidate_cell_009_01",
+    "candidate_cell_009_02",
+    "candidate_cell_012_01",
+    "candidate_cell_012_02",
+    "candidate_cell_013_01",
+    "candidate_cell_013_02",
+    "candidate_cell_014_01",
+    "candidate_cell_014_03",
+    "candidate_cell_015_03",
+    "candidate_cell_016_01",
+    "candidate_cell_016_02",
+    "candidate_cell_017_06",
+    "candidate_cell_017_07",
+    "candidate_cell_018_03",
+    "candidate_cell_021_01",
+    "candidate_cell_021_03",
+    "candidate_cell_022_05",
+    "candidate_cell_023_02",
+    "candidate_cell_023_03"
+  ],
+  "initial_candidate_ids": [
+    "kc_feature__aspect__perfect",
+    "kc_feature__aspect__perfect_progressive",
+    "kc_feature__aspect__progressive",
+    "kc_feature__clause__imperative",
+    "kc_feature__clause__polar_question",
+    "kc_feature__polarity__negative",
+    "kc_feature__tense__past",
+    "kc_feature__tense__present",
+    "kc_feature__voice__passive"
+  ],
+  "eligible_addition_ids": [
+    "kc_interaction__aspect_perfect__and__polarity_negative",
+    "kc_interaction__aspect_perfect__and__tense_past",
+    "kc_interaction__aspect_perfect__and__tense_present",
+    "kc_interaction__aspect_perfect_progressive__and__tense_past",
+    "kc_interaction__polarity_negative__and__tense_past",
+    "kc_interaction__polarity_negative__and__tense_present",
+    "kc_interaction__tense_present__and__voice_passive",
+    "kc_operation__finite_tense_form",
+    "kc_operation__perfect_dependency",
+    "kc_operation__progressive_dependency"
+  ],
+  "initial_event_support": {
+    "kc_feature__aspect__perfect": {
+      "train_events": 32000,
+      "validation_events": 8000
+    },
+    "kc_feature__aspect__perfect_progressive": {
+      "train_events": 20000,
+      "validation_events": 5000
+    },
+    "kc_feature__aspect__progressive": {
+      "train_events": 24000,
+      "validation_events": 6000
+    },
+    "kc_feature__clause__imperative": {
+      "train_events": 12000,
+      "validation_events": 3000
+    },
+    "kc_feature__clause__polar_question": {
+      "train_events": 16000,
+      "validation_events": 4000
+    },
+    "kc_feature__polarity__negative": {
+      "train_events": 48000,
+      "validation_events": 12000
+    },
+    "kc_feature__tense__past": {
+      "train_events": 44000,
+      "validation_events": 11000
+    },
+    "kc_feature__tense__present": {
+      "train_events": 72000,
+      "validation_events": 18000
+    },
+    "kc_feature__voice__passive": {
+      "train_events": 20000,
+      "validation_events": 5000
+    }
+  },
+  "initial_support_warnings": {},
+  "addition_event_support": {
+    "kc_interaction__aspect_perfect__and__polarity_negative": {
+      "train_events": 16000,
+      "validation_events": 4000
+    },
+    "kc_interaction__aspect_perfect__and__tense_past": {
+      "train_events": 16000,
+      "validation_events": 4000
+    },
+    "kc_interaction__aspect_perfect__and__tense_present": {
+      "train_events": 16000,
+      "validation_events": 4000
+    },
+    "kc_interaction__aspect_perfect_progressive__and__tense_past": {
+      "train_events": 12000,
+      "validation_events": 3000
+    },
+    "kc_interaction__polarity_negative__and__tense_past": {
+      "train_events": 16000,
+      "validation_events": 4000
+    },
+    "kc_interaction__polarity_negative__and__tense_present": {
+      "train_events": 24000,
+      "validation_events": 6000
+    },
+    "kc_interaction__tense_present__and__voice_passive": {
+      "train_events": 16000,
+      "validation_events": 4000
+    },
+    "kc_operation__finite_tense_form": {
+      "train_events": 116000,
+      "validation_events": 29000
+    },
+    "kc_operation__perfect_dependency": {
+      "train_events": 52000,
+      "validation_events": 13000
+    },
+    "kc_operation__progressive_dependency": {
+      "train_events": 44000,
+      "validation_events": 11000
+    }
+  },
+  "excluded_additions": {},
+  "selected_candidate_ids": [
+    "kc_feature__aspect__perfect",
+    "kc_feature__aspect__perfect_progressive",
+    "kc_feature__aspect__progressive",
+    "kc_feature__clause__imperative",
+    "kc_feature__clause__polar_question",
+    "kc_feature__polarity__negative",
+    "kc_feature__tense__past",
+    "kc_feature__tense__present",
+    "kc_feature__voice__passive",
+    "kc_interaction__aspect_perfect__and__polarity_negative"
+  ],
+  "selected_support": {
+    "kc_feature__aspect__perfect": {
+      "cell_support": 5,
+      "item_support": 8
+    },
+    "kc_feature__aspect__perfect_progressive": {
+      "cell_support": 3,
+      "item_support": 5
+    },
+    "kc_feature__aspect__progressive": {
+      "cell_support": 3,
+      "item_support": 6
+    },
+    "kc_feature__clause__imperative": {
+      "cell_support": 2,
+      "item_support": 3
+    },
+    "kc_feature__clause__polar_question": {
+      "cell_support": 2,
+      "item_support": 4
+    },
+    "kc_feature__polarity__negative": {
+      "cell_support": 6,
+      "item_support": 12
+    },
+    "kc_feature__tense__past": {
+      "cell_support": 7,
+      "item_support": 11
+    },
+    "kc_feature__tense__present": {
+      "cell_support": 9,
+      "item_support": 18
+    },
+    "kc_feature__voice__passive": {
+      "cell_support": 3,
+      "item_support": 5
+    },
+    "kc_interaction__aspect_perfect__and__polarity_negative": {
+      "cell_support": 2,
+      "item_support": 4
+    }
+  },
+  "split": {
+    "mode": "chronological",
+    "train_dataset_split": "train",
+    "validation_dataset_split": "validation",
+    "train_learners": 1000,
+    "validation_learners": 1000,
+    "train_events": 128000,
+    "validation_events": 32000,
+    "reserved_events_read": false
+  },
+  "objective": {
+    "metric": "log_loss",
+    "complexity": "kc_count",
+    "complexity_penalty": 0.0005,
+    "minimum_improvement": 0.0
+  },
+  "selector_model": {
+    "model": "observable_logistic_kt",
+    "history_prior": {
+      "alpha": 1.0,
+      "beta": 1.0
+    },
+    "features": [
+      "learner_success_rate",
+      "learner_log_attempts",
+      "per_kc_active",
+      "per_kc_prior_successes",
+      "per_kc_prior_failures"
+    ],
+    "regularization_c": 0.1,
+    "max_iterations": 300,
+    "random_seed": 20260827
+  },
+  "final_validation_score": {
+    "n": 32000,
+    "log_loss": 0.6463538273424759,
+    "brier_score": 0.2269704430037298,
+    "kc_count": 10,
+    "complexity_penalty": 0.005,
+    "objective": 0.6513538273424759
+  },
+  "trace": [
+    {
+      "step": 0,
+      "action": "initial_factorized",
+      "candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive"
+      ],
+      "score": {
+        "n": 32000,
+        "log_loss": 0.6471603353700723,
+        "brier_score": 0.22733527146813912,
+        "kc_count": 9,
+        "complexity_penalty": 0.0045000000000000005,
+        "objective": 0.6516603353700723
+      }
+    },
+    {
+      "step": 1,
+      "action": "forward_add",
+      "selected": "kc_interaction__aspect_perfect__and__polarity_negative",
+      "objective_improvement": 0.00030650802759635276,
+      "score": {
+        "n": 32000,
+        "log_loss": 0.6463538273424759,
+        "brier_score": 0.2269704430037298,
+        "kc_count": 10,
+        "complexity_penalty": 0.005,
+        "objective": 0.6513538273424759
+      },
+      "candidate_scores": [
+        {
+          "candidate_id": "kc_interaction__aspect_perfect__and__polarity_negative",
+          "score": {
+            "n": 32000,
+            "log_loss": 0.6463538273424759,
+            "brier_score": 0.2269704430037298,
+            "kc_count": 10,
+            "complexity_penalty": 0.005,
+            "objective": 0.6513538273424759
+          },
+          "objective_improvement": 0.00030650802759635276
+        },
+        {
+          "candidate_id": "kc_interaction__aspect_perfect__and__tense_past",
+          "score": {
+            "n": 32000,
+            "log_loss": 0.6472079598887179,
+            "brier_score": 0.22734917587220213,
+            "kc_count": 10,
+            "complexity_penalty": 0.005,
+            "objective": 0.6522079598887179
+          },
+          "objective_improvement": -0.0005476245186456508
+        },
+        {
+          "candidate_id": "kc_interaction__aspect_perfect__and__tense_present",
+          "score": {
+            "n": 32000,
+            "log_loss": 0.6471970612549344,
+            "brier_score": 0.22735101803988647,
+            "kc_count": 10,
+            "complexity_penalty": 0.005,
+            "objective": 0.6521970612549344
+          },
+          "objective_improvement": -0.0005367258848620882
+        },
+        {
+          "candidate_id": "kc_interaction__aspect_perfect_progressive__and__tense_past",
+          "score": {
+            "n": 32000,
+            "log_loss": 0.647112571084071,
+            "brier_score": 0.22731644200104084,
+            "kc_count": 10,
+            "complexity_penalty": 0.005,
+            "objective": 0.6521125710840711
+          },
+          "objective_improvement": -0.00045223571399877205
+        },
+        {
+          "candidate_id": "kc_interaction__polarity_negative__and__tense_past",
+          "score": {
+            "n": 32000,
+            "log_loss": 0.6473701795998594,
+            "brier_score": 0.22742595620259265,
+            "kc_count": 10,
+            "complexity_penalty": 0.005,
+            "objective": 0.6523701795998594
+          },
+          "objective_improvement": -0.0007098442297871488
+        },
+        {
+          "candidate_id": "kc_interaction__polarity_negative__and__tense_present",
+          "score": {
+            "n": 32000,
+            "log_loss": 0.6468282643437449,
+            "brier_score": 0.22717496359997477,
+            "kc_count": 10,
+            "complexity_penalty": 0.005,
+            "objective": 0.6518282643437449
+          },
+          "objective_improvement": -0.00016792897367257087
+        },
+        {
+          "candidate_id": "kc_interaction__tense_present__and__voice_passive",
+          "score": {
+            "n": 32000,
+            "log_loss": 0.6469974588323243,
+            "brier_score": 0.22725586081978116,
+            "kc_count": 10,
+            "complexity_penalty": 0.005,
+            "objective": 0.6519974588323243
+          },
+          "objective_improvement": -0.0003371234622520092
+        },
+        {
+          "candidate_id": "kc_operation__finite_tense_form",
+          "score": {
+            "n": 32000,
+            "log_loss": 0.6469663853124311,
+            "brier_score": 0.22725060439450462,
+            "kc_count": 10,
+            "complexity_penalty": 0.005,
+            "objective": 0.6519663853124311
+          },
+          "objective_improvement": -0.00030604994235883254
+        },
+        {
+          "candidate_id": "kc_operation__perfect_dependency",
+          "score": {
+            "n": 32000,
+            "log_loss": 0.6471699108189946,
+            "brier_score": 0.2273384282560277,
+            "kc_count": 10,
+            "complexity_penalty": 0.005,
+            "objective": 0.6521699108189946
+          },
+          "objective_improvement": -0.0005095754489222726
+        },
+        {
+          "candidate_id": "kc_operation__progressive_dependency",
+          "score": {
+            "n": 32000,
+            "log_loss": 0.6470936388263487,
+            "brier_score": 0.22730493579569636,
+            "kc_count": 10,
+            "complexity_penalty": 0.005,
+            "objective": 0.6520936388263487
+          },
+          "objective_improvement": -0.00043330345627645706
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "action": "forward_stop",
+      "minimum_improvement": 0.0,
+      "best_rejected": {
+        "candidate_id": "kc_interaction__polarity_negative__and__tense_present",
+        "score": {
+          "n": 32000,
+          "log_loss": 0.6459912673791601,
+          "brier_score": 0.2267919644688194,
+          "kc_count": 11,
+          "complexity_penalty": 0.0055,
+          "objective": 0.6514912673791601
+        },
+        "objective_improvement": -0.0001374400366841444
+      },
+      "candidate_scores": [
+        {
+          "candidate_id": "kc_interaction__aspect_perfect__and__tense_past",
+          "score": {
+            "n": 32000,
+            "log_loss": 0.6464196049699374,
+            "brier_score": 0.2269963441920491,
+            "kc_count": 11,
+            "complexity_penalty": 0.0055,
+            "objective": 0.6519196049699374
+          },
+          "objective_improvement": -0.0005657776274614612
+        },
+        {
+          "candidate_id": "kc_interaction__aspect_perfect__and__tense_present",
+          "score": {
+            "n": 32000,
+            "log_loss": 0.6464059466423024,
+            "brier_score": 0.22699124509798527,
+            "kc_count": 11,
+            "complexity_penalty": 0.0055,
+            "objective": 0.6519059466423024
+          },
+          "objective_improvement": -0.000552119299826459
+        },
+        {
+          "candidate_id": "kc_interaction__aspect_perfect_progressive__and__tense_past",
+          "score": {
+            "n": 32000,
+            "log_loss": 0.6464223810960316,
+            "brier_score": 0.2269991375900404,
+            "kc_count": 11,
+            "complexity_penalty": 0.0055,
+            "objective": 0.6519223810960315
+          },
+          "objective_improvement": -0.0005685537535555785
+        },
+        {
+          "candidate_id": "kc_interaction__polarity_negative__and__tense_past",
+          "score": {
+            "n": 32000,
+            "log_loss": 0.6465077367065376,
+            "brier_score": 0.2270341773211284,
+            "kc_count": 11,
+            "complexity_penalty": 0.0055,
+            "objective": 0.6520077367065376
+          },
+          "objective_improvement": -0.0006539093640616223
+        },
+        {
+          "candidate_id": "kc_interaction__polarity_negative__and__tense_present",
+          "score": {
+            "n": 32000,
+            "log_loss": 0.6459912673791601,
+            "brier_score": 0.2267919644688194,
+            "kc_count": 11,
+            "complexity_penalty": 0.0055,
+            "objective": 0.6514912673791601
+          },
+          "objective_improvement": -0.0001374400366841444
+        },
+        {
+          "candidate_id": "kc_interaction__tense_present__and__voice_passive",
+          "score": {
+            "n": 32000,
+            "log_loss": 0.6463618977930105,
+            "brier_score": 0.2269713056821018,
+            "kc_count": 11,
+            "complexity_penalty": 0.0055,
+            "objective": 0.6518618977930104
+          },
+          "objective_improvement": -0.0005080704505344702
+        },
+        {
+          "candidate_id": "kc_operation__finite_tense_form",
+          "score": {
+            "n": 32000,
+            "log_loss": 0.6463677740865067,
+            "brier_score": 0.2269766290312895,
+            "kc_count": 11,
+            "complexity_penalty": 0.0055,
+            "objective": 0.6518677740865066
+          },
+          "objective_improvement": -0.0005139467440307133
+        },
+        {
+          "candidate_id": "kc_operation__perfect_dependency",
+          "score": {
+            "n": 32000,
+            "log_loss": 0.6463713870868858,
+            "brier_score": 0.2269774419848598,
+            "kc_count": 11,
+            "complexity_penalty": 0.0055,
+            "objective": 0.6518713870868857
+          },
+          "objective_improvement": -0.0005175597444098123
+        },
+        {
+          "candidate_id": "kc_operation__progressive_dependency",
+          "score": {
+            "n": 32000,
+            "log_loss": 0.6464172759074527,
+            "brier_score": 0.22699555580463587,
+            "kc_count": 11,
+            "complexity_penalty": 0.0055,
+            "objective": 0.6519172759074526
+          },
+          "objective_improvement": -0.0005634485649766985
+        }
+      ]
+    }
+  ],
+  "development_outcomes_read": true,
+  "reserved_or_holdout_outcomes_read": false,
+  "held_out_grammar_read": false
+}

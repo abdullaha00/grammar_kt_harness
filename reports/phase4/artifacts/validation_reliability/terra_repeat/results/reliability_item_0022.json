@@ -1,0 +1,52 @@
+{
+  "sample_order": 22,
+  "blind_item_id": "reliability_item_0022",
+  "candidate_id": "candidate_model_selected_CELL_C20140C7DAD62DB2_03",
+  "condition": "model_selected",
+  "cell_id": "CELL_C20140C7DAD62DB2",
+  "candidate_index": 3,
+  "original_accepted": true,
+  "original_failed_criteria": [],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Past simple, active, negative declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt context and answer are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It clearly focuses on forming the past simple negative."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The cue sufficiently directs the intended response, including the accepted contraction variant."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "Vocabulary and context are common and clear."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The completed target form is not displayed in the prompt."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it requires only the targeted past simple negative construction."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  },
+  "accepted": true,
+  "runtime_seconds": 10.208536544989329
+}

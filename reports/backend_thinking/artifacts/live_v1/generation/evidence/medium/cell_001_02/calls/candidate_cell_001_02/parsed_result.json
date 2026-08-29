@@ -1,0 +1,7 @@
+{
+  "prompt": "You want to know about Leo’s usual trip to school. Use the verb “walk” to ask: ____",
+  "target_answer": "Does Leo walk to school?",
+  "accepted_answers": [
+    "Does Leo walk to school?"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "source_id": "1741163713121x303053781636601900",
+  "stratum": "complete_noneligible",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163713121x303053781636601900",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "Negative present continuous is an ordinary active declarative construction with present tense, progressive aspect, and no central modal."
+  },
+  "retained_mapping": {
+    "source_id": "1741163713121x303053781636601900",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": null
+  },
+  "task_runtime_seconds": 9.087693347000823,
+  "model_calls": 1,
+  "tokens_used": 6035,
+  "model_runtime_seconds": 9.086953901000015,
+  "model_call_failures": 0
+}

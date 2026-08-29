@@ -1,0 +1,12 @@
+{
+  "prompt": "Workers are putting fresh paint on the fence right now. Complete the response using the cue: (the fence / paint) ___",
+  "target_answer": "The fence is being painted.",
+  "accepted_answers": [
+    "The fence is being painted."
+  ],
+  "operation_tags": [
+    "progressive",
+    "be_passive"
+  ],
+  "note": "The fence receives the action that is happening now."
+}

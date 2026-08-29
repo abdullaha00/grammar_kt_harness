@@ -1,0 +1,42 @@
+{
+  "target_cell": {
+    "cell_id": "cell_021",
+    "features": {
+      "tense": "present",
+      "aspect": "progressive",
+      "voice": "passive",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "none"
+    }
+  },
+  "candidate_position": {
+    "index": 1,
+    "count": 3
+  },
+  "item_format": {
+    "format_id": "controlled_production",
+    "task_goal": "Produce the complete response licensed by a short context and lexical cue.",
+    "required_fields": [
+      "prompt",
+      "target_answer",
+      "accepted_answers"
+    ],
+    "answer_form": "text replacing the single visible response slot",
+    "constraints": [
+      "The prompt must visibly mark the response slot.",
+      "The target answer must show the complete clause after slot replacement.",
+      "Each accepted answer must contain only text entered in the response slot.",
+      "Accepted answers must preserve the intended GrammarCell.",
+      "The prompt must not reveal the completed target form."
+    ]
+  },
+  "design": {
+    "design_id": "best_of_three_model_selected_v1",
+    "candidates_per_cell": 3,
+    "candidate_calls": "independent",
+    "lexical_choice": "model_generated",
+    "lexical_constraint": "simple_non_target_language",
+    "nuisance_condition": "short_context"
+  }
+}

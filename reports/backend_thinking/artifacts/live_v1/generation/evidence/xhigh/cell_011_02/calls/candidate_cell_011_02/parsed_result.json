@@ -1,0 +1,7 @@
+{
+  "prompt": "When I looked into the kitchen, I saw Anna in the middle of making lunch. Complete the sentence using the cue (cook): Anna ____ lunch.",
+  "target_answer": "Anna was cooking lunch.",
+  "accepted_answers": [
+    "was cooking"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_002_01",
+  "cell_id": "cell_002",
+  "candidate_index": 1,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: no text immediately precedes the response slot",
+  "candidate": {
+    "item_id": "candidate_cell_002_01",
+    "cell_id": "cell_002",
+    "format": "controlled_production",
+    "prompt": "The kitchen is clean now. Ask whether Mia cleaned it yesterday. Use: Mia / clean the kitchen / yesterday. Response: ____",
+    "target_answer": "Did Mia clean the kitchen yesterday?",
+    "accepted_answers": [
+      "Did Mia clean the kitchen yesterday?",
+      "Did Mia clean the kitchen yesterday"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 21.043552521001402,
+  "model_calls": 1,
+  "tokens_used": 5552,
+  "model_runtime_seconds": 21.042700292000518,
+  "model_call_failures": 0
+}

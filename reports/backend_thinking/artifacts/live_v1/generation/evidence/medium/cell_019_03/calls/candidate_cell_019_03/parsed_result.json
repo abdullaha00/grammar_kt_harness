@@ -1,0 +1,7 @@
+{
+  "prompt": "The shop closed at six. Workers cleaned the floor before they left. Complete the sentence using the cue (clean): The floor ____ before the workers left.",
+  "target_answer": "The floor was cleaned before the workers left.",
+  "accepted_answers": [
+    "was cleaned"
+  ]
+}

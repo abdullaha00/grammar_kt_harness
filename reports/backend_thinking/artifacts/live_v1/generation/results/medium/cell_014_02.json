@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_medium_cell_014_02",
+  "cell_id": "cell_014",
+  "candidate_index": 2,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_014_02",
+    "cell_id": "cell_014",
+    "format": "controlled_production",
+    "prompt": "The door was still open when Maya left at noon. Complete the sentence using the verb in brackets: By noon, Maya ___ the door. (lock)",
+    "target_answer": "By noon, Maya had not locked the door.",
+    "accepted_answers": [
+      "had not locked",
+      "hadn't locked"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 13.800473692001106,
+  "model_calls": 1,
+  "tokens_used": 3169,
+  "model_runtime_seconds": 13.799659672999042,
+  "model_call_failures": 0
+}

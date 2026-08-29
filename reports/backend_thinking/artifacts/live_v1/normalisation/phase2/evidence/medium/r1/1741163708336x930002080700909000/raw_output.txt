@@ -1,0 +1,26 @@
+{
+  "source_id": "1741163708336x930002080700909000",
+  "result": "complete",
+  "cells": [
+    {
+      "aspect": "none",
+      "clause": "polar_question",
+      "modal": "none",
+      "polarity": "positive",
+      "tense": "present",
+      "voice": "active"
+    },
+    {
+      "aspect": "none",
+      "clause": "polar_question",
+      "modal": "none",
+      "polarity": "positive",
+      "tense": "past",
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "The descriptor licenses affirmative yes/no questions with nonmodal DO-support across the closed present/past space. The examples positively establish both present 'Do' and past 'Did', so the original branch is narrowed into two scalar tense cells while all other Phase-1 constraints remain fixed."
+}

@@ -1,0 +1,1 @@
+{"prompt":"Maya started reading the book yesterday, but she is only halfway through. Complete the sentence using “finish”: Maya ____ the book.","target_answer":"Maya has not finished the book.","accepted_answers":["has not finished","hasn't finished"]}

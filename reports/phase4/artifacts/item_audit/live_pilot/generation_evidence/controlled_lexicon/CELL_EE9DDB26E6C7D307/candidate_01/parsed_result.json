@@ -1,0 +1,14 @@
+{
+  "prompt": "The room is cold, so you want Omar to leave the door closed. Use OPEN + THE DOOR: ____",
+  "target_answer": "Don't open the door.",
+  "accepted_answers": [
+    "Don't open the door.",
+    "Do not open the door."
+  ],
+  "operation_tags": [
+    "do_support",
+    "negation",
+    "imperative"
+  ],
+  "note": "Both the contracted and uncontracted forms are accepted."
+}

@@ -1,26 +1,25 @@
 \begin{table*}[t]
   \centering
   \small
-  \begin{tabular}{@{}llcc@{}}
+  \begin{tabular}{@{}lrrcc@{}}
     \toprule
-    Policy-specific data & Model & Test AUC $\uparrow$ & Test log loss $\downarrow$ \\
+    Representation & KCs & All-probe LL &
+      $\Delta$ all probes [95\% CI] & $\Delta$ compositional [95\% CI] \\
     \midrule
-    Factorized & Empirical & $.613\pm.010$ & $.661\pm.010$ \\
-               & BKT       & $.603\pm.007$ & $.723\pm.016$ \\
-               & Logistic  & $\mathbf{.658\pm.013}$ & $\mathbf{.618\pm.010}$ \\
-    \addlinespace
-    + interactions & Empirical & $.608\pm.008$ & $.649\pm.006$ \\
-               & BKT       & $.603\pm.014$ & $.690\pm.007$ \\
-               & Logistic  & $\mathbf{.646\pm.012}$ & $\mathbf{.603\pm.005}$ \\
-    \addlinespace
-    Whole cell & Empirical & $.659\pm.005$ & $.661\pm.005$ \\
-               & BKT       & $.650\pm.005$ & $.729\pm.006$ \\
-               & Logistic  & $\mathbf{.691\pm.009}$ & $\mathbf{.626\pm.006}$ \\
+    Factorized & 9 & .643731 & reference & reference \\
+    Automated & 10 & .643356 &
+      $-.000375\;[-.000631,-.000109]$ &
+      $-.000234\;[-.000836,.000375]$ \\
+    All supported interactions & 16 & .643334 &
+      $-.000397\;[-.000782,-.000026]$ &
+      $-.001168\;[-.002042,-.000246]$ \\
+    Oracle all-cell & 24 & .657507 &
+      $+.013777\;[.012288,.015234]$ &
+      $+.059615\;[.053390,.065675]$ \\
     \bottomrule
   \end{tabular}
-  \caption{Mean test metrics and 95\% $t$ intervals over five simulation seeds.
-  Bold marks the best model within each policy-specific dataset. Scores must
-  not be compared as controlled policy effects because the item pools and
-  generating states differ.}
+  \caption{Primary fixed-logistic results on the final 1,000-learner mixed-world
+  stream.  Deltas are candidate minus factorized log loss; intervals resample
+  whole learners 5,000 times.  Negative is better.  This is one simulation seed.}
   \label{tab:kt-results}
 \end{table*}

@@ -1,0 +1,71 @@
+{
+  "item_id": "candidate_cell_013_03",
+  "audit_id": "validation_live_02bcea689d09",
+  "cell_id": "cell_013",
+  "effort": "xhigh",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_02bcea689d09",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "It is present perfect, active, positive, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The completed action and current spotless result make the prompt-answer pair coherent."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of the present perfect for a completed action with a present result."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The current result ('now it is spotless') strongly cues the present perfect resultative reading."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and kitchen-cleaning context are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt provides only the base-form cue 'clean,' not the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The item can be solved using the target tense and basic subject-auxiliary agreement only."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 15.188257523001084,
+  "model_calls": 1,
+  "tokens_used": 2899,
+  "model_runtime_seconds": 15.187460343999192,
+  "model_call_failures": 0
+}

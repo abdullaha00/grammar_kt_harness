@@ -1,0 +1,8 @@
+{
+  "prompt": "The floor is wet. Warn your friend: “_____!” (use: run)",
+  "target_answer": "Don't run!",
+  "accepted_answers": [
+    "Don't run",
+    "Do not run"
+  ]
+}

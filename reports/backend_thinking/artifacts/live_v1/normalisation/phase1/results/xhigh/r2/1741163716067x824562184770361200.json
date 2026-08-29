@@ -1,0 +1,55 @@
+{
+  "source_id": "1741163716067x824562184770361200",
+  "stratum": "phase2_eligible",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163716067x824562184770361200",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "Main-verb BE forms negative declaratives in either present or past; contraction does not alter the canonical dimensions."
+  },
+  "retained_mapping": {
+    "source_id": "1741163716067x824562184770361200",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 8.785548243000449,
+  "model_calls": 1,
+  "tokens_used": 6024,
+  "model_runtime_seconds": 8.784824924001441,
+  "model_call_failures": 0
+}

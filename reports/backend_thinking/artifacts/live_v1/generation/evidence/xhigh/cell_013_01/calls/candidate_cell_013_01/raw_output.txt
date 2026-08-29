@@ -1,0 +1,1 @@
+{"prompt":"The kitchen floor was dirty earlier, but it is clean now. Complete the sentence with the present perfect form of the verb in brackets: My brother [____] it. (clean)","target_answer":"My brother has cleaned it.","accepted_answers":["has cleaned"]}

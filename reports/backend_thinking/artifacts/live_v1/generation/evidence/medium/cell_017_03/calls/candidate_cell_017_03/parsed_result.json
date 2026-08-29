@@ -1,0 +1,8 @@
+{
+  "prompt": "The bus came one minute after Sara reached the stop. She ____ for long when it arrived. (wait)",
+  "target_answer": "She had not been waiting for long when it arrived.",
+  "accepted_answers": [
+    "had not been waiting",
+    "hadn't been waiting"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a positive declarative in the simple past passive with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and answer form a coherent historical-fact completion."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "It primarily tests recall of a historical fact, not focused grammar use."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The broad prompt does not determine this exact sentence or the narrow accepted-answer set."
+    },
+    "non_target_language_simplicity": {
+      "passed": false,
+      "note": "“Magna Carta” and “Runnymede” are specialist historical terms, so lexical/factual knowledge drives the response."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed target sentence."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Producing the target does not require unrelated advanced grammar."
+    },
+    "no_world_knowledge": {
+      "passed": false,
+      "note": "Answering requires external historical knowledge about the Magna Carta, Runnymede, and 1215."
+    }
+  }
+}

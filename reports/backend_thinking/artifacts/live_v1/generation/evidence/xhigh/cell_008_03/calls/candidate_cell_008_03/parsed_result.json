@@ -1,0 +1,7 @@
+{
+  "prompt": "Mia is outside now. Use the words in brackets to complete the sentence: Mia _____. (water / the plants)",
+  "target_answer": "Mia is watering the plants.",
+  "accepted_answers": [
+    "is watering the plants"
+  ]
+}

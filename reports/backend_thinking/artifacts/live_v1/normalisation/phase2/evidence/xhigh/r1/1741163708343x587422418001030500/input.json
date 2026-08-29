@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "source_id": "1741163708343x587422418001030500",
+    "supercategory": "CLAUSES",
+    "subcategory": "interrogatives",
+    "guideword": "FORM: 'WH-' INTERROGATIVE, SUBJECT",
+    "can_do": "Can form questions with a 'wh-' word as subject, without an auxiliary verb."
+  },
+  "phase1_mapping": {
+    "source_id": "1741163708343x587422418001030500",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "subject_wh_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "examples": [
+    "What happened? (Spanish - Latin American, B1 THRESHOLD)",
+    "Who cares? (Spanish - Latin American, B1 THRESHOLD)",
+    "Who knows? (Portuguese, B1 THRESHOLD)"
+  ]
+}

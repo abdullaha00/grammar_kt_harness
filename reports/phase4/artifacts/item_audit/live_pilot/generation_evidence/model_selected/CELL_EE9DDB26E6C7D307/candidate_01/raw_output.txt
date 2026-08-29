@@ -1,0 +1,14 @@
+{
+  "prompt": "The pan is very hot. Warn a child. Use the cue TOUCH: ____",
+  "target_answer": "Don't touch the pan.",
+  "accepted_answers": [
+    "Don't touch the pan.",
+    "Do not touch the pan."
+  ],
+  "operation_tags": [
+    "do_support",
+    "negation",
+    "imperative"
+  ],
+  "note": "The contracted and uncontracted forms are both accepted."
+}

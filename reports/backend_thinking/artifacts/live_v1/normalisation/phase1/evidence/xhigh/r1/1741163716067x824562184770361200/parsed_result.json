@@ -1,0 +1,21 @@
+{
+  "source_id": "1741163716067x824562184770361200",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": [
+        "present",
+        "past"
+      ],
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "negative",
+      "clause": "declarative",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "Main-verb BE forms negative declarative statements; contraction does not alter the canonical dimensions."
+}

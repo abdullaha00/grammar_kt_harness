@@ -1,0 +1,34 @@
+{
+  "descriptor": {
+    "source_id": "1741163708336x928067678664856700",
+    "supercategory": "CLAUSES",
+    "subcategory": "interrogatives",
+    "guideword": "FORM: AFFIRMATIVE INTERROGATIVE, WITH 'BE'",
+    "can_do": "Can form interrogative clauses with 'be'."
+  },
+  "phase1_mapping": {
+    "source_id": "1741163708336x928067678664856700",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": null,
+        "clause": null,
+        "modal": "none",
+        "polarity": "positive",
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "examples": [
+    "How are you? (A1 BREAKTHROUGH; 2009; Farsi; Pass)",
+    "Are you ok? (A1 BREAKTHROUGH; 2011; Thai; Pass)"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "prompt": "Maya arrived at the bus stop only a minute before the bus came. Complete the sentence using “wait”: Maya ___ for the bus for long.",
+  "target_answer": "Maya had not been waiting for the bus for long.",
+  "accepted_answers": [
+    "had not been waiting",
+    "hadn't been waiting"
+  ]
+}

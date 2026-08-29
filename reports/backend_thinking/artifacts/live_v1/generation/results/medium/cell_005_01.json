@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_medium_cell_005_01",
+  "cell_id": "cell_005",
+  "candidate_index": 1,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": false,
+  "answer_span_note": "accepted answer repeats punctuation already printed immediately after the response slot: '.'",
+  "candidate": {
+    "item_id": "candidate_cell_005_01",
+    "cell_id": "cell_005",
+    "format": "controlled_production",
+    "prompt": "Your hands are dirty from the garden. Before dinner, ______. (wash / hands)",
+    "target_answer": "Wash your hands.",
+    "accepted_answers": [
+      "wash your hands",
+      "Wash your hands."
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 7.39839968600063,
+  "model_calls": 1,
+  "tokens_used": 2968,
+  "model_runtime_seconds": 7.3976881350008625,
+  "model_call_failures": 0
+}

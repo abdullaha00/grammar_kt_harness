@@ -1,0 +1,1 @@
+{"source_id":"1741163713121x303053781636601900","result":"complete","cells":[{"tense":"present","aspect":"progressive","voice":"active","polarity":"negative","clause":"declarative","modal":"none"}],"phase2_eligible":[],"note":"Negative present continuous declarative in the active voice."}

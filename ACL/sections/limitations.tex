@@ -1,33 +1,50 @@
 \section*{Limitations}
 
-The ontology covers single-clause English verbal morphosyntax: present and past
-tense, four aspect values, active and canonical BE-passive voice, polarity,
-five clause types, and nine central modals.  It excludes question tags, linked
-conditionals, embedded questions, GET-passives, semi-modals, non-verbal grammar,
-and multi-clause relations.  The stratified 139-descriptor sample is not the
-full EGP and only exact mappings enter downstream stages.
+The empirical grammar domain is English single-clause verbal morphosyntax.  The
+139-descriptor sample is not the full EGP, only exact mappings enter downstream
+stages, and the retained normalization snapshot has eight repeated units but no
+expert adjudication or broad cross-model stability study.  The external parsed
+snapshot is not redistributed.  The alternate-schema test verifies an
+interface, not another language.
 
-Normalization and item diagnostics use one automated model backend without
-expert adjudication.  Eight normalization repeats and five diagnostic repeats
-are too few for general reliability claims.  The diagnostic's near-universal
-acceptance is consistency evidence, not proof of naturalness or uniqueness;
-the model snapshot and all decoding parameters are not pinned.  Surface
-realization also uses a ten-frame lexicon and fixed transformations, limiting
-lexical and discourse diversity.
+Items are LLM-generated and model-validated.  The generator and validator are
+different model configurations, and a repeat/model sensitivity study reveals
+material disagreement; no teachers or learners assessed correctness,
+naturalness, difficulty, accessibility, or educational value.  The final
+explicit-construction cue was introduced only after a preregistered unchanged-
+prompt rescue failed, so its distinct provenance is essential.  Provider model
+snapshots, complete decoding controls, and prices were unavailable.
 
-Most importantly, the simulator defines responses from the same KC assignments
-being evaluated, and the five-items-per-KC rule gives each policy a different
-item pool.  Its outputs can expose leakage, sparsity, and software failures, but
-cannot validate a policy's cognitive reality, acquisition order, or transfer to
-learners.  Such claims require expert-labelled shared items and independent
-human interaction data.
+The exhaustive item audit was performed by an independent agent, not a teacher
+or annotation panel.  Its six frozen corrections were rejudged by the same
+validator configuration used for the bank, so the resulting curation removes
+identified packaging defects but does not provide independent human validity.
+
+All learner responses are synthetic.  The four worlds omit vocabulary state,
+forgetting, transfer among KCs, response strategies, classroom exposure, and
+many forms of individual variation.  The final integrated result uses one
+mixed-world seed; learner bootstrap quantifies clustering within that stream,
+not metric uncertainty across latent worlds or simulation seeds.  Five full-
+support mixed-world seeds produce the same selected inventory, but this is
+stability under one declared simulator family, not replication across human
+populations, item-generation runs, or model versions.
+
+Candidate equivalence is item-bank-specific.  Background values, protected
+marginals, two-cell/three-item pair support, and exclusion of exact cells from
+active additions are explicit assumptions.  Repeated item variants change
+which pair candidates meet item support.  Observable PFA gives each active KC
+full response credit, while multi-KC BKT has a stronger shared-credit confound.
+Novel-value evaluation contains only one cell, and a development-derived policy
+cannot label its unseen \texttt{would} value without violating the holdout.
+None of the results establishes cognitively atomic KCs or human compositional
+learning.
 
 \section*{Ethics Statement}
 
-No learner or human-participant records are used; all sequences and profile
-labels are synthetic.  Profile names denote Beta-distribution settings, not
-demographic or ability groups.  Generated items must not be deployed for
-assessment or instruction without human review for correctness, ambiguity,
-accessibility, and bias.  Use and quotation of the external EGP source remain
-subject to its licence; the artifact stores identifiers, selection metadata,
-and verification material rather than redistributing the snapshot.
+No learner or human-participant records are used; all response sequences are
+synthetic.  Latent-world labels denote simulation assumptions, not demographic
+or ability groups.  Generated items must not be deployed for assessment or
+instruction without qualified human review for correctness, ambiguity,
+accessibility, and bias.  Use and quotation of EGP material remain subject to
+its licence; the package retains derived mappings and verification metadata
+rather than redistributing the source snapshot.

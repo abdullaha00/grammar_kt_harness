@@ -1,0 +1,296 @@
+Re-evaluate one partial Phase-1 mapping using examples as additional evidence.
+
+Only dimensions named in `phase2_eligible` may narrow. All other values remain
+exactly fixed. Preserve every Phase-1 OR branch and its within-cell feature
+correlations: each returned cell must narrow one original branch, and no
+original branch may disappear. Examples are illustrative, not exhaustive:
+refine an eligible dimension only when the descriptor licenses the broader
+space and the examples positively establish the refinement. Never broaden a
+constraint, recombine fields from different branches, or infer incidental
+grammar.
+
+If an example directly contradicts an exact Phase-1 scalar, return unresolved
+with no cells and explain the contradiction. Copy `phase2_eligible` unchanged
+from Phase 1 as provenance, including when the result becomes complete.
+
+Return one JSON object with exactly: source_id, result, cells,
+phase2_eligible, note.
+
+DESCRIPTOR EVIDENCE:
+{
+  "source_id": "1741163708336x930002080700909000",
+  "supercategory": "CLAUSES",
+  "subcategory": "interrogatives",
+  "guideword": "FORM: AFFIRMATIVE INTERROGATIVE",
+  "can_do": "Can form interrogative clauses ('yes/no' forms) of main lexical verbs with auxiliary 'do'."
+}
+
+PHASE-1 MAPPING:
+{
+  "source_id": "1741163708336x930002080700909000",
+  "result": "partial",
+  "cells": [
+    {
+      "aspect": "none",
+      "clause": "polar_question",
+      "modal": "none",
+      "polarity": "positive",
+      "tense": [
+        "present",
+        "past"
+      ],
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "phase2 eligible: tense"
+}
+
+ELIGIBLE EXAMPLES:
+[
+  "Do you remember Julie? (Brazil; A2 WAYSTAGE; 2004; Portuguese; Pass)",
+  "Did you buy a new mobile phone? (Spain; A2 WAYSTAGE; 2007; Spanish - European; Pass)"
+]
+
+CANONICAL GRAMMAR SCHEMA:
+{
+  "schema_id": "grammar_cell_english_v1",
+  "description": "Single-clause English verbal morphosyntax used in the pilot.",
+  "dimension_order": [
+    "tense",
+    "aspect",
+    "voice",
+    "polarity",
+    "clause",
+    "modal"
+  ],
+  "dimensions": {
+    "tense": {
+      "allowed_values": [
+        "present",
+        "past",
+        "NA"
+      ],
+      "interpretation": "Morphological finite tense; NA when the construction does not license tense.",
+      "exclusions": [
+        "future tense"
+      ]
+    },
+    "aspect": {
+      "allowed_values": [
+        "none",
+        "progressive",
+        "perfect",
+        "perfect_progressive"
+      ],
+      "interpretation": "Grammatical aspect encoded by the auxiliary chain.",
+      "exclusions": [
+        "lexical aspect",
+        "habituality"
+      ]
+    },
+    "voice": {
+      "allowed_values": [
+        "active",
+        "passive"
+      ],
+      "interpretation": "Active/non-passive versus canonical BE-passive.",
+      "exclusions": [
+        "GET-passive",
+        "middle voice"
+      ]
+    },
+    "polarity": {
+      "allowed_values": [
+        "positive",
+        "negative"
+      ],
+      "interpretation": "Clause-level grammatical polarity."
+    },
+    "clause": {
+      "allowed_values": [
+        "declarative",
+        "polar_question",
+        "subject_wh_question",
+        "non_subject_wh_question",
+        "imperative"
+      ],
+      "interpretation": "Main-clause type in the current single-clause scope.",
+      "exclusions": [
+        "tag_question",
+        "embedded_question"
+      ]
+    },
+    "modal": {
+      "allowed_values": [
+        "none",
+        "can",
+        "could",
+        "may",
+        "might",
+        "must",
+        "shall",
+        "should",
+        "will",
+        "would"
+      ],
+      "interpretation": "Central modal identity, or none.",
+      "exclusions": [
+        "semi_modals",
+        "periphrastic_modals"
+      ]
+    }
+  },
+  "constraints": [
+    {
+      "description": "Central modals do not carry the pilot's morphological tense value.",
+      "if": {
+        "modal": {
+          "not": "none"
+        }
+      },
+      "then": {
+        "tense": "NA"
+      }
+    },
+    {
+      "description": "Morphological present or past excludes central modals.",
+      "if": {
+        "tense": [
+          "present",
+          "past"
+        ]
+      },
+      "then": {
+        "modal": "none"
+      }
+    },
+    {
+      "description": "Imperatives use the pilot's uninflected active simple representation.",
+      "if": {
+        "clause": "imperative"
+      },
+      "then": {
+        "tense": "NA",
+        "aspect": "none",
+        "voice": "active",
+        "modal": "none"
+      }
+    }
+  ],
+  "scope": {
+    "unit": "single main clause",
+    "language": "English",
+    "resource": "English Grammar Profile pilot"
+  }
+}
+
+EGP NORMALISATION RULEBOOK:
+# EGP normalisation rulebook
+
+This rulebook maps EGP evidence into the six-dimensional English pilot
+GrammarCell. It intentionally ends the EGP-specific vocabulary at the
+normalisation boundary.
+
+## Scope
+
+In scope: single-clause English verbal morphosyntax; morphological present and
+past; simple, progressive, perfect and perfect-progressive aspect; active and
+canonical BE-passive voice; positive and negative polarity; declaratives,
+polar questions, subject-WH questions, non-subject-WH questions and
+imperatives; and the central modals declared in the canonical schema.
+
+Out of scope: tags, embedded questions, linked conditionals, GET-passives,
+semi-modals, non-verbal targets, and multi-clause relations that cannot be
+represented as one cell.
+
+## Evidence encoding
+
+1. Exact atomic evidence becomes a scalar.
+2. Independently asserted alternatives become separate OR cells.
+3. A bounded superclass without member-wise support becomes a list.
+4. Missing usable evidence becomes null.
+
+Dimensions within one cell are AND constraints. Cells are OR branches. Lists
+do not independently support their members. Never infer a Cartesian product.
+
+## English decisions
+
+### Tense and modal
+
+- Named morphological present/past gives that scalar and entails
+  `modal: none`.
+- A closed finite formula that establishes a nonmodal form but not present
+  versus past may use `[present, past]`.
+- An exact central modal gives `tense: NA`; a bounded set of central modals also
+  gives `tense: NA`.
+- `will` is a modal, not a future tense value.
+- Irreconcilable morphological-tense and central-modal evidence in one
+  inseparable construction is `unresolved`.
+
+### Aspect cue priority
+
+Apply the first supported row; examples do not supply a missing descriptor cue.
+
+| Priority | Descriptor evidence | Aspect |
+|---:|---|---|
+| 1 | explicit perfect-progressive/perfect-continuous target | `perfect_progressive` |
+| 2 | explicit perfect, including modal + HAVE + participle | `perfect` |
+| 3 | explicit progressive/continuous or BE + -ing target | `progressive` |
+| 4 | explicit “simple” | `none` |
+| 5 | closed modal + base/main-verb formula | `none` |
+| 6 | closed nonmodal DO/main-BE/finite-main-verb formula | `none` |
+| 7 | ordinary, emphatic-DO, LET, or LET'S imperative | `none` |
+| 8 | broad modal or BE/HAVE wording that does not close the chain | null |
+| 9 | no usable aspect evidence | null |
+
+Explicit perfect/progressive evidence overrides simple defaults. Merely naming
+a modal superclass does not rule out perfect or progressive structure.
+
+### Voice, polarity, and clause
+
+- Explicit canonical BE-passive gives `passive`; an ordinary finite verbal
+  form is `active` unless the descriptor leaves voice genuinely unresolved.
+- Affirmative gives `positive`; negative/NOT gives `negative`. Bare generic
+  questions do not establish polarity.
+- Yes/no wording gives `polar_question`; explicit subject and non-subject WH
+  wording use their respective values. Generic WH may remain
+  `[subject_wh_question, non_subject_wh_question]` when the subtype is bounded
+  but unresolved. Bare “questions” without a closed subtype set gives null.
+- Ordinary unmarked tense/aspect forms are declarative.
+
+### Imperatives
+
+- Imperatives use `tense: NA`, `aspect: none`, `voice: active`, and
+  `modal: none`. Unnegated imperatives are positive.
+- Preserve special surface evidence such as emphatic DO, LET'S, LET'S NOT, or
+  LET + pronoun in the mapping note only.
+- LET'S NOT expresses negation without DO-support; ordinary negative
+  imperatives such as “Don't open it” do use DO-support. This distinction is
+  generation evidence, not a new GrammarCell field.
+
+## Phase 2
+
+Examples may be consulted only for a Phase-1 `partial` mapping whose explicit
+`phase2_eligible` list names an eligible dimension. Bare generic “questions” do
+not by themselves license example-based narrowing. Exact Phase-1 values cannot
+be silently broadened or replaced. A direct contradiction produces
+`unresolved`.
+
+`phase2_eligible` is a list in canonical dimension order, and is empty when
+examples cannot safely refine the mapping. A dimension is eligible only when
+it is uncertain in at least one Phase-1 cell, the descriptor establishes a
+closed broader alternative space, examples could positively distinguish
+members, and refinement would not claim that the examples exhaust an open
+class. `note` remains free-text linguistic explanation. Phase 2 may only
+narrow named dimensions. Every output cell must descend from a single Phase-1
+OR branch, every Phase-1 branch must remain represented, and exact/unmentioned
+constraints and within-branch correlations remain fixed. Phase 2 copies the
+eligibility list unchanged as provenance.
+
+`complete` means every field in every cell is one allowed scalar.
+`partial` preserves at least one list or null. `out_of_scope` and `unresolved`
+have no cells.
+

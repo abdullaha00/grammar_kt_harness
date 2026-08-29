@@ -1,0 +1,12 @@
+{
+  "prompt": "You want to know about Mia's evening habit. Use the cue “Mia / read / a book” to ask a yes-or-no question.\nResponse: ______",
+  "target_answer": "Does Mia read a book?",
+  "accepted_answers": [
+    "Does Mia read a book?"
+  ],
+  "operation_tags": [
+    "do_support",
+    "operator_inversion"
+  ],
+  "note": "A simple-present yes-or-no question about a regular activity."
+}

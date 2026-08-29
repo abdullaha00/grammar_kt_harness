@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses present simple, active voice, negative declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target sentence is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt context and negative answer are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It directly practises present-simple negation with do-support."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The cue and context clearly call for a negative present-simple response; the accepted contracted and uncontracted forms cover the expected variants."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary is common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the base-form cue, not the completed negative form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external knowledge is required."
+    }
+  }
+}

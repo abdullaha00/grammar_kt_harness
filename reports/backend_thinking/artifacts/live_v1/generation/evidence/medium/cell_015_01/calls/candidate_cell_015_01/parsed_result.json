@@ -1,0 +1,7 @@
+{
+  "prompt": "The kitchen was clean when Mia arrived. Complete the sentence using the words in brackets: Her brother _____. (wash / the dishes)",
+  "target_answer": "Her brother had washed the dishes.",
+  "accepted_answers": [
+    "had washed the dishes"
+  ]
+}

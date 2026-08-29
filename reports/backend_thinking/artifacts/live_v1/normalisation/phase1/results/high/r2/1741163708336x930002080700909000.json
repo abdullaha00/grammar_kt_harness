@@ -1,0 +1,60 @@
+{
+  "source_id": "1741163708336x930002080700909000",
+  "stratum": "phase2_eligible",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708336x930002080700909000",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "Affirmative yes/no questions with DO-support establish a positive, active, simple nonmodal construction, but do not distinguish present from past tense."
+  },
+  "retained_mapping": {
+    "source_id": "1741163708336x930002080700909000",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "polar_question",
+        "modal": "none"
+      },
+      {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 10.714884689999963,
+  "model_calls": 1,
+  "tokens_used": 6029,
+  "model_runtime_seconds": 10.712939615999858,
+  "model_call_failures": 0
+}

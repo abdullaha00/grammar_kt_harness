@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163708336x930002080700909000",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": ["present", "past"],
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "polar_question",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": ["tense"],
+  "note": "Affirmative yes/no questions with lexical verbs use nonmodal DO-support; the descriptor does not distinguish present do/does from past did."
+}

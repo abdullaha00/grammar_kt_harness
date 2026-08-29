@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "“Had not been working” is past perfect progressive, active, negative, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "Starting work on Monday coherently supports saying she had not been working there before then."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The context does not clearly elicit the progressive aspect over the simpler past perfect form."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "“Had not worked at the shop” also fits the prompt naturally, so the accepted progressive response is not sufficiently determined."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and workplace context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt provides only the base verb “work,” not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed beyond selecting the intended verb form."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The item can be answered using only the information in the prompt."
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "prompt": "The workers painted the classroom yesterday. Complete the sentence about the classroom: ____",
+  "target_answer": "The classroom was painted yesterday.",
+  "accepted_answers": [
+    "The classroom was painted yesterday."
+  ],
+  "operation_tags": [
+    "be_passive"
+  ],
+  "note": "Use a complete clause."
+}

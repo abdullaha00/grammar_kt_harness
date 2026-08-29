@@ -1,0 +1,50 @@
+evidence_id: phase2_generator_self_report_audit_v1
+description: >-
+  Frozen mapping used only to reproduce the historical generator-tag audit.
+  Generator self-reports are not active item metadata or KC declarations.
+
+tag_rules:
+  - generator_tag: perfect
+    operation_id: perfect_dependency
+    activation:
+      any:
+        - {cell: {aspect: perfect}}
+        - {cell: {aspect: perfect_progressive}}
+  - generator_tag: progressive
+    operation_id: progressive_dependency
+    activation:
+      any:
+        - {cell: {aspect: progressive}}
+        - {cell: {aspect: perfect_progressive}}
+  - generator_tag: be_passive
+    operation_id: passive_dependency
+    activation: {cell: {voice: passive}}
+  - generator_tag: negation
+    operation_id: negation
+    activation: {cell: {polarity: negative}}
+  - generator_tag: central_modal
+    operation_id: central_modal
+    activation: {cell: {modal: {not: none}}}
+  - generator_tag: operator_inversion
+    operation_id: operator_inversion
+    activation:
+      any:
+        - {cell: {clause: polar_question}}
+        - {cell: {clause: non_subject_wh_question}}
+  - generator_tag: subject_wh
+    operation_id: subject_wh
+    activation: {cell: {clause: subject_wh_question}}
+  - generator_tag: wh_fronting
+    operation_id: wh_fronting
+    activation: {cell: {clause: non_subject_wh_question}}
+  - generator_tag: imperative
+    operation_id: imperative
+    activation: {cell: {clause: imperative}}
+
+# Frozen self-reports from the four development items in the original fixture
+# audit. Current generation does not emit these fields.
+fixture_reported_tags_by_cell_id:
+  cell_001: []
+  cell_002: [do_support, negation]
+  cell_003: [be_passive]
+  cell_004: [progressive]

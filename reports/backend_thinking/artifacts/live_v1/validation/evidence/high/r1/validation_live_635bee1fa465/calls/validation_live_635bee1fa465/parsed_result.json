@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target is a present perfect, active, negative declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt context and answer form a coherent, natural exchange."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The prompt does not explicitly constrain the required tense, weakening its focus as a present-perfect exercise."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The cue and context allow other plausible completions, including different tense choices or additional words such as “yet,” beyond the accepted set."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "“Cups,” “wash,” and “unwashed” are common and transparent vocabulary."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives lexical cues but does not display the completed present-perfect negative form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external factual or specialist knowledge is required."
+    }
+  }
+}

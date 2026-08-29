@@ -1,0 +1,1 @@
+{"prompt":"The storm knocked down a tree last night. Complete the sentence using the cue (knock down): “The tree ____ last night.”","target_answer":"The tree was knocked down last night.","accepted_answers":["was knocked down"]}

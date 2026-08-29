@@ -1,0 +1,1 @@
+{"prompt":"Nina's sandwich is still untouched. Complete the sentence using the verb in brackets: Nina [____] her sandwich yet. (eat)","target_answer":"Nina has not eaten her sandwich yet.","accepted_answers":["has not eaten","hasn't eaten"]}

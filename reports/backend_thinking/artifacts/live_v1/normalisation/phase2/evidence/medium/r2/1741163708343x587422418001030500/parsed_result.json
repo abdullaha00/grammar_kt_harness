@@ -1,0 +1,26 @@
+{
+  "source_id": "1741163708343x587422418001030500",
+  "result": "partial",
+  "cells": [
+    {
+      "aspect": "none",
+      "clause": "subject_wh_question",
+      "modal": "none",
+      "polarity": null,
+      "tense": "present",
+      "voice": "active"
+    },
+    {
+      "aspect": "none",
+      "clause": "subject_wh_question",
+      "modal": "none",
+      "polarity": null,
+      "tense": "past",
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "The examples positively establish both members of the descriptor-licensed tense space: present in “Who cares?” and “Who knows?”, and past in “What happened?”. The original branch is therefore represented by two independently evidenced tense-specific descendants. Polarity remains null because it was not Phase-2 eligible, so the mapping remains partial."
+}

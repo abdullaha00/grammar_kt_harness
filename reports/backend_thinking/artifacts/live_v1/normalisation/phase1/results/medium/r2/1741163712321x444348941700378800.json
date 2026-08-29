@@ -1,0 +1,45 @@
+{
+  "source_id": "1741163712321x444348941700378800",
+  "stratum": "partial_noneligible",
+  "effort": "medium",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712321x444348941700378800",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "past",
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": null,
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "Past continuous fixes past tense, progressive aspect, active voice, and no modal; generic question wording establishes neither a canonical question subtype nor polarity."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712321x444348941700378800",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "past",
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": null,
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "phase2 eligible: none"
+  },
+  "task_runtime_seconds": 8.80503882099947,
+  "model_calls": 1,
+  "tokens_used": 6019,
+  "model_runtime_seconds": 8.804315175999363,
+  "model_call_failures": 0
+}

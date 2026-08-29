@@ -1,0 +1,71 @@
+{
+  "item_id": "candidate_cell_018_02",
+  "audit_id": "validation_live_e48491fdc66e",
+  "cell_id": "cell_018",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_e48491fdc66e",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "Uses past perfect progressive, active, positive, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The timing context coherently supports the stated waiting duration."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides clear, focused practice of the past perfect progressive."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "Other valid responses are possible, such as using “since 8:00,” but are not accepted."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and situation are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives only the cue, not the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Solving it requires no unrelated advanced grammar."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 10.344112075999874,
+  "model_calls": 1,
+  "tokens_used": 2651,
+  "model_runtime_seconds": 10.343304052999883,
+  "model_call_failures": 0
+}

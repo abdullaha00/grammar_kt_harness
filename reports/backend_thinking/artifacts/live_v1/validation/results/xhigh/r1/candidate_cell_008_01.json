@@ -1,0 +1,69 @@
+{
+  "item_id": "candidate_cell_008_01",
+  "audit_id": "validation_live_a81b7c815b00",
+  "cell_id": "cell_008",
+  "effort": "xhigh",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_a81b7c815b00",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The target is present progressive, active, positive, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The brush-in-hand context coherently supports that Maya is painting the wall."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of the present progressive form."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The instruction supplies the verb and context clearly cues the progressive response."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and situation are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives the base verb but does not display the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Solving requires only the intended present progressive construction."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": true,
+  "retained_failed_criteria": [],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 11.488045676000183,
+  "model_calls": 1,
+  "tokens_used": 2645,
+  "model_runtime_seconds": 11.48726463100138,
+  "model_call_failures": 0
+}

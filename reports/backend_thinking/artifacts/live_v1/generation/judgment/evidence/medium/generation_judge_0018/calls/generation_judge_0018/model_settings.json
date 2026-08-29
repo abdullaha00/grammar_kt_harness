@@ -1,0 +1,7 @@
+{
+  "model": "gpt-5.6-terra",
+  "reasoning_effort": "medium",
+  "stage": "validation",
+  "call_key": "generation_judge_0018",
+  "codex_version": "codex-cli 0.150.1"
+}

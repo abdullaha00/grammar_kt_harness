@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "A negative active imperative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The warning naturally fits the hot-pan context."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It clearly practises a negative imperative."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The cue and context strongly determine the intended warning."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "All vocabulary is common and unambiguous."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the cue verb, not the completed answer."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Only basic negative-imperative formation is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No specialist or external knowledge is required."
+    }
+  }
+}

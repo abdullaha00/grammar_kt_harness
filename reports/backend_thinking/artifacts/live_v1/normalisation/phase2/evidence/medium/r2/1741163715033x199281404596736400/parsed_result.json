@@ -1,0 +1,26 @@
+{
+  "source_id": "1741163715033x199281404596736400",
+  "result": "partial",
+  "cells": [
+    {
+      "aspect": "none",
+      "clause": "polar_question",
+      "modal": "none",
+      "polarity": null,
+      "tense": "present",
+      "voice": "active"
+    },
+    {
+      "aspect": "none",
+      "clause": "polar_question",
+      "modal": "none",
+      "polarity": null,
+      "tense": "past",
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "The examples positively establish both licensed tense alternatives: present with 'Do you know/like/remember' and past with 'Did you see'. Polarity remains unresolved because it was not Phase-2 eligible."
+}

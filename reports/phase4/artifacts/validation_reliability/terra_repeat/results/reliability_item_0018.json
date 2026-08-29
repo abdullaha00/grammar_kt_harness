@@ -1,0 +1,54 @@
+{
+  "sample_order": 18,
+  "blind_item_id": "reliability_item_0018",
+  "candidate_id": "candidate_model_selected_CELL_0ACC7E0377B19DC1_04",
+  "condition": "model_selected",
+  "cell_id": "CELL_0ACC7E0377B19DC1",
+  "candidate_index": 4,
+  "original_accepted": false,
+  "original_failed_criteria": [
+    "determinacy"
+  ],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target is a positive active declarative clause with modal “would.”"
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and response form a coherent imagined conditional situation."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice producing “would” in a simple context."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The cue supports several equally valid responses, such as “Maya would visit her friend,” but only one is accepted."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the verb cue, not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed beyond interpreting the conditional context."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is required."
+    }
+  },
+  "accepted": false,
+  "runtime_seconds": 10.93755765199603
+}

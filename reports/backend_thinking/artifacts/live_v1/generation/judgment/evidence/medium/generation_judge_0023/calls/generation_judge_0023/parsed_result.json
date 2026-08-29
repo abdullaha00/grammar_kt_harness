@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a positive active past-simple polar question with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The context and question are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It clearly focuses practice on past-simple question formation with did."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The supplied words and requested question form sufficiently specify the accepted response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and unambiguous."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt provides cue words but not the completed question form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it requires only basic past-simple interrogative formation."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

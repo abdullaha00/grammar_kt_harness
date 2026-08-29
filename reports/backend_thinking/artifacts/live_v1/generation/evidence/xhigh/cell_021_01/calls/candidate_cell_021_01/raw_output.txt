@@ -1,0 +1,1 @@
+{"prompt":"The kitchen staff are washing the plates now. Complete the sentence using “wash”: The plates ____.","target_answer":"The plates are being washed.","accepted_answers":["are being washed"]}

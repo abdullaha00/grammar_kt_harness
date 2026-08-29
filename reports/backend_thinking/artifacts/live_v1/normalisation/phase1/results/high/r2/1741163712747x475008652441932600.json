@@ -1,0 +1,45 @@
+{
+  "source_id": "1741163712747x475008652441932600",
+  "stratum": "complete_noneligible",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712747x475008652441932600",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "The descriptor specifies a negative present perfect simple declarative with nonmodal active HAVE plus a past participle."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712747x475008652441932600",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": null
+  },
+  "task_runtime_seconds": 7.721953358999599,
+  "model_calls": 1,
+  "tokens_used": 3922,
+  "model_runtime_seconds": 7.721256770000764,
+  "model_call_failures": 0
+}

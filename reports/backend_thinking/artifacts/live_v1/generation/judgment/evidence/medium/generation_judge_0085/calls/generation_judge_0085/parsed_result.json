@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target uses positive active declarative “would + base verb,” matching the intended cell."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "“His friend would fix the chair” is grammatical English."
+    },
+    "naturalness": {
+      "passed": false,
+      "note": "The context states willingness but provides no conditional situation that naturally motivates “would”; “will fix” is more natural here."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The item does not provide a clear enough cue for focused practice of the modal “would.”"
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "“Will fix,” “can fix,” and other forms are plausible from the context, so “would fix” is not sufficiently determined."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies only the lexical verb “fix,” not the completed target form “would fix.”"
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed to form the intended answer."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is required."
+    }
+  }
+}

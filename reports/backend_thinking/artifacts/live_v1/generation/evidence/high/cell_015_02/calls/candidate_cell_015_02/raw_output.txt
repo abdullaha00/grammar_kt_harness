@@ -1,0 +1,1 @@
+{"prompt":"The table was empty when we arrived. Complete the sentence using the cue (clear): The waiter ____.","target_answer":"The waiter had cleared the table.","accepted_answers":["had cleared the table"]}

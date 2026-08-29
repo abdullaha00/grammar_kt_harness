@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a positive past simple passive declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": false,
+      "note": "Plural subject “letters” requires “were,” not “was.”"
+    },
+    "naturalness": {
+      "passed": false,
+      "note": "The prompt is coherent, but the ungrammatical answer makes the pair unnatural."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "It models incorrect subject–auxiliary agreement."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The prompt does not determine the subject or verb needed for the sole accepted answer."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "“Letters,” “sent,” and “yesterday” are common and clear."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The intended response primarily practices a basic past passive form."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external factual or specialist knowledge is needed."
+    }
+  }
+}

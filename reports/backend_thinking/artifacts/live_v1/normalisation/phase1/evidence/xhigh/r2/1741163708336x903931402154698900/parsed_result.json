@@ -1,0 +1,21 @@
+{
+  "source_id": "1741163708336x903931402154698900",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": [
+        "present",
+        "past"
+      ],
+      "aspect": null,
+      "voice": null,
+      "polarity": "positive",
+      "clause": "polar_question",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "Affirmative yes/no interrogatives establish positive polarity and polar-question clause type. Finite nonmodal BE/HAVE bounds tense to present or past, but the broad auxiliary wording does not determine aspect or voice."
+}

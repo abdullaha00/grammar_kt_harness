@@ -1,0 +1,7 @@
+{
+  "prompt": "You want to know about Ben's usual routine. Use the cue: walk to work. [____]",
+  "target_answer": "Does Ben walk to work?",
+  "accepted_answers": [
+    "Does Ben walk to work?"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The answer is present simple, active, positive, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The sentence is grammatically well formed."
+    },
+    "naturalness": {
+      "passed": false,
+      "note": "Although interpretable, the unusually obscure noun phrase and verb make the prompt-answer pair unnatural."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "Highly specialized vocabulary distracts from the intended simple-present grammar focus."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The broad prompt permits many possible descriptions and does not determine this exact response."
+    },
+    "non_target_language_simplicity": {
+      "passed": false,
+      "note": "Words such as “sesquipedalian,” “logomachist,” and “tergiversates” are uncommon and opaque."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed target sentence or target verb form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Producing the target structure does not require unrelated advanced grammar."
+    },
+    "no_world_knowledge": {
+      "passed": false,
+      "note": "Specialist lexical knowledge is needed to understand and independently produce the response."
+    }
+  }
+}

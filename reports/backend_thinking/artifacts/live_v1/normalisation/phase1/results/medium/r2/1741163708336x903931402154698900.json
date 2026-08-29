@@ -1,0 +1,55 @@
+{
+  "source_id": "1741163708336x903931402154698900",
+  "stratum": "phase2_eligible",
+  "effort": "medium",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708336x903931402154698900",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": null,
+        "voice": null,
+        "polarity": "positive",
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "Affirmative yes/no interrogatives fix positive polarity and polar-question clause type. Auxiliary BE/HAVE establishes a finite nonmodal construction but does not distinguish present from past or close the aspect and voice possibilities."
+  },
+  "retained_mapping": {
+    "source_id": "1741163708336x903931402154698900",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": null,
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 16.864983216000837,
+  "model_calls": 1,
+  "tokens_used": 6320,
+  "model_runtime_seconds": 16.864311806999467,
+  "model_call_failures": 0
+}

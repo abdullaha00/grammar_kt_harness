@@ -1,0 +1,7 @@
+{
+  "prompt": "Mia is in the kitchen now. Complete the sentence using the verb in brackets: Mia ___ dinner. (cook)",
+  "target_answer": "Mia is cooking dinner.",
+  "accepted_answers": [
+    "is cooking"
+  ]
+}

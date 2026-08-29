@@ -1,0 +1,21 @@
+{
+  "protocol": "explicit_construction_determinacy_intervention_v1",
+  "trigger": "zero_coverage_after_rescue_with_repeated_determinacy_failure",
+  "candidate_indices": [
+    6,
+    7
+  ],
+  "cell_ids": [
+    "cell_017"
+  ],
+  "planned_generation_attempts": 2,
+  "prior_terminal_judgments_by_cell": {
+    "cell_017": 5
+  },
+  "prior_determinacy_failures_by_cell": {
+    "cell_017": 5
+  },
+  "generation_prompt": "modules/items/generation/ablations/determinacy_explicit_construction_prompt.txt",
+  "generation_prompt_sha256": "0a1e5b6af687a110a7d584f42bbc49107300cc368d3d3cf72aa6702582976862",
+  "only_generation_prompt_changes": true
+}

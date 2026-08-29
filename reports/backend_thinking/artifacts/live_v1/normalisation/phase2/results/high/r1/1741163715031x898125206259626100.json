@@ -1,0 +1,100 @@
+{
+  "source_id": "1741163715031x898125206259626100",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163715031x898125206259626100",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": [
+          "subject_wh_question",
+          "non_subject_wh_question"
+        ],
+        "modal": "none",
+        "polarity": null,
+        "tense": "present",
+        "voice": "active"
+      },
+      {
+        "aspect": "none",
+        "clause": [
+          "subject_wh_question",
+          "non_subject_wh_question"
+        ],
+        "modal": "none",
+        "polarity": null,
+        "tense": "past",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "The descriptor licenses finite present and past main-verb BE questions, and the examples positively establish both present forms ('are') and a past form ('was'). Tense is therefore resolved into two descendant branches. All non-eligible constraints remain unchanged; the mapping remains partial because clause is still a list and polarity is null."
+  },
+  "fixed_phase1_mapping": {
+    "source_id": "1741163715031x898125206259626100",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": [
+          "subject_wh_question",
+          "non_subject_wh_question"
+        ],
+        "modal": "none",
+        "polarity": null,
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "retained_phase2_mapping": {
+    "source_id": "1741163715031x898125206259626100",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": [
+          "subject_wh_question",
+          "non_subject_wh_question"
+        ],
+        "modal": "none",
+        "polarity": null,
+        "tense": "present",
+        "voice": "active"
+      },
+      {
+        "aspect": "none",
+        "clause": [
+          "subject_wh_question",
+          "non_subject_wh_question"
+        ],
+        "modal": "none",
+        "polarity": null,
+        "tense": "past",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 16.117872749000526,
+  "model_calls": 1,
+  "tokens_used": 6502,
+  "model_runtime_seconds": 16.117125560000204,
+  "model_call_failures": 0
+}

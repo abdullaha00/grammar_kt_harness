@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_010_01",
+  "cell_id": "cell_010",
+  "candidate_index": 1,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_010_01",
+    "cell_id": "cell_010",
+    "format": "controlled_production",
+    "prompt": "The bus arrived at 8:00, but Leo stayed at home. Complete the sentence using the cue (take): Leo ____ the bus.",
+    "target_answer": "Leo did not take the bus.",
+    "accepted_answers": [
+      "did not take",
+      "didn't take"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 7.12390508000135,
+  "model_calls": 1,
+  "tokens_used": 2981,
+  "model_runtime_seconds": 7.1231792100006714,
+  "model_call_failures": 0
+}

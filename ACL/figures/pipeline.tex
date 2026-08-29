@@ -1,42 +1,45 @@
 \begin{figure*}[t]
   \centering
-  \resizebox{\textwidth}{!}{%
   \begin{tikzpicture}[
-    node distance=2.7mm,
     >=Latex,
-    box/.style={draw, rounded corners=1.5pt, align=center, minimum height=9mm,
-      text width=1.48cm, font=\scriptsize, inner sep=2pt},
-    data/.style={box, fill=gray!13},
-    assisted/.style={box, fill=orange!18, dashed},
-    deterministic/.style={box, fill=blue!10},
-    policy/.style={box, fill=green!13},
-    synthetic/.style={box, fill=violet!12, double},
+    node distance=3.5mm,
+    box/.style={draw, rounded corners=1.5pt, align=center, minimum height=8mm,
+      text width=2.0cm, font=\scriptsize, inner sep=2pt},
+    model/.style={box, fill=orange!16, dashed},
+    fixed/.style={box, fill=blue!10},
+    evidence/.style={box, fill=violet!10},
+    kc/.style={box, fill=green!12},
     arrow/.style={->, semithick}
   ]
-    \node[data] (source) {source\\descriptors};
-    \node[assisted, right=of source] (norm) {two-phase\\normalization};
-    \node[deterministic, right=of norm] (canon) {canonical\\cells};
-    \node[deterministic, right=of canon] (real) {surface\\realization};
-    \node[policy, right=of real] (kc) {KC\\projection};
-    \node[assisted, right=of kc] (items) {items + model\\diagnostic};
-    \node[deterministic, right=of items] (q) {deterministic\\Q-matrix};
-    \node[synthetic, right=of q] (sim) {synthetic\\interactions};
-    \node[deterministic, right=of sim] (kt) {KT\\evaluation};
+    \node[fixed] (source) {grammar\\resource};
+    \node[model, right=of source] (norm) {resource-specific\\normalization};
+    \node[fixed, right=of norm] (cells) {canonical\\GrammarCells};
+    \node[model, right=of cells] (gen) {$N=3$ item\\generation};
+    \node[model, right=of gen] (valid) {independent\\screening};
+    \node[fixed, very thick, right=of valid] (bank) {fixed\\item bank};
+
+    \node[fixed, below=8mm of source] (fold) {semantic\\grammar fold};
+    \node[evidence, right=of fold] (events) {development\\learner evidence};
+    \node[kc, right=of events] (cands) {KC candidates\\+ support};
+    \node[kc, right=of cands] (select) {predictive--\\parsimonious selection};
+    \node[fixed, very thick, right=of select] (policy) {frozen policy\\+ Q-matrix};
+    \node[evidence, right=of policy] (eval) {KT + frozen-probe\\evaluation};
 
     \draw[arrow] (source) -- (norm);
-    \draw[arrow] (norm) -- (canon);
-    \draw[arrow] (canon) -- (real);
-    \draw[arrow] (real) -- (kc);
-    \draw[arrow] (kc) -- (items);
-    \draw[arrow] (items) -- (q);
-    \draw[arrow] (q) -- (sim);
-    \draw[arrow] (sim) -- (kt);
+    \draw[arrow] (norm) -- (cells);
+    \draw[arrow] (cells) -- (gen);
+    \draw[arrow] (gen) -- (valid);
+    \draw[arrow] (valid) -- (bank);
+    \draw[arrow] (bank.south) |- (fold.east);
+    \draw[arrow] (fold) -- (events);
+    \draw[arrow] (events) -- (cands);
+    \draw[arrow] (cands) -- (select);
+    \draw[arrow] (select) -- (policy);
+    \draw[arrow] (policy) -- (eval);
   \end{tikzpicture}
-  }
-  \caption{The \system{} pipeline.  Model assistance is confined to
-  normalization and an independent item diagnostic; canonicalization,
-  realization, KC rule evaluation, item construction, and Q-matrix derivation
-  have deterministic executors.  Simulation is explicitly separated from
-  claims about human learner data.}
+  \caption{Active \system{} methodology.  Model assistance is confined to
+  normalization, item generation, and item screening.  Candidate construction
+  uses development grammar only; selection uses development responses only.
+  Thick boxes mark the bank and policy freezing boundaries.}
   \label{fig:pipeline}
 \end{figure*}

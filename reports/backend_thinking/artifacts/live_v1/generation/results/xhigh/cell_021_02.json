@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_021_02",
+  "cell_id": "cell_021",
+  "candidate_index": 2,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_021_02",
+    "cell_id": "cell_021",
+    "format": "controlled_production",
+    "prompt": "Someone is painting the door right now. Complete the sentence using the cue (paint): The door ____.",
+    "target_answer": "The door is being painted.",
+    "accepted_answers": [
+      "is being painted"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 5.698104076000163,
+  "model_calls": 1,
+  "tokens_used": 2971,
+  "model_runtime_seconds": 5.697349222000412,
+  "model_call_failures": 0
+}

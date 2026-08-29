@@ -1,0 +1,7 @@
+{
+  "prompt": "The workers painted the front door yesterday. Complete the sentence using the cue (paint): The front door ____ yesterday.",
+  "target_answer": "The front door was painted yesterday.",
+  "accepted_answers": [
+    "was painted"
+  ]
+}

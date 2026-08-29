@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target is an active negative imperative with no modal, matching the intended GrammarCell."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "“Don't open the door.” is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The negative command is a natural response when the room is cold and the door should remain closed."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The cue and context provide focused practice forming a negative imperative."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The instruction to keep the door closed and the cue “open / the door” clearly determine the negative imperative, with only contracted and uncontracted variants expected."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common, transparent, and lexically unambiguous."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt conveys the intended meaning but does not display the completed form “Don't open the door.”"
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The response requires only the targeted negative imperative construction."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external factual or specialist knowledge is needed."
+    }
+  }
+}

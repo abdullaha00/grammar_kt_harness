@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is past perfect, active, negative, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The noon-arrival context and past-perfect negative with “yet” are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It gives focused practice of the negative past perfect."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "A natural equivalent, “had not yet opened,” is not included in the accepted answers."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and clear."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies only the required verb, not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The item does not require unrelated advanced grammar."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

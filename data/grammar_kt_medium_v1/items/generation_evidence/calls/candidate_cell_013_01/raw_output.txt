@@ -1,0 +1,1 @@
+{"prompt":"The dishes are clean now. Complete the sentence using the cue (wash): Maya ____ the dishes.","target_answer":"Maya has washed the dishes.","accepted_answers":["has washed"]}

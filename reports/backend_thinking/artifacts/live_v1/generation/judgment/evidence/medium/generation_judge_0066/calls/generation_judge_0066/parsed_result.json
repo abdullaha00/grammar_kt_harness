@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "“has cleaned” is present perfect, active, positive, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target sentence is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The context and completed sentence are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It directly practices forming the present perfect of a regular verb."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The prompt specifies the verb, tense form, subject, and sentence slot, determining “has cleaned.”"
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt names the base verb but does not display the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Only basic present-perfect formation and subject–auxiliary agreement are needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is required."
+    }
+  }
+}

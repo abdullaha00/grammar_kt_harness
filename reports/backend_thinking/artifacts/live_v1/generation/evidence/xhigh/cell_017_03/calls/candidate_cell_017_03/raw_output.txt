@@ -1,0 +1,1 @@
+{"prompt":"At noon, the garden was still untouched. Complete the sentence using the cue (work in the garden): Mia [____] before lunch.","target_answer":"Mia had not been working in the garden before lunch.","accepted_answers":["had not been working in the garden","hadn't been working in the garden"]}

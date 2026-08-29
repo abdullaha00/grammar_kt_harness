@@ -1,0 +1,7 @@
+{
+  "prompt": "Mia started cleaning the kitchen an hour ago, and she is still doing it. Complete the sentence: Mia ____ the kitchen for an hour.",
+  "target_answer": "Mia has been cleaning the kitchen for an hour.",
+  "accepted_answers": [
+    "has been cleaning"
+  ]
+}

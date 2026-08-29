@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_008_02",
+  "cell_id": "cell_008",
+  "candidate_index": 2,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_008_02",
+    "cell_id": "cell_008",
+    "format": "controlled_production",
+    "prompt": "The children are outside with a ball. Complete the sentence using “play”: The children ____.",
+    "target_answer": "The children are playing with the ball.",
+    "accepted_answers": [
+      "are playing with the ball"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 6.9382041259996186,
+  "model_calls": 1,
+  "tokens_used": 2972,
+  "model_runtime_seconds": 6.937428410999928,
+  "model_call_failures": 0
+}

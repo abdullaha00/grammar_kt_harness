@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163715033x134646499658930300",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": ["present", "past"],
+      "aspect": "progressive",
+      "voice": "active",
+      "polarity": null,
+      "clause": "polar_question",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": ["tense", "polarity"],
+  "note": "Auxiliary BE with an -ing form marks progressive aspect and subject–auxiliary inversion marks a polar question; the descriptor does not distinguish present from past BE or specify polarity."
+}

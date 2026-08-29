@@ -1,0 +1,12 @@
+{
+  "prompt": "Tom began washing the car at 9:00. At 10:00, he stopped because it started to rain. Complete the sentence using “wash the car”: Before it started to rain, Tom _______________.",
+  "target_answer": "Before it started to rain, Tom had been washing the car.",
+  "accepted_answers": [
+    "Before it started to rain, Tom had been washing the car."
+  ],
+  "operation_tags": [
+    "perfect",
+    "progressive"
+  ],
+  "note": "The answer describes an ongoing activity that began before another event in the past."
+}

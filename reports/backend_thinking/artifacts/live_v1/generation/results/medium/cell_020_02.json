@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_medium_cell_020_02",
+  "cell_id": "cell_020",
+  "candidate_index": 2,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_020_02",
+    "cell_id": "cell_020",
+    "format": "controlled_production",
+    "prompt": "At this café, a worker cleans every table after each customer. Complete the sentence using “clean”: Every table ____ after each customer.",
+    "target_answer": "Every table is cleaned after each customer.",
+    "accepted_answers": [
+      "is cleaned"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 8.312441485000818,
+  "model_calls": 1,
+  "tokens_used": 3063,
+  "model_runtime_seconds": 8.31163270199977,
+  "model_call_failures": 0
+}

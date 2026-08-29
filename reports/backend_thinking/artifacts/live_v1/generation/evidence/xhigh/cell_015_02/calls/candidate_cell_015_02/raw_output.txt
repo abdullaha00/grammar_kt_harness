@@ -1,0 +1,1 @@
+{"prompt":"The table was ready when the guests arrived. Complete the sentence using “set / the table”: Leo [____] before the guests arrived.","target_answer":"Leo had set the table before the guests arrived.","accepted_answers":["had set the table"]}

@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_010_02",
+  "cell_id": "cell_010",
+  "candidate_index": 2,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_010_02",
+    "cell_id": "cell_010",
+    "format": "controlled_production",
+    "prompt": "The bus arrived on time, so Mia used it instead of walking. Complete the sentence with the past negative form of “walk”: Mia ____ to work.",
+    "target_answer": "Mia did not walk to work.",
+    "accepted_answers": [
+      "did not walk",
+      "didn't walk"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 6.094743453999399,
+  "model_calls": 1,
+  "tokens_used": 2984,
+  "model_runtime_seconds": 6.094007763000263,
+  "model_call_failures": 0
+}

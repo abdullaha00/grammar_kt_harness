@@ -1,0 +1,7 @@
+{
+  "prompt": "Every morning, Ben ___ before school. (feed / the cat)",
+  "target_answer": "Ben feeds the cat before school.",
+  "accepted_answers": [
+    "feeds the cat"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "prompt": "Tom stayed home yesterday. Complete the sentence using the cue (Tom / walk / to the park): ____",
+  "target_answer": "Tom did not walk to the park.",
+  "accepted_answers": [
+    "Tom did not walk to the park.",
+    "Tom didn't walk to the park."
+  ],
+  "operation_tags": [
+    "do_support",
+    "negation"
+  ],
+  "note": "The full and contracted negative forms are accepted."
+}

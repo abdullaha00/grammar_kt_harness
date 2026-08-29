@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_medium_cell_019_03",
+  "cell_id": "cell_019",
+  "candidate_index": 3,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_019_03",
+    "cell_id": "cell_019",
+    "format": "controlled_production",
+    "prompt": "The shop closed at six. Workers cleaned the floor before they left. Complete the sentence using the cue (clean): The floor ____ before the workers left.",
+    "target_answer": "The floor was cleaned before the workers left.",
+    "accepted_answers": [
+      "was cleaned"
+    ],
+    "generation_metadata": {
+      "candidate_index": 3,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 6.561747051999191,
+  "model_calls": 1,
+  "tokens_used": 2981,
+  "model_runtime_seconds": 6.560930076000659,
+  "model_call_failures": 0
+}

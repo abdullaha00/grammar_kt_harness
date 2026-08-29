@@ -1,0 +1,49 @@
+policy_id: medium_v1_factorized
+description: Development-observed non-background feature-value KCs; frozen before
+  grammar-holdout projection.
+kcs:
+- id: kc_feature__aspect__perfect
+  definition: Represent canonical aspect=perfect.
+  activation:
+    cell:
+      aspect: perfect
+- id: kc_feature__aspect__perfect_progressive
+  definition: Represent canonical aspect=perfect_progressive.
+  activation:
+    cell:
+      aspect: perfect_progressive
+- id: kc_feature__aspect__progressive
+  definition: Represent canonical aspect=progressive.
+  activation:
+    cell:
+      aspect: progressive
+- id: kc_feature__clause__imperative
+  definition: Represent canonical clause=imperative.
+  activation:
+    cell:
+      clause: imperative
+- id: kc_feature__clause__polar_question
+  definition: Represent canonical clause=polar_question.
+  activation:
+    cell:
+      clause: polar_question
+- id: kc_feature__polarity__negative
+  definition: Represent canonical polarity=negative.
+  activation:
+    cell:
+      polarity: negative
+- id: kc_feature__tense__past
+  definition: Represent canonical tense=past.
+  activation:
+    cell:
+      tense: past
+- id: kc_feature__tense__present
+  definition: Represent canonical tense=present.
+  activation:
+    cell:
+      tense: present
+- id: kc_feature__voice__passive
+  definition: Represent canonical voice=passive.
+  activation:
+    cell:
+      voice: passive

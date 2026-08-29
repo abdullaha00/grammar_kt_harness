@@ -1,0 +1,12 @@
+{
+  "prompt": "You want to know whether Mia walks to school each morning. Use the words in brackets to complete the question. [_____] (Mia / walk / to school each morning)",
+  "target_answer": "Does Mia walk to school each morning?",
+  "accepted_answers": [
+    "Does Mia walk to school each morning?"
+  ],
+  "operation_tags": [
+    "do_support",
+    "operator_inversion"
+  ],
+  "note": "A complete yes/no question in the simple present."
+}

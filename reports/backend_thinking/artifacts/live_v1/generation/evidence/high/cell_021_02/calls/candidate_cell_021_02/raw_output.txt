@@ -1,0 +1,1 @@
+{"prompt":"Lunch is being prepared now. Complete the sentence using the words in brackets: Lunch ____ now. (prepare)","target_answer":"Lunch is being prepared now.","accepted_answers":["is being prepared"]}

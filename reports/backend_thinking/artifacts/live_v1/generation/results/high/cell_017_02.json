@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_high_cell_017_02",
+  "cell_id": "cell_017",
+  "candidate_index": 2,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_017_02",
+    "cell_id": "cell_017",
+    "format": "controlled_production",
+    "prompt": "Maya started cleaning the kitchen at eight. At ten, she still had not started on the living room. Complete the sentence using “clean”: Maya ______ the living room.",
+    "target_answer": "Maya had not been cleaning the living room.",
+    "accepted_answers": [
+      "had not been cleaning",
+      "hadn't been cleaning"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 5.124747035999462,
+  "model_calls": 1,
+  "tokens_used": 5040,
+  "model_runtime_seconds": 5.123981075999836,
+  "model_call_failures": 0
+}

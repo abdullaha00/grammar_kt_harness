@@ -1,0 +1,1 @@
+{"prompt":"When we arrived, the windows were clean. Complete the sentence using the cue (wash): The windows ____.","target_answer":"The windows had been washed.","accepted_answers":["had been washed"]}

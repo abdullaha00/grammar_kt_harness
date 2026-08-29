@@ -1,0 +1,7 @@
+{
+  "prompt": "Ava is in the kitchen now. Complete the sentence using the cue (wash / the dishes): Ava _____.",
+  "target_answer": "Ava is washing the dishes.",
+  "accepted_answers": [
+    "is washing the dishes"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "prompt": "Maya started at eight. At noon, she was still doing the same job. Use the cue “paint the fence” to complete the sentence: ______.",
+  "target_answer": "She had been painting the fence for four hours.",
+  "accepted_answers": [
+    "She had been painting the fence for four hours.",
+    "Maya had been painting the fence for four hours."
+  ],
+  "operation_tags": [
+    "perfect",
+    "progressive"
+  ],
+  "note": "The response describes an ongoing activity that began before the stated past time."
+}

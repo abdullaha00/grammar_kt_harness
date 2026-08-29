@@ -1,0 +1,14 @@
+{
+  "prompt": "The room is cold. Tell Omar what not to do. (open / the door) ______",
+  "target_answer": "Don't open the door.",
+  "accepted_answers": [
+    "Don't open the door.",
+    "Do not open the door."
+  ],
+  "operation_tags": [
+    "do_support",
+    "negation",
+    "imperative"
+  ],
+  "note": "A negative imperative telling Omar not to perform the cued action."
+}

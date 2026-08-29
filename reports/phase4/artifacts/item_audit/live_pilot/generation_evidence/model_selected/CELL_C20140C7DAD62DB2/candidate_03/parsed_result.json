@@ -1,0 +1,13 @@
+{
+  "prompt": "The room stayed cold yesterday because the window remained closed. Complete the sentence using the cue: Mia / not open / the window. ____",
+  "target_answer": "Mia did not open the window.",
+  "accepted_answers": [
+    "Mia did not open the window.",
+    "Mia didn't open the window."
+  ],
+  "operation_tags": [
+    "do_support",
+    "negation"
+  ],
+  "note": "Use the simple past negative."
+}

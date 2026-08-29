@@ -1,0 +1,7 @@
+{
+  "prompt": "The floor is wet near the door. Tell your friend what to do: ____.",
+  "target_answer": "Walk carefully.",
+  "accepted_answers": [
+    "Walk carefully"
+  ]
+}

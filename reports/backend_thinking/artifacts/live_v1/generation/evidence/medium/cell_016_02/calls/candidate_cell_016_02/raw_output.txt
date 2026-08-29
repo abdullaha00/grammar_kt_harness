@@ -1,0 +1,1 @@
+{"prompt":"Tom started washing the car an hour ago, and he is still doing it. Complete the sentence using the cue “wash”: Tom ____ the car for an hour.","target_answer":"Tom has been washing the car for an hour.","accepted_answers":["has been washing"]}

@@ -1,0 +1,65 @@
+{
+  "blind_id": "generation_judge_0110",
+  "experiment_item_id": "generation_medium_cell_006_02",
+  "generation_effort": "medium",
+  "cell_id": "cell_006",
+  "candidate_index": 2,
+  "judge_effort": "medium",
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "generation_judge_0110",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "It is an active negative imperative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The warning fits the wet-floor context naturally."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It gives focused practice producing a negative imperative."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "Many equally natural warnings fit the prompt, such as “Don't run.” or “Don't run here.”, beyond the accepted set."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and situation are common and clear."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not show the completed imperative."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Only basic imperative negation is needed."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No specialist or external knowledge is required."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "task_runtime_seconds": 7.701643913998851,
+  "model_calls": 1,
+  "tokens_used": 2470,
+  "model_runtime_seconds": 7.7008021469991945,
+  "model_call_failures": 0
+}

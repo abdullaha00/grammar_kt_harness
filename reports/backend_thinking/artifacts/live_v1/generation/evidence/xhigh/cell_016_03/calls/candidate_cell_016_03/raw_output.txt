@@ -1,0 +1,1 @@
+{"prompt":"The boy started cleaning his room an hour ago, and he is still doing it. Complete the sentence using “clean”: The boy [____] his room for an hour.","target_answer":"The boy has been cleaning his room for an hour.","accepted_answers":["has been cleaning"]}

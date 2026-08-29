@@ -1,0 +1,65 @@
+{
+  "blind_id": "generation_judge_0194",
+  "experiment_item_id": "generation_medium_cell_014_01",
+  "generation_effort": "medium",
+  "cell_id": "cell_014",
+  "candidate_index": 1,
+  "judge_effort": "medium",
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "generation_judge_0194",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "Uses past perfect, active voice, negative polarity, and a declarative clause."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The context and answer are coherent and natural."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "The prompt does not explicitly require the past perfect, weakening its focus as a grammar-practice item."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "Simple past (e.g. “didn't clean the cups”) is also a natural, contextually valid completion but is not accepted."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and situation are common and clear."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed target form is not displayed in the prompt."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "No unrelated advanced grammar is needed."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is required."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "task_runtime_seconds": 11.60265421999975,
+  "model_calls": 1,
+  "tokens_used": 2709,
+  "model_runtime_seconds": 11.601805992999289,
+  "model_call_failures": 0
+}

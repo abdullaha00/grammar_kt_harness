@@ -1,0 +1,1 @@
+{"prompt":"The café washes the outdoor tables, but it leaves the indoor tables dirty. Complete the sentence: The indoor tables ____ every day. (wash)","target_answer":"The indoor tables are not washed every day.","accepted_answers":["are not washed","aren't washed"]}

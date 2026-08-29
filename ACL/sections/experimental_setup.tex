@@ -1,32 +1,60 @@
 \section{Experimental Design}
 \label{sec:experimental-design}
 
-The base run uses the factorized policy.  Two variants reuse its frozen source,
-normalization, canonical, and realization artifacts, changing only the KC
-policy and downstream stages.  Because construction makes five items per KC,
-the resulting item pools are policy-specific; Q-matrix structure is directly
-comparable, whereas predictive scores are not a controlled estimate of a
-policy effect.
+\paragraph{Final integrated dataset.}
+The final experiment uses the fixed 44-item bank, semantic 18/5/1 cell fold,
+the declared mixed latent world, 1,000 learners, and seed 20260827.  It contains
+204,000 events: 160,000 development acquisition events supplied to selection
+and 44,000 frozen probes.  Four representations reuse exactly this stream:
+(i) nine factorized feature KCs; (ii) those features plus all seven structurally
+eligible pair interactions; (iii) the automated policy; and (iv) a labelled
+oracle with one exact KC for each of all 24 cells.  The oracle violates
+development-only discovery and serves only as a granularity diagnostic.
 
-The simulator is a transparent integration test.  It draws independent initial
-mastery for 60 learners from each of three profiles with
-$\mathrm{Beta}(2,6)$, $\mathrm{Beta}(2,2)$, and $\mathrm{Beta}(6,2)$ priors.
-Every learner receives two shuffled passes over the relevant accepted item
-pool.  For active KCs $A_i$, mastery $m_{lk}$, deterministic item difficulty
-$d_i\in[-0.8,0.8]$, and multi-KC penalty $0.15$, the response logit is
-\begin{equation}
- z_{li}=|A_i|^{-1}\!\sum_{k\in A_i}\operatorname{logit}(m_{lk})
-       -d_i-0.15(|A_i|-1),
-\end{equation}
-and $p_{li}=0.1+0.8\sigma(z_{li})$.  Mastery increases after every response at
-a profile-specific rate.  Each learner is split chronologically 60/20/20.
-Latent mastery, probabilities, random draws, and profile labels are written to
-separate oracle files and rejected from KT input.
+The primary comparison fixes observable logistic KT and contrasts each policy
+with factorization.  We resample whole learners 5,000 times and report the
+candidate-minus-factorized change in log loss and Brier score with percentile
+95\% intervals.  Negative values favour the candidate.  Development,
+compositional, and novel-value probe subsets are reported separately.  The
+novel subset has only one cell and two items, so it is descriptive.
 
-We evaluate a Beta-smoothed empirical KC rate, fixed-parameter BKT
-($P(T)=.04$, $P(G)=.20$, $P(S)=.10$), and $L_2$-regularized logistic regression.
-The latter uses only pre-event learner success, active-KC success, prior
-opportunities, item difficulty, KC count, and one-hot KC indicators.  We run
-seeds 20260817--20260821 and report mean test AUC and log loss with 95\% $t$
-intervals over the five runs.  Accuracy and validation metrics are retained in
-the artifact but are secondary here.
+\paragraph{Method-development audits.}
+Settings were chosen through staged controls rather than the final test stream.
+The item audit compares model-selected text with a six-entry controlled lexicon
+and evaluates $N\in\{1,3,5\}$ on eight fixed cells.  A 24-item stratified sample
+is rejudged by the same validator family and an alternate model.  The fold audit
+tests tuple-level coverage and ID/order invariance.
+
+KC robustness uses a fixed 24-cell/42-item structural bank, 240 learners,
+seeds 20260827--20260829, and four readable worlds: factorized,
+interaction-heavy, cell-specific, and mixed.  We compare factorized,
+all-supported, automated, and exact-all-cell representations under fixed
+logistic KT.  Nested 30/60/120/240-learner samples study support.  A predeclared
+grid $\lambda\in\{0,.00025,.0005,.001,.002\}$ is evaluated only in the
+factorized null and interaction-heavy positive control.  These synthetic worlds
+test whether the selector behaves appropriately when its assumptions are true
+or false; they do not identify a human learner ontology.
+
+For final-bank stability, we rerun selection at 1,000 learners over five mixed-
+world seeds (20260827--20260831), and on nested 60/120/240/500/1,000-learner
+subsets of the reference stream.  Every run supplies development acquisition
+events only; holdout and reserved test outcomes are absent from selection.
+
+\paragraph{Models and baselines.}
+Retained normalization and generation outputs use \texttt{gpt-5.6-sol} at
+medium reasoning effort; independent item judgments use
+\texttt{gpt-5.6-terra} at medium effort.  Outputs, rendered prompts, parsed
+records, and call settings are retained.  The provider did not expose a pinned
+snapshot or monetary price.  KT baselines are empirical rate, fixed BKT, and
+regularized logistic; no neural KT model is added because the research variable
+is KC representation rather than predictive architecture.
+
+After freezing the dataset, a separate 905-call matched operational audit
+compared medium, high, and xhigh effort with two condition-blind research-agent
+reviews.  A zero-critical-error rule was inconclusive for every stage.  For
+future pipeline runs, high was retained for normalization (higher semantic
+quality and repeatability than medium, cheaper than tied xhigh), while medium
+was retained for generation and validation because deeper effort brought no
+independently confirmed quality gain.  This post-construction audit changes the
+active runner declaration, not the all-medium provenance or results reported
+for the fixed dataset.

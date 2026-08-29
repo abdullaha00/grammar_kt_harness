@@ -1,0 +1,45 @@
+{
+  "source_id": "1741163712334x456379754309706560",
+  "stratum": "partial_noneligible",
+  "effort": "medium",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712334x456379754309706560",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "past",
+        "aspect": "perfect",
+        "voice": "active",
+        "polarity": null,
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "Past perfect simple establishes past tense, perfect aspect, active voice, and no central modal. Generic question wording establishes neither a canonical question subtype nor polarity."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712334x456379754309706560",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "past",
+        "aspect": "perfect",
+        "voice": "active",
+        "polarity": null,
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "phase2 eligible: none"
+  },
+  "task_runtime_seconds": 11.85990405099983,
+  "model_calls": 1,
+  "tokens_used": 6075,
+  "model_runtime_seconds": 11.85919199700038,
+  "model_call_failures": 0
+}

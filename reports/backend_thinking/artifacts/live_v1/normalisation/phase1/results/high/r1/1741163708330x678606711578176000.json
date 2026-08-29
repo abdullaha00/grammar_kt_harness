@@ -1,0 +1,60 @@
+{
+  "source_id": "1741163708330x678606711578176000",
+  "stratum": "phase2_eligible",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708330x678606711578176000",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "Emphatic DO establishes a positive active declarative with simple nonmodal structure, but does not distinguish present do/does from past did."
+  },
+  "retained_mapping": {
+    "source_id": "1741163708330x678606711578176000",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 9.702478909001002,
+  "model_calls": 1,
+  "tokens_used": 6065,
+  "model_runtime_seconds": 9.701757916998758,
+  "model_call_failures": 0
+}

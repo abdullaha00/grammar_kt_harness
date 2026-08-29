@@ -1,0 +1,71 @@
+{
+  "item_id": "adversarial_lexical_simplicity_1",
+  "audit_id": "validation_live_0319fbff795b",
+  "cell_id": "cell_003",
+  "effort": "medium",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_0319fbff795b",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "It is a positive active declarative in the present simple."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The sentence is grammatically well formed."
+      },
+      "naturalness": {
+        "passed": false,
+        "note": "The unusually ornate vocabulary makes the prompt-answer pair unnatural."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "Obscure vocabulary distracts from the intended grammar practice."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The open-ended prompt does not determine this exact accepted sentence."
+      },
+      "non_target_language_simplicity": {
+        "passed": false,
+        "note": "Key words are uncommon and lexically opaque."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed target form is not shown in the prompt."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Producing the sentence requires only ordinary present-simple agreement."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external factual knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "non_target_language_simplicity"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": true,
+  "reference_source": "authored_adversarial_negative_control",
+  "task_runtime_seconds": 10.446187458999702,
+  "model_calls": 1,
+  "tokens_used": 2632,
+  "model_runtime_seconds": 10.445326024999304,
+  "model_call_failures": 0
+}

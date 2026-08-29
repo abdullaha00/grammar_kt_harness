@@ -1,0 +1,69 @@
+{
+  "item_id": "candidate_cell_003_01",
+  "audit_id": "validation_live_b3831a1592f2",
+  "cell_id": "cell_003",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_b3831a1592f2",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The target is a positive active simple-present declarative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "Walking a dog every morning before breakfast is natural and coherent."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of third-person singular simple present."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The subject, time expression, and supplied verb/object clearly cue “walks the dog.”"
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and context are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed target form is not shown in the prompt."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Only basic simple-present third-person singular inflection is needed."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is required."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": true,
+  "retained_failed_criteria": [],
+  "packaging_correction": true,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 9.636178587999893,
+  "model_calls": 1,
+  "tokens_used": 2589,
+  "model_runtime_seconds": 9.635286654000083,
+  "model_call_failures": 0
+}

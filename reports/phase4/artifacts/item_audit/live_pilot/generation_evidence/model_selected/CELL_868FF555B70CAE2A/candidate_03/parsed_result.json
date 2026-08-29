@@ -1,0 +1,12 @@
+{
+  "prompt": "You are not sure about Mia's usual routine. Complete the question. Cue: Mia / feed / her cat\nResponse: [_____]",
+  "target_answer": "Does Mia feed her cat?",
+  "accepted_answers": [
+    "Does Mia feed her cat?"
+  ],
+  "operation_tags": [
+    "do_support",
+    "operator_inversion"
+  ],
+  "note": ""
+}

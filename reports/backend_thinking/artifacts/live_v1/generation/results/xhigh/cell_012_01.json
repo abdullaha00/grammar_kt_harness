@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_012_01",
+  "cell_id": "cell_012",
+  "candidate_index": 1,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_012_01",
+    "cell_id": "cell_012",
+    "format": "controlled_production",
+    "prompt": "Mia's lunch is still untouched. Complete the sentence using “eat”: Mia [________] her lunch.",
+    "target_answer": "Mia has not eaten her lunch.",
+    "accepted_answers": [
+      "has not eaten",
+      "hasn't eaten"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 10.71637494999959,
+  "model_calls": 1,
+  "tokens_used": 5225,
+  "model_runtime_seconds": 10.715642396000476,
+  "model_call_failures": 0
+}

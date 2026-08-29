@@ -1,0 +1,1 @@
+{"prompt":"When we arrived at the room, the staff said the door was ready. Complete the sentence using “lock”: The door ____.","target_answer":"The door had been locked.","accepted_answers":["had been locked"]}

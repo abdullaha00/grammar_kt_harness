@@ -1,0 +1,1 @@
+{"prompt":"Maya started washing the car an hour ago and is still doing it. Complete the sentence with the verb “wash”: Maya ____ the car for an hour.","target_answer":"Maya has been washing the car for an hour.","accepted_answers":["has been washing"]}

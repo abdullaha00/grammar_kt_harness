@@ -1,0 +1,7 @@
+{
+  "prompt": "Mia wants to know about Ben's trip yesterday. Complete her question using the cue: Ben / visit / his uncle. [____]",
+  "target_answer": "Did Ben visit his uncle?",
+  "accepted_answers": [
+    "Did Ben visit his uncle?"
+  ]
+}

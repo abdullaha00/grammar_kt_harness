@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a past, active, negative declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "Staying home yesterday coherently supports not walking to the park."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of past simple negation with familiar language."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The cue and context allow other valid completions, such as adding “yesterday,” while the accepted set is limited to two exact phrasings."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the base-form cue, not the completed negative form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it requires only basic past simple negation."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

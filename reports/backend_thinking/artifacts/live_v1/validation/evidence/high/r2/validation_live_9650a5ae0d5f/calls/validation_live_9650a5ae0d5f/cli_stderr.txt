@@ -1,0 +1,86 @@
+OpenAI Codex v0.150.1
+--------
+workdir: /home/abdullah/grammar_kt_harness/reports/backend_thinking/artifacts/live_v1/validation/evidence/high/r2/validation_live_9650a5ae0d5f/calls/validation_live_9650a5ae0d5f
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: high
+reasoning summaries: none
+session id: 01a04690-3da2-7172-9c28-ddfcbeddefb8
+--------
+user
+Judge one generated exercise independently from the generator.
+
+Use the visible learner-facing prompt, target answer, accepted answers, intended
+GrammarCell, and the declared criteria. Do not rely on generation reasoning or
+generation metadata. Judge every criterion separately and give a short note.
+
+Return one JSON object with a `judgments` mapping. Every declared criterion must
+have exactly `passed` (true/false) and `note`.
+
+VISIBLE ITEM:
+{
+  "item_id": "validation_live_9650a5ae0d5f",
+  "format": "controlled_production",
+  "prompt": "Mia started washing the car an hour ago, and she is still doing it. Complete the sentence using the verb in brackets: Mia ___ the car for an hour. (wash)",
+  "target_answer": "Mia has been washing the car for an hour.",
+  "accepted_answers": [
+    "has been washing"
+  ]
+}
+
+INTENDED GRAMMAR CELL:
+{
+  "tense": "present",
+  "aspect": "perfect_progressive",
+  "voice": "active",
+  "polarity": "positive",
+  "clause": "declarative",
+  "modal": "none"
+}
+
+VALIDATION CRITERIA:
+{
+  "target_fidelity": {
+    "required": true,
+    "question": "Does the target answer express exactly the intended GrammarCell?"
+  },
+  "grammaticality": {
+    "required": true,
+    "question": "Is the target answer grammatical English?"
+  },
+  "naturalness": {
+    "required": true,
+    "question": "Is the prompt-answer pair natural and coherent?"
+  },
+  "pedagogical_suitability": {
+    "required": true,
+    "question": "Is the item suitable for focused grammar practice?"
+  },
+  "determinacy": {
+    "required": true,
+    "question": "Does the prompt sufficiently determine the accepted response set?"
+  },
+  "non_target_language_simplicity": {
+    "required": true,
+    "question": "Is the vocabulary and context sufficiently common, transparent, and lexically unambiguous that lexical knowledge is unlikely to determine the learner's response?"
+  },
+  "no_answer_leakage": {
+    "required": true,
+    "question": "Does the prompt avoid displaying the completed target form?"
+  },
+  "no_extraneous_grammar": {
+    "required": true,
+    "question": "Can the item be solved without unrelated advanced grammar?"
+  },
+  "no_world_knowledge": {
+    "required": true,
+    "question": "Can the item be answered without external factual or specialist knowledge?"
+  }
+}
+
+codex
+{"judgments":{"target_fidelity":{"passed":true,"note":"“has been washing” is present perfect progressive, active, positive, declarative, with no modal."},"grammaticality":{"passed":true,"note":"The target sentence is grammatical English."},"naturalness":{"passed":true,"note":"The ongoing action and one-hour duration make the prompt-answer pair coherent and natural."},"pedagogical_suitability":{"passed":true,"note":"It gives focused practice of the present perfect progressive with a clear duration cue."},"determinacy":{"passed":true,"note":"“Started … an hour ago” and “is still doing it,” plus “for an hour,” clearly determine the intended form."},"non_target_language_simplicity":{"passed":true,"note":"The vocabulary and situation are common and transparent."},"no_answer_leakage":{"passed":true,"note":"The prompt does not display the completed target verb form."},"no_extraneous_grammar":{"passed":true,"note":"The item can be solved through the target tense-aspect construction alone."},"no_world_knowledge":{"passed":true,"note":"No external or specialist knowledge is needed."}}}
+tokens used
+2,543

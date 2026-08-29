@@ -1,0 +1,18 @@
+{
+  "returncode": 0,
+  "runtime_seconds": 12.150763646999621,
+  "tokens_used": 2702,
+  "token_metric": "codex_cli_total_tokens_used",
+  "command": [
+    "codex",
+    "exec",
+    "--ephemeral",
+    "--sandbox",
+    "read-only",
+    "--model",
+    "gpt-5.6-terra",
+    "--config",
+    "model_reasoning_effort=\"high\"",
+    "-"
+  ]
+}

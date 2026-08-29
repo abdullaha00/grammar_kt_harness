@@ -1,7 +1,5 @@
 protocol_id: simple_online_kt_v1
 techniques: [empirical, bkt, logistic]
-history: learner events strictly before the predicted event
-evaluation_split: test
 
 empirical:
   alpha: 1.0
@@ -14,6 +12,10 @@ bkt:
   slip: 0.10
 
 logistic:
+  include_item_difficulty: false
+  include_kc_count: false
+  include_kc_indicators: true
+  standardize: true
   regularization_c: 1.0
   max_iterations: 300
   random_seed: 20260827

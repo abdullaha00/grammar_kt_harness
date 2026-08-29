@@ -14,9 +14,9 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from grammar_kt.canonicalise import canonicalise
 from grammar_kt.generate import generate_items
-from grammar_kt.io import call_model, load_typed_resource, read_jsonl, read_text, read_yaml
+from grammar_kt.io import call_model, load_typed_resource, read_text, read_yaml
 from grammar_kt.normalise import normalise
-from grammar_kt.validate_items import validate_items
+from grammar_kt.validate_items import select_item_bank, validate_items
 
 
 RESOURCE_PATH = ROOT / "data/fixtures/egp_pilot.jsonl"
@@ -33,11 +33,10 @@ normalisation_rulebook = read_text(
 grammar_schema = read_yaml(ROOT / "modules/grammar/canonical/schema.yaml")
 generation_prompt = read_text(ROOT / "modules/items/generation/prompt.txt")
 generation_rulebook = read_text(ROOT / "modules/items/generation/rulebook.md")
-generation_design = read_yaml(ROOT / "modules/items/generation/design.yaml")
+generation_design = read_yaml(ROOT / "data/fixtures/item_generation.yaml")
 item_format = read_yaml(
     ROOT / "modules/items/generation/formats/controlled_production.yaml"
 )
-lexicon = read_jsonl(ROOT / "modules/items/generation/lexicon.jsonl")
 validation_prompt = read_text(ROOT / "modules/items/validation/prompt.txt")
 validation_criteria = read_yaml(ROOT / "modules/items/validation/criteria.yaml")
 fixture_model_call = partial(
@@ -81,19 +80,25 @@ def main() -> int:
         generation_rulebook,
         generation_design,
         item_format,
-        lexicon,
         model="fixture",
         reasoning_effort="deterministic",
         model_call=fixture_model_call,
     )
     if arguments.stage == "generation":
-        print("INPUT")
+        print("INPUT GrammarCell")
         show(cells[0])
-        print("OUTPUT")
+        print("LEXICAL/CONTEXTUAL RESPONSIBILITY")
+        print(
+            "The model chooses compatible, simple lexical and contextual material; "
+            "no controlled lexical entry is supplied."
+        )
+        print("GENERATION PROMPT")
+        print(generation_prompt)
+        print("OUTPUT CandidateItem")
         show(candidates[0])
         return 0
 
-    accepted, judgments = validate_items(
+    validator_accepted, judgments = validate_items(
         candidates,
         cells[:1],
         validation_prompt,
@@ -102,10 +107,17 @@ def main() -> int:
         reasoning_effort="deterministic",
         model_call=fixture_model_call,
     )
+    selected = select_item_bank(validator_accepted, generation_design)
     print("INPUT")
     show(candidates[0])
     print("OUTPUT")
-    show({"judgment": judgments[0], "accepted_item": accepted[0] if accepted else None})
+    show(
+        {
+            "judgment": judgments[0],
+            "validator_accepted": bool(validator_accepted),
+            "selected_item": selected[0] if selected else None,
+        }
+    )
     return 0
 
 

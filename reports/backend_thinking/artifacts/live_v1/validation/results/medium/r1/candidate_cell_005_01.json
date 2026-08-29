@@ -1,0 +1,71 @@
+{
+  "item_id": "candidate_cell_005_01",
+  "audit_id": "validation_live_be421ac65d98",
+  "cell_id": "cell_005",
+  "effort": "medium",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_be421ac65d98",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "Positive active imperative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The dark-room context coherently motivates the instruction."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice producing an imperative."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The cue and context sufficiently specify the expected response."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "All vocabulary is common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives a cue, not the completed sentence."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "No unrelated advanced grammar is needed."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external knowledge is required."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy"
+  ],
+  "packaging_correction": true,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 7.722290255000189,
+  "model_calls": 1,
+  "tokens_used": 2448,
+  "model_runtime_seconds": 7.721355785999549,
+  "model_call_failures": 0
+}

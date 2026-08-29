@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a positive active imperative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The context and instruction naturally lead to the response."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice forming a basic imperative."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The cue clearly determines the expected wording, aside from terminal punctuation."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "All vocabulary is common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The completed target sentence is not displayed; only the cue is given."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated or advanced grammar is required."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The item requires no external knowledge."
+    }
+  }
+}

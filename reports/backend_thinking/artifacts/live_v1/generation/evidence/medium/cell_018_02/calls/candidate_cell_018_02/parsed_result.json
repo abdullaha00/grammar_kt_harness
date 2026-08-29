@@ -1,0 +1,7 @@
+{
+  "prompt": "The path was wet because it had rained without stopping all morning. Complete the sentence using “rain”: It ____.",
+  "target_answer": "It had been raining all morning.",
+  "accepted_answers": [
+    "had been raining all morning"
+  ]
+}

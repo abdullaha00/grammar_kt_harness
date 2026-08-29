@@ -1,0 +1,8 @@
+{
+  "prompt": "Rain is coming in through the open window. Use the cue “close / window”: ____",
+  "target_answer": "Close the window.",
+  "accepted_answers": [
+    "Close the window.",
+    "Close the window"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "“had not been working” is past perfect progressive, active, negative, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The resting context coherently supports the statement that Ben had not been working."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of a negative perfect progressive form using a familiar verb."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The prompt does not uniquely require the past perfect progressive; alternatives such as “was not working” or “did not work” are also plausible."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives the base verb but does not display the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed to form the target response."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The item can be answered using only the given context."
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "experiment_id": "P3-KC-SELECTION-001",
+  "evidence_status": "software_verification",
+  "legacy_artifact": "experiments/post_training_v1/data/pilot_v1/opportunities.jsonl",
+  "legacy_artifact_sha256": "5635b69de038fa3d0532265c78695b8c7360d92a84df932791ab7446b3e9768e",
+  "legacy_fields_used": [
+    "canonical_split",
+    "canonical_cell_id",
+    "cell",
+    "measurement_opportunity_id"
+  ],
+  "legacy_evidence_explicitly_not_used": [
+    "expected_operations",
+    "structural_conditions",
+    "post_training_split",
+    "source_descriptor_ids",
+    "coverage_reasons",
+    "item_format",
+    "legacy KCs",
+    "legacy learner outcomes"
+  ],
+  "development_cells": 16,
+  "development_measurement_opportunities": 30,
+  "world_files": [
+    "modules/simulation/worlds/phase3_factorized.yaml",
+    "modules/simulation/worlds/phase3_interaction_probe.yaml"
+  ],
+  "world_file_sha256": {
+    "modules/simulation/worlds/phase3_factorized.yaml": "442e1cdcf4f10baf48f5e1b23b197de3f07d352ccea104b1210782258f923ace",
+    "modules/simulation/worlds/phase3_interaction_probe.yaml": "3d9d2ea65a615738c0306abefdac15a17d74ea9277d09bc4065c717982a0303c"
+  },
+  "candidate_design_file": "modules/kcs/candidate_design.yaml",
+  "selection_design_file": "modules/kcs/selection.yaml",
+  "seeds": [
+    20260827
+  ],
+  "learners": 24,
+  "passes": 3,
+  "events_per_world_seed": 2160,
+  "lambda_grid": [
+    0.0,
+    0.002,
+    0.01
+  ],
+  "paired_bootstrap_repeats": 200,
+  "primary_selector": {
+    "model": "observable_logistic_kt",
+    "history_prior": {
+      "alpha": 1.0,
+      "beta": 1.0
+    },
+    "features": [
+      "learner_success_rate",
+      "learner_log_attempts",
+      "per_kc_active",
+      "per_kc_prior_successes",
+      "per_kc_prior_failures"
+    ],
+    "regularization_c": 0.1,
+    "max_iterations": 300,
+    "random_seed": 20260827
+  },
+  "primary_selection_split": {
+    "mode": "chronological",
+    "train_dataset_split": "train",
+    "validation_dataset_split": "validation"
+  },
+  "reserved_test_outcomes_read_by_selection": false,
+  "exact_command": "python scripts/run_kc_selection_experiments.py --quick"
+}

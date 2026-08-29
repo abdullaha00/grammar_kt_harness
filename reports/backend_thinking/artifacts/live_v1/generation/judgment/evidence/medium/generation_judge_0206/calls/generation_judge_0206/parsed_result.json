@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Present simple, active, positive polar question with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and question form a coherent, natural exchange."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It clearly practises present-simple question formation with third-person singular."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The context, subject, verb, and destination sufficiently determine the accepted question."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "All vocabulary is common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The completed target question is not shown in the prompt."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it requires only the targeted present-simple question structure."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external knowledge is needed."
+    }
+  }
+}

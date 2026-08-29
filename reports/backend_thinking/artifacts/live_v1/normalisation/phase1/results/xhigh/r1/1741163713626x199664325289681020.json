@@ -1,0 +1,27 @@
+{
+  "source_id": "1741163713626x199664325289681020",
+  "stratum": "out_of_scope",
+  "effort": "xhigh",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163713626x199664325289681020",
+    "result": "out_of_scope",
+    "cells": [],
+    "phase2_eligible": [],
+    "note": "The descriptor targets present-simple use in an if-clause, a multi-clause conditional relation not representable in the single-main-clause schema."
+  },
+  "retained_mapping": {
+    "source_id": "1741163713626x199664325289681020",
+    "result": "out_of_scope",
+    "cells": [],
+    "phase2_eligible": [],
+    "note": "Linked conditional construction is out of scope."
+  },
+  "task_runtime_seconds": 17.20612102800078,
+  "model_calls": 1,
+  "tokens_used": 6353,
+  "model_runtime_seconds": 17.205442825999853,
+  "model_call_failures": 0
+}

@@ -1,0 +1,71 @@
+{
+  "item_id": "adversarial_world_knowledge_2",
+  "audit_id": "validation_live_8666282e8665",
+  "cell_id": "cell_019",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_8666282e8665",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "Uses a positive past simple passive declarative: “was sealed.”"
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt and answer form a coherent historical-fact completion."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "It primarily tests recall of a specific historical fact rather than focused grammar production."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The prompt does not provide enough information to determine this specific historical statement."
+      },
+      "non_target_language_simplicity": {
+        "passed": false,
+        "note": "“Magna Carta” and “Runnymede” are specialist historical terms and not lexically transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Producing the answer does not require advanced grammar beyond the target past passive structure."
+      },
+      "no_world_knowledge": {
+        "passed": false,
+        "note": "Answering requires external knowledge of the Magna Carta, Runnymede, and the date 1215."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "no_world_knowledge"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": true,
+  "reference_source": "authored_adversarial_negative_control",
+  "task_runtime_seconds": 11.831052552999608,
+  "model_calls": 1,
+  "tokens_used": 2723,
+  "model_runtime_seconds": 11.830221547999827,
+  "model_call_failures": 0
+}

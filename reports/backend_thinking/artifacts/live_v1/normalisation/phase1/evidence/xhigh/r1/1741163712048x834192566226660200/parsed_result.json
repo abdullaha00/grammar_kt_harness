@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163712048x834192566226660200",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": "NA",
+      "aspect": "none",
+      "voice": "passive",
+      "polarity": null,
+      "clause": null,
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": [],
+  "note": "The target is the uninflected canonical BE-passive infinitive. Its listed governors are contextual periphrastic or lexical forms; polarity and main-clause type are not constrained."
+}

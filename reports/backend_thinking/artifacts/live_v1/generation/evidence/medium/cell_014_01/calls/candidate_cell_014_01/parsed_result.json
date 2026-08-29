@@ -1,0 +1,8 @@
+{
+  "prompt": "Maya checked the kitchen before leaving. The cups were still dirty. Complete the sentence using the cue in brackets: She ___ before she left. (clean the cups)",
+  "target_answer": "She had not cleaned the cups before she left.",
+  "accepted_answers": [
+    "had not cleaned the cups",
+    "hadn't cleaned the cups"
+  ]
+}

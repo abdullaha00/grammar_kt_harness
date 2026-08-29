@@ -1,0 +1,71 @@
+{
+  "item_id": "adversarial_world_knowledge_1",
+  "audit_id": "validation_live_1109908d0a5d",
+  "cell_id": "cell_003",
+  "effort": "medium",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_1109908d0a5d",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The answer is a positive active present-tense declarative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt and answer form a coherent factual-production task."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "Success depends primarily on recalling a geography fact rather than practicing the target grammar."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The prompt permits valid alternatives such as “Kazakhstan's capital is Astana,” but only one wording is accepted."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "Apart from the proper names, the vocabulary and sentence structure are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed target sentence."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The response requires only a simple present-tense declarative sentence."
+      },
+      "no_world_knowledge": {
+        "passed": false,
+        "note": "Answering requires knowing that Astana is Kazakhstan's capital."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "no_world_knowledge"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": true,
+  "reference_source": "authored_adversarial_negative_control",
+  "task_runtime_seconds": 11.97156672500023,
+  "model_calls": 1,
+  "tokens_used": 2674,
+  "model_runtime_seconds": 11.970773971999733,
+  "model_call_failures": 0
+}

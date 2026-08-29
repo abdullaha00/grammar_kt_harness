@@ -1,0 +1,7 @@
+{
+  "prompt": "The bus arrived at 8:20. Maya started waiting at 8:00 and was still waiting then. Complete the sentence using the verb in brackets: Maya ___ for twenty minutes when the bus arrived. (wait)",
+  "target_answer": "Maya had been waiting for twenty minutes when the bus arrived.",
+  "accepted_answers": [
+    "had been waiting"
+  ]
+}

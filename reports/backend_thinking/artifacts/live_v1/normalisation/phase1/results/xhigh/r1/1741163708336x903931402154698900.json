@@ -1,0 +1,55 @@
+{
+  "source_id": "1741163708336x903931402154698900",
+  "stratum": "phase2_eligible",
+  "effort": "xhigh",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708336x903931402154698900",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": null,
+        "voice": null,
+        "polarity": "positive",
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "Affirmative yes/no wording fixes positive polarity and polar-question clause type. Finite nonmodal BE/HAVE permits present or past, while the broad auxiliary wording does not determine aspect or voice."
+  },
+  "retained_mapping": {
+    "source_id": "1741163708336x903931402154698900",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": null,
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 41.22108497800036,
+  "model_calls": 1,
+  "tokens_used": 5397,
+  "model_runtime_seconds": 41.220351874999324,
+  "model_call_failures": 0
+}

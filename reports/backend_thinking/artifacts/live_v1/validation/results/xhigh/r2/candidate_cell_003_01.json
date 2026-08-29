@@ -1,0 +1,69 @@
+{
+  "item_id": "candidate_cell_003_01",
+  "audit_id": "validation_live_b3831a1592f2",
+  "cell_id": "cell_003",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_b3831a1592f2",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The target is a positive, active present-simple declarative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "Walking a dog before breakfast is a coherent, natural routine."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It clearly focuses practice on third-person singular present-simple verb inflection."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The subject, routine adverbial, and supplied verb/object sufficiently determine “walks the dog.”"
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and context are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed target form is not displayed; only the base verb and object are provided."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Solving it requires no unrelated advanced grammar."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": true,
+  "retained_failed_criteria": [],
+  "packaging_correction": true,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 13.119565271999818,
+  "model_calls": 1,
+  "tokens_used": 2648,
+  "model_runtime_seconds": 13.118779493001057,
+  "model_call_failures": 0
+}

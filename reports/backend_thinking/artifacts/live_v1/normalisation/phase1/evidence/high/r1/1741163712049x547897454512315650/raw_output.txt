@@ -1,0 +1,46 @@
+{
+  "source_id": "1741163712049x547897454512315650",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": "NA",
+      "aspect": "perfect",
+      "voice": "passive",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": [
+        "can",
+        "could",
+        "may",
+        "might",
+        "must",
+        "shall",
+        "should",
+        "will",
+        "would"
+      ]
+    },
+    {
+      "tense": "NA",
+      "aspect": "perfect",
+      "voice": "passive",
+      "polarity": "negative",
+      "clause": "declarative",
+      "modal": [
+        "can",
+        "could",
+        "may",
+        "might",
+        "must",
+        "shall",
+        "should",
+        "will",
+        "would"
+      ]
+    }
+  ],
+  "phase2_eligible": [
+    "modal"
+  ],
+  "note": "The descriptor targets passive modal-perfect declaratives in independently asserted affirmative and negative forms; central modals require tense NA, while the modal identity remains bounded but unresolved."
+}

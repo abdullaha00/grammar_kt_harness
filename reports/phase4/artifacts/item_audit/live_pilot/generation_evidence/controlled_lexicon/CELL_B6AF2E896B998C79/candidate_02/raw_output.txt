@@ -1,0 +1,1 @@
+{"prompt":"Ana made the meal before the guests arrived. Complete the sentence using “prepare”: The meal _____.","target_answer":"The meal was prepared.","accepted_answers":["The meal was prepared."],"operation_tags":["be_passive"],"note":"Simple past positive declarative passive."}

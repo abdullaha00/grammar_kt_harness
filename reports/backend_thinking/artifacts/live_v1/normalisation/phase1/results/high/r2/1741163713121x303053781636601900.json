@@ -1,0 +1,45 @@
+{
+  "source_id": "1741163713121x303053781636601900",
+  "stratum": "complete_noneligible",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163713121x303053781636601900",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "Present continuous supplies present tense and progressive aspect; the negative form fixes negative polarity, with an ordinary active declarative interpretation."
+  },
+  "retained_mapping": {
+    "source_id": "1741163713121x303053781636601900",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": null
+  },
+  "task_runtime_seconds": 11.283894516000146,
+  "model_calls": 1,
+  "tokens_used": 6029,
+  "model_runtime_seconds": 11.283117776998552,
+  "model_call_failures": 0
+}

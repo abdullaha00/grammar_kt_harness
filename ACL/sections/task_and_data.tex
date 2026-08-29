@@ -3,7 +3,8 @@
 
 \subsection{Grammar-cell representation}
 
-For descriptor $d$, normalization returns a status, cells, and a note.  A cell
+For descriptor $d$, normalization returns a status, cells, explicit Phase-2
+eligibility, and a note.  A cell
 has six dimensions,
 \begin{equation}
   c=(t,a,v,p,q,m),
@@ -31,10 +32,24 @@ records, an ordered list selects 139 descriptors: 23 regression controls and
 116 fresh cases stratified over tense--aspect combinations, passive voice,
 negation, questions, imperatives, central modals, and out-of-scope phenomena.
 
-The design contains 139 primary annotation units and eight blinded repeats.
-Every unit retains model evidence; only primaries feed canonicalization.
+The design contains 139 primary annotation units and eight repeated units.
+Every unit retains model evidence; only primaries feed canonicalization.  The
+retained annotation snapshot is used as evidence rather than regenerated for
+this study.
 
-Phase~1 exposes the identifier, category fields, guideword, and can-do
-statement.  Source examples remain hidden unless a partial result is eligible
-for Phase~2, preventing examples from silently replacing the descriptor as the
-definition of coverage.
+Phase~1 exposes category fields, guideword, and can-do statement.  Source
+examples remain hidden unless a partial result explicitly identifies an
+uncertain dimension as Phase-2 eligible.  Phase~2 may narrow only those domains
+while preserving every Phase-1 branch and ineligible exact value.
+
+\subsection{Fixed dataset boundary and grammar fold}
+
+Forty-four complete mappings contribute 48 source--cell edges and 24 unique
+cells.  Item generation and validation see cells and language-facing design
+files, but no fold, KC, learner outcome, or KT result.  After the bank is fixed,
+a deterministic semantic split assigns 18 cells to development, five to a
+constituent-compositional holdout, and one containing unseen
+\texttt{modal=would} to a novel-value holdout.  The five compositional cells use
+only feature values seen in development; 36 of their 37 value pairs are also
+seen.  We therefore call the split constituent-compositional rather than claim
+that every pair has been observed.

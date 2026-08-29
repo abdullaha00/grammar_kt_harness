@@ -1,0 +1,85 @@
+{
+  "source_id": "1741163708336x930002080700909000",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708336x930002080700909000",
+    "result": "complete",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "present",
+        "voice": "active"
+      },
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "past",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "The examples positively establish both licensed tense alternatives: present DO-support and past DID-support. The original branch is therefore refined into separate present and past cells; all other Phase-1 constraints remain fixed."
+  },
+  "fixed_phase1_mapping": {
+    "source_id": "1741163708336x930002080700909000",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "retained_phase2_mapping": {
+    "source_id": "1741163708336x930002080700909000",
+    "result": "complete",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "present",
+        "voice": "active"
+      },
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "past",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 12.475147417999324,
+  "model_calls": 1,
+  "tokens_used": 6305,
+  "model_runtime_seconds": 12.474423506000676,
+  "model_call_failures": 0
+}

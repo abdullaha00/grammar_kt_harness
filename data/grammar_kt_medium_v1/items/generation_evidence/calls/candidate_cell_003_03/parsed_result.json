@@ -1,0 +1,7 @@
+{
+  "prompt": "Maya has the same routine every morning. Complete the sentence using “pack”: Maya ____ her lunch before school.",
+  "target_answer": "Maya packs her lunch before school.",
+  "accepted_answers": [
+    "packs"
+  ]
+}

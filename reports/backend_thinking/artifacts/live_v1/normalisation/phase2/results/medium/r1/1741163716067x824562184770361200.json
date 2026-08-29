@@ -1,0 +1,72 @@
+{
+  "source_id": "1741163716067x824562184770361200",
+  "effort": "medium",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163716067x824562184770361200",
+    "result": "complete",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "negative",
+        "tense": "present",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "The descriptor licenses negative statements with finite main-verb BE across the Phase-1 present/past space, and all eligible examples positively establish present-tense forms (is, are, am, isn't). Tense is therefore narrowed to present; all other Phase-1 constraints remain fixed."
+  },
+  "fixed_phase1_mapping": {
+    "source_id": "1741163716067x824562184770361200",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "negative",
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "retained_phase2_mapping": {
+    "source_id": "1741163716067x824562184770361200",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "negative",
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 10.441869749000034,
+  "model_calls": 1,
+  "tokens_used": 6204,
+  "model_runtime_seconds": 10.44118174399955,
+  "model_call_failures": 0
+}

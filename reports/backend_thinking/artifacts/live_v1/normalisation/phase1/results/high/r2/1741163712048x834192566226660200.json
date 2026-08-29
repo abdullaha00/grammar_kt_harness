@@ -1,0 +1,36 @@
+{
+  "source_id": "1741163712048x834192566226660200",
+  "stratum": "out_of_scope",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712048x834192566226660200",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "NA",
+        "aspect": "none",
+        "voice": "passive",
+        "polarity": null,
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "The target is the simple passive infinitive; its listed licensing forms are not central modals in the canonical schema. Polarity and main-clause type are not specified."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712048x834192566226660200",
+    "result": "out_of_scope",
+    "cells": [],
+    "phase2_eligible": [],
+    "note": "Passive infinitives governed by forms including the deferred periphrastic modals 'be going to' and 'have to' are outside the single-clause ontology."
+  },
+  "task_runtime_seconds": 25.7951341579992,
+  "model_calls": 1,
+  "tokens_used": 6740,
+  "model_runtime_seconds": 25.794397834000847,
+  "model_call_failures": 0
+}

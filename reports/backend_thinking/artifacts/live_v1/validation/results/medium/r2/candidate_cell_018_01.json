@@ -1,0 +1,71 @@
+{
+  "item_id": "candidate_cell_018_01",
+  "audit_id": "validation_live_ae319698b96f",
+  "cell_id": "cell_018",
+  "effort": "medium",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_ae319698b96f",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "Uses past perfect progressive, active, positive, declarative form with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The timeline and answer are coherent and natural."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of the past perfect progressive."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "Other equally valid answers, such as “She had been painting the fence since eight,” are not accepted."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and context are common and clear."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives only the verb cue, not the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The item can be answered using the target tense without unrelated advanced grammar."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy"
+  ],
+  "packaging_correction": true,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 10.927857418999338,
+  "model_calls": 1,
+  "tokens_used": 4725,
+  "model_runtime_seconds": 10.927035681999769,
+  "model_call_failures": 0
+}

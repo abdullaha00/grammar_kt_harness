@@ -1,0 +1,12 @@
+{
+  "prompt": "You want to know about Mia's usual routine. Use the cue to write a complete question: Mia / wash the cups after dinner\nAnswer: ______",
+  "target_answer": "Does Mia wash the cups after dinner?",
+  "accepted_answers": [
+    "Does Mia wash the cups after dinner?"
+  ],
+  "operation_tags": [
+    "do_support",
+    "operator_inversion"
+  ],
+  "note": "The question asks whether washing the cups after dinner is Mia's usual routine."
+}

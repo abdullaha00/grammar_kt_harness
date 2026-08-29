@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": false,
+      "note": "The target is present simple active, not past passive."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target sentence is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and answer form a coherent, natural sentence."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "It does not practise the intended past passive form."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The prompt permits multiple plausible sentences and does not specify the intended tense or voice."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary is common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed target sentence."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The target uses only straightforward grammar."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external factual or specialist knowledge is needed."
+    }
+  }
+}

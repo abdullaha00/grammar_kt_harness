@@ -1,0 +1,12 @@
+{
+  "prompt": "Workers are cleaning the classroom windows right now. Complete the sentence using “clean”: The classroom windows ____.",
+  "target_answer": "The classroom windows are being cleaned.",
+  "accepted_answers": [
+    "The classroom windows are being cleaned."
+  ],
+  "operation_tags": [
+    "progressive",
+    "be_passive"
+  ],
+  "note": "The plural subject takes “are,” followed by “being” and the past participle “cleaned.”"
+}

@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a positive active imperative with no modal, tense, or aspect."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "“Turn on the light.” is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The dark-room context naturally supports this instruction."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides a clear, focused imperative-production task."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The cue order and context sufficiently direct the response to “Turn on the light.”"
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives cue words but does not display the completed target sentence."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The response requires only a straightforward imperative and basic noun phrase."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

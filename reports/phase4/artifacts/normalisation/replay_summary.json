@@ -1,0 +1,110 @@
+{
+  "experiment_id": "P4-NORMALISATION-OFFLINE-001",
+  "claim_boundary": "Offline replay of retained 2026-08-20 model outputs; no fresh annotation, model call, or independent quality adjudication.",
+  "legacy_run": "runs/base_seed_20260820",
+  "legacy_source_selection": {
+    "available": true,
+    "rows": 139,
+    "unique_source_ids": 139,
+    "source_path": "runs/base_seed_20260820/source/sample_metadata.jsonl",
+    "source_sha256": "ccdf01561ff883a4e58e90f1366961faf3f52904fc3d7bfbe980bfc9a61d41ff",
+    "retained_path": "reports/phase4/artifacts/normalisation/selection_manifest.jsonl",
+    "retained_sha256": "ccdf01561ff883a4e58e90f1366961faf3f52904fc3d7bfbe980bfc9a61d41ff",
+    "ordered_ids_match_source_subset": true
+  },
+  "annotation_units": 147,
+  "primary_descriptors": 139,
+  "repeated_annotations": 8,
+  "legacy_model_settings": [
+    {
+      "backend": "codex_exec",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "medium",
+      "model_snapshot_pinned": false,
+      "decoding_parameters_pinned": false
+    }
+  ],
+  "seed": null,
+  "primary_final_result_counts": {
+    "complete": 44,
+    "out_of_scope": 16,
+    "partial": 77,
+    "unresolved": 2
+  },
+  "primary_phase2_calls": 80,
+  "primary_phase2_result_transitions": {
+    "partial->complete": 2,
+    "partial->partial": 77,
+    "partial->unresolved": 1
+  },
+  "primary_phase2_complete_yield": 2,
+  "explicit_nonempty_eligibility_primary": 9,
+  "phase1_contract_pass_primary": 80,
+  "phase2_contract_pass_primary": 80,
+  "transition_contract_pass_primary": 80,
+  "transition_contract_failure_examples": [],
+  "repeat_exact_mapping_agreements": 8,
+  "repeat_result_agreements": 8,
+  "repeat_comparisons": [
+    {
+      "unit_id": "u140",
+      "duplicate_of": "u001",
+      "source_id": "1741163708336x930002080700909000",
+      "exact_mapping_agreement": true,
+      "result_agreement": true
+    },
+    {
+      "unit_id": "u141",
+      "duplicate_of": "u013",
+      "source_id": "1741163712321x444348941700378800",
+      "exact_mapping_agreement": true,
+      "result_agreement": true
+    },
+    {
+      "unit_id": "u142",
+      "duplicate_of": "u018",
+      "source_id": "1741163712052x892253245373132200",
+      "exact_mapping_agreement": true,
+      "result_agreement": true
+    },
+    {
+      "unit_id": "u143",
+      "duplicate_of": "u010",
+      "source_id": "1741163708332x403656410301087360",
+      "exact_mapping_agreement": true,
+      "result_agreement": true
+    },
+    {
+      "unit_id": "u144",
+      "duplicate_of": "u024",
+      "source_id": "1741163713626x133661684035994100",
+      "exact_mapping_agreement": true,
+      "result_agreement": true
+    },
+    {
+      "unit_id": "u145",
+      "duplicate_of": "u074",
+      "source_id": "1741163712047x184306606922612260",
+      "exact_mapping_agreement": true,
+      "result_agreement": true
+    },
+    {
+      "unit_id": "u146",
+      "duplicate_of": "u100",
+      "source_id": "1741163710844x267345296139498430",
+      "exact_mapping_agreement": true,
+      "result_agreement": true
+    },
+    {
+      "unit_id": "u147",
+      "duplicate_of": "u115",
+      "source_id": "1741163708336x928067678664856700",
+      "exact_mapping_agreement": true,
+      "result_agreement": true
+    }
+  ],
+  "artifacts": {
+    "legacy_transitions": "reports/phase4/artifacts/normalisation/legacy_transitions.jsonl",
+    "legacy_transitions_sha256": "a923bb044bcb77c35cb87e1fd3933d2009e08ed255311b68da539a5011e2c113"
+  }
+}

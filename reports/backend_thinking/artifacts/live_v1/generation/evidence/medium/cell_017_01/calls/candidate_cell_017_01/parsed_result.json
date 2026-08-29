@@ -1,0 +1,8 @@
+{
+  "prompt": "Mia started cleaning the kitchen at 8:00, but she stopped after a few minutes. At 9:00, she ______ for an hour. Use the verb “clean.”",
+  "target_answer": "She had not been cleaning the kitchen for an hour.",
+  "accepted_answers": [
+    "had not been cleaning the kitchen",
+    "hadn't been cleaning the kitchen"
+  ]
+}

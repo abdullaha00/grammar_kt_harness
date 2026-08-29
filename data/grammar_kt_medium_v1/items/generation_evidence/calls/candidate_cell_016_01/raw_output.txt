@@ -1,0 +1,1 @@
+{"prompt":"Mia started washing the car an hour ago, and she is still doing it. Complete the sentence using the verb in brackets: Mia ___ the car for an hour. (wash)","target_answer":"Mia has been washing the car for an hour.","accepted_answers":["has been washing"]}

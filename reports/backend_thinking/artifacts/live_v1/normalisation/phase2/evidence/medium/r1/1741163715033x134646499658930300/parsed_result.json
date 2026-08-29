@@ -1,0 +1,18 @@
+{
+  "source_id": "1741163715033x134646499658930300",
+  "result": "partial",
+  "cells": [
+    {
+      "aspect": "progressive",
+      "clause": "polar_question",
+      "modal": "none",
+      "polarity": null,
+      "tense": "present",
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "The descriptor licenses nonmodal auxiliary BE in either morphological present or past, while all eligible examples positively exhibit present-tense 'are'; tense is therefore narrowed to present. Polarity remains unspecified."
+}

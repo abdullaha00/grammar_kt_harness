@@ -1,0 +1,1 @@
+{"prompt":"The bus arrived at nine, so Leo stayed home. Complete the sentence using “go”: Leo ____ to the bus stop.","target_answer":"Leo did not go to the bus stop.","accepted_answers":["did not go","didn't go"]}

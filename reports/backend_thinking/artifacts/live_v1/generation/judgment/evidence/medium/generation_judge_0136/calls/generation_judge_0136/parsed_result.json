@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "“has cleaned” is present perfect, active, positive, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "“Emma has cleaned the kitchen floor.” is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The dirty-then-clean context coherently supports the present perfect answer."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The item directly practises forming the present perfect of a regular verb."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The instruction and subject clearly determine “has cleaned” as the intended completion."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives the verb and tense instruction but does not display the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "It can be solved using only the targeted present perfect formation."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is required."
+    }
+  }
+}

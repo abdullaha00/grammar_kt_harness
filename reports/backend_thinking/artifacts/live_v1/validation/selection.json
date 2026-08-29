@@ -1,0 +1,43 @@
+{
+  "experiment_id": "BACKEND-THINKING-001",
+  "stage": "validation",
+  "date": "2026-08-28",
+  "strict_frozen_rule_status": "inconclusive",
+  "strict_frozen_rule_reason": "Every effort produced at least one false accept on a blind-reviewer-critical natural challenge item; no effort passed the zero-critical-error interpretation of the gate.",
+  "operational_setting": "medium",
+  "operational_decision": "Retain the current lowest effort because it has the best observed blind-reference agreement, ties the minimum confirmed critical false-accept count, passes all authored safety controls, and has the lowest latency and token use.",
+  "generation_judge_effort": "medium",
+  "quality_rate": {
+    "medium": 0.6944444444444444,
+    "high": 0.5833333333333334,
+    "xhigh": 0.5694444444444444
+  },
+  "confirmed_critical_false_accepts": {
+    "medium": 2,
+    "high": 3,
+    "xhigh": 2
+  },
+  "authored_adversarial_safety_false_accepts": {
+    "medium": 0,
+    "high": 0,
+    "xhigh": 0
+  },
+  "paired_quality_delta": {
+    "medium_minus_high": {
+      "delta": 0.1111111111111111,
+      "ci_95": [0.0, 0.2222222222222222]
+    },
+    "medium_minus_xhigh": {
+      "delta": 0.125,
+      "ci_95": [0.013888888888888888, 0.2361111111111111]
+    }
+  },
+  "claim_boundary": "Operational choice on a frozen 36-item boundary-enriched challenge cohort plus 12 authored safety controls. Blind references are independent research-agent judgments, not human or expert gold labels.",
+  "evidence": [
+    "analysis/review_analysis.json",
+    "automated_summary.json",
+    "reviews/reviewer_a_validation.jsonl",
+    "reviews/reviewer_b_validation.jsonl",
+    "reviews/adjudicator_validation.jsonl"
+  ]
+}

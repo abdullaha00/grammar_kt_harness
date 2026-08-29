@@ -1,0 +1,1 @@
+{"prompt":"Mia planned to read a book before today, but the book is still unopened. Use the cue “Mia / read / a book” to complete the response: ____","target_answer":"Mia has not read a book.","accepted_answers":["Mia has not read a book.","Mia hasn't read a book."],"operation_tags":["perfect","negation"],"note":"The response states that the planned action remains incomplete."}

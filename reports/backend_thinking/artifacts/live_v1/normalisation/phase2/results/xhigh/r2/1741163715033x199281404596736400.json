@@ -1,0 +1,85 @@
+{
+  "source_id": "1741163715033x199281404596736400",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163715033x199281404596736400",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "present",
+        "voice": "active"
+      },
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "past",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "Examples positively establish both present-tense DO questions and past-tense DID questions, so the original bounded tense alternative is resolved into two correlated OR cells. Polarity remains null because it was not Phase-2 eligible."
+  },
+  "fixed_phase1_mapping": {
+    "source_id": "1741163715033x199281404596736400",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "retained_phase2_mapping": {
+    "source_id": "1741163715033x199281404596736400",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "present",
+        "voice": "active"
+      },
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "past",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 12.644809850999081,
+  "model_calls": 1,
+  "tokens_used": 4435,
+  "model_runtime_seconds": 12.644055097000091,
+  "model_call_failures": 0
+}

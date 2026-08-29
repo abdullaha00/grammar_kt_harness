@@ -1,0 +1,71 @@
+{
+  "item_id": "adversarial_grammaticality_1",
+  "audit_id": "validation_live_a30ee9a0d078",
+  "cell_id": "cell_003",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_a30ee9a0d078",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "It uses present simple, active voice, positive polarity, and a declarative clause with no modal."
+      },
+      "grammaticality": {
+        "passed": false,
+        "note": "With singular subject “Mia,” the verb must be “walks,” not “walk.”"
+      },
+      "naturalness": {
+        "passed": false,
+        "note": "The prompt-answer pair is undermined by the ungrammatical target sentence."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "An incorrect subject-verb agreement form makes it unsuitable for focused grammar practice."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The prompt does not state that Mia walks to school, so it does not sufficiently determine the accepted response."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and context are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The intended response requires only basic present-simple construction."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external factual or specialist knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "grammaticality"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": true,
+  "reference_source": "authored_adversarial_negative_control",
+  "task_runtime_seconds": 12.793316328999936,
+  "model_calls": 1,
+  "tokens_used": 2737,
+  "model_runtime_seconds": 12.792554854000628,
+  "model_call_failures": 0
+}

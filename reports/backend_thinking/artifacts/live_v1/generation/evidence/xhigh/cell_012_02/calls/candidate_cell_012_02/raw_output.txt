@@ -1,0 +1,1 @@
+{"prompt":"The children were asked to wash the cups, but the cups are still dirty. Complete the sentence using the cue “wash”: They ____ the cups.","target_answer":"They have not washed the cups.","accepted_answers":["have not washed","haven't washed"]}

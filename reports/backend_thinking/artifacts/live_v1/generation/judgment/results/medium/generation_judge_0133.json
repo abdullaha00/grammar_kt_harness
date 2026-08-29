@@ -1,0 +1,65 @@
+{
+  "blind_id": "generation_judge_0133",
+  "experiment_item_id": "generation_xhigh_cell_005_03",
+  "generation_effort": "xhigh",
+  "cell_id": "cell_005",
+  "candidate_index": 3,
+  "judge_effort": "medium",
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "generation_judge_0133",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "“Put one bag on the table.” is a positive active imperative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The situation and instruction are coherent and natural."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice forming a simple imperative with the supplied verb."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The blank appears to call for the full sentence, but the accepted-answer set contains only “Put,” creating an unclear response expectation."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and context are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives only the cue verb, not the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Solving it requires only a basic imperative form."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "task_runtime_seconds": 8.153285326001424,
+  "model_calls": 1,
+  "tokens_used": 2483,
+  "model_runtime_seconds": 8.152433281999038,
+  "model_call_failures": 0
+}

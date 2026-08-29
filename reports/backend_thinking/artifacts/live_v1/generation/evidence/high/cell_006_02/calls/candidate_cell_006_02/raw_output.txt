@@ -1,0 +1,1 @@
+{"prompt":"The pan is very hot. Warn your brother using the cue (touch): \"_____!\"","target_answer":"Don't touch the pan!","accepted_answers":["Don't touch the pan"]}

@@ -1,0 +1,35 @@
+rq,status,retained_evidence
+F1,answered,summary.json:source_normalisation
+F2,answered,grammar_cells.csv
+F3,answered,summary.json:source_normalisation
+F4,answered,dimension_value_support.csv
+F5,answered,grammar_cells.csv
+F6,answered,fold_summary.csv
+F7,answered,fold_summary.csv
+F8,answered,item_generation_stages.csv
+F9,partially_answered,item_generation_stages.csv; N=5 is Phase-4 evidence
+F10,answered,item_generation_stages.csv
+F11,answered,grammar_cells.csv; qualitative_index.csv
+F12,answered,criterion_failures.csv; grammar_cells.csv
+F13,answered,lexical_diversity.csv
+F14,answered,criterion_failures.csv:non_target_language_simplicity
+F15,answered,kc_candidate_families.csv
+F16,answered,kc_candidate_families.csv; kc_candidate_support.csv
+F17,answered,operation_candidates.csv
+F18,answered,automated_selected_kcs.csv
+F19,answered,selection_stability.json if retained; otherwise Phase-4/5 evidence only
+F20,answered,policy_granularity.csv
+F21,answered,policy_granularity.csv; kc_candidate_support.csv
+F22,answered,kt_metrics.csv; paired_logistic.csv
+F23,answered,kt_metrics.csv; paired_logistic.csv:compositional_holdout
+F24,partially_answered,primary mixed world here; four-world Phase-4 evidence external
+F25,partially_answered,finalization_manifest.json plus Phase-5 nested support evidence
+F26,answered,call_times.csv; provider price unavailable
+F27,answered,criterion_failures.csv; qualitative_index.csv
+F28,partially_answered,qualitative_index.csv is descriptive; no human usability study
+F29,partially_answered,declared-schema structural method; English-only empirical evidence
+F30,partially_answered,retained exact legacy mapping match; repeat/model stability unavailable
+F31,answered,rejection_stages.csv
+F32,answered,lexical_diversity.csv; item_generation_stages.csv
+F33,answered,item_generation_stages.csv; criterion_failures.csv
+F34,answered,one_vs_two_variant_sensitivity.csv

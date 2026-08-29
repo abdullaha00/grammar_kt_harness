@@ -1,0 +1,8 @@
+{
+  "prompt": "The paint is still wet. Tell your friend to avoid touching the wall: “_____.”",
+  "target_answer": "Don't touch the wall.",
+  "accepted_answers": [
+    "Don't touch the wall",
+    "Do not touch the wall"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "source_id": "1741163713626x199664325289681020",
+  "stratum": "out_of_scope",
+  "effort": "medium",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163713626x199664325289681020",
+    "result": "out_of_scope",
+    "cells": [],
+    "phase2_eligible": [],
+    "note": "The target is a subordinate if-clause in a conditional relation, outside the schema’s single-main-clause scope."
+  },
+  "retained_mapping": {
+    "source_id": "1741163713626x199664325289681020",
+    "result": "out_of_scope",
+    "cells": [],
+    "phase2_eligible": [],
+    "note": "Linked conditional construction is out of scope."
+  },
+  "task_runtime_seconds": 12.293316421999407,
+  "model_calls": 1,
+  "tokens_used": 4040,
+  "model_runtime_seconds": 12.292469629999687,
+  "model_call_failures": 0
+}

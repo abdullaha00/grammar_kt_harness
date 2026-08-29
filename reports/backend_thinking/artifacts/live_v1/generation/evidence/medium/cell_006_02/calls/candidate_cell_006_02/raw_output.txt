@@ -1,0 +1,1 @@
+{"prompt":"The floor is wet. Tell your friend to avoid running: “_____.”","target_answer":"Don't run on the wet floor.","accepted_answers":["Don't run on the wet floor","Do not run on the wet floor"]}

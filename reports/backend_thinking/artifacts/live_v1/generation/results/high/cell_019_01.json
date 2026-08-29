@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_high_cell_019_01",
+  "cell_id": "cell_019",
+  "candidate_index": 1,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_019_01",
+    "cell_id": "cell_019",
+    "format": "controlled_production",
+    "prompt": "The workers painted the front door yesterday. Complete the sentence using the cue (paint): The front door ____ yesterday.",
+    "target_answer": "The front door was painted yesterday.",
+    "accepted_answers": [
+      "was painted"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 5.7230077869990055,
+  "model_calls": 1,
+  "tokens_used": 2969,
+  "model_runtime_seconds": 5.722233615000732,
+  "model_call_failures": 0
+}

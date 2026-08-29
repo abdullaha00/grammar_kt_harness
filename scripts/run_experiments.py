@@ -60,17 +60,26 @@ generation_design = read_yaml(ROOT / "modules/items/generation/design.yaml")
 item_format = read_yaml(
     ROOT / "modules/items/generation/formats/controlled_production.yaml"
 )
-lexicon = read_jsonl(ROOT / "modules/items/generation/lexicon.jsonl")
 
 validation_prompt = read_text(ROOT / "modules/items/validation/prompt.txt")
 validation_criteria = read_yaml(ROOT / "modules/items/validation/criteria.yaml")
 
-grammar_fold_spec = read_yaml(ROOT / "modules/simulation/folds/reference.yaml")
-simulation_world = read_yaml(ROOT / "modules/simulation/world.yaml")
+grammar_fold_spec = read_yaml(
+    ROOT / "data/fixtures/declarations/fold_reference.yaml"
+)
+simulation_world = read_yaml(
+    ROOT / "data/fixtures/declarations/simulation_world.yaml"
+)
 
-factorized_policy = read_yaml(ROOT / "modules/kcs/policies/factorized.yaml")
-full_cell_policy = read_yaml(ROOT / "modules/kcs/policies/full_cell.yaml")
-interactions_policy = read_yaml(ROOT / "modules/kcs/policies/interactions.yaml")
+factorized_policy = read_yaml(
+    ROOT / "data/fixtures/declarations/kc_policies/factorized.yaml"
+)
+full_cell_policy = read_yaml(
+    ROOT / "data/fixtures/declarations/kc_policies/full_cell.yaml"
+)
+interactions_policy = read_yaml(
+    ROOT / "data/fixtures/declarations/kc_policies/interactions.yaml"
+)
 
 kt_protocol = read_yaml(ROOT / "modules/evaluation/kt/protocol.yaml")
 evaluation_protocol = read_yaml(ROOT / "modules/evaluation/protocol.yaml")
@@ -109,7 +118,6 @@ def main() -> int:
         generation_rulebook,
         generation_design,
         item_format,
-        lexicon,
         model="fixture",
         reasoning_effort="deterministic",
         model_call=fixture_model_call,
@@ -149,7 +157,6 @@ def main() -> int:
         generation_rulebook,
         generation_design,
         item_format,
-        lexicon,
         model="fixture",
         reasoning_effort="deterministic",
         model_call=fixture_model_call,
@@ -188,7 +195,6 @@ def main() -> int:
         generation_rulebook,
         generation_design,
         item_format,
-        lexicon,
         model="fixture",
         reasoning_effort="deterministic",
         model_call=fixture_model_call,
@@ -199,7 +205,6 @@ def main() -> int:
         generation_rulebook,
         generation_design,
         item_format,
-        lexicon,
         model="fixture",
         reasoning_effort="deterministic",
         model_call=fixture_model_call,

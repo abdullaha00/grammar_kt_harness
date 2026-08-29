@@ -1,0 +1,8 @@
+{
+  "prompt": "Maya goes to work by bus every day. Complete the sentence using “drive”: Maya ____ to work.",
+  "target_answer": "Maya does not drive to work.",
+  "accepted_answers": [
+    "does not drive",
+    "doesn't drive"
+  ]
+}

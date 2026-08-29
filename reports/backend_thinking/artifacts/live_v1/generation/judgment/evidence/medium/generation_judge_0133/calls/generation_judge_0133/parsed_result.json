@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "“Put one bag on the table.” is a positive active imperative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The situation and instruction are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice forming a simple imperative with the supplied verb."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The blank appears to call for the full sentence, but the accepted-answer set contains only “Put,” creating an unclear response expectation."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the cue verb, not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it requires only a basic imperative form."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

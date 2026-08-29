@@ -1,0 +1,69 @@
+{
+  "item_id": "candidate_cell_010_01",
+  "audit_id": "validation_live_3152a4bef0ae",
+  "cell_id": "cell_010",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_3152a4bef0ae",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The target is a past simple active declarative with negative polarity and no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The context and negative response are coherent and natural."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of past simple negation with did not."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The statement that Tom stayed home yesterday and the cue sufficiently indicate the negative past response."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "All vocabulary and context are common and unambiguous."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The item requires only basic past simple negation."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external factual or specialist knowledge is needed."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": true,
+  "retained_failed_criteria": [],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 10.597039578000476,
+  "model_calls": 1,
+  "tokens_used": 2644,
+  "model_runtime_seconds": 10.595266723999885,
+  "model_call_failures": 0
+}

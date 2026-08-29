@@ -1,0 +1,8 @@
+{
+  "prompt": "Mia usually walks to work, but today she is taking the bus. Complete the sentence using the cue: Mia ____ to work today. (walk)",
+  "target_answer": "Mia is not walking to work today.",
+  "accepted_answers": [
+    "is not walking",
+    "isn't walking"
+  ]
+}

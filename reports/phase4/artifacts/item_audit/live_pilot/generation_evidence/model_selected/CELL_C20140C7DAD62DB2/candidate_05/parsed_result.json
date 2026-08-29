@@ -1,0 +1,13 @@
+{
+  "prompt": "The shop was open, but Mia bought nothing. Complete the response using the cue (buy / any food): Mia ____.",
+  "target_answer": "Mia did not buy any food.",
+  "accepted_answers": [
+    "Mia did not buy any food.",
+    "Mia didn't buy any food."
+  ],
+  "operation_tags": [
+    "do_support",
+    "negation"
+  ],
+  "note": "Complete past simple active negative declarative clause."
+}

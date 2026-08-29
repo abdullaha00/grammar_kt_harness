@@ -1,0 +1,12 @@
+{
+  "prompt": "Mia does not have a free afternoon, but imagine that she did. Complete the result using the cue: Mia / visit / her aunt. Response: ___",
+  "target_answer": "Mia would visit her aunt.",
+  "accepted_answers": [
+    "Mia would visit her aunt.",
+    "Mia'd visit her aunt."
+  ],
+  "operation_tags": [
+    "central_modal"
+  ],
+  "note": "The context licenses a hypothetical result."
+}

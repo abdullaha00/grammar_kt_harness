@@ -1,0 +1,8 @@
+{
+  "prompt": "Use the negative past perfect continuous with the words in brackets. Ben's clothes were clean because ________. (he / paint the wall)",
+  "target_answer": "Ben's clothes were clean because he had not been painting the wall.",
+  "accepted_answers": [
+    "he had not been painting the wall",
+    "he hadn't been painting the wall"
+  ]
+}

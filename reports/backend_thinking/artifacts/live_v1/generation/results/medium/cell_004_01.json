@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_medium_cell_004_01",
+  "cell_id": "cell_004",
+  "candidate_index": 1,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_004_01",
+    "cell_id": "cell_004",
+    "format": "controlled_production",
+    "prompt": "Yesterday, Ben had one dirty cup. Complete the sentence using the verb “wash”: Ben ____ the cup.",
+    "target_answer": "Ben washed the cup.",
+    "accepted_answers": [
+      "washed"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 6.036706536000565,
+  "model_calls": 1,
+  "tokens_used": 2966,
+  "model_runtime_seconds": 6.0359608079998,
+  "model_call_failures": 0
+}

@@ -1,51 +1,51 @@
 normalisation.phase1:
   egp_present_simple:
-    response: {source_id: egp_present_simple, result: complete, cells: [{tense: present, aspect: none, voice: active, polarity: positive, clause: declarative, modal: none}], note: null}
+    response: {source_id: egp_present_simple, result: complete, cells: [{tense: present, aspect: none, voice: active, polarity: positive, clause: declarative, modal: none}], phase2_eligible: [], note: null}
     variants:
       - prompt_contains: "FINAL SELF-CHECK"
-        response: {source_id: egp_present_simple, result: complete, cells: [{tense: present, aspect: none, voice: active, polarity: positive, clause: declarative, modal: none}], note: "self-check completed; exact values supported without examples"}
+        response: {source_id: egp_present_simple, result: complete, cells: [{tense: present, aspect: none, voice: active, polarity: positive, clause: declarative, modal: none}], phase2_eligible: [], note: "self-check completed; exact values supported without examples"}
   egp_past_negative:
-    response: {source_id: egp_past_negative, result: complete, cells: [{tense: past, aspect: none, voice: active, polarity: negative, clause: declarative, modal: none}], note: null}
+    response: {source_id: egp_past_negative, result: complete, cells: [{tense: past, aspect: none, voice: active, polarity: negative, clause: declarative, modal: none}], phase2_eligible: [], note: null}
   egp_past_passive:
-    response: {source_id: egp_past_passive, result: complete, cells: [{tense: past, aspect: none, voice: passive, polarity: positive, clause: declarative, modal: none}], note: null}
+    response: {source_id: egp_past_passive, result: complete, cells: [{tense: past, aspect: none, voice: passive, polarity: positive, clause: declarative, modal: none}], phase2_eligible: [], note: null}
   egp_present_progressive:
-    response: {source_id: egp_present_progressive, result: complete, cells: [{tense: present, aspect: progressive, voice: active, polarity: positive, clause: declarative, modal: none}], note: null}
+    response: {source_id: egp_present_progressive, result: complete, cells: [{tense: present, aspect: progressive, voice: active, polarity: positive, clause: declarative, modal: none}], phase2_eligible: [], note: null}
   egp_progressive_passive_negative:
-    response: {source_id: egp_progressive_passive_negative, result: complete, cells: [{tense: present, aspect: progressive, voice: passive, polarity: negative, clause: declarative, modal: none}], note: null}
+    response: {source_id: egp_progressive_passive_negative, result: complete, cells: [{tense: present, aspect: progressive, voice: passive, polarity: negative, clause: declarative, modal: none}], phase2_eligible: [], note: null}
   egp_should_question:
-    response: {source_id: egp_should_question, result: complete, cells: [{tense: NA, aspect: none, voice: active, polarity: positive, clause: polar_question, modal: should}], note: null}
+    response: {source_id: egp_should_question, result: complete, cells: [{tense: NA, aspect: none, voice: active, polarity: positive, clause: polar_question, modal: should}], phase2_eligible: [], note: null}
 
 generation:
   cell_001_1:
-    response: {prompt: "Every morning, Lina ___ to work by bus. (travel)", target_answer: "Every morning, Lina travels to work by bus.", accepted_answers: ["Every morning, Lina travels to work by bus."], operation_tags: [], note: "Common A2 routine context."}
+    response: {prompt: "Every morning, Lina ___ to work by bus. (travel)", target_answer: "Every morning, Lina travels to work by bus.", accepted_answers: ["travels"]}
     variants:
       - prompt_contains: "CONTEXTUALISED CONDITION"
-        response: {prompt: "Lina describes her routine: ‘Every morning, I ___ to work by bus.’ (travel)", target_answer: "Every morning, I travel to work by bus.", accepted_answers: ["Every morning, I travel to work by bus."], operation_tags: [], note: "First-person utterance gives an explicit speaker context."}
+        response: {prompt: "Lina describes her routine: ‘Every morning, I ___ to work by bus.’ (travel)", target_answer: "Every morning, I travel to work by bus.", accepted_answers: ["travel"]}
   cell_002_1:
-    response: {prompt: "Yesterday, Omar ___ the door because it was stuck. (not / open)", target_answer: "Yesterday, Omar did not open the door because it was stuck.", accepted_answers: ["Yesterday, Omar did not open the door because it was stuck."], operation_tags: [do_support, negation], note: "Past time cue and negative cue determine the response."}
+    response: {prompt: "Yesterday, Omar ___ the door because it was stuck. (not / open)", target_answer: "Yesterday, Omar did not open the door because it was stuck.", accepted_answers: ["did not open"]}
     variants:
       - prompt_contains: "CONTEXTUALISED CONDITION"
-        response: {prompt: "A friend asks about yesterday. Reply: ‘Omar ___ the door because it was stuck.’ (not / open)", target_answer: "Omar did not open the door because it was stuck.", accepted_answers: ["Omar did not open the door because it was stuck."], operation_tags: [do_support, negation], note: "Reply frame supplies discourse context."}
+        response: {prompt: "A friend asks about yesterday. Reply: ‘Omar ___ the door because it was stuck.’ (not / open)", target_answer: "Omar did not open the door because it was stuck.", accepted_answers: ["did not open"]}
   cell_003_1:
-    response: {prompt: "Yesterday, the meal ___ by Ana. (prepare)", target_answer: "Yesterday, the meal was prepared by Ana.", accepted_answers: ["Yesterday, the meal was prepared by Ana."], operation_tags: [be_passive], note: "Agent phrase makes passive voice determinate."}
+    response: {prompt: "Yesterday, the meal ___ by Ana. (prepare)", target_answer: "Yesterday, the meal was prepared by Ana.", accepted_answers: ["was prepared"]}
     variants:
       - prompt_contains: "CONTEXTUALISED CONDITION"
-        response: {prompt: "Who cooked? Complete the reply: ‘The meal ___ by Ana yesterday.’ (prepare)", target_answer: "The meal was prepared by Ana yesterday.", accepted_answers: ["The meal was prepared by Ana yesterday."], operation_tags: [be_passive], note: "Question-reply context licenses the agent phrase."}
+        response: {prompt: "Who cooked? Complete the reply: ‘The meal ___ by Ana yesterday.’ (prepare)", target_answer: "The meal was prepared by Ana yesterday.", accepted_answers: ["was prepared"]}
   cell_004_1:
-    response: {prompt: "Right now, Mia ___ a book. (read)", target_answer: "Right now, Mia is reading a book.", accepted_answers: ["Right now, Mia is reading a book."], operation_tags: [progressive], note: "Right-now cue determines progressive aspect."}
+    response: {prompt: "Right now, Mia ___ a book. (read)", target_answer: "Right now, Mia is reading a book.", accepted_answers: ["is reading"]}
     variants:
       - prompt_contains: "CONTEXTUALISED CONDITION"
-        response: {prompt: "‘What is Mia doing?’ ‘Right now, she ___ a book.’ (read)", target_answer: "Right now, she is reading a book.", accepted_answers: ["Right now, she is reading a book."], operation_tags: [progressive], note: "Dialogue explicitly asks about an ongoing action."}
+        response: {prompt: "‘What is Mia doing?’ ‘Right now, she ___ a book.’ (read)", target_answer: "Right now, she is reading a book.", accepted_answers: ["is reading"]}
   cell_005_1:
-    response: {prompt: "Right now, the rooms ___ by the team. (not / clean)", target_answer: "Right now, the rooms are not being cleaned by the team.", accepted_answers: ["Right now, the rooms are not being cleaned by the team."], operation_tags: [progressive, be_passive, negation], note: "Agent and time cues control the auxiliary chain."}
+    response: {prompt: "Right now, the rooms ___ by the team. (not / clean)", target_answer: "Right now, the rooms are not being cleaned by the team.", accepted_answers: ["are not being cleaned"]}
     variants:
       - prompt_contains: "CONTEXTUALISED CONDITION"
-        response: {prompt: "A manager checks the schedule: ‘At the moment, the rooms ___ by the team.’ (not / clean)", target_answer: "At the moment, the rooms are not being cleaned by the team.", accepted_answers: ["At the moment, the rooms are not being cleaned by the team."], operation_tags: [progressive, be_passive, negation], note: "Workplace utterance supplies a plausible context."}
+        response: {prompt: "A manager checks the schedule: ‘At the moment, the rooms ___ by the team.’ (not / clean)", target_answer: "At the moment, the rooms are not being cleaned by the team.", accepted_answers: ["are not being cleaned"]}
   cell_006_1:
-    response: {prompt: "___ we take the earlier train? (should)", target_answer: "Should we take the earlier train?", accepted_answers: ["Should we take the earlier train?"], operation_tags: [central_modal, operator_inversion], note: "Modal cue and question mark determine form."}
+    response: {prompt: "___ we take the earlier train? (should)", target_answer: "Should we take the earlier train?", accepted_answers: ["Should"]}
     variants:
       - prompt_contains: "CONTEXTUALISED CONDITION"
-        response: {prompt: "The last train may be busy. Ask your friend: ‘___ we take the earlier train?’ (should)", target_answer: "Should we take the earlier train?", accepted_answers: ["Should we take the earlier train?"], operation_tags: [central_modal, operator_inversion], note: "Travel problem makes advice-seeking pragmatic."}
+        response: {prompt: "The last train may be busy. Ask your friend: ‘___ we take the earlier train?’ (should)", target_answer: "Should we take the earlier train?", accepted_answers: ["Should"]}
 
 validation:
   default:
@@ -56,7 +56,7 @@ validation:
         naturalness: {passed: true, note: "The prompt and answer form a natural short context."}
         pedagogical_suitability: {passed: true, note: "The requested form is focused and visible."}
         determinacy: {passed: true, note: "The cues sufficiently constrain the accepted answer."}
-        cefr_appropriateness: {passed: true, note: "Non-target vocabulary is common."}
+        non_target_language_simplicity: {passed: true, note: "Vocabulary and context are common and transparent."}
         no_answer_leakage: {passed: true, note: "The completed form is not displayed in the prompt."}
         no_extraneous_grammar: {passed: true, note: "No unrelated advanced construction is required."}
         no_world_knowledge: {passed: true, note: "No specialist knowledge is needed."}
@@ -69,7 +69,7 @@ validation:
             naturalness: {passed: true, note: "The short dialogue provides explicit pragmatic context."}
             pedagogical_suitability: {passed: true, note: "The requested form remains focused."}
             determinacy: {passed: true, note: "The cues sufficiently constrain the accepted answer."}
-            cefr_appropriateness: {passed: true, note: "Non-target vocabulary is common."}
+            non_target_language_simplicity: {passed: true, note: "Vocabulary and context are common and transparent."}
             no_answer_leakage: {passed: true, note: "The completed form is not displayed in the prompt."}
             no_extraneous_grammar: {passed: true, note: "No unrelated advanced construction is required."}
             no_world_knowledge: {passed: true, note: "No specialist knowledge is needed."}

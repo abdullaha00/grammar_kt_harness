@@ -1,0 +1,12 @@
+{
+  "prompt": "Mia started at seven and was still reading at nine. Complete the sentence using the cue (Mia / read / a book): By nine, ____.",
+  "target_answer": "Mia had been reading a book for two hours.",
+  "accepted_answers": [
+    "Mia had been reading a book for two hours."
+  ],
+  "operation_tags": [
+    "perfect",
+    "progressive"
+  ],
+  "note": "The activity continued for two hours before the stated past time."
+}

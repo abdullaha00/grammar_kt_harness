@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_024_01",
+  "cell_id": "cell_024",
+  "candidate_index": 1,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_024_01",
+    "cell_id": "cell_024",
+    "format": "controlled_production",
+    "prompt": "Lena is busy today, but she has offered to help tomorrow. Complete the sentence using “help”: Lena ____ tomorrow.",
+    "target_answer": "Lena would help tomorrow.",
+    "accepted_answers": [
+      "would help"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 7.717427044000942,
+  "model_calls": 1,
+  "tokens_used": 5019,
+  "model_runtime_seconds": 7.712999118999505,
+  "model_call_failures": 0
+}

@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_017_01",
+  "cell_id": "cell_017",
+  "candidate_index": 1,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_017_01",
+    "cell_id": "cell_017",
+    "format": "controlled_production",
+    "prompt": "Lena planned to bake all morning, but the broken oven stopped her from starting. Complete the sentence using the cue “bake”: By noon, Lena ___.",
+    "target_answer": "By noon, Lena had not been baking.",
+    "accepted_answers": [
+      "had not been baking",
+      "hadn't been baking"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 19.34713723599998,
+  "model_calls": 1,
+  "tokens_used": 3474,
+  "model_runtime_seconds": 19.346323882000434,
+  "model_call_failures": 0
+}

@@ -1,0 +1,60 @@
+{
+  "source_id": "1741163708330x678606711578176000",
+  "stratum": "phase2_eligible",
+  "effort": "xhigh",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708330x678606711578176000",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "Emphatic DO marks a positive active declarative with simple aspect; the descriptor does not distinguish present do from past did."
+  },
+  "retained_mapping": {
+    "source_id": "1741163708330x678606711578176000",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      },
+      {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 9.28724936099934,
+  "model_calls": 1,
+  "tokens_used": 6054,
+  "model_runtime_seconds": 9.286530823999783,
+  "model_call_failures": 0
+}

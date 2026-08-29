@@ -1,0 +1,103 @@
+{
+  "source_id": "1741163712049x547897454512315650",
+  "stratum": "partial_noneligible",
+  "effort": "medium",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712049x547897454512315650",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "NA",
+        "aspect": "perfect",
+        "voice": "passive",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": [
+          "can",
+          "could",
+          "may",
+          "might",
+          "must",
+          "shall",
+          "should",
+          "will",
+          "would"
+        ]
+      },
+      {
+        "tense": "NA",
+        "aspect": "perfect",
+        "voice": "passive",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": [
+          "can",
+          "could",
+          "may",
+          "might",
+          "must",
+          "shall",
+          "should",
+          "will",
+          "would"
+        ]
+      }
+    ],
+    "phase2_eligible": [
+      "modal"
+    ],
+    "note": "The descriptor independently asserts affirmative and negative modal-perfect passive forms. Central modals require tense NA; the reference to past time does not establish morphological past tense, and no individual modal is specified."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712049x547897454512315650",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "NA",
+        "aspect": "perfect",
+        "voice": "passive",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": [
+          "can",
+          "could",
+          "may",
+          "might",
+          "must",
+          "shall",
+          "should",
+          "will",
+          "would"
+        ]
+      },
+      {
+        "tense": "NA",
+        "aspect": "perfect",
+        "voice": "passive",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": [
+          "can",
+          "could",
+          "may",
+          "might",
+          "must",
+          "shall",
+          "should",
+          "will",
+          "would"
+        ]
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "phase2 eligible: none"
+  },
+  "task_runtime_seconds": 14.425522412999271,
+  "model_calls": 1,
+  "tokens_used": 6218,
+  "model_runtime_seconds": 14.424685025000144,
+  "model_call_failures": 0
+}

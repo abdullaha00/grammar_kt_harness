@@ -1,0 +1,1 @@
+{"prompt":"The door looked fresh this morning. Complete the sentence using the verb in brackets: Yesterday, the door _____. (paint)","target_answer":"Yesterday, the door was painted.","accepted_answers":["was painted"]}

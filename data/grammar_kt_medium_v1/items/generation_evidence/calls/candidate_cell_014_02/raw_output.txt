@@ -1,0 +1,1 @@
+{"prompt":"When the guests arrived, the door was still open. Complete the sentence using “lock”: Mia ____ the door.","target_answer":"Mia had not locked the door.","accepted_answers":["had not locked","hadn't locked"]}

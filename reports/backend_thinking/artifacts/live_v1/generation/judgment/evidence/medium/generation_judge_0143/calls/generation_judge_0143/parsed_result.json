@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Present perfect, active, negative declarative."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target sentence is grammatical."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The context and answer are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It directly practices the present perfect negative."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The context and supplied verb clearly cue the intended form."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and clear."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the base verb, not the completed form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external knowledge is required."
+    }
+  }
+}

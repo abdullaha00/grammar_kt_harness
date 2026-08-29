@@ -1,0 +1,7 @@
+{
+  "prompt": "The ground is still wet. Complete the sentence using “rain”: It ______ for two hours.",
+  "target_answer": "It has been raining for two hours.",
+  "accepted_answers": [
+    "has been raining"
+  ]
+}

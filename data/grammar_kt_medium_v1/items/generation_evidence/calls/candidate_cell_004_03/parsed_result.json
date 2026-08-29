@@ -1,0 +1,7 @@
+{
+  "prompt": "Yesterday, Leo found some dirt on the kitchen floor. Complete the sentence using the verb “clean”: Leo ___ the kitchen floor.",
+  "target_answer": "Leo cleaned the kitchen floor.",
+  "accepted_answers": [
+    "cleaned"
+  ]
+}

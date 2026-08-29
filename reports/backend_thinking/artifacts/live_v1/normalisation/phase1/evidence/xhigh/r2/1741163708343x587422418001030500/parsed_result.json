@@ -1,0 +1,21 @@
+{
+  "source_id": "1741163708343x587422418001030500",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": [
+        "present",
+        "past"
+      ],
+      "aspect": "none",
+      "voice": "active",
+      "polarity": null,
+      "clause": "subject_wh_question",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "A subject-WH question without an auxiliary uses an active, nonmodal finite main verb; tense is bounded to present or past, while polarity is unspecified."
+}

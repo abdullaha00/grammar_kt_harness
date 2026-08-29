@@ -1,0 +1,55 @@
+{
+  "source_id": "1741163715033x134646499658930300",
+  "stratum": "phase2_eligible",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163715033x134646499658930300",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": null,
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "Finite auxiliary BE with an -ing form marks an active progressive polar question; present versus past and polarity are not specified."
+  },
+  "retained_mapping": {
+    "source_id": "1741163715033x134646499658930300",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": null,
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 10.63238700599868,
+  "model_calls": 1,
+  "tokens_used": 6111,
+  "model_runtime_seconds": 10.631666433999271,
+  "model_call_failures": 0
+}

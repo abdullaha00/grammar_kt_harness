@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The answer is past perfect progressive, active, positive, declarative, and contains no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is fully grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The situation and completed sentence are natural and coherent."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The timeline and duration cue provide focused practice of the past perfect progressive."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The start time, past reference point, continued activity, and duration cue strongly determine the accepted form."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and fence-painting context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies lexical cues but does not display the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed to complete the item."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "Only basic time calculation from 8:00 to noon is required, with no external knowledge."
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt":"Every morning, Mia washes the red cups but leaves the blue cup alone. Complete the sentence using “wash”: The blue cup ____.","target_answer":"The blue cup is not washed.","accepted_answers":["is not washed","isn't washed"]}

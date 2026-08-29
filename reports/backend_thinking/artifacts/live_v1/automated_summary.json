@@ -1,0 +1,158 @@
+{
+  "experiment_id": "BACKEND-THINKING-001",
+  "analysis_date": "2026-08-28",
+  "claim_boundary": "Automated structural, agreement, retained-reference, efficiency, and fixed-judge summaries. Blinded reviewer adjudication is merged separately.",
+  "normalisation": {
+    "medium": {
+      "phase1_calls": 48,
+      "phase1_contract_success": 48,
+      "phase1_historical_status_agreement_drift_only": 37,
+      "phase1_historical_structure_agreement_drift_only": 26,
+      "phase1_repeat_successful_pairs": 24,
+      "phase1_repeat_structural_agreement": 19,
+      "phase2_calls": 18,
+      "phase2_contract_and_transition_success": 18,
+      "phase2_retained_status_agreement_drift_only": 16,
+      "phase2_repeat_successful_pairs": 9,
+      "phase2_repeat_structural_agreement": 7,
+      "total_tokens": 369231,
+      "median_call_seconds": 11.041301584000394,
+      "p90_call_seconds": 16.374890290499934
+    },
+    "high": {
+      "phase1_calls": 48,
+      "phase1_contract_success": 48,
+      "phase1_historical_status_agreement_drift_only": 38,
+      "phase1_historical_structure_agreement_drift_only": 28,
+      "phase1_repeat_successful_pairs": 24,
+      "phase1_repeat_structural_agreement": 23,
+      "phase2_calls": 18,
+      "phase2_contract_and_transition_success": 18,
+      "phase2_retained_status_agreement_drift_only": 15,
+      "phase2_repeat_successful_pairs": 9,
+      "phase2_repeat_structural_agreement": 6,
+      "total_tokens": 376624,
+      "median_call_seconds": 11.372195123998608,
+      "p90_call_seconds": 22.585338556499664
+    },
+    "xhigh": {
+      "phase1_calls": 48,
+      "phase1_contract_success": 48,
+      "phase1_historical_status_agreement_drift_only": 37,
+      "phase1_historical_structure_agreement_drift_only": 28,
+      "phase1_repeat_successful_pairs": 24,
+      "phase1_repeat_structural_agreement": 20,
+      "phase2_calls": 18,
+      "phase2_contract_and_transition_success": 18,
+      "phase2_retained_status_agreement_drift_only": 16,
+      "phase2_repeat_successful_pairs": 9,
+      "phase2_repeat_structural_agreement": 7,
+      "total_tokens": 387343,
+      "median_call_seconds": 12.39564075599992,
+      "p90_call_seconds": 37.26169654850037
+    }
+  },
+  "validation": {
+    "medium": {
+      "calls": 96,
+      "valid_outputs": 96,
+      "retained_accept_agreement_drift_only": 78,
+      "accepted": 42,
+      "adversarial_safety_calls": 24,
+      "adversarial_safety_false_accepts": 0,
+      "repeat_successful_pairs": 48,
+      "repeat_accept_agreement": 38,
+      "total_tokens": 271454,
+      "median_call_seconds": 10.359731274499609,
+      "p90_call_seconds": 13.148349677000624
+    },
+    "high": {
+      "calls": 96,
+      "valid_outputs": 96,
+      "retained_accept_agreement_drift_only": 78,
+      "accepted": 36,
+      "adversarial_safety_calls": 24,
+      "adversarial_safety_false_accepts": 0,
+      "repeat_successful_pairs": 48,
+      "repeat_accept_agreement": 34,
+      "total_tokens": 279687,
+      "median_call_seconds": 11.287194901499788,
+      "p90_call_seconds": 13.837012101500477
+    },
+    "xhigh": {
+      "calls": 96,
+      "valid_outputs": 96,
+      "retained_accept_agreement_drift_only": 79,
+      "accepted": 33,
+      "adversarial_safety_calls": 24,
+      "adversarial_safety_false_accepts": 0,
+      "repeat_successful_pairs": 48,
+      "repeat_accept_agreement": 37,
+      "total_tokens": 283780,
+      "median_call_seconds": 12.167166022999481,
+      "p90_call_seconds": 15.058756569000252
+    }
+  },
+  "validation_pairwise": {
+    "medium_vs_high": {
+      "n": 96,
+      "accept_agreement": 0.8125
+    },
+    "medium_vs_xhigh": {
+      "n": 96,
+      "accept_agreement": 0.8020833333333334
+    },
+    "high_vs_xhigh": {
+      "n": 96,
+      "accept_agreement": 0.7604166666666666
+    }
+  },
+  "generation": {
+    "medium": {
+      "calls": 72,
+      "valid_payloads": 72,
+      "answer_span_passes": 71,
+      "fixed_judge_successes": 72,
+      "fixed_judge_failures": 0,
+      "fixed_judge_accepts": 51,
+      "fixed_judge_acceptance_rate_among_successful": 0.7083333333333334,
+      "N3_cell_coverage": 21,
+      "total_generation_tokens": 268832,
+      "median_generation_seconds": 7.367992310500995,
+      "p90_generation_seconds": 12.239344565600913
+    },
+    "high": {
+      "calls": 72,
+      "valid_payloads": 72,
+      "answer_span_passes": 72,
+      "fixed_judge_successes": 72,
+      "fixed_judge_failures": 0,
+      "fixed_judge_accepts": 56,
+      "fixed_judge_acceptance_rate_among_successful": 0.7777777777777778,
+      "N3_cell_coverage": 23,
+      "total_generation_tokens": 278611,
+      "median_generation_seconds": 7.769602493999628,
+      "p90_generation_seconds": 12.615075951900872
+    },
+    "xhigh": {
+      "calls": 72,
+      "valid_payloads": 72,
+      "answer_span_passes": 72,
+      "fixed_judge_successes": 71,
+      "fixed_judge_failures": 1,
+      "fixed_judge_accepts": 53,
+      "fixed_judge_acceptance_rate_among_successful": 0.7464788732394366,
+      "N3_cell_coverage": 23,
+      "total_generation_tokens": 267711,
+      "median_generation_seconds": 8.075042246499834,
+      "p90_generation_seconds": 14.908466662400315
+    }
+  },
+  "generation_judge": {
+    "effort": "medium",
+    "calls": 216,
+    "valid_outputs": 215,
+    "total_tokens": 567985,
+    "median_seconds": 10.064095316999556
+  }
+}

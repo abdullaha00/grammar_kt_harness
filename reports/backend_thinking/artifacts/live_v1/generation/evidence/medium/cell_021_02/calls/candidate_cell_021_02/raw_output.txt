@@ -1,0 +1,1 @@
+{"prompt":"The painters are working in the kitchen today. Complete the sentence using the cue (paint): The kitchen ____.","target_answer":"The kitchen is being painted.","accepted_answers":["is being painted"]}

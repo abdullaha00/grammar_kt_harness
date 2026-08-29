@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target is present simple, passive, negative, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The café context and completed sentence are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of the present passive negative."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The instruction, verb cue, context, and blank clearly determine the accepted passive-negative forms."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies only the base verb, not the completed passive form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated or advanced grammar is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The context provides all information needed; no external knowledge is required."
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "prompt": "You want to know about Tom's daily routine. Complete the question using the words in brackets: [____] (Tom / walk / to school / every day)",
+  "target_answer": "Does Tom walk to school every day?",
+  "accepted_answers": [
+    "Does Tom walk to school every day?"
+  ]
+}

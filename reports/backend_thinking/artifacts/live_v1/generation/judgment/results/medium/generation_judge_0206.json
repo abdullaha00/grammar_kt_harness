@@ -1,0 +1,65 @@
+{
+  "blind_id": "generation_judge_0206",
+  "experiment_item_id": "generation_medium_cell_001_02",
+  "generation_effort": "medium",
+  "cell_id": "cell_001",
+  "candidate_index": 2,
+  "judge_effort": "medium",
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "generation_judge_0206",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "Present simple, active, positive polar question with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt and question form a coherent, natural exchange."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It clearly practises present-simple question formation with third-person singular."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The context, subject, verb, and destination sufficiently determine the accepted question."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "All vocabulary is common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed target question is not shown in the prompt."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Solving it requires only the targeted present-simple question structure."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external knowledge is needed."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "task_runtime_seconds": 9.470610238000518,
+  "model_calls": 1,
+  "tokens_used": 2517,
+  "model_runtime_seconds": 9.469790356000885,
+  "model_call_failures": 0
+}

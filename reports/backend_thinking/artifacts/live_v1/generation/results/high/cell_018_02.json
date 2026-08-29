@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_high_cell_018_02",
+  "cell_id": "cell_018",
+  "candidate_index": 2,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_018_02",
+    "cell_id": "cell_018",
+    "format": "controlled_production",
+    "prompt": "The bus arrived at 8:20. Maya started waiting at 8:00 and was still waiting then. Complete the sentence using the verb in brackets: Maya ___ for twenty minutes when the bus arrived. (wait)",
+    "target_answer": "Maya had been waiting for twenty minutes when the bus arrived.",
+    "accepted_answers": [
+      "had been waiting"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 12.634989665999456,
+  "model_calls": 1,
+  "tokens_used": 3220,
+  "model_runtime_seconds": 12.634159700000964,
+  "model_call_failures": 0
+}

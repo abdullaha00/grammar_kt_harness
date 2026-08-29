@@ -1,0 +1,55 @@
+{
+  "source_id": "1741163708336x903931402154698900",
+  "stratum": "phase2_eligible",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708336x903931402154698900",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": null,
+        "voice": null,
+        "polarity": "positive",
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "Affirmative yes/no interrogatives with nonmodal finite BE or HAVE establish positive polar questions, but the auxiliary wording does not close the aspect chain or determine voice."
+  },
+  "retained_mapping": {
+    "source_id": "1741163708336x903931402154698900",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": null,
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 13.020792535999135,
+  "model_calls": 1,
+  "tokens_used": 6265,
+  "model_runtime_seconds": 13.02009522499975,
+  "model_call_failures": 0
+}

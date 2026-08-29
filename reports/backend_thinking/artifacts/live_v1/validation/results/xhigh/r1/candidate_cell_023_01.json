@@ -1,0 +1,71 @@
+{
+  "item_id": "candidate_cell_023_01",
+  "audit_id": "validation_live_28f240e829c4",
+  "cell_id": "cell_023",
+  "effort": "xhigh",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_28f240e829c4",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "Uses present simple, negative passive, declarative form, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "A closed café naturally implies that breakfast is not served on Sundays."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It clearly focuses practice on forming the present simple negative passive."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The context and supplied words sufficiently cue the intended negative passive completion."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "Café, breakfast, and serve are common, transparent vocabulary."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed passive negative form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The item can be solved using only the targeted passive-negative structure."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external factual or specialist knowledge is needed."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 12.594731344001048,
+  "model_calls": 1,
+  "tokens_used": 2754,
+  "model_runtime_seconds": 12.593901013000504,
+  "model_call_failures": 0
+}

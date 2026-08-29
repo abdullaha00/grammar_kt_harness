@@ -1,0 +1,2 @@
+descriptors,complete_count,out_of_scope_count,partial_count,unresolved_count,complete_proportion,out_of_scope_proportion,partial_proportion,unresolved_proportion,phase2_eligible_descriptors,phase2_eligible_by_dimension,contributing_descriptors,source_cell_edges,unique_cells,all_descriptors_per_cell,contributing_descriptors_per_cell,source_cell_edges_per_cell
+139,44,16,77,2,0.31654676258992803,0.11510791366906475,0.5539568345323741,0.014388489208633094,9,"{""tense"": 9}",44,48,24,5.791666666666667,1.8333333333333333,2.0

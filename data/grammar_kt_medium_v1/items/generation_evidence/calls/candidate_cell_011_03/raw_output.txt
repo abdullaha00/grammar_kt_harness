@@ -1,0 +1,1 @@
+{"prompt":"At eight last night, Maya was busy in the kitchen. Complete the sentence using the cue “make dinner”: Maya _____.","target_answer":"Maya was making dinner.","accepted_answers":["was making dinner"]}

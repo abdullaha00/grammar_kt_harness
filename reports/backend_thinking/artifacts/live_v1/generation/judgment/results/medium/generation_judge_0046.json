@@ -1,0 +1,65 @@
+{
+  "blind_id": "generation_judge_0046",
+  "experiment_item_id": "generation_high_cell_006_02",
+  "generation_effort": "high",
+  "cell_id": "cell_006",
+  "candidate_index": 2,
+  "judge_effort": "medium",
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "generation_judge_0046",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "“Don't touch the pan!” is an active negative imperative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The hot-pan context naturally motivates a warning not to touch it."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "The cue and context provide focused practice of a negative imperative."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The cue “touch” and stated object sufficiently point to the expected response."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "“Pan,” “hot,” and “touch” are common and clear vocabulary."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt provides only the cue verb, not the completed negative imperative."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Solving it requires only the target negative-imperative form."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "task_runtime_seconds": 8.754936907000229,
+  "model_calls": 1,
+  "tokens_used": 2478,
+  "model_runtime_seconds": 8.754156705999776,
+  "model_call_failures": 0
+}

@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a present perfect, active, negative declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": false,
+      "note": "“A book” is generic, while the prompt refers to Mia’s specific unread book, making the pair pragmatically mismatched."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The article mismatch may distract from the intended present-perfect practice."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The context naturally permits alternatives such as “Mia hasn’t read the book yet,” which are not accepted."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only a cue, not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The item can be completed using the target grammar without unrelated advanced structures."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

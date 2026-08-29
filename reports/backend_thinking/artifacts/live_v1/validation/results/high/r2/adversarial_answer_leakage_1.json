@@ -1,0 +1,71 @@
+{
+  "item_id": "adversarial_answer_leakage_1",
+  "audit_id": "validation_live_d3d933bd4fad",
+  "cell_id": "cell_008",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_d3d933bd4fad",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The answer is present progressive, active, positive, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt and answer are coherent, though highly mechanical."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "It asks learners only to copy a supplied sentence, not to practise forming the target grammar."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The prompt explicitly specifies the single accepted response."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and context are common and unambiguous."
+      },
+      "no_answer_leakage": {
+        "passed": false,
+        "note": "The prompt displays the complete target answer verbatim."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "No unrelated advanced grammar is needed."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external knowledge is required."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "no_answer_leakage"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": true,
+  "reference_source": "authored_adversarial_negative_control",
+  "task_runtime_seconds": 9.991435022000587,
+  "model_calls": 1,
+  "tokens_used": 2562,
+  "model_runtime_seconds": 9.99064263999935,
+  "model_call_failures": 0
+}

@@ -1,0 +1,45 @@
+{
+  "source_id": "1741163712334x456379754309706560",
+  "stratum": "partial_noneligible",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712334x456379754309706560",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "past",
+        "aspect": "perfect",
+        "voice": "active",
+        "polarity": null,
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "Past perfect simple establishes past tense, perfect aspect, and a nonmodal active form; bare generic questions establish neither polarity nor a closed question subtype."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712334x456379754309706560",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "past",
+        "aspect": "perfect",
+        "voice": "active",
+        "polarity": null,
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "phase2 eligible: none"
+  },
+  "task_runtime_seconds": 11.223610689999987,
+  "model_calls": 1,
+  "tokens_used": 6031,
+  "model_runtime_seconds": 11.222910391999903,
+  "model_call_failures": 0
+}

@@ -1,0 +1,45 @@
+{"item_id": "candidate_cell_001_01", "kc_ids": ["kc_feature__clause__polar_question", "kc_feature__tense__present"]}
+{"item_id": "candidate_cell_001_02", "kc_ids": ["kc_feature__clause__polar_question", "kc_feature__tense__present"]}
+{"item_id": "candidate_cell_002_01", "kc_ids": ["kc_feature__clause__polar_question", "kc_feature__tense__past"]}
+{"item_id": "candidate_cell_002_03", "kc_ids": ["kc_feature__clause__polar_question", "kc_feature__tense__past"]}
+{"item_id": "candidate_cell_003_01", "kc_ids": ["kc_feature__tense__present"]}
+{"item_id": "candidate_cell_003_03", "kc_ids": ["kc_feature__tense__present"]}
+{"item_id": "candidate_cell_004_01", "kc_ids": ["kc_feature__tense__past"]}
+{"item_id": "candidate_cell_004_02", "kc_ids": ["kc_feature__tense__past"]}
+{"item_id": "candidate_cell_005_01", "kc_ids": ["kc_feature__clause__imperative"]}
+{"item_id": "candidate_cell_005_03", "kc_ids": ["kc_feature__clause__imperative"]}
+{"item_id": "candidate_cell_006_01", "kc_ids": ["kc_feature__clause__imperative", "kc_feature__polarity__negative"]}
+{"item_id": "candidate_cell_006_03", "kc_ids": ["kc_feature__clause__imperative", "kc_feature__polarity__negative"]}
+{"item_id": "candidate_cell_007_01", "kc_ids": ["kc_feature__polarity__negative", "kc_feature__tense__present"]}
+{"item_id": "candidate_cell_007_02", "kc_ids": ["kc_feature__polarity__negative", "kc_feature__tense__present"]}
+{"item_id": "candidate_cell_008_01", "kc_ids": ["kc_feature__aspect__progressive", "kc_feature__tense__present"]}
+{"item_id": "candidate_cell_008_02", "kc_ids": ["kc_feature__aspect__progressive", "kc_feature__tense__present"]}
+{"item_id": "candidate_cell_009_01", "kc_ids": ["kc_feature__aspect__progressive", "kc_feature__polarity__negative", "kc_feature__tense__present"]}
+{"item_id": "candidate_cell_009_02", "kc_ids": ["kc_feature__aspect__progressive", "kc_feature__polarity__negative", "kc_feature__tense__present"]}
+{"item_id": "candidate_cell_010_01", "kc_ids": ["kc_feature__polarity__negative", "kc_feature__tense__past"]}
+{"item_id": "candidate_cell_010_03", "kc_ids": ["kc_feature__polarity__negative", "kc_feature__tense__past"]}
+{"item_id": "candidate_cell_011_01", "kc_ids": ["kc_feature__aspect__progressive", "kc_feature__tense__past"]}
+{"item_id": "candidate_cell_011_03", "kc_ids": ["kc_feature__aspect__progressive", "kc_feature__tense__past"]}
+{"item_id": "candidate_cell_012_01", "kc_ids": ["kc_feature__aspect__perfect", "kc_feature__polarity__negative", "kc_feature__tense__present", "kc_interaction__aspect_perfect__and__polarity_negative"]}
+{"item_id": "candidate_cell_012_02", "kc_ids": ["kc_feature__aspect__perfect", "kc_feature__polarity__negative", "kc_feature__tense__present", "kc_interaction__aspect_perfect__and__polarity_negative"]}
+{"item_id": "candidate_cell_013_01", "kc_ids": ["kc_feature__aspect__perfect", "kc_feature__tense__present"]}
+{"item_id": "candidate_cell_013_02", "kc_ids": ["kc_feature__aspect__perfect", "kc_feature__tense__present"]}
+{"item_id": "candidate_cell_014_01", "kc_ids": ["kc_feature__aspect__perfect", "kc_feature__polarity__negative", "kc_feature__tense__past", "kc_interaction__aspect_perfect__and__polarity_negative"]}
+{"item_id": "candidate_cell_014_03", "kc_ids": ["kc_feature__aspect__perfect", "kc_feature__polarity__negative", "kc_feature__tense__past", "kc_interaction__aspect_perfect__and__polarity_negative"]}
+{"item_id": "candidate_cell_015_03", "kc_ids": ["kc_feature__aspect__perfect", "kc_feature__tense__past"]}
+{"item_id": "candidate_cell_016_01", "kc_ids": ["kc_feature__aspect__perfect_progressive", "kc_feature__tense__present"]}
+{"item_id": "candidate_cell_016_02", "kc_ids": ["kc_feature__aspect__perfect_progressive", "kc_feature__tense__present"]}
+{"item_id": "candidate_cell_017_07", "kc_ids": ["kc_feature__aspect__perfect_progressive", "kc_feature__polarity__negative", "kc_feature__tense__past"]}
+{"item_id": "candidate_cell_018_01", "kc_ids": ["kc_feature__aspect__perfect_progressive", "kc_feature__tense__past"]}
+{"item_id": "candidate_cell_018_03", "kc_ids": ["kc_feature__aspect__perfect_progressive", "kc_feature__tense__past"]}
+{"item_id": "candidate_cell_019_02", "kc_ids": ["kc_feature__tense__past", "kc_feature__voice__passive"]}
+{"item_id": "candidate_cell_019_03", "kc_ids": ["kc_feature__tense__past", "kc_feature__voice__passive"]}
+{"item_id": "candidate_cell_020_01", "kc_ids": ["kc_feature__tense__present", "kc_feature__voice__passive"]}
+{"item_id": "candidate_cell_020_03", "kc_ids": ["kc_feature__tense__present", "kc_feature__voice__passive"]}
+{"item_id": "candidate_cell_021_01", "kc_ids": ["kc_feature__aspect__progressive", "kc_feature__tense__present", "kc_feature__voice__passive"]}
+{"item_id": "candidate_cell_021_03", "kc_ids": ["kc_feature__aspect__progressive", "kc_feature__tense__present", "kc_feature__voice__passive"]}
+{"item_id": "candidate_cell_022_05", "kc_ids": ["kc_feature__aspect__perfect", "kc_feature__tense__past", "kc_feature__voice__passive"]}
+{"item_id": "candidate_cell_023_02", "kc_ids": ["kc_feature__polarity__negative", "kc_feature__tense__present", "kc_feature__voice__passive"]}
+{"item_id": "candidate_cell_023_03", "kc_ids": ["kc_feature__polarity__negative", "kc_feature__tense__present", "kc_feature__voice__passive"]}
+{"item_id": "candidate_cell_024_02", "kc_ids": []}
+{"item_id": "candidate_cell_024_03", "kc_ids": []}

@@ -1,0 +1,71 @@
+{
+  "item_id": "adversarial_extraneous_grammar_1",
+  "audit_id": "validation_live_24b1fa46b8c1",
+  "cell_id": "cell_003",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_24b1fa46b8c1",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The target is a positive, active, present-simple declarative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "“Mia closes the window.” is grammatical English."
+      },
+      "naturalness": {
+        "passed": false,
+        "note": "The technical prompt about an ellipted counterfactual protasis does not coherently lead to the simple-present target."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "The prompt is too linguistically technical and does not provide a clear focused production task."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The prompt supplies no content that determines Mia, closing, or the window as the required consequence."
+      },
+      "non_target_language_simplicity": {
+        "passed": false,
+        "note": "Terms such as “counterfactual protasis” and “ellipsis” are advanced and opaque."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed target sentence is not displayed in the prompt."
+      },
+      "no_extraneous_grammar": {
+        "passed": false,
+        "note": "Solving the item requires interpreting advanced conditional and ellipsis terminology unrelated to the target present-simple form."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external factual or specialist knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "no_extraneous_grammar"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": true,
+  "reference_source": "authored_adversarial_negative_control",
+  "task_runtime_seconds": 14.656711126999653,
+  "model_calls": 1,
+  "tokens_used": 4837,
+  "model_runtime_seconds": 14.655921394998586,
+  "model_call_failures": 0
+}

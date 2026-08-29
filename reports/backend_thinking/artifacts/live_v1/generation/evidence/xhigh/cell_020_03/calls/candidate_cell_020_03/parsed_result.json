@@ -1,0 +1,7 @@
+{
+  "prompt": "Every morning, a worker cleans the office windows. Complete the sentence using “clean”: The office windows ____ every morning.",
+  "target_answer": "The office windows are cleaned every morning.",
+  "accepted_answers": [
+    "are cleaned"
+  ]
+}

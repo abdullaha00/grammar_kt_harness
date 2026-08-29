@@ -1,0 +1,36 @@
+{
+  "source_id": "1741163712048x834192566226660200",
+  "stratum": "out_of_scope",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712048x834192566226660200",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "NA",
+        "aspect": "none",
+        "voice": "passive",
+        "polarity": null,
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "The target is the uninflected simple BE-passive infinitive. Its listed governors do not assert a central modal, polarity, or main-clause type."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712048x834192566226660200",
+    "result": "out_of_scope",
+    "cells": [],
+    "phase2_eligible": [],
+    "note": "Passive infinitives governed by forms including the deferred periphrastic modals 'be going to' and 'have to' are outside the single-clause ontology."
+  },
+  "task_runtime_seconds": 29.57148878099906,
+  "model_calls": 1,
+  "tokens_used": 4827,
+  "model_runtime_seconds": 29.570839878000697,
+  "model_call_failures": 0
+}

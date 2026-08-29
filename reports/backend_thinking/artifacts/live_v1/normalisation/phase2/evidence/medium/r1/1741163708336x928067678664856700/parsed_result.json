@@ -1,0 +1,18 @@
+{
+  "source_id": "1741163708336x928067678664856700",
+  "result": "partial",
+  "cells": [
+    {
+      "aspect": null,
+      "clause": null,
+      "modal": "none",
+      "polarity": "positive",
+      "tense": "present",
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "The examples positively establish present-tense forms of 'be', narrowing the licensed present/past tense alternative to present. All other Phase-1 constraints remain unchanged."
+}

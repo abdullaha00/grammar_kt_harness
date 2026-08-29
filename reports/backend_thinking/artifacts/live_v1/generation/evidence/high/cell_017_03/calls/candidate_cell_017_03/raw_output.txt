@@ -1,0 +1,1 @@
+{"prompt":"Lena arrived at 8:00 and went straight inside. Complete the sentence using the negative past perfect progressive form of the verb in brackets: Before 8:00, Lena ___ outside. (wait)","target_answer":"Before 8:00, Lena had not been waiting outside.","accepted_answers":["had not been waiting","hadn't been waiting"]}

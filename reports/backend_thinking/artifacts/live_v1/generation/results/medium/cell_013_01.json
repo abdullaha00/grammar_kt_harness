@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_medium_cell_013_01",
+  "cell_id": "cell_013",
+  "candidate_index": 1,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_013_01",
+    "cell_id": "cell_013",
+    "format": "controlled_production",
+    "prompt": "The kitchen floor was dirty, but it is clean now. Complete the sentence using “clean”: My brother ____ the kitchen floor.",
+    "target_answer": "My brother has cleaned the kitchen floor.",
+    "accepted_answers": [
+      "has cleaned"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 9.001782760000424,
+  "model_calls": 1,
+  "tokens_used": 3137,
+  "model_runtime_seconds": 9.000899381000636,
+  "model_call_failures": 0
+}

@@ -1,0 +1,65 @@
+{
+  "blind_id": "generation_judge_0100",
+  "experiment_item_id": "generation_medium_cell_016_03",
+  "generation_effort": "medium",
+  "cell_id": "cell_016",
+  "candidate_index": 3,
+  "judge_effort": "medium",
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "generation_judge_0100",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "It is present perfect progressive, active, positive, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The scenario and completed sentence are coherent and natural."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of the present perfect progressive."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The ongoing action from two hours ago clearly cues “has been washing.”"
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and context are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Only the target tense-aspect construction is needed."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external knowledge is required."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "task_runtime_seconds": 10.478069736998805,
+  "model_calls": 1,
+  "tokens_used": 2551,
+  "model_runtime_seconds": 10.477237020999382,
+  "model_call_failures": 0
+}

@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses past perfect, active voice, negative polarity, declarative clause, and no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The noon-arrival context coherently supports the unfinished action expressed with “yet.”"
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of the negative past perfect form."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The earlier past reference point and “yet” strongly determine “had not opened/hadn't opened.”"
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and lexically clear."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies only the base verb “open,” not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it requires no unrelated advanced grammar beyond interpreting the time relationship."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external factual or specialist knowledge is needed."
+    }
+  }
+}

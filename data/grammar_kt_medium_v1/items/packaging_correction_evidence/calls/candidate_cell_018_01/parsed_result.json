@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses positive active past perfect progressive in a declarative clause."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The timing context and answer form a coherent, natural situation."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It clearly focuses practice on the past perfect progressive for duration."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "Other valid completions, such as using “since eight,” fit the prompt but are not listed as accepted."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the base-verb cue, not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The item relies only on the information provided in the prompt."
+    }
+  }
+}

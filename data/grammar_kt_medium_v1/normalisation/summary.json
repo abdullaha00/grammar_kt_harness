@@ -1,0 +1,22 @@
+{
+  "descriptors": 139,
+  "unique_source_ids": 139,
+  "normalisation_results": {
+    "complete": 44,
+    "out_of_scope": 16,
+    "partial": 77,
+    "unresolved": 2
+  },
+  "explicit_phase2_eligible": 9,
+  "canonical_cells": 24,
+  "source_cell_relations": 48,
+  "descriptors_contributing_cells": 44,
+  "complete_descriptors_per_cell": 1.8333333333333333,
+  "source_cell_relations_per_cell": 2.0,
+  "legacy_equivalence": {
+    "legacy_cell_count": 24,
+    "current_cell_count": 24,
+    "feature_inventory_exact_match": true,
+    "source_memberships_exact_match": true
+  }
+}

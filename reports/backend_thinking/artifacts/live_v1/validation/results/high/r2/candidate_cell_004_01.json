@@ -1,0 +1,69 @@
+{
+  "item_id": "candidate_cell_004_01",
+  "audit_id": "validation_live_aacf977dda13",
+  "cell_id": "cell_004",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_aacf977dda13",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The target is a positive active declarative in the simple past."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "“Mia washed the cup.” is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The context and completed sentence are coherent and natural."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of a regular simple-past verb form."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "“Yesterday” and the supplied verb clearly determine “washed.”"
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and situation are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives only the base form “wash,” not the completed past form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The item can be solved using only the targeted simple-past form."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": true,
+  "retained_failed_criteria": [],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 9.86728648099961,
+  "model_calls": 1,
+  "tokens_used": 2564,
+  "model_runtime_seconds": 9.866440458999932,
+  "model_call_failures": 0
+}

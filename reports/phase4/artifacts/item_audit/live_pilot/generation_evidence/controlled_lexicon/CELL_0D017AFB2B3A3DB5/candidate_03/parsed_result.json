@@ -1,0 +1,12 @@
+{
+  "prompt": "Mia started a book two hours before she stopped for a break. Complete the sentence using the cue (Mia / read / a book): ____",
+  "target_answer": "Mia had been reading a book.",
+  "accepted_answers": [
+    "Mia had been reading a book."
+  ],
+  "operation_tags": [
+    "perfect",
+    "progressive"
+  ],
+  "note": "The activity continued over a period before a past event."
+}

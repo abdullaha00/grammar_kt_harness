@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses past perfect, active voice, positive declarative form, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The cleared table naturally supports the inference that Leo had washed the dishes before Mia arrived."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The cue and context provide focused practice of the past perfect."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The time sequence and cue sufficiently determine the intended past-perfect response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the base-form cue, not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving the item only requires forming the intended past-perfect clause."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

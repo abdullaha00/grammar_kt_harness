@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a positive active present-perfect declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt context and answer are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It directly and clearly practices present-perfect formation."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The supplied words and required tense determine the accepted sentence."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary is common, transparent, and unambiguous."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is required."
+    }
+  }
+}

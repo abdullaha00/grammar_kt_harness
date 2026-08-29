@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is an active negative imperative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The cold-room context coherently motivates telling Omar not to open the door."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It gives focused practice of negative imperatives."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The prompt supports equally natural responses outside the listed set, such as adding Omar’s name or using “Please don’t...”."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt provides only the verb-object cue, not the completed negative imperative."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "It can be answered using the target negative-imperative pattern alone."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

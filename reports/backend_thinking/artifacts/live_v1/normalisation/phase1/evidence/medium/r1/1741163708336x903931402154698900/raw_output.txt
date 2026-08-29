@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163708336x903931402154698900",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": ["present", "past"],
+      "aspect": null,
+      "voice": null,
+      "polarity": "positive",
+      "clause": "polar_question",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": ["tense"],
+  "note": "Affirmative yes/no interrogatives with finite auxiliary BE or HAVE establish positive polarity, polar-question clause type, and a nonmodal present-or-past form. The broad auxiliary wording does not determine the aspect or distinguish active from passive voice."
+}

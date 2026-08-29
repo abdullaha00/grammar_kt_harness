@@ -1,0 +1,7 @@
+{
+  "prompt": "The café serves tea, but it does not serve soup. Complete the sentence using the verb in brackets: Soup [____] at the café. (serve)",
+  "target_answer": "Soup is not served at the café.",
+  "accepted_answers": [
+    "is not served"
+  ]
+}

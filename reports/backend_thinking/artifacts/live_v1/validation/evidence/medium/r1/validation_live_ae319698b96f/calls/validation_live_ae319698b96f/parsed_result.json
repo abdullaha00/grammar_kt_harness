@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses past perfect progressive, active, positive declarative form with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The timing context and answer form a coherent, natural description."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It clearly practices the past perfect progressive for duration before a past reference point."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The open blank permits other valid responses, such as using “since eight” or a different but equivalent wording, beyond the accepted set."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the base-verb cue, not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it requires only the intended tense/aspect construction and a simple duration phrase."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

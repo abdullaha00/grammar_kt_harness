@@ -1,0 +1,9 @@
+stage,cohort,retained_records,calls_with_recorded_duration,records_without_duration,sum_seconds,median_seconds,mean_seconds,timing_interpretation
+generation,default_n3,72,72,0,701.681102806062,8.996229305499583,9.745570872306416,"sum of per-call durations; concurrent calls overlap, so this is not wall time"
+generation,conditional_rescue,4,4,0,54.835103435005294,15.117445461997704,13.708775858751324,"sum of per-call durations; concurrent calls overlap, so this is not wall time"
+generation,determinacy_intervention,2,2,0,27.63838632500847,13.819193162504234,13.819193162504234,"sum of per-call durations; concurrent calls overlap, so this is not wall time"
+generation,all,78,78,0,784.1545925660757,9.30393522799568,10.053264007257381,"sum of per-call durations; concurrent calls overlap, so this is not wall time"
+validation,default_n3,72,52,20,561.8974672499753,10.824953953997465,10.805720524037987,"sum of per-call durations; concurrent calls overlap, so this is not wall time"
+validation,conditional_rescue,4,4,0,52.20688209398941,12.093085756001528,13.051720523497352,"sum of per-call durations; concurrent calls overlap, so this is not wall time"
+validation,determinacy_intervention,1,1,0,12.219531424998422,12.219531424998422,12.219531424998422,"sum of per-call durations; concurrent calls overlap, so this is not wall time"
+validation,all,77,57,20,626.3238807689631,10.931789712994942,10.988138259104616,"sum of per-call durations; concurrent calls overlap, so this is not wall time"

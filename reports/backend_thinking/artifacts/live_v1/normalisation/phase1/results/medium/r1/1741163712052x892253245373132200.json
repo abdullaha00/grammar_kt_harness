@@ -1,0 +1,67 @@
+{
+  "source_id": "1741163712052x892253245373132200",
+  "stratum": "partial_noneligible",
+  "effort": "medium",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712052x892253245373132200",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "NA",
+        "aspect": null,
+        "voice": "passive",
+        "polarity": null,
+        "clause": null,
+        "modal": [
+          "can",
+          "could",
+          "may",
+          "might",
+          "must",
+          "shall",
+          "should",
+          "will",
+          "would"
+        ]
+      }
+    ],
+    "phase2_eligible": [
+      "modal"
+    ],
+    "note": "The descriptor specifies passive voice with an unresolved central modal; it does not constrain aspect, polarity, or clause type."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712052x892253245373132200",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "NA",
+        "aspect": null,
+        "voice": "passive",
+        "polarity": null,
+        "clause": "declarative",
+        "modal": [
+          "can",
+          "could",
+          "may",
+          "might",
+          "must",
+          "shall",
+          "should",
+          "will",
+          "would"
+        ]
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "phase2 eligible: none"
+  },
+  "task_runtime_seconds": 12.40901737599961,
+  "model_calls": 1,
+  "tokens_used": 6170,
+  "model_runtime_seconds": 12.408311586999844,
+  "model_call_failures": 0
+}

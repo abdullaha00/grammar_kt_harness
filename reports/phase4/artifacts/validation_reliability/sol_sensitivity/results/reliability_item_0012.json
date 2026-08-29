@@ -1,0 +1,52 @@
+{
+  "sample_order": 12,
+  "blind_item_id": "reliability_item_0012",
+  "candidate_id": "candidate_model_selected_CELL_0A7F3FA2D498D97D_01",
+  "condition": "model_selected",
+  "cell_id": "CELL_0A7F3FA2D498D97D",
+  "candidate_index": 1,
+  "original_accepted": true,
+  "original_failed_criteria": [],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The answer is an active, negative present-perfect declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "An untouched breakfast at noon coherently supports the response that Emma has not eaten it."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The cue and context provide focused practice forming the negative present perfect."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The context, cue, and completion instruction sufficiently determine the full and contracted accepted forms."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and sufficiently transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed present-perfect target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed to produce the answer."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The response follows directly from the stated situation and requires no external knowledge."
+    }
+  },
+  "accepted": true,
+  "runtime_seconds": 13.660960278997663
+}

@@ -1,0 +1,7 @@
+{
+  "prompt": "At this café, the tables ___ every morning. (clean)",
+  "target_answer": "The tables are cleaned every morning.",
+  "accepted_answers": [
+    "are cleaned"
+  ]
+}

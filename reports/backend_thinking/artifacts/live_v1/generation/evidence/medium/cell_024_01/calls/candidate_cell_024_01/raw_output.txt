@@ -1,0 +1,1 @@
+{"prompt":"Leo has a broken chair. His friend is willing to repair it. Complete the sentence using “fix”: His friend ____ the chair.","target_answer":"His friend would fix the chair.","accepted_answers":["would fix"]}

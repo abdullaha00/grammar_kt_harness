@@ -1,0 +1,8 @@
+{
+  "prompt": "Maya started cleaning the kitchen an hour ago and is still doing it. Maya [____]. (clean the kitchen)",
+  "target_answer": "Maya has been cleaning the kitchen.",
+  "accepted_answers": [
+    "has been cleaning the kitchen",
+    "'s been cleaning the kitchen"
+  ]
+}

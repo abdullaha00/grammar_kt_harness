@@ -1,0 +1,55 @@
+{
+  "source_id": "1741163708336x928067678664856700",
+  "stratum": "phase2_eligible",
+  "effort": "medium",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708336x928067678664856700",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "Affirmative interrogatives with finite main BE establish positive, active, simple nonmodal clauses, but do not specify present versus past or a canonical question subtype."
+  },
+  "retained_mapping": {
+    "source_id": "1741163708336x928067678664856700",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": null,
+        "voice": "active",
+        "polarity": "positive",
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 11.341332283998781,
+  "model_calls": 1,
+  "tokens_used": 9148,
+  "model_runtime_seconds": 11.340683586000523,
+  "model_call_failures": 0
+}

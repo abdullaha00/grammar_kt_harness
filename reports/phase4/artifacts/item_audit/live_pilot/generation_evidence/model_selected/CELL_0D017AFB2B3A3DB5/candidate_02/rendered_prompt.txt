@@ -1,0 +1,124 @@
+Create one controlled-production English exercise for the supplied target.
+
+The GrammarCell is fixed. Do not choose, weaken, or reinterpret it. Realise
+every target feature in the target answer, follow the item-format contract, and
+choose your own lexical material and short context. Ordinary lexical content is
+treated as known background knowledge, not as a learner skill. Use common,
+concrete, high-frequency vocabulary that is unlikely to be the source of
+learner difficulty. Avoid specialist terms, idioms, rare senses, obscure proper
+nouns, culturally specific knowledge, and unnecessary lexical complexity.
+Choose predicates and argument structures compatible with the fixed target
+GrammarCell. Keep the context short, natural, pedagogically useful, and
+answer-determinate, and vary lexical and contextual material naturally across
+items.
+
+Do not infer or mention KC information, grammar-fold labels, simulation
+information or assumptions, learner outcomes, or KT models. Return one JSON
+object containing: prompt, target_answer, accepted_answers, operation_tags, and
+note.
+
+TARGET GRAMMAR CELL:
+{
+  "cell_id": "CELL_0D017AFB2B3A3DB5",
+  "features": {
+    "tense": "past",
+    "aspect": "perfect_progressive",
+    "voice": "active",
+    "polarity": "positive",
+    "clause": "declarative",
+    "modal": "none"
+  }
+}
+
+SOURCE SUPPORT:
+{
+  "available": false,
+  "evidence": [],
+  "instruction": "No source evidence is supplied in this condition."
+}
+
+ITEM FORMAT:
+{
+  "format_id": "controlled_production",
+  "task_goal": "Produce the complete response licensed by a short context and lexical cue.",
+  "required_fields": [
+    "prompt",
+    "target_answer",
+    "accepted_answers"
+  ],
+  "answer_form": "one complete English clause",
+  "constraints": [
+    "The prompt must visibly mark the response slot.",
+    "The target answer must fill the task without additional explanation.",
+    "Accepted answers must preserve the intended GrammarCell.",
+    "The prompt must not reveal the completed target form."
+  ]
+}
+
+GENERATION DESIGN:
+{
+  "design_id": "one_generated_item_per_cell",
+  "format": "controlled_production",
+  "items_per_cell": 1,
+  "lexical_choice": "model_generated",
+  "lexical_constraint": "simple_non_target_language",
+  "diversity": {
+    "vary_lexical_context_across_cells": true
+  },
+  "balancing": {
+    "nuisance_condition": "short_context"
+  }
+}
+
+ENGLISH GENERATION RULES:
+# English controlled-production generation rules
+
+- Make subject–verb agreement overt where the selected subject permits it.
+- Realise simple present/past on the finite main verb unless an auxiliary is
+  required; use DO-support for lexical-verb negation and interrogation.
+- Order the auxiliary chain as modal, perfect HAVE, progressive BE, passive BE,
+  lexical verb. Use the corresponding base, participle, or -ing forms.
+- Realise canonical passive with BE plus a past participle and a compatible
+  transitive predicate.
+- Place NOT after the finite operator. Insert DO only when no other operator is
+  present.
+- In polar and non-subject-WH questions, invert the finite operator and subject.
+  Subject-WH questions do not invert solely because the subject is WH.
+- Central modals take a base-form complement and never co-occur with
+  morphological present/past in the GrammarCell.
+- Imperatives use a base verb. Ordinary negative imperatives use DO-support;
+  LET'S NOT has `negation`, `imperative`, and `let_imperative` operation tags
+  but not `do_support`.
+- Use only these operation tags when relevant: `perfect`, `progressive`,
+  `be_passive`, `central_modal`, `do_support`, `negation`,
+  `operator_inversion`, `subject_wh`, `wh_fronting`, `imperative`,
+  `emphatic_do`, `let_imperative`.
+- Keep all accepted answers genuinely equivalent for the target.
+
+## Lexical/contextual material
+
+- Choose common, concrete, transparent vocabulary; vocabulary should not be the
+  intended source of difficulty.
+- Avoid specialist terms, idioms, rare meanings, obscure proper-noun knowledge,
+  culturally specific knowledge, and other world-knowledge dependencies.
+- Select a predicate with plausible argument structure that is compatible with
+  the grammatical construction.
+- Passive targets require a naturally transitive, passivisable predicate.
+- Keep contexts short and natural.
+- Vary lexical and contextual material across items where possible.
+
+
+AUDIT CANDIDATE POSITION:
+{
+  "index": 2,
+  "count": 5
+}
+
+LEXICAL INTERVENTION FOR THIS CONDITION:
+{
+  "mode": "model_selected",
+  "instruction": "Choose common, transparent lexical and contextual material compatible with the fixed GrammarCell."
+}
+
+Generate this candidate independently. Candidate position is an experimental
+index, not learner-facing content: do not mention it in the exercise.

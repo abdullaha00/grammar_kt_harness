@@ -1,0 +1,11 @@
+{
+  "prompt": "Yesterday, Mia cleaned the windows. Complete the sentence beginning with “The windows” and use the verb “clean”: ____",
+  "target_answer": "The windows were cleaned yesterday.",
+  "accepted_answers": [
+    "The windows were cleaned yesterday."
+  ],
+  "operation_tags": [
+    "be_passive"
+  ],
+  "note": ""
+}

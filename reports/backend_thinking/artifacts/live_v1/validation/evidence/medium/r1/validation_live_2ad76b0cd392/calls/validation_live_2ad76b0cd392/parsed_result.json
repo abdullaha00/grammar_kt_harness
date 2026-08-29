@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses past perfect progressive, active voice, negative polarity, declarative clause, and no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The context and answer are coherent, though the phrasing is slightly formal."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The intended form is not uniquely motivated by the prompt, reducing its value for focused practice."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "Other plausible forms, such as “had not practiced,” fit the context, so it does not sufficiently determine the accepted past perfect progressive response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and scenario are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed target verb form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "It can be answered using the targeted tense/aspect construction without unrelated advanced grammar."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

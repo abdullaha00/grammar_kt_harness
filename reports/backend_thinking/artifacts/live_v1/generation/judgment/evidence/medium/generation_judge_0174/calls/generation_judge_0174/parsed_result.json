@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses positive active declarative “would + base verb,” matching the intended modal cell."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "“Mia would carry the boxes” is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The hypothetical moving context coherently supports the answer."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The blank directly focuses practice on the modal form “would carry.”"
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The prompt suggests a hypothetical situation but does not uniquely require “would”; alternatives such as “could carry” or “might carry” are also plausible."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "“Help,” “move,” “carry,” and “boxes” are common, transparent vocabulary."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the base verb “carry,” not the completed modal form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "It can be completed using the target modal construction without unrelated advanced grammar."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external factual or specialist knowledge is needed."
+    }
+  }
+}

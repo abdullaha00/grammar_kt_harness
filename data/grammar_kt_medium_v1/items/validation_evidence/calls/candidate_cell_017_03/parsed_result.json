@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target is past perfect progressive, active, negative, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target sentence is grammatically well formed."
+    },
+    "naturalness": {
+      "passed": false,
+      "note": "The prompt says Maya started cleaning, which conflicts with the negative answer that she had not been cleaning."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The contradiction between context and target makes the intended form confusing for focused practice."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The context supports an affirmative form such as “had been cleaning,” not the sole accepted negative response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt provides only the base-form cue “clean,” not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed beyond interpreting the time sequence and producing the target tense."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external factual or specialist knowledge is required."
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "status": "complete",
+  "seed": 20260831,
+  "learners": 1000,
+  "world_id": "phase4_mixed_v1",
+  "protocol_id": "development_acquisition_frozen_probes_v1",
+  "source": "deterministic_mixed_world_simulation",
+  "event_file": "events/seed_20260831.jsonl.gz",
+  "file_sha256": "7bc506e1349d8f2700c9b73419e648a781ea796c9c377339f7d97baa9ac2f3c4",
+  "content_sha256": "12dd5f73f946ae82169a449ec3c7b16a2fe95c0893564519d8283ccc63056477",
+  "finalized_reference_content_sha256": null,
+  "method_fingerprint": "d235af8ebe55dabca38266a03cd9a680eca7c122bc96d1db60be7fb5c99127c0",
+  "integrity": {
+    "events": 204000,
+    "learners": 1000,
+    "events_per_learner": 204,
+    "phase_counts": {
+      "acquisition": 160000,
+      "probe": 44000
+    },
+    "grammar_split_counts": {
+      "compositional_holdout": 10000,
+      "development": 192000,
+      "novel_feature_holdout": 2000
+    },
+    "dataset_split_counts": {
+      "test": 44000,
+      "train": 128000,
+      "validation": 32000
+    }
+  },
+  "provenance": {
+    "model_calls": 0,
+    "models": [],
+    "description": "Deterministic synthetic-event replay and learner-evidence KC selection over the already fixed, model-validated item bank; no LM is invoked."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "source_id": "1741163712334x456379754309706560",
+  "stratum": "partial_noneligible",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712334x456379754309706560",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "past",
+        "aspect": "perfect",
+        "voice": "active",
+        "polarity": null,
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "The descriptor specifies an active past perfect form, but bare “questions” establishes neither an in-scope question subtype nor polarity."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712334x456379754309706560",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "past",
+        "aspect": "perfect",
+        "voice": "active",
+        "polarity": null,
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "phase2 eligible: none"
+  },
+  "task_runtime_seconds": 13.600593340999694,
+  "model_calls": 1,
+  "tokens_used": 6029,
+  "model_runtime_seconds": 13.599798293998901,
+  "model_call_failures": 0
+}

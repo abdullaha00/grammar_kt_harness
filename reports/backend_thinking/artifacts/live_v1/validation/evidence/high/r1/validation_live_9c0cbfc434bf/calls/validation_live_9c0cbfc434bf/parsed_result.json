@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a positive past passive declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target is grammatical English."
+    },
+    "naturalness": {
+      "passed": false,
+      "note": "The prompt refers to a garden-path relative but provides no sentence to resolve."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The missing source sentence prevents focused, answerable practice."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "Nothing in the prompt determines “the report,” “filed,” or “yesterday.”"
+    },
+    "non_target_language_simplicity": {
+      "passed": false,
+      "note": "Terms such as “garden-path relative” and “presupposed event” are technical and not transparent to typical learners."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The completed target form is not displayed in the prompt."
+    },
+    "no_extraneous_grammar": {
+      "passed": false,
+      "note": "It invokes advanced garden-path and presupposition analysis unrelated to forming a basic passive."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external factual or specialist knowledge is needed."
+    }
+  }
+}

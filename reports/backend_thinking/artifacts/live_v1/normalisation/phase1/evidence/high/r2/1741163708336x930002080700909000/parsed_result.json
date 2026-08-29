@@ -1,0 +1,21 @@
+{
+  "source_id": "1741163708336x930002080700909000",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": [
+        "present",
+        "past"
+      ],
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "polar_question",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "Affirmative yes/no questions with DO-support establish a positive, active, simple nonmodal construction, but do not distinguish present from past tense."
+}

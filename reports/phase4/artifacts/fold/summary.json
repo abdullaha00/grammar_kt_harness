@@ -1,0 +1,1229 @@
+{
+  "experiment_id": "P4-FOLD-001",
+  "date": "2026-08-27",
+  "rq": "RQ8/RQ9: scalable semantic grammar folds and clean holdout roles",
+  "exact_command": ".venv/bin/python scripts/run_fold_analysis.py",
+  "source_artifact": "experiments/post_training_v1/data/pilot_v1/opportunities.jsonl",
+  "source_sha256": "5635b69de038fa3d0532265c78695b8c7360d92a84df932791ab7446b3e9768e",
+  "source_scale": {
+    "cells": 24,
+    "structural_items": 42
+  },
+  "learner_outcomes_read": false,
+  "models": null,
+  "seed": 20260827,
+  "active_design": {
+    "fold_id": "semantic_grammar_coverage_v1",
+    "description": "Outcome-free semantic split. Explicit novel values are withheld completely; compositional cells are sampled by feature tuple while retaining repeated development support for every constituent value.",
+    "compositional_holdout_fraction": 0.2,
+    "minimum_development_value_cell_support": 2,
+    "minimum_accepted_items_per_holdout_cell": 1,
+    "semantic_sampling_seed": 20260827,
+    "novel_feature_values": {
+      "modal": [
+        "would"
+      ]
+    }
+  },
+  "active_result": {
+    "cell_counts": {
+      "development": 18,
+      "compositional_holdout": 5,
+      "novel_feature_holdout": 1
+    },
+    "accepted_item_counts": {
+      "development": 33,
+      "compositional_holdout": 8,
+      "novel_feature_holdout": 1
+    },
+    "accepted_items_per_cell": {
+      "development": {
+        "minimum": 1,
+        "median": 2.0,
+        "maximum": 2
+      },
+      "compositional_holdout": {
+        "minimum": 1,
+        "median": 2,
+        "maximum": 2
+      },
+      "novel_feature_holdout": {
+        "minimum": 1,
+        "median": 1,
+        "maximum": 1
+      }
+    },
+    "cells_without_accepted_items": 0,
+    "compositional_target": 5,
+    "compositional_achieved": 5,
+    "compositional_target_shortfall": 0,
+    "development_value_cell_support": {
+      "tense": {
+        "present": 9,
+        "past": 7,
+        "NA": 2
+      },
+      "aspect": {
+        "none": 7,
+        "progressive": 3,
+        "perfect": 5,
+        "perfect_progressive": 3
+      },
+      "voice": {
+        "active": 15,
+        "passive": 3
+      },
+      "polarity": {
+        "positive": 12,
+        "negative": 6
+      },
+      "clause": {
+        "declarative": 14,
+        "polar_question": 2,
+        "imperative": 2
+      },
+      "modal": {
+        "none": 18
+      }
+    },
+    "compositional_value_contract": {
+      "cells_with_any_unseen_development_value": 0,
+      "minimum_constituent_support_observed": 3
+    },
+    "novel_feature_contract": {
+      "cells_with_unseen_development_value": 1,
+      "unseen_values": [
+        [
+          "modal",
+          "would"
+        ]
+      ]
+    },
+    "pairwise_coverage": {
+      "development_unique_value_pairs": 72,
+      "compositional_unique_value_pairs": 37,
+      "compositional_pairs_seen_in_development": 36,
+      "compositional_pairs_unseen_in_development": 1,
+      "novel_unique_value_pairs": 15,
+      "novel_pairs_seen_in_development": 9,
+      "novel_pairs_unseen_in_development": 6
+    },
+    "compositional_cells": [
+      {
+        "cell_id": "CELL_272348FAE26B290D",
+        "features": {
+          "tense": "present",
+          "aspect": "none",
+          "voice": "passive",
+          "polarity": "positive",
+          "clause": "declarative",
+          "modal": "none"
+        },
+        "accepted_item_support": 1,
+        "development_constituent_support": {
+          "tense": 9,
+          "aspect": 7,
+          "voice": 3,
+          "polarity": 12,
+          "clause": 14,
+          "modal": 18
+        }
+      },
+      {
+        "cell_id": "CELL_A24D66AAA38BC108",
+        "features": {
+          "tense": "present",
+          "aspect": "none",
+          "voice": "active",
+          "polarity": "negative",
+          "clause": "declarative",
+          "modal": "none"
+        },
+        "accepted_item_support": 2,
+        "development_constituent_support": {
+          "tense": 9,
+          "aspect": 7,
+          "voice": 15,
+          "polarity": 6,
+          "clause": 14,
+          "modal": 18
+        }
+      },
+      {
+        "cell_id": "CELL_EA48447107868B2C",
+        "features": {
+          "tense": "past",
+          "aspect": "progressive",
+          "voice": "active",
+          "polarity": "positive",
+          "clause": "declarative",
+          "modal": "none"
+        },
+        "accepted_item_support": 2,
+        "development_constituent_support": {
+          "tense": 7,
+          "aspect": 3,
+          "voice": 15,
+          "polarity": 12,
+          "clause": 14,
+          "modal": 18
+        }
+      },
+      {
+        "cell_id": "CELL_B6AF2E896B998C79",
+        "features": {
+          "tense": "past",
+          "aspect": "none",
+          "voice": "passive",
+          "polarity": "positive",
+          "clause": "declarative",
+          "modal": "none"
+        },
+        "accepted_item_support": 1,
+        "development_constituent_support": {
+          "tense": 7,
+          "aspect": 7,
+          "voice": 3,
+          "polarity": 12,
+          "clause": 14,
+          "modal": 18
+        }
+      },
+      {
+        "cell_id": "CELL_C20140C7DAD62DB2",
+        "features": {
+          "tense": "past",
+          "aspect": "none",
+          "voice": "active",
+          "polarity": "negative",
+          "clause": "declarative",
+          "modal": "none"
+        },
+        "accepted_item_support": 2,
+        "development_constituent_support": {
+          "tense": 7,
+          "aspect": 7,
+          "voice": 15,
+          "polarity": 6,
+          "clause": 14,
+          "modal": 18
+        }
+      }
+    ],
+    "novel_feature_cells": [
+      {
+        "cell_id": "CELL_0ACC7E0377B19DC1",
+        "features": {
+          "tense": "NA",
+          "aspect": "none",
+          "voice": "active",
+          "polarity": "positive",
+          "clause": "declarative",
+          "modal": "would"
+        },
+        "accepted_item_support": 1,
+        "unseen_development_values": [
+          {
+            "dimension": "modal",
+            "value": "would"
+          }
+        ]
+      }
+    ]
+  },
+  "sensitivity": [
+    {
+      "label": "fraction_0p2_min_1",
+      "design": {
+        "fold_id": "semantic_grammar_coverage_v1",
+        "description": "Outcome-free semantic split. Explicit novel values are withheld completely; compositional cells are sampled by feature tuple while retaining repeated development support for every constituent value.",
+        "compositional_holdout_fraction": 0.2,
+        "minimum_development_value_cell_support": 1,
+        "minimum_accepted_items_per_holdout_cell": 1,
+        "semantic_sampling_seed": 20260827,
+        "novel_feature_values": {
+          "modal": [
+            "would"
+          ]
+        }
+      },
+      "assignment_artifact": "reports/phase4/artifacts/fold/assignments_fraction_0p2_min_1.jsonl",
+      "diagnostics_artifact": "reports/phase4/artifacts/fold/diagnostics_fraction_0p2_min_1.json",
+      "results": {
+        "cell_counts": {
+          "development": 18,
+          "compositional_holdout": 5,
+          "novel_feature_holdout": 1
+        },
+        "accepted_item_counts": {
+          "development": 33,
+          "compositional_holdout": 8,
+          "novel_feature_holdout": 1
+        },
+        "accepted_items_per_cell": {
+          "development": {
+            "minimum": 1,
+            "median": 2.0,
+            "maximum": 2
+          },
+          "compositional_holdout": {
+            "minimum": 1,
+            "median": 2,
+            "maximum": 2
+          },
+          "novel_feature_holdout": {
+            "minimum": 1,
+            "median": 1,
+            "maximum": 1
+          }
+        },
+        "cells_without_accepted_items": 0,
+        "compositional_target": 5,
+        "compositional_achieved": 5,
+        "compositional_target_shortfall": 0,
+        "development_value_cell_support": {
+          "tense": {
+            "present": 9,
+            "past": 7,
+            "NA": 2
+          },
+          "aspect": {
+            "none": 7,
+            "progressive": 3,
+            "perfect": 5,
+            "perfect_progressive": 3
+          },
+          "voice": {
+            "active": 15,
+            "passive": 3
+          },
+          "polarity": {
+            "positive": 12,
+            "negative": 6
+          },
+          "clause": {
+            "declarative": 14,
+            "polar_question": 2,
+            "imperative": 2
+          },
+          "modal": {
+            "none": 18
+          }
+        },
+        "compositional_value_contract": {
+          "cells_with_any_unseen_development_value": 0,
+          "minimum_constituent_support_observed": 3
+        },
+        "novel_feature_contract": {
+          "cells_with_unseen_development_value": 1,
+          "unseen_values": [
+            [
+              "modal",
+              "would"
+            ]
+          ]
+        },
+        "pairwise_coverage": {
+          "development_unique_value_pairs": 72,
+          "compositional_unique_value_pairs": 37,
+          "compositional_pairs_seen_in_development": 36,
+          "compositional_pairs_unseen_in_development": 1,
+          "novel_unique_value_pairs": 15,
+          "novel_pairs_seen_in_development": 9,
+          "novel_pairs_unseen_in_development": 6
+        },
+        "compositional_cells": [
+          {
+            "cell_id": "CELL_272348FAE26B290D",
+            "features": {
+              "tense": "present",
+              "aspect": "none",
+              "voice": "passive",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 1,
+            "development_constituent_support": {
+              "tense": 9,
+              "aspect": 7,
+              "voice": 3,
+              "polarity": 12,
+              "clause": 14,
+              "modal": 18
+            }
+          },
+          {
+            "cell_id": "CELL_A24D66AAA38BC108",
+            "features": {
+              "tense": "present",
+              "aspect": "none",
+              "voice": "active",
+              "polarity": "negative",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 2,
+            "development_constituent_support": {
+              "tense": 9,
+              "aspect": 7,
+              "voice": 15,
+              "polarity": 6,
+              "clause": 14,
+              "modal": 18
+            }
+          },
+          {
+            "cell_id": "CELL_EA48447107868B2C",
+            "features": {
+              "tense": "past",
+              "aspect": "progressive",
+              "voice": "active",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 2,
+            "development_constituent_support": {
+              "tense": 7,
+              "aspect": 3,
+              "voice": 15,
+              "polarity": 12,
+              "clause": 14,
+              "modal": 18
+            }
+          },
+          {
+            "cell_id": "CELL_B6AF2E896B998C79",
+            "features": {
+              "tense": "past",
+              "aspect": "none",
+              "voice": "passive",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 1,
+            "development_constituent_support": {
+              "tense": 7,
+              "aspect": 7,
+              "voice": 3,
+              "polarity": 12,
+              "clause": 14,
+              "modal": 18
+            }
+          },
+          {
+            "cell_id": "CELL_C20140C7DAD62DB2",
+            "features": {
+              "tense": "past",
+              "aspect": "none",
+              "voice": "active",
+              "polarity": "negative",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 2,
+            "development_constituent_support": {
+              "tense": 7,
+              "aspect": 7,
+              "voice": 15,
+              "polarity": 6,
+              "clause": 14,
+              "modal": 18
+            }
+          }
+        ],
+        "novel_feature_cells": [
+          {
+            "cell_id": "CELL_0ACC7E0377B19DC1",
+            "features": {
+              "tense": "NA",
+              "aspect": "none",
+              "voice": "active",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "would"
+            },
+            "accepted_item_support": 1,
+            "unseen_development_values": [
+              {
+                "dimension": "modal",
+                "value": "would"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "label": "fraction_0p2_min_2",
+      "design": {
+        "fold_id": "semantic_grammar_coverage_v1",
+        "description": "Outcome-free semantic split. Explicit novel values are withheld completely; compositional cells are sampled by feature tuple while retaining repeated development support for every constituent value.",
+        "compositional_holdout_fraction": 0.2,
+        "minimum_development_value_cell_support": 2,
+        "minimum_accepted_items_per_holdout_cell": 1,
+        "semantic_sampling_seed": 20260827,
+        "novel_feature_values": {
+          "modal": [
+            "would"
+          ]
+        }
+      },
+      "assignment_artifact": "reports/phase4/artifacts/fold/assignments_fraction_0p2_min_2.jsonl",
+      "diagnostics_artifact": "reports/phase4/artifacts/fold/diagnostics_fraction_0p2_min_2.json",
+      "results": {
+        "cell_counts": {
+          "development": 18,
+          "compositional_holdout": 5,
+          "novel_feature_holdout": 1
+        },
+        "accepted_item_counts": {
+          "development": 33,
+          "compositional_holdout": 8,
+          "novel_feature_holdout": 1
+        },
+        "accepted_items_per_cell": {
+          "development": {
+            "minimum": 1,
+            "median": 2.0,
+            "maximum": 2
+          },
+          "compositional_holdout": {
+            "minimum": 1,
+            "median": 2,
+            "maximum": 2
+          },
+          "novel_feature_holdout": {
+            "minimum": 1,
+            "median": 1,
+            "maximum": 1
+          }
+        },
+        "cells_without_accepted_items": 0,
+        "compositional_target": 5,
+        "compositional_achieved": 5,
+        "compositional_target_shortfall": 0,
+        "development_value_cell_support": {
+          "tense": {
+            "present": 9,
+            "past": 7,
+            "NA": 2
+          },
+          "aspect": {
+            "none": 7,
+            "progressive": 3,
+            "perfect": 5,
+            "perfect_progressive": 3
+          },
+          "voice": {
+            "active": 15,
+            "passive": 3
+          },
+          "polarity": {
+            "positive": 12,
+            "negative": 6
+          },
+          "clause": {
+            "declarative": 14,
+            "polar_question": 2,
+            "imperative": 2
+          },
+          "modal": {
+            "none": 18
+          }
+        },
+        "compositional_value_contract": {
+          "cells_with_any_unseen_development_value": 0,
+          "minimum_constituent_support_observed": 3
+        },
+        "novel_feature_contract": {
+          "cells_with_unseen_development_value": 1,
+          "unseen_values": [
+            [
+              "modal",
+              "would"
+            ]
+          ]
+        },
+        "pairwise_coverage": {
+          "development_unique_value_pairs": 72,
+          "compositional_unique_value_pairs": 37,
+          "compositional_pairs_seen_in_development": 36,
+          "compositional_pairs_unseen_in_development": 1,
+          "novel_unique_value_pairs": 15,
+          "novel_pairs_seen_in_development": 9,
+          "novel_pairs_unseen_in_development": 6
+        },
+        "compositional_cells": [
+          {
+            "cell_id": "CELL_272348FAE26B290D",
+            "features": {
+              "tense": "present",
+              "aspect": "none",
+              "voice": "passive",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 1,
+            "development_constituent_support": {
+              "tense": 9,
+              "aspect": 7,
+              "voice": 3,
+              "polarity": 12,
+              "clause": 14,
+              "modal": 18
+            }
+          },
+          {
+            "cell_id": "CELL_A24D66AAA38BC108",
+            "features": {
+              "tense": "present",
+              "aspect": "none",
+              "voice": "active",
+              "polarity": "negative",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 2,
+            "development_constituent_support": {
+              "tense": 9,
+              "aspect": 7,
+              "voice": 15,
+              "polarity": 6,
+              "clause": 14,
+              "modal": 18
+            }
+          },
+          {
+            "cell_id": "CELL_EA48447107868B2C",
+            "features": {
+              "tense": "past",
+              "aspect": "progressive",
+              "voice": "active",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 2,
+            "development_constituent_support": {
+              "tense": 7,
+              "aspect": 3,
+              "voice": 15,
+              "polarity": 12,
+              "clause": 14,
+              "modal": 18
+            }
+          },
+          {
+            "cell_id": "CELL_B6AF2E896B998C79",
+            "features": {
+              "tense": "past",
+              "aspect": "none",
+              "voice": "passive",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 1,
+            "development_constituent_support": {
+              "tense": 7,
+              "aspect": 7,
+              "voice": 3,
+              "polarity": 12,
+              "clause": 14,
+              "modal": 18
+            }
+          },
+          {
+            "cell_id": "CELL_C20140C7DAD62DB2",
+            "features": {
+              "tense": "past",
+              "aspect": "none",
+              "voice": "active",
+              "polarity": "negative",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 2,
+            "development_constituent_support": {
+              "tense": 7,
+              "aspect": 7,
+              "voice": 15,
+              "polarity": 6,
+              "clause": 14,
+              "modal": 18
+            }
+          }
+        ],
+        "novel_feature_cells": [
+          {
+            "cell_id": "CELL_0ACC7E0377B19DC1",
+            "features": {
+              "tense": "NA",
+              "aspect": "none",
+              "voice": "active",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "would"
+            },
+            "accepted_item_support": 1,
+            "unseen_development_values": [
+              {
+                "dimension": "modal",
+                "value": "would"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "label": "fraction_0p3_min_1",
+      "design": {
+        "fold_id": "semantic_grammar_coverage_v1",
+        "description": "Outcome-free semantic split. Explicit novel values are withheld completely; compositional cells are sampled by feature tuple while retaining repeated development support for every constituent value.",
+        "compositional_holdout_fraction": 0.3,
+        "minimum_development_value_cell_support": 1,
+        "minimum_accepted_items_per_holdout_cell": 1,
+        "semantic_sampling_seed": 20260827,
+        "novel_feature_values": {
+          "modal": [
+            "would"
+          ]
+        }
+      },
+      "assignment_artifact": "reports/phase4/artifacts/fold/assignments_fraction_0p3_min_1.jsonl",
+      "diagnostics_artifact": "reports/phase4/artifacts/fold/diagnostics_fraction_0p3_min_1.json",
+      "results": {
+        "cell_counts": {
+          "development": 16,
+          "compositional_holdout": 7,
+          "novel_feature_holdout": 1
+        },
+        "accepted_item_counts": {
+          "development": 29,
+          "compositional_holdout": 12,
+          "novel_feature_holdout": 1
+        },
+        "accepted_items_per_cell": {
+          "development": {
+            "minimum": 1,
+            "median": 2.0,
+            "maximum": 2
+          },
+          "compositional_holdout": {
+            "minimum": 1,
+            "median": 2,
+            "maximum": 2
+          },
+          "novel_feature_holdout": {
+            "minimum": 1,
+            "median": 1,
+            "maximum": 1
+          }
+        },
+        "cells_without_accepted_items": 0,
+        "compositional_target": 7,
+        "compositional_achieved": 7,
+        "compositional_target_shortfall": 0,
+        "development_value_cell_support": {
+          "tense": {
+            "present": 8,
+            "past": 6,
+            "NA": 2
+          },
+          "aspect": {
+            "none": 6,
+            "progressive": 3,
+            "perfect": 5,
+            "perfect_progressive": 2
+          },
+          "voice": {
+            "active": 13,
+            "passive": 3
+          },
+          "polarity": {
+            "positive": 10,
+            "negative": 6
+          },
+          "clause": {
+            "declarative": 12,
+            "polar_question": 2,
+            "imperative": 2
+          },
+          "modal": {
+            "none": 16
+          }
+        },
+        "compositional_value_contract": {
+          "cells_with_any_unseen_development_value": 0,
+          "minimum_constituent_support_observed": 2
+        },
+        "novel_feature_contract": {
+          "cells_with_unseen_development_value": 1,
+          "unseen_values": [
+            [
+              "modal",
+              "would"
+            ]
+          ]
+        },
+        "pairwise_coverage": {
+          "development_unique_value_pairs": 72,
+          "compositional_unique_value_pairs": 42,
+          "compositional_pairs_seen_in_development": 41,
+          "compositional_pairs_unseen_in_development": 1,
+          "novel_unique_value_pairs": 15,
+          "novel_pairs_seen_in_development": 9,
+          "novel_pairs_unseen_in_development": 6
+        },
+        "compositional_cells": [
+          {
+            "cell_id": "CELL_272348FAE26B290D",
+            "features": {
+              "tense": "present",
+              "aspect": "none",
+              "voice": "passive",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 1,
+            "development_constituent_support": {
+              "tense": 8,
+              "aspect": 6,
+              "voice": 3,
+              "polarity": 10,
+              "clause": 12,
+              "modal": 16
+            }
+          },
+          {
+            "cell_id": "CELL_A24D66AAA38BC108",
+            "features": {
+              "tense": "present",
+              "aspect": "none",
+              "voice": "active",
+              "polarity": "negative",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 2,
+            "development_constituent_support": {
+              "tense": 8,
+              "aspect": 6,
+              "voice": 13,
+              "polarity": 6,
+              "clause": 12,
+              "modal": 16
+            }
+          },
+          {
+            "cell_id": "CELL_EA48447107868B2C",
+            "features": {
+              "tense": "past",
+              "aspect": "progressive",
+              "voice": "active",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 2,
+            "development_constituent_support": {
+              "tense": 6,
+              "aspect": 3,
+              "voice": 13,
+              "polarity": 10,
+              "clause": 12,
+              "modal": 16
+            }
+          },
+          {
+            "cell_id": "CELL_B6AF2E896B998C79",
+            "features": {
+              "tense": "past",
+              "aspect": "none",
+              "voice": "passive",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 1,
+            "development_constituent_support": {
+              "tense": 6,
+              "aspect": 6,
+              "voice": 3,
+              "polarity": 10,
+              "clause": 12,
+              "modal": 16
+            }
+          },
+          {
+            "cell_id": "CELL_C20140C7DAD62DB2",
+            "features": {
+              "tense": "past",
+              "aspect": "none",
+              "voice": "active",
+              "polarity": "negative",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 2,
+            "development_constituent_support": {
+              "tense": 6,
+              "aspect": 6,
+              "voice": 13,
+              "polarity": 6,
+              "clause": 12,
+              "modal": 16
+            }
+          },
+          {
+            "cell_id": "CELL_D88738F5F0FBE1EB",
+            "features": {
+              "tense": "present",
+              "aspect": "none",
+              "voice": "active",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 2,
+            "development_constituent_support": {
+              "tense": 8,
+              "aspect": 6,
+              "voice": 13,
+              "polarity": 10,
+              "clause": 12,
+              "modal": 16
+            }
+          },
+          {
+            "cell_id": "CELL_0D017AFB2B3A3DB5",
+            "features": {
+              "tense": "past",
+              "aspect": "perfect_progressive",
+              "voice": "active",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 2,
+            "development_constituent_support": {
+              "tense": 6,
+              "aspect": 2,
+              "voice": 13,
+              "polarity": 10,
+              "clause": 12,
+              "modal": 16
+            }
+          }
+        ],
+        "novel_feature_cells": [
+          {
+            "cell_id": "CELL_0ACC7E0377B19DC1",
+            "features": {
+              "tense": "NA",
+              "aspect": "none",
+              "voice": "active",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "would"
+            },
+            "accepted_item_support": 1,
+            "unseen_development_values": [
+              {
+                "dimension": "modal",
+                "value": "would"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "label": "fraction_0p3_min_2",
+      "design": {
+        "fold_id": "semantic_grammar_coverage_v1",
+        "description": "Outcome-free semantic split. Explicit novel values are withheld completely; compositional cells are sampled by feature tuple while retaining repeated development support for every constituent value.",
+        "compositional_holdout_fraction": 0.3,
+        "minimum_development_value_cell_support": 2,
+        "minimum_accepted_items_per_holdout_cell": 1,
+        "semantic_sampling_seed": 20260827,
+        "novel_feature_values": {
+          "modal": [
+            "would"
+          ]
+        }
+      },
+      "assignment_artifact": "reports/phase4/artifacts/fold/assignments_fraction_0p3_min_2.jsonl",
+      "diagnostics_artifact": "reports/phase4/artifacts/fold/diagnostics_fraction_0p3_min_2.json",
+      "results": {
+        "cell_counts": {
+          "development": 16,
+          "compositional_holdout": 7,
+          "novel_feature_holdout": 1
+        },
+        "accepted_item_counts": {
+          "development": 29,
+          "compositional_holdout": 12,
+          "novel_feature_holdout": 1
+        },
+        "accepted_items_per_cell": {
+          "development": {
+            "minimum": 1,
+            "median": 2.0,
+            "maximum": 2
+          },
+          "compositional_holdout": {
+            "minimum": 1,
+            "median": 2,
+            "maximum": 2
+          },
+          "novel_feature_holdout": {
+            "minimum": 1,
+            "median": 1,
+            "maximum": 1
+          }
+        },
+        "cells_without_accepted_items": 0,
+        "compositional_target": 7,
+        "compositional_achieved": 7,
+        "compositional_target_shortfall": 0,
+        "development_value_cell_support": {
+          "tense": {
+            "present": 8,
+            "past": 6,
+            "NA": 2
+          },
+          "aspect": {
+            "none": 6,
+            "progressive": 3,
+            "perfect": 5,
+            "perfect_progressive": 2
+          },
+          "voice": {
+            "active": 13,
+            "passive": 3
+          },
+          "polarity": {
+            "positive": 10,
+            "negative": 6
+          },
+          "clause": {
+            "declarative": 12,
+            "polar_question": 2,
+            "imperative": 2
+          },
+          "modal": {
+            "none": 16
+          }
+        },
+        "compositional_value_contract": {
+          "cells_with_any_unseen_development_value": 0,
+          "minimum_constituent_support_observed": 2
+        },
+        "novel_feature_contract": {
+          "cells_with_unseen_development_value": 1,
+          "unseen_values": [
+            [
+              "modal",
+              "would"
+            ]
+          ]
+        },
+        "pairwise_coverage": {
+          "development_unique_value_pairs": 72,
+          "compositional_unique_value_pairs": 42,
+          "compositional_pairs_seen_in_development": 41,
+          "compositional_pairs_unseen_in_development": 1,
+          "novel_unique_value_pairs": 15,
+          "novel_pairs_seen_in_development": 9,
+          "novel_pairs_unseen_in_development": 6
+        },
+        "compositional_cells": [
+          {
+            "cell_id": "CELL_272348FAE26B290D",
+            "features": {
+              "tense": "present",
+              "aspect": "none",
+              "voice": "passive",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 1,
+            "development_constituent_support": {
+              "tense": 8,
+              "aspect": 6,
+              "voice": 3,
+              "polarity": 10,
+              "clause": 12,
+              "modal": 16
+            }
+          },
+          {
+            "cell_id": "CELL_A24D66AAA38BC108",
+            "features": {
+              "tense": "present",
+              "aspect": "none",
+              "voice": "active",
+              "polarity": "negative",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 2,
+            "development_constituent_support": {
+              "tense": 8,
+              "aspect": 6,
+              "voice": 13,
+              "polarity": 6,
+              "clause": 12,
+              "modal": 16
+            }
+          },
+          {
+            "cell_id": "CELL_EA48447107868B2C",
+            "features": {
+              "tense": "past",
+              "aspect": "progressive",
+              "voice": "active",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 2,
+            "development_constituent_support": {
+              "tense": 6,
+              "aspect": 3,
+              "voice": 13,
+              "polarity": 10,
+              "clause": 12,
+              "modal": 16
+            }
+          },
+          {
+            "cell_id": "CELL_B6AF2E896B998C79",
+            "features": {
+              "tense": "past",
+              "aspect": "none",
+              "voice": "passive",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 1,
+            "development_constituent_support": {
+              "tense": 6,
+              "aspect": 6,
+              "voice": 3,
+              "polarity": 10,
+              "clause": 12,
+              "modal": 16
+            }
+          },
+          {
+            "cell_id": "CELL_C20140C7DAD62DB2",
+            "features": {
+              "tense": "past",
+              "aspect": "none",
+              "voice": "active",
+              "polarity": "negative",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 2,
+            "development_constituent_support": {
+              "tense": 6,
+              "aspect": 6,
+              "voice": 13,
+              "polarity": 6,
+              "clause": 12,
+              "modal": 16
+            }
+          },
+          {
+            "cell_id": "CELL_D88738F5F0FBE1EB",
+            "features": {
+              "tense": "present",
+              "aspect": "none",
+              "voice": "active",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 2,
+            "development_constituent_support": {
+              "tense": 8,
+              "aspect": 6,
+              "voice": 13,
+              "polarity": 10,
+              "clause": 12,
+              "modal": 16
+            }
+          },
+          {
+            "cell_id": "CELL_0D017AFB2B3A3DB5",
+            "features": {
+              "tense": "past",
+              "aspect": "perfect_progressive",
+              "voice": "active",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "none"
+            },
+            "accepted_item_support": 2,
+            "development_constituent_support": {
+              "tense": 6,
+              "aspect": 2,
+              "voice": 13,
+              "polarity": 10,
+              "clause": 12,
+              "modal": 16
+            }
+          }
+        ],
+        "novel_feature_cells": [
+          {
+            "cell_id": "CELL_0ACC7E0377B19DC1",
+            "features": {
+              "tense": "NA",
+              "aspect": "none",
+              "voice": "active",
+              "polarity": "positive",
+              "clause": "declarative",
+              "modal": "would"
+            },
+            "accepted_item_support": 1,
+            "unseen_development_values": [
+              {
+                "dimension": "modal",
+                "value": "would"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "id_and_order_invariance": {
+    "intervention": "reverse cells/items and replace every cell ID",
+    "semantic_assignments_unchanged": true,
+    "comparison_unit": "canonical feature tuple"
+  },
+  "legacy_split_comparison": {
+    "note": "The historical split is descriptive only and was not an input to the builder.",
+    "matching_cell_assignments": 12,
+    "total_cells": 24,
+    "transition_counts": {
+      "compositional_holdout -> development": 7,
+      "development -> compositional_holdout": 5,
+      "development -> development": 11,
+      "novel_feature_holdout -> novel_feature_holdout": 1
+    }
+  },
+  "interpretation": "The active 0.20 fold reaches five compositional cells and one declared-value novel cell. Every compositional constituent has at least two measured development cells. Raising the requested fraction to 0.30 reaches seven cells; changing the minimum support from one to two changes no assignment at either fraction on this inventory."
+}

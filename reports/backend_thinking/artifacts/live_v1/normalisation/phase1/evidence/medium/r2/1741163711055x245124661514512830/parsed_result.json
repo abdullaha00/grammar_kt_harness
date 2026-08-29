@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163711055x245124661514512830",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": "NA",
+      "aspect": null,
+      "voice": "active",
+      "polarity": null,
+      "clause": "polar_question",
+      "modal": "shall"
+    }
+  ],
+  "phase2_eligible": [],
+  "note": "'Shall' with subject 'we' forms an active suggestion question; the descriptor does not constrain the auxiliary chain's aspect or the clause's polarity."
+}

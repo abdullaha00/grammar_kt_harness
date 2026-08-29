@@ -1,0 +1,18 @@
+{
+  "source_id": "1741163715033x134646499658930300",
+  "result": "partial",
+  "cells": [
+    {
+      "aspect": "progressive",
+      "clause": "polar_question",
+      "modal": "none",
+      "polarity": null,
+      "tense": "present",
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "Tense narrowed from the descriptor-licensed present/past space to present because all eligible examples positively show present-tense auxiliary 'are'. Polarity remains unresolved."
+}

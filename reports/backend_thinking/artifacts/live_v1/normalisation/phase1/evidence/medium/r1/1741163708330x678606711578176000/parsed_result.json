@@ -1,0 +1,21 @@
+{
+  "source_id": "1741163708330x678606711578176000",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": [
+        "present",
+        "past"
+      ],
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "Emphatic affirmative DO establishes a simple, active, positive declarative construction, but does not distinguish present do/does from past did."
+}

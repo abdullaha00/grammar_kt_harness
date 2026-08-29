@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "“Walk carefully.” is a positive active imperative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The wet-floor context naturally supports the advice."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice producing an imperative."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "Many equally appropriate imperatives are possible, such as “Be careful” or “Don’t slip,” but they are not accepted."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and clear."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The item can be answered using a simple imperative without unrelated grammar."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

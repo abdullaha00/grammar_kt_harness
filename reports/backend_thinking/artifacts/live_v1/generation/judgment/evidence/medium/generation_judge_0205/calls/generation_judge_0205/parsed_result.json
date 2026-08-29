@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses present progressive, active voice, negative polarity, declarative clause, and no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target sentence is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The broken-leg context naturally supports a temporary negative present-progressive statement."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It clearly focuses practice on the negative present progressive."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The context, time expression, and required verb strongly determine “is not/isn't walking.”"
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt provides only the base verb “walk,” not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed to complete the sentence."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The item relies only on the stated everyday context."
+    }
+  }
+}

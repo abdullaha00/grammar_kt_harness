@@ -1,0 +1,491 @@
+{
+  "scope": "Agreement checks only cell-deterministic tags. Legacy tags were created by deterministic rules and are not independent validation.",
+  "fixture": {
+    "items": 4,
+    "agreements": 4,
+    "rows": [
+      {
+        "item_id": "item_001",
+        "expected_cell_deterministic_tags": [],
+        "reported_cell_deterministic_tags": [],
+        "generator_only_or_excluded_tags": [],
+        "agreement": true
+      },
+      {
+        "item_id": "item_002",
+        "expected_cell_deterministic_tags": [
+          "negation"
+        ],
+        "reported_cell_deterministic_tags": [
+          "negation"
+        ],
+        "generator_only_or_excluded_tags": [
+          "do_support"
+        ],
+        "agreement": true
+      },
+      {
+        "item_id": "item_003",
+        "expected_cell_deterministic_tags": [
+          "be_passive"
+        ],
+        "reported_cell_deterministic_tags": [
+          "be_passive"
+        ],
+        "generator_only_or_excluded_tags": [],
+        "agreement": true
+      },
+      {
+        "item_id": "item_004",
+        "expected_cell_deterministic_tags": [
+          "progressive"
+        ],
+        "reported_cell_deterministic_tags": [
+          "progressive"
+        ],
+        "generator_only_or_excluded_tags": [],
+        "agreement": true
+      }
+    ]
+  },
+  "legacy_development": {
+    "items": 30,
+    "agreements": 30,
+    "rows": [
+      {
+        "measurement_opportunity_id": "OPP_411173C3591C0528",
+        "expected_from_cell_declaration": [
+          "negation",
+          "perfect"
+        ],
+        "legacy_rule_tags": [
+          "negation",
+          "perfect"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_B208F8E56B894B33",
+        "expected_from_cell_declaration": [
+          "negation",
+          "perfect"
+        ],
+        "legacy_rule_tags": [
+          "negation",
+          "perfect"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_1EAAAE41776A3AAC",
+        "expected_from_cell_declaration": [
+          "perfect",
+          "progressive"
+        ],
+        "legacy_rule_tags": [
+          "perfect",
+          "progressive"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_6192A30E57947215",
+        "expected_from_cell_declaration": [
+          "perfect",
+          "progressive"
+        ],
+        "legacy_rule_tags": [
+          "perfect",
+          "progressive"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_C800F6C91882408C",
+        "expected_from_cell_declaration": [
+          "be_passive"
+        ],
+        "legacy_rule_tags": [
+          "be_passive"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_72E8533771433B0D",
+        "expected_from_cell_declaration": [
+          "negation",
+          "perfect"
+        ],
+        "legacy_rule_tags": [
+          "negation",
+          "perfect"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_BFBFCCE4D543FF3E",
+        "expected_from_cell_declaration": [
+          "negation",
+          "perfect"
+        ],
+        "legacy_rule_tags": [
+          "negation",
+          "perfect"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_1272BAAC731D1B9F",
+        "expected_from_cell_declaration": [
+          "progressive"
+        ],
+        "legacy_rule_tags": [
+          "progressive"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_435A5CC7157D625F",
+        "expected_from_cell_declaration": [
+          "progressive"
+        ],
+        "legacy_rule_tags": [
+          "progressive"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_DA35D6B379FF278E",
+        "expected_from_cell_declaration": [
+          "operator_inversion"
+        ],
+        "legacy_rule_tags": [
+          "operator_inversion"
+        ],
+        "legacy_realisation_dependent_tags": [
+          "do_support"
+        ],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_0AACAF7CC06D0687",
+        "expected_from_cell_declaration": [
+          "operator_inversion"
+        ],
+        "legacy_rule_tags": [
+          "operator_inversion"
+        ],
+        "legacy_realisation_dependent_tags": [
+          "do_support"
+        ],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_C11D4575D274DE60",
+        "expected_from_cell_declaration": [
+          "perfect"
+        ],
+        "legacy_rule_tags": [
+          "perfect"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_571A559BDF8E1278",
+        "expected_from_cell_declaration": [
+          "perfect"
+        ],
+        "legacy_rule_tags": [
+          "perfect"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_2072A544514B5263",
+        "expected_from_cell_declaration": [
+          "negation"
+        ],
+        "legacy_rule_tags": [
+          "negation"
+        ],
+        "legacy_realisation_dependent_tags": [
+          "do_support"
+        ],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_09F87B8452792126",
+        "expected_from_cell_declaration": [
+          "negation"
+        ],
+        "legacy_rule_tags": [
+          "negation"
+        ],
+        "legacy_realisation_dependent_tags": [
+          "do_support"
+        ],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_5C12DC3A52C5ACD5",
+        "expected_from_cell_declaration": [
+          "perfect"
+        ],
+        "legacy_rule_tags": [
+          "perfect"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_6D072D0B8DFDD45C",
+        "expected_from_cell_declaration": [
+          "perfect"
+        ],
+        "legacy_rule_tags": [
+          "perfect"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_772FF9B236FFEC3C",
+        "expected_from_cell_declaration": [
+          "be_passive"
+        ],
+        "legacy_rule_tags": [
+          "be_passive"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_41A93EA98EE2DEF1",
+        "expected_from_cell_declaration": [
+          "negation"
+        ],
+        "legacy_rule_tags": [
+          "negation"
+        ],
+        "legacy_realisation_dependent_tags": [
+          "do_support"
+        ],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_3041561958E88920",
+        "expected_from_cell_declaration": [
+          "negation"
+        ],
+        "legacy_rule_tags": [
+          "negation"
+        ],
+        "legacy_realisation_dependent_tags": [
+          "do_support"
+        ],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_7330AE17DD5F71BD",
+        "expected_from_cell_declaration": [],
+        "legacy_rule_tags": [],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_90086FC4A2022B18",
+        "expected_from_cell_declaration": [],
+        "legacy_rule_tags": [],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_3B6026FA7C833447",
+        "expected_from_cell_declaration": [
+          "perfect",
+          "progressive"
+        ],
+        "legacy_rule_tags": [
+          "perfect",
+          "progressive"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_711BEC5073915943",
+        "expected_from_cell_declaration": [
+          "perfect",
+          "progressive"
+        ],
+        "legacy_rule_tags": [
+          "perfect",
+          "progressive"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_F7951C4FFFDCB09A",
+        "expected_from_cell_declaration": [
+          "negation",
+          "progressive"
+        ],
+        "legacy_rule_tags": [
+          "negation",
+          "progressive"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_7E1E0B371E1A07AD",
+        "expected_from_cell_declaration": [
+          "negation",
+          "progressive"
+        ],
+        "legacy_rule_tags": [
+          "negation",
+          "progressive"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_B78AE4237E42B0D8",
+        "expected_from_cell_declaration": [
+          "progressive"
+        ],
+        "legacy_rule_tags": [
+          "progressive"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_3F0B751447F853FD",
+        "expected_from_cell_declaration": [
+          "progressive"
+        ],
+        "legacy_rule_tags": [
+          "progressive"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_EABBC1AC9B2136CC",
+        "expected_from_cell_declaration": [
+          "imperative"
+        ],
+        "legacy_rule_tags": [
+          "imperative"
+        ],
+        "legacy_realisation_dependent_tags": [],
+        "agreement": true
+      },
+      {
+        "measurement_opportunity_id": "OPP_31239E9D4BC47DA0",
+        "expected_from_cell_declaration": [
+          "imperative"
+        ],
+        "legacy_rule_tags": [
+          "imperative"
+        ],
+        "legacy_realisation_dependent_tags": [
+          "let_imperative"
+        ],
+        "agreement": true
+      }
+    ]
+  },
+  "legacy_candidate_support_and_equivalence": [
+    {
+      "id": "kc_operation__central_modal",
+      "cell_support": 0,
+      "item_support": 0,
+      "equivalent_to": null,
+      "selection_eligible": false
+    },
+    {
+      "id": "kc_operation__finite_tense_form",
+      "cell_support": 15,
+      "item_support": 28,
+      "equivalent_to": null,
+      "selection_eligible": true
+    },
+    {
+      "id": "kc_operation__imperative",
+      "cell_support": 1,
+      "item_support": 2,
+      "equivalent_to": "kc_feature__clause__imperative",
+      "selection_eligible": false
+    },
+    {
+      "id": "kc_operation__negation",
+      "cell_support": 5,
+      "item_support": 10,
+      "equivalent_to": "kc_feature__polarity__negative",
+      "selection_eligible": false
+    },
+    {
+      "id": "kc_operation__operator_inversion",
+      "cell_support": 1,
+      "item_support": 2,
+      "equivalent_to": "kc_feature__clause__polar_question",
+      "selection_eligible": false
+    },
+    {
+      "id": "kc_operation__passive_dependency",
+      "cell_support": 2,
+      "item_support": 2,
+      "equivalent_to": "kc_feature__voice__passive",
+      "selection_eligible": false
+    },
+    {
+      "id": "kc_operation__perfect_dependency",
+      "cell_support": 6,
+      "item_support": 12,
+      "equivalent_to": null,
+      "selection_eligible": true
+    },
+    {
+      "id": "kc_operation__progressive_dependency",
+      "cell_support": 5,
+      "item_support": 10,
+      "equivalent_to": null,
+      "selection_eligible": true
+    },
+    {
+      "id": "kc_operation__subject_wh",
+      "cell_support": 0,
+      "item_support": 0,
+      "equivalent_to": "kc_operation__central_modal",
+      "selection_eligible": false
+    },
+    {
+      "id": "kc_operation__wh_fronting",
+      "cell_support": 0,
+      "item_support": 0,
+      "equivalent_to": "kc_operation__central_modal",
+      "selection_eligible": false
+    }
+  ],
+  "excluded_from_cell_deterministic_candidates": {
+    "agreement": "depends on subject/person/number and realisation",
+    "do_support": "depends on operator and predicate realisation",
+    "emphatic_do": "realisation-dependent and not canonical-cell entailed",
+    "let_imperative": "imperative subtype absent from the canonical cell"
+  }
+}

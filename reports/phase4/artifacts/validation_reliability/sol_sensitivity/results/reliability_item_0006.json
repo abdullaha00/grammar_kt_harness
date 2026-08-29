@@ -1,0 +1,52 @@
+{
+  "sample_order": 6,
+  "blind_item_id": "reliability_item_0006",
+  "candidate_id": "candidate_readable_source_evidence_CELL_868FF555B70CAE2A_01",
+  "condition": "readable_source_evidence",
+  "cell_id": "CELL_868FF555B70CAE2A",
+  "candidate_index": 1,
+  "original_accepted": true,
+  "original_failed_criteria": [],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The answer is an active, positive simple-present polar question with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatically correct English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The routine context and resulting question are natural and coherent."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The cue clearly focuses practice on forming a third-person simple-present question with does and the base verb."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The cue, context, and instruction sufficiently determine the intended question."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and after-dinner context are common, clear, and lexically straightforward."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies only a cue and does not display the completed question form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed to construct the response."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The item can be answered entirely from the supplied cue and basic grammar knowledge."
+    }
+  },
+  "accepted": true,
+  "runtime_seconds": 13.55136353499256
+}

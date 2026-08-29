@@ -1,0 +1,69 @@
+{
+  "item_id": "candidate_cell_012_01",
+  "audit_id": "validation_live_3e886042c954",
+  "cell_id": "cell_012",
+  "effort": "xhigh",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_3e886042c954",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The target is present perfect, active, negative, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The noon/breakfast context naturally supports the response."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides a clear cue for focused present-perfect negative practice."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "Other equally natural completions, such as “Emma hasn't eaten her breakfast,” fit the cue and context but are not accepted."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and situation are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives only the base-form cue, not the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The item can be answered using the target tense and negation without advanced unrelated grammar."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": true,
+  "retained_failed_criteria": [],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 13.664874313000837,
+  "model_calls": 1,
+  "tokens_used": 2654,
+  "model_runtime_seconds": 13.663880302001417,
+  "model_call_failures": 0
+}

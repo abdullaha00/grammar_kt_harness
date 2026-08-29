@@ -1,0 +1,69 @@
+{
+  "item_id": "candidate_cell_018_03",
+  "audit_id": "validation_live_5a83c7d65cb4",
+  "cell_id": "cell_018",
+  "effort": "medium",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_5a83c7d65cb4",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "Uses active positive past perfect progressive: “had been painting.”"
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The timeline and completed sentence are coherent and natural."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It clearly focuses practice on the past perfect progressive with duration."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The time cues and supplied verb phrase strongly determine the intended response."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and situation are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt provides a cue but does not display the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The item can be answered using the target tense-aspect structure alone."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": true,
+  "retained_failed_criteria": [],
+  "packaging_correction": true,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 10.57439723600146,
+  "model_calls": 1,
+  "tokens_used": 2657,
+  "model_runtime_seconds": 10.573453077000522,
+  "model_call_failures": 0
+}

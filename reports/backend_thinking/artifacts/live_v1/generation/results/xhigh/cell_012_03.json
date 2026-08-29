@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_012_03",
+  "cell_id": "cell_012",
+  "candidate_index": 3,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_012_03",
+    "cell_id": "cell_012",
+    "format": "controlled_production",
+    "prompt": "Nina's sandwich is still untouched. Complete the sentence using the verb in brackets: Nina [____] her sandwich yet. (eat)",
+    "target_answer": "Nina has not eaten her sandwich yet.",
+    "accepted_answers": [
+      "has not eaten",
+      "hasn't eaten"
+    ],
+    "generation_metadata": {
+      "candidate_index": 3,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 15.680562808000104,
+  "model_calls": 1,
+  "tokens_used": 3251,
+  "model_runtime_seconds": 15.679687776999344,
+  "model_call_failures": 0
+}

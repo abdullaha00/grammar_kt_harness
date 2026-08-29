@@ -1,0 +1,34 @@
+{
+  "descriptor": {
+    "source_id": "1741163708336x903931402154698900",
+    "supercategory": "CLAUSES",
+    "subcategory": "interrogatives",
+    "guideword": "FORM: AFFIRMATIVE INTERROGATIVE, WITH AUXILIARY 'BE/HAVE'",
+    "can_do": "Can form interrogative clauses ('yes/no' forms) with auxiliary 'be' and 'have'."
+  },
+  "phase1_mapping": {
+    "source_id": "1741163708336x903931402154698900",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": null,
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "examples": [
+    "Are you going to the new art class? (Cyprus; A2 WAYSTAGE; 2006; Turkish; Pass)",
+    "Have you got a new dress for the party? (Italy; A2 WAYSTAGE; 2008; Italian; Pass)"
+  ]
+}

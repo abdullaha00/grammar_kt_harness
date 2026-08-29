@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a present-simple active positive polar question with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and question form a coherent daily-routine context."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of present-simple do-support in questions."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The supplied words and instruction sufficiently determine the expected question."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "All vocabulary is common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives word cues but does not display the completed question form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it requires only basic present-simple question formation."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external knowledge is needed."
+    }
+  }
+}

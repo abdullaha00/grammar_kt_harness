@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a negative active imperative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The warning fits the hot-pan context naturally."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of negative imperatives."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "Other natural responses, such as “Don't touch it,” are not included in the accepted set."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and clear."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies only the cue word, not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The item can be answered using a simple negative imperative."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

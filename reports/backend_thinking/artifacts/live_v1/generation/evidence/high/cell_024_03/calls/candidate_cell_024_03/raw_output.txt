@@ -1,0 +1,1 @@
+{"prompt":"Imagine we asked Mia to help us move. Complete the sentence using “carry”: Mia [____] the boxes.","target_answer":"Mia would carry the boxes.","accepted_answers":["would carry"]}

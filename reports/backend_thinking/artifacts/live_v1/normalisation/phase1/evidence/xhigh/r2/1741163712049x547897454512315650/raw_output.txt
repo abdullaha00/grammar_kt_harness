@@ -1,0 +1,7 @@
+{
+  "source_id": "1741163712049x547897454512315650",
+  "result": "unresolved",
+  "cells": [],
+  "phase2_eligible": [],
+  "note": "The inseparable construction combines morphological present-perfect evidence with central-modal evidence, which requires tense NA under the canonical schema."
+}

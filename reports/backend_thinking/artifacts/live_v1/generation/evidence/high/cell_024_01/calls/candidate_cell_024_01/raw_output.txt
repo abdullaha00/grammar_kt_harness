@@ -1,0 +1,1 @@
+{"prompt":"Mia has a car, so she could drive to the store. Complete the sentence using the cue “drive”: Mia ____ to the store.","target_answer":"Mia would drive to the store.","accepted_answers":["would drive"]}

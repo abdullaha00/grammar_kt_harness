@@ -1,0 +1,65 @@
+{
+  "blind_id": "generation_judge_0208",
+  "experiment_item_id": "generation_high_cell_004_01",
+  "generation_effort": "high",
+  "cell_id": "cell_004",
+  "candidate_index": 1,
+  "judge_effort": "medium",
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "generation_judge_0208",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "Uses simple past, active, positive declarative form."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt and answer form a coherent, natural sentence."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of a simple past verb form."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The cue and sentence frame sufficiently determine “filled the glass.”"
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and context are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed past form is not displayed in the prompt."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "No unrelated or advanced grammar is needed."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external factual or specialist knowledge is required."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "task_runtime_seconds": 10.171143995999955,
+  "model_calls": 1,
+  "tokens_used": 2581,
+  "model_runtime_seconds": 10.17034495400003,
+  "model_call_failures": 0
+}

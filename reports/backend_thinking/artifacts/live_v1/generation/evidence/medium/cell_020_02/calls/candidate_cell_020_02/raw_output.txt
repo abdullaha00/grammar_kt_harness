@@ -1,0 +1,1 @@
+{"prompt":"At this café, a worker cleans every table after each customer. Complete the sentence using “clean”: Every table ____ after each customer.","target_answer":"Every table is cleaned after each customer.","accepted_answers":["is cleaned"]}

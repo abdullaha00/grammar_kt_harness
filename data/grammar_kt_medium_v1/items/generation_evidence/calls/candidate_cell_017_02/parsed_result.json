@@ -1,0 +1,8 @@
+{
+  "prompt": "Maya began piano lessons last month. Before then, she ____ the piano. (practice)",
+  "target_answer": "Before then, she had not been practicing the piano.",
+  "accepted_answers": [
+    "had not been practicing",
+    "hadn't been practicing"
+  ]
+}

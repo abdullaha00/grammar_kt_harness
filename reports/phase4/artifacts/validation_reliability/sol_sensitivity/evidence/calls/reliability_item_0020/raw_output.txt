@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The answer is present progressive, passive, positive, declarative, and has no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The context and completed sentence are natural and coherent."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The item clearly focuses practice on forming the present progressive passive."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The context and cues sufficiently determine the intended sentence, aside from inconsequential contraction or punctuation variants."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary is common, transparent, and unlikely to impede the grammar task."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies lexical cues but does not display the completed passive construction."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed to complete the item."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The response follows entirely from the supplied sentence and cues."
+    }
+  }
+}

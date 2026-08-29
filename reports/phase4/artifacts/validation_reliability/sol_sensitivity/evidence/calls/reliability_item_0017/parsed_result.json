@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The answer is present perfect, active, negative, declarative, and has no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is fully grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The situation and completed sentence form a natural, coherent pair."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The item does not explicitly require the present perfect, so it does not isolate the intended form reliably."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "Other plausible completions, such as “Mia did not wash the cups,” are not ruled out by the prompt."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary is common, concrete, and unambiguous."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed present-perfect negative form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The answer requires no external factual or specialist knowledge."
+    }
+  }
+}

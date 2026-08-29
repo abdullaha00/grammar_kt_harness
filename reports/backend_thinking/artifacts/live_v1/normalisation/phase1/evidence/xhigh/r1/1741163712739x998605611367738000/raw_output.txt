@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163712739x998605611367738000",
+  "result": "complete",
+  "cells": [
+    {
+      "tense": "past",
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "negative",
+      "clause": "declarative",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": [],
+  "note": "Past simple negative declaratives use a nonmodal active form; the limited verb range is lexical and does not affect the canonical dimensions."
+}

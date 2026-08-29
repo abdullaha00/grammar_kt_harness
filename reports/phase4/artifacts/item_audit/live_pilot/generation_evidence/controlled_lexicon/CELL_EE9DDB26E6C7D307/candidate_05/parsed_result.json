@@ -1,0 +1,14 @@
+{
+  "prompt": "The room is not ready. Tell Omar to leave the door closed. Use: open / the door. Response: ____",
+  "target_answer": "Don't open the door.",
+  "accepted_answers": [
+    "Don't open the door.",
+    "Do not open the door."
+  ],
+  "operation_tags": [
+    "do_support",
+    "negation",
+    "imperative"
+  ],
+  "note": "A negative instruction telling Omar to leave the door closed."
+}

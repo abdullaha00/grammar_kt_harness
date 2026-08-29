@@ -1,0 +1,36 @@
+{
+  "source_id": "1741163712048x834192566226660200",
+  "stratum": "out_of_scope",
+  "effort": "xhigh",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712048x834192566226660200",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "NA",
+        "aspect": "none",
+        "voice": "passive",
+        "polarity": null,
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "The target is the uninflected canonical BE-passive infinitive. Its listed governors are contextual periphrastic or lexical forms; polarity and main-clause type are not constrained."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712048x834192566226660200",
+    "result": "out_of_scope",
+    "cells": [],
+    "phase2_eligible": [],
+    "note": "Passive infinitives governed by forms including the deferred periphrastic modals 'be going to' and 'have to' are outside the single-clause ontology."
+  },
+  "task_runtime_seconds": 43.194730752000396,
+  "model_calls": 1,
+  "tokens_used": 5113,
+  "model_runtime_seconds": 43.19394054499935,
+  "model_call_failures": 0
+}

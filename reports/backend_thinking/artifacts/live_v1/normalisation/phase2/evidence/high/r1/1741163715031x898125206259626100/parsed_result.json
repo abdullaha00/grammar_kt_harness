@@ -1,0 +1,32 @@
+{
+  "source_id": "1741163715031x898125206259626100",
+  "result": "partial",
+  "cells": [
+    {
+      "aspect": "none",
+      "clause": [
+        "subject_wh_question",
+        "non_subject_wh_question"
+      ],
+      "modal": "none",
+      "polarity": null,
+      "tense": "present",
+      "voice": "active"
+    },
+    {
+      "aspect": "none",
+      "clause": [
+        "subject_wh_question",
+        "non_subject_wh_question"
+      ],
+      "modal": "none",
+      "polarity": null,
+      "tense": "past",
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "The descriptor licenses finite present and past main-verb BE questions, and the examples positively establish both present forms ('are') and a past form ('was'). Tense is therefore resolved into two descendant branches. All non-eligible constraints remain unchanged; the mapping remains partial because clause is still a list and polarity is null."
+}

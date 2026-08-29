@@ -1,0 +1,12 @@
+{
+  "prompt": "Lunch is in thirty minutes, and Ana is working on the food now. Complete the sentence using the cues (the meal / prepare / by Ana): ____",
+  "target_answer": "The meal is being prepared by Ana.",
+  "accepted_answers": [
+    "The meal is being prepared by Ana."
+  ],
+  "operation_tags": [
+    "progressive",
+    "be_passive"
+  ],
+  "note": "The response must be one complete clause."
+}

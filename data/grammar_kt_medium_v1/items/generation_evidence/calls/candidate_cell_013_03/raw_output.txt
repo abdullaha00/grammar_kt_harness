@@ -1,0 +1,1 @@
+{"prompt":"Mia started cleaning the kitchen earlier, and now it is spotless. Complete the sentence using the cue “clean”: Mia ____ the kitchen.","target_answer":"Mia has cleaned the kitchen.","accepted_answers":["has cleaned"]}

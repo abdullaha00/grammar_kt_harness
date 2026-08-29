@@ -1,0 +1,8 @@
+{
+  "prompt": "Leo rides the bus to work, so he leaves his car at home. Complete the sentence using the cue (drive): Leo ____ to work.",
+  "target_answer": "Leo does not drive to work.",
+  "accepted_answers": [
+    "does not drive",
+    "doesn't drive"
+  ]
+}

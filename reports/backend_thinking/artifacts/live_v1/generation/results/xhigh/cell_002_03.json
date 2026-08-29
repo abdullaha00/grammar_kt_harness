@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_002_03",
+  "cell_id": "cell_002",
+  "candidate_index": 3,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_002_03",
+    "cell_id": "cell_002",
+    "format": "controlled_production",
+    "prompt": "You want to know whether Ben finished the task yesterday. Complete the question using the cue: Ben / finish the task\n[_____]?",
+    "target_answer": "Did Ben finish the task yesterday?",
+    "accepted_answers": [
+      "Did Ben finish the task yesterday"
+    ],
+    "generation_metadata": {
+      "candidate_index": 3,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 8.46259028699933,
+  "model_calls": 1,
+  "tokens_used": 2980,
+  "model_runtime_seconds": 8.461425420999149,
+  "model_call_failures": 0
+}

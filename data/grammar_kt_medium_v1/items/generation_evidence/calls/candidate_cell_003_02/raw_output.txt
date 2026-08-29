@@ -1,0 +1,1 @@
+{"prompt":"Leo has the same morning routine every day. Complete the sentence using the cue (walk): Leo ___ to school each morning.","target_answer":"Leo walks to school each morning.","accepted_answers":["walks"]}

@@ -1,0 +1,1 @@
+{"prompt":"Maya does not have a car, so she cannot drive to work. If she had a car, _____. (drive to work)","target_answer":"She would drive to work.","accepted_answers":["she would drive to work"]}

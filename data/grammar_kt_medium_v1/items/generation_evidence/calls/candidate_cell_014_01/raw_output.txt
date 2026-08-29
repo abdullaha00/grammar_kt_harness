@@ -1,0 +1,1 @@
+{"prompt":"When Mia arrived at noon, the door was still closed. Complete the sentence using “open”: Mia ___ the door yet.","target_answer":"Mia had not opened the door yet.","accepted_answers":["had not opened","hadn't opened"]}

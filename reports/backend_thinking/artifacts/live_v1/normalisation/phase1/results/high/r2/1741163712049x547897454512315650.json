@@ -1,0 +1,103 @@
+{
+  "source_id": "1741163712049x547897454512315650",
+  "stratum": "partial_noneligible",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712049x547897454512315650",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "NA",
+        "aspect": "perfect",
+        "voice": "passive",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": [
+          "can",
+          "could",
+          "may",
+          "might",
+          "must",
+          "shall",
+          "should",
+          "will",
+          "would"
+        ]
+      },
+      {
+        "tense": "NA",
+        "aspect": "perfect",
+        "voice": "passive",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": [
+          "can",
+          "could",
+          "may",
+          "might",
+          "must",
+          "shall",
+          "should",
+          "will",
+          "would"
+        ]
+      }
+    ],
+    "phase2_eligible": [
+      "modal"
+    ],
+    "note": "The descriptor asserts affirmative and negative modal-perfect passive forms as separate alternatives; the modal identity remains bounded but unspecified."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712049x547897454512315650",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "NA",
+        "aspect": "perfect",
+        "voice": "passive",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": [
+          "can",
+          "could",
+          "may",
+          "might",
+          "must",
+          "shall",
+          "should",
+          "will",
+          "would"
+        ]
+      },
+      {
+        "tense": "NA",
+        "aspect": "perfect",
+        "voice": "passive",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": [
+          "can",
+          "could",
+          "may",
+          "might",
+          "must",
+          "shall",
+          "should",
+          "will",
+          "would"
+        ]
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "phase2 eligible: none"
+  },
+  "task_runtime_seconds": 14.613832525999896,
+  "model_calls": 1,
+  "tokens_used": 6353,
+  "model_runtime_seconds": 14.613087151999935,
+  "model_call_failures": 0
+}

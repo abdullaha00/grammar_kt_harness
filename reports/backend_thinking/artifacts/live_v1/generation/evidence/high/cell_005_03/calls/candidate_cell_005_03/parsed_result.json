@@ -1,0 +1,7 @@
+{
+  "prompt": "Your hands are dirty from painting. Before you eat, ______. (wash / your hands)",
+  "target_answer": "Wash your hands.",
+  "accepted_answers": [
+    "wash your hands"
+  ]
+}

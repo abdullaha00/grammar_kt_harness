@@ -1,0 +1,1 @@
+{"prompt":"Ben gives his dog food every morning. Complete the sentence using the cue (feed): Ben ____ the dog every morning.","target_answer":"Ben feeds the dog every morning.","accepted_answers":["feeds"]}

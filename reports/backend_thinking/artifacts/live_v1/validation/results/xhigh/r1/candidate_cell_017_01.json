@@ -1,0 +1,72 @@
+{
+  "item_id": "candidate_cell_017_01",
+  "audit_id": "validation_live_f41a0607a9dd",
+  "cell_id": "cell_017",
+  "effort": "xhigh",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_f41a0607a9dd",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The target is a negative past perfect progressive active declarative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The context and answer are coherent and reasonably natural."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "The prompt does not clearly signal the required progressive aspect, weakening its value as focused practice."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "“Had not worked” is also a grammatical, contextually valid completion but is not accepted."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and work context are common and clear."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives only the base verb “work,” not the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "No unrelated advanced grammar is needed to understand or complete the item."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "The item requires no external or specialist knowledge."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy",
+    "pedagogical_suitability"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 15.087325404001604,
+  "model_calls": 1,
+  "tokens_used": 2861,
+  "model_runtime_seconds": 15.086536221000642,
+  "model_call_failures": 0
+}

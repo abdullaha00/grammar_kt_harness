@@ -1,0 +1,55 @@
+{
+  "sample_order": 13,
+  "blind_item_id": "reliability_item_0013",
+  "candidate_id": "candidate_model_selected_CELL_B6AF2E896B998C79_05",
+  "condition": "model_selected",
+  "cell_id": "CELL_B6AF2E896B998C79",
+  "candidate_index": 5,
+  "original_accepted": false,
+  "original_failed_criteria": [
+    "determinacy",
+    "pedagogical_suitability"
+  ],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses past simple passive, positive declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and answer form a coherent, natural context."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of the past passive."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "Other equally valid responses are possible, such as placing “yesterday” at the beginning or including the agent, but they are not accepted."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the base verb “paint,” not the completed passive form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The item can be solved using the target passive structure alone."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external factual or specialist knowledge is needed."
+    }
+  },
+  "accepted": false,
+  "runtime_seconds": 10.932284285008791
+}

@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_medium_cell_013_02",
+  "cell_id": "cell_013",
+  "candidate_index": 2,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_013_02",
+    "cell_id": "cell_013",
+    "format": "controlled_production",
+    "prompt": "The dishes were dirty earlier, but they are clean now. Complete the sentence using the verb in brackets: Maya ____ the dishes. (wash)",
+    "target_answer": "Maya has washed the dishes.",
+    "accepted_answers": [
+      "has washed"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 10.201535645001059,
+  "model_calls": 1,
+  "tokens_used": 5169,
+  "model_runtime_seconds": 10.200723658999777,
+  "model_call_failures": 0
+}

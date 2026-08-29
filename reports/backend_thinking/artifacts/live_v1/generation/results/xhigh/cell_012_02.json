@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_012_02",
+  "cell_id": "cell_012",
+  "candidate_index": 2,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_012_02",
+    "cell_id": "cell_012",
+    "format": "controlled_production",
+    "prompt": "The children were asked to wash the cups, but the cups are still dirty. Complete the sentence using the cue “wash”: They ____ the cups.",
+    "target_answer": "They have not washed the cups.",
+    "accepted_answers": [
+      "have not washed",
+      "haven't washed"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 5.732976962000976,
+  "model_calls": 1,
+  "tokens_used": 2982,
+  "model_runtime_seconds": 5.732181633999062,
+  "model_call_failures": 0
+}

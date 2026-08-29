@@ -1,0 +1,12 @@
+{
+  "prompt": "Maya started painting the fence at 8:00. At noon, she was still working. Complete the sentence using the cue (Maya / paint the fence / for four hours): At noon, ____.",
+  "target_answer": "Maya had been painting the fence for four hours.",
+  "accepted_answers": [
+    "Maya had been painting the fence for four hours."
+  ],
+  "operation_tags": [
+    "perfect",
+    "progressive"
+  ],
+  "note": "The action began before the past reference time and continued until that time."
+}

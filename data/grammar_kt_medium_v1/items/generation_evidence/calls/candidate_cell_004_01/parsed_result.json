@@ -1,0 +1,7 @@
+{
+  "prompt": "Yesterday, Mia found a dirty cup on the table. Complete the sentence using “wash”: Mia ____ the cup.",
+  "target_answer": "Mia washed the cup.",
+  "accepted_answers": [
+    "washed"
+  ]
+}

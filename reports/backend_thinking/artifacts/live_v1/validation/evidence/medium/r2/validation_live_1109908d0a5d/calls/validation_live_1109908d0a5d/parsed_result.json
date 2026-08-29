@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a positive, active, present-tense declarative with no modal or aspect."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and answer form a coherent factual statement task."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "Success depends chiefly on recalling a geography fact rather than practising the target grammar."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "Other natural wordings express the requested fact, but only one exact answer is accepted."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "Apart from the proper name, the vocabulary and sentence structure are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed target sentence."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The item requires only a simple present-tense declarative."
+    },
+    "no_world_knowledge": {
+      "passed": false,
+      "note": "The learner must know Kazakhstan's capital to produce the answer."
+    }
+  }
+}

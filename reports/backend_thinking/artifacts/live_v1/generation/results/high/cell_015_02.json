@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_high_cell_015_02",
+  "cell_id": "cell_015",
+  "candidate_index": 2,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_015_02",
+    "cell_id": "cell_015",
+    "format": "controlled_production",
+    "prompt": "The table was empty when we arrived. Complete the sentence using the cue (clear): The waiter ____.",
+    "target_answer": "The waiter had cleared the table.",
+    "accepted_answers": [
+      "had cleared the table"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 6.223971341998549,
+  "model_calls": 1,
+  "tokens_used": 2969,
+  "model_runtime_seconds": 6.222678644000553,
+  "model_call_failures": 0
+}

@@ -1,0 +1,7 @@
+{
+  "prompt": "Your friend is carrying too many bags. Give this instruction using the cue “put”: “_____ one bag on the table.”",
+  "target_answer": "Put one bag on the table.",
+  "accepted_answers": [
+    "Put"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "item_id": "candidate_cell_022_01",
+  "audit_id": "validation_live_1bf89856f7cb",
+  "cell_id": "cell_022",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_1bf89856f7cb",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "“The kitchen had been cleaned” is past perfect, passive, positive, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The arrival-time context and prior cleaning action form a coherent sentence pair."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "A plausible simpler completion, “The kitchen was clean,” competes with the intended past perfect passive."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The prompt does not sufficiently rule out “was clean,” so it does not uniquely determine the accepted response."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and context are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed target form is not displayed in the prompt."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The item can be addressed using the intended tense, aspect, and voice without unrelated advanced grammar."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 12.50795383699915,
+  "model_calls": 1,
+  "tokens_used": 2717,
+  "model_runtime_seconds": 12.50705964000008,
+  "model_call_failures": 0
+}

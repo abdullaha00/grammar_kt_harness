@@ -1,0 +1,8 @@
+{
+  "prompt": "The door was still open this morning. Complete the sentence using the cue (close): Mia ___ the door last night.",
+  "target_answer": "Mia did not close the door last night.",
+  "accepted_answers": [
+    "did not close",
+    "didn't close"
+  ]
+}

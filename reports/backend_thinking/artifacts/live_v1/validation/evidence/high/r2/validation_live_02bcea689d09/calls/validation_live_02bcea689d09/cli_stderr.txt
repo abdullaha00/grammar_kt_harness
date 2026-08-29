@@ -1,0 +1,86 @@
+OpenAI Codex v0.150.1
+--------
+workdir: /home/abdullah/grammar_kt_harness/reports/backend_thinking/artifacts/live_v1/validation/evidence/high/r2/validation_live_02bcea689d09/calls/validation_live_02bcea689d09
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: high
+reasoning summaries: none
+session id: 01a04691-5db3-77b3-bb04-6d5fff14832c
+--------
+user
+Judge one generated exercise independently from the generator.
+
+Use the visible learner-facing prompt, target answer, accepted answers, intended
+GrammarCell, and the declared criteria. Do not rely on generation reasoning or
+generation metadata. Judge every criterion separately and give a short note.
+
+Return one JSON object with a `judgments` mapping. Every declared criterion must
+have exactly `passed` (true/false) and `note`.
+
+VISIBLE ITEM:
+{
+  "item_id": "validation_live_02bcea689d09",
+  "format": "controlled_production",
+  "prompt": "Mia started cleaning the kitchen earlier, and now it is spotless. Complete the sentence using the cue “clean”: Mia ____ the kitchen.",
+  "target_answer": "Mia has cleaned the kitchen.",
+  "accepted_answers": [
+    "has cleaned"
+  ]
+}
+
+INTENDED GRAMMAR CELL:
+{
+  "tense": "present",
+  "aspect": "perfect",
+  "voice": "active",
+  "polarity": "positive",
+  "clause": "declarative",
+  "modal": "none"
+}
+
+VALIDATION CRITERIA:
+{
+  "target_fidelity": {
+    "required": true,
+    "question": "Does the target answer express exactly the intended GrammarCell?"
+  },
+  "grammaticality": {
+    "required": true,
+    "question": "Is the target answer grammatical English?"
+  },
+  "naturalness": {
+    "required": true,
+    "question": "Is the prompt-answer pair natural and coherent?"
+  },
+  "pedagogical_suitability": {
+    "required": true,
+    "question": "Is the item suitable for focused grammar practice?"
+  },
+  "determinacy": {
+    "required": true,
+    "question": "Does the prompt sufficiently determine the accepted response set?"
+  },
+  "non_target_language_simplicity": {
+    "required": true,
+    "question": "Is the vocabulary and context sufficiently common, transparent, and lexically unambiguous that lexical knowledge is unlikely to determine the learner's response?"
+  },
+  "no_answer_leakage": {
+    "required": true,
+    "question": "Does the prompt avoid displaying the completed target form?"
+  },
+  "no_extraneous_grammar": {
+    "required": true,
+    "question": "Can the item be solved without unrelated advanced grammar?"
+  },
+  "no_world_knowledge": {
+    "required": true,
+    "question": "Can the item be answered without external factual or specialist knowledge?"
+  }
+}
+
+codex
+{"judgments":{"target_fidelity":{"passed":true,"note":"“has cleaned” is present perfect, active, positive, declarative, with no modal."},"grammaticality":{"passed":true,"note":"The target sentence is grammatical English."},"naturalness":{"passed":true,"note":"The earlier action and current spotless result make the present perfect sentence coherent."},"pedagogical_suitability":{"passed":true,"note":"The item provides focused practice of the present perfect with a clear verb cue."},"determinacy":{"passed":false,"note":"The context also permits alternatives such as “Mia cleaned the kitchen,” so it does not fully determine only the accepted response."},"non_target_language_simplicity":{"passed":true,"note":"The vocabulary and situation are common and transparent."},"no_answer_leakage":{"passed":true,"note":"The prompt supplies only the base-form cue “clean,” not the completed target form."},"no_extraneous_grammar":{"passed":true,"note":"No unrelated advanced grammar is needed to complete the item."},"no_world_knowledge":{"passed":true,"note":"The item requires no external or specialist knowledge."}}}
+tokens used
+2,698

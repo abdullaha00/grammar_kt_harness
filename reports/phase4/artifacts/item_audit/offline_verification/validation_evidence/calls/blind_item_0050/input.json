@@ -1,0 +1,57 @@
+{
+  "visible_item": {
+    "item_id": "blind_item_0050",
+    "format": "controlled_production",
+    "prompt": "Complete the sentence: The learner ___ in a short sentence. (open)",
+    "target_answer": "The learner uses open in a short sentence.",
+    "accepted_answers": [
+      "The learner uses open in a short sentence."
+    ]
+  },
+  "target_cell": {
+    "tense": "NA",
+    "aspect": "none",
+    "voice": "active",
+    "polarity": "negative",
+    "clause": "imperative",
+    "modal": "none"
+  },
+  "criteria": {
+    "target_fidelity": {
+      "required": true,
+      "question": "Does the target answer express exactly the intended GrammarCell?"
+    },
+    "grammaticality": {
+      "required": true,
+      "question": "Is the target answer grammatical English?"
+    },
+    "naturalness": {
+      "required": true,
+      "question": "Is the prompt-answer pair natural and coherent?"
+    },
+    "pedagogical_suitability": {
+      "required": true,
+      "question": "Is the item suitable for focused grammar practice?"
+    },
+    "determinacy": {
+      "required": true,
+      "question": "Does the prompt sufficiently determine the accepted response set?"
+    },
+    "non_target_language_simplicity": {
+      "required": true,
+      "question": "Is the vocabulary and context sufficiently common, transparent, and lexically unambiguous that lexical knowledge is unlikely to determine the learner's response?"
+    },
+    "no_answer_leakage": {
+      "required": true,
+      "question": "Does the prompt avoid displaying the completed target form?"
+    },
+    "no_extraneous_grammar": {
+      "required": true,
+      "question": "Can the item be solved without unrelated advanced grammar?"
+    },
+    "no_world_knowledge": {
+      "required": true,
+      "question": "Can the item be answered without external factual or specialist knowledge?"
+    }
+  }
+}

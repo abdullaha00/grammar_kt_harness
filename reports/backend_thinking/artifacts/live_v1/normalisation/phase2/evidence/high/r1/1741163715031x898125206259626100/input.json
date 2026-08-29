@@ -1,0 +1,38 @@
+{
+  "descriptor": {
+    "source_id": "1741163715031x898125206259626100",
+    "supercategory": "QUESTIONS",
+    "subcategory": "wh-",
+    "guideword": "FORM: MAIN VERB 'BE'",
+    "can_do": "Can use 'wh-'words + main verb 'be' + subject to form 'wh-' questions."
+  },
+  "phase1_mapping": {
+    "source_id": "1741163715031x898125206259626100",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": [
+          "subject_wh_question",
+          "non_subject_wh_question"
+        ],
+        "modal": "none",
+        "polarity": null,
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "examples": [
+    "How was your dinner yesterday? (Mexico; A2 WAYSTAGE; 2009; Spanish - Latin American; Pass)",
+    "How are you, my friend? (India; A2 WAYSTAGE; 2010; Hindi; Pass)",
+    "Where are you, men? (Brazil; A2 WAYSTAGE; 2010; Portuguese; Pass)"
+  ]
+}

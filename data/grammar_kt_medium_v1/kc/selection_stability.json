@@ -1,0 +1,1701 @@
+{
+  "experiment_id": "phase6_selection_stability_v1",
+  "status": "complete",
+  "scale": {
+    "cells": 24,
+    "items": 44,
+    "candidate_counts": {
+      "feature_value": 9,
+      "operation": 10,
+      "interaction": 18,
+      "full_cell": 18,
+      "raw_total": 55,
+      "support_eligible": 42,
+      "selection_eligible": 28,
+      "activation_equivalence_classes": 38,
+      "activation_duplicate_candidates": 17
+    },
+    "simulation_seeds": 5,
+    "full_support_learners": 1000,
+    "selection_conditions": 9
+  },
+  "fixed_artifact_integrity": {
+    "candidate_inventory_and_fold_read_from_final_dataset": true,
+    "method_fingerprint": "d235af8ebe55dabca38266a03cd9a680eca7c122bc96d1db60be7fb5c99127c0",
+    "finalized_reference_selected_candidate_ids": [
+      "kc_feature__aspect__perfect",
+      "kc_feature__aspect__perfect_progressive",
+      "kc_feature__aspect__progressive",
+      "kc_feature__clause__imperative",
+      "kc_feature__clause__polar_question",
+      "kc_feature__polarity__negative",
+      "kc_feature__tense__past",
+      "kc_feature__tense__present",
+      "kc_feature__voice__passive",
+      "kc_interaction__aspect_perfect__and__polarity_negative"
+    ]
+  },
+  "event_streams": [
+    {
+      "status": "complete",
+      "seed": 20260827,
+      "learners": 1000,
+      "world_id": "phase4_mixed_v1",
+      "protocol_id": "development_acquisition_frozen_probes_v1",
+      "source": "deterministic_mixed_world_simulation",
+      "event_file": "events/seed_20260827.jsonl.gz",
+      "file_sha256": "030dc4e7883a4b083182f7a887119cd9c11b1094546891b67fc5ec7a10a68d19",
+      "content_sha256": "59f530eb5a33be9f6739ddb6bed489d67bcd19ea72e026b36cdf01f07119ae2c",
+      "finalized_reference_content_sha256": "59f530eb5a33be9f6739ddb6bed489d67bcd19ea72e026b36cdf01f07119ae2c",
+      "method_fingerprint": "d235af8ebe55dabca38266a03cd9a680eca7c122bc96d1db60be7fb5c99127c0",
+      "integrity": {
+        "events": 204000,
+        "learners": 1000,
+        "events_per_learner": 204,
+        "phase_counts": {
+          "acquisition": 160000,
+          "probe": 44000
+        },
+        "grammar_split_counts": {
+          "compositional_holdout": 10000,
+          "development": 192000,
+          "novel_feature_holdout": 2000
+        },
+        "dataset_split_counts": {
+          "test": 44000,
+          "train": 128000,
+          "validation": 32000
+        }
+      },
+      "provenance": {
+        "model_calls": 0,
+        "models": [],
+        "description": "Deterministic synthetic-event replay and learner-evidence KC selection over the already fixed, model-validated item bank; no LM is invoked."
+      }
+    },
+    {
+      "status": "complete",
+      "seed": 20260828,
+      "learners": 1000,
+      "world_id": "phase4_mixed_v1",
+      "protocol_id": "development_acquisition_frozen_probes_v1",
+      "source": "deterministic_mixed_world_simulation",
+      "event_file": "events/seed_20260828.jsonl.gz",
+      "file_sha256": "bbf05fa425d4fd19c4d40c31537830a86cd7b585d9be940e5d79b378b883d592",
+      "content_sha256": "41eca0947dfd3822d3bfb2ee9b692e596805f915f760a72e4eda12734e585b2f",
+      "finalized_reference_content_sha256": null,
+      "method_fingerprint": "d235af8ebe55dabca38266a03cd9a680eca7c122bc96d1db60be7fb5c99127c0",
+      "integrity": {
+        "events": 204000,
+        "learners": 1000,
+        "events_per_learner": 204,
+        "phase_counts": {
+          "acquisition": 160000,
+          "probe": 44000
+        },
+        "grammar_split_counts": {
+          "compositional_holdout": 10000,
+          "development": 192000,
+          "novel_feature_holdout": 2000
+        },
+        "dataset_split_counts": {
+          "test": 44000,
+          "train": 128000,
+          "validation": 32000
+        }
+      },
+      "provenance": {
+        "model_calls": 0,
+        "models": [],
+        "description": "Deterministic synthetic-event replay and learner-evidence KC selection over the already fixed, model-validated item bank; no LM is invoked."
+      }
+    },
+    {
+      "status": "complete",
+      "seed": 20260829,
+      "learners": 1000,
+      "world_id": "phase4_mixed_v1",
+      "protocol_id": "development_acquisition_frozen_probes_v1",
+      "source": "deterministic_mixed_world_simulation",
+      "event_file": "events/seed_20260829.jsonl.gz",
+      "file_sha256": "6f272c49cc1580e8c477c079abe2256f6652ad560fcfee7614a13a373261e942",
+      "content_sha256": "b64a211f990902ac2d977803f46bcbf3e7c0e9443f21ecbc0e5f3e6408da9b28",
+      "finalized_reference_content_sha256": null,
+      "method_fingerprint": "d235af8ebe55dabca38266a03cd9a680eca7c122bc96d1db60be7fb5c99127c0",
+      "integrity": {
+        "events": 204000,
+        "learners": 1000,
+        "events_per_learner": 204,
+        "phase_counts": {
+          "acquisition": 160000,
+          "probe": 44000
+        },
+        "grammar_split_counts": {
+          "compositional_holdout": 10000,
+          "development": 192000,
+          "novel_feature_holdout": 2000
+        },
+        "dataset_split_counts": {
+          "test": 44000,
+          "train": 128000,
+          "validation": 32000
+        }
+      },
+      "provenance": {
+        "model_calls": 0,
+        "models": [],
+        "description": "Deterministic synthetic-event replay and learner-evidence KC selection over the already fixed, model-validated item bank; no LM is invoked."
+      }
+    },
+    {
+      "status": "complete",
+      "seed": 20260830,
+      "learners": 1000,
+      "world_id": "phase4_mixed_v1",
+      "protocol_id": "development_acquisition_frozen_probes_v1",
+      "source": "deterministic_mixed_world_simulation",
+      "event_file": "events/seed_20260830.jsonl.gz",
+      "file_sha256": "2f0ea966a83375ccc6b22f47b7aadd39f7e1821697d8a6079610f765a5ab6d75",
+      "content_sha256": "fd92b3661aa2795596afa5607e9f400d13ecaf9f53f813dd3d5da357132dd9dd",
+      "finalized_reference_content_sha256": null,
+      "method_fingerprint": "d235af8ebe55dabca38266a03cd9a680eca7c122bc96d1db60be7fb5c99127c0",
+      "integrity": {
+        "events": 204000,
+        "learners": 1000,
+        "events_per_learner": 204,
+        "phase_counts": {
+          "acquisition": 160000,
+          "probe": 44000
+        },
+        "grammar_split_counts": {
+          "compositional_holdout": 10000,
+          "development": 192000,
+          "novel_feature_holdout": 2000
+        },
+        "dataset_split_counts": {
+          "test": 44000,
+          "train": 128000,
+          "validation": 32000
+        }
+      },
+      "provenance": {
+        "model_calls": 0,
+        "models": [],
+        "description": "Deterministic synthetic-event replay and learner-evidence KC selection over the already fixed, model-validated item bank; no LM is invoked."
+      }
+    },
+    {
+      "status": "complete",
+      "seed": 20260831,
+      "learners": 1000,
+      "world_id": "phase4_mixed_v1",
+      "protocol_id": "development_acquisition_frozen_probes_v1",
+      "source": "deterministic_mixed_world_simulation",
+      "event_file": "events/seed_20260831.jsonl.gz",
+      "file_sha256": "7bc506e1349d8f2700c9b73419e648a781ea796c9c377339f7d97baa9ac2f3c4",
+      "content_sha256": "12dd5f73f946ae82169a449ec3c7b16a2fe95c0893564519d8283ccc63056477",
+      "finalized_reference_content_sha256": null,
+      "method_fingerprint": "d235af8ebe55dabca38266a03cd9a680eca7c122bc96d1db60be7fb5c99127c0",
+      "integrity": {
+        "events": 204000,
+        "learners": 1000,
+        "events_per_learner": 204,
+        "phase_counts": {
+          "acquisition": 160000,
+          "probe": 44000
+        },
+        "grammar_split_counts": {
+          "compositional_holdout": 10000,
+          "development": 192000,
+          "novel_feature_holdout": 2000
+        },
+        "dataset_split_counts": {
+          "test": 44000,
+          "train": 128000,
+          "validation": 32000
+        }
+      },
+      "provenance": {
+        "model_calls": 0,
+        "models": [],
+        "description": "Deterministic synthetic-event replay and learner-evidence KC selection over the already fixed, model-validated item bank; no LM is invoked."
+      }
+    }
+  ],
+  "selections": [
+    {
+      "condition_id": "seed_20260827__learners_0060",
+      "seed": 20260827,
+      "learners": 60,
+      "stage": "reference_seed_nested_support",
+      "selection_source": "verified_retained_stability_policy",
+      "selection_events": 9600,
+      "selection_train_events": 7680,
+      "selection_validation_events": 1920,
+      "holdout_events_supplied": 0,
+      "reserved_test_events_supplied": 0,
+      "selected_candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive",
+        "kc_interaction__aspect_perfect__and__polarity_negative"
+      ],
+      "initial_candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive"
+      ],
+      "selected_addition_ids": [
+        "kc_interaction__aspect_perfect__and__polarity_negative"
+      ],
+      "kc_count": 10,
+      "addition_count": 1,
+      "exact_selected_inventory_match_reference": true,
+      "event_file_sha256": "030dc4e7883a4b083182f7a887119cd9c11b1094546891b67fc5ec7a10a68d19",
+      "event_content_sha256": "59f530eb5a33be9f6739ddb6bed489d67bcd19ea72e026b36cdf01f07119ae2c",
+      "policy_file": "policies/seed_20260827__learners_0060.yaml",
+      "policy_file_sha256": "e4c9de66f60a5a03a56cd5a90ac41d868dd8e1d98f343b817849bdd821f0b0fe",
+      "final_validation_score": {
+        "n": 1920,
+        "log_loss": 0.6515629570732746,
+        "brier_score": 0.22943180742364355,
+        "kc_count": 10,
+        "complexity_penalty": 0.005,
+        "objective": 0.6565629570732746
+      }
+    },
+    {
+      "condition_id": "seed_20260827__learners_0120",
+      "seed": 20260827,
+      "learners": 120,
+      "stage": "reference_seed_nested_support",
+      "selection_source": "verified_retained_stability_policy",
+      "selection_events": 19200,
+      "selection_train_events": 15360,
+      "selection_validation_events": 3840,
+      "holdout_events_supplied": 0,
+      "reserved_test_events_supplied": 0,
+      "selected_candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive",
+        "kc_interaction__tense_present__and__voice_passive"
+      ],
+      "initial_candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive"
+      ],
+      "selected_addition_ids": [
+        "kc_interaction__tense_present__and__voice_passive"
+      ],
+      "kc_count": 10,
+      "addition_count": 1,
+      "exact_selected_inventory_match_reference": false,
+      "event_file_sha256": "030dc4e7883a4b083182f7a887119cd9c11b1094546891b67fc5ec7a10a68d19",
+      "event_content_sha256": "59f530eb5a33be9f6739ddb6bed489d67bcd19ea72e026b36cdf01f07119ae2c",
+      "policy_file": "policies/seed_20260827__learners_0120.yaml",
+      "policy_file_sha256": "ecfea44778cfd2802c2031052147676437fe68b0a79100003aa30274e5c34316",
+      "final_validation_score": {
+        "n": 3840,
+        "log_loss": 0.6522772318937081,
+        "brier_score": 0.22975991791849626,
+        "kc_count": 10,
+        "complexity_penalty": 0.005,
+        "objective": 0.6572772318937081
+      }
+    },
+    {
+      "condition_id": "seed_20260827__learners_0240",
+      "seed": 20260827,
+      "learners": 240,
+      "stage": "reference_seed_nested_support",
+      "selection_source": "verified_retained_stability_policy",
+      "selection_events": 38400,
+      "selection_train_events": 30720,
+      "selection_validation_events": 7680,
+      "holdout_events_supplied": 0,
+      "reserved_test_events_supplied": 0,
+      "selected_candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive",
+        "kc_interaction__aspect_perfect__and__polarity_negative"
+      ],
+      "initial_candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive"
+      ],
+      "selected_addition_ids": [
+        "kc_interaction__aspect_perfect__and__polarity_negative"
+      ],
+      "kc_count": 10,
+      "addition_count": 1,
+      "exact_selected_inventory_match_reference": true,
+      "event_file_sha256": "030dc4e7883a4b083182f7a887119cd9c11b1094546891b67fc5ec7a10a68d19",
+      "event_content_sha256": "59f530eb5a33be9f6739ddb6bed489d67bcd19ea72e026b36cdf01f07119ae2c",
+      "policy_file": "policies/seed_20260827__learners_0240.yaml",
+      "policy_file_sha256": "325a90f37f79b9bc67d379c4f26594d0483460068baa688990f8ca141854a63f",
+      "final_validation_score": {
+        "n": 7680,
+        "log_loss": 0.6499953113692823,
+        "brier_score": 0.2286481941597023,
+        "kc_count": 10,
+        "complexity_penalty": 0.005,
+        "objective": 0.6549953113692824
+      }
+    },
+    {
+      "condition_id": "seed_20260827__learners_0500",
+      "seed": 20260827,
+      "learners": 500,
+      "stage": "reference_seed_nested_support",
+      "selection_source": "verified_retained_stability_policy",
+      "selection_events": 80000,
+      "selection_train_events": 64000,
+      "selection_validation_events": 16000,
+      "holdout_events_supplied": 0,
+      "reserved_test_events_supplied": 0,
+      "selected_candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive",
+        "kc_interaction__aspect_perfect__and__polarity_negative"
+      ],
+      "initial_candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive"
+      ],
+      "selected_addition_ids": [
+        "kc_interaction__aspect_perfect__and__polarity_negative"
+      ],
+      "kc_count": 10,
+      "addition_count": 1,
+      "exact_selected_inventory_match_reference": true,
+      "event_file_sha256": "030dc4e7883a4b083182f7a887119cd9c11b1094546891b67fc5ec7a10a68d19",
+      "event_content_sha256": "59f530eb5a33be9f6739ddb6bed489d67bcd19ea72e026b36cdf01f07119ae2c",
+      "policy_file": "policies/seed_20260827__learners_0500.yaml",
+      "policy_file_sha256": "e8d918128eb52fa972a5de8dcda0021f7a7cecfe22dacd85579c30d2758bb625",
+      "final_validation_score": {
+        "n": 16000,
+        "log_loss": 0.6473796394296916,
+        "brier_score": 0.2274273233041452,
+        "kc_count": 10,
+        "complexity_penalty": 0.005,
+        "objective": 0.6523796394296916
+      }
+    },
+    {
+      "condition_id": "seed_20260827__learners_1000",
+      "seed": 20260827,
+      "learners": 1000,
+      "stage": "reference_seed_nested_support",
+      "selection_source": "verified_retained_stability_policy",
+      "selection_events": 160000,
+      "selection_train_events": 128000,
+      "selection_validation_events": 32000,
+      "holdout_events_supplied": 0,
+      "reserved_test_events_supplied": 0,
+      "selected_candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive",
+        "kc_interaction__aspect_perfect__and__polarity_negative"
+      ],
+      "initial_candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive"
+      ],
+      "selected_addition_ids": [
+        "kc_interaction__aspect_perfect__and__polarity_negative"
+      ],
+      "kc_count": 10,
+      "addition_count": 1,
+      "exact_selected_inventory_match_reference": true,
+      "event_file_sha256": "030dc4e7883a4b083182f7a887119cd9c11b1094546891b67fc5ec7a10a68d19",
+      "event_content_sha256": "59f530eb5a33be9f6739ddb6bed489d67bcd19ea72e026b36cdf01f07119ae2c",
+      "policy_file": "policies/seed_20260827__learners_1000.yaml",
+      "policy_file_sha256": "0f2668b97c314a1719164f09d1847f2c7de12d5167a637933da0309fa63e2c00",
+      "final_validation_score": {
+        "n": 32000,
+        "log_loss": 0.6463538273424759,
+        "brier_score": 0.2269704430037298,
+        "kc_count": 10,
+        "complexity_penalty": 0.005,
+        "objective": 0.6513538273424759
+      }
+    },
+    {
+      "condition_id": "seed_20260828__learners_1000",
+      "seed": 20260828,
+      "learners": 1000,
+      "stage": "full_support_seed_stability",
+      "selection_source": "verified_retained_stability_policy",
+      "selection_events": 160000,
+      "selection_train_events": 128000,
+      "selection_validation_events": 32000,
+      "holdout_events_supplied": 0,
+      "reserved_test_events_supplied": 0,
+      "selected_candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive",
+        "kc_interaction__aspect_perfect__and__polarity_negative"
+      ],
+      "initial_candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive"
+      ],
+      "selected_addition_ids": [
+        "kc_interaction__aspect_perfect__and__polarity_negative"
+      ],
+      "kc_count": 10,
+      "addition_count": 1,
+      "exact_selected_inventory_match_reference": true,
+      "event_file_sha256": "bbf05fa425d4fd19c4d40c31537830a86cd7b585d9be940e5d79b378b883d592",
+      "event_content_sha256": "41eca0947dfd3822d3bfb2ee9b692e596805f915f760a72e4eda12734e585b2f",
+      "policy_file": "policies/seed_20260828__learners_1000.yaml",
+      "policy_file_sha256": "3e45c392f66680614b38b5ca6de86c0c0970f85b66b76899bee921b507ed6d29",
+      "final_validation_score": {
+        "n": 32000,
+        "log_loss": 0.6461523283469444,
+        "brier_score": 0.22685906846868342,
+        "kc_count": 10,
+        "complexity_penalty": 0.005,
+        "objective": 0.6511523283469444
+      }
+    },
+    {
+      "condition_id": "seed_20260829__learners_1000",
+      "seed": 20260829,
+      "learners": 1000,
+      "stage": "full_support_seed_stability",
+      "selection_source": "verified_retained_stability_policy",
+      "selection_events": 160000,
+      "selection_train_events": 128000,
+      "selection_validation_events": 32000,
+      "holdout_events_supplied": 0,
+      "reserved_test_events_supplied": 0,
+      "selected_candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive",
+        "kc_interaction__aspect_perfect__and__polarity_negative"
+      ],
+      "initial_candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive"
+      ],
+      "selected_addition_ids": [
+        "kc_interaction__aspect_perfect__and__polarity_negative"
+      ],
+      "kc_count": 10,
+      "addition_count": 1,
+      "exact_selected_inventory_match_reference": true,
+      "event_file_sha256": "6f272c49cc1580e8c477c079abe2256f6652ad560fcfee7614a13a373261e942",
+      "event_content_sha256": "b64a211f990902ac2d977803f46bcbf3e7c0e9443f21ecbc0e5f3e6408da9b28",
+      "policy_file": "policies/seed_20260829__learners_1000.yaml",
+      "policy_file_sha256": "9c141bfc4879d548c032da619232895a37d4b6713a567f55179fa1345da2f9a7",
+      "final_validation_score": {
+        "n": 32000,
+        "log_loss": 0.6446459793951332,
+        "brier_score": 0.22620492018894595,
+        "kc_count": 10,
+        "complexity_penalty": 0.005,
+        "objective": 0.6496459793951332
+      }
+    },
+    {
+      "condition_id": "seed_20260830__learners_1000",
+      "seed": 20260830,
+      "learners": 1000,
+      "stage": "full_support_seed_stability",
+      "selection_source": "verified_retained_stability_policy",
+      "selection_events": 160000,
+      "selection_train_events": 128000,
+      "selection_validation_events": 32000,
+      "holdout_events_supplied": 0,
+      "reserved_test_events_supplied": 0,
+      "selected_candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive",
+        "kc_interaction__aspect_perfect__and__polarity_negative"
+      ],
+      "initial_candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive"
+      ],
+      "selected_addition_ids": [
+        "kc_interaction__aspect_perfect__and__polarity_negative"
+      ],
+      "kc_count": 10,
+      "addition_count": 1,
+      "exact_selected_inventory_match_reference": true,
+      "event_file_sha256": "2f0ea966a83375ccc6b22f47b7aadd39f7e1821697d8a6079610f765a5ab6d75",
+      "event_content_sha256": "fd92b3661aa2795596afa5607e9f400d13ecaf9f53f813dd3d5da357132dd9dd",
+      "policy_file": "policies/seed_20260830__learners_1000.yaml",
+      "policy_file_sha256": "393af8805af5e92c6bcfc9726d5e3c3b29956d3391229a0c3b19e94fe5bb7a34",
+      "final_validation_score": {
+        "n": 32000,
+        "log_loss": 0.6482536328722053,
+        "brier_score": 0.2277987964528134,
+        "kc_count": 10,
+        "complexity_penalty": 0.005,
+        "objective": 0.6532536328722053
+      }
+    },
+    {
+      "condition_id": "seed_20260831__learners_1000",
+      "seed": 20260831,
+      "learners": 1000,
+      "stage": "full_support_seed_stability",
+      "selection_source": "verified_retained_stability_policy",
+      "selection_events": 160000,
+      "selection_train_events": 128000,
+      "selection_validation_events": 32000,
+      "holdout_events_supplied": 0,
+      "reserved_test_events_supplied": 0,
+      "selected_candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive",
+        "kc_interaction__aspect_perfect__and__polarity_negative"
+      ],
+      "initial_candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive"
+      ],
+      "selected_addition_ids": [
+        "kc_interaction__aspect_perfect__and__polarity_negative"
+      ],
+      "kc_count": 10,
+      "addition_count": 1,
+      "exact_selected_inventory_match_reference": true,
+      "event_file_sha256": "7bc506e1349d8f2700c9b73419e648a781ea796c9c377339f7d97baa9ac2f3c4",
+      "event_content_sha256": "12dd5f73f946ae82169a449ec3c7b16a2fe95c0893564519d8283ccc63056477",
+      "policy_file": "policies/seed_20260831__learners_1000.yaml",
+      "policy_file_sha256": "6387be3030876f36a791c658165e0b4bbcb592952d3f983da64b607aa4417129",
+      "final_validation_score": {
+        "n": 32000,
+        "log_loss": 0.646378079326817,
+        "brier_score": 0.22694904307917016,
+        "kc_count": 10,
+        "complexity_penalty": 0.005,
+        "objective": 0.651378079326817
+      }
+    }
+  ],
+  "frequencies": {
+    "all_conditions": {
+      "selected": [
+        {
+          "candidate_id": "kc_feature__aspect__perfect",
+          "selected_conditions": 9,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0120",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__aspect__perfect_progressive",
+          "selected_conditions": 9,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0120",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__aspect__progressive",
+          "selected_conditions": 9,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0120",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__clause__imperative",
+          "selected_conditions": 9,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0120",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__clause__polar_question",
+          "selected_conditions": 9,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0120",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__polarity__negative",
+          "selected_conditions": 9,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0120",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__tense__past",
+          "selected_conditions": 9,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0120",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__tense__present",
+          "selected_conditions": 9,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0120",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__voice__passive",
+          "selected_conditions": 9,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0120",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_interaction__aspect_perfect__and__polarity_negative",
+          "selected_conditions": 8,
+          "selection_frequency": 0.8888888888888888,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_interaction__tense_present__and__voice_passive",
+          "selected_conditions": 1,
+          "selection_frequency": 0.1111111111111111,
+          "condition_ids": [
+            "seed_20260827__learners_0120"
+          ]
+        }
+      ],
+      "additions": [
+        {
+          "candidate_id": "kc_interaction__aspect_perfect__and__polarity_negative",
+          "selected_conditions": 8,
+          "selection_frequency": 0.8888888888888888,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_interaction__tense_present__and__voice_passive",
+          "selected_conditions": 1,
+          "selection_frequency": 0.1111111111111111,
+          "condition_ids": [
+            "seed_20260827__learners_0120"
+          ]
+        }
+      ]
+    },
+    "reference_nested_support": {
+      "selected": [
+        {
+          "candidate_id": "kc_feature__aspect__perfect",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0120",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__aspect__perfect_progressive",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0120",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__aspect__progressive",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0120",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__clause__imperative",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0120",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__clause__polar_question",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0120",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__polarity__negative",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0120",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__tense__past",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0120",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__tense__present",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0120",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__voice__passive",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0120",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_interaction__aspect_perfect__and__polarity_negative",
+          "selected_conditions": 4,
+          "selection_frequency": 0.8,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_interaction__tense_present__and__voice_passive",
+          "selected_conditions": 1,
+          "selection_frequency": 0.2,
+          "condition_ids": [
+            "seed_20260827__learners_0120"
+          ]
+        }
+      ],
+      "additions": [
+        {
+          "candidate_id": "kc_interaction__aspect_perfect__and__polarity_negative",
+          "selected_conditions": 4,
+          "selection_frequency": 0.8,
+          "condition_ids": [
+            "seed_20260827__learners_0060",
+            "seed_20260827__learners_0240",
+            "seed_20260827__learners_0500",
+            "seed_20260827__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_interaction__tense_present__and__voice_passive",
+          "selected_conditions": 1,
+          "selection_frequency": 0.2,
+          "condition_ids": [
+            "seed_20260827__learners_0120"
+          ]
+        }
+      ]
+    },
+    "five_seed_full_support": {
+      "selected": [
+        {
+          "candidate_id": "kc_feature__aspect__perfect",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__aspect__perfect_progressive",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__aspect__progressive",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__clause__imperative",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__clause__polar_question",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__polarity__negative",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__tense__past",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__tense__present",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_feature__voice__passive",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        },
+        {
+          "candidate_id": "kc_interaction__aspect_perfect__and__polarity_negative",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        }
+      ],
+      "additions": [
+        {
+          "candidate_id": "kc_interaction__aspect_perfect__and__polarity_negative",
+          "selected_conditions": 5,
+          "selection_frequency": 1.0,
+          "condition_ids": [
+            "seed_20260827__learners_1000",
+            "seed_20260828__learners_1000",
+            "seed_20260829__learners_1000",
+            "seed_20260830__learners_1000",
+            "seed_20260831__learners_1000"
+          ]
+        }
+      ]
+    }
+  },
+  "jaccard": {
+    "all_conditions": {
+      "pairs": [
+        {
+          "left": "seed_20260827__learners_0060",
+          "right": "seed_20260827__learners_0120",
+          "all_selected_jaccard": 0.8181818181818182,
+          "addition_jaccard": 0.0,
+          "exact_selected_inventory_match": false,
+          "exact_addition_inventory_match": false
+        },
+        {
+          "left": "seed_20260827__learners_0060",
+          "right": "seed_20260827__learners_0240",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0060",
+          "right": "seed_20260827__learners_0500",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0060",
+          "right": "seed_20260827__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0060",
+          "right": "seed_20260828__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0060",
+          "right": "seed_20260829__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0060",
+          "right": "seed_20260830__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0060",
+          "right": "seed_20260831__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0120",
+          "right": "seed_20260827__learners_0240",
+          "all_selected_jaccard": 0.8181818181818182,
+          "addition_jaccard": 0.0,
+          "exact_selected_inventory_match": false,
+          "exact_addition_inventory_match": false
+        },
+        {
+          "left": "seed_20260827__learners_0120",
+          "right": "seed_20260827__learners_0500",
+          "all_selected_jaccard": 0.8181818181818182,
+          "addition_jaccard": 0.0,
+          "exact_selected_inventory_match": false,
+          "exact_addition_inventory_match": false
+        },
+        {
+          "left": "seed_20260827__learners_0120",
+          "right": "seed_20260827__learners_1000",
+          "all_selected_jaccard": 0.8181818181818182,
+          "addition_jaccard": 0.0,
+          "exact_selected_inventory_match": false,
+          "exact_addition_inventory_match": false
+        },
+        {
+          "left": "seed_20260827__learners_0120",
+          "right": "seed_20260828__learners_1000",
+          "all_selected_jaccard": 0.8181818181818182,
+          "addition_jaccard": 0.0,
+          "exact_selected_inventory_match": false,
+          "exact_addition_inventory_match": false
+        },
+        {
+          "left": "seed_20260827__learners_0120",
+          "right": "seed_20260829__learners_1000",
+          "all_selected_jaccard": 0.8181818181818182,
+          "addition_jaccard": 0.0,
+          "exact_selected_inventory_match": false,
+          "exact_addition_inventory_match": false
+        },
+        {
+          "left": "seed_20260827__learners_0120",
+          "right": "seed_20260830__learners_1000",
+          "all_selected_jaccard": 0.8181818181818182,
+          "addition_jaccard": 0.0,
+          "exact_selected_inventory_match": false,
+          "exact_addition_inventory_match": false
+        },
+        {
+          "left": "seed_20260827__learners_0120",
+          "right": "seed_20260831__learners_1000",
+          "all_selected_jaccard": 0.8181818181818182,
+          "addition_jaccard": 0.0,
+          "exact_selected_inventory_match": false,
+          "exact_addition_inventory_match": false
+        },
+        {
+          "left": "seed_20260827__learners_0240",
+          "right": "seed_20260827__learners_0500",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0240",
+          "right": "seed_20260827__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0240",
+          "right": "seed_20260828__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0240",
+          "right": "seed_20260829__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0240",
+          "right": "seed_20260830__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0240",
+          "right": "seed_20260831__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0500",
+          "right": "seed_20260827__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0500",
+          "right": "seed_20260828__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0500",
+          "right": "seed_20260829__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0500",
+          "right": "seed_20260830__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0500",
+          "right": "seed_20260831__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_1000",
+          "right": "seed_20260828__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_1000",
+          "right": "seed_20260829__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_1000",
+          "right": "seed_20260830__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_1000",
+          "right": "seed_20260831__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260828__learners_1000",
+          "right": "seed_20260829__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260828__learners_1000",
+          "right": "seed_20260830__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260828__learners_1000",
+          "right": "seed_20260831__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260829__learners_1000",
+          "right": "seed_20260830__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260829__learners_1000",
+          "right": "seed_20260831__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260830__learners_1000",
+          "right": "seed_20260831__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        }
+      ],
+      "all_selected": {
+        "mean": 0.9595959595959596,
+        "median": 1.0,
+        "minimum": 0.8181818181818182
+      },
+      "additions": {
+        "mean": 0.7777777777777778,
+        "median": 1.0,
+        "minimum": 0.0
+      }
+    },
+    "reference_nested_support": {
+      "pairs": [
+        {
+          "left": "seed_20260827__learners_0060",
+          "right": "seed_20260827__learners_0120",
+          "all_selected_jaccard": 0.8181818181818182,
+          "addition_jaccard": 0.0,
+          "exact_selected_inventory_match": false,
+          "exact_addition_inventory_match": false
+        },
+        {
+          "left": "seed_20260827__learners_0060",
+          "right": "seed_20260827__learners_0240",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0060",
+          "right": "seed_20260827__learners_0500",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0060",
+          "right": "seed_20260827__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0120",
+          "right": "seed_20260827__learners_0240",
+          "all_selected_jaccard": 0.8181818181818182,
+          "addition_jaccard": 0.0,
+          "exact_selected_inventory_match": false,
+          "exact_addition_inventory_match": false
+        },
+        {
+          "left": "seed_20260827__learners_0120",
+          "right": "seed_20260827__learners_0500",
+          "all_selected_jaccard": 0.8181818181818182,
+          "addition_jaccard": 0.0,
+          "exact_selected_inventory_match": false,
+          "exact_addition_inventory_match": false
+        },
+        {
+          "left": "seed_20260827__learners_0120",
+          "right": "seed_20260827__learners_1000",
+          "all_selected_jaccard": 0.8181818181818182,
+          "addition_jaccard": 0.0,
+          "exact_selected_inventory_match": false,
+          "exact_addition_inventory_match": false
+        },
+        {
+          "left": "seed_20260827__learners_0240",
+          "right": "seed_20260827__learners_0500",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0240",
+          "right": "seed_20260827__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_0500",
+          "right": "seed_20260827__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        }
+      ],
+      "all_selected": {
+        "mean": 0.9272727272727272,
+        "median": 1.0,
+        "minimum": 0.8181818181818182
+      },
+      "additions": {
+        "mean": 0.6,
+        "median": 1.0,
+        "minimum": 0.0
+      }
+    },
+    "five_seed_full_support": {
+      "pairs": [
+        {
+          "left": "seed_20260827__learners_1000",
+          "right": "seed_20260828__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_1000",
+          "right": "seed_20260829__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_1000",
+          "right": "seed_20260830__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260827__learners_1000",
+          "right": "seed_20260831__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260828__learners_1000",
+          "right": "seed_20260829__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260828__learners_1000",
+          "right": "seed_20260830__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260828__learners_1000",
+          "right": "seed_20260831__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260829__learners_1000",
+          "right": "seed_20260830__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260829__learners_1000",
+          "right": "seed_20260831__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        },
+        {
+          "left": "seed_20260830__learners_1000",
+          "right": "seed_20260831__learners_1000",
+          "all_selected_jaccard": 1.0,
+          "addition_jaccard": 1.0,
+          "exact_selected_inventory_match": true,
+          "exact_addition_inventory_match": true
+        }
+      ],
+      "all_selected": {
+        "mean": 1.0,
+        "median": 1.0,
+        "minimum": 1.0
+      },
+      "additions": {
+        "mean": 1.0,
+        "median": 1.0,
+        "minimum": 1.0
+      }
+    }
+  },
+  "exact_inventory_matches": {
+    "reference_condition_id": "seed_20260827__learners_1000",
+    "conditions_matching_finalized_reference": 8,
+    "full_support_seeds_matching_finalized_reference": 5,
+    "all_conditions_identical": false,
+    "all_full_support_seeds_identical": true
+  },
+  "boundary_checks": {
+    "holdout_events_supplied_to_any_selection": 0,
+    "reserved_test_events_supplied_to_any_selection": 0
+  },
+  "provenance": {
+    "model_calls": 0,
+    "models": [],
+    "description": "Deterministic synthetic-event replay and learner-evidence KC selection over the already fixed, model-validated item bank; no LM is invoked."
+  },
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/run_phase6_selection_stability.py"
+}

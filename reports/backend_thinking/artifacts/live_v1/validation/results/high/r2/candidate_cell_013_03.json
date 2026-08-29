@@ -1,0 +1,71 @@
+{
+  "item_id": "candidate_cell_013_03",
+  "audit_id": "validation_live_02bcea689d09",
+  "cell_id": "cell_013",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_02bcea689d09",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "“has cleaned” is present perfect, active, positive, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The earlier action and current spotless result make the present perfect sentence coherent."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "The item provides focused practice of the present perfect with a clear verb cue."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The context also permits alternatives such as “Mia cleaned the kitchen,” so it does not fully determine only the accepted response."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and situation are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt supplies only the base-form cue “clean,” not the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "No unrelated advanced grammar is needed to complete the item."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "The item requires no external or specialist knowledge."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 12.546701948998816,
+  "model_calls": 1,
+  "tokens_used": 2698,
+  "model_runtime_seconds": 12.545910173001175,
+  "model_call_failures": 0
+}

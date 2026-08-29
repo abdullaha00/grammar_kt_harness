@@ -1,0 +1,86 @@
+OpenAI Codex v0.150.1
+--------
+workdir: /home/abdullah/grammar_kt_harness/reports/backend_thinking/artifacts/live_v1/validation/evidence/xhigh/r2/validation_live_b3831a1592f2/calls/validation_live_b3831a1592f2
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: xhigh
+reasoning summaries: none
+session id: 01a04692-173b-7063-ab24-07a6baa88a61
+--------
+user
+Judge one generated exercise independently from the generator.
+
+Use the visible learner-facing prompt, target answer, accepted answers, intended
+GrammarCell, and the declared criteria. Do not rely on generation reasoning or
+generation metadata. Judge every criterion separately and give a short note.
+
+Return one JSON object with a `judgments` mapping. Every declared criterion must
+have exactly `passed` (true/false) and `note`.
+
+VISIBLE ITEM:
+{
+  "item_id": "validation_live_b3831a1592f2",
+  "format": "controlled_production",
+  "prompt": "Emma has a dog. Every morning, she ___ before breakfast. (walk / the dog)",
+  "target_answer": "Every morning, she walks the dog before breakfast.",
+  "accepted_answers": [
+    "walks the dog"
+  ]
+}
+
+INTENDED GRAMMAR CELL:
+{
+  "tense": "present",
+  "aspect": "none",
+  "voice": "active",
+  "polarity": "positive",
+  "clause": "declarative",
+  "modal": "none"
+}
+
+VALIDATION CRITERIA:
+{
+  "target_fidelity": {
+    "required": true,
+    "question": "Does the target answer express exactly the intended GrammarCell?"
+  },
+  "grammaticality": {
+    "required": true,
+    "question": "Is the target answer grammatical English?"
+  },
+  "naturalness": {
+    "required": true,
+    "question": "Is the prompt-answer pair natural and coherent?"
+  },
+  "pedagogical_suitability": {
+    "required": true,
+    "question": "Is the item suitable for focused grammar practice?"
+  },
+  "determinacy": {
+    "required": true,
+    "question": "Does the prompt sufficiently determine the accepted response set?"
+  },
+  "non_target_language_simplicity": {
+    "required": true,
+    "question": "Is the vocabulary and context sufficiently common, transparent, and lexically unambiguous that lexical knowledge is unlikely to determine the learner's response?"
+  },
+  "no_answer_leakage": {
+    "required": true,
+    "question": "Does the prompt avoid displaying the completed target form?"
+  },
+  "no_extraneous_grammar": {
+    "required": true,
+    "question": "Can the item be solved without unrelated advanced grammar?"
+  },
+  "no_world_knowledge": {
+    "required": true,
+    "question": "Can the item be answered without external factual or specialist knowledge?"
+  }
+}
+
+codex
+{"judgments":{"target_fidelity":{"passed":true,"note":"The target is a positive, active present-simple declarative with no modal."},"grammaticality":{"passed":true,"note":"The target sentence is grammatical English."},"naturalness":{"passed":true,"note":"Walking a dog before breakfast is a coherent, natural routine."},"pedagogical_suitability":{"passed":true,"note":"It clearly focuses practice on third-person singular present-simple verb inflection."},"determinacy":{"passed":true,"note":"The subject, routine adverbial, and supplied verb/object sufficiently determine “walks the dog.”"},"non_target_language_simplicity":{"passed":true,"note":"The vocabulary and context are common and transparent."},"no_answer_leakage":{"passed":true,"note":"The completed target form is not displayed; only the base verb and object are provided."},"no_extraneous_grammar":{"passed":true,"note":"Solving it requires no unrelated advanced grammar."},"no_world_knowledge":{"passed":true,"note":"No external or specialist knowledge is needed."}}}
+tokens used
+2,648

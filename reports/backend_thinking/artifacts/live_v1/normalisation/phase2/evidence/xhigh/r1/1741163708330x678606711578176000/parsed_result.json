@@ -1,0 +1,26 @@
+{
+  "source_id": "1741163708330x678606711578176000",
+  "result": "complete",
+  "cells": [
+    {
+      "aspect": "none",
+      "clause": "declarative",
+      "modal": "none",
+      "polarity": "positive",
+      "tense": "present",
+      "voice": "active"
+    },
+    {
+      "aspect": "none",
+      "clause": "declarative",
+      "modal": "none",
+      "polarity": "positive",
+      "tense": "past",
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "The emphatic present forms with 'do' and the past form with 'did' positively establish both members of the Phase-1 tense alternative."
+}

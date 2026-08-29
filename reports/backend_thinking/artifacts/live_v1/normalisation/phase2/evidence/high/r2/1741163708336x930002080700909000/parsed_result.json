@@ -1,0 +1,26 @@
+{
+  "source_id": "1741163708336x930002080700909000",
+  "result": "complete",
+  "cells": [
+    {
+      "aspect": "none",
+      "clause": "polar_question",
+      "modal": "none",
+      "polarity": "positive",
+      "tense": "present",
+      "voice": "active"
+    },
+    {
+      "aspect": "none",
+      "clause": "polar_question",
+      "modal": "none",
+      "polarity": "positive",
+      "tense": "past",
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "The examples positively establish both licensed tense alternatives: present DO-support and past DID-support. The original branch is therefore refined into separate present and past cells; all other Phase-1 constraints remain fixed."
+}

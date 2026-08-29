@@ -1,0 +1,7 @@
+{
+  "prompt": "The door is open and the room is cold. Tell your brother what to do. Use the cue “close / the door”: ____",
+  "target_answer": "Close the door.",
+  "accepted_answers": [
+    "Close the door."
+  ]
+}

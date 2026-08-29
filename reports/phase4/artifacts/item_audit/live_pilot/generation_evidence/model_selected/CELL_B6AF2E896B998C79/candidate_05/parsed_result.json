@@ -1,0 +1,11 @@
+{
+  "prompt": "Yesterday, the workers changed the color of the kitchen door. Complete the sentence using the verb \"paint\": [__________]",
+  "target_answer": "The kitchen door was painted yesterday.",
+  "accepted_answers": [
+    "The kitchen door was painted yesterday."
+  ],
+  "operation_tags": [
+    "be_passive"
+  ],
+  "note": "The completed sentence describes what happened to the kitchen door."
+}

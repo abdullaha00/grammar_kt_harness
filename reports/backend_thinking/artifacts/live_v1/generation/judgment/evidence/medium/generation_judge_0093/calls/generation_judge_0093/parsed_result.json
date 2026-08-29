@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is present simple, passive, negative, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and answer form a coherent, natural statement about bakery deliveries."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It gives focused practice of the present simple passive negative."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The context and sentence frame clearly require the negative passive forms listed."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and delivery context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The completed passive-negative form is not shown in the prompt."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it requires only the targeted passive-negative structure."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The necessary information is supplied directly in the prompt."
+    }
+  }
+}

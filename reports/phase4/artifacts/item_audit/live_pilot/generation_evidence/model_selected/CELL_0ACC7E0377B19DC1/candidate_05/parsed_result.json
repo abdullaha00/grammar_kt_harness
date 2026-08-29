@@ -1,0 +1,11 @@
+{
+  "prompt": "If the box were too heavy for Leo, Ava has offered to help. Complete the result using the cue (Ava / carry / the box): ____",
+  "target_answer": "Ava would carry the box.",
+  "accepted_answers": [
+    "Ava would carry the box."
+  ],
+  "operation_tags": [
+    "central_modal"
+  ],
+  "note": "Use the cue to write one complete clause."
+}

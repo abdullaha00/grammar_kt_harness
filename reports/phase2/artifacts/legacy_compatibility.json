@@ -1,0 +1,46 @@
+{
+  "artifact": "experiments/post_training_v1/data/pilot_v1/opportunities.jsonl",
+  "sha256": "5635b69de038fa3d0532265c78695b8c7360d92a84df932791ab7446b3e9768e",
+  "semantic_unit": "measurement opportunity; learner outcomes and legacy KCs absent",
+  "rows": 42,
+  "unique_cells": 24,
+  "development_cells": 16,
+  "development_items": 30,
+  "split_item_counts": {
+    "compositional_holdout": 11,
+    "development": 30,
+    "novel_feature_holdout": 1
+  },
+  "schema_validation_errors": [],
+  "canonical_id_feature_conflicts": [],
+  "feature_values": {
+    "tense": [
+      "NA",
+      "past",
+      "present"
+    ],
+    "aspect": [
+      "none",
+      "perfect",
+      "perfect_progressive",
+      "progressive"
+    ],
+    "voice": [
+      "active",
+      "passive"
+    ],
+    "polarity": [
+      "negative",
+      "positive"
+    ],
+    "clause": [
+      "declarative",
+      "imperative",
+      "polar_question"
+    ],
+    "modal": [
+      "none",
+      "would"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "prompt": "The cups are still unwashed. Complete the sentence using the cue (Mia / wash / the cups): ______",
+  "target_answer": "Mia has not washed the cups.",
+  "accepted_answers": [
+    "Mia has not washed the cups.",
+    "Mia hasn't washed the cups."
+  ],
+  "operation_tags": [
+    "perfect",
+    "negation"
+  ],
+  "note": "The response states that the task remains incomplete."
+}

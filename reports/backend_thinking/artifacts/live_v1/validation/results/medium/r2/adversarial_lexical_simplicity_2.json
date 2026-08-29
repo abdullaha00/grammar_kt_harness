@@ -1,0 +1,71 @@
+{
+  "item_id": "adversarial_lexical_simplicity_2",
+  "audit_id": "validation_live_66b9c298b343",
+  "cell_id": "cell_019",
+  "effort": "medium",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_66b9c298b343",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "It is a positive past-tense passive declarative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatically well formed."
+      },
+      "naturalness": {
+        "passed": false,
+        "note": "The unusually obscure vocabulary and mismatch between “abstruse” and “antidisestablishmentarian” make the pair unnatural."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "Lexical difficulty distracts substantially from the intended passive-voice practice."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The prompt does not determine the specific subject, verb, or adverb in the sole accepted answer."
+      },
+      "non_target_language_simplicity": {
+        "passed": false,
+        "note": "“Antidisestablishmentarian,” “tract,” “promulgated,” and “yesternight” are not common or transparent vocabulary."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed target sentence."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Producing the target structure does not require unrelated advanced grammar."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external factual or specialist knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "non_target_language_simplicity"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": true,
+  "reference_source": "authored_adversarial_negative_control",
+  "task_runtime_seconds": 10.81689069100139,
+  "model_calls": 1,
+  "tokens_used": 2645,
+  "model_runtime_seconds": 10.81612210899948,
+  "model_call_failures": 0
+}

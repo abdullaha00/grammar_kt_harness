@@ -1,0 +1,7 @@
+{
+  "prompt": "The guests arrived at noon, but the work was already finished. Complete the sentence using the verb in brackets: The windows [____] before the guests arrived. (clean)",
+  "target_answer": "The windows had been cleaned before the guests arrived.",
+  "accepted_answers": [
+    "had been cleaned"
+  ]
+}

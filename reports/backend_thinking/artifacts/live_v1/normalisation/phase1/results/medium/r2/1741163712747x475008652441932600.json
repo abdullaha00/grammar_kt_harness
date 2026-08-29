@@ -1,0 +1,45 @@
+{
+  "source_id": "1741163712747x475008652441932600",
+  "stratum": "complete_noneligible",
+  "effort": "medium",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712747x475008652441932600",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "The descriptor specifies a negative present perfect active declarative with first-person subject; the limited verb range does not constrain a canonical dimension."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712747x475008652441932600",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "perfect",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": null
+  },
+  "task_runtime_seconds": 7.646901490001255,
+  "model_calls": 1,
+  "tokens_used": 5989,
+  "model_runtime_seconds": 7.646197533000304,
+  "model_call_failures": 0
+}

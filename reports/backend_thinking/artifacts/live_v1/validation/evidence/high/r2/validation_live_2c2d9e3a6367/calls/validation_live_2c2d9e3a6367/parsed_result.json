@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target is present progressive, active, negative, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The context and answer form a coherent, natural contrast."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides a simple, focused prompt for negative present progressive practice."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The prompt does not explicitly require negation, and “They are playing outside” remains grammatically possible from the cue alone."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the base-form cue “play,” not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The item can be answered using only the targeted present progressive negative structure."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No factual or specialist knowledge is required."
+    }
+  }
+}

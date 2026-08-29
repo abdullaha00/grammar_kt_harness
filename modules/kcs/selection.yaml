@@ -1,0 +1,42 @@
+selection_id: forward_predictive_parsimony_v1
+description: >-
+  Start from development-observed feature-value KCs, then greedily add supported
+  nonredundant operation or pairwise candidates when development-validation
+  predictive gain offsets a KC-count penalty; finally prune additions that no
+  longer improve the same objective.
+
+selection_split:
+  mode: chronological
+  train_dataset_split: train
+  validation_dataset_split: validation
+
+objective:
+  metric: log_loss
+  complexity: kc_count
+  # Phase-3 calibration: this rejected additions in 5/5 factorized seeds while
+  # allowing one recovery in the deliberately detectable interaction probe.
+  complexity_penalty: 0.0005
+  # The objective already penalizes complexity; a second gain threshold was
+  # redundant and caused a documented false negative in the recovery probe.
+  minimum_improvement: 0.0
+
+search:
+  initial_family: feature_value
+  addition_families: [operation, interaction]
+  preserve_initial: true
+  backward_prune: true
+
+selector_model:
+  model: observable_logistic_kt
+  history_prior: {alpha: 1.0, beta: 1.0}
+  # Observable, nested PFA-style histories: adding a candidate appends its
+  # columns without changing the existing representation. No oracle is used.
+  features:
+    - learner_success_rate
+    - learner_log_attempts
+    - per_kc_active
+    - per_kc_prior_successes
+    - per_kc_prior_failures
+  regularization_c: 0.1
+  max_iterations: 300
+  random_seed: 20260827

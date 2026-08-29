@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Present progressive, active, positive declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The copying instruction and answer are coherent."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "It only requires copying a supplied sentence, not practising the grammar form."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The prompt specifies exactly one accepted response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary is common and unambiguous."
+    },
+    "no_answer_leakage": {
+      "passed": false,
+      "note": "The prompt displays the complete target answer."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external knowledge is required."
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "item_id": "adversarial_target_fidelity_2",
+  "audit_id": "validation_live_e8fe198f358d",
+  "cell_id": "cell_019",
+  "effort": "medium",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_e8fe198f358d",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": false,
+        "note": "The target is present-tense active, not past-tense passive."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt and answer form a coherent everyday sentence."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "It does not practice the intended past passive grammar cell."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The prompt does not specify the required tense or voice, so many valid sentences are possible."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary is common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed target sentence."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "No unrelated advanced grammar is needed."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external knowledge is required."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "target_fidelity"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": true,
+  "reference_source": "authored_adversarial_negative_control",
+  "task_runtime_seconds": 7.703124455998477,
+  "model_calls": 1,
+  "tokens_used": 2466,
+  "model_runtime_seconds": 7.702365378001559,
+  "model_call_failures": 0
+}

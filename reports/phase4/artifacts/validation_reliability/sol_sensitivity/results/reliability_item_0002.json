@@ -1,0 +1,54 @@
+{
+  "sample_order": 2,
+  "blind_item_id": "reliability_item_0002",
+  "candidate_id": "candidate_model_selected_CELL_0A7F3FA2D498D97D_05",
+  "condition": "model_selected",
+  "cell_id": "CELL_0A7F3FA2D498D97D",
+  "candidate_index": 5,
+  "original_accepted": false,
+  "original_failed_criteria": [
+    "determinacy"
+  ],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The answer is present perfect, active, negative, declarative, and contains no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The dirty cups provide a natural context for saying that Maya has not washed them."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The item does not explicitly cue the present perfect negative, so it is insufficiently focused on the intended grammar."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "Several forms fit the prompt, such as “Maya did not wash the cups” or “Maya is not washing the cups,” beyond the accepted responses."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common, transparent, and lexically straightforward."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies content words but does not display the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed to complete the item."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The item requires no external factual or specialist knowledge."
+    }
+  },
+  "accepted": false,
+  "runtime_seconds": 15.192162517007091
+}

@@ -1,0 +1,65 @@
+{
+  "blind_id": "generation_judge_0042",
+  "experiment_item_id": "generation_high_cell_014_03",
+  "generation_effort": "high",
+  "cell_id": "cell_014",
+  "candidate_index": 3,
+  "judge_effort": "medium",
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "generation_judge_0042",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The target is a negative past perfect active declarative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The context and answer form a coherent, natural explanation."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of the negative past perfect."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "“Lena didn't eat breakfast before she left home” is also a natural grammatical completion, so the prompt does not fully determine only the accepted past-perfect forms."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and situation are common and clear."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed target form is not shown in the prompt."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The item can be answered using the target tense pattern without unrelated advanced grammar."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "task_runtime_seconds": 12.25168445700001,
+  "model_calls": 1,
+  "tokens_used": 1653,
+  "model_runtime_seconds": 12.250858168001287,
+  "model_call_failures": 0
+}

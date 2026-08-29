@@ -1,0 +1,7 @@
+{
+  "prompt": "The dishes were dirty earlier, but they are clean now. Complete the sentence using the verb in brackets: Maya ____ the dishes. (wash)",
+  "target_answer": "Maya has washed the dishes.",
+  "accepted_answers": [
+    "has washed"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "prompt": "It is the end of the week, and Mia's book is still unread. Complete the response using the cue (Mia / read / a book): ____",
+  "target_answer": "Mia has not read a book.",
+  "accepted_answers": [
+    "Mia has not read a book.",
+    "Mia hasn't read a book."
+  ],
+  "operation_tags": [
+    "perfect",
+    "negation"
+  ],
+  "note": "The full and contracted negative forms are accepted."
+}

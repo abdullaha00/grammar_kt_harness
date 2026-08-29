@@ -1,0 +1,1 @@
+{"prompt":"Mia started washing the windows two hours ago, and she is still doing it. Complete the sentence: Mia ____ the windows for two hours.","target_answer":"Mia has been washing the windows for two hours.","accepted_answers":["has been washing"]}

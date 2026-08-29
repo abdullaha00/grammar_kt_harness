@@ -1,0 +1,13 @@
+{
+  "fold_id": "semantic_grammar_coverage_v1",
+  "description": "Outcome-free semantic split. Explicit novel values are withheld completely; compositional cells are sampled by feature tuple while retaining repeated development support for every constituent value.",
+  "compositional_holdout_fraction": 0.2,
+  "minimum_development_value_cell_support": 2,
+  "minimum_accepted_items_per_holdout_cell": 1,
+  "semantic_sampling_seed": 20260827,
+  "novel_feature_values": {
+    "modal": [
+      "would"
+    ]
+  }
+}

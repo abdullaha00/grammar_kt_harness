@@ -1,0 +1,5 @@
+{
+  "intervention": "reverse cells/items and replace every cell ID",
+  "semantic_assignments_unchanged": true,
+  "comparison_unit": "canonical feature tuple"
+}

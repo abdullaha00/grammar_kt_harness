@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_high_cell_014_03",
+  "cell_id": "cell_014",
+  "candidate_index": 3,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_014_03",
+    "cell_id": "cell_014",
+    "format": "controlled_production",
+    "prompt": "Lena was hungry because she skipped breakfast. Complete the sentence using the verb in brackets: Lena ___ breakfast before she left home. (eat)",
+    "target_answer": "Lena had not eaten breakfast before she left home.",
+    "accepted_answers": [
+      "had not eaten",
+      "hadn't eaten"
+    ],
+    "generation_metadata": {
+      "candidate_index": 3,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 13.713883730000816,
+  "model_calls": 1,
+  "tokens_used": 3189,
+  "model_runtime_seconds": 13.71203839699956,
+  "model_call_failures": 0
+}

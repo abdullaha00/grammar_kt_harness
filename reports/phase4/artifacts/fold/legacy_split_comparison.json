@@ -1,0 +1,11 @@
+{
+  "note": "The historical split is descriptive only and was not an input to the builder.",
+  "matching_cell_assignments": 12,
+  "total_cells": 24,
+  "transition_counts": {
+    "compositional_holdout -> development": 7,
+    "development -> compositional_holdout": 5,
+    "development -> development": 11,
+    "novel_feature_holdout -> novel_feature_holdout": 1
+  }
+}

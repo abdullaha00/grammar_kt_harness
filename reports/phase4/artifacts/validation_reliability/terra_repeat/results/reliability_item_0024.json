@@ -1,0 +1,54 @@
+{
+  "sample_order": 24,
+  "blind_item_id": "reliability_item_0024",
+  "candidate_id": "candidate_model_selected_CELL_0D017AFB2B3A3DB5_02",
+  "condition": "model_selected",
+  "cell_id": "CELL_0D017AFB2B3A3DB5",
+  "candidate_index": 2,
+  "original_accepted": false,
+  "original_failed_criteria": [
+    "determinacy"
+  ],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses positive active past perfect progressive in a declarative clause, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The timeline and response form a coherent, natural context."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The item clearly focuses on forming the past perfect progressive."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The prompt permits equally valid variants such as “since 8:00” or “for 20 minutes,” but only one exact wording is accepted."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only a cue and does not display the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "It can be completed using the target tense plus simple, familiar duration language."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is required."
+    }
+  },
+  "accepted": false,
+  "runtime_seconds": 11.663995449998765
+}

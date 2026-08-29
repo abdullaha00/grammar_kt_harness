@@ -1,0 +1,8 @@
+{
+  "prompt": "Mia drinks tea, but she ___ coffee. (drink)",
+  "target_answer": "She does not drink coffee.",
+  "accepted_answers": [
+    "does not drink",
+    "doesn't drink"
+  ]
+}

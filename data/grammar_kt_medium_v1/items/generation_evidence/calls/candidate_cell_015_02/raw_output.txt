@@ -1,0 +1,1 @@
+{"prompt":"The guests arrived at 7:00. Complete the sentence using “wash the dishes”: Maya ____ before the guests arrived.","target_answer":"Maya had washed the dishes before the guests arrived.","accepted_answers":["had washed the dishes"]}

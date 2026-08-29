@@ -1,0 +1,1 @@
+{"prompt":"The children got home at six. By then, their father ____ dinner. (cook)","target_answer":"Their father had cooked dinner.","accepted_answers":["had cooked"]}

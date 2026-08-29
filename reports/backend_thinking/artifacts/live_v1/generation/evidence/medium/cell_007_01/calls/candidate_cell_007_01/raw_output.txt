@@ -1,0 +1,1 @@
+{"prompt":"Mia works at the library, not at the café. Complete the sentence with the correct form of “work”: Mia ____ at the café.","target_answer":"Mia does not work at the café.","accepted_answers":["does not work","doesn't work"]}

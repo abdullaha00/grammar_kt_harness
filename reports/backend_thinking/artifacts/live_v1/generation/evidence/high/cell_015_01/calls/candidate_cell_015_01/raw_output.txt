@@ -1,0 +1,1 @@
+{"prompt":"When Ben reached the bus stop, the bus was no longer there. Complete the sentence using the cue “leave”: The bus ____.","target_answer":"The bus had left.","accepted_answers":["had left"]}

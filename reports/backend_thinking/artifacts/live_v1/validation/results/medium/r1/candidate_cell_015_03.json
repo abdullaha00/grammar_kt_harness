@@ -1,0 +1,69 @@
+{
+  "item_id": "candidate_cell_015_03",
+  "audit_id": "validation_live_4d75d0fbfe9b",
+  "cell_id": "cell_015",
+  "effort": "medium",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_4d75d0fbfe9b",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "“had set” is past perfect, active, positive, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "Setting the table before the family sits down for dinner is coherent and natural."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "The item clearly focuses practice on the past perfect form of “set.”"
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The completed past event and “By then” context sufficiently cue “had set.”"
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and dinner-table context are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives only the base verb “set,” not the completed past-perfect form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Solving it requires only the intended past-perfect construction."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": true,
+  "retained_failed_criteria": [],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 12.741663344000699,
+  "model_calls": 1,
+  "tokens_used": 2585,
+  "model_runtime_seconds": 12.740791129999707,
+  "model_call_failures": 0
+}

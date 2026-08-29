@@ -1,0 +1,21 @@
+{
+  "source_id": "1741163708336x928067678664856700",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": [
+        "present",
+        "past"
+      ],
+      "aspect": null,
+      "voice": null,
+      "polarity": "positive",
+      "clause": null,
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "Affirmative interrogatives with finite BE are nonmodal and positive; present versus past is bounded but unresolved, while the aspect, voice, and question subtype are not specified."
+}

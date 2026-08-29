@@ -1,0 +1,8 @@
+{
+  "prompt": "The bus came early, so Mia missed it. Complete the sentence using the cue (catch): Mia ___ the bus.",
+  "target_answer": "Mia did not catch the bus.",
+  "accepted_answers": [
+    "did not catch",
+    "didn't catch"
+  ]
+}

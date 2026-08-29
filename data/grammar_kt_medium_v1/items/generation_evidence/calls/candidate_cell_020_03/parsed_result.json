@@ -1,0 +1,7 @@
+{
+  "prompt": "A worker cleans the shop windows every morning. Complete the sentence using the verb in brackets: The shop windows ____ every morning. (clean)",
+  "target_answer": "The shop windows are cleaned every morning.",
+  "accepted_answers": [
+    "are cleaned"
+  ]
+}

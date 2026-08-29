@@ -1,0 +1,12 @@
+{
+  "prompt": "The car is unavailable today. Complete the response using the words in brackets.\nA: How would Ben get to work?\nB: ____ (he / take / the bus)",
+  "target_answer": "He would take the bus.",
+  "accepted_answers": [
+    "He would take the bus.",
+    "He'd take the bus."
+  ],
+  "operation_tags": [
+    "central_modal"
+  ],
+  "note": "The response is a positive active declarative clause with would followed by the base form take."
+}

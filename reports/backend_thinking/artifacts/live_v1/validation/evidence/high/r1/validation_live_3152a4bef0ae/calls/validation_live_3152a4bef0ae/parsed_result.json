@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses past simple active negative declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "Staying home coherently supports not walking to the park."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of past-simple negation with did not."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The context and cue clearly determine a past negative sentence using the supplied words."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "All vocabulary and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed negative target sentence."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Only basic past-simple negation is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is required."
+    }
+  }
+}

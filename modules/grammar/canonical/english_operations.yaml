@@ -1,0 +1,58 @@
+operation_design_id: english_cell_deterministic_operations_v1
+description: >-
+  English grammatical-operation hypotheses whose activation can be derived
+  from the canonical GrammarCell alone. Realisation-dependent operations such
+  as DO-support and agreement are intentionally excluded.
+
+operations:
+  - id: finite_tense_form
+    definition: Realise a morphologically present- or past-tense finite form.
+    activation:
+      any:
+        - {cell: {tense: present}}
+        - {cell: {tense: past}}
+
+  - id: perfect_dependency
+    definition: Realise perfect HAVE and its participial dependency.
+    activation:
+      any:
+        - {cell: {aspect: perfect}}
+        - {cell: {aspect: perfect_progressive}}
+
+  - id: progressive_dependency
+    definition: Realise progressive BE and its -ing dependency.
+    activation:
+      any:
+        - {cell: {aspect: progressive}}
+        - {cell: {aspect: perfect_progressive}}
+
+  - id: passive_dependency
+    definition: Realise passive BE and a past-participle dependency.
+    activation: {cell: {voice: passive}}
+
+  - id: negation
+    definition: Realise clause-level grammatical negation.
+    activation: {cell: {polarity: negative}}
+
+  - id: central_modal
+    definition: Realise a central modal and base-form complement.
+    activation: {cell: {modal: {not: none}}}
+
+  - id: operator_inversion
+    definition: Realise finite-operator and subject inversion.
+    activation:
+      any:
+        - {cell: {clause: polar_question}}
+        - {cell: {clause: non_subject_wh_question}}
+
+  - id: subject_wh
+    definition: Realise a subject-WH main clause without question-triggered inversion.
+    activation: {cell: {clause: subject_wh_question}}
+
+  - id: wh_fronting
+    definition: Front a non-subject WH constituent in a main-clause question.
+    activation: {cell: {clause: non_subject_wh_question}}
+
+  - id: imperative
+    definition: Realise an imperative main clause.
+    activation: {cell: {clause: imperative}}

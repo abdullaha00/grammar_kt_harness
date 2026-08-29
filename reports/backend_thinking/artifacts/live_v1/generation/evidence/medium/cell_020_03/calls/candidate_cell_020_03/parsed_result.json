@@ -1,0 +1,7 @@
+{
+  "prompt": "The staff wash the school windows every Friday. Complete the sentence using the cue (wash): The school windows ___.",
+  "target_answer": "The school windows are washed every Friday.",
+  "accepted_answers": [
+    "are washed every Friday"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source_id": "1741163715031x898125206259626100",
+  "result": "partial",
+  "cells": [
+    {
+      "aspect": "none",
+      "clause": [
+        "subject_wh_question",
+        "non_subject_wh_question"
+      ],
+      "modal": "none",
+      "polarity": null,
+      "tense": "present",
+      "voice": "active"
+    },
+    {
+      "aspect": "none",
+      "clause": [
+        "subject_wh_question",
+        "non_subject_wh_question"
+      ],
+      "modal": "none",
+      "polarity": null,
+      "tense": "past",
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "The descriptor licenses finite present and past forms of main-verb BE, and the examples positively establish both: present 'are' and past 'was'. The original branch is therefore preserved as two tense-specific descendants; clause subtype and polarity remain unresolved and unchanged."
+}

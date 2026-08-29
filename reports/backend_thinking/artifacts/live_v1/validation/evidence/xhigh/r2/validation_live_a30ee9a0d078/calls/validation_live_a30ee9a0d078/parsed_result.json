@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It uses a positive active declarative in the present simple."
+    },
+    "grammaticality": {
+      "passed": false,
+      "note": "With singular subject “Mia,” the verb should be “walks,” not “walk.”"
+    },
+    "naturalness": {
+      "passed": false,
+      "note": "The prompt is understandable, but the target answer is ungrammatical and therefore not natural English."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The incorrect subject-verb agreement makes it unsuitable for focused grammar practice."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The open prompt permits many valid descriptions, while the sole accepted answer is not the grammatical expected form."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed target sentence."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is required."
+    }
+  }
+}

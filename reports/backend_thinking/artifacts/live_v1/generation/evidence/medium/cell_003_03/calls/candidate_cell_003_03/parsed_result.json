@@ -1,0 +1,7 @@
+{
+  "prompt": "Every morning, Lina gives her cat fresh water. Complete the sentence using the cue in brackets: Lina ___ fresh water every morning. (give her cat)",
+  "target_answer": "Lina gives her cat fresh water every morning.",
+  "accepted_answers": [
+    "gives her cat"
+  ]
+}

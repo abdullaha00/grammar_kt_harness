@@ -1,0 +1,12 @@
+{
+  "prompt": "The workers have started work on the kitchen, but they have not finished. Complete the sentence using the cue (the kitchen / paint): ____",
+  "target_answer": "The kitchen is being painted.",
+  "accepted_answers": [
+    "The kitchen is being painted."
+  ],
+  "operation_tags": [
+    "progressive",
+    "be_passive"
+  ],
+  "note": "The answer describes an action currently in progress and focuses on the thing receiving the action."
+}

@@ -1,0 +1,5 @@
+policy_id: medium_v1_oracle_exact_all_cell
+description: Labelled oracle structural extreme with one KC for every exact cell,
+  including evaluation cells; never available to selection.
+kind: full_cell
+kc_id_pattern: kc_oracle_cell__{cell_id}

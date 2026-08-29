@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_medium_cell_019_02",
+  "cell_id": "cell_019",
+  "candidate_index": 2,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_019_02",
+    "cell_id": "cell_019",
+    "format": "controlled_production",
+    "prompt": "The storm knocked down a tree last night. Complete the sentence using the cue (knock down): “The tree ____ last night.”",
+    "target_answer": "The tree was knocked down last night.",
+    "accepted_answers": [
+      "was knocked down"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 5.4517206670007,
+  "model_calls": 1,
+  "tokens_used": 2978,
+  "model_runtime_seconds": 5.4509858950004855,
+  "model_call_failures": 0
+}

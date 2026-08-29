@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163715031x898125206259626100",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": ["present", "past"],
+      "aspect": "none",
+      "voice": "active",
+      "polarity": null,
+      "clause": "non_subject_wh_question",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": ["tense"],
+  "note": "The finite main-verb BE formula permits present or past and places the subject after BE, identifying a non-subject WH question; polarity is unspecified."
+}

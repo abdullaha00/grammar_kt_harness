@@ -1,0 +1,36 @@
+{
+  "descriptor": {
+    "source_id": "1741163715033x134646499658930300",
+    "supercategory": "QUESTIONS",
+    "subcategory": "yes/no",
+    "guideword": "FORM: AUXILIARY 'BE'",
+    "can_do": "Can use auxiliary 'be' + subject + the '-ing' form (continuous form) to form 'yes/no' questions."
+  },
+  "phase1_mapping": {
+    "source_id": "1741163715033x134646499658930300",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "progressive",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "examples": [
+    "Are you going to come? (Spain; A2 WAYSTAGE; 2006; Catalan; Pass)",
+    "Are you feeling better? (A2 WAYSTAGE; 2008; Spanish - Latin American; Pass)",
+    "Are you going to the new art class? (Cyprus; A2 WAYSTAGE; 2006; Turkish; Pass)",
+    "Are you doing anything on Friday? (Spain; A2 WAYSTAGE; 2010; Chinese; Pass)"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "prompt": "The room is too warm. What action is likely if Omar becomes uncomfortable? Use the cue: Omar / open / the door. Response: ____",
+  "target_answer": "Omar would open the door.",
+  "accepted_answers": [
+    "Omar would open the door."
+  ],
+  "operation_tags": [
+    "central_modal"
+  ],
+  "note": "The response describes the likely action in the stated situation."
+}

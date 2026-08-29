@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163712048x834192566226660200",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": "NA",
+      "aspect": null,
+      "voice": "passive",
+      "polarity": null,
+      "clause": null,
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": [],
+  "note": "The target is a non-finite passive infinitive; the named preceding forms are not central modals, while aspect, polarity, and main-clause type are not constrained."
+}

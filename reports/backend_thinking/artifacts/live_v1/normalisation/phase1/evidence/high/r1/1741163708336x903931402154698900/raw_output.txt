@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163708336x903931402154698900",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": ["present", "past"],
+      "aspect": null,
+      "voice": null,
+      "polarity": "positive",
+      "clause": "polar_question",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": ["tense"],
+  "note": "Affirmative yes/no interrogation fixes positive polarity and polar-question clause type. Auxiliary BE/HAVE establishes a finite nonmodal form but does not close the auxiliary chain sufficiently to determine aspect or voice."
+}

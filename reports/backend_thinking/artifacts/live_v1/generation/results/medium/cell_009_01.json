@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_medium_cell_009_01",
+  "cell_id": "cell_009",
+  "candidate_index": 1,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_009_01",
+    "cell_id": "cell_009",
+    "format": "controlled_production",
+    "prompt": "Mia usually walks to work, but today she is taking the bus. Complete the sentence using the cue: Mia ____ to work today. (walk)",
+    "target_answer": "Mia is not walking to work today.",
+    "accepted_answers": [
+      "is not walking",
+      "isn't walking"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 6.547693260999949,
+  "model_calls": 1,
+  "tokens_used": 5035,
+  "model_runtime_seconds": 6.546948281000368,
+  "model_call_failures": 0
+}

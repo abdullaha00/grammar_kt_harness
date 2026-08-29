@@ -1,0 +1,121 @@
+{
+  "experiment_id": "phase6_selection_stability_v1",
+  "design": {
+    "reference_seed": 20260827,
+    "simulation_seeds": [
+      20260827,
+      20260828,
+      20260829,
+      20260830,
+      20260831
+    ],
+    "full_support_learners": 1000,
+    "reference_nested_learners": [
+      60,
+      120,
+      240,
+      500,
+      1000
+    ],
+    "selection_conditions": [
+      {
+        "condition_id": "seed_20260827__learners_0060",
+        "seed": 20260827,
+        "learners": 60,
+        "stage": "reference_seed_nested_support"
+      },
+      {
+        "condition_id": "seed_20260827__learners_0120",
+        "seed": 20260827,
+        "learners": 120,
+        "stage": "reference_seed_nested_support"
+      },
+      {
+        "condition_id": "seed_20260827__learners_0240",
+        "seed": 20260827,
+        "learners": 240,
+        "stage": "reference_seed_nested_support"
+      },
+      {
+        "condition_id": "seed_20260827__learners_0500",
+        "seed": 20260827,
+        "learners": 500,
+        "stage": "reference_seed_nested_support"
+      },
+      {
+        "condition_id": "seed_20260827__learners_1000",
+        "seed": 20260827,
+        "learners": 1000,
+        "stage": "reference_seed_nested_support"
+      },
+      {
+        "condition_id": "seed_20260828__learners_1000",
+        "seed": 20260828,
+        "learners": 1000,
+        "stage": "full_support_seed_stability"
+      },
+      {
+        "condition_id": "seed_20260829__learners_1000",
+        "seed": 20260829,
+        "learners": 1000,
+        "stage": "full_support_seed_stability"
+      },
+      {
+        "condition_id": "seed_20260830__learners_1000",
+        "seed": 20260830,
+        "learners": 1000,
+        "stage": "full_support_seed_stability"
+      },
+      {
+        "condition_id": "seed_20260831__learners_1000",
+        "seed": 20260831,
+        "learners": 1000,
+        "stage": "full_support_seed_stability"
+      }
+    ],
+    "selection_count": 9,
+    "design_type": "nested_reference_support_plus_full_support_seed_stability; not_a_Cartesian_product"
+  },
+  "fixed_artifacts": {
+    "cells": {
+      "path": "data/grammar_kt_medium_v1/canonical/cells.jsonl",
+      "sha256": "af181630c092ba9e71a38b6e385339dafedb10161f7989b6df97590b20c5c63c"
+    },
+    "items": {
+      "path": "data/grammar_kt_medium_v1/items/selected_bank.jsonl",
+      "sha256": "b30fbe0c70ea4a522ebca17cc4859f8cc28a08997ad86ac469f884c051a5b1da"
+    },
+    "fold": {
+      "path": "data/grammar_kt_medium_v1/fold/assignments.jsonl",
+      "sha256": "b6ab0e0d88bc360ad4f0f40d86c2f5a8b670ee2121b2cff01575a00b96a2f5f4"
+    },
+    "candidate_inventory": {
+      "path": "data/grammar_kt_medium_v1/kc/candidate_inventory.json",
+      "sha256": "bfca38de7ae8bfcf3edd2b65195b7857fc79c8e73d540991d63ad31c7e37c3a5"
+    },
+    "grammar_schema": {
+      "path": "modules/grammar/canonical/schema.yaml",
+      "sha256": "a3e8d4f1c419eff10c4498db4b3b243fddf51b708ad569c652a9caaa3a8f0aaf"
+    },
+    "world_design": {
+      "path": "modules/simulation/worlds/phase4_mixed.yaml",
+      "sha256": "13fb5bb0c4489d43d7e4df72b478f6e5fa563922db38c6133e962e96777f0129"
+    },
+    "simulation_protocol": {
+      "path": "modules/simulation/protocol.yaml",
+      "sha256": "211147f1a99b2d0dc71f109d81b825c7436e67a47acfa3998fdeac2bd0ead131"
+    },
+    "selection_design": {
+      "path": "modules/kcs/selection.yaml",
+      "sha256": "75b572a4931236c7b4e351d8ed86aeb3a2c3b58f5e13c3d4d7b526b81f58bbcd"
+    }
+  },
+  "method_fingerprint": "d235af8ebe55dabca38266a03cd9a680eca7c122bc96d1db60be7fb5c99127c0",
+  "selection_boundary": "Only development acquisition events labelled train/validation enter select_kcs; frozen probes and all grammar holdouts are excluded.",
+  "provenance": {
+    "model_calls": 0,
+    "models": [],
+    "description": "Deterministic synthetic-event replay and learner-evidence KC selection over the already fixed, model-validated item bank; no LM is invoked."
+  },
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/run_phase6_selection_stability.py"
+}

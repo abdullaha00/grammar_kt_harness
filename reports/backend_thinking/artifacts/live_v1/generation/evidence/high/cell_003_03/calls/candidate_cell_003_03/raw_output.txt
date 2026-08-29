@@ -1,0 +1,1 @@
+{"prompt":"Mia follows the same routine every morning. Complete the sentence using the cue (feed): Mia ___ the cat before breakfast.","target_answer":"Mia feeds the cat before breakfast.","accepted_answers":["feeds"]}

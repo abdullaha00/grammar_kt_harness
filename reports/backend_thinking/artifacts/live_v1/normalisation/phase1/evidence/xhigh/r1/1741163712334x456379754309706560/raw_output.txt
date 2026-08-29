@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163712334x456379754309706560",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": "past",
+      "aspect": "perfect",
+      "voice": "active",
+      "polarity": null,
+      "clause": null,
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": [],
+  "note": "The descriptor specifies an active past-perfect form, but generic questions establish neither polarity nor a closed question subtype."
+}

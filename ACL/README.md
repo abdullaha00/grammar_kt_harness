@@ -1,50 +1,47 @@
-# *ACL Paper Styles
+# ACL manuscript
 
-This directory contains the latest LaTeX templates for *ACL conferences.
+`paper.tex` is the paper-facing account of the active grammar-KT dataset and KC
+selection pipeline.  Quantitative claims are indexed in `evidence.md` and
+`results_summary.md`; detailed experiment commands and artifacts remain in the
+repository-level reports.
 
-## Instructions for authors
+## Build
 
-Paper submissions to *ACL conferences must use the official ACL style
-templates.
+Run from this directory so that section, table, figure, and bibliography paths
+resolve correctly:
 
-The LaTeX style files are available
+```bash
+cd ACL
+latexmk -pdf -interaction=nonstopmode -halt-on-error paper.tex
+```
 
-- as an [Overleaf template](https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj)
-- in this repository
-- as a [.zip file](https://github.com/acl-org/acl-style-files/archive/refs/heads/master.zip)
+Equivalent invocation from the repository root:
 
-Please see [`acl_latex.tex`](https://github.com/acl-org/acl-style-files/blob/master/acl_latex.tex) for detailed instructions on using the LaTeX style.  This file also serves as a template document for use with LaTeX and pdfLaTeX.  The file  [`acl_lualatex.tex`](https://github.com/acl-org/acl-style-files/blob/master/acl_lualatex.tex) serves as a template document for use with both XeLaTeX and LuaLaTeX. 
+```bash
+latexmk -cd -pdf -interaction=nonstopmode -halt-on-error ACL/paper.tex
+```
 
-Please follow the paper formatting guidelines general to *ACL
-conferences:
+To run the ACL bibliography-style regression suite:
 
-- [Paper formatting guidelines](https://acl-org.github.io/ACLPUB/formatting.html)
+```bash
+cd ACL
+python tests/regression/run_tests.py
+```
 
-Authors may not modify these style files or use templates designed for
-other conferences.
+The review manuscript uses the unmodified ACL style files in this directory.
+Generated `paper.aux`, `paper.bbl`, `paper.blg`, `paper.fdb_latexmk`,
+`paper.fls`, `paper.log`, `paper.out`, and `paper.pdf` must be rebuilt after any
+source or bibliography change.
 
-## Instructions for publications chairs
+## Source layout
 
-To adapt the style files for your conference, please fork this repository and
-make necessary changes. Minimally, you'll need to update the name of
-the conference and rename the files.
+- `sections/`: manuscript prose;
+- `tables/`: main paper tables generated from retained evidence;
+- `figures/`: paper-facing methodology figures;
+- `paper.bib`: cited bibliography;
+- `evidence.md`: claim-to-artifact ledger;
+- `results_summary.md`: compact quantitative handoff.
 
-If you make improvements to the templates that should be propagated to
-future conferences, please submit a pull request. Thank you in
-advance!
-
-In older versions of the templates, authors were asked to fill in the
-START submission ID so that it would be stamped at the top of each
-page of the anonymized version. This is no longer needed, because it
-is now possible to do this stamping automatically within
-START. Currently, the way to do this is for the program chair to email
-support@softconf.com and request it.
-
-## Instructions for making changes to style files
-
-- merge pull request in github, or push to github
-- git pull from github to a local repository
-- then, git push from your local repository to overleaf project 
-    - Overleaf project is https://www.overleaf.com/project/5f64f1fb97c4c50001b60549
-    - Overleaf git url is https://git.overleaf.com/5f64f1fb97c4c50001b60549
-- then, click "Submit" and then "Submit as Template" in overleaf in order to ask overleaf to update the overleaf template from the overleaf project 
+The appendix contains detailed sensitivities and the artifact/RQ maps.  Human
+validity, another-language evidence, or stability beyond the declared synthetic
+worlds must not be inferred from executable completion.

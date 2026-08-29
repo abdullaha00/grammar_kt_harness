@@ -1,0 +1,7 @@
+{
+  "prompt": "The bakery made the bread early this morning. Complete the sentence with the correct form of “make”: The bread ____ early this morning.",
+  "target_answer": "The bread was made early this morning.",
+  "accepted_answers": [
+    "was made"
+  ]
+}

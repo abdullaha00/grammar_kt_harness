@@ -1,0 +1,7 @@
+{
+  "prompt": "By the time the bus arrived, Maya ___ for thirty minutes. (wait)",
+  "target_answer": "Maya had been waiting for thirty minutes.",
+  "accepted_answers": [
+    "had been waiting"
+  ]
+}

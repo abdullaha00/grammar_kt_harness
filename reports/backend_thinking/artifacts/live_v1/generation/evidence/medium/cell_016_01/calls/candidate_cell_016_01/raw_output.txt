@@ -1,0 +1,1 @@
+{"prompt":"Mia started washing the car an hour ago, and she is still doing it. Complete the sentence using “wash”: Mia ___.","target_answer":"Mia has been washing the car.","accepted_answers":["has been washing the car"]}

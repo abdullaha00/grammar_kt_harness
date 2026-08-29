@@ -1,0 +1,7 @@
+{
+  "prompt": "Lena has an umbrella. What happens if it starts to rain? Use the cue “take it with her.” Lena ____.",
+  "target_answer": "Lena would take it with her.",
+  "accepted_answers": [
+    "would take it with her"
+  ]
+}

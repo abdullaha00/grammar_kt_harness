@@ -1,0 +1,36 @@
+{
+  "source_id": "1741163712747x212368838412682500",
+  "stratum": "out_of_scope",
+  "effort": "medium",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712747x212368838412682500",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "present",
+        "aspect": "perfect_progressive",
+        "voice": "active",
+        "polarity": "positive",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "Present perfect continuous fixes present tense and perfect-progressive aspect. The focusing construction triggers subject–auxiliary inversion in an affirmative declarative clause; 'not only' does not establish clause-level negative polarity."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712747x212368838412682500",
+    "result": "out_of_scope",
+    "cells": [],
+    "phase2_eligible": [],
+    "note": "The 'not only … but' focusing construction is a multi-clause relational construction not representable as one GrammarCell."
+  },
+  "task_runtime_seconds": 10.020547010999508,
+  "model_calls": 1,
+  "tokens_used": 3992,
+  "model_runtime_seconds": 10.019829073999063,
+  "model_call_failures": 0
+}

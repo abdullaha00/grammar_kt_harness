@@ -1,0 +1,1 @@
+{"prompt":"You want to know whether Mia opened the window. Complete the question using the cue “open”: ___ the window?","target_answer":"Did Mia open the window?","accepted_answers":["Did Mia open"]}

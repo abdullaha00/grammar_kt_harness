@@ -1,0 +1,50 @@
+{
+  "source_id": "1741163708336x928067678664856700",
+  "stratum": "phase2_eligible",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708336x928067678664856700",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "polarity": "positive",
+        "clause": null,
+        "modal": null
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "Affirmative fixes positive polarity, but generic interrogative wording with broad BE evidence does not determine question subtype, tense, aspect, voice, or modal status."
+  },
+  "retained_mapping": {
+    "source_id": "1741163708336x928067678664856700",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": null,
+        "voice": "active",
+        "polarity": "positive",
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 23.961487819999093,
+  "model_calls": 1,
+  "tokens_used": 6728,
+  "model_runtime_seconds": 23.9608287939991,
+  "model_call_failures": 0
+}

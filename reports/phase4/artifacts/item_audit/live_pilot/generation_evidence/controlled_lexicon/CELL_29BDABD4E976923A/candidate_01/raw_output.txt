@@ -1,0 +1,1 @@
+{"prompt":"Ana is making the meal now. Complete the sentence using “prepare”: The meal ____.","target_answer":"The meal is being prepared.","accepted_answers":["The meal is being prepared."],"operation_tags":["progressive","be_passive"],"note":"The response describes an action in progress now."}

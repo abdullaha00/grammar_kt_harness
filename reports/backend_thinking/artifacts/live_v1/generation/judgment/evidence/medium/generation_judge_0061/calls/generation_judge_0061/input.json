@@ -1,0 +1,57 @@
+{
+  "visible_item": {
+    "item_id": "generation_judge_0061",
+    "format": "controlled_production",
+    "prompt": "The table was ready when the guests arrived. Complete the sentence using “set / the table”: Leo [____] before the guests arrived.",
+    "target_answer": "Leo had set the table before the guests arrived.",
+    "accepted_answers": [
+      "had set the table"
+    ]
+  },
+  "target_cell": {
+    "tense": "past",
+    "aspect": "perfect",
+    "voice": "active",
+    "polarity": "positive",
+    "clause": "declarative",
+    "modal": "none"
+  },
+  "criteria": {
+    "target_fidelity": {
+      "required": true,
+      "question": "Does the target answer express exactly the intended GrammarCell?"
+    },
+    "grammaticality": {
+      "required": true,
+      "question": "Is the target answer grammatical English?"
+    },
+    "naturalness": {
+      "required": true,
+      "question": "Is the prompt-answer pair natural and coherent?"
+    },
+    "pedagogical_suitability": {
+      "required": true,
+      "question": "Is the item suitable for focused grammar practice?"
+    },
+    "determinacy": {
+      "required": true,
+      "question": "Does the prompt sufficiently determine the accepted response set?"
+    },
+    "non_target_language_simplicity": {
+      "required": true,
+      "question": "Is the vocabulary and context sufficiently common, transparent, and lexically unambiguous that lexical knowledge is unlikely to determine the learner's response?"
+    },
+    "no_answer_leakage": {
+      "required": true,
+      "question": "Does the prompt avoid displaying the completed target form?"
+    },
+    "no_extraneous_grammar": {
+      "required": true,
+      "question": "Can the item be solved without unrelated advanced grammar?"
+    },
+    "no_world_knowledge": {
+      "required": true,
+      "question": "Can the item be answered without external factual or specialist knowledge?"
+    }
+  }
+}

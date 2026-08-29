@@ -1,0 +1,71 @@
+{
+  "item_id": "adversarial_grammaticality_2",
+  "audit_id": "validation_live_a7f49136bdc3",
+  "cell_id": "cell_019",
+  "effort": "medium",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_a7f49136bdc3",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "It uses a positive declarative past passive form."
+      },
+      "grammaticality": {
+        "passed": false,
+        "note": "Plural subject “letters” requires “were,” not “was.”"
+      },
+      "naturalness": {
+        "passed": false,
+        "note": "The prompt is coherent, but the answer’s agreement error makes the pair unnatural."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "The incorrect model answer is unsuitable for focused grammar practice."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The open prompt does not sufficiently determine the exact accepted wording, and the accepted answer is ungrammatical."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "“Letters,” “sent,” and “yesterday” are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "No unrelated advanced grammar is needed."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is required."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "grammaticality"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": true,
+  "reference_source": "authored_adversarial_negative_control",
+  "task_runtime_seconds": 11.004446496999662,
+  "model_calls": 1,
+  "tokens_used": 4719,
+  "model_runtime_seconds": 11.00366650900105,
+  "model_call_failures": 0
+}

@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_high_cell_009_03",
+  "cell_id": "cell_009",
+  "candidate_index": 3,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_009_03",
+    "cell_id": "cell_009",
+    "format": "controlled_production",
+    "prompt": "Mia usually takes the bus, but today her brother is driving her. Complete the sentence using “take”: Mia ____ the bus today.",
+    "target_answer": "Mia is not taking the bus today.",
+    "accepted_answers": [
+      "is not taking",
+      "isn't taking"
+    ],
+    "generation_metadata": {
+      "candidate_index": 3,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 7.081821113000842,
+  "model_calls": 1,
+  "tokens_used": 2981,
+  "model_runtime_seconds": 7.081043424001109,
+  "model_call_failures": 0
+}

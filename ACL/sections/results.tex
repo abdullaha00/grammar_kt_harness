@@ -1,52 +1,109 @@
 \section{Results}
 
-\subsection{Normalization and stability}
-
-Phase~1 returned 42 complete, 80 partial, 16 out-of-scope, and one unresolved
-primary mapping.  Of the 80 partial cases routed to Phase~2, two became
-complete, 77 remained partial, and one became unresolved.  The final outcome
-was therefore 44/139 complete mappings (31.7\%), 77 partial, 16 out-of-scope,
-two unresolved, and no schema failures.  Conservative filtering admitted 48
-source-cell edges into 24 unique canonical cells.  Thirteen cells had one
-supporting descriptor, six had two, four had four, and one had seven.
+\subsection{Dataset construction (RQ1)}
 
 \input{tables/normalization_results}
 
-All eight repeated annotation units matched their primary unit exactly in
-status, cells, and note.  The five repeated item diagnostics likewise agreed on
-all decision flags, although their free-text notes differed.  These small
-repeat sets show deterministic-looking behavior for the sampled calls, not a
-general reliability estimate.
+The final normalization outcome is 44/139 complete mappings (31.7\%), 77
+partial, 16 out of scope, and two unresolved.  The complete rows contribute 48
+source--cell edges to 24 unique cells.  Explicit Phase-2 eligibility identifies
+only 9 of the 80 historical partial Phase-1 rows; the retained broad routing had
+resolved only two.  All 80 retained transitions pass the stronger
+branch-preservation audit, and six adversarial tests reject unsafe changes.
 
-\subsection{Policy and item structure}
+Initial default $N=3$ generation produced 72 attempts, 71 payloads, 53 validator
+acceptances, and coverage of 22/24 cells; its initial $N=1,2,3$ prefixes covered
+18, 21, and 22 cells.  The unchanged-prompt rescue accepted one of four
+candidates and reached 23 cells.  Two explicit-construction-cue attempts
+initially accepted one and completed coverage.
+
+An exhaustive agent audit then identified five packaging/reference defects in
+the selected bank and one likely judge error among rejected items.  We corrected
+only answer/reference fields, preserved the raw artifacts, and independently
+rejudged this frozen six-item cohort.  Two former accepts failed and the former
+reject passed.  Post-correction $N=1,2,3$ prefixes therefore contain 16, 33, and
+51 accepts covering 16, 19, and 22 cells; both explicit-cue candidates pass.
+The curated total is 54 accepts and 44 selected items over all 24 cells.
+Determinacy fails on 22/77 curated judgments and remains the dominant rejection;
+naturalness and pedagogical suitability fail on two and three.  The other six
+criteria have no failures.  These are model judgments and an agent audit, not
+expert gold labels.
+
+The earlier eight-cell audit supports the chosen generation design: model-
+selected language covered 8/8 cells at $N=3$, versus 5/8 for a controlled
+lexicon; $N=5$ added accepted variants but no model-selected cell coverage.
+On a stratified 24-item reliability sample, original versus same-model repeat
+acceptance agreed on 19/23 valid rejudgments ($\kappa=.652$), and original versus
+alternate model on 19/24 ($\kappa=.583$).  The final bank therefore supports
+traceable model-validity claims only.
+
+\subsection{Candidate space and selected granularity (RQ2)}
 
 \input{tables/policy_results}
 
-Table~\ref{tab:policy-results} shows that policy choice materially changes the
-benchmark.  Factorization shares nine KCs across the 24 cells and yields a mean
-row width of 2.20.  Adding interactions increases this to 14 KCs and 2.91; the
-DO-question interaction is identical to the polar-question column on this
-sample, so it adds no observed distinction.  Whole-cell encoding produces 24
-orthogonal columns and unit-width rows.
+The 18 development cells and 32 items induce 55 candidates: nine feature
+values, ten declared operations, 18 supported co-occurring pairs, and 18 exact
+development cells.  Seventeen candidates duplicate another activation vector,
+leaving 38 classes; support and equivalence rules leave 28 selection-eligible
+representatives.  Direct negation, passive, imperative, and inversion operations
+alias corresponding feature KCs on this bank.  Finite-tense, perfect-dependency,
+and progressive-dependency operations remain distinct.  Using only one item per
+cell would leave two eligible interactions rather than seven, showing that item
+support affects the measurable hypothesis space even when cell support is
+fixed.
 
-Deterministic checks rejected no candidate.  The automated diagnostic accepted
-all 45 factorized and all 120 whole-cell items.  It rejected one of 70
-interaction items for suspected answer ambiguity: the negative past
-perfect-progressive target placed \emph{not} after the first auxiliary, while
-the diagnostic identified a marked alternative placement consistent with the
-literal prompt.  This case illustrates why deterministic realization alone
-does not establish a unique pedagogically acceptable answer.
+The forward selector starts with nine features and adds only
+\texttt{aspect=perfect}$\wedge$\texttt{polarity=negative}, supported by two
+cells and four items.  The frozen automated policy therefore has ten KCs and
+mean row width 2.18, compared with 16 KCs/2.89 for all supported interactions
+and 24 unit-width oracle cell KCs.
 
-\subsection{Synthetic KT checks}
+\subsection{Fixed-event KT comparison (RQ3)}
 
 \input{tables/kt_results}
 
-Every run passed Q-matrix integrity and observable/oracle separation checks.
-The policy-specific simulations contained 16,200, 24,840, and 43,200 events per
-seed for factorized, interaction, and whole-cell policies.  Within each dataset,
-logistic regression achieved the highest mean test AUC and lowest log loss
-(Table~\ref{tab:kt-results}); fixed-parameter BKT had the highest log loss.
-These results establish that the generated artifacts support chronological KT
-evaluation and respond consistently across seeds.  They do not rank the KC
-policies: the item counts, row widths, response-generating states, and outcome
-rates all change with the policy.
+On the final mixed-world stream, automated selection lowers all-probe logistic
+log loss from .643731 to .643356 ($\Delta=-.000375$, 95\% learner-bootstrap CI
+$[-.000631,-.000109]$).  The gain is concentrated in development probes
+($-.000450$ $[-.000758,-.000141]$); its compositional estimate remains
+inconclusive ($-.000234$ $[-.000836,.000375]$).  All seven supported interactions
+reach .643334 and improve over factorization on all probes ($-.000397$
+$[-.000782,-.000026]$) and compositional probes ($-.001168$
+$[-.002042,-.000246]$).  This richer policy was not selected by the penalized
+development objective; its one-stream result is a sensitivity, not grounds to
+replace the active method.  The 24-cell oracle performs worse overall (.657507)
+and especially on compositional probes because its evaluation-cell columns have
+no acquisition history.
+
+Novel-value estimates use only 2,000 events from two items.  Automated minus
+factorized log loss is $+.000119$ $[-.000099,.000352]$, and a development-
+derived policy cannot create a \texttt{would} KC after seeing the holdout.  The
+gap is reported rather than repaired using evaluation grammar.
+
+\subsection{Robustness and support (RQ4)}
+
+At 240 learners and $\lambda=.0005$, the selector adds no KC in any of three
+factorized or cell-specific null seeds, and recovers both eligible planted
+interactions in all three interaction-heavy seeds; one extra operation appears
+once.  At 30 learners the factorized null has additions in 2/3 seeds, while the
+cell-specific null becomes clean only at 240.  Addition-only Jaccard remains
+.778 in the interaction world and .333 in the mixed world, so repeated events
+do not eliminate limited structural support.
+
+Penalty sensitivity exposes the intended tradeoff.  With $\lambda=0$, all
+three factorized-null runs add irrelevant KCs; $.00025$ does so in 2/3.
+Penalties $.001$ and $.002$ miss at least one planted interaction in 1/3 and
+3/3 positive-control runs.  The retained $.0005$ is the only tested point with
+zero null additions and joint 3/3 planted recovery.  Across worlds, automated
+minus factorized mean log loss is 0 in the factorized world, $-.002256$ in the
+interaction-heavy world, 0 in the cell-specific world, and $+.000016$ in the
+mixed world.  Exact cells win only in their matching cell-specific world.  No
+representation is universally best.
+
+On the curated final bank, all five 1,000-learner mixed-world seeds select the
+same ten KCs, including perfect$\wedge$negative (pairwise inventory
+Jaccard $=1$).  Nested 60/240/500/1,000-learner subsets of the reference seed
+also match; the 120-learner subset instead adds present$\wedge$passive, giving
+Jaccard .818 with the reference inventory.  Thus full-support selection is
+stable across the tested simulation seeds, while a single intermediate support
+sample exposes finite-evidence sensitivity.

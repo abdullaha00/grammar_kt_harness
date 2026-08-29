@@ -1,0 +1,7 @@
+{
+  "prompt": "Before the guests arrived, the room was ready. Complete the sentence using the cue “move”: By then, the chairs ____ into the hall.",
+  "target_answer": "By then, the chairs had been moved into the hall.",
+  "accepted_answers": [
+    "had been moved"
+  ]
+}

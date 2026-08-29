@@ -1,0 +1,11 @@
+{
+  "prompt": "Mia is choosing a drink. State her polite preference using the cue (Mia / some water): ______.",
+  "target_answer": "Mia would like some water.",
+  "accepted_answers": [
+    "Mia would like some water."
+  ],
+  "operation_tags": [
+    "central_modal"
+  ],
+  "note": "The response uses affirmative “would like” to express a polite preference."
+}

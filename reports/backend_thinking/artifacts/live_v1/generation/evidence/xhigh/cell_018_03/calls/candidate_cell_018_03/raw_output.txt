@@ -1,0 +1,1 @@
+{"prompt":"Ben started washing the car at 4 p.m. and stopped at 6 p.m. Complete the sentence using the cue (he / wash the car): By the time he stopped, [_____] for two hours.","target_answer":"By the time he stopped, he had been washing the car for two hours.","accepted_answers":["he had been washing the car"]}

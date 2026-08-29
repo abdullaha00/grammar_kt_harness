@@ -1,0 +1,1 @@
+{"prompt":"Maya skipped breakfast and later arrived at work hungry. Complete the sentence using the cue “eat”: She ___ breakfast.","target_answer":"She had not eaten breakfast.","accepted_answers":["had not eaten","hadn't eaten"]}

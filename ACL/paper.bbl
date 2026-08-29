@@ -1,4 +1,4 @@
-\begin{thebibliography}{15}
+\begin{thebibliography}{17}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Abdelrahman et~al.(2023)Abdelrahman, Wang, and
@@ -7,6 +7,14 @@ Ghodai Abdelrahman, Qing Wang, and Bernardo~Pereira Nunes. 2023.
 \newblock \href {https://doi.org/10.1145/3569576} {Knowledge tracing: A
   survey}.
 \newblock \emph{ACM Computing Surveys}, 55(11):1--37.
+
+\bibitem[{Bender and Friedman(2018)}]{bender-friedman-2018}
+Emily~M. Bender and Batya Friedman. 2018.
+\newblock \href {https://doi.org/10.1162/tacl_a_00041} {Data statements for
+  natural language processing: Toward mitigating system bias and enabling
+  better science}.
+\newblock \emph{Transactions of the Association for Computational Linguistics},
+  6:587--604.
 
 \bibitem[{Bitew et~al.(2023)Bitew, Deleu, Do{\u{g}}ru{\"o}z, Develder, and
   Demeester}]{bitew-etal-2023-learning}
@@ -18,6 +26,13 @@ Semere~Kiros Bitew, Johannes Deleu, A.~Seza Do{\u{g}}ru{\"o}z, Chris Develder,
 \newblock In \emph{Proceedings of the 18th Workshop on Innovative Use of {NLP}
   for Building Educational Applications}, pages 598--609. Association for
   Computational Linguistics.
+
+\bibitem[{Cen et~al.(2006)Cen, Koedinger, and Junker}]{cen-etal-2006}
+Hao Cen, Kenneth Koedinger, and Brian Junker. 2006.
+\newblock \href {https://doi.org/10.1007/11774303_17} {Learning factors
+  analysis -- a general method for cognitive model evaluation and improvement}.
+\newblock In \emph{Intelligent Tutoring Systems}, volume 4053 of \emph{Lecture
+  Notes in Computer Science}, pages 164--175. Springer.
 
 \bibitem[{Chan et~al.(2022)Chan, Somasundaran, Ghosh, and
   Zhao}]{chan-etal-2022-agree}

@@ -1,0 +1,52 @@
+{
+  "sample_order": 23,
+  "blind_item_id": "reliability_item_0023",
+  "candidate_id": "candidate_controlled_lexicon_CELL_0D017AFB2B3A3DB5_05",
+  "condition": "controlled_lexicon",
+  "cell_id": "CELL_0D017AFB2B3A3DB5",
+  "candidate_index": 5,
+  "original_accepted": true,
+  "original_failed_criteria": [],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses past perfect progressive, active positive declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The time span and answer form are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of the past perfect progressive with duration."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The cue, start time, end time, and required sentence frame strongly determine the intended response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the verb cue, not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it primarily requires the target tense/aspect and a simple duration phrase."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external knowledge is needed."
+    }
+  },
+  "accepted": true,
+  "runtime_seconds": 12.249212237002212
+}

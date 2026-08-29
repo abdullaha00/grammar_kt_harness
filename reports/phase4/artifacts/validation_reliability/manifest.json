@@ -1,0 +1,37 @@
+{
+  "experiment": "phase4_validation_reliability",
+  "date": "2026-08-27",
+  "artifact_status": "live_model_evidence",
+  "scientific_evidence": true,
+  "role": "validator audit; rejudgments do not change item acceptance",
+  "input": "reports/phase4/artifacts/item_audit/live_pilot",
+  "input_manifest_sha256": "b082148e7d5f0e9e0dbabb3e9264f9e947d186bca7e9d847fb6bbfe11d3572ad",
+  "input_validation_sha256": "b0b0842b763be036f6376792bb19ac09c20ca048de67ddb9629c00ca968dc03b",
+  "sample_seed": 20260827,
+  "requested_sample_size": 24,
+  "actual_sample_size": 24,
+  "sampling": "valid outputs only; rejected items oversampled to at most half; greedy condition, failed-criterion, and cell coverage",
+  "models": {
+    "terra_repeat": {
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium"
+    },
+    "sol_sensitivity": {
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "medium"
+    }
+  },
+  "original_validator": "gpt-5.6-terra",
+  "criteria": [
+    "target_fidelity",
+    "grammaticality",
+    "naturalness",
+    "pedagogical_suitability",
+    "determinacy",
+    "non_target_language_simplicity",
+    "no_answer_leakage",
+    "no_extraneous_grammar",
+    "no_world_knowledge"
+  ],
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/run_validation_reliability.py --input-dir reports/phase4/artifacts/item_audit/live_pilot --output-dir reports/phase4/artifacts/validation_reliability --sample-size 24 --seed 20260827 --workers 4 --repeat-model gpt-5.6-terra --sensitivity-model gpt-5.6-sol --reasoning-effort medium"
+}

@@ -1,0 +1,57 @@
+{
+  "experiment_id": "BACKEND-THINKING-001",
+  "stage": "generation",
+  "date": "2026-08-28",
+  "strict_frozen_rule_status": "inconclusive",
+  "strict_frozen_rule_reason": "Medium trailed the best N=3 coverage by two cells; high had frozen-validator false accepts on blind-adjudicated critical items; xhigh had both a malformed judge output and a critical false accept.",
+  "operational_setting": "medium",
+  "operational_decision": "Retain medium under the predeclared inconclusive fallback. It has the fewest blind position-1 critical defects, no critical defect accepted by the frozen validator, complete judge evidence, and the lowest latency. High improves acceptance and coverage but the paired confidence interval is inconclusive and two of its blind-critical items were accepted.",
+  "fixed_judge_acceptance_rate": {
+    "medium": 0.7083333333333334,
+    "high": 0.7777777777777778,
+    "xhigh_successful_judgments_only": 0.7464788732394366
+  },
+  "n3_cell_coverage": {
+    "medium": 21,
+    "high": 23,
+    "xhigh": 23
+  },
+  "blind_position1_quality_rate": {
+    "medium": 0.875,
+    "high": 0.875,
+    "xhigh": 0.875
+  },
+  "blind_position1_confirmed_critical_errors": {
+    "medium": 2,
+    "high": 3,
+    "xhigh": 3
+  },
+  "frozen_validator_accepted_blind_critical_items": {
+    "medium": 0,
+    "high": 2,
+    "xhigh": 1
+  },
+  "paired_quality_delta": {
+    "medium_minus_high": {
+      "delta": -0.06944444444444445,
+      "ci_95": [-0.18090277777777747, 0.041666666666666664]
+    },
+    "medium_minus_xhigh": {
+      "delta": -0.028169014084507043,
+      "ci_95": [-0.1267605633802817, 0.08333333333333333]
+    }
+  },
+  "first_attempt_failures": {
+    "medium_answer_span": 1,
+    "high": 0,
+    "xhigh_fixed_judge_json": 1
+  },
+  "claim_boundary": "Operational choice on one fresh N=3 block for each of 24 final GrammarCells. Fixed judgments use the independently frozen medium validator; blind research-agent review covers position 1 only, and generation has no repeat call block.",
+  "evidence": [
+    "analysis/review_analysis.json",
+    "automated_summary.json",
+    "reviews/reviewer_a_generation.jsonl",
+    "reviews/reviewer_b_generation.jsonl",
+    "reviews/adjudicator_generation.jsonl"
+  ]
+}

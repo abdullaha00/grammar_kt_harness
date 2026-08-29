@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": false,
+      "note": "The target is past-tense negative, not present-tense positive."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target sentence is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and answer are coherent, though “routine” is slightly less natural with “yesterday.”"
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "It does not practice the declared present positive GrammarCell."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The prompt provides no details that uniquely determine the target sentence."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "All vocabulary is common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The completed target form is not shown in the prompt."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The response requires only basic past negation and simple vocabulary."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "sample_order": 3,
+  "blind_item_id": "reliability_item_0003",
+  "candidate_id": "candidate_controlled_lexicon_CELL_C20140C7DAD62DB2_04",
+  "condition": "controlled_lexicon",
+  "cell_id": "CELL_C20140C7DAD62DB2",
+  "candidate_index": 4,
+  "original_accepted": false,
+  "original_failed_criteria": [
+    "determinacy"
+  ],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target is a past, active, negative declarative with no aspect or modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical as a standalone sentence."
+    },
+    "naturalness": {
+      "passed": false,
+      "note": "The prompt already supplies “Omar,” so inserting the target produces the unnatural duplication “Omar Omar did not open the door.”"
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The mismatch between the blank and the full-sentence accepted answers makes the expected response format confusing."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The blank calls for a predicate such as “did not open the door,” while the accepted set contains full sentences; other coherent completions are also possible."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common, clear, and lexically accessible."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt provides context and relevant vocabulary but does not display the completed negative past form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammatical construction is required."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The answer can be derived entirely from the stated scenario."
+    }
+  },
+  "accepted": false,
+  "runtime_seconds": 23.14142427900515
+}

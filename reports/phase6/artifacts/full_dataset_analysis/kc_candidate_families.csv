@@ -1,0 +1,5 @@
+family,raw_candidates,support_eligible,equivalence_representatives,selection_eligible,activation_duplicates,minimum_cell_support,median_cell_support,minimum_item_support,median_item_support
+feature_value,9,9,9,9,0,2,3.0,3,6.0
+operation,10,7,4,3,6,0,2.5,0,4.5
+interaction,18,8,16,7,2,1,1.0,1,2.0
+full_cell,18,18,9,9,9,1,1.0,1,2.0

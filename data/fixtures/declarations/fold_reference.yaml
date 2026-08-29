@@ -1,0 +1,21 @@
+fold_id: english_pilot_reference
+description: Frozen ID-specific fixture split; not an active grammar-fold design.
+assignments:
+  cell_001:
+    split: development
+    rationale: Present active affirmative declarative baseline.
+  cell_002:
+    split: development
+    rationale: Introduces past and negative values.
+  cell_003:
+    split: development
+    rationale: Introduces passive voice in a known past declarative setting.
+  cell_004:
+    split: development
+    rationale: Introduces progressive aspect in a known present declarative setting.
+  cell_005:
+    split: compositional_holdout
+    rationale: Recombines present, progressive, passive, negative and declarative values seen in development.
+  cell_006:
+    split: novel_feature_holdout
+    rationale: Introduces the unseen modal should and polar-question clause value.

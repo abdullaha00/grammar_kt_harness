@@ -1,0 +1,36 @@
+{
+  "source_id": "1741163708343x784452436860678700",
+  "stratum": "out_of_scope",
+  "effort": "xhigh",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708343x784452436860678700",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": null,
+        "aspect": null,
+        "voice": null,
+        "polarity": null,
+        "clause": null,
+        "modal": null
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "The descriptor targets adverb placement within a generic interrogative clause but does not constrain the canonical verbal dimensions or identify a closed question subtype."
+  },
+  "retained_mapping": {
+    "source_id": "1741163708343x784452436860678700",
+    "result": "out_of_scope",
+    "cells": [],
+    "phase2_eligible": [],
+    "note": "Adverb placement within interrogative clauses is non-verbal grammar and is not represented by the schema."
+  },
+  "task_runtime_seconds": 13.50845411499904,
+  "model_calls": 1,
+  "tokens_used": 6268,
+  "model_runtime_seconds": 13.507706349999353,
+  "model_call_failures": 0
+}

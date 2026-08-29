@@ -1,0 +1,14 @@
+{
+  "protocol": "conditional_zero_coverage_rescue_v1",
+  "trigger": "zero_validator_accepted_after_default_n3",
+  "default_candidates_per_cell": 3,
+  "candidate_indices": [
+    4,
+    5
+  ],
+  "cell_ids": [
+    "cell_017",
+    "cell_022"
+  ],
+  "planned_generation_attempts": 4
+}

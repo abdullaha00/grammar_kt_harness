@@ -1,0 +1,21 @@
+{
+  "source_id": "1741163708330x678606711578176000",
+  "result": "partial",
+  "cells": [
+    {
+      "aspect": "none",
+      "clause": "declarative",
+      "modal": "none",
+      "polarity": "positive",
+      "tense": [
+        "present",
+        "past"
+      ],
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "The examples positively attest both licensed tense values: present with 'do' and past with 'did'. Therefore the Phase-1 tense alternative cannot be narrowed."
+}

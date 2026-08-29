@@ -1,0 +1,7 @@
+{
+  "prompt": "This morning, the dog saw the open door. Use the cue “run” to complete the sentence: The dog ____ into the garden.",
+  "target_answer": "The dog ran into the garden.",
+  "accepted_answers": [
+    "ran"
+  ]
+}

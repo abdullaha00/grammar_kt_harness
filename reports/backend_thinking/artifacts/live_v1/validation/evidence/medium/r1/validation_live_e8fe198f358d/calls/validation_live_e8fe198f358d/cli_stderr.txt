@@ -1,0 +1,86 @@
+OpenAI Codex v0.150.1
+--------
+workdir: /home/abdullah/grammar_kt_harness/reports/backend_thinking/artifacts/live_v1/validation/evidence/medium/r1/validation_live_e8fe198f358d/calls/validation_live_e8fe198f358d
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a04693-7024-77d3-9777-d03207515cec
+--------
+user
+Judge one generated exercise independently from the generator.
+
+Use the visible learner-facing prompt, target answer, accepted answers, intended
+GrammarCell, and the declared criteria. Do not rely on generation reasoning or
+generation metadata. Judge every criterion separately and give a short note.
+
+Return one JSON object with a `judgments` mapping. Every declared criterion must
+have exactly `passed` (true/false) and `note`.
+
+VISIBLE ITEM:
+{
+  "item_id": "validation_live_e8fe198f358d",
+  "format": "controlled_production",
+  "prompt": "Write the sentence about Ava and the letter: ______",
+  "target_answer": "Ava mails the letter every Monday.",
+  "accepted_answers": [
+    "Ava mails the letter every Monday."
+  ]
+}
+
+INTENDED GRAMMAR CELL:
+{
+  "tense": "past",
+  "aspect": "none",
+  "voice": "passive",
+  "polarity": "positive",
+  "clause": "declarative",
+  "modal": "none"
+}
+
+VALIDATION CRITERIA:
+{
+  "target_fidelity": {
+    "required": true,
+    "question": "Does the target answer express exactly the intended GrammarCell?"
+  },
+  "grammaticality": {
+    "required": true,
+    "question": "Is the target answer grammatical English?"
+  },
+  "naturalness": {
+    "required": true,
+    "question": "Is the prompt-answer pair natural and coherent?"
+  },
+  "pedagogical_suitability": {
+    "required": true,
+    "question": "Is the item suitable for focused grammar practice?"
+  },
+  "determinacy": {
+    "required": true,
+    "question": "Does the prompt sufficiently determine the accepted response set?"
+  },
+  "non_target_language_simplicity": {
+    "required": true,
+    "question": "Is the vocabulary and context sufficiently common, transparent, and lexically unambiguous that lexical knowledge is unlikely to determine the learner's response?"
+  },
+  "no_answer_leakage": {
+    "required": true,
+    "question": "Does the prompt avoid displaying the completed target form?"
+  },
+  "no_extraneous_grammar": {
+    "required": true,
+    "question": "Can the item be solved without unrelated advanced grammar?"
+  },
+  "no_world_knowledge": {
+    "required": true,
+    "question": "Can the item be answered without external factual or specialist knowledge?"
+  }
+}
+
+codex
+{"judgments":{"target_fidelity":{"passed":false,"note":"The target is present simple active, not past passive."},"grammaticality":{"passed":true,"note":"The target sentence is grammatical English."},"naturalness":{"passed":true,"note":"The prompt and target form a coherent, natural sentence."},"pedagogical_suitability":{"passed":false,"note":"It does not practise the intended past passive grammar cell."},"determinacy":{"passed":false,"note":"The prompt does not determine the verb, tense, voice, or time expression needed for the sole accepted answer."},"non_target_language_simplicity":{"passed":true,"note":"The vocabulary is common and transparent."},"no_answer_leakage":{"passed":true,"note":"The completed target sentence is not shown in the prompt."},"no_extraneous_grammar":{"passed":true,"note":"The target requires only basic sentence structure and simple present agreement."},"no_world_knowledge":{"passed":true,"note":"No external or specialist knowledge is needed."}}}
+tokens used
+2,559

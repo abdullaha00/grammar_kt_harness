@@ -1,0 +1,12 @@
+{
+  "prompt": "The workers are painting the kitchen walls right now. Complete the sentence using “the kitchen walls” and “paint”: ____",
+  "target_answer": "The kitchen walls are being painted.",
+  "accepted_answers": [
+    "The kitchen walls are being painted."
+  ],
+  "operation_tags": [
+    "progressive",
+    "be_passive"
+  ],
+  "note": "The response describes an action currently in progress, with the kitchen walls as the receiver of the action."
+}

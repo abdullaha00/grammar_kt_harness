@@ -1,0 +1,8 @@
+{
+  "prompt": "The bus arrived at 8:00, but Leo stayed at home. Complete the sentence using the cue (take): Leo ____ the bus.",
+  "target_answer": "Leo did not take the bus.",
+  "accepted_answers": [
+    "did not take",
+    "didn't take"
+  ]
+}

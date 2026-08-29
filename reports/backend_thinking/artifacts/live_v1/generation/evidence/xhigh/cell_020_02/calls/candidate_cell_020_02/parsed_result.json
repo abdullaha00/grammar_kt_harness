@@ -1,0 +1,7 @@
+{
+  "prompt": "Each evening, a worker locks the front door. Complete the sentence using the cue (lock): The front door ____ each evening.",
+  "target_answer": "The front door is locked each evening.",
+  "accepted_answers": [
+    "is locked"
+  ]
+}

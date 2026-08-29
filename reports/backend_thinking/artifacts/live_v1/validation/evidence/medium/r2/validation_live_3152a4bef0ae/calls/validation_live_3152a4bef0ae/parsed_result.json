@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target is an active, past-tense, negative declarative with no modal or additional aspect."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "Staying home yesterday coherently supports the statement that Tom did not walk to the park."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The item clearly focuses practice on past simple negation with did not/didn't."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The context and cue sufficiently indicate the intended negative past-simple response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt provides only the cue words, not the completed negative form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it requires only the targeted past-simple negative construction."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

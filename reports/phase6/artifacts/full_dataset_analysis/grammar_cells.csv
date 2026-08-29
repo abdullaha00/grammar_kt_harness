@@ -1,0 +1,25 @@
+cell_id,tense,aspect,voice,polarity,clause,modal,grammar_regime,declared_source_ids,source_cell_edges,generation_attempts,candidate_payloads,terminal_judgments,validator_accepted,validator_acceptance_rate,selected_items,failed_criteria
+cell_001,present,none,active,positive,polar_question,none,development,1,1,3,2,2,2,1.0,2,{}
+cell_002,past,none,active,positive,polar_question,none,development,1,1,3,3,3,3,1.0,2,{}
+cell_003,present,none,active,positive,declarative,none,development,4,4,3,3,3,3,1.0,2,{}
+cell_004,past,none,active,positive,declarative,none,development,4,4,3,3,3,3,1.0,2,{}
+cell_005,NA,none,active,positive,imperative,none,development,7,7,3,3,3,1,0.3333333333333333,1,"{""determinacy"": 2}"
+cell_006,NA,none,active,negative,imperative,none,development,4,4,3,3,3,3,1.0,2,{}
+cell_007,present,none,active,negative,declarative,none,compositional_holdout,2,2,3,3,3,2,0.6666666666666666,2,"{""determinacy"": 1}"
+cell_008,present,progressive,active,positive,declarative,none,development,1,1,3,3,3,3,1.0,2,{}
+cell_009,present,progressive,active,negative,declarative,none,development,2,2,3,3,3,3,1.0,2,{}
+cell_010,past,none,active,negative,declarative,none,compositional_holdout,1,1,3,3,3,2,0.6666666666666666,2,"{""determinacy"": 1}"
+cell_011,past,progressive,active,positive,declarative,none,compositional_holdout,1,1,3,3,3,3,1.0,2,{}
+cell_012,present,perfect,active,negative,declarative,none,development,4,4,3,3,3,2,0.6666666666666666,2,"{""determinacy"": 1}"
+cell_013,present,perfect,active,positive,declarative,none,development,1,1,3,3,3,2,0.6666666666666666,2,"{""determinacy"": 1}"
+cell_014,past,perfect,active,negative,declarative,none,development,2,2,3,3,3,3,1.0,2,{}
+cell_015,past,perfect,active,positive,declarative,none,development,2,2,3,3,3,1,0.3333333333333333,1,"{""determinacy"": 2}"
+cell_016,present,perfect_progressive,active,positive,declarative,none,development,1,1,3,3,3,3,1.0,2,{}
+cell_017,past,perfect_progressive,active,negative,declarative,none,development,1,1,7,7,7,2,0.2857142857142857,2,"{""determinacy"": 5, ""naturalness"": 1, ""pedagogical_suitability"": 2}"
+cell_018,past,perfect_progressive,active,positive,declarative,none,development,1,1,3,3,3,1,0.3333333333333333,1,"{""determinacy"": 2}"
+cell_019,past,none,passive,positive,declarative,none,compositional_holdout,2,2,3,3,3,2,0.6666666666666666,2,"{""determinacy"": 1}"
+cell_020,present,none,passive,positive,declarative,none,compositional_holdout,2,2,3,3,3,3,1.0,2,{}
+cell_021,present,progressive,passive,positive,declarative,none,development,1,1,3,3,3,2,0.6666666666666666,2,{}
+cell_022,past,perfect,passive,positive,declarative,none,development,1,1,5,5,5,1,0.2,1,"{""determinacy"": 4}"
+cell_023,present,none,passive,negative,declarative,none,development,1,1,3,3,3,2,0.6666666666666666,2,"{""determinacy"": 1}"
+cell_024,NA,none,active,positive,declarative,would,novel_feature_holdout,1,1,3,3,3,2,0.6666666666666666,2,"{""determinacy"": 1, ""naturalness"": 1, ""pedagogical_suitability"": 1}"

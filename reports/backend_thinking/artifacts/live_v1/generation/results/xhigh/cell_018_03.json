@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_018_03",
+  "cell_id": "cell_018",
+  "candidate_index": 3,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_018_03",
+    "cell_id": "cell_018",
+    "format": "controlled_production",
+    "prompt": "Ben started washing the car at 4 p.m. and stopped at 6 p.m. Complete the sentence using the cue (he / wash the car): By the time he stopped, [_____] for two hours.",
+    "target_answer": "By the time he stopped, he had been washing the car for two hours.",
+    "accepted_answers": [
+      "he had been washing the car"
+    ],
+    "generation_metadata": {
+      "candidate_index": 3,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 17.79210696299924,
+  "model_calls": 1,
+  "tokens_used": 5564,
+  "model_runtime_seconds": 17.791250432999732,
+  "model_call_failures": 0
+}

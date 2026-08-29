@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163711055x245124661514512830",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": "NA",
+      "aspect": null,
+      "voice": null,
+      "polarity": null,
+      "clause": null,
+      "modal": "shall"
+    }
+  ],
+  "phase2_eligible": [],
+  "note": "The exact central modal 'shall' fixes tense as NA; the descriptor does not explicitly constrain the auxiliary chain, voice, polarity, or clause type."
+}

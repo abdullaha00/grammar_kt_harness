@@ -1,0 +1,11 @@
+{
+  "prompt": "Mia said, “I will read a book if I have time.” Report her plan using the cue (Mia / read / a book): [____]",
+  "target_answer": "Mia would read a book.",
+  "accepted_answers": [
+    "Mia would read a book."
+  ],
+  "operation_tags": [
+    "central_modal"
+  ],
+  "note": "Use the modal would to report Mia’s future plan."
+}

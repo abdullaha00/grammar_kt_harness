@@ -1,0 +1,86 @@
+OpenAI Codex v0.150.1
+--------
+workdir: /home/abdullah/grammar_kt_harness/reports/backend_thinking/artifacts/live_v1/generation/judgment/evidence/medium/generation_judge_0024/calls/generation_judge_0024
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a046a0-0643-7c13-92b6-708a8fdbb265
+--------
+user
+Judge one generated exercise independently from the generator.
+
+Use the visible learner-facing prompt, target answer, accepted answers, intended
+GrammarCell, and the declared criteria. Do not rely on generation reasoning or
+generation metadata. Judge every criterion separately and give a short note.
+
+Return one JSON object with a `judgments` mapping. Every declared criterion must
+have exactly `passed` (true/false) and `note`.
+
+VISIBLE ITEM:
+{
+  "item_id": "generation_judge_0024",
+  "format": "controlled_production",
+  "prompt": "Each evening, a worker locks the front door. Complete the sentence using the cue (lock): The front door ____ each evening.",
+  "target_answer": "The front door is locked each evening.",
+  "accepted_answers": [
+    "is locked"
+  ]
+}
+
+INTENDED GRAMMAR CELL:
+{
+  "tense": "present",
+  "aspect": "none",
+  "voice": "passive",
+  "polarity": "positive",
+  "clause": "declarative",
+  "modal": "none"
+}
+
+VALIDATION CRITERIA:
+{
+  "target_fidelity": {
+    "required": true,
+    "question": "Does the target answer express exactly the intended GrammarCell?"
+  },
+  "grammaticality": {
+    "required": true,
+    "question": "Is the target answer grammatical English?"
+  },
+  "naturalness": {
+    "required": true,
+    "question": "Is the prompt-answer pair natural and coherent?"
+  },
+  "pedagogical_suitability": {
+    "required": true,
+    "question": "Is the item suitable for focused grammar practice?"
+  },
+  "determinacy": {
+    "required": true,
+    "question": "Does the prompt sufficiently determine the accepted response set?"
+  },
+  "non_target_language_simplicity": {
+    "required": true,
+    "question": "Is the vocabulary and context sufficiently common, transparent, and lexically unambiguous that lexical knowledge is unlikely to determine the learner's response?"
+  },
+  "no_answer_leakage": {
+    "required": true,
+    "question": "Does the prompt avoid displaying the completed target form?"
+  },
+  "no_extraneous_grammar": {
+    "required": true,
+    "question": "Can the item be solved without unrelated advanced grammar?"
+  },
+  "no_world_knowledge": {
+    "required": true,
+    "question": "Can the item be answered without external factual or specialist knowledge?"
+  }
+}
+
+codex
+{"judgments":{"target_fidelity":{"passed":true,"note":"Uses present simple passive, positive declarative, with no modal."},"grammaticality":{"passed":true,"note":"The target sentence is grammatical English."},"naturalness":{"passed":true,"note":"The prompt and passive answer are coherent and natural."},"pedagogical_suitability":{"passed":true,"note":"It clearly focuses practice on the present simple passive."},"determinacy":{"passed":true,"note":"The cue and sentence context determine the expected form “is locked.”"},"non_target_language_simplicity":{"passed":true,"note":"The vocabulary is common and the context is transparent."},"no_answer_leakage":{"passed":true,"note":"The prompt gives only the base-form cue “lock,” not the completed passive form."},"no_extraneous_grammar":{"passed":true,"note":"No unrelated advanced grammar is needed."},"no_world_knowledge":{"passed":true,"note":"No external or specialist knowledge is required."}}}
+tokens used
+2,470

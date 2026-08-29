@@ -1,0 +1,1 @@
+{"prompt":"You saw Mia at the park yesterday. Ask about what she did there. Cue: play tennis\n____?","target_answer":"Did Mia play tennis?","accepted_answers":["Did Mia play tennis"]}

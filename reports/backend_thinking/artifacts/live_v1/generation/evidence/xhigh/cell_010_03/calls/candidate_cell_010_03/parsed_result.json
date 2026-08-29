@@ -1,0 +1,8 @@
+{
+  "prompt": "Mia was sick and stayed home all day. Complete the sentence using the cue “go”: Mia ____ to work.",
+  "target_answer": "Mia did not go to work.",
+  "accepted_answers": [
+    "did not go",
+    "didn't go"
+  ]
+}

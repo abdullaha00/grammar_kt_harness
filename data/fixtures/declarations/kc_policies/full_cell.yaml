@@ -1,0 +1,4 @@
+policy_id: full_cell
+kind: full_cell
+description: Historical fixture exact-cell comparison policy.
+kc_id_pattern: kc_{cell_id}

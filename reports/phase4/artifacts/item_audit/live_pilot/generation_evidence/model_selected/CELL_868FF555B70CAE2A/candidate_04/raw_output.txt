@@ -1,0 +1,12 @@
+{
+  "prompt": "You want to know whether Ben travels to school on foot each day. Use the cue (Ben / walk / to school every day) to write the complete question: ____",
+  "target_answer": "Does Ben walk to school every day?",
+  "accepted_answers": [
+    "Does Ben walk to school every day?"
+  ],
+  "operation_tags": [
+    "do_support",
+    "operator_inversion"
+  ],
+  "note": "Capitalize the first word and include a question mark."
+}

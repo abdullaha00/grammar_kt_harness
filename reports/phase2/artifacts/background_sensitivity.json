@@ -1,0 +1,806 @@
+{
+  "fixture": [
+    {
+      "intervention": "active",
+      "feature_candidates": 5,
+      "raw_interactions": 3,
+      "support_eligible_interactions": 0,
+      "raw_total": 22,
+      "activation_equivalence_classes": 8,
+      "activation_duplicate_candidates": 14,
+      "selection_eligible": 7,
+      "feature_support": {
+        "kc_feature__aspect__progressive": {
+          "cells": 1,
+          "items": 1
+        },
+        "kc_feature__polarity__negative": {
+          "cells": 1,
+          "items": 1
+        },
+        "kc_feature__tense__past": {
+          "cells": 2,
+          "items": 2
+        },
+        "kc_feature__tense__present": {
+          "cells": 2,
+          "items": 2
+        },
+        "kc_feature__voice__passive": {
+          "cells": 1,
+          "items": 1
+        }
+      }
+    },
+    {
+      "intervention": "present_as_reference",
+      "feature_candidates": 4,
+      "raw_interactions": 2,
+      "support_eligible_interactions": 0,
+      "raw_total": 20,
+      "activation_equivalence_classes": 7,
+      "activation_duplicate_candidates": 13,
+      "selection_eligible": 6,
+      "feature_support": {
+        "kc_feature__aspect__progressive": {
+          "cells": 1,
+          "items": 1
+        },
+        "kc_feature__polarity__negative": {
+          "cells": 1,
+          "items": 1
+        },
+        "kc_feature__tense__past": {
+          "cells": 2,
+          "items": 2
+        },
+        "kc_feature__voice__passive": {
+          "cells": 1,
+          "items": 1
+        }
+      }
+    },
+    {
+      "intervention": "explicit_tense_NA",
+      "feature_candidates": 5,
+      "raw_interactions": 3,
+      "support_eligible_interactions": 0,
+      "raw_total": 22,
+      "activation_equivalence_classes": 8,
+      "activation_duplicate_candidates": 14,
+      "selection_eligible": 7,
+      "feature_support": {
+        "kc_feature__aspect__progressive": {
+          "cells": 1,
+          "items": 1
+        },
+        "kc_feature__polarity__negative": {
+          "cells": 1,
+          "items": 1
+        },
+        "kc_feature__tense__past": {
+          "cells": 2,
+          "items": 2
+        },
+        "kc_feature__tense__present": {
+          "cells": 2,
+          "items": 2
+        },
+        "kc_feature__voice__passive": {
+          "cells": 1,
+          "items": 1
+        }
+      }
+    },
+    {
+      "intervention": "explicit_aspect_none",
+      "feature_candidates": 6,
+      "raw_interactions": 7,
+      "support_eligible_interactions": 0,
+      "raw_total": 27,
+      "activation_equivalence_classes": 9,
+      "activation_duplicate_candidates": 18,
+      "selection_eligible": 7,
+      "feature_support": {
+        "kc_feature__aspect__none": {
+          "cells": 3,
+          "items": 3
+        },
+        "kc_feature__aspect__progressive": {
+          "cells": 1,
+          "items": 1
+        },
+        "kc_feature__polarity__negative": {
+          "cells": 1,
+          "items": 1
+        },
+        "kc_feature__tense__past": {
+          "cells": 2,
+          "items": 2
+        },
+        "kc_feature__tense__present": {
+          "cells": 2,
+          "items": 2
+        },
+        "kc_feature__voice__passive": {
+          "cells": 1,
+          "items": 1
+        }
+      }
+    },
+    {
+      "intervention": "explicit_voice_active",
+      "feature_candidates": 6,
+      "raw_interactions": 7,
+      "support_eligible_interactions": 0,
+      "raw_total": 27,
+      "activation_equivalence_classes": 9,
+      "activation_duplicate_candidates": 18,
+      "selection_eligible": 8,
+      "feature_support": {
+        "kc_feature__aspect__progressive": {
+          "cells": 1,
+          "items": 1
+        },
+        "kc_feature__polarity__negative": {
+          "cells": 1,
+          "items": 1
+        },
+        "kc_feature__tense__past": {
+          "cells": 2,
+          "items": 2
+        },
+        "kc_feature__tense__present": {
+          "cells": 2,
+          "items": 2
+        },
+        "kc_feature__voice__active": {
+          "cells": 3,
+          "items": 3
+        },
+        "kc_feature__voice__passive": {
+          "cells": 1,
+          "items": 1
+        }
+      }
+    },
+    {
+      "intervention": "explicit_polarity_positive",
+      "feature_candidates": 6,
+      "raw_interactions": 7,
+      "support_eligible_interactions": 0,
+      "raw_total": 27,
+      "activation_equivalence_classes": 9,
+      "activation_duplicate_candidates": 18,
+      "selection_eligible": 8,
+      "feature_support": {
+        "kc_feature__aspect__progressive": {
+          "cells": 1,
+          "items": 1
+        },
+        "kc_feature__polarity__negative": {
+          "cells": 1,
+          "items": 1
+        },
+        "kc_feature__polarity__positive": {
+          "cells": 3,
+          "items": 3
+        },
+        "kc_feature__tense__past": {
+          "cells": 2,
+          "items": 2
+        },
+        "kc_feature__tense__present": {
+          "cells": 2,
+          "items": 2
+        },
+        "kc_feature__voice__passive": {
+          "cells": 1,
+          "items": 1
+        }
+      }
+    },
+    {
+      "intervention": "explicit_clause_declarative",
+      "feature_candidates": 6,
+      "raw_interactions": 8,
+      "support_eligible_interactions": 0,
+      "raw_total": 28,
+      "activation_equivalence_classes": 8,
+      "activation_duplicate_candidates": 20,
+      "selection_eligible": 7,
+      "feature_support": {
+        "kc_feature__aspect__progressive": {
+          "cells": 1,
+          "items": 1
+        },
+        "kc_feature__clause__declarative": {
+          "cells": 4,
+          "items": 4
+        },
+        "kc_feature__polarity__negative": {
+          "cells": 1,
+          "items": 1
+        },
+        "kc_feature__tense__past": {
+          "cells": 2,
+          "items": 2
+        },
+        "kc_feature__tense__present": {
+          "cells": 2,
+          "items": 2
+        },
+        "kc_feature__voice__passive": {
+          "cells": 1,
+          "items": 1
+        }
+      }
+    },
+    {
+      "intervention": "explicit_modal_none",
+      "feature_candidates": 6,
+      "raw_interactions": 8,
+      "support_eligible_interactions": 0,
+      "raw_total": 28,
+      "activation_equivalence_classes": 8,
+      "activation_duplicate_candidates": 20,
+      "selection_eligible": 7,
+      "feature_support": {
+        "kc_feature__aspect__progressive": {
+          "cells": 1,
+          "items": 1
+        },
+        "kc_feature__modal__none": {
+          "cells": 4,
+          "items": 4
+        },
+        "kc_feature__polarity__negative": {
+          "cells": 1,
+          "items": 1
+        },
+        "kc_feature__tense__past": {
+          "cells": 2,
+          "items": 2
+        },
+        "kc_feature__tense__present": {
+          "cells": 2,
+          "items": 2
+        },
+        "kc_feature__voice__passive": {
+          "cells": 1,
+          "items": 1
+        }
+      }
+    },
+    {
+      "intervention": "all_observed_values_explicit",
+      "feature_candidates": 10,
+      "raw_interactions": 35,
+      "support_eligible_interactions": 7,
+      "raw_total": 59,
+      "activation_equivalence_classes": 13,
+      "activation_duplicate_candidates": 46,
+      "selection_eligible": 9,
+      "feature_support": {
+        "kc_feature__aspect__none": {
+          "cells": 3,
+          "items": 3
+        },
+        "kc_feature__aspect__progressive": {
+          "cells": 1,
+          "items": 1
+        },
+        "kc_feature__clause__declarative": {
+          "cells": 4,
+          "items": 4
+        },
+        "kc_feature__modal__none": {
+          "cells": 4,
+          "items": 4
+        },
+        "kc_feature__polarity__negative": {
+          "cells": 1,
+          "items": 1
+        },
+        "kc_feature__polarity__positive": {
+          "cells": 3,
+          "items": 3
+        },
+        "kc_feature__tense__past": {
+          "cells": 2,
+          "items": 2
+        },
+        "kc_feature__tense__present": {
+          "cells": 2,
+          "items": 2
+        },
+        "kc_feature__voice__active": {
+          "cells": 3,
+          "items": 3
+        },
+        "kc_feature__voice__passive": {
+          "cells": 1,
+          "items": 1
+        }
+      }
+    }
+  ],
+  "legacy_development": [
+    {
+      "intervention": "active",
+      "feature_candidates": 9,
+      "raw_interactions": 13,
+      "support_eligible_interactions": 6,
+      "raw_total": 48,
+      "activation_equivalence_classes": 33,
+      "activation_duplicate_candidates": 15,
+      "selection_eligible": 26,
+      "feature_support": {
+        "kc_feature__aspect__perfect": {
+          "cells": 4,
+          "items": 8
+        },
+        "kc_feature__aspect__perfect_progressive": {
+          "cells": 2,
+          "items": 4
+        },
+        "kc_feature__aspect__progressive": {
+          "cells": 3,
+          "items": 6
+        },
+        "kc_feature__clause__imperative": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__clause__polar_question": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__polarity__negative": {
+          "cells": 5,
+          "items": 10
+        },
+        "kc_feature__tense__past": {
+          "cells": 7,
+          "items": 13
+        },
+        "kc_feature__tense__present": {
+          "cells": 8,
+          "items": 15
+        },
+        "kc_feature__voice__passive": {
+          "cells": 2,
+          "items": 2
+        }
+      }
+    },
+    {
+      "intervention": "present_as_reference",
+      "feature_candidates": 8,
+      "raw_interactions": 7,
+      "support_eligible_interactions": 3,
+      "raw_total": 41,
+      "activation_equivalence_classes": 29,
+      "activation_duplicate_candidates": 12,
+      "selection_eligible": 24,
+      "feature_support": {
+        "kc_feature__aspect__perfect": {
+          "cells": 4,
+          "items": 8
+        },
+        "kc_feature__aspect__perfect_progressive": {
+          "cells": 2,
+          "items": 4
+        },
+        "kc_feature__aspect__progressive": {
+          "cells": 3,
+          "items": 6
+        },
+        "kc_feature__clause__imperative": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__clause__polar_question": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__polarity__negative": {
+          "cells": 5,
+          "items": 10
+        },
+        "kc_feature__tense__past": {
+          "cells": 7,
+          "items": 13
+        },
+        "kc_feature__voice__passive": {
+          "cells": 2,
+          "items": 2
+        }
+      }
+    },
+    {
+      "intervention": "explicit_tense_NA",
+      "feature_candidates": 10,
+      "raw_interactions": 14,
+      "support_eligible_interactions": 6,
+      "raw_total": 50,
+      "activation_equivalence_classes": 33,
+      "activation_duplicate_candidates": 17,
+      "selection_eligible": 26,
+      "feature_support": {
+        "kc_feature__aspect__perfect": {
+          "cells": 4,
+          "items": 8
+        },
+        "kc_feature__aspect__perfect_progressive": {
+          "cells": 2,
+          "items": 4
+        },
+        "kc_feature__aspect__progressive": {
+          "cells": 3,
+          "items": 6
+        },
+        "kc_feature__clause__imperative": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__clause__polar_question": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__polarity__negative": {
+          "cells": 5,
+          "items": 10
+        },
+        "kc_feature__tense__na": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__tense__past": {
+          "cells": 7,
+          "items": 13
+        },
+        "kc_feature__tense__present": {
+          "cells": 8,
+          "items": 15
+        },
+        "kc_feature__voice__passive": {
+          "cells": 2,
+          "items": 2
+        }
+      }
+    },
+    {
+      "intervention": "explicit_aspect_none",
+      "feature_candidates": 10,
+      "raw_interactions": 19,
+      "support_eligible_interactions": 9,
+      "raw_total": 55,
+      "activation_equivalence_classes": 37,
+      "activation_duplicate_candidates": 18,
+      "selection_eligible": 30,
+      "feature_support": {
+        "kc_feature__aspect__none": {
+          "cells": 7,
+          "items": 12
+        },
+        "kc_feature__aspect__perfect": {
+          "cells": 4,
+          "items": 8
+        },
+        "kc_feature__aspect__perfect_progressive": {
+          "cells": 2,
+          "items": 4
+        },
+        "kc_feature__aspect__progressive": {
+          "cells": 3,
+          "items": 6
+        },
+        "kc_feature__clause__imperative": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__clause__polar_question": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__polarity__negative": {
+          "cells": 5,
+          "items": 10
+        },
+        "kc_feature__tense__past": {
+          "cells": 7,
+          "items": 13
+        },
+        "kc_feature__tense__present": {
+          "cells": 8,
+          "items": 15
+        },
+        "kc_feature__voice__passive": {
+          "cells": 2,
+          "items": 2
+        }
+      }
+    },
+    {
+      "intervention": "explicit_voice_active",
+      "feature_candidates": 10,
+      "raw_interactions": 21,
+      "support_eligible_interactions": 12,
+      "raw_total": 57,
+      "activation_equivalence_classes": 36,
+      "activation_duplicate_candidates": 21,
+      "selection_eligible": 29,
+      "feature_support": {
+        "kc_feature__aspect__perfect": {
+          "cells": 4,
+          "items": 8
+        },
+        "kc_feature__aspect__perfect_progressive": {
+          "cells": 2,
+          "items": 4
+        },
+        "kc_feature__aspect__progressive": {
+          "cells": 3,
+          "items": 6
+        },
+        "kc_feature__clause__imperative": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__clause__polar_question": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__polarity__negative": {
+          "cells": 5,
+          "items": 10
+        },
+        "kc_feature__tense__past": {
+          "cells": 7,
+          "items": 13
+        },
+        "kc_feature__tense__present": {
+          "cells": 8,
+          "items": 15
+        },
+        "kc_feature__voice__active": {
+          "cells": 14,
+          "items": 28
+        },
+        "kc_feature__voice__passive": {
+          "cells": 2,
+          "items": 2
+        }
+      }
+    },
+    {
+      "intervention": "explicit_polarity_positive",
+      "feature_candidates": 10,
+      "raw_interactions": 21,
+      "support_eligible_interactions": 11,
+      "raw_total": 57,
+      "activation_equivalence_classes": 38,
+      "activation_duplicate_candidates": 19,
+      "selection_eligible": 31,
+      "feature_support": {
+        "kc_feature__aspect__perfect": {
+          "cells": 4,
+          "items": 8
+        },
+        "kc_feature__aspect__perfect_progressive": {
+          "cells": 2,
+          "items": 4
+        },
+        "kc_feature__aspect__progressive": {
+          "cells": 3,
+          "items": 6
+        },
+        "kc_feature__clause__imperative": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__clause__polar_question": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__polarity__negative": {
+          "cells": 5,
+          "items": 10
+        },
+        "kc_feature__polarity__positive": {
+          "cells": 11,
+          "items": 20
+        },
+        "kc_feature__tense__past": {
+          "cells": 7,
+          "items": 13
+        },
+        "kc_feature__tense__present": {
+          "cells": 8,
+          "items": 15
+        },
+        "kc_feature__voice__passive": {
+          "cells": 2,
+          "items": 2
+        }
+      }
+    },
+    {
+      "intervention": "explicit_clause_declarative",
+      "feature_candidates": 10,
+      "raw_interactions": 20,
+      "support_eligible_interactions": 12,
+      "raw_total": 56,
+      "activation_equivalence_classes": 35,
+      "activation_duplicate_candidates": 21,
+      "selection_eligible": 28,
+      "feature_support": {
+        "kc_feature__aspect__perfect": {
+          "cells": 4,
+          "items": 8
+        },
+        "kc_feature__aspect__perfect_progressive": {
+          "cells": 2,
+          "items": 4
+        },
+        "kc_feature__aspect__progressive": {
+          "cells": 3,
+          "items": 6
+        },
+        "kc_feature__clause__declarative": {
+          "cells": 14,
+          "items": 26
+        },
+        "kc_feature__clause__imperative": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__clause__polar_question": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__polarity__negative": {
+          "cells": 5,
+          "items": 10
+        },
+        "kc_feature__tense__past": {
+          "cells": 7,
+          "items": 13
+        },
+        "kc_feature__tense__present": {
+          "cells": 8,
+          "items": 15
+        },
+        "kc_feature__voice__passive": {
+          "cells": 2,
+          "items": 2
+        }
+      }
+    },
+    {
+      "intervention": "explicit_modal_none",
+      "feature_candidates": 10,
+      "raw_interactions": 22,
+      "support_eligible_interactions": 12,
+      "raw_total": 58,
+      "activation_equivalence_classes": 34,
+      "activation_duplicate_candidates": 24,
+      "selection_eligible": 27,
+      "feature_support": {
+        "kc_feature__aspect__perfect": {
+          "cells": 4,
+          "items": 8
+        },
+        "kc_feature__aspect__perfect_progressive": {
+          "cells": 2,
+          "items": 4
+        },
+        "kc_feature__aspect__progressive": {
+          "cells": 3,
+          "items": 6
+        },
+        "kc_feature__clause__imperative": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__clause__polar_question": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__modal__none": {
+          "cells": 16,
+          "items": 30
+        },
+        "kc_feature__polarity__negative": {
+          "cells": 5,
+          "items": 10
+        },
+        "kc_feature__tense__past": {
+          "cells": 7,
+          "items": 13
+        },
+        "kc_feature__tense__present": {
+          "cells": 8,
+          "items": 15
+        },
+        "kc_feature__voice__passive": {
+          "cells": 2,
+          "items": 2
+        }
+      }
+    },
+    {
+      "intervention": "all_observed_values_explicit",
+      "feature_candidates": 15,
+      "raw_interactions": 66,
+      "support_eligible_interactions": 42,
+      "raw_total": 107,
+      "activation_equivalence_classes": 54,
+      "activation_duplicate_candidates": 53,
+      "selection_eligible": 47,
+      "feature_support": {
+        "kc_feature__aspect__none": {
+          "cells": 7,
+          "items": 12
+        },
+        "kc_feature__aspect__perfect": {
+          "cells": 4,
+          "items": 8
+        },
+        "kc_feature__aspect__perfect_progressive": {
+          "cells": 2,
+          "items": 4
+        },
+        "kc_feature__aspect__progressive": {
+          "cells": 3,
+          "items": 6
+        },
+        "kc_feature__clause__declarative": {
+          "cells": 14,
+          "items": 26
+        },
+        "kc_feature__clause__imperative": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__clause__polar_question": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__modal__none": {
+          "cells": 16,
+          "items": 30
+        },
+        "kc_feature__polarity__negative": {
+          "cells": 5,
+          "items": 10
+        },
+        "kc_feature__polarity__positive": {
+          "cells": 11,
+          "items": 20
+        },
+        "kc_feature__tense__na": {
+          "cells": 1,
+          "items": 2
+        },
+        "kc_feature__tense__past": {
+          "cells": 7,
+          "items": 13
+        },
+        "kc_feature__tense__present": {
+          "cells": 8,
+          "items": 15
+        },
+        "kc_feature__voice__active": {
+          "cells": 14,
+          "items": 28
+        },
+        "kc_feature__voice__passive": {
+          "cells": 2,
+          "items": 2
+        }
+      }
+    }
+  ]
+}

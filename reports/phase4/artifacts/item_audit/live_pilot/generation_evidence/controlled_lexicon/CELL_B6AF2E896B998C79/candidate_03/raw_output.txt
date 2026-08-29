@@ -1,0 +1,11 @@
+{
+  "prompt": "Yesterday, Ana got the meal ready. Complete the report using the cue (the meal / prepare / by Ana): ____",
+  "target_answer": "The meal was prepared by Ana.",
+  "accepted_answers": [
+    "The meal was prepared by Ana."
+  ],
+  "operation_tags": [
+    "be_passive"
+  ],
+  "note": "The response uses the positive simple past passive."
+}

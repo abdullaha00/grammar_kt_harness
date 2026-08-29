@@ -1,0 +1,12 @@
+{
+  "prompt": "You want to check whether feeding the cat is the boy’s daily job. Use these words: the boy / feed / the cat every morning\nAnswer: ______",
+  "target_answer": "Does the boy feed the cat every morning?",
+  "accepted_answers": [
+    "Does the boy feed the cat every morning?"
+  ],
+  "operation_tags": [
+    "do_support",
+    "operator_inversion"
+  ],
+  "note": "A simple-present yes/no question about a daily activity."
+}

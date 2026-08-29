@@ -1,0 +1,52 @@
+{
+  "sample_order": 20,
+  "blind_item_id": "reliability_item_0020",
+  "candidate_id": "candidate_controlled_lexicon_CELL_29BDABD4E976923A_05",
+  "condition": "controlled_lexicon",
+  "cell_id": "CELL_29BDABD4E976923A",
+  "candidate_index": 5,
+  "original_accepted": true,
+  "original_failed_criteria": [],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target is present progressive passive, positive declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and answer form a coherent, natural sentence."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It directly practices the present progressive passive using clear cues."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The cue words and context strongly determine the intended passive progressive response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary is common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives lexical cues but does not display the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it requires only the intended passive progressive construction."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  },
+  "accepted": true,
+  "runtime_seconds": 8.699764762000996
+}

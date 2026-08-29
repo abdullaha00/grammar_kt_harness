@@ -1,0 +1,54 @@
+{
+  "sample_order": 21,
+  "blind_item_id": "reliability_item_0021",
+  "candidate_id": "candidate_readable_source_evidence_CELL_0ACC7E0377B19DC1_02",
+  "condition": "readable_source_evidence",
+  "cell_id": "CELL_0ACC7E0377B19DC1",
+  "candidate_index": 2,
+  "original_accepted": false,
+  "original_failed_criteria": [
+    "determinacy"
+  ],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The answer is a positive active declarative using the modal “would,” exactly matching the intended GrammarCell."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is fully grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "Wanting a glass of water is a natural and coherent response to being thirsty."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The item provides clear, focused practice of “would like” for expressing a desire."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The context and bracketed words strongly determine “She would like a glass of water,” with the accepted contraction as the only substantive variant."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common, transparent, and unlikely to create lexical difficulty."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies the lexical verb “like” but does not display the completed target construction “would like.”"
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed to complete the sentence."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The answer requires only the explicitly stated context and no external knowledge."
+    }
+  },
+  "accepted": true,
+  "runtime_seconds": 16.902523989992915
+}

@@ -1,0 +1,55 @@
+{
+  "source_id": "1741163715033x134646499658930300",
+  "stratum": "phase2_eligible",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163715033x134646499658930300",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": null,
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "The finite nonmodal BE + -ing construction marks active progressive yes/no questions but does not specify present versus past tense or polarity."
+  },
+  "retained_mapping": {
+    "source_id": "1741163715033x134646499658930300",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": null,
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 11.557416454999839,
+  "model_calls": 1,
+  "tokens_used": 6181,
+  "model_runtime_seconds": 11.556723190999037,
+  "model_call_failures": 0
+}

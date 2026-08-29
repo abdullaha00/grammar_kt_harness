@@ -1,0 +1,7 @@
+{
+  "prompt": "Mia started cleaning the kitchen an hour ago, and now it is clean. Complete the sentence using the verb “clean”: Mia ____ the kitchen.",
+  "target_answer": "Mia has cleaned the kitchen.",
+  "accepted_answers": [
+    "has cleaned"
+  ]
+}

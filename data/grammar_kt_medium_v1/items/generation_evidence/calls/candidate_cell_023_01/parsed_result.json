@@ -1,0 +1,7 @@
+{
+  "prompt": "The café is closed on Sundays. Complete the sentence using the words in brackets: On Sundays, _____. (breakfast / serve)",
+  "target_answer": "On Sundays, breakfast is not served.",
+  "accepted_answers": [
+    "breakfast is not served"
+  ]
+}

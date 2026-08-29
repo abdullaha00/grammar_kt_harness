@@ -1,0 +1,1 @@
+{"prompt":"The café serves lunch, but it closes before dinner. Complete the sentence using “dinner” and “serve”: Dinner ____.","target_answer":"Dinner is not served.","accepted_answers":["is not served","isn't served"]}

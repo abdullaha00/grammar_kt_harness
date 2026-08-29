@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "“Mia did not take the bus” is past simple, active, negative, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": false,
+      "note": "The causal link is unnatural: a bus arriving on time would not normally explain why Mia walked instead."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of past-simple negation with the cue verb."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "“Walked … instead” sufficiently signals that Mia did not take the bus."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and lexically clear."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the base-form cue “take,” not the completed negative form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The response can be formed using only past-simple negation."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

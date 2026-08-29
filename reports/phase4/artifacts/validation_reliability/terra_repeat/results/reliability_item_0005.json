@@ -1,0 +1,52 @@
+{
+  "sample_order": 5,
+  "blind_item_id": "reliability_item_0005",
+  "candidate_id": "candidate_controlled_lexicon_CELL_EE9DDB26E6C7D307_04",
+  "condition": "controlled_lexicon",
+  "cell_id": "CELL_EE9DDB26E6C7D307",
+  "candidate_index": 4,
+  "original_accepted": true,
+  "original_failed_criteria": [],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Negative active imperative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The context and instruction coherently motivate the response."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It directly practises negative imperatives."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The cue and instruction clearly determine a negative imperative using the supplied words."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "All vocabulary and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The completed negative imperative is not shown in the prompt."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Only basic imperative formation is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is required."
+    }
+  },
+  "accepted": true,
+  "runtime_seconds": 10.62543829799688
+}

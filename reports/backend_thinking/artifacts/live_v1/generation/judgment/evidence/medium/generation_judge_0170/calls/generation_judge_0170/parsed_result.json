@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses present simple, active, negative declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target sentence is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and completed sentence are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It directly practises present-simple negation with do-support."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The context and instruction determine a negative form of “work”; both listed contractions are equivalent."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and setting are common and clear."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the base verb, not the completed negative form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated or advanced grammar is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The needed information is provided in the prompt."
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "dataset_id": "grammar_kt_medium_v1",
+  "resource": "English Grammar Profile retained 139-descriptor sample",
+  "descriptor_count": 139,
+  "schema": "modules/grammar/resource/egp/schema.yaml",
+  "descriptors_sha256": "bbe52d0358c6333d3f9db17586d4cd76e99172c5b44dee4d3703487ea28e904a",
+  "claim_boundary": "The source sample and model normalization outputs are retained from the 2026-08-20 run; Phase 6 does not relabel them."
+}

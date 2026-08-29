@@ -1,0 +1,8 @@
+{
+  "prompt": "The bus came at nine, so Mia stayed home. Complete the sentence using the cue (walk to work): Mia ______.",
+  "target_answer": "Mia did not walk to work.",
+  "accepted_answers": [
+    "did not walk to work",
+    "didn't walk to work"
+  ]
+}

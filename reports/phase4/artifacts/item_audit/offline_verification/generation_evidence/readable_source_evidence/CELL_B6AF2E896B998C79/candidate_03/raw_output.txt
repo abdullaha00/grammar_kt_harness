@@ -1,0 +1,1 @@
+{"prompt": "Complete the sentence: The learner ___ in a short sentence. (clean)", "target_answer": "The learner uses clean in a short sentence.", "accepted_answers": ["The learner uses clean in a short sentence."], "operation_tags": [], "note": "Deterministic software fixture; not linguistic evidence."}

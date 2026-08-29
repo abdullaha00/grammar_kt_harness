@@ -1,0 +1,18 @@
+{
+  "source_id": "1741163716067x824562184770361200",
+  "result": "complete",
+  "cells": [
+    {
+      "aspect": "none",
+      "clause": "declarative",
+      "modal": "none",
+      "polarity": "negative",
+      "tense": "present",
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "The descriptor licenses negative statements with finite main-verb BE across the Phase-1 present/past space, and all eligible examples positively establish present-tense forms (is, are, am, isn't). Tense is therefore narrowed to present; all other Phase-1 constraints remain fixed."
+}

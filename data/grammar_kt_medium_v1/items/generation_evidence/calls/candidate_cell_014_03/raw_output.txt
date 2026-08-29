@@ -1,0 +1,1 @@
+{"prompt":"When the bus arrived, Maya was still at the stop. Complete the sentence using “leave”: Maya _____.","target_answer":"Maya had not left.","accepted_answers":["had not left","hadn't left"]}

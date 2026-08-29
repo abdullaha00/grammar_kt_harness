@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_high_cell_023_03",
+  "cell_id": "cell_023",
+  "candidate_index": 3,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_023_03",
+    "cell_id": "cell_023",
+    "format": "controlled_production",
+    "prompt": "The delivery service operates from Monday to Saturday only. Complete the sentence using “deliver”: Packages ____ on Sundays.",
+    "target_answer": "Packages are not delivered on Sundays.",
+    "accepted_answers": [
+      "are not delivered",
+      "aren't delivered"
+    ],
+    "generation_metadata": {
+      "candidate_index": 3,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 9.589949414999865,
+  "model_calls": 1,
+  "tokens_used": 3109,
+  "model_runtime_seconds": 9.589218122000602,
+  "model_call_failures": 0
+}

@@ -1,0 +1,7 @@
+{
+  "prompt": "When Mia arrived at the kitchen, the table was already clear. Complete the sentence using the cue (Leo / wash / the dishes): ____",
+  "target_answer": "Leo had washed the dishes.",
+  "accepted_answers": [
+    "Leo had washed the dishes."
+  ]
+}

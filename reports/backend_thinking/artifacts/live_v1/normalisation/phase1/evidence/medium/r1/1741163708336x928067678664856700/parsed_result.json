@@ -1,0 +1,21 @@
+{
+  "source_id": "1741163708336x928067678664856700",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": [
+        "present",
+        "past"
+      ],
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": null,
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "Affirmative interrogatives with finite main BE establish positive, active, simple nonmodal clauses, but do not specify present versus past or a canonical question subtype."
+}

@@ -1,0 +1,1 @@
+{"prompt":"You want to know whether Mia took the bus yesterday. Complete the question using the cue “take the bus”: [____]?","target_answer":"Did Mia take the bus yesterday?","accepted_answers":["Did Mia take the bus yesterday"]}

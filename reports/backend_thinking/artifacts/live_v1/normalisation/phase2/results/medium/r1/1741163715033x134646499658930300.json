@@ -1,0 +1,72 @@
+{
+  "source_id": "1741163715033x134646499658930300",
+  "effort": "medium",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163715033x134646499658930300",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "progressive",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "present",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "The descriptor licenses nonmodal auxiliary BE in either morphological present or past, while all eligible examples positively exhibit present-tense 'are'; tense is therefore narrowed to present. Polarity remains unspecified."
+  },
+  "fixed_phase1_mapping": {
+    "source_id": "1741163715033x134646499658930300",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "progressive",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "retained_phase2_mapping": {
+    "source_id": "1741163715033x134646499658930300",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "progressive",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 9.319782659000339,
+  "model_calls": 1,
+  "tokens_used": 4174,
+  "model_runtime_seconds": 9.319047761000547,
+  "model_call_failures": 0
+}

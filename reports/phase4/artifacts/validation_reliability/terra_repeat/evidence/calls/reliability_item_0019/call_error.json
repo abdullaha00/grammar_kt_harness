@@ -1,0 +1,9 @@
+{
+  "model": "gpt-5.6-terra",
+  "reasoning_effort": "medium",
+  "errors": [
+    "JSONDecodeError: Expecting ',' delimiter: line 1 column 394 (char 393)"
+  ],
+  "raw_output_retained": false,
+  "reason": "shared call_model parses JSON before evidence writing; the blinded input remains in blinded_items.jsonl"
+}

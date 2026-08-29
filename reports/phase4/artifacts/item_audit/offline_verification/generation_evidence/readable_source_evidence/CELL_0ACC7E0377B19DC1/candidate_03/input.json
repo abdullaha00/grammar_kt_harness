@@ -1,0 +1,60 @@
+{
+  "target_cell": {
+    "cell_id": "CELL_0ACC7E0377B19DC1",
+    "features": {
+      "tense": "NA",
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "would"
+    }
+  },
+  "source_support": {
+    "available": true,
+    "evidence": [
+      {
+        "guideword": "FORM: AFFIRMATIVE WITH 'LIKE'",
+        "can_do": "Can use the affirmative form with 'like'."
+      }
+    ],
+    "instruction": "Use this readable resource evidence only to support the fixed GrammarCell; do not copy wording or add unsupported grammar."
+  },
+  "item_format": {
+    "format_id": "controlled_production",
+    "task_goal": "Produce the complete response licensed by a short context and lexical cue.",
+    "required_fields": [
+      "prompt",
+      "target_answer",
+      "accepted_answers"
+    ],
+    "answer_form": "one complete English clause",
+    "constraints": [
+      "The prompt must visibly mark the response slot.",
+      "The target answer must fill the task without additional explanation.",
+      "Accepted answers must preserve the intended GrammarCell.",
+      "The prompt must not reveal the completed target form."
+    ]
+  },
+  "design": {
+    "design_id": "one_generated_item_per_cell",
+    "format": "controlled_production",
+    "items_per_cell": 1,
+    "lexical_choice": "model_generated",
+    "lexical_constraint": "simple_non_target_language",
+    "diversity": {
+      "vary_lexical_context_across_cells": true
+    },
+    "balancing": {
+      "nuisance_condition": "short_context"
+    }
+  },
+  "candidate_position": {
+    "index": 3,
+    "count": 3
+  },
+  "lexical_intervention": {
+    "mode": "model_selected",
+    "instruction": "Choose common, transparent lexical and contextual material compatible with the fixed GrammarCell."
+  }
+}

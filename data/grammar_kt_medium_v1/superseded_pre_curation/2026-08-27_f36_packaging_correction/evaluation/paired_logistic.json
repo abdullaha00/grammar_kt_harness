@@ -1,0 +1,548 @@
+{
+  "method": "learner_cluster_paired_bootstrap",
+  "fixed_kt_method": "logistic",
+  "repeats": 5000,
+  "seed": 20260827,
+  "comparisons": [
+    {
+      "grammar_regime": "all_test",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 1000,
+      "n_events": 45000,
+      "events_per_learner": {
+        "minimum": 45,
+        "median": 45.0,
+        "maximum": 45
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6440294932421575,
+          "brier_score": 0.2259161394584878
+        },
+        "candidate": {
+          "log_loss": 0.6436274420767585,
+          "brier_score": 0.22572790921092992
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.00040205116540716215,
+        "interval_95": [
+          -0.0007375513137792112,
+          -7.128143351314613e-05
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.00018823024756029188,
+        "interval_95": [
+          -0.00034257266113174286,
+          -3.6076703399611863e-05
+        ]
+      }
+    },
+    {
+      "grammar_regime": "all_test",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 1000,
+      "n_events": 45000,
+      "events_per_learner": {
+        "minimum": 45,
+        "median": 45.0,
+        "maximum": 45
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6440294932421575,
+          "brier_score": 0.2259161394584878
+        },
+        "candidate": {
+          "log_loss": 0.6437978850792613,
+          "brier_score": 0.22580342015314014
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.00023160816290531175,
+        "interval_95": [
+          -0.000487704902687158,
+          2.794013546302361e-05
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.00011271930534902341,
+        "interval_95": [
+          -0.00022805182189179955,
+          3.733446853048174e-06
+        ]
+      }
+    },
+    {
+      "grammar_regime": "all_test",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 1000,
+      "n_events": 45000,
+      "events_per_learner": {
+        "minimum": 45,
+        "median": 45.0,
+        "maximum": 45
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6440294932421575,
+          "brier_score": 0.2259161394584878
+        },
+        "candidate": {
+          "log_loss": 0.6575349745797734,
+          "brier_score": 0.23258374546281776
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.013505481337610438,
+        "interval_95": [
+          0.011988209721964212,
+          0.014983205390113443
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.006667606004322526,
+        "interval_95": [
+          0.005935326635183003,
+          0.00738498376362283
+        ]
+      }
+    },
+    {
+      "grammar_regime": "development",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 1000,
+      "n_events": 33000,
+      "events_per_learner": {
+        "minimum": 33,
+        "median": 33.0,
+        "maximum": 33
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6391151708709087,
+          "brier_score": 0.22352860978966194
+        },
+        "candidate": {
+          "log_loss": 0.6388522808059567,
+          "brier_score": 0.22340561863718286
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.00026289006495112136,
+        "interval_95": [
+          -0.0006917837984416567,
+          0.00014816996957210137
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.00012299115248378406,
+        "interval_95": [
+          -0.0003176163273950318,
+          6.559442194666342e-05
+        ]
+      }
+    },
+    {
+      "grammar_regime": "development",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 1000,
+      "n_events": 33000,
+      "events_per_learner": {
+        "minimum": 33,
+        "median": 33.0,
+        "maximum": 33
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6391151708709087,
+          "brier_score": 0.22352860978966194
+        },
+        "candidate": {
+          "log_loss": 0.6388882796424685,
+          "brier_score": 0.22341608703884028
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.00022689122843749787,
+        "interval_95": [
+          -0.0005423588801783317,
+          9.922093905804054e-05
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.00011252275082473893,
+        "interval_95": [
+          -0.00025266210599682635,
+          3.274645283865151e-05
+        ]
+      }
+    },
+    {
+      "grammar_regime": "development",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 1000,
+      "n_events": 33000,
+      "events_per_learner": {
+        "minimum": 33,
+        "median": 33.0,
+        "maximum": 33
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6391151708709087,
+          "brier_score": 0.22352860978966194
+        },
+        "candidate": {
+          "log_loss": 0.6388876196572706,
+          "brier_score": 0.22340679292237242
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.00022755121363113865,
+        "interval_95": [
+          -0.0007389344320324893,
+          0.00027362464440001635
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.00012181686728931079,
+        "interval_95": [
+          -0.00035109788571927817,
+          0.0001001492105048363
+        ]
+      }
+    },
+    {
+      "grammar_regime": "compositional_holdout",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 1000,
+      "n_events": 10000,
+      "events_per_learner": {
+        "minimum": 10,
+        "median": 10.0,
+        "maximum": 10
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6538162457712707,
+          "brier_score": 0.23066580390686972
+        },
+        "candidate": {
+          "log_loss": 0.6528774153234542,
+          "brier_score": 0.23022600611332764
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.0009388304478182258,
+        "interval_95": [
+          -0.0015725145190653264,
+          -0.0003069203469828649
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.00043979779354287764,
+        "interval_95": [
+          -0.0007372326241146677,
+          -0.00014424307573581436
+        ]
+      }
+    },
+    {
+      "grammar_regime": "compositional_holdout",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 1000,
+      "n_events": 10000,
+      "events_per_learner": {
+        "minimum": 10,
+        "median": 10.0,
+        "maximum": 10
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6538162457712707,
+          "brier_score": 0.23066580390686972
+        },
+        "candidate": {
+          "log_loss": 0.6534984496039621,
+          "brier_score": 0.23051827514620613
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -0.00031779616730794085,
+        "interval_95": [
+          -0.0009297382368481761,
+          0.00031108655532045794
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.00014752876066641965,
+        "interval_95": [
+          -0.00043151832914788634,
+          0.00014609753843763463
+        ]
+      }
+    },
+    {
+      "grammar_regime": "compositional_holdout",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 1000,
+      "n_events": 10000,
+      "events_per_learner": {
+        "minimum": 10,
+        "median": 10.0,
+        "maximum": 10
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6538162457712707,
+          "brier_score": 0.23066580390686972
+        },
+        "candidate": {
+          "log_loss": 0.7140475106054247,
+          "brier_score": 0.26043227275566483
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.06023126483415826,
+        "interval_95": [
+          0.053615232103938766,
+          0.0666961031550807
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.029766468848798803,
+        "interval_95": [
+          0.02654692776154525,
+          0.03291843520776044
+        ]
+      }
+    },
+    {
+      "grammar_regime": "novel_feature_holdout",
+      "reference": "factorized",
+      "candidate": "supported_interactions",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "supported_interactions",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 1000,
+      "n_events": 2000,
+      "events_per_learner": {
+        "minimum": 2,
+        "median": 2.0,
+        "maximum": 2
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6761820497223575,
+          "brier_score": 0.24156205675223769
+        },
+        "candidate": {
+          "log_loss": 0.6761677368114857,
+          "brier_score": 0.2415552191658263
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": -1.4312910876516816e-05,
+        "interval_95": [
+          -4.570355744489261e-05,
+          1.7758816892951607e-05
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -6.83758640974122e-06,
+        "interval_95": [
+          -2.1852421535717668e-05,
+          8.518328220668404e-06
+        ]
+      }
+    },
+    {
+      "grammar_regime": "novel_feature_holdout",
+      "reference": "factorized",
+      "candidate": "automated",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "automated",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 1000,
+      "n_events": 2000,
+      "events_per_learner": {
+        "minimum": 2,
+        "median": 2.0,
+        "maximum": 2
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6761820497223575,
+          "brier_score": 0.24156205675223769
+        },
+        "candidate": {
+          "log_loss": 0.6763035521627419,
+          "brier_score": 0.24162014157382533
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.00012150244038890461,
+        "interval_95": [
+          -8.560621917541148e-05,
+          0.0003229035730207176
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 5.808482158726328e-05,
+        "interval_95": [
+          -4.065414079789466e-05,
+          0.00015425936232604253
+        ]
+      }
+    },
+    {
+      "grammar_regime": "novel_feature_holdout",
+      "reference": "factorized",
+      "candidate": "oracle_all_cell",
+      "available": true,
+      "reference_policy_id": "factorized",
+      "candidate_policy_id": "oracle_all_cell",
+      "sign_convention": "candidate_minus_reference; negative favours candidate",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "percentile_method": "linear",
+      "n_learners": 1000,
+      "n_events": 2000,
+      "events_per_learner": {
+        "minimum": 2,
+        "median": 2.0,
+        "maximum": 2
+      },
+      "repeats": 5000,
+      "seed": 20260827,
+      "observed": {
+        "reference": {
+          "log_loss": 0.6761820497223575,
+          "brier_score": 0.24156205675223769
+        },
+        "candidate": {
+          "log_loss": 0.6826536506727221,
+          "brier_score": 0.24476082591577225
+        }
+      },
+      "delta_log_loss": {
+        "point_estimate": 0.006471600950357318,
+        "interval_95": [
+          0.0004081165785980335,
+          0.012774985208505382
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.003198769163536454,
+        "interval_95": [
+          0.0002345112534523591,
+          0.006283253569264114
+        ]
+      }
+    }
+  ]
+}

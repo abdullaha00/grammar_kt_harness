@@ -1,0 +1,214 @@
+{
+  "protocol_id": "grammar_kt_evaluation_v1",
+  "dataset": {
+    "generated_candidates": 77,
+    "validator_accepted_candidates": 55,
+    "validator_acceptance_rate": 0.7142857142857143,
+    "selected_bank_items": 45,
+    "selection_rate_among_accepted": 0.8181818181818182,
+    "deterministic_precheck_rejections": 0,
+    "grammar_cells": 24,
+    "validator_covered_cells": 24,
+    "covered_cells": 24,
+    "selected_items_per_cell": {
+      "cell_001": 2,
+      "cell_002": 2,
+      "cell_003": 2,
+      "cell_004": 2,
+      "cell_005": 2,
+      "cell_006": 2,
+      "cell_007": 2,
+      "cell_008": 2,
+      "cell_009": 2,
+      "cell_010": 2,
+      "cell_011": 2,
+      "cell_012": 2,
+      "cell_013": 2,
+      "cell_014": 2,
+      "cell_015": 1,
+      "cell_016": 2,
+      "cell_017": 1,
+      "cell_018": 2,
+      "cell_019": 2,
+      "cell_020": 2,
+      "cell_021": 2,
+      "cell_022": 1,
+      "cell_023": 2,
+      "cell_024": 2
+    },
+    "unique_prompt_rate": 1.0,
+    "duplicate_prompts": 0,
+    "lexical_types": 235,
+    "lexical_tokens": 816,
+    "lexical_diversity": 0.28799019607843135,
+    "format_distribution": {
+      "controlled_production": 45
+    },
+    "criterion_pass_rates": {
+      "target_fidelity": 1.0,
+      "grammaticality": 1.0,
+      "naturalness": 0.961038961038961,
+      "pedagogical_suitability": 0.961038961038961,
+      "determinacy": 0.7402597402597403,
+      "non_target_language_simplicity": 1.0,
+      "no_answer_leakage": 1.0,
+      "no_extraneous_grammar": 1.0,
+      "no_world_knowledge": 1.0
+    },
+    "grammar_cell_coverage": 1.0
+  },
+  "representation": {
+    "policy_id": "medium_v1_factorized_plus_all_supported_interactions",
+    "items": 45,
+    "kcs": 16,
+    "item_coverage": 0.9555555555555556,
+    "event_coverage": 0.9904761904761905,
+    "q_matrix_density": 0.175,
+    "kcs_per_item": 2.8,
+    "kc_support": {
+      "kc_feature__aspect__perfect": 8,
+      "kc_feature__aspect__perfect_progressive": 5,
+      "kc_feature__aspect__progressive": 8,
+      "kc_feature__clause__imperative": 4,
+      "kc_feature__clause__polar_question": 4,
+      "kc_feature__polarity__negative": 15,
+      "kc_feature__tense__past": 17,
+      "kc_feature__tense__present": 22,
+      "kc_feature__voice__passive": 9,
+      "kc_interaction__aspect_perfect__and__polarity_negative": 4,
+      "kc_interaction__aspect_perfect__and__tense_past": 4,
+      "kc_interaction__aspect_perfect__and__tense_present": 4,
+      "kc_interaction__aspect_perfect_progressive__and__tense_past": 3,
+      "kc_interaction__polarity_negative__and__tense_past": 5,
+      "kc_interaction__polarity_negative__and__tense_present": 8,
+      "kc_interaction__tense_present__and__voice_passive": 6
+    },
+    "redundant_kcs": [],
+    "compositional_coverage": 1.0
+  },
+  "kt": {
+    "empirical": {
+      "n": 45000,
+      "log_loss": 0.6685595295976029,
+      "brier_score": 0.23777550735254072,
+      "auc": 0.5063342033257371,
+      "ece": 0.07046164016327498,
+      "accuracy": 0.6107333333333334,
+      "grammar_split_metrics": {
+        "development": {
+          "n": 33000,
+          "log_loss": 0.6630672741293991,
+          "brier_score": 0.23506434774992163,
+          "auc": 0.5070929731224757,
+          "ece": 0.08341228516677815,
+          "accuracy": 0.625969696969697
+        },
+        "compositional_holdout": {
+          "n": 10000,
+          "log_loss": 0.6715876869751559,
+          "brier_score": 0.23929923980729237,
+          "auc": 0.5114966329813442,
+          "ece": 0.0664888108408308,
+          "accuracy": 0.5999
+        },
+        "novel_feature_holdout": {
+          "n": 2000,
+          "log_loss": 0.7440409579352011,
+          "brier_score": 0.2748909785219979,
+          "auc": 0.5083974010509695,
+          "ece": 0.18044610778443104,
+          "accuracy": 0.4135
+        }
+      }
+    },
+    "bkt": {
+      "n": 45000,
+      "log_loss": 0.8174768942023715,
+      "brier_score": 0.27569139324047554,
+      "auc": 0.5355214929646761,
+      "ece": 0.21272291718880848,
+      "accuracy": 0.6418222222222222,
+      "grammar_split_metrics": {
+        "development": {
+          "n": 33000,
+          "log_loss": 0.8097242758759531,
+          "brier_score": 0.27151151318733074,
+          "auc": 0.5155861076579542,
+          "ece": 0.21187326973055448,
+          "accuracy": 0.6586666666666666
+        },
+        "compositional_holdout": {
+          "n": 10000,
+          "log_loss": 0.8577477219329858,
+          "brier_score": 0.28964508035954895,
+          "auc": 0.509857595578916,
+          "ece": 0.229332753618204,
+          "accuracy": 0.6319
+        },
+        "novel_feature_holdout": {
+          "n": 2000,
+          "log_loss": 0.7440409579352011,
+          "brier_score": 0.2748909785219979,
+          "auc": 0.5083974010509695,
+          "ece": 0.18044610778443104,
+          "accuracy": 0.4135
+        }
+      }
+    },
+    "logistic": {
+      "n": 45000,
+      "log_loss": 0.6436274420767562,
+      "brier_score": 0.22572790921093036,
+      "auc": 0.5622513072360251,
+      "ece": 0.0023722235397428265,
+      "accuracy": 0.6511777777777777,
+      "grammar_split_metrics": {
+        "development": {
+          "n": 33000,
+          "log_loss": 0.6388522808059555,
+          "brier_score": 0.22340561863717995,
+          "auc": 0.5379405951728984,
+          "ece": 0.00437673063722547,
+          "accuracy": 0.6602727272727272
+        },
+        "compositional_holdout": {
+          "n": 10000,
+          "log_loss": 0.6528774153234542,
+          "brier_score": 0.23022600611332728,
+          "auc": 0.5555722816957859,
+          "ece": 0.006175865579548389,
+          "accuracy": 0.6329
+        },
+        "novel_feature_holdout": {
+          "n": 2000,
+          "log_loss": 0.6761677368114799,
+          "brier_score": 0.24155521916582776,
+          "auc": 0.5083974010509695,
+          "ece": 0.012038302027734815,
+          "accuracy": 0.5925
+        }
+      }
+    }
+  },
+  "paired_bootstrap": {
+    "bkt_minus_empirical_log_loss": {
+      "mean": 0.14940468185490446,
+      "interval_95": [
+        0.1427574831229105,
+        0.15742718594193658
+      ]
+    },
+    "logistic_minus_empirical_log_loss": {
+      "mean": -0.024970528279464367,
+      "interval_95": [
+        -0.026924517184362375,
+        -0.022996479017649844
+      ]
+    }
+  },
+  "input_counts": {
+    "events": 210000,
+    "predictions": 630000,
+    "prediction_events": 210000
+  }
+}

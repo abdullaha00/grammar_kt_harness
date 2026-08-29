@@ -1,0 +1,52 @@
+{
+  "sample_order": 10,
+  "blind_item_id": "reliability_item_0010",
+  "candidate_id": "candidate_model_selected_CELL_EE9DDB26E6C7D307_04",
+  "condition": "model_selected",
+  "cell_id": "CELL_EE9DDB26E6C7D307",
+  "candidate_index": 4,
+  "original_accepted": true,
+  "original_failed_criteria": [],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The answer is an active negative imperative with no tense, aspect, or modal marking."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "\"Don't run\" is a grammatical negative imperative."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "Warning someone not to run on a wet floor is natural and coherent."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The item directly elicits the negative imperative using a supplied verb."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The warning context, blank structure, and verb cue strongly determine \"Don't run\" or its uncontracted equivalent."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The prompt uses common, transparent vocabulary with no meaningful lexical ambiguity."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies only the base verb and does not display the completed negative imperative."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Producing the answer requires only formation of a negative imperative."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external factual or specialist knowledge is needed."
+    }
+  },
+  "accepted": true,
+  "runtime_seconds": 14.843842374990345
+}

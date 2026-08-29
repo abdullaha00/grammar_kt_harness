@@ -1,0 +1,69 @@
+{
+  "item_id": "candidate_cell_006_01",
+  "audit_id": "validation_live_a8cc2b7f7d7f",
+  "cell_id": "cell_006",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_a8cc2b7f7d7f",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "A negative active imperative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The warning naturally fits the hot-pan context."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It clearly practises a negative imperative."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The cue and context strongly determine the intended warning."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "All vocabulary is common and unambiguous."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives only the cue verb, not the completed answer."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Only basic negative-imperative formation is needed."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No specialist or external knowledge is required."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": true,
+  "retained_failed_criteria": [],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 8.029809043000569,
+  "model_calls": 1,
+  "tokens_used": 4530,
+  "model_runtime_seconds": 8.028996418001043,
+  "model_call_failures": 0
+}

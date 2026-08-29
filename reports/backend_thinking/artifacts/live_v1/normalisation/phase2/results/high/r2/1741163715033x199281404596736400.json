@@ -1,0 +1,85 @@
+{
+  "source_id": "1741163715033x199281404596736400",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163715033x199281404596736400",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "present",
+        "voice": "active"
+      },
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "past",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "The examples positively establish both present-tense DO-support ('Do you know/like/remember') and past-tense DO-support ('Did you see'), so the Phase-1 tense alternatives are resolved into separate descendant cells. Polarity remains null because it was not Phase-2 eligible."
+  },
+  "fixed_phase1_mapping": {
+    "source_id": "1741163715033x199281404596736400",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "retained_phase2_mapping": {
+    "source_id": "1741163715033x199281404596736400",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "present",
+        "voice": "active"
+      },
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "past",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 15.105474284999218,
+  "model_calls": 1,
+  "tokens_used": 6534,
+  "model_runtime_seconds": 15.104784598999686,
+  "model_call_failures": 0
+}

@@ -1,0 +1,55 @@
+{
+  "sample_order": 13,
+  "blind_item_id": "reliability_item_0013",
+  "candidate_id": "candidate_model_selected_CELL_B6AF2E896B998C79_05",
+  "condition": "model_selected",
+  "cell_id": "CELL_B6AF2E896B998C79",
+  "candidate_index": 5,
+  "original_accepted": false,
+  "original_failed_criteria": [
+    "determinacy",
+    "pedagogical_suitability"
+  ],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The answer is a positive declarative in the simple past passive, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is fully grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The answer naturally and coherently restates the event described in the prompt."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The prompt does not explicitly cue the passive voice, so it does not reliably focus learners on the intended grammar."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "Several valid responses are possible, including \"The workers painted the kitchen door yesterday,\" but only the passive target is accepted."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and context are common, clear, and lexically straightforward."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies only the base verb \"paint\" and does not display the completed passive form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Producing the answer requires no unrelated advanced grammar."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The item can be answered entirely from the information in the prompt."
+    }
+  },
+  "accepted": false,
+  "runtime_seconds": 15.510890436999034
+}

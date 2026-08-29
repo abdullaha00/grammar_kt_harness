@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163708343x587422418001030500",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": ["present", "past"],
+      "aspect": "none",
+      "voice": "active",
+      "polarity": null,
+      "clause": "subject_wh_question",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": ["tense"],
+  "note": "The descriptor specifies a subject-WH question with a simple finite main verb and no auxiliary; it does not distinguish present from past or establish polarity."
+}

@@ -1,0 +1,71 @@
+{
+  "item_id": "candidate_cell_007_03",
+  "audit_id": "validation_live_5abc38883115",
+  "cell_id": "cell_007",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_5abc38883115",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The target is present simple, active, negative, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "“Mia does not drink coffee.” is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt and answer are coherent: avoiding coffee naturally supports not drinking it."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of present-simple negation with a third-person singular subject."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "Other natural completions, such as “never drinks,” fit the prompt but are not listed as accepted answers."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and context are common and clear."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not show the completed negative target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The item can be solved using basic present-simple negation only."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is required."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 13.111506252000254,
+  "model_calls": 1,
+  "tokens_used": 2734,
+  "model_runtime_seconds": 13.110680616000536,
+  "model_call_failures": 0
+}

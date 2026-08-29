@@ -1,0 +1,36 @@
+{
+  "source_id": "1741163711055x245124661514512830",
+  "stratum": "unresolved",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163711055x245124661514512830",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "NA",
+        "aspect": null,
+        "voice": null,
+        "polarity": null,
+        "clause": "polar_question",
+        "modal": "shall"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "Suggestion-making with 'shall' and 'we' identifies the conventional polar-question construction, but does not constrain the auxiliary chain, voice, or polarity."
+  },
+  "retained_mapping": {
+    "source_id": "1741163711055x245124661514512830",
+    "result": "unresolved",
+    "cells": [],
+    "phase2_eligible": [],
+    "note": "phase2 contradiction: clause=declarative; evidence: examples use interrogative 'Shall we ...?' forms."
+  },
+  "task_runtime_seconds": 21.731386236000617,
+  "model_calls": 1,
+  "tokens_used": 4504,
+  "model_runtime_seconds": 21.73072042199965,
+  "model_call_failures": 0
+}

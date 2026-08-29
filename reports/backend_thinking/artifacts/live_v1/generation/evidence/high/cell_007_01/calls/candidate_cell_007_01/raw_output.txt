@@ -1,0 +1,1 @@
+{"prompt":"Leo chooses tea every morning and avoids coffee. Complete the sentence using the verb “drink”: Leo [____] coffee.","target_answer":"Leo does not drink coffee.","accepted_answers":["does not drink","doesn't drink"]}

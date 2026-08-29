@@ -1,0 +1,71 @@
+{
+  "item_id": "adversarial_lexical_simplicity_1",
+  "audit_id": "validation_live_0319fbff795b",
+  "cell_id": "cell_003",
+  "effort": "medium",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_0319fbff795b",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "Present simple, active, positive declarative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": false,
+        "note": "The unusually obscure and stacked vocabulary makes the prompt-answer pair unnatural."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "Rare vocabulary distracts from the intended basic grammar focus."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The prompt does not determine this exact highly specific lexical response."
+      },
+      "non_target_language_simplicity": {
+        "passed": false,
+        "note": "“Sesquipedalian,” “logomachist,” and “tergiversates” are rare and opaque."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed target form is not displayed in the prompt."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "No unrelated advanced grammar is needed; the main issue is vocabulary."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external factual knowledge is needed to understand the scenario."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "non_target_language_simplicity"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": true,
+  "reference_source": "authored_adversarial_negative_control",
+  "task_runtime_seconds": 13.051173773999835,
+  "model_calls": 1,
+  "tokens_used": 4792,
+  "model_runtime_seconds": 13.050374452001051,
+  "model_call_failures": 0
+}

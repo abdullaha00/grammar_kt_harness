@@ -1,0 +1,7 @@
+{
+  "prompt": "The path was wet when we arrived. It _____ all morning. (rain)",
+  "target_answer": "It had been raining all morning.",
+  "accepted_answers": [
+    "had been raining"
+  ]
+}

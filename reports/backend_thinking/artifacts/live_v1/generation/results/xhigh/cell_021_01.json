@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_021_01",
+  "cell_id": "cell_021",
+  "candidate_index": 1,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_021_01",
+    "cell_id": "cell_021",
+    "format": "controlled_production",
+    "prompt": "The kitchen staff are washing the plates now. Complete the sentence using “wash”: The plates ____.",
+    "target_answer": "The plates are being washed.",
+    "accepted_answers": [
+      "are being washed"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 9.994838849999724,
+  "model_calls": 1,
+  "tokens_used": 5177,
+  "model_runtime_seconds": 9.994079644000522,
+  "model_call_failures": 0
+}

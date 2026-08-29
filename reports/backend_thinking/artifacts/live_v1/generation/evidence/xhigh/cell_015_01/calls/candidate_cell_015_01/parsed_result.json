@@ -1,0 +1,7 @@
+{
+  "prompt": "The kitchen floor was clean when we came home. Complete the sentence using the cue “Maya / wash”: Maya ______ the floor.",
+  "target_answer": "Maya had washed the floor.",
+  "accepted_answers": [
+    "had washed"
+  ]
+}

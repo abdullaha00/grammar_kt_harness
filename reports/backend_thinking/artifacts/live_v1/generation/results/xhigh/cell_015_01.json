@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_xhigh_cell_015_01",
+  "cell_id": "cell_015",
+  "candidate_index": 1,
+  "effort": "xhigh",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_015_01",
+    "cell_id": "cell_015",
+    "format": "controlled_production",
+    "prompt": "The kitchen floor was clean when we came home. Complete the sentence using the cue “Maya / wash”: Maya ______ the floor.",
+    "target_answer": "Maya had washed the floor.",
+    "accepted_answers": [
+      "had washed"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 4.849997585000892,
+  "model_calls": 1,
+  "tokens_used": 5022,
+  "model_runtime_seconds": 4.84922524600006,
+  "model_call_failures": 0
+}

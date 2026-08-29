@@ -1,0 +1,11 @@
+candidate_id,family,cell_support,item_support,meets_support_threshold,equivalence_class_id,equivalent_to,is_equivalence_representative,selection_eligible,exclusion_reasons
+kc_operation__central_modal,operation,0,0,False,activation_class_001,,True,False,"[""no_development_item_support""]"
+kc_operation__finite_tense_form,operation,16,29,True,activation_class_038,,True,True,[]
+kc_operation__imperative,operation,2,3,True,activation_class_030,kc_feature__clause__imperative,False,False,"[""activation_equivalent_on_development_items""]"
+kc_operation__negation,operation,6,12,True,activation_class_028,kc_feature__polarity__negative,False,False,"[""activation_equivalent_on_development_items""]"
+kc_operation__operator_inversion,operation,2,4,True,activation_class_037,kc_feature__clause__polar_question,False,False,"[""activation_equivalent_on_development_items""]"
+kc_operation__passive_dependency,operation,3,5,True,activation_class_006,kc_feature__voice__passive,False,False,"[""activation_equivalent_on_development_items""]"
+kc_operation__perfect_dependency,operation,8,13,True,activation_class_021,,True,True,[]
+kc_operation__progressive_dependency,operation,6,11,True,activation_class_026,,True,True,[]
+kc_operation__subject_wh,operation,0,0,False,activation_class_001,kc_operation__central_modal,False,False,"[""no_development_item_support"", ""activation_equivalent_on_development_items""]"
+kc_operation__wh_fronting,operation,0,0,False,activation_class_001,kc_operation__central_modal,False,False,"[""no_development_item_support"", ""activation_equivalent_on_development_items""]"

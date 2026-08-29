@@ -1,0 +1,72 @@
+{
+  "source_id": "1741163708336x903931402154698900",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708336x903931402154698900",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": null,
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "present",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "Both examples positively establish morphological present tense through finite 'are' and 'have'. Tense is therefore narrowed from [present, past] to present; aspect remains null because it is not Phase-2 eligible."
+  },
+  "fixed_phase1_mapping": {
+    "source_id": "1741163708336x903931402154698900",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": null,
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "retained_phase2_mapping": {
+    "source_id": "1741163708336x903931402154698900",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": null,
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 10.438128058000075,
+  "model_calls": 1,
+  "tokens_used": 6551,
+  "model_runtime_seconds": 10.437425288999293,
+  "model_call_failures": 0
+}

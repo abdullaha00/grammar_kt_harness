@@ -1,0 +1,7 @@
+{
+  "prompt": "Look at the children in the yard. Complete the sentence using “play”: The children ___.",
+  "target_answer": "The children are playing.",
+  "accepted_answers": [
+    "are playing"
+  ]
+}

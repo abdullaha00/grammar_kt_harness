@@ -1,0 +1,1 @@
+{"source_id":"1741163713626x199664325289681020","result":"out_of_scope","cells":[],"phase2_eligible":[],"note":"The descriptor targets present-simple use in an if-clause, a multi-clause conditional relation not representable in the single-main-clause schema."}

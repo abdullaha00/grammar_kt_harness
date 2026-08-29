@@ -1,0 +1,71 @@
+{
+  "item_id": "candidate_cell_005_02",
+  "audit_id": "validation_live_4378e9c17840",
+  "cell_id": "cell_005",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_4378e9c17840",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "“Walk carefully.” is a positive active imperative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "A wet floor near a door naturally motivates this advice."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides clear practice producing a simple imperative."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "Many equally natural imperatives fit the prompt, such as “Be careful” or “Don’t slip,” but only one is accepted."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and situation are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The item can be answered using a basic imperative without unrelated grammar."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external factual or specialist knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 10.201063504000558,
+  "model_calls": 1,
+  "tokens_used": 2590,
+  "model_runtime_seconds": 10.200258225000653,
+  "model_call_failures": 0
+}

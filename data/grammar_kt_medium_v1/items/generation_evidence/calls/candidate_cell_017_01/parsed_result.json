@@ -1,0 +1,8 @@
+{
+  "prompt": "Maya started her job at the shop on Monday. Complete the sentence using “work”: Before Monday, she [____] at the shop.",
+  "target_answer": "Before Monday, she had not been working at the shop.",
+  "accepted_answers": [
+    "had not been working",
+    "hadn't been working"
+  ]
+}

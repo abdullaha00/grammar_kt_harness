@@ -1,0 +1,1 @@
+{"prompt":"Mia has a job at the town library. Complete the sentence using “work”: Mia ____ at the library.","target_answer":"Mia works at the library.","accepted_answers":["works"]}

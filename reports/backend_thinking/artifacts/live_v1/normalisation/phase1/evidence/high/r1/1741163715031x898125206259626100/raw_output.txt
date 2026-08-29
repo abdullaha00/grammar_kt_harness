@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163715031x898125206259626100",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": ["present", "past"],
+      "aspect": "none",
+      "voice": "active",
+      "polarity": null,
+      "clause": "non_subject_wh_question",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": ["tense"],
+  "note": "The inverted wh-word + main BE + subject pattern forms a non-subject wh-question. The finite BE form is nonmodal and simple, but present versus past and polarity are unspecified."
+}

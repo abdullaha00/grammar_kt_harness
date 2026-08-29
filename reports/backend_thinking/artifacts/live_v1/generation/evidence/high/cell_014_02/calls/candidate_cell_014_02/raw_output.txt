@@ -1,0 +1,1 @@
+{"prompt":"The cake was still on the table the next morning. Complete the sentence using she / eat / it: She ____.","target_answer":"She had not eaten it.","accepted_answers":["had not eaten it","hadn't eaten it"]}

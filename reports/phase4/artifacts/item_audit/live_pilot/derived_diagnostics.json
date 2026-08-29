@@ -1,0 +1,204 @@
+{
+  "artifact_status": "live_model_evidence",
+  "derivation": "offline analysis of frozen outputs; no model calls",
+  "matched_readable_source_vs_model_selected_n3": {
+    "matched_cell_ids": [
+      "CELL_0ACC7E0377B19DC1",
+      "CELL_868FF555B70CAE2A",
+      "CELL_B6AF2E896B998C79"
+    ],
+    "model_selected": {
+      "planned_attempts": 9,
+      "structurally_valid_candidates": 8,
+      "valid_validator_outputs": 8,
+      "accepted_candidates": 6,
+      "end_to_end_acceptance_rate": 0.6666666666666666,
+      "covered_cells": 3,
+      "accepted_count_by_cell": {
+        "CELL_0ACC7E0377B19DC1": 2,
+        "CELL_868FF555B70CAE2A": 2,
+        "CELL_B6AF2E896B998C79": 2
+      }
+    },
+    "readable_source_evidence": {
+      "planned_attempts": 9,
+      "structurally_valid_candidates": 8,
+      "valid_validator_outputs": 8,
+      "accepted_candidates": 6,
+      "end_to_end_acceptance_rate": 0.6666666666666666,
+      "covered_cells": 3,
+      "accepted_count_by_cell": {
+        "CELL_0ACC7E0377B19DC1": 1,
+        "CELL_868FF555B70CAE2A": 3,
+        "CELL_B6AF2E896B998C79": 2
+      }
+    },
+    "source_minus_model_selected": {
+      "structurally_valid_candidates": 0,
+      "accepted_candidates": 0,
+      "end_to_end_acceptance_rate": 0.0,
+      "covered_cells": 0,
+      "accepted_count_by_cell": {
+        "CELL_0ACC7E0377B19DC1": -1,
+        "CELL_868FF555B70CAE2A": 1,
+        "CELL_B6AF2E896B998C79": 0
+      }
+    },
+    "interpretation_limit": "One stochastic eight-cell pilot with only three matched source cells; equal aggregate acceptance is not evidence of equivalence or no effect."
+  },
+  "accepted_variant_support": {
+    "model_selected": {
+      "maximum_n": 5,
+      "accepted_count_by_cell": {
+        "CELL_0A7F3FA2D498D97D": 3,
+        "CELL_0ACC7E0377B19DC1": 2,
+        "CELL_0D017AFB2B3A3DB5": 2,
+        "CELL_29BDABD4E976923A": 5,
+        "CELL_868FF555B70CAE2A": 4,
+        "CELL_B6AF2E896B998C79": 3,
+        "CELL_C20140C7DAD62DB2": 3,
+        "CELL_EE9DDB26E6C7D307": 5
+      },
+      "cells_with_any_accepted": 8,
+      "cells_with_at_least_two_accepted": [
+        "CELL_0A7F3FA2D498D97D",
+        "CELL_0ACC7E0377B19DC1",
+        "CELL_0D017AFB2B3A3DB5",
+        "CELL_29BDABD4E976923A",
+        "CELL_868FF555B70CAE2A",
+        "CELL_B6AF2E896B998C79",
+        "CELL_C20140C7DAD62DB2",
+        "CELL_EE9DDB26E6C7D307"
+      ],
+      "at_least_two_count": 8,
+      "at_least_two_rate": 1.0
+    },
+    "controlled_lexicon": {
+      "maximum_n": 5,
+      "accepted_count_by_cell": {
+        "CELL_0A7F3FA2D498D97D": 0,
+        "CELL_0ACC7E0377B19DC1": 1,
+        "CELL_0D017AFB2B3A3DB5": 1,
+        "CELL_29BDABD4E976923A": 5,
+        "CELL_868FF555B70CAE2A": 5,
+        "CELL_B6AF2E896B998C79": 4,
+        "CELL_C20140C7DAD62DB2": 3,
+        "CELL_EE9DDB26E6C7D307": 4
+      },
+      "cells_with_any_accepted": 7,
+      "cells_with_at_least_two_accepted": [
+        "CELL_29BDABD4E976923A",
+        "CELL_868FF555B70CAE2A",
+        "CELL_B6AF2E896B998C79",
+        "CELL_C20140C7DAD62DB2",
+        "CELL_EE9DDB26E6C7D307"
+      ],
+      "at_least_two_count": 5,
+      "at_least_two_rate": 0.625
+    },
+    "readable_source_evidence": {
+      "maximum_n": 3,
+      "accepted_count_by_cell": {
+        "CELL_0ACC7E0377B19DC1": 1,
+        "CELL_868FF555B70CAE2A": 3,
+        "CELL_B6AF2E896B998C79": 2
+      },
+      "cells_with_any_accepted": 3,
+      "cells_with_at_least_two_accepted": [
+        "CELL_868FF555B70CAE2A",
+        "CELL_B6AF2E896B998C79"
+      ],
+      "at_least_two_count": 2,
+      "at_least_two_rate": 0.6666666666666666
+    }
+  },
+  "criterion_failures": {
+    "rejected_candidates": 30,
+    "criterion_failure_counts": {
+      "determinacy": 29,
+      "naturalness": 7,
+      "pedagogical_suitability": 8,
+      "no_extraneous_grammar": 3
+    },
+    "failure_combination_counts": {
+      "determinacy": 22,
+      "naturalness + pedagogical_suitability + determinacy": 4,
+      "naturalness + pedagogical_suitability + determinacy + no_extraneous_grammar": 2,
+      "naturalness + pedagogical_suitability + no_extraneous_grammar": 1,
+      "pedagogical_suitability + determinacy": 1
+    },
+    "criterion_failure_counts_by_condition": {
+      "controlled_lexicon": {
+        "determinacy": 16,
+        "naturalness": 5,
+        "pedagogical_suitability": 5,
+        "no_extraneous_grammar": 2
+      },
+      "model_selected": {
+        "determinacy": 11,
+        "naturalness": 2,
+        "pedagogical_suitability": 3,
+        "no_extraneous_grammar": 1
+      },
+      "readable_source_evidence": {
+        "determinacy": 2
+      }
+    }
+  },
+  "cell_deterministic_operation_tag_agreement": {
+    "comparison_scope": "Only generator tags with cell-deterministic declarations are compared; realisation-dependent tags such as do_support are ignored.",
+    "candidates": 86,
+    "exact_matches": 86,
+    "exact_match_rate": 1.0,
+    "missing_expected_tag_counts": {},
+    "unexpected_deterministic_tag_counts": {},
+    "mismatches": []
+  },
+  "call_runtime": {
+    "interpretation": "Summed call duration is compute/wait time across concurrent calls, not experiment wall-clock duration.",
+    "generation": {
+      "calls": 89,
+      "summed_call_seconds": 1841.3240855620388,
+      "median_call_seconds": 11.48895538400393
+    },
+    "validation": {
+      "calls": 86,
+      "summed_call_seconds": 922.1099707730755,
+      "median_call_seconds": 10.532495352999831
+    },
+    "generation_by_condition": {
+      "model_selected": {
+        "calls": 40,
+        "summed_call_seconds": 472.91310722602066,
+        "median_call_seconds": 11.71012701899599
+      },
+      "controlled_lexicon": {
+        "calls": 40,
+        "summed_call_seconds": 1269.6521512170002,
+        "median_call_seconds": 11.326731771499908
+      },
+      "readable_source_evidence": {
+        "calls": 9,
+        "summed_call_seconds": 98.75882711901795,
+        "median_call_seconds": 11.927290410996648
+      }
+    },
+    "validation_by_condition": {
+      "model_selected": {
+        "calls": 39,
+        "summed_call_seconds": 408.32481256700703,
+        "median_call_seconds": 10.143434580997564
+      },
+      "controlled_lexicon": {
+        "calls": 39,
+        "summed_call_seconds": 437.19244109405554,
+        "median_call_seconds": 10.95467599100084
+      },
+      "readable_source_evidence": {
+        "calls": 8,
+        "summed_call_seconds": 76.5927171120129,
+        "median_call_seconds": 8.780631265501142
+      }
+    }
+  }
+}

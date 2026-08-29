@@ -1,0 +1,1 @@
+{"prompt":"The family sat down for dinner at seven. Complete the sentence using the verb in brackets: By then, Mia _____ the table. (set)","target_answer":"By then, Mia had set the table.","accepted_answers":["had set"]}

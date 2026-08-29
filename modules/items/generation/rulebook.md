@@ -14,11 +14,20 @@
 - Central modals take a base-form complement and never co-occur with
   morphological present/past in the GrammarCell.
 - Imperatives use a base verb. Ordinary negative imperatives use DO-support;
-  LET'S NOT has `negation`, `imperative`, and `let_imperative` operation tags
-  but not `do_support`.
-- Use only these operation tags when relevant: `perfect`, `progressive`,
-  `be_passive`, `central_modal`, `do_support`, `negation`,
-  `operator_inversion`, `subject_wh`, `wh_fronting`, `imperative`,
-  `emphatic_do`, `let_imperative`.
-- Prefer common concrete vocabulary, avoid specialist knowledge, and keep all
-  accepted answers genuinely equivalent for the target.
+  LET'S NOT does not use DO-support.
+- Keep all accepted answers genuinely equivalent for the target.
+- Keep the complete realised clause in `target_answer`, but put only valid
+  response-slot spans in `accepted_answers`; never repeat text already visible
+  outside the slot.
+
+## Lexical/contextual material
+
+- Choose common, concrete, transparent vocabulary; vocabulary should not be the
+  intended source of difficulty.
+- Avoid specialist terms, idioms, rare meanings, obscure proper-noun knowledge,
+  culturally specific knowledge, and other world-knowledge dependencies.
+- Select a predicate with plausible argument structure that is compatible with
+  the grammatical construction.
+- Passive targets require a naturally transitive, passivisable predicate.
+- Keep contexts short and natural.
+- Vary lexical and contextual material across items where possible.

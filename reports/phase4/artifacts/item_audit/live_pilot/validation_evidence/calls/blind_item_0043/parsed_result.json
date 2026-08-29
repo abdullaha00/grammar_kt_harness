@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a past simple, active, negative declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt context and answer form a coherent explanation."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The cue clearly focuses practice on past simple negation."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The cue and requested sentence structure sufficiently determine the response, allowing only the stated full and contracted forms."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary is common and the context is transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The completed target sentence is not displayed in the prompt."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "It can be completed using only basic past simple negation."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is required."
+    }
+  }
+}

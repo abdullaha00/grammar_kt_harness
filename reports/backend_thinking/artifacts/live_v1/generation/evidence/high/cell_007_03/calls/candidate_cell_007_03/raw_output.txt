@@ -1,0 +1,1 @@
+{"prompt":"Eva walks to work every day. She ____ the bus. (take)","target_answer":"She doesn't take the bus.","accepted_answers":["doesn't take","does not take"]}

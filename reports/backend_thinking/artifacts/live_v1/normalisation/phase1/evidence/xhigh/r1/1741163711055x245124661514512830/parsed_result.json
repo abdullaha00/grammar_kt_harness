@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163711055x245124661514512830",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": "NA",
+      "aspect": null,
+      "voice": null,
+      "polarity": "positive",
+      "clause": "polar_question",
+      "modal": "shall"
+    }
+  ],
+  "phase2_eligible": [],
+  "note": "Suggestion-making with 'shall' and 'we' identifies the positive polar-question construction, but does not close the auxiliary chain sufficiently to determine aspect or voice."
+}

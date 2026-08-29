@@ -1,0 +1,1 @@
+{"prompt":"The bakery receives fresh bread every morning. Complete the sentence using the verb in brackets: Fresh bread ___ every morning. (deliver)","target_answer":"Fresh bread is delivered every morning.","accepted_answers":["is delivered"]}

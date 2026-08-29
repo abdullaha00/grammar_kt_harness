@@ -1,0 +1,65 @@
+{
+  "blind_id": "generation_judge_0012",
+  "experiment_item_id": "generation_high_cell_021_02",
+  "generation_effort": "high",
+  "cell_id": "cell_021",
+  "candidate_index": 2,
+  "judge_effort": "medium",
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "generation_judge_0012",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "Uses present progressive passive, positive declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": false,
+        "note": "The exercise is incoherent because the prompt displays the completed sentence before asking the learner to complete it."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "It cannot provide meaningful focused practice because the answer is already shown."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The prompt determines the accepted response, albeit by directly revealing it."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "“Lunch” and “prepare” are common, transparent vocabulary."
+      },
+      "no_answer_leakage": {
+        "passed": false,
+        "note": "The prompt explicitly gives “Lunch is being prepared now,” including the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Only the target present progressive passive construction is needed."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is required."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "task_runtime_seconds": 11.580471235000005,
+  "model_calls": 1,
+  "tokens_used": 2671,
+  "model_runtime_seconds": 11.579656090001663,
+  "model_call_failures": 0
+}

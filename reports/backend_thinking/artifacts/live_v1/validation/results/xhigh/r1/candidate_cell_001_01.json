@@ -1,0 +1,69 @@
+{
+  "item_id": "candidate_cell_001_01",
+  "audit_id": "validation_live_de8af9343c77",
+  "cell_id": "cell_001",
+  "effort": "xhigh",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_de8af9343c77",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "Present simple, active, positive polar question with do-support."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt and resulting question are coherent and natural."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It clearly practices present-simple yes/no question formation."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The supplied subject, verb phrase, time expression, and response instruction determine the accepted question."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary is common and unambiguous."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt provides the base elements but not the completed question form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Only basic present-simple question formation is needed."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external knowledge is required."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": true,
+  "retained_failed_criteria": [],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 9.149755619999269,
+  "model_calls": 1,
+  "tokens_used": 2575,
+  "model_runtime_seconds": 9.14886853399912,
+  "model_call_failures": 0
+}

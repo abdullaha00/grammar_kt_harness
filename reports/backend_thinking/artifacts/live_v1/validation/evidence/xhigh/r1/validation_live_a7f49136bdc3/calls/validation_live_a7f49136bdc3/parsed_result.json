@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a positive declarative in the past passive, matching the intended GrammarCell."
+    },
+    "grammaticality": {
+      "passed": false,
+      "note": "Plural subject “letters” requires “were sent,” not “was sent.”"
+    },
+    "naturalness": {
+      "passed": false,
+      "note": "The prompt is coherent, but the target answer is ungrammatical."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The supplied target models incorrect subject-verb agreement."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The open reporting prompt permits multiple valid passive responses, but only one is accepted."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "“Letters,” “sent,” and “yesterday” are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The item primarily requires a simple past passive construction."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external factual or specialist knowledge is needed."
+    }
+  }
+}

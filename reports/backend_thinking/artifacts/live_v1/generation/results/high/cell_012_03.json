@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_high_cell_012_03",
+  "cell_id": "cell_012",
+  "candidate_index": 3,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_012_03",
+    "cell_id": "cell_012",
+    "format": "controlled_production",
+    "prompt": "Maya started reading the book yesterday, but she is only halfway through. Complete the sentence using “finish”: Maya ____ the book.",
+    "target_answer": "Maya has not finished the book.",
+    "accepted_answers": [
+      "has not finished",
+      "hasn't finished"
+    ],
+    "generation_metadata": {
+      "candidate_index": 3,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 8.630611364000288,
+  "model_calls": 1,
+  "tokens_used": 3087,
+  "model_runtime_seconds": 8.629888408000625,
+  "model_call_failures": 0
+}

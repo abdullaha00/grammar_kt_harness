@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_medium_cell_012_01",
+  "cell_id": "cell_012",
+  "candidate_index": 1,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_012_01",
+    "cell_id": "cell_012",
+    "format": "controlled_production",
+    "prompt": "The cups are still dirty. Complete the sentence using “wash”: Sam ____ the cups today.",
+    "target_answer": "Sam has not washed the cups today.",
+    "accepted_answers": [
+      "has not washed",
+      "hasn't washed"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 11.695774125999378,
+  "model_calls": 1,
+  "tokens_used": 3153,
+  "model_runtime_seconds": 11.695044395000878,
+  "model_call_failures": 0
+}

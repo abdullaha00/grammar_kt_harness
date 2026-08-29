@@ -1,0 +1,1 @@
+{"prompt":"You want to know whether Ben finished the task yesterday. Complete the question using the cue: Ben / finish the task\n[_____]?","target_answer":"Did Ben finish the task yesterday?","accepted_answers":["Did Ben finish the task yesterday"]}

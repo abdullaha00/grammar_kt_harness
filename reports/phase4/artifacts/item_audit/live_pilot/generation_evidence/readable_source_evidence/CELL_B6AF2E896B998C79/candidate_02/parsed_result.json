@@ -1,0 +1,11 @@
+{
+  "prompt": "A worker painted the door yesterday. Complete the sentence using the cue: The door ______ yesterday. (paint)",
+  "target_answer": "The door was painted yesterday.",
+  "accepted_answers": [
+    "The door was painted yesterday."
+  ],
+  "operation_tags": [
+    "be_passive"
+  ],
+  "note": "The completed clause describes what happened to the door."
+}

@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a positive active declarative in the present simple, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The sentence is grammatically well formed, despite its highly unusual word choices."
+    },
+    "naturalness": {
+      "passed": false,
+      "note": "The prompt-answer pair is coherent but sounds contrived and unnaturally ornate."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "Rare, opaque vocabulary distracts from the intended present-simple grammar focus."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The prompt does not determine this exact highly specific lexical response."
+    },
+    "non_target_language_simplicity": {
+      "passed": false,
+      "note": "Terms such as “sesquipedalian,” “logomachist,” and “tergiversates” are uncommon and lexically demanding."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed target sentence or verb form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammatical construction is required beyond forming a present-simple statement."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external factual or specialist knowledge is needed; the issue is lexical obscurity rather than world knowledge."
+    }
+  }
+}

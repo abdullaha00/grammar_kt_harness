@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_medium_cell_001_02",
+  "cell_id": "cell_001",
+  "candidate_index": 2,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: no text immediately precedes the response slot",
+  "candidate": {
+    "item_id": "candidate_cell_001_02",
+    "cell_id": "cell_001",
+    "format": "controlled_production",
+    "prompt": "You want to know about Leo’s usual trip to school. Use the verb “walk” to ask: ____",
+    "target_answer": "Does Leo walk to school?",
+    "accepted_answers": [
+      "Does Leo walk to school?"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 9.69342472200151,
+  "model_calls": 1,
+  "tokens_used": 3109,
+  "model_runtime_seconds": 9.692632212998433,
+  "model_call_failures": 0
+}

@@ -1,0 +1,1 @@
+{"prompt":"The bakery receives bread from Monday to Saturday, but no delivery comes on Sunday. Complete using the verb in brackets: Bread ____ on Sundays. (deliver)","target_answer":"Bread is not delivered on Sundays.","accepted_answers":["is not delivered","isn't delivered"]}

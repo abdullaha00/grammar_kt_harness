@@ -1,0 +1,13 @@
+{
+  "prompt": "Lena usually walks to work, but yesterday she took the bus. Complete the response using “walk to work”: Lena ______.",
+  "target_answer": "Lena did not walk to work.",
+  "accepted_answers": [
+    "Lena did not walk to work.",
+    "Lena didn't walk to work."
+  ],
+  "operation_tags": [
+    "do_support",
+    "negation"
+  ],
+  "note": "The completed clause states what Lena did not do yesterday."
+}

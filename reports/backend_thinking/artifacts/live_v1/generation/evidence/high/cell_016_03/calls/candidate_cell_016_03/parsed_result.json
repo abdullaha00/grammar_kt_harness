@@ -1,0 +1,7 @@
+{
+  "prompt": "Maya started cleaning the floor twenty minutes ago and is still doing it. Complete the sentence using the words in brackets: Maya ____ for twenty minutes. (clean the floor)",
+  "target_answer": "Maya has been cleaning the floor for twenty minutes.",
+  "accepted_answers": [
+    "has been cleaning the floor"
+  ]
+}

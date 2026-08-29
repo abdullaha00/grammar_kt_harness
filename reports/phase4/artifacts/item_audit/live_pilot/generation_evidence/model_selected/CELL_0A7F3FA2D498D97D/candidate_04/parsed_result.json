@@ -1,0 +1,13 @@
+{
+  "prompt": "Maya started her homework earlier, but she is still working on it. Complete the sentence using the cue (finish / her homework): Maya ______.",
+  "target_answer": "Maya has not finished her homework.",
+  "accepted_answers": [
+    "Maya has not finished her homework.",
+    "Maya hasn't finished her homework."
+  ],
+  "operation_tags": [
+    "perfect",
+    "negation"
+  ],
+  "note": "The full and contracted negative forms are accepted."
+}

@@ -1,0 +1,71 @@
+{
+  "item_id": "adversarial_grammaticality_1",
+  "audit_id": "validation_live_a30ee9a0d078",
+  "cell_id": "cell_003",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_a30ee9a0d078",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "It uses a positive active declarative in the present simple."
+      },
+      "grammaticality": {
+        "passed": false,
+        "note": "With singular subject “Mia,” the verb should be “walks,” not “walk.”"
+      },
+      "naturalness": {
+        "passed": false,
+        "note": "The prompt is understandable, but the target answer is ungrammatical and therefore not natural English."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "The incorrect subject-verb agreement makes it unsuitable for focused grammar practice."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The open prompt permits many valid descriptions, while the sole accepted answer is not the grammatical expected form."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and context are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed target sentence."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "No unrelated advanced grammar is needed."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is required."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "grammaticality"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": true,
+  "reference_source": "authored_adversarial_negative_control",
+  "task_runtime_seconds": 11.57237445499959,
+  "model_calls": 1,
+  "tokens_used": 2657,
+  "model_runtime_seconds": 11.571559254000022,
+  "model_call_failures": 0
+}

@@ -1,0 +1,52 @@
+{
+  "sample_order": 19,
+  "blind_item_id": "reliability_item_0019",
+  "candidate_id": "candidate_model_selected_CELL_0ACC7E0377B19DC1_02",
+  "condition": "model_selected",
+  "cell_id": "CELL_0ACC7E0377B19DC1",
+  "candidate_index": 2,
+  "original_accepted": true,
+  "original_failed_criteria": [],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The answer is a positive active declarative clause using the modal “would,” exactly matching the intended GrammarCell."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "“He would take the bus” is grammatically correct English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The unavailable car provides a coherent context for asking how Ben would travel to work."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The bracketed words support focused practice of forming a declarative sentence with “would.”"
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The context and bracketed words clearly determine the full and contracted accepted responses."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and transport context are common, transparent, and unlikely to obstruct the grammar task."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies lexical cues but does not display the completed modal construction."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "The response requires only basic word order and the target modal construction."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external factual or specialist knowledge is needed to construct the response."
+    }
+  },
+  "accepted": true,
+  "runtime_seconds": 14.388554474004195
+}

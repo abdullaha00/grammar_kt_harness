@@ -1,17 +1,37 @@
 \begin{table*}[t]
   \centering
   \small
-  \begin{tabular}{@{}lrrrrrl@{}}
-    \toprule
-    Policy & KCs & Candidates & Accepted & $Q$ edges & Density & Row widths \\
-    \midrule
-    Factorized & 9 & 45 & 45 & 99 & .244 & 1--4 (mean 2.20) \\
-    + interactions & 14 & 70 & 69 & 201 & .208 & 1--5 (mean 2.91) \\
-    Whole cell & 24 & 120 & 120 & 120 & .042 & 1 (mean 1.00) \\
-    \bottomrule
-  \end{tabular}
-  \caption{Policy-specific item and Q-matrix outcomes. Density is the fraction
-  of active entries. Item pools differ because five candidates are constructed
-  per activated KC.}
+  \begin{minipage}[t]{.49\textwidth}
+    \centering
+    \begin{tabular}{@{}lrrrr@{}}
+      \toprule
+      Candidate family & Raw & Support & Duplicate & Eligible \\
+      \midrule
+      Feature value & 9 & 9 & 0 & 9 \\
+      Operation & 10 & 7 & 6 & 3 \\
+      Interaction & 18 & 8 & 2 & 7 \\
+      Development cell & 18 & 18 & 9 & 9 \\
+      \midrule
+      Total / classes & 55 & 42 & 17 & 28 \\
+      \bottomrule
+    \end{tabular}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{.49\textwidth}
+    \centering
+    \begin{tabular}{@{}lrrrr@{}}
+      \toprule
+      Policy & KCs & Inter. & $Q$ density & KCs/item \\
+      \midrule
+      Factorized & 9 & 0 & .232 & 2.09 \\
+      Automated & 10 & 1 & .218 & 2.18 \\
+      All supported & 16 & 7 & .180 & 2.89 \\
+      Oracle all-cell & 24 & 0 & .042 & 1.00 \\
+      \bottomrule
+    \end{tabular}
+  \end{minipage}
+  \caption{Development-derived candidate space (left) and frozen policy
+  granularity on the 44-item bank (right).  Duplicate means activation-equivalent
+  on development items; ``oracle'' includes evaluation-cell KCs unavailable to
+  the selector.}
   \label{tab:policy-results}
 \end{table*}

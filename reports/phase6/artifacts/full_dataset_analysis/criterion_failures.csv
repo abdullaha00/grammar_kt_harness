@@ -1,0 +1,37 @@
+cohort,criterion,evaluated,passed,failed,pass_rate,failure_item_ids
+all,determinacy,77,55,22,0.7142857142857143,"[""candidate_cell_005_01"", ""candidate_cell_005_02"", ""candidate_cell_007_03"", ""candidate_cell_010_02"", ""candidate_cell_012_03"", ""candidate_cell_013_03"", ""candidate_cell_015_01"", ""candidate_cell_015_02"", ""candidate_cell_017_01"", ""candidate_cell_017_02"", ""candidate_cell_017_03"", ""candidate_cell_017_04"", ""candidate_cell_017_05"", ""candidate_cell_018_01"", ""candidate_cell_018_02"", ""candidate_cell_019_01"", ""candidate_cell_022_01"", ""candidate_cell_022_02"", ""candidate_cell_022_03"", ""candidate_cell_022_04"", ""candidate_cell_023_01"", ""candidate_cell_024_01""]"
+all,grammaticality,77,77,0,1.0,[]
+all,naturalness,77,75,2,0.974025974025974,"[""candidate_cell_017_03"", ""candidate_cell_024_01""]"
+all,no_answer_leakage,77,77,0,1.0,[]
+all,no_extraneous_grammar,77,77,0,1.0,[]
+all,no_world_knowledge,77,77,0,1.0,[]
+all,non_target_language_simplicity,77,77,0,1.0,[]
+all,pedagogical_suitability,77,74,3,0.961038961038961,"[""candidate_cell_017_01"", ""candidate_cell_017_03"", ""candidate_cell_024_01""]"
+all,target_fidelity,77,77,0,1.0,[]
+default_n3,determinacy,71,52,19,0.7323943661971831,"[""candidate_cell_005_01"", ""candidate_cell_005_02"", ""candidate_cell_007_03"", ""candidate_cell_010_02"", ""candidate_cell_012_03"", ""candidate_cell_013_03"", ""candidate_cell_015_01"", ""candidate_cell_015_02"", ""candidate_cell_017_01"", ""candidate_cell_017_02"", ""candidate_cell_017_03"", ""candidate_cell_018_01"", ""candidate_cell_018_02"", ""candidate_cell_019_01"", ""candidate_cell_022_01"", ""candidate_cell_022_02"", ""candidate_cell_022_03"", ""candidate_cell_023_01"", ""candidate_cell_024_01""]"
+default_n3,grammaticality,71,71,0,1.0,[]
+default_n3,naturalness,71,69,2,0.971830985915493,"[""candidate_cell_017_03"", ""candidate_cell_024_01""]"
+default_n3,no_answer_leakage,71,71,0,1.0,[]
+default_n3,no_extraneous_grammar,71,71,0,1.0,[]
+default_n3,no_world_knowledge,71,71,0,1.0,[]
+default_n3,non_target_language_simplicity,71,71,0,1.0,[]
+default_n3,pedagogical_suitability,71,68,3,0.9577464788732394,"[""candidate_cell_017_01"", ""candidate_cell_017_03"", ""candidate_cell_024_01""]"
+default_n3,target_fidelity,71,71,0,1.0,[]
+conditional_rescue,determinacy,4,1,3,0.25,"[""candidate_cell_017_04"", ""candidate_cell_017_05"", ""candidate_cell_022_04""]"
+conditional_rescue,grammaticality,4,4,0,1.0,[]
+conditional_rescue,naturalness,4,4,0,1.0,[]
+conditional_rescue,no_answer_leakage,4,4,0,1.0,[]
+conditional_rescue,no_extraneous_grammar,4,4,0,1.0,[]
+conditional_rescue,no_world_knowledge,4,4,0,1.0,[]
+conditional_rescue,non_target_language_simplicity,4,4,0,1.0,[]
+conditional_rescue,pedagogical_suitability,4,4,0,1.0,[]
+conditional_rescue,target_fidelity,4,4,0,1.0,[]
+determinacy_intervention,determinacy,2,2,0,1.0,[]
+determinacy_intervention,grammaticality,2,2,0,1.0,[]
+determinacy_intervention,naturalness,2,2,0,1.0,[]
+determinacy_intervention,no_answer_leakage,2,2,0,1.0,[]
+determinacy_intervention,no_extraneous_grammar,2,2,0,1.0,[]
+determinacy_intervention,no_world_knowledge,2,2,0,1.0,[]
+determinacy_intervention,non_target_language_simplicity,2,2,0,1.0,[]
+determinacy_intervention,pedagogical_suitability,2,2,0,1.0,[]
+determinacy_intervention,target_fidelity,2,2,0,1.0,[]

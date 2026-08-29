@@ -1,0 +1,1 @@
+{"prompt":"Someone cleaned the windows yesterday. Complete the sentence using “clean”: The windows ____ yesterday.","target_answer":"The windows were cleaned yesterday.","accepted_answers":["were cleaned"]}

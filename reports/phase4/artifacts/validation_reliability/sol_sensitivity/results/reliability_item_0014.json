@@ -1,0 +1,54 @@
+{
+  "sample_order": 14,
+  "blind_item_id": "reliability_item_0014",
+  "candidate_id": "candidate_controlled_lexicon_CELL_0D017AFB2B3A3DB5_04",
+  "condition": "controlled_lexicon",
+  "cell_id": "CELL_0D017AFB2B3A3DB5",
+  "candidate_index": 4,
+  "original_accepted": false,
+  "original_failed_criteria": [
+    "determinacy"
+  ],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The answer is a positive, active, declarative past perfect progressive clause with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "“Lina had been traveling” is grammatical English."
+    },
+    "naturalness": {
+      "passed": false,
+      "note": "Given that Lina was still on the journey when Omar arrived, “Lina was still traveling” is more natural than the target."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The context does not clearly isolate the past perfect progressive, weakening the item as focused practice."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The prompt also strongly supports “Lina was traveling” or “Lina was still traveling,” which are not accepted."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common, transparent, and unlikely to create a lexical barrier."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies only the base cue and does not display the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed to understand or complete the item."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The item requires no external factual or specialist knowledge."
+    }
+  },
+  "accepted": false,
+  "runtime_seconds": 16.700389414996607
+}

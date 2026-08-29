@@ -1,0 +1,12 @@
+{
+  "prompt": "The bus arrived at 8:20. Maya started waiting at 8:00. Complete the response using the cue (Maya / wait for the bus): ____",
+  "target_answer": "Maya had been waiting for the bus for twenty minutes.",
+  "accepted_answers": [
+    "Maya had been waiting for the bus for twenty minutes."
+  ],
+  "operation_tags": [
+    "perfect",
+    "progressive"
+  ],
+  "note": "The waiting continued for twenty minutes before the bus arrived."
+}

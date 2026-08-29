@@ -1,0 +1,24 @@
+{
+  "source_id": "1741163715031x898125206259626100",
+  "result": "partial",
+  "cells": [
+    {
+      "aspect": "none",
+      "clause": [
+        "subject_wh_question",
+        "non_subject_wh_question"
+      ],
+      "modal": "none",
+      "polarity": null,
+      "tense": [
+        "present",
+        "past"
+      ],
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "No tense narrowing is licensed: the examples positively attest both past ('was') and present ('are'), so the Phase-1 tense alternative must be preserved."
+}

@@ -1,0 +1,69 @@
+{
+  "item_id": "candidate_cell_015_03",
+  "audit_id": "validation_live_4d75d0fbfe9b",
+  "cell_id": "cell_015",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "validation_live_4d75d0fbfe9b",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "Uses past perfect active positive declarative form: “had set.”"
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The dinner context and prior table-setting action are coherent and natural."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of the past perfect with a clear time relationship."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "“By then” and the later past reference point strongly determine “had set.”"
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and situation are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed target form is not shown in the prompt."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "No unrelated advanced grammar is needed to complete the item."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "The answer requires no external or specialist knowledge."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "retained_accepted": true,
+  "retained_failed_criteria": [],
+  "packaging_correction": false,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 11.95304348299942,
+  "model_calls": 1,
+  "tokens_used": 4669,
+  "model_runtime_seconds": 11.952281001000301,
+  "model_call_failures": 0
+}

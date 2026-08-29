@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "“had been cleaned” is past perfect passive, positive declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The arrival-time context coherently supports a prior cleaning event."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of the past perfect passive."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The context supports other grammatical completions, such as “was clean,” and the cue does not explicitly require passive past perfect."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "“Kitchen” and “clean” are common, transparent vocabulary."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only the cue words, not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is required."
+    }
+  }
+}

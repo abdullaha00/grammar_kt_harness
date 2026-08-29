@@ -1,0 +1,1 @@
+{"prompt":"The family was ready to leave. Complete the sentence using the verb in brackets: The bags _____ before they left. (pack)","target_answer":"The bags had been packed before they left.","accepted_answers":["had been packed"]}

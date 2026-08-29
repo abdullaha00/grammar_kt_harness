@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163715033x134646499658930300",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": ["present", "past"],
+      "aspect": "progressive",
+      "voice": "active",
+      "polarity": null,
+      "clause": "polar_question",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": ["tense"],
+  "note": "Finite BE inversion forms an active progressive yes/no question; present versus past and polarity are not specified."
+}

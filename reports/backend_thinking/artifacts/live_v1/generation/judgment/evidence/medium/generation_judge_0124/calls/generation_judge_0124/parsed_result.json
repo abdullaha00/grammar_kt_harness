@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses present perfect, active voice, negative polarity, declarative clause, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target sentence is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "Being halfway through naturally supports saying she has not finished the book."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It gives focused practice of the negative present perfect with a clear verb cue."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The context and required verb sufficiently support the accepted negative present-perfect forms."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and reading context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies only the base verb “finish,” not the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed to complete the sentence."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The item requires no external or specialist knowledge."
+    }
+  }
+}

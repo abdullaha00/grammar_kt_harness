@@ -1,0 +1,7 @@
+{
+  "prompt": "When Mia arrived at the kitchen, the floor was already clean. Complete the sentence using the cue (wash): She ____ the floor before Mia arrived.",
+  "target_answer": "She had washed the floor before Mia arrived.",
+  "accepted_answers": [
+    "had washed"
+  ]
+}

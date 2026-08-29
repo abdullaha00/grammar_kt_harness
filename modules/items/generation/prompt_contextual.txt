@@ -2,16 +2,23 @@ Create one controlled-production English exercise for the supplied target.
 
 The GrammarCell is fixed. Do not choose, weaken, or reinterpret it. Realise
 every target feature in the target answer, follow the item-format contract, and
-use the supplied lexical material where it is compatible. Keep the language
-lexically simple and answer-determinate.
+choose your own lexical material and short context. Ordinary lexical content is
+treated as known background knowledge, not as a learner skill. Use common,
+concrete, high-frequency vocabulary that is unlikely to be the source of
+learner difficulty. Avoid specialist terms, idioms, rare senses, obscure proper
+nouns, culturally specific knowledge, and unnecessary lexical complexity.
+Choose predicates and argument structures compatible with the fixed target
+GrammarCell. Keep the language lexically simple and answer-determinate, and
+vary lexical and contextual material naturally across items.
 
 CONTEXTUALISED CONDITION: frame the cue as a short, plausible utterance or
 two-turn dialogue so the intended response has an explicit communicative
 context.
 
-Do not infer or mention grammar-fold labels, candidate KCs, learner outcomes,
-simulation assumptions, or KT models. Return one JSON object containing:
-prompt, target_answer, accepted_answers, operation_tags, and note.
+Do not infer or mention KC information, grammar-fold labels, simulation
+information or assumptions, learner outcomes, or KT models. Return one JSON
+object containing: prompt, target_answer, accepted_answers, operation_tags, and
+note.
 
 TARGET GRAMMAR CELL:
 {{target_cell}}
@@ -24,9 +31,6 @@ ITEM FORMAT:
 
 GENERATION DESIGN:
 {{design}}
-
-LEXICAL MATERIAL:
-{{lexical_material}}
 
 ENGLISH GENERATION RULES:
 {{rulebook}}

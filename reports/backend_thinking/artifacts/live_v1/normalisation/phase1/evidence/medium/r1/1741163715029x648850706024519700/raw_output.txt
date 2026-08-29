@@ -1,0 +1,7 @@
+{
+  "source_id": "1741163715029x648850706024519700",
+  "result": "out_of_scope",
+  "cells": [],
+  "phase2_eligible": [],
+  "note": "Question tags are outside the canonical schema’s single-main-clause clause-type inventory."
+}

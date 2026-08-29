@@ -1,0 +1,15 @@
+{
+  "prompt": "Lina planned to travel this month, but she is still at home. Complete the sentence: Lina ______ this month.",
+  "target_answer": "Lina has not traveled this month.",
+  "accepted_answers": [
+    "Lina has not traveled this month.",
+    "Lina hasn't traveled this month.",
+    "Lina has not travelled this month.",
+    "Lina hasn't travelled this month."
+  ],
+  "operation_tags": [
+    "perfect",
+    "negation"
+  ],
+  "note": "Both standard spellings of the past participle are accepted."
+}

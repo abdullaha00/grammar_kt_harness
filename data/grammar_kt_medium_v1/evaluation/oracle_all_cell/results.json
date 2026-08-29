@@ -1,0 +1,222 @@
+{
+  "protocol_id": "grammar_kt_evaluation_v1",
+  "dataset": {
+    "generated_candidates": 77,
+    "validator_accepted_candidates": 54,
+    "validator_acceptance_rate": 0.7012987012987013,
+    "selected_bank_items": 44,
+    "selection_rate_among_accepted": 0.8148148148148148,
+    "deterministic_precheck_rejections": 2,
+    "grammar_cells": 24,
+    "validator_covered_cells": 24,
+    "covered_cells": 24,
+    "selected_items_per_cell": {
+      "cell_001": 2,
+      "cell_002": 2,
+      "cell_003": 2,
+      "cell_004": 2,
+      "cell_005": 1,
+      "cell_006": 2,
+      "cell_007": 2,
+      "cell_008": 2,
+      "cell_009": 2,
+      "cell_010": 2,
+      "cell_011": 2,
+      "cell_012": 2,
+      "cell_013": 2,
+      "cell_014": 2,
+      "cell_015": 1,
+      "cell_016": 2,
+      "cell_017": 2,
+      "cell_018": 1,
+      "cell_019": 2,
+      "cell_020": 2,
+      "cell_021": 2,
+      "cell_022": 1,
+      "cell_023": 2,
+      "cell_024": 2
+    },
+    "unique_prompt_rate": 1.0,
+    "duplicate_prompts": 0,
+    "lexical_types": 242,
+    "lexical_tokens": 795,
+    "lexical_diversity": 0.30440251572327043,
+    "format_distribution": {
+      "controlled_production": 44
+    },
+    "criterion_pass_rates": {
+      "target_fidelity": 1.0,
+      "grammaticality": 1.0,
+      "naturalness": 0.974025974025974,
+      "pedagogical_suitability": 0.961038961038961,
+      "determinacy": 0.7142857142857143,
+      "non_target_language_simplicity": 1.0,
+      "no_answer_leakage": 1.0,
+      "no_extraneous_grammar": 1.0,
+      "no_world_knowledge": 1.0
+    },
+    "grammar_cell_coverage": 1.0
+  },
+  "representation": {
+    "policy_id": "medium_v1_oracle_exact_all_cell",
+    "items": 44,
+    "kcs": 24,
+    "item_coverage": 1.0,
+    "event_coverage": 1.0,
+    "q_matrix_density": 0.041666666666666664,
+    "kcs_per_item": 1.0,
+    "kc_support": {
+      "kc_oracle_cell__cell_001": 2,
+      "kc_oracle_cell__cell_002": 2,
+      "kc_oracle_cell__cell_003": 2,
+      "kc_oracle_cell__cell_004": 2,
+      "kc_oracle_cell__cell_005": 1,
+      "kc_oracle_cell__cell_006": 2,
+      "kc_oracle_cell__cell_007": 2,
+      "kc_oracle_cell__cell_008": 2,
+      "kc_oracle_cell__cell_009": 2,
+      "kc_oracle_cell__cell_010": 2,
+      "kc_oracle_cell__cell_011": 2,
+      "kc_oracle_cell__cell_012": 2,
+      "kc_oracle_cell__cell_013": 2,
+      "kc_oracle_cell__cell_014": 2,
+      "kc_oracle_cell__cell_015": 1,
+      "kc_oracle_cell__cell_016": 2,
+      "kc_oracle_cell__cell_017": 2,
+      "kc_oracle_cell__cell_018": 1,
+      "kc_oracle_cell__cell_019": 2,
+      "kc_oracle_cell__cell_020": 2,
+      "kc_oracle_cell__cell_021": 2,
+      "kc_oracle_cell__cell_022": 1,
+      "kc_oracle_cell__cell_023": 2,
+      "kc_oracle_cell__cell_024": 2
+    },
+    "redundant_kcs": [],
+    "compositional_coverage": 0.0
+  },
+  "kt": {
+    "empirical": {
+      "n": 44000,
+      "log_loss": 0.6928361169433367,
+      "brier_score": 0.24865756416202847,
+      "auc": 0.5213379886206009,
+      "ece": 0.11519967532467537,
+      "accuracy": 0.5978409090909091,
+      "grammar_split_metrics": {
+        "development": {
+          "n": 32000,
+          "log_loss": 0.6927194680871085,
+          "brier_score": 0.2481541507227891,
+          "auc": 0.5161316260808118,
+          "ece": 0.1204308035714286,
+          "accuracy": 0.5965625
+        },
+        "compositional_holdout": {
+          "n": 10000,
+          "log_loss": 0.6931471805599454,
+          "brier_score": 0.25,
+          "auc": 0.5,
+          "ece": 0.13980000000000004,
+          "accuracy": 0.6398
+        },
+        "novel_feature_holdout": {
+          "n": 2000,
+          "log_loss": 0.6931471805599454,
+          "brier_score": 0.25,
+          "auc": 0.5,
+          "ece": 0.09150000000000003,
+          "accuracy": 0.4085
+        }
+      }
+    },
+    "bkt": {
+      "n": 44000,
+      "log_loss": 0.7722347128068202,
+      "brier_score": 0.2702525546745835,
+      "auc": 0.5292149417001155,
+      "ece": 0.193087483625025,
+      "accuracy": 0.5629772727272727,
+      "grammar_split_metrics": {
+        "development": {
+          "n": 32000,
+          "log_loss": 0.788000175733638,
+          "brier_score": 0.2709495126775523,
+          "auc": 0.5160633254200526,
+          "ece": 0.20202653998440942,
+          "accuracy": 0.6245625
+        },
+        "compositional_holdout": {
+          "n": 10000,
+          "log_loss": 0.7407444526001966,
+          "brier_score": 0.2736368,
+          "auc": 0.5,
+          "ece": 0.20780000000000004,
+          "accuracy": 0.3602
+        },
+        "novel_feature_holdout": {
+          "n": 2000,
+          "log_loss": 0.6774386070108569,
+          "brier_score": 0.24218000000000006,
+          "auc": 0.5,
+          "ece": 0.023500000000000132,
+          "accuracy": 0.5915
+        }
+      }
+    },
+    "logistic": {
+      "n": 44000,
+      "log_loss": 0.6575072912310627,
+      "brier_score": 0.23256470693151024,
+      "auc": 0.5458820022824884,
+      "ece": 0.04129137551750647,
+      "accuracy": 0.587590909090909,
+      "grammar_split_metrics": {
+        "development": {
+          "n": 32000,
+          "log_loss": 0.6398854535880448,
+          "brier_score": 0.22389994732116117,
+          "auc": 0.540051483587831,
+          "ece": 0.009440219484922803,
+          "accuracy": 0.65840625
+        },
+        "compositional_holdout": {
+          "n": 10000,
+          "log_loss": 0.7083442241328108,
+          "brier_score": 0.25759177672151584,
+          "auc": 0.5069427581738394,
+          "ece": 0.16477779160439637,
+          "accuracy": 0.3602
+        },
+        "novel_feature_holdout": {
+          "n": 2000,
+          "log_loss": 0.6852720290106082,
+          "brier_score": 0.24606551174706806,
+          "auc": 0.5008628975769547,
+          "ece": 0.06652220839560369,
+          "accuracy": 0.5915
+        }
+      }
+    }
+  },
+  "paired_bootstrap": {
+    "bkt_minus_empirical_log_loss": {
+      "mean": 0.07904383089585969,
+      "interval_95": [
+        0.07348215132014092,
+        0.08423799124919375
+      ]
+    },
+    "logistic_minus_empirical_log_loss": {
+      "mean": -0.03533919609399486,
+      "interval_95": [
+        -0.03821928226772002,
+        -0.03289706759596735
+      ]
+    }
+  },
+  "input_counts": {
+    "events": 204000,
+    "predictions": 612000,
+    "prediction_events": 204000
+  }
+}

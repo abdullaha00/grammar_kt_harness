@@ -1,0 +1,65 @@
+{
+  "blind_id": "generation_judge_0095",
+  "experiment_item_id": "generation_high_cell_007_01",
+  "generation_effort": "high",
+  "cell_id": "cell_007",
+  "candidate_index": 1,
+  "judge_effort": "medium",
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "generation_judge_0095",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The target is present simple, active, negative, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "“Leo does not drink coffee.” is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The context and completed sentence are coherent and natural."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of present-simple negation with do-support."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "The prompt, context, verb cue, and blank clearly determine “does not drink” or “doesn't drink.”"
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary is common and the context is transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt supplies only the base verb “drink,” not the completed negative form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Solving it requires only basic present-simple negative formation."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "task_runtime_seconds": 10.278704336998999,
+  "model_calls": 1,
+  "tokens_used": 2572,
+  "model_runtime_seconds": 10.277891383000679,
+  "model_call_failures": 0
+}

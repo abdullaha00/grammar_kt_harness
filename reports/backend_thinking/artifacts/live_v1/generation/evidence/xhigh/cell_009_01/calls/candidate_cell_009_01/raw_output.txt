@@ -1,0 +1,1 @@
+{"prompt":"The television is off. Complete the sentence using the cue (watch television): Tom ____.","target_answer":"Tom is not watching television.","accepted_answers":["is not watching television","isn't watching television"]}

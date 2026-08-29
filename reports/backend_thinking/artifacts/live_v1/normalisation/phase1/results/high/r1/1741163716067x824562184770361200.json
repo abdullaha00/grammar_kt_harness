@@ -1,0 +1,55 @@
+{
+  "source_id": "1741163716067x824562184770361200",
+  "stratum": "phase2_eligible",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163716067x824562184770361200",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "Main-verb BE establishes a simple active nonmodal negative statement, but the descriptor does not distinguish present from past; contraction does not affect the canonical dimensions."
+  },
+  "retained_mapping": {
+    "source_id": "1741163716067x824562184770361200",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 10.51407064200066,
+  "model_calls": 1,
+  "tokens_used": 6068,
+  "model_runtime_seconds": 10.513366954999583,
+  "model_call_failures": 0
+}

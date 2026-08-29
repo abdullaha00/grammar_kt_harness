@@ -1,0 +1,1 @@
+{"prompt":"Maya started cleaning the kitchen at eight. At ten, she still had not started on the living room. Complete the sentence using “clean”: Maya ______ the living room.","target_answer":"Maya had not been cleaning the living room.","accepted_answers":["had not been cleaning","hadn't been cleaning"]}

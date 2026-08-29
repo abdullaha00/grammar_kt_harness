@@ -1,0 +1,1 @@
+{"prompt":"The dishes are still dirty. Complete the sentence using the cues (Lena / wash / the dishes): ___","target_answer":"Lena has not washed the dishes.","accepted_answers":["Lena has not washed the dishes.","Lena hasn't washed the dishes."]}

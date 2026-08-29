@@ -1,0 +1,1974 @@
+{
+  "analysis_id": "medium_v1_full_dataset_analysis",
+  "dataset_dir": "/home/abdullah/grammar_kt_harness/data/grammar_kt_medium_v1",
+  "dataset_finalization": {
+    "dataset_id": "grammar_kt_medium_v1",
+    "status": "downstream_finalized",
+    "input_bank_status": "fixed_item_bank_complete",
+    "scale": {
+      "cells": 24,
+      "selected_items": 44,
+      "learners": 1000,
+      "events": 204000,
+      "development_events_supplied_to_selector": 160000
+    },
+    "grammar_fold": {
+      "fold_id": "semantic_grammar_coverage_v1",
+      "cell_counts": {
+        "compositional_holdout": 5,
+        "development": 18,
+        "novel_feature_holdout": 1
+      }
+    },
+    "simulation": {
+      "world_id": "phase4_mixed_v1",
+      "protocol_id": "development_acquisition_frozen_probes_v1",
+      "seed": 20260827,
+      "events_are_identical_across_policies": true
+    },
+    "kc": {
+      "candidate_design_id": "schema_structural_candidates_v1",
+      "candidate_counts": {
+        "feature_value": 9,
+        "operation": 10,
+        "interaction": 18,
+        "full_cell": 18,
+        "raw_total": 55,
+        "support_eligible": 42,
+        "selection_eligible": 28,
+        "activation_equivalence_classes": 38,
+        "activation_duplicate_candidates": 17
+      },
+      "selection_id": "forward_predictive_parsimony_v1",
+      "complexity_penalty": 0.0005,
+      "policies": {
+        "factorized": {
+          "policy_id": "medium_v1_factorized",
+          "kc_count": 9,
+          "q_matrix_density": 0.23232323232323232,
+          "logistic_test_log_loss": 0.6437307892727746
+        },
+        "supported_interactions": {
+          "policy_id": "medium_v1_factorized_plus_all_supported_interactions",
+          "kc_count": 16,
+          "q_matrix_density": 0.18039772727272727,
+          "logistic_test_log_loss": 0.6433337328844257
+        },
+        "automated": {
+          "policy_id": "selected__forward_predictive_parsimony_v1",
+          "kc_count": 10,
+          "q_matrix_density": 0.21818181818181817,
+          "logistic_test_log_loss": 0.6433557926927006
+        },
+        "oracle_all_cell": {
+          "policy_id": "medium_v1_oracle_exact_all_cell",
+          "kc_count": 24,
+          "q_matrix_density": 0.041666666666666664,
+          "logistic_test_log_loss": 0.6575072912310627
+        }
+      }
+    },
+    "kt_protocol_id": "simple_online_kt_v1",
+    "evaluation_protocol_id": "grammar_kt_evaluation_v1",
+    "paired_logistic": {
+      "repeats": 5000,
+      "seed": 20260827,
+      "comparison_count": 12
+    },
+    "large_artifact_storage": {
+      "events": "simulation/events.jsonl.gz",
+      "private_oracle": "simulation/oracle_debug.json.gz",
+      "predictions": "kt/{policy}/predictions.jsonl.gz",
+      "gzip_mtime": 0
+    },
+    "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/finalize_full_dataset.py --dataset-dir data/grammar_kt_medium_v1 --learners 1000 --seed 20260827 --bootstrap-repeats 5000"
+  },
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/analyze_full_dataset.py --dataset-dir data/grammar_kt_medium_v1 --output-dir reports/phase6/artifacts/full_dataset_analysis",
+  "model_calls_made": false,
+  "learner_outcomes_recomputed": false,
+  "source_normalisation": {
+    "descriptors": 139,
+    "normalisation_counts": {
+      "complete": 44,
+      "out_of_scope": 16,
+      "partial": 77,
+      "unresolved": 2
+    },
+    "normalisation_proportions": {
+      "complete": 0.31654676258992803,
+      "out_of_scope": 0.11510791366906475,
+      "partial": 0.5539568345323741,
+      "unresolved": 0.014388489208633094
+    },
+    "phase2_eligible_descriptors": 9,
+    "phase2_eligible_by_dimension": {
+      "tense": 9
+    },
+    "contributing_descriptors": 44,
+    "source_cell_edges": 48,
+    "unique_cells": 24,
+    "all_descriptors_per_cell": 5.791666666666667,
+    "contributing_descriptors_per_cell": 1.8333333333333333,
+    "source_cell_edges_per_cell": 2.0
+  },
+  "canonical": {
+    "dimensions": [
+      "tense",
+      "aspect",
+      "voice",
+      "polarity",
+      "clause",
+      "modal"
+    ],
+    "unique_cells": 24,
+    "dimension_value_table": "dimension_value_support.csv",
+    "cell_table": "grammar_cells.csv"
+  },
+  "items": {
+    "attempts": 78,
+    "candidate_payloads": 77,
+    "judgments": 77,
+    "validator_accepted": 54,
+    "selected": 44,
+    "selected_cells": 24,
+    "stage_table": "item_generation_stages.csv",
+    "criterion_table": "criterion_failures.csv",
+    "timing_claim_boundary": "Per-call duration sums are workload totals, not elapsed wall time, because calls overlap.",
+    "provider_price_available": false
+  },
+  "fold": {
+    "rows": [
+      {
+        "grammar_regime": "development",
+        "cells": 18,
+        "selected_items": 32,
+        "minimum_items_per_cell": 1,
+        "median_items_per_cell": 2.0,
+        "maximum_items_per_cell": 2,
+        "unique_feature_values": 15,
+        "unseen_development_feature_values": 0,
+        "unique_value_pairs": 72,
+        "value_pairs_seen_in_development": 72,
+        "value_pairs_unseen_in_development": 0
+      },
+      {
+        "grammar_regime": "compositional_holdout",
+        "cells": 5,
+        "selected_items": 10,
+        "minimum_items_per_cell": 2,
+        "median_items_per_cell": 2.0,
+        "maximum_items_per_cell": 2,
+        "unique_feature_values": 10,
+        "unseen_development_feature_values": 0,
+        "unique_value_pairs": 37,
+        "value_pairs_seen_in_development": 36,
+        "value_pairs_unseen_in_development": 1
+      },
+      {
+        "grammar_regime": "novel_feature_holdout",
+        "cells": 1,
+        "selected_items": 2,
+        "minimum_items_per_cell": 2,
+        "median_items_per_cell": 2.0,
+        "maximum_items_per_cell": 2,
+        "unique_feature_values": 6,
+        "unseen_development_feature_values": 1,
+        "unique_value_pairs": 15,
+        "value_pairs_seen_in_development": 9,
+        "value_pairs_unseen_in_development": 6
+      }
+    ],
+    "unseen_development_values": {
+      "development": [],
+      "compositional_holdout": [],
+      "novel_feature_holdout": [
+        [
+          "modal",
+          "would"
+        ]
+      ]
+    }
+  },
+  "kc_candidates": {
+    "feature_value": 9,
+    "operation": 10,
+    "interaction": 18,
+    "full_cell": 18,
+    "raw_total": 55,
+    "support_eligible": 42,
+    "selection_eligible": 28,
+    "activation_equivalence_classes": 38,
+    "activation_duplicate_candidates": 17
+  },
+  "one_vs_two_variant_structural_sensitivity": {
+    "outcomes_read": false,
+    "learner_selector_rerun": false,
+    "scope": "structural candidate support/equivalence only",
+    "eligible_in_both": [
+      "kc_cell__tense_na__aspect_none__voice_active__polarity_positive__clause_imperative__modal_none",
+      "kc_cell__tense_past__aspect_none__voice_active__polarity_positive__clause_declarative__modal_none",
+      "kc_cell__tense_past__aspect_perfect__voice_active__polarity_negative__clause_declarative__modal_none",
+      "kc_cell__tense_past__aspect_perfect__voice_active__polarity_positive__clause_declarative__modal_none",
+      "kc_cell__tense_past__aspect_perfect_progressive__voice_active__polarity_positive__clause_declarative__modal_none",
+      "kc_cell__tense_present__aspect_none__voice_active__polarity_positive__clause_declarative__modal_none",
+      "kc_cell__tense_present__aspect_perfect__voice_active__polarity_negative__clause_declarative__modal_none",
+      "kc_cell__tense_present__aspect_perfect__voice_active__polarity_positive__clause_declarative__modal_none",
+      "kc_cell__tense_present__aspect_progressive__voice_active__polarity_positive__clause_declarative__modal_none",
+      "kc_feature__aspect__perfect",
+      "kc_feature__aspect__perfect_progressive",
+      "kc_feature__aspect__progressive",
+      "kc_feature__clause__imperative",
+      "kc_feature__clause__polar_question",
+      "kc_feature__polarity__negative",
+      "kc_feature__tense__past",
+      "kc_feature__tense__present",
+      "kc_feature__voice__passive",
+      "kc_interaction__aspect_perfect__and__tense_past",
+      "kc_interaction__polarity_negative__and__tense_present",
+      "kc_operation__finite_tense_form",
+      "kc_operation__perfect_dependency",
+      "kc_operation__progressive_dependency"
+    ],
+    "eligible_only_with_rank1": [],
+    "eligible_only_with_up_to_two": [
+      "kc_interaction__aspect_perfect__and__polarity_negative",
+      "kc_interaction__aspect_perfect__and__tense_present",
+      "kc_interaction__aspect_perfect_progressive__and__tense_past",
+      "kc_interaction__polarity_negative__and__tense_past",
+      "kc_interaction__tense_present__and__voice_passive"
+    ],
+    "eligible_inventory_jaccard": 0.8214285714285714
+  },
+  "policy_count": 4,
+  "kt_metric_rows": 48,
+  "paired_logistic_rows": 12,
+  "selection_stability": {
+    "experiment_id": "phase6_selection_stability_v1",
+    "status": "complete",
+    "scale": {
+      "cells": 24,
+      "items": 44,
+      "candidate_counts": {
+        "feature_value": 9,
+        "operation": 10,
+        "interaction": 18,
+        "full_cell": 18,
+        "raw_total": 55,
+        "support_eligible": 42,
+        "selection_eligible": 28,
+        "activation_equivalence_classes": 38,
+        "activation_duplicate_candidates": 17
+      },
+      "simulation_seeds": 5,
+      "full_support_learners": 1000,
+      "selection_conditions": 9
+    },
+    "fixed_artifact_integrity": {
+      "candidate_inventory_and_fold_read_from_final_dataset": true,
+      "method_fingerprint": "d235af8ebe55dabca38266a03cd9a680eca7c122bc96d1db60be7fb5c99127c0",
+      "finalized_reference_selected_candidate_ids": [
+        "kc_feature__aspect__perfect",
+        "kc_feature__aspect__perfect_progressive",
+        "kc_feature__aspect__progressive",
+        "kc_feature__clause__imperative",
+        "kc_feature__clause__polar_question",
+        "kc_feature__polarity__negative",
+        "kc_feature__tense__past",
+        "kc_feature__tense__present",
+        "kc_feature__voice__passive",
+        "kc_interaction__aspect_perfect__and__polarity_negative"
+      ]
+    },
+    "event_streams": [
+      {
+        "status": "complete",
+        "seed": 20260827,
+        "learners": 1000,
+        "world_id": "phase4_mixed_v1",
+        "protocol_id": "development_acquisition_frozen_probes_v1",
+        "source": "deterministic_mixed_world_simulation",
+        "event_file": "events/seed_20260827.jsonl.gz",
+        "file_sha256": "030dc4e7883a4b083182f7a887119cd9c11b1094546891b67fc5ec7a10a68d19",
+        "content_sha256": "59f530eb5a33be9f6739ddb6bed489d67bcd19ea72e026b36cdf01f07119ae2c",
+        "finalized_reference_content_sha256": "59f530eb5a33be9f6739ddb6bed489d67bcd19ea72e026b36cdf01f07119ae2c",
+        "method_fingerprint": "d235af8ebe55dabca38266a03cd9a680eca7c122bc96d1db60be7fb5c99127c0",
+        "integrity": {
+          "events": 204000,
+          "learners": 1000,
+          "events_per_learner": 204,
+          "phase_counts": {
+            "acquisition": 160000,
+            "probe": 44000
+          },
+          "grammar_split_counts": {
+            "compositional_holdout": 10000,
+            "development": 192000,
+            "novel_feature_holdout": 2000
+          },
+          "dataset_split_counts": {
+            "test": 44000,
+            "train": 128000,
+            "validation": 32000
+          }
+        },
+        "provenance": {
+          "model_calls": 0,
+          "models": [],
+          "description": "Deterministic synthetic-event replay and learner-evidence KC selection over the already fixed, model-validated item bank; no LM is invoked."
+        }
+      },
+      {
+        "status": "complete",
+        "seed": 20260828,
+        "learners": 1000,
+        "world_id": "phase4_mixed_v1",
+        "protocol_id": "development_acquisition_frozen_probes_v1",
+        "source": "deterministic_mixed_world_simulation",
+        "event_file": "events/seed_20260828.jsonl.gz",
+        "file_sha256": "bbf05fa425d4fd19c4d40c31537830a86cd7b585d9be940e5d79b378b883d592",
+        "content_sha256": "41eca0947dfd3822d3bfb2ee9b692e596805f915f760a72e4eda12734e585b2f",
+        "finalized_reference_content_sha256": null,
+        "method_fingerprint": "d235af8ebe55dabca38266a03cd9a680eca7c122bc96d1db60be7fb5c99127c0",
+        "integrity": {
+          "events": 204000,
+          "learners": 1000,
+          "events_per_learner": 204,
+          "phase_counts": {
+            "acquisition": 160000,
+            "probe": 44000
+          },
+          "grammar_split_counts": {
+            "compositional_holdout": 10000,
+            "development": 192000,
+            "novel_feature_holdout": 2000
+          },
+          "dataset_split_counts": {
+            "test": 44000,
+            "train": 128000,
+            "validation": 32000
+          }
+        },
+        "provenance": {
+          "model_calls": 0,
+          "models": [],
+          "description": "Deterministic synthetic-event replay and learner-evidence KC selection over the already fixed, model-validated item bank; no LM is invoked."
+        }
+      },
+      {
+        "status": "complete",
+        "seed": 20260829,
+        "learners": 1000,
+        "world_id": "phase4_mixed_v1",
+        "protocol_id": "development_acquisition_frozen_probes_v1",
+        "source": "deterministic_mixed_world_simulation",
+        "event_file": "events/seed_20260829.jsonl.gz",
+        "file_sha256": "6f272c49cc1580e8c477c079abe2256f6652ad560fcfee7614a13a373261e942",
+        "content_sha256": "b64a211f990902ac2d977803f46bcbf3e7c0e9443f21ecbc0e5f3e6408da9b28",
+        "finalized_reference_content_sha256": null,
+        "method_fingerprint": "d235af8ebe55dabca38266a03cd9a680eca7c122bc96d1db60be7fb5c99127c0",
+        "integrity": {
+          "events": 204000,
+          "learners": 1000,
+          "events_per_learner": 204,
+          "phase_counts": {
+            "acquisition": 160000,
+            "probe": 44000
+          },
+          "grammar_split_counts": {
+            "compositional_holdout": 10000,
+            "development": 192000,
+            "novel_feature_holdout": 2000
+          },
+          "dataset_split_counts": {
+            "test": 44000,
+            "train": 128000,
+            "validation": 32000
+          }
+        },
+        "provenance": {
+          "model_calls": 0,
+          "models": [],
+          "description": "Deterministic synthetic-event replay and learner-evidence KC selection over the already fixed, model-validated item bank; no LM is invoked."
+        }
+      },
+      {
+        "status": "complete",
+        "seed": 20260830,
+        "learners": 1000,
+        "world_id": "phase4_mixed_v1",
+        "protocol_id": "development_acquisition_frozen_probes_v1",
+        "source": "deterministic_mixed_world_simulation",
+        "event_file": "events/seed_20260830.jsonl.gz",
+        "file_sha256": "2f0ea966a83375ccc6b22f47b7aadd39f7e1821697d8a6079610f765a5ab6d75",
+        "content_sha256": "fd92b3661aa2795596afa5607e9f400d13ecaf9f53f813dd3d5da357132dd9dd",
+        "finalized_reference_content_sha256": null,
+        "method_fingerprint": "d235af8ebe55dabca38266a03cd9a680eca7c122bc96d1db60be7fb5c99127c0",
+        "integrity": {
+          "events": 204000,
+          "learners": 1000,
+          "events_per_learner": 204,
+          "phase_counts": {
+            "acquisition": 160000,
+            "probe": 44000
+          },
+          "grammar_split_counts": {
+            "compositional_holdout": 10000,
+            "development": 192000,
+            "novel_feature_holdout": 2000
+          },
+          "dataset_split_counts": {
+            "test": 44000,
+            "train": 128000,
+            "validation": 32000
+          }
+        },
+        "provenance": {
+          "model_calls": 0,
+          "models": [],
+          "description": "Deterministic synthetic-event replay and learner-evidence KC selection over the already fixed, model-validated item bank; no LM is invoked."
+        }
+      },
+      {
+        "status": "complete",
+        "seed": 20260831,
+        "learners": 1000,
+        "world_id": "phase4_mixed_v1",
+        "protocol_id": "development_acquisition_frozen_probes_v1",
+        "source": "deterministic_mixed_world_simulation",
+        "event_file": "events/seed_20260831.jsonl.gz",
+        "file_sha256": "7bc506e1349d8f2700c9b73419e648a781ea796c9c377339f7d97baa9ac2f3c4",
+        "content_sha256": "12dd5f73f946ae82169a449ec3c7b16a2fe95c0893564519d8283ccc63056477",
+        "finalized_reference_content_sha256": null,
+        "method_fingerprint": "d235af8ebe55dabca38266a03cd9a680eca7c122bc96d1db60be7fb5c99127c0",
+        "integrity": {
+          "events": 204000,
+          "learners": 1000,
+          "events_per_learner": 204,
+          "phase_counts": {
+            "acquisition": 160000,
+            "probe": 44000
+          },
+          "grammar_split_counts": {
+            "compositional_holdout": 10000,
+            "development": 192000,
+            "novel_feature_holdout": 2000
+          },
+          "dataset_split_counts": {
+            "test": 44000,
+            "train": 128000,
+            "validation": 32000
+          }
+        },
+        "provenance": {
+          "model_calls": 0,
+          "models": [],
+          "description": "Deterministic synthetic-event replay and learner-evidence KC selection over the already fixed, model-validated item bank; no LM is invoked."
+        }
+      }
+    ],
+    "selections": [
+      {
+        "condition_id": "seed_20260827__learners_0060",
+        "seed": 20260827,
+        "learners": 60,
+        "stage": "reference_seed_nested_support",
+        "selection_source": "verified_retained_stability_policy",
+        "selection_events": 9600,
+        "selection_train_events": 7680,
+        "selection_validation_events": 1920,
+        "holdout_events_supplied": 0,
+        "reserved_test_events_supplied": 0,
+        "selected_candidate_ids": [
+          "kc_feature__aspect__perfect",
+          "kc_feature__aspect__perfect_progressive",
+          "kc_feature__aspect__progressive",
+          "kc_feature__clause__imperative",
+          "kc_feature__clause__polar_question",
+          "kc_feature__polarity__negative",
+          "kc_feature__tense__past",
+          "kc_feature__tense__present",
+          "kc_feature__voice__passive",
+          "kc_interaction__aspect_perfect__and__polarity_negative"
+        ],
+        "initial_candidate_ids": [
+          "kc_feature__aspect__perfect",
+          "kc_feature__aspect__perfect_progressive",
+          "kc_feature__aspect__progressive",
+          "kc_feature__clause__imperative",
+          "kc_feature__clause__polar_question",
+          "kc_feature__polarity__negative",
+          "kc_feature__tense__past",
+          "kc_feature__tense__present",
+          "kc_feature__voice__passive"
+        ],
+        "selected_addition_ids": [
+          "kc_interaction__aspect_perfect__and__polarity_negative"
+        ],
+        "kc_count": 10,
+        "addition_count": 1,
+        "exact_selected_inventory_match_reference": true,
+        "event_file_sha256": "030dc4e7883a4b083182f7a887119cd9c11b1094546891b67fc5ec7a10a68d19",
+        "event_content_sha256": "59f530eb5a33be9f6739ddb6bed489d67bcd19ea72e026b36cdf01f07119ae2c",
+        "policy_file": "policies/seed_20260827__learners_0060.yaml",
+        "policy_file_sha256": "e4c9de66f60a5a03a56cd5a90ac41d868dd8e1d98f343b817849bdd821f0b0fe",
+        "final_validation_score": {
+          "n": 1920,
+          "log_loss": 0.6515629570732746,
+          "brier_score": 0.22943180742364355,
+          "kc_count": 10,
+          "complexity_penalty": 0.005,
+          "objective": 0.6565629570732746
+        }
+      },
+      {
+        "condition_id": "seed_20260827__learners_0120",
+        "seed": 20260827,
+        "learners": 120,
+        "stage": "reference_seed_nested_support",
+        "selection_source": "verified_retained_stability_policy",
+        "selection_events": 19200,
+        "selection_train_events": 15360,
+        "selection_validation_events": 3840,
+        "holdout_events_supplied": 0,
+        "reserved_test_events_supplied": 0,
+        "selected_candidate_ids": [
+          "kc_feature__aspect__perfect",
+          "kc_feature__aspect__perfect_progressive",
+          "kc_feature__aspect__progressive",
+          "kc_feature__clause__imperative",
+          "kc_feature__clause__polar_question",
+          "kc_feature__polarity__negative",
+          "kc_feature__tense__past",
+          "kc_feature__tense__present",
+          "kc_feature__voice__passive",
+          "kc_interaction__tense_present__and__voice_passive"
+        ],
+        "initial_candidate_ids": [
+          "kc_feature__aspect__perfect",
+          "kc_feature__aspect__perfect_progressive",
+          "kc_feature__aspect__progressive",
+          "kc_feature__clause__imperative",
+          "kc_feature__clause__polar_question",
+          "kc_feature__polarity__negative",
+          "kc_feature__tense__past",
+          "kc_feature__tense__present",
+          "kc_feature__voice__passive"
+        ],
+        "selected_addition_ids": [
+          "kc_interaction__tense_present__and__voice_passive"
+        ],
+        "kc_count": 10,
+        "addition_count": 1,
+        "exact_selected_inventory_match_reference": false,
+        "event_file_sha256": "030dc4e7883a4b083182f7a887119cd9c11b1094546891b67fc5ec7a10a68d19",
+        "event_content_sha256": "59f530eb5a33be9f6739ddb6bed489d67bcd19ea72e026b36cdf01f07119ae2c",
+        "policy_file": "policies/seed_20260827__learners_0120.yaml",
+        "policy_file_sha256": "ecfea44778cfd2802c2031052147676437fe68b0a79100003aa30274e5c34316",
+        "final_validation_score": {
+          "n": 3840,
+          "log_loss": 0.6522772318937081,
+          "brier_score": 0.22975991791849626,
+          "kc_count": 10,
+          "complexity_penalty": 0.005,
+          "objective": 0.6572772318937081
+        }
+      },
+      {
+        "condition_id": "seed_20260827__learners_0240",
+        "seed": 20260827,
+        "learners": 240,
+        "stage": "reference_seed_nested_support",
+        "selection_source": "verified_retained_stability_policy",
+        "selection_events": 38400,
+        "selection_train_events": 30720,
+        "selection_validation_events": 7680,
+        "holdout_events_supplied": 0,
+        "reserved_test_events_supplied": 0,
+        "selected_candidate_ids": [
+          "kc_feature__aspect__perfect",
+          "kc_feature__aspect__perfect_progressive",
+          "kc_feature__aspect__progressive",
+          "kc_feature__clause__imperative",
+          "kc_feature__clause__polar_question",
+          "kc_feature__polarity__negative",
+          "kc_feature__tense__past",
+          "kc_feature__tense__present",
+          "kc_feature__voice__passive",
+          "kc_interaction__aspect_perfect__and__polarity_negative"
+        ],
+        "initial_candidate_ids": [
+          "kc_feature__aspect__perfect",
+          "kc_feature__aspect__perfect_progressive",
+          "kc_feature__aspect__progressive",
+          "kc_feature__clause__imperative",
+          "kc_feature__clause__polar_question",
+          "kc_feature__polarity__negative",
+          "kc_feature__tense__past",
+          "kc_feature__tense__present",
+          "kc_feature__voice__passive"
+        ],
+        "selected_addition_ids": [
+          "kc_interaction__aspect_perfect__and__polarity_negative"
+        ],
+        "kc_count": 10,
+        "addition_count": 1,
+        "exact_selected_inventory_match_reference": true,
+        "event_file_sha256": "030dc4e7883a4b083182f7a887119cd9c11b1094546891b67fc5ec7a10a68d19",
+        "event_content_sha256": "59f530eb5a33be9f6739ddb6bed489d67bcd19ea72e026b36cdf01f07119ae2c",
+        "policy_file": "policies/seed_20260827__learners_0240.yaml",
+        "policy_file_sha256": "325a90f37f79b9bc67d379c4f26594d0483460068baa688990f8ca141854a63f",
+        "final_validation_score": {
+          "n": 7680,
+          "log_loss": 0.6499953113692823,
+          "brier_score": 0.2286481941597023,
+          "kc_count": 10,
+          "complexity_penalty": 0.005,
+          "objective": 0.6549953113692824
+        }
+      },
+      {
+        "condition_id": "seed_20260827__learners_0500",
+        "seed": 20260827,
+        "learners": 500,
+        "stage": "reference_seed_nested_support",
+        "selection_source": "verified_retained_stability_policy",
+        "selection_events": 80000,
+        "selection_train_events": 64000,
+        "selection_validation_events": 16000,
+        "holdout_events_supplied": 0,
+        "reserved_test_events_supplied": 0,
+        "selected_candidate_ids": [
+          "kc_feature__aspect__perfect",
+          "kc_feature__aspect__perfect_progressive",
+          "kc_feature__aspect__progressive",
+          "kc_feature__clause__imperative",
+          "kc_feature__clause__polar_question",
+          "kc_feature__polarity__negative",
+          "kc_feature__tense__past",
+          "kc_feature__tense__present",
+          "kc_feature__voice__passive",
+          "kc_interaction__aspect_perfect__and__polarity_negative"
+        ],
+        "initial_candidate_ids": [
+          "kc_feature__aspect__perfect",
+          "kc_feature__aspect__perfect_progressive",
+          "kc_feature__aspect__progressive",
+          "kc_feature__clause__imperative",
+          "kc_feature__clause__polar_question",
+          "kc_feature__polarity__negative",
+          "kc_feature__tense__past",
+          "kc_feature__tense__present",
+          "kc_feature__voice__passive"
+        ],
+        "selected_addition_ids": [
+          "kc_interaction__aspect_perfect__and__polarity_negative"
+        ],
+        "kc_count": 10,
+        "addition_count": 1,
+        "exact_selected_inventory_match_reference": true,
+        "event_file_sha256": "030dc4e7883a4b083182f7a887119cd9c11b1094546891b67fc5ec7a10a68d19",
+        "event_content_sha256": "59f530eb5a33be9f6739ddb6bed489d67bcd19ea72e026b36cdf01f07119ae2c",
+        "policy_file": "policies/seed_20260827__learners_0500.yaml",
+        "policy_file_sha256": "e8d918128eb52fa972a5de8dcda0021f7a7cecfe22dacd85579c30d2758bb625",
+        "final_validation_score": {
+          "n": 16000,
+          "log_loss": 0.6473796394296916,
+          "brier_score": 0.2274273233041452,
+          "kc_count": 10,
+          "complexity_penalty": 0.005,
+          "objective": 0.6523796394296916
+        }
+      },
+      {
+        "condition_id": "seed_20260827__learners_1000",
+        "seed": 20260827,
+        "learners": 1000,
+        "stage": "reference_seed_nested_support",
+        "selection_source": "verified_retained_stability_policy",
+        "selection_events": 160000,
+        "selection_train_events": 128000,
+        "selection_validation_events": 32000,
+        "holdout_events_supplied": 0,
+        "reserved_test_events_supplied": 0,
+        "selected_candidate_ids": [
+          "kc_feature__aspect__perfect",
+          "kc_feature__aspect__perfect_progressive",
+          "kc_feature__aspect__progressive",
+          "kc_feature__clause__imperative",
+          "kc_feature__clause__polar_question",
+          "kc_feature__polarity__negative",
+          "kc_feature__tense__past",
+          "kc_feature__tense__present",
+          "kc_feature__voice__passive",
+          "kc_interaction__aspect_perfect__and__polarity_negative"
+        ],
+        "initial_candidate_ids": [
+          "kc_feature__aspect__perfect",
+          "kc_feature__aspect__perfect_progressive",
+          "kc_feature__aspect__progressive",
+          "kc_feature__clause__imperative",
+          "kc_feature__clause__polar_question",
+          "kc_feature__polarity__negative",
+          "kc_feature__tense__past",
+          "kc_feature__tense__present",
+          "kc_feature__voice__passive"
+        ],
+        "selected_addition_ids": [
+          "kc_interaction__aspect_perfect__and__polarity_negative"
+        ],
+        "kc_count": 10,
+        "addition_count": 1,
+        "exact_selected_inventory_match_reference": true,
+        "event_file_sha256": "030dc4e7883a4b083182f7a887119cd9c11b1094546891b67fc5ec7a10a68d19",
+        "event_content_sha256": "59f530eb5a33be9f6739ddb6bed489d67bcd19ea72e026b36cdf01f07119ae2c",
+        "policy_file": "policies/seed_20260827__learners_1000.yaml",
+        "policy_file_sha256": "0f2668b97c314a1719164f09d1847f2c7de12d5167a637933da0309fa63e2c00",
+        "final_validation_score": {
+          "n": 32000,
+          "log_loss": 0.6463538273424759,
+          "brier_score": 0.2269704430037298,
+          "kc_count": 10,
+          "complexity_penalty": 0.005,
+          "objective": 0.6513538273424759
+        }
+      },
+      {
+        "condition_id": "seed_20260828__learners_1000",
+        "seed": 20260828,
+        "learners": 1000,
+        "stage": "full_support_seed_stability",
+        "selection_source": "verified_retained_stability_policy",
+        "selection_events": 160000,
+        "selection_train_events": 128000,
+        "selection_validation_events": 32000,
+        "holdout_events_supplied": 0,
+        "reserved_test_events_supplied": 0,
+        "selected_candidate_ids": [
+          "kc_feature__aspect__perfect",
+          "kc_feature__aspect__perfect_progressive",
+          "kc_feature__aspect__progressive",
+          "kc_feature__clause__imperative",
+          "kc_feature__clause__polar_question",
+          "kc_feature__polarity__negative",
+          "kc_feature__tense__past",
+          "kc_feature__tense__present",
+          "kc_feature__voice__passive",
+          "kc_interaction__aspect_perfect__and__polarity_negative"
+        ],
+        "initial_candidate_ids": [
+          "kc_feature__aspect__perfect",
+          "kc_feature__aspect__perfect_progressive",
+          "kc_feature__aspect__progressive",
+          "kc_feature__clause__imperative",
+          "kc_feature__clause__polar_question",
+          "kc_feature__polarity__negative",
+          "kc_feature__tense__past",
+          "kc_feature__tense__present",
+          "kc_feature__voice__passive"
+        ],
+        "selected_addition_ids": [
+          "kc_interaction__aspect_perfect__and__polarity_negative"
+        ],
+        "kc_count": 10,
+        "addition_count": 1,
+        "exact_selected_inventory_match_reference": true,
+        "event_file_sha256": "bbf05fa425d4fd19c4d40c31537830a86cd7b585d9be940e5d79b378b883d592",
+        "event_content_sha256": "41eca0947dfd3822d3bfb2ee9b692e596805f915f760a72e4eda12734e585b2f",
+        "policy_file": "policies/seed_20260828__learners_1000.yaml",
+        "policy_file_sha256": "3e45c392f66680614b38b5ca6de86c0c0970f85b66b76899bee921b507ed6d29",
+        "final_validation_score": {
+          "n": 32000,
+          "log_loss": 0.6461523283469444,
+          "brier_score": 0.22685906846868342,
+          "kc_count": 10,
+          "complexity_penalty": 0.005,
+          "objective": 0.6511523283469444
+        }
+      },
+      {
+        "condition_id": "seed_20260829__learners_1000",
+        "seed": 20260829,
+        "learners": 1000,
+        "stage": "full_support_seed_stability",
+        "selection_source": "verified_retained_stability_policy",
+        "selection_events": 160000,
+        "selection_train_events": 128000,
+        "selection_validation_events": 32000,
+        "holdout_events_supplied": 0,
+        "reserved_test_events_supplied": 0,
+        "selected_candidate_ids": [
+          "kc_feature__aspect__perfect",
+          "kc_feature__aspect__perfect_progressive",
+          "kc_feature__aspect__progressive",
+          "kc_feature__clause__imperative",
+          "kc_feature__clause__polar_question",
+          "kc_feature__polarity__negative",
+          "kc_feature__tense__past",
+          "kc_feature__tense__present",
+          "kc_feature__voice__passive",
+          "kc_interaction__aspect_perfect__and__polarity_negative"
+        ],
+        "initial_candidate_ids": [
+          "kc_feature__aspect__perfect",
+          "kc_feature__aspect__perfect_progressive",
+          "kc_feature__aspect__progressive",
+          "kc_feature__clause__imperative",
+          "kc_feature__clause__polar_question",
+          "kc_feature__polarity__negative",
+          "kc_feature__tense__past",
+          "kc_feature__tense__present",
+          "kc_feature__voice__passive"
+        ],
+        "selected_addition_ids": [
+          "kc_interaction__aspect_perfect__and__polarity_negative"
+        ],
+        "kc_count": 10,
+        "addition_count": 1,
+        "exact_selected_inventory_match_reference": true,
+        "event_file_sha256": "6f272c49cc1580e8c477c079abe2256f6652ad560fcfee7614a13a373261e942",
+        "event_content_sha256": "b64a211f990902ac2d977803f46bcbf3e7c0e9443f21ecbc0e5f3e6408da9b28",
+        "policy_file": "policies/seed_20260829__learners_1000.yaml",
+        "policy_file_sha256": "9c141bfc4879d548c032da619232895a37d4b6713a567f55179fa1345da2f9a7",
+        "final_validation_score": {
+          "n": 32000,
+          "log_loss": 0.6446459793951332,
+          "brier_score": 0.22620492018894595,
+          "kc_count": 10,
+          "complexity_penalty": 0.005,
+          "objective": 0.6496459793951332
+        }
+      },
+      {
+        "condition_id": "seed_20260830__learners_1000",
+        "seed": 20260830,
+        "learners": 1000,
+        "stage": "full_support_seed_stability",
+        "selection_source": "verified_retained_stability_policy",
+        "selection_events": 160000,
+        "selection_train_events": 128000,
+        "selection_validation_events": 32000,
+        "holdout_events_supplied": 0,
+        "reserved_test_events_supplied": 0,
+        "selected_candidate_ids": [
+          "kc_feature__aspect__perfect",
+          "kc_feature__aspect__perfect_progressive",
+          "kc_feature__aspect__progressive",
+          "kc_feature__clause__imperative",
+          "kc_feature__clause__polar_question",
+          "kc_feature__polarity__negative",
+          "kc_feature__tense__past",
+          "kc_feature__tense__present",
+          "kc_feature__voice__passive",
+          "kc_interaction__aspect_perfect__and__polarity_negative"
+        ],
+        "initial_candidate_ids": [
+          "kc_feature__aspect__perfect",
+          "kc_feature__aspect__perfect_progressive",
+          "kc_feature__aspect__progressive",
+          "kc_feature__clause__imperative",
+          "kc_feature__clause__polar_question",
+          "kc_feature__polarity__negative",
+          "kc_feature__tense__past",
+          "kc_feature__tense__present",
+          "kc_feature__voice__passive"
+        ],
+        "selected_addition_ids": [
+          "kc_interaction__aspect_perfect__and__polarity_negative"
+        ],
+        "kc_count": 10,
+        "addition_count": 1,
+        "exact_selected_inventory_match_reference": true,
+        "event_file_sha256": "2f0ea966a83375ccc6b22f47b7aadd39f7e1821697d8a6079610f765a5ab6d75",
+        "event_content_sha256": "fd92b3661aa2795596afa5607e9f400d13ecaf9f53f813dd3d5da357132dd9dd",
+        "policy_file": "policies/seed_20260830__learners_1000.yaml",
+        "policy_file_sha256": "393af8805af5e92c6bcfc9726d5e3c3b29956d3391229a0c3b19e94fe5bb7a34",
+        "final_validation_score": {
+          "n": 32000,
+          "log_loss": 0.6482536328722053,
+          "brier_score": 0.2277987964528134,
+          "kc_count": 10,
+          "complexity_penalty": 0.005,
+          "objective": 0.6532536328722053
+        }
+      },
+      {
+        "condition_id": "seed_20260831__learners_1000",
+        "seed": 20260831,
+        "learners": 1000,
+        "stage": "full_support_seed_stability",
+        "selection_source": "verified_retained_stability_policy",
+        "selection_events": 160000,
+        "selection_train_events": 128000,
+        "selection_validation_events": 32000,
+        "holdout_events_supplied": 0,
+        "reserved_test_events_supplied": 0,
+        "selected_candidate_ids": [
+          "kc_feature__aspect__perfect",
+          "kc_feature__aspect__perfect_progressive",
+          "kc_feature__aspect__progressive",
+          "kc_feature__clause__imperative",
+          "kc_feature__clause__polar_question",
+          "kc_feature__polarity__negative",
+          "kc_feature__tense__past",
+          "kc_feature__tense__present",
+          "kc_feature__voice__passive",
+          "kc_interaction__aspect_perfect__and__polarity_negative"
+        ],
+        "initial_candidate_ids": [
+          "kc_feature__aspect__perfect",
+          "kc_feature__aspect__perfect_progressive",
+          "kc_feature__aspect__progressive",
+          "kc_feature__clause__imperative",
+          "kc_feature__clause__polar_question",
+          "kc_feature__polarity__negative",
+          "kc_feature__tense__past",
+          "kc_feature__tense__present",
+          "kc_feature__voice__passive"
+        ],
+        "selected_addition_ids": [
+          "kc_interaction__aspect_perfect__and__polarity_negative"
+        ],
+        "kc_count": 10,
+        "addition_count": 1,
+        "exact_selected_inventory_match_reference": true,
+        "event_file_sha256": "7bc506e1349d8f2700c9b73419e648a781ea796c9c377339f7d97baa9ac2f3c4",
+        "event_content_sha256": "12dd5f73f946ae82169a449ec3c7b16a2fe95c0893564519d8283ccc63056477",
+        "policy_file": "policies/seed_20260831__learners_1000.yaml",
+        "policy_file_sha256": "6387be3030876f36a791c658165e0b4bbcb592952d3f983da64b607aa4417129",
+        "final_validation_score": {
+          "n": 32000,
+          "log_loss": 0.646378079326817,
+          "brier_score": 0.22694904307917016,
+          "kc_count": 10,
+          "complexity_penalty": 0.005,
+          "objective": 0.651378079326817
+        }
+      }
+    ],
+    "frequencies": {
+      "all_conditions": {
+        "selected": [
+          {
+            "candidate_id": "kc_feature__aspect__perfect",
+            "selected_conditions": 9,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0120",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__aspect__perfect_progressive",
+            "selected_conditions": 9,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0120",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__aspect__progressive",
+            "selected_conditions": 9,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0120",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__clause__imperative",
+            "selected_conditions": 9,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0120",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__clause__polar_question",
+            "selected_conditions": 9,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0120",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__polarity__negative",
+            "selected_conditions": 9,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0120",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__tense__past",
+            "selected_conditions": 9,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0120",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__tense__present",
+            "selected_conditions": 9,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0120",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__voice__passive",
+            "selected_conditions": 9,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0120",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_interaction__aspect_perfect__and__polarity_negative",
+            "selected_conditions": 8,
+            "selection_frequency": 0.8888888888888888,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_interaction__tense_present__and__voice_passive",
+            "selected_conditions": 1,
+            "selection_frequency": 0.1111111111111111,
+            "condition_ids": [
+              "seed_20260827__learners_0120"
+            ]
+          }
+        ],
+        "additions": [
+          {
+            "candidate_id": "kc_interaction__aspect_perfect__and__polarity_negative",
+            "selected_conditions": 8,
+            "selection_frequency": 0.8888888888888888,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_interaction__tense_present__and__voice_passive",
+            "selected_conditions": 1,
+            "selection_frequency": 0.1111111111111111,
+            "condition_ids": [
+              "seed_20260827__learners_0120"
+            ]
+          }
+        ]
+      },
+      "reference_nested_support": {
+        "selected": [
+          {
+            "candidate_id": "kc_feature__aspect__perfect",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0120",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__aspect__perfect_progressive",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0120",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__aspect__progressive",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0120",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__clause__imperative",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0120",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__clause__polar_question",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0120",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__polarity__negative",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0120",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__tense__past",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0120",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__tense__present",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0120",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__voice__passive",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0120",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_interaction__aspect_perfect__and__polarity_negative",
+            "selected_conditions": 4,
+            "selection_frequency": 0.8,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_interaction__tense_present__and__voice_passive",
+            "selected_conditions": 1,
+            "selection_frequency": 0.2,
+            "condition_ids": [
+              "seed_20260827__learners_0120"
+            ]
+          }
+        ],
+        "additions": [
+          {
+            "candidate_id": "kc_interaction__aspect_perfect__and__polarity_negative",
+            "selected_conditions": 4,
+            "selection_frequency": 0.8,
+            "condition_ids": [
+              "seed_20260827__learners_0060",
+              "seed_20260827__learners_0240",
+              "seed_20260827__learners_0500",
+              "seed_20260827__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_interaction__tense_present__and__voice_passive",
+            "selected_conditions": 1,
+            "selection_frequency": 0.2,
+            "condition_ids": [
+              "seed_20260827__learners_0120"
+            ]
+          }
+        ]
+      },
+      "five_seed_full_support": {
+        "selected": [
+          {
+            "candidate_id": "kc_feature__aspect__perfect",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__aspect__perfect_progressive",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__aspect__progressive",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__clause__imperative",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__clause__polar_question",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__polarity__negative",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__tense__past",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__tense__present",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_feature__voice__passive",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          },
+          {
+            "candidate_id": "kc_interaction__aspect_perfect__and__polarity_negative",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          }
+        ],
+        "additions": [
+          {
+            "candidate_id": "kc_interaction__aspect_perfect__and__polarity_negative",
+            "selected_conditions": 5,
+            "selection_frequency": 1.0,
+            "condition_ids": [
+              "seed_20260827__learners_1000",
+              "seed_20260828__learners_1000",
+              "seed_20260829__learners_1000",
+              "seed_20260830__learners_1000",
+              "seed_20260831__learners_1000"
+            ]
+          }
+        ]
+      }
+    },
+    "jaccard": {
+      "all_conditions": {
+        "pairs": [
+          {
+            "left": "seed_20260827__learners_0060",
+            "right": "seed_20260827__learners_0120",
+            "all_selected_jaccard": 0.8181818181818182,
+            "addition_jaccard": 0.0,
+            "exact_selected_inventory_match": false,
+            "exact_addition_inventory_match": false
+          },
+          {
+            "left": "seed_20260827__learners_0060",
+            "right": "seed_20260827__learners_0240",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0060",
+            "right": "seed_20260827__learners_0500",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0060",
+            "right": "seed_20260827__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0060",
+            "right": "seed_20260828__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0060",
+            "right": "seed_20260829__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0060",
+            "right": "seed_20260830__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0060",
+            "right": "seed_20260831__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0120",
+            "right": "seed_20260827__learners_0240",
+            "all_selected_jaccard": 0.8181818181818182,
+            "addition_jaccard": 0.0,
+            "exact_selected_inventory_match": false,
+            "exact_addition_inventory_match": false
+          },
+          {
+            "left": "seed_20260827__learners_0120",
+            "right": "seed_20260827__learners_0500",
+            "all_selected_jaccard": 0.8181818181818182,
+            "addition_jaccard": 0.0,
+            "exact_selected_inventory_match": false,
+            "exact_addition_inventory_match": false
+          },
+          {
+            "left": "seed_20260827__learners_0120",
+            "right": "seed_20260827__learners_1000",
+            "all_selected_jaccard": 0.8181818181818182,
+            "addition_jaccard": 0.0,
+            "exact_selected_inventory_match": false,
+            "exact_addition_inventory_match": false
+          },
+          {
+            "left": "seed_20260827__learners_0120",
+            "right": "seed_20260828__learners_1000",
+            "all_selected_jaccard": 0.8181818181818182,
+            "addition_jaccard": 0.0,
+            "exact_selected_inventory_match": false,
+            "exact_addition_inventory_match": false
+          },
+          {
+            "left": "seed_20260827__learners_0120",
+            "right": "seed_20260829__learners_1000",
+            "all_selected_jaccard": 0.8181818181818182,
+            "addition_jaccard": 0.0,
+            "exact_selected_inventory_match": false,
+            "exact_addition_inventory_match": false
+          },
+          {
+            "left": "seed_20260827__learners_0120",
+            "right": "seed_20260830__learners_1000",
+            "all_selected_jaccard": 0.8181818181818182,
+            "addition_jaccard": 0.0,
+            "exact_selected_inventory_match": false,
+            "exact_addition_inventory_match": false
+          },
+          {
+            "left": "seed_20260827__learners_0120",
+            "right": "seed_20260831__learners_1000",
+            "all_selected_jaccard": 0.8181818181818182,
+            "addition_jaccard": 0.0,
+            "exact_selected_inventory_match": false,
+            "exact_addition_inventory_match": false
+          },
+          {
+            "left": "seed_20260827__learners_0240",
+            "right": "seed_20260827__learners_0500",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0240",
+            "right": "seed_20260827__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0240",
+            "right": "seed_20260828__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0240",
+            "right": "seed_20260829__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0240",
+            "right": "seed_20260830__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0240",
+            "right": "seed_20260831__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0500",
+            "right": "seed_20260827__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0500",
+            "right": "seed_20260828__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0500",
+            "right": "seed_20260829__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0500",
+            "right": "seed_20260830__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0500",
+            "right": "seed_20260831__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_1000",
+            "right": "seed_20260828__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_1000",
+            "right": "seed_20260829__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_1000",
+            "right": "seed_20260830__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_1000",
+            "right": "seed_20260831__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260828__learners_1000",
+            "right": "seed_20260829__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260828__learners_1000",
+            "right": "seed_20260830__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260828__learners_1000",
+            "right": "seed_20260831__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260829__learners_1000",
+            "right": "seed_20260830__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260829__learners_1000",
+            "right": "seed_20260831__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260830__learners_1000",
+            "right": "seed_20260831__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          }
+        ],
+        "all_selected": {
+          "mean": 0.9595959595959596,
+          "median": 1.0,
+          "minimum": 0.8181818181818182
+        },
+        "additions": {
+          "mean": 0.7777777777777778,
+          "median": 1.0,
+          "minimum": 0.0
+        }
+      },
+      "reference_nested_support": {
+        "pairs": [
+          {
+            "left": "seed_20260827__learners_0060",
+            "right": "seed_20260827__learners_0120",
+            "all_selected_jaccard": 0.8181818181818182,
+            "addition_jaccard": 0.0,
+            "exact_selected_inventory_match": false,
+            "exact_addition_inventory_match": false
+          },
+          {
+            "left": "seed_20260827__learners_0060",
+            "right": "seed_20260827__learners_0240",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0060",
+            "right": "seed_20260827__learners_0500",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0060",
+            "right": "seed_20260827__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0120",
+            "right": "seed_20260827__learners_0240",
+            "all_selected_jaccard": 0.8181818181818182,
+            "addition_jaccard": 0.0,
+            "exact_selected_inventory_match": false,
+            "exact_addition_inventory_match": false
+          },
+          {
+            "left": "seed_20260827__learners_0120",
+            "right": "seed_20260827__learners_0500",
+            "all_selected_jaccard": 0.8181818181818182,
+            "addition_jaccard": 0.0,
+            "exact_selected_inventory_match": false,
+            "exact_addition_inventory_match": false
+          },
+          {
+            "left": "seed_20260827__learners_0120",
+            "right": "seed_20260827__learners_1000",
+            "all_selected_jaccard": 0.8181818181818182,
+            "addition_jaccard": 0.0,
+            "exact_selected_inventory_match": false,
+            "exact_addition_inventory_match": false
+          },
+          {
+            "left": "seed_20260827__learners_0240",
+            "right": "seed_20260827__learners_0500",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0240",
+            "right": "seed_20260827__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_0500",
+            "right": "seed_20260827__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          }
+        ],
+        "all_selected": {
+          "mean": 0.9272727272727272,
+          "median": 1.0,
+          "minimum": 0.8181818181818182
+        },
+        "additions": {
+          "mean": 0.6,
+          "median": 1.0,
+          "minimum": 0.0
+        }
+      },
+      "five_seed_full_support": {
+        "pairs": [
+          {
+            "left": "seed_20260827__learners_1000",
+            "right": "seed_20260828__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_1000",
+            "right": "seed_20260829__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_1000",
+            "right": "seed_20260830__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260827__learners_1000",
+            "right": "seed_20260831__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260828__learners_1000",
+            "right": "seed_20260829__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260828__learners_1000",
+            "right": "seed_20260830__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260828__learners_1000",
+            "right": "seed_20260831__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260829__learners_1000",
+            "right": "seed_20260830__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260829__learners_1000",
+            "right": "seed_20260831__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          },
+          {
+            "left": "seed_20260830__learners_1000",
+            "right": "seed_20260831__learners_1000",
+            "all_selected_jaccard": 1.0,
+            "addition_jaccard": 1.0,
+            "exact_selected_inventory_match": true,
+            "exact_addition_inventory_match": true
+          }
+        ],
+        "all_selected": {
+          "mean": 1.0,
+          "median": 1.0,
+          "minimum": 1.0
+        },
+        "additions": {
+          "mean": 1.0,
+          "median": 1.0,
+          "minimum": 1.0
+        }
+      }
+    },
+    "exact_inventory_matches": {
+      "reference_condition_id": "seed_20260827__learners_1000",
+      "conditions_matching_finalized_reference": 8,
+      "full_support_seeds_matching_finalized_reference": 5,
+      "all_conditions_identical": false,
+      "all_full_support_seeds_identical": true
+    },
+    "boundary_checks": {
+      "holdout_events_supplied_to_any_selection": 0,
+      "reserved_test_events_supplied_to_any_selection": 0
+    },
+    "provenance": {
+      "model_calls": 0,
+      "models": [],
+      "description": "Deterministic synthetic-event replay and learner-evidence KC selection over the already fixed, model-validated item bank; no LM is invoked."
+    },
+    "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/run_phase6_selection_stability.py"
+  },
+  "claim_boundaries": [
+    "Item quality is model-judged; no human acceptability or pedagogical efficacy study was performed.",
+    "Learner outcomes are synthetic under the declared mixed latent world, not observations of human learners.",
+    "The KC algorithm consumes a declared schema structurally, but empirical evidence here is English-only.",
+    "The retained normalization snapshot cannot establish repeated-run or cross-model stability.",
+    "Qualitative rows are traceable item/cell IDs and validator evidence, not new analyst judgments."
+  ],
+  "outputs": [
+    "automated_selected_kcs.csv",
+    "call_times.csv",
+    "criterion_failures.csv",
+    "dimension_value_support.csv",
+    "fold_summary.csv",
+    "grammar_cells.csv",
+    "item_generation_stages.csv",
+    "kc_candidate_families.csv",
+    "kc_candidate_support.csv",
+    "kt_metrics.csv",
+    "lexical_diversity.csv",
+    "one_vs_two_variant_sensitivity.csv",
+    "operation_candidates.csv",
+    "paired_logistic.csv",
+    "policy_granularity.csv",
+    "qualitative_index.csv",
+    "rejection_stages.csv",
+    "rq_evidence.csv",
+    "source_normalisation.csv"
+  ]
+}

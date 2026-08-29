@@ -1,0 +1,1 @@
+{"prompt":"The delivery service operates from Monday to Saturday only. Complete the sentence using “deliver”: Packages ____ on Sundays.","target_answer":"Packages are not delivered on Sundays.","accepted_answers":["are not delivered","aren't delivered"]}

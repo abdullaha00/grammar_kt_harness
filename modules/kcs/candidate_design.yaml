@@ -1,0 +1,35 @@
+candidate_design_id: schema_structural_candidates_v1
+description: >-
+  Development-only interpretable KC hypotheses derived from the declared
+  canonical grammar schema and the fixed development item bank.
+
+candidate_types:
+  feature_values: true
+  operations: true
+  pairwise_interactions: true
+  full_cells: true
+
+# These values are explicit reference conditions rather than learner KCs in the
+# primary hypothesis space. They remain present in each GrammarCell and can be
+# changed for a declared ablation.
+background_values:
+  tense: [NA]
+  aspect: [none]
+  voice: [active]
+  polarity: [positive]
+  clause: [declarative]
+  modal: [none]
+
+# Interaction support is reported before filtering. Both thresholds must be met
+# for an interaction to enter learner-evidence selection.
+minimum_interaction_cell_support: 2
+minimum_interaction_item_support: 3
+
+# When two hypotheses have identical activation on the development item bank,
+# prefer the simpler reusable description. Equivalence is measurement-bank
+# specific, not a claim of linguistic identity.
+equivalence_representative_order:
+  - feature_value
+  - operation
+  - interaction
+  - full_cell

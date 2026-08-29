@@ -1,0 +1,65 @@
+{
+  "blind_id": "generation_judge_0213",
+  "experiment_item_id": "generation_medium_cell_021_01",
+  "generation_effort": "medium",
+  "cell_id": "cell_021",
+  "candidate_index": 1,
+  "judge_effort": "medium",
+  "success": true,
+  "error": null,
+  "accepted": true,
+  "judgment": {
+    "item_id": "generation_judge_0213",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "“are being cleaned” is present progressive passive, positive declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target sentence is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The prompt and answer form a coherent, natural description of an ongoing action."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It directly practises the present progressive passive with a clear cue."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "“Right now” and the supplied verb clearly determine the present progressive passive response."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "“Workers,” “cleaning,” and “windows” are common, transparent vocabulary."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed passive form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "Only the target passive progressive construction is needed."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is required."
+      }
+    },
+    "accepted": true,
+    "rejection_stage": null
+  },
+  "task_runtime_seconds": 8.229350200999761,
+  "model_calls": 1,
+  "tokens_used": 2485,
+  "model_runtime_seconds": 8.228532244000235,
+  "model_call_failures": 0
+}

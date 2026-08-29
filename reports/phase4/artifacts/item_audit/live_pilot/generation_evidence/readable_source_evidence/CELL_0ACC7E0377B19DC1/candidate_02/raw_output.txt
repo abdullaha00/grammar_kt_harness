@@ -1,0 +1,12 @@
+{
+  "prompt": "Mia is thirsty. Complete the sentence using the words in brackets: ____ (she / like / a glass of water)",
+  "target_answer": "She would like a glass of water.",
+  "accepted_answers": [
+    "She would like a glass of water.",
+    "She'd like a glass of water."
+  ],
+  "operation_tags": [
+    "central_modal"
+  ],
+  "note": "The response is a positive declarative clause expressing what Mia wants."
+}

@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163713626x133661684035994100",
+  "result": "complete",
+  "cells": [
+    {
+      "tense": "present",
+      "aspect": "none",
+      "voice": "active",
+      "polarity": "positive",
+      "clause": "declarative",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": [],
+  "note": "Present simple affirmative denotes an active, positive declarative with no grammatical aspect or central modal; regular versus irregular verb morphology does not affect the canonical dimensions."
+}

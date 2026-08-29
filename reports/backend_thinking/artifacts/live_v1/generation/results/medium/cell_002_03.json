@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_medium_cell_002_03",
+  "cell_id": "cell_002",
+  "candidate_index": 3,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: no text immediately precedes the response slot",
+  "candidate": {
+    "item_id": "candidate_cell_002_03",
+    "cell_id": "cell_002",
+    "format": "controlled_production",
+    "prompt": "Mia wants to know about Leo's evening. Use the words in brackets to complete the question: ___? (Leo / wash / the dishes)",
+    "target_answer": "Did Leo wash the dishes?",
+    "accepted_answers": [
+      "Did Leo wash the dishes"
+    ],
+    "generation_metadata": {
+      "candidate_index": 3,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 7.437766387998636,
+  "model_calls": 1,
+  "tokens_used": 5028,
+  "model_runtime_seconds": 7.436538631000076,
+  "model_call_failures": 0
+}

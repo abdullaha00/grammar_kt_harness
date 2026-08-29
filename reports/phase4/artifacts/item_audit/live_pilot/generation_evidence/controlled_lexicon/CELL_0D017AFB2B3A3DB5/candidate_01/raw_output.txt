@@ -1,0 +1,13 @@
+{
+  "prompt": "At noon, Mia was still in the middle of a book she began at nine. Complete the sentence using the cue (read / a book / for three hours): Mia ______.",
+  "target_answer": "Mia had been reading a book for three hours.",
+  "accepted_answers": [
+    "Mia had been reading a book for three hours.",
+    "Mia'd been reading a book for three hours."
+  ],
+  "operation_tags": [
+    "perfect",
+    "progressive"
+  ],
+  "note": ""
+}

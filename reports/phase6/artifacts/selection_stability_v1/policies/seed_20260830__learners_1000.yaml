@@ -1,0 +1,469 @@
+policy_id: selected__forward_predictive_parsimony_v1
+description: Development-only feature base with predictive/parsimony-selected supported
+  additions; frozen before grammar-holdout projection.
+kcs:
+- id: kc_feature__aspect__perfect
+  definition: Represent canonical aspect=perfect.
+  activation:
+    cell:
+      aspect: perfect
+- id: kc_feature__aspect__perfect_progressive
+  definition: Represent canonical aspect=perfect_progressive.
+  activation:
+    cell:
+      aspect: perfect_progressive
+- id: kc_feature__aspect__progressive
+  definition: Represent canonical aspect=progressive.
+  activation:
+    cell:
+      aspect: progressive
+- id: kc_feature__clause__imperative
+  definition: Represent canonical clause=imperative.
+  activation:
+    cell:
+      clause: imperative
+- id: kc_feature__clause__polar_question
+  definition: Represent canonical clause=polar_question.
+  activation:
+    cell:
+      clause: polar_question
+- id: kc_feature__polarity__negative
+  definition: Represent canonical polarity=negative.
+  activation:
+    cell:
+      polarity: negative
+- id: kc_feature__tense__past
+  definition: Represent canonical tense=past.
+  activation:
+    cell:
+      tense: past
+- id: kc_feature__tense__present
+  definition: Represent canonical tense=present.
+  activation:
+    cell:
+      tense: present
+- id: kc_feature__voice__passive
+  definition: Represent canonical voice=passive.
+  activation:
+    cell:
+      voice: passive
+- id: kc_interaction__aspect_perfect__and__polarity_negative
+  definition: Represent the supported interaction aspect=perfect and polarity=negative.
+  activation:
+    cell:
+      aspect: perfect
+      polarity: negative
+selection_metadata:
+  selection_id: forward_predictive_parsimony_v1
+  candidate_design_id: schema_structural_candidates_v1
+  development_cell_ids:
+  - cell_001
+  - cell_002
+  - cell_003
+  - cell_004
+  - cell_005
+  - cell_006
+  - cell_008
+  - cell_009
+  - cell_012
+  - cell_013
+  - cell_014
+  - cell_015
+  - cell_016
+  - cell_017
+  - cell_018
+  - cell_021
+  - cell_022
+  - cell_023
+  development_item_ids:
+  - candidate_cell_001_01
+  - candidate_cell_001_02
+  - candidate_cell_002_01
+  - candidate_cell_002_03
+  - candidate_cell_003_01
+  - candidate_cell_003_03
+  - candidate_cell_004_01
+  - candidate_cell_004_02
+  - candidate_cell_005_03
+  - candidate_cell_006_01
+  - candidate_cell_006_03
+  - candidate_cell_008_01
+  - candidate_cell_008_02
+  - candidate_cell_009_01
+  - candidate_cell_009_02
+  - candidate_cell_012_01
+  - candidate_cell_012_02
+  - candidate_cell_013_01
+  - candidate_cell_013_02
+  - candidate_cell_014_01
+  - candidate_cell_014_03
+  - candidate_cell_015_03
+  - candidate_cell_016_01
+  - candidate_cell_016_02
+  - candidate_cell_017_06
+  - candidate_cell_017_07
+  - candidate_cell_018_03
+  - candidate_cell_021_01
+  - candidate_cell_021_03
+  - candidate_cell_022_05
+  - candidate_cell_023_02
+  - candidate_cell_023_03
+  initial_candidate_ids:
+  - kc_feature__aspect__perfect
+  - kc_feature__aspect__perfect_progressive
+  - kc_feature__aspect__progressive
+  - kc_feature__clause__imperative
+  - kc_feature__clause__polar_question
+  - kc_feature__polarity__negative
+  - kc_feature__tense__past
+  - kc_feature__tense__present
+  - kc_feature__voice__passive
+  eligible_addition_ids:
+  - kc_interaction__aspect_perfect__and__polarity_negative
+  - kc_interaction__aspect_perfect__and__tense_past
+  - kc_interaction__aspect_perfect__and__tense_present
+  - kc_interaction__aspect_perfect_progressive__and__tense_past
+  - kc_interaction__polarity_negative__and__tense_past
+  - kc_interaction__polarity_negative__and__tense_present
+  - kc_interaction__tense_present__and__voice_passive
+  - kc_operation__finite_tense_form
+  - kc_operation__perfect_dependency
+  - kc_operation__progressive_dependency
+  initial_event_support:
+    kc_feature__aspect__perfect:
+      train_events: 32000
+      validation_events: 8000
+    kc_feature__aspect__perfect_progressive:
+      train_events: 20000
+      validation_events: 5000
+    kc_feature__aspect__progressive:
+      train_events: 24000
+      validation_events: 6000
+    kc_feature__clause__imperative:
+      train_events: 12000
+      validation_events: 3000
+    kc_feature__clause__polar_question:
+      train_events: 16000
+      validation_events: 4000
+    kc_feature__polarity__negative:
+      train_events: 48000
+      validation_events: 12000
+    kc_feature__tense__past:
+      train_events: 44000
+      validation_events: 11000
+    kc_feature__tense__present:
+      train_events: 72000
+      validation_events: 18000
+    kc_feature__voice__passive:
+      train_events: 20000
+      validation_events: 5000
+  initial_support_warnings: {}
+  addition_event_support:
+    kc_interaction__aspect_perfect__and__polarity_negative:
+      train_events: 16000
+      validation_events: 4000
+    kc_interaction__aspect_perfect__and__tense_past:
+      train_events: 16000
+      validation_events: 4000
+    kc_interaction__aspect_perfect__and__tense_present:
+      train_events: 16000
+      validation_events: 4000
+    kc_interaction__aspect_perfect_progressive__and__tense_past:
+      train_events: 12000
+      validation_events: 3000
+    kc_interaction__polarity_negative__and__tense_past:
+      train_events: 16000
+      validation_events: 4000
+    kc_interaction__polarity_negative__and__tense_present:
+      train_events: 24000
+      validation_events: 6000
+    kc_interaction__tense_present__and__voice_passive:
+      train_events: 16000
+      validation_events: 4000
+    kc_operation__finite_tense_form:
+      train_events: 116000
+      validation_events: 29000
+    kc_operation__perfect_dependency:
+      train_events: 52000
+      validation_events: 13000
+    kc_operation__progressive_dependency:
+      train_events: 44000
+      validation_events: 11000
+  excluded_additions: {}
+  selected_candidate_ids:
+  - kc_feature__aspect__perfect
+  - kc_feature__aspect__perfect_progressive
+  - kc_feature__aspect__progressive
+  - kc_feature__clause__imperative
+  - kc_feature__clause__polar_question
+  - kc_feature__polarity__negative
+  - kc_feature__tense__past
+  - kc_feature__tense__present
+  - kc_feature__voice__passive
+  - kc_interaction__aspect_perfect__and__polarity_negative
+  selected_support:
+    kc_feature__aspect__perfect:
+      cell_support: 5
+      item_support: 8
+    kc_feature__aspect__perfect_progressive:
+      cell_support: 3
+      item_support: 5
+    kc_feature__aspect__progressive:
+      cell_support: 3
+      item_support: 6
+    kc_feature__clause__imperative:
+      cell_support: 2
+      item_support: 3
+    kc_feature__clause__polar_question:
+      cell_support: 2
+      item_support: 4
+    kc_feature__polarity__negative:
+      cell_support: 6
+      item_support: 12
+    kc_feature__tense__past:
+      cell_support: 7
+      item_support: 11
+    kc_feature__tense__present:
+      cell_support: 9
+      item_support: 18
+    kc_feature__voice__passive:
+      cell_support: 3
+      item_support: 5
+    kc_interaction__aspect_perfect__and__polarity_negative:
+      cell_support: 2
+      item_support: 4
+  split:
+    mode: chronological
+    train_dataset_split: train
+    validation_dataset_split: validation
+    train_learners: 1000
+    validation_learners: 1000
+    train_events: 128000
+    validation_events: 32000
+    reserved_events_read: false
+  objective:
+    metric: log_loss
+    complexity: kc_count
+    complexity_penalty: 0.0005
+    minimum_improvement: 0.0
+  selector_model:
+    model: observable_logistic_kt
+    history_prior:
+      alpha: 1.0
+      beta: 1.0
+    features:
+    - learner_success_rate
+    - learner_log_attempts
+    - per_kc_active
+    - per_kc_prior_successes
+    - per_kc_prior_failures
+    regularization_c: 0.1
+    max_iterations: 300
+    random_seed: 20260827
+  final_validation_score: &id001
+    n: 32000
+    log_loss: 0.6482536328722053
+    brier_score: 0.2277987964528134
+    kc_count: 10
+    complexity_penalty: 0.005
+    objective: 0.6532536328722053
+  trace:
+  - step: 0
+    action: initial_factorized
+    candidate_ids:
+    - kc_feature__aspect__perfect
+    - kc_feature__aspect__perfect_progressive
+    - kc_feature__aspect__progressive
+    - kc_feature__clause__imperative
+    - kc_feature__clause__polar_question
+    - kc_feature__polarity__negative
+    - kc_feature__tense__past
+    - kc_feature__tense__present
+    - kc_feature__voice__passive
+    score:
+      n: 32000
+      log_loss: 0.6489469699297445
+      brier_score: 0.2281393198869053
+      kc_count: 9
+      complexity_penalty: 0.0045000000000000005
+      objective: 0.6534469699297445
+  - step: 1
+    action: forward_add
+    selected: kc_interaction__aspect_perfect__and__polarity_negative
+    objective_improvement: 0.00019333705753921127
+    score: *id001
+    candidate_scores:
+    - candidate_id: kc_interaction__aspect_perfect__and__polarity_negative
+      score: *id001
+      objective_improvement: 0.00019333705753921127
+    - candidate_id: kc_interaction__aspect_perfect__and__tense_past
+      score:
+        n: 32000
+        log_loss: 0.6489913181071177
+        brier_score: 0.22815566485870117
+        kc_count: 10
+        complexity_penalty: 0.005
+        objective: 0.6539913181071177
+      objective_improvement: -0.000544348177373255
+    - candidate_id: kc_interaction__aspect_perfect__and__tense_present
+      score:
+        n: 32000
+        log_loss: 0.6490043429007392
+        brier_score: 0.22816332275217666
+        kc_count: 10
+        complexity_penalty: 0.005
+        objective: 0.6540043429007392
+      objective_improvement: -0.000557372970994674
+    - candidate_id: kc_interaction__aspect_perfect_progressive__and__tense_past
+      score:
+        n: 32000
+        log_loss: 0.6488391193736611
+        brier_score: 0.22809392256487065
+        kc_count: 10
+        complexity_penalty: 0.005
+        objective: 0.6538391193736611
+      objective_improvement: -0.000392149443916634
+    - candidate_id: kc_interaction__polarity_negative__and__tense_past
+      score:
+        n: 32000
+        log_loss: 0.6490621228454029
+        brier_score: 0.22819384261913644
+        kc_count: 10
+        complexity_penalty: 0.005
+        objective: 0.6540621228454029
+      objective_improvement: -0.0006151529156583901
+    - candidate_id: kc_interaction__polarity_negative__and__tense_present
+      score:
+        n: 32000
+        log_loss: 0.6485253857813643
+        brier_score: 0.227943782026356
+        kc_count: 10
+        complexity_penalty: 0.005
+        objective: 0.6535253857813643
+      objective_improvement: -7.841585161982856e-05
+    - candidate_id: kc_interaction__tense_present__and__voice_passive
+      score:
+        n: 32000
+        log_loss: 0.6486476359095359
+        brier_score: 0.22800217648972304
+        kc_count: 10
+        complexity_penalty: 0.005
+        objective: 0.6536476359095359
+      objective_improvement: -0.00020066597979140344
+    - candidate_id: kc_operation__finite_tense_form
+      score:
+        n: 32000
+        log_loss: 0.6487438554684661
+        brier_score: 0.22805209526864634
+        kc_count: 10
+        complexity_penalty: 0.005
+        objective: 0.6537438554684661
+      objective_improvement: -0.00029688553872164736
+    - candidate_id: kc_operation__perfect_dependency
+      score:
+        n: 32000
+        log_loss: 0.6489834611541236
+        brier_score: 0.2281533690849132
+        kc_count: 10
+        complexity_penalty: 0.005
+        objective: 0.6539834611541236
+      objective_improvement: -0.0005364912243791542
+    - candidate_id: kc_operation__progressive_dependency
+      score:
+        n: 32000
+        log_loss: 0.64893946318651
+        brier_score: 0.2281353144340276
+        kc_count: 10
+        complexity_penalty: 0.005
+        objective: 0.65393946318651
+      objective_improvement: -0.0004924932567654805
+  - step: 2
+    action: forward_stop
+    minimum_improvement: 0.0
+    best_rejected: &id002
+      candidate_id: kc_interaction__polarity_negative__and__tense_present
+      score:
+        n: 32000
+        log_loss: 0.6479332619588921
+        brier_score: 0.22763634010978975
+        kc_count: 11
+        complexity_penalty: 0.0055
+        objective: 0.6534332619588921
+      objective_improvement: -0.00017962908668678335
+    candidate_scores:
+    - candidate_id: kc_interaction__aspect_perfect__and__tense_past
+      score:
+        n: 32000
+        log_loss: 0.6483267685969827
+        brier_score: 0.2278278487368057
+        kc_count: 11
+        complexity_penalty: 0.0055
+        objective: 0.6538267685969826
+      objective_improvement: -0.0005731357247773516
+    - candidate_id: kc_interaction__aspect_perfect__and__tense_present
+      score:
+        n: 32000
+        log_loss: 0.6483175829092725
+        brier_score: 0.2278223732262551
+        kc_count: 11
+        complexity_penalty: 0.0055
+        objective: 0.6538175829092725
+      objective_improvement: -0.0005639500370672179
+    - candidate_id: kc_interaction__aspect_perfect_progressive__and__tense_past
+      score:
+        n: 32000
+        log_loss: 0.648254433202208
+        brier_score: 0.2278002992807435
+        kc_count: 11
+        complexity_penalty: 0.0055
+        objective: 0.6537544332022079
+      objective_improvement: -0.0005008003300026598
+    - candidate_id: kc_interaction__polarity_negative__and__tense_past
+      score:
+        n: 32000
+        log_loss: 0.6484054085946471
+        brier_score: 0.22786119581102734
+        kc_count: 11
+        complexity_penalty: 0.0055
+        objective: 0.6539054085946471
+      objective_improvement: -0.0006517757224417942
+    - *id002
+    - candidate_id: kc_interaction__tense_present__and__voice_passive
+      score:
+        n: 32000
+        log_loss: 0.6481064246277822
+        brier_score: 0.2277378823572811
+        kc_count: 11
+        complexity_penalty: 0.0055
+        objective: 0.6536064246277822
+      objective_improvement: -0.0003527917555768978
+    - candidate_id: kc_operation__finite_tense_form
+      score:
+        n: 32000
+        log_loss: 0.6481237696407662
+        brier_score: 0.22774459217539325
+        kc_count: 11
+        complexity_penalty: 0.0055
+        objective: 0.6536237696407662
+      objective_improvement: -0.0003701367685609025
+    - candidate_id: kc_operation__perfect_dependency
+      score:
+        n: 32000
+        log_loss: 0.6482928605376337
+        brier_score: 0.22781607279799632
+        kc_count: 11
+        complexity_penalty: 0.0055
+        objective: 0.6537928605376336
+      objective_improvement: -0.0005392276654283545
+    - candidate_id: kc_operation__progressive_dependency
+      score:
+        n: 32000
+        log_loss: 0.6482401430457294
+        brier_score: 0.22779385690277673
+        kc_count: 11
+        complexity_penalty: 0.0055
+        objective: 0.6537401430457294
+      objective_improvement: -0.00048651017352407955
+  development_outcomes_read: true
+  reserved_or_holdout_outcomes_read: false
+  held_out_grammar_read: false

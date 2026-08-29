@@ -1,0 +1,31 @@
+{
+  "experiment_item_id": "generation_medium_cell_014_01",
+  "cell_id": "cell_014",
+  "candidate_index": 1,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_014_01",
+    "cell_id": "cell_014",
+    "format": "controlled_production",
+    "prompt": "Maya checked the kitchen before leaving. The cups were still dirty. Complete the sentence using the cue in brackets: She ___ before she left. (clean the cups)",
+    "target_answer": "She had not cleaned the cups before she left.",
+    "accepted_answers": [
+      "had not cleaned the cups",
+      "hadn't cleaned the cups"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 12.052604402000725,
+  "model_calls": 1,
+  "tokens_used": 3198,
+  "model_runtime_seconds": 12.051682762999917,
+  "model_call_failures": 0
+}

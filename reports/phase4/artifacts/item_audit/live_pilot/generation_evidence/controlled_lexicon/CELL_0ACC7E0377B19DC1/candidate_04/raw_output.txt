@@ -1,0 +1,11 @@
+{
+  "prompt": "Ana said she planned to cook for everyone. Complete the sentence using the cue (prepare / the meal): ____",
+  "target_answer": "Ana would prepare the meal.",
+  "accepted_answers": [
+    "Ana would prepare the meal."
+  ],
+  "operation_tags": [
+    "central_modal"
+  ],
+  "note": "Use “would” followed by the base form of the verb."
+}

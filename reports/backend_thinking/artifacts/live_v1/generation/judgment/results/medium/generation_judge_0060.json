@@ -1,0 +1,65 @@
+{
+  "blind_id": "generation_judge_0060",
+  "experiment_item_id": "generation_medium_cell_024_02",
+  "generation_effort": "medium",
+  "cell_id": "cell_024",
+  "candidate_index": 2,
+  "judge_effort": "medium",
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "generation_judge_0060",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "“Would walk” is active, positive, declarative, and uses the modal would."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "“Anna would walk to the store” is grammatical English."
+      },
+      "naturalness": {
+        "passed": false,
+        "note": "“If the rain stopped, Anna had a plan” is awkward and does not naturally set up the conditional result."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "The awkward lead-in may confuse learners during otherwise focused modal practice."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The context does not clearly establish that “would walk” is the uniquely intended completion."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary is common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed target form is not displayed in the prompt."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The conditional context directly supports the target use of “would” rather than adding unrelated grammar."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "task_runtime_seconds": 14.931954163999762,
+  "model_calls": 1,
+  "tokens_used": 2846,
+  "model_runtime_seconds": 14.931142190000173,
+  "model_call_failures": 0
+}

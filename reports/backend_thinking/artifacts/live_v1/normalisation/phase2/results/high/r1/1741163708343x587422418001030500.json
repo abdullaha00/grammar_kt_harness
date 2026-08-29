@@ -1,0 +1,85 @@
+{
+  "source_id": "1741163708343x587422418001030500",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163708343x587422418001030500",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "subject_wh_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "present",
+        "voice": "active"
+      },
+      {
+        "aspect": "none",
+        "clause": "subject_wh_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "past",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "The examples positively establish both licensed tense alternatives: present in “Who cares?” and “Who knows?”, and past in “What happened?”. The original branch is therefore refined into correlated present and past descendants. Polarity remains unresolved because it was not Phase-2 eligible."
+  },
+  "fixed_phase1_mapping": {
+    "source_id": "1741163708343x587422418001030500",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "subject_wh_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "retained_phase2_mapping": {
+    "source_id": "1741163708343x587422418001030500",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "subject_wh_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "present",
+        "voice": "active"
+      },
+      {
+        "aspect": "none",
+        "clause": "subject_wh_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": "past",
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 14.217039690000092,
+  "model_calls": 1,
+  "tokens_used": 9441,
+  "model_runtime_seconds": 14.215023963000931,
+  "model_call_failures": 0
+}

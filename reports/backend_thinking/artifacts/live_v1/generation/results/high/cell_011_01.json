@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_high_cell_011_01",
+  "cell_id": "cell_011",
+  "candidate_index": 1,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_011_01",
+    "cell_id": "cell_011",
+    "format": "controlled_production",
+    "prompt": "The rain started while Mia was outside. Complete the sentence using “walk home”: Mia _____.",
+    "target_answer": "Mia was walking home.",
+    "accepted_answers": [
+      "was walking home"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 7.970928771001127,
+  "model_calls": 1,
+  "tokens_used": 5014,
+  "model_runtime_seconds": 7.970104115998765,
+  "model_call_failures": 0
+}

@@ -1,0 +1,1 @@
+{"prompt":"Yesterday, Anna was thirsty. Complete the sentence using the cue “fill / the glass”: Anna _____.","target_answer":"Anna filled the glass.","accepted_answers":["filled the glass"]}

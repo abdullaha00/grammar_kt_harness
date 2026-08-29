@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a positive past-tense passive declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatically well formed."
+    },
+    "naturalness": {
+      "passed": false,
+      "note": "The unusually obscure vocabulary and mismatch between “abstruse” and “antidisestablishmentarian” make the pair unnatural."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "Lexical difficulty distracts substantially from the intended passive-voice practice."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The prompt does not determine the specific subject, verb, or adverb in the sole accepted answer."
+    },
+    "non_target_language_simplicity": {
+      "passed": false,
+      "note": "“Antidisestablishmentarian,” “tract,” “promulgated,” and “yesternight” are not common or transparent vocabulary."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed target sentence."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Producing the target structure does not require unrelated advanced grammar."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external factual or specialist knowledge is needed."
+    }
+  }
+}

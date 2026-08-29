@@ -1,0 +1,1 @@
+{"prompt":"You cannot remember whether Mia opened the window yesterday. Ask: ____?","target_answer":"Did Mia open the window yesterday?","accepted_answers":["Did Mia open the window yesterday"]}

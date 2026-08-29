@@ -1,0 +1,1 @@
+{"prompt":"When I entered the kitchen, Leo was still busy. He started two hours earlier and had not stopped. Complete the sentence using the verb in brackets: He ___ bread for two hours. (make)","target_answer":"He had been making bread for two hours.","accepted_answers":["had been making"]}

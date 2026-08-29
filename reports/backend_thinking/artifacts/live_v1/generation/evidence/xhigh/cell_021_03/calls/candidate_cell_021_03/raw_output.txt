@@ -1,0 +1,1 @@
+{"prompt":"The floor is wet, and a worker has a mop. Complete the sentence using “clean”: The floor ____.","target_answer":"The floor is being cleaned.","accepted_answers":["is being cleaned"]}

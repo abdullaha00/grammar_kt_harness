@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163712048x834192566226660200",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": "NA",
+      "aspect": "none",
+      "voice": "passive",
+      "polarity": null,
+      "clause": null,
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": [],
+  "note": "The target is a simple passive infinitive, which is non-finite and contains no central modal. The listed governing forms are periphrastic or lexical and do not constrain polarity or main-clause type."
+}

@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_medium_cell_020_01",
+  "cell_id": "cell_020",
+  "candidate_index": 1,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_020_01",
+    "cell_id": "cell_020",
+    "format": "controlled_production",
+    "prompt": "The bakery receives fresh bread every morning. Complete the sentence using the verb in brackets: Fresh bread ___ every morning. (deliver)",
+    "target_answer": "Fresh bread is delivered every morning.",
+    "accepted_answers": [
+      "is delivered"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 8.580751768000482,
+  "model_calls": 1,
+  "tokens_used": 5141,
+  "model_runtime_seconds": 8.579935151999962,
+  "model_call_failures": 0
+}

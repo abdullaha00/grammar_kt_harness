@@ -1,0 +1,26 @@
+{
+  "source_id": "1741163708330x678606711578176000",
+  "result": "complete",
+  "cells": [
+    {
+      "aspect": "none",
+      "clause": "declarative",
+      "modal": "none",
+      "polarity": "positive",
+      "tense": "present",
+      "voice": "active"
+    },
+    {
+      "aspect": "none",
+      "clause": "declarative",
+      "modal": "none",
+      "polarity": "positive",
+      "tense": "past",
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "The examples positively establish both licensed tense alternatives: present emphatic 'do' and past emphatic 'did'. The original branch is therefore refined into separate present and past OR cells; all other Phase-1 constraints remain unchanged."
+}

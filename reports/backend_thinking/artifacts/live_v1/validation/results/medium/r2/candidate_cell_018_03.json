@@ -1,0 +1,69 @@
+{
+  "item_id": "candidate_cell_018_03",
+  "audit_id": "validation_live_5a83c7d65cb4",
+  "cell_id": "cell_018",
+  "effort": "medium",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_5a83c7d65cb4",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The target uses past perfect progressive, active, positive, declarative form."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": false,
+        "note": "The prompt already supplies “At noon,”, while the target repeats it, yielding an unnatural duplicated phrase if inserted."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "The cue and timeline provide focused practice of the intended form."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "Past continuous (“Maya was painting the fence for four hours”) is also a plausible response in this context."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and situation are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed target form is not displayed in the prompt."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The task can be completed without unrelated advanced grammar."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is required."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": true,
+  "retained_failed_criteria": [],
+  "packaging_correction": true,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 13.247135557998263,
+  "model_calls": 1,
+  "tokens_used": 2750,
+  "model_runtime_seconds": 13.246324902000197,
+  "model_call_failures": 0
+}

@@ -1,0 +1,27 @@
+{
+  "source_id": "1741163715029x648850706024519700",
+  "stratum": "out_of_scope",
+  "effort": "medium",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163715029x648850706024519700",
+    "result": "out_of_scope",
+    "cells": [],
+    "phase2_eligible": [],
+    "note": "Question tags are outside the canonical schema’s single-main-clause clause-type inventory."
+  },
+  "retained_mapping": {
+    "source_id": "1741163715029x648850706024519700",
+    "result": "out_of_scope",
+    "cells": [],
+    "phase2_eligible": [],
+    "note": "Question tags are a declared unsupported construction."
+  },
+  "task_runtime_seconds": 5.734651691000181,
+  "model_calls": 1,
+  "tokens_used": 3823,
+  "model_runtime_seconds": 5.73396318399864,
+  "model_call_failures": 0
+}

@@ -1,0 +1,55 @@
+{
+  "source_id": "1741163715033x134646499658930300",
+  "stratum": "phase2_eligible",
+  "effort": "high",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163715033x134646499658930300",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": null,
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "The closed nonmodal BE + subject + -ing formula establishes an active progressive polar question but does not distinguish present from past or specify polarity."
+  },
+  "retained_mapping": {
+    "source_id": "1741163715033x134646499658930300",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": [
+          "present",
+          "past"
+        ],
+        "aspect": "progressive",
+        "voice": "active",
+        "polarity": null,
+        "clause": "polar_question",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "task_runtime_seconds": 64.58460325899978,
+  "model_calls": 1,
+  "tokens_used": 6141,
+  "model_runtime_seconds": 64.58234223199906,
+  "model_call_failures": 0
+}

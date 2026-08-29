@@ -1,0 +1,7 @@
+{
+  "prompt": "Look at Emma in the garden. Complete the sentence using “water”: Emma ____ the flowers.",
+  "target_answer": "Emma is watering the flowers.",
+  "accepted_answers": [
+    "is watering"
+  ]
+}

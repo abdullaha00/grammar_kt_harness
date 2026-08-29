@@ -1,0 +1,8 @@
+{
+  "prompt": "Emma usually walks to work, but today she is staying home. Complete the sentence using “walk”: Emma ____ to work today.",
+  "target_answer": "Emma isn't walking to work today.",
+  "accepted_answers": [
+    "isn't walking",
+    "is not walking"
+  ]
+}

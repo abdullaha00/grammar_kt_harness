@@ -1,0 +1,71 @@
+{
+  "item_id": "adversarial_extraneous_grammar_2",
+  "audit_id": "validation_live_9c0cbfc434bf",
+  "cell_id": "cell_019",
+  "effort": "xhigh",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_9c0cbfc434bf",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "Past simple positive passive declarative with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target is grammatical English."
+      },
+      "naturalness": {
+        "passed": false,
+        "note": "The prompt does not provide a garden-path relative or a recoverable event, so the answer is not coherently motivated."
+      },
+      "pedagogical_suitability": {
+        "passed": false,
+        "note": "It does not present enough material for focused passive-voice practice."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The prompt leaves the event and wording entirely unspecified; many answers could fit."
+      },
+      "non_target_language_simplicity": {
+        "passed": false,
+        "note": "“Garden-path relative” and “presupposed event” are technical, non-transparent terms."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The completed target form is not displayed in the prompt."
+      },
+      "no_extraneous_grammar": {
+        "passed": false,
+        "note": "Solving it requires interpreting an unspecified garden-path relative, beyond the intended passive form."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external factual or specialist knowledge is needed."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "no_extraneous_grammar"
+  ],
+  "packaging_correction": false,
+  "adversarial_safety": true,
+  "reference_source": "authored_adversarial_negative_control",
+  "task_runtime_seconds": 10.339572791999672,
+  "model_calls": 1,
+  "tokens_used": 2639,
+  "model_runtime_seconds": 10.338775829000951,
+  "model_call_failures": 0
+}

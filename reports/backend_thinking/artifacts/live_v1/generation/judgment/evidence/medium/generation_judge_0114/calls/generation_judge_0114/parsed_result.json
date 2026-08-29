@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "“was painted” is past simple passive, positive declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target sentence is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and answer form a coherent contrast between the door's current appearance and yesterday's action."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It gives focused practice of the past passive using a clear verb cue."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The past-time marker, singular subject, and required verb sufficiently determine “was painted” as the intended response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "“door,” “fresh,” “yesterday,” and “paint” are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt does not display the completed passive form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving it requires only forming the intended past passive."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "descriptor": {
+    "source_id": "1741163715033x199281404596736400",
+    "supercategory": "QUESTIONS",
+    "subcategory": "yes/no",
+    "guideword": "FORM: LEXICAL VERBS WITH 'DO'",
+    "can_do": "Can use auxiliary 'do' + subject + main verb to form 'yes/no' questions."
+  },
+  "phase1_mapping": {
+    "source_id": "1741163715033x199281404596736400",
+    "result": "partial",
+    "cells": [
+      {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": null,
+        "tense": [
+          "present",
+          "past"
+        ],
+        "voice": "active"
+      }
+    ],
+    "phase2_eligible": [
+      "tense"
+    ],
+    "note": "phase2 eligible: tense"
+  },
+  "examples": [
+    "My favourite song is 'Viva la vida'. Do you know it? (Spain; A2 WAYSTAGE; 2009; Spanish - European; Pass)",
+    "My bedroom will be blue!! I love this colour!! Do you like it? (Brazil; A2 WAYSTAGE; 2006; Portuguese; Pass)",
+    "Yesterday, I went to buy some new clothes at the new store that is opposite my house, do you remember it? (Mexico; A2 WAYSTAGE; 2008; Spanish - Latin American; Pass)",
+    "Did you see the football match last night? (India; A2 WAYSTAGE; 2007; Marathi; Pass)"
+  ]
+}

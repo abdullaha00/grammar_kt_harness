@@ -1,0 +1,6 @@
+{
+  "intervention": "replace every held-out feature value and source ID",
+  "before_sha256": "486614ecc9a1e3f8e044946923ffefe4e896ad6eecfd6d93df9227c9d80aafa3",
+  "after_sha256": "486614ecc9a1e3f8e044946923ffefe4e896ad6eecfd6d93df9227c9d80aafa3",
+  "inventory_unchanged": true
+}

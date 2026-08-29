@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_medium_cell_022_02",
+  "cell_id": "cell_022",
+  "candidate_index": 2,
+  "effort": "medium",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: accepted answers do not repeat the visible slot prefix",
+  "candidate": {
+    "item_id": "candidate_cell_022_02",
+    "cell_id": "cell_022",
+    "format": "controlled_production",
+    "prompt": "When we arrived at the room, the staff said the door was ready. Complete the sentence using “lock”: The door ____.",
+    "target_answer": "The door had been locked.",
+    "accepted_answers": [
+      "had been locked"
+    ],
+    "generation_metadata": {
+      "candidate_index": 2,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 5.633716653001102,
+  "model_calls": 1,
+  "tokens_used": 2975,
+  "model_runtime_seconds": 5.631946662999326,
+  "model_call_failures": 0
+}

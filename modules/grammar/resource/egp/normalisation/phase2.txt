@@ -1,16 +1,20 @@
 Re-evaluate one partial Phase-1 mapping using examples as additional evidence.
 
-Only dimensions named after `phase2 eligible:` may change. All other cell
-constraints and branch correlations remain fixed. Examples are illustrative,
-not exhaustive: refine an eligible dimension only when the descriptor licenses
-the broader space and the examples positively establish the refinement. Do not
-infer absent alternatives or incidental grammar.
+Only dimensions named in `phase2_eligible` may narrow. All other values remain
+exactly fixed. Preserve every Phase-1 OR branch and its within-cell feature
+correlations: each returned cell must narrow one original branch, and no
+original branch may disappear. Examples are illustrative, not exhaustive:
+refine an eligible dimension only when the descriptor licenses the broader
+space and the examples positively establish the refinement. Never broaden a
+constraint, recombine fields from different branches, or infer incidental
+grammar.
 
 If an example directly contradicts an exact Phase-1 scalar, return unresolved
-with no cells and explain the contradiction. Otherwise retain the eligibility
-note as provenance.
+with no cells and explain the contradiction. Copy `phase2_eligible` unchanged
+from Phase 1 as provenance, including when the result becomes complete.
 
-Return one JSON object with exactly: source_id, result, cells, note.
+Return one JSON object with exactly: source_id, result, cells,
+phase2_eligible, note.
 
 DESCRIPTOR EVIDENCE:
 {{descriptor}}

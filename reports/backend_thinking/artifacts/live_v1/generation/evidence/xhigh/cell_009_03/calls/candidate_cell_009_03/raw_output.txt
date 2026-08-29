@@ -1,0 +1,1 @@
+{"prompt":"The children are sitting quietly with their books closed. What are they doing? They ____ (read).","target_answer":"They are not reading.","accepted_answers":["are not reading","aren't reading"]}

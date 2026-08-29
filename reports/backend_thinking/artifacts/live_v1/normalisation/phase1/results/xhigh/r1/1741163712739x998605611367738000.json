@@ -1,0 +1,45 @@
+{
+  "source_id": "1741163712739x998605611367738000",
+  "stratum": "complete_noneligible",
+  "effort": "xhigh",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712739x998605611367738000",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": "Past simple negative declaratives use a nonmodal active form; the limited verb range is lexical and does not affect the canonical dimensions."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712739x998605611367738000",
+    "result": "complete",
+    "cells": [
+      {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": "declarative",
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [],
+    "note": null
+  },
+  "task_runtime_seconds": 8.177892072999384,
+  "model_calls": 1,
+  "tokens_used": 6009,
+  "model_runtime_seconds": 8.177059809000639,
+  "model_call_failures": 0
+}

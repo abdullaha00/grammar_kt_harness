@@ -1,0 +1,21 @@
+{
+  "source_id": "1741163715033x199281404596736400",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": [
+        "present",
+        "past"
+      ],
+      "aspect": "none",
+      "voice": "active",
+      "polarity": null,
+      "clause": "polar_question",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "DO-support with a main verb marks an active simple polar question; the descriptor does not distinguish present from past or specify polarity."
+}

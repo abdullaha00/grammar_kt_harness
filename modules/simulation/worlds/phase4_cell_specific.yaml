@@ -1,0 +1,35 @@
+world_id: phase4_cell_specific_v1
+claim: >-
+  Each exact canonical GrammarCell has an independent latent state. Development
+  acquisition therefore cannot transfer mastery to an unseen cell tuple.
+seed: 20260827
+learners: 240
+passes: 6
+item_order: counterbalanced_rotate_by_learner_and_pass
+
+latent_structure:
+  components:
+    - kind: exact_cells
+      scope: all_cells
+      initial_mastery_beta: [2.3, 3.7]
+      learning_rate: 0.06
+      weight: 1.0
+
+background_mastery_beta: [4.0, 2.0]
+background_learning_rate: 0.08
+difficulty:
+  base: 0.0
+  per_active_dimension: 0.0
+  adjustments:
+    - {activation: {voice: passive}, amount: 0.30}
+    - {activation: {aspect: [perfect_progressive]}, amount: 0.20}
+    - {activation: {clause: [polar_question, imperative]}, amount: 0.15}
+    - {activation: {modal: {not: none}}, amount: 0.25}
+response:
+  discrimination: 3.0
+  guess_floor: 0.08
+  slip_ceiling: 0.08
+temporal_split:
+  train_fraction: 0.60
+  validation_fraction: 0.20
+  test_fraction: 0.20

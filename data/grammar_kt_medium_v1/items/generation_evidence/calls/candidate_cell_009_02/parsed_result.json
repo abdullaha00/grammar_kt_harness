@@ -1,0 +1,8 @@
+{
+  "prompt": "The children are sitting quietly with their books closed. Complete the sentence using “read”: The children ___.",
+  "target_answer": "The children are not reading.",
+  "accepted_answers": [
+    "are not reading",
+    "aren't reading"
+  ]
+}

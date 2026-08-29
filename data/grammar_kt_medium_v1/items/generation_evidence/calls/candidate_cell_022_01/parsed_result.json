@@ -1,0 +1,7 @@
+{
+  "prompt": "When Maya arrived, the kitchen was clean. Complete the sentence using the cue “clean / kitchen”: The kitchen ____.",
+  "target_answer": "The kitchen had been cleaned.",
+  "accepted_answers": [
+    "had been cleaned"
+  ]
+}

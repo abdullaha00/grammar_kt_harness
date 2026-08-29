@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "“are being washed” is present progressive passive, positive declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target sentence is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and completed sentence are coherent and natural."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It directly practises the present progressive passive."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The cue, subject, time adverb, and required verb sufficiently determine “are being washed.”"
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "“Kitchen staff,” “plates,” and “wash” are common, transparent vocabulary."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives the base verb but does not display the completed passive progressive form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Only the target passive progressive transformation is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is required."
+    }
+  }
+}

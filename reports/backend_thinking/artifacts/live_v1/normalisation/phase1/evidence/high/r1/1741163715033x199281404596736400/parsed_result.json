@@ -1,0 +1,21 @@
+{
+  "source_id": "1741163715033x199281404596736400",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": [
+        "present",
+        "past"
+      ],
+      "aspect": "none",
+      "voice": "active",
+      "polarity": null,
+      "clause": "polar_question",
+      "modal": "none"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "The DO-support formula establishes an active, nonmodal simple polar question but does not distinguish present do/does from past did or specify polarity."
+}

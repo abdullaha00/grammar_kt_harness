@@ -1,48 +1,156 @@
-\section{Artifact Map}
+\section{Candidate and Operation Audit}
 
-Table~\ref{tab:artifact-map} maps the principal conceptual choices to their
-repository artifacts.  The map is intended to keep the paper narrative aligned
-with executable inputs as the experiment evolves.
+The active English background values are tense \texttt{NA}, aspect
+\texttt{none}, active voice, positive polarity, declarative clause, and modal
+\texttt{none}.  Present and past remain explicit KCs.  Making every observed
+value explicit expanded the Phase-2 raw space from 48 to 107 candidates and
+produced 53 duplicate excess candidates, so the retained backgrounds are a
+parsimonious declaration rather than a cognitive claim.
+
+Of ten English operation declarations, finite-tense form, perfect dependency,
+and progressive dependency are nonredundant and selection-eligible.  Negation,
+passive dependency, imperative, and operator inversion duplicate corresponding
+feature columns.  Central modal, subject-WH, and WH-fronting have zero
+development support.  Generator self-reported operation tags are not used.
+Candidate construction has no learner-event or holdout parameter; mutating all
+holdout features leaves the retained development inventory byte-identical.
+
+With one rank-1 development item per cell, the same 55 raw candidates yield 23
+eligible representatives and two eligible interactions.  With up to two items,
+they yield 28 and seven.  The five newly eligible pairs all meet the unchanged
+two-cell requirement but gain the required third item.  This is a structural
+sensitivity; outcomes were not read and selection was not rerun.
+
+\section{Selector Sensitivity and Latent Worlds}
+
+\begin{table*}[h]
+  \centering
+  \small
+  \begin{tabular}{@{}lrrrrr@{}}
+    \toprule
+    $\lambda$ & Null runs with additions & Null KC counts &
+      Interaction KC counts & Both planted recovered \\
+    \midrule
+    0 & 3/3 & 14, 14, 11 & 13, 15, 13 & 3/3 \\
+    .00025 & 2/3 & 9, 10, 10 & 11, 13, 12 & 3/3 \\
+    .0005 & 0/3 & 9, 9, 9 & 11, 12, 11 & 3/3 \\
+    .001 & 0/3 & 9, 9, 9 & 11, 11, 10 & 2/3 \\
+    .002 & 0/3 & 9, 9, 9 & 9, 10, 10 & 0/3 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Complexity-penalty sensitivity at 240 learners.  The null is the
+  factorized world; recovery is measured in the interaction-heavy world over
+  seeds 20260827--20260829.}
+  \label{tab:lambda-sensitivity}
+\end{table*}
+
+\begin{table*}[h]
+  \centering
+  \small
+  \begin{tabular}{@{}lrrrrr@{}}
+    \toprule
+    Latent world & Factorized & All supported & Automated & Oracle cell &
+      Auto.--fact. \\
+    \midrule
+    Factorized & .578311 & .578334 & .578311 & .603004 & .000000 \\
+    Interaction-heavy & .609353 & .607225 & \textbf{.607097} & .621903 & -.002256 \\
+    Cell-specific & .686715 & .686379 & .686715 & \textbf{.679439} & .000000 \\
+    Mixed & .641559 & \textbf{.641273} & .641575 & .652886 & +.000016 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Three-seed mean frozen-probe logistic log loss on the structural
+  robustness bank.  Bold marks the lowest value within a declared synthetic
+  world, not a human-validity ranking.}
+  \label{tab:world-results}
+\end{table*}
+
+At 240 learners, selected KC counts across the three seeds are 9/9/9 in the
+factorized world, 11/12/11 in the interaction-heavy world, 9/9/9 in the
+cell-specific world, and 9/9/10 in the mixed world.  On the curated final bank,
+five independent 1,000-learner mixed-world streams select the identical ten-KC
+inventory (all ten pairwise Jaccards equal 1).  In nested reference-seed samples,
+60, 240, 500, and 1,000 learners match that inventory; 120 learners substitute
+present$\wedge$passive for perfect$\wedge$negative (Jaccard .818).  No holdout
+or reserved test event is supplied to any selection run.
+
+On the reference interaction-heavy seed, automated minus factorized all-probe
+log loss is $-.002666$ with learner-bootstrap interval
+$[-.004244,-.001103]$; the compositional-only interval
+$[-.005286,.002518]$ includes zero.  This separates predictive recovery of a
+planted interaction from the unresolved transfer claim.
+
+\section{Item and Validation Audit}
+
+The eight-cell item audit made 89 generation attempts and 86 structurally valid
+objects.  Model-selected $N=1/3/5$ covered 6/8, 8/8, and 8/8 cells; controlled
+lexicon generation covered 5/8, 5/8, and 7/8.  Model-selected $N=3$ accepted
+18/24 candidates, while $N=5$ accepted 27/40 without further coverage.  On three
+matched cells, readable source evidence and cell-only prompting each accepted
+six candidates at $N=3$; that sample is too small for a source-evidence claim.
+
+The final bank's 44 prompts are all unique.  They contain 242 lexical types in
+795 lexical tokens (type--token ratio .304).  Twenty rank-2 items have median
+token-set distance .739 from their cell's first item.  These automatic
+surface statistics show nonidentity, not pedagogical diversity.
+
+Before curation, the exhaustive agent audit classified 31/45 selected items as
+having no material item-level concern, nine as usable but judgment-sensitive,
+and five as requiring deterministic packaging/reference correction.  Six
+corrected candidates were independently rejudged: two original accepts became
+rejects, one original reject became accepted, and three accepts remained
+accepted.  The raw records and superseded downstream artifacts are retained.
+This audit is qualitative agent evidence, not expert or learner validation.
+
+\section{RQ and Artifact Map}
 
 \begin{table}[H]
   \centering
   \footnotesize
-  \begin{tabularx}{\columnwidth}{@{}lX@{}}
+  \begin{tabularx}{\columnwidth}{@{}l>{\raggedright\arraybackslash}p{0.20\columnwidth}X@{}}
     \toprule
-    Component & Scientific artifacts and executor \\
+    RQ & Status & Evidence-supported answer \\
     \midrule
-    Source & sample IDs, metadata, annotation units, and digest;
-      \texttt{source.py} \\
-    Normalization & phase prompts, grammar domains, rulebook, JSON schema,
-      and backend configuration; \texttt{normalisation.py} and
-      \texttt{normalisation\_validation.py} \\
-    Canonical cells & fixed dimension order and record constraints;
-      \texttt{canonical.py} and \texttt{records.py} \\
-    Realization & lexical frames, rules, and held-out cell list;
-      \texttt{realisation.py} \\
-    KC projection & factorized, interaction, and full-cell policies;
-      \texttt{kc.py} \\
-    Items & transformation template and diagnostic criteria;
-      \texttt{items.py} and \texttt{item\_validation.py} \\
-    Q-matrix & frozen cell--KC projection and integrity rules;
-      \texttt{qmatrix.py} \\
-    Simulation & learner-profile and response parameters;
-      \texttt{simulation.py} \\
-    KT & empirical, BKT, and logistic settings; \texttt{kt.py} \\
+    RQ1 & Partial & 24 cells and 44 model-validated items are retained; source
+      completion is 31.7\%, and no human item study was performed. \\
+    RQ2 & Partial & The bank gives 55 raw/38 activation-class/28 eligible
+      candidates; automation freezes nine marginals plus one interaction. \\
+    RQ3 & Partial & Automation improves the retained stream overall, but its
+      compositional and novel-value intervals include zero. \\
+    RQ4 & Answered within controls & Recovery, penalty, support, KT, and four-world
+      audits show assumption sensitivity and no universal winner; the final
+      inventory is identical over five full-support seeds. \\
     \bottomrule
   \end{tabularx}
-  \caption{Conceptual components, replaceable scientific artifacts, and their
-  executors. Paths are relative to the artifact repository.}
-  \label{tab:artifact-map}
+  \caption{Paper-level research-question ledger.  ``Partial'' marks missing
+  human or cross-world evidence, not an unfinished software stage.}
+  \label{tab:rq-ledger}
 \end{table}
 
-\section{Evidence Retained for the Reported Runs}
-
-The archived run directories retain resolved configurations, clean source
-commit identifiers and digests, reuse boundaries, stage summaries, prompts,
-raw and parsed model responses, validation decisions, Q-matrices, simulated
-event tables, fitted-model predictions, and metric summaries.  The primary
-run and each policy variant use five declared simulation seeds.  Human
-evaluation is not part of the present evidence; adding it would require a
-predeclared sample, qualified annotators, instructions, adjudication,
-agreement measures, and uncertainty reporting.
+\begin{table}[H]
+  \centering
+  \footnotesize
+  \begin{tabularx}{\columnwidth}{@{}>{\raggedright\arraybackslash}p{0.24\columnwidth}X@{}}
+    \toprule
+    Component & Retained declaration, executor, and evidence \\
+    \midrule
+    Source \& normalisation & Source manifest, prompts, rulebook, schema;
+      \texttt{io.py}, \texttt{normalise.py}; retained mappings and transition
+      audit. \\
+    Canonical \& items & English dimensions, generation prompt/design,
+      validation criteria; \texttt{canonicalise.py}, \texttt{generate.py},
+      \texttt{validate\_items.py}; all calls, judgments, accepted pool, and
+      selected bank. \\
+    Fold \& simulation & Semantic fold, frozen-probe protocol, four world files;
+      \texttt{fold.py}, \texttt{simulate.py}; fixed events and private oracle. \\
+    KC method & \texttt{candidate\_design.yaml}, English operation declaration,
+      \texttt{selection.yaml}; \texttt{kc\_candidates.py},
+      \texttt{kc\_selection.py}; inventory, trace, policies, and Q-matrices. \\
+    KT \& evaluation & Observable KT protocol; \texttt{kt.py},
+      \texttt{evaluate.py}; predictions, regime metrics, and learner-paired
+      comparisons. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Compact artifact map.  Exact commands, model settings, seeds, hashes,
+  negative results, and output paths are recorded in the experiment ledger.}
+  \label{tab:artifact-map}
+\end{table}

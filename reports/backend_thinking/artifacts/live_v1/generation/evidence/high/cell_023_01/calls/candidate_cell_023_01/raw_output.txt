@@ -1,0 +1,1 @@
+{"prompt":"This café takes card payments only. Complete the sentence using “accept”: Cash ____ here.","target_answer":"Cash is not accepted here.","accepted_answers":["is not accepted","isn't accepted"]}

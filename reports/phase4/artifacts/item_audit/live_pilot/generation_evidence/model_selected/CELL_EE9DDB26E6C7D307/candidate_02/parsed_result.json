@@ -1,0 +1,14 @@
+{
+  "prompt": "The paint is still wet. Warn your brother: ____ (touch / the wet paint)",
+  "target_answer": "Don't touch the wet paint.",
+  "accepted_answers": [
+    "Don't touch the wet paint.",
+    "Do not touch the wet paint."
+  ],
+  "operation_tags": [
+    "do_support",
+    "negation",
+    "imperative"
+  ],
+  "note": "The response is a negative imperative warning."
+}

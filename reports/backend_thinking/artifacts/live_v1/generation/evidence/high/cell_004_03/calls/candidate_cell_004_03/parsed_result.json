@@ -1,0 +1,7 @@
+{
+  "prompt": "Mia usually walks to work. Yesterday, it rained, so she ___ instead. (take the bus)",
+  "target_answer": "She took the bus instead.",
+  "accepted_answers": [
+    "took the bus"
+  ]
+}

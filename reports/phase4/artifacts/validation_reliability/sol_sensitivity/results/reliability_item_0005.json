@@ -1,0 +1,52 @@
+{
+  "sample_order": 5,
+  "blind_item_id": "reliability_item_0005",
+  "candidate_id": "candidate_controlled_lexicon_CELL_EE9DDB26E6C7D307_04",
+  "condition": "controlled_lexicon",
+  "cell_id": "CELL_EE9DDB26E6C7D307",
+  "candidate_index": 4,
+  "original_accepted": true,
+  "original_failed_criteria": [],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target is an active negative imperative with no tense, aspect, or modal marking."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "“Don't open the door.” is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "Telling Omar not to open the door because the room is cold is natural and coherent."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The cue provides focused practice forming a negative imperative."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The instruction and lexical cue clearly determine the response, with contraction and full-form variants appropriately accepted."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common, transparent, and unambiguous."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies lexical cues but does not display the completed negative imperative."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is needed to produce the answer."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "The answer follows directly from the prompt and requires no external knowledge."
+    }
+  },
+  "accepted": true,
+  "runtime_seconds": 12.219676125998376
+}

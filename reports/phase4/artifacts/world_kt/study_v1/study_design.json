@@ -1,0 +1,96 @@
+{
+  "experiment_id": "P4-WORLD-KT-001",
+  "evidence_status": "scientific_run",
+  "date": "2026-08-27",
+  "rqs": [
+    "RQ5",
+    "RQ6",
+    "RQ7",
+    "RQ9",
+    "RQ19",
+    "RQ20"
+  ],
+  "exact_command": ".venv/bin/python scripts/run_phase4_world_audit.py",
+  "source": "experiments/post_training_v1/data/pilot_v1/opportunities.jsonl",
+  "source_sha256": "5635b69de038fa3d0532265c78695b8c7360d92a84df932791ab7446b3e9768e",
+  "legacy_fields_used": [
+    "canonical_cell_id",
+    "cell",
+    "measurement_opportunity_id"
+  ],
+  "legacy_fields_not_used": [
+    "canonical_split",
+    "post_training_split",
+    "expected_operations",
+    "source_descriptor_ids",
+    "structural_conditions",
+    "legacy learner evidence",
+    "legacy KCs"
+  ],
+  "scale": {
+    "cells": 24,
+    "fixed_structural_items": 42,
+    "development_cells": 18,
+    "development_items": 33,
+    "learners_per_world_seed": 240,
+    "worlds": 4,
+    "seeds": [
+      20260827,
+      20260828,
+      20260829
+    ]
+  },
+  "world_files": {
+    "modules/simulation/worlds/phase4_factorized.yaml": "571f0edaa1d68648d416a414d59ffc2b16661d4dce0060f72c89b9f0766fcedc",
+    "modules/simulation/worlds/phase4_interaction_heavy.yaml": "96b6034810530ead0952b43152313384a6023e55e45413991f0776945883292c",
+    "modules/simulation/worlds/phase4_cell_specific.yaml": "379967869ce0f0459511d1de4f265952a23fa13bfc602d03aba09aeff5c99c6d",
+    "modules/simulation/worlds/phase4_mixed.yaml": "9beddc1cdd782c0fa7a2efd8c718cdaa59b314744bed9ee9f7c22f90dbadae33"
+  },
+  "fold_design_file": "modules/simulation/folds/semantic.yaml",
+  "frozen_protocol_file": "modules/simulation/protocol.yaml",
+  "candidate_design_file": "modules/kcs/candidate_design.yaml",
+  "selection_design_file": "modules/kcs/selection.yaml",
+  "primary_kt_file": "modules/evaluation/kt/protocol.yaml",
+  "learner_model": "declared synthetic latent mastery world",
+  "kt_models": {
+    "empirical": {
+      "alpha": 1.0,
+      "beta": 1.0
+    },
+    "bkt": {
+      "initial_mastery": 0.35,
+      "learn": 0.12,
+      "guess": 0.18,
+      "slip": 0.1
+    },
+    "logistic": {
+      "implementation": "sklearn.linear_model.LogisticRegression",
+      "include_item_difficulty": false,
+      "include_kc_count": false,
+      "include_kc_indicators": true,
+      "standardize": true,
+      "regularization_c": 1.0,
+      "max_iterations": 300,
+      "random_seed": 20260827
+    }
+  },
+  "primary_logistic_excludes": [
+    "simulator_item_difficulty",
+    "kc_count"
+  ],
+  "controls": [
+    "mixed_history",
+    "oracle_difficulty_logistic",
+    "kc_count_logistic",
+    "regularization_C_0.1_1_10",
+    "BKT_selector",
+    "activation_duplicate",
+    "probe_outcome_and_order_mutation"
+  ],
+  "paired_bootstrap": {
+    "unit": "learner",
+    "repeats": 1000,
+    "seed": 20260827
+  },
+  "model_calls": null
+}

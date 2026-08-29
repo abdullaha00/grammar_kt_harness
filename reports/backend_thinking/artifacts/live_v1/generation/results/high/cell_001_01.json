@@ -1,0 +1,30 @@
+{
+  "experiment_item_id": "generation_high_cell_001_01",
+  "cell_id": "cell_001",
+  "candidate_index": 1,
+  "effort": "high",
+  "success": true,
+  "error": null,
+  "answer_span_passed": true,
+  "answer_span_note": "passed: no text immediately precedes the response slot",
+  "candidate": {
+    "item_id": "candidate_cell_001_01",
+    "cell_id": "cell_001",
+    "format": "controlled_production",
+    "prompt": "You want to know about Tom's daily routine. Complete the question using the words in brackets: [____] (Tom / walk / to school / every day)",
+    "target_answer": "Does Tom walk to school every day?",
+    "accepted_answers": [
+      "Does Tom walk to school every day?"
+    ],
+    "generation_metadata": {
+      "candidate_index": 1,
+      "candidate_count": 3,
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "task_runtime_seconds": 8.311852861999796,
+  "model_calls": 1,
+  "tokens_used": 3128,
+  "model_runtime_seconds": 8.311116082999433,
+  "model_call_failures": 0
+}

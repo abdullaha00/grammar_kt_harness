@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "It is a positive past simple passive declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": false,
+      "note": "The prior-before-arrival context more naturally calls for past perfect passive (“had been prepared”)."
+    },
+    "pedagogical_suitability": {
+      "passed": false,
+      "note": "The time relationship makes the intended past simple passive an awkward focus."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The context plausibly supports “The meal had been prepared by Ana,” which is not accepted."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and situation are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt gives only a base-form cue, not the completed passive form."
+    },
+    "no_extraneous_grammar": {
+      "passed": false,
+      "note": "Resolving the before-arrival timeline requires choosing between past simple and past perfect."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external or specialist knowledge is needed."
+    }
+  }
+}

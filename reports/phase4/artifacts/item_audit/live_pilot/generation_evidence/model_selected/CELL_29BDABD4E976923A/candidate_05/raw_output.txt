@@ -1,0 +1,12 @@
+{
+  "prompt": "Workers are painting the front door right now. Use the cue to describe the situation in one complete clause: (the front door / paint) ______",
+  "target_answer": "The front door is being painted.",
+  "accepted_answers": [
+    "The front door is being painted."
+  ],
+  "operation_tags": [
+    "progressive",
+    "be_passive"
+  ],
+  "note": "The context makes the action current and places the focus on the front door."
+}

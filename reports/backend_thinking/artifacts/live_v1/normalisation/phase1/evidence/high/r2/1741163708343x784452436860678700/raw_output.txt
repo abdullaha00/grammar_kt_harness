@@ -1,0 +1,16 @@
+{
+  "source_id": "1741163708343x784452436860678700",
+  "result": "partial",
+  "cells": [
+    {
+      "tense": null,
+      "aspect": null,
+      "voice": null,
+      "polarity": null,
+      "clause": null,
+      "modal": null
+    }
+  ],
+  "phase2_eligible": [],
+  "note": "The descriptor targets adverb placement in a generically interrogative clause but does not specify a canonical question subtype or constrain the other dimensions."
+}

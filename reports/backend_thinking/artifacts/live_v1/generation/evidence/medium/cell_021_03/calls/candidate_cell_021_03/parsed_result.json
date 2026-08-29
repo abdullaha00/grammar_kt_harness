@@ -1,0 +1,7 @@
+{
+  "prompt": "Workers are changing the color of the walls right now. Complete the sentence using “paint”: The walls ____.",
+  "target_answer": "The walls are being painted.",
+  "accepted_answers": [
+    "are being painted"
+  ]
+}

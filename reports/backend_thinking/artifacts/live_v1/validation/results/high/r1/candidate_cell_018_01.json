@@ -1,0 +1,71 @@
+{
+  "item_id": "candidate_cell_018_01",
+  "audit_id": "validation_live_ae319698b96f",
+  "cell_id": "cell_018",
+  "effort": "high",
+  "replicate": 1,
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "validation_live_ae319698b96f",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: no text immediately precedes the response slot"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "It uses past perfect progressive active positive declarative form with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": true,
+        "note": "The timeline and duration form a coherent prompt-answer pair."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "It provides focused practice of the past perfect progressive for duration."
+      },
+      "determinacy": {
+        "passed": false,
+        "note": "The context supports the target, but it does not explicitly require that tense; other natural completions such as past progressive are possible."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and situation are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt gives only the base-verb cue, not the completed target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "It can be solved with the target tense and a simple duration phrase."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "Only basic time calculation is needed; no external knowledge is required."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "retained_accepted": false,
+  "retained_failed_criteria": [
+    "determinacy"
+  ],
+  "packaging_correction": true,
+  "adversarial_safety": false,
+  "reference_source": "retained_medium_curation",
+  "task_runtime_seconds": 13.48819007900056,
+  "model_calls": 1,
+  "tokens_used": 2793,
+  "model_runtime_seconds": 13.487411021000298,
+  "model_call_failures": 0
+}

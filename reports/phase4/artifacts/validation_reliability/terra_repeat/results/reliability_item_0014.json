@@ -1,0 +1,54 @@
+{
+  "sample_order": 14,
+  "blind_item_id": "reliability_item_0014",
+  "candidate_id": "candidate_controlled_lexicon_CELL_0D017AFB2B3A3DB5_04",
+  "condition": "controlled_lexicon",
+  "cell_id": "CELL_0D017AFB2B3A3DB5",
+  "candidate_index": 4,
+  "original_accepted": false,
+  "original_failed_criteria": [
+    "determinacy"
+  ],
+  "validator_output_valid": true,
+  "validation_errors": [],
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "“Lina had been traveling” is past perfect progressive, active, positive, declarative, with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The context and answer are coherent, though “was still traveling” would be more direct."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The cue and short context are appropriate for focused past perfect progressive practice."
+    },
+    "determinacy": {
+      "passed": false,
+      "note": "The context also naturally supports forms such as “Lina was traveling” or “Lina was still traveling,” so it does not sufficiently determine the accepted past perfect progressive response."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and context are common and transparent."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt provides only the base-form cue and does not display the completed target form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Solving the item mainly requires selecting the intended tense-aspect form."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external factual or specialist knowledge is needed."
+    }
+  },
+  "accepted": false,
+  "runtime_seconds": 13.893143863999285
+}

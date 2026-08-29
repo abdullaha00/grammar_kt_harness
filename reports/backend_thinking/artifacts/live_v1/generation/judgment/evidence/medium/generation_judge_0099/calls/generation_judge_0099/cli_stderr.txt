@@ -1,0 +1,87 @@
+OpenAI Codex v0.150.1
+--------
+workdir: /home/abdullah/grammar_kt_harness/reports/backend_thinking/artifacts/live_v1/generation/judgment/evidence/medium/generation_judge_0099/calls/generation_judge_0099
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a046a2-f204-71b3-9ff6-c58842840004
+--------
+user
+Judge one generated exercise independently from the generator.
+
+Use the visible learner-facing prompt, target answer, accepted answers, intended
+GrammarCell, and the declared criteria. Do not rely on generation reasoning or
+generation metadata. Judge every criterion separately and give a short note.
+
+Return one JSON object with a `judgments` mapping. Every declared criterion must
+have exactly `passed` (true/false) and `note`.
+
+VISIBLE ITEM:
+{
+  "item_id": "generation_judge_0099",
+  "format": "controlled_production",
+  "prompt": "The bus came at nine, so Mia stayed home. Complete the sentence using the cue (walk to work): Mia ______.",
+  "target_answer": "Mia did not walk to work.",
+  "accepted_answers": [
+    "did not walk to work",
+    "didn't walk to work"
+  ]
+}
+
+INTENDED GRAMMAR CELL:
+{
+  "tense": "past",
+  "aspect": "none",
+  "voice": "active",
+  "polarity": "negative",
+  "clause": "declarative",
+  "modal": "none"
+}
+
+VALIDATION CRITERIA:
+{
+  "target_fidelity": {
+    "required": true,
+    "question": "Does the target answer express exactly the intended GrammarCell?"
+  },
+  "grammaticality": {
+    "required": true,
+    "question": "Is the target answer grammatical English?"
+  },
+  "naturalness": {
+    "required": true,
+    "question": "Is the prompt-answer pair natural and coherent?"
+  },
+  "pedagogical_suitability": {
+    "required": true,
+    "question": "Is the item suitable for focused grammar practice?"
+  },
+  "determinacy": {
+    "required": true,
+    "question": "Does the prompt sufficiently determine the accepted response set?"
+  },
+  "non_target_language_simplicity": {
+    "required": true,
+    "question": "Is the vocabulary and context sufficiently common, transparent, and lexically unambiguous that lexical knowledge is unlikely to determine the learner's response?"
+  },
+  "no_answer_leakage": {
+    "required": true,
+    "question": "Does the prompt avoid displaying the completed target form?"
+  },
+  "no_extraneous_grammar": {
+    "required": true,
+    "question": "Can the item be solved without unrelated advanced grammar?"
+  },
+  "no_world_knowledge": {
+    "required": true,
+    "question": "Can the item be answered without external factual or specialist knowledge?"
+  }
+}
+
+codex
+{"judgments":{"target_fidelity":{"passed":true,"note":"The target is past simple, active, negative, declarative, with no modal."},"grammaticality":{"passed":true,"note":"The target answer is grammatical English."},"naturalness":{"passed":false,"note":"The stated cause is incoherent: a bus coming at nine would not naturally lead Mia to stay home."},"pedagogical_suitability":{"passed":true,"note":"The cue supports focused practice of past-simple negation."},"determinacy":{"passed":true,"note":"Given that Mia stayed home and the cue, a negative past-simple response is sufficiently determined."},"non_target_language_simplicity":{"passed":true,"note":"The vocabulary and context are common and transparent."},"no_answer_leakage":{"passed":true,"note":"The prompt does not display the completed negative target form."},"no_extraneous_grammar":{"passed":true,"note":"The item can be answered using only basic past-simple negation."},"no_world_knowledge":{"passed":true,"note":"No external or specialist knowledge is required."}}}
+tokens used
+2,728

@@ -1,0 +1,1 @@
+{"prompt":"The guests arrived to find everything ready. The windows ___ before they came. (clean)","target_answer":"The windows had been cleaned before they came.","accepted_answers":["had been cleaned"]}

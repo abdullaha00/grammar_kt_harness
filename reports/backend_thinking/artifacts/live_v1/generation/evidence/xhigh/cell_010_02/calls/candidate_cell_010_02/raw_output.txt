@@ -1,0 +1,1 @@
+{"prompt":"The bus arrived on time, so Mia used it instead of walking. Complete the sentence with the past negative form of “walk”: Mia ____ to work.","target_answer":"Mia did not walk to work.","accepted_answers":["did not walk","didn't walk"]}

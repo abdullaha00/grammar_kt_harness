@@ -1,0 +1,48 @@
+{
+  "offline": true,
+  "controls": [
+    {
+      "case_id": "valid_narrowing",
+      "expected_pass": true,
+      "observed_pass": true,
+      "expectation_met": true,
+      "error": null
+    },
+    {
+      "case_id": "changed_exact_field",
+      "expected_pass": false,
+      "observed_pass": false,
+      "expectation_met": true,
+      "error": "Phase 2 produced a broadened, recombined, or otherwise invalid branch"
+    },
+    {
+      "case_id": "broadened_eligible_field",
+      "expected_pass": false,
+      "observed_pass": false,
+      "expectation_met": true,
+      "error": "Phase 2 produced a broadened, recombined, or otherwise invalid branch"
+    },
+    {
+      "case_id": "cross_branch_recombination",
+      "expected_pass": false,
+      "observed_pass": false,
+      "expectation_met": true,
+      "error": "Phase 2 produced a broadened, recombined, or otherwise invalid branch"
+    },
+    {
+      "case_id": "dropped_branch",
+      "expected_pass": false,
+      "observed_pass": false,
+      "expectation_met": true,
+      "error": "Phase 2 dropped Phase-1 branches: [1]"
+    },
+    {
+      "case_id": "eligibility_names_exact_dimension",
+      "expected_pass": false,
+      "observed_pass": false,
+      "expectation_met": true,
+      "error": "adversarial_control: phase2_eligible dimensions are not uncertain: ['tense']"
+    }
+  ],
+  "all_expectations_met": true
+}

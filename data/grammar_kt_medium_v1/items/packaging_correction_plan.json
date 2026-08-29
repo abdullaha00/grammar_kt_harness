@@ -1,0 +1,96 @@
+{
+  "protocol": "frozen_item_packaging_correction_v1",
+  "status": "preregistered_before_revalidation",
+  "scope": "six exact answer-key packaging corrections; prompts, GrammarCells, item IDs, and generation outputs are unchanged",
+  "frozen_date_utc": "2026-08-27",
+  "raw_candidates_sha256": "0317d2b0cf36ea24b5ff55775374e03034e233b41208d1ecebd83f658537d88a",
+  "raw_validation_sha256": "0d3aa8ef46df1ed49a50cc1c61fd53d4de2d67764b012f621f558b6a70b758a9",
+  "validation_model": "gpt-5.6-terra",
+  "reasoning_effort": "medium",
+  "validation_prompt_sha256": "9252f92c8d711d06ad10456f1ba7c83169d47d6b64720dbb13cce86f2a01e96b",
+  "validation_criteria_sha256": "da9ca74c3b2eb4b1835cb1d569830c8d1e4dc006a86a7829b0ddc47b041b9b85",
+  "corrections": [
+    {
+      "item_id": "candidate_cell_003_01",
+      "audit_disposition": "selected",
+      "changes": {
+        "target_answer": {
+          "before": "She walks the dog before breakfast.",
+          "after": "Every morning, she walks the dog before breakfast."
+        }
+      }
+    },
+    {
+      "item_id": "candidate_cell_005_01",
+      "audit_disposition": "selected",
+      "changes": {
+        "accepted_answers": {
+          "before": [
+            "Turn on the light."
+          ],
+          "after": [
+            "Turn on the light"
+          ]
+        }
+      }
+    },
+    {
+      "item_id": "candidate_cell_017_06",
+      "audit_disposition": "rejected",
+      "changes": {
+        "target_answer": {
+          "before": "she had not been sleeping well for several nights.",
+          "after": "Nina was tired because she had not been sleeping well for several nights."
+        }
+      }
+    },
+    {
+      "item_id": "candidate_cell_018_01",
+      "audit_disposition": "selected",
+      "changes": {
+        "accepted_answers": {
+          "before": [
+            "She had been painting the fence for four hours.",
+            "Maya had been painting the fence for four hours."
+          ],
+          "after": [
+            "She had been painting the fence for four hours",
+            "Maya had been painting the fence for four hours"
+          ]
+        }
+      }
+    },
+    {
+      "item_id": "candidate_cell_018_03",
+      "audit_disposition": "selected",
+      "changes": {
+        "target_answer": {
+          "before": "Maya had been painting the fence for four hours.",
+          "after": "At noon, Maya had been painting the fence for four hours."
+        },
+        "accepted_answers": {
+          "before": [
+            "Maya had been painting the fence for four hours."
+          ],
+          "after": [
+            "Maya had been painting the fence for four hours"
+          ]
+        }
+      }
+    },
+    {
+      "item_id": "candidate_cell_019_03",
+      "audit_disposition": "selected",
+      "changes": {
+        "accepted_answers": {
+          "before": [
+            "The fence was painted."
+          ],
+          "after": [
+            "The fence was painted"
+          ]
+        }
+      }
+    }
+  ]
+}

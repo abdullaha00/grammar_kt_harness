@@ -1,0 +1,8 @@
+{
+  "prompt": "The email is still in Nina's drafts. Complete the sentence using the verb “send”: Nina ___ the email yet.",
+  "target_answer": "Nina has not sent the email yet.",
+  "accepted_answers": [
+    "has not sent",
+    "hasn't sent"
+  ]
+}

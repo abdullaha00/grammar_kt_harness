@@ -1,0 +1,26 @@
+{
+  "source_id": "1741163708336x930002080700909000",
+  "result": "complete",
+  "cells": [
+    {
+      "aspect": "none",
+      "clause": "polar_question",
+      "modal": "none",
+      "polarity": "positive",
+      "tense": "present",
+      "voice": "active"
+    },
+    {
+      "aspect": "none",
+      "clause": "polar_question",
+      "modal": "none",
+      "polarity": "positive",
+      "tense": "past",
+      "voice": "active"
+    }
+  ],
+  "phase2_eligible": [
+    "tense"
+  ],
+  "note": "The examples positively establish both licensed tense alternatives: present with 'Do' and past with 'Did'. The original Phase-1 branch is therefore narrowed into two scalar descendant cells while all other constraints remain fixed."
+}

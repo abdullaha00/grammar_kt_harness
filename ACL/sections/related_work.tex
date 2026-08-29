@@ -10,15 +10,17 @@ uses NLP to quantitatively re-examine EGP level assignments
 is complementary: converting descriptor content into a bounded structural
 representation while preserving uncertainty and provenance.
 
-\paragraph{Exercise generation for language learning.}
+\paragraph{Exercise generation and documentation.}
 Adaptive question generation has conditioned generation on learner history and
 target difficulty \citep{srivastava-goodman-2021-question,
 cui-sachan-2023-adaptive}.  Grammar-focused systems generate multiple-choice or
 gap-filling exercises from passages or examples
 \citep{chan-etal-2022-agree,bitew-etal-2023-learning}.  These studies highlight
 both the cost of authoring and the need to evaluate correctness and answer
-uniqueness.  Our controlled transformations sacrifice open-ended diversity for
-an exact, replayable relation among a cell, its realization, and its KC labels.
+uniqueness.  We generate common lexical contexts from a fixed grammar cell,
+screen candidates independently, and freeze the resulting bank before KC
+construction.  Following data-statement principles, we make selection, scope,
+and limitations explicit \citep{bender-friedman-2018}.
 
 \paragraph{Domain models and knowledge tracing.}
 KCs describe acquired units inferred from performance on related tasks
@@ -27,9 +29,12 @@ state with learning, guess, and slip parameters
 \citep{corbett-anderson-1995}; factor models instead use logistic predictors and
 practice features \citep{pavlik-etal-2009}.  A Q-matrix supplies the assumed
 item--KC mapping, but expert matrices can be refined or learned from response
-data \citep{pardos-dadu-2018}.  \citet{picones-etal-2022} combine domain-model
-induction and student modelling in one pipeline.  In contrast, we derive the
-domain model from linguistic specifications before responses exist, then freeze
-it before simulation.  Synthetic KT data have supported controlled model tests
-\citep{piech-etal-2015,pagonis-etal-2024}; here they test software behavior, not
-the cognitive truth of the generating policy.
+data \citep{pardos-dadu-2018}.  Learning Factors Analysis explicitly compares
+and improves cognitive models using learner evidence \citep{cen-etal-2006}, and
+\citet{picones-etal-2022} combine domain-model induction with student modelling.
+Our hybrid boundary is different: linguistic structure defines an interpretable
+candidate space without outcomes; only development responses select within it;
+and the policy is then frozen.  Synthetic KT data support controlled model tests
+\citep{piech-etal-2015,pagonis-etal-2024}.  We use multiple declared worlds to
+test recovery and failure modes, not to assert the cognitive truth of any one
+world.

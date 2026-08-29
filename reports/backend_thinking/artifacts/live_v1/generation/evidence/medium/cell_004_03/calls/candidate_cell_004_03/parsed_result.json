@@ -1,0 +1,7 @@
+{
+  "prompt": "Yesterday, Ben needed some food. Complete the sentence using the cue (cook): Ben ____ dinner.",
+  "target_answer": "Ben cooked dinner.",
+  "accepted_answers": [
+    "cooked"
+  ]
+}

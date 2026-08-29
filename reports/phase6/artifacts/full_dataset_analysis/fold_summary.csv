@@ -1,0 +1,4 @@
+grammar_regime,cells,selected_items,minimum_items_per_cell,median_items_per_cell,maximum_items_per_cell,unique_feature_values,unseen_development_feature_values,unique_value_pairs,value_pairs_seen_in_development,value_pairs_unseen_in_development
+development,18,32,1,2.0,2,15,0,72,72,0
+compositional_holdout,5,10,2,2.0,2,10,0,37,36,1
+novel_feature_holdout,1,2,2,2.0,2,6,1,15,9,6

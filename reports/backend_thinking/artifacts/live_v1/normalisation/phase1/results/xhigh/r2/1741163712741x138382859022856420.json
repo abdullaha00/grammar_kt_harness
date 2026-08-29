@@ -1,0 +1,57 @@
+{
+  "source_id": "1741163712741x138382859022856420",
+  "stratum": "unresolved",
+  "effort": "xhigh",
+  "replicate": 2,
+  "success": true,
+  "error": null,
+  "mapping": {
+    "source_id": "1741163712741x138382859022856420",
+    "result": "partial",
+    "cells": [
+      {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": null,
+        "clause": "polar_question",
+        "modal": "none"
+      },
+      {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": null,
+        "clause": [
+          "subject_wh_question",
+          "non_subject_wh_question"
+        ],
+        "modal": "none"
+      },
+      {
+        "tense": "past",
+        "aspect": "none",
+        "voice": "active",
+        "polarity": "negative",
+        "clause": null,
+        "modal": "none"
+      }
+    ],
+    "phase2_eligible": [
+      "clause"
+    ],
+    "note": "Past simple fixes past tense, simple aspect, active voice, and no modal. Yes/no, generic WH, and negative questions are distinct asserted forms; generic WH leaves its subtype unresolved, while negative questions do not specify a question subtype. Tag questions are out of scope."
+  },
+  "retained_mapping": {
+    "source_id": "1741163712741x138382859022856420",
+    "result": "unresolved",
+    "cells": [],
+    "phase2_eligible": [],
+    "note": "Inseparable mixed supported and unsupported construction: question forms include out-of-scope question tags."
+  },
+  "task_runtime_seconds": 49.609284365998974,
+  "model_calls": 1,
+  "tokens_used": 7813,
+  "model_runtime_seconds": 49.608587381999314,
+  "model_call_failures": 0
+}

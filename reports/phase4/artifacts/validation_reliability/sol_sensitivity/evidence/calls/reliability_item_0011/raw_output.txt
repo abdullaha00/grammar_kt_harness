@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "The target is an active, negative, past-tense declarative with no modal."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "“Lena did not walk to work” is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The response coherently contrasts Lena’s usual routine with taking the bus yesterday."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "The item provides focused practice forming a simple-past negative with “did not.”"
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The context, required phrase, and sentence frame clearly determine the full and contracted accepted forms."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "The vocabulary and commuting context are common, clear, and lexically unambiguous."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies the lexical phrase but does not display the completed negative past form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "No unrelated advanced grammar is required to complete the item."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "All information needed to answer is explicitly provided in the prompt."
+    }
+  }
+}

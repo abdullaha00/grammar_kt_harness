@@ -1,0 +1,8 @@
+{
+  "prompt": "Ben usually walks to work, but today his leg hurts. Complete the sentence using “walk”: Ben ____ to work today.",
+  "target_answer": "Ben is not walking to work today.",
+  "accepted_answers": [
+    "is not walking",
+    "isn't walking"
+  ]
+}

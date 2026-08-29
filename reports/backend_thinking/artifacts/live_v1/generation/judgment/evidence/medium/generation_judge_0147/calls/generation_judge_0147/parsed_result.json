@@ -1,0 +1,40 @@
+{
+  "judgments": {
+    "target_fidelity": {
+      "passed": true,
+      "note": "Uses a past simple active positive polar question with do-support."
+    },
+    "grammaticality": {
+      "passed": true,
+      "note": "The target answer is grammatical English."
+    },
+    "naturalness": {
+      "passed": true,
+      "note": "The prompt and question form a natural, coherent exchange."
+    },
+    "pedagogical_suitability": {
+      "passed": true,
+      "note": "It provides focused practice of past simple question formation."
+    },
+    "determinacy": {
+      "passed": true,
+      "note": "The cue clearly determines the expected question, aside from terminal punctuation."
+    },
+    "non_target_language_simplicity": {
+      "passed": true,
+      "note": "All vocabulary and context are common and unambiguous."
+    },
+    "no_answer_leakage": {
+      "passed": true,
+      "note": "The prompt supplies only the cue, not the completed question form."
+    },
+    "no_extraneous_grammar": {
+      "passed": true,
+      "note": "Only basic past-simple question formation is needed."
+    },
+    "no_world_knowledge": {
+      "passed": true,
+      "note": "No external knowledge is required."
+    }
+  }
+}

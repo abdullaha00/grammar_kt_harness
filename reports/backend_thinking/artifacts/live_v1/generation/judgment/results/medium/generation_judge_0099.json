@@ -1,0 +1,65 @@
+{
+  "blind_id": "generation_judge_0099",
+  "experiment_item_id": "generation_medium_cell_010_02",
+  "generation_effort": "medium",
+  "cell_id": "cell_010",
+  "candidate_index": 2,
+  "judge_effort": "medium",
+  "success": true,
+  "error": null,
+  "accepted": false,
+  "judgment": {
+    "item_id": "generation_judge_0099",
+    "deterministic_checks": {
+      "answer_span_consistency": {
+        "passed": true,
+        "note": "passed: accepted answers do not repeat the visible slot prefix"
+      }
+    },
+    "judgments": {
+      "target_fidelity": {
+        "passed": true,
+        "note": "The target is past simple, active, negative, declarative, with no modal."
+      },
+      "grammaticality": {
+        "passed": true,
+        "note": "The target answer is grammatical English."
+      },
+      "naturalness": {
+        "passed": false,
+        "note": "The stated cause is incoherent: a bus coming at nine would not naturally lead Mia to stay home."
+      },
+      "pedagogical_suitability": {
+        "passed": true,
+        "note": "The cue supports focused practice of past-simple negation."
+      },
+      "determinacy": {
+        "passed": true,
+        "note": "Given that Mia stayed home and the cue, a negative past-simple response is sufficiently determined."
+      },
+      "non_target_language_simplicity": {
+        "passed": true,
+        "note": "The vocabulary and context are common and transparent."
+      },
+      "no_answer_leakage": {
+        "passed": true,
+        "note": "The prompt does not display the completed negative target form."
+      },
+      "no_extraneous_grammar": {
+        "passed": true,
+        "note": "The item can be answered using only basic past-simple negation."
+      },
+      "no_world_knowledge": {
+        "passed": true,
+        "note": "No external or specialist knowledge is required."
+      }
+    },
+    "accepted": false,
+    "rejection_stage": "independent_model_judgment"
+  },
+  "task_runtime_seconds": 12.497562696000386,
+  "model_calls": 1,
+  "tokens_used": 2728,
+  "model_runtime_seconds": 12.49676515399915,
+  "model_call_failures": 0
+}
