@@ -1585,6 +1585,39 @@ experiment:
   under `data/grammar_kt_full_v1/provenance/items/packaging_corrections/` and
   `runs/grammar_kt_full_v1_private/items/packaging_corrections/`.
 
+### Execution result (post-freeze)
+
+- **Exact command:**
+
+  ```bash
+  .venv/bin/python scripts/build_dataset.py --stage correct-items --workers 3 --max-attempts 2
+  ```
+- **Models/settings:** Independent validation `gpt-5.6-terra`/medium; three
+  workers; two maximum technical attempts. All three calls completed on their
+  first technical attempt; aggregate recorded call runtime was 34.37 seconds.
+- **Results:** One of three copied packages passed all criteria. Adding
+  `mustn't` repaired `gc_019f7fb10012b606`, raising bank coverage 72→73/75.
+  The negative and positive imperative copies again failed only determinacy.
+  For the negative imperative, the judge identified further valid polite and
+  referential commands (`Please don't touch the wall`, `Don't touch the paint`).
+  For the positive imperative, it identified polite variants before or after
+  the command. All other 24 criterion decisions across the three copied items
+  passed.
+- **Negative result:** A finite answer-list expansion does not repair open full-
+  sentence imperative production: after the exact validator-named equivalents
+  were appended, another independently valid set remained. This is evidence of
+  a task-format/response-space problem, not a missing finite package entry.
+- **Methodological consequence:** Freeze this result and do not append another
+  answer list. Curation remains blocked for the two imperative cells. Compare a
+  constrained grammar-production format against exclusion/nonmeasurement, then
+  preregister any final format intervention before new calls.
+- **Artifacts:**
+  `data/grammar_kt_full_v1/provenance/items/packaging_corrections/`; plan,
+  corrected-candidate, and judgment file SHA-256 values are respectively
+  `90a330d10fb70fdc975b07c7c2300cea5368c26c87cff9ecce5f9b1900ae4f31`,
+  `944e24e9814d3a931da4e714ac7c26874a7d33132593b455fef907cbe863287a`,
+  and `57c5bcc47d9f5219b042fc5925a945960127d36c52a9110ab5ad94da03d34e0d`.
+
 ## FULL-REGIME-Q-001-PREREG — semantic regimes and pre-simulation Q* gate
 
 - **Date frozen:** 2026-08-29, before final-item regime assignment and Q*
