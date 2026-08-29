@@ -72,6 +72,7 @@ def test_active_source_is_one_cohesive_file_per_stage() -> None:
         "generator_kcs.py",
         "measurement.py",
         "model_evidence.py",
+        "baseline_simulation.py",
     }
     actual = {path.name for path in (ROOT / "src/grammar_kt").glob("*.py")}
     assert actual == expected

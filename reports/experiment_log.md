@@ -1199,3 +1199,60 @@ experiment:
   generic generator/Q audit modules.
 - **Artifact paths:** `reports/research_state.md`,
   `reports/full_v1_protocols/`, and the new full-v1 construction code/config.
+
+## FULL-KC-001-PILOT — outcome-free generator-KC alternatives on the retained bank
+
+- **Date:** 2026-08-29
+- **Research question:** Which declared generator ontology is linguistically
+  reusable, parsimonious, and structurally measurable before any learner is
+  simulated?
+- **Motivation:** The revised programme requires `K*` to be fixed independently
+  of the response evidence it will generate. The retained medium bank provides
+  a cheap structural pilot but cannot select `K*` by predictive KT fit.
+- **Hypothesis:** The declared reusable-operation hybrid will retain full Q
+  column rank and useful pair contrasts with fewer latent dimensions than a
+  feature control; the perfect-progressive chain will add nested complexity,
+  while exact-cell KCs will provide no reuse.
+- **Methodology:** Projected the same 44 fixed medium-bank items mechanically
+  onto four inventories: the operation hybrid, hybrid plus the preregistered
+  perfect-progressive-chain interaction, observed non-reference feature values,
+  and one KC per exact cell. Compared support, rank, identical/near-identical Q
+  columns, pair contrasts, and reuse. The script copies only cell IDs/features
+  and item-to-cell references; it has no event, outcome, selector, or KT input.
+- **Manipulated variable:** Generator-KC construction principle.
+- **Held fixed:** The 24 retained canonical cells, 44 curated items, canonical
+  schema, generator support thresholds, and deterministic Q projection.
+- **Exact command:**
+
+  ```bash
+  .venv/bin/python scripts/investigate_generator_kcs.py \
+    --cells data/grammar_kt_medium_v1/canonical/cells.jsonl \
+    --items data/grammar_kt_medium_v1/items/selected_bank.jsonl \
+    --output reports/full_v1_artifacts/kc/generator_alternatives_medium.json
+  ```
+- **Models/settings:** None; deterministic structural analysis.
+- **Seeds:** None.
+- **Data:** Historical `grammar_kt_medium_v1` cells and fixed item bank.
+- **Results:** The hybrid used 9 KCs, had rank 9, 99 Q edges, 24 distinct
+  cell-activation rows, no identical or near-identical columns, and two-sided
+  contrasts for all 36 KC pairs. The feature control used 10 KCs and also had
+  full rank. Adding the chain produced 10 full-rank KCs, but its 5 items/3
+  cells were strictly nested within both component skills: each comparison had
+  8 component-only, 5 co-occurring, and 0 chain-only items. The 24 exact-cell
+  KCs had no cross-cell reuse and one fell below the two-item support gate.
+- **Uncertainty/failure analysis:** This is medium-bank pilot geometry, not the
+  full-inventory freeze and not evidence about human cognitive structure. Full
+  support can change after the linguistic census and item-bank construction.
+  Q full rank establishes linear distinguishability, not reliable statistical
+  recovery under finite noisy responses.
+- **Interpretation:** Retain the operation hybrid as the working `K*`. The
+  feature-only and exact-cell representations remain downstream controls. The
+  chain lacks a parsimony justification at this scale and remains excluded by
+  default; its full-bank structural result will be reported before the freeze.
+- **Methodological consequence:** Added an outcome-free, reproducible
+  generator-ontology pilot and an explicit K*/Q*-consuming baseline simulator.
+  No learner responses were generated and no ontology was selected by KT fit.
+- **Artifact paths:**
+  `reports/full_v1_artifacts/kc/generator_alternatives_medium.json`,
+  `scripts/investigate_generator_kcs.py`, and
+  `modules/kcs/generator/`.
