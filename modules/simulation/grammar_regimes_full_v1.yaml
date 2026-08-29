@@ -1,0 +1,27 @@
+design_id: grammar_regimes_structural_v1
+semantic_tie_seed: 20260829
+
+# Select one feature value whose entire cell cohort is absent from acquisition.
+# The search is schema-driven: this file names sizes and structural constraints,
+# not an English value chosen after seeing learner outcomes.
+unseen_value:
+  target_cells: 6
+  minimum_cells: 4
+  maximum_cells: 8
+  maximum_trigger_values: 1
+  maximum_unseen_value_only_kcs: 0
+  minimum_remaining_cells_per_kc: 1
+
+# Hold out exact tuples only when every constituent value and every lower-order
+# dimension pair remains represented by seen cells.
+unseen_combination:
+  target_cells: 15
+  minimum_cells: 12
+  beam_width: 512
+  minimum_seen_cells_per_value: 1
+  minimum_seen_cells_per_pair: 1
+  minimum_seen_cells_per_kc: 1
+  require_pairwise_seen: true
+
+items:
+  minimum_items_per_holdout_cell: 1
