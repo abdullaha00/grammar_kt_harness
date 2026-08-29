@@ -1385,3 +1385,107 @@ experiment:
 - **Artifact paths:** `data/grammar_kt_full_v1/kcs.jsonl`,
   `data/grammar_kt_full_v1/provenance/kcs/construction.json`, and
   `reports/full_v1_artifacts/kc/generator_alternatives_full_cells_preitem.json`.
+
+## FULL-ITEM-001 — full-inventory N=3 generation and independent validation
+
+- **Date:** 2026-08-29
+- **Research question:** RQ1: does the retained best-of-three item method
+  provide valid measurement opportunities for every full-v1 GrammarCell, and
+  which validation criterion limits coverage at this scale?
+- **Motivation:** The medium campaign suggested that most coverage gains occur
+  by the third independent generation, but that result did not cover the
+  75-cell full inventory or its expanded modal/aspect combinations.
+- **Hypothesis:** Three independent candidates per cell will recover most of
+  the inventory; any remaining gap will be dominated by response determinacy
+  rather than target fidelity or grammaticality.
+- **Methodology:** Froze all 225 generation calls before execution, made three
+  independent calls for each of the 75 fixed cells, applied deterministic slot
+  and answer checks, and sent every structurally valid candidate to the
+  independently configured validator under a blinded identifier. Original
+  candidate and judgment checkpoints are immutable; no repair, rescue,
+  learner outcome, Q-matrix, or downstream score entered this run.
+- **Manipulated variable:** Independent candidate draw (positions 1--3) within
+  a fixed GrammarCell.
+- **Held fixed:** Frozen cells and K* ordering gate, generation prompt,
+  rulebook, item format, lexical policy, validation prompt/criteria, models,
+  and reasoning efforts.
+- **Exact commands:**
+
+  ```bash
+  .venv/bin/python scripts/build_dataset.py --stage generate-items --workers 8 --max-attempts 2
+  .venv/bin/python scripts/build_dataset.py --stage validate-items --workers 8 --max-attempts 2
+  ```
+- **Models/settings:** Generation `gpt-5.6-sol`/medium; independent validation
+  `gpt-5.6-terra`/medium; eight workers; at most two technical attempts;
+  provider sampling seed unavailable.
+- **Seeds:** No provider seed available. Candidate positions and identifiers
+  were frozen deterministically.
+- **Data:** All 75 full-v1 GrammarCells; 225 candidates and 225 terminal
+  judgments at code revision `d7f067b411be167d408b80a6912c257320eda925`.
+- **Results:** Generation recovered 225/225 valid payloads on their first
+  technical attempt. Validation accepted 102/225 (45.33%), covering 57/75
+  cells: 25 cells have one accepted candidate, 19 have two, 13 have three, and
+  18 have none. Two candidates failed deterministic answer packaging; 223 were
+  model-judged. Fidelity, grammaticality, non-target simplicity, and
+  world-knowledge criteria passed 223/223. Determinacy passed only 106/223 and
+  failed 117; the next largest failure count was pedagogical suitability at
+  22. Naturalness, leakage, and extraneous-grammar failures numbered six, one,
+  and three. Aggregate recorded call runtimes were 2,855.50 generation seconds
+  and 3,451.42 validation seconds; three judge calls needed a second technical
+  attempt.
+- **Uncertainty/failure analysis:** The validator is automatic rather than
+  human gold, and its strict determinacy interpretation rejects plausible
+  exercises where the context leaves several modal or aspectual formulations
+  open. The zero-coverage cohort is concentrated in modal identity,
+  progressive/perfect-progressive aspect, and positive/negative imperatives.
+  Naming only a lexical predicate generally does not select those forms.
+- **Interpretation:** N=3 is insufficient for the complete full-v1 bank under
+  the unchanged learner-facing prompt. The result confirms a systematic
+  measurement-design failure, not a generator-KC failure: candidates almost
+  always realize the requested target, but their visible prompts often do not
+  make that target the uniquely licensed learner response.
+- **Methodological consequence:** Curation remains blocked. Preserve all
+  original output, run the separately frozen unchanged-prompt rescue below,
+  and evaluate an explicit-construction instruction only for any still-
+  uncovered determinacy-dominated cohort.
+- **Artifact paths:** `data/grammar_kt_full_v1/provenance/items/` and private
+  raw evidence under `runs/grammar_kt_full_v1_private/items/`.
+
+## FULL-ITEM-002-PREREG — conditional full-bank item rescue
+
+- **Date frozen:** 2026-08-29, before any rescue model call.
+- **Research question:** Is the 18-cell N=3 gap principally finite candidate
+  sampling, or does it require a small, explicit change to the learner-facing
+  measurement instruction?
+- **Hypothesis:** Two further unchanged-prompt independent draws will recover
+  only part of the gap because the dominant ambiguity is construction-specific.
+  For a residual determinacy-dominated cohort, allowing the instruction to name
+  the complete target construction will materially improve cell coverage
+  without reducing fidelity, grammaticality, or leakage quality.
+- **Frozen methodology:** First, generate and independently validate exactly
+  two additional unchanged-prompt candidates for all 18 cells with zero N=3
+  acceptance. Freeze the complete cohort before the first call and do not stop
+  a cell after an early acceptance. If gaps remain, freeze one second cohort
+  before its first call: cells must still have zero acceptance and their prior
+  evidence must show determinacy as the dominant recurring rejection reason.
+  For that cohort generate exactly two candidates with the historical
+  `determinacy_explicit_construction_prompt.txt`; this prompt may name the
+  construction but may not reveal an inflected response, auxiliary chain, or
+  accepted answer. Keep the validator and every other resource unchanged.
+- **Manipulated variables:** Fresh candidate draw; then, only in the separately
+  labelled second cohort, permission to name the target construction in the
+  learner-facing instruction.
+- **Held fixed:** GrammarCells, K*, original 225 rows, item format, rulebook,
+  lexical policy, model/effort, validator, criteria, technical retry policy,
+  and absence of learner/Q/KT evidence.
+- **Primary outcomes:** Newly covered cells and accepted candidates by campaign;
+  determinacy pass rate. Secondary safeguards are all other validation
+  criteria, exact duplicate prompts, and deterministic packaging failures.
+- **Decision rule:** Unchanged rescue and prompt-intervention results remain
+  separately reported regardless of direction. Full-bank curation may proceed
+  only if every cell has at least one independently accepted candidate. Any
+  remaining gap after the frozen intervention is retained as a negative result
+  and requires a new declared decision; it is never silently repaired.
+- **Planned artifacts:** Immutable campaign plans, generation calls/candidates,
+  validation calls/judgments, audits, and private raw evidence under the
+  full-v1 item provenance directories.
