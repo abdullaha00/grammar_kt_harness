@@ -1,0 +1,74 @@
+design_id: measurement_realism_controlled_instrument_v1
+status: FROZEN_CONTROLLED_INSTRUMENT_BEFORE_RESPONSES
+date_frozen: 2026-08-30
+scenario_kind: controlled_instrument_scaffold
+release_eligible: false
+protected_reference: data/grammar_kt_full_v1
+
+base_executable_config:
+  path: experiments/measurement_realism/design/scenario_config_v1.yaml
+  sha256: 0948b5dfadb87ebc3e47a05e5761b5e00b7469dcb684676a37db110d660c9eee
+
+selected_cells:
+  path: experiments/measurement_realism/design/format_selection/selected_cells.json
+  sha256: 8f8fa56e710982c92426f154482d062cffebfb32d29f19c7fe96f4208a4b479b
+
+controlled_instrument:
+  rows_path: experiments/measurement_realism/design/controlled_instrument_v1/instrument.jsonl
+  rows_sha256: 74b2bc4a425ea7a1b583b14aeb7cb6e034dfe4eb87a3cc8f91636cebac4079c5
+  semantic_sha256: 74b2bc4a425ea7a1b583b14aeb7cb6e034dfe4eb87a3cc8f91636cebac4079c5
+  schema_path: experiments/measurement_realism/design/controlled_instrument_v1/controlled_instrument.schema.json
+  schema_sha256: 364e648f63e6d9c358d1a1ae1426f3b5b34f011f82fedac7b2e5a1a0719c7977
+  manifest_path: experiments/measurement_realism/design/controlled_instrument_v1/manifest.json
+  manifest_sha256: ede6ad3694af6feea6df3bc5ef38fc8b36d6fc635e2ae7c8270d4e5592f19e02
+  builder_path: experiments/measurement_realism/design/controlled_instrument_v1/build_scaffold.py
+  builder_sha256: 5744d6b57257a476ffa82281b3209a762fbead3ed37578a5c3f51aaecbe18870
+  protocol_path: experiments/measurement_realism/design/controlled_instrument_v1/PROTOCOL.md
+  protocol_sha256: af7c0a9097fb32decdfc3e0f8f51944d8a9f6d948b8e3e4077f91e896558cd1f
+  execution_plan_path: experiments/measurement_realism/design/controlled_instrument_v1/EXECUTION_PLAN.md
+  execution_plan_sha256: bcdce4eb2b361e05fef763b435f6af42030c80e8d53e4436a304260b0c0457b7
+  exact_slots: 152
+  exact_families: 38
+  seen_slots: 144
+  probe_only_slots: 8
+  seen_cell_q_rank: 18
+
+failed_curated_bank_evidence:
+  status: CURATED_BANK_INCOMPLETE_NOT_FREEZABLE
+  decision_ledger_path: experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/curation/family_decisions.jsonl
+  decision_ledger_sha256: d0aea025d8b8d4c2d3a38976bd1175886021cc8df8407c10332db14629f2aa34
+  attempted_families: 38
+  accepted_families: 5
+  completed_candidate_rounds: 3
+  accepted_content_used: false
+  rejected_content_used: false
+
+claim_boundary:
+  learner_facing_item_bank: false
+  measurement_validity_claimed: false
+  platform_plausibility_claimed: false
+  format_labels_instantiated_as_tasks: false
+  response_space_defined: false
+  permitted_claim: controlled_structural_sensitivity_only
+  prohibited_claims:
+    - validated_item_bank
+    - platform_plausible_dataset
+    - realistic_learner_opportunities
+    - release_dataset
+
+runner_gate:
+  explicit_cli_flag: --controlled-scenario
+  required_for: [plan, validate-plan, run, analyze, aggregate]
+  canonical_output_dir: experiments/measurement_realism/worlds/controlled_instrument_v1
+  production_curated_gate_retained: true
+  plan_status: PREREGISTERED_CONTROLLED_SCENARIO_BEFORE_RESPONSES
+  external_approval_required_before_run: true
+  external_approval_recorded_in_this_config: false
+
+adaptive_policy_boundary:
+  policy_design_map: frozen_oracle_aligned_instrument_kc_q
+  policy_may_read_declared_item_kc_map: true
+  policy_may_read_latent_learner_state: false
+  policy_may_read_planted_nuisance_effects: false
+  policy_may_read_future_outcomes: false
+  interpretation: controlled_favourable_policy_not_real_platform_claim

@@ -1,0 +1,17 @@
+{
+  "ambiguity_explanation": "",
+  "batch_id": "solver_r01_rep1_constrained_cloze_b02",
+  "instruction_understanding": "Complete Alex's offer question using shall and close.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02_g01_cloze",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": false,
+  "other_reasonable_responses": [],
+  "reasonable_unkeyed_responses": [],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02_g01_cloze_solver_r1",
+  "submitted_response": "Shall I close",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

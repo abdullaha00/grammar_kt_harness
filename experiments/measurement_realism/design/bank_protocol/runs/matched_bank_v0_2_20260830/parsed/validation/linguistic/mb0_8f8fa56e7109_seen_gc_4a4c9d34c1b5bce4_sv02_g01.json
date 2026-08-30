@@ -1,0 +1,164 @@
+{
+  "batch_id": "critic_r01_linguistic_b01",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g01",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "shared_target_proposition",
+      "evidence": "All items express the deduction that Maya took the umbrella earlier.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "target_construction_consistency",
+      "evidence": "Every target uses the same positive active must-perfect declarative construction.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "Completed target realizes active positive must-perfect construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "“Maya must have taken the umbrella” is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "The target makes a plausible deduction about an earlier event.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The missing umbrella and Maya’s departure support the inference.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "“must have taken” completes the template exactly as stated.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g01_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "The completed dialogue target is a positive active must-perfect declarative.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "The target sentence is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "It coherently states the intended deduction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The conversational setup naturally prompts a conclusion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "The accepted phrase produces the stated completed target.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g01_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "Option B realizes the declared must + perfect HAVE + participle construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "Option B is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "It appropriately expresses Leo’s deduction about the umbrella.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The rainy-morning situation makes the inference plausible.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "Accepted response “B” uniquely identifies the target option.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g01_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "The accepted target fully realizes active positive modal-perfect structure.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "The target sentence is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "The instruction explicitly reframes certainty as an evidence-based deduction about the earlier event.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The given evidence naturally supports the requested modal-perfect deduction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "The accepted full sentence exactly matches the completed target.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g01_xform"
+    }
+  ],
+  "overall_accept": true,
+  "role": "linguistic",
+  "summary": "All four items validly and consistently realize the target deduction."
+}

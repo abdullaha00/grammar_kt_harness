@@ -1,0 +1,188 @@
+{
+  "batch_id": "critic_r02_platform_product_b02",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g02",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "plausible_format_crossing",
+      "evidence": "The formats consistently elicit or recognise the same practical ability question.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "non_repetitive_learner_experience",
+      "evidence": "The family repeatedly uses Maya carrying the same boxes.",
+      "severity": "minor_concern"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The bracketed words and question frame clearly signal the required question.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "Entering the opening phrase before “the boxes?” is coherent.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "Move, boxes, and carry are common concrete words.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "Asking whether someone can carry boxes is natural.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "Basic can-question word order is generally below B2 level.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The partially completed question supports unambiguous scoring.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g02_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The dialogue asks exactly whether Maya can help carry the boxes.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "A full question naturally completes Sam’s turn.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "The short dialogue uses everyday terms.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "The request for help follows naturally from boxes needing moving.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The required question is a low-level modal pattern for B2.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The task is conventional and clearly constrained.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g02_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The prompt explicitly asks about ability and identifies the intended question.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "The four options work as a single-choice grammar item.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "No vocabulary beyond the scenario is needed.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "The question fits the situation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The errors and target are elementary modal-question forms.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The MCQ is readily usable in a basic interface.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g02_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The source statement and cue fully specify the yes-or-no question.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "A full-sentence response matches the rewrite instruction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "Required vocabulary is supplied in the source and cue.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "The question is appropriate when arranging help with boxes.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The transformation is too simple for a typical B2 item.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The answer form and punctuation expectation are clear.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g02_xform"
+    }
+  ],
+  "overall_accept": true,
+  "role": "platform_product",
+  "summary": "Clear and deployable, but the language target is notably easier than B2 and is repeated with minimal variation."
+}

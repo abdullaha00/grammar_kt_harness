@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "grammar-kt-controlled-instrument-slot-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "slot_id",
+    "family_id",
+    "cell_id",
+    "replicate_index",
+    "format_label",
+    "grammar_regime",
+    "acquisition_updates",
+    "generator_kc_ids",
+    "q_row",
+    "instrument_status",
+    "release_eligible",
+    "placeholder_metadata",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {"const": "controlled_instrument_slot_v1"},
+    "slot_id": {"type": "string", "pattern": "^cis1_[a-f0-9]{12}_(seen|ucomb|uval)_gc_[a-f0-9]{16}_r(01|02)_(clz|dlg|mcq|xfm)$"},
+    "family_id": {"type": "string", "pattern": "^cis1_[a-f0-9]{12}_(seen|ucomb|uval)_gc_[a-f0-9]{16}_r(01|02)$"},
+    "cell_id": {"type": "string", "pattern": "^gc_[a-f0-9]{16}$"},
+    "replicate_index": {"type": "integer", "minimum": 1, "maximum": 2},
+    "format_label": {
+      "enum": [
+        "constrained_cloze",
+        "dialogue_completion",
+        "multiple_choice",
+        "sentence_transformation"
+      ]
+    },
+    "grammar_regime": {"enum": ["seen", "unseen_combination", "unseen_value"]},
+    "acquisition_updates": {"type": "boolean"},
+    "generator_kc_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^gkc_"}
+    },
+    "q_row": {
+      "type": "array",
+      "minItems": 18,
+      "maxItems": 18,
+      "items": {"enum": [0, 1]}
+    },
+    "instrument_status": {"const": "STRUCTURAL_PLACEHOLDER_ONLY"},
+    "release_eligible": {"const": false},
+    "placeholder_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "learner_prompt_present",
+        "target_answer_present",
+        "accepted_response_space_present",
+        "format_is_label_only",
+        "learner_facing_validity",
+        "platform_deployability",
+        "permitted_use"
+      ],
+      "properties": {
+        "learner_prompt_present": {"const": false},
+        "target_answer_present": {"const": false},
+        "accepted_response_space_present": {"const": false},
+        "format_is_label_only": {"const": true},
+        "learner_facing_validity": {"const": "NOT_ASSESSED"},
+        "platform_deployability": {"const": "NOT_ASSESSED"},
+        "permitted_use": {"const": "CONTROLLED_SIMULATOR_SCENARIO_ONLY"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "construction",
+        "selected_cells_sha256",
+        "candidate_item_content_used",
+        "learner_outcomes_used"
+      ],
+      "properties": {
+        "construction": {"const": "deterministic_from_selected_cell_and_crossing"},
+        "selected_cells_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "candidate_item_content_used": {"const": false},
+        "learner_outcomes_used": {"const": false}
+      }
+    }
+  }
+}

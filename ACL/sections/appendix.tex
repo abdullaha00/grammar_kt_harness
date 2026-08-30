@@ -33,10 +33,20 @@
       \nolinkurl{scripts/experiments/};
       \nolinkurl{experiments/full_v1/};
       \nolinkurl{reports/full_v1_artifacts/} \\
+    Measurement audits &
+      \nolinkurl{experiments/measurement_realism/audits/};
+      \nolinkurl{reports/platform_plausibility_audit.md};
+      \nolinkurl{reports/kc_methodology_audit.md} \\
+    Matched-bank evidence &
+      \nolinkurl{experiments/measurement_realism/design/bank_protocol/};
+      immutable generation, solver, critic, and failed-release-gate evidence \\
+    Controlled scenarios &
+      \nolinkurl{experiments/measurement_realism/worlds/controlled_instrument_v1/};
+      compact nuisance, error, and policy analyses with non-release manifests \\
     Release and claims &
       \nolinkurl{data/grammar_kt_full_v1/manifest.json};
       \nolinkurl{reports/final_release_manifest.json};
-      \nolinkurl{reports/experiment_log.md};
+      \nolinkurl{reports/measurement_extension_rq_ledger.md};
       \nolinkurl{ACL/evidence.md} \\
     \bottomrule
   \end{tabularx}
@@ -67,124 +77,66 @@ items.  Max-one preserves all 75 cells with 75 items, while max-three adds only
 13 items beyond max-two.  No selected prompts are exact duplicates.  Surface
 nonidentity is not itself evidence of pedagogical diversity.
 
-\begin{table*}[t]
+\makeatletter
+\setlength{\@dblfptop}{0pt}
+\makeatother
+\begin{table*}[!t]
   \centering
   \footnotesize
-  \begin{tabularx}{\textwidth}{@{}p{.18\textwidth}X@{}}
+  \begin{tabularx}{\textwidth}{@{}p{.20\textwidth}p{.34\textwidth}p{.38\textwidth}@{}}
     \toprule
-    Field & Frozen value and role \\
+    Audit case & Learner-visible task (abridged only where marked) & Why the
+      judgment concerns measurement \\
     \midrule
-    Item ID & \nolinkurl{candidate_gc_e7fef77abc10b5ba_01} \\
-    Stored prompt & \emph{Mia had a map, so she found the house. Without the
-      map, [\_\_\_\_]. (find)} \\
-    Stored answer key & \emph{she would not have found the house}; or
-      \emph{she wouldn't have found the house} \\
-    \grammarcell & \texttt{tense=NA, aspect=perfect, voice=active,
-      polarity=negative, clause=declarative, modal=would} \\
-    Active \kstar{} / \qstar{} row & perfect construction; central modal
-      WOULD; verbal negation / \texttt{100000000000001100} (K01--K18) \\
-    Example public event & simulated \texttt{learner\_000001}, sequence 2,
-      acquisition, \texttt{y=1} \\
-    Causal role in baseline & The item ID selects the \qstar{} row.  Active-KC
-      mastery and keyed randomness generate binary $y$; no prompt is rendered
-      and no textual response is collected or scored. \\
+    Shared clear pass & ``By lunchtime, the room \_\_\_\_. (paint)'' after
+      stating that workers finished before lunch. & The temporal contrast and
+      lexical cue select \emph{had been painted}; both audits accept the
+      perfect--passive--past cloze. \\
+    Shared answer-space failure & ``The workers were gone and the gate was
+      open.  The gate \_\_\_.'' (cue: open). & \emph{was open} and
+      \emph{had been open} are salient alternatives to keyed
+      \emph{had been opened}; failure cannot isolate the intended Q row. \\
+    KC-purity disagreement & ``Mia said, `I will carry one bag.'  Mia said
+      that she \_\_\_.'' & The one-KC row names \textsc{would}, but the task
+      also invokes reported-speech backshift and pronoun change; the strict and
+      role-based audits disagree. \\
+    Modal answer-space failure & ``The sky is dark, so take an umbrella.  It
+      \_\_\_ soon.'' (cue: rain). & \emph{may}, \emph{might}, \emph{will},
+      and \emph{is going to} are plausible, so the context cannot uniquely
+      measure the planted \textsc{may} KC. \\
     \bottomrule
   \end{tabularx}
-  \caption{One retained item and event, separating the auditable measurement
-  surface from response generation.  The stored answer is not evidence that
-  the simulated learner produced it verbatim.}
-  \label{tab:stored-item-example}
-\end{table*}
-
-\begin{table*}[t]
-  \centering
-  \footnotesize
-  \begin{tabular}{@{}lrrrr@{}}
-    \toprule
-    Generator condition & \multicolumn{2}{c}{Family-coarse $\Delta$ LL} &
-      \multicolumn{2}{c}{Split-2 $\Delta$ LL} \\
-    & Mean & Three-seed range & Mean & Three-seed range \\
-    \midrule
-    Baseline minimum, .10/.10 & .007924 & [.007568,.008306] &
-      .003241 & [.003001,.003575] \\
-    Noise .00/.00 & .016363 & [.016032,.016957] &
-      .005969 & [.005573,.006636] \\
-    Noise .20/.10 & .005259 & [.004938,.005684] &
-      .002222 & [.001971,.002457] \\
-    Noise .10/.20 & .005310 & [.005110,.005692] &
-      .002283 & [.002159,.002526] \\
-    Noise .20/.20 & .003082 & [.002904,.003436] &
-      .001506 & [.001372,.001604] \\
-    Product aggregation & .008237 & [.007820,.008762] &
-      .004188 & [.003755,.004678] \\
-    Arithmetic-mean aggregation & .004500 & [.004353,.004790] &
-      .001738 & [.001486,.002218] \\
-    Learner guess/slip heterogeneity & .008186 & [.007748,.008794] &
-      .003294 & [.003077,.003722] \\
-    Forgetting .002/gap & .003467 & [.003061,.003829] &
-      .001753 & [.001567,.001979] \\
-    Item difficulty logit SD .60 & .006346 & [.004579,.007505] &
-      .004138 & [-.000413,.009955] \\
-    Learner learning-rate heterogeneity & .007939 & [.007471,.008279] &
-      .003311 & [.002908,.003588] \\
-    Correlated initial mastery & .005836 & [.005357,.006275] &
-      .002380 & [.002034,.002737] \\
-    Correct-only updating & .011085 & [.010698,.011391] &
-      .005046 & [.004769,.005209] \\
-    \bottomrule
-  \end{tabular}
-  \caption{Simulator-sensitivity detail for the primary observable-logistic
-  model.  Values are
-  candidate minus \kstar{} on common terminal probes; positive favours
-  \kstar{}.  Seeds are 20260829--20260831 with 500 learners per world.  Ranges
-  describe these three structural seeds, not population intervals.}
-  \label{tab:robustness-detail}
+  \caption{Exact full-v1 audit cases (prompt text lightly abridged where
+  indicated).  The examples separate grammatical instantiation from answer
+  determinacy and KC measurement purity; model-critic judgments are not human
+  validation.}
+  \label{tab:item-audit-examples}
 \end{table*}
 
 \section{Research-Question Ledger}
 
-\begin{description}
-  \item[RQ1---supported in scope.] All 1,222 rows receive a disposition; the
-    complete subset yields 75 cells, 18 generator KCs, 113 items, audited
-    \qstar{}, and 283,000 replayable events.
-  \item[RQ2---supported for frozen controls.] \kstar{} gives the lowest
-    overall primary loss and item-state RMSE; coarsening, refinement, and every
-    tested 10\% Q corruption are harmful.  Local and robustness reversals
-    delimit the claim.
-  \item[RQ3---unique recovery rejected.] Observable selection recovers a
-    high-overlap seen-Q equivalence class, but cannot distinguish atomic from
-    compositional rules with identical seen activation.
-  \item[RQ4---recombination supported.] Reusable KCs transfer better than
-    exact cells to pairwise-seen/full-tuple-unseen grammar.  The six-cell
-    unseen-value comparison is narrow and cannot resolve RQ3 equivalence.
-\end{description}
+\paragraph{RQ1---auditability supported; platform validity not established.}
+Full-v1 is complete and replayable, but only 60/113 items are usable in both
+automated audits, and the matched-format successor freezes only 5/38 families.
+There is no new dataset release.
 
-Every answer is conditional on the declared synthetic world and automatically
-screened item bank.
+\paragraph{RQ2---supported for declared controls.}
+Coarsening, refinement, and Q corruption harm prediction in clean full-v1.  In
+the separate controlled scenario, planted format nuisance increases a false
+split's relative advantage and an observed format term repairs the strong
+control.  The correction is inconsistent under combined heterogeneity; the
+aligned item basis is only a positive control.
 
-\begin{table*}[t]
-  \centering
-  \footnotesize
-  \begin{tabular}{@{}p{.20\textwidth}p{.33\textwidth}p{.39\textwidth}@{}}
-    \toprule
-    Control & Frozen result & Interpretation boundary \\
-    \midrule
-    Nested learners & Raw prediction selects \kstar{} in 21/21 cohorts;
-      $.0005|K|$ selects union in 18/21. & Selection depends on the criterion;
-      no synthetic count is a human recruitment threshold. \\
-    Opportunities 6/12/24 & \kstar{} loss is .681757/.672104/.636837; its
-      gap to exact cells grows .007523/.014301/.032110. & Schedule lengths
-      differ; no diminishing-return threshold is inferred. \\
-    Max-one vs. max-two & 75 vs. 113 items and minimum support 1 vs. 2, but
-      both have 75 Q rows and rank 18. & Added contexts are replication, not
-      structural diversity in this simulator. \\
-    Two-KC anchors & A+B-only gives exact ties through $N=1000$; anchors
-      restore rank, but missing planted interaction costs only .000506 at
-      balanced $N=1000$. & Rank is necessary but insufficient for practically
-      unique predictive recovery. \\
-    \bottomrule
-  \end{tabular}
-  \caption{Bounded collection-design controls. All counts and effects are
-  conditional on the declared synthetic worlds.}
-  \label{tab:collection-design}
-\end{table*}
+\paragraph{RQ3---unique recovery rejected; information-design effects
+supported.}
+Equivalent seen-Q rules remain observationally indistinguishable, while
+anchors restore selected contrasts.  Linked structured errors improve planted
+failure localisation more than prediction; schedule changes alter model
+recovery; open dialogue improves naturalness while weakening determinacy and
+KC attribution.
+
+The original grammar-generalisation result remains supporting evidence:
+reusable KCs outperform exact-cell histories on pairwise-seen/full-tuple-unseen
+cells, within a narrow synthetic regime.  Every answer is conditional on the
+declared generator, instrument, assignment policy, and response-information
+world.

@@ -1,0 +1,17 @@
+{
+  "ambiguity_explanation": "",
+  "batch_id": "solver_r02_rep1_constrained_cloze_b01",
+  "instruction_understanding": "Complete the question using the stated words and context.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02_g02_cloze",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": false,
+  "other_reasonable_responses": [],
+  "reasonable_unkeyed_responses": [],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02_g02_cloze_solver_r1",
+  "submitted_response": "Has Maya booked",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

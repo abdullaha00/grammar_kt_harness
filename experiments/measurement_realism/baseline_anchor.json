@@ -1,0 +1,60 @@
+{
+  "verification_id": "measurement_realism_full_v1_anchor_20260830",
+  "status": "VERIFIED_BEFORE_EXTENSION",
+  "source_branch": "agent/full-dataset-research-program",
+  "source_commit": "f1a5eb29414dd03d173dbd9d0c4cb20762f2b259",
+  "research_branch": "agent/measurement-realism-methodology-program",
+  "dataset": "data/grammar_kt_full_v1",
+  "git_tree_object": "a3d77782cd1d4a5b297cc6d63eba2551d8d71ce4",
+  "git_diff_against_source_commit": "empty",
+  "core_sha256": {
+    "manifest.json": "322128843f8e7e6547a99efcecc6836fcd581f314fb49557a28d58fe79c69f4c",
+    "q_matrix.csv": "b6df582478f05976ceb200da6edc2b31fb305da64498e5ddb5f473a9459bf5bf",
+    "interactions.jsonl.gz": "9272ca86a647e3b13c9ce52b5381dde215f7ef448e4a19a41a22495fa99ef97f",
+    "oracle/learner_truth.jsonl.gz": "956ed53f370d5494d379072954c0821d4098f11e51e2629b33d8ee0b8b844601"
+  },
+  "replays": {
+    "q_star": {
+      "status": "verified frozen Q* artifacts",
+      "items": 113,
+      "kcs": 18,
+      "rank": 18,
+      "edges": 269
+    },
+    "learner_stream": {
+      "status": "FROZEN_BASELINE_COMPLETE",
+      "learners": 1000,
+      "interactions": 283000,
+      "observable_oracle_alignment": "exact"
+    },
+    "final_release_manifest": {
+      "status": "FINAL_RELEASE_MANIFEST_VERIFIED",
+      "artifacts": 164,
+      "reported_sha256": "abd2c274deea97fb4a690006431353eff7462b3a558a1c0fc7d2d1d20878a39a"
+    },
+    "scientific_contract_tests": {
+      "passed": 272,
+      "failed": 0
+    },
+    "rq2_kc_misspecification": {
+      "conditions": 15,
+      "projection_bundle_sha256": "4b793fc6a44a14b975db41f272abfcc0d9df7c3f8effa6b1109f0711c3885661",
+      "comparison": "byte-identical projection bundle; results differ only in preregistration plan-path hash metadata"
+    },
+    "rq3_discovery": {
+      "status": "POST_SELECTION_TRUTH_EVALUATION",
+      "sha256": "52e4ff8cba3932010d54fa3af653d64553d3e042d901ab5ac5f9d308bf12f0cd",
+      "comparison": "byte-identical"
+    },
+    "rq4_generalisation": {
+      "plan_sha256": "0f7a2d423f3761f196ddb4c16dd76aa18a3a0eac2ad114c14aa27342f0813515",
+      "results_sha256": "a25f43833e620f40294c350259673dadfaaf3f38356339cd6b4cef42be4ec144",
+      "comparison": "byte-identical"
+    }
+  },
+  "boundary": {
+    "full_v1_mutated": false,
+    "new_measurement_outputs_written_inside_full_v1": false,
+    "user_owned_preexisting_worktree_changes_touched": false
+  }
+}

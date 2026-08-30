@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_sv02_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "The bridge was being inspected at noon.",
+  "cell_id": "gc_fcb801c76c95c7bf",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_sv02_g02_cloze",
+      "context": "The safety team started work in the morning and had not finished by noon.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "The bridge [[RESPONSE]] at noon. (inspect)",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using the verb in brackets.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "was being inspected"
+        ],
+        "completed_target": "The bridge was being inspected at noon.",
+        "correct_choice_id": null,
+        "target_response": "was being inspected"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_sv02_g02_dialog",
+      "context": "Two colleagues are discussing the safety team's work on the bridge.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Maya: Had the safety team finished its work by noon?",
+          "Leo: No, the inspection was still in progress."
+        ],
+        "incomplete_turn_template": "Engineer: The bridge [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the engineer's reply.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "was being inspected at noon."
+        ],
+        "completed_target": "The bridge was being inspected at noon.",
+        "correct_choice_id": null,
+        "target_response": "was being inspected at noon."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_sv02_g02_mcq",
+      "context": "At noon, the safety team was in the middle of its inspection of the bridge.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the past passive but omits the progressive construction.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses a progressive form but fails to construct the passive.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses present finite morphology instead of past finite morphology.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "The bridge was inspected at noon."
+          },
+          {
+            "id": "B",
+            "text": "The bridge was being inspected at noon."
+          },
+          {
+            "id": "C",
+            "text": "The bridge was inspecting at noon."
+          },
+          {
+            "id": "D",
+            "text": "The bridge is being inspected at noon."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly describes what was happening to the bridge at noon?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that best describes the situation.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "The bridge was being inspected at noon.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_sv02_g02_xform",
+      "context": "Focus on what was happening to the bridge.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "At noon, the safety team was in the middle of an inspection of the bridge.",
+        "stem": null,
+        "transformation_cue": "Use the verb \"inspect\" and begin with \"The bridge\"."
+      },
+      "instruction": "Rewrite the information as one sentence, following the cue.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "The bridge was being inspected at noon."
+        ],
+        "completed_target": "The bridge was being inspected at noon.",
+        "correct_choice_id": null,
+        "target_response": "The bridge was being inspected at noon."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Describe the ongoing inspection from the bridge's perspective.",
+    "main_verb_lemma": "inspect",
+    "object_head": "bridge",
+    "participants": [
+      "the bridge",
+      "the safety team"
+    ],
+    "situation_summary": "A safety team was carrying out an inspection of a bridge at noon.",
+    "time_anchor": "at noon"
+  },
+  "semantic_variant_index": 2
+}

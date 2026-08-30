@@ -1,0 +1,722 @@
+{
+  "coverage_pilot_12": {
+    "all_kcs_covered": true,
+    "cell_count": 12,
+    "column_normalised_condition_number_2": 1.7320508075688779,
+    "equal_activation_column_pairs": [
+      [
+        "gkc_aspect_progressive",
+        "gkc_be_passive"
+      ],
+      [
+        "gkc_aspect_progressive",
+        "gkc_finite_past"
+      ],
+      [
+        "gkc_be_passive",
+        "gkc_finite_past"
+      ],
+      [
+        "gkc_finite_present",
+        "gkc_non_subject_wh_question"
+      ]
+    ],
+    "exact_rank": 12,
+    "feature_value_counts": {
+      "aspect": {
+        "none": 8,
+        "perfect": 3,
+        "progressive": 1
+      },
+      "clause": {
+        "declarative": 7,
+        "imperative": 1,
+        "non_subject_wh_question": 1,
+        "polar_question": 3
+      },
+      "modal": {
+        "can": 1,
+        "could": 1,
+        "may": 1,
+        "might": 1,
+        "must": 1,
+        "none": 3,
+        "shall": 1,
+        "should": 1,
+        "will": 1,
+        "would": 1
+      },
+      "polarity": {
+        "negative": 2,
+        "positive": 10
+      },
+      "tense": {
+        "NA": 10,
+        "past": 1,
+        "present": 1
+      },
+      "voice": {
+        "active": 11,
+        "passive": 1
+      }
+    },
+    "kc_count": 18,
+    "pair_geometry": {
+      "counts": {
+        "crossed": 1,
+        "disjoint": 139,
+        "equal": 4,
+        "nested": 9
+      },
+      "examples": {
+        "crossed": [
+          [
+            "gkc_aspect_perfect",
+            "gkc_negation"
+          ]
+        ],
+        "disjoint": [
+          [
+            "gkc_aspect_perfect",
+            "gkc_aspect_progressive"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_be_passive"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_finite_past"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_finite_present"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_imperative"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_modal_can"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_modal_may"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_modal_might"
+          ]
+        ],
+        "equal": [
+          [
+            "gkc_aspect_progressive",
+            "gkc_be_passive"
+          ],
+          [
+            "gkc_aspect_progressive",
+            "gkc_finite_past"
+          ],
+          [
+            "gkc_be_passive",
+            "gkc_finite_past"
+          ],
+          [
+            "gkc_finite_present",
+            "gkc_non_subject_wh_question"
+          ]
+        ],
+        "nested": [
+          [
+            "gkc_aspect_perfect",
+            "gkc_modal_could"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_modal_must"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_modal_would"
+          ],
+          [
+            "gkc_finite_present",
+            "gkc_negation"
+          ],
+          [
+            "gkc_modal_can",
+            "gkc_polar_question"
+          ],
+          [
+            "gkc_modal_may",
+            "gkc_polar_question"
+          ],
+          [
+            "gkc_modal_shall",
+            "gkc_polar_question"
+          ],
+          [
+            "gkc_modal_would",
+            "gkc_negation"
+          ]
+        ]
+      }
+    },
+    "q_cardinality_counts": {
+      "1": 4,
+      "2": 5,
+      "3": 3
+    },
+    "q_isolating_cell_by_kc": {
+      "gkc_imperative": "gc_bb4f472f992ab76b",
+      "gkc_modal_might": "gc_90b9229122fa55d6",
+      "gkc_modal_should": "gc_809d40d141731b61",
+      "gkc_modal_will": "gc_16d9f6e33f0517ec"
+    },
+    "q_isolating_cell_count": 4,
+    "raw_condition_number_2": 2.175327747161075,
+    "representative_item_dispositions": {
+      "technically_valid_but_artificial": 1,
+      "usable_as_stored": 11
+    },
+    "representative_learner_overall": {
+      "concern": 1,
+      "pass": 11
+    },
+    "representative_platform_overall": {
+      "fail": 1,
+      "pass": 11
+    },
+    "selected_cell_support_by_kc": {
+      "gkc_aspect_perfect": 3,
+      "gkc_aspect_progressive": 1,
+      "gkc_be_passive": 1,
+      "gkc_finite_past": 1,
+      "gkc_finite_present": 1,
+      "gkc_imperative": 1,
+      "gkc_modal_can": 1,
+      "gkc_modal_could": 1,
+      "gkc_modal_may": 1,
+      "gkc_modal_might": 1,
+      "gkc_modal_must": 1,
+      "gkc_modal_shall": 1,
+      "gkc_modal_should": 1,
+      "gkc_modal_will": 1,
+      "gkc_modal_would": 1,
+      "gkc_negation": 2,
+      "gkc_non_subject_wh_question": 1,
+      "gkc_polar_question": 3
+    },
+    "source_support": {
+      "max": 12,
+      "min": 1,
+      "sum": 36
+    }
+  },
+  "decision": {
+    "full_cell_ids": [
+      "gc_edcc8d38860ff41d",
+      "gc_9b8833161ce61d83",
+      "gc_325e05b06bb38886",
+      "gc_90b9229122fa55d6",
+      "gc_4a4c9d34c1b5bce4",
+      "gc_f86ecd83135f0b52",
+      "gc_809d40d141731b61",
+      "gc_16d9f6e33f0517ec",
+      "gc_e7fef77abc10b5ba",
+      "gc_bb4f472f992ab76b",
+      "gc_4634bf1b005f7724",
+      "gc_4601bed02c004e37",
+      "gc_d15de8b5658bd6a5",
+      "gc_2d6eb4f93cba4c6b",
+      "gc_44ff4acdb263024b",
+      "gc_fcb801c76c95c7bf",
+      "gc_9d70af80c0843115",
+      "gc_08d90a35b669ed28"
+    ],
+    "full_reference_item_ids": [
+      "candidate_gc_edcc8d38860ff41d_02",
+      "unchanged_rescue_gc_9b8833161ce61d83_01",
+      "candidate_gc_325e05b06bb38886_01",
+      "candidate_gc_90b9229122fa55d6_01",
+      "unchanged_rescue_gc_4a4c9d34c1b5bce4_02",
+      "candidate_gc_f86ecd83135f0b52_02",
+      "candidate_gc_809d40d141731b61_02",
+      "unchanged_rescue_gc_16d9f6e33f0517ec_01",
+      "candidate_gc_e7fef77abc10b5ba_01",
+      "cue_bounded_imperative_gc_bb4f472f992ab76b_02",
+      "candidate_gc_4634bf1b005f7724_03",
+      "candidate_gc_4601bed02c004e37_01",
+      "candidate_gc_d15de8b5658bd6a5_01",
+      "candidate_gc_2d6eb4f93cba4c6b_03",
+      "candidate_gc_44ff4acdb263024b_01",
+      "candidate_gc_fcb801c76c95c7bf_03",
+      "candidate_gc_9d70af80c0843115_01",
+      "candidate_gc_08d90a35b669ed28_02"
+    ],
+    "full_tier": "full_rank_18",
+    "held_out_probe_cell_ids": [
+      "gc_e730dbce7b036961",
+      "gc_483f3ac117f331a7"
+    ],
+    "held_out_probe_reference_item_ids": [
+      "candidate_gc_e730dbce7b036961_01",
+      "candidate_gc_483f3ac117f331a7_02"
+    ],
+    "pilot_cell_ids": [
+      "gc_edcc8d38860ff41d",
+      "gc_9b8833161ce61d83",
+      "gc_325e05b06bb38886",
+      "gc_90b9229122fa55d6",
+      "gc_4a4c9d34c1b5bce4",
+      "gc_f86ecd83135f0b52",
+      "gc_809d40d141731b61",
+      "gc_16d9f6e33f0517ec",
+      "gc_e7fef77abc10b5ba",
+      "gc_bb4f472f992ab76b",
+      "gc_4634bf1b005f7724",
+      "gc_fcb801c76c95c7bf"
+    ],
+    "pilot_reference_item_ids": [
+      "candidate_gc_edcc8d38860ff41d_02",
+      "unchanged_rescue_gc_9b8833161ce61d83_01",
+      "candidate_gc_325e05b06bb38886_01",
+      "candidate_gc_90b9229122fa55d6_01",
+      "unchanged_rescue_gc_4a4c9d34c1b5bce4_02",
+      "candidate_gc_f86ecd83135f0b52_02",
+      "candidate_gc_809d40d141731b61_02",
+      "unchanged_rescue_gc_16d9f6e33f0517ec_01",
+      "candidate_gc_e7fef77abc10b5ba_01",
+      "cue_bounded_imperative_gc_bb4f472f992ab76b_02",
+      "candidate_gc_4634bf1b005f7724_03",
+      "candidate_gc_fcb801c76c95c7bf_03"
+    ],
+    "pilot_tier": "coverage_pilot_12"
+  },
+  "full_rank_18": {
+    "all_kcs_covered": true,
+    "cell_count": 18,
+    "column_normalised_condition_number_2": 10.928558850700657,
+    "equal_activation_column_pairs": [],
+    "exact_rank": 18,
+    "feature_value_counts": {
+      "aspect": {
+        "none": 10,
+        "perfect": 6,
+        "progressive": 2
+      },
+      "clause": {
+        "declarative": 12,
+        "imperative": 1,
+        "non_subject_wh_question": 1,
+        "polar_question": 4
+      },
+      "modal": {
+        "can": 1,
+        "could": 1,
+        "may": 1,
+        "might": 1,
+        "must": 1,
+        "none": 9,
+        "shall": 1,
+        "should": 1,
+        "will": 1,
+        "would": 1
+      },
+      "polarity": {
+        "negative": 3,
+        "positive": 15
+      },
+      "tense": {
+        "NA": 10,
+        "past": 5,
+        "present": 3
+      },
+      "voice": {
+        "active": 16,
+        "passive": 2
+      }
+    },
+    "kc_count": 18,
+    "pair_geometry": {
+      "counts": {
+        "crossed": 10,
+        "disjoint": 132,
+        "nested": 11
+      },
+      "examples": {
+        "crossed": [
+          [
+            "gkc_aspect_perfect",
+            "gkc_be_passive"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_finite_past"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_finite_present"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_negation"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_polar_question"
+          ],
+          [
+            "gkc_aspect_progressive",
+            "gkc_be_passive"
+          ],
+          [
+            "gkc_be_passive",
+            "gkc_negation"
+          ],
+          [
+            "gkc_finite_past",
+            "gkc_negation"
+          ]
+        ],
+        "disjoint": [
+          [
+            "gkc_aspect_perfect",
+            "gkc_aspect_progressive"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_imperative"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_modal_can"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_modal_may"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_modal_might"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_modal_shall"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_modal_should"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_modal_will"
+          ]
+        ],
+        "nested": [
+          [
+            "gkc_aspect_perfect",
+            "gkc_modal_could"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_modal_must"
+          ],
+          [
+            "gkc_aspect_perfect",
+            "gkc_modal_would"
+          ],
+          [
+            "gkc_aspect_progressive",
+            "gkc_finite_past"
+          ],
+          [
+            "gkc_be_passive",
+            "gkc_finite_past"
+          ],
+          [
+            "gkc_finite_present",
+            "gkc_non_subject_wh_question"
+          ],
+          [
+            "gkc_modal_can",
+            "gkc_polar_question"
+          ],
+          [
+            "gkc_modal_may",
+            "gkc_polar_question"
+          ]
+        ]
+      }
+    },
+    "q_cardinality_counts": {
+      "1": 6,
+      "2": 7,
+      "3": 4,
+      "4": 1
+    },
+    "q_isolating_cell_by_kc": {
+      "gkc_finite_past": "gc_4601bed02c004e37",
+      "gkc_finite_present": "gc_d15de8b5658bd6a5",
+      "gkc_imperative": "gc_bb4f472f992ab76b",
+      "gkc_modal_might": "gc_90b9229122fa55d6",
+      "gkc_modal_should": "gc_809d40d141731b61",
+      "gkc_modal_will": "gc_16d9f6e33f0517ec"
+    },
+    "q_isolating_cell_count": 6,
+    "raw_condition_number_2": 14.755717650163742,
+    "representative_item_dispositions": {
+      "technically_valid_but_artificial": 1,
+      "usable_as_stored": 17
+    },
+    "representative_learner_overall": {
+      "concern": 1,
+      "pass": 17
+    },
+    "representative_platform_overall": {
+      "fail": 1,
+      "pass": 17
+    },
+    "selected_cell_support_by_kc": {
+      "gkc_aspect_perfect": 6,
+      "gkc_aspect_progressive": 2,
+      "gkc_be_passive": 2,
+      "gkc_finite_past": 5,
+      "gkc_finite_present": 3,
+      "gkc_imperative": 1,
+      "gkc_modal_can": 1,
+      "gkc_modal_could": 1,
+      "gkc_modal_may": 1,
+      "gkc_modal_might": 1,
+      "gkc_modal_must": 1,
+      "gkc_modal_shall": 1,
+      "gkc_modal_should": 1,
+      "gkc_modal_will": 1,
+      "gkc_modal_would": 1,
+      "gkc_negation": 3,
+      "gkc_non_subject_wh_question": 1,
+      "gkc_polar_question": 4
+    },
+    "source_support": {
+      "max": 26,
+      "min": 1,
+      "sum": 85
+    }
+  },
+  "minimality": {
+    "coverage_minimum_explanation": "Nine mutually exclusive modal values need nine cells; imperative and the only non-subject-WH activation need two additional cells; those eleven cells contain no finite-past activation, so at least one further seen cell is necessary. The selected past-progressive passive supplies past, progressive, and passive in that twelfth row.",
+    "full_basis_is_unimodular": true,
+    "full_exact_determinant": -1,
+    "full_rank_achieved_rows": 18,
+    "full_rank_is_minimum": true,
+    "full_rank_row_lower_bound": 18,
+    "pilot_achieves_minimum_coverage_size": true,
+    "seen_cell_all_kc_coverage_minimum_from_exact_set_cover": 12
+  },
+  "risks": [
+    "The imperative cell is scientifically mandatory but its best frozen reference item is annotation-like and must be redesigned, not reused.",
+    "The non-subject-WH KC has one canonical cell and remains nested with present and negation in linguistic support despite algebraic separation.",
+    "Nine modal KCs have only one selected cell each; matched formats can separate format nuisance within those cells but cannot establish broad cross-cell transfer for a modal KC.",
+    "Full rank and determinant magnitude one establish exact algebraic identifiability only, not psychological or measurement validity.",
+    "The 12-cell pilot has all-KC marginal coverage but equal activation columns and rank 12; it is for generation/validation feasibility only.",
+    "The two held-out cells are non-updating probes and are excluded from the 18-row rank, determinant, support, and acquisition claims.",
+    "The item audit is structured independent-agent evidence, not learner, teacher, product, or expert validation."
+  ],
+  "scientific_boundary": {
+    "allowed_inputs": [
+      "frozen GrammarCells and seen-regime labels",
+      "frozen K* and deterministic Q*",
+      "frozen learner-facing item records",
+      "explicit non-human, outcome-free item-audit judgments"
+    ],
+    "downstream_model_results_read": false,
+    "item_audit_status": "Codex rubric judgments; not human validation",
+    "learner_outcomes_read": false,
+    "learner_truth_read": false,
+    "response_probabilities_read": false
+  },
+  "selection_schema": "matched_format_selection_summary_v1",
+  "support_ledger": [
+    {
+      "bank_cell_support": 30,
+      "bank_item_support": 42,
+      "full_q_isolating_cell_id": null,
+      "full_selection_cell_support": 6,
+      "generator_kc_id": "gkc_aspect_perfect",
+      "pilot_q_isolating_cell_id": null,
+      "pilot_selection_cell_support": 3,
+      "rare_in_full_v1_fewer_than_6_items": false
+    },
+    {
+      "bank_cell_support": 17,
+      "bank_item_support": 29,
+      "full_q_isolating_cell_id": null,
+      "full_selection_cell_support": 2,
+      "generator_kc_id": "gkc_aspect_progressive",
+      "pilot_q_isolating_cell_id": null,
+      "pilot_selection_cell_support": 1,
+      "rare_in_full_v1_fewer_than_6_items": false
+    },
+    {
+      "bank_cell_support": 13,
+      "bank_item_support": 22,
+      "full_q_isolating_cell_id": null,
+      "full_selection_cell_support": 2,
+      "generator_kc_id": "gkc_be_passive",
+      "pilot_q_isolating_cell_id": null,
+      "pilot_selection_cell_support": 1,
+      "rare_in_full_v1_fewer_than_6_items": false
+    },
+    {
+      "bank_cell_support": 13,
+      "bank_item_support": 20,
+      "full_q_isolating_cell_id": "gc_4601bed02c004e37",
+      "full_selection_cell_support": 5,
+      "generator_kc_id": "gkc_finite_past",
+      "pilot_q_isolating_cell_id": null,
+      "pilot_selection_cell_support": 1,
+      "rare_in_full_v1_fewer_than_6_items": false
+    },
+    {
+      "bank_cell_support": 17,
+      "bank_item_support": 30,
+      "full_q_isolating_cell_id": "gc_d15de8b5658bd6a5",
+      "full_selection_cell_support": 3,
+      "generator_kc_id": "gkc_finite_present",
+      "pilot_q_isolating_cell_id": null,
+      "pilot_selection_cell_support": 1,
+      "rare_in_full_v1_fewer_than_6_items": false
+    },
+    {
+      "bank_cell_support": 2,
+      "bank_item_support": 4,
+      "full_q_isolating_cell_id": "gc_bb4f472f992ab76b",
+      "full_selection_cell_support": 1,
+      "generator_kc_id": "gkc_imperative",
+      "pilot_q_isolating_cell_id": "gc_bb4f472f992ab76b",
+      "pilot_selection_cell_support": 1,
+      "rare_in_full_v1_fewer_than_6_items": true
+    },
+    {
+      "bank_cell_support": 4,
+      "bank_item_support": 7,
+      "full_q_isolating_cell_id": null,
+      "full_selection_cell_support": 1,
+      "generator_kc_id": "gkc_modal_can",
+      "pilot_q_isolating_cell_id": null,
+      "pilot_selection_cell_support": 1,
+      "rare_in_full_v1_fewer_than_6_items": false
+    },
+    {
+      "bank_cell_support": 5,
+      "bank_item_support": 5,
+      "full_q_isolating_cell_id": null,
+      "full_selection_cell_support": 1,
+      "generator_kc_id": "gkc_modal_could",
+      "pilot_q_isolating_cell_id": null,
+      "pilot_selection_cell_support": 1,
+      "rare_in_full_v1_fewer_than_6_items": true
+    },
+    {
+      "bank_cell_support": 5,
+      "bank_item_support": 8,
+      "full_q_isolating_cell_id": null,
+      "full_selection_cell_support": 1,
+      "generator_kc_id": "gkc_modal_may",
+      "pilot_q_isolating_cell_id": null,
+      "pilot_selection_cell_support": 1,
+      "rare_in_full_v1_fewer_than_6_items": false
+    },
+    {
+      "bank_cell_support": 3,
+      "bank_item_support": 5,
+      "full_q_isolating_cell_id": "gc_90b9229122fa55d6",
+      "full_selection_cell_support": 1,
+      "generator_kc_id": "gkc_modal_might",
+      "pilot_q_isolating_cell_id": "gc_90b9229122fa55d6",
+      "pilot_selection_cell_support": 1,
+      "rare_in_full_v1_fewer_than_6_items": true
+    },
+    {
+      "bank_cell_support": 5,
+      "bank_item_support": 7,
+      "full_q_isolating_cell_id": null,
+      "full_selection_cell_support": 1,
+      "generator_kc_id": "gkc_modal_must",
+      "pilot_q_isolating_cell_id": null,
+      "pilot_selection_cell_support": 1,
+      "rare_in_full_v1_fewer_than_6_items": false
+    },
+    {
+      "bank_cell_support": 4,
+      "bank_item_support": 4,
+      "full_q_isolating_cell_id": null,
+      "full_selection_cell_support": 1,
+      "generator_kc_id": "gkc_modal_shall",
+      "pilot_q_isolating_cell_id": null,
+      "pilot_selection_cell_support": 1,
+      "rare_in_full_v1_fewer_than_6_items": true
+    },
+    {
+      "bank_cell_support": 4,
+      "bank_item_support": 4,
+      "full_q_isolating_cell_id": "gc_809d40d141731b61",
+      "full_selection_cell_support": 1,
+      "generator_kc_id": "gkc_modal_should",
+      "pilot_q_isolating_cell_id": "gc_809d40d141731b61",
+      "pilot_selection_cell_support": 1,
+      "rare_in_full_v1_fewer_than_6_items": true
+    },
+    {
+      "bank_cell_support": 9,
+      "bank_item_support": 14,
+      "full_q_isolating_cell_id": "gc_16d9f6e33f0517ec",
+      "full_selection_cell_support": 1,
+      "generator_kc_id": "gkc_modal_will",
+      "pilot_q_isolating_cell_id": "gc_16d9f6e33f0517ec",
+      "pilot_selection_cell_support": 1,
+      "rare_in_full_v1_fewer_than_6_items": false
+    },
+    {
+      "bank_cell_support": 4,
+      "bank_item_support": 5,
+      "full_q_isolating_cell_id": null,
+      "full_selection_cell_support": 1,
+      "generator_kc_id": "gkc_modal_would",
+      "pilot_q_isolating_cell_id": null,
+      "pilot_selection_cell_support": 1,
+      "rare_in_full_v1_fewer_than_6_items": true
+    },
+    {
+      "bank_cell_support": 32,
+      "bank_item_support": 49,
+      "full_q_isolating_cell_id": null,
+      "full_selection_cell_support": 3,
+      "generator_kc_id": "gkc_negation",
+      "pilot_q_isolating_cell_id": null,
+      "pilot_selection_cell_support": 2,
+      "rare_in_full_v1_fewer_than_6_items": false
+    },
+    {
+      "bank_cell_support": 1,
+      "bank_item_support": 2,
+      "full_q_isolating_cell_id": null,
+      "full_selection_cell_support": 1,
+      "generator_kc_id": "gkc_non_subject_wh_question",
+      "pilot_q_isolating_cell_id": null,
+      "pilot_selection_cell_support": 1,
+      "rare_in_full_v1_fewer_than_6_items": true
+    },
+    {
+      "bank_cell_support": 8,
+      "bank_item_support": 12,
+      "full_q_isolating_cell_id": null,
+      "full_selection_cell_support": 4,
+      "generator_kc_id": "gkc_polar_question",
+      "pilot_q_isolating_cell_id": null,
+      "pilot_selection_cell_support": 3,
+      "rare_in_full_v1_fewer_than_6_items": false
+    }
+  ]
+}

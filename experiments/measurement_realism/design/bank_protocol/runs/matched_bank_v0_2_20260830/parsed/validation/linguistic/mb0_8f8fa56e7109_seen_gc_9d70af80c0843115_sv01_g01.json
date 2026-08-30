@@ -1,0 +1,164 @@
+{
+  "batch_id": "critic_r01_linguistic_b02",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g01",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "shared_target_proposition",
+      "evidence": "All items state that the alarm was not tested before the drill began.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "target_construction_consistency",
+      "evidence": "Every target uses the same past perfect negative passive declarative construction.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "“had not been tested” is past perfect, negative, passive, and declarative.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "“The alarm had not been tested before the drill began” is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "The target coherently states that the prior test did not occur.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The safety-drill context naturally supports the target.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "Both “had not been tested” and contracted “hadn't been tested” yield the same target proposition and construction.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g01_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "The accepted completion realizes past perfect negative passive morphology.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "The completed reply is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "The preceding reference to the records and a missing check supports the target meaning.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The dialogue is natural for discussing a failed safety alarm.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "The full and contracted negative completions are linguistically equivalent.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g01_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "Keyed option B is a declarative past perfect negative passive.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "Option B is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "Option B states the intended absence of a prior alarm test.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The scenario and keyed statement are natural and coherent.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "Accepted response “B” uniquely identifies the intended target.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g01_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "Each accepted target is a past perfect negative passive declarative.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "Both the full and contracted accepted sentences are grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "The target preserves the source meaning that no one tested the alarm before the drill.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The transformation is natural in the stated safety-records context.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "The two accepted versions differ only in standard contraction and preserve the same proposition.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g01_xform"
+    }
+  ],
+  "overall_accept": true,
+  "role": "linguistic",
+  "summary": "The family consistently and accurately realizes the declared past-perfect negative passive cell."
+}

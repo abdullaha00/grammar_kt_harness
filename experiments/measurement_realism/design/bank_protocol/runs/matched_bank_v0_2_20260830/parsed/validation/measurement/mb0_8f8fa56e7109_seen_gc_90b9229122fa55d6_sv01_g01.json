@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r01_measurement_b02",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01_g01",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "All formats target MIGHT followed by base-form arrive in the same delivery-possibility proposition.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "Formats change production versus recognition only; none changes the declared modal/base-form operation.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "Each format concerns uncertain delivery arrival this afternoon.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The required response “might arrive” directly realizes MIGHT plus a base-form complement.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The fixed subject, object, and time adjunct add no substantial grammar beyond the declared modal construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Both supplied words must be combined in the modal-plus-base pattern; no keyed response avoids that operation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "Given the mandated words and single blank, “might arrive” is the determinate completion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "No solver-proposed unkeyed alternative was supplied, and the sole mandated completion is accepted.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Delivery and arrive are common, context-supported vocabulary; the response is only two words.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01_g01_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The uncertainty context and explicit cue require “might arrive,” evidencing modal selection and base complement formation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "Dialogue framing does not require a further grammatical transformation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "A correct completion must supply the declared modal construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "With both lexical elements prescribed, the blank has one normal completion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "No reasonable unkeyed response was proposed by either solver attempt.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The dialogue clearly establishes uncertainty and has low reading burden.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01_g01_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Option B tests the target pattern, but success can partly come from eliminating visibly malformed distractors rather than independently producing MIGHT plus a base form.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "All options keep the same simple declarative proposition; contrasts concern the modal complement.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The uniquely well-formed option permits testwise elimination, although no alternative keyed option expresses the target possibility correctly.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "Only B is grammatical and expresses the stated possibility.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Single-choice scoring appropriately accepts the sole correct option B.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The contextual vocabulary is transparent and does not materially drive the choice.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01_g01_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Rewriting with mandated “might” and “arrive” requires the declared modal-plus-base construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The task also requires reformulating the extraposed “It is possible that...” source into a subject-initial clause.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The cue and required initial subject make the target modal construction necessary.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The required start, modal, verb, and time expression yield the keyed sentence as the determinate response.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "No solver-proposed reasonable unkeyed alternative was reported.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Source-to-target restructuring adds transformation burden beyond simple modal selection.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01_g01_xform"
+    }
+  ],
+  "overall_accept": true,
+  "role": "measurement",
+  "summary": "Acceptable matched family. MCQ allows some elimination and transformation adds reformulation burden, but neither invalidates the declared MIGHT construct."
+}

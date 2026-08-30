@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "Maya can check the stated restriction with either a general or specific question.",
+  "batch_id": "solver_r02_rep1_dialogue_completion_b01",
+  "instruction_understanding": "Write Maya's question to check which file type the printer does not accept.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02_g02_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Does the printer accept TIFF files?"
+  ],
+  "reasonable_unkeyed_responses": [
+    "Does the printer accept TIFF files?"
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02_g02_dialog_solver_r1",
+  "submitted_response": "Which file type does the printer not accept?",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

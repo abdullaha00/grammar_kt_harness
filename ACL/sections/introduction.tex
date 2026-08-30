@@ -1,74 +1,77 @@
 \section{Introduction}
 
 Knowledge tracing (KT) estimates changing learner knowledge from chronological
-responses \citep{corbett-anderson-1995,abdelrahman-etal-2023}.  A KT dataset
-normally associates each item with one or more knowledge components (KCs),
-often through a binary Q-matrix.  That matrix embeds consequential scientific
-decisions: what counts as reusable knowledge, which interactions require
-separate state, and where learning should transfer.  It is not merely a data
-format.
+responses \citep{corbett-anderson-1995,abdelrahman-etal-2023}.  Its input is
+usually treated as a sequence of items, outcomes, and knowledge-component (KC)
+labels.  Yet the label matrix embeds a measurement theory: it declares what
+knowledge is reusable, what an item requires, and where practice should
+transfer.  A large response log cannot by itself reveal whether those
+declarations are valid.
 
-Those decisions are unusually difficult to audit in language learning.  The
-Teacher--Student Chatroom Corpus v2 (TSCCv2), for example, richly annotates 260
-written English lessons, but a conversational turn may be explanation,
-scaffolding, elicitation, correction, or several grammatical phenomena rather
-than one predefined assessment opportunity \citep{caines-etal-2022-teacher}.
-Vocabulary-oriented benchmarks do not isolate grammar KCs, while large
-tutoring logs may expose skill labels without a transparent linguistic
-decomposition.  Scale alone therefore does not supply the measurement boundary
-needed for grammar-KC research.
+This problem is acute in language learning.  In a dialogue corpus such as the
+Teacher--Student Chatroom Corpus v2, a turn may be explanation, elicitation,
+repair, clarification, or several grammatical phenomena rather than one
+scorable opportunity \citep{caines-etal-2022-teacher}.  Large platform logs
+record behaviour selected by a curriculum or adaptive policy, while open
+responses admit alternative correct forms and structured errors.  The true
+opportunity boundary, KC ontology, Q-matrix, and learner state remain latent.
+Consequently, real logs cannot directly answer whether a recovered ontology is
+the generating one, whether a KC split is absorbing item difficulty, or what
+would have happened under a counterfactual measurement policy.
 
-Grammar resources offer richer descriptions, but not ready-made KT objects.
-The English Grammar Profile (EGP) contains over 1,200 corpus-derived competence
-descriptions \citep{okeeffe-mark-2017}.  A descriptor can combine tense,
-aspect, voice, polarity, clause type, and modality, state bounded alternatives,
-or lie outside a declared scope.  Moreover, one surface form admits competing
-KC analyses: \emph{Why didn't he went?} could be one past-question KC, several
-reusable operations (finite-past selection, DO-support, negation, and
-non-subject-WH formation), or those operations plus an interaction.  Each
-choice produces different learner histories and Q-matrices; no decomposition
-is neutral.
+We study a perfect-information thought experiment.  What analyses would be
+possible if a language-learning dataset supplied true grammatical
+opportunities, generator KCs, Q, and learner mastery?  Because those quantities
+are prohibitively difficult or impossible to observe jointly in human data, we
+construct them synthetically.  The synthetic world provides experimental
+truth---not human cognitive truth.
 
-We introduce \system, a controlled environment in which the scientific
-objects and their causal order are explicit:
+Perfect annotation creates internal validity but does not solve measurement.
+If a learner cannot infer what response is requested, if several reasonable
+answers are marked wrong, or if a false KC split captures a task-format effect,
+then a mathematically convenient benchmark can still mislead.  We therefore
+separate five layers:
 \begin{equation}
-\grammarcell \ne \kstar \ne \khat .
+\begin{aligned}
+\grammarcell &\rightarrow (\kstar,\qstar)
+\rightarrow \text{instrument} \\
+\text{instrument} &\rightarrow \text{policy + learner}
+\rightarrow (\khat,\qhat) .
+\end{aligned}
 \end{equation}
-A \grammarcell{} is a canonical linguistic description of the construction
-instantiated by an item.  The generator inventory \kstar{} and its deterministic
-item mapping \qstar{} are declared synthetic truth: simulated learners have
-mastery over these KCs.  A discovered or deliberately misspecified inventory
-\khat{} with mapping \qhat{} is instead a downstream experimental hypothesis.
-None of these objects is asserted to be the cognitive truth of human grammar.
+A \grammarcell{} is a canonical construction; \kstar{} is a declared latent
+coordinate system possessed by synthetic learners; and \khat{} is a downstream
+hypothesis.  Thus \grammarcell{} $\ne$ \kstar{} $\ne$ \khat{}.
 
-Figure~\ref{fig:pipeline} shows the resulting two-layer programme.  Layer A
-processes the complete source inventory, freezes \kstar{} before learner
-outcomes exist, constructs and audits a fixed measurement bank and \qstar{},
-and only then simulates public responses plus separate private oracle truth.
-Layer B leaves that release immutable while changing or hiding the supplied KC
-representation.
+Our immutable reference, \texttt{grammar\_kt\_full\_v1}, processes every
+English Grammar Profile record under an explicit verbal-morphosyntax scope
+\citep{okeeffe-mark-2017}.  It freezes 75 cells, 18 generator factors, 113
+prompts, a rank-18 $113\times18$ \qstar{}, and 283,000 binary events before any
+downstream experiment.  It is a clean Q-driven laboratory environment: prompt
+text is auditable, but the response simulator consumes only Q and mastery.
 
-We ask four questions:
+We ask three questions:
 \begin{enumerate}
-  \item[RQ1] Can a grammar resource be transformed into an auditable fixed
-    language-learning dataset with explicit KCs, items, item--KC mappings, and
-    learner interactions?
-  \item[RQ2] How does KT behave when the supplied KC representation differs
-    from the generator ontology?
-  \item[RQ3] Can observable learner-response evidence recover an appropriate
-    KC representation when generator truth is hidden?
-  \item[RQ4] How do alternative representations generalise from seen grammar
-    to unseen combinations and unseen values?
+  \item[RQ1] What must be declared and audited to construct a grammar-learning
+    measurement environment with known latent structure, and where does a clean
+    Q-driven benchmark fall short?
+  \item[RQ2] How do KC/Q misspecification and item- or format-specific nuisance
+    affect prediction and recovery of the planted learner state?
+  \item[RQ3] Which item-bank contrasts, assignment histories, and response
+    information make latent structure and mastery distinguishable?
 \end{enumerate}
 
-Our contributions are: (i) a versioned benchmark constructed from every EGP
-record under an explicit English verbal-morphosyntax scope; (ii) an
-outcome-independent 18-KC generator ontology, 113-item bank, audited full-rank
-\qstar{}, and 283,000-event learner stream; (iii) controlled full-dataset
-studies of granularity, Q-matrix noise, discovery, linguistic generalisation,
-and mastery recovery; and (iv) compact simulator and collection-design
-controls that identify which assumptions carry the conclusions.  The result is
-an executable methodological test bed.  Automatic linguistic judgments and
-synthetic learner dynamics remain explicit limitations.
+Our contributions are fourfold.  First, we preserve a replayable clean-control
+benchmark whose oracle truth supports counterfactual representation and
+identifiability studies unavailable in real logs.  Second, we conduct a
+complete learner/platform audit, a pedagogical KC audit, and repeated
+outcome-blind KC induction; these expose substantive validity limits that Q
+rank alone cannot answer.  Third, we attempt a full-rank matched-format bank and
+retain its failure---only 5/38 complete families pass---rather than silently
+relaxing the release gate.  Fourth, we isolate planted format/item nuisance,
+learner heterogeneity, structured errors, assignment policies, and dialogue
+openness in separate controlled studies.  The result is a methodology for
+asking when KT is informative or misleading.  It does not claim a deployable
+platform dataset, human-like simulator, or uniquely correct grammar ontology.
 
 \input{figures/pipeline}

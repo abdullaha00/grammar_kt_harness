@@ -1,0 +1,160 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "Maya could have taken the earlier bus.",
+  "cell_id": "gc_9b8833161ce61d83",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g03_cloze",
+      "context": "Maya arrived late. An earlier bus was available, but she did not take it. (could / have / take)",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Maya [[RESPONSE]].",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using the words in brackets. Change the form of the verb if needed.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "could have taken the earlier bus",
+          "could've taken the earlier bus"
+        ],
+        "completed_target": "Maya could have taken the earlier bus.",
+        "correct_choice_id": null,
+        "target_response": "could have taken the earlier bus"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g03_dialog",
+      "context": "Maya arrived late, although an earlier bus had been available to her.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Nina: Why did Maya arrive late?",
+          "Leo: She waited for the last bus, but there was an earlier one.",
+          "Nina: So she had another option? Yes."
+        ],
+        "incomplete_turn_template": "Leo: Maya [[RESPONSE]].",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Leo's reply.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "could have taken the earlier bus",
+          "could've taken the earlier bus"
+        ],
+        "completed_target": "Maya could have taken the earlier bus.",
+        "correct_choice_id": null,
+        "target_response": "could have taken the earlier bus"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g03_mcq",
+      "context": "Maya arrived late. An earlier bus was available, but she did not take it.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the past form 'took' instead of the past participle required after perfect 'have'.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Selects 'can' instead of the required modal 'could' for the unrealized past opportunity.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses 'had' instead of the base form 'have' after the modal 'could'.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Maya could have took the earlier bus."
+          },
+          {
+            "id": "B",
+            "text": "Maya could have taken the earlier bus."
+          },
+          {
+            "id": "C",
+            "text": "Maya can have taken the earlier bus."
+          },
+          {
+            "id": "D",
+            "text": "Maya could had taken the earlier bus."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence says that taking the earlier bus was a possible past action for Maya?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that best expresses the meaning.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Maya could have taken the earlier bus.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g03_xform",
+      "context": "Maya arrived late because she waited for the last bus.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "An earlier bus was available to Maya. She did not take it.",
+        "stem": null,
+        "transformation_cue": "Use: Maya / could / have / take / the earlier bus"
+      },
+      "instruction": "Combine the statements into one sentence to describe Maya's possible past action.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Maya could have taken the earlier bus.",
+          "Maya could've taken the earlier bus."
+        ],
+        "completed_target": "Maya could have taken the earlier bus.",
+        "correct_choice_id": null,
+        "target_response": "Maya could have taken the earlier bus."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "State that Maya had an unrealized opportunity to travel on an earlier bus.",
+    "main_verb_lemma": "take",
+    "object_head": "bus",
+    "participants": [
+      "Maya"
+    ],
+    "situation_summary": "Maya arrived late even though an earlier bus was available to her.",
+    "time_anchor": "before Maya arrived late"
+  },
+  "semantic_variant_index": 1
+}

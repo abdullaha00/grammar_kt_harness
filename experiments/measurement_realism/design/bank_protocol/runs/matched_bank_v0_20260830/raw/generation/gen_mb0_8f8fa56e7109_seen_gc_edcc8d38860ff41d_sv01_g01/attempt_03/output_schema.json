@@ -1,0 +1,299 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "measurement-realism-generated-family-v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol_id",
+    "family_id",
+    "candidate_id",
+    "candidate_round",
+    "cell_id",
+    "grammar_regime",
+    "semantic_variant_index",
+    "intended_cefr",
+    "canonical_target_sentence",
+    "semantic_frame",
+    "items"
+  ],
+  "properties": {
+    "protocol_id": {
+      "const": "measurement_realism_matched_bank_v0"
+    },
+    "family_id": {
+      "const": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01"
+    },
+    "candidate_id": {
+      "const": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01"
+    },
+    "candidate_round": {
+      "const": 1
+    },
+    "cell_id": {
+      "const": "gc_edcc8d38860ff41d"
+    },
+    "grammar_regime": {
+      "const": "seen"
+    },
+    "semantic_variant_index": {
+      "const": 1
+    },
+    "intended_cefr": {
+      "const": "B2"
+    },
+    "canonical_target_sentence": {
+      "type": "string",
+      "minLength": 2
+    },
+    "semantic_frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "situation_summary",
+        "communicative_goal",
+        "participants",
+        "time_anchor",
+        "main_verb_lemma",
+        "object_head"
+      ],
+      "properties": {
+        "situation_summary": {
+          "type": "string",
+          "minLength": 2
+        },
+        "communicative_goal": {
+          "type": "string",
+          "minLength": 2
+        },
+        "participants": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "time_anchor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "main_verb_lemma": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z -]*$"
+        },
+        "object_head": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    }
+  },
+  "$defs": {
+    "option": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "text"
+      ],
+      "properties": {
+        "id": {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "distractor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "option_id",
+        "intended_operation_error"
+      ],
+      "properties": {
+        "option_id": {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ]
+        },
+        "intended_operation_error": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sentence_template",
+        "dialogue_turns",
+        "incomplete_turn_template",
+        "stem",
+        "options",
+        "source_sentence",
+        "transformation_cue"
+      ],
+      "properties": {
+        "sentence_template": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dialogue_turns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "incomplete_turn_template": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "stem": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/option"
+          }
+        },
+        "source_sentence": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "transformation_cue": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "scoring": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_response",
+        "accepted_responses",
+        "completed_target",
+        "correct_choice_id"
+      ],
+      "properties": {
+        "target_response": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accepted_responses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "completed_target": {
+          "type": "string",
+          "minLength": 2
+        },
+        "correct_choice_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D",
+            null
+          ]
+        }
+      }
+    },
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_item_id",
+        "format",
+        "response_mode",
+        "instruction",
+        "context",
+        "format_payload",
+        "scoring",
+        "distractor_annotations"
+      ],
+      "properties": {
+        "candidate_item_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "format": {
+          "enum": [
+            "constrained_cloze",
+            "dialogue_completion",
+            "multiple_choice",
+            "sentence_transformation"
+          ]
+        },
+        "response_mode": {
+          "enum": [
+            "short_text",
+            "single_choice",
+            "full_sentence"
+          ]
+        },
+        "instruction": {
+          "type": "string",
+          "minLength": 1
+        },
+        "context": {
+          "type": "string"
+        },
+        "format_payload": {
+          "$ref": "#/$defs/payload"
+        },
+        "scoring": {
+          "$ref": "#/$defs/scoring"
+        },
+        "distractor_annotations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/distractor"
+          }
+        }
+      }
+    }
+  }
+}

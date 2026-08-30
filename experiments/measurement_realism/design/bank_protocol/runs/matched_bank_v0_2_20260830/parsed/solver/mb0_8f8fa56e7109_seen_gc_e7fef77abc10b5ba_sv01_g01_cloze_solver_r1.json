@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "The wording can be arranged in more than one natural way.",
+  "batch_id": "solver_r01_rep1_constrained_cloze_b02",
+  "instruction_understanding": "State what would have happened without the ladder, using reach.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g01_cloze",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Without the ladder, Maya couldn't have reached the window."
+  ],
+  "reasonable_unkeyed_responses": [
+    "Without the ladder, Maya couldn't have reached the window."
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g01_cloze_solver_r1",
+  "submitted_response": "Maya couldn't have reached the window without the ladder.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

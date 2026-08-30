@@ -1,0 +1,113 @@
+{
+  "format_contracts": {
+    "constrained_cloze": {
+      "contract": "One visible sentence contains exactly one [[RESPONSE]] slot. The slot contains every overt form needed to evidence the target operations; the surrounding text must not reveal those forms.",
+      "required_payload_fields": [
+        "sentence_template"
+      ],
+      "response_mode": "short_text"
+    },
+    "dialogue_completion": {
+      "contract": "A concise, coherent dialogue makes one missing learner response pragmatically clear. Exactly one turn contains [[RESPONSE]].",
+      "required_payload_fields": [
+        "dialogue_turns",
+        "incomplete_turn_template"
+      ],
+      "response_mode": "short_text"
+    },
+    "multiple_choice": {
+      "contract": "Four meaning-matched options differ primarily in the target grammatical operations. Exactly one option is keyed; distractors must be plausible operation errors, not lexical or world-knowledge traps.",
+      "required_payload_fields": [
+        "stem",
+        "options"
+      ],
+      "response_mode": "single_choice"
+    },
+    "sentence_transformation": {
+      "contract": "A source sentence, explicit communicative instruction, and supplied lexical cue determine one target sentence without requiring an unprompted lexical substitution.",
+      "required_payload_fields": [
+        "source_sentence",
+        "transformation_cue"
+      ],
+      "response_mode": "full_sentence"
+    }
+  },
+  "generator_kcs": [
+    {
+      "activation_rule": {
+        "cell": {
+          "modal": "can"
+        }
+      },
+      "description": "Select central modal CAN and its base-form complement.",
+      "id": "gkc_modal_can",
+      "name": "central modal CAN"
+    },
+    {
+      "activation_rule": {
+        "cell": {
+          "clause": "polar_question"
+        }
+      },
+      "description": "Form a yes/no question with finite-operator inversion.",
+      "id": "gkc_polar_question",
+      "name": "polar-question formation"
+    }
+  ],
+  "grammar_cell": {
+    "aspect": "none",
+    "clause": "polar_question",
+    "modal": "can",
+    "polarity": "positive",
+    "tense": "NA",
+    "voice": "active"
+  },
+  "grammar_regime": "seen",
+  "identifiers": {
+    "candidate_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01",
+    "candidate_item_ids": {
+      "constrained_cloze": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01_cloze",
+      "dialogue_completion": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01_dialog",
+      "multiple_choice": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01_mcq",
+      "sentence_transformation": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01_xform"
+    },
+    "candidate_round": 1,
+    "cell_id": "gc_edcc8d38860ff41d",
+    "family_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01",
+    "protocol_id": "measurement_realism_matched_bank_v0",
+    "semantic_variant_index": 1
+  },
+  "intended_cefr": "B2",
+  "q_row": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "source_support": {
+    "copy_policy": "usable_starting_point_not_automatic_final_item",
+    "reference_accepted_answers": [
+      "Can your sister drive"
+    ],
+    "reference_prompt": "Your friend wants to know if your sister is able to drive. Complete the question using the words in brackets: ____ (your sister / drive)?",
+    "reference_target_answer": "Can your sister drive?",
+    "source_ids": [
+      "1741163710392x628826808565412700",
+      "1741163715032x756418004139892900"
+    ]
+  }
+}

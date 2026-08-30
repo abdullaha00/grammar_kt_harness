@@ -1,0 +1,155 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "Nina checks the office door every evening.",
+  "cell_id": "gc_d15de8b5658bd6a5",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g02_cloze",
+      "context": "This is part of Nina's regular routine at work.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Nina [[RESPONSE]] the office door every evening.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence with the correct form of “check.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "checks"
+        ],
+        "completed_target": "Nina checks the office door every evening.",
+        "correct_choice_id": null,
+        "target_response": "checks"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g02_dialog",
+      "context": "A colleague asks Nina about her usual routine before leaving work.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Colleague: What do you do as part of your evening security routine?"
+        ],
+        "incomplete_turn_template": "Nina: Nina [[RESPONSE]] the office door every evening.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Nina's answer using the correct form of “check.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "checks"
+        ],
+        "completed_target": "Nina checks the office door every evening.",
+        "correct_choice_id": null,
+        "target_response": "checks"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g02_mcq",
+      "context": "Nina performs the same security check each evening at work.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the uninflected verb instead of present-tense third-person singular agreement.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses past-tense morphology instead of the present finite form.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses the present progressive instead of the simple present finite form for the routine.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Nina check the office door every evening."
+          },
+          {
+            "id": "B",
+            "text": "Nina checked the office door every evening."
+          },
+          {
+            "id": "C",
+            "text": "Nina checks the office door every evening."
+          },
+          {
+            "id": "D",
+            "text": "Nina is checking the office door every evening."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence is correct?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly describes Nina's regular routine.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "C"
+        ],
+        "completed_target": "Nina checks the office door every evening.",
+        "correct_choice_id": "C",
+        "target_response": "C"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g02_xform",
+      "context": "Nina follows this security routine whenever she finishes work for the day.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Nina performs a security check on the office door. This is her routine each evening.",
+        "stem": null,
+        "transformation_cue": "Nina + check + the office door + every evening"
+      },
+      "instruction": "Rewrite the statement as one sentence about Nina's regular routine. Use “check” and “every evening.”",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Nina checks the office door every evening."
+        ],
+        "completed_target": "Nina checks the office door every evening.",
+        "correct_choice_id": null,
+        "target_response": "Nina checks the office door every evening."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Describe Nina's regular evening security check.",
+    "main_verb_lemma": "check",
+    "object_head": "door",
+    "participants": [
+      "Nina"
+    ],
+    "situation_summary": "Nina checks a door as part of her regular evening routine at work.",
+    "time_anchor": "every evening"
+  },
+  "semantic_variant_index": 2
+}

@@ -1,0 +1,110 @@
+{
+  "analysis_implementation": {
+    "bytes": 57710,
+    "path": "scripts/experiments/analyze_measurement_realism_bank_failure.py",
+    "sha256": "b55ee55c8c63cea253ed4818d678ef670b3de9e2afab38821035da9d19236114"
+  },
+  "manifest_schema": "measurement_realism_matched_bank_negative_result_package_v1",
+  "outputs": [
+    {
+      "bytes": 292609,
+      "path": "experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/analysis/failure_analysis.json",
+      "sha256": "1761db11853163421cd83cb9b4410f00ec887a2e0f574e1578c474eba203b7c3"
+    },
+    {
+      "bytes": 7751,
+      "path": "experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/analysis/failure_analysis.md",
+      "sha256": "4c9cf5d17035aefe857025c9b98cba211dd4fe0e685909d2dbff73a5e9e5956d"
+    }
+  ],
+  "run_id": "matched_bank_v0_2_20260830",
+  "source_evidence": {
+    "files": [
+      {
+        "bytes": 6094,
+        "path": "experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/plan.json",
+        "sha256": "d15aa38dfdf922dce9bc2c95dc176a339da0b822673102bd0ce5e9e2f38d8fa1"
+      },
+      {
+        "bytes": 13589,
+        "path": "experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/frozen/config.yaml",
+        "sha256": "beb8f4fcf08fa85bec1ccd764258eb0469bf516d15fcf948286a5bf73a0258af"
+      },
+      {
+        "bytes": 46461,
+        "path": "experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/frozen/selected_cells.json",
+        "sha256": "8f8fa56e710982c92426f154482d062cffebfb32d29f19c7fe96f4208a4b479b"
+      },
+      {
+        "bytes": 5946,
+        "path": "experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/frozen/prompts/generate_family.txt",
+        "sha256": "e2d823d2825111b70777469308b9e3f7c420ef58300c93b9bd89e49e97ae2c77"
+      },
+      {
+        "bytes": 51083,
+        "path": "experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/curation/family_decisions.jsonl",
+        "sha256": "d0aea025d8b8d4c2d3a38976bd1175886021cc8df8407c10332db14629f2aa34"
+      },
+      {
+        "bytes": 49541,
+        "path": "experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/curation/rejections.jsonl",
+        "sha256": "ea23837e0c33bdd40b7fb950db63361c89283f678148bceb38d9f60cc375b993"
+      },
+      {
+        "bytes": 123518,
+        "path": "experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/provenance/call_records.jsonl",
+        "sha256": "2ecca69a22c38c2e17979cd18da483611130626672344eec92db4b9b0588cc2e"
+      },
+      {
+        "bytes": 185,
+        "path": "experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/provenance/call_evidence_manifest.json",
+        "sha256": "9ecd012838bb20f811dbdbccfcef92d5107961a215beca3280c4bdc930545faf"
+      },
+      {
+        "bytes": 15582498,
+        "path": "experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/provenance/call_evidence_bundle.jsonl",
+        "sha256": "a8a59bf265ce209994bf2cc244c979729ee5f2abbadf4e1c04f442bdb635d982"
+      }
+    ],
+    "trees": [
+      {
+        "bytes": 619216,
+        "files": 106,
+        "path": "experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/parsed/generation",
+        "tree_sha256": "9935ca4ca084d98011cdb104ce40381d21e840910f49751333834d3827f28bc9"
+      },
+      {
+        "bytes": 533609,
+        "files": 712,
+        "path": "experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/parsed/solver",
+        "tree_sha256": "36a727bb0cf22397b38e5050c5bb4225c54e405191fd4de593dac34158fe5c3b"
+      },
+      {
+        "bytes": 607417,
+        "files": 90,
+        "path": "experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/parsed/validation",
+        "tree_sha256": "fd0e24b74812c7a0e689c1a5462f11d0eb57d051b990b12b10ad6aa7b42ee99d"
+      },
+      {
+        "bytes": 23302,
+        "files": 106,
+        "path": "experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/provenance/deterministic_checks",
+        "tree_sha256": "820cd5b93b503e54898f840aebbb7d2554d8d3c56409cf2b35a567d6572d0fe7"
+      },
+      {
+        "bytes": 592264,
+        "files": 42,
+        "path": "experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_20260830",
+        "tree_sha256": "107ffb9e91dd5a6e4ea5b8ecdc6e3acf485c86794c244d2a3bdebc0c09420e92"
+      },
+      {
+        "bytes": 527776,
+        "files": 30,
+        "path": "experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_1_20260830",
+        "tree_sha256": "78c5ca68094455581afba143140bcc1601b8de01987cf90c569f437cc13f22eb"
+      }
+    ]
+  },
+  "status": "FAILED_PREREGISTERED_BANK_FREEZE_GATE",
+  "verification_command": ".venv/bin/python scripts/experiments/analyze_measurement_realism_bank_failure.py verify"
+}

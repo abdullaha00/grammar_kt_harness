@@ -1,0 +1,188 @@
+{
+  "batch_id": "critic_r02_platform_product_b01",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g02",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "plausible_format_crossing",
+      "evidence": "Cloze, dialogue, MCQ, and transformation all coherently express a past deduction.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "non_repetitive_learner_experience",
+      "evidence": "The same Nina/spare-key scenario and sentence recur in every format.",
+      "severity": "minor_concern"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The missing-key evidence and required “must” cue make the intended deduction understandable.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "A short-text phrase correctly completes the displayed sentence.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "“Spare key” and “entered the office” are accessible B2 wording.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "Being the only person who entered makes Nina a strong suspect, but does not strictly establish that she took the key.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "A past deduction with “must have” is appropriate B2 practice.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The target completion is clear and readily scoreable.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g02_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The dialogue provides the evidence before Omar’s incomplete conclusion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "Completing the final dialogue turn in short text is coherent.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "The workplace and key vocabulary are accessible at B2.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "The conclusion is plausible, although the facts do not rule out every other explanation for a missing key.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The modal-perfect deduction is well within B2 grammar practice.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The response location and expected phrase are unambiguous.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g02_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The instruction asks directly for the best deduction from the facts.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "Four labelled sentences suit a single-choice interaction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "The wording is familiar workplace language for B2.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "“Must” is presented as definitive despite limited evidence about why the key is gone.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The answer choices distinguish deduction, obligation, and incorrect verb form appropriately.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The answer choice and scoring are clear.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g02_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The source facts and cue words clearly request one deductive sentence.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "A full-sentence response is appropriate for this prompt.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "The vocabulary is accessible at the declared level.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "The phrase “only one possible explanation” overstates what the visible facts establish.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "Guided use of “must have taken” is plausible B2 production.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The response expectation is explicit and supports ordinary scoring.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g02_xform"
+    }
+  ],
+  "overall_accept": true,
+  "role": "platform_product",
+  "summary": "The format set is deployable and B2-appropriate, with minor realism concerns about treating circumstantial evidence as conclusive."
+}

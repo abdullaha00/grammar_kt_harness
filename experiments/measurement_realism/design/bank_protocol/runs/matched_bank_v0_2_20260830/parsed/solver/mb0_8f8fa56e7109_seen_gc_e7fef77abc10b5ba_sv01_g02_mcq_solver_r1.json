@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "C is less natural than B but is a possible grammatical placement of not with a similar meaning.",
+  "batch_id": "solver_r02_rep1_multiple_choice_b02",
+  "instruction_understanding": "Choose the likely past result if Priya had not helped Omar.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g02_mcq",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "C"
+  ],
+  "reasonable_unkeyed_responses": [
+    "C"
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g02_mcq_solver_r1",
+  "submitted_response": "B",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

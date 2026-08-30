@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r03_measurement_b01",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g03",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "All formats require or identify the same modal-perfect conclusion about Nora taking the parcel.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "Format changes response mechanism only; MUST and perfect HAVE retain the same grammatical role.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "The missing-parcel inference is maintained throughout.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Keyed 'must have taken' requires MUST, base HAVE, and participle TAKEN.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The response directly realizes the declared modal and perfect operations.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Instruction requires MUST and TAKE, and the past-inference meaning requires perfect HAVE.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The constrained response and evidence support the keyed conclusion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The short-text response is appropriately bounded by the supplied lexical requirements.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The parcel scenario is accessible and does not require specialized knowledge.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g03_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The completion requires MUST HAVE TAKEN.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "No important undeclared grammar is needed to fill the frame.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The required conclusion is about a past action and the keyed form realizes both declared KCs.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The dialogue establishes disappearance and Nora as the only nearby person, supporting the target conclusion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The response frame and instructed words adequately constrain the completion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Attributing the disappearance specifically to taking is an inferential-pragmatic assumption, though context supports it.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g03_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "B is the sole option with modal MUST, base HAVE, and participle TAKEN.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "Distractors diagnose the declared modal/perfect dependencies.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "No other option expresses the required grammatical past conclusion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "Only B is grammatically well formed and suitable for the stated conclusion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "B is the only defensible listed answer.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The contextual inference is simple and vocabulary is ordinary.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g03_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The response requires constructing MUST HAVE TAKEN from supplied lemmas.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "Combining evidence into a conclusion adds no major undeclared grammatical demand.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The cue gives lexical ingredients but not the required order or participial form TAKEN.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "Beginning with Nora and using the given words determine the intended structure.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "A standard contraction such as 'Nora must've taken the parcel.' is a reasonable equivalent but is not listed.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The learner must make a confident evidential inference as well as construct the form.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g03_xform"
+    }
+  ],
+  "overall_accept": true,
+  "role": "measurement",
+  "summary": "Accepted: formats consistently measure MUST plus perfect construction; only a non-blocking contraction-coverage refinement is noted."
+}

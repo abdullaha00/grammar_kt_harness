@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "The subject can be expressed with Maya's name or a pronoun.",
+  "batch_id": "solver_r03_rep2_dialogue_completion_b01",
+  "instruction_understanding": "Write Leo's advice for Maya about her phone before the trip.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv02_g03_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Maya should charge her phone before her trip."
+  ],
+  "reasonable_unkeyed_responses": [
+    "Maya should charge her phone before her trip."
+  ],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv02_g03_dialog_solver_r2",
+  "submitted_response": "She should charge her phone before her trip.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

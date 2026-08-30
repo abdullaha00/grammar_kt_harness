@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "B can also suggest an ongoing activity, but D more clearly expresses duration continuing before the arrival.",
+  "batch_id": "solver_r03_rep1_multiple_choice_b02",
+  "instruction_understanding": "Choose the sentence emphasizing an activity continuing for two hours before Leo arrived.",
+  "item_id": "mb0_8f8fa56e7109_uval_gc_483f3ac117f331a7_sv01_g03_mcq",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "B"
+  ],
+  "reasonable_unkeyed_responses": [
+    "B"
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_uval_gc_483f3ac117f331a7_sv01_g03_mcq_solver_r1",
+  "submitted_response": "D",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

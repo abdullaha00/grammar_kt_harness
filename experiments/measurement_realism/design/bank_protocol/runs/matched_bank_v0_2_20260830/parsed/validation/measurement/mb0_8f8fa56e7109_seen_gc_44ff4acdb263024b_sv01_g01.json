@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r01_measurement_b01",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv01_g01",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv01",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "Each format targets past BE plus -ing for the same ongoing action at 8:00 yesterday.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "Recognition versus production changes response mechanism, not the progressive or past-finite definition.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "All items describe Maya carrying boxes while the action was underway at the stated time.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "“was carrying” requires past BE and the progressive -ing dependency.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The response is limited to the declared auxiliary-plus-participle construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The blank requires both target operations.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The explicit ongoing-action context and fixed template determine “was carrying”.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "No reasonable solver-proposed unkeyed response was reported.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Lexis and temporal context are transparent.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv01_g01_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The reply slot requires the past progressive form “was carrying”.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The dialogue question is input only; the required response does not add material grammar.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The form cannot be supplied correctly without past BE and -ing.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "“At 8:00 yesterday” and the ongoing-action context determine the target form.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "No reasonable unkeyed solver alternative was supplied.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Interpreting a dialogue question about an observed action is a modest discourse burden.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv01_g01_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Only C combines past finite BE with carrying to encode the required ongoing event.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "No additional grammar is needed beyond interpreting the stated time and aspect.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Some distractors are overtly ungrammatical, so elimination can assist selection, though A remains a grammatical aspect contrast.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The instruction explicitly requires an action already in progress at 8:00; C alone expresses this.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The single displayed correct option C is fully covered.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The situation is simple and lexical demands are low.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv01_g01_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The required full sentence actively constructs both past finite BE and the -ing form.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The cue supplies the lemma, time-led opening, and required semantic relation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The explicit in-progress instruction prevents the supplied simple-past source wording from being copied unchanged.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The required opening and stated continuing action determine the keyed sentence.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "No material reasonable unkeyed response was proposed; the cue fixes the sentence content and opening.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Full-sentence assembly and prescribed word order add small non-target production burden.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv01_g01_xform"
+    }
+  ],
+  "overall_accept": true,
+  "role": "measurement",
+  "summary": "Accept: all formats provide determinate evidence for past progressive, with only modest dialogue and full-production burden."
+}

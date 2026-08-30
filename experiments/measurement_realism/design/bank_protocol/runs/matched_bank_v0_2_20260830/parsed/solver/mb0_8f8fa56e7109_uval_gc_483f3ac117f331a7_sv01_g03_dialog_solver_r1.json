@@ -1,0 +1,23 @@
+{
+  "ambiguity_explanation": "The duration is clear, but the action can be described in more than one natural way.",
+  "batch_id": "solver_r03_rep1_dialogue_completion_b02",
+  "instruction_understanding": "Give Leo's one-sentence answer saying how long Maya had been repairing her bicycle when he arrived.",
+  "item_id": "mb0_8f8fa56e7109_uval_gc_483f3ac117f331a7_sv01_g03_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "She had been working on it for two hours.",
+    "For two hours."
+  ],
+  "reasonable_unkeyed_responses": [
+    "She had been working on it for two hours.",
+    "For two hours."
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_uval_gc_483f3ac117f331a7_sv01_g03_dialog_solver_r1",
+  "submitted_response": "She had been repairing it for two hours.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

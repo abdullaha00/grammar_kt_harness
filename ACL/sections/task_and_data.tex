@@ -57,3 +57,19 @@ value.  All generator KCs nevertheless have seen support: this cohort tests a
 new linguistic composition, not a latent KC observed only at evaluation.
 Acquisition uses seen grammar only; every item receives one terminal,
 non-updating probe.
+
+\subsection{Clean observable and private layers}
+
+The frozen public record contains learner ID, item ID, sequence, correctness,
+phase, pass, and grammar regime.  Generator KCs, mastery before/after, response
+probability, and random draw are private oracle fields.  This matches the
+perfect-information thought experiment: ordinary KT receives only fields a
+platform could log, while evaluation may later open otherwise unavailable
+truth.
+
+The surface and response process are less realistic.  The 113 prompts do not
+have an executable UI/scorer, and simulated learners never read or answer their
+text.  Full-v1 therefore has strong artifact and experimental validity but
+unestablished response-process validity.  We retain it unchanged and assess
+the measurement layer separately rather than reinterpret binary events as
+human production.

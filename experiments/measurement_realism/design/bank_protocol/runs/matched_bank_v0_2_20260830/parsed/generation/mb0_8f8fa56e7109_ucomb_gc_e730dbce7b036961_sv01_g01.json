@@ -1,0 +1,158 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "The movers are carrying the boxes into the office right now.",
+  "cell_id": "gc_e730dbce7b036961",
+  "family_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01",
+  "grammar_regime": "unseen_combination",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g01_cloze",
+      "context": "A delivery has just arrived, and the work is in progress.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "The movers [[RESPONSE]] the boxes into the office right now.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using the correct form of “carry.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "are carrying"
+        ],
+        "completed_target": "The movers are carrying the boxes into the office right now.",
+        "correct_choice_id": null,
+        "target_response": "are carrying"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g01_dialog",
+      "context": "Nora and Leo are watching a delivery at their workplace.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Nora: Has the delivery arrived?",
+          "Leo: Yes, and the work has already started.",
+          "Nora: What can you see?"
+        ],
+        "incomplete_turn_template": "Leo: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Leo’s final reply with one sentence.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "The movers are carrying the boxes into the office right now."
+        ],
+        "completed_target": "The movers are carrying the boxes into the office right now.",
+        "correct_choice_id": null,
+        "target_response": "The movers are carrying the boxes into the office right now."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g01_mcq",
+      "context": "A delivery has just arrived, and the work is in progress.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the simple present instead of constructing the present progressive.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses singular present BE with the plural subject in the progressive construction.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Omits the finite present form of BE required by the progressive construction.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "The movers carry the boxes into the office right now."
+          },
+          {
+            "id": "B",
+            "text": "The movers are carrying the boxes into the office right now."
+          },
+          {
+            "id": "C",
+            "text": "The movers is carrying the boxes into the office right now."
+          },
+          {
+            "id": "D",
+            "text": "The movers carrying the boxes into the office right now."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly describes the scene?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly describes what is happening now.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "The movers are carrying the boxes into the office right now.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g01_xform",
+      "context": "A delivery has just arrived at an office.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "The movers carry the boxes into the office.",
+        "stem": null,
+        "transformation_cue": "right now"
+      },
+      "instruction": "Rewrite the sentence to show that the action is in progress now. Use all the words in the cue.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "The movers are carrying the boxes into the office right now."
+        ],
+        "completed_target": "The movers are carrying the boxes into the office right now.",
+        "correct_choice_id": null,
+        "target_response": "The movers are carrying the boxes into the office right now."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Describe the delivery work currently in progress.",
+    "main_verb_lemma": "carry",
+    "object_head": "boxes",
+    "participants": [
+      "the movers",
+      "the boxes"
+    ],
+    "situation_summary": "A delivery has arrived, and movers are taking boxes into an office.",
+    "time_anchor": "right now"
+  },
+  "semantic_variant_index": 1
+}

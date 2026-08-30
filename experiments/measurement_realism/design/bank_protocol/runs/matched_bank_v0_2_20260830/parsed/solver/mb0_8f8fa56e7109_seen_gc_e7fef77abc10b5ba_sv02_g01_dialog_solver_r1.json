@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "Both responses express the likely consequence.",
+  "batch_id": "solver_r01_rep1_dialogue_completion_b02",
+  "instruction_understanding": "State what would have happened without Nora's alarm.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g01_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "She would have been late for work."
+  ],
+  "reasonable_unkeyed_responses": [
+    "She would have been late for work."
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g01_dialog_solver_r1",
+  "submitted_response": "She would have arrived late for work.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

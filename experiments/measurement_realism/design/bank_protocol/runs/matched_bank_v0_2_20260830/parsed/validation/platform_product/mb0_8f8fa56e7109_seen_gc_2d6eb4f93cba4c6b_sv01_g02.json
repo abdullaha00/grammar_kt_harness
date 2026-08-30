@@ -1,0 +1,188 @@
+{
+  "batch_id": "critic_r02_platform_product_b01",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv01_g02",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv01",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "plausible_format_crossing",
+      "evidence": "Each format meaningfully represents temporal ordering and past-perfect use.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "non_repetitive_learner_experience",
+      "evidence": "All four items retain the same Maya/office/guard sentence with only format changes.",
+      "severity": "minor_concern"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The sentence frame and timing context indicate the needed completion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "The blank accepts the needed verb phrase and object naturally.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "“Lock,” “office,” and “guard” are accessible B2 vocabulary.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "Locking an office before a guard arrives is coherent.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "Past-perfect sequencing is plausible B2 practice.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The task presents a clear, readily scorable completion.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv01_g02_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The preceding question and reply make the event order explicit.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "A text completion for Nora’s final turn is appropriate.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "The office scenario uses familiar vocabulary.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "The dialogue coherently explains which event happened first.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The task targets a standard B2 past-perfect form.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The expected phrase is clear from the turn template.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv01_g02_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The stem explicitly asks for the sentence showing the earlier event.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "The labelled sentence options work cleanly as single choice.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "The vocabulary is ordinary workplace language.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "The stated order of events is easy to follow.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The alternatives provide plausible form and tense contrasts for B2.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "One option directly matches the stated timing.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv01_g02_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The instruction supplies the source statements and specifies “had locked” and “before.”",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "Writing one combined sentence fits a full-sentence field.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "The lexical material is accessible at B2.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "The two-event office scenario is natural enough for practice.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "Guided past-perfect production is appropriate B2 difficulty.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The required structure and target output are unambiguous.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv01_g02_xform"
+    }
+  ],
+  "overall_accept": true,
+  "role": "platform_product",
+  "summary": "The items are clear and technically deployable, though their repeated wording limits variety."
+}

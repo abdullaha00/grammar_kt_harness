@@ -1,0 +1,164 @@
+{
+  "batch_id": "critic_r01_linguistic_b02",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01_g01",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "shared_target_proposition",
+      "evidence": "All four items concern the possibility of the delivery arriving this afternoon.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "target_construction_consistency",
+      "evidence": "Every target realizes positive active declarative MIGHT plus bare-infinitive “arrive.”",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "“might arrive” is a positive active declarative with modal MIGHT and a bare-infinitival complement.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "“The delivery might arrive this afternoon” is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "The uncertain delayed-delivery context coherently licenses epistemic possibility.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The context and completion are natural for a delivery-delay situation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "The sole accepted response, “might arrive”, completes the stated target exactly.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01_g01_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "The completion “might arrive” realizes the declared positive active MIGHT declarative.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "The completed dialogue turn is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "Nina’s uncertainty about the driver supports “The delivery might arrive this afternoon.”",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The dialogue provides a natural reason for an uncertain arrival prediction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "“might arrive” is exactly the required cloze completion.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01_g01_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "Option B, the keyed target, is a positive active declarative with MIGHT plus bare “arrive.”",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "Option B is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "Option B expresses the possibility described in the context.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The scenario naturally supports the target sentence.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "The sole accepted response “B” uniquely selects the grammatical target option.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01_g01_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "“The delivery might arrive this afternoon” matches the declared positive active modal construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "The accepted full sentence is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "The target preserves the source proposition of possible arrival.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "Uncertain arrival time is a natural context for the transformation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "The sole accepted response is the required grammatical rewrite and preserves the source meaning.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01_g01_xform"
+    }
+  ],
+  "overall_accept": true,
+  "role": "linguistic",
+  "summary": "All items faithfully and naturally measure the declared MIGHT construction."
+}

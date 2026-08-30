@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r02_measurement_b03",
+  "candidate_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g02",
+  "family_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "Every format requires or recognizes the same present-progressive BE + -ing construction with singular present finite selection.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "The response mechanisms differ (completion, recognition, transformation), but the grammar construct is not redefined across formats.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "All formats describe Maya carrying boxes into the office during a current office move.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The gap requires present singular BE ('is') plus the -ing form 'carrying', directly activating both declared KCs.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The template supplies the subject and complements, leaving only the declared progressive construction and finite-form selection.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The happening-now context and required verb make a simple present completion inconsistent with the intended description.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "For singular Maya and an action explicitly happening now, 'is carrying' is the determinate completion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The full and contracted forms of the fixed gap response are accepted; no solver-proposed unkeyed alternative was supplied.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The office-move context is transparent and imposes little burden beyond the target morphology.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g02_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Completing the reply requires singular present 'is' and 'carrying' after BE.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The question and context are straightforward and do not impose a further major construction on the response.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The fixed continuation 'the boxes into the office' means a response must supply the finite progressive verb group.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The explicit 'right now' question and fixed sentence frame determine 'is carrying'.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The relevant full and contracted response variants are accepted, and no reasonable unkeyed solver alternatives were proposed.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The dialogue gives clear visual-evidence context without requiring complex pragmatic inference.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g02_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "B is the only option combining correct singular present BE with the -ing dependency; A, C, and D provide direct contrasts.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "No important undeclared grammatical operation is required to select the answer.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Some distractors are conspicuously malformed ('Maya are', bare 'Maya carrying'), allowing partial testwise elimination, although identifying B still reflects the target construction.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "B uniquely describes the explicitly current action using a grammatical present progressive.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "This closed-response item has one defensible correct option, B; no solver-proposed unkeyed alternative exists.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The lexical situation and options are accessible and relevant to the aspectual contrast.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g02_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The required full sentence must select singular present 'is' and construct 'carrying' to express the ongoing action.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "Understanding the source's present-perfect wording ('has not finished') adds some non-target tense/aspect comprehension, though the instruction explicitly redirects to what is happening now.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The required verb and explicit ongoing-now meaning preclude a correct target response without the progressive construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The instruction and context specify one sentence about an action in progress, and the accepted full and contracted realizations cover it.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Standard contracted variants are accepted and no solver-proposed unkeyed alternative requires adjudication.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Full-sentence reformulation and interpreting the source statement impose a larger production and reading burden than the gap formats.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g02_xform"
+    }
+  ],
+  "overall_accept": true,
+  "role": "measurement",
+  "summary": "Accept: the formats provide coherent evidence for present progressive and singular present BE, with only minor recognition and transformation-format burden concerns."
+}

@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r01_measurement_b01",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv01_g01",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv01",
+  "family_judgments": [
+    {
+      "blocking": true,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "The dialogue is an open full-answer task with multiple valid referential realizations, unlike the tightly constrained cloze and cue-led transformation.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "All formats still nominally target past finite marking; the dialogue problem is added nuisance burden rather than a new KC.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "Each format concerns Lena repairing the broken chair yesterday.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The blank requires the past finite form “repaired”.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "Only a regular past form is required in a simple declarative template.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The past-time adverb and response slot require past morphology.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "“Yesterday” determines the intended past form.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "No reasonable unkeyed solver alternative was reported for the constrained one-word response.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Vocabulary and context are straightforward.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv01_g01_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Any correct answer must use a past form of repair to report the action.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "Unlike the other formats, this requires independently composing a full referential reply, including subject/object choices.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "A grammatically correct response still needs past marking on repair.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The event is clear, but the open question permits multiple equally adequate ways to identify Lena and the chair.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Solver response “She repaired the chair yesterday.” is linguistically and contextually reasonable, meets the full-sentence instruction and uses repair, but is unkeyed; rejecting it is blocking.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "non_target_burden",
+          "evidence": "This format adds anaphora and lexical-reference decisions (“She”, “the chair”, “broken chair”) unrelated to past finite-form selection.",
+          "severity": "major_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv01_g01_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "D is the only grammatical past-finite realization for the stated event.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The task is a simple tense-form selection with accessible content.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "B and C are plainly ill-formed and A conflicts with yesterday, making elimination easier than a stronger grammatical foil would.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "Only D correctly reports the completed yesterday event.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The keyed displayed option D is covered.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "No substantial burden beyond tense interpretation is present.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv01_g01_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The cue requires producing “repaired” in a past declarative sentence.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The specified words limit additional syntactic choices.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The answer must transform the supplied fixed-event information into the requested past form.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The provided lexical material and yesterday anchor determine the keyed report.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "No reasonable unkeyed solver response was proposed for the explicitly cued transformation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Combining two propositions adds modest sentence-construction burden.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv01_g01_xform"
+    }
+  ],
+  "overall_accept": false,
+  "role": "measurement",
+  "summary": "Reject: the dialogue rejects the reasonable solver response “She repaired the chair yesterday” and introduces format-specific reference-production burden."
+}

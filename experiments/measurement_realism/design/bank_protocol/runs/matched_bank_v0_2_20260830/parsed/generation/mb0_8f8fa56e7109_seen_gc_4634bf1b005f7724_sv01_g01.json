@@ -1,0 +1,160 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "Which report doesn't Maya upload?",
+  "cell_id": "gc_4634bf1b005f7724",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g01_cloze",
+      "context": "During the weekly reporting process, Maya uploads most reports, but a colleague handles one of them.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]]",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Write the question using these words: which report / Maya / not upload.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Which report doesn't Maya upload?",
+          "Which report does Maya not upload?"
+        ],
+        "completed_target": "Which report doesn't Maya upload?",
+        "correct_choice_id": null,
+        "target_response": "Which report doesn't Maya upload?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g01_dialog",
+      "context": "Two colleagues are discussing the weekly reporting process.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Nora: Maya uploads most of the weekly reports.",
+          "Eli: Yes, but Leo handles one of them."
+        ],
+        "incomplete_turn_template": "Nora: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Maya's colleague's question.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Which report doesn't Maya upload?",
+          "Which report does Maya not upload?"
+        ],
+        "completed_target": "Which report doesn't Maya upload?",
+        "correct_choice_id": null,
+        "target_response": "Which report doesn't Maya upload?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g01_mcq",
+      "context": "Maya uploads most weekly reports, but another colleague uploads one of them. Ask which report is not part of Maya's task.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "The finite operator is not inverted before the subject in the non-subject WH question.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "The main verb incorrectly carries present-tense agreement after the finite operator.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "The required verbal negation is omitted.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Which report doesn't Maya upload?"
+          },
+          {
+            "id": "B",
+            "text": "Which report Maya doesn't upload?"
+          },
+          {
+            "id": "C",
+            "text": "Which report doesn't Maya uploads?"
+          },
+          {
+            "id": "D",
+            "text": "Which report does Maya upload?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which question is correct?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the correct question.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "Which report doesn't Maya upload?",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g01_xform",
+      "context": "The question concerns Maya's regular role in the weekly reporting process.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Maya does not upload one of the weekly reports.",
+        "stem": null,
+        "transformation_cue": "which report / Maya / not upload"
+      },
+      "instruction": "Turn the statement into a question asking for the missing information. Use the cue words provided.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Which report doesn't Maya upload?",
+          "Which report does Maya not upload?"
+        ],
+        "completed_target": "Which report doesn't Maya upload?",
+        "correct_choice_id": null,
+        "target_response": "Which report doesn't Maya upload?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Ask which report is excluded from Maya's regular upload task.",
+    "main_verb_lemma": "upload",
+    "object_head": "report",
+    "participants": [
+      "Maya",
+      "a colleague asking about the reports"
+    ],
+    "situation_summary": "Maya uploads most weekly reports, but another colleague handles one of them.",
+    "time_anchor": "the regular weekly reporting process"
+  },
+  "semantic_variant_index": 1
+}

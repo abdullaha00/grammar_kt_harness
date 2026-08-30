@@ -1,0 +1,164 @@
+{
+  "batch_id": "critic_r02_linguistic_b02",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01_g02",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "shared_target_proposition",
+      "evidence": "All items offer to close the window.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "target_construction_consistency",
+      "evidence": "Every target uses the same SHALL polar-question construction.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "“Shall I close the window?” is an active positive polar question with SHALL and base-form “close.”",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "The target is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "The question coherently offers to close the open window.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "Cold air from an open window naturally motivates the offer.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "“Shall I close” completes the template exactly to the target.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01_g02_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "The target is a positive active SHALL polar question.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "“Shall I close the window?” is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "The utterance is a coherent offer in response to the cold room.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The dialogue naturally licenses this conventional offer.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "The accepted response exactly matches the completed target.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01_g02_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "Accepted option A has SHALL–subject inversion and base-form “close.”",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "Option A is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "The target expresses the intended offer to help.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The open-window context is natural for this offer.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "Response “A” uniquely selects the stated target.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01_g02_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "The target realizes the declared active positive SHALL polar-question construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "“Shall I close the window?” is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "It recasts the available action as an offer without changing the central proposition.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The transformation is natural in the cold-room setting.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "The accepted full sentence exactly matches the target.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01_g02_xform"
+    }
+  ],
+  "overall_accept": true,
+  "role": "linguistic",
+  "summary": "All items are grammatical, coherent, and constructionally consistent SHALL-question offers."
+}

@@ -1,0 +1,362 @@
+protocol_id: measurement_realism_matched_bank_v0
+status: preregistered_before_model_calls
+date: 2026-08-30
+
+scientific_boundaries:
+  purpose: >-
+    Construct a compact, fully crossed learner-facing measurement bank while
+    preserving the full-v1 GrammarCells and generator Q* rows.
+  no_learner_outcomes_read: true
+  no_simulator_or_kt_results_read: true
+  grammar_cells_are_not_kcs: true
+  generated_wording_cannot_change_q_star: true
+  full_v1_is_read_only: true
+
+protected_reference:
+  root: data/grammar_kt_full_v1
+  manifest: data/grammar_kt_full_v1/manifest.json
+  cells: data/grammar_kt_full_v1/grammar/cells.jsonl
+  regimes: data/grammar_kt_full_v1/grammar/regime_assignments.jsonl
+  kcs: data/grammar_kt_full_v1/kcs.jsonl
+  q_matrix: data/grammar_kt_full_v1/q_matrix.csv
+  source_relations: data/grammar_kt_full_v1/grammar/source_cell_relations.jsonl
+
+selected_cells:
+  path: experiments/measurement_realism/design/format_selection/selected_cells.json
+  sha256: 8f8fa56e710982c92426f154482d062cffebfb32d29f19c7fe96f4208a4b479b
+  schema: schemas/selected_cells.schema.json
+  require_embedded_source_hashes: true
+  expected:
+    seen_cells: 18
+    unseen_combination_cells: 1
+    unseen_value_cells: 1
+    seen_cell_q_rank: 18
+    generator_kcs: 18
+
+design:
+  family_unit: one_grammar_cell_by_one_semantic_variant_crossed_over_all_formats
+  generation_unit: whole_family
+  seen_semantic_variants_per_cell: 2
+  heldout_semantic_variants_per_cell: 1
+  canonical_format_order:
+    - constrained_cloze
+    - dialogue_completion
+    - multiple_choice
+    - sentence_transformation
+  expected_families: 38
+  expected_items: 152
+  heldout_use: probe_only
+  heldout_updates_mastery: false
+  q_projection: copy_frozen_cell_q_row_to_every_item_in_cell
+  q_projection_may_be_overridden_by_model: false
+  intended_proficiency:
+    profile_id: declared_b2_adult_grammar_review_v0
+    cefr: B2
+    learner_description: adult English learner completing grammar review
+    source: researcher_declared_interface_design_target
+    fixed_across_cells_and_formats: true
+    not_inferred_from_egp: true
+    not_a_validated_item_difficulty_label: true
+    rationale: >-
+      full-v1 does not carry learner-facing CEFR labels in its item schema. A
+      single B2 review profile controls the interface target across formats;
+      critics may reject mismatched items, but this choice is not evidence that
+      every selected construction originated at B2 or has B2 difficulty.
+
+formats:
+  constrained_cloze:
+    response_mode: short_text
+    contract: >-
+      One visible sentence contains exactly one [[RESPONSE]] slot. The slot
+      contains every overt form needed to evidence the target operations; the
+      surrounding text must not reveal those forms.
+    required_payload_fields: [sentence_template]
+  dialogue_completion:
+    response_mode: short_text
+    contract: >-
+      A concise, coherent dialogue makes one missing learner response
+      pragmatically clear. Exactly one turn contains [[RESPONSE]].
+    required_payload_fields: [dialogue_turns, incomplete_turn_template]
+  multiple_choice:
+    response_mode: single_choice
+    contract: >-
+      Four meaning-matched options differ primarily in the target grammatical
+      operations. Exactly one option is keyed; distractors must be plausible
+      operation errors, not lexical or world-knowledge traps.
+    required_payload_fields: [stem, options]
+  sentence_transformation:
+    response_mode: full_sentence
+    contract: >-
+      A source sentence, explicit communicative instruction, and supplied
+      lexical cue determine one target sentence without requiring an
+      unprompted lexical substitution.
+    required_payload_fields: [source_sentence, transformation_cue]
+
+generation:
+  model: gpt-5.6-sol
+  reasoning_effort: medium
+  additional_sampling_parameters: {}
+  prompt: prompts/generate_family.txt
+  output_schema: schemas/generated_family.schema.json
+  candidate_rounds_per_family: 3
+  candidates_per_call: 1
+  raw_outputs_are_append_only: true
+  validator_feedback_returned_to_generator: false
+  generator_sees:
+    - grammar_cell
+    - grammar_regime
+    - generator_kc_descriptions
+    - frozen_q_row
+    - source_support
+    - intended_cefr
+    - semantic_variant_index
+    - format_contracts
+  generator_must_not_see:
+    - learner_outcomes
+    - simulator_truth
+    - kt_results
+    - critic_outputs
+    - prior_failed_candidate_text
+
+learner_solver_stress_test:
+  model: gpt-5.6-terra
+  reasoning_effort: medium
+  additional_sampling_parameters: {}
+  prompt: prompts/learner_solver.txt
+  output_schema: schemas/solver_response.schema.json
+  independent_attempts_per_item: 2
+  call_unit: batch_of_nonmatched_items
+  maximum_items_per_call: 16
+  same_family_items_per_call_maximum: 1
+  batch_algorithm: >-
+    For solver replicate 1 and then replicate 2, traverse formats in canonical
+    order; within each format sort candidate items by family_id; partition
+    consecutive items into batches of at most 16. Start a fresh model context
+    for every batch. This yields two distinct calls for every item and never
+    exposes two formats from the same semantic family in one call.
+  fresh_context_per_batch: true
+  within_batch_judgments_statistically_independent: false
+  persona: careful_adult_english_learner_at_declared_cefr
+  oracle_blind: true
+  not_human_evidence: true
+  scoring_normalization:
+    unicode: NFC
+    trim_outer_whitespace: true
+    collapse_internal_whitespace: true
+    casefold: true
+    ignore_terminal_punctuation: true
+    no_fuzzy_matching: true
+  hard_gates:
+    minimum_keyed_matches_per_item: 1
+    maximum_task_not_understood_per_item: 0
+    maximum_major_ambiguity_flags_per_item: 0
+    reasonable_unkeyed_response_policy: block_pending_measurement_review
+
+independent_validation:
+  model: gpt-5.6-terra
+  reasoning_effort: medium
+  additional_sampling_parameters: {}
+  call_unit: role_separated_family_batch
+  maximum_families_per_call: 5
+  batch_algorithm: >-
+    Within each validator role and candidate round, sort eligible candidate
+    families by family_id and partition them into consecutive batches of at
+    most five. Start a fresh context for every role/batch; never combine roles
+    and never disclose another role's outputs.
+  fresh_context_per_role_batch: true
+  within_batch_judgments_statistically_independent: false
+  roles_do_not_see_other_roles_outputs: true
+  output_schema: schemas/critic_response.schema.json
+  severity_values: [pass, minor_concern, major_concern]
+  roles:
+    linguistic:
+      prompt: prompts/critic_linguistic.txt
+      sees_oracle_annotations: true
+      exact_item_criteria:
+        - grammar_cell_fidelity
+        - target_grammaticality
+        - target_meaning_coherence
+        - contextual_naturalness
+        - accepted_response_linguistic_equivalence
+      exact_family_criteria:
+        - shared_target_proposition
+        - target_construction_consistency
+      must_pass:
+        - grammar_cell_fidelity
+        - target_grammaticality
+        - accepted_response_linguistic_equivalence
+        - shared_target_proposition
+        - target_construction_consistency
+    measurement:
+      prompt: prompts/critic_measurement.txt
+      sees_oracle_annotations: true
+      sees_solver_outputs: true
+      exact_item_criteria:
+        - active_kc_evidence
+        - no_major_undeclared_grammar
+        - no_target_avoiding_shortcut
+        - answer_determinacy
+        - accepted_response_coverage
+        - non_target_burden
+      exact_family_criteria:
+        - construct_equivalence_across_formats
+        - no_format_specific_kc_redefinition
+        - comparable_semantic_content
+      must_pass:
+        - active_kc_evidence
+        - no_target_avoiding_shortcut
+        - answer_determinacy
+        - accepted_response_coverage
+        - construct_equivalence_across_formats
+        - no_format_specific_kc_redefinition
+    platform_product:
+      prompt: prompts/critic_platform_product.txt
+      sees_oracle_annotations: false
+      sees_solver_outputs: false
+      exact_item_criteria:
+        - task_comprehensibility
+        - ui_response_mechanism_coherence
+        - lexical_accessibility
+        - context_naturalness
+        - difficulty_plausibility
+        - platform_deployability
+      exact_family_criteria:
+        - plausible_format_crossing
+        - non_repetitive_learner_experience
+      must_pass:
+        - task_comprehensibility
+        - ui_response_mechanism_coherence
+        - platform_deployability
+        - plausible_format_crossing
+  acceptance:
+    every_role_overall_accept: true
+    no_major_concern: true
+    every_must_pass_criterion_severity: pass
+    minor_concerns_retained_in_ledger: true
+  numeric_average_or_opaque_composite_score: prohibited
+  batching_limitation: >-
+    Per-family judgments returned in one model call may share context and are
+    not independent replicates. Role separation and solver replicate separation
+    are preserved; uncertainty claims must not treat batched rows as independent
+    annotators.
+
+deterministic_checks:
+  canonical_json:
+    encoding: UTF-8
+    ensure_ascii: false
+    sort_keys: true
+    separators: [",", ":"]
+    allow_nan: false
+    trailing_newline_in_hash: false
+  id_specification:
+    selection_hash_prefix_characters: 12
+    family_id: >-
+      mb0_{selection_sha256[0:12]}_{regime_code}_{cell_id}_sv{variant:02d}
+    candidate_id: "{family_id}_g{candidate_round:02d}"
+    slot_id: "{family_id}_{format_code}"
+    candidate_item_id: "{candidate_id}_{format_code}"
+    final_item_id: "{slot_id}"
+    regime_codes:
+      seen: seen
+      unseen_combination: ucomb
+      unseen_value: uval
+    format_codes:
+      constrained_cloze: cloze
+      dialogue_completion: dialog
+      multiple_choice: mcq
+      sentence_transformation: xform
+  structural:
+    - schema_valid
+    - exact_family_and_item_counts
+    - exact_format_crossing_per_family
+    - no_duplicate_ids
+    - selected_cell_and_regime_match
+    - q_row_equals_frozen_projection
+    - q_row_binary_length_18
+    - canonical_target_identical_across_family_formats
+    - target_response_reconstructs_canonical_target
+    - dialogue_speaker_label_excluded_from_target_reconstruction
+    - exactly_one_response_slot_where_required
+    - exactly_four_unique_mcq_options
+    - exactly_one_mcq_key
+    - no_full_target_leakage_in_visible_prompt
+    - normalized_accepted_responses_unique
+    - all_paths_relative_and_within_run_root
+  ui_limits:
+    instruction_max_words: 24
+    context_max_words: 55
+    visible_prompt_max_words: 100
+    mcq_options: 4
+    dialogue_max_complete_turns: 3
+  semantic_variant_diversity:
+    applies_within_seen_cell: true
+    require_distinct_main_verb_lemma: true
+    require_distinct_context_summary: true
+    maximum_lowercase_content_token_jaccard: 0.60
+    stopword_list: [a, an, and, are, as, at, be, been, being, by, do, does, did, for, from, had, has, have, he, her, him, his, i, in, is, it, its, may, might, must, not, of, on, or, our, she, should, that, the, their, them, they, this, to, was, we, were, will, with, would, you, your]
+
+curation:
+  unit: family
+  accept_entire_family_or_reject_entire_family: true
+  cross_round_format_cherry_picking: prohibited
+  silent_repair: prohibited
+  post_generation_manual_copy_edit: prohibited_in_confirmatory_bank
+  successful_candidate_rule: earliest_candidate_round_passing_all_gates
+  final_item_id_assignment: replace_candidate_item_id_with_stable_slot_id
+  require_both_seen_variants: true
+  require_every_selected_cell: true
+  selected_cell_substitution: requires_new_versioned_selected_cells_artifact
+  unresolved_family_after_round_limit: fail_bank_freeze
+  curation_schema: schemas/curation_decision.schema.json
+
+failure_and_retry:
+  technical_failure_kinds:
+    - transport_error
+    - timeout
+    - empty_response
+    - malformed_json
+    - output_schema_failure
+  technical_attempts_per_request: 3
+  technical_retry_request_bytes_must_be_identical: true
+  technical_retry_prompt_hash_must_be_identical: true
+  scientific_failure_retries_validation: false
+  scientific_failure_action: advance_whole_family_to_next_generation_candidate_round
+  scientific_failure_feedback_to_generator: none
+  never_overwrite_raw_output: true
+  candidate_round_limit_action: mark_family_exhausted_and_fail_bank_freeze
+  correction_protocol: >-
+    Any later correction must be a separately versioned, append-only derived
+    candidate linked to the raw candidate and must rerun solver stress testing
+    and all three independent critics. It is outside this confirmatory v0.
+
+artifacts:
+  run_root: experiments/measurement_realism/design/bank_protocol/runs/{run_id}
+  immutable_inputs:
+    - frozen/config.yaml
+    - frozen/selected_cells.json
+    - frozen/prompts/
+    - frozen/schemas/
+    - frozen/input_hashes.json
+  plans:
+    - plans/generation_requests.jsonl
+    - plans/solver_requests.jsonl
+    - plans/critic_requests.jsonl
+  raw_outputs:
+    - raw/generation/{request_id}/{attempt_id}.txt
+    - raw/solver/{request_id}/{attempt_id}.txt
+    - raw/validation/{role}/{request_id}/{attempt_id}.txt
+  parsed_outputs:
+    - parsed/generation/{candidate_id}.json
+    - parsed/solver/{solver_attempt_id}.json
+    - parsed/validation/{role}/{critic_call_id}.json
+  ledgers:
+    - provenance/call_records.jsonl
+    - provenance/deterministic_checks.jsonl
+    - curation/family_decisions.jsonl
+    - curation/rejections.jsonl
+  frozen_bank:
+    - bank/items.jsonl
+    - bank/families.jsonl
+    - bank/q_matrix.csv
+    - bank/manifest.json
+  provenance_schema: schemas/call_record.schema.json

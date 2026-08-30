@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "The context permits more than one equivalent description of the unfinished work.",
+  "batch_id": "solver_r02_rep1_dialogue_completion_b02",
+  "instruction_understanding": "Complete the reply about what would have happened without Priya's help.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g02_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "wouldn't have completed the report before the deadline"
+  ],
+  "reasonable_unkeyed_responses": [
+    "wouldn't have completed the report before the deadline"
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g02_dialog_solver_r1",
+  "submitted_response": "wouldn't have finished his work before the deadline",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

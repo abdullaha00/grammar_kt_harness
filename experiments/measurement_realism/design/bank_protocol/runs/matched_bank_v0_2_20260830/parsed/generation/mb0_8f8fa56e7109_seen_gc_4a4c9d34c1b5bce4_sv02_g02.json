@@ -1,0 +1,161 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "Nina must have taken the parcel.",
+  "cell_id": "gc_4a4c9d34c1b5bce4",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g02_cloze",
+      "context": "The parcel was on the reception desk at 2 p.m. At 3 p.m. it was gone, and Nina was the only person who had entered the room.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Nina [[RESPONSE]] the parcel.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using “must” and the correct form of “take.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "must have taken",
+          "must've taken"
+        ],
+        "completed_target": "Nina must have taken the parcel.",
+        "correct_choice_id": null,
+        "target_response": "must have taken"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g02_dialog",
+      "context": "Maya and Owen are discussing a missing parcel.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Owen: The parcel was on the reception desk at 2 p.m., but it was gone by 3 p.m.",
+          "Owen: Nina was the only person who entered the room during that time."
+        ],
+        "incomplete_turn_template": "Maya: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Maya’s reply with her conclusion.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Nina must have taken the parcel.",
+          "Nina must've taken the parcel."
+        ],
+        "completed_target": "Nina must have taken the parcel.",
+        "correct_choice_id": null,
+        "target_response": "Nina must have taken the parcel."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g02_mcq",
+      "context": "The parcel was on the reception desk at 2 p.m. At 3 p.m. it was gone, and Nina was the only person who had entered the room.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses MUST with a base-form complement but omits perfect HAVE, expressing present necessity rather than a conclusion about an earlier event.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses the past form “took” instead of the required past participle “taken” after perfect HAVE.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Places perfect HAVE before MUST and fails to use MUST with its base-form complement.",
+          "option_id": "C"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Nina must take the parcel."
+          },
+          {
+            "id": "B",
+            "text": "Nina must have took the parcel."
+          },
+          {
+            "id": "C",
+            "text": "Nina has must taken the parcel."
+          },
+          {
+            "id": "D",
+            "text": "Nina must have taken the parcel."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "What is the most likely explanation?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that best expresses the conclusion.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "D"
+        ],
+        "completed_target": "Nina must have taken the parcel.",
+        "correct_choice_id": "D",
+        "target_response": "D"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g02_xform",
+      "context": "Use the evidence to explain what happened to the parcel.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "The parcel was on the reception desk at 2 p.m. It was gone at 3 p.m., and Nina was the only person who entered the room.",
+        "stem": null,
+        "transformation_cue": "Use “must” and the verb “take.” Begin with “Nina.”"
+      },
+      "instruction": "Rewrite the information as one sentence expressing a strong conclusion.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Nina must have taken the parcel.",
+          "Nina must've taken the parcel."
+        ],
+        "completed_target": "Nina must have taken the parcel.",
+        "correct_choice_id": null,
+        "target_response": "Nina must have taken the parcel."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Express a strong conclusion about who removed the parcel.",
+    "main_verb_lemma": "take",
+    "object_head": "parcel",
+    "participants": [
+      "Nina",
+      "Maya",
+      "Owen"
+    ],
+    "situation_summary": "A parcel disappeared from a reception desk while Nina was the only person entering the room.",
+    "time_anchor": "Between 2 p.m. and 3 p.m., before the disappearance was discovered"
+  },
+  "semantic_variant_index": 2
+}

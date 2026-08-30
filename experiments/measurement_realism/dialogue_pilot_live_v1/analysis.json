@@ -1,0 +1,3608 @@
+{
+  "analysis_id": "ecological_precision_continuum_analysis_v1",
+  "by_cell_stratum": {
+    "multi_kc": {
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 25,
+          "max": 4.0,
+          "mean": 2.08,
+          "median": 2.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 23,
+        "operation_counts": {
+          "discourse_pragmatics": 17,
+          "lexical_choice": 8,
+          "other": 4,
+          "pronoun_reference": 23
+        }
+      },
+      "judgments": 25,
+      "opportunities": 5,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_constrained_cloze",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_contextual_production",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_dialogue_completion",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_open_dialogue",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_sentence_transformation"
+      ],
+      "plausible_response_lower_bound": {
+        "count": 25,
+        "max": 6.0,
+        "mean": 3.36,
+        "median": 4.0,
+        "min": 1.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 7,
+          "major_gap": 12,
+          "minor_gap": 1,
+          "not_applicable": 5
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 21,
+          "determinate": 4
+        },
+        "context_naturalness": {
+          "minor_concern": 6,
+          "pass": 19
+        },
+        "interaction_naturalness": {
+          "minor_concern": 12,
+          "pass": 13
+        },
+        "kc_attribution": {
+          "clear": 7,
+          "partial": 18
+        },
+        "lexical_nuisance": {
+          "low": 25
+        },
+        "platform_plausibility": {
+          "minor_concern": 4,
+          "pass": 21
+        },
+        "task_comprehensibility": {
+          "pass": 25
+        }
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 25,
+        "false": 13,
+        "rate": 0.48,
+        "true": 12
+      }
+    },
+    "question": {
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 25,
+          "max": 4.0,
+          "mean": 1.48,
+          "median": 2.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 19,
+        "operation_counts": {
+          "agreement": 5,
+          "discourse_pragmatics": 12,
+          "lexical_choice": 6,
+          "pronoun_reference": 13,
+          "reported_speech": 1
+        }
+      },
+      "judgments": 25,
+      "opportunities": 5,
+      "opportunity_ids": [
+        "ecp_question_gc_08d90a35b669ed28_constrained_cloze",
+        "ecp_question_gc_08d90a35b669ed28_contextual_production",
+        "ecp_question_gc_08d90a35b669ed28_dialogue_completion",
+        "ecp_question_gc_08d90a35b669ed28_open_dialogue",
+        "ecp_question_gc_08d90a35b669ed28_sentence_transformation"
+      ],
+      "plausible_response_lower_bound": {
+        "count": 25,
+        "max": 5.0,
+        "mean": 2.44,
+        "median": 2.0,
+        "min": 1.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 10,
+          "major_gap": 2,
+          "minor_gap": 8,
+          "not_applicable": 5
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 17,
+          "determinate": 8
+        },
+        "context_naturalness": {
+          "minor_concern": 2,
+          "pass": 23
+        },
+        "interaction_naturalness": {
+          "minor_concern": 2,
+          "pass": 23
+        },
+        "kc_attribution": {
+          "clear": 16,
+          "partial": 9
+        },
+        "lexical_nuisance": {
+          "low": 23,
+          "moderate": 2
+        },
+        "platform_plausibility": {
+          "minor_concern": 2,
+          "pass": 23
+        },
+        "task_comprehensibility": {
+          "pass": 25
+        }
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 25,
+        "false": 13,
+        "rate": 0.48,
+        "true": 12
+      }
+    },
+    "rare_complex": {
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 25,
+          "max": 6.0,
+          "mean": 2.08,
+          "median": 2.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 21,
+        "operation_counts": {
+          "agreement": 10,
+          "auxiliary_selection": 5,
+          "discourse_pragmatics": 12,
+          "do_support": 5,
+          "lexical_choice": 10,
+          "operator_inversion": 5,
+          "pronoun_reference": 4,
+          "voice_argument_structure": 1
+        }
+      },
+      "judgments": 25,
+      "opportunities": 5,
+      "opportunity_ids": [
+        "ecp_rare_complex_gc_4634bf1b005f7724_constrained_cloze",
+        "ecp_rare_complex_gc_4634bf1b005f7724_contextual_production",
+        "ecp_rare_complex_gc_4634bf1b005f7724_dialogue_completion",
+        "ecp_rare_complex_gc_4634bf1b005f7724_open_dialogue",
+        "ecp_rare_complex_gc_4634bf1b005f7724_sentence_transformation"
+      ],
+      "plausible_response_lower_bound": {
+        "count": 25,
+        "max": 8.0,
+        "mean": 3.56,
+        "median": 3.0,
+        "min": 1.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 4,
+          "major_gap": 6,
+          "minor_gap": 9,
+          "not_applicable": 6
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 19,
+          "determinate": 4,
+          "materially_ambiguous": 2
+        },
+        "context_naturalness": {
+          "minor_concern": 1,
+          "pass": 24
+        },
+        "interaction_naturalness": {
+          "minor_concern": 6,
+          "pass": 19
+        },
+        "kc_attribution": {
+          "clear": 10,
+          "partial": 14,
+          "weak": 1
+        },
+        "lexical_nuisance": {
+          "low": 24,
+          "moderate": 1
+        },
+        "platform_plausibility": {
+          "minor_concern": 3,
+          "pass": 22
+        },
+        "task_comprehensibility": {
+          "minor_concern": 2,
+          "pass": 23
+        }
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 25,
+        "false": 9,
+        "rate": 0.64,
+        "true": 16
+      }
+    },
+    "simple": {
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 25,
+          "max": 5.0,
+          "mean": 2.6,
+          "median": 3.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 22,
+        "operation_counts": {
+          "agreement": 15,
+          "auxiliary_selection": 4,
+          "discourse_pragmatics": 12,
+          "do_support": 5,
+          "lexical_choice": 5,
+          "other": 8,
+          "pronoun_reference": 16
+        }
+      },
+      "judgments": 25,
+      "opportunities": 5,
+      "opportunity_ids": [
+        "ecp_simple_gc_d15de8b5658bd6a5_constrained_cloze",
+        "ecp_simple_gc_d15de8b5658bd6a5_contextual_production",
+        "ecp_simple_gc_d15de8b5658bd6a5_dialogue_completion",
+        "ecp_simple_gc_d15de8b5658bd6a5_open_dialogue",
+        "ecp_simple_gc_d15de8b5658bd6a5_sentence_transformation"
+      ],
+      "plausible_response_lower_bound": {
+        "count": 25,
+        "max": 8.0,
+        "mean": 3.36,
+        "median": 3.0,
+        "min": 1.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 9,
+          "major_gap": 10,
+          "minor_gap": 1,
+          "not_applicable": 5
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 16,
+          "determinate": 6,
+          "materially_ambiguous": 2,
+          "not_applicable": 1
+        },
+        "context_naturalness": {
+          "minor_concern": 2,
+          "pass": 23
+        },
+        "interaction_naturalness": {
+          "minor_concern": 4,
+          "pass": 21
+        },
+        "kc_attribution": {
+          "clear": 6,
+          "not_attributable": 1,
+          "partial": 17,
+          "weak": 1
+        },
+        "lexical_nuisance": {
+          "low": 25
+        },
+        "platform_plausibility": {
+          "minor_concern": 3,
+          "pass": 22
+        },
+        "task_comprehensibility": {
+          "pass": 25
+        }
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 25,
+        "false": 23,
+        "rate": 0.08,
+        "true": 2
+      }
+    }
+  },
+  "by_critic_role": {
+    "language_teacher": {
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 20,
+          "max": 5.0,
+          "mean": 2.95,
+          "median": 3.0,
+          "min": 2.0
+        },
+        "judgments_with_any": 20,
+        "operation_counts": {
+          "agreement": 15,
+          "auxiliary_selection": 1,
+          "discourse_pragmatics": 11,
+          "do_support": 2,
+          "lexical_choice": 9,
+          "other": 5,
+          "pronoun_reference": 16
+        }
+      },
+      "judgments": 20,
+      "opportunities": 20,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_constrained_cloze",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_contextual_production",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_dialogue_completion",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_open_dialogue",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_sentence_transformation",
+        "ecp_question_gc_08d90a35b669ed28_constrained_cloze",
+        "ecp_question_gc_08d90a35b669ed28_contextual_production",
+        "ecp_question_gc_08d90a35b669ed28_dialogue_completion",
+        "ecp_question_gc_08d90a35b669ed28_open_dialogue",
+        "ecp_question_gc_08d90a35b669ed28_sentence_transformation",
+        "ecp_rare_complex_gc_4634bf1b005f7724_constrained_cloze",
+        "ecp_rare_complex_gc_4634bf1b005f7724_contextual_production",
+        "ecp_rare_complex_gc_4634bf1b005f7724_dialogue_completion",
+        "ecp_rare_complex_gc_4634bf1b005f7724_open_dialogue",
+        "ecp_rare_complex_gc_4634bf1b005f7724_sentence_transformation",
+        "ecp_simple_gc_d15de8b5658bd6a5_constrained_cloze",
+        "ecp_simple_gc_d15de8b5658bd6a5_contextual_production",
+        "ecp_simple_gc_d15de8b5658bd6a5_dialogue_completion",
+        "ecp_simple_gc_d15de8b5658bd6a5_open_dialogue",
+        "ecp_simple_gc_d15de8b5658bd6a5_sentence_transformation"
+      ],
+      "plausible_response_lower_bound": {
+        "count": 20,
+        "max": 5.0,
+        "mean": 3.25,
+        "median": 3.0,
+        "min": 1.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 7,
+          "major_gap": 7,
+          "minor_gap": 6
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 17,
+          "determinate": 3
+        },
+        "context_naturalness": {
+          "minor_concern": 2,
+          "pass": 18
+        },
+        "interaction_naturalness": {
+          "minor_concern": 5,
+          "pass": 15
+        },
+        "kc_attribution": {
+          "clear": 10,
+          "partial": 10
+        },
+        "lexical_nuisance": {
+          "low": 19,
+          "moderate": 1
+        },
+        "platform_plausibility": {
+          "pass": 20
+        },
+        "task_comprehensibility": {
+          "minor_concern": 1,
+          "pass": 19
+        }
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 20,
+        "false": 12,
+        "rate": 0.4,
+        "true": 8
+      }
+    },
+    "learner": {
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 20,
+          "max": 3.0,
+          "mean": 1.05,
+          "median": 1.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 12,
+        "operation_counts": {
+          "discourse_pragmatics": 4,
+          "do_support": 1,
+          "lexical_choice": 7,
+          "pronoun_reference": 8,
+          "voice_argument_structure": 1
+        }
+      },
+      "judgments": 20,
+      "opportunities": 20,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_constrained_cloze",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_contextual_production",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_dialogue_completion",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_open_dialogue",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_sentence_transformation",
+        "ecp_question_gc_08d90a35b669ed28_constrained_cloze",
+        "ecp_question_gc_08d90a35b669ed28_contextual_production",
+        "ecp_question_gc_08d90a35b669ed28_dialogue_completion",
+        "ecp_question_gc_08d90a35b669ed28_open_dialogue",
+        "ecp_question_gc_08d90a35b669ed28_sentence_transformation",
+        "ecp_rare_complex_gc_4634bf1b005f7724_constrained_cloze",
+        "ecp_rare_complex_gc_4634bf1b005f7724_contextual_production",
+        "ecp_rare_complex_gc_4634bf1b005f7724_dialogue_completion",
+        "ecp_rare_complex_gc_4634bf1b005f7724_open_dialogue",
+        "ecp_rare_complex_gc_4634bf1b005f7724_sentence_transformation",
+        "ecp_simple_gc_d15de8b5658bd6a5_constrained_cloze",
+        "ecp_simple_gc_d15de8b5658bd6a5_contextual_production",
+        "ecp_simple_gc_d15de8b5658bd6a5_dialogue_completion",
+        "ecp_simple_gc_d15de8b5658bd6a5_open_dialogue",
+        "ecp_simple_gc_d15de8b5658bd6a5_sentence_transformation"
+      ],
+      "plausible_response_lower_bound": {
+        "count": 20,
+        "max": 5.0,
+        "mean": 2.25,
+        "median": 2.0,
+        "min": 1.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "not_applicable": 20
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 13,
+          "determinate": 5,
+          "materially_ambiguous": 2
+        },
+        "context_naturalness": {
+          "minor_concern": 4,
+          "pass": 16
+        },
+        "interaction_naturalness": {
+          "minor_concern": 5,
+          "pass": 15
+        },
+        "kc_attribution": {
+          "clear": 7,
+          "not_attributable": 1,
+          "partial": 11,
+          "weak": 1
+        },
+        "lexical_nuisance": {
+          "low": 19,
+          "moderate": 1
+        },
+        "platform_plausibility": {
+          "pass": 20
+        },
+        "task_comprehensibility": {
+          "minor_concern": 1,
+          "pass": 19
+        }
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 20,
+        "false": 11,
+        "rate": 0.45,
+        "true": 9
+      }
+    },
+    "linguistic": {
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 20,
+          "max": 6.0,
+          "mean": 3.05,
+          "median": 3.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 19,
+        "operation_counts": {
+          "agreement": 10,
+          "auxiliary_selection": 6,
+          "discourse_pragmatics": 11,
+          "do_support": 6,
+          "lexical_choice": 10,
+          "operator_inversion": 5,
+          "other": 3,
+          "pronoun_reference": 10
+        }
+      },
+      "judgments": 20,
+      "opportunities": 20,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_constrained_cloze",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_contextual_production",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_dialogue_completion",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_open_dialogue",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_sentence_transformation",
+        "ecp_question_gc_08d90a35b669ed28_constrained_cloze",
+        "ecp_question_gc_08d90a35b669ed28_contextual_production",
+        "ecp_question_gc_08d90a35b669ed28_dialogue_completion",
+        "ecp_question_gc_08d90a35b669ed28_open_dialogue",
+        "ecp_question_gc_08d90a35b669ed28_sentence_transformation",
+        "ecp_rare_complex_gc_4634bf1b005f7724_constrained_cloze",
+        "ecp_rare_complex_gc_4634bf1b005f7724_contextual_production",
+        "ecp_rare_complex_gc_4634bf1b005f7724_dialogue_completion",
+        "ecp_rare_complex_gc_4634bf1b005f7724_open_dialogue",
+        "ecp_rare_complex_gc_4634bf1b005f7724_sentence_transformation",
+        "ecp_simple_gc_d15de8b5658bd6a5_constrained_cloze",
+        "ecp_simple_gc_d15de8b5658bd6a5_contextual_production",
+        "ecp_simple_gc_d15de8b5658bd6a5_dialogue_completion",
+        "ecp_simple_gc_d15de8b5658bd6a5_open_dialogue",
+        "ecp_simple_gc_d15de8b5658bd6a5_sentence_transformation"
+      ],
+      "plausible_response_lower_bound": {
+        "count": 20,
+        "max": 5.0,
+        "mean": 3.2,
+        "median": 3.0,
+        "min": 1.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 7,
+          "major_gap": 7,
+          "minor_gap": 6
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 14,
+          "determinate": 6
+        },
+        "context_naturalness": {
+          "pass": 20
+        },
+        "interaction_naturalness": {
+          "minor_concern": 2,
+          "pass": 18
+        },
+        "kc_attribution": {
+          "clear": 7,
+          "partial": 13
+        },
+        "lexical_nuisance": {
+          "low": 19,
+          "moderate": 1
+        },
+        "platform_plausibility": {
+          "pass": 20
+        },
+        "task_comprehensibility": {
+          "pass": 20
+        }
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 20,
+        "false": 10,
+        "rate": 0.5,
+        "true": 10
+      }
+    },
+    "measurement": {
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 20,
+          "max": 4.0,
+          "mean": 1.9,
+          "median": 2.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 18,
+        "operation_counts": {
+          "agreement": 5,
+          "auxiliary_selection": 1,
+          "discourse_pragmatics": 12,
+          "lexical_choice": 1,
+          "other": 4,
+          "pronoun_reference": 15
+        }
+      },
+      "judgments": 20,
+      "opportunities": 20,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_constrained_cloze",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_contextual_production",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_dialogue_completion",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_open_dialogue",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_sentence_transformation",
+        "ecp_question_gc_08d90a35b669ed28_constrained_cloze",
+        "ecp_question_gc_08d90a35b669ed28_contextual_production",
+        "ecp_question_gc_08d90a35b669ed28_dialogue_completion",
+        "ecp_question_gc_08d90a35b669ed28_open_dialogue",
+        "ecp_question_gc_08d90a35b669ed28_sentence_transformation",
+        "ecp_rare_complex_gc_4634bf1b005f7724_constrained_cloze",
+        "ecp_rare_complex_gc_4634bf1b005f7724_contextual_production",
+        "ecp_rare_complex_gc_4634bf1b005f7724_dialogue_completion",
+        "ecp_rare_complex_gc_4634bf1b005f7724_open_dialogue",
+        "ecp_rare_complex_gc_4634bf1b005f7724_sentence_transformation",
+        "ecp_simple_gc_d15de8b5658bd6a5_constrained_cloze",
+        "ecp_simple_gc_d15de8b5658bd6a5_contextual_production",
+        "ecp_simple_gc_d15de8b5658bd6a5_dialogue_completion",
+        "ecp_simple_gc_d15de8b5658bd6a5_open_dialogue",
+        "ecp_simple_gc_d15de8b5658bd6a5_sentence_transformation"
+      ],
+      "plausible_response_lower_bound": {
+        "count": 20,
+        "max": 8.0,
+        "mean": 3.8,
+        "median": 3.5,
+        "min": 1.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 9,
+          "major_gap": 7,
+          "minor_gap": 4
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 15,
+          "determinate": 4,
+          "materially_ambiguous": 1
+        },
+        "context_naturalness": {
+          "minor_concern": 4,
+          "pass": 16
+        },
+        "interaction_naturalness": {
+          "minor_concern": 5,
+          "pass": 15
+        },
+        "kc_attribution": {
+          "clear": 8,
+          "partial": 11,
+          "weak": 1
+        },
+        "lexical_nuisance": {
+          "low": 20
+        },
+        "platform_plausibility": {
+          "pass": 20
+        },
+        "task_comprehensibility": {
+          "pass": 20
+        }
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 20,
+        "false": 12,
+        "rate": 0.4,
+        "true": 8
+      }
+    },
+    "platform_product": {
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 20,
+          "max": 3.0,
+          "mean": 1.35,
+          "median": 1.5,
+          "min": 0.0
+        },
+        "judgments_with_any": 16,
+        "operation_counts": {
+          "auxiliary_selection": 1,
+          "discourse_pragmatics": 15,
+          "do_support": 1,
+          "lexical_choice": 2,
+          "pronoun_reference": 7,
+          "reported_speech": 1
+        }
+      },
+      "judgments": 20,
+      "opportunities": 20,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_constrained_cloze",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_contextual_production",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_dialogue_completion",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_open_dialogue",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_sentence_transformation",
+        "ecp_question_gc_08d90a35b669ed28_constrained_cloze",
+        "ecp_question_gc_08d90a35b669ed28_contextual_production",
+        "ecp_question_gc_08d90a35b669ed28_dialogue_completion",
+        "ecp_question_gc_08d90a35b669ed28_open_dialogue",
+        "ecp_question_gc_08d90a35b669ed28_sentence_transformation",
+        "ecp_rare_complex_gc_4634bf1b005f7724_constrained_cloze",
+        "ecp_rare_complex_gc_4634bf1b005f7724_contextual_production",
+        "ecp_rare_complex_gc_4634bf1b005f7724_dialogue_completion",
+        "ecp_rare_complex_gc_4634bf1b005f7724_open_dialogue",
+        "ecp_rare_complex_gc_4634bf1b005f7724_sentence_transformation",
+        "ecp_simple_gc_d15de8b5658bd6a5_constrained_cloze",
+        "ecp_simple_gc_d15de8b5658bd6a5_contextual_production",
+        "ecp_simple_gc_d15de8b5658bd6a5_dialogue_completion",
+        "ecp_simple_gc_d15de8b5658bd6a5_open_dialogue",
+        "ecp_simple_gc_d15de8b5658bd6a5_sentence_transformation"
+      ],
+      "plausible_response_lower_bound": {
+        "count": 20,
+        "max": 5.0,
+        "mean": 3.4,
+        "median": 4.0,
+        "min": 1.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 7,
+          "major_gap": 9,
+          "minor_gap": 3,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 14,
+          "determinate": 4,
+          "materially_ambiguous": 1,
+          "not_applicable": 1
+        },
+        "context_naturalness": {
+          "minor_concern": 1,
+          "pass": 19
+        },
+        "interaction_naturalness": {
+          "minor_concern": 7,
+          "pass": 13
+        },
+        "kc_attribution": {
+          "clear": 7,
+          "partial": 13
+        },
+        "lexical_nuisance": {
+          "low": 20
+        },
+        "platform_plausibility": {
+          "minor_concern": 12,
+          "pass": 8
+        },
+        "task_comprehensibility": {
+          "pass": 20
+        }
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 20,
+        "false": 13,
+        "rate": 0.35,
+        "true": 7
+      }
+    }
+  },
+  "by_format": {
+    "constrained_cloze": {
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 20,
+          "max": 4.0,
+          "mean": 1.25,
+          "median": 1.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 12,
+        "operation_counts": {
+          "agreement": 6,
+          "auxiliary_selection": 1,
+          "discourse_pragmatics": 1,
+          "do_support": 1,
+          "lexical_choice": 3,
+          "operator_inversion": 1,
+          "other": 4,
+          "pronoun_reference": 8
+        }
+      },
+      "judgments": 20,
+      "opportunities": 4,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_constrained_cloze",
+        "ecp_question_gc_08d90a35b669ed28_constrained_cloze",
+        "ecp_rare_complex_gc_4634bf1b005f7724_constrained_cloze",
+        "ecp_simple_gc_d15de8b5658bd6a5_constrained_cloze"
+      ],
+      "plausible_response_lower_bound": {
+        "count": 20,
+        "max": 3.0,
+        "mean": 1.3,
+        "median": 1.0,
+        "min": 1.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 13,
+          "minor_gap": 3,
+          "not_applicable": 4
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 3,
+          "determinate": 17
+        },
+        "context_naturalness": {
+          "minor_concern": 2,
+          "pass": 18
+        },
+        "interaction_naturalness": {
+          "minor_concern": 3,
+          "pass": 17
+        },
+        "kc_attribution": {
+          "clear": 17,
+          "partial": 3
+        },
+        "lexical_nuisance": {
+          "low": 20
+        },
+        "platform_plausibility": {
+          "pass": 20
+        },
+        "task_comprehensibility": {
+          "pass": 20
+        }
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 20,
+        "false": 19,
+        "rate": 0.05,
+        "true": 1
+      }
+    },
+    "contextual_production": {
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 20,
+          "max": 4.0,
+          "mean": 1.9,
+          "median": 1.5,
+          "min": 0.0
+        },
+        "judgments_with_any": 19,
+        "operation_counts": {
+          "agreement": 6,
+          "auxiliary_selection": 1,
+          "discourse_pragmatics": 10,
+          "do_support": 1,
+          "lexical_choice": 7,
+          "operator_inversion": 1,
+          "other": 2,
+          "pronoun_reference": 10
+        }
+      },
+      "judgments": 20,
+      "opportunities": 4,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_contextual_production",
+        "ecp_question_gc_08d90a35b669ed28_contextual_production",
+        "ecp_rare_complex_gc_4634bf1b005f7724_contextual_production",
+        "ecp_simple_gc_d15de8b5658bd6a5_contextual_production"
+      ],
+      "plausible_response_lower_bound": {
+        "count": 20,
+        "max": 6.0,
+        "mean": 3.5,
+        "median": 3.5,
+        "min": 1.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 1,
+          "major_gap": 11,
+          "minor_gap": 4,
+          "not_applicable": 4
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 19,
+          "determinate": 1
+        },
+        "context_naturalness": {
+          "minor_concern": 1,
+          "pass": 19
+        },
+        "interaction_naturalness": {
+          "minor_concern": 10,
+          "pass": 10
+        },
+        "kc_attribution": {
+          "clear": 5,
+          "partial": 15
+        },
+        "lexical_nuisance": {
+          "low": 20
+        },
+        "platform_plausibility": {
+          "minor_concern": 3,
+          "pass": 17
+        },
+        "task_comprehensibility": {
+          "minor_concern": 1,
+          "pass": 19
+        }
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 20,
+        "false": 12,
+        "rate": 0.4,
+        "true": 8
+      }
+    },
+    "dialogue_completion": {
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 20,
+          "max": 5.0,
+          "mean": 2.3,
+          "median": 2.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 18,
+        "operation_counts": {
+          "agreement": 6,
+          "auxiliary_selection": 1,
+          "discourse_pragmatics": 17,
+          "do_support": 2,
+          "lexical_choice": 6,
+          "operator_inversion": 1,
+          "pronoun_reference": 13
+        }
+      },
+      "judgments": 20,
+      "opportunities": 4,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_dialogue_completion",
+        "ecp_question_gc_08d90a35b669ed28_dialogue_completion",
+        "ecp_rare_complex_gc_4634bf1b005f7724_dialogue_completion",
+        "ecp_simple_gc_d15de8b5658bd6a5_dialogue_completion"
+      ],
+      "plausible_response_lower_bound": {
+        "count": 20,
+        "max": 6.0,
+        "mean": 3.85,
+        "median": 4.0,
+        "min": 2.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "major_gap": 13,
+          "minor_gap": 3,
+          "not_applicable": 4
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 19,
+          "materially_ambiguous": 1
+        },
+        "context_naturalness": {
+          "minor_concern": 4,
+          "pass": 16
+        },
+        "interaction_naturalness": {
+          "minor_concern": 4,
+          "pass": 16
+        },
+        "kc_attribution": {
+          "clear": 3,
+          "not_attributable": 1,
+          "partial": 15,
+          "weak": 1
+        },
+        "lexical_nuisance": {
+          "low": 20
+        },
+        "platform_plausibility": {
+          "minor_concern": 4,
+          "pass": 16
+        },
+        "task_comprehensibility": {
+          "pass": 20
+        }
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 20,
+        "false": 6,
+        "rate": 0.7,
+        "true": 14
+      }
+    },
+    "open_dialogue": {
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 20,
+          "max": 6.0,
+          "mean": 2.75,
+          "median": 2.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 19,
+        "operation_counts": {
+          "agreement": 6,
+          "auxiliary_selection": 1,
+          "discourse_pragmatics": 19,
+          "do_support": 2,
+          "lexical_choice": 7,
+          "operator_inversion": 1,
+          "other": 3,
+          "pronoun_reference": 16
+        }
+      },
+      "judgments": 20,
+      "opportunities": 4,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_open_dialogue",
+        "ecp_question_gc_08d90a35b669ed28_open_dialogue",
+        "ecp_rare_complex_gc_4634bf1b005f7724_open_dialogue",
+        "ecp_simple_gc_d15de8b5658bd6a5_open_dialogue"
+      ],
+      "plausible_response_lower_bound": {
+        "count": 20,
+        "max": 8.0,
+        "mean": 4.55,
+        "median": 5.0,
+        "min": 2.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 14,
+          "minor_gap": 1,
+          "not_applicable": 5
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 16,
+          "materially_ambiguous": 3,
+          "not_applicable": 1
+        },
+        "context_naturalness": {
+          "pass": 20
+        },
+        "interaction_naturalness": {
+          "pass": 20
+        },
+        "kc_attribution": {
+          "clear": 4,
+          "partial": 15,
+          "weak": 1
+        },
+        "lexical_nuisance": {
+          "low": 20
+        },
+        "platform_plausibility": {
+          "minor_concern": 3,
+          "pass": 17
+        },
+        "task_comprehensibility": {
+          "pass": 20
+        }
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 20,
+        "false": 7,
+        "rate": 0.65,
+        "true": 13
+      }
+    },
+    "sentence_transformation": {
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 20,
+          "max": 4.0,
+          "mean": 2.1,
+          "median": 2.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 17,
+        "operation_counts": {
+          "agreement": 6,
+          "auxiliary_selection": 5,
+          "discourse_pragmatics": 6,
+          "do_support": 4,
+          "lexical_choice": 6,
+          "operator_inversion": 1,
+          "other": 3,
+          "pronoun_reference": 9,
+          "reported_speech": 1,
+          "voice_argument_structure": 1
+        }
+      },
+      "judgments": 20,
+      "opportunities": 4,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_sentence_transformation",
+        "ecp_question_gc_08d90a35b669ed28_sentence_transformation",
+        "ecp_rare_complex_gc_4634bf1b005f7724_sentence_transformation",
+        "ecp_simple_gc_d15de8b5658bd6a5_sentence_transformation"
+      ],
+      "plausible_response_lower_bound": {
+        "count": 20,
+        "max": 4.0,
+        "mean": 2.7,
+        "median": 3.0,
+        "min": 1.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 2,
+          "major_gap": 6,
+          "minor_gap": 8,
+          "not_applicable": 4
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 16,
+          "determinate": 4
+        },
+        "context_naturalness": {
+          "minor_concern": 4,
+          "pass": 16
+        },
+        "interaction_naturalness": {
+          "minor_concern": 7,
+          "pass": 13
+        },
+        "kc_attribution": {
+          "clear": 10,
+          "partial": 10
+        },
+        "lexical_nuisance": {
+          "low": 17,
+          "moderate": 3
+        },
+        "platform_plausibility": {
+          "minor_concern": 2,
+          "pass": 18
+        },
+        "task_comprehensibility": {
+          "minor_concern": 1,
+          "pass": 19
+        }
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 20,
+        "false": 14,
+        "rate": 0.3,
+        "true": 6
+      }
+    }
+  },
+  "by_opportunity": {
+    "ecp_multi_kc_gc_2d6eb4f93cba4c6b_constrained_cloze": {
+      "family_id": "ecp_multi_kc_gc_2d6eb4f93cba4c6b",
+      "format": "constrained_cloze",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 2.0,
+          "mean": 1.2,
+          "median": 2.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 3,
+        "operation_counts": {
+          "discourse_pragmatics": 1,
+          "other": 2,
+          "pronoun_reference": 3
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_constrained_cloze"
+      ],
+      "pilot_stratum": "multi_kc",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 2.0,
+        "mean": 1.2,
+        "median": 1.0,
+        "min": 1.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 3,
+          "minor_gap": 1,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 1,
+          "determinate": 4
+        },
+        "context_naturalness": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "interaction_naturalness": {
+          "pass": 5
+        },
+        "kc_attribution": {
+          "clear": 4,
+          "partial": 1
+        },
+        "lexical_nuisance": {
+          "low": 5
+        },
+        "platform_plausibility": {
+          "pass": 5
+        },
+        "task_comprehensibility": {
+          "pass": 5
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": true,
+        "answer_determinacy": true,
+        "context_naturalness": true,
+        "interaction_naturalness": false,
+        "kc_attribution": true,
+        "lexical_nuisance": false,
+        "platform_plausibility": false,
+        "task_comprehensibility": false
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 4,
+        "rate": 0.2,
+        "true": 1
+      }
+    },
+    "ecp_multi_kc_gc_2d6eb4f93cba4c6b_contextual_production": {
+      "family_id": "ecp_multi_kc_gc_2d6eb4f93cba4c6b",
+      "format": "contextual_production",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 3.0,
+          "mean": 2.2,
+          "median": 2.0,
+          "min": 1.0
+        },
+        "judgments_with_any": 5,
+        "operation_counts": {
+          "discourse_pragmatics": 3,
+          "lexical_choice": 3,
+          "pronoun_reference": 5
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_contextual_production"
+      ],
+      "pilot_stratum": "multi_kc",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 6.0,
+        "mean": 4.0,
+        "median": 4.0,
+        "min": 2.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "major_gap": 4,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 5
+        },
+        "context_naturalness": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "interaction_naturalness": {
+          "minor_concern": 4,
+          "pass": 1
+        },
+        "kc_attribution": {
+          "partial": 5
+        },
+        "lexical_nuisance": {
+          "low": 5
+        },
+        "platform_plausibility": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "task_comprehensibility": {
+          "pass": 5
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": false,
+        "answer_determinacy": false,
+        "context_naturalness": true,
+        "interaction_naturalness": true,
+        "kc_attribution": false,
+        "lexical_nuisance": false,
+        "platform_plausibility": true,
+        "task_comprehensibility": false
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 3,
+        "rate": 0.4,
+        "true": 2
+      }
+    },
+    "ecp_multi_kc_gc_2d6eb4f93cba4c6b_dialogue_completion": {
+      "family_id": "ecp_multi_kc_gc_2d6eb4f93cba4c6b",
+      "format": "dialogue_completion",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 3.0,
+          "mean": 2.4,
+          "median": 2.0,
+          "min": 2.0
+        },
+        "judgments_with_any": 5,
+        "operation_counts": {
+          "discourse_pragmatics": 5,
+          "lexical_choice": 2,
+          "pronoun_reference": 5
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_dialogue_completion"
+      ],
+      "pilot_stratum": "multi_kc",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 5.0,
+        "mean": 4.0,
+        "median": 4.0,
+        "min": 2.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "major_gap": 4,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 5
+        },
+        "context_naturalness": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "interaction_naturalness": {
+          "minor_concern": 3,
+          "pass": 2
+        },
+        "kc_attribution": {
+          "partial": 5
+        },
+        "lexical_nuisance": {
+          "low": 5
+        },
+        "platform_plausibility": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "task_comprehensibility": {
+          "pass": 5
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": false,
+        "answer_determinacy": false,
+        "context_naturalness": true,
+        "interaction_naturalness": true,
+        "kc_attribution": false,
+        "lexical_nuisance": false,
+        "platform_plausibility": true,
+        "task_comprehensibility": false
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 1,
+        "rate": 0.8,
+        "true": 4
+      }
+    },
+    "ecp_multi_kc_gc_2d6eb4f93cba4c6b_open_dialogue": {
+      "family_id": "ecp_multi_kc_gc_2d6eb4f93cba4c6b",
+      "format": "open_dialogue",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 4.0,
+          "mean": 2.6,
+          "median": 2.0,
+          "min": 2.0
+        },
+        "judgments_with_any": 5,
+        "operation_counts": {
+          "discourse_pragmatics": 5,
+          "lexical_choice": 2,
+          "other": 1,
+          "pronoun_reference": 5
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_open_dialogue"
+      ],
+      "pilot_stratum": "multi_kc",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 5.0,
+        "mean": 4.2,
+        "median": 4.0,
+        "min": 3.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 4,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 5
+        },
+        "context_naturalness": {
+          "pass": 5
+        },
+        "interaction_naturalness": {
+          "pass": 5
+        },
+        "kc_attribution": {
+          "clear": 3,
+          "partial": 2
+        },
+        "lexical_nuisance": {
+          "low": 5
+        },
+        "platform_plausibility": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "task_comprehensibility": {
+          "pass": 5
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": false,
+        "answer_determinacy": false,
+        "context_naturalness": false,
+        "interaction_naturalness": false,
+        "kc_attribution": true,
+        "lexical_nuisance": false,
+        "platform_plausibility": true,
+        "task_comprehensibility": false
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 3,
+        "rate": 0.4,
+        "true": 2
+      }
+    },
+    "ecp_multi_kc_gc_2d6eb4f93cba4c6b_sentence_transformation": {
+      "family_id": "ecp_multi_kc_gc_2d6eb4f93cba4c6b",
+      "format": "sentence_transformation",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 3.0,
+          "mean": 2.0,
+          "median": 2.0,
+          "min": 1.0
+        },
+        "judgments_with_any": 5,
+        "operation_counts": {
+          "discourse_pragmatics": 3,
+          "lexical_choice": 1,
+          "other": 1,
+          "pronoun_reference": 5
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_sentence_transformation"
+      ],
+      "pilot_stratum": "multi_kc",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 4.0,
+        "mean": 3.4,
+        "median": 4.0,
+        "min": 2.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "major_gap": 4,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 5
+        },
+        "context_naturalness": {
+          "minor_concern": 3,
+          "pass": 2
+        },
+        "interaction_naturalness": {
+          "minor_concern": 5
+        },
+        "kc_attribution": {
+          "partial": 5
+        },
+        "lexical_nuisance": {
+          "low": 5
+        },
+        "platform_plausibility": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "task_comprehensibility": {
+          "pass": 5
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": false,
+        "answer_determinacy": false,
+        "context_naturalness": true,
+        "interaction_naturalness": false,
+        "kc_attribution": false,
+        "lexical_nuisance": false,
+        "platform_plausibility": true,
+        "task_comprehensibility": false
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 2,
+        "rate": 0.6,
+        "true": 3
+      }
+    },
+    "ecp_question_gc_08d90a35b669ed28_constrained_cloze": {
+      "family_id": "ecp_question_gc_08d90a35b669ed28",
+      "format": "constrained_cloze",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 2.0,
+          "mean": 0.8,
+          "median": 1.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 3,
+        "operation_counts": {
+          "agreement": 1,
+          "pronoun_reference": 3
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_question_gc_08d90a35b669ed28_constrained_cloze"
+      ],
+      "pilot_stratum": "question",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 1.0,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 4,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "determinate": 5
+        },
+        "context_naturalness": {
+          "pass": 5
+        },
+        "interaction_naturalness": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "kc_attribution": {
+          "clear": 5
+        },
+        "lexical_nuisance": {
+          "low": 5
+        },
+        "platform_plausibility": {
+          "pass": 5
+        },
+        "task_comprehensibility": {
+          "pass": 5
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": false,
+        "answer_determinacy": false,
+        "context_naturalness": false,
+        "interaction_naturalness": true,
+        "kc_attribution": false,
+        "lexical_nuisance": false,
+        "platform_plausibility": false,
+        "task_comprehensibility": false
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 5,
+        "rate": 0.0,
+        "true": 0
+      }
+    },
+    "ecp_question_gc_08d90a35b669ed28_contextual_production": {
+      "family_id": "ecp_question_gc_08d90a35b669ed28",
+      "format": "contextual_production",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 3.0,
+          "mean": 1.2,
+          "median": 1.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 4,
+        "operation_counts": {
+          "agreement": 1,
+          "discourse_pragmatics": 2,
+          "lexical_choice": 1,
+          "pronoun_reference": 2
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_question_gc_08d90a35b669ed28_contextual_production"
+      ],
+      "pilot_stratum": "question",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 3.0,
+        "mean": 2.2,
+        "median": 2.0,
+        "min": 1.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 1,
+          "minor_gap": 3,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 4,
+          "determinate": 1
+        },
+        "context_naturalness": {
+          "pass": 5
+        },
+        "interaction_naturalness": {
+          "pass": 5
+        },
+        "kc_attribution": {
+          "clear": 4,
+          "partial": 1
+        },
+        "lexical_nuisance": {
+          "low": 5
+        },
+        "platform_plausibility": {
+          "pass": 5
+        },
+        "task_comprehensibility": {
+          "pass": 5
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": true,
+        "answer_determinacy": true,
+        "context_naturalness": false,
+        "interaction_naturalness": false,
+        "kc_attribution": true,
+        "lexical_nuisance": false,
+        "platform_plausibility": false,
+        "task_comprehensibility": false
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 3,
+        "rate": 0.4,
+        "true": 2
+      }
+    },
+    "ecp_question_gc_08d90a35b669ed28_dialogue_completion": {
+      "family_id": "ecp_question_gc_08d90a35b669ed28",
+      "format": "dialogue_completion",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 3.0,
+          "mean": 1.8,
+          "median": 2.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 4,
+        "operation_counts": {
+          "agreement": 1,
+          "discourse_pragmatics": 4,
+          "lexical_choice": 1,
+          "pronoun_reference": 3
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_question_gc_08d90a35b669ed28_dialogue_completion"
+      ],
+      "pilot_stratum": "question",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 4.0,
+        "mean": 3.2,
+        "median": 3.0,
+        "min": 2.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "major_gap": 2,
+          "minor_gap": 2,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 5
+        },
+        "context_naturalness": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "interaction_naturalness": {
+          "pass": 5
+        },
+        "kc_attribution": {
+          "clear": 2,
+          "partial": 3
+        },
+        "lexical_nuisance": {
+          "low": 5
+        },
+        "platform_plausibility": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "task_comprehensibility": {
+          "pass": 5
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": true,
+        "answer_determinacy": false,
+        "context_naturalness": true,
+        "interaction_naturalness": false,
+        "kc_attribution": true,
+        "lexical_nuisance": false,
+        "platform_plausibility": true,
+        "task_comprehensibility": false
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 1,
+        "rate": 0.8,
+        "true": 4
+      }
+    },
+    "ecp_question_gc_08d90a35b669ed28_open_dialogue": {
+      "family_id": "ecp_question_gc_08d90a35b669ed28",
+      "format": "open_dialogue",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 4.0,
+          "mean": 2.0,
+          "median": 2.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 4,
+        "operation_counts": {
+          "agreement": 1,
+          "discourse_pragmatics": 4,
+          "lexical_choice": 2,
+          "pronoun_reference": 3
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_question_gc_08d90a35b669ed28_open_dialogue"
+      ],
+      "pilot_stratum": "question",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 5.0,
+        "mean": 3.8,
+        "median": 4.0,
+        "min": 2.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 4,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 5
+        },
+        "context_naturalness": {
+          "pass": 5
+        },
+        "interaction_naturalness": {
+          "pass": 5
+        },
+        "kc_attribution": {
+          "clear": 1,
+          "partial": 4
+        },
+        "lexical_nuisance": {
+          "low": 5
+        },
+        "platform_plausibility": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "task_comprehensibility": {
+          "pass": 5
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": false,
+        "answer_determinacy": false,
+        "context_naturalness": false,
+        "interaction_naturalness": false,
+        "kc_attribution": true,
+        "lexical_nuisance": false,
+        "platform_plausibility": true,
+        "task_comprehensibility": false
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 0,
+        "rate": 1.0,
+        "true": 5
+      }
+    },
+    "ecp_question_gc_08d90a35b669ed28_sentence_transformation": {
+      "family_id": "ecp_question_gc_08d90a35b669ed28",
+      "format": "sentence_transformation",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 3.0,
+          "mean": 1.6,
+          "median": 2.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 4,
+        "operation_counts": {
+          "agreement": 1,
+          "discourse_pragmatics": 2,
+          "lexical_choice": 2,
+          "pronoun_reference": 2,
+          "reported_speech": 1
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_question_gc_08d90a35b669ed28_sentence_transformation"
+      ],
+      "pilot_stratum": "question",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 3.0,
+        "mean": 2.0,
+        "median": 2.0,
+        "min": 1.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 1,
+          "minor_gap": 3,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 3,
+          "determinate": 2
+        },
+        "context_naturalness": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "interaction_naturalness": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "kc_attribution": {
+          "clear": 4,
+          "partial": 1
+        },
+        "lexical_nuisance": {
+          "low": 3,
+          "moderate": 2
+        },
+        "platform_plausibility": {
+          "pass": 5
+        },
+        "task_comprehensibility": {
+          "pass": 5
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": true,
+        "answer_determinacy": true,
+        "context_naturalness": true,
+        "interaction_naturalness": true,
+        "kc_attribution": true,
+        "lexical_nuisance": true,
+        "platform_plausibility": false,
+        "task_comprehensibility": false
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 4,
+        "rate": 0.2,
+        "true": 1
+      }
+    },
+    "ecp_rare_complex_gc_4634bf1b005f7724_constrained_cloze": {
+      "family_id": "ecp_rare_complex_gc_4634bf1b005f7724",
+      "format": "constrained_cloze",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 4.0,
+          "mean": 1.4,
+          "median": 1.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 3,
+        "operation_counts": {
+          "agreement": 2,
+          "auxiliary_selection": 1,
+          "do_support": 1,
+          "lexical_choice": 2,
+          "operator_inversion": 1
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_rare_complex_gc_4634bf1b005f7724_constrained_cloze"
+      ],
+      "pilot_stratum": "rare_complex",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 3.0,
+        "mean": 2.0,
+        "median": 2.0,
+        "min": 1.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 2,
+          "minor_gap": 2,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 2,
+          "determinate": 3
+        },
+        "context_naturalness": {
+          "pass": 5
+        },
+        "interaction_naturalness": {
+          "minor_concern": 2,
+          "pass": 3
+        },
+        "kc_attribution": {
+          "clear": 4,
+          "partial": 1
+        },
+        "lexical_nuisance": {
+          "low": 5
+        },
+        "platform_plausibility": {
+          "pass": 5
+        },
+        "task_comprehensibility": {
+          "pass": 5
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": true,
+        "answer_determinacy": true,
+        "context_naturalness": false,
+        "interaction_naturalness": true,
+        "kc_attribution": true,
+        "lexical_nuisance": false,
+        "platform_plausibility": false,
+        "task_comprehensibility": false
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 5,
+        "rate": 0.0,
+        "true": 0
+      }
+    },
+    "ecp_rare_complex_gc_4634bf1b005f7724_contextual_production": {
+      "family_id": "ecp_rare_complex_gc_4634bf1b005f7724",
+      "format": "contextual_production",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 4.0,
+          "mean": 2.0,
+          "median": 1.0,
+          "min": 1.0
+        },
+        "judgments_with_any": 5,
+        "operation_counts": {
+          "agreement": 2,
+          "auxiliary_selection": 1,
+          "discourse_pragmatics": 3,
+          "do_support": 1,
+          "lexical_choice": 2,
+          "operator_inversion": 1
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_rare_complex_gc_4634bf1b005f7724_contextual_production"
+      ],
+      "pilot_stratum": "rare_complex",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 5.0,
+        "mean": 3.8,
+        "median": 4.0,
+        "min": 3.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "major_gap": 3,
+          "minor_gap": 1,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 5
+        },
+        "context_naturalness": {
+          "pass": 5
+        },
+        "interaction_naturalness": {
+          "minor_concern": 3,
+          "pass": 2
+        },
+        "kc_attribution": {
+          "clear": 1,
+          "partial": 4
+        },
+        "lexical_nuisance": {
+          "low": 5
+        },
+        "platform_plausibility": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "task_comprehensibility": {
+          "minor_concern": 1,
+          "pass": 4
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": true,
+        "answer_determinacy": false,
+        "context_naturalness": false,
+        "interaction_naturalness": true,
+        "kc_attribution": true,
+        "lexical_nuisance": false,
+        "platform_plausibility": true,
+        "task_comprehensibility": true
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 1,
+        "rate": 0.8,
+        "true": 4
+      }
+    },
+    "ecp_rare_complex_gc_4634bf1b005f7724_dialogue_completion": {
+      "family_id": "ecp_rare_complex_gc_4634bf1b005f7724",
+      "format": "dialogue_completion",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 5.0,
+          "mean": 2.4,
+          "median": 2.0,
+          "min": 1.0
+        },
+        "judgments_with_any": 5,
+        "operation_counts": {
+          "agreement": 2,
+          "auxiliary_selection": 1,
+          "discourse_pragmatics": 4,
+          "do_support": 1,
+          "lexical_choice": 2,
+          "operator_inversion": 1,
+          "pronoun_reference": 1
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_rare_complex_gc_4634bf1b005f7724_dialogue_completion"
+      ],
+      "pilot_stratum": "rare_complex",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 6.0,
+        "mean": 4.0,
+        "median": 4.0,
+        "min": 3.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "major_gap": 3,
+          "minor_gap": 1,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 5
+        },
+        "context_naturalness": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "interaction_naturalness": {
+          "pass": 5
+        },
+        "kc_attribution": {
+          "clear": 1,
+          "partial": 3,
+          "weak": 1
+        },
+        "lexical_nuisance": {
+          "low": 5
+        },
+        "platform_plausibility": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "task_comprehensibility": {
+          "pass": 5
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": true,
+        "answer_determinacy": false,
+        "context_naturalness": true,
+        "interaction_naturalness": false,
+        "kc_attribution": true,
+        "lexical_nuisance": false,
+        "platform_plausibility": true,
+        "task_comprehensibility": false
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 0,
+        "rate": 1.0,
+        "true": 5
+      }
+    },
+    "ecp_rare_complex_gc_4634bf1b005f7724_open_dialogue": {
+      "family_id": "ecp_rare_complex_gc_4634bf1b005f7724",
+      "format": "open_dialogue",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 6.0,
+          "mean": 3.0,
+          "median": 3.0,
+          "min": 1.0
+        },
+        "judgments_with_any": 5,
+        "operation_counts": {
+          "agreement": 2,
+          "auxiliary_selection": 1,
+          "discourse_pragmatics": 5,
+          "do_support": 1,
+          "lexical_choice": 2,
+          "operator_inversion": 1,
+          "pronoun_reference": 3
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_rare_complex_gc_4634bf1b005f7724_open_dialogue"
+      ],
+      "pilot_stratum": "rare_complex",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 8.0,
+        "mean": 5.0,
+        "median": 5.0,
+        "min": 3.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 2,
+          "minor_gap": 1,
+          "not_applicable": 2
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 3,
+          "materially_ambiguous": 2
+        },
+        "context_naturalness": {
+          "pass": 5
+        },
+        "interaction_naturalness": {
+          "pass": 5
+        },
+        "kc_attribution": {
+          "partial": 5
+        },
+        "lexical_nuisance": {
+          "low": 5
+        },
+        "platform_plausibility": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "task_comprehensibility": {
+          "pass": 5
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": true,
+        "answer_determinacy": true,
+        "context_naturalness": false,
+        "interaction_naturalness": false,
+        "kc_attribution": false,
+        "lexical_nuisance": false,
+        "platform_plausibility": true,
+        "task_comprehensibility": false
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 0,
+        "rate": 1.0,
+        "true": 5
+      }
+    },
+    "ecp_rare_complex_gc_4634bf1b005f7724_sentence_transformation": {
+      "family_id": "ecp_rare_complex_gc_4634bf1b005f7724",
+      "format": "sentence_transformation",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 4.0,
+          "mean": 1.6,
+          "median": 2.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 3,
+        "operation_counts": {
+          "agreement": 2,
+          "auxiliary_selection": 1,
+          "do_support": 1,
+          "lexical_choice": 2,
+          "operator_inversion": 1,
+          "voice_argument_structure": 1
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_rare_complex_gc_4634bf1b005f7724_sentence_transformation"
+      ],
+      "pilot_stratum": "rare_complex",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 4.0,
+        "mean": 3.0,
+        "median": 3.0,
+        "min": 2.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "minor_gap": 4,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 4,
+          "determinate": 1
+        },
+        "context_naturalness": {
+          "pass": 5
+        },
+        "interaction_naturalness": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "kc_attribution": {
+          "clear": 4,
+          "partial": 1
+        },
+        "lexical_nuisance": {
+          "low": 4,
+          "moderate": 1
+        },
+        "platform_plausibility": {
+          "pass": 5
+        },
+        "task_comprehensibility": {
+          "minor_concern": 1,
+          "pass": 4
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": false,
+        "answer_determinacy": true,
+        "context_naturalness": false,
+        "interaction_naturalness": true,
+        "kc_attribution": true,
+        "lexical_nuisance": true,
+        "platform_plausibility": false,
+        "task_comprehensibility": true
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 3,
+        "rate": 0.4,
+        "true": 2
+      }
+    },
+    "ecp_simple_gc_d15de8b5658bd6a5_constrained_cloze": {
+      "family_id": "ecp_simple_gc_d15de8b5658bd6a5",
+      "format": "constrained_cloze",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 3.0,
+          "mean": 1.6,
+          "median": 2.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 3,
+        "operation_counts": {
+          "agreement": 3,
+          "lexical_choice": 1,
+          "other": 2,
+          "pronoun_reference": 2
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_simple_gc_d15de8b5658bd6a5_constrained_cloze"
+      ],
+      "pilot_stratum": "simple",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 1.0,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 4,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "determinate": 5
+        },
+        "context_naturalness": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "interaction_naturalness": {
+          "pass": 5
+        },
+        "kc_attribution": {
+          "clear": 4,
+          "partial": 1
+        },
+        "lexical_nuisance": {
+          "low": 5
+        },
+        "platform_plausibility": {
+          "pass": 5
+        },
+        "task_comprehensibility": {
+          "pass": 5
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": false,
+        "answer_determinacy": false,
+        "context_naturalness": true,
+        "interaction_naturalness": false,
+        "kc_attribution": true,
+        "lexical_nuisance": false,
+        "platform_plausibility": false,
+        "task_comprehensibility": false
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 5,
+        "rate": 0.0,
+        "true": 0
+      }
+    },
+    "ecp_simple_gc_d15de8b5658bd6a5_contextual_production": {
+      "family_id": "ecp_simple_gc_d15de8b5658bd6a5",
+      "format": "contextual_production",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 3.0,
+          "mean": 2.2,
+          "median": 3.0,
+          "min": 1.0
+        },
+        "judgments_with_any": 5,
+        "operation_counts": {
+          "agreement": 3,
+          "discourse_pragmatics": 2,
+          "lexical_choice": 1,
+          "other": 2,
+          "pronoun_reference": 3
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_simple_gc_d15de8b5658bd6a5_contextual_production"
+      ],
+      "pilot_stratum": "simple",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 5.0,
+        "mean": 4.0,
+        "median": 4.0,
+        "min": 3.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "major_gap": 4,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 5
+        },
+        "context_naturalness": {
+          "pass": 5
+        },
+        "interaction_naturalness": {
+          "minor_concern": 3,
+          "pass": 2
+        },
+        "kc_attribution": {
+          "partial": 5
+        },
+        "lexical_nuisance": {
+          "low": 5
+        },
+        "platform_plausibility": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "task_comprehensibility": {
+          "pass": 5
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": false,
+        "answer_determinacy": false,
+        "context_naturalness": false,
+        "interaction_naturalness": true,
+        "kc_attribution": false,
+        "lexical_nuisance": false,
+        "platform_plausibility": true,
+        "task_comprehensibility": false
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 5,
+        "rate": 0.0,
+        "true": 0
+      }
+    },
+    "ecp_simple_gc_d15de8b5658bd6a5_dialogue_completion": {
+      "family_id": "ecp_simple_gc_d15de8b5658bd6a5",
+      "format": "dialogue_completion",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 4.0,
+          "mean": 2.6,
+          "median": 3.0,
+          "min": 0.0
+        },
+        "judgments_with_any": 4,
+        "operation_counts": {
+          "agreement": 3,
+          "discourse_pragmatics": 4,
+          "do_support": 1,
+          "lexical_choice": 1,
+          "pronoun_reference": 4
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_simple_gc_d15de8b5658bd6a5_dialogue_completion"
+      ],
+      "pilot_stratum": "simple",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 5.0,
+        "mean": 4.2,
+        "median": 4.0,
+        "min": 3.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "major_gap": 4,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 4,
+          "materially_ambiguous": 1
+        },
+        "context_naturalness": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "interaction_naturalness": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "kc_attribution": {
+          "not_attributable": 1,
+          "partial": 4
+        },
+        "lexical_nuisance": {
+          "low": 5
+        },
+        "platform_plausibility": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "task_comprehensibility": {
+          "pass": 5
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": false,
+        "answer_determinacy": true,
+        "context_naturalness": true,
+        "interaction_naturalness": true,
+        "kc_attribution": true,
+        "lexical_nuisance": false,
+        "platform_plausibility": true,
+        "task_comprehensibility": false
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 4,
+        "rate": 0.2,
+        "true": 1
+      }
+    },
+    "ecp_simple_gc_d15de8b5658bd6a5_open_dialogue": {
+      "family_id": "ecp_simple_gc_d15de8b5658bd6a5",
+      "format": "open_dialogue",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 5.0,
+          "mean": 3.4,
+          "median": 4.0,
+          "min": 2.0
+        },
+        "judgments_with_any": 5,
+        "operation_counts": {
+          "agreement": 3,
+          "discourse_pragmatics": 5,
+          "do_support": 1,
+          "lexical_choice": 1,
+          "other": 2,
+          "pronoun_reference": 5
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_simple_gc_d15de8b5658bd6a5_open_dialogue"
+      ],
+      "pilot_stratum": "simple",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 8.0,
+        "mean": 5.2,
+        "median": 5.0,
+        "min": 3.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 4,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 3,
+          "materially_ambiguous": 1,
+          "not_applicable": 1
+        },
+        "context_naturalness": {
+          "pass": 5
+        },
+        "interaction_naturalness": {
+          "pass": 5
+        },
+        "kc_attribution": {
+          "partial": 4,
+          "weak": 1
+        },
+        "lexical_nuisance": {
+          "low": 5
+        },
+        "platform_plausibility": {
+          "pass": 5
+        },
+        "task_comprehensibility": {
+          "pass": 5
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": false,
+        "answer_determinacy": true,
+        "context_naturalness": false,
+        "interaction_naturalness": false,
+        "kc_attribution": true,
+        "lexical_nuisance": false,
+        "platform_plausibility": false,
+        "task_comprehensibility": false
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 4,
+        "rate": 0.2,
+        "true": 1
+      }
+    },
+    "ecp_simple_gc_d15de8b5658bd6a5_sentence_transformation": {
+      "family_id": "ecp_simple_gc_d15de8b5658bd6a5",
+      "format": "sentence_transformation",
+      "incidental_grammar": {
+        "count_per_judgment": {
+          "count": 5,
+          "max": 4.0,
+          "mean": 3.2,
+          "median": 4.0,
+          "min": 1.0
+        },
+        "judgments_with_any": 5,
+        "operation_counts": {
+          "agreement": 3,
+          "auxiliary_selection": 4,
+          "discourse_pragmatics": 1,
+          "do_support": 3,
+          "lexical_choice": 1,
+          "other": 2,
+          "pronoun_reference": 2
+        }
+      },
+      "judgments": 5,
+      "opportunities": 1,
+      "opportunity_ids": [
+        "ecp_simple_gc_d15de8b5658bd6a5_sentence_transformation"
+      ],
+      "pilot_stratum": "simple",
+      "plausible_response_lower_bound": {
+        "count": 5,
+        "max": 3.0,
+        "mean": 2.4,
+        "median": 3.0,
+        "min": 1.0
+      },
+      "rating_distributions": {
+        "accepted_response_coverage": {
+          "complete": 1,
+          "major_gap": 2,
+          "minor_gap": 1,
+          "not_applicable": 1
+        },
+        "answer_determinacy": {
+          "bounded_multiple": 4,
+          "determinate": 1
+        },
+        "context_naturalness": {
+          "pass": 5
+        },
+        "interaction_naturalness": {
+          "pass": 5
+        },
+        "kc_attribution": {
+          "clear": 2,
+          "partial": 3
+        },
+        "lexical_nuisance": {
+          "low": 5
+        },
+        "platform_plausibility": {
+          "minor_concern": 1,
+          "pass": 4
+        },
+        "task_comprehensibility": {
+          "pass": 5
+        }
+      },
+      "role_disagreement": {
+        "accepted_response_coverage": true,
+        "answer_determinacy": true,
+        "context_naturalness": false,
+        "interaction_naturalness": false,
+        "kc_attribution": true,
+        "lexical_nuisance": false,
+        "platform_plausibility": true,
+        "task_comprehensibility": false
+      },
+      "target_avoiding_shortcut": {
+        "applicable_judgments": 5,
+        "false": 5,
+        "rate": 0.0,
+        "true": 0
+      }
+    }
+  },
+  "continuum_direction_checks": {
+    "determinacy_risk": {
+      "complete_sequences": 19,
+      "fraction_monotone": 1.0,
+      "monotone_sequence_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::language_teacher",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::learner",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::linguistic",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::measurement",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::platform_product",
+        "ecp_question_gc_08d90a35b669ed28::language_teacher",
+        "ecp_question_gc_08d90a35b669ed28::learner",
+        "ecp_question_gc_08d90a35b669ed28::linguistic",
+        "ecp_question_gc_08d90a35b669ed28::measurement",
+        "ecp_question_gc_08d90a35b669ed28::platform_product",
+        "ecp_rare_complex_gc_4634bf1b005f7724::language_teacher",
+        "ecp_rare_complex_gc_4634bf1b005f7724::learner",
+        "ecp_rare_complex_gc_4634bf1b005f7724::linguistic",
+        "ecp_rare_complex_gc_4634bf1b005f7724::measurement",
+        "ecp_rare_complex_gc_4634bf1b005f7724::platform_product",
+        "ecp_simple_gc_d15de8b5658bd6a5::language_teacher",
+        "ecp_simple_gc_d15de8b5658bd6a5::learner",
+        "ecp_simple_gc_d15de8b5658bd6a5::linguistic",
+        "ecp_simple_gc_d15de8b5658bd6a5::measurement"
+      ],
+      "monotone_sequences": 19,
+      "predeclared_direction": "nondecreasing"
+    },
+    "incidental_grammar_count": {
+      "complete_sequences": 20,
+      "fraction_monotone": 0.45,
+      "monotone_sequence_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::learner",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::platform_product",
+        "ecp_question_gc_08d90a35b669ed28::language_teacher",
+        "ecp_question_gc_08d90a35b669ed28::learner",
+        "ecp_question_gc_08d90a35b669ed28::measurement",
+        "ecp_rare_complex_gc_4634bf1b005f7724::language_teacher",
+        "ecp_rare_complex_gc_4634bf1b005f7724::linguistic",
+        "ecp_rare_complex_gc_4634bf1b005f7724::measurement",
+        "ecp_rare_complex_gc_4634bf1b005f7724::platform_product"
+      ],
+      "monotone_sequences": 9,
+      "predeclared_direction": "nondecreasing"
+    },
+    "interaction_naturalness_risk": {
+      "complete_sequences": 20,
+      "fraction_monotone": 0.4,
+      "monotone_sequence_ids": [
+        "ecp_question_gc_08d90a35b669ed28::language_teacher",
+        "ecp_question_gc_08d90a35b669ed28::learner",
+        "ecp_question_gc_08d90a35b669ed28::linguistic",
+        "ecp_question_gc_08d90a35b669ed28::measurement",
+        "ecp_question_gc_08d90a35b669ed28::platform_product",
+        "ecp_rare_complex_gc_4634bf1b005f7724::language_teacher",
+        "ecp_rare_complex_gc_4634bf1b005f7724::platform_product",
+        "ecp_simple_gc_d15de8b5658bd6a5::linguistic"
+      ],
+      "monotone_sequences": 8,
+      "predeclared_direction": "nonincreasing"
+    },
+    "kc_attribution_risk": {
+      "complete_sequences": 20,
+      "fraction_monotone": 0.7,
+      "monotone_sequence_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::learner",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::linguistic",
+        "ecp_question_gc_08d90a35b669ed28::language_teacher",
+        "ecp_question_gc_08d90a35b669ed28::learner",
+        "ecp_question_gc_08d90a35b669ed28::linguistic",
+        "ecp_question_gc_08d90a35b669ed28::measurement",
+        "ecp_rare_complex_gc_4634bf1b005f7724::language_teacher",
+        "ecp_rare_complex_gc_4634bf1b005f7724::learner",
+        "ecp_rare_complex_gc_4634bf1b005f7724::linguistic",
+        "ecp_rare_complex_gc_4634bf1b005f7724::platform_product",
+        "ecp_simple_gc_d15de8b5658bd6a5::language_teacher",
+        "ecp_simple_gc_d15de8b5658bd6a5::linguistic",
+        "ecp_simple_gc_d15de8b5658bd6a5::measurement",
+        "ecp_simple_gc_d15de8b5658bd6a5::platform_product"
+      ],
+      "monotone_sequences": 14,
+      "predeclared_direction": "nondecreasing"
+    },
+    "lexical_nuisance_risk": {
+      "complete_sequences": 20,
+      "fraction_monotone": 0.85,
+      "monotone_sequence_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::language_teacher",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::learner",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::linguistic",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::measurement",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::platform_product",
+        "ecp_question_gc_08d90a35b669ed28::learner",
+        "ecp_question_gc_08d90a35b669ed28::measurement",
+        "ecp_question_gc_08d90a35b669ed28::platform_product",
+        "ecp_rare_complex_gc_4634bf1b005f7724::language_teacher",
+        "ecp_rare_complex_gc_4634bf1b005f7724::linguistic",
+        "ecp_rare_complex_gc_4634bf1b005f7724::measurement",
+        "ecp_rare_complex_gc_4634bf1b005f7724::platform_product",
+        "ecp_simple_gc_d15de8b5658bd6a5::language_teacher",
+        "ecp_simple_gc_d15de8b5658bd6a5::learner",
+        "ecp_simple_gc_d15de8b5658bd6a5::linguistic",
+        "ecp_simple_gc_d15de8b5658bd6a5::measurement",
+        "ecp_simple_gc_d15de8b5658bd6a5::platform_product"
+      ],
+      "monotone_sequences": 17,
+      "predeclared_direction": "nondecreasing"
+    },
+    "platform_plausibility_risk": {
+      "complete_sequences": 20,
+      "fraction_monotone": 0.8,
+      "monotone_sequence_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::language_teacher",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::learner",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::linguistic",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::measurement",
+        "ecp_question_gc_08d90a35b669ed28::language_teacher",
+        "ecp_question_gc_08d90a35b669ed28::learner",
+        "ecp_question_gc_08d90a35b669ed28::linguistic",
+        "ecp_question_gc_08d90a35b669ed28::measurement",
+        "ecp_rare_complex_gc_4634bf1b005f7724::language_teacher",
+        "ecp_rare_complex_gc_4634bf1b005f7724::learner",
+        "ecp_rare_complex_gc_4634bf1b005f7724::linguistic",
+        "ecp_rare_complex_gc_4634bf1b005f7724::measurement",
+        "ecp_simple_gc_d15de8b5658bd6a5::language_teacher",
+        "ecp_simple_gc_d15de8b5658bd6a5::learner",
+        "ecp_simple_gc_d15de8b5658bd6a5::linguistic",
+        "ecp_simple_gc_d15de8b5658bd6a5::measurement"
+      ],
+      "monotone_sequences": 16,
+      "predeclared_direction": "nonincreasing"
+    },
+    "plausible_response_lower_bound": {
+      "complete_sequences": 20,
+      "fraction_monotone": 0.85,
+      "monotone_sequence_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::language_teacher",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::learner",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::linguistic",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::platform_product",
+        "ecp_question_gc_08d90a35b669ed28::language_teacher",
+        "ecp_question_gc_08d90a35b669ed28::learner",
+        "ecp_question_gc_08d90a35b669ed28::linguistic",
+        "ecp_question_gc_08d90a35b669ed28::measurement",
+        "ecp_question_gc_08d90a35b669ed28::platform_product",
+        "ecp_rare_complex_gc_4634bf1b005f7724::language_teacher",
+        "ecp_rare_complex_gc_4634bf1b005f7724::learner",
+        "ecp_rare_complex_gc_4634bf1b005f7724::linguistic",
+        "ecp_rare_complex_gc_4634bf1b005f7724::measurement",
+        "ecp_rare_complex_gc_4634bf1b005f7724::platform_product",
+        "ecp_simple_gc_d15de8b5658bd6a5::language_teacher",
+        "ecp_simple_gc_d15de8b5658bd6a5::measurement",
+        "ecp_simple_gc_d15de8b5658bd6a5::platform_product"
+      ],
+      "monotone_sequences": 17,
+      "predeclared_direction": "nondecreasing"
+    }
+  },
+  "evidence_boundary": {
+    "interpretation": "Separate automated critic diagnostics; not human response-process, expert-validity, or platform-deployability evidence.",
+    "scalar_realism_score_computed": false,
+    "weighted_composite_computed": false
+  },
+  "format_order": [
+    "constrained_cloze",
+    "sentence_transformation",
+    "contextual_production",
+    "dialogue_completion",
+    "open_dialogue"
+  ],
+  "inputs": {
+    "critic_judgments": {
+      "bytes": 86112,
+      "path": "experiments/measurement_realism/dialogue_pilot_live_v1/critic_judgments.jsonl",
+      "rows": 100,
+      "sha256": "5551e1a39adb871eb7d6811982c47c2bd86e79c01e0aa8f72499a22ddefa8f0c"
+    },
+    "generated_families": {
+      "bytes": 41406,
+      "path": "experiments/measurement_realism/dialogue_pilot_live_v1/generated_families.jsonl",
+      "rows": 4,
+      "sha256": "efa03d40dbd51703ce981d3fc74760183cb4cc0fcfe72a5fdd7ae74994297903"
+    },
+    "source_analyzer": {
+      "bytes": 20963,
+      "path": "experiments/measurement_realism/dialogue_pilot/analyze_dialogue_pilot.py",
+      "sha256": "bb22e2ebe990f39aacc34e47038b9eafd40987ec6c4c4c4dfe0a5233f4ca7ab4"
+    },
+    "source_plan": {
+      "bytes": 15658,
+      "path": "experiments/measurement_realism/dialogue_pilot/selected_cells.json",
+      "sha256": "bb5403ffd1f581dbdadd113e10c0604eb2b503d387086f6f2a4debd253efb2c3"
+    }
+  },
+  "interpretation_rules": [
+    "No dimension may be substituted for another or averaged into a realism score.",
+    "An ecological improvement does not rescue material ambiguity or weak KC attribution.",
+    "A constrained item may remain useful even when its interaction-naturalness rating is lower.",
+    "Open dialogue is not viable for scale if its opportunity boundary or KC attribution is not defensible.",
+    "Role disagreement and exact opportunity IDs remain reportable evidence."
+  ],
+  "matched_deltas_vs_constrained_cloze": {
+    "contextual_production": {
+      "matched_family_role_pairs": 20,
+      "pair_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::language_teacher",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::learner",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::linguistic",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::measurement",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::platform_product",
+        "ecp_question_gc_08d90a35b669ed28::language_teacher",
+        "ecp_question_gc_08d90a35b669ed28::learner",
+        "ecp_question_gc_08d90a35b669ed28::linguistic",
+        "ecp_question_gc_08d90a35b669ed28::measurement",
+        "ecp_question_gc_08d90a35b669ed28::platform_product",
+        "ecp_rare_complex_gc_4634bf1b005f7724::language_teacher",
+        "ecp_rare_complex_gc_4634bf1b005f7724::learner",
+        "ecp_rare_complex_gc_4634bf1b005f7724::linguistic",
+        "ecp_rare_complex_gc_4634bf1b005f7724::measurement",
+        "ecp_rare_complex_gc_4634bf1b005f7724::platform_product",
+        "ecp_simple_gc_d15de8b5658bd6a5::language_teacher",
+        "ecp_simple_gc_d15de8b5658bd6a5::learner",
+        "ecp_simple_gc_d15de8b5658bd6a5::linguistic",
+        "ecp_simple_gc_d15de8b5658bd6a5::measurement",
+        "ecp_simple_gc_d15de8b5658bd6a5::platform_product"
+      ],
+      "reference_format": "constrained_cloze",
+      "separate_metric_deltas_target_minus_reference": {
+        "accepted_response_coverage_risk": {
+          "count": 16,
+          "decrease": 0,
+          "equal": 2,
+          "increase": 14,
+          "max": 2.0,
+          "mean": 1.4375,
+          "median": 2.0,
+          "min": 0.0
+        },
+        "context_naturalness_risk": {
+          "count": 20,
+          "decrease": 1,
+          "equal": 19,
+          "increase": 0,
+          "max": 0.0,
+          "mean": -0.05,
+          "median": 0.0,
+          "min": -1.0
+        },
+        "determinacy_risk": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 4,
+          "increase": 16,
+          "max": 1.0,
+          "mean": 0.8,
+          "median": 1.0,
+          "min": 0.0
+        },
+        "incidental_grammar_count": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 8,
+          "increase": 12,
+          "max": 2.0,
+          "mean": 0.65,
+          "median": 1.0,
+          "min": 0.0
+        },
+        "interaction_naturalness_risk": {
+          "count": 20,
+          "decrease": 3,
+          "equal": 7,
+          "increase": 10,
+          "max": 1.0,
+          "mean": 0.35,
+          "median": 0.5,
+          "min": -1.0
+        },
+        "kc_attribution_risk": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 8,
+          "increase": 12,
+          "max": 1.0,
+          "mean": 0.6,
+          "median": 1.0,
+          "min": 0.0
+        },
+        "lexical_nuisance_risk": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 20,
+          "increase": 0,
+          "max": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0
+        },
+        "platform_plausibility_risk": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 17,
+          "increase": 3,
+          "max": 1.0,
+          "mean": 0.15,
+          "median": 0.0,
+          "min": 0.0
+        },
+        "plausible_response_lower_bound": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 1,
+          "increase": 19,
+          "max": 5.0,
+          "mean": 2.2,
+          "median": 2.0,
+          "min": 0.0
+        },
+        "target_avoiding_shortcut": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 13,
+          "increase": 7,
+          "max": 1.0,
+          "mean": 0.35,
+          "median": 0.0,
+          "min": 0.0
+        }
+      }
+    },
+    "dialogue_completion": {
+      "matched_family_role_pairs": 20,
+      "pair_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::language_teacher",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::learner",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::linguistic",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::measurement",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::platform_product",
+        "ecp_question_gc_08d90a35b669ed28::language_teacher",
+        "ecp_question_gc_08d90a35b669ed28::learner",
+        "ecp_question_gc_08d90a35b669ed28::linguistic",
+        "ecp_question_gc_08d90a35b669ed28::measurement",
+        "ecp_question_gc_08d90a35b669ed28::platform_product",
+        "ecp_rare_complex_gc_4634bf1b005f7724::language_teacher",
+        "ecp_rare_complex_gc_4634bf1b005f7724::learner",
+        "ecp_rare_complex_gc_4634bf1b005f7724::linguistic",
+        "ecp_rare_complex_gc_4634bf1b005f7724::measurement",
+        "ecp_rare_complex_gc_4634bf1b005f7724::platform_product",
+        "ecp_simple_gc_d15de8b5658bd6a5::language_teacher",
+        "ecp_simple_gc_d15de8b5658bd6a5::learner",
+        "ecp_simple_gc_d15de8b5658bd6a5::linguistic",
+        "ecp_simple_gc_d15de8b5658bd6a5::measurement",
+        "ecp_simple_gc_d15de8b5658bd6a5::platform_product"
+      ],
+      "reference_format": "constrained_cloze",
+      "separate_metric_deltas_target_minus_reference": {
+        "accepted_response_coverage_risk": {
+          "count": 16,
+          "decrease": 0,
+          "equal": 1,
+          "increase": 15,
+          "max": 2.0,
+          "mean": 1.625,
+          "median": 2.0,
+          "min": 0.0
+        },
+        "context_naturalness_risk": {
+          "count": 20,
+          "decrease": 2,
+          "equal": 14,
+          "increase": 4,
+          "max": 1.0,
+          "mean": 0.1,
+          "median": 0.0,
+          "min": -1.0
+        },
+        "determinacy_risk": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 3,
+          "increase": 17,
+          "max": 2.0,
+          "mean": 0.9,
+          "median": 1.0,
+          "min": 0.0
+        },
+        "incidental_grammar_count": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 5,
+          "increase": 15,
+          "max": 3.0,
+          "mean": 1.05,
+          "median": 1.0,
+          "min": 0.0
+        },
+        "interaction_naturalness_risk": {
+          "count": 20,
+          "decrease": 3,
+          "equal": 13,
+          "increase": 4,
+          "max": 1.0,
+          "mean": 0.05,
+          "median": 0.0,
+          "min": -1.0
+        },
+        "kc_attribution_risk": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 6,
+          "increase": 14,
+          "max": 3.0,
+          "mean": 0.85,
+          "median": 1.0,
+          "min": 0.0
+        },
+        "lexical_nuisance_risk": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 20,
+          "increase": 0,
+          "max": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0
+        },
+        "platform_plausibility_risk": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 16,
+          "increase": 4,
+          "max": 1.0,
+          "mean": 0.2,
+          "median": 0.0,
+          "min": 0.0
+        },
+        "plausible_response_lower_bound": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 0,
+          "increase": 20,
+          "max": 5.0,
+          "mean": 2.55,
+          "median": 3.0,
+          "min": 1.0
+        },
+        "target_avoiding_shortcut": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 7,
+          "increase": 13,
+          "max": 1.0,
+          "mean": 0.65,
+          "median": 1.0,
+          "min": 0.0
+        }
+      }
+    },
+    "open_dialogue": {
+      "matched_family_role_pairs": 20,
+      "pair_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::language_teacher",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::learner",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::linguistic",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::measurement",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::platform_product",
+        "ecp_question_gc_08d90a35b669ed28::language_teacher",
+        "ecp_question_gc_08d90a35b669ed28::learner",
+        "ecp_question_gc_08d90a35b669ed28::linguistic",
+        "ecp_question_gc_08d90a35b669ed28::measurement",
+        "ecp_question_gc_08d90a35b669ed28::platform_product",
+        "ecp_rare_complex_gc_4634bf1b005f7724::language_teacher",
+        "ecp_rare_complex_gc_4634bf1b005f7724::learner",
+        "ecp_rare_complex_gc_4634bf1b005f7724::linguistic",
+        "ecp_rare_complex_gc_4634bf1b005f7724::measurement",
+        "ecp_rare_complex_gc_4634bf1b005f7724::platform_product",
+        "ecp_simple_gc_d15de8b5658bd6a5::language_teacher",
+        "ecp_simple_gc_d15de8b5658bd6a5::learner",
+        "ecp_simple_gc_d15de8b5658bd6a5::linguistic",
+        "ecp_simple_gc_d15de8b5658bd6a5::measurement",
+        "ecp_simple_gc_d15de8b5658bd6a5::platform_product"
+      ],
+      "reference_format": "constrained_cloze",
+      "separate_metric_deltas_target_minus_reference": {
+        "accepted_response_coverage_risk": {
+          "count": 15,
+          "decrease": 2,
+          "equal": 13,
+          "increase": 0,
+          "max": 0.0,
+          "mean": -0.133333333,
+          "median": 0.0,
+          "min": -1.0
+        },
+        "context_naturalness_risk": {
+          "count": 20,
+          "decrease": 2,
+          "equal": 18,
+          "increase": 0,
+          "max": 0.0,
+          "mean": -0.1,
+          "median": 0.0,
+          "min": -1.0
+        },
+        "determinacy_risk": {
+          "count": 19,
+          "decrease": 0,
+          "equal": 3,
+          "increase": 16,
+          "max": 2.0,
+          "mean": 1.0,
+          "median": 1.0,
+          "min": 0.0
+        },
+        "incidental_grammar_count": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 3,
+          "increase": 17,
+          "max": 3.0,
+          "mean": 1.5,
+          "median": 2.0,
+          "min": 0.0
+        },
+        "interaction_naturalness_risk": {
+          "count": 20,
+          "decrease": 3,
+          "equal": 17,
+          "increase": 0,
+          "max": 0.0,
+          "mean": -0.15,
+          "median": 0.0,
+          "min": -1.0
+        },
+        "kc_attribution_risk": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 7,
+          "increase": 13,
+          "max": 2.0,
+          "mean": 0.7,
+          "median": 1.0,
+          "min": 0.0
+        },
+        "lexical_nuisance_risk": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 20,
+          "increase": 0,
+          "max": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0
+        },
+        "platform_plausibility_risk": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 17,
+          "increase": 3,
+          "max": 1.0,
+          "mean": 0.15,
+          "median": 0.0,
+          "min": 0.0
+        },
+        "plausible_response_lower_bound": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 0,
+          "increase": 20,
+          "max": 7.0,
+          "mean": 3.25,
+          "median": 3.0,
+          "min": 1.0
+        },
+        "target_avoiding_shortcut": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 8,
+          "increase": 12,
+          "max": 1.0,
+          "mean": 0.6,
+          "median": 1.0,
+          "min": 0.0
+        }
+      }
+    },
+    "sentence_transformation": {
+      "matched_family_role_pairs": 20,
+      "pair_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::language_teacher",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::learner",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::linguistic",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::measurement",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b::platform_product",
+        "ecp_question_gc_08d90a35b669ed28::language_teacher",
+        "ecp_question_gc_08d90a35b669ed28::learner",
+        "ecp_question_gc_08d90a35b669ed28::linguistic",
+        "ecp_question_gc_08d90a35b669ed28::measurement",
+        "ecp_question_gc_08d90a35b669ed28::platform_product",
+        "ecp_rare_complex_gc_4634bf1b005f7724::language_teacher",
+        "ecp_rare_complex_gc_4634bf1b005f7724::learner",
+        "ecp_rare_complex_gc_4634bf1b005f7724::linguistic",
+        "ecp_rare_complex_gc_4634bf1b005f7724::measurement",
+        "ecp_rare_complex_gc_4634bf1b005f7724::platform_product",
+        "ecp_simple_gc_d15de8b5658bd6a5::language_teacher",
+        "ecp_simple_gc_d15de8b5658bd6a5::learner",
+        "ecp_simple_gc_d15de8b5658bd6a5::linguistic",
+        "ecp_simple_gc_d15de8b5658bd6a5::measurement",
+        "ecp_simple_gc_d15de8b5658bd6a5::platform_product"
+      ],
+      "reference_format": "constrained_cloze",
+      "separate_metric_deltas_target_minus_reference": {
+        "accepted_response_coverage_risk": {
+          "count": 16,
+          "decrease": 0,
+          "equal": 4,
+          "increase": 12,
+          "max": 2.0,
+          "mean": 1.0625,
+          "median": 1.0,
+          "min": 0.0
+        },
+        "context_naturalness_risk": {
+          "count": 20,
+          "decrease": 1,
+          "equal": 16,
+          "increase": 3,
+          "max": 1.0,
+          "mean": 0.1,
+          "median": 0.0,
+          "min": -1.0
+        },
+        "determinacy_risk": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 7,
+          "increase": 13,
+          "max": 1.0,
+          "mean": 0.65,
+          "median": 1.0,
+          "min": 0.0
+        },
+        "incidental_grammar_count": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 8,
+          "increase": 12,
+          "max": 3.0,
+          "mean": 0.85,
+          "median": 1.0,
+          "min": 0.0
+        },
+        "interaction_naturalness_risk": {
+          "count": 20,
+          "decrease": 2,
+          "equal": 12,
+          "increase": 6,
+          "max": 1.0,
+          "mean": 0.2,
+          "median": 0.0,
+          "min": -1.0
+        },
+        "kc_attribution_risk": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 13,
+          "increase": 7,
+          "max": 1.0,
+          "mean": 0.35,
+          "median": 0.0,
+          "min": 0.0
+        },
+        "lexical_nuisance_risk": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 17,
+          "increase": 3,
+          "max": 1.0,
+          "mean": 0.15,
+          "median": 0.0,
+          "min": 0.0
+        },
+        "platform_plausibility_risk": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 18,
+          "increase": 2,
+          "max": 1.0,
+          "mean": 0.1,
+          "median": 0.0,
+          "min": 0.0
+        },
+        "plausible_response_lower_bound": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 5,
+          "increase": 15,
+          "max": 3.0,
+          "mean": 1.4,
+          "median": 2.0,
+          "min": 0.0
+        },
+        "target_avoiding_shortcut": {
+          "count": 20,
+          "decrease": 0,
+          "equal": 15,
+          "increase": 5,
+          "max": 1.0,
+          "mean": 0.25,
+          "median": 0.0,
+          "min": 0.0
+        }
+      }
+    }
+  },
+  "role_disagreement": {
+    "accepted_response_coverage": {
+      "count": 9,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_constrained_cloze",
+        "ecp_question_gc_08d90a35b669ed28_contextual_production",
+        "ecp_question_gc_08d90a35b669ed28_dialogue_completion",
+        "ecp_question_gc_08d90a35b669ed28_sentence_transformation",
+        "ecp_rare_complex_gc_4634bf1b005f7724_constrained_cloze",
+        "ecp_rare_complex_gc_4634bf1b005f7724_contextual_production",
+        "ecp_rare_complex_gc_4634bf1b005f7724_dialogue_completion",
+        "ecp_rare_complex_gc_4634bf1b005f7724_open_dialogue",
+        "ecp_simple_gc_d15de8b5658bd6a5_sentence_transformation"
+      ]
+    },
+    "answer_determinacy": {
+      "count": 9,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_constrained_cloze",
+        "ecp_question_gc_08d90a35b669ed28_contextual_production",
+        "ecp_question_gc_08d90a35b669ed28_sentence_transformation",
+        "ecp_rare_complex_gc_4634bf1b005f7724_constrained_cloze",
+        "ecp_rare_complex_gc_4634bf1b005f7724_open_dialogue",
+        "ecp_rare_complex_gc_4634bf1b005f7724_sentence_transformation",
+        "ecp_simple_gc_d15de8b5658bd6a5_dialogue_completion",
+        "ecp_simple_gc_d15de8b5658bd6a5_open_dialogue",
+        "ecp_simple_gc_d15de8b5658bd6a5_sentence_transformation"
+      ]
+    },
+    "context_naturalness": {
+      "count": 9,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_constrained_cloze",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_contextual_production",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_dialogue_completion",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_sentence_transformation",
+        "ecp_question_gc_08d90a35b669ed28_dialogue_completion",
+        "ecp_question_gc_08d90a35b669ed28_sentence_transformation",
+        "ecp_rare_complex_gc_4634bf1b005f7724_dialogue_completion",
+        "ecp_simple_gc_d15de8b5658bd6a5_constrained_cloze",
+        "ecp_simple_gc_d15de8b5658bd6a5_dialogue_completion"
+      ]
+    },
+    "interaction_naturalness": {
+      "count": 9,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_contextual_production",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_dialogue_completion",
+        "ecp_question_gc_08d90a35b669ed28_constrained_cloze",
+        "ecp_question_gc_08d90a35b669ed28_sentence_transformation",
+        "ecp_rare_complex_gc_4634bf1b005f7724_constrained_cloze",
+        "ecp_rare_complex_gc_4634bf1b005f7724_contextual_production",
+        "ecp_rare_complex_gc_4634bf1b005f7724_sentence_transformation",
+        "ecp_simple_gc_d15de8b5658bd6a5_contextual_production",
+        "ecp_simple_gc_d15de8b5658bd6a5_dialogue_completion"
+      ]
+    },
+    "kc_attribution": {
+      "count": 14,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_constrained_cloze",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_open_dialogue",
+        "ecp_question_gc_08d90a35b669ed28_contextual_production",
+        "ecp_question_gc_08d90a35b669ed28_dialogue_completion",
+        "ecp_question_gc_08d90a35b669ed28_open_dialogue",
+        "ecp_question_gc_08d90a35b669ed28_sentence_transformation",
+        "ecp_rare_complex_gc_4634bf1b005f7724_constrained_cloze",
+        "ecp_rare_complex_gc_4634bf1b005f7724_contextual_production",
+        "ecp_rare_complex_gc_4634bf1b005f7724_dialogue_completion",
+        "ecp_rare_complex_gc_4634bf1b005f7724_sentence_transformation",
+        "ecp_simple_gc_d15de8b5658bd6a5_constrained_cloze",
+        "ecp_simple_gc_d15de8b5658bd6a5_dialogue_completion",
+        "ecp_simple_gc_d15de8b5658bd6a5_open_dialogue",
+        "ecp_simple_gc_d15de8b5658bd6a5_sentence_transformation"
+      ]
+    },
+    "lexical_nuisance": {
+      "count": 2,
+      "opportunity_ids": [
+        "ecp_question_gc_08d90a35b669ed28_sentence_transformation",
+        "ecp_rare_complex_gc_4634bf1b005f7724_sentence_transformation"
+      ]
+    },
+    "platform_plausibility": {
+      "count": 12,
+      "opportunity_ids": [
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_contextual_production",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_dialogue_completion",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_open_dialogue",
+        "ecp_multi_kc_gc_2d6eb4f93cba4c6b_sentence_transformation",
+        "ecp_question_gc_08d90a35b669ed28_dialogue_completion",
+        "ecp_question_gc_08d90a35b669ed28_open_dialogue",
+        "ecp_rare_complex_gc_4634bf1b005f7724_contextual_production",
+        "ecp_rare_complex_gc_4634bf1b005f7724_dialogue_completion",
+        "ecp_rare_complex_gc_4634bf1b005f7724_open_dialogue",
+        "ecp_simple_gc_d15de8b5658bd6a5_contextual_production",
+        "ecp_simple_gc_d15de8b5658bd6a5_dialogue_completion",
+        "ecp_simple_gc_d15de8b5658bd6a5_sentence_transformation"
+      ]
+    },
+    "task_comprehensibility": {
+      "count": 2,
+      "opportunity_ids": [
+        "ecp_rare_complex_gc_4634bf1b005f7724_contextual_production",
+        "ecp_rare_complex_gc_4634bf1b005f7724_sentence_transformation"
+      ]
+    }
+  },
+  "scale": {
+    "critic_roles": [
+      "learner",
+      "language_teacher",
+      "platform_product",
+      "measurement",
+      "linguistic"
+    ],
+    "judgments": 100,
+    "observed_opportunities": 20,
+    "planned_opportunities": 20
+  },
+  "status": "CRITIC_JUDGMENTS_ANALYSED"
+}

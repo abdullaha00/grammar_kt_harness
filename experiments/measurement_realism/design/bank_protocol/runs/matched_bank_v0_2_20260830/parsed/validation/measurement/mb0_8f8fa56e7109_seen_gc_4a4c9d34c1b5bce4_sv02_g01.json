@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r01_measurement_b01",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g01",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "All four formats target the same modal-perfect deduction that Maya took the umbrella.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "Format changes recognition versus production only; the required MUST/HAVE/participle dependencies are unchanged.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "Every item uses the same missing-umbrella evidence and earlier-event conclusion.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The required phrase actively realizes MUST, base HAVE, and irregular participle taken.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The response template is simple and the lexical verb is explicitly supplied.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The required words and blank require the complete modal-perfect chain.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The stipulated evidence and instruction determine the intended deduction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "“must’ve taken” is a linguistically reasonable contracted response but is not accepted explicitly.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The task also relies on contextual inference about the missing umbrella.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g01_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The reply slot requires the same MUST + HAVE + taken construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The dialogue is lexically accessible and adds no material response grammar.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The required words mean success requires assembling the target sequence.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The explicit prompt asks for the deduction from the supplied evidence.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The equivalent contracted response “must’ve taken” is absent from the declared accepted set.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Understanding the multi-turn missing-object inference is additional discourse burden.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g01_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "B uniquely contains MUST followed by base HAVE and the participle taken.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "No important grammar beyond the declared modal-perfect dependencies is demanded.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "A, C, and D are all morphosyntactically defective, so learners may select B by error elimination rather than fully interpreting the inference.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "B is the only grammatical expression of the specified deduction among the displayed options.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The sole correct choice B is declared accepted.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The rainy-morning scenario is accessible at the stated level.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g01_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The required rewrite constructs MUST + HAVE + irregular participle taken.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The source identifies the actor and event; the target operation is the declared modal-perfect rewrite.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The instruction explicitly requires a confident deduction about an earlier event, excluding copying “took”.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The supplied evidence and required words determine the intended modal-perfect proposition.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "“Maya must’ve taken the umbrella.” is a reasonable equivalent full response but is unkeyed.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The task combines paraphrase, evidence interpretation, and full-sentence production.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g01_xform"
+    }
+  ],
+  "overall_accept": true,
+  "role": "measurement",
+  "summary": "Accept with minor constructed-response coverage concerns for the standard “must’ve” contraction and modest inference burden."
+}

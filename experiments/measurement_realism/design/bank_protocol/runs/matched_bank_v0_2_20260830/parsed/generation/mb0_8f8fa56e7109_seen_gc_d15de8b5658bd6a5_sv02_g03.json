@@ -1,0 +1,156 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "The café serves lunch at noon.",
+  "cell_id": "gc_d15de8b5658bd6a5",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g03_cloze",
+      "context": "This is part of the café's regular daily schedule.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "The café [[RESPONSE]] lunch at noon. (serve)",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence with the correct form of the verb in brackets.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "serves"
+        ],
+        "completed_target": "The café serves lunch at noon.",
+        "correct_choice_id": null,
+        "target_response": "serves"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g03_dialog",
+      "context": "A customer is asking about the café's regular lunch schedule.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Customer: When is the café's usual lunchtime?"
+        ],
+        "incomplete_turn_template": "Staff member: The café [[RESPONSE]] lunch at noon. (serve)",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the reply with the correct form of the verb in brackets.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "serves"
+        ],
+        "completed_target": "The café serves lunch at noon.",
+        "correct_choice_id": null,
+        "target_response": "serves"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g03_mcq",
+      "context": "Lunch is provided there at noon every day.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the base form instead of the present finite form required with a singular subject.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses past finite morphology instead of present finite morphology.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses a non-finite -ing form without a present finite verb.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "The café serve lunch at noon."
+          },
+          {
+            "id": "B",
+            "text": "The café serves lunch at noon."
+          },
+          {
+            "id": "C",
+            "text": "The café served lunch at noon."
+          },
+          {
+            "id": "D",
+            "text": "The café serving lunch at noon."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence is correct?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly describes the café's regular schedule.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "The café serves lunch at noon.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g03_xform",
+      "context": "Describe the café's regular daily schedule.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Lunch at the café is at noon.",
+        "stem": null,
+        "transformation_cue": "Begin with “The café” and use the verb “serve.” Keep the words “lunch at noon.”"
+      },
+      "instruction": "Rewrite the information as one sentence beginning with “The café.”",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "The café serves lunch at noon."
+        ],
+        "completed_target": "The café serves lunch at noon.",
+        "correct_choice_id": null,
+        "target_response": "The café serves lunch at noon."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "State what the café provides at its usual lunchtime.",
+    "main_verb_lemma": "serve",
+    "object_head": "lunch",
+    "participants": [
+      "the café",
+      "a customer"
+    ],
+    "situation_summary": "A customer asks about a café's regular lunch schedule.",
+    "time_anchor": "at noon every day"
+  },
+  "semantic_variant_index": 2
+}

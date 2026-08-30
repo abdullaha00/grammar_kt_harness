@@ -1,0 +1,158 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv02_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "Can Maya carry the box upstairs?",
+  "cell_id": "gc_edcc8d38860ff41d",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv02_g01_cloze",
+      "context": "You are moving boxes and need to know whether Maya is able to take one upstairs.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]] the box upstairs?",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the question.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Can Maya carry"
+        ],
+        "completed_target": "Can Maya carry the box upstairs?",
+        "correct_choice_id": null,
+        "target_response": "Can Maya carry"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv02_g01_dialog",
+      "context": "Leo and Nina are deciding who can move a box during the move.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Nina: This box needs to go upstairs.",
+          "Nina: Maya has offered to help."
+        ],
+        "incomplete_turn_template": "Leo: [[RESPONSE]] the box upstairs?",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Leo's question.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Can Maya carry"
+        ],
+        "completed_target": "Can Maya carry the box upstairs?",
+        "correct_choice_id": null,
+        "target_response": "Can Maya carry"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv02_g01_mcq",
+      "context": "During a move, you want to ask whether Maya is able to take a box upstairs.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses statement word order instead of placing the modal before the subject.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Adds DO-support even though CAN is already the finite operator.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses an inflected verb after CAN instead of the base form.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Maya can carry the box upstairs?"
+          },
+          {
+            "id": "B",
+            "text": "Does Maya can carry the box upstairs?"
+          },
+          {
+            "id": "C",
+            "text": "Can Maya carry the box upstairs?"
+          },
+          {
+            "id": "D",
+            "text": "Can Maya carries the box upstairs?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence asks about Maya's ability?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the correct question.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "C"
+        ],
+        "completed_target": "Can Maya carry the box upstairs?",
+        "correct_choice_id": "C",
+        "target_response": "C"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv02_g01_xform",
+      "context": "You are checking whether Maya is able to move the box during the move.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Maya can carry the box upstairs.",
+        "stem": null,
+        "transformation_cue": "Begin with “Can” and use the same remaining words."
+      },
+      "instruction": "Rewrite the statement as a question asking whether it is true.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Can Maya carry the box upstairs?"
+        ],
+        "completed_target": "Can Maya carry the box upstairs?",
+        "correct_choice_id": null,
+        "target_response": "Can Maya carry the box upstairs?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Ask about Maya's ability to carry the box upstairs.",
+    "main_verb_lemma": "carry",
+    "object_head": "box",
+    "participants": [
+      "Maya",
+      "the person asking",
+      "the listener"
+    ],
+    "situation_summary": "Someone is checking whether Maya is able to take a box upstairs during a move.",
+    "time_anchor": "during the move now"
+  },
+  "semantic_variant_index": 2
+}

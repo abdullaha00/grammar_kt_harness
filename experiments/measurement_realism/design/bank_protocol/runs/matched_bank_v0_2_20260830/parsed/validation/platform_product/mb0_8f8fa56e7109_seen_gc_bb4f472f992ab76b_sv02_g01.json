@@ -1,0 +1,188 @@
+{
+  "batch_id": "critic_r01_platform_product_b02",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g01",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "plausible_format_crossing",
+      "evidence": "The four interaction types are plausible ways to practise or recognise a direct instruction.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "non_repetitive_learner_experience",
+      "evidence": "Each item repeats the same oven instruction with only format changes.",
+      "severity": "minor_concern"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The instruction gives the exact required words and the blank is the whole instruction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "A short text field can clearly collect the imperative phrase.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "Oven, cooking, and turn off are everyday vocabulary below B2.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "Switching off an oven before leaving is a natural instruction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "With both required words supplied, this is very easy for a B2 learner.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The entry task is unambiguous and simple to score.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g01_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "Leo explicitly asks what he should do, so the needed instruction is clear.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "Completing Maya's final turn works naturally in text entry.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "The kitchen scenario uses common everyday language.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "The exchange is a believable conversation before leaving.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The answer is strongly determined by the immediately repeated context and is simple for B2.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The dialogue is concise and the expected response is clear.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g01_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The prompt plainly asks for a direct instruction to Leo.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "A single-choice control is appropriate for the four sentence options.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "All options use highly familiar household vocabulary.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "The situation clearly requires an instruction to turn the oven off.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The contrast is very transparent for B2 because the direct imperative is easily recognisable.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "Choices are brief and have one clear intended answer.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g01_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The source and word cue clearly request a direct instruction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "A full-sentence entry is coherent for rewriting a message.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "The required household language is readily accessible.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "The final imperative is natural in the described kitchen situation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The cue supplies the full phrase, leaving minimal B2-level challenge.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The expected imperative is clear and can be automatically scored.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g01_xform"
+    }
+  ],
+  "overall_accept": true,
+  "role": "platform_product",
+  "summary": "The family is clear and deployable, but it is substantially easier than typical B2 practice and highly repetitive across formats."
+}

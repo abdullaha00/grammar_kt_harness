@@ -1,72 +1,73 @@
 \section{Limitations and Ethics}
 \label{sec:limitations}
 
-\paragraph{Linguistic scope and annotation.}
+\paragraph{No human measurement validation.}
+Both full-bank audits, the KC inductions, the matched-bank critics, and the
+dialogue pilot are model-based stress tests.  No learner, teacher,
+psychometrician, or platform reviewer assessed the rendered tasks.  Role
+disagreement is informative but is not inter-rater reliability, and plurality
+is not validity.  CEFR appropriateness, accessibility, bias, scorer coverage,
+and actual response processes remain unmeasured.  Accordingly there is
+\textbf{no new dataset release}; full-v1 remains the clean reference and none of
+the extension artifacts is classroom-ready or release-valid.
+
+\paragraph{Item surface and matched-bank failure.}
+Full-v1 learners never read prompts or produce text: item IDs select Q rows and
+binary outcomes are sampled from mastery.  The 113-item audit therefore cannot
+change its responses.  The intended 152-slot matched bank failed its
+preregistered complete-family, coverage, and rank gates.  The 20 passing slots
+are not a representative partial bank.  A future declared-correction layer
+would need independent replay and then rendered human/expert and learner
+validation before any deployment or release claim.
+
+\paragraph{Content-free controlled scenario.}
+The quantitative format/item study uses structural slots and categorical
+format labels, not learner-facing content.  Planted effects are sensitivity
+levels rather than estimates from human data.  Orthogonality holds over equally
+weighted seen slots, not exactly over the acquisition event multiset.  Model D
+is aligned to the planted same-seen-item residual basis; held-out item effects
+are encoded as zero.  Its advantage does not demonstrate arbitrary item
+deconfounding or unseen-item generalisation.  Explicit format adjustment is not
+consistently superior to the false split after learner heterogeneity is added.
+
+\paragraph{Errors and learner state.}
+The structured failed-KC label is sampled after an incorrect outcome in
+proportion to active mastery deficit.  It is neither causal truth nor a
+validated learner-error taxonomy; the 80\% condition hides labels rather than
+misclassifying them.  The Beta evidence-count terminal-KC estimate is not a
+fitted mastery trajectory, and its improvement under shuffled labels exposes
+metric bias.  We therefore do not scale to synthetic error text or claim that
+error-aware KT recovers human knowledge.
+
+\paragraph{Platform schedules.}
+Q-balanced, curriculum, and mixed policies share one occurrence multiset and,
+under order-independent learning, identical terminal oracle mastery.  Their
+fitted differences concern history representation, not learning efficacy.
+Adaptive assignment changes exposure and state; its logged propensity is tied
+to the deterministic policy and is not a general off-policy-evaluation weight.
+The alternative-policy fits were frozen after responses and are exploratory.
+
+\paragraph{Statistical uncertainty.}
+Learner bootstrap intervals condition on one fitted model, frozen train/dev
+sample, bank, seed, hyperparameter, and simulator world.  They omit refitting,
+item/cell sampling, bank construction, simulator-family and seed-level
+uncertainty, multiplicity, and any human population.  Three-seed ranges are
+descriptive.  Fitted terminal learner--KC recovery was not implemented for the
+new A--D models; item-prerequisite state and evidence-count diagnostics must not
+be relabelled as that estimand.
+
+\paragraph{Linguistic and generalisation scope.}
 The empirical domain is English single-main-clause verbal morphosyntax under
-six declared dimensions.  All EGP records are processed, but 675 are outside
-that boundary and only complete scalar mappings canonicalise.  Normalisation is
-model-assisted; a 120-row repeat measures stability but there is no expert
-adjudication or second-language study.  The external parsed source snapshot is
-consult-only and not redistributed.
-
-\paragraph{Item validity.}
-Items are LLM-generated and independently model-validated.  No teachers or
-learners assessed correctness, naturalness, difficulty, accessibility, bias, or
-educational value.  Determinacy caused most rejection, and two imperative cells
-required a separately labelled cue-bounded format after open production and a
-finite answer-list correction failed.  The fixed bank is auditable measurement
-material, not a classroom-ready assessment.  Prompt and accepted-answer strings
-are never rendered to the simulated learner or used to score $y$, so ambiguity
-cannot affect the synthetic outcome---but neither can this benchmark test
-whether a person would interpret or answer an item as intended.
-
-\paragraph{Generator truth.}
-The 18 KCs are a deliberately simple reusable-operation ontology.  They are
-ground truth only because the simulator maintains state over them.  Reference
-conditions, excluded chain operations, minimum aggregation, independent
-initial mastery, and equal opportunity learning are scientific assumptions,
-not evidence about cognitive atomicity or human acquisition.
-
-\paragraph{Synthetic learners and uncertainty.}
-The baseline uses $\operatorname{Beta}(2,2)$ mastery, guess/slip .10/.10,
-learning rate .02, and no item difficulty, forgetting, vocabulary state,
-prerequisites, or transfer.  Compact sensitivity worlds vary these assumptions
-mostly one at a time, apart from the combined guess/slip design, and use three
-seeds and one severity per condition.
-The correlated-mastery control is undirected rather than a prerequisite graph.
-Learner bootstrap intervals quantify sampling of synthetic learners within a
-world, not uncertainty over grammar cells, simulator families, prompts, or
-human populations.
-
-\paragraph{Evaluation scope.}
-The six unseen-value cells all test perfect-progressive aspect, and every
-generator KC has seen support.  They do not establish generalisation to
-arbitrary unseen grammar.  The exact-item negative control is implied by the
-absence of item memory and difficulty.  Family-coarse state recovery reverses
-locally on the unseen-value cohort, and unmodelled item difficulty reverses one
-primary split-2 ranking, so \kstar{} is not claimed to dominate every regime or
-world.
-
-\paragraph{KC discovery and KT models.}
-Activation equivalence is bank-specific.  Seen responses cannot distinguish
-atomic and compositional rules with identical seen Q columns; a structural
-prior or new contrast is needed.  The compositional ceiling proves candidate
-reachability, not blind recovery.  PFA-like logistic regression is the primary
-observable model; fixed BKT uses mismatched aggregation and update semantics and
-is diagnostic only.  Similar response prediction does not guarantee recovery
-of a meaningfully comparable latent state.
-
-\paragraph{Collection and language claims.}
-Synthetic learner-count, opportunity, or anchor thresholds do not transfer
-directly to human-study recruitment.  They identify failure modes under stated
-generative conditions.  The alternate-schema test verifies reusable software,
-not empirical cross-lingual validity or a universal grammar ontology.
+six dimensions.  Source normalisation is model-assisted and has no expert
+adjudication or second-language replication.  The six unseen-value cells all
+concern perfect-progressive aspect, and every generator KC has seen support.
+Neither the alternate-schema software test nor this narrow probe establishes
+cross-lingual or unrestricted grammatical generalisation.
 
 \paragraph{Ethics.}
-No human-participant or learner records are used; all response sequences are
-synthetic.  Latent conditions denote simulation assumptions, not demographic
-or ability groups.  Generated items must not be deployed for assessment or
-instruction without qualified human review for correctness, ambiguity,
-accessibility, and bias.  Use and quotation of EGP material remain subject to
-its licence; the release retains derived mappings and verification metadata
-rather than redistributing the consult-only source snapshot.
+No human-participant or learner records are used; all response histories are
+synthetic.  Latent conditions are modelling assumptions, not demographic or
+ability groups.  Generated exercises and error forms must not be used for
+assessment or instruction without qualified review for correctness,
+accessibility, fairness, and educational value.  The consult-only source is not
+redistributed, and its use remains subject to its licence.

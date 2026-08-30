@@ -1,0 +1,188 @@
+{
+  "batch_id": "critic_r02_platform_product_b01",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g02",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "plausible_format_crossing",
+      "evidence": "All formats appropriately express an action in progress at a past moment.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "non_repetitive_learner_experience",
+      "evidence": "The same Maya/bicycle/Leo-arrival scenario and sentence recur across all formats.",
+      "severity": "minor_concern"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The timing description and “repair” cue clearly identify the blank’s purpose.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "A short-text completion fits the displayed sentence frame.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "“Repair” and “bicycle” are accessible B2 words.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "Repairing a bicycle when someone arrives is a familiar scenario.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "Past continuous for an interrupted activity is appropriate at B2.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The expected response is clear and easily scored.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g02_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "Leo’s question and Nora’s description clearly establish an ongoing action.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "Completing Nora’s turn in short text is coherent.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "The language is common and well supported by the dialogue.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "The dialogue gives a credible account of what Leo saw.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The form-to-meaning link is suitable for B2 learners.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The turn template provides a clear response boundary.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g02_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The instruction and context both state that the repair was in progress.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "Sentence alternatives are appropriate for single-choice selection.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "All vocabulary is accessible at the declared level.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "The arrival interrupting an ongoing repair is natural.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The options target tense and form distinctions expected at B2.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "There is one unambiguous selectable answer.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g02_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The two source statements and cue specify the intended combined sentence.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "A full-sentence entry is suitable for this transformation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "The bicycle-repair wording is accessible at B2.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "The description of work continuing through an arrival is coherent.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "Guided production of past continuous is plausible B2 work.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The requested response is clearly bounded and scoreable.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g02_xform"
+    }
+  ],
+  "overall_accept": true,
+  "role": "platform_product",
+  "summary": "A coherent B2 family with usable formats, but little contextual variation between them."
+}

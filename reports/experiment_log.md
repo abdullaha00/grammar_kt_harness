@@ -2485,3 +2485,279 @@ experiment:
   The append-only `integrity_verification.json` records and tests the declared
   integer-key restoration needed to validate the pre-serialization semantic
   digest; `results.json` remains byte-identical.
+
+## MR-AUDIT-KC-001 — full-v1 platform audit and outcome-blind KC stress test
+
+- **Date frozen/executed:** 2026-08-30.
+- **Research question:** Does the frozen bank plausibly function as a
+  learner-facing platform instrument, and does repeated outcome-blind KC
+  construction support one uniquely natural generator ontology?
+- **Limitation motivating the experiment:** Full-v1's original validator
+  primarily established linguistic instantiation and determinacy for stored
+  text. It did not establish learner comprehension, response-space fairness,
+  deployability, or psychological uniqueness of K*.
+- **Exact intervention:** None to full-v1. A strict 113-item census and a second
+  fixed-call learner/teacher/platform-product/measurement audit were applied to
+  frozen items. A separate KC audit measured support, isolates, nesting, and
+  pedagogical interpretation. Three independent induction calls received
+  frozen GrammarCells, support information, and a predicate grammar, but no
+  learner outcomes, K*, or Q* labels; proposals were canonicalised by cell
+  activation before comparison with K*.
+- **Models/settings:** Four-role audit and KC induction used
+  `gpt-5.6-terra`, medium reasoning. The role audit made 16 batched calls and
+  retained 452 judgments; KC induction made three independent calls. Prompts,
+  exact inputs, raw and parsed outputs, settings, and byte hashes are frozen.
+  The strict audit and structural analyses are deterministic. No judgment is
+  human or expert gold.
+- **Primary audit result:** Strict labels are 70 usable, 15 minor repair, 15
+  technically valid but pedagogically artificial, 10 material answer-space
+  failures, and three rewrite/withhold. Exact cross-audit agreement is 70/113;
+  60/113 are usable in both mappings; 53/113 are in the union requiring
+  action; 18/113 are in the critical answer-space/withhold union. Live roles
+  disagree on 56/113.
+- **KC result:** Only 16/113 rows isolate one KC and six KCs lack an isolating
+  row. The three inductions yield 17/18/18 unique activation signatures with
+  ranks 17/18/17. Nine signatures occur in every run, the union has 30,
+  pairwise activation Jaccard is `.400`, `.440`, and `.458`, and 5/4/7
+  signatures exactly match K*.
+- **Interpretation:** Original validator acceptance, Q full rank, learner
+  evidence, and platform validity are different claims. K* remains useful as a
+  declared synthetic coordinate system but is not a uniquely recovered human
+  ontology. Role disagreements and critical items must remain item-level
+  evidence rather than one realism score.
+- **Exact reconstruction/verification commands:**
+
+  ```bash
+  .venv/bin/python scripts/experiments/analyze_platform_audits.py \
+    --json-output /tmp/platform_audit_synthesis.json \
+    --report-output /tmp/platform_plausibility_audit.md
+  .venv/bin/python -m pytest -q \
+    tests/test_measurement_realism_kc_induction.py
+  ```
+- **Artifacts:** `experiments/measurement_realism/audits/`,
+  `experiments/measurement_realism/kc_induction_v1/`,
+  `reports/platform_plausibility_audit.md`, and
+  `reports/kc_methodology_audit.md`. Frozen KC proposal bundle SHA-256:
+  `180b99ffbf54488a88d6d1ceafeb408d40b6be019dfc636ffa3582bdfcec1f46`;
+  raw proposals:
+  `15fc31a384cee666c7261ebf56ef8c23207bdc20a40e78ab6b09542426f70c5c`.
+
+## MR-MATCHED-BANK-001 — preregistered crossed learner-facing bank
+
+- **Date frozen/executed:** 2026-08-30.
+- **Research question:** Can matched educational formats preserve a common
+  GrammarCell/Q row while passing answerability, linguistic, measurement, and
+  platform-product gates strongly enough to support a platform-plausible
+  extension?
+- **Pre-outcome design:** Rank feasibility required 18 distinct seen cell-Q
+  rows for 18 KCs. The frozen target crossed 18 seen cells with constrained
+  cloze, dialogue completion, multiple choice, and sentence transformation,
+  with two semantic variants; one unseen-combination and one unseen-value cell
+  supplied eight non-updating probe slots. Total target: 38 families/152 slots.
+  Cell selection SHA-256:
+  `8f8fa56e710982c92426f154482d062cffebfb32d29f19c7fe96f4208a4b479b`.
+- **Models/settings:** Generation used `gpt-5.6-sol`, medium reasoning;
+  independent solvers and linguistic/measurement/platform critics used
+  `gpt-5.6-terra`, medium reasoning. Deterministic checks preceded solver and
+  critic gates. The corrected scientific campaign completed 178 calls, 106
+  candidates, 712 solver attempts, and 90 role judgments with zero technical
+  failures. Two earlier attempts remain explicitly labelled infrastructure
+  failures; their outputs were not silently repaired.
+- **Result:** The three round funnels were `38→31→12→3`,
+  `35→32→12→2`, and `33→26→6→0` from generated family to
+  deterministic pass to solver pass to critic pass. Only 5/38 whole families
+  (20/152 slots) passed. They cover 4/20 cells, 6/18 KCs, seen-Q rank 3, and
+  all-regime rank 4. Of 30 critic-reached candidates, measurement accepted 9,
+  linguistic 29, and product 24; 23 decisions were mixed. Dialogue completion
+  was the weakest solver format.
+- **Conclusion and methodology change:** The preregistered freeze gate failed.
+  No learner-facing bank was frozen, the 20 slots are not a partial release,
+  and `data/grammar_kt_measurement_v1/` must not be created. This is a retained
+  negative result showing that linguistic validity cannot substitute for
+  response-space and measurement validity.
+- **Exact verification command:**
+
+  ```bash
+  .venv/bin/python \
+    scripts/experiments/analyze_measurement_realism_bank_failure.py verify
+  ```
+- **Artifacts/hashes:** Corrected run under
+  `experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/`;
+  call-evidence bundle
+  `a8a59bf265ce209994bf2cc244c979729ee5f2abbadf4e1c04f442bdb635d982`;
+  failure analysis
+  `1761db11853163421cd83cb9b4410f00ec887a2e0f574e1578c474eba203b7c3`.
+
+## MR-CONTROLLED-001 — nuisance, heterogeneity, and structured-error worlds
+
+- **Date frozen/executed:** 2026-08-30. The scenario plan was frozen before
+  responses. The final synthesis corrects one generic sign gloss append-only;
+  it does not rewrite the frozen aggregate.
+- **Research question:** Can omitted measurement nuisance masquerade as KC
+  granularity, does an observed nuisance covariate recover the shared
+  representation, and what diagnostic information is lost by binary outcomes?
+- **Claim boundary:** The preregistered matched bank had failed. This experiment
+  therefore uses a content-free 38-family/152-slot structural instrument with
+  categorical format labels but no prompt, target, accepted answers, or
+  response space. It is a **controlled scenario**, not a platform-valid item
+  bank, and carries `release_eligible=false`.
+- **Worlds/scale:** Six separate worlds vary no nuisance, format SD `.35`,
+  strong-format positive-control SD `.70`, item SD `.50`, item plus format,
+  and combined item/format/ability/learning/noise heterogeneity. Seeds are
+  `20260829`--`20260831`; each run has 500 learners, 188 acquisition and 152
+  non-updating probe events per learner (170,000 rows). Eighteen Q-balanced and
+  nine alternative-policy response runs total 4,590,000 rows. Worlds are
+  plausible sensitivity magnitudes, not estimates from humans.
+- **Models:** A = shared K* without nuisance; B = false format-split KCs; C =
+  shared K* plus observed format contrasts; D = C plus an aligned seen-item
+  residual basis. Bounded logistic models use learner-disjoint fitting,
+  acquisition-only causal histories, train-only standardisation, seen-probe
+  primary evaluation, and learner-paired bootstrap intervals conditional on a
+  frozen fit/seed. D is an exact-span positive control, not a general item
+  model or unseen-item solution.
+- **Format result:** Format difference-in-differences
+  `(B-A)_strong-(B-A)_zero` has mean `-.031551` (seed range
+  `[-.033431,-.029013]`), with all conditional intervals excluding zero.
+  Negative means planted format nuisance increases B's relative advantage over
+  A. C-B in the strong-format world averages `-.005317`
+  (`[-.006034,-.004652]`), again excluding zero in every seed. Mean A/B/C loss
+  is `.663597/.638965/.633648`; in the zero-format control A/B is
+  `.657219/.664138`.
+- **Item/heterogeneity boundaries:** D-C is `-.013099` item-only and
+  `-.012609` item-plus-format, with every interval excluding zero, because D
+  exactly spans the planted seen-item effect. Item-only B-A is small/mixed
+  (`+.001195`, `+.000847`, `-.001328`) with every interval crossing zero.
+  Combined-heterogeneous C-B is also mixed and every interval crosses zero;
+  explicit format adjustment is not a universal remedy.
+- **Structured-error result:** Binary/linked/80%-linked/within-item-shuffled
+  mean log loss is `.636359/.635493/.635833/.636987`; failed-KC top-1 is
+  `.420781/1.000/.883728/.462525`; secondary terminal evidence RMSE is
+  `.228727/.144357/.158804/.165519`. Linked-minus-binary loss deltas are only
+  `-.001336`, `-.000897`, and `-.000368`, with the third interval crossing
+  zero. Failed KC is sampled post-outcome in proportion to mastery deficit; it
+  is not a single causal human error. The shuffled RMSE improvement exposes
+  bias in treating that secondary metric alone as diagnostic proof.
+- **Exact verification commands:**
+
+  ```bash
+  .venv/bin/python scripts/experiments/measurement_realism_worlds.py \
+    --stage validate-plan --controlled-scenario \
+    --config experiments/measurement_realism/design/controlled_instrument_v1/scenario_config.yaml \
+    --output-dir experiments/measurement_realism/worlds/controlled_instrument_v1
+  .venv/bin/python -m pytest -q \
+    tests/test_controlled_instrument_scenario.py \
+    tests/test_measurement_realism_worlds.py
+  .venv/bin/python \
+    experiments/measurement_realism/worlds/controlled_instrument_v1/synthesis/build_synthesis.py \
+    --check
+  ```
+- **Artifacts/hashes:** Study plan
+  `e3d50e10001b7dff8042b002aba04b595bb8d95e496bd66beebae08e4d678667`;
+  aggregate results
+  `06da0a0c2e297124234ad433caa0fd0d6f7924d5b13b707f4fed8ded9a81bfaf`;
+  verified synthesis results
+  `55ac72dfdaf739597451e5766edb399690b780bbfa9499474c9142cf919e844a`.
+
+## MR-POLICY-001 — exploratory schedule-conditioned recovery
+
+- **Date frozen/executed:** 2026-08-30. The A--D fit plan was frozen after
+  response generation and inspection of descriptive schedule diagnostics; it
+  is explicitly post-response exploratory rather than preregistered
+  confirmatory evidence.
+- **Research question:** Do laboratory, curriculum, mixed-practice, and simple
+  adaptive assignment policies generate different observable histories and
+  fitted-state recovery under the combined heterogeneous controlled world?
+- **Held fixed:** All policies use 188 acquisition events per learner. Lab,
+  curriculum, and mixed reorder the same occurrence multiset; because learning
+  is unconditional and order-independent, their terminal oracle mastery and
+  probe accuracy are identical by construction. Adaptive assignment uses only
+  observable cell-level correctness, exposure, spacing, and keyed exploration;
+  it changes exposure and terminal state. It reads no latent mastery, future
+  outcomes, or planted nuisance.
+- **Result:** Item-exposure Gini for lab/curriculum/mixed/adaptive is
+  `.162530/.162530/.162530/.080298`; median repetition gap is
+  `93.67/31.00/92.00/26.67`. Model-D log loss is
+  `.636359/.639779/.636341/.639477`; item-state RMSE is
+  `.129724/.139472/.130748/.141659`. Curriculum-minus-lab loss averages
+  `+.003420`, mixed-minus-lab `-.000018`, and adaptive-minus-lab `+.003118`.
+  The transparent terminal-evidence RMSE is
+  `.228727/.229618/.229042/.237280`.
+- **Interpretation:** These are history morphology, selection, and model-fit
+  results, not educational-policy value. Logged propensities are design
+  diagnostics, not a complete off-policy estimator; adaptive differences mix
+  selection and changed practice.
+- **Exact verification command:**
+
+  ```bash
+  .venv/bin/python \
+    scripts/experiments/measurement_realism_policy_recovery.py verify
+  ```
+- **Artifacts/hashes:** Plan
+  `5a47ca244c57001ae353e4cc673754cac3df071631347fb79b1853ce3ad0f3e7`;
+  results
+  `29702c895ae9ba34cd0e1313514b23694572d3ca60b9629923b4713c5340a5c6`.
+
+## MR-DIALOGUE-001 — ecology--precision continuum pilot
+
+- **Date frozen/executed:** 2026-08-30.
+- **Research question:** As a controlled grammar opportunity moves from cloze
+  toward open dialogue, how do automated naturalness, answer determinacy,
+  incidental grammar, response-family size, shortcuts, and KC attribution
+  change?
+- **Design/models:** Four matched GrammarCell families each instantiate five
+  openness levels. Generation used `gpt-5.6-sol`, medium reasoning; critique
+  used `gpt-5.6-terra`, medium reasoning. Twenty critic calls yield five
+  independent role judgments for each of 20 opportunities (100 judgments).
+  Exact prompts, settings, raw/parsed outputs, and byte hashes are frozen.
+- **Result:** Cloze receives 17/20 naturalness, 17/20 determinate, and 17/20
+  clear-KC judgments, with 1/20 shortcuts and mean plausible-response-family
+  lower bound 1.30. Open dialogue receives 20/20 naturalness, 0/20 determinate
+  (16 bounded, three materially ambiguous, one N/A), 4/20 clear-KC, 13/20
+  shortcuts, and response-family mean 4.55. Open-minus-cloze changes are
+  `+1.00` determinacy risk, `+.70` KC-attribution risk, `+3.25` response
+  families, `+1.50` incidental grammar, and `+.60` shortcuts, while
+  naturalness risk falls `.15`. Dialogue completion is not a universal middle
+  point: 14/20 shortcuts and 3/20 clear KC attributions.
+- **Interpretation:** The pilot supports an ecological-naturalness versus
+  scoring/KC-precision tradeoff under its automated rubric; it does not rank
+  task formats universally. It has four families, no learner responses, and no
+  human/expert validation. Surface error text was not scaled because the
+  release-valid instrument prerequisite failed.
+- **Exact verification command:**
+
+  ```bash
+  .venv/bin/python \
+    scripts/experiments/measurement_realism_dialogue_live.py verify
+  ```
+- **Artifacts/hashes:** `experiments/measurement_realism/dialogue_pilot_live_v1/`;
+  analysis
+  `5d2538e7866855782f92fe0c946bfcfb714463ae60f8879f01135f2459e797ef`;
+  call bundle
+  `eaee2637f978b3a2286647b6a035d5bc6bc0da422c4c3575d72a14ba21c38ccb`;
+  package manifest
+  `8ad84e3200d4997041bccc92e46da2d46c08645c19fa6da6e78104dd0efa4f8e`.
+
+## MR-RELEASE-001 — extension decision and claim boundary
+
+- **Date:** 2026-08-30.
+- **Decision:** **NO_NEW_DATASET_RELEASE**. There is no new dataset release,
+  `data/grammar_kt_measurement_v1/` must remain absent, and full-v1 remains the
+  immutable reference.
+- **Evidence:** The matched learner-facing bank failed its complete-family,
+  cell/KC coverage, held-out, rank, solver-answerability, and independent
+  measurement gates. The content-free substitute explicitly lacks prompts,
+  answers, response spaces, and platform-valid formats, so it is retained only
+  as a controlled scenario. Automated item, KC, and dialogue audits cannot
+  supply release validity without human/expert evidence.
+- **Retained output:** Negative construction evidence, compact controlled-world
+  aggregates, policy/error/dialogue analyses, reconstruction commands, reports,
+  notebook, and manuscript. No partial bank or synthetic surface-error log is
+  promoted.
+- **Verification boundary:**
+
+  ```bash
+  .venv/bin/python \
+    scripts/experiments/verify_measurement_realism_programme.py preflight
+  .venv/bin/python \
+    scripts/experiments/verify_measurement_realism_programme.py verify
+  ```

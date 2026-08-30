@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "Both past simple and past perfect can express the sequence, although the past perfect makes it especially explicit.",
+  "batch_id": "solver_r01_rep1_dialogue_completion_b01",
+  "instruction_understanding": "Add a sentence explaining that Maya locked the office before the guard arrived.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv02_g01_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "I locked it before you arrived."
+  ],
+  "reasonable_unkeyed_responses": [
+    "I locked it before you arrived."
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv02_g01_dialog_solver_r1",
+  "submitted_response": "I had locked it before you arrived.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

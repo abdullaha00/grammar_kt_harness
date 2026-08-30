@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "Several natural advice expressions fit the situation.",
+  "batch_id": "solver_r02_rep2_dialogue_completion_b01",
+  "instruction_understanding": "Complete Leo's reply with natural advice about Maya's phone battery.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv02_g02_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "You'd better charge your phone before we leave."
+  ],
+  "reasonable_unkeyed_responses": [
+    "You'd better charge your phone before we leave."
+  ],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv02_g02_dialog_solver_r2",
+  "submitted_response": "You should charge your phone before we leave.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

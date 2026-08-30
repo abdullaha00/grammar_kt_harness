@@ -1,0 +1,162 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "Which ingredient does the soup not contain?",
+  "cell_id": "gc_4634bf1b005f7724",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g02_cloze",
+      "context": "The label says that the vegetable soup contains tomatoes and carrots and is milk-free. Ask about the ingredient that is absent.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]]",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the question using “which ingredient,” “the soup,” and “not contain.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Which ingredient does the soup not contain?",
+          "Which ingredient doesn't the soup contain?"
+        ],
+        "completed_target": "Which ingredient does the soup not contain?",
+        "correct_choice_id": null,
+        "target_response": "Which ingredient does the soup not contain?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g02_dialog",
+      "context": "A customer is checking whether the vegetable soup is suitable for them.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Customer: I can eat tomatoes and carrots, but I cannot have milk.",
+          "Server: This soup contains tomatoes and carrots, and the label says it is milk-free.",
+          "Customer: I want to make sure I understood correctly."
+        ],
+        "incomplete_turn_template": "Customer: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the customer’s question using “which ingredient,” “the soup,” and “not contain.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Which ingredient does the soup not contain?",
+          "Which ingredient doesn't the soup contain?"
+        ],
+        "completed_target": "Which ingredient does the soup not contain?",
+        "correct_choice_id": null,
+        "target_response": "Which ingredient does the soup not contain?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g02_mcq",
+      "context": "The label says that the vegetable soup contains tomatoes and carrots and is milk-free.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "The finite operator is not inverted with the subject after the non-subject WH expression.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "NOT is placed after the main verb instead of after the finite operator.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "The finite operator is in the past tense instead of the present tense.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Which ingredient the soup does not contain?"
+          },
+          {
+            "id": "B",
+            "text": "Which ingredient does the soup not contain?"
+          },
+          {
+            "id": "C",
+            "text": "Which ingredient does the soup contain not?"
+          },
+          {
+            "id": "D",
+            "text": "Which ingredient did the soup not contain?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which question correctly asks about the ingredient that is absent from the soup?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the correctly formed question.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Which ingredient does the soup not contain?",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g02_xform",
+      "context": "The label describes what is in the vegetable soup and what is absent from it.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "The soup contains tomatoes and carrots. The soup does not contain milk.",
+        "stem": null,
+        "transformation_cue": "Which ingredient / the soup / not contain? ---> one present-time question"
+      },
+      "instruction": "Turn the statements into one question asking about the ingredient that is absent. Begin with “Which ingredient” and use “the soup” and “contain.”",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Which ingredient does the soup not contain?",
+          "Which ingredient doesn't the soup contain?"
+        ],
+        "completed_target": "Which ingredient does the soup not contain?",
+        "correct_choice_id": null,
+        "target_response": "Which ingredient does the soup not contain?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Ask which ingredient is absent from the soup.",
+    "main_verb_lemma": "contain",
+    "object_head": "ingredient",
+    "participants": [
+      "customer",
+      "cafe server",
+      "vegetable soup"
+    ],
+    "situation_summary": "A customer checks a vegetable soup label that lists tomatoes and carrots and says the soup is milk-free.",
+    "time_anchor": "the soup's present composition"
+  },
+  "semantic_variant_index": 1
+}

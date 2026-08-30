@@ -1,0 +1,155 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv01_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "At 8:00 yesterday, Maya was carrying the boxes.",
+  "cell_id": "gc_44ff4acdb263024b",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv01_g01_cloze",
+      "context": "The action was already happening at 8:00 yesterday.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "At 8:00 yesterday, Maya [[RESPONSE]] the boxes.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence with the correct form of “carry.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "was carrying"
+        ],
+        "completed_target": "At 8:00 yesterday, Maya was carrying the boxes.",
+        "correct_choice_id": null,
+        "target_response": "was carrying"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv01_g01_dialog",
+      "context": "A colleague saw Maya while she was in the middle of moving some boxes.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Leo: What did you see Maya do with the boxes at 8:00 yesterday?"
+        ],
+        "incomplete_turn_template": "Nina: At 8:00 yesterday, Maya [[RESPONSE]] the boxes.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Maya’s colleague’s reply with the correct form of “carry.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "was carrying"
+        ],
+        "completed_target": "At 8:00 yesterday, Maya was carrying the boxes.",
+        "correct_choice_id": null,
+        "target_response": "was carrying"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv01_g01_mcq",
+      "context": "Maya was in the middle of moving some boxes at that time.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the simple past instead of constructing the progressive form.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses present finite “is” instead of selecting the past finite form “was.”",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Omits the required -ing form after progressive “was.”",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "At 8:00 yesterday, Maya carried the boxes."
+          },
+          {
+            "id": "B",
+            "text": "At 8:00 yesterday, Maya is carrying the boxes."
+          },
+          {
+            "id": "C",
+            "text": "At 8:00 yesterday, Maya was carrying the boxes."
+          },
+          {
+            "id": "D",
+            "text": "At 8:00 yesterday, Maya was carry the boxes."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence best describes the situation?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that shows the action was already happening at 8:00 yesterday.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "C"
+        ],
+        "completed_target": "At 8:00 yesterday, Maya was carrying the boxes.",
+        "correct_choice_id": "C",
+        "target_response": "C"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv01_g01_xform",
+      "context": "Maya’s action had started before 8:00 and was continuing then.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Maya carried the boxes. The time was 8:00 yesterday.",
+        "stem": null,
+        "transformation_cue": "Use “carry” and begin with “At 8:00 yesterday, Maya”. Write the full sentence."
+      },
+      "instruction": "Rewrite the information as one sentence. Show that the action was in progress at the stated time.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "At 8:00 yesterday, Maya was carrying the boxes."
+        ],
+        "completed_target": "At 8:00 yesterday, Maya was carrying the boxes.",
+        "correct_choice_id": null,
+        "target_response": "At 8:00 yesterday, Maya was carrying the boxes."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Describe what Maya was doing with the boxes at that time.",
+    "main_verb_lemma": "carry",
+    "object_head": "boxes",
+    "participants": [
+      "Maya"
+    ],
+    "situation_summary": "Maya was in the middle of moving some boxes at a specific time yesterday.",
+    "time_anchor": "8:00 yesterday"
+  },
+  "semantic_variant_index": 1
+}

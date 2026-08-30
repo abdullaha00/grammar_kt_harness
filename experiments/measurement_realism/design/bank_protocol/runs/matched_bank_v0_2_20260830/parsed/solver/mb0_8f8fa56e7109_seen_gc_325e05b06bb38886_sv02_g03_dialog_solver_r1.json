@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "More than one polite question is possible.",
+  "batch_id": "solver_r03_rep1_dialogue_completion_b01",
+  "instruction_understanding": "Ask Sam politely for permission to borrow the charger.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv02_g03_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "May I borrow your charger, please?"
+  ],
+  "reasonable_unkeyed_responses": [
+    "May I borrow your charger, please?"
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv02_g03_dialog_solver_r1",
+  "submitted_response": "Could I borrow your charger, please?",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

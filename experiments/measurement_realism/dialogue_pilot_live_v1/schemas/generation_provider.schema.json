@@ -1,0 +1,92 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {"type": "string", "enum": ["dialogue_continuum_family_v1"]},
+    "family_id": {"type": "string"},
+    "cell_id": {"type": "string"},
+    "pilot_stratum": {"type": "string", "enum": ["simple", "multi_kc", "question", "rare_complex"]},
+    "grammar_cell": {
+      "type": "object",
+      "properties": {
+        "tense": {"type": "string"},
+        "aspect": {"type": "string"},
+        "voice": {"type": "string"},
+        "polarity": {"type": "string"},
+        "clause": {"type": "string"},
+        "modal": {"type": "string"}
+      },
+      "required": ["tense", "aspect", "voice", "polarity", "clause", "modal"],
+      "additionalProperties": false
+    },
+    "active_generator_kc_ids": {"type": "array", "items": {"type": "string"}},
+    "q_row": {"type": "array", "items": {"type": "integer", "enum": [0, 1]}},
+    "shared_semantic_specification": {
+      "type": "object",
+      "properties": {
+        "scenario": {"type": "string"},
+        "entities_and_referents": {"type": "array", "items": {"type": "string"}},
+        "lexical_head": {"type": "string"},
+        "target_proposition": {"type": "string"},
+        "intended_response_function": {"type": "string"},
+        "canonical_target_example": {"type": "string"},
+        "non_target_vocabulary_policy": {"type": "string"}
+      },
+      "required": ["scenario", "entities_and_referents", "lexical_head", "target_proposition", "intended_response_function", "canonical_target_example", "non_target_vocabulary_policy"],
+      "additionalProperties": false
+    },
+    "opportunities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "opportunity_id": {"type": "string"},
+          "format": {"type": "string", "enum": ["constrained_cloze", "sentence_transformation", "contextual_production", "dialogue_completion", "open_dialogue"]},
+          "viability": {"type": "string", "enum": ["candidate", "not_viable"]},
+          "instruction": {"type": "string"},
+          "context": {"type": "string"},
+          "stimulus": {"type": "string"},
+          "dialogue_history": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {"speaker": {"type": "string"}, "text": {"type": "string"}},
+              "required": ["speaker", "text"],
+              "additionalProperties": false
+            }
+          },
+          "response_mechanism": {
+            "type": "object",
+            "properties": {
+              "type": {"type": "string", "enum": ["typed_span", "typed_sentence", "typed_short_clause", "typed_turn", "typed_free_turn"]},
+              "visible_component": {"type": "string"},
+              "options": {"type": "array", "items": {"type": "string"}}
+            },
+            "required": ["type", "visible_component", "options"],
+            "additionalProperties": false
+          },
+          "canonical_target_example": {"type": "string"},
+          "scoring_interpretation": {
+            "type": "object",
+            "properties": {
+              "kind": {"type": "string", "enum": ["exhaustive_set", "bounded_variants", "interpretive_rubric"]},
+              "accepted_responses": {"type": "array", "items": {"type": "string"}},
+              "normalization": {"type": "string"},
+              "rubric": {"type": "string"}
+            },
+            "required": ["kind", "accepted_responses", "normalization", "rubric"],
+            "additionalProperties": false
+          },
+          "feedback_target": {"type": "string"},
+          "opportunity_boundary": {"type": "string"},
+          "anticipated_incidental_grammar": {"type": "array", "items": {"type": "string"}},
+          "viability_note": {"type": "string"}
+        },
+        "required": ["opportunity_id", "format", "viability", "instruction", "context", "stimulus", "dialogue_history", "response_mechanism", "canonical_target_example", "scoring_interpretation", "feedback_target", "opportunity_boundary", "anticipated_incidental_grammar", "viability_note"],
+        "additionalProperties": false
+      }
+    },
+    "generation_notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": ["schema_version", "family_id", "cell_id", "pilot_stratum", "grammar_cell", "active_generator_kc_ids", "q_row", "shared_semantic_specification", "opportunities", "generation_notes"],
+  "additionalProperties": false
+}

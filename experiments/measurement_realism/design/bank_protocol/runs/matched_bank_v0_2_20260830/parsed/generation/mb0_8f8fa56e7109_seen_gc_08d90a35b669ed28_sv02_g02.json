@@ -1,0 +1,158 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "Has Maya booked the meeting room?",
+  "cell_id": "gc_08d90a35b669ed28",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02_g02_cloze",
+      "context": "Maya was going to reserve a room for tomorrow's meeting. You want to know whether this is complete now.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]] the meeting room?",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": "Maya / book"
+      },
+      "instruction": "Complete the question using the words in brackets.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Has Maya booked"
+        ],
+        "completed_target": "Has Maya booked the meeting room?",
+        "correct_choice_id": null,
+        "target_response": "Has Maya booked"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02_g02_dialog",
+      "context": "Two colleagues are preparing for tomorrow's meeting.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Nora: We need a room for tomorrow's meeting.",
+          "Eli: Maya said she would arrange it.",
+          "Nora: I want to check whether it is booked now."
+        ],
+        "incomplete_turn_template": "Nora: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the final turn with a question.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Has Maya booked the meeting room?"
+        ],
+        "completed_target": "Has Maya booked the meeting room?",
+        "correct_choice_id": null,
+        "target_response": "Has Maya booked the meeting room?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02_g02_mcq",
+      "context": "Maya was going to reserve a room for tomorrow's meeting. You want to know whether the task is complete now.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses simple-past DID instead of present perfect HAVE.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses the bare verb after HAVE instead of the past participle.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Keeps declarative subject-operator order instead of forming a yes/no question by inversion.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Has Maya booked the meeting room?"
+          },
+          {
+            "id": "B",
+            "text": "Did Maya book the meeting room?"
+          },
+          {
+            "id": "C",
+            "text": "Has Maya book the meeting room?"
+          },
+          {
+            "id": "D",
+            "text": "Maya has booked the meeting room?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which question should you ask?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the best question for this situation.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "Has Maya booked the meeting room?",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02_g02_xform",
+      "context": "You are preparing for tomorrow's meeting.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Maya was going to book the meeting room.",
+        "stem": null,
+        "transformation_cue": "Use: Maya / book / the meeting room"
+      },
+      "instruction": "Rewrite the information as a question asking whether the task is complete now.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Has Maya booked the meeting room?"
+        ],
+        "completed_target": "Has Maya booked the meeting room?",
+        "correct_choice_id": null,
+        "target_response": "Has Maya booked the meeting room?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Ask whether Maya has completed the room booking.",
+    "main_verb_lemma": "book",
+    "object_head": "room",
+    "participants": [
+      "Maya",
+      "colleague"
+    ],
+    "situation_summary": "Maya was going to reserve a room for tomorrow's meeting, and a colleague is checking whether the task is complete.",
+    "time_anchor": "now, before tomorrow's meeting"
+  },
+  "semantic_variant_index": 2
+}

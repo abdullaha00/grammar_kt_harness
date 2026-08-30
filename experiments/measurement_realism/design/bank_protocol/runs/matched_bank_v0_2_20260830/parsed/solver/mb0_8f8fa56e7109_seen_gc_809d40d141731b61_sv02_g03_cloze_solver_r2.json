@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "More than one advice expression fits the context.",
+  "batch_id": "solver_r03_rep2_constrained_cloze_b01",
+  "instruction_understanding": "Complete the advice sentence with suitable words.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv02_g03_cloze",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "needs to charge"
+  ],
+  "reasonable_unkeyed_responses": [
+    "needs to charge"
+  ],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv02_g03_cloze_solver_r2",
+  "submitted_response": "should charge",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

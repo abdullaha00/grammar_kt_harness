@@ -1,0 +1,132 @@
+{
+  "commands": {
+    "critic_round": ".venv/bin/python scripts/experiments/measurement_realism_bank.py critic --run-id matched_bank_v0_2_20260830 --round ROUND --workers 3",
+    "curate_round": ".venv/bin/python scripts/experiments/measurement_realism_bank.py curate --run-id matched_bank_v0_2_20260830 --round ROUND",
+    "freeze": ".venv/bin/python scripts/experiments/measurement_realism_bank.py freeze --run-id matched_bank_v0_2_20260830",
+    "generate_round": ".venv/bin/python scripts/experiments/measurement_realism_bank.py generate --run-id matched_bank_v0_2_20260830 --round ROUND --workers 4",
+    "solve_round": ".venv/bin/python scripts/experiments/measurement_realism_bank.py solve --run-id matched_bank_v0_2_20260830 --round ROUND --workers 4",
+    "verify": ".venv/bin/python scripts/experiments/verify_measurement_realism_bank.py --run-id matched_bank_v0_2_20260830"
+  },
+  "counts": {
+    "families": 38,
+    "generation_requests": 114,
+    "items_if_frozen": 152
+  },
+  "execution_environment": {
+    "codex_cli": "codex-cli 0.151.0",
+    "fresh_ephemeral_context_per_request": true,
+    "provider_output_schema": true,
+    "python": "3.14.7"
+  },
+  "generation_plan": {
+    "path": "plans/generation_requests.jsonl",
+    "sha256": "c82f7f8a875bcc10c05432a3b92cd2de7a47308ec239f513b51218ac0c6f33b5"
+  },
+  "inputs": {
+    "audited_backend": {
+      "bytes": 3114,
+      "path": "src/grammar_kt/model_evidence.py",
+      "sha256": "857c26451469c6e7912293931ed5c890b4f7601d6fb51e835a9fecfcd9f17bd2"
+    },
+    "config": {
+      "bytes": 13589,
+      "path": "modules/measurement_realism/matched_bank/config.yaml",
+      "sha256": "beb8f4fcf08fa85bec1ccd764258eb0469bf516d15fcf948286a5bf73a0258af"
+    },
+    "implementation": {
+      "bytes": 76046,
+      "path": "scripts/experiments/measurement_realism_bank.py",
+      "sha256": "f0ef132f291aa1d1fa666e88b8e735a93b5ae0a94d08f8e829e97ff8edd060b5"
+    },
+    "kcs": {
+      "bytes": 15814,
+      "path": "data/grammar_kt_full_v1/kcs.jsonl",
+      "sha256": "f3b308dcda7c11886e1dc67476dbe6adbcb53b8676b643c62d226fe68cfe0355"
+    },
+    "prompt:critic_linguistic.txt": {
+      "bytes": 1534,
+      "path": "modules/measurement_realism/matched_bank/prompts/critic_linguistic.txt",
+      "sha256": "9be40f54407624442ad42b4865333b71a552e45790ad8a271c3be4f6535f1ad5"
+    },
+    "prompt:critic_measurement.txt": {
+      "bytes": 1939,
+      "path": "modules/measurement_realism/matched_bank/prompts/critic_measurement.txt",
+      "sha256": "c0e2fe31f653288bf4fad307d52d1b6c6098ab13e41922696d8c8eae8c9670d9"
+    },
+    "prompt:critic_platform_product.txt": {
+      "bytes": 1679,
+      "path": "modules/measurement_realism/matched_bank/prompts/critic_platform_product.txt",
+      "sha256": "8e68e8fcc79783b4642ddc326e14cad150420ebea605461d1f0a234db759575d"
+    },
+    "prompt:generate_family.txt": {
+      "bytes": 5946,
+      "path": "modules/measurement_realism/matched_bank/prompts/generate_family.txt",
+      "sha256": "e2d823d2825111b70777469308b9e3f7c420ef58300c93b9bd89e49e97ae2c77"
+    },
+    "prompt:learner_solver.txt": {
+      "bytes": 1601,
+      "path": "modules/measurement_realism/matched_bank/prompts/learner_solver.txt",
+      "sha256": "863634ca5c2b384c8ea3fa2ad0a1f27429bd959f4322a00b1a6487c187187be5"
+    },
+    "schema:call_record.schema.json": {
+      "bytes": 1209,
+      "path": "modules/measurement_realism/matched_bank/schemas/call_record.schema.json",
+      "sha256": "0366b9e0e42a9b833eab1e1be211ab84f19d146b523080fe4e1d706b9286757f"
+    },
+    "schema:critic_response.schema.json": {
+      "bytes": 1979,
+      "path": "modules/measurement_realism/matched_bank/schemas/critic_response.schema.json",
+      "sha256": "904898b1d8016abcc9a427c86de799a83b676851e76ec1809f4575f13a168f20"
+    },
+    "schema:curated_item.schema.json": {
+      "bytes": 3401,
+      "path": "modules/measurement_realism/matched_bank/schemas/curated_item.schema.json",
+      "sha256": "6cf2aa85a14de9daff168f7f98b536ad5ae0b636fe3a262232438fd5bbb0f481"
+    },
+    "schema:curation_decision.schema.json": {
+      "bytes": 916,
+      "path": "modules/measurement_realism/matched_bank/schemas/curation_decision.schema.json",
+      "sha256": "f38fe36318c3ce0ae2c4df03c1d57e8adf86b2a6a744c235902998983091b793"
+    },
+    "schema:generated_family.schema.json": {
+      "bytes": 4539,
+      "path": "modules/measurement_realism/matched_bank/schemas/generated_family.schema.json",
+      "sha256": "be5e5040a9918af54e3e8f5c35f952bca50e58fa34783f268af7b09c828dd479"
+    },
+    "schema:selected_cells.schema.json": {
+      "bytes": 2360,
+      "path": "modules/measurement_realism/matched_bank/schemas/selected_cells.schema.json",
+      "sha256": "963cda69be9a9048fd8343ae6a852a7bcc47fe12e4874356733673238760f51f"
+    },
+    "schema:solver_response.schema.json": {
+      "bytes": 1641,
+      "path": "modules/measurement_realism/matched_bank/schemas/solver_response.schema.json",
+      "sha256": "c832831301d2595f387ddbeefd5a571b8dfb950025f31632950c1b12434669d7"
+    },
+    "selected_cells": {
+      "bytes": 46461,
+      "path": "experiments/measurement_realism/design/format_selection/selected_cells.json",
+      "sha256": "8f8fa56e710982c92426f154482d062cffebfb32d29f19c7fe96f4208a4b479b"
+    },
+    "selection_input_manifest": {
+      "bytes": 2112,
+      "path": "experiments/measurement_realism/design/format_selection/input_manifest.json",
+      "sha256": "78f5a8dcda03645ca62baf72a6d76ebf48d49a424d0cdef341180865a4fb42af"
+    },
+    "v1_manifest": {
+      "bytes": 26456,
+      "path": "data/grammar_kt_full_v1/manifest.json",
+      "sha256": "322128843f8e7e6547a99efcecc6836fcd581f314fb49557a28d58fe79c69f4c"
+    }
+  },
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "repository_head_at_plan": "f1a5eb29414dd03d173dbd9d0c4cb20762f2b259",
+  "run_id": "matched_bank_v0_2_20260830",
+  "scientific_boundary": {
+    "full_v1_mutated": false,
+    "learner_outcomes_read": false,
+    "q_projection_model_editable": false,
+    "simulator_or_kt_results_read": false
+  },
+  "status": "PREREGISTERED_BEFORE_MATCHED_BANK_MODEL_CALLS"
+}

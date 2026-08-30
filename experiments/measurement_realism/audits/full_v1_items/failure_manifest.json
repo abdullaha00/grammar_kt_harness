@@ -1,0 +1,33 @@
+{
+  "audit_id": "full_v1_platform_plausibility_audit_v1",
+  "status": "INFRASTRUCTURE_FAILURE_NO_SCIENTIFIC_RESULT",
+  "failed_stage": "learner_role_batch_03_local_schema_validation",
+  "failure": "One item used the misspelled key task_comprehibility instead of task_comprehensibility.",
+  "scientific_use": "None of the partial v1 judgments enters an aggregate, report, item decision, or later experiment.",
+  "resolution": "A versioned v2 plan uses a provider-side JSON schema plus the unchanged local exact-key and item-coverage validator. The v1 output was not repaired or overwritten.",
+  "completed_calls_before_failure": 3,
+  "restricted_evidence_root": "runs/measurement_realism/full_v1_item_audit_evidence",
+  "retained_hashes": [
+    {
+      "role": "learner",
+      "batch": 1,
+      "rendered_prompt_sha256": "309d4bb2abbe0d8aa26920fe657052efb7a1e4b6518eb82c3e428964cb27f124",
+      "raw_output_sha256": "b8720cedd24a05ee3a1e4d9a00ab722c6945e5e9d6417a3afff9c49026c96eb8",
+      "parsed_result_sha256": "f3d6b1aa1800901b69bc8122fb3f13a600ff64a147fa1b79862ea9de6122ffa6"
+    },
+    {
+      "role": "learner",
+      "batch": 2,
+      "rendered_prompt_sha256": "3536e2cd0fb07c005f304dd62df511ee559945b343776bc26c70699458bba36b",
+      "raw_output_sha256": "efd27e83c401093680e1516ce9b4730b93c1923ac485e168fe4ea1a8f906749d",
+      "parsed_result_sha256": "ea5192727fe162cee51c68f412c1082643346e569a798f3d57a1f3122395da61"
+    },
+    {
+      "role": "learner",
+      "batch": 3,
+      "rendered_prompt_sha256": "601de61ae4401b1aa750a95156a9ee4e66f247b93f46c8977039e65ed13b1b25",
+      "raw_output_sha256": "086be6e2caba42c95a825a72de37eab2fe38e5b2cb2c30eed6686de12c810b21",
+      "parsed_result_sha256": "70ade424c558590cf722e54b9811a753ebe7ed19e3044095757f86c704eca487"
+    }
+  ]
+}

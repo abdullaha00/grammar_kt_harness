@@ -1,0 +1,161 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "The report had not been printed before the meeting began.",
+  "cell_id": "gc_9d70af80c0843115",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g03_cloze",
+      "context": "The printer stopped working, so no copies of the report were available when the meeting started.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "The report [[RESPONSE]] before the meeting began.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using the correct form of “print”.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "had not been printed",
+          "hadn't been printed"
+        ],
+        "completed_target": "The report had not been printed before the meeting began.",
+        "correct_choice_id": null,
+        "target_response": "had not been printed"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g03_dialog",
+      "context": "Maya and Leo are discussing why the meeting attendees had no copies of the report.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Leo: Why did nobody have a copy of the report?",
+          "Maya: The office printer had stopped working."
+        ],
+        "incomplete_turn_template": "Maya: The report [[RESPONSE]] before the meeting began.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Maya’s reply using the correct form of “print”.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "had not been printed",
+          "hadn't been printed"
+        ],
+        "completed_target": "The report had not been printed before the meeting began.",
+        "correct_choice_id": null,
+        "target_response": "had not been printed"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g03_mcq",
+      "context": "The printer stopped working, and the meeting started without copies of the report.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Omits passive BE, leaving the report incorrectly functioning as the agent of “print”.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses finite past BE instead of past perfect HAVE and incorrectly follows it with “been”.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses present perfect “has” instead of past perfect “had” for the earlier past event.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "The report had not printed before the meeting began."
+          },
+          {
+            "id": "B",
+            "text": "The report had not been printed before the meeting began."
+          },
+          {
+            "id": "C",
+            "text": "The report was not been printed before the meeting began."
+          },
+          {
+            "id": "D",
+            "text": "The report has not been printed before the meeting began."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly describes the situation?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly explains why no copies were available.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "The report had not been printed before the meeting began.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g03_xform",
+      "context": "The printer problem meant that the report was still unavailable when the meeting started.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Nobody had printed the report before the meeting began.",
+        "stem": null,
+        "transformation_cue": "Begin with: The report"
+      },
+      "instruction": "Rewrite the sentence in the passive, beginning with “The report”. Keep the same meaning.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "The report had not been printed before the meeting began.",
+          "The report hadn't been printed before the meeting began."
+        ],
+        "completed_target": "The report had not been printed before the meeting began.",
+        "correct_choice_id": null,
+        "target_response": "The report had not been printed before the meeting began."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Explain that the report remained unprinted up to the start of the meeting.",
+    "main_verb_lemma": "print",
+    "object_head": "report",
+    "participants": [
+      "Maya",
+      "Leo",
+      "meeting attendees"
+    ],
+    "situation_summary": "An office printer problem left a report unavailable when a meeting started.",
+    "time_anchor": "before the meeting began"
+  },
+  "semantic_variant_index": 2
+}

@@ -1,0 +1,158 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv02_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "May I borrow this umbrella?",
+  "cell_id": "gc_325e05b06bb38886",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv02_g02_cloze",
+      "context": "It has started raining. You need to use your coworker's spare umbrella.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]] this umbrella?",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the question to ask politely for permission.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "May I borrow"
+        ],
+        "completed_target": "May I borrow this umbrella?",
+        "correct_choice_id": null,
+        "target_response": "May I borrow"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv02_g02_dialog",
+      "context": "It has started raining, and the employee needs an umbrella.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Coworker: It's raining hard now.",
+          "Employee: I don't have an umbrella.",
+          "Coworker: There's a spare one by the door."
+        ],
+        "incomplete_turn_template": "Employee: [[RESPONSE]] this umbrella?",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the employee's question.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "May I borrow"
+        ],
+        "completed_target": "May I borrow this umbrella?",
+        "correct_choice_id": null,
+        "target_response": "May I borrow"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv02_g02_mcq",
+      "context": "It has started raining. An employee politely asks a coworker for permission to use a spare umbrella.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses statement word order instead of finite-operator inversion for a polar question.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses the past-tense form instead of the base-form complement after MAY.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Adds incorrect DO-support instead of inverting MAY directly.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "I may borrow this umbrella?"
+          },
+          {
+            "id": "B",
+            "text": "May I borrow this umbrella?"
+          },
+          {
+            "id": "C",
+            "text": "May I borrowed this umbrella?"
+          },
+          {
+            "id": "D",
+            "text": "Do I may borrow this umbrella?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "What should the employee ask?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the correct question.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "May I borrow this umbrella?",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv02_g02_xform",
+      "context": "It has started raining, and your coworker has a spare umbrella.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "I want to borrow this umbrella. I need your permission.",
+        "stem": null,
+        "transformation_cue": "Use: may / I / borrow / this umbrella"
+      },
+      "instruction": "Rewrite the statements as a polite question asking for permission.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "May I borrow this umbrella?"
+        ],
+        "completed_target": "May I borrow this umbrella?",
+        "correct_choice_id": null,
+        "target_response": "May I borrow this umbrella?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Ask politely for permission to borrow the umbrella.",
+    "main_verb_lemma": "borrow",
+    "object_head": "umbrella",
+    "participants": [
+      "employee",
+      "coworker"
+    ],
+    "situation_summary": "An employee needs an umbrella because it has started raining and asks a coworker for permission to use a spare one.",
+    "time_anchor": "now, after the rain has started"
+  },
+  "semantic_variant_index": 2
+}

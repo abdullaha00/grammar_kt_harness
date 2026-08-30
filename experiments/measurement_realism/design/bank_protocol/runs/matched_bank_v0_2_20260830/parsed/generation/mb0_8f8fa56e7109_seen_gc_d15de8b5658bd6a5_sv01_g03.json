@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv01_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "Maya checks the front door every night.",
+  "cell_id": "gc_d15de8b5658bd6a5",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv01_g03_cloze",
+      "context": "This is part of Maya's regular home safety routine.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Maya [[RESPONSE]] the front door every night.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence with the correct form of “check.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "checks"
+        ],
+        "completed_target": "Maya checks the front door every night.",
+        "correct_choice_id": null,
+        "target_response": "checks"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv01_g03_dialog",
+      "context": "Leo is asking Nina about Maya's regular home safety routine.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Leo: Does Maya have a regular safety routine?",
+          "Nina: Yes.",
+          "Leo: What does she check every night?"
+        ],
+        "incomplete_turn_template": "Nina: Maya [[RESPONSE]].",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Nina's final reply.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "checks the front door every night"
+        ],
+        "completed_target": "Maya checks the front door every night.",
+        "correct_choice_id": null,
+        "target_response": "checks the front door every night"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv01_g03_mcq",
+      "context": "Maya follows the same home safety routine each night.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the uninflected base form instead of the present finite form required with a third-person singular subject.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses the present progressive instead of the non-progressive present finite form for the regular routine.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses past finite morphology instead of present finite morphology.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Maya check the front door every night."
+          },
+          {
+            "id": "B",
+            "text": "Maya checks the front door every night."
+          },
+          {
+            "id": "C",
+            "text": "Maya is checking the front door every night."
+          },
+          {
+            "id": "D",
+            "text": "Maya checked the front door every night."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly describes what Maya regularly does?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly describes Maya's regular routine.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Maya checks the front door every night.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv01_g03_xform",
+      "context": "Describe Maya's regular home safety routine.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Maya's nightly routine includes a check of the front door.",
+        "stem": null,
+        "transformation_cue": "Use the verb “check” and the words “every night.”"
+      },
+      "instruction": "Rewrite the information as one sentence about what Maya does. Begin with “Maya.”",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Maya checks the front door every night."
+        ],
+        "completed_target": "Maya checks the front door every night.",
+        "correct_choice_id": null,
+        "target_response": "Maya checks the front door every night."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Describe what Maya regularly does as part of her safety routine.",
+    "main_verb_lemma": "check",
+    "object_head": "door",
+    "participants": [
+      "Maya"
+    ],
+    "situation_summary": "Maya follows a nightly home safety routine involving the front door.",
+    "time_anchor": "every night"
+  },
+  "semantic_variant_index": 1
+}

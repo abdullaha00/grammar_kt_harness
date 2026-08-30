@@ -1,0 +1,164 @@
+{
+  "batch_id": "critic_r02_linguistic_b02",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g02",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "shared_target_proposition",
+      "evidence": "All items target the conclusion that Nina took the parcel.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "target_construction_consistency",
+      "evidence": "Every target uses the same MUST + perfect HAVE + past-participle declarative construction.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "The completed target “Nina must have taken the parcel” is an active positive declarative with MUST + perfect HAVE + past participle.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "“Nina must have taken the parcel” is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "The disappearance and Nina being the only entrant support an evidential conclusion about an earlier taking event.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The reception-desk scenario naturally licenses a deduction with “must have taken.”",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "Both “must have taken” and “must've taken” complete the same target construction and proposition.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g02_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "The target is a positive active declarative using MUST + perfect HAVE + “taken.”",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "“Nina must have taken the parcel” is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "Maya’s conclusion follows coherently from the stated timing and sole-entry evidence.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The dialogue provides a natural conversational context for this conclusion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "The expanded and contracted forms express the same proposition and construction.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g02_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "Option D, the accepted response, is a positive active declarative with modal MUST and perfect aspect.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "Accepted option D is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "The accepted sentence expresses the intended strong retrospective inference.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The question and evidence context naturally support selecting option D.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "Accepted response “D” uniquely selects the stated completed target.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g02_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "The target realizes the declared active, positive, declarative MUST-perfect cell.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "“Nina must have taken the parcel” is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "The transformation preserves the inference about the parcel’s disappearance.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The evidence-to-conclusion transformation is natural and clear.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "Both accepted forms are equivalent realizations of the target sentence.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g02_xform"
+    }
+  ],
+  "overall_accept": true,
+  "role": "linguistic",
+  "summary": "All four items validly and consistently measure the declared MUST-perfect declarative construction."
+}

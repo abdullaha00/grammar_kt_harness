@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write or verify the machine-readable full-v1 release root manifest."""
+"""Write or verify the immutable full-v1 release-root compatibility manifest."""
 
 from __future__ import annotations
 
@@ -176,7 +176,7 @@ def build_manifest() -> dict[str, object]:
     return {
         "manifest_id": "grammar_kt_full_v1_final_release_root",
         "status": "FINAL_RELEASE_VERIFIED",
-        "purpose": "Root byte-hash anchor for the frozen baseline, paper-facing experiments, final synthesis, executable notebooks, and ACL manuscript.",
+        "purpose": "Compatibility hash anchor for the immutable full-v1 dataset and its current repository-facing documentation, notebooks, experiments, and interpretive ACL manuscript. Measurement-program evidence is separately frozen by programme_evidence_manifest.json.",
         "scope": scope_declaration(),
         "explicit_exclusions": [
             "reports/final_release_manifest.json (this manifest; anchored by Git)",
@@ -184,6 +184,7 @@ def build_manifest() -> dict[str, object]:
             "RQ2 development_results_n20.json and RQ3 pilot outputs",
             "TeX auxiliary/log files and local render intermediates",
             "licensed source content, provider snapshots/seeds, and unrelated user files",
+            "measurement-realism experiment evidence (covered by its separate explicit programme manifest)",
         ],
         "artifact_count": len(records),
         "artifact_bytes": sum(int(row["bytes"]) for row in records),

@@ -1,81 +1,99 @@
-\section{Downstream Experimental Design}
+\section{Experimental Design}
 \label{sec:experimental-design}
 
-\paragraph{Common observable protocol.}
-All headline representation comparisons fit on the same 170,000 acquisition
-rows and evaluate the same 113,000 terminal probes.  The primary model is a
-standardized PFA-like logistic regression \citep{pavlik-etal-2009} whose
-features use strictly prior successes and opportunities on active hypothesis
-KCs.  It receives no item identity, generator state, response probability,
-random draw, or probe outcome.  Log loss and Brier score are primary;
-calibration, AUC, and accuracy are diagnostic.  Paired intervals resample
-whole learners 2,000 times, retaining all events for a sampled learner.
-Empirical history and fixed BKT are secondary sensitivities because their
-multi-KC semantics do not match every generator condition.
+\subsection{Clean-control representation evidence}
 
-\paragraph{RQ2: controlled misspecification.}
-Six deterministic representations span one all-merged KC, six linguistic
-family unions, the 18-KC \kstar{}, 35 structural split-2 KCs, 66 split-4 KCs,
-and 75 exact-cell KCs.  Separate controls add false-positive, false-negative,
-or mixed Q edges at a 27-edge (approximately 10\%) Hamming budget over three
-structural seeds.  Every projection is frozen before outcomes are loaded and
-all representations reuse the exact event stream.
+The immutable full-v1 stream supports the known-truth baseline.  A standardized
+PFA-like logistic model uses strictly prior successes and opportunities on
+active hypothesis KCs \citep{pavlik-etal-2009}.  It receives no item identity,
+generator state, response probability, random draw, or probe outcome.  Six
+deterministic representations span one all-merged KC, six family unions,
+\kstar{}, 35 split-2 KCs, 66 split-4 KCs, and 75 exact cells.  Nine frozen
+Q-corruption controls add false-positive, false-negative, or mixed edges at a
+27-edge budget.  All representations reuse the same 113,000 probes.
 
-\paragraph{RQ3: observable-only discovery.}
-The outcome-independent candidate space contains 181 atomic features,
-operations, coarse unions, structural splits, supported intersections, exact
-cells, and deterministic hash distractors.  Stable learner-disjoint groups
-provide 800 fit and 200 validation learners.  A protected-feature forward
-selector scores validation log loss plus $.0005|K|$ and evaluates 22 eligible
-additions.  Selection may read canonical item structure and seen acquisition
-outcomes, but not \kstar{}, \qstar{}, oracle state, or any probe outcome.
-After freezing, name-free optimal column matching reports exact KC recovery,
-activation Jaccard, and aligned Q-edge precision, recall, and F1.  The declared
-compositional operation policy is a candidate-space ceiling, not evidence of
-blind selection.  RQ3's structural controls are local to the discovery
-protocol: its eight-KC operation-group baseline and 54-KC seen-cell baseline
-are not the six-family and 75-cell representations on the RQ2 granularity
-curve.
+Observable-only discovery searches 181 outcome-independent features,
+operations, unions, splits, supported intersections, exact cells, and hash
+distractors using learner-disjoint fit/validation groups.  It cannot read
+\kstar{}, \qstar{}, oracle state, or probes before selection.  Name-free
+activation matching opens truth only after the representation is frozen.
+Separate collection controls vary learner count, opportunities, within-cell
+replication, and A-only/B-only/A+B anchors.  These retained experiments answer
+whether response volume or Q geometry distinguishes hypotheses; they do not
+validate the learner-facing instrument.
 
-\paragraph{RQ4: linguistic generalisation.}
-Six predeclared hypotheses---\kstar{}, RQ3 atomic features, family unions,
-split-2, exact cells, and \kstar{} plus supported intersections---are evaluated
-by seen, pairwise-seen/full-tuple-unseen combination, and unseen-value regimes.
-We report event-weighted and cell-macro metrics, per-cell and leave-one-cell-out
-sensitivity, and learner-paired contrasts.  A separate negative control
-withholds one item from each of 30 two-item seen cells and replaces its
-acquisition occurrences with the same-cell counterpart while preserving every
-\kstar{} opportunity count.
+\subsection{Audit and construction outcomes}
 
-\paragraph{Mastery recovery.}
-Observable predictions for the frozen RQ2 representations are written before
-the private oracle is opened.  Under the known baseline response link,
-$(p-.10)/.80$ estimates the minimum active-prerequisite state and is compared
-with oracle pre-response aggregate mastery.  A separate fixed-BKT analysis
-compares exposed terminal per-KC states with oracle KC mastery.  The targets
-are intentionally distinct and are not called human mastery.
+The two item audits cover all 113 full-v1 prompts.  The strict census is one
+rubric-guided review; the second comprises four role-specific fixed calls per
+item.  A deterministic script maps their labels, reports exact disagreement,
+and preserves item IDs for every cell.  The KC audit is outcome-free.  Three KC
+inductions use independent calls and are compared by activation signatures.
 
-\paragraph{Simulator robustness.}
-A compact preregistered study runs 13 conditions, three seeds, and 500 learners
-per world.  It varies guess/slip, product and arithmetic-mean aggregation,
-learner noise and learning-rate heterogeneity, mild forgetting, item logit
-difficulty, correlated initial mastery, and correctness-conditioned updating.
-\kstar{}, family-coarse, and split-2 projections share rows within each world.
-Primary conclusions use the unchanged observable logistic model; empirical
-and BKT results remain secondary.
+The matched-bank campaign treats a complete cell/variant family as the unit:
+all four formats must pass deterministic checks, independent solver coverage,
+and three role critics.  Three declared rounds may generate new candidates but
+may not edit prior output.  The primary outcome is the number of complete
+families and resulting cell/KC support and Q rank; isolated passing slots cannot
+satisfy the release gate.
 
-\paragraph{Collection-design controls.}
-Outcome-free nested cohorts test $N\in\{60,120,240,500,1000\}$; three common
-seeds test acquisition targets 6, 12, and 24.  An outcome-free max-one/max-two
-audit separates within-cell replication from distinct Q rows.  Finally,
-factorized A/B and planted A/B/interaction micro-worlds compare A+B-only,
-sparse-anchor, and balanced A-only/B-only/A+B banks at $N=100,300,1000$ with
-60 acquisition events and three terminal probes per learner.  The latter
-distinguishes OR/union merging from an A+B-only intersection.
+\subsection{A--D nuisance comparison}
 
-\paragraph{Model-assisted construction.}
-Retained normalisation and generation use \texttt{gpt-5.6-sol}; independent
-item judgments use \texttt{gpt-5.6-terra}.  Normalisation uses high reasoning
-effort and generation/validation medium.  Rendered prompts, parsed outputs,
-settings, retries, and call evidence are retained.  Provider sampling seeds and
-pinned snapshots were unavailable.
+The controlled instrument contains 144 seen and eight held-out structural
+slots.  For each of six worlds and three seeds, 500 learners generate 170,000
+events under a Q-balanced schedule.  Nine additional response runs use the
+combined heterogeneous world with curriculum, mixed, or adaptive assignment,
+for 4.59 million events overall.
+
+Learners are split 60/20/20 by a stable hash.  Model selection uses training
+learners' acquisition rows and dev learners' seen probes; the selected penalty
+is refit on train+dev acquisition and evaluated on test learners' terminal
+probes.  Standardization is fit on training acquisition only.  Primary scope is
+seen-probe log loss; Brier score, fixed-width ECE, AUC, and an oracle-only
+item-prerequisite state RMSE are secondary.  Model D's item basis covers seen
+item IDs only; held-out probe items are zero encoded.
+
+The four preregistered contrasts are:
+\begin{align*}
+&[(L_B-L_A)_{\text{strong format}}-(L_B-L_A)_{\text{zero}}],\\
+&(L_C-L_B)_{\text{strong format}},\\
+&(L_D-L_C)_{\text{item only}},\qquad
+(L_D-L_C)_{\text{item+format}} .
+\end{align*}
+Negative values in the first contrast mean format nuisance increases B's
+relative advantage over A; they do not validate the false split.  The remaining
+negative values favour the explicitly adjusted candidate.
+
+\subsection{Error, policy, and dialogue evidence}
+
+Error-history models hold D fixed and vary only prior observable error labels.
+We evaluate prediction, item-prerequisite state, failed-KC localisation on
+incorrect multi-KC probes, and a transparent Beta-smoothed terminal-KC evidence
+diagnostic.  The latter is not a fitted KT state.  The shuffled stream preserves
+within-item/phase category marginals and is a negative learner-specific
+information control, not a claim of complete statistical independence.
+
+Schedule diagnostics report acquisition and probe accuracy separately, item/KC
+exposure inequality, repetition gap, and adjacency.  Q-balanced, curriculum,
+and mixed schedules share the same occurrence multiset; under unconditional
+order-independent learning they have identical terminal oracle mastery by
+construction.  Alternative-policy A--D fits were frozen after responses and
+descriptive diagnostics, so they are exploratory.
+
+The dialogue study generates four matched families at five openness levels and
+collects five role judgments for each of 20 opportunities.  We report each
+dimension and disagreement; no composite is computed.
+
+\subsection{Uncertainty and model assistance}
+
+Within a frozen fitted model, percentile intervals resample 82 test learners
+2,000 times.  They condition on the fit, selected hyperparameter, bank, seed,
+and simulator world; they omit refitting, item/cell sampling, simulator-family
+uncertainty, and multiplicity.  Three-seed means and ranges are descriptive,
+not population intervals.
+
+Retained construction and audits use fixed \texttt{gpt-5.6-sol} or
+\texttt{gpt-5.6-terra} calls with prompt, input, schema, settings, raw output,
+parsed output, and hashes frozen.  Model critics are independent stress tests,
+not human participants.  No learner, teacher, or platform expert judgment is
+fabricated.

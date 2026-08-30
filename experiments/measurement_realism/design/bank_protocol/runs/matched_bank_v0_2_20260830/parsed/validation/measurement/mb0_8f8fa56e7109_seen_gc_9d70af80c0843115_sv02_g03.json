@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r03_measurement_b01",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g03",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02",
+  "family_judgments": [
+    {
+      "blocking": true,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "Cloze/dialogue allow simple-past passive answers, MCQ forces recognition of the keyed morphology, and transformation additionally requires active-to-passive restructuring.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "The transformation foregrounds syntactic voice conversion, whereas the other formats primarily select a fixed passive form; declared KCs remain present but response demands differ materially.",
+      "severity": "minor_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "All formats concern the report remaining unprinted when the meeting began.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Keyed 'had not been printed' realizes past perfect, negation, and passive BE plus participle.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The response target aligns with the four declared operations.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Solver-proposed 'was not printed' is grammatical and contextually reasonable, while avoiding perfect HAVE.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "The printer/copies context and 'before the meeting began' do not force past perfect over simple-past passive.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Reasonable unkeyed 'was not printed' is rejected.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The learner must infer temporal interpretation from a causal printer scenario.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g03_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The keyed response contains each declared past-perfect passive-negation component.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "No additional response grammar is required.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "A learner can reasonably answer 'was not printed' to explain the absence of copies, omitting perfect HAVE.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "The dialogue establishes unavailability, not a uniquely required past-perfect form.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The plausible simple-past passive alternative is absent from the accepted responses.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Explanation of an office-printer causal chain adds discourse burden.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g03_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "B uniquely combines HAD, NOT, BEEN, and PRINTED in the intended passive-perfect structure.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "Distractors focus on omissions or malformed alternatives to declared operations.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "No listed alternative is both grammatical and an adequate explanation with the target temporal relation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "B is the sole defensible listed option.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Single-choice scoring covers the one defensible option.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The context is straightforward.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g03_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Rewriting the active negative past perfect as passive requires passive BE while retaining past perfect and negation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "Passive transformation is part of the declared passive target rather than an unrelated demand.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The source does not provide the passive auxiliary sequence; the learner must construct it.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "Equivalent passive wording such as 'The report had not been printed by the time the meeting began' is defensible.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The exact-only key omits reasonable same-meaning passive paraphrases, including 'by the time the meeting began'.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Active-to-passive subject restructuring adds task burden beyond selecting verb morphology.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g03_xform"
+    }
+  ],
+  "overall_accept": false,
+  "role": "measurement",
+  "summary": "Rejected: past-perfect form is not determined in cloze/dialogue, their reasonable simple-past passive alternatives are unaccepted, and transformation scoring is too narrow."
+}

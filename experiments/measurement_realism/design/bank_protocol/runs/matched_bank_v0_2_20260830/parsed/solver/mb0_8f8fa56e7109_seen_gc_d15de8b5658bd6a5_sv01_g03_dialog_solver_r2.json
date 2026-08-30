@@ -1,0 +1,25 @@
+{
+  "ambiguity_explanation": "The context does not state which part of her safety routine Maya checks.",
+  "batch_id": "solver_r03_rep2_dialogue_completion_b02",
+  "instruction_understanding": "Complete the sentence after “Maya” to say what she checks every night.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv01_g03_dialog",
+  "keyed_match": false,
+  "major_ambiguity": true,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "checks that the doors are locked",
+    "checks the locks",
+    "checks the windows are closed"
+  ],
+  "reasonable_unkeyed_responses": [
+    "checks that the doors are locked",
+    "checks the locks",
+    "checks the windows are closed"
+  ],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv01_g03_dialog_solver_r2",
+  "submitted_response": "checks the doors are locked",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

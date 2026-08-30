@@ -1,0 +1,23 @@
+{
+  "ambiguity_explanation": "No cue words or required verb form are supplied, so several questions fit the context.",
+  "batch_id": "solver_r01_rep2_constrained_cloze_b01",
+  "instruction_understanding": "Write a question about which report Mia is not responsible for.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02_g01_cloze",
+  "keyed_match": false,
+  "major_ambiguity": true,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Which report does Mia not prepare?",
+    "Which report does Mia not handle?"
+  ],
+  "reasonable_unkeyed_responses": [
+    "Which report does Mia not prepare?",
+    "Which report does Mia not handle?"
+  ],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02_g01_cloze_solver_r2",
+  "submitted_response": "Which report isn't Mia responsible for?",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

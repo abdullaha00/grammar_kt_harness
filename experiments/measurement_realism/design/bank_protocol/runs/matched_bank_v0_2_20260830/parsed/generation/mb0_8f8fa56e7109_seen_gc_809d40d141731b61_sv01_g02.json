@@ -1,0 +1,158 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv01_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "Maya should charge her phone before the trip.",
+  "cell_id": "gc_809d40d141731b61",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv01_g02_cloze",
+      "context": "Maya's phone battery is nearly empty, and she is leaving for a trip soon.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Maya [[RESPONSE]] before the trip.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the advice using the verb “charge.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "should charge her phone"
+        ],
+        "completed_target": "Maya should charge her phone before the trip.",
+        "correct_choice_id": null,
+        "target_response": "should charge her phone"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv01_g02_dialog",
+      "context": "Maya is leaving for a trip soon, but her phone battery is nearly empty.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Alex: Maya's phone battery is nearly empty.",
+          "Sam: She is leaving for her trip soon."
+        ],
+        "incomplete_turn_template": "Sam: Maya [[RESPONSE]] before the trip.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Sam's advice using the verb “charge.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "should charge her phone"
+        ],
+        "completed_target": "Maya should charge her phone before the trip.",
+        "correct_choice_id": null,
+        "target_response": "should charge her phone"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv01_g02_mcq",
+      "context": "Maya's phone battery is nearly empty, and she is leaving for a trip soon.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses a third-person singular complement instead of the base form after SHOULD.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Adds TO before the base-form complement of SHOULD.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses a past-tense complement instead of the base form after SHOULD.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Maya should charges her phone before the trip."
+          },
+          {
+            "id": "B",
+            "text": "Maya should charge her phone before the trip."
+          },
+          {
+            "id": "C",
+            "text": "Maya should to charge her phone before the trip."
+          },
+          {
+            "id": "D",
+            "text": "Maya should charged her phone before the trip."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly advises Maya what to do?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that gives correct advice.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Maya should charge her phone before the trip.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv01_g02_xform",
+      "context": "Maya's phone battery is nearly empty, and she is leaving for a trip soon.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "It is a good idea for Maya to charge her phone before the trip.",
+        "stem": null,
+        "transformation_cue": "Use “should” and keep the other details unchanged."
+      },
+      "instruction": "Rewrite the sentence as advice using “should.”",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Maya should charge her phone before the trip."
+        ],
+        "completed_target": "Maya should charge her phone before the trip.",
+        "correct_choice_id": null,
+        "target_response": "Maya should charge her phone before the trip."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Advise Maya to charge her phone before leaving.",
+    "main_verb_lemma": "charge",
+    "object_head": "phone",
+    "participants": [
+      "Maya",
+      "Alex",
+      "Sam"
+    ],
+    "situation_summary": "Maya's phone battery is nearly empty shortly before a trip.",
+    "time_anchor": "before the trip"
+  },
+  "semantic_variant_index": 1
+}

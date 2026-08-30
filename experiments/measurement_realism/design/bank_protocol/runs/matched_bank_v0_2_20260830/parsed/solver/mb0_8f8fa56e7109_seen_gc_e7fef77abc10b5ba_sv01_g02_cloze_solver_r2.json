@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "The instruction refers to a verb in brackets, but no bracketed verb is shown. The context suggests completed.",
+  "batch_id": "solver_r02_rep2_constrained_cloze_b02",
+  "instruction_understanding": "Complete the hypothetical sentence using the verb that should have appeared in brackets.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g02_cloze",
+  "keyed_match": false,
+  "major_ambiguity": true,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "wouldn't have completed the report before the deadline"
+  ],
+  "reasonable_unkeyed_responses": [
+    "wouldn't have completed the report before the deadline"
+  ],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g02_cloze_solver_r2",
+  "submitted_response": "would not have completed the report before the deadline",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

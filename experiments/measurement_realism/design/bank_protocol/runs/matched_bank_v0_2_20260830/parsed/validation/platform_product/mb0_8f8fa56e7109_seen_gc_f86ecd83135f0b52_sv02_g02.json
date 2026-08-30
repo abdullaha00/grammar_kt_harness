@@ -1,0 +1,188 @@
+{
+  "batch_id": "critic_r02_platform_product_b03",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02_g02",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "plausible_format_crossing",
+      "evidence": "The cloze, dialogue, multiple-choice, and transformation formats each present a coherent conventional practice interaction.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "non_repetitive_learner_experience",
+      "evidence": "All four items repeatedly use the same window scenario and the identical target sentence, so completing the whole family would feel highly repetitive.",
+      "severity": "minor_concern"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The instruction names both required words and the blank precedes “the window?”, making the intended offer clear.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "A short-text field naturally accepts “Shall I close” and the fixed sentence ending supplies the object.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "“Window,” “open,” “cold,” and “close” are familiar, accessible vocabulary for B2 learners.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "Offering to close an open window after someone says they feel cold is a natural everyday exchange.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The constrained prompt gives substantial support while still requiring accurate offer word order.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The prompt, blank, and accepted short response can be delivered and scored cleanly in a basic practice interface.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02_g02_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The preceding line establishes the problem and the instruction explicitly specifies the words to use.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "A dialogue-completion text field after “Maya:” clearly signals that the learner should enter her full reply.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "The context uses common everyday language, including “cold air,” “window,” and “uncomfortable.”",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "Maya’s proposed reply is a natural response to Leo being uncomfortable from the cold air.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The task supplies the communicative situation and required lexical material but requires production of the complete offer.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "This is a standard typed dialogue-completion interaction with an unambiguous target utterance.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02_g02_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "“Choose the correct offer” and “What should Maya say?” clearly explain the learner’s selection task.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "The four labelled answer options fit a single-choice control, and one option is plainly the intended utterance.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "All contextual and option vocabulary is everyday and appropriate for B2.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "The scenario provides a credible reason for Maya to offer to close the window.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The distractors contrast recognisable form errors without requiring vocabulary knowledge beyond the prompt.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The item is immediately usable as a conventional single-answer multiple-choice question.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02_g02_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The source statement, request to make Maya’s offer, and cue words together make the required rewrite understandable.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "A full-sentence response field is appropriate for a rewrite task, and the cue gives sufficient response constraints.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "“Offers,” “close,” and “window” are accessible; no specialist vocabulary is needed.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "The source statement and resulting offer match the window-and-cold scenario.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The cue reduces unnecessary lexical load while leaving the learner to form the question correctly.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "A simple text-entry transformation task can score the displayed target sentence reliably.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02_g02_xform"
+    }
+  ],
+  "overall_accept": true,
+  "role": "platform_product",
+  "summary": "A clear, deployable offer-practice family; its only product concern is repetition of the same scenario and response across formats."
+}

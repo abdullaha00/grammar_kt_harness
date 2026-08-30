@@ -1,0 +1,158 @@
+{
+  "authorization": {
+    "command_guard": "--authorize-live-calls-after-root-approval",
+    "conversational_root_approval_required": true,
+    "live_calls_authorized_by_plan": false
+  },
+  "commands": {
+    "analyse": ".venv/bin/python scripts/experiments/measurement_realism_dialogue_live.py analyse",
+    "critic": ".venv/bin/python scripts/experiments/measurement_realism_dialogue_live.py critic --authorize-live-calls-after-root-approval --workers 4",
+    "generate": ".venv/bin/python scripts/experiments/measurement_realism_dialogue_live.py generate --authorize-live-calls-after-root-approval --workers 4",
+    "package": ".venv/bin/python scripts/experiments/measurement_realism_dialogue_live.py package",
+    "plan": ".venv/bin/python scripts/experiments/measurement_realism_dialogue_live.py plan",
+    "verify": ".venv/bin/python scripts/experiments/measurement_realism_dialogue_live.py verify"
+  },
+  "critic_roles": [
+    "learner",
+    "language_teacher",
+    "platform_product",
+    "measurement",
+    "linguistic"
+  ],
+  "dataset_release_justified_by_this_pilot_alone": false,
+  "evidence_type": "independent_automated_rubric_stress_test",
+  "generation_call_plan": {
+    "path": "generation_call_plan.jsonl",
+    "rows": 4,
+    "sha256": "a936381ca3f62917c58270ede61bccd06538d76420c5703f612b0a32c9611583"
+  },
+  "human_or_expert_gold": false,
+  "implementation": {
+    "python": "3.14.7",
+    "repository_head_at_plan": "f1a5eb29414dd03d173dbd9d0c4cb20762f2b259"
+  },
+  "models": {
+    "critique": {
+      "name": "gpt-5.6-terra",
+      "reasoning_effort": "medium"
+    },
+    "generation": {
+      "name": "gpt-5.6-sol",
+      "reasoning_effort": "medium"
+    }
+  },
+  "protected_reference": {
+    "git_tree": "a3d77782cd1d4a5b297cc6d63eba2551d8d71ce4",
+    "manifest_sha256": "322128843f8e7e6547a99efcecc6836fcd581f314fb49557a28d58fe79c69f4c",
+    "manifest_status": "FROZEN_BASELINE_COMPLETE",
+    "path": "data/grammar_kt_full_v1"
+  },
+  "role_visibility": {
+    "language_teacher": {
+      "sees_oracle_annotations": true,
+      "sees_scoring_key": true
+    },
+    "learner": {
+      "sees_oracle_annotations": false,
+      "sees_scoring_key": false
+    },
+    "linguistic": {
+      "sees_oracle_annotations": true,
+      "sees_scoring_key": true
+    },
+    "measurement": {
+      "sees_oracle_annotations": true,
+      "sees_scoring_key": true
+    },
+    "platform_product": {
+      "sees_oracle_annotations": false,
+      "sees_scoring_key": true
+    }
+  },
+  "scale": {
+    "critic_calls": 20,
+    "critic_judgments": 100,
+    "families": 4,
+    "formats": 5,
+    "generation_calls": 4,
+    "opportunities": 20
+  },
+  "scientific_boundary": {
+    "critic_roles_share_outputs": false,
+    "full_v1_mutated": false,
+    "generation_reads_kt_results": false,
+    "generation_reads_learner_outcomes": false,
+    "generation_reads_private_oracle_trajectories": false,
+    "scalar_realism_score": false
+  },
+  "source_pilot_status_preserved": "FROZEN_NO_CALL_CONTINUUM_PLAN",
+  "static_inputs": {
+    "audited_model_backend": {
+      "bytes": 3114,
+      "path": "src/grammar_kt/model_evidence.py",
+      "sha256": "857c26451469c6e7912293931ed5c890b4f7601d6fb51e835a9fecfcd9f17bd2"
+    },
+    "config": {
+      "bytes": 4275,
+      "path": "experiments/measurement_realism/dialogue_pilot_live_v1/config.yaml",
+      "sha256": "32ba0946f86f75b9c237373f42063b2899f49abff43ff0fe03ffd62244434f16"
+    },
+    "critic_local_schema": {
+      "bytes": 3373,
+      "path": "experiments/measurement_realism/dialogue_pilot/schemas/critic_judgment.schema.json",
+      "sha256": "4a73beade6cd6f02e9233b9a9152567f2d7e55f26c21269d2d39b99a1d8197e7"
+    },
+    "critic_prompt": {
+      "bytes": 2093,
+      "path": "experiments/measurement_realism/dialogue_pilot_live_v1/prompts/critic_envelope.txt",
+      "sha256": "7f0eb3dedbec3865b14e42f3a7401a94fd4cfac39a4b2006e41be063f512d93e"
+    },
+    "critic_provider_schema": {
+      "bytes": 3246,
+      "path": "experiments/measurement_realism/dialogue_pilot_live_v1/schemas/critic_envelope_provider.schema.json",
+      "sha256": "18ca0b249da20e049181a48e112e320ae53c607552b73c3beceb118793e5eb29"
+    },
+    "execution_protocol": {
+      "bytes": 3547,
+      "path": "experiments/measurement_realism/dialogue_pilot_live_v1/PROTOCOL.md",
+      "sha256": "f3f36c6b867dc080200aa2cfa09607756aa8a21f2098c6f612df601ba09ab095"
+    },
+    "generation_local_schema": {
+      "bytes": 5750,
+      "path": "experiments/measurement_realism/dialogue_pilot/schemas/generated_family.schema.json",
+      "sha256": "a0080c0dd57cbedddef9b219010ce67d843da722b90094bb370d92ffdd48637d"
+    },
+    "generation_prompt": {
+      "bytes": 3011,
+      "path": "experiments/measurement_realism/dialogue_pilot_live_v1/prompts/generation.txt",
+      "sha256": "b26b099b609dd6951eb43a98ff9207dca3fce3cfb7ce13012688aa3f29bb515d"
+    },
+    "generation_provider_schema": {
+      "bytes": 4443,
+      "path": "experiments/measurement_realism/dialogue_pilot_live_v1/schemas/generation_provider.schema.json",
+      "sha256": "df321080e59a72d3e4203371e398aacc11a5ad6d763c8863ceabd5d4a1911bf9"
+    },
+    "implementation": {
+      "bytes": 55152,
+      "path": "scripts/experiments/measurement_realism_dialogue_live.py",
+      "sha256": "e7f05a5e205876a70efb1b0cb1ffe4ea002196b44bfe8f3b9eb4ef44c15c3e48"
+    },
+    "source_analyzer": {
+      "bytes": 20963,
+      "path": "experiments/measurement_realism/dialogue_pilot/analyze_dialogue_pilot.py",
+      "sha256": "bb22e2ebe990f39aacc34e47038b9eafd40987ec6c4c4c4dfe0a5233f4ca7ab4"
+    },
+    "source_generation_requests": {
+      "bytes": 13541,
+      "path": "experiments/measurement_realism/dialogue_pilot/generation_requests.jsonl",
+      "sha256": "241268090bc9b61558ad947eab1189ac3bf942741799434409864288c8d5a09f"
+    },
+    "source_selected_cells": {
+      "bytes": 15658,
+      "path": "experiments/measurement_realism/dialogue_pilot/selected_cells.json",
+      "sha256": "bb5403ffd1f581dbdadd113e10c0604eb2b503d387086f6f2a4debd253efb2c3"
+    }
+  },
+  "status": "FROZEN_BEFORE_LIVE_CALLS",
+  "study_id": "dialogue_pilot_live_v1"
+}

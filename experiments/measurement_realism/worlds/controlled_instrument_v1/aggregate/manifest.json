@@ -1,0 +1,10 @@
+{
+  "aggregate_kind": "controlled_instrument_cross_scenario_v1",
+  "artifacts": {
+    "results.json": "06da0a0c2e297124234ad433caa0fd0d6f7924d5b13b707f4fed8ded9a81bfaf"
+  },
+  "controlled_scenario": true,
+  "release_eligible": false,
+  "scenario_kind": "controlled_instrument_scaffold",
+  "study_plan_sha256": "e3d50e10001b7dff8042b002aba04b595bb8d95e496bd66beebae08e4d678667"
+}

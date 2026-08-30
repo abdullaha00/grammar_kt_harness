@@ -94,9 +94,16 @@ def test_active_source_is_one_cohesive_file_per_stage() -> None:
     )
 
 
-def test_research_modules_match_the_five_pipeline_groups() -> None:
+def test_research_modules_match_the_pipeline_and_measurement_groups() -> None:
     groups = {path.name for path in (ROOT / "modules").iterdir() if path.is_dir()}
-    assert groups == {"grammar", "items", "simulation", "kcs", "evaluation"}
+    assert groups == {
+        "grammar",
+        "items",
+        "simulation",
+        "kcs",
+        "evaluation",
+        "measurement_realism",
+    }
 
 
 def test_fixture_only_declarations_are_not_presented_as_active_modules() -> None:
@@ -391,7 +398,7 @@ def test_final_dataset_notebook_is_full_v1_public_viewer() -> None:
         assert expected in output_text
 
 
-def test_acl_paper_uses_urop_preprint_shell_with_full_v1_evidence() -> None:
+def test_acl_paper_uses_preprint_shell_with_known_truth_and_measurement_evidence() -> None:
     paper = (ROOT / "ACL/paper.tex").read_text(encoding="utf-8")
     section_text = " ".join(
         path.read_text(encoding="utf-8")
@@ -404,7 +411,7 @@ def test_acl_paper_uses_urop_preprint_shell_with_full_v1_evidence() -> None:
         "Abdullah Akram",
         "University of Cambridge",
         r"aa2527@cam.ac.uk",
-        "Operationalising Grammar Knowledge Components",
+        "Known Truth, Ambiguous Measurement",
     ):
         assert required in paper
 
@@ -415,15 +422,14 @@ def test_acl_paper_uses_urop_preprint_shell_with_full_v1_evidence() -> None:
     )
 
     for required in (
-        "Stored prompt",
         "neither renders a prompt nor collects or scores free text",
         "controlled forward-generation and inverse-recovery benchmark",
-        r"The primary \kstar{} ranking holds",
-        "baseline plus 12 perturbations",
-        "were processed without technical failure",
-        "eight-KC operation-group baseline and 54-KC seen-cell baseline",
-        "candidate_gc_e7fef77abc10b5ba_01",
-        "100000000000001100",
+        "Known truth is necessary, not sufficient",
+        "Content-free controlled scenario",
+        "no new dataset release",
+        "matched-format successor freezes only 5/38 families",
+        "Shared answer-space failure",
+        "Modal answer-space failure",
         r"\section{Artifact Map}",
     ):
         assert required in normalized

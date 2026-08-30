@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "Maya's name or a pronoun can be used.",
+  "batch_id": "solver_r03_rep2_dialogue_completion_b01",
+  "instruction_understanding": "Write Leo's reply using could, have, and take to describe Maya's earlier option.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv02_g03_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "She could have taken an earlier bus."
+  ],
+  "reasonable_unkeyed_responses": [
+    "She could have taken an earlier bus."
+  ],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv02_g03_dialog_solver_r2",
+  "submitted_response": "Maya could have taken an earlier bus.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

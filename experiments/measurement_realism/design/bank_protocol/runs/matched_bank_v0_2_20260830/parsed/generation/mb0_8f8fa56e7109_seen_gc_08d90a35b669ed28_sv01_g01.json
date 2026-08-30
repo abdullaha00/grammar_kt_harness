@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "Has Maya sent the invitation?",
+  "cell_id": "gc_08d90a35b669ed28",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g01_cloze",
+      "context": "Maya planned to send the invitation this morning. You want to know whether she has completed the task. Use: Maya / send.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]] the invitation?",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the question using the words in brackets.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Has Maya sent"
+        ],
+        "completed_target": "Has Maya sent the invitation?",
+        "correct_choice_id": null,
+        "target_response": "Has Maya sent"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g01_dialog",
+      "context": "Two colleagues are checking whether an invitation has been sent.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Nora: We need to confirm the guest list today.",
+          "Sam: Maya planned to send the invitation this morning."
+        ],
+        "incomplete_turn_template": "Nora: [[RESPONSE]] the invitation?",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the final question.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Has Maya sent"
+        ],
+        "completed_target": "Has Maya sent the invitation?",
+        "correct_choice_id": null,
+        "target_response": "Has Maya sent"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g01_mcq",
+      "context": "Maya planned to send the invitation this morning. A colleague wants to know whether she has completed the task by now.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses past-tense DO instead of the present perfect construction.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses the base form after perfect HAVE instead of the required past participle.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Keeps statement word order instead of inverting the finite operator and subject.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Has Maya sent the invitation?"
+          },
+          {
+            "id": "B",
+            "text": "Did Maya send the invitation?"
+          },
+          {
+            "id": "C",
+            "text": "Has Maya send the invitation?"
+          },
+          {
+            "id": "D",
+            "text": "Maya has sent the invitation?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which question should the colleague ask?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the best question for this situation.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "Has Maya sent the invitation?",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g01_xform",
+      "context": "Maya planned to send an invitation earlier, but you do not know whether she has completed the task.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Maya planned to send the invitation this morning.",
+        "stem": null,
+        "transformation_cue": "Use these words: Maya / send / the invitation."
+      },
+      "instruction": "Write a yes-or-no question to find out whether the task is complete now.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Has Maya sent the invitation?"
+        ],
+        "completed_target": "Has Maya sent the invitation?",
+        "correct_choice_id": null,
+        "target_response": "Has Maya sent the invitation?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Ask whether Maya has completed sending the invitation by now.",
+    "main_verb_lemma": "send",
+    "object_head": "invitation",
+    "participants": [
+      "Maya",
+      "colleague"
+    ],
+    "situation_summary": "Maya planned to send an invitation earlier, and a colleague wants to know whether she has completed the task.",
+    "time_anchor": "by now"
+  },
+  "semantic_variant_index": 1
+}

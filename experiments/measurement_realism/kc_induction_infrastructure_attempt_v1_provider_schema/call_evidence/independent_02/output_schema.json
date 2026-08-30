@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "replicate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "hypotheses": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 24,
+      "items": {
+        "type": "object",
+        "properties": {
+          "proposal_id": {
+            "type": "string",
+            "pattern": "^p[0-9]{2}$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "hypothesis_type": {
+            "type": "string",
+            "enum": [
+              "operation",
+              "construction_family",
+              "feature_value",
+              "interaction",
+              "prerequisite_hypothesis"
+            ]
+          },
+          "pedagogical_interpretation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reuse_and_parsimony_rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "activation": {
+            "type": "object",
+            "properties": {
+              "any_of": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "all_of": {
+                      "type": "object",
+                      "minProperties": 1,
+                      "additionalProperties": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                          "type": "string"
+                        },
+                        "uniqueItems": true
+                      }
+                    }
+                  },
+                  "required": [
+                    "all_of"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "any_of"
+            ],
+            "additionalProperties": false
+          },
+          "limitation_or_needed_evidence": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "proposal_id",
+          "name",
+          "hypothesis_type",
+          "pedagogical_interpretation",
+          "reuse_and_parsimony_rationale",
+          "activation",
+          "limitation_or_needed_evidence"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "ontology_level_limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "replicate_id",
+    "hypotheses",
+    "ontology_level_limitations"
+  ],
+  "additionalProperties": false
+}

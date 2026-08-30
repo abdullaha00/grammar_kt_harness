@@ -1,0 +1,17 @@
+{
+  "ambiguity_explanation": "",
+  "batch_id": "solver_r01_rep2_dialogue_completion_b01",
+  "instruction_understanding": "Use might and miss to express Maya's uncertainty about catching the train.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv02_g01_dialog",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": false,
+  "other_reasonable_responses": [],
+  "reasonable_unkeyed_responses": [],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv02_g01_dialog_solver_r2",
+  "submitted_response": "might miss",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

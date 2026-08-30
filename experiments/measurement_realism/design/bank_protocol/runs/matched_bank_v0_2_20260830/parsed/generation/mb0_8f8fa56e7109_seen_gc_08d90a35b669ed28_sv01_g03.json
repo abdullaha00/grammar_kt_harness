@@ -1,0 +1,162 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "Has Nina locked the front door yet?",
+  "cell_id": "gc_08d90a35b669ed28",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g03_cloze",
+      "context": "The taxi is waiting outside. Before everyone leaves, you want to check whether Nina has completed the final security task.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]]",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Write the complete question. Use “Nina,” “lock the front door,” and “yet.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Has Nina locked the front door yet?",
+          "Has Nina locked the front door yet"
+        ],
+        "completed_target": "Has Nina locked the front door yet?",
+        "correct_choice_id": null,
+        "target_response": "Has Nina locked the front door yet?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g03_dialog",
+      "context": "The group is about to leave, and Alex wants to check whether Nina has completed the door-locking task.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Jordan: The taxi is waiting outside.",
+          "Alex: Is everyone ready to leave?",
+          "Jordan: Nina was checking the front door."
+        ],
+        "incomplete_turn_template": "Alex: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Alex’s question. Use “Nina,” “lock the front door,” and “yet.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Has Nina locked the front door yet?",
+          "Has Nina locked the front door yet"
+        ],
+        "completed_target": "Has Nina locked the front door yet?",
+        "correct_choice_id": null,
+        "target_response": "Has Nina locked the front door yet?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g03_mcq",
+      "context": "The taxi is waiting outside, and the group needs to know whether Nina has completed the task of locking the front door by now.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the present perfect auxiliary without correct singular agreement with Nina.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Incorrectly uses do-support instead of inverting the finite perfect auxiliary.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses the base form lock instead of the past participle required after perfect have.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Has Nina locked the front door yet?"
+          },
+          {
+            "id": "B",
+            "text": "Have Nina locked the front door yet?"
+          },
+          {
+            "id": "C",
+            "text": "Does Nina have locked the front door yet?"
+          },
+          {
+            "id": "D",
+            "text": "Has Nina lock the front door yet?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which question should Alex ask?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the best question for this situation.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "Has Nina locked the front door yet?",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g03_xform",
+      "context": "The group is about to leave home, but one final security task may still be unfinished.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "It is still unclear whether Nina completed the task of locking the front door.",
+        "stem": null,
+        "transformation_cue": "Use “Nina,” “lock the front door,” and “yet.”"
+      },
+      "instruction": "Turn the statement into a direct question about the situation now.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Has Nina locked the front door yet?",
+          "Has Nina locked the front door yet"
+        ],
+        "completed_target": "Has Nina locked the front door yet?",
+        "correct_choice_id": null,
+        "target_response": "Has Nina locked the front door yet?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Ask whether Nina has completed the door-locking task by now.",
+    "main_verb_lemma": "lock",
+    "object_head": "door",
+    "participants": [
+      "Nina",
+      "Alex",
+      "Jordan"
+    ],
+    "situation_summary": "A group is about to leave home, but it is unclear whether Nina has secured the front door.",
+    "time_anchor": "now, before the group leaves"
+  },
+  "semantic_variant_index": 1
+}

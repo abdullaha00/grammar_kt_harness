@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "Both versions give the same clear instruction.",
+  "batch_id": "solver_r02_rep1_dialogue_completion_b02",
+  "instruction_understanding": "Complete Maya's turn with a direct instruction about the oven.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g02_dialog",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Turn it off."
+  ],
+  "reasonable_unkeyed_responses": [
+    "Turn it off."
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g02_dialog_solver_r1",
+  "submitted_response": "Turn off the oven.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

@@ -1,0 +1,17 @@
+{
+  "ambiguity_explanation": "",
+  "batch_id": "solver_r01_rep2_sentence_transformation_b02",
+  "instruction_understanding": "Give Maya's direct instruction to Leo about the oven.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g01_xform",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": false,
+  "other_reasonable_responses": [],
+  "reasonable_unkeyed_responses": [],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g01_xform_solver_r2",
+  "submitted_response": "Turn off the oven.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

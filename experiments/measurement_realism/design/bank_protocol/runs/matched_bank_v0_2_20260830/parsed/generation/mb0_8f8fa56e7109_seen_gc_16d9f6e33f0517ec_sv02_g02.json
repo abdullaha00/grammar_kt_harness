@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "The courier will deliver the keys to Leo tomorrow morning.",
+  "cell_id": "gc_16d9f6e33f0517ec",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02_g02_cloze",
+      "context": "The delivery has been arranged for tomorrow morning.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "The courier [[RESPONSE]] the keys to Leo tomorrow morning.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using the verb “deliver.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "will deliver"
+        ],
+        "completed_target": "The courier will deliver the keys to Leo tomorrow morning.",
+        "correct_choice_id": null,
+        "target_response": "will deliver"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02_g02_dialog",
+      "context": "Leo is asking about an arranged delivery of his keys.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Leo: When will I get the keys?",
+          "Manager: The delivery has been arranged."
+        ],
+        "incomplete_turn_template": "Manager: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the manager’s reply with one sentence.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "The courier will deliver the keys to Leo tomorrow morning."
+        ],
+        "completed_target": "The courier will deliver the keys to Leo tomorrow morning.",
+        "correct_choice_id": null,
+        "target_response": "The courier will deliver the keys to Leo tomorrow morning."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02_g02_mcq",
+      "context": "A courier is scheduled to take the keys to Leo tomorrow morning.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses a third-person singular verb instead of the base form after WILL.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Omits the required modal WILL.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses a past-tense form instead of the base form after WILL.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "The courier will delivers the keys to Leo tomorrow morning."
+          },
+          {
+            "id": "B",
+            "text": "The courier will deliver the keys to Leo tomorrow morning."
+          },
+          {
+            "id": "C",
+            "text": "The courier delivers the keys to Leo tomorrow morning."
+          },
+          {
+            "id": "D",
+            "text": "The courier will delivered the keys to Leo tomorrow morning."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly describes what is planned?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly reports the arranged delivery.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "The courier will deliver the keys to Leo tomorrow morning.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02_g02_xform",
+      "context": "The delivery arrangement has been confirmed.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "The courier is scheduled to deliver the keys to Leo. The delivery is tomorrow morning.",
+        "stem": null,
+        "transformation_cue": "will + deliver"
+      },
+      "instruction": "Rewrite the information as one sentence about what is planned. Use the cue given.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "The courier will deliver the keys to Leo tomorrow morning."
+        ],
+        "completed_target": "The courier will deliver the keys to Leo tomorrow morning.",
+        "correct_choice_id": null,
+        "target_response": "The courier will deliver the keys to Leo tomorrow morning."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "State what the courier is expected to do.",
+    "main_verb_lemma": "deliver",
+    "object_head": "keys",
+    "participants": [
+      "the courier",
+      "Leo"
+    ],
+    "situation_summary": "A courier is scheduled to take some keys to Leo the next morning.",
+    "time_anchor": "tomorrow morning"
+  },
+  "semantic_variant_index": 2
+}

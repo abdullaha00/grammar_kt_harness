@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "The verb said to be in brackets is not shown. The context supports this completion, but other wording is also possible.",
+  "batch_id": "solver_r01_rep2_constrained_cloze_b02",
+  "instruction_understanding": "Complete the sentence using the verb in brackets to describe the counterfactual result.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g01_cloze",
+  "keyed_match": false,
+  "major_ambiguity": true,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "would have arrived late for work"
+  ],
+  "reasonable_unkeyed_responses": [
+    "would have arrived late for work"
+  ],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g01_cloze_solver_r2",
+  "submitted_response": "would not have reached work on time",
+  "task_understood": false,
+  "vocabulary_or_context_blocked": false
+}

@@ -1,0 +1,17 @@
+{
+  "ambiguity_explanation": "",
+  "batch_id": "solver_r01_rep2_constrained_cloze_b01",
+  "instruction_understanding": "Complete the sentence with the correct form of carry.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv01_g01_cloze",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": false,
+  "other_reasonable_responses": [],
+  "reasonable_unkeyed_responses": [],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv01_g01_cloze_solver_r2",
+  "submitted_response": "was carrying",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

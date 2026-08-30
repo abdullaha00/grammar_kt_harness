@@ -1,0 +1,156 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "Leo was repairing the bicycle at four o'clock yesterday.",
+  "cell_id": "gc_44ff4acdb263024b",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g03_cloze",
+      "context": "At four o'clock yesterday, Leo had started working on his bicycle but had not finished.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Leo [[RESPONSE]] the bicycle at four o'clock yesterday.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence with the correct form of “repair.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "was repairing"
+        ],
+        "completed_target": "Leo was repairing the bicycle at four o'clock yesterday.",
+        "correct_choice_id": null,
+        "target_response": "was repairing"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g03_dialog",
+      "context": "Leo explains what he was doing at a particular time yesterday.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Nina: What were you doing at four o'clock yesterday?",
+          "Leo: I was busy working on my bicycle."
+        ],
+        "incomplete_turn_template": "Leo: Leo [[RESPONSE]] the bicycle at four o'clock yesterday.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Leo's answer with the correct form of “repair.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "was repairing"
+        ],
+        "completed_target": "Leo was repairing the bicycle at four o'clock yesterday.",
+        "correct_choice_id": null,
+        "target_response": "was repairing"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g03_mcq",
+      "context": "Leo had started working on his bicycle before four o'clock yesterday and finished later.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the simple past instead of constructing the progressive activity.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses past finite BE but omits the required -ing form of the main verb.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses present finite BE instead of the required past finite form.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Leo repaired the bicycle at four o'clock yesterday."
+          },
+          {
+            "id": "B",
+            "text": "Leo was repair the bicycle at four o'clock yesterday."
+          },
+          {
+            "id": "C",
+            "text": "Leo was repairing the bicycle at four o'clock yesterday."
+          },
+          {
+            "id": "D",
+            "text": "Leo is repairing the bicycle at four o'clock yesterday."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly describes what was happening at four o'clock yesterday?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that says Leo's repair work was in progress at that time.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "C"
+        ],
+        "completed_target": "Leo was repairing the bicycle at four o'clock yesterday.",
+        "correct_choice_id": "C",
+        "target_response": "C"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g03_xform",
+      "context": "Describe Leo's activity as it was continuing at a specific time yesterday.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Leo worked on the bicycle yesterday. At four o'clock, the work was still in progress.",
+        "stem": null,
+        "transformation_cue": "Begin with “Leo” and use “repair” to describe the activity in progress at four o'clock yesterday."
+      },
+      "instruction": "Combine the information into one sentence using the verb “repair.”",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Leo was repairing the bicycle at four o'clock yesterday."
+        ],
+        "completed_target": "Leo was repairing the bicycle at four o'clock yesterday.",
+        "correct_choice_id": null,
+        "target_response": "Leo was repairing the bicycle at four o'clock yesterday."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Describe the activity Leo had in progress at that past time.",
+    "main_verb_lemma": "repair",
+    "object_head": "bicycle",
+    "participants": [
+      "Leo"
+    ],
+    "situation_summary": "Leo's bicycle repair was in progress at a specific time yesterday.",
+    "time_anchor": "at four o'clock yesterday"
+  },
+  "semantic_variant_index": 2
+}

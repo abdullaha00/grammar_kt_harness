@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "More than one natural question can check the same information.",
+  "batch_id": "solver_r02_rep1_dialogue_completion_b01",
+  "instruction_understanding": "Write Nora's final question to check whether the room is booked.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02_g02_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Is the room booked for tomorrow's meeting?"
+  ],
+  "reasonable_unkeyed_responses": [
+    "Is the room booked for tomorrow's meeting?"
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02_g02_dialog_solver_r1",
+  "submitted_response": "Has Maya booked the room for tomorrow's meeting?",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

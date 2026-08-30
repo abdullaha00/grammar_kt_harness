@@ -1,0 +1,160 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "The conference room had not been cleaned before the clients arrived.",
+  "cell_id": "gc_9d70af80c0843115",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g01_cloze",
+      "context": "The clients arrived for a meeting, but the conference room was still dirty.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "The conference room [[RESPONSE]] before the clients arrived.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence with the correct form of “clean.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "had not been cleaned",
+          "hadn't been cleaned"
+        ],
+        "completed_target": "The conference room had not been cleaned before the clients arrived.",
+        "correct_choice_id": null,
+        "target_response": "had not been cleaned"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g01_dialog",
+      "context": "Leo and Maya are discussing whether the meeting room was ready for the clients.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Leo: Was everything ready when the clients arrived?",
+          "Maya: No. The room was still dirty."
+        ],
+        "incomplete_turn_template": "Maya: The conference room [[RESPONSE]] before the clients arrived.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Maya’s reply with the correct form of “clean.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "had not been cleaned",
+          "hadn't been cleaned"
+        ],
+        "completed_target": "The conference room had not been cleaned before the clients arrived.",
+        "correct_choice_id": null,
+        "target_response": "had not been cleaned"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g01_mcq",
+      "context": "The clients arrived for a meeting, but the conference room was still dirty because the required cleaning had not happened.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Omits passive BE, so the conference room incorrectly appears as the agent of “clean.”",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses the simple past passive instead of the past perfect passive.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Omits negation and therefore states that the cleaning happened.",
+          "option_id": "C"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "The conference room had not cleaned before the clients arrived."
+          },
+          {
+            "id": "B",
+            "text": "The conference room was not cleaned before the clients arrived."
+          },
+          {
+            "id": "C",
+            "text": "The conference room had been cleaned before the clients arrived."
+          },
+          {
+            "id": "D",
+            "text": "The conference room had not been cleaned before the clients arrived."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly states what had not happened before the clients arrived?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that best describes the situation.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "D"
+        ],
+        "completed_target": "The conference room had not been cleaned before the clients arrived.",
+        "correct_choice_id": "D",
+        "target_response": "D"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g01_xform",
+      "context": "The clients arrived for a meeting and found that the conference room was still dirty.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "The clients arrived. The conference room was still dirty because nobody had cleaned it.",
+        "stem": null,
+        "transformation_cue": "Begin with “The conference room” and use “before the clients arrived” to say that the cleaning had not happened by then."
+      },
+      "instruction": "Rewrite the information as one sentence using “clean.”",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "The conference room had not been cleaned before the clients arrived.",
+          "The conference room hadn't been cleaned before the clients arrived."
+        ],
+        "completed_target": "The conference room had not been cleaned before the clients arrived.",
+        "correct_choice_id": null,
+        "target_response": "The conference room had not been cleaned before the clients arrived."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "State that the required cleaning did not happen before the clients arrived.",
+    "main_verb_lemma": "clean",
+    "object_head": "conference room",
+    "participants": [
+      "meeting staff",
+      "clients"
+    ],
+    "situation_summary": "The conference room was still dirty when the clients arrived for a meeting.",
+    "time_anchor": "before the clients arrived"
+  },
+  "semantic_variant_index": 2
+}

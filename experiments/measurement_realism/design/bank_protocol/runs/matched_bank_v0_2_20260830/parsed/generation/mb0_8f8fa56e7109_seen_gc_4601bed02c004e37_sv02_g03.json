@@ -1,0 +1,158 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "I found my missing keys under the sofa yesterday.",
+  "cell_id": "gc_4601bed02c004e37",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02_g03_cloze",
+      "context": "Mia is explaining where she located her keys the previous day.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "I [[RESPONSE]] my missing keys under the sofa yesterday.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence with the correct form of “find.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "found"
+        ],
+        "completed_target": "I found my missing keys under the sofa yesterday.",
+        "correct_choice_id": null,
+        "target_response": "found"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02_g03_dialog",
+      "context": "Mia and Alex are talking about Mia’s missing keys.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Alex: Did you manage to find your missing keys yesterday?",
+          "Mia: Yes, I did.",
+          "Alex: Where were they?"
+        ],
+        "incomplete_turn_template": "Mia: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Mia’s final reply.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "I found my missing keys under the sofa yesterday."
+        ],
+        "completed_target": "I found my missing keys under the sofa yesterday.",
+        "correct_choice_id": null,
+        "target_response": "I found my missing keys under the sofa yesterday."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02_g03_mcq",
+      "context": "Mia is telling Alex where she located her missing keys.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the present finite form instead of the required past finite form.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Marks the main verb as past after the past-tense operator “did,” creating double past marking.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses the present-perfect operator “have” instead of selecting the simple past finite form.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "I find my missing keys under the sofa yesterday."
+          },
+          {
+            "id": "B",
+            "text": "I found my missing keys under the sofa yesterday."
+          },
+          {
+            "id": "C",
+            "text": "I did found my missing keys under the sofa yesterday."
+          },
+          {
+            "id": "D",
+            "text": "I have found my missing keys under the sofa yesterday."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly describes Mia’s discovery yesterday?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly reports what happened yesterday.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "I found my missing keys under the sofa yesterday.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02_g03_xform",
+      "context": "Mia is changing a present-time statement into a report about the previous day.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "I find my missing keys under the sofa today.",
+        "stem": null,
+        "transformation_cue": "Use “yesterday” and the correct form of “find.”"
+      },
+      "instruction": "Rewrite the sentence as a report about yesterday. Replace “today” with “yesterday” and change only what is needed.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "I found my missing keys under the sofa yesterday."
+        ],
+        "completed_target": "I found my missing keys under the sofa yesterday.",
+        "correct_choice_id": null,
+        "target_response": "I found my missing keys under the sofa yesterday."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Report where Mia located her keys the previous day.",
+    "main_verb_lemma": "find",
+    "object_head": "keys",
+    "participants": [
+      "Mia",
+      "Alex"
+    ],
+    "situation_summary": "Mia located her missing keys under the sofa after searching for them.",
+    "time_anchor": "yesterday"
+  },
+  "semantic_variant_index": 2
+}

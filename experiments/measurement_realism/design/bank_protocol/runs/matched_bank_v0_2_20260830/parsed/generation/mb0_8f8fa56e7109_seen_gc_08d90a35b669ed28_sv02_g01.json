@@ -1,0 +1,161 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "Has Maya packed the first-aid kit?",
+  "cell_id": "gc_08d90a35b669ed28",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02_g01_cloze",
+      "context": "The group is about to leave for a hiking trip. Maya was responsible for preparing the first-aid kit, but Ben does not know whether it is ready. Use: Maya / pack.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]] the first-aid kit?",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the question using the words in brackets.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Has Maya packed"
+        ],
+        "completed_target": "Has Maya packed the first-aid kit?",
+        "correct_choice_id": null,
+        "target_response": "Has Maya packed"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02_g01_dialog",
+      "context": "Ben and Sofia are checking that everything is ready before their group leaves for a hiking trip.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Sofia: We are almost ready to leave.",
+          "Ben: What about the first-aid kit?",
+          "Sofia: Maya was responsible for it."
+        ],
+        "incomplete_turn_template": "Ben: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Ben's final turn with a question.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Has Maya packed the first-aid kit?",
+          "Has Maya packed the first-aid kit"
+        ],
+        "completed_target": "Has Maya packed the first-aid kit?",
+        "correct_choice_id": null,
+        "target_response": "Has Maya packed the first-aid kit?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02_g01_mcq",
+      "context": "The group is about to leave for a hiking trip. Maya was responsible for preparing the first-aid kit, and Ben wants to know whether it is ready now.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the base form instead of the required past participle after perfect HAVE.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses present-tense DO as the question operator instead of inverting perfect HAVE.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Places the subject after the participle instead of directly after the inverted finite operator.",
+          "option_id": "C"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Has Maya pack the first-aid kit?"
+          },
+          {
+            "id": "B",
+            "text": "Does Maya have packed the first-aid kit?"
+          },
+          {
+            "id": "C",
+            "text": "Has packed Maya the first-aid kit?"
+          },
+          {
+            "id": "D",
+            "text": "Has Maya packed the first-aid kit?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which question should Ben ask?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the best question for this situation.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "D"
+        ],
+        "completed_target": "Has Maya packed the first-aid kit?",
+        "correct_choice_id": "D",
+        "target_response": "D"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02_g01_xform",
+      "context": "The group is about to leave for a hiking trip, but Ben does not know whether the first-aid kit is ready.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Maya was responsible for packing the first-aid kit.",
+        "stem": null,
+        "transformation_cue": "Use: Maya / pack / the first-aid kit."
+      },
+      "instruction": "Write a yes-or-no question to find out whether the task is complete now.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Has Maya packed the first-aid kit?",
+          "Has Maya packed the first-aid kit"
+        ],
+        "completed_target": "Has Maya packed the first-aid kit?",
+        "correct_choice_id": null,
+        "target_response": "Has Maya packed the first-aid kit?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Ask whether Maya has completed the preparation needed for the trip.",
+    "main_verb_lemma": "pack",
+    "object_head": "kit",
+    "participants": [
+      "Maya",
+      "Ben",
+      "Sofia"
+    ],
+    "situation_summary": "Friends are about to leave for a hiking trip, and Maya was responsible for preparing the first-aid kit.",
+    "time_anchor": "now, just before the group leaves"
+  },
+  "semantic_variant_index": 2
+}

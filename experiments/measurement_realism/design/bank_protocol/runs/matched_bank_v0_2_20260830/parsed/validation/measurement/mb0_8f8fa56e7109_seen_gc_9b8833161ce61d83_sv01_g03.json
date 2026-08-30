@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r03_measurement_b01",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g03",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01",
+  "family_judgments": [
+    {
+      "blocking": true,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "The dialogue is open-ended and permits alternative verbs/articles, the cloze fixes lexical material, MCQ is recognition, and transformation nearly supplies the answer.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": true,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "The dialogue changes the task into unrestricted pragmatic reply generation, while the transformation reduces it to cue assembly rather than a comparable COULD-perfect operation.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "All formats concern Maya's unused earlier-bus opportunity.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The keyed response realizes COULD plus base HAVE and participle TAKEN.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The target directly instantiates the declared modal-perfect construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The required bracketed words and response frame require the modal-perfect sequence.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "Solver-proposed 'could have taken an earlier bus' is grammatical and contextually reasonable; the context does not uniquely require 'the'.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Reasonable unkeyed 'could have taken an earlier bus' is omitted from the accepted set.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Choosing definite versus indefinite reference adds article-choice burden unrelated to the KCs.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g03_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The keyed completion includes COULD HAVE TAKEN.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "No undeclared grammatical operation is intrinsically required.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The instruction merely says 'Complete Leo's reply' and supplies no lexical constraint; a learner can give another semantically suitable reply rather than demonstrate the declared target.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "Solver-proposed 'could have caught an earlier bus' and 'could have taken an earlier bus' are both contextually reasonable.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Both solver-proposed alternatives are reasonable but rejected by the narrow key.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Open dialogue continuation requires lexical and discourse-choice decisions beyond modal-perfect morphology.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g03_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "B is the only option with COULD, base HAVE, and TAKEN.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "Distractors directly contrast the modal-perfect dependencies.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Within the presented options, selecting B requires recognizing the relevant modal-perfect structure.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "Only B is grammatical and expresses the stated unrealized past possibility.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "B is the sole defensible listed option.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The travel scenario is clear.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g03_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The intended output contains the declared COULD and perfect HAVE construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The task is grammatically aligned with the declared target.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The transformation cue supplies the ordered lexical sequence 'Maya / could / have / take / the earlier bus', enabling mechanical assembly with little independent modal selection.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The supplied sequence constrains the intended sentence.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The listed contraction is covered, though other natural word-order variants are not.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Sentence assembly is an additional production burden.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g03_xform"
+    }
+  ],
+  "overall_accept": false,
+  "role": "measurement",
+  "summary": "Rejected: open-response alternatives are reasonable but unkeyed, and formats range from unconstrained dialogue completion to highly cued assembly."
+}

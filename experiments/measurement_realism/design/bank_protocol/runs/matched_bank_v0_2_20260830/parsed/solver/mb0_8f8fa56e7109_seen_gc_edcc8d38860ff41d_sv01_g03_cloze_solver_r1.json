@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "Both question forms ask about ability, though the supplied words support the submitted form directly.",
+  "batch_id": "solver_r03_rep1_constrained_cloze_b02",
+  "instruction_understanding": "Write a question using Elena, carry, and the boxes.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g03_cloze",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Is Elena able to carry the boxes"
+  ],
+  "reasonable_unkeyed_responses": [
+    "Is Elena able to carry the boxes"
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g03_cloze_solver_r1",
+  "submitted_response": "Can Elena carry the boxes",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

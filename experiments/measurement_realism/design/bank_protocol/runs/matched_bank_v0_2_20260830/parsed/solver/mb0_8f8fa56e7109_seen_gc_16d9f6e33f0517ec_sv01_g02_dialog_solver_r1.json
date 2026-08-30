@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "The delivery time can be expressed in more than one natural way.",
+  "batch_id": "solver_r02_rep1_dialogue_completion_b01",
+  "instruction_understanding": "Complete Leo's reply using will and deliver.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv01_g02_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "She will deliver my keys before work tomorrow."
+  ],
+  "reasonable_unkeyed_responses": [
+    "She will deliver my keys before work tomorrow."
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv01_g02_dialog_solver_r1",
+  "submitted_response": "She will deliver them before I go to work tomorrow.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

@@ -1,0 +1,159 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "Maya would not have reached the window without the ladder.",
+  "cell_id": "gc_e7fef77abc10b5ba",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g01_cloze",
+      "context": "Maya was able to reach a high window because she had a ladder. Say what the result would have been without it.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]]",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using the verb “reach.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Maya would not have reached the window without the ladder.",
+          "Maya wouldn't have reached the window without the ladder."
+        ],
+        "completed_target": "Maya would not have reached the window without the ladder.",
+        "correct_choice_id": null,
+        "target_response": "Maya would not have reached the window without the ladder."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g01_dialog",
+      "context": "Maya used a ladder to reach a high window.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Jon: Did the ladder make a difference?",
+          "Jon: Could you have reached the window without it?"
+        ],
+        "incomplete_turn_template": "Maya: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Maya’s reply.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Maya would not have reached the window without the ladder.",
+          "Maya wouldn't have reached the window without the ladder."
+        ],
+        "completed_target": "Maya would not have reached the window without the ladder.",
+        "correct_choice_id": null,
+        "target_response": "Maya would not have reached the window without the ladder."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g01_mcq",
+      "context": "Maya used a ladder to reach a high window.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Omits perfect HAVE and uses the base form after WOULD NOT.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Omits verbal negation, reversing the intended result.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses the base form REACH instead of the required past participle after HAVE.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Maya would not have reached the window without the ladder."
+          },
+          {
+            "id": "B",
+            "text": "Maya would not reach the window without the ladder."
+          },
+          {
+            "id": "C",
+            "text": "Maya would have reached the window without the ladder."
+          },
+          {
+            "id": "D",
+            "text": "Maya would not have reach the window without the ladder."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly says that reaching the window depended on having the ladder?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly describes the result without the ladder.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "Maya would not have reached the window without the ladder.",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g01_xform",
+      "context": "Keep the same person, action, and object.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Maya had the ladder, so she reached the window.",
+        "stem": null,
+        "transformation_cue": "Use: Maya / would / not / have / reach / the window / without the ladder."
+      },
+      "instruction": "Rewrite the sentence to say what the result would have been without the ladder.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Maya would not have reached the window without the ladder.",
+          "Maya wouldn't have reached the window without the ladder."
+        ],
+        "completed_target": "Maya would not have reached the window without the ladder.",
+        "correct_choice_id": null,
+        "target_response": "Maya would not have reached the window without the ladder."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "State that reaching the window depended on having the ladder.",
+    "main_verb_lemma": "reach",
+    "object_head": "window",
+    "participants": [
+      "Maya"
+    ],
+    "situation_summary": "Maya used a ladder to reach a high window and considers the result if the ladder had not been available.",
+    "time_anchor": "an earlier attempt to reach the window"
+  },
+  "semantic_variant_index": 1
+}

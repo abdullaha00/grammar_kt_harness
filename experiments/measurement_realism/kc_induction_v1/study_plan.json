@@ -1,0 +1,101 @@
+{
+  "study_id": "measurement_realism_kc_induction_v1",
+  "status": "PREREGISTERED_BEFORE_MODEL_CALLS",
+  "evidence_type": "independent_non_human_outcome_blind_kc_hypothesis_induction",
+  "human_or_expert_gold": false,
+  "replicate_ids": [
+    "independent_01",
+    "independent_02",
+    "independent_03"
+  ],
+  "model": {
+    "name": "gpt-5.6-terra",
+    "reasoning_effort": "medium"
+  },
+  "proposal_count": {
+    "minimum": 12,
+    "maximum": 24
+  },
+  "canonicalisation": {
+    "equivalence": "identical activation vector over the frozen 75-cell universe",
+    "empty_activation": "reject",
+    "duplicate_within_replicate": "retain_raw_but_collapse_for_structural_metrics",
+    "wording_similarity_used_for_equivalence": false
+  },
+  "scientific_boundary": {
+    "visible": [
+      "canonical GrammarCell schema and all 75 cells",
+      "cell-level source-support counts",
+      "allowed executable predicate grammar"
+    ],
+    "hidden_until_evaluation": [
+      "frozen generator K* names, descriptions, and activation columns",
+      "item wording and validation judgments",
+      "Q*",
+      "learner interactions and private trajectories",
+      "KT, discovery, and measurement-realism outcomes"
+    ],
+    "claim": "Independent automated hypothesis induction is a reproducibility and underdetermination stress test. It is not expert evidence, a psychological ontology, or a procedure for selecting generator truth from outcomes."
+  },
+  "scale": {
+    "cells": 75,
+    "dimensions": 6
+  },
+  "input": {
+    "path": "proposal_input.json",
+    "sha256": "5cb46444763da87de19fcfc90f08ad0b519942d79fe5b6386f1dff5a13c7f733"
+  },
+  "requests": {
+    "path": "proposal_requests.jsonl",
+    "sha256": "768cce87149617a412659775cefd25de2bdd97cd13346563bd7cf7d490d25717",
+    "count": 3
+  },
+  "inputs": {
+    "dataset_manifest": {
+      "path": "data/grammar_kt_full_v1/manifest.json",
+      "sha256": "322128843f8e7e6547a99efcecc6836fcd581f314fb49557a28d58fe79c69f4c",
+      "bytes": 26456
+    },
+    "cells": {
+      "path": "data/grammar_kt_full_v1/grammar/cells.jsonl",
+      "sha256": "a6bf8041e93fdea21d0ba7b318a24cb64610a6064517a2f7fbbbf3aca2fa4e1a",
+      "bytes": 22345
+    },
+    "canonical_schema": {
+      "path": "modules/grammar/canonical/schema.yaml",
+      "sha256": "a3e8d4f1c419eff10c4498db4b3b243fddf51b708ad569c652a9caaa3a8f0aaf",
+      "bytes": 1867
+    },
+    "config": {
+      "path": "modules/measurement_realism/kc_induction.yaml",
+      "sha256": "9785c6f8f39e7da358697446066967751d243a5da302cf91ff5399ff6831980a",
+      "bytes": 1122
+    },
+    "prompt": {
+      "path": "modules/measurement_realism/prompts/kc_induction.txt",
+      "sha256": "65c40a9b08dc0c6e5827c93cc132424542a10d03ca5314032d2b663e41f0d61b",
+      "bytes": 2332
+    },
+    "output_schema": {
+      "path": "modules/measurement_realism/schemas/kc_induction.schema.json",
+      "sha256": "68d6a868cd262386aae61803b3c780b0f9374b4c0fe6efd091e34d0062f7b8b8",
+      "bytes": 2704
+    },
+    "script": {
+      "path": "scripts/experiments/measurement_realism_kc_induction.py",
+      "sha256": "ce77f28fe96aeb45e768bb12d87f4680b05848e57c64797651d90a6b4027e1de",
+      "bytes": 26051
+    },
+    "audited_backend": {
+      "path": "src/grammar_kt/model_evidence.py",
+      "sha256": "857c26451469c6e7912293931ed5c890b4f7601d6fb51e835a9fecfcd9f17bd2",
+      "bytes": 3114
+    }
+  },
+  "repository_head_at_plan": "f1a5eb29414dd03d173dbd9d0c4cb20762f2b259",
+  "commands": {
+    "plan": ".venv/bin/python scripts/experiments/measurement_realism_kc_induction.py plan",
+    "run": ".venv/bin/python scripts/experiments/measurement_realism_kc_induction.py run --workers 3",
+    "analyse": ".venv/bin/python scripts/experiments/measurement_realism_kc_induction.py analyse"
+  }
+}

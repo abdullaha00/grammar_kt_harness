@@ -1,0 +1,21 @@
+{
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "stage": "generation",
+  "call_key": "gen_mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01",
+  "command": [
+    "codex",
+    "exec",
+    "--ephemeral",
+    "--sandbox",
+    "read-only",
+    "--model",
+    "gpt-5.6-sol",
+    "--config",
+    "model_reasoning_effort=\"medium\"",
+    "--output-schema",
+    "/home/abdullah/grammar_kt_harness/experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_20260830/raw/generation/gen_mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01/attempt_03/output_schema.json",
+    "-"
+  ],
+  "output_schema_supplied": true
+}

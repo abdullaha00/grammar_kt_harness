@@ -1,0 +1,142 @@
+pilot_id: ecological_precision_continuum_v1
+status: PREREGISTERED_NO_GENERATION_OR_CRITIQUE_RUN
+protected_dataset: data/grammar_kt_full_v1
+canonical_selection: experiments/measurement_realism/design/format_selection/selected_cells.json
+
+scientific_boundary:
+  purpose: >-
+    Test how a matched learner opportunity changes as interaction becomes less
+    constrained, while retaining the same GrammarCell, generator-Q row,
+    semantic proposition, and intended response function.
+  no_human_like_claim: true
+  no_platform_validity_claim: true
+  no_scalar_realism_score: true
+  learner_outcomes_read: false
+  private_oracle_trajectories_read: false
+  full_v1_mutation: prohibited
+  open_dialogue_scale_decision: >-
+    Do not scale open dialogue if a defensible one-turn opportunity boundary,
+    scoring interpretation, and KC attribution cannot be retained.
+
+selection:
+  source_cohort: full_rank_18_seen_acquisition
+  exact_roles:
+    simple: finite_present_anchor
+    multi_kc: past_perfect_contrast
+    question: present_perfect_polar_contrast
+    rare_complex: non_subject_wh_rare_cell
+  expected_q_widths:
+    simple: 1
+    multi_kc: 2
+    question: 3
+    rare_complex: 3
+  stable_tie_break: cell_id
+  outcomes_forbidden: true
+
+formats:
+  order:
+    - constrained_cloze
+    - sentence_transformation
+    - contextual_production
+    - dialogue_completion
+    - open_dialogue
+  contracts:
+    constrained_cloze:
+      response_mechanism: typed_span
+      constraint: One visible slot inside a complete clause; lexical verb cue allowed.
+    sentence_transformation:
+      response_mechanism: typed_sentence
+      constraint: Transform one supplied proposition under a concise communicative cue.
+    contextual_production:
+      response_mechanism: typed_short_clause
+      constraint: Produce one clause from a short context and communicative goal without a full syntactic frame.
+    dialogue_completion:
+      response_mechanism: typed_turn
+      constraint: Complete the next named learner turn after at most three complete context turns.
+    open_dialogue:
+      response_mechanism: typed_free_turn
+      constraint: Produce one free but bounded turn from dialogue history and a communicative goal; no exact-string scoring claim.
+
+matching:
+  invariant_within_family:
+    - GrammarCell
+    - active_generator_kc_ids
+    - q_row
+    - shared_scenario_and_referents
+    - target_proposition
+    - intended_grammatical_realisation
+    - canonical_target_example
+  allowed_to_change:
+    - instruction
+    - amount_of_syntactic_scaffolding
+    - response_component
+    - dialogue_history_needed_by_format
+    - scoring_policy_appropriate_to_response_mechanism
+  prohibited:
+    - changing_lexical_head_to_make_one_format_easier
+    - adding_a_format_specific_kc
+    - using_specialist_grammar_terminology_to_force_determinacy
+    - treating_example_responses_as_exhaustive_for_open_dialogue
+    - silently_repairing_a_generated_opportunity
+
+generation:
+  model_proposal: gpt-5.6-sol
+  reasoning_effort_proposal: medium
+  live_calls_authorized_by_this_plan: false
+  prompt: prompts/generate_continuum_family.txt
+  output_schema: schemas/generated_family.schema.json
+  call_unit: one_cell_family
+  candidates_per_family_if_later_authorized: 1
+  raw_evidence_required:
+    - exact_input
+    - rendered_prompt
+    - model_and_settings
+    - raw_output
+    - parsed_output
+    - hashes
+
+critique:
+  model_proposal: gpt-5.6-terra
+  reasoning_effort_proposal: medium
+  live_calls_authorized_by_this_plan: false
+  prompt: prompts/critic_continuum.txt
+  judgment_schema: schemas/critic_judgment.schema.json
+  roles:
+    - learner
+    - language_teacher
+    - platform_product
+    - measurement
+    - linguistic
+  independent_context_per_role_and_family: true
+  roles_do_not_see_other_outputs: true
+  ratings_retained_separately: true
+  plurality_as_truth: prohibited
+
+analysis:
+  script: analyze_dialogue_pilot.py
+  required_dimensions:
+    ecology:
+      - context_naturalness
+      - interaction_naturalness
+      - platform_plausibility
+    measurement_precision:
+      - answer_determinacy
+      - plausible_response_lower_bound
+      - accepted_response_coverage
+      - incidental_grammar_operations
+      - lexical_nuisance
+      - kc_attribution
+      - target_avoiding_shortcut
+  report_separately_by:
+    - format
+    - cell_stratum
+    - critic_role
+    - opportunity
+  matched_reference_format: constrained_cloze
+  scalar_realism_score: prohibited
+  opaque_weighted_composite: prohibited
+  disagreement_item_ids_required: true
+
+human_expert_validation:
+  protocol: human_expert_validation_protocol.md
+  status: FUTURE_NO_HUMAN_JUDGMENTS_COLLECTED

@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "Both responses describe the same likely consequence.",
+  "batch_id": "solver_r02_rep1_dialogue_completion_b02",
+  "instruction_understanding": "Answer what would have happened if the bridge had been closed.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g02_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "They would not have crossed the river before dark"
+  ],
+  "reasonable_unkeyed_responses": [
+    "They would not have crossed the river before dark"
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g02_dialog_solver_r1",
+  "submitted_response": "They wouldn't have been able to cross the river before dark",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

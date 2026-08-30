@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "May I borrow your phone charger?",
+  "cell_id": "gc_325e05b06bb38886",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01_g02_cloze",
+      "context": "You need to charge your phone before a meeting. Ask your colleague for permission to use their charger. (may / I / borrow / your phone charger)",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]]",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Write the polite question using the words in brackets.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "May I borrow your phone charger?"
+        ],
+        "completed_target": "May I borrow your phone charger?",
+        "correct_choice_id": null,
+        "target_response": "May I borrow your phone charger?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01_g02_dialog",
+      "context": "The visitor needs to charge their phone before the meeting and wants permission to borrow the colleague's charger.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Visitor: My phone battery is almost empty, and the meeting starts soon.",
+          "Colleague: I have my phone charger with me."
+        ],
+        "incomplete_turn_template": "Visitor: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the visitor's polite question.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "May I borrow your phone charger?"
+        ],
+        "completed_target": "May I borrow your phone charger?",
+        "correct_choice_id": null,
+        "target_response": "May I borrow your phone charger?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01_g02_mcq",
+      "context": "You need to charge your phone before a meeting. Ask your colleague for permission to borrow their charger.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses statement word order instead of placing the modal before the subject in the question.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses a past-tense complement instead of the base form after the modal.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Incorrectly adds do-support before a central modal.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "May I borrow your phone charger?"
+          },
+          {
+            "id": "B",
+            "text": "I may borrow your phone charger?"
+          },
+          {
+            "id": "C",
+            "text": "May I borrowed your phone charger?"
+          },
+          {
+            "id": "D",
+            "text": "Do I may borrow your phone charger?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which question should you ask?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the correct polite question.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "May I borrow your phone charger?",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01_g02_xform",
+      "context": "You need to charge your phone before a meeting, and your colleague has a charger.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "I would like permission to borrow your phone charger.",
+        "stem": null,
+        "transformation_cue": "may / I / borrow / your phone charger"
+      },
+      "instruction": "Change the statement into a polite question asking for permission. Use the cue and keep the same meaning.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "May I borrow your phone charger?"
+        ],
+        "completed_target": "May I borrow your phone charger?",
+        "correct_choice_id": null,
+        "target_response": "May I borrow your phone charger?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Politely ask for permission to borrow a phone charger.",
+    "main_verb_lemma": "borrow",
+    "object_head": "charger",
+    "participants": [
+      "visitor",
+      "colleague"
+    ],
+    "situation_summary": "A visitor needs to charge their phone before a meeting and asks a colleague for permission to borrow the colleague's charger.",
+    "time_anchor": "now, before the meeting"
+  },
+  "semantic_variant_index": 1
+}

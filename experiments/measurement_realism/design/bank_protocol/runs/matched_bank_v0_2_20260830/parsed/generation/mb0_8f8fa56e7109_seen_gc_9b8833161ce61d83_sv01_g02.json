@@ -1,0 +1,160 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "Nora could have collected the parcel before closing time.",
+  "cell_id": "gc_9b8833161ce61d83",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g02_cloze",
+      "context": "Yesterday, Nora took a longer route and reached the collection desk just after it closed. The direct route would have got her there in time.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Nora [[RESPONSE]] the parcel before closing time.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence with the correct form of the words in brackets: could / collect.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "could have collected",
+          "could've collected"
+        ],
+        "completed_target": "Nora could have collected the parcel before closing time.",
+        "correct_choice_id": null,
+        "target_response": "could have collected"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g02_dialog",
+      "context": "Nora missed the parcel collection desk yesterday after choosing a longer route.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Leo: Why didn't Nora get the parcel yesterday?",
+          "Amir: She took the longer route and arrived just after the desk closed.",
+          "Leo: Would the direct route have got her there in time?"
+        ],
+        "incomplete_turn_template": "Amir: Nora [[RESPONSE]] the parcel before closing time.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Amir's reply using the correct form of could and collect.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "could have collected",
+          "could've collected"
+        ],
+        "completed_target": "Nora could have collected the parcel before closing time.",
+        "correct_choice_id": null,
+        "target_response": "could have collected"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g02_mcq",
+      "context": "Yesterday, Nora took a longer route and reached the collection desk just after it closed. The direct route would have got her there in time.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Omits perfect HAVE after the modal COULD.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses the base form COLLECT instead of the past participle required by perfect HAVE.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Places HAVE before COULD and fails to construct the modal perfect sequence COULD HAVE plus past participle.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Nora could have collected the parcel before closing time."
+          },
+          {
+            "id": "B",
+            "text": "Nora could collected the parcel before closing time."
+          },
+          {
+            "id": "C",
+            "text": "Nora could have collect the parcel before closing time."
+          },
+          {
+            "id": "D",
+            "text": "Nora had could collect the parcel before closing time."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence best describes the situation?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly describes Nora's missed opportunity.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "Nora could have collected the parcel before closing time.",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g02_xform",
+      "context": "Nora missed the parcel collection desk yesterday after choosing a longer route.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Nora did not collect the parcel before closing time. She had enough time to do so if she had taken the direct route.",
+        "stem": null,
+        "transformation_cue": "could / collect the parcel before closing time"
+      },
+      "instruction": "Rewrite the information as one sentence to show that this was possible for Nora, but did not happen. Use the cue provided.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Nora could have collected the parcel before closing time.",
+          "Nora could've collected the parcel before closing time."
+        ],
+        "completed_target": "Nora could have collected the parcel before closing time.",
+        "correct_choice_id": null,
+        "target_response": "Nora could have collected the parcel before closing time."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "State that Nora had an unrealized past opportunity to collect the parcel before the desk closed.",
+    "main_verb_lemma": "collect",
+    "object_head": "parcel",
+    "participants": [
+      "Nora"
+    ],
+    "situation_summary": "Nora missed the parcel collection desk after taking a longer route, although the direct route would have got her there in time.",
+    "time_anchor": "before the collection desk closed yesterday"
+  },
+  "semantic_variant_index": 1
+}

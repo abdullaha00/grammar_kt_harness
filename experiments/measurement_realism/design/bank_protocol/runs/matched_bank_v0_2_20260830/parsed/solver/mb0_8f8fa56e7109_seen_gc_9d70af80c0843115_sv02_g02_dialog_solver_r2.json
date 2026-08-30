@@ -1,0 +1,17 @@
+{
+  "ambiguity_explanation": "",
+  "batch_id": "solver_r02_rep2_dialogue_completion_b02",
+  "instruction_understanding": "Complete the reply using the correct form of deliver.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g02_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": false,
+  "other_reasonable_responses": [],
+  "reasonable_unkeyed_responses": [],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g02_dialog_solver_r2",
+  "submitted_response": "could not be delivered",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

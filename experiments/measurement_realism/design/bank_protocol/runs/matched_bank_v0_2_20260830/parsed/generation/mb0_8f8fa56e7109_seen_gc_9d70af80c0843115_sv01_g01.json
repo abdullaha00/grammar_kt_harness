@@ -1,0 +1,161 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "The alarm had not been tested before the drill began.",
+  "cell_id": "gc_9d70af80c0843115",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g01_cloze",
+      "context": "The safety alarm failed during the drill. The records showed that no test took place beforehand.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "The alarm [[RESPONSE]] before the drill began.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using the correct form of “test”.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "had not been tested",
+          "hadn't been tested"
+        ],
+        "completed_target": "The alarm had not been tested before the drill began.",
+        "correct_choice_id": null,
+        "target_response": "had not been tested"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g01_dialog",
+      "context": "Maya and Leo are discussing why a safety alarm failed during a drill.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Leo: Why did the alarm fail during the drill?",
+          "Maya: I checked the safety records. No one had checked whether it worked."
+        ],
+        "incomplete_turn_template": "Maya: The alarm [[RESPONSE]] before the drill began.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Maya’s reply using the correct form of “test”.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "had not been tested",
+          "hadn't been tested"
+        ],
+        "completed_target": "The alarm had not been tested before the drill began.",
+        "correct_choice_id": null,
+        "target_response": "had not been tested"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g01_mcq",
+      "context": "The alarm failed during a safety drill. The records showed that no one tested it beforehand.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Omits passive BE, producing an active perfect form with the alarm incorrectly acting as the tester.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses past BE instead of perfect HAVE and combines it incorrectly with “been”.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Omits negation and therefore reverses the intended polarity.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "The alarm had not tested before the drill began."
+          },
+          {
+            "id": "B",
+            "text": "The alarm had not been tested before the drill began."
+          },
+          {
+            "id": "C",
+            "text": "The alarm was not been tested before the drill began."
+          },
+          {
+            "id": "D",
+            "text": "The alarm had been tested before the drill began."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly describes the situation?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that best explains why the alarm failed.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "The alarm had not been tested before the drill began.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g01_xform",
+      "context": "The safety records explain why the alarm failed during the drill.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "The drill began. No one had tested the alarm before then.",
+        "stem": null,
+        "transformation_cue": "The alarm ... (been) ... before the drill began."
+      },
+      "instruction": "Rewrite the information as one sentence beginning with “The alarm”. Use the cue and keep the meaning unchanged.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "The alarm had not been tested before the drill began.",
+          "The alarm hadn't been tested before the drill began."
+        ],
+        "completed_target": "The alarm had not been tested before the drill began.",
+        "correct_choice_id": null,
+        "target_response": "The alarm had not been tested before the drill began."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Explain the lack of an earlier test of the alarm.",
+    "main_verb_lemma": "test",
+    "object_head": "alarm",
+    "participants": [
+      "Maya",
+      "Leo",
+      "safety staff"
+    ],
+    "situation_summary": "A safety alarm failed during a drill because no test had taken place beforehand.",
+    "time_anchor": "before the drill began"
+  },
+  "semantic_variant_index": 1
+}

@@ -1,0 +1,496 @@
+{
+  "analysis_contract": {
+    "disagreement_item_ids_required": true,
+    "matched_reference_format": "constrained_cloze",
+    "opaque_weighted_composite": "prohibited",
+    "report_separately_by": [
+      "format",
+      "cell_stratum",
+      "critic_role",
+      "opportunity"
+    ],
+    "required_dimensions": {
+      "ecology": [
+        "context_naturalness",
+        "interaction_naturalness",
+        "platform_plausibility"
+      ],
+      "measurement_precision": [
+        "answer_determinacy",
+        "plausible_response_lower_bound",
+        "accepted_response_coverage",
+        "incidental_grammar_operations",
+        "lexical_nuisance",
+        "kc_attribution",
+        "target_avoiding_shortcut"
+      ]
+    },
+    "scalar_realism_score": "prohibited",
+    "script": "analyze_dialogue_pilot.py"
+  },
+  "counts": {
+    "cells": 4,
+    "formats_per_cell": 5,
+    "planned_critic_judgments": 100,
+    "planned_opportunities": 20
+  },
+  "critic_roles": [
+    "learner",
+    "language_teacher",
+    "platform_product",
+    "measurement",
+    "linguistic"
+  ],
+  "format_order": [
+    "constrained_cloze",
+    "sentence_transformation",
+    "contextual_production",
+    "dialogue_completion",
+    "open_dialogue"
+  ],
+  "human_expert_validation": {
+    "protocol": "human_expert_validation_protocol.md",
+    "status": "FUTURE_NO_HUMAN_JUDGMENTS_COLLECTED"
+  },
+  "pilot_id": "ecological_precision_continuum_v1",
+  "scientific_boundary": {
+    "full_v1_mutation": "prohibited",
+    "learner_outcomes_read": false,
+    "no_human_like_claim": true,
+    "no_platform_validity_claim": true,
+    "no_scalar_realism_score": true,
+    "open_dialogue_scale_decision": "Do not scale open dialogue if a defensible one-turn opportunity boundary, scoring interpretation, and KC attribution cannot be retained.",
+    "private_oracle_trajectories_read": false,
+    "purpose": "Test how a matched learner opportunity changes as interaction becomes less constrained, while retaining the same GrammarCell, generator-Q row, semantic proposition, and intended response function."
+  },
+  "selected_cells": [
+    {
+      "active_generator_kc_ids": [
+        "gkc_finite_present"
+      ],
+      "cell_id": "gc_d15de8b5658bd6a5",
+      "family_id": "ecp_simple_gc_d15de8b5658bd6a5",
+      "grammar_cell": {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "present",
+        "voice": "active"
+      },
+      "grammar_regime": "seen",
+      "opportunity_slots": [
+        {
+          "continuum_order": 1,
+          "format": "constrained_cloze",
+          "opportunity_id": "ecp_simple_gc_d15de8b5658bd6a5_constrained_cloze"
+        },
+        {
+          "continuum_order": 2,
+          "format": "sentence_transformation",
+          "opportunity_id": "ecp_simple_gc_d15de8b5658bd6a5_sentence_transformation"
+        },
+        {
+          "continuum_order": 3,
+          "format": "contextual_production",
+          "opportunity_id": "ecp_simple_gc_d15de8b5658bd6a5_contextual_production"
+        },
+        {
+          "continuum_order": 4,
+          "format": "dialogue_completion",
+          "opportunity_id": "ecp_simple_gc_d15de8b5658bd6a5_dialogue_completion"
+        },
+        {
+          "continuum_order": 5,
+          "format": "open_dialogue",
+          "opportunity_id": "ecp_simple_gc_d15de8b5658bd6a5_open_dialogue"
+        }
+      ],
+      "pilot_stratum": "simple",
+      "q_cardinality": 1,
+      "q_row": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "reference_item": {
+        "accepted_answers": [
+          "makes"
+        ],
+        "audit": {
+          "answer_determinacy": "pass",
+          "format_plausibility": "pass",
+          "issue_tags": [],
+          "learner_overall": "pass",
+          "lexical_context_accessibility": "pass",
+          "measurement_purity": "pass",
+          "pedagogical_plausibility": "pass",
+          "platform_overall": "pass",
+          "primary_disposition": "usable_as_stored",
+          "response_space_fairness": "pass",
+          "task_comprehensibility": "pass"
+        },
+        "item_id": "candidate_gc_d15de8b5658bd6a5_01",
+        "prompt": "Every morning, the boy ___ his bed before breakfast. (make)",
+        "reuse_policy": "usable_starting_point_not_automatic_final_item",
+        "target_answer": "The boy makes his bed before breakfast."
+      },
+      "selection_order": 1,
+      "selection_rationale": "One-KC finite-present anchor: a common, minimally compositional selected seen row.",
+      "selection_role": "finite_present_anchor",
+      "source_ids": [
+        "1741163708330x678606711578176000",
+        "1741163709472x588484642713553900",
+        "1741163709666x869572460282350800",
+        "1741163710385x337673798370062850",
+        "1741163710385x880822948927010600",
+        "1741163710387x670189134684302700",
+        "1741163710396x753443551652472000",
+        "1741163710611x434796619294706160",
+        "1741163710611x575620351539563000",
+        "1741163710611x641365217086004500",
+        "1741163710612x901003785079941200",
+        "1741163710613x336970391866066940",
+        "1741163710618x426930291367799940",
+        "1741163713626x133661684035994100",
+        "1741163713626x486355013779909760",
+        "1741163714098x430400984906472960",
+        "1741163714099x349717141784129860",
+        "1741163714104x425497348594013000",
+        "1741163715607x526138276437947400",
+        "1741163715607x671128268905876200",
+        "1741163715608x423925668920691600",
+        "1741163715608x515455874028492200",
+        "1741163715820x418754553525479940",
+        "1741163716064x592610604587924000",
+        "1741163716065x880428316136173400",
+        "1741163716067x147000311893029860"
+      ],
+      "source_support_count": 26
+    },
+    {
+      "active_generator_kc_ids": [
+        "gkc_aspect_perfect",
+        "gkc_finite_past"
+      ],
+      "cell_id": "gc_2d6eb4f93cba4c6b",
+      "family_id": "ecp_multi_kc_gc_2d6eb4f93cba4c6b",
+      "grammar_cell": {
+        "aspect": "perfect",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "past",
+        "voice": "active"
+      },
+      "grammar_regime": "seen",
+      "opportunity_slots": [
+        {
+          "continuum_order": 1,
+          "format": "constrained_cloze",
+          "opportunity_id": "ecp_multi_kc_gc_2d6eb4f93cba4c6b_constrained_cloze"
+        },
+        {
+          "continuum_order": 2,
+          "format": "sentence_transformation",
+          "opportunity_id": "ecp_multi_kc_gc_2d6eb4f93cba4c6b_sentence_transformation"
+        },
+        {
+          "continuum_order": 3,
+          "format": "contextual_production",
+          "opportunity_id": "ecp_multi_kc_gc_2d6eb4f93cba4c6b_contextual_production"
+        },
+        {
+          "continuum_order": 4,
+          "format": "dialogue_completion",
+          "opportunity_id": "ecp_multi_kc_gc_2d6eb4f93cba4c6b_dialogue_completion"
+        },
+        {
+          "continuum_order": 5,
+          "format": "open_dialogue",
+          "opportunity_id": "ecp_multi_kc_gc_2d6eb4f93cba4c6b_open_dialogue"
+        }
+      ],
+      "pilot_stratum": "multi_kc",
+      "q_cardinality": 2,
+      "q_row": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "reference_item": {
+        "accepted_answers": [
+          "had left"
+        ],
+        "audit": {
+          "answer_determinacy": "pass",
+          "format_plausibility": "pass",
+          "issue_tags": [],
+          "learner_overall": "pass",
+          "lexical_context_accessibility": "pass",
+          "measurement_purity": "pass",
+          "pedagogical_plausibility": "pass",
+          "platform_overall": "pass",
+          "primary_disposition": "usable_as_stored",
+          "response_space_fairness": "pass",
+          "task_comprehensibility": "pass"
+        },
+        "item_id": "candidate_gc_2d6eb4f93cba4c6b_03",
+        "prompt": "The children arrived at the kitchen at noon. Their father pointed to the empty table and said, “By the time you arrived, your mother ______.” Use the verb “leave.”",
+        "reuse_policy": "usable_starting_point_not_automatic_final_item",
+        "target_answer": "Your mother had left."
+      },
+      "selection_order": 2,
+      "selection_rationale": "An ordinary two-KC aspect-plus-finite contrast between the simple anchor and more heavily stacked rows.",
+      "selection_role": "past_perfect_contrast",
+      "source_ids": [
+        "1741163712332x475879228502143170",
+        "1741163712333x761860144866407300",
+        "1741163712335x467440951326574700",
+        "1741163712739x551343528482470600"
+      ],
+      "source_support_count": 4
+    },
+    {
+      "active_generator_kc_ids": [
+        "gkc_aspect_perfect",
+        "gkc_finite_present",
+        "gkc_polar_question"
+      ],
+      "cell_id": "gc_08d90a35b669ed28",
+      "family_id": "ecp_question_gc_08d90a35b669ed28",
+      "grammar_cell": {
+        "aspect": "perfect",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "present",
+        "voice": "active"
+      },
+      "grammar_regime": "seen",
+      "opportunity_slots": [
+        {
+          "continuum_order": 1,
+          "format": "constrained_cloze",
+          "opportunity_id": "ecp_question_gc_08d90a35b669ed28_constrained_cloze"
+        },
+        {
+          "continuum_order": 2,
+          "format": "sentence_transformation",
+          "opportunity_id": "ecp_question_gc_08d90a35b669ed28_sentence_transformation"
+        },
+        {
+          "continuum_order": 3,
+          "format": "contextual_production",
+          "opportunity_id": "ecp_question_gc_08d90a35b669ed28_contextual_production"
+        },
+        {
+          "continuum_order": 4,
+          "format": "dialogue_completion",
+          "opportunity_id": "ecp_question_gc_08d90a35b669ed28_dialogue_completion"
+        },
+        {
+          "continuum_order": 5,
+          "format": "open_dialogue",
+          "opportunity_id": "ecp_question_gc_08d90a35b669ed28_open_dialogue"
+        }
+      ],
+      "pilot_stratum": "question",
+      "q_cardinality": 3,
+      "q_row": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "reference_item": {
+        "accepted_answers": [
+          "Has Leo finished his homework?",
+          "Has Leo finished his homework"
+        ],
+        "audit": {
+          "answer_determinacy": "pass",
+          "format_plausibility": "pass",
+          "issue_tags": [],
+          "learner_overall": "pass",
+          "lexical_context_accessibility": "pass",
+          "measurement_purity": "pass",
+          "pedagogical_plausibility": "pass",
+          "platform_overall": "pass",
+          "primary_disposition": "usable_as_stored",
+          "response_space_fairness": "pass",
+          "task_comprehensibility": "pass"
+        },
+        "item_id": "candidate_gc_08d90a35b669ed28_02",
+        "prompt": "Leo started his homework after dinner. Ask whether it is complete now, using “Leo” and “finish his homework”: [____]",
+        "reuse_policy": "usable_starting_point_not_automatic_final_item",
+        "target_answer": "Has Leo finished his homework?"
+      },
+      "selection_order": 3,
+      "selection_rationale": "A common polar-question contrast with reusable aspect and finite-form dependencies.",
+      "selection_role": "present_perfect_polar_contrast",
+      "source_ids": [
+        "1741163715033x444139630968705800"
+      ],
+      "source_support_count": 1
+    },
+    {
+      "active_generator_kc_ids": [
+        "gkc_finite_present",
+        "gkc_negation",
+        "gkc_non_subject_wh_question"
+      ],
+      "cell_id": "gc_4634bf1b005f7724",
+      "family_id": "ecp_rare_complex_gc_4634bf1b005f7724",
+      "grammar_cell": {
+        "aspect": "none",
+        "clause": "non_subject_wh_question",
+        "modal": "none",
+        "polarity": "negative",
+        "tense": "present",
+        "voice": "active"
+      },
+      "grammar_regime": "seen",
+      "opportunity_slots": [
+        {
+          "continuum_order": 1,
+          "format": "constrained_cloze",
+          "opportunity_id": "ecp_rare_complex_gc_4634bf1b005f7724_constrained_cloze"
+        },
+        {
+          "continuum_order": 2,
+          "format": "sentence_transformation",
+          "opportunity_id": "ecp_rare_complex_gc_4634bf1b005f7724_sentence_transformation"
+        },
+        {
+          "continuum_order": 3,
+          "format": "contextual_production",
+          "opportunity_id": "ecp_rare_complex_gc_4634bf1b005f7724_contextual_production"
+        },
+        {
+          "continuum_order": 4,
+          "format": "dialogue_completion",
+          "opportunity_id": "ecp_rare_complex_gc_4634bf1b005f7724_dialogue_completion"
+        },
+        {
+          "continuum_order": 5,
+          "format": "open_dialogue",
+          "opportunity_id": "ecp_rare_complex_gc_4634bf1b005f7724_open_dialogue"
+        }
+      ],
+      "pilot_stratum": "rare_complex",
+      "q_cardinality": 3,
+      "q_row": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "reference_item": {
+        "accepted_answers": [
+          "Which door does the key not open?"
+        ],
+        "audit": {
+          "answer_determinacy": "pass",
+          "format_plausibility": "pass",
+          "issue_tags": [],
+          "learner_overall": "pass",
+          "lexical_context_accessibility": "pass",
+          "measurement_purity": "pass",
+          "pedagogical_plausibility": "pass",
+          "platform_overall": "pass",
+          "primary_disposition": "usable_as_stored",
+          "response_space_fairness": "pass",
+          "task_comprehensibility": "pass"
+        },
+        "item_id": "candidate_gc_4634bf1b005f7724_03",
+        "prompt": "A key opens one of two doors but does not open the other. Complete the question using these words: which door / the key / not open. ___",
+        "reuse_policy": "usable_starting_point_not_automatic_final_item",
+        "target_answer": "Which door does the key not open?"
+      },
+      "selection_order": 4,
+      "selection_rationale": "The sole selected non-subject-WH cell, deliberately testing the narrowest rare clause-operation support.",
+      "selection_role": "non_subject_wh_rare_cell",
+      "source_ids": [
+        "1741163715031x643536767928989600"
+      ],
+      "source_support_count": 1
+    }
+  ],
+  "selection_method": {
+    "kind": "exact_selection_role_lookup_from_outcome_free_full_rank_cohort",
+    "outcomes_read": false,
+    "private_oracle_trajectories_read": false,
+    "strata_in_order": [
+      "simple",
+      "multi_kc",
+      "question",
+      "rare_complex"
+    ],
+    "tie_break": "cell_id"
+  },
+  "source_selection": {
+    "cohort": "full_rank_18_seen_acquisition",
+    "path": "experiments/measurement_realism/design/format_selection/selected_cells.json",
+    "sha256": "8f8fa56e710982c92426f154482d062cffebfb32d29f19c7fe96f4208a4b479b"
+  },
+  "status": "FROZEN_NO_CALL_CONTINUUM_PLAN"
+}

@@ -1,0 +1,159 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "Nina must have moved the chairs.",
+  "cell_id": "gc_4a4c9d34c1b5bce4",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g03_cloze",
+      "context": "The chairs are by the window now. Nina was the only person with a key earlier this morning.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Nina [[RESPONSE]] the chairs.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using “must” and the correct form of “move.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "must have moved"
+        ],
+        "completed_target": "Nina must have moved the chairs.",
+        "correct_choice_id": null,
+        "target_response": "must have moved"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g03_dialog",
+      "context": "Ava and Ben are discussing a change in their meeting room.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Ava: The chairs are by the window now.",
+          "Ben: Who moved them?",
+          "Ava: Nina was the only person with a key earlier this morning."
+        ],
+        "incomplete_turn_template": "Ben: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Ben’s final turn with a strong conclusion about what happened.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Nina must have moved the chairs."
+        ],
+        "completed_target": "Nina must have moved the chairs.",
+        "correct_choice_id": null,
+        "target_response": "Nina must have moved the chairs."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g03_mcq",
+      "context": "The chairs are by the window now. Nina was the only person with a key earlier this morning.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Omits the perfect construction and presents the action as a present obligation rather than a conclusion about an earlier event.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Selects MIGHT instead of MUST, weakening the required strong conclusion.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses the base form MOVE instead of the required past participle MOVED after HAVE.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Nina must move the chairs."
+          },
+          {
+            "id": "B",
+            "text": "Nina must have moved the chairs."
+          },
+          {
+            "id": "C",
+            "text": "Nina might have moved the chairs."
+          },
+          {
+            "id": "D",
+            "text": "Nina must have move the chairs."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence best explains the change?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that gives the best strong conclusion about what happened.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Nina must have moved the chairs.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g03_xform",
+      "context": "The chairs are by the window now, although they were elsewhere before.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Nina was the only person with a key earlier this morning. The chairs are now by the window.",
+        "stem": null,
+        "transformation_cue": "Nina / must / move / the chairs"
+      },
+      "instruction": "Use the cue words to write a strong conclusion about what happened.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Nina must have moved the chairs."
+        ],
+        "completed_target": "Nina must have moved the chairs.",
+        "correct_choice_id": null,
+        "target_response": "Nina must have moved the chairs."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Draw a strong conclusion about who moved the chairs.",
+    "main_verb_lemma": "move",
+    "object_head": "chairs",
+    "participants": [
+      "Nina",
+      "Ava",
+      "Ben"
+    ],
+    "situation_summary": "The chairs are now by the window, and Nina was the only person with a key earlier.",
+    "time_anchor": "earlier this morning"
+  },
+  "semantic_variant_index": 2
+}

@@ -1,0 +1,17 @@
+{
+  "ambiguity_explanation": "",
+  "batch_id": "solver_r01_rep1_sentence_transformation_b01",
+  "instruction_understanding": "Give a confident deduction that Maya locked the office door earlier.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g01_xform",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": false,
+  "other_reasonable_responses": [],
+  "reasonable_unkeyed_responses": [],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g01_xform_solver_r1",
+  "submitted_response": "Maya must have locked the office door.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

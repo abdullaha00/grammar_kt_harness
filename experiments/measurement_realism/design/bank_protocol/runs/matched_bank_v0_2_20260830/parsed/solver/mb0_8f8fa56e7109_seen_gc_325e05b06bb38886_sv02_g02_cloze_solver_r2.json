@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "More than one polite permission modal fits the situation.",
+  "batch_id": "solver_r02_rep2_constrained_cloze_b01",
+  "instruction_understanding": "Complete a polite question asking permission to use the umbrella.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv02_g02_cloze",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Could I use"
+  ],
+  "reasonable_unkeyed_responses": [
+    "Could I use"
+  ],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv02_g02_cloze_solver_r2",
+  "submitted_response": "May I use",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

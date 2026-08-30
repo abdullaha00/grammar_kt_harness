@@ -1,0 +1,155 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "The librarian checks the return box every morning.",
+  "cell_id": "gc_d15de8b5658bd6a5",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g01_cloze",
+      "context": "This is the librarian's regular morning routine.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "The librarian [[RESPONSE]] the return box every morning. (check)",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence with the correct form of the verb in brackets.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "checks"
+        ],
+        "completed_target": "The librarian checks the return box every morning.",
+        "correct_choice_id": null,
+        "target_response": "checks"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g01_dialog",
+      "context": "Nora is asking about the librarian's daily routine.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Nora: What does the librarian do with the returned books at the start of each day?"
+        ],
+        "incomplete_turn_template": "Sam: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Sam's reply with a full sentence.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "The librarian checks the return box every morning."
+        ],
+        "completed_target": "The librarian checks the return box every morning.",
+        "correct_choice_id": null,
+        "target_response": "The librarian checks the return box every morning."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g01_mcq",
+      "context": "The librarian inspects the box used for returned books each morning.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the uninflected base form instead of present-tense third-person singular agreement.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses past-tense morphology instead of the present finite form.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses the present progressive instead of the simple present form for the routine.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "The librarian check the return box every morning."
+          },
+          {
+            "id": "B",
+            "text": "The librarian checks the return box every morning."
+          },
+          {
+            "id": "C",
+            "text": "The librarian checked the return box every morning."
+          },
+          {
+            "id": "D",
+            "text": "The librarian is checking the return box every morning."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly describes this daily routine?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly describes the librarian's regular routine.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "The librarian checks the return box every morning.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g01_xform",
+      "context": "Describe the librarian's regular morning task.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Checking the return box is the librarian's regular morning task.",
+        "stem": null,
+        "transformation_cue": "Use: the librarian / check / the return box / every morning."
+      },
+      "instruction": "Rewrite the information as one sentence using the words provided.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "The librarian checks the return box every morning."
+        ],
+        "completed_target": "The librarian checks the return box every morning.",
+        "correct_choice_id": null,
+        "target_response": "The librarian checks the return box every morning."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Describe the librarian's regular morning task.",
+    "main_verb_lemma": "check",
+    "object_head": "box",
+    "participants": [
+      "the librarian"
+    ],
+    "situation_summary": "A librarian inspects the box used for returned books as part of a daily routine.",
+    "time_anchor": "every morning"
+  },
+  "semantic_variant_index": 2
+}

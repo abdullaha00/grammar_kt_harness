@@ -1,0 +1,496 @@
+{
+  "acquisition_occurrence_semantic_sha256": "90b73c8c984cb133b6e2d8ac3054bd2ad49345a16376658bbf31da57b6da3056",
+  "claim_boundary": {
+    "format_labels_instantiated_as_tasks": false,
+    "learner_facing_item_bank": false,
+    "measurement_validity_claimed": false,
+    "permitted_claim": "controlled_structural_sensitivity_only",
+    "platform_plausibility_claimed": false,
+    "prohibited_claims": [
+      "validated_item_bank",
+      "platform_plausible_dataset",
+      "realistic_learner_opportunities",
+      "release_dataset"
+    ],
+    "response_space_defined": false
+  },
+  "commands": {
+    "aggregate": "python scripts/experiments/measurement_realism_worlds.py --stage aggregate --controlled-scenario --config experiments/measurement_realism/design/controlled_instrument_v1/scenario_config.yaml --output-dir experiments/measurement_realism/worlds/controlled_instrument_v1",
+    "analyze": "python scripts/experiments/measurement_realism_worlds.py --stage analyze --controlled-scenario --config experiments/measurement_realism/design/controlled_instrument_v1/scenario_config.yaml --output-dir experiments/measurement_realism/worlds/controlled_instrument_v1 --world clean_zero --seed 20260829 --policy q_balanced_lab",
+    "plan": "python scripts/experiments/measurement_realism_worlds.py --stage plan --controlled-scenario --config experiments/measurement_realism/design/controlled_instrument_v1/scenario_config.yaml --bank experiments/measurement_realism/design/controlled_instrument_v1/instrument.jsonl --output-dir experiments/measurement_realism/worlds/controlled_instrument_v1",
+    "run_after_explicit_approval_only": "python scripts/experiments/measurement_realism_worlds.py --stage run --controlled-scenario --config experiments/measurement_realism/design/controlled_instrument_v1/scenario_config.yaml --output-dir experiments/measurement_realism/worlds/controlled_instrument_v1 --world clean_zero --seed 20260829 --policy q_balanced_lab",
+    "validate_plan": "python scripts/experiments/measurement_realism_worlds.py --stage validate-plan --controlled-scenario --config experiments/measurement_realism/design/controlled_instrument_v1/scenario_config.yaml --output-dir experiments/measurement_realism/worlds/controlled_instrument_v1"
+  },
+  "controlled_scenario": true,
+  "created_before_response_generation": true,
+  "frozen_acquisition_budget": 188,
+  "inputs": {
+    "base_executable_config": {
+      "bytes": 7312,
+      "path": "experiments/measurement_realism/design/scenario_config_v1.yaml",
+      "sha256": "0948b5dfadb87ebc3e47a05e5761b5e00b7469dcb684676a37db110d660c9eee"
+    },
+    "controlled_instrument": {
+      "bytes": 154996,
+      "path": "experiments/measurement_realism/design/controlled_instrument_v1/instrument.jsonl",
+      "sha256": "74b2bc4a425ea7a1b583b14aeb7cb6e034dfe4eb87a3cc8f91636cebac4079c5"
+    },
+    "controlled_instrument_builder": {
+      "bytes": 9476,
+      "path": "experiments/measurement_realism/design/controlled_instrument_v1/build_scaffold.py",
+      "sha256": "5744d6b57257a476ffa82281b3209a762fbead3ed37578a5c3f51aaecbe18870"
+    },
+    "controlled_instrument_execution_plan": {
+      "bytes": 2332,
+      "path": "experiments/measurement_realism/design/controlled_instrument_v1/EXECUTION_PLAN.md",
+      "sha256": "bcdce4eb2b361e05fef763b435f6af42030c80e8d53e4436a304260b0c0457b7"
+    },
+    "controlled_instrument_manifest": {
+      "bytes": 2446,
+      "path": "experiments/measurement_realism/design/controlled_instrument_v1/manifest.json",
+      "sha256": "ede6ad3694af6feea6df3bc5ef38fc8b36d6fc635e2ae7c8270d4e5592f19e02"
+    },
+    "controlled_instrument_protocol": {
+      "bytes": 3901,
+      "path": "experiments/measurement_realism/design/controlled_instrument_v1/PROTOCOL.md",
+      "sha256": "af7c0a9097fb32decdfc3e0f8f51944d8a9f6d948b8e3e4077f91e896558cd1f"
+    },
+    "controlled_instrument_schema": {
+      "bytes": 2993,
+      "path": "experiments/measurement_realism/design/controlled_instrument_v1/controlled_instrument.schema.json",
+      "sha256": "364e648f63e6d9c358d1a1ae1426f3b5b34f011f82fedac7b2e5a1a0719c7977"
+    },
+    "dependency_declaration": {
+      "bytes": 529,
+      "path": "pyproject.toml",
+      "sha256": "207d4af3d1ac252996850865ee8fde50171dab0e6fb6eacc3f060d79acc8c770"
+    },
+    "executable_config": {
+      "bytes": 3515,
+      "path": "experiments/measurement_realism/design/controlled_instrument_v1/scenario_config.yaml",
+      "sha256": "dfb28a1425da07989a24dd77a82346922c3acad29522589d89608bfbbc59e683"
+    },
+    "failed_curated_decision_ledger": {
+      "bytes": 51083,
+      "path": "experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/curation/family_decisions.jsonl",
+      "sha256": "d0aea025d8b8d4c2d3a38976bd1175886021cc8df8407c10332db14629f2aa34"
+    },
+    "implementation_script": {
+      "bytes": 191270,
+      "path": "scripts/experiments/measurement_realism_worlds.py",
+      "sha256": "3166f6dd0a5fc86b1d4b7ef502bfd2b50993a62c5f52c8ec735fb26e24183214"
+    },
+    "schedule_dependency": {
+      "bytes": 31646,
+      "path": "src/grammar_kt/baseline_simulation.py",
+      "sha256": "e39cacd5c43306f49f8aab14a8389c0f69b82cf8d96ccdcf2eda71bb8e8567c4"
+    },
+    "selected_cells": {
+      "bytes": 46461,
+      "path": "experiments/measurement_realism/design/format_selection/selected_cells.json",
+      "sha256": "8f8fa56e710982c92426f154482d062cffebfb32d29f19c7fe96f4208a4b479b"
+    }
+  },
+  "instrument_audit": {
+    "claim_boundary": "structural simulator slots only; no learner-facing or platform validity",
+    "complete_crossing": true,
+    "families": 38,
+    "formats": {
+      "constrained_cloze": 38,
+      "dialogue_completion": 38,
+      "multiple_choice": 38,
+      "sentence_transformation": 38
+    },
+    "item_count": 152,
+    "learner_facing_content_present": false,
+    "normalized_semantic_sha256": "18c6998c0fc75eec6d650824d8c3508df5fd4b9499f5e2830f794eb2b04621d5",
+    "probe_only_items": 8,
+    "raw_semantic_sha256": "74b2bc4a425ea7a1b583b14aeb7cb6e034dfe4eb87a3cc8f91636cebac4079c5",
+    "release_eligible": false,
+    "scenario_kind": "controlled_instrument_scaffold",
+    "seen_cell_q_rank": 18,
+    "seen_cells": 18,
+    "seen_items": 144
+  },
+  "policies": [
+    "q_balanced_lab",
+    "curriculum",
+    "mixed_practice",
+    "adaptive_weakness"
+  ],
+  "production_curated_bank_evidence": null,
+  "release_eligible": false,
+  "response_generation_authority": {
+    "canonical_output_dir": "experiments/measurement_realism/worlds/controlled_instrument_v1",
+    "external_approval_recorded_in_plan": false,
+    "external_approval_required": true,
+    "planned_output_is_canonical": true,
+    "runner_flag": "--controlled-scenario",
+    "runner_flag_required": true
+  },
+  "run_matrix": [
+    {
+      "policy_id": "q_balanced_lab",
+      "seed": 20260829,
+      "world_id": "clean_zero"
+    },
+    {
+      "policy_id": "q_balanced_lab",
+      "seed": 20260830,
+      "world_id": "clean_zero"
+    },
+    {
+      "policy_id": "q_balanced_lab",
+      "seed": 20260831,
+      "world_id": "clean_zero"
+    },
+    {
+      "policy_id": "q_balanced_lab",
+      "seed": 20260829,
+      "world_id": "format_moderate"
+    },
+    {
+      "policy_id": "q_balanced_lab",
+      "seed": 20260830,
+      "world_id": "format_moderate"
+    },
+    {
+      "policy_id": "q_balanced_lab",
+      "seed": 20260831,
+      "world_id": "format_moderate"
+    },
+    {
+      "policy_id": "q_balanced_lab",
+      "seed": 20260829,
+      "world_id": "format_strong_control"
+    },
+    {
+      "policy_id": "q_balanced_lab",
+      "seed": 20260830,
+      "world_id": "format_strong_control"
+    },
+    {
+      "policy_id": "q_balanced_lab",
+      "seed": 20260831,
+      "world_id": "format_strong_control"
+    },
+    {
+      "policy_id": "q_balanced_lab",
+      "seed": 20260829,
+      "world_id": "item_moderate"
+    },
+    {
+      "policy_id": "q_balanced_lab",
+      "seed": 20260830,
+      "world_id": "item_moderate"
+    },
+    {
+      "policy_id": "q_balanced_lab",
+      "seed": 20260831,
+      "world_id": "item_moderate"
+    },
+    {
+      "policy_id": "q_balanced_lab",
+      "seed": 20260829,
+      "world_id": "item_format_moderate"
+    },
+    {
+      "policy_id": "q_balanced_lab",
+      "seed": 20260830,
+      "world_id": "item_format_moderate"
+    },
+    {
+      "policy_id": "q_balanced_lab",
+      "seed": 20260831,
+      "world_id": "item_format_moderate"
+    },
+    {
+      "policy_id": "q_balanced_lab",
+      "seed": 20260829,
+      "world_id": "combined_heterogeneous"
+    },
+    {
+      "policy_id": "q_balanced_lab",
+      "seed": 20260830,
+      "world_id": "combined_heterogeneous"
+    },
+    {
+      "policy_id": "q_balanced_lab",
+      "seed": 20260831,
+      "world_id": "combined_heterogeneous"
+    },
+    {
+      "policy_id": "curriculum",
+      "seed": 20260829,
+      "world_id": "combined_heterogeneous"
+    },
+    {
+      "policy_id": "curriculum",
+      "seed": 20260830,
+      "world_id": "combined_heterogeneous"
+    },
+    {
+      "policy_id": "curriculum",
+      "seed": 20260831,
+      "world_id": "combined_heterogeneous"
+    },
+    {
+      "policy_id": "mixed_practice",
+      "seed": 20260829,
+      "world_id": "combined_heterogeneous"
+    },
+    {
+      "policy_id": "mixed_practice",
+      "seed": 20260830,
+      "world_id": "combined_heterogeneous"
+    },
+    {
+      "policy_id": "mixed_practice",
+      "seed": 20260831,
+      "world_id": "combined_heterogeneous"
+    },
+    {
+      "policy_id": "adaptive_weakness",
+      "seed": 20260829,
+      "world_id": "combined_heterogeneous"
+    },
+    {
+      "policy_id": "adaptive_weakness",
+      "seed": 20260830,
+      "world_id": "combined_heterogeneous"
+    },
+    {
+      "policy_id": "adaptive_weakness",
+      "seed": 20260831,
+      "world_id": "combined_heterogeneous"
+    }
+  ],
+  "runtime_versions": {
+    "jsonschema": "4.26.0",
+    "numpy": "2.5.1",
+    "python": "3.14.7",
+    "python_implementation": "CPython",
+    "pyyaml": "6.0.3",
+    "scikit_learn": "1.9.0",
+    "scipy": "1.18.0"
+  },
+  "scenario_kind": "controlled_instrument_scaffold",
+  "schedule_diagnostics": {
+    "budget_resolution": "selected_cell_q_geometry_replaces_rank_witness",
+    "exhaustive_coverage_occurrences": 144,
+    "frozen_selected_bank_budget": 188,
+    "item_exposure_imbalance": 1,
+    "item_exposure_maximum": 2,
+    "item_exposure_median": 1.0,
+    "item_exposure_minimum": 1,
+    "item_exposures": {
+      "cis1_8f8fa56e7109_seen_gc_08d90a35b669ed28_r01_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_08d90a35b669ed28_r01_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_08d90a35b669ed28_r01_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_08d90a35b669ed28_r01_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_08d90a35b669ed28_r02_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_08d90a35b669ed28_r02_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_08d90a35b669ed28_r02_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_08d90a35b669ed28_r02_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_r01_clz": 2,
+      "cis1_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_r01_dlg": 2,
+      "cis1_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_r01_mcq": 2,
+      "cis1_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_r01_xfm": 2,
+      "cis1_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_r02_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_r02_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_r02_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_r02_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_r01_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_r01_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_r01_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_r01_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_r02_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_r02_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_r02_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_r02_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_325e05b06bb38886_r01_clz": 2,
+      "cis1_8f8fa56e7109_seen_gc_325e05b06bb38886_r01_dlg": 2,
+      "cis1_8f8fa56e7109_seen_gc_325e05b06bb38886_r01_mcq": 2,
+      "cis1_8f8fa56e7109_seen_gc_325e05b06bb38886_r01_xfm": 2,
+      "cis1_8f8fa56e7109_seen_gc_325e05b06bb38886_r02_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_325e05b06bb38886_r02_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_325e05b06bb38886_r02_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_325e05b06bb38886_r02_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_44ff4acdb263024b_r01_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_44ff4acdb263024b_r01_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_44ff4acdb263024b_r01_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_44ff4acdb263024b_r01_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_44ff4acdb263024b_r02_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_44ff4acdb263024b_r02_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_44ff4acdb263024b_r02_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_44ff4acdb263024b_r02_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_4601bed02c004e37_r01_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_4601bed02c004e37_r01_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_4601bed02c004e37_r01_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_4601bed02c004e37_r01_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_4601bed02c004e37_r02_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_4601bed02c004e37_r02_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_4601bed02c004e37_r02_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_4601bed02c004e37_r02_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_4634bf1b005f7724_r01_clz": 2,
+      "cis1_8f8fa56e7109_seen_gc_4634bf1b005f7724_r01_dlg": 2,
+      "cis1_8f8fa56e7109_seen_gc_4634bf1b005f7724_r01_mcq": 2,
+      "cis1_8f8fa56e7109_seen_gc_4634bf1b005f7724_r01_xfm": 2,
+      "cis1_8f8fa56e7109_seen_gc_4634bf1b005f7724_r02_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_4634bf1b005f7724_r02_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_4634bf1b005f7724_r02_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_4634bf1b005f7724_r02_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_r01_clz": 2,
+      "cis1_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_r01_dlg": 2,
+      "cis1_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_r01_mcq": 2,
+      "cis1_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_r01_xfm": 2,
+      "cis1_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_r02_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_r02_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_r02_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_r02_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_809d40d141731b61_r01_clz": 2,
+      "cis1_8f8fa56e7109_seen_gc_809d40d141731b61_r01_dlg": 2,
+      "cis1_8f8fa56e7109_seen_gc_809d40d141731b61_r01_mcq": 2,
+      "cis1_8f8fa56e7109_seen_gc_809d40d141731b61_r01_xfm": 2,
+      "cis1_8f8fa56e7109_seen_gc_809d40d141731b61_r02_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_809d40d141731b61_r02_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_809d40d141731b61_r02_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_809d40d141731b61_r02_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_90b9229122fa55d6_r01_clz": 2,
+      "cis1_8f8fa56e7109_seen_gc_90b9229122fa55d6_r01_dlg": 2,
+      "cis1_8f8fa56e7109_seen_gc_90b9229122fa55d6_r01_mcq": 2,
+      "cis1_8f8fa56e7109_seen_gc_90b9229122fa55d6_r01_xfm": 2,
+      "cis1_8f8fa56e7109_seen_gc_90b9229122fa55d6_r02_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_90b9229122fa55d6_r02_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_90b9229122fa55d6_r02_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_90b9229122fa55d6_r02_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_9b8833161ce61d83_r01_clz": 2,
+      "cis1_8f8fa56e7109_seen_gc_9b8833161ce61d83_r01_dlg": 2,
+      "cis1_8f8fa56e7109_seen_gc_9b8833161ce61d83_r01_mcq": 2,
+      "cis1_8f8fa56e7109_seen_gc_9b8833161ce61d83_r01_xfm": 2,
+      "cis1_8f8fa56e7109_seen_gc_9b8833161ce61d83_r02_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_9b8833161ce61d83_r02_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_9b8833161ce61d83_r02_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_9b8833161ce61d83_r02_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_9d70af80c0843115_r01_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_9d70af80c0843115_r01_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_9d70af80c0843115_r01_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_9d70af80c0843115_r01_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_9d70af80c0843115_r02_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_9d70af80c0843115_r02_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_9d70af80c0843115_r02_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_9d70af80c0843115_r02_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_bb4f472f992ab76b_r01_clz": 2,
+      "cis1_8f8fa56e7109_seen_gc_bb4f472f992ab76b_r01_dlg": 2,
+      "cis1_8f8fa56e7109_seen_gc_bb4f472f992ab76b_r01_mcq": 2,
+      "cis1_8f8fa56e7109_seen_gc_bb4f472f992ab76b_r01_xfm": 2,
+      "cis1_8f8fa56e7109_seen_gc_bb4f472f992ab76b_r02_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_bb4f472f992ab76b_r02_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_bb4f472f992ab76b_r02_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_bb4f472f992ab76b_r02_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_r01_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_r01_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_r01_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_r01_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_r02_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_r02_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_r02_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_r02_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_r01_clz": 2,
+      "cis1_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_r01_dlg": 2,
+      "cis1_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_r01_mcq": 2,
+      "cis1_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_r01_xfm": 2,
+      "cis1_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_r02_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_r02_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_r02_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_r02_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_edcc8d38860ff41d_r01_clz": 2,
+      "cis1_8f8fa56e7109_seen_gc_edcc8d38860ff41d_r01_dlg": 2,
+      "cis1_8f8fa56e7109_seen_gc_edcc8d38860ff41d_r01_mcq": 2,
+      "cis1_8f8fa56e7109_seen_gc_edcc8d38860ff41d_r01_xfm": 2,
+      "cis1_8f8fa56e7109_seen_gc_edcc8d38860ff41d_r02_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_edcc8d38860ff41d_r02_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_edcc8d38860ff41d_r02_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_edcc8d38860ff41d_r02_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_f86ecd83135f0b52_r01_clz": 2,
+      "cis1_8f8fa56e7109_seen_gc_f86ecd83135f0b52_r01_dlg": 2,
+      "cis1_8f8fa56e7109_seen_gc_f86ecd83135f0b52_r01_mcq": 2,
+      "cis1_8f8fa56e7109_seen_gc_f86ecd83135f0b52_r01_xfm": 2,
+      "cis1_8f8fa56e7109_seen_gc_f86ecd83135f0b52_r02_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_f86ecd83135f0b52_r02_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_f86ecd83135f0b52_r02_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_f86ecd83135f0b52_r02_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_r01_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_r01_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_r01_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_r01_xfm": 1,
+      "cis1_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_r02_clz": 1,
+      "cis1_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_r02_dlg": 1,
+      "cis1_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_r02_mcq": 1,
+      "cis1_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_r02_xfm": 1
+    },
+    "kc_opportunities": {
+      "gkc_aspect_perfect": 60,
+      "gkc_aspect_progressive": 16,
+      "gkc_be_passive": 16,
+      "gkc_finite_past": 40,
+      "gkc_finite_present": 28,
+      "gkc_imperative": 12,
+      "gkc_modal_can": 12,
+      "gkc_modal_could": 12,
+      "gkc_modal_may": 12,
+      "gkc_modal_might": 12,
+      "gkc_modal_must": 12,
+      "gkc_modal_shall": 12,
+      "gkc_modal_should": 12,
+      "gkc_modal_will": 12,
+      "gkc_modal_would": 12,
+      "gkc_negation": 32,
+      "gkc_non_subject_wh_question": 12,
+      "gkc_polar_question": 44
+    },
+    "kc_opportunity_maximum": 60,
+    "kc_opportunity_median": 12.0,
+    "kc_opportunity_minimum": 12,
+    "proposal_rank_witness_budget_nonbinding": 184,
+    "q_balanced_top_up_occurrences": 44,
+    "schedule_length": 188,
+    "schedule_mode": "exhaustive_then_q_balanced",
+    "seen_kc_ids": [
+      "gkc_aspect_perfect",
+      "gkc_aspect_progressive",
+      "gkc_be_passive",
+      "gkc_finite_past",
+      "gkc_finite_present",
+      "gkc_imperative",
+      "gkc_modal_can",
+      "gkc_modal_could",
+      "gkc_modal_may",
+      "gkc_modal_might",
+      "gkc_modal_must",
+      "gkc_modal_shall",
+      "gkc_modal_should",
+      "gkc_modal_will",
+      "gkc_modal_would",
+      "gkc_negation",
+      "gkc_non_subject_wh_question",
+      "gkc_polar_question"
+    ],
+    "target_opportunities_per_seen_kc": 12
+  },
+  "seeds": [
+    20260829,
+    20260830,
+    20260831
+  ],
+  "status": "PREREGISTERED_CONTROLLED_SCENARIO_BEFORE_RESPONSES",
+  "study_id": "measurement_realism_controlled_instrument_v1",
+  "world_ids": [
+    "clean_zero",
+    "format_moderate",
+    "format_strong_control",
+    "item_moderate",
+    "item_format_moderate",
+    "combined_heterogeneous"
+  ]
+}

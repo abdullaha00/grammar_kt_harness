@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "Turn off the oven.",
+  "cell_id": "gc_bb4f472f992ab76b",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g01_cloze",
+      "context": "Maya and Leo have finished cooking. The oven is still on, and Maya wants Leo to switch it off before they leave.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]].",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Maya's instruction. Use “turn off” and “the oven.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Turn off the oven"
+        ],
+        "completed_target": "Turn off the oven.",
+        "correct_choice_id": null,
+        "target_response": "Turn off the oven"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g01_dialog",
+      "context": "Maya and Leo are about to leave the kitchen after cooking.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Maya: We've finished cooking, but the oven is still on.",
+          "Leo: What should I do before we leave the kitchen?"
+        ],
+        "incomplete_turn_template": "Maya: [[RESPONSE]].",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Maya's final turn with the instruction she gives Leo.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Turn off the oven"
+        ],
+        "completed_target": "Turn off the oven.",
+        "correct_choice_id": null,
+        "target_response": "Turn off the oven"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g01_mcq",
+      "context": "Maya and Leo have finished cooking, but the oven is still on. Maya wants Leo to switch it off before they leave.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses a declarative clause with an overt subject instead of an imperative clause.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses an -ing clause fragment instead of the base verb form required for an imperative.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses a to-infinitive fragment instead of an imperative clause.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "You turn off the oven."
+          },
+          {
+            "id": "B",
+            "text": "Turning off the oven."
+          },
+          {
+            "id": "C",
+            "text": "Turn off the oven."
+          },
+          {
+            "id": "D",
+            "text": "To turn off the oven."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "What should Maya say to Leo?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence Maya should use to give Leo a direct instruction.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "C"
+        ],
+        "completed_target": "Turn off the oven.",
+        "correct_choice_id": "C",
+        "target_response": "C"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g01_xform",
+      "context": "Maya and Leo have finished cooking and are about to leave the kitchen.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "The oven is still on. Maya tells Leo that he needs to turn it off.",
+        "stem": null,
+        "transformation_cue": "turn off / the oven"
+      },
+      "instruction": "Rewrite Maya's message as a direct instruction to Leo. Use all the words in the cue.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Turn off the oven."
+        ],
+        "completed_target": "Turn off the oven.",
+        "correct_choice_id": null,
+        "target_response": "Turn off the oven."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Maya tells Leo to switch off the oven before they leave.",
+    "main_verb_lemma": "turn off",
+    "object_head": "oven",
+    "participants": [
+      "Maya",
+      "Leo"
+    ],
+    "situation_summary": "Maya and Leo have finished cooking, but the oven is still on as they prepare to leave the kitchen.",
+    "time_anchor": "after cooking and before leaving the kitchen"
+  },
+  "semantic_variant_index": 2
+}

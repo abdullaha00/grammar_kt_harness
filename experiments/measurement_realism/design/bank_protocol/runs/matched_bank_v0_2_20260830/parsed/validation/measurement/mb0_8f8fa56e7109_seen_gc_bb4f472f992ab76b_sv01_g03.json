@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r03_measurement_b02",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g03",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "All formats target an imperative instruction, but the MCQ measures recognition among overtly labeled syntactic alternatives whereas the other formats require production; the productive formats also inherit an unscored phrasal-verb word-order choice.",
+      "severity": "minor_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "The formats retain the same declared construct—an English imperative clause. Recognition versus production changes response mechanism and nuisance burden, not the KC definition.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "Each item instantiates the same situation: after the cake is removed, Alex directs Sam to switch off the oven.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The learner must supply a direct instruction with a bare verb, realizing the declared imperative-clause KC.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "Producing the keyed wording also involves the separable phrasal verb “turn off” and its object placement, but these are limited lexical/syntactic burdens rather than a major additional grammatical construct.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Although the instruction labels the response as an instruction and supplies the lexical material, a successful response still requires an imperative realization rather than a declarative, gerund, or infinitive phrase.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "“Turn the oven off.” is a linguistically and contextually reasonable imperative using the supplied lexical material; the separable phrasal verb permits both object placements.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The accepted set contains only “Turn off the oven.” and rejects the defensible alternative “Turn the oven off.”; omission makes free-text scoring invalid for this item.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Success can partly reflect familiarity with the phrasal verb and its separability, alongside the intended imperative construction.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g03_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The reply context calls for Alex to formulate a direct imperative to Sam, so the declared imperative KC is active.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The response additionally entails the lexical phrasal-verb pattern “turn off,” including possible separability, but no major undeclared grammar is required.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The dialogue and required words constrain the communicative act to a direct command; a bare imperative form is needed for a fully appropriate reply.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "“Turn the oven off.” is an equally appropriate direct reply in this dialogue, so the keyed word order is not uniquely determined.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Only “Turn off the oven.” is accepted. The reasonable unkeyed imperative “Turn the oven off.” would be marked wrong.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Dialogue interpretation is straightforward, but phrasal-verb word-order knowledge contributes non-target burden.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g03_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Selecting B requires recognizing that a direct imperative is realized by the bare verb “Turn off,” unlike the declarative, gerund phrase, and infinitive phrase alternatives.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The alternatives contrast clause/phrase types directly relevant to recognizing an imperative; no important undeclared grammar is needed to choose B.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The contextual request for a direct instruction and the syntactic contrasts require identification of the imperative option; no other option is a direct command.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "B is the sole option that gives Alex's direct instruction in the stated context.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The single-choice response mode has one linguistically correct option, B, and the scoring key accepts B.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "This recognition format reduces productive burden and may partly measure test-wise elimination of clearly non-finite or declarative distractors, rather than production alone.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g03_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Writing Alex's direct instruction without a subject requires an imperative-clause realization.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The source sentence includes present passive/progressive-like state language and present perfect passive material, but these are supplied for interpretation rather than transformation; separable-phrasal-verb ordering remains a minor extra burden.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The explicit no-subject cue narrows the response, but the learner must still realize the supplied verb phrase as a well-formed direct imperative.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "The solver-proposed “Turn the oven off.” is linguistically and contextually reasonable, uses all cue words, and is an equally valid imperative because “turn off” is separable.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The accepted set excludes the defensible solver-proposed response “Turn the oven off.”, so correct free-text responses can be scored incorrect.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The task imposes source-sentence comprehension and phrasal-verb placement demands beyond imperative formation.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g03_xform"
+    }
+  ],
+  "overall_accept": false,
+  "role": "measurement",
+  "summary": "The family consistently targets imperative formation, but all free-response versions reject the equally valid separable-phrasal-verb order “Turn the oven off.” This determinacy and accepted-response-coverage defect is blocking."
+}

@@ -1,0 +1,23 @@
+{
+  "ambiguity_explanation": "Several questions naturally follow the suggestion.",
+  "batch_id": "solver_r03_rep2_dialogue_completion_b02",
+  "instruction_understanding": "Complete Maya's question about whether Elena can help.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g03_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Can Elena help us?",
+    "Will she be able to help us?"
+  ],
+  "reasonable_unkeyed_responses": [
+    "Can Elena help us?",
+    "Will she be able to help us?"
+  ],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g03_dialog_solver_r2",
+  "submitted_response": "Can she help us?",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

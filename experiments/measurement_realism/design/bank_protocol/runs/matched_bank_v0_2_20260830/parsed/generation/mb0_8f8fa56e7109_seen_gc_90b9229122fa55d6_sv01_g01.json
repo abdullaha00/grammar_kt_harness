@@ -1,0 +1,158 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "The delivery might arrive this afternoon.",
+  "cell_id": "gc_90b9229122fa55d6",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01_g01_cloze",
+      "context": "The driver has been delayed, but the delivery is still possible later today.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "The delivery [[RESPONSE]] this afternoon.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using “might” and the correct form of “arrive.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "might arrive"
+        ],
+        "completed_target": "The delivery might arrive this afternoon.",
+        "correct_choice_id": null,
+        "target_response": "might arrive"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01_g01_dialog",
+      "context": "Nina and Omar are discussing a delayed delivery.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Omar: Has the driver given you an exact arrival time?",
+          "Nina: No, the driver is delayed, so I am not certain."
+        ],
+        "incomplete_turn_template": "Nina: The delivery [[RESPONSE]] this afternoon.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Nina’s reply using “might” and the correct form of “arrive.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "might arrive"
+        ],
+        "completed_target": "The delivery might arrive this afternoon.",
+        "correct_choice_id": null,
+        "target_response": "might arrive"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01_g01_mcq",
+      "context": "The driver has been delayed, but the delivery is still possible later today.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses a third-person singular verb instead of the base-form complement after MIGHT.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses an -ing form instead of the base-form complement after MIGHT.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Incorrectly inserts DO-support before MIGHT in a positive declarative clause.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "The delivery might arrives this afternoon."
+          },
+          {
+            "id": "B",
+            "text": "The delivery might arrive this afternoon."
+          },
+          {
+            "id": "C",
+            "text": "The delivery might arriving this afternoon."
+          },
+          {
+            "id": "D",
+            "text": "The delivery does might arrive this afternoon."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence is correct?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly expresses the possibility.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "The delivery might arrive this afternoon.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01_g01_xform",
+      "context": "The driver has been delayed, so the arrival time is uncertain.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "It is possible that the delivery will arrive this afternoon.",
+        "stem": null,
+        "transformation_cue": "Begin with “The delivery” and use “might” with “arrive.”"
+      },
+      "instruction": "Rewrite the sentence using “might” to express the same possibility.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "The delivery might arrive this afternoon."
+        ],
+        "completed_target": "The delivery might arrive this afternoon.",
+        "correct_choice_id": null,
+        "target_response": "The delivery might arrive this afternoon."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Express the possibility that the delivery will arrive later today.",
+    "main_verb_lemma": "arrive",
+    "object_head": null,
+    "participants": [
+      "Nina",
+      "Omar",
+      "the delivery"
+    ],
+    "situation_summary": "Nina and Omar are waiting for a delivery whose arrival time is uncertain.",
+    "time_anchor": "this afternoon"
+  },
+  "semantic_variant_index": 1
+}

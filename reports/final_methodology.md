@@ -1,11 +1,16 @@
-# Final full-v1 methodology
+# Final methodology: immutable full-v1 and measurement-realism programme
 
-This report defines the paper-facing method for `grammar_kt_full_v1`. Exact
-commands, seeds, negative results, and artifact hashes are in
+This report first defines the retained method for `grammar_kt_full_v1`, then
+records how the post-GrammarCell methodology was audited and extended without
+mutating that benchmark. Exact commands, seeds, negative results, and artifact hashes are in
 `reports/experiment_log.md`; the compact current state is
 `reports/research_state.md`. The earlier outcome-selected medium-v1 method is
 preserved at `reports/historical/medium_v1/final_methodology.md` and is pilot
 evidence only.
+
+Programme boundary: there is **no new dataset release**. The executed
+measurement extension is a content-free **controlled scenario**, not a
+learner-facing bank; human/expert evidence remains necessary for **release validity**.
 
 ## Scientific objects and causal order
 
@@ -309,11 +314,57 @@ assumptions must never trigger item regeneration or redefine K*.
 baseline, paper-facing experiments, reports, notebooks, and ACL build; it is
 verified with `scripts/final_release_manifest.py --verify`.
 
+## Measurement-realism extension
+
+The baseline method above maximizes internal control. A separate extension asks
+whether its observable opportunities, responses, and histories could plausibly
+support inferences relevant to a language-learning platform. Its complete
+method is `reports/measurement_extension_methodology.md`; results and final RQ
+decisions are in `reports/measurement_realism_results.md` and
+`reports/measurement_extension_rq_ledger.md`.
+
+The extension keeps five additional distinctions explicit:
+
+```text
+linguistic validity
+!= measurement validity
+!= learner answerability
+!= platform plausibility
+!= structural simulator convenience
+```
+
+It performs a complete two-audit census of the 113 prompts, a structural and
+pedagogical K* audit, repeated outcome-blind KC induction, and a 37-source
+literature review. It then preselects a rank-18, 18-cell matched-format design
+and attempts to construct 38 complete families across cloze, dialogue
+completion, multiple choice, and sentence transformation. Only 5/38 families
+pass the frozen deterministic, solver, and role-critic gates. The failure is
+retained; no partial bank or measurement dataset is released.
+
+The remaining format/item/heterogeneity/error/policy hypotheses are tested in
+a separate 152-slot content-free structural instrument. It contains no prompt,
+target, accepted response, or scorer and is permanently marked
+`release_eligible=false`. Six paired simulator worlds, four A--D nuisance
+models, three seeds, structured-error positive/negative controls, and four
+equal-budget schedules are evaluated. The exercise tests causal sensitivity to
+planted mechanisms, not human realism. A four-family automated dialogue
+continuum separately inspects the naturalness--determinacy tradeoff in actual
+visible interactions.
+
+The dataset decision follows hard gates rather than an average realism score.
+A future release requires complete instrument crossing, answerability,
+measurement purity, observable/oracle separation, policy provenance,
+reconstruction, and independent rendered expert/learner validation. Those
+conditions are not met. Full-v1 remains the only frozen dataset and is now
+described as a clean Q-driven control benchmark.
+
 ## Claim boundary
 
 The release establishes an auditable controlled benchmark under declared
-English and synthetic assumptions. It does not establish that K* is a human
-cognitive ontology, that automatic judgments are human pedagogical validation,
-that simulator parameters estimate learner behaviour, that synthetic sample
-thresholds transfer to a real study, or that one English instantiation provides
-cross-lingual evidence.
+English and synthetic assumptions. The extension establishes where that
+benchmark's measurement claims fail, and how planted nuisance changes inference
+in a content-free control. Neither establishes that K* is a human cognitive
+ontology, that automatic judgments are human pedagogical validation, that the
+113 prompts or failed matched bank are deployable, that simulator parameters
+estimate learner behaviour, that synthetic sample thresholds transfer to a
+real study, or that one English instantiation provides cross-lingual evidence.

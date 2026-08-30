@@ -1,0 +1,1505 @@
+{
+  "counts": {
+    "seen_acquisition": 18,
+    "total": 20,
+    "unseen_combination_probe": 1,
+    "unseen_value_probe": 1
+  },
+  "dataset_id": "grammar_kt_full_v1",
+  "held_out_cells": [
+    {
+      "acquisition_updates": false,
+      "cell_id": "gc_e730dbce7b036961",
+      "features": {
+        "aspect": "progressive",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "present",
+        "voice": "active"
+      },
+      "generator_kc_ids": [
+        "gkc_aspect_progressive",
+        "gkc_finite_present"
+      ],
+      "grammar_regime": "unseen_combination",
+      "included_in_seen_rank_claim": false,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "pass",
+        "issue_tags": [],
+        "learner_overall": "pass",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "pass",
+        "platform_overall": "pass",
+        "primary_disposition": "usable_as_stored",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "pass"
+      },
+      "q_cardinality": 2,
+      "q_isolating": false,
+      "q_row": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "reference_accepted_answers": [
+        "are playing"
+      ],
+      "reference_item_id": "candidate_gc_e730dbce7b036961_01",
+      "reference_prompt": "The children are outside with a ball. Complete the sentence using \u201cplay\u201d: The children ____ in the garden.",
+      "reference_stem_reuse": "usable_starting_point_not_automatic_final_item",
+      "reference_target_answer": "The children are playing in the garden.",
+      "role": "unseen_combination_probe",
+      "selection_order": 19,
+      "selection_rationale": "Probe-only cell chosen without outcomes: audited usable reference first, then greatest EGP source support, narrower Q row, representative-item quality, and stable ID. It recombines seen present and progressive values in a held-out exact GrammarCell.",
+      "selection_role": "unseen_combination_probe",
+      "source_ids": [
+        "1741163709469x773626805908608900",
+        "1741163709472x336460271601600300",
+        "1741163709473x494283441514848260",
+        "1741163713121x244049823776565150",
+        "1741163713122x609663333417254100"
+      ],
+      "source_support_count": 5
+    },
+    {
+      "acquisition_updates": false,
+      "cell_id": "gc_483f3ac117f331a7",
+      "features": {
+        "aspect": "perfect_progressive",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "past",
+        "voice": "active"
+      },
+      "generator_kc_ids": [
+        "gkc_aspect_perfect",
+        "gkc_aspect_progressive",
+        "gkc_finite_past"
+      ],
+      "grammar_regime": "unseen_value",
+      "included_in_seen_rank_claim": false,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "pass",
+        "issue_tags": [],
+        "learner_overall": "pass",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "pass",
+        "platform_overall": "pass",
+        "primary_disposition": "usable_as_stored",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "pass"
+      },
+      "q_cardinality": 3,
+      "q_isolating": false,
+      "q_row": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "reference_accepted_answers": [
+        "had been making"
+      ],
+      "reference_item_id": "candidate_gc_483f3ac117f331a7_02",
+      "reference_prompt": "Ben\u2019s hands were covered in flour when I arrived. He ____ bread all morning. (make)",
+      "reference_stem_reuse": "usable_starting_point_not_automatic_final_item",
+      "reference_target_answer": "He had been making bread all morning.",
+      "role": "unseen_value_probe",
+      "selection_order": 20,
+      "selection_rationale": "Probe-only cell chosen without outcomes: audited usable reference first, then greatest EGP source support, narrower Q row, representative-item quality, and stable ID. Its perfect-progressive aspect value is absent from acquisition while its component KCs remain declared in K*.",
+      "selection_role": "unseen_value_probe",
+      "source_ids": [
+        "1741163712328x669008360458158700",
+        "1741163712332x322280679825253100"
+      ],
+      "source_support_count": 2
+    }
+  ],
+  "input_hashes": {
+    "cells": "a6bf8041e93fdea21d0ba7b318a24cb64610a6064517a2f7fbbbf3aca2fa4e1a",
+    "dataset_manifest": "322128843f8e7e6547a99efcecc6836fcd581f314fb49557a28d58fe79c69f4c",
+    "item_audit": "dd191531629bdb85b767208b9871d6f2ad387781e89b39d80d78b5b991c30445",
+    "items": "46e2fcbd723d11f6b30ecdd197fb05c39f04f7b0fc8f61e2183ffb8fb7110011",
+    "kcs": "f3b308dcda7c11886e1dc67476dbe6adbcb53b8676b643c62d226fe68cfe0355",
+    "q_matrix": "b6df582478f05976ceb200da6edc2b31fb305da64498e5ddb5f473a9459bf5bf",
+    "regimes": "5e65cf1bca33778e8300d7fe0125871c2d622c9b4aca8ebe5280a3e93a9e4bdf",
+    "selector": "0dbf6ce4796f422fe17a996238eeb92c4254f7d1ad323905ea653005ae778a2f"
+  },
+  "kc_order": [
+    "gkc_aspect_perfect",
+    "gkc_aspect_progressive",
+    "gkc_be_passive",
+    "gkc_finite_past",
+    "gkc_finite_present",
+    "gkc_imperative",
+    "gkc_modal_can",
+    "gkc_modal_could",
+    "gkc_modal_may",
+    "gkc_modal_might",
+    "gkc_modal_must",
+    "gkc_modal_shall",
+    "gkc_modal_should",
+    "gkc_modal_will",
+    "gkc_modal_would",
+    "gkc_negation",
+    "gkc_non_subject_wh_question",
+    "gkc_polar_question"
+  ],
+  "purpose": "Canonical matched-format design: an 18-cell seen acquisition basis plus one non-updating probe for each held-out grammar regime.",
+  "scientific_boundary": {
+    "allowed_inputs": [
+      "frozen GrammarCells and seen-regime labels",
+      "frozen K* and deterministic Q*",
+      "frozen learner-facing item records",
+      "explicit non-human, outcome-free item-audit judgments"
+    ],
+    "downstream_model_results_read": false,
+    "held_out_probe_policy": "acquisition_updates=false; exclude from acquisition and all seen-Q rank/determinant claims",
+    "item_audit_status": "Codex rubric judgments; not human validation",
+    "learner_outcomes_read": false,
+    "learner_truth_read": false,
+    "response_probabilities_read": false
+  },
+  "seen_cells": [
+    {
+      "acquisition_updates": true,
+      "cell_id": "gc_edcc8d38860ff41d",
+      "features": {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "can",
+        "polarity": "positive",
+        "tense": "NA",
+        "voice": "active"
+      },
+      "generator_kc_ids": [
+        "gkc_modal_can",
+        "gkc_polar_question"
+      ],
+      "grammar_regime": "seen",
+      "included_in_seen_rank_claim": true,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "pass",
+        "issue_tags": [],
+        "learner_overall": "pass",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "pass",
+        "platform_overall": "pass",
+        "primary_disposition": "usable_as_stored",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "pass"
+      },
+      "q_cardinality": 2,
+      "q_isolating": false,
+      "q_row": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "reference_accepted_answers": [
+        "Can your sister drive"
+      ],
+      "reference_item_id": "candidate_gc_edcc8d38860ff41d_02",
+      "reference_prompt": "Your friend wants to know if your sister is able to drive. Complete the question using the words in brackets: ____ (your sister / drive)?",
+      "reference_stem_reuse": "usable_starting_point_not_automatic_final_item",
+      "reference_target_answer": "Can your sister drive?",
+      "role": "seen_acquisition",
+      "selection_order": 1,
+      "selection_rationale": "Seen cell chosen outcome-free: audited usable first; then a Q-isolating modal anchor when available; otherwise greatest EGP source support, narrower Q row, and stable ID tie-breaks.",
+      "selection_role": "modal_can",
+      "source_ids": [
+        "1741163710392x628826808565412700",
+        "1741163715032x756418004139892900"
+      ],
+      "source_support_count": 2
+    },
+    {
+      "acquisition_updates": true,
+      "cell_id": "gc_9b8833161ce61d83",
+      "features": {
+        "aspect": "perfect",
+        "clause": "declarative",
+        "modal": "could",
+        "polarity": "positive",
+        "tense": "NA",
+        "voice": "active"
+      },
+      "generator_kc_ids": [
+        "gkc_aspect_perfect",
+        "gkc_modal_could"
+      ],
+      "grammar_regime": "seen",
+      "included_in_seen_rank_claim": true,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "pass",
+        "issue_tags": [],
+        "learner_overall": "pass",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "pass",
+        "platform_overall": "pass",
+        "primary_disposition": "usable_as_stored",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "pass"
+      },
+      "q_cardinality": 2,
+      "q_isolating": false,
+      "q_row": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "reference_accepted_answers": [
+        "could have locked the door"
+      ],
+      "reference_item_id": "unchanged_rescue_gc_9b8833161ce61d83_01",
+      "reference_prompt": "Sam had a key, but he left the door open. Complete the sentence using the cue (could / lock): Sam ____.",
+      "reference_stem_reuse": "usable_starting_point_not_automatic_final_item",
+      "reference_target_answer": "Sam could have locked the door.",
+      "role": "seen_acquisition",
+      "selection_order": 2,
+      "selection_rationale": "Seen cell chosen outcome-free: audited usable first; then a Q-isolating modal anchor when available; otherwise greatest EGP source support, narrower Q row, and stable ID tie-breaks.",
+      "selection_role": "modal_could",
+      "source_ids": [
+        "1741163716295x133200860687879170",
+        "1741163716295x333431392231873200",
+        "1741163716295x403332037991284800",
+        "1741163716295x431001332463613700"
+      ],
+      "source_support_count": 4
+    },
+    {
+      "acquisition_updates": true,
+      "cell_id": "gc_325e05b06bb38886",
+      "features": {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "may",
+        "polarity": "positive",
+        "tense": "NA",
+        "voice": "active"
+      },
+      "generator_kc_ids": [
+        "gkc_modal_may",
+        "gkc_polar_question"
+      ],
+      "grammar_regime": "seen",
+      "included_in_seen_rank_claim": true,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "pass",
+        "issue_tags": [],
+        "learner_overall": "pass",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "pass",
+        "platform_overall": "pass",
+        "primary_disposition": "usable_as_stored",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "pass"
+      },
+      "q_cardinality": 2,
+      "q_isolating": false,
+      "q_row": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "reference_accepted_answers": [
+        "May I sit here"
+      ],
+      "reference_item_id": "candidate_gc_325e05b06bb38886_01",
+      "reference_prompt": "You want to know if it is possible to use the empty chair. Ask the receptionist: \u201c_____?\u201d (cue: I / may / sit / here)",
+      "reference_stem_reuse": "usable_starting_point_not_automatic_final_item",
+      "reference_target_answer": "May I sit here?",
+      "role": "seen_acquisition",
+      "selection_order": 3,
+      "selection_rationale": "Seen cell chosen outcome-free: audited usable first; then a Q-isolating modal anchor when available; otherwise greatest EGP source support, narrower Q row, and stable ID tie-breaks.",
+      "selection_role": "modal_may",
+      "source_ids": [
+        "1741163710839x649757077040261000",
+        "1741163710840x470507602302159700"
+      ],
+      "source_support_count": 2
+    },
+    {
+      "acquisition_updates": true,
+      "cell_id": "gc_90b9229122fa55d6",
+      "features": {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "might",
+        "polarity": "positive",
+        "tense": "NA",
+        "voice": "active"
+      },
+      "generator_kc_ids": [
+        "gkc_modal_might"
+      ],
+      "grammar_regime": "seen",
+      "included_in_seen_rank_claim": true,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "pass",
+        "issue_tags": [],
+        "learner_overall": "pass",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "pass",
+        "platform_overall": "pass",
+        "primary_disposition": "usable_as_stored",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "pass"
+      },
+      "q_cardinality": 1,
+      "q_isolating": true,
+      "q_row": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "reference_accepted_answers": [
+        "might rain"
+      ],
+      "reference_item_id": "candidate_gc_90b9229122fa55d6_01",
+      "reference_prompt": "The sky is very dark, so there is a chance of rain. Complete the sentence using \u201cmight\u201d and \u201crain\u201d: It ____ soon.",
+      "reference_stem_reuse": "usable_starting_point_not_automatic_final_item",
+      "reference_target_answer": "It might rain soon.",
+      "role": "seen_acquisition",
+      "selection_order": 4,
+      "selection_rationale": "Seen cell chosen outcome-free: audited usable first; then a Q-isolating modal anchor when available; otherwise greatest EGP source support, narrower Q row, and stable ID tie-breaks.",
+      "selection_role": "modal_might",
+      "source_ids": [
+        "1741163710843x377860994738539200"
+      ],
+      "source_support_count": 1
+    },
+    {
+      "acquisition_updates": true,
+      "cell_id": "gc_4a4c9d34c1b5bce4",
+      "features": {
+        "aspect": "perfect",
+        "clause": "declarative",
+        "modal": "must",
+        "polarity": "positive",
+        "tense": "NA",
+        "voice": "active"
+      },
+      "generator_kc_ids": [
+        "gkc_aspect_perfect",
+        "gkc_modal_must"
+      ],
+      "grammar_regime": "seen",
+      "included_in_seen_rank_claim": true,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "pass",
+        "issue_tags": [],
+        "learner_overall": "pass",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "pass",
+        "platform_overall": "pass",
+        "primary_disposition": "usable_as_stored",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "pass"
+      },
+      "q_cardinality": 2,
+      "q_isolating": false,
+      "q_row": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "reference_accepted_answers": [
+        "must have cleaned"
+      ],
+      "reference_item_id": "unchanged_rescue_gc_4a4c9d34c1b5bce4_02",
+      "reference_prompt": "The kitchen is clean now, and Sam was the only person at home. Complete the sentence using \u201cmust\u201d and \u201cclean\u201d: Sam ___ the kitchen.",
+      "reference_stem_reuse": "usable_starting_point_not_automatic_final_item",
+      "reference_target_answer": "Sam must have cleaned the kitchen.",
+      "role": "seen_acquisition",
+      "selection_order": 5,
+      "selection_rationale": "Seen cell chosen outcome-free: audited usable first; then a Q-isolating modal anchor when available; otherwise greatest EGP source support, narrower Q row, and stable ID tie-breaks.",
+      "selection_role": "modal_must",
+      "source_ids": [
+        "1741163710846x862002717036825300",
+        "1741163711029x580434283031923800"
+      ],
+      "source_support_count": 2
+    },
+    {
+      "acquisition_updates": true,
+      "cell_id": "gc_f86ecd83135f0b52",
+      "features": {
+        "aspect": "none",
+        "clause": "polar_question",
+        "modal": "shall",
+        "polarity": "positive",
+        "tense": "NA",
+        "voice": "active"
+      },
+      "generator_kc_ids": [
+        "gkc_modal_shall",
+        "gkc_polar_question"
+      ],
+      "grammar_regime": "seen",
+      "included_in_seen_rank_claim": true,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "pass",
+        "issue_tags": [],
+        "learner_overall": "pass",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "pass",
+        "platform_overall": "pass",
+        "primary_disposition": "usable_as_stored",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "pass"
+      },
+      "q_cardinality": 2,
+      "q_isolating": false,
+      "q_row": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "reference_accepted_answers": [
+        "Shall I carry"
+      ],
+      "reference_item_id": "candidate_gc_f86ecd83135f0b52_02",
+      "reference_prompt": "The bags are heavy, and you offer to help. Use \u201cshall\u201d and \u201ccarry\u201d to complete the question: _____ the bags for you?",
+      "reference_stem_reuse": "usable_starting_point_not_automatic_final_item",
+      "reference_target_answer": "Shall I carry the bags for you?",
+      "role": "seen_acquisition",
+      "selection_order": 6,
+      "selection_rationale": "Seen cell chosen outcome-free: audited usable first; then a Q-isolating modal anchor when available; otherwise greatest EGP source support, narrower Q row, and stable ID tie-breaks.",
+      "selection_role": "modal_shall",
+      "source_ids": [
+        "1741163709461x334143938995607360",
+        "1741163709462x251946416286091620",
+        "1741163711055x171614615026989500",
+        "1741163711055x245124661514512830"
+      ],
+      "source_support_count": 4
+    },
+    {
+      "acquisition_updates": true,
+      "cell_id": "gc_809d40d141731b61",
+      "features": {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "should",
+        "polarity": "positive",
+        "tense": "NA",
+        "voice": "active"
+      },
+      "generator_kc_ids": [
+        "gkc_modal_should"
+      ],
+      "grammar_regime": "seen",
+      "included_in_seen_rank_claim": true,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "pass",
+        "issue_tags": [],
+        "learner_overall": "pass",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "pass",
+        "platform_overall": "pass",
+        "primary_disposition": "usable_as_stored",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "pass"
+      },
+      "q_cardinality": 1,
+      "q_isolating": true,
+      "q_row": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "reference_accepted_answers": [
+        "should rest"
+      ],
+      "reference_item_id": "candidate_gc_809d40d141731b61_02",
+      "reference_prompt": "Your friend has a bad headache. Give this advice using the cue \u201crest\u201d: You ___ for a while.",
+      "reference_stem_reuse": "usable_starting_point_not_automatic_final_item",
+      "reference_target_answer": "You should rest for a while.",
+      "role": "seen_acquisition",
+      "selection_order": 7,
+      "selection_rationale": "Seen cell chosen outcome-free: audited usable first; then a Q-isolating modal anchor when available; otherwise greatest EGP source support, narrower Q row, and stable ID tie-breaks.",
+      "selection_role": "modal_should",
+      "source_ids": [
+        "1741163711286x540510273565590660"
+      ],
+      "source_support_count": 1
+    },
+    {
+      "acquisition_updates": true,
+      "cell_id": "gc_16d9f6e33f0517ec",
+      "features": {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "will",
+        "polarity": "positive",
+        "tense": "NA",
+        "voice": "active"
+      },
+      "generator_kc_ids": [
+        "gkc_modal_will"
+      ],
+      "grammar_regime": "seen",
+      "included_in_seen_rank_claim": true,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "pass",
+        "issue_tags": [],
+        "learner_overall": "pass",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "pass",
+        "platform_overall": "pass",
+        "primary_disposition": "usable_as_stored",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "pass"
+      },
+      "q_cardinality": 1,
+      "q_isolating": true,
+      "q_row": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "reference_accepted_answers": [
+        "will carry"
+      ],
+      "reference_item_id": "unchanged_rescue_gc_16d9f6e33f0517ec_01",
+      "reference_prompt": "Ben has promised to help after lunch. Complete the sentence using the cue \"carry\": Ben ___ the bags to the car.",
+      "reference_stem_reuse": "usable_starting_point_not_automatic_final_item",
+      "reference_target_answer": "Ben will carry the bags to the car.",
+      "role": "seen_acquisition",
+      "selection_order": 8,
+      "selection_rationale": "Seen cell chosen outcome-free: audited usable first; then a Q-isolating modal anchor when available; otherwise greatest EGP source support, narrower Q row, and stable ID tie-breaks.",
+      "selection_role": "modal_will",
+      "source_ids": [
+        "1741163709453x838199776198091500",
+        "1741163709453x862696596004533200",
+        "1741163709462x760930219625040500",
+        "1741163709462x817785568593135600",
+        "1741163710609x441961301901162560"
+      ],
+      "source_support_count": 5
+    },
+    {
+      "acquisition_updates": true,
+      "cell_id": "gc_e7fef77abc10b5ba",
+      "features": {
+        "aspect": "perfect",
+        "clause": "declarative",
+        "modal": "would",
+        "polarity": "negative",
+        "tense": "NA",
+        "voice": "active"
+      },
+      "generator_kc_ids": [
+        "gkc_aspect_perfect",
+        "gkc_modal_would",
+        "gkc_negation"
+      ],
+      "grammar_regime": "seen",
+      "included_in_seen_rank_claim": true,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "pass",
+        "issue_tags": [],
+        "learner_overall": "pass",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "pass",
+        "platform_overall": "pass",
+        "primary_disposition": "usable_as_stored",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "pass"
+      },
+      "q_cardinality": 3,
+      "q_isolating": false,
+      "q_row": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "reference_accepted_answers": [
+        "she would not have found the house",
+        "she wouldn't have found the house"
+      ],
+      "reference_item_id": "candidate_gc_e7fef77abc10b5ba_01",
+      "reference_prompt": "Mia had a map, so she found the house. Without the map, [____]. (find)",
+      "reference_stem_reuse": "usable_starting_point_not_automatic_final_item",
+      "reference_target_answer": "she would not have found the house",
+      "role": "seen_acquisition",
+      "selection_order": 9,
+      "selection_rationale": "Seen cell chosen outcome-free: audited usable first; then a Q-isolating modal anchor when available; otherwise greatest EGP source support, narrower Q row, and stable ID tie-breaks.",
+      "selection_role": "modal_would",
+      "source_ids": [
+        "1741163711528x505214348491108700"
+      ],
+      "source_support_count": 1
+    },
+    {
+      "acquisition_updates": true,
+      "cell_id": "gc_bb4f472f992ab76b",
+      "features": {
+        "aspect": "none",
+        "clause": "imperative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "NA",
+        "voice": "active"
+      },
+      "generator_kc_ids": [
+        "gkc_imperative"
+      ],
+      "grammar_regime": "seen",
+      "included_in_seen_rank_claim": true,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "fail",
+        "issue_tags": [
+          "overconstrained_annotation_prompt",
+          "prompt_too_long",
+          "near_duplicate_item"
+        ],
+        "learner_overall": "concern",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "concern",
+        "platform_overall": "fail",
+        "primary_disposition": "technically_valid_but_artificial",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "concern"
+      },
+      "q_cardinality": 1,
+      "q_isolating": true,
+      "q_row": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "reference_accepted_answers": [
+        "Close the window"
+      ],
+      "reference_item_id": "cue_bounded_imperative_gc_bb4f472f992ab76b_02",
+      "reference_prompt": "The room is cold. Write a positive imperative. Rearrange the cue chunks \u201cthe window\u201d / \u201cClose\u201d and use all and only those chunks, exactly once each. Do not add, omit, or substitute anything. Do not use politeness markers, vocatives, pronouns, or adverbs. Begin your response with a capital letter: [________].",
+      "reference_stem_reuse": "redesign_required",
+      "reference_target_answer": "Close the window.",
+      "role": "seen_acquisition",
+      "selection_order": 10,
+      "selection_rationale": "The positive imperative is the only Q-isolating imperative row. Its existing prose UI is not reusable; the cell is retained as a mandatory redesign target.",
+      "selection_role": "imperative_anchor",
+      "source_ids": [
+        "1741163708330x197590942940390140",
+        "1741163708331x150409111220634050",
+        "1741163708331x843997098925344500",
+        "1741163708331x925040480671095300",
+        "1741163708332x482855077867024000",
+        "1741163708332x722525787055346800",
+        "1741163708332x731099780769310200",
+        "1741163708335x133935596064802990",
+        "1741163708335x356877701278647700",
+        "1741163708335x425762217604840600",
+        "1741163710612x402995334969845200",
+        "1741163716065x303072824467764300"
+      ],
+      "source_support_count": 12
+    },
+    {
+      "acquisition_updates": true,
+      "cell_id": "gc_4634bf1b005f7724",
+      "features": {
+        "aspect": "none",
+        "clause": "non_subject_wh_question",
+        "modal": "none",
+        "polarity": "negative",
+        "tense": "present",
+        "voice": "active"
+      },
+      "generator_kc_ids": [
+        "gkc_finite_present",
+        "gkc_negation",
+        "gkc_non_subject_wh_question"
+      ],
+      "grammar_regime": "seen",
+      "included_in_seen_rank_claim": true,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "pass",
+        "issue_tags": [],
+        "learner_overall": "pass",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "pass",
+        "platform_overall": "pass",
+        "primary_disposition": "usable_as_stored",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "pass"
+      },
+      "q_cardinality": 3,
+      "q_isolating": false,
+      "q_row": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "reference_accepted_answers": [
+        "Which door does the key not open?"
+      ],
+      "reference_item_id": "candidate_gc_4634bf1b005f7724_03",
+      "reference_prompt": "A key opens one of two doors but does not open the other. Complete the question using these words: which door / the key / not open. ___",
+      "reference_stem_reuse": "usable_starting_point_not_automatic_final_item",
+      "reference_target_answer": "Which door does the key not open?",
+      "role": "seen_acquisition",
+      "selection_order": 11,
+      "selection_rationale": "The only canonical non-subject-WH cell; mandatory for all-KC coverage.",
+      "selection_role": "non_subject_wh_rare_cell",
+      "source_ids": [
+        "1741163715031x643536767928989600"
+      ],
+      "source_support_count": 1
+    },
+    {
+      "acquisition_updates": true,
+      "cell_id": "gc_4601bed02c004e37",
+      "features": {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "past",
+        "voice": "active"
+      },
+      "generator_kc_ids": [
+        "gkc_finite_past"
+      ],
+      "grammar_regime": "seen",
+      "included_in_seen_rank_claim": true,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "pass",
+        "issue_tags": [],
+        "learner_overall": "pass",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "pass",
+        "platform_overall": "pass",
+        "primary_disposition": "usable_as_stored",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "pass"
+      },
+      "q_cardinality": 1,
+      "q_isolating": true,
+      "q_row": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "reference_accepted_answers": [
+        "walked"
+      ],
+      "reference_item_id": "candidate_gc_4601bed02c004e37_01",
+      "reference_prompt": "Yesterday, Mia needed some milk, so she ___ to the shop. (walk)",
+      "reference_stem_reuse": "usable_starting_point_not_automatic_final_item",
+      "reference_target_answer": "Mia walked to the shop.",
+      "role": "seen_acquisition",
+      "selection_order": 12,
+      "selection_rationale": "One-KC past anchor; reference row for the past aspect contrasts.",
+      "selection_role": "finite_past_anchor",
+      "source_ids": [
+        "1741163708330x678606711578176000",
+        "1741163709241x319054215667245100",
+        "1741163709241x531655376865656240",
+        "1741163710611x641365217086004500",
+        "1741163712320x420977783135077200",
+        "1741163712739x218459335733744320",
+        "1741163712739x256584265013129380",
+        "1741163712739x802711964566174800",
+        "1741163712740x655374430632900200",
+        "1741163712743x210897861318798620",
+        "1741163712743x286039195636331720",
+        "1741163712744x852310054287561700",
+        "1741163715818x484532724787778900",
+        "1741163716067x147000311893029860"
+      ],
+      "source_support_count": 14
+    },
+    {
+      "acquisition_updates": true,
+      "cell_id": "gc_d15de8b5658bd6a5",
+      "features": {
+        "aspect": "none",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "present",
+        "voice": "active"
+      },
+      "generator_kc_ids": [
+        "gkc_finite_present"
+      ],
+      "grammar_regime": "seen",
+      "included_in_seen_rank_claim": true,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "pass",
+        "issue_tags": [],
+        "learner_overall": "pass",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "pass",
+        "platform_overall": "pass",
+        "primary_disposition": "usable_as_stored",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "pass"
+      },
+      "q_cardinality": 1,
+      "q_isolating": true,
+      "q_row": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "reference_accepted_answers": [
+        "makes"
+      ],
+      "reference_item_id": "candidate_gc_d15de8b5658bd6a5_01",
+      "reference_prompt": "Every morning, the boy ___ his bed before breakfast. (make)",
+      "reference_stem_reuse": "usable_starting_point_not_automatic_final_item",
+      "reference_target_answer": "The boy makes his bed before breakfast.",
+      "role": "seen_acquisition",
+      "selection_order": 13,
+      "selection_rationale": "One-KC present anchor.",
+      "selection_role": "finite_present_anchor",
+      "source_ids": [
+        "1741163708330x678606711578176000",
+        "1741163709472x588484642713553900",
+        "1741163709666x869572460282350800",
+        "1741163710385x337673798370062850",
+        "1741163710385x880822948927010600",
+        "1741163710387x670189134684302700",
+        "1741163710396x753443551652472000",
+        "1741163710611x434796619294706160",
+        "1741163710611x575620351539563000",
+        "1741163710611x641365217086004500",
+        "1741163710612x901003785079941200",
+        "1741163710613x336970391866066940",
+        "1741163710618x426930291367799940",
+        "1741163713626x133661684035994100",
+        "1741163713626x486355013779909760",
+        "1741163714098x430400984906472960",
+        "1741163714099x349717141784129860",
+        "1741163714104x425497348594013000",
+        "1741163715607x526138276437947400",
+        "1741163715607x671128268905876200",
+        "1741163715608x423925668920691600",
+        "1741163715608x515455874028492200",
+        "1741163715820x418754553525479940",
+        "1741163716064x592610604587924000",
+        "1741163716065x880428316136173400",
+        "1741163716067x147000311893029860"
+      ],
+      "source_support_count": 26
+    },
+    {
+      "acquisition_updates": true,
+      "cell_id": "gc_2d6eb4f93cba4c6b",
+      "features": {
+        "aspect": "perfect",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "past",
+        "voice": "active"
+      },
+      "generator_kc_ids": [
+        "gkc_aspect_perfect",
+        "gkc_finite_past"
+      ],
+      "grammar_regime": "seen",
+      "included_in_seen_rank_claim": true,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "pass",
+        "issue_tags": [],
+        "learner_overall": "pass",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "pass",
+        "platform_overall": "pass",
+        "primary_disposition": "usable_as_stored",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "pass"
+      },
+      "q_cardinality": 2,
+      "q_isolating": false,
+      "q_row": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "reference_accepted_answers": [
+        "had left"
+      ],
+      "reference_item_id": "candidate_gc_2d6eb4f93cba4c6b_03",
+      "reference_prompt": "The children arrived at the kitchen at noon. Their father pointed to the empty table and said, \u201cBy the time you arrived, your mother ______.\u201d Use the verb \u201cleave.\u201d",
+      "reference_stem_reuse": "usable_starting_point_not_automatic_final_item",
+      "reference_target_answer": "Your mother had left.",
+      "role": "seen_acquisition",
+      "selection_order": 14,
+      "selection_rationale": "Differs from the past anchor by perfect activation.",
+      "selection_role": "past_perfect_contrast",
+      "source_ids": [
+        "1741163712332x475879228502143170",
+        "1741163712333x761860144866407300",
+        "1741163712335x467440951326574700",
+        "1741163712739x551343528482470600"
+      ],
+      "source_support_count": 4
+    },
+    {
+      "acquisition_updates": true,
+      "cell_id": "gc_44ff4acdb263024b",
+      "features": {
+        "aspect": "progressive",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "past",
+        "voice": "active"
+      },
+      "generator_kc_ids": [
+        "gkc_aspect_progressive",
+        "gkc_finite_past"
+      ],
+      "grammar_regime": "seen",
+      "included_in_seen_rank_claim": true,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "pass",
+        "issue_tags": [],
+        "learner_overall": "pass",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "pass",
+        "platform_overall": "pass",
+        "primary_disposition": "usable_as_stored",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "pass"
+      },
+      "q_cardinality": 2,
+      "q_isolating": false,
+      "q_row": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "reference_accepted_answers": [
+        "was cooking"
+      ],
+      "reference_item_id": "candidate_gc_44ff4acdb263024b_01",
+      "reference_prompt": "When I looked into the kitchen, Sam ______ dinner. Use the verb \u201ccook.\u201d",
+      "reference_stem_reuse": "usable_starting_point_not_automatic_final_item",
+      "reference_target_answer": "Sam was cooking dinner.",
+      "role": "seen_acquisition",
+      "selection_order": 15,
+      "selection_rationale": "Differs from the past anchor by progressive activation.",
+      "selection_role": "past_progressive_contrast",
+      "source_ids": [
+        "1741163712321x293020264590759800",
+        "1741163712321x614372617735755500",
+        "1741163712327x699835533298048600"
+      ],
+      "source_support_count": 3
+    },
+    {
+      "acquisition_updates": true,
+      "cell_id": "gc_fcb801c76c95c7bf",
+      "features": {
+        "aspect": "progressive",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "past",
+        "voice": "passive"
+      },
+      "generator_kc_ids": [
+        "gkc_aspect_progressive",
+        "gkc_be_passive",
+        "gkc_finite_past"
+      ],
+      "grammar_regime": "seen",
+      "included_in_seen_rank_claim": true,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "pass",
+        "issue_tags": [],
+        "learner_overall": "pass",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "pass",
+        "platform_overall": "pass",
+        "primary_disposition": "usable_as_stored",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "pass"
+      },
+      "q_cardinality": 3,
+      "q_isolating": false,
+      "q_row": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "reference_accepted_answers": [
+        "was being painted"
+      ],
+      "reference_item_id": "candidate_gc_fcb801c76c95c7bf_03",
+      "reference_prompt": "The workers started painting the kitchen at nine. At ten, the kitchen _____. (paint)",
+      "reference_stem_reuse": "usable_starting_point_not_automatic_final_item",
+      "reference_target_answer": "The kitchen was being painted.",
+      "role": "seen_acquisition",
+      "selection_order": 16,
+      "selection_rationale": "Differs from the active past-progressive row by passive activation; also compresses past/progressive/passive coverage in the pilot.",
+      "selection_role": "past_progressive_passive_contrast",
+      "source_ids": [
+        "1741163712049x932315866168376600"
+      ],
+      "source_support_count": 1
+    },
+    {
+      "acquisition_updates": true,
+      "cell_id": "gc_9d70af80c0843115",
+      "features": {
+        "aspect": "perfect",
+        "clause": "declarative",
+        "modal": "none",
+        "polarity": "negative",
+        "tense": "past",
+        "voice": "passive"
+      },
+      "generator_kc_ids": [
+        "gkc_aspect_perfect",
+        "gkc_be_passive",
+        "gkc_finite_past",
+        "gkc_negation"
+      ],
+      "grammar_regime": "seen",
+      "included_in_seen_rank_claim": true,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "pass",
+        "issue_tags": [],
+        "learner_overall": "pass",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "pass",
+        "platform_overall": "pass",
+        "primary_disposition": "usable_as_stored",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "pass"
+      },
+      "q_cardinality": 4,
+      "q_isolating": false,
+      "q_row": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "reference_accepted_answers": [
+        "had not been closed",
+        "hadn't been closed"
+      ],
+      "reference_item_id": "candidate_gc_9d70af80c0843115_01",
+      "reference_prompt": "The door was still open when we arrived. Complete the sentence using \u201cclose\u201d: The door [____] before we arrived.",
+      "reference_stem_reuse": "usable_starting_point_not_automatic_final_item",
+      "reference_target_answer": "The door had not been closed before we arrived.",
+      "role": "seen_acquisition",
+      "selection_order": 17,
+      "selection_rationale": "Four-KC complex row; with the aspect and voice contrasts it identifies negation without excluding complex measurement.",
+      "selection_role": "complex_negation_contrast",
+      "source_ids": [
+        "1741163712050x954476408686193200"
+      ],
+      "source_support_count": 1
+    },
+    {
+      "acquisition_updates": true,
+      "cell_id": "gc_08d90a35b669ed28",
+      "features": {
+        "aspect": "perfect",
+        "clause": "polar_question",
+        "modal": "none",
+        "polarity": "positive",
+        "tense": "present",
+        "voice": "active"
+      },
+      "generator_kc_ids": [
+        "gkc_aspect_perfect",
+        "gkc_finite_present",
+        "gkc_polar_question"
+      ],
+      "grammar_regime": "seen",
+      "included_in_seen_rank_claim": true,
+      "item_audit": {
+        "answer_determinacy": "pass",
+        "format_plausibility": "pass",
+        "issue_tags": [],
+        "learner_overall": "pass",
+        "lexical_context_accessibility": "pass",
+        "measurement_purity": "pass",
+        "pedagogical_plausibility": "pass",
+        "platform_overall": "pass",
+        "primary_disposition": "usable_as_stored",
+        "response_space_fairness": "pass",
+        "task_comprehensibility": "pass"
+      },
+      "q_cardinality": 3,
+      "q_isolating": false,
+      "q_row": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "reference_accepted_answers": [
+        "Has Leo finished his homework?",
+        "Has Leo finished his homework"
+      ],
+      "reference_item_id": "candidate_gc_08d90a35b669ed28_02",
+      "reference_prompt": "Leo started his homework after dinner. Ask whether it is complete now, using \u201cLeo\u201d and \u201cfinish his homework\u201d: [____]",
+      "reference_stem_reuse": "usable_starting_point_not_automatic_final_item",
+      "reference_target_answer": "Has Leo finished his homework?",
+      "role": "seen_acquisition",
+      "selection_order": 18,
+      "selection_rationale": "Adds a non-modal polar-question contrast in a present-perfect context.",
+      "selection_role": "present_perfect_polar_contrast",
+      "source_ids": [
+        "1741163715033x444139630968705800"
+      ],
+      "source_support_count": 1
+    }
+  ],
+  "seen_rank_claim": {
+    "cell_count": 18,
+    "exact_determinant": -1,
+    "exact_rank": 18,
+    "held_out_cells_excluded": true
+  },
+  "selection_schema": "matched_format_selected_cells_v1"
+}

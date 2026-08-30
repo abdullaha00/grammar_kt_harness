@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv02_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "Can Nora repair the lamp?",
+  "cell_id": "gc_edcc8d38860ff41d",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv02_g02_cloze",
+      "context": "The lamp is broken. You want to know whether Nora is able to fix it.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]]",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Write the complete question using the words Nora, can, repair, and the lamp.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Can Nora repair the lamp?"
+        ],
+        "completed_target": "Can Nora repair the lamp?",
+        "correct_choice_id": null,
+        "target_response": "Can Nora repair the lamp?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv02_g02_dialog",
+      "context": "Alex wants to know whether Nora is able to fix a broken lamp.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Alex: This lamp is broken.",
+          "Sam: Nora is good at fixing things."
+        ],
+        "incomplete_turn_template": "Alex: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Alex's question.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Can Nora repair the lamp?"
+        ],
+        "completed_target": "Can Nora repair the lamp?",
+        "correct_choice_id": null,
+        "target_response": "Can Nora repair the lamp?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv02_g02_mcq",
+      "context": "The lamp is broken. You want to know whether Nora is able to repair it.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Adds do-support instead of placing the modal can before the subject.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses an inflected verb after can instead of the base form repair.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Keeps declarative word order instead of placing can before the subject.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Does Nora can repair the lamp?"
+          },
+          {
+            "id": "B",
+            "text": "Can Nora repair the lamp?"
+          },
+          {
+            "id": "C",
+            "text": "Can Nora repairs the lamp?"
+          },
+          {
+            "id": "D",
+            "text": "Nora can repair the lamp?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly asks about Nora's ability?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the correct question.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Can Nora repair the lamp?",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv02_g02_xform",
+      "context": "The lamp is broken, and you want to ask whether Nora is able to fix it.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Nora is able to repair the lamp.",
+        "stem": null,
+        "transformation_cue": "Begin with: Can"
+      },
+      "instruction": "Change the statement into a question about Nora's ability. Use can and keep all the other information.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Can Nora repair the lamp?"
+        ],
+        "completed_target": "Can Nora repair the lamp?",
+        "correct_choice_id": null,
+        "target_response": "Can Nora repair the lamp?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Ask whether Nora has the ability to repair the lamp.",
+    "main_verb_lemma": "repair",
+    "object_head": "lamp",
+    "participants": [
+      "Nora",
+      "the person asking"
+    ],
+    "situation_summary": "A lamp is broken, and someone wants to know whether Nora is able to repair it.",
+    "time_anchor": "now"
+  },
+  "semantic_variant_index": 2
+}

@@ -1,0 +1,158 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_sv01_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "The road was being repaired at noon yesterday.",
+  "cell_id": "gc_fcb801c76c95c7bf",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_sv01_g03_cloze",
+      "context": "The crew started work at eleven yesterday and finished at two.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "The road [[RESPONSE]] at noon yesterday. (repair)",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using the verb in brackets.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "was being repaired"
+        ],
+        "completed_target": "The road was being repaired at noon yesterday.",
+        "correct_choice_id": null,
+        "target_response": "was being repaired"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_sv01_g03_dialog",
+      "context": "Two colleagues are discussing yesterday's roadworks.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Maya: Why was the street closed yesterday?",
+          "Leo: A repair crew worked there from eleven until two.",
+          "Maya: What was happening at noon?"
+        ],
+        "incomplete_turn_template": "Leo: The road [[RESPONSE]].",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the final reply.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "was being repaired at noon yesterday"
+        ],
+        "completed_target": "The road was being repaired at noon yesterday.",
+        "correct_choice_id": null,
+        "target_response": "was being repaired at noon yesterday"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_sv01_g03_mcq",
+      "context": "The repair crew worked on the road from eleven until two yesterday. The time in question is noon.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses a past passive but omits the progressive construction, presenting the repair as a completed event.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses present finite tense instead of past finite tense.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Omits passive BE and the lexical past participle, incorrectly making the road the agent of the repair.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "The road was repaired at noon yesterday."
+          },
+          {
+            "id": "B",
+            "text": "The road was being repaired at noon yesterday."
+          },
+          {
+            "id": "C",
+            "text": "The road is being repaired at noon yesterday."
+          },
+          {
+            "id": "D",
+            "text": "The road was repairing at noon yesterday."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence describes the work in progress at that time?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that best describes the situation.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "The road was being repaired at noon yesterday.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_sv01_g03_xform",
+      "context": "Describe what was happening to the road rather than what the workers were doing.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Workers were repairing the road at noon yesterday.",
+        "stem": null,
+        "transformation_cue": "Begin with “The road” and use the verb “repair.”"
+      },
+      "instruction": "Rewrite the sentence to focus on the road. Keep the same meaning and time.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "The road was being repaired at noon yesterday."
+        ],
+        "completed_target": "The road was being repaired at noon yesterday.",
+        "correct_choice_id": null,
+        "target_response": "The road was being repaired at noon yesterday."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Describe the work in progress on the road at a specific past time.",
+    "main_verb_lemma": "repair",
+    "object_head": "road",
+    "participants": [
+      "road repair crew",
+      "road"
+    ],
+    "situation_summary": "A road repair crew was working at noon yesterday.",
+    "time_anchor": "at noon yesterday"
+  },
+  "semantic_variant_index": 1
+}

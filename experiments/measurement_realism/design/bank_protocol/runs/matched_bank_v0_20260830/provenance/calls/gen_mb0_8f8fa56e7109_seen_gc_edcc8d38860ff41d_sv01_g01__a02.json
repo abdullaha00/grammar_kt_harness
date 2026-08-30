@@ -1,0 +1,14 @@
+{
+  "attempt_id": 2,
+  "evidence_path": "raw/generation/gen_mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01/attempt_02",
+  "input_sha256": "642f45cb496d86c872a063188ef964c4e7b0daf97050790f8a83063a852c28ed",
+  "model": "gpt-5.6-sol",
+  "output_schema_sha256": "4aaab72ba428d16a0f5379a151d1ec43eefc7ec55de139b67c1210deaed6acf5",
+  "parsed_output_sha256": null,
+  "prompt_sha256": "32a470acff39ca79a2133eacb6212f10b7c1fdd7b36ba4f93bc20f684d4f249e",
+  "raw_output_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+  "reasoning_effort": "medium",
+  "request_id": "gen_mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01",
+  "stage": "generation",
+  "status": "technical_failure"
+}

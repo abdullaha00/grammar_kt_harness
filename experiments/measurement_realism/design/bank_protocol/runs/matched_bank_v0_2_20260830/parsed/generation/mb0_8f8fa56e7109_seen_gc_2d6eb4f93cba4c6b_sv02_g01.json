@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv02_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "Maya had locked the office before the guard arrived.",
+  "cell_id": "gc_2d6eb4f93cba4c6b",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv02_g01_cloze",
+      "context": "The guard reached the building at nine. By then, the office was already secure.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Maya [[RESPONSE]] the office before the guard arrived.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence with the correct form of “lock.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "had locked"
+        ],
+        "completed_target": "Maya had locked the office before the guard arrived.",
+        "correct_choice_id": null,
+        "target_response": "had locked"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv02_g01_dialog",
+      "context": "The guard reached the building at nine and found the office secure.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Guard: Was the office still open when I arrived?",
+          "Maya: No. I secured it earlier."
+        ],
+        "incomplete_turn_template": "Maya: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Maya's reply with one sentence using “lock.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Maya had locked the office before the guard arrived."
+        ],
+        "completed_target": "Maya had locked the office before the guard arrived.",
+        "correct_choice_id": null,
+        "target_response": "Maya had locked the office before the guard arrived."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv02_g01_mcq",
+      "context": "Maya secured the office first. The guard arrived later.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses present finite “has” instead of selecting the past finite form “had.”",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses the base form “lock” instead of the participle “locked” after perfect “had.”",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses “was” instead of perfect “had” and therefore fails to construct the past perfect.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Maya had locked the office before the guard arrived."
+          },
+          {
+            "id": "B",
+            "text": "Maya has locked the office before the guard arrived."
+          },
+          {
+            "id": "C",
+            "text": "Maya had lock the office before the guard arrived."
+          },
+          {
+            "id": "D",
+            "text": "Maya was locked the office before the guard arrived."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly shows that Maya's action was complete before the guard's arrival?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly reports what happened.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "Maya had locked the office before the guard arrived.",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv02_g01_xform",
+      "context": "Use all the information given without changing the participants or action.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Maya locked the office. Later, the guard arrived.",
+        "stem": null,
+        "transformation_cue": "Begin with “Maya,” use “before,” and use the verb “lock.”"
+      },
+      "instruction": "Combine the two statements into one sentence. Show clearly which event happened first.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Maya had locked the office before the guard arrived."
+        ],
+        "completed_target": "Maya had locked the office before the guard arrived.",
+        "correct_choice_id": null,
+        "target_response": "Maya had locked the office before the guard arrived."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "State that Maya completed securing the office before the guard's arrival.",
+    "main_verb_lemma": "lock",
+    "object_head": "office",
+    "participants": [
+      "Maya",
+      "the guard"
+    ],
+    "situation_summary": "Maya secured an office, and a guard arrived later.",
+    "time_anchor": "before the guard arrived"
+  },
+  "semantic_variant_index": 2
+}

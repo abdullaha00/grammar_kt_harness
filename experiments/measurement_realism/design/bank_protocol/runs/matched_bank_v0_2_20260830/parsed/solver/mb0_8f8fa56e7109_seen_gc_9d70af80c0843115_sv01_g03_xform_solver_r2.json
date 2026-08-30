@@ -1,0 +1,17 @@
+{
+  "ambiguity_explanation": "",
+  "batch_id": "solver_r03_rep2_sentence_transformation_b01",
+  "instruction_understanding": "Combine the statements beginning with The package and using deliver and before.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g03_xform",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": false,
+  "other_reasonable_responses": [],
+  "reasonable_unkeyed_responses": [],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g03_xform_solver_r2",
+  "submitted_response": "The package had not been delivered before the office closed.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

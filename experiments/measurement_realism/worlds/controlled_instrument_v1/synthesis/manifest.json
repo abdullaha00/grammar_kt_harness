@@ -1,0 +1,20 @@
+{
+  "aggregate_results_sha256": "06da0a0c2e297124234ad433caa0fd0d6f7924d5b13b707f4fed8ded9a81bfaf",
+  "artifacts": {
+    "report.md": "4c01f46fb9f534d55067951a2088cff36245778e2d351642c4f8d7ee30ce49e7",
+    "results.json": "55ac72dfdaf739597451e5766edb399690b780bbfa9499474c9142cf919e844a"
+  },
+  "content_free_instrument": true,
+  "controlled_scenario": true,
+  "implementation": {
+    "build_synthesis.py": "81e41c06c517cdb1e988842be24948daff8dc117903f484cf4e51eb336559af7",
+    "synthesis.schema.json": "95760a1e19f26a4a654312978879f20f27a25a898c3cb0a9b6ea1e4115cb4386",
+    "test_build_synthesis.py": "afbc3216838f003bdbcb3bbccdc95251a9a8d93ceed2452a5fe2983c2852010d"
+  },
+  "release_eligible": false,
+  "scenario_kind": "controlled_instrument_scaffold",
+  "schema_version": "controlled_world_synthesis_manifest_v1",
+  "study_plan_sha256": "e3d50e10001b7dff8042b002aba04b595bb8d95e496bd66beebae08e4d678667",
+  "synthesis_kind": "posthoc_controlled_structural_evidence_synthesis",
+  "synthesis_timing": "post_response_derived_summary"
+}

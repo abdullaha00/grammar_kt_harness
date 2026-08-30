@@ -1,0 +1,3212 @@
+{
+  "audit_id": "full_v1_generator_kc_structural_audit_v1",
+  "scope": "Deterministic K*/Q*/prompt diagnostics plus transparent regex heuristics. No learner outcomes or oracle trajectories are read.",
+  "judgment_boundary": "This JSON contains computed diagnostics only. Any linguistic or pedagogical interpretation in the companion report is non-human Codex analysis, not expert or learner evidence.",
+  "dataset": "data/grammar_kt_full_v1",
+  "input_sha256": {
+    "cells": "a6bf8041e93fdea21d0ba7b318a24cb64610a6064517a2f7fbbbf3aca2fa4e1a",
+    "kcs": "f3b308dcda7c11886e1dc67476dbe6adbcb53b8676b643c62d226fe68cfe0355",
+    "items": "46e2fcbd723d11f6b30ecdd197fb05c39f04f7b0fc8f61e2183ffb8fb7110011",
+    "q_matrix": "b6df582478f05976ceb200da6edc2b31fb305da64498e5ddb5f473a9459bf5bf",
+    "kc_construction": "cb32eecbb128ecd92c949cb1d1d925de36b5a03e77f875e704d8c57557acfbdb",
+    "measurement_audit": "ba087772a4b605d5efdbbb0baf87aa1cb3c3753cbdfeb0051ef0578130bdea74"
+  },
+  "frozen_provenance_cross_checks": {
+    "construction_generator_kc_count": 18,
+    "construction_outcomes_read": false,
+    "measurement_status": "PASS",
+    "measurement_q_rank": 18
+  },
+  "counts": {
+    "canonical_cells": 75,
+    "items": 113,
+    "generator_kcs": 18,
+    "q_edges": 269,
+    "q_row_width_distribution": {
+      "1": 16,
+      "2": 47,
+      "3": 41,
+      "4": 9
+    },
+    "items_with_one_kc": 16,
+    "items_with_multiple_kcs": 97,
+    "all_item_format_distribution": {
+      "controlled_production": 113
+    },
+    "all_surface_prompt_style_distribution": {
+      "bounded_chunk_reordering": 4,
+      "completion_or_cloze": 85,
+      "explicit_metalanguage_production": 11,
+      "question_formation": 13
+    },
+    "all_campaign_distribution": {
+      "cue_bounded_imperative_production_v1": 4,
+      "default_campaign": 89,
+      "explicit_construction_determinacy_intervention_v1": 9,
+      "full_v1_validator_named_answer_packaging_correction_v1": 1,
+      "unchanged_prompt_zero_coverage_rescue_v1": 10
+    }
+  },
+  "linear_algebra": {
+    "rank": 18,
+    "raw_singular_values": [
+      9.48740367,
+      5.53115448,
+      5.17873971,
+      4.76020158,
+      4.59189586,
+      3.69076715,
+      3.46437308,
+      2.83352184,
+      2.64517033,
+      2.54137027,
+      2.31894993,
+      2.23569683,
+      2.20703094,
+      2.02656659,
+      1.96857941,
+      1.95233055,
+      1.46806499,
+      1.23580377
+    ],
+    "raw_condition_number": 7.67711175,
+    "column_normalized_singular_values": [
+      1.65893091,
+      1.18903632,
+      1.1265448,
+      1.09542503,
+      1.07290376,
+      1.02825343,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.92082203,
+      0.83611169,
+      0.74241162,
+      0.71185483,
+      0.64840205,
+      0.3623818
+    ],
+    "column_normalized_condition_number": 4.5778538,
+    "interpretation_limit": "Full rank and finite condition numbers show algebraic column independence on this bank; they do not establish cognitive independence, content validity, or pedagogical transfer."
+  },
+  "pair_relation_distribution": {
+    "crossed": 46,
+    "disjoint": 105,
+    "right_nested_in_left": 2
+  },
+  "pairs_without_two_sided_contrast": [
+    {
+      "left_kc_id": "gkc_finite_present",
+      "right_kc_id": "gkc_non_subject_wh_question",
+      "left_only_items": 28,
+      "right_only_items": 0,
+      "cooccurring_items": 2,
+      "jaccard": 0.066667,
+      "relation": "right_nested_in_left",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_negation",
+      "right_kc_id": "gkc_non_subject_wh_question",
+      "left_only_items": 47,
+      "right_only_items": 0,
+      "cooccurring_items": 2,
+      "jaccard": 0.040816,
+      "relation": "right_nested_in_left",
+      "a_only_b_only_and_a_plus_b": false
+    }
+  ],
+  "pairs_with_a_only_b_only_and_a_plus_b": 46,
+  "per_kc": [
+    {
+      "kc_id": "gkc_aspect_perfect",
+      "name": "perfect construction",
+      "family": "declared_operation",
+      "activation_rule": {
+        "cell": {
+          "aspect": [
+            "perfect",
+            "perfect_progressive"
+          ]
+        }
+      },
+      "item_support": 42,
+      "cell_support_from_q": 30,
+      "declared_cell_support": 30,
+      "isolating_item_count": 0,
+      "isolating_item_ids": [],
+      "q_width_distribution": {
+        "2": 13,
+        "3": 22,
+        "4": 7
+      },
+      "cooccurring_kcs": {
+        "gkc_aspect_progressive": 9,
+        "gkc_be_passive": 6,
+        "gkc_finite_past": 8,
+        "gkc_finite_present": 10,
+        "gkc_modal_can": 2,
+        "gkc_modal_could": 2,
+        "gkc_modal_may": 3,
+        "gkc_modal_might": 3,
+        "gkc_modal_must": 3,
+        "gkc_modal_should": 2,
+        "gkc_modal_will": 6,
+        "gkc_modal_would": 3,
+        "gkc_negation": 20,
+        "gkc_polar_question": 1
+      },
+      "nested_in_kcs": [],
+      "contains_nested_kcs": [],
+      "campaign_distribution": {
+        "default_campaign": 35,
+        "explicit_construction_determinacy_intervention_v1": 2,
+        "unchanged_prompt_zero_coverage_rescue_v1": 5
+      },
+      "format_distribution": {
+        "controlled_production": 42
+      },
+      "surface_prompt_style_distribution": {
+        "completion_or_cloze": 39,
+        "explicit_metalanguage_production": 2,
+        "question_formation": 1
+      },
+      "explicit_prompt_cue_patterns": [
+        "\\bperfect\\b"
+      ],
+      "items_with_explicit_prompt_cue": 2,
+      "explicit_prompt_cue_fraction": 0.047619,
+      "active_cell_feature_values": {
+        "tense": [
+          "NA",
+          "past",
+          "present"
+        ],
+        "aspect": [
+          "perfect",
+          "perfect_progressive"
+        ],
+        "voice": [
+          "active",
+          "passive"
+        ],
+        "polarity": [
+          "negative",
+          "positive"
+        ],
+        "clause": [
+          "declarative",
+          "polar_question"
+        ],
+        "modal": [
+          "can",
+          "could",
+          "may",
+          "might",
+          "must",
+          "none",
+          "should",
+          "will",
+          "would"
+        ]
+      },
+      "finite_operator_family_by_cell": {
+        "central_modal:can": 1,
+        "central_modal:could": 2,
+        "central_modal:may": 2,
+        "central_modal:might": 2,
+        "central_modal:must": 2,
+        "central_modal:should": 2,
+        "central_modal:will": 4,
+        "central_modal:would": 2,
+        "perfect_HAVE": 13
+      },
+      "finite_operator_family_by_item": {
+        "central_modal:can": 2,
+        "central_modal:could": 2,
+        "central_modal:may": 3,
+        "central_modal:might": 3,
+        "central_modal:must": 3,
+        "central_modal:should": 2,
+        "central_modal:will": 6,
+        "central_modal:would": 3,
+        "perfect_HAVE": 18
+      },
+      "active_cell_ids_sha256": "64431427897e117c4fd97948898c2f786ade3198002082da89c5ee3c8734fdcb",
+      "q_column_sha256": "3e1c3c6671e2f388779d0cea5cbb6fdade7492226ecef3b3c702a14a6318ffde"
+    },
+    {
+      "kc_id": "gkc_aspect_progressive",
+      "name": "progressive construction",
+      "family": "declared_operation",
+      "activation_rule": {
+        "cell": {
+          "aspect": [
+            "progressive",
+            "perfect_progressive"
+          ]
+        }
+      },
+      "item_support": 29,
+      "cell_support_from_q": 17,
+      "declared_cell_support": 17,
+      "isolating_item_count": 0,
+      "isolating_item_ids": [],
+      "q_width_distribution": {
+        "2": 8,
+        "3": 15,
+        "4": 6
+      },
+      "cooccurring_kcs": {
+        "gkc_aspect_perfect": 9,
+        "gkc_be_passive": 6,
+        "gkc_finite_past": 9,
+        "gkc_finite_present": 11,
+        "gkc_modal_shall": 1,
+        "gkc_modal_should": 1,
+        "gkc_modal_will": 7,
+        "gkc_negation": 12
+      },
+      "nested_in_kcs": [],
+      "contains_nested_kcs": [],
+      "campaign_distribution": {
+        "default_campaign": 20,
+        "explicit_construction_determinacy_intervention_v1": 7,
+        "unchanged_prompt_zero_coverage_rescue_v1": 2
+      },
+      "format_distribution": {
+        "controlled_production": 29
+      },
+      "surface_prompt_style_distribution": {
+        "completion_or_cloze": 22,
+        "explicit_metalanguage_production": 7
+      },
+      "explicit_prompt_cue_patterns": [
+        "\\bprogressive\\b",
+        "\\bcontinuous\\b"
+      ],
+      "items_with_explicit_prompt_cue": 7,
+      "explicit_prompt_cue_fraction": 0.241379,
+      "active_cell_feature_values": {
+        "tense": [
+          "NA",
+          "past",
+          "present"
+        ],
+        "aspect": [
+          "perfect_progressive",
+          "progressive"
+        ],
+        "voice": [
+          "active",
+          "passive"
+        ],
+        "polarity": [
+          "negative",
+          "positive"
+        ],
+        "clause": [
+          "declarative"
+        ],
+        "modal": [
+          "none",
+          "shall",
+          "should",
+          "will"
+        ]
+      },
+      "finite_operator_family_by_cell": {
+        "BE": 7,
+        "central_modal:shall": 1,
+        "central_modal:should": 1,
+        "central_modal:will": 4,
+        "perfect_HAVE": 4
+      },
+      "finite_operator_family_by_item": {
+        "BE": 14,
+        "central_modal:shall": 1,
+        "central_modal:should": 1,
+        "central_modal:will": 7,
+        "perfect_HAVE": 6
+      },
+      "active_cell_ids_sha256": "ba1b470c3649644cdae4e48f1b95871df3adc5b0c4fffd955c86b54bc3aca394",
+      "q_column_sha256": "5ef614050d18492905e1f6b77735dae9ac0fa8a524dfb94b3201f4fb47f64ddd"
+    },
+    {
+      "kc_id": "gkc_be_passive",
+      "name": "canonical BE-passive",
+      "family": "declared_operation",
+      "activation_rule": {
+        "cell": {
+          "voice": "passive"
+        }
+      },
+      "item_support": 22,
+      "cell_support_from_q": 13,
+      "declared_cell_support": 13,
+      "isolating_item_count": 0,
+      "isolating_item_ids": [],
+      "q_width_distribution": {
+        "2": 5,
+        "3": 12,
+        "4": 5
+      },
+      "cooccurring_kcs": {
+        "gkc_aspect_perfect": 6,
+        "gkc_aspect_progressive": 6,
+        "gkc_finite_past": 7,
+        "gkc_finite_present": 11,
+        "gkc_modal_may": 2,
+        "gkc_modal_must": 2,
+        "gkc_negation": 10
+      },
+      "nested_in_kcs": [],
+      "contains_nested_kcs": [],
+      "campaign_distribution": {
+        "default_campaign": 22
+      },
+      "format_distribution": {
+        "controlled_production": 22
+      },
+      "surface_prompt_style_distribution": {
+        "completion_or_cloze": 22
+      },
+      "explicit_prompt_cue_patterns": [
+        "\\bpassive\\b"
+      ],
+      "items_with_explicit_prompt_cue": 0,
+      "explicit_prompt_cue_fraction": 0.0,
+      "active_cell_feature_values": {
+        "tense": [
+          "NA",
+          "past",
+          "present"
+        ],
+        "aspect": [
+          "none",
+          "perfect",
+          "progressive"
+        ],
+        "voice": [
+          "passive"
+        ],
+        "polarity": [
+          "negative",
+          "positive"
+        ],
+        "clause": [
+          "declarative"
+        ],
+        "modal": [
+          "may",
+          "must",
+          "none"
+        ]
+      },
+      "finite_operator_family_by_cell": {
+        "BE": 7,
+        "central_modal:may": 1,
+        "central_modal:must": 1,
+        "perfect_HAVE": 4
+      },
+      "finite_operator_family_by_item": {
+        "BE": 12,
+        "central_modal:may": 2,
+        "central_modal:must": 2,
+        "perfect_HAVE": 6
+      },
+      "active_cell_ids_sha256": "f48061b32090f2aabe8c8119a33ae03b4bcabaf33d778bbd0cb4467e06b4afef",
+      "q_column_sha256": "4ad6d86d3e54d6d8c20bff8ff75752cf7d8154be2d2f1bf3ebe744d31989470c"
+    },
+    {
+      "kc_id": "gkc_finite_past",
+      "name": "past finite-form selection",
+      "family": "declared_operation",
+      "activation_rule": {
+        "cell": {
+          "tense": "past"
+        }
+      },
+      "item_support": 20,
+      "cell_support_from_q": 13,
+      "declared_cell_support": 13,
+      "isolating_item_count": 2,
+      "isolating_item_ids": [
+        "candidate_gc_4601bed02c004e37_01",
+        "candidate_gc_4601bed02c004e37_03"
+      ],
+      "q_width_distribution": {
+        "1": 2,
+        "2": 6,
+        "3": 9,
+        "4": 3
+      },
+      "cooccurring_kcs": {
+        "gkc_aspect_perfect": 8,
+        "gkc_aspect_progressive": 9,
+        "gkc_be_passive": 7,
+        "gkc_negation": 9
+      },
+      "nested_in_kcs": [],
+      "contains_nested_kcs": [],
+      "campaign_distribution": {
+        "default_campaign": 18,
+        "explicit_construction_determinacy_intervention_v1": 2
+      },
+      "format_distribution": {
+        "controlled_production": 20
+      },
+      "surface_prompt_style_distribution": {
+        "completion_or_cloze": 18,
+        "explicit_metalanguage_production": 2
+      },
+      "explicit_prompt_cue_patterns": [
+        "\\bpast\\b"
+      ],
+      "items_with_explicit_prompt_cue": 3,
+      "explicit_prompt_cue_fraction": 0.15,
+      "active_cell_feature_values": {
+        "tense": [
+          "past"
+        ],
+        "aspect": [
+          "none",
+          "perfect",
+          "perfect_progressive",
+          "progressive"
+        ],
+        "voice": [
+          "active",
+          "passive"
+        ],
+        "polarity": [
+          "negative",
+          "positive"
+        ],
+        "clause": [
+          "declarative"
+        ],
+        "modal": [
+          "none"
+        ]
+      },
+      "finite_operator_family_by_cell": {
+        "BE": 5,
+        "DO_support": 1,
+        "finite_lexical_main_verb": 1,
+        "perfect_HAVE": 6
+      },
+      "finite_operator_family_by_item": {
+        "BE": 8,
+        "DO_support": 2,
+        "finite_lexical_main_verb": 2,
+        "perfect_HAVE": 8
+      },
+      "active_cell_ids_sha256": "bd4ecc4d4b5da5be007632ed51fbbcc9fb815a24ab2b0e9257ebaad1269e5024",
+      "q_column_sha256": "66d8265406dbe02f7bf6f3d53e60feb015e57cfcad9e60f96688186c9ca91719"
+    },
+    {
+      "kc_id": "gkc_finite_present",
+      "name": "present finite-form selection",
+      "family": "declared_operation",
+      "activation_rule": {
+        "cell": {
+          "tense": "present"
+        }
+      },
+      "item_support": 30,
+      "cell_support_from_q": 17,
+      "declared_cell_support": 17,
+      "isolating_item_count": 2,
+      "isolating_item_ids": [
+        "candidate_gc_d15de8b5658bd6a5_01",
+        "candidate_gc_d15de8b5658bd6a5_03"
+      ],
+      "q_width_distribution": {
+        "1": 2,
+        "2": 7,
+        "3": 16,
+        "4": 5
+      },
+      "cooccurring_kcs": {
+        "gkc_aspect_perfect": 10,
+        "gkc_aspect_progressive": 11,
+        "gkc_be_passive": 11,
+        "gkc_negation": 17,
+        "gkc_non_subject_wh_question": 2,
+        "gkc_polar_question": 3
+      },
+      "nested_in_kcs": [],
+      "contains_nested_kcs": [
+        "gkc_non_subject_wh_question"
+      ],
+      "campaign_distribution": {
+        "default_campaign": 30
+      },
+      "format_distribution": {
+        "controlled_production": 30
+      },
+      "surface_prompt_style_distribution": {
+        "completion_or_cloze": 25,
+        "explicit_metalanguage_production": 1,
+        "question_formation": 4
+      },
+      "explicit_prompt_cue_patterns": [
+        "\\bpresent\\b"
+      ],
+      "items_with_explicit_prompt_cue": 1,
+      "explicit_prompt_cue_fraction": 0.033333,
+      "active_cell_feature_values": {
+        "tense": [
+          "present"
+        ],
+        "aspect": [
+          "none",
+          "perfect",
+          "perfect_progressive",
+          "progressive"
+        ],
+        "voice": [
+          "active",
+          "passive"
+        ],
+        "polarity": [
+          "negative",
+          "positive"
+        ],
+        "clause": [
+          "declarative",
+          "non_subject_wh_question",
+          "polar_question"
+        ],
+        "modal": [
+          "none"
+        ]
+      },
+      "finite_operator_family_by_cell": {
+        "BE": 6,
+        "DO_support": 3,
+        "finite_lexical_main_verb": 1,
+        "perfect_HAVE": 7
+      },
+      "finite_operator_family_by_item": {
+        "BE": 12,
+        "DO_support": 6,
+        "finite_lexical_main_verb": 2,
+        "perfect_HAVE": 10
+      },
+      "active_cell_ids_sha256": "13ce1ea310ddf99abc51d50781a439bb13398bd5cd6fc72b7c73cd468748a86f",
+      "q_column_sha256": "33efa4aee8ec42f4e41f8eceaa291eca51ce832831442cd7d72e3b1c76142fa1"
+    },
+    {
+      "kc_id": "gkc_imperative",
+      "name": "imperative clause formation",
+      "family": "declared_operation",
+      "activation_rule": {
+        "cell": {
+          "clause": "imperative"
+        }
+      },
+      "item_support": 4,
+      "cell_support_from_q": 2,
+      "declared_cell_support": 2,
+      "isolating_item_count": 2,
+      "isolating_item_ids": [
+        "cue_bounded_imperative_gc_bb4f472f992ab76b_01",
+        "cue_bounded_imperative_gc_bb4f472f992ab76b_02"
+      ],
+      "q_width_distribution": {
+        "1": 2,
+        "2": 2
+      },
+      "cooccurring_kcs": {
+        "gkc_negation": 2
+      },
+      "nested_in_kcs": [],
+      "contains_nested_kcs": [],
+      "campaign_distribution": {
+        "cue_bounded_imperative_production_v1": 4
+      },
+      "format_distribution": {
+        "controlled_production": 4
+      },
+      "surface_prompt_style_distribution": {
+        "bounded_chunk_reordering": 4
+      },
+      "explicit_prompt_cue_patterns": [
+        "\\bimperative\\b"
+      ],
+      "items_with_explicit_prompt_cue": 4,
+      "explicit_prompt_cue_fraction": 1.0,
+      "active_cell_feature_values": {
+        "tense": [
+          "NA"
+        ],
+        "aspect": [
+          "none"
+        ],
+        "voice": [
+          "active"
+        ],
+        "polarity": [
+          "negative",
+          "positive"
+        ],
+        "clause": [
+          "imperative"
+        ],
+        "modal": [
+          "none"
+        ]
+      },
+      "finite_operator_family_by_cell": {
+        "DO_support": 1,
+        "uninflected_lexical_verb": 1
+      },
+      "finite_operator_family_by_item": {
+        "DO_support": 2,
+        "uninflected_lexical_verb": 2
+      },
+      "active_cell_ids_sha256": "e651dc3e0c4016be5da5c09c4cac9c2e9528c94c3f308015d6f4e339f98de5f5",
+      "q_column_sha256": "70eb07a17c5ce589e5f9a100693f5f12c2b066f4a655bcf47c962e1c88f0ba74"
+    },
+    {
+      "kc_id": "gkc_modal_can",
+      "name": "central modal CAN",
+      "family": "dimension_value_operation",
+      "activation_rule": {
+        "cell": {
+          "modal": "can"
+        }
+      },
+      "item_support": 7,
+      "cell_support_from_q": 4,
+      "declared_cell_support": 4,
+      "isolating_item_count": 1,
+      "isolating_item_ids": [
+        "candidate_gc_3aaf5191d5f45601_02"
+      ],
+      "q_width_distribution": {
+        "1": 1,
+        "2": 4,
+        "3": 2
+      },
+      "cooccurring_kcs": {
+        "gkc_aspect_perfect": 2,
+        "gkc_negation": 4,
+        "gkc_polar_question": 2
+      },
+      "nested_in_kcs": [],
+      "contains_nested_kcs": [],
+      "campaign_distribution": {
+        "default_campaign": 7
+      },
+      "format_distribution": {
+        "controlled_production": 7
+      },
+      "surface_prompt_style_distribution": {
+        "completion_or_cloze": 5,
+        "question_formation": 2
+      },
+      "explicit_prompt_cue_patterns": [
+        "\\bcan\\b"
+      ],
+      "items_with_explicit_prompt_cue": 2,
+      "explicit_prompt_cue_fraction": 0.285714,
+      "active_cell_feature_values": {
+        "tense": [
+          "NA"
+        ],
+        "aspect": [
+          "none",
+          "perfect"
+        ],
+        "voice": [
+          "active"
+        ],
+        "polarity": [
+          "negative",
+          "positive"
+        ],
+        "clause": [
+          "declarative",
+          "polar_question"
+        ],
+        "modal": [
+          "can"
+        ]
+      },
+      "finite_operator_family_by_cell": {
+        "central_modal:can": 4
+      },
+      "finite_operator_family_by_item": {
+        "central_modal:can": 7
+      },
+      "active_cell_ids_sha256": "ac61a6719afc9600b44daeee77ac1296eefb139c23019a4501252e62f1aac254",
+      "q_column_sha256": "3b0f8e0959413ac68652f30a511af7f02645b635ba571aa52b056cb5f42c9d8d"
+    },
+    {
+      "kc_id": "gkc_modal_could",
+      "name": "central modal COULD",
+      "family": "dimension_value_operation",
+      "activation_rule": {
+        "cell": {
+          "modal": "could"
+        }
+      },
+      "item_support": 5,
+      "cell_support_from_q": 5,
+      "declared_cell_support": 5,
+      "isolating_item_count": 1,
+      "isolating_item_ids": [
+        "candidate_gc_bba42336e267985f_01"
+      ],
+      "q_width_distribution": {
+        "1": 1,
+        "2": 3,
+        "3": 1
+      },
+      "cooccurring_kcs": {
+        "gkc_aspect_perfect": 2,
+        "gkc_negation": 2,
+        "gkc_polar_question": 1
+      },
+      "nested_in_kcs": [],
+      "contains_nested_kcs": [],
+      "campaign_distribution": {
+        "default_campaign": 2,
+        "explicit_construction_determinacy_intervention_v1": 1,
+        "unchanged_prompt_zero_coverage_rescue_v1": 2
+      },
+      "format_distribution": {
+        "controlled_production": 5
+      },
+      "surface_prompt_style_distribution": {
+        "completion_or_cloze": 3,
+        "explicit_metalanguage_production": 1,
+        "question_formation": 1
+      },
+      "explicit_prompt_cue_patterns": [
+        "\\bcould\\b"
+      ],
+      "items_with_explicit_prompt_cue": 5,
+      "explicit_prompt_cue_fraction": 1.0,
+      "active_cell_feature_values": {
+        "tense": [
+          "NA"
+        ],
+        "aspect": [
+          "none",
+          "perfect"
+        ],
+        "voice": [
+          "active"
+        ],
+        "polarity": [
+          "negative",
+          "positive"
+        ],
+        "clause": [
+          "declarative",
+          "polar_question"
+        ],
+        "modal": [
+          "could"
+        ]
+      },
+      "finite_operator_family_by_cell": {
+        "central_modal:could": 5
+      },
+      "finite_operator_family_by_item": {
+        "central_modal:could": 5
+      },
+      "active_cell_ids_sha256": "947fa67b399c88fdb94382394f8203d0ec4c7a4ce9b53960c63543d9553c78ea",
+      "q_column_sha256": "3601965f0ffab83b208cc1c09f4633f3327c4e9d2e7e17dee018a1ba18acca64"
+    },
+    {
+      "kc_id": "gkc_modal_may",
+      "name": "central modal MAY",
+      "family": "dimension_value_operation",
+      "activation_rule": {
+        "cell": {
+          "modal": "may"
+        }
+      },
+      "item_support": 8,
+      "cell_support_from_q": 5,
+      "declared_cell_support": 5,
+      "isolating_item_count": 1,
+      "isolating_item_ids": [
+        "unchanged_rescue_gc_8a330fc9e496e359_02"
+      ],
+      "q_width_distribution": {
+        "1": 1,
+        "2": 6,
+        "3": 1
+      },
+      "cooccurring_kcs": {
+        "gkc_aspect_perfect": 3,
+        "gkc_be_passive": 2,
+        "gkc_negation": 1,
+        "gkc_polar_question": 2
+      },
+      "nested_in_kcs": [],
+      "contains_nested_kcs": [],
+      "campaign_distribution": {
+        "default_campaign": 6,
+        "unchanged_prompt_zero_coverage_rescue_v1": 2
+      },
+      "format_distribution": {
+        "controlled_production": 8
+      },
+      "surface_prompt_style_distribution": {
+        "completion_or_cloze": 6,
+        "question_formation": 2
+      },
+      "explicit_prompt_cue_patterns": [
+        "\\bmay\\b"
+      ],
+      "items_with_explicit_prompt_cue": 5,
+      "explicit_prompt_cue_fraction": 0.625,
+      "active_cell_feature_values": {
+        "tense": [
+          "NA"
+        ],
+        "aspect": [
+          "none",
+          "perfect"
+        ],
+        "voice": [
+          "active",
+          "passive"
+        ],
+        "polarity": [
+          "negative",
+          "positive"
+        ],
+        "clause": [
+          "declarative",
+          "polar_question"
+        ],
+        "modal": [
+          "may"
+        ]
+      },
+      "finite_operator_family_by_cell": {
+        "central_modal:may": 5
+      },
+      "finite_operator_family_by_item": {
+        "central_modal:may": 8
+      },
+      "active_cell_ids_sha256": "6573ea4e2b0e38c9f615890d836ec1cd4b40849d0e54375a827f23d88ad661aa",
+      "q_column_sha256": "29fd324f97266e7adc046e87279bcc1c22b5befebc98c0ec40fffdad207a2a97"
+    },
+    {
+      "kc_id": "gkc_modal_might",
+      "name": "central modal MIGHT",
+      "family": "dimension_value_operation",
+      "activation_rule": {
+        "cell": {
+          "modal": "might"
+        }
+      },
+      "item_support": 5,
+      "cell_support_from_q": 3,
+      "declared_cell_support": 3,
+      "isolating_item_count": 2,
+      "isolating_item_ids": [
+        "candidate_gc_90b9229122fa55d6_01",
+        "candidate_gc_90b9229122fa55d6_02"
+      ],
+      "q_width_distribution": {
+        "1": 2,
+        "2": 2,
+        "3": 1
+      },
+      "cooccurring_kcs": {
+        "gkc_aspect_perfect": 3,
+        "gkc_negation": 1
+      },
+      "nested_in_kcs": [],
+      "contains_nested_kcs": [],
+      "campaign_distribution": {
+        "default_campaign": 5
+      },
+      "format_distribution": {
+        "controlled_production": 5
+      },
+      "surface_prompt_style_distribution": {
+        "completion_or_cloze": 5
+      },
+      "explicit_prompt_cue_patterns": [
+        "\\bmight\\b"
+      ],
+      "items_with_explicit_prompt_cue": 5,
+      "explicit_prompt_cue_fraction": 1.0,
+      "active_cell_feature_values": {
+        "tense": [
+          "NA"
+        ],
+        "aspect": [
+          "none",
+          "perfect"
+        ],
+        "voice": [
+          "active"
+        ],
+        "polarity": [
+          "negative",
+          "positive"
+        ],
+        "clause": [
+          "declarative"
+        ],
+        "modal": [
+          "might"
+        ]
+      },
+      "finite_operator_family_by_cell": {
+        "central_modal:might": 3
+      },
+      "finite_operator_family_by_item": {
+        "central_modal:might": 5
+      },
+      "active_cell_ids_sha256": "207fed46f8a1732a25db5e91fae989264fde971bb35b936f034c7c3c3a9865f2",
+      "q_column_sha256": "d3d51d3191f8cfbfc18bc88ebb0257f1c33209f69b60ee175bad0376b80e6d20"
+    },
+    {
+      "kc_id": "gkc_modal_must",
+      "name": "central modal MUST",
+      "family": "dimension_value_operation",
+      "activation_rule": {
+        "cell": {
+          "modal": "must"
+        }
+      },
+      "item_support": 7,
+      "cell_support_from_q": 5,
+      "declared_cell_support": 5,
+      "isolating_item_count": 1,
+      "isolating_item_ids": [
+        "determinacy_intervention_gc_67bcfeedfa77f954_02"
+      ],
+      "q_width_distribution": {
+        "1": 1,
+        "2": 3,
+        "3": 3
+      },
+      "cooccurring_kcs": {
+        "gkc_aspect_perfect": 3,
+        "gkc_be_passive": 2,
+        "gkc_negation": 4
+      },
+      "nested_in_kcs": [],
+      "contains_nested_kcs": [],
+      "campaign_distribution": {
+        "default_campaign": 3,
+        "explicit_construction_determinacy_intervention_v1": 1,
+        "full_v1_validator_named_answer_packaging_correction_v1": 1,
+        "unchanged_prompt_zero_coverage_rescue_v1": 2
+      },
+      "format_distribution": {
+        "controlled_production": 7
+      },
+      "surface_prompt_style_distribution": {
+        "completion_or_cloze": 5,
+        "explicit_metalanguage_production": 2
+      },
+      "explicit_prompt_cue_patterns": [
+        "\\bmust\\b"
+      ],
+      "items_with_explicit_prompt_cue": 6,
+      "explicit_prompt_cue_fraction": 0.857143,
+      "active_cell_feature_values": {
+        "tense": [
+          "NA"
+        ],
+        "aspect": [
+          "none",
+          "perfect"
+        ],
+        "voice": [
+          "active",
+          "passive"
+        ],
+        "polarity": [
+          "negative",
+          "positive"
+        ],
+        "clause": [
+          "declarative"
+        ],
+        "modal": [
+          "must"
+        ]
+      },
+      "finite_operator_family_by_cell": {
+        "central_modal:must": 5
+      },
+      "finite_operator_family_by_item": {
+        "central_modal:must": 7
+      },
+      "active_cell_ids_sha256": "b6754638b58ffa6a9cb16aaea87a7ede1a97a40c2f4cf767d7dfb1ad4a0f9869",
+      "q_column_sha256": "5152104975f7b664ca9a10f4a32452added3b02100ae5de46abed98da1cfa1d5"
+    },
+    {
+      "kc_id": "gkc_modal_shall",
+      "name": "central modal SHALL",
+      "family": "dimension_value_operation",
+      "activation_rule": {
+        "cell": {
+          "modal": "shall"
+        }
+      },
+      "item_support": 4,
+      "cell_support_from_q": 4,
+      "declared_cell_support": 4,
+      "isolating_item_count": 1,
+      "isolating_item_ids": [
+        "candidate_gc_70772a95583e5587_02"
+      ],
+      "q_width_distribution": {
+        "1": 1,
+        "2": 3
+      },
+      "cooccurring_kcs": {
+        "gkc_aspect_progressive": 1,
+        "gkc_negation": 1,
+        "gkc_polar_question": 1
+      },
+      "nested_in_kcs": [],
+      "contains_nested_kcs": [],
+      "campaign_distribution": {
+        "default_campaign": 3,
+        "unchanged_prompt_zero_coverage_rescue_v1": 1
+      },
+      "format_distribution": {
+        "controlled_production": 4
+      },
+      "surface_prompt_style_distribution": {
+        "completion_or_cloze": 3,
+        "question_formation": 1
+      },
+      "explicit_prompt_cue_patterns": [
+        "\\bshall\\b"
+      ],
+      "items_with_explicit_prompt_cue": 4,
+      "explicit_prompt_cue_fraction": 1.0,
+      "active_cell_feature_values": {
+        "tense": [
+          "NA"
+        ],
+        "aspect": [
+          "none",
+          "progressive"
+        ],
+        "voice": [
+          "active"
+        ],
+        "polarity": [
+          "negative",
+          "positive"
+        ],
+        "clause": [
+          "declarative",
+          "polar_question"
+        ],
+        "modal": [
+          "shall"
+        ]
+      },
+      "finite_operator_family_by_cell": {
+        "central_modal:shall": 4
+      },
+      "finite_operator_family_by_item": {
+        "central_modal:shall": 4
+      },
+      "active_cell_ids_sha256": "54e90808e784950983893786a8caa63552d1b5db48f5855411a133b85b32a336",
+      "q_column_sha256": "f3a0199fd81cad91b91815f37ee37faaf6fa2246258079bc1117a5efd8dcb16a"
+    },
+    {
+      "kc_id": "gkc_modal_should",
+      "name": "central modal SHOULD",
+      "family": "dimension_value_operation",
+      "activation_rule": {
+        "cell": {
+          "modal": "should"
+        }
+      },
+      "item_support": 4,
+      "cell_support_from_q": 4,
+      "declared_cell_support": 4,
+      "isolating_item_count": 1,
+      "isolating_item_ids": [
+        "candidate_gc_809d40d141731b61_02"
+      ],
+      "q_width_distribution": {
+        "1": 1,
+        "2": 2,
+        "3": 1
+      },
+      "cooccurring_kcs": {
+        "gkc_aspect_perfect": 2,
+        "gkc_aspect_progressive": 1,
+        "gkc_negation": 1
+      },
+      "nested_in_kcs": [],
+      "contains_nested_kcs": [],
+      "campaign_distribution": {
+        "default_campaign": 3,
+        "explicit_construction_determinacy_intervention_v1": 1
+      },
+      "format_distribution": {
+        "controlled_production": 4
+      },
+      "surface_prompt_style_distribution": {
+        "completion_or_cloze": 3,
+        "explicit_metalanguage_production": 1
+      },
+      "explicit_prompt_cue_patterns": [
+        "\\bshould\\b"
+      ],
+      "items_with_explicit_prompt_cue": 1,
+      "explicit_prompt_cue_fraction": 0.25,
+      "active_cell_feature_values": {
+        "tense": [
+          "NA"
+        ],
+        "aspect": [
+          "none",
+          "perfect",
+          "progressive"
+        ],
+        "voice": [
+          "active"
+        ],
+        "polarity": [
+          "negative",
+          "positive"
+        ],
+        "clause": [
+          "declarative"
+        ],
+        "modal": [
+          "should"
+        ]
+      },
+      "finite_operator_family_by_cell": {
+        "central_modal:should": 4
+      },
+      "finite_operator_family_by_item": {
+        "central_modal:should": 4
+      },
+      "active_cell_ids_sha256": "df9f71edf56ac1ea43ff907aab93ea20f6961dcbfe1df12f2d530e3a530d5b0d",
+      "q_column_sha256": "e8a1a1c6e09a6a590cc9503d32d8869d3af57859c2182aada96b9527eea03b31"
+    },
+    {
+      "kc_id": "gkc_modal_will",
+      "name": "central modal WILL",
+      "family": "dimension_value_operation",
+      "activation_rule": {
+        "cell": {
+          "modal": "will"
+        }
+      },
+      "item_support": 14,
+      "cell_support_from_q": 9,
+      "declared_cell_support": 9,
+      "isolating_item_count": 1,
+      "isolating_item_ids": [
+        "unchanged_rescue_gc_16d9f6e33f0517ec_01"
+      ],
+      "q_width_distribution": {
+        "1": 1,
+        "2": 7,
+        "3": 5,
+        "4": 1
+      },
+      "cooccurring_kcs": {
+        "gkc_aspect_perfect": 6,
+        "gkc_aspect_progressive": 7,
+        "gkc_negation": 5,
+        "gkc_polar_question": 2
+      },
+      "nested_in_kcs": [],
+      "contains_nested_kcs": [],
+      "campaign_distribution": {
+        "default_campaign": 8,
+        "explicit_construction_determinacy_intervention_v1": 4,
+        "unchanged_prompt_zero_coverage_rescue_v1": 2
+      },
+      "format_distribution": {
+        "controlled_production": 14
+      },
+      "surface_prompt_style_distribution": {
+        "completion_or_cloze": 8,
+        "explicit_metalanguage_production": 4,
+        "question_formation": 2
+      },
+      "explicit_prompt_cue_patterns": [
+        "\\bwill\\b"
+      ],
+      "items_with_explicit_prompt_cue": 6,
+      "explicit_prompt_cue_fraction": 0.428571,
+      "active_cell_feature_values": {
+        "tense": [
+          "NA"
+        ],
+        "aspect": [
+          "none",
+          "perfect",
+          "perfect_progressive",
+          "progressive"
+        ],
+        "voice": [
+          "active"
+        ],
+        "polarity": [
+          "negative",
+          "positive"
+        ],
+        "clause": [
+          "declarative",
+          "polar_question"
+        ],
+        "modal": [
+          "will"
+        ]
+      },
+      "finite_operator_family_by_cell": {
+        "central_modal:will": 9
+      },
+      "finite_operator_family_by_item": {
+        "central_modal:will": 14
+      },
+      "active_cell_ids_sha256": "38838722a794057ed3b12b2d27c7a67b651cfd27f22c3a445bb9b30bd9f75aa6",
+      "q_column_sha256": "f6dcfda5cdca79bd3213b7ce013fd632d49e7c4bcb3a4280c2844cf797e623a8"
+    },
+    {
+      "kc_id": "gkc_modal_would",
+      "name": "central modal WOULD",
+      "family": "dimension_value_operation",
+      "activation_rule": {
+        "cell": {
+          "modal": "would"
+        }
+      },
+      "item_support": 5,
+      "cell_support_from_q": 4,
+      "declared_cell_support": 4,
+      "isolating_item_count": 1,
+      "isolating_item_ids": [
+        "unchanged_rescue_gc_fac1ce90011b677c_02"
+      ],
+      "q_width_distribution": {
+        "1": 1,
+        "2": 2,
+        "3": 2
+      },
+      "cooccurring_kcs": {
+        "gkc_aspect_perfect": 3,
+        "gkc_negation": 2,
+        "gkc_polar_question": 1
+      },
+      "nested_in_kcs": [],
+      "contains_nested_kcs": [],
+      "campaign_distribution": {
+        "default_campaign": 4,
+        "unchanged_prompt_zero_coverage_rescue_v1": 1
+      },
+      "format_distribution": {
+        "controlled_production": 5
+      },
+      "surface_prompt_style_distribution": {
+        "completion_or_cloze": 4,
+        "question_formation": 1
+      },
+      "explicit_prompt_cue_patterns": [
+        "\\bwould\\b"
+      ],
+      "items_with_explicit_prompt_cue": 0,
+      "explicit_prompt_cue_fraction": 0.0,
+      "active_cell_feature_values": {
+        "tense": [
+          "NA"
+        ],
+        "aspect": [
+          "none",
+          "perfect"
+        ],
+        "voice": [
+          "active"
+        ],
+        "polarity": [
+          "negative",
+          "positive"
+        ],
+        "clause": [
+          "declarative",
+          "polar_question"
+        ],
+        "modal": [
+          "would"
+        ]
+      },
+      "finite_operator_family_by_cell": {
+        "central_modal:would": 4
+      },
+      "finite_operator_family_by_item": {
+        "central_modal:would": 5
+      },
+      "active_cell_ids_sha256": "c400a0baa69c64e887564c000df2269e4bf4c1b6d393f719c8601be1b4bbf021",
+      "q_column_sha256": "bd4201be136f7dd55760a2b13c61b8b12d6537222f45db0c2edf47dd764c2d8a"
+    },
+    {
+      "kc_id": "gkc_negation",
+      "name": "verbal negation",
+      "family": "declared_operation",
+      "activation_rule": {
+        "cell": {
+          "polarity": "negative"
+        }
+      },
+      "item_support": 49,
+      "cell_support_from_q": 32,
+      "declared_cell_support": 32,
+      "isolating_item_count": 0,
+      "isolating_item_ids": [],
+      "q_width_distribution": {
+        "2": 12,
+        "3": 28,
+        "4": 9
+      },
+      "cooccurring_kcs": {
+        "gkc_aspect_perfect": 20,
+        "gkc_aspect_progressive": 12,
+        "gkc_be_passive": 10,
+        "gkc_finite_past": 9,
+        "gkc_finite_present": 17,
+        "gkc_imperative": 2,
+        "gkc_modal_can": 4,
+        "gkc_modal_could": 2,
+        "gkc_modal_may": 1,
+        "gkc_modal_might": 1,
+        "gkc_modal_must": 4,
+        "gkc_modal_shall": 1,
+        "gkc_modal_should": 1,
+        "gkc_modal_will": 5,
+        "gkc_modal_would": 2,
+        "gkc_non_subject_wh_question": 2,
+        "gkc_polar_question": 2
+      },
+      "nested_in_kcs": [],
+      "contains_nested_kcs": [
+        "gkc_non_subject_wh_question"
+      ],
+      "campaign_distribution": {
+        "cue_bounded_imperative_production_v1": 2,
+        "default_campaign": 39,
+        "explicit_construction_determinacy_intervention_v1": 5,
+        "full_v1_validator_named_answer_packaging_correction_v1": 1,
+        "unchanged_prompt_zero_coverage_rescue_v1": 2
+      },
+      "format_distribution": {
+        "controlled_production": 49
+      },
+      "surface_prompt_style_distribution": {
+        "bounded_chunk_reordering": 2,
+        "completion_or_cloze": 37,
+        "explicit_metalanguage_production": 7,
+        "question_formation": 3
+      },
+      "explicit_prompt_cue_patterns": [
+        "\\bnegative\\b",
+        "\\bnot\\b",
+        "\\b(?:cannot|can't|couldn't|doesn't|don't|hadn't|hasn't|isn't|mustn't|shouldn't|wasn't|weren't|won't|wouldn't)\\b"
+      ],
+      "items_with_explicit_prompt_cue": 24,
+      "explicit_prompt_cue_fraction": 0.489796,
+      "active_cell_feature_values": {
+        "tense": [
+          "NA",
+          "past",
+          "present"
+        ],
+        "aspect": [
+          "none",
+          "perfect",
+          "perfect_progressive",
+          "progressive"
+        ],
+        "voice": [
+          "active",
+          "passive"
+        ],
+        "polarity": [
+          "negative"
+        ],
+        "clause": [
+          "declarative",
+          "imperative",
+          "non_subject_wh_question",
+          "polar_question"
+        ],
+        "modal": [
+          "can",
+          "could",
+          "may",
+          "might",
+          "must",
+          "none",
+          "shall",
+          "should",
+          "will",
+          "would"
+        ]
+      },
+      "finite_operator_family_by_cell": {
+        "BE": 5,
+        "DO_support": 5,
+        "central_modal:can": 2,
+        "central_modal:could": 2,
+        "central_modal:may": 1,
+        "central_modal:might": 1,
+        "central_modal:must": 3,
+        "central_modal:shall": 1,
+        "central_modal:should": 1,
+        "central_modal:will": 4,
+        "central_modal:would": 1,
+        "perfect_HAVE": 6
+      },
+      "finite_operator_family_by_item": {
+        "BE": 9,
+        "DO_support": 10,
+        "central_modal:can": 4,
+        "central_modal:could": 2,
+        "central_modal:may": 1,
+        "central_modal:might": 1,
+        "central_modal:must": 4,
+        "central_modal:shall": 1,
+        "central_modal:should": 1,
+        "central_modal:will": 5,
+        "central_modal:would": 2,
+        "perfect_HAVE": 9
+      },
+      "active_cell_ids_sha256": "4417af6a877a11a614dfd128ad1d7a2c2b8e89f8a4fbfd7d9cb8b806b0a4aa26",
+      "q_column_sha256": "c9d0c13fb52b14e517d6f3cfbeaf3c79f87eb674c5d083e102edb67799f97f3c"
+    },
+    {
+      "kc_id": "gkc_non_subject_wh_question",
+      "name": "non-subject-WH question formation",
+      "family": "declared_operation",
+      "activation_rule": {
+        "cell": {
+          "clause": "non_subject_wh_question"
+        }
+      },
+      "item_support": 2,
+      "cell_support_from_q": 1,
+      "declared_cell_support": 1,
+      "isolating_item_count": 0,
+      "isolating_item_ids": [],
+      "q_width_distribution": {
+        "3": 2
+      },
+      "cooccurring_kcs": {
+        "gkc_finite_present": 2,
+        "gkc_negation": 2
+      },
+      "nested_in_kcs": [
+        "gkc_finite_present",
+        "gkc_negation"
+      ],
+      "contains_nested_kcs": [],
+      "campaign_distribution": {
+        "default_campaign": 2
+      },
+      "format_distribution": {
+        "controlled_production": 2
+      },
+      "surface_prompt_style_distribution": {
+        "question_formation": 2
+      },
+      "explicit_prompt_cue_patterns": [
+        "\\bask\\b",
+        "\\bquestion\\b",
+        "\\bwhat\\b",
+        "\\bwhich\\b"
+      ],
+      "items_with_explicit_prompt_cue": 2,
+      "explicit_prompt_cue_fraction": 1.0,
+      "active_cell_feature_values": {
+        "tense": [
+          "present"
+        ],
+        "aspect": [
+          "none"
+        ],
+        "voice": [
+          "active"
+        ],
+        "polarity": [
+          "negative"
+        ],
+        "clause": [
+          "non_subject_wh_question"
+        ],
+        "modal": [
+          "none"
+        ]
+      },
+      "finite_operator_family_by_cell": {
+        "DO_support": 1
+      },
+      "finite_operator_family_by_item": {
+        "DO_support": 2
+      },
+      "active_cell_ids_sha256": "f7cad58dc7e93b83ebd2418b589443cbfe25cb19b5dc727c79119028364cff9d",
+      "q_column_sha256": "d4936efd5bf373335b49c42b49a62cf3dd90af096e72651261ef233487ea2250"
+    },
+    {
+      "kc_id": "gkc_polar_question",
+      "name": "polar-question formation",
+      "family": "declared_operation",
+      "activation_rule": {
+        "cell": {
+          "clause": "polar_question"
+        }
+      },
+      "item_support": 12,
+      "cell_support_from_q": 8,
+      "declared_cell_support": 8,
+      "isolating_item_count": 0,
+      "isolating_item_ids": [],
+      "q_width_distribution": {
+        "2": 9,
+        "3": 3
+      },
+      "cooccurring_kcs": {
+        "gkc_aspect_perfect": 1,
+        "gkc_finite_present": 3,
+        "gkc_modal_can": 2,
+        "gkc_modal_could": 1,
+        "gkc_modal_may": 2,
+        "gkc_modal_shall": 1,
+        "gkc_modal_will": 2,
+        "gkc_modal_would": 1,
+        "gkc_negation": 2
+      },
+      "nested_in_kcs": [],
+      "contains_nested_kcs": [],
+      "campaign_distribution": {
+        "default_campaign": 11,
+        "unchanged_prompt_zero_coverage_rescue_v1": 1
+      },
+      "format_distribution": {
+        "controlled_production": 12
+      },
+      "surface_prompt_style_distribution": {
+        "explicit_metalanguage_production": 1,
+        "question_formation": 11
+      },
+      "explicit_prompt_cue_patterns": [
+        "\\bask\\b",
+        "\\bquestion\\b",
+        "\\bwhether\\b"
+      ],
+      "items_with_explicit_prompt_cue": 12,
+      "explicit_prompt_cue_fraction": 1.0,
+      "active_cell_feature_values": {
+        "tense": [
+          "NA",
+          "present"
+        ],
+        "aspect": [
+          "none",
+          "perfect"
+        ],
+        "voice": [
+          "active"
+        ],
+        "polarity": [
+          "negative",
+          "positive"
+        ],
+        "clause": [
+          "polar_question"
+        ],
+        "modal": [
+          "can",
+          "could",
+          "may",
+          "none",
+          "shall",
+          "will",
+          "would"
+        ]
+      },
+      "finite_operator_family_by_cell": {
+        "DO_support": 1,
+        "central_modal:can": 1,
+        "central_modal:could": 1,
+        "central_modal:may": 1,
+        "central_modal:shall": 1,
+        "central_modal:will": 1,
+        "central_modal:would": 1,
+        "perfect_HAVE": 1
+      },
+      "finite_operator_family_by_item": {
+        "DO_support": 2,
+        "central_modal:can": 2,
+        "central_modal:could": 1,
+        "central_modal:may": 2,
+        "central_modal:shall": 1,
+        "central_modal:will": 2,
+        "central_modal:would": 1,
+        "perfect_HAVE": 1
+      },
+      "active_cell_ids_sha256": "5551ee2ad7a50b7ab28e8cf42cf5867cdbdf7ce5b194002c1f6c041b27d0a9d9",
+      "q_column_sha256": "6dd2c3e333f539dd1d03d160e7ef0b99014c29a51b268ee7bb03be8b867c0e5c"
+    }
+  ],
+  "pair_metrics": [
+    {
+      "left_kc_id": "gkc_aspect_perfect",
+      "right_kc_id": "gkc_aspect_progressive",
+      "left_only_items": 33,
+      "right_only_items": 20,
+      "cooccurring_items": 9,
+      "jaccard": 0.145161,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_perfect",
+      "right_kc_id": "gkc_be_passive",
+      "left_only_items": 36,
+      "right_only_items": 16,
+      "cooccurring_items": 6,
+      "jaccard": 0.103448,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_perfect",
+      "right_kc_id": "gkc_finite_past",
+      "left_only_items": 34,
+      "right_only_items": 12,
+      "cooccurring_items": 8,
+      "jaccard": 0.148148,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_perfect",
+      "right_kc_id": "gkc_finite_present",
+      "left_only_items": 32,
+      "right_only_items": 20,
+      "cooccurring_items": 10,
+      "jaccard": 0.16129,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_perfect",
+      "right_kc_id": "gkc_imperative",
+      "left_only_items": 42,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_aspect_perfect",
+      "right_kc_id": "gkc_modal_can",
+      "left_only_items": 40,
+      "right_only_items": 5,
+      "cooccurring_items": 2,
+      "jaccard": 0.042553,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_perfect",
+      "right_kc_id": "gkc_modal_could",
+      "left_only_items": 40,
+      "right_only_items": 3,
+      "cooccurring_items": 2,
+      "jaccard": 0.044444,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_perfect",
+      "right_kc_id": "gkc_modal_may",
+      "left_only_items": 39,
+      "right_only_items": 5,
+      "cooccurring_items": 3,
+      "jaccard": 0.06383,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_perfect",
+      "right_kc_id": "gkc_modal_might",
+      "left_only_items": 39,
+      "right_only_items": 2,
+      "cooccurring_items": 3,
+      "jaccard": 0.068182,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_perfect",
+      "right_kc_id": "gkc_modal_must",
+      "left_only_items": 39,
+      "right_only_items": 4,
+      "cooccurring_items": 3,
+      "jaccard": 0.065217,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_perfect",
+      "right_kc_id": "gkc_modal_shall",
+      "left_only_items": 42,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_aspect_perfect",
+      "right_kc_id": "gkc_modal_should",
+      "left_only_items": 40,
+      "right_only_items": 2,
+      "cooccurring_items": 2,
+      "jaccard": 0.045455,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_perfect",
+      "right_kc_id": "gkc_modal_will",
+      "left_only_items": 36,
+      "right_only_items": 8,
+      "cooccurring_items": 6,
+      "jaccard": 0.12,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_perfect",
+      "right_kc_id": "gkc_modal_would",
+      "left_only_items": 39,
+      "right_only_items": 2,
+      "cooccurring_items": 3,
+      "jaccard": 0.068182,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_perfect",
+      "right_kc_id": "gkc_negation",
+      "left_only_items": 22,
+      "right_only_items": 29,
+      "cooccurring_items": 20,
+      "jaccard": 0.28169,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_perfect",
+      "right_kc_id": "gkc_non_subject_wh_question",
+      "left_only_items": 42,
+      "right_only_items": 2,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_aspect_perfect",
+      "right_kc_id": "gkc_polar_question",
+      "left_only_items": 41,
+      "right_only_items": 11,
+      "cooccurring_items": 1,
+      "jaccard": 0.018868,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_progressive",
+      "right_kc_id": "gkc_be_passive",
+      "left_only_items": 23,
+      "right_only_items": 16,
+      "cooccurring_items": 6,
+      "jaccard": 0.133333,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_progressive",
+      "right_kc_id": "gkc_finite_past",
+      "left_only_items": 20,
+      "right_only_items": 11,
+      "cooccurring_items": 9,
+      "jaccard": 0.225,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_progressive",
+      "right_kc_id": "gkc_finite_present",
+      "left_only_items": 18,
+      "right_only_items": 19,
+      "cooccurring_items": 11,
+      "jaccard": 0.229167,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_progressive",
+      "right_kc_id": "gkc_imperative",
+      "left_only_items": 29,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_aspect_progressive",
+      "right_kc_id": "gkc_modal_can",
+      "left_only_items": 29,
+      "right_only_items": 7,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_aspect_progressive",
+      "right_kc_id": "gkc_modal_could",
+      "left_only_items": 29,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_aspect_progressive",
+      "right_kc_id": "gkc_modal_may",
+      "left_only_items": 29,
+      "right_only_items": 8,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_aspect_progressive",
+      "right_kc_id": "gkc_modal_might",
+      "left_only_items": 29,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_aspect_progressive",
+      "right_kc_id": "gkc_modal_must",
+      "left_only_items": 29,
+      "right_only_items": 7,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_aspect_progressive",
+      "right_kc_id": "gkc_modal_shall",
+      "left_only_items": 28,
+      "right_only_items": 3,
+      "cooccurring_items": 1,
+      "jaccard": 0.03125,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_progressive",
+      "right_kc_id": "gkc_modal_should",
+      "left_only_items": 28,
+      "right_only_items": 3,
+      "cooccurring_items": 1,
+      "jaccard": 0.03125,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_progressive",
+      "right_kc_id": "gkc_modal_will",
+      "left_only_items": 22,
+      "right_only_items": 7,
+      "cooccurring_items": 7,
+      "jaccard": 0.194444,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_progressive",
+      "right_kc_id": "gkc_modal_would",
+      "left_only_items": 29,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_aspect_progressive",
+      "right_kc_id": "gkc_negation",
+      "left_only_items": 17,
+      "right_only_items": 37,
+      "cooccurring_items": 12,
+      "jaccard": 0.181818,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_aspect_progressive",
+      "right_kc_id": "gkc_non_subject_wh_question",
+      "left_only_items": 29,
+      "right_only_items": 2,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_aspect_progressive",
+      "right_kc_id": "gkc_polar_question",
+      "left_only_items": 29,
+      "right_only_items": 12,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_be_passive",
+      "right_kc_id": "gkc_finite_past",
+      "left_only_items": 15,
+      "right_only_items": 13,
+      "cooccurring_items": 7,
+      "jaccard": 0.2,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_be_passive",
+      "right_kc_id": "gkc_finite_present",
+      "left_only_items": 11,
+      "right_only_items": 19,
+      "cooccurring_items": 11,
+      "jaccard": 0.268293,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_be_passive",
+      "right_kc_id": "gkc_imperative",
+      "left_only_items": 22,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_be_passive",
+      "right_kc_id": "gkc_modal_can",
+      "left_only_items": 22,
+      "right_only_items": 7,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_be_passive",
+      "right_kc_id": "gkc_modal_could",
+      "left_only_items": 22,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_be_passive",
+      "right_kc_id": "gkc_modal_may",
+      "left_only_items": 20,
+      "right_only_items": 6,
+      "cooccurring_items": 2,
+      "jaccard": 0.071429,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_be_passive",
+      "right_kc_id": "gkc_modal_might",
+      "left_only_items": 22,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_be_passive",
+      "right_kc_id": "gkc_modal_must",
+      "left_only_items": 20,
+      "right_only_items": 5,
+      "cooccurring_items": 2,
+      "jaccard": 0.074074,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_be_passive",
+      "right_kc_id": "gkc_modal_shall",
+      "left_only_items": 22,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_be_passive",
+      "right_kc_id": "gkc_modal_should",
+      "left_only_items": 22,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_be_passive",
+      "right_kc_id": "gkc_modal_will",
+      "left_only_items": 22,
+      "right_only_items": 14,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_be_passive",
+      "right_kc_id": "gkc_modal_would",
+      "left_only_items": 22,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_be_passive",
+      "right_kc_id": "gkc_negation",
+      "left_only_items": 12,
+      "right_only_items": 39,
+      "cooccurring_items": 10,
+      "jaccard": 0.163934,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_be_passive",
+      "right_kc_id": "gkc_non_subject_wh_question",
+      "left_only_items": 22,
+      "right_only_items": 2,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_be_passive",
+      "right_kc_id": "gkc_polar_question",
+      "left_only_items": 22,
+      "right_only_items": 12,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_past",
+      "right_kc_id": "gkc_finite_present",
+      "left_only_items": 20,
+      "right_only_items": 30,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_past",
+      "right_kc_id": "gkc_imperative",
+      "left_only_items": 20,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_past",
+      "right_kc_id": "gkc_modal_can",
+      "left_only_items": 20,
+      "right_only_items": 7,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_past",
+      "right_kc_id": "gkc_modal_could",
+      "left_only_items": 20,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_past",
+      "right_kc_id": "gkc_modal_may",
+      "left_only_items": 20,
+      "right_only_items": 8,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_past",
+      "right_kc_id": "gkc_modal_might",
+      "left_only_items": 20,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_past",
+      "right_kc_id": "gkc_modal_must",
+      "left_only_items": 20,
+      "right_only_items": 7,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_past",
+      "right_kc_id": "gkc_modal_shall",
+      "left_only_items": 20,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_past",
+      "right_kc_id": "gkc_modal_should",
+      "left_only_items": 20,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_past",
+      "right_kc_id": "gkc_modal_will",
+      "left_only_items": 20,
+      "right_only_items": 14,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_past",
+      "right_kc_id": "gkc_modal_would",
+      "left_only_items": 20,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_past",
+      "right_kc_id": "gkc_negation",
+      "left_only_items": 11,
+      "right_only_items": 40,
+      "cooccurring_items": 9,
+      "jaccard": 0.15,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_finite_past",
+      "right_kc_id": "gkc_non_subject_wh_question",
+      "left_only_items": 20,
+      "right_only_items": 2,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_past",
+      "right_kc_id": "gkc_polar_question",
+      "left_only_items": 20,
+      "right_only_items": 12,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_present",
+      "right_kc_id": "gkc_imperative",
+      "left_only_items": 30,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_present",
+      "right_kc_id": "gkc_modal_can",
+      "left_only_items": 30,
+      "right_only_items": 7,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_present",
+      "right_kc_id": "gkc_modal_could",
+      "left_only_items": 30,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_present",
+      "right_kc_id": "gkc_modal_may",
+      "left_only_items": 30,
+      "right_only_items": 8,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_present",
+      "right_kc_id": "gkc_modal_might",
+      "left_only_items": 30,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_present",
+      "right_kc_id": "gkc_modal_must",
+      "left_only_items": 30,
+      "right_only_items": 7,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_present",
+      "right_kc_id": "gkc_modal_shall",
+      "left_only_items": 30,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_present",
+      "right_kc_id": "gkc_modal_should",
+      "left_only_items": 30,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_present",
+      "right_kc_id": "gkc_modal_will",
+      "left_only_items": 30,
+      "right_only_items": 14,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_present",
+      "right_kc_id": "gkc_modal_would",
+      "left_only_items": 30,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_present",
+      "right_kc_id": "gkc_negation",
+      "left_only_items": 13,
+      "right_only_items": 32,
+      "cooccurring_items": 17,
+      "jaccard": 0.274194,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_finite_present",
+      "right_kc_id": "gkc_non_subject_wh_question",
+      "left_only_items": 28,
+      "right_only_items": 0,
+      "cooccurring_items": 2,
+      "jaccard": 0.066667,
+      "relation": "right_nested_in_left",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_finite_present",
+      "right_kc_id": "gkc_polar_question",
+      "left_only_items": 27,
+      "right_only_items": 9,
+      "cooccurring_items": 3,
+      "jaccard": 0.076923,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_imperative",
+      "right_kc_id": "gkc_modal_can",
+      "left_only_items": 4,
+      "right_only_items": 7,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_imperative",
+      "right_kc_id": "gkc_modal_could",
+      "left_only_items": 4,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_imperative",
+      "right_kc_id": "gkc_modal_may",
+      "left_only_items": 4,
+      "right_only_items": 8,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_imperative",
+      "right_kc_id": "gkc_modal_might",
+      "left_only_items": 4,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_imperative",
+      "right_kc_id": "gkc_modal_must",
+      "left_only_items": 4,
+      "right_only_items": 7,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_imperative",
+      "right_kc_id": "gkc_modal_shall",
+      "left_only_items": 4,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_imperative",
+      "right_kc_id": "gkc_modal_should",
+      "left_only_items": 4,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_imperative",
+      "right_kc_id": "gkc_modal_will",
+      "left_only_items": 4,
+      "right_only_items": 14,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_imperative",
+      "right_kc_id": "gkc_modal_would",
+      "left_only_items": 4,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_imperative",
+      "right_kc_id": "gkc_negation",
+      "left_only_items": 2,
+      "right_only_items": 47,
+      "cooccurring_items": 2,
+      "jaccard": 0.039216,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_imperative",
+      "right_kc_id": "gkc_non_subject_wh_question",
+      "left_only_items": 4,
+      "right_only_items": 2,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_imperative",
+      "right_kc_id": "gkc_polar_question",
+      "left_only_items": 4,
+      "right_only_items": 12,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_can",
+      "right_kc_id": "gkc_modal_could",
+      "left_only_items": 7,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_can",
+      "right_kc_id": "gkc_modal_may",
+      "left_only_items": 7,
+      "right_only_items": 8,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_can",
+      "right_kc_id": "gkc_modal_might",
+      "left_only_items": 7,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_can",
+      "right_kc_id": "gkc_modal_must",
+      "left_only_items": 7,
+      "right_only_items": 7,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_can",
+      "right_kc_id": "gkc_modal_shall",
+      "left_only_items": 7,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_can",
+      "right_kc_id": "gkc_modal_should",
+      "left_only_items": 7,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_can",
+      "right_kc_id": "gkc_modal_will",
+      "left_only_items": 7,
+      "right_only_items": 14,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_can",
+      "right_kc_id": "gkc_modal_would",
+      "left_only_items": 7,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_can",
+      "right_kc_id": "gkc_negation",
+      "left_only_items": 3,
+      "right_only_items": 45,
+      "cooccurring_items": 4,
+      "jaccard": 0.076923,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_modal_can",
+      "right_kc_id": "gkc_non_subject_wh_question",
+      "left_only_items": 7,
+      "right_only_items": 2,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_can",
+      "right_kc_id": "gkc_polar_question",
+      "left_only_items": 5,
+      "right_only_items": 10,
+      "cooccurring_items": 2,
+      "jaccard": 0.117647,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_modal_could",
+      "right_kc_id": "gkc_modal_may",
+      "left_only_items": 5,
+      "right_only_items": 8,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_could",
+      "right_kc_id": "gkc_modal_might",
+      "left_only_items": 5,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_could",
+      "right_kc_id": "gkc_modal_must",
+      "left_only_items": 5,
+      "right_only_items": 7,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_could",
+      "right_kc_id": "gkc_modal_shall",
+      "left_only_items": 5,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_could",
+      "right_kc_id": "gkc_modal_should",
+      "left_only_items": 5,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_could",
+      "right_kc_id": "gkc_modal_will",
+      "left_only_items": 5,
+      "right_only_items": 14,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_could",
+      "right_kc_id": "gkc_modal_would",
+      "left_only_items": 5,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_could",
+      "right_kc_id": "gkc_negation",
+      "left_only_items": 3,
+      "right_only_items": 47,
+      "cooccurring_items": 2,
+      "jaccard": 0.038462,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_modal_could",
+      "right_kc_id": "gkc_non_subject_wh_question",
+      "left_only_items": 5,
+      "right_only_items": 2,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_could",
+      "right_kc_id": "gkc_polar_question",
+      "left_only_items": 4,
+      "right_only_items": 11,
+      "cooccurring_items": 1,
+      "jaccard": 0.0625,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_modal_may",
+      "right_kc_id": "gkc_modal_might",
+      "left_only_items": 8,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_may",
+      "right_kc_id": "gkc_modal_must",
+      "left_only_items": 8,
+      "right_only_items": 7,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_may",
+      "right_kc_id": "gkc_modal_shall",
+      "left_only_items": 8,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_may",
+      "right_kc_id": "gkc_modal_should",
+      "left_only_items": 8,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_may",
+      "right_kc_id": "gkc_modal_will",
+      "left_only_items": 8,
+      "right_only_items": 14,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_may",
+      "right_kc_id": "gkc_modal_would",
+      "left_only_items": 8,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_may",
+      "right_kc_id": "gkc_negation",
+      "left_only_items": 7,
+      "right_only_items": 48,
+      "cooccurring_items": 1,
+      "jaccard": 0.017857,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_modal_may",
+      "right_kc_id": "gkc_non_subject_wh_question",
+      "left_only_items": 8,
+      "right_only_items": 2,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_may",
+      "right_kc_id": "gkc_polar_question",
+      "left_only_items": 6,
+      "right_only_items": 10,
+      "cooccurring_items": 2,
+      "jaccard": 0.111111,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_modal_might",
+      "right_kc_id": "gkc_modal_must",
+      "left_only_items": 5,
+      "right_only_items": 7,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_might",
+      "right_kc_id": "gkc_modal_shall",
+      "left_only_items": 5,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_might",
+      "right_kc_id": "gkc_modal_should",
+      "left_only_items": 5,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_might",
+      "right_kc_id": "gkc_modal_will",
+      "left_only_items": 5,
+      "right_only_items": 14,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_might",
+      "right_kc_id": "gkc_modal_would",
+      "left_only_items": 5,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_might",
+      "right_kc_id": "gkc_negation",
+      "left_only_items": 4,
+      "right_only_items": 48,
+      "cooccurring_items": 1,
+      "jaccard": 0.018868,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_modal_might",
+      "right_kc_id": "gkc_non_subject_wh_question",
+      "left_only_items": 5,
+      "right_only_items": 2,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_might",
+      "right_kc_id": "gkc_polar_question",
+      "left_only_items": 5,
+      "right_only_items": 12,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_must",
+      "right_kc_id": "gkc_modal_shall",
+      "left_only_items": 7,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_must",
+      "right_kc_id": "gkc_modal_should",
+      "left_only_items": 7,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_must",
+      "right_kc_id": "gkc_modal_will",
+      "left_only_items": 7,
+      "right_only_items": 14,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_must",
+      "right_kc_id": "gkc_modal_would",
+      "left_only_items": 7,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_must",
+      "right_kc_id": "gkc_negation",
+      "left_only_items": 3,
+      "right_only_items": 45,
+      "cooccurring_items": 4,
+      "jaccard": 0.076923,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_modal_must",
+      "right_kc_id": "gkc_non_subject_wh_question",
+      "left_only_items": 7,
+      "right_only_items": 2,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_must",
+      "right_kc_id": "gkc_polar_question",
+      "left_only_items": 7,
+      "right_only_items": 12,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_shall",
+      "right_kc_id": "gkc_modal_should",
+      "left_only_items": 4,
+      "right_only_items": 4,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_shall",
+      "right_kc_id": "gkc_modal_will",
+      "left_only_items": 4,
+      "right_only_items": 14,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_shall",
+      "right_kc_id": "gkc_modal_would",
+      "left_only_items": 4,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_shall",
+      "right_kc_id": "gkc_negation",
+      "left_only_items": 3,
+      "right_only_items": 48,
+      "cooccurring_items": 1,
+      "jaccard": 0.019231,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_modal_shall",
+      "right_kc_id": "gkc_non_subject_wh_question",
+      "left_only_items": 4,
+      "right_only_items": 2,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_shall",
+      "right_kc_id": "gkc_polar_question",
+      "left_only_items": 3,
+      "right_only_items": 11,
+      "cooccurring_items": 1,
+      "jaccard": 0.066667,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_modal_should",
+      "right_kc_id": "gkc_modal_will",
+      "left_only_items": 4,
+      "right_only_items": 14,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_should",
+      "right_kc_id": "gkc_modal_would",
+      "left_only_items": 4,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_should",
+      "right_kc_id": "gkc_negation",
+      "left_only_items": 3,
+      "right_only_items": 48,
+      "cooccurring_items": 1,
+      "jaccard": 0.019231,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_modal_should",
+      "right_kc_id": "gkc_non_subject_wh_question",
+      "left_only_items": 4,
+      "right_only_items": 2,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_should",
+      "right_kc_id": "gkc_polar_question",
+      "left_only_items": 4,
+      "right_only_items": 12,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_will",
+      "right_kc_id": "gkc_modal_would",
+      "left_only_items": 14,
+      "right_only_items": 5,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_will",
+      "right_kc_id": "gkc_negation",
+      "left_only_items": 9,
+      "right_only_items": 44,
+      "cooccurring_items": 5,
+      "jaccard": 0.086207,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_modal_will",
+      "right_kc_id": "gkc_non_subject_wh_question",
+      "left_only_items": 14,
+      "right_only_items": 2,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_will",
+      "right_kc_id": "gkc_polar_question",
+      "left_only_items": 12,
+      "right_only_items": 10,
+      "cooccurring_items": 2,
+      "jaccard": 0.083333,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_modal_would",
+      "right_kc_id": "gkc_negation",
+      "left_only_items": 3,
+      "right_only_items": 47,
+      "cooccurring_items": 2,
+      "jaccard": 0.038462,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_modal_would",
+      "right_kc_id": "gkc_non_subject_wh_question",
+      "left_only_items": 5,
+      "right_only_items": 2,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_modal_would",
+      "right_kc_id": "gkc_polar_question",
+      "left_only_items": 4,
+      "right_only_items": 11,
+      "cooccurring_items": 1,
+      "jaccard": 0.0625,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_negation",
+      "right_kc_id": "gkc_non_subject_wh_question",
+      "left_only_items": 47,
+      "right_only_items": 0,
+      "cooccurring_items": 2,
+      "jaccard": 0.040816,
+      "relation": "right_nested_in_left",
+      "a_only_b_only_and_a_plus_b": false
+    },
+    {
+      "left_kc_id": "gkc_negation",
+      "right_kc_id": "gkc_polar_question",
+      "left_only_items": 47,
+      "right_only_items": 10,
+      "cooccurring_items": 2,
+      "jaccard": 0.033898,
+      "relation": "crossed",
+      "a_only_b_only_and_a_plus_b": true
+    },
+    {
+      "left_kc_id": "gkc_non_subject_wh_question",
+      "right_kc_id": "gkc_polar_question",
+      "left_only_items": 2,
+      "right_only_items": 12,
+      "cooccurring_items": 0,
+      "jaccard": 0.0,
+      "relation": "disjoint",
+      "a_only_b_only_and_a_plus_b": false
+    }
+  ],
+  "heuristic_notes": {
+    "explicit_prompt_cue": "Case-insensitive regex over prompt text. For modal KCs it is the literal modal lemma; for clause KCs it includes task-type language such as ask/question. A hit is neither automatically bad nor proof of answer leakage.",
+    "surface_prompt_style": "Priority-ordered lexical heuristic. It exposes variation hidden under the single controlled_production format label."
+  }
+}

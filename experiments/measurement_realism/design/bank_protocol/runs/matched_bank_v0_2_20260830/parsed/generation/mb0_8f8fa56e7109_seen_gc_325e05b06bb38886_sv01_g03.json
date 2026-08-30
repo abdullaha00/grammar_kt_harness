@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "May I borrow your charger?",
+  "cell_id": "gc_325e05b06bb38886",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01_g03_cloze",
+      "context": "Sam's phone battery is low. Alex has a charger.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]] your charger?",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Sam's question using the words may, I, and borrow.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "May I borrow"
+        ],
+        "completed_target": "May I borrow your charger?",
+        "correct_choice_id": null,
+        "target_response": "May I borrow"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01_g03_dialog",
+      "context": "Sam needs to charge a phone, and Alex has a charger available.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Sam: My phone battery is almost empty.",
+          "Alex: I have a charger in my bag."
+        ],
+        "incomplete_turn_template": "Sam: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Sam's final turn with a polite question asking for permission.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "May I borrow your charger?"
+        ],
+        "completed_target": "May I borrow your charger?",
+        "correct_choice_id": null,
+        "target_response": "May I borrow your charger?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01_g03_mcq",
+      "context": "Sam's phone battery is low, and Sam wants Alex's permission to borrow Alex's charger.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses declarative subject–modal order instead of inverting the finite modal to form the question.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses an -ing form instead of the base-form complement after may.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Adds do-support even though may itself must serve as the inverted finite operator.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "I may borrow your charger?"
+          },
+          {
+            "id": "B",
+            "text": "May I borrowing your charger?"
+          },
+          {
+            "id": "C",
+            "text": "May I borrow your charger?"
+          },
+          {
+            "id": "D",
+            "text": "Do I may borrow your charger?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "What should Sam ask Alex?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the correct question for Sam to ask.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "C"
+        ],
+        "completed_target": "May I borrow your charger?",
+        "correct_choice_id": "C",
+        "target_response": "C"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01_g03_xform",
+      "context": "Sam's phone battery is low, and Alex has a charger available.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Sam wants permission to borrow Alex's charger now.",
+        "stem": null,
+        "transformation_cue": "may / I / borrow / your charger"
+      },
+      "instruction": "Write Sam's question to Alex asking for permission. Use all the words in the cue.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "May I borrow your charger?"
+        ],
+        "completed_target": "May I borrow your charger?",
+        "correct_choice_id": null,
+        "target_response": "May I borrow your charger?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Sam asks Alex for permission to borrow the charger.",
+    "main_verb_lemma": "borrow",
+    "object_head": "charger",
+    "participants": [
+      "Sam",
+      "Alex"
+    ],
+    "situation_summary": "Sam's phone battery is low, and Alex has a charger available.",
+    "time_anchor": "now"
+  },
+  "semantic_variant_index": 1
+}

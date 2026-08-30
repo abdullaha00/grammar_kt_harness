@@ -1,0 +1,24 @@
+{
+  "artifact_id": "full_v1_platform_plausibility_call_evidence_bundle_v1",
+  "status": "PUBLIC_CALL_EVIDENCE_PACKAGED",
+  "calls": 16,
+  "files_per_call": 8,
+  "artifact_names": [
+    "input.json",
+    "rendered_prompt.txt",
+    "model_settings.json",
+    "output_schema.json",
+    "raw_output.txt",
+    "cli_stderr.txt",
+    "call_metadata.json",
+    "parsed_result.json"
+  ],
+  "bundle": "call_evidence_bundle.jsonl",
+  "bundle_sha256": "c9b406549287cdfc777bea4b5fae4a55d0cfbd410858cea39a6f15982c6f174a",
+  "run_manifest_sha256": "6e0ac396bf036d47e2588d871b613e99ad53c1c516b2d210ef827c5b3f21749b",
+  "source_evidence_root": "runs/measurement_realism/full_v1_item_audit_evidence_v2",
+  "contains_restricted_egp_source_text": false,
+  "contains_only_public_frozen_item_context": true,
+  "packager": "scripts/experiments/package_measurement_audit_evidence.py",
+  "packager_sha256": "46c2925f94227f7db12d6240cf68ae74a4b43e7f19823815490749edb09f41d8"
+}

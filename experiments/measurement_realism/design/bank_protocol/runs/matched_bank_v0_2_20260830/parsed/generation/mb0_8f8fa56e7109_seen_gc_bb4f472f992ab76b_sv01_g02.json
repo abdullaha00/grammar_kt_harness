@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "Turn off the oven.",
+  "cell_id": "gc_bb4f472f992ab76b",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g02_cloze",
+      "context": "Mia has taken the cake out, but the oven is still on. The cooking instructor tells her what to do next.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]]",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the instructor's direct instruction.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Turn off the oven."
+        ],
+        "completed_target": "Turn off the oven.",
+        "correct_choice_id": null,
+        "target_response": "Turn off the oven."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g02_dialog",
+      "context": "Mia and her cooking instructor have just finished baking a cake.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Mia: The cake is out now.",
+          "Instructor: Good, but the oven is still on."
+        ],
+        "incomplete_turn_template": "Instructor: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the instructor's reply.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Turn off the oven."
+        ],
+        "completed_target": "Turn off the oven.",
+        "correct_choice_id": null,
+        "target_response": "Turn off the oven."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g02_mcq",
+      "context": "Mia has taken the cake out, but the oven is still on.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses an explicit subject and declarative clause form instead of an imperative.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses an -ing clause fragment instead of an imperative.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses a to-infinitive clause fragment instead of an imperative.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "You turn off the oven."
+          },
+          {
+            "id": "B",
+            "text": "Turn off the oven."
+          },
+          {
+            "id": "C",
+            "text": "Turning off the oven."
+          },
+          {
+            "id": "D",
+            "text": "To turn off the oven."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "What does the instructor say to Mia?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the direct instruction the cooking instructor gives Mia.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Turn off the oven.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g02_xform",
+      "context": "The cooking lesson has just finished.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Mia has taken the cake out. The oven is still on.",
+        "stem": null,
+        "transformation_cue": "turn off / the oven"
+      },
+      "instruction": "Write the instructor's message as a direct instruction to Mia. Use all the words in the cue.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Turn off the oven."
+        ],
+        "completed_target": "Turn off the oven.",
+        "correct_choice_id": null,
+        "target_response": "Turn off the oven."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "The cooking instructor directly tells Mia to switch the oven off.",
+    "main_verb_lemma": "turn off",
+    "object_head": "oven",
+    "participants": [
+      "cooking instructor",
+      "Mia"
+    ],
+    "situation_summary": "After a cooking lesson, the cake is out but the oven is still on.",
+    "time_anchor": "immediately after the cake is removed"
+  },
+  "semantic_variant_index": 1
+}

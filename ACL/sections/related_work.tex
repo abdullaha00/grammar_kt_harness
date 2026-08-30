@@ -1,55 +1,65 @@
 \section{Related Work}
 
-\paragraph{Grammar resources and linguistic representation.}
-The CEFR provides proficiency scales across language activities
-\citep{coe-2020-cefr}.  The EGP specializes this programme for English
-grammar, using learner-corpus frequency, accuracy, and dispersion to associate
-competence statements with CEFR levels \citep{okeeffe-mark-2017}.  Recent work
-uses NLP to re-examine those level assignments quantitatively
-\citep{verratti-souto-etal-2025}.  We do not reassess proficiency levels.
-Instead, we convert descriptor content into a bounded structural
-representation while retaining uncertainty, source relations, and
-out-of-scope decisions.
+\paragraph{Grammar resources and opportunity boundaries.}
+The CEFR provides proficiency scales, while the English Grammar Profile (EGP)
+links corpus-supported grammar competence statements to CEFR levels
+\citep{coe-2020-cefr,okeeffe-mark-2017}.  These are rich linguistic resources,
+not item banks or cognitive models.  TSCCv2 retains discourse relations,
+pedagogical focus, repair, and correction in real English tutoring
+\citep{caines-etal-2022-teacher}; dialogue KT must infer which turns are
+opportunities and what each tests \citep{scarlatos-etal-2025-dialogue}.  We
+study the complementary setting in which opportunity and generator truth are
+declared, then ask how much ecological context can be added before that
+boundary becomes ambiguous.
 
-\paragraph{Language tutoring data and dialogue KT.}
-TSCCv2 retains discourse sequences, pedagogical focus, response relations, and
-grammatical-error corrections from real English tutoring
-\citep{caines-etal-2022-teacher}.  Dialogue KT has used language models to mark
-candidate KCs and correctness at individual turns before fitting a tracer
-\citep{scarlatos-etal-2025-dialogue}.  Such work demonstrates the value of
-expert-audited learner interaction, but it must infer whether a turn is an
-assessment opportunity and what it tests.  We study the complementary setting:
-the linguistic opportunity, item, and generator mapping are constructed and
-audited before any learner event exists.
+\paragraph{KC/Q specification and identifiability.}
+KCs connect performance to instructional units \citep{koedinger-etal-2012}.
+Classical BKT models learning, guess, and slip
+\citep{corbett-anderson-1995}; PFA uses logistic practice features
+\citep{pavlik-etal-2009}.  Cognitive-model refinement combines statistical
+evidence with expert interpretation \citep{cen-etal-2006}, and response data can
+validate or refine Q \citep{de-la-torre-chiu-2016,pardos-dadu-2018}.  Q
+misspecification can be absorbed into response parameters and damage latent
+classification \citep{rupp-templin-2008}.  Formal Q-identifiability conditions
+are response-model-specific; for example, DINA results require structure beyond
+numerical rank \citep{gu-xu-2021}.  We therefore separate linear Q geometry,
+empirical recovery, pedagogical interpretation, and psychological truth.
 
-\paragraph{Exercise generation and documentation.}
-Adaptive question generation has conditioned text on learner history and target
-difficulty \citep{srivastava-goodman-2021-question,
-cui-sachan-2023-adaptive}.  Grammar-focused systems generate multiple-choice
-or gap-filling exercises from passages or examples
-\citep{chan-etal-2022-agree,bitew-etal-2023-learning}.  These studies highlight
-both authoring cost and the need to assess correctness and answer uniqueness.
-We generate common lexical contexts from fixed grammar cells, screen candidates
-independently, retain failed attempts and interventions, and freeze the bank
-before simulation.  Following data-statement principles, we document scope,
-selection, and limitations \citep{bender-friedman-2018}.
+\paragraph{Measurement validity, item difficulty, and format.}
+Validity concerns the interpretation and use of responses, including construct
+underrepresentation and construct-irrelevant variance
+\citep{messick-1994,kane-2013}.  Item difficulty is central in IRT and has been
+incorporated into KT \citep{pardos-heffernan-2011}; individualized KT shows that
+learner learning rates can also matter \citep{yudelson-etal-2013}.  Format
+effects are heterogeneous: matched multiple-choice and constructed-response
+stems are more comparable than unmatched content, and language-test effects
+depend on design and proficiency \citep{rodriguez-2003,innami-koizumi-2009}.
+Thus a format contrast requires matched semantic content and crossed KCs, not
+unrelated item campaigns.  We use zero and planted controls rather than assign
+one supposedly universal difficulty ordering to task types.
 
-\paragraph{Domain models and knowledge tracing.}
-KCs are acquired units connecting instruction and performance
-\citep{koedinger-etal-2012}.  Classical BKT tracks a latent learned/unlearned
-state with learning, guess, and slip parameters
-\citep{corbett-anderson-1995}; factor models instead use logistic practice
-features \citep{pavlik-etal-2009}.  A Q-matrix supplies the assumed item--KC
-mapping, and learner responses can be used to validate or refine that mapping
-or compare cognitive models
-\citep{de-la-torre-chiu-2016,pardos-dadu-2018,cen-etal-2006}.  Related work combines
-domain-model induction with student modelling \citep{picones-etal-2022}.
+\paragraph{Platform selection and learner responses.}
+SLAM includes millions of language-production tokens with exercise, time, and
+error metadata \citep{settles-etal-2018}; EdNet mixes problem, lecture,
+purchase, and within-question events at much larger scale
+\citep{choi-etal-2020}.  Such logs are selected service histories, not random
+item assignment.  Spaced-practice models make elapsed exposure part of the
+learning process \citep{settles-meeder-2016}.  We compare a laboratory schedule
+with simple curriculum, mixed, and observable-history adaptive alternatives,
+while explicitly avoiding a policy-value claim.
 
-Our boundary differs in two ways.  First, generator \kstar/\qstar{} is fixed
-from linguistic and measurement declarations before responses are generated;
-it is not selected for predictive success.  Second, response-driven
-refinement is evaluated later as KC discovery, where known synthetic truth can
-measure structural as well as predictive recovery.  Synthetic KT data are
-useful for such controlled tests \citep{piech-etal-2015,pagonis-etal-2024},
-provided simulator-dependent results are not promoted to human cognitive
-claims.
+Binary correctness also discards linguistic evidence.  Learner corpora and
+ERRANT show that grammatical errors can be typed, while multiple valid
+corrections complicate exact scoring \citep{bryant-etal-2017,bryant-etal-2019}.
+We begin with structured categories and linked/shuffled information controls;
+we do not call generated labels human errors or generate surface text without
+validation.
+
+\paragraph{Synthetic learner studies.}
+Known truth makes controlled KT evaluation possible
+\citep{piech-etal-2015,pagonis-etal-2024}, but simulator validity is
+purpose-specific, and educational simulations often provide limited validity
+evidence \citep{kaser-alexandron-2024}.  Our response is not one increasingly
+ornate ``realistic'' simulator.  We retain a clean world and add separate paired
+worlds for item, format, learner, error, and policy mechanisms, each with a
+negative or positive control and a bounded claim.

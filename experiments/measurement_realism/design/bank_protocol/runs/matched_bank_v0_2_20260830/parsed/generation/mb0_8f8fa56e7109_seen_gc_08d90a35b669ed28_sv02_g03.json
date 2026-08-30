@@ -1,0 +1,161 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "Has Nina returned the library book?",
+  "cell_id": "gc_08d90a35b669ed28",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02_g03_cloze",
+      "context": "Nina's library book was due back today. Alex wants to know if it is back at the library now.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]]",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Write Alex's question using “Nina,” “return,” and “the library book.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Has Nina returned the library book?",
+          "Has Nina returned the library book"
+        ],
+        "completed_target": "Has Nina returned the library book?",
+        "correct_choice_id": null,
+        "target_response": "Has Nina returned the library book?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02_g03_dialog",
+      "context": "Alex is asking about a book that was due back today.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Alex: Nina's library book was due back today.",
+          "Librarian: I checked the returns this morning."
+        ],
+        "incomplete_turn_template": "Alex: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Alex's question using “Nina,” “return,” and “the library book.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Has Nina returned the library book?",
+          "Has Nina returned the library book"
+        ],
+        "completed_target": "Has Nina returned the library book?",
+        "correct_choice_id": null,
+        "target_response": "Has Nina returned the library book?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02_g03_mcq",
+      "context": "Nina's library book was due back today. Alex wants to ask the librarian if it is back now.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the simple past with DID instead of constructing the present perfect.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses the base form after HAVE instead of the required past participle.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Keeps declarative word order instead of inverting the finite operator and subject.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Has Nina returned the library book?"
+          },
+          {
+            "id": "B",
+            "text": "Did Nina return the library book?"
+          },
+          {
+            "id": "C",
+            "text": "Has Nina return the library book?"
+          },
+          {
+            "id": "D",
+            "text": "Nina has returned the library book?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which question should Alex ask?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the correct question.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "Has Nina returned the library book?",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv02_g03_xform",
+      "context": "Nina's library book was due back today. Alex wants to check whether it is back now.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Nina has returned the library book.",
+        "stem": null,
+        "transformation_cue": "Begin with “Has.”"
+      },
+      "instruction": "Turn the statement into a yes/no question without changing the meaning.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Has Nina returned the library book?",
+          "Has Nina returned the library book"
+        ],
+        "completed_target": "Has Nina returned the library book?",
+        "correct_choice_id": null,
+        "target_response": "Has Nina returned the library book?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Ask whether Nina has returned the book by the present time.",
+    "main_verb_lemma": "return",
+    "object_head": "book",
+    "participants": [
+      "Nina",
+      "Alex",
+      "the librarian"
+    ],
+    "situation_summary": "Nina's library book was due back today, and Alex asks the librarian whether it is back now.",
+    "time_anchor": "now, on the day the book is due"
+  },
+  "semantic_variant_index": 2
+}

@@ -1,0 +1,162 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "Maya is carrying the boxes into the office.",
+  "cell_id": "gc_e730dbce7b036961",
+  "family_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01",
+  "grammar_regime": "unseen_combination",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g02_cloze",
+      "context": "The office move is happening now.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Maya [[RESPONSE]] the boxes into the office.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using the verb “carry.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "is carrying",
+          "'s carrying",
+          "’s carrying"
+        ],
+        "completed_target": "Maya is carrying the boxes into the office.",
+        "correct_choice_id": null,
+        "target_response": "is carrying"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g02_dialog",
+      "context": "Two colleagues are watching the office move.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Leo: What is Maya doing right now?",
+          "Nina: I can see her near the entrance with the boxes."
+        ],
+        "incomplete_turn_template": "Nina: Maya [[RESPONSE]] the boxes into the office.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Maya's colleague's reply using the verb “carry.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "is carrying",
+          "'s carrying",
+          "’s carrying"
+        ],
+        "completed_target": "Maya is carrying the boxes into the office.",
+        "correct_choice_id": null,
+        "target_response": "is carrying"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g02_mcq",
+      "context": "The office move is in progress, and Maya currently has the boxes in her arms.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the simple present instead of constructing the present progressive.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses the wrong present form of BE for the singular subject.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Omits the finite present form of BE from the progressive construction.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Maya carries the boxes into the office."
+          },
+          {
+            "id": "B",
+            "text": "Maya is carrying the boxes into the office."
+          },
+          {
+            "id": "C",
+            "text": "Maya are carrying the boxes into the office."
+          },
+          {
+            "id": "D",
+            "text": "Maya carrying the boxes into the office."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly describes Maya's current action?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that describes what is happening now.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Maya is carrying the boxes into the office.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g02_xform",
+      "context": "The office move is happening at this moment.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Maya started to carry the boxes into the office and has not finished.",
+        "stem": null,
+        "transformation_cue": "Begin with “Maya” and use the verb “carry.”"
+      },
+      "instruction": "Rewrite the information as one sentence about what is happening now. Use “carry.”",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Maya is carrying the boxes into the office.",
+          "Maya's carrying the boxes into the office.",
+          "Maya’s carrying the boxes into the office."
+        ],
+        "completed_target": "Maya is carrying the boxes into the office.",
+        "correct_choice_id": null,
+        "target_response": "Maya is carrying the boxes into the office."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Describe Maya's current action.",
+    "main_verb_lemma": "carry",
+    "object_head": "boxes",
+    "participants": [
+      "Maya"
+    ],
+    "situation_summary": "During an office move, Maya is taking boxes into the office now.",
+    "time_anchor": "right now during the office move"
+  },
+  "semantic_variant_index": 1
+}

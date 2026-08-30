@@ -1,0 +1,19 @@
+{
+  "ambiguity_explanation": "Both versions give the same clear instruction.",
+  "batch_id": "solver_r02_rep1_dialogue_completion_b02",
+  "instruction_understanding": "Complete the instructor's reply with a suitable instruction about the oven.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g02_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Turn off the oven."
+  ],
+  "reasonable_unkeyed_responses": [],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g02_dialog_solver_r1",
+  "submitted_response": "Turn it off.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

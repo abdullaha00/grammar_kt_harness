@@ -1,0 +1,9 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01",
+  "candidate_round": 1,
+  "failed_checks": [
+    "dialogue_completion:canonical_reconstruction"
+  ],
+  "family_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01",
+  "passed": false
+}

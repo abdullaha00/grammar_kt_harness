@@ -1,0 +1,44 @@
+{
+  "type": "object",
+  "properties": {
+    "critic_role": {"type": "string", "enum": ["learner", "language_teacher", "platform_product", "measurement", "linguistic"]},
+    "family_id": {"type": "string"},
+    "judgments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "judgment_schema": {"type": "string", "enum": ["dialogue_continuum_critic_v1"]},
+          "critic_id": {"type": "string"},
+          "critic_role": {"type": "string", "enum": ["learner", "language_teacher", "platform_product", "measurement", "linguistic"]},
+          "family_id": {"type": "string"},
+          "opportunity_id": {"type": "string"},
+          "format": {"type": "string", "enum": ["constrained_cloze", "sentence_transformation", "contextual_production", "dialogue_completion", "open_dialogue"]},
+          "ratings": {
+            "type": "object",
+            "properties": {
+              "task_comprehensibility": {"type": "string", "enum": ["pass", "minor_concern", "major_concern", "not_applicable"]},
+              "context_naturalness": {"type": "string", "enum": ["pass", "minor_concern", "major_concern", "not_applicable"]},
+              "interaction_naturalness": {"type": "string", "enum": ["pass", "minor_concern", "major_concern", "not_applicable"]},
+              "platform_plausibility": {"type": "string", "enum": ["pass", "minor_concern", "major_concern", "not_applicable"]},
+              "answer_determinacy": {"type": "string", "enum": ["determinate", "bounded_multiple", "materially_ambiguous", "not_applicable"]},
+              "accepted_response_coverage": {"type": "string", "enum": ["complete", "minor_gap", "major_gap", "not_applicable"]},
+              "lexical_nuisance": {"type": "string", "enum": ["low", "moderate", "high", "not_applicable"]},
+              "kc_attribution": {"type": "string", "enum": ["clear", "partial", "weak", "not_attributable", "not_applicable"]}
+            },
+            "required": ["task_comprehensibility", "context_naturalness", "interaction_naturalness", "platform_plausibility", "answer_determinacy", "accepted_response_coverage", "lexical_nuisance", "kc_attribution"],
+            "additionalProperties": false
+          },
+          "plausible_response_lower_bound": {"type": ["integer", "null"]},
+          "incidental_grammar_operations": {"type": "array", "items": {"type": "string", "enum": ["tense_selection", "aspect_selection", "voice_argument_structure", "negation", "auxiliary_selection", "do_support", "operator_inversion", "wh_fronting", "modal_semantics", "agreement", "participle_morphology", "progressive_morphology", "reported_speech", "pronoun_reference", "lexical_choice", "discourse_pragmatics", "other"]}},
+          "target_avoiding_shortcut": {"type": ["boolean", "null"]},
+          "primary_concern": {"type": "string"}
+        },
+        "required": ["judgment_schema", "critic_id", "critic_role", "family_id", "opportunity_id", "format", "ratings", "plausible_response_lower_bound", "incidental_grammar_operations", "target_avoiding_shortcut", "primary_concern"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["critic_role", "family_id", "judgments"],
+  "additionalProperties": false
+}

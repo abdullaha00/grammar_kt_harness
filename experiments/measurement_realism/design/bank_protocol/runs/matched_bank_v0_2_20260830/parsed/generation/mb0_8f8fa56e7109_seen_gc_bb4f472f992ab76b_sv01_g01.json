@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "Turn off the kitchen light.",
+  "cell_id": "gc_bb4f472f992ab76b",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g01_cloze",
+      "context": "Alex and Mia are about to leave the kitchen, but the light is still on. Words: turn off / the kitchen light",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]]",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Use all the given words to complete Alex's instruction.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Turn off the kitchen light."
+        ],
+        "completed_target": "Turn off the kitchen light.",
+        "correct_choice_id": null,
+        "target_response": "Turn off the kitchen light."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g01_dialog",
+      "context": "Alex and Mia are about to leave the kitchen.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Mia: Are we ready to leave the kitchen?",
+          "Alex: Almost. The light is still on."
+        ],
+        "incomplete_turn_template": "Alex: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Alex's final turn with a direct instruction to Mia.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Turn off the kitchen light."
+        ],
+        "completed_target": "Turn off the kitchen light.",
+        "correct_choice_id": null,
+        "target_response": "Turn off the kitchen light."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g01_mcq",
+      "context": "Alex and Mia are about to leave the kitchen, but the light is still on.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses an -ing fragment instead of an imperative main clause.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses a passive declarative clause instead of an active imperative.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses a past-participle fragment instead of the base verb required for an imperative.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Turn off the kitchen light."
+          },
+          {
+            "id": "B",
+            "text": "Turning off the kitchen light."
+          },
+          {
+            "id": "C",
+            "text": "The kitchen light is turned off."
+          },
+          {
+            "id": "D",
+            "text": "Turned off the kitchen light."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "What should Alex say to Mia before they leave?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that gives Mia a direct instruction.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "Turn off the kitchen light.",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g01_xform",
+      "context": "Alex and Mia are about to leave the kitchen.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Mia is leaving the kitchen. The kitchen light is still on.",
+        "stem": null,
+        "transformation_cue": "turn off / the kitchen light"
+      },
+      "instruction": "Rewrite the information as Alex's direct instruction to Mia. Use the cue words.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Turn off the kitchen light."
+        ],
+        "completed_target": "Turn off the kitchen light.",
+        "correct_choice_id": null,
+        "target_response": "Turn off the kitchen light."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Alex directly tells Mia what to do before they leave.",
+    "main_verb_lemma": "turn off",
+    "object_head": "light",
+    "participants": [
+      "Alex",
+      "Mia"
+    ],
+    "situation_summary": "Alex and Mia are about to leave the kitchen, but the light is still on.",
+    "time_anchor": "now, before leaving the kitchen"
+  },
+  "semantic_variant_index": 1
+}

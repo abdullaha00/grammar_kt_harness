@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "Maya was repairing her bicycle when Leo arrived.",
+  "cell_id": "gc_44ff4acdb263024b",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g02_cloze",
+      "context": "The repair began before Leo arrived and was still in progress at that moment.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Maya [[RESPONSE]] her bicycle when Leo arrived.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence with the correct form of “repair.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "was repairing"
+        ],
+        "completed_target": "Maya was repairing her bicycle when Leo arrived.",
+        "correct_choice_id": null,
+        "target_response": "was repairing"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g02_dialog",
+      "context": "Nora explains what she saw as Leo came in.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Leo: What was Maya doing when I arrived?",
+          "Nora: She was in the middle of fixing a problem with her bicycle."
+        ],
+        "incomplete_turn_template": "Nora: Maya [[RESPONSE]] her bicycle when Leo arrived.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Nora's answer with the correct form of “repair.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "was repairing"
+        ],
+        "completed_target": "Maya was repairing her bicycle when Leo arrived.",
+        "correct_choice_id": null,
+        "target_response": "was repairing"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g02_mcq",
+      "context": "Maya started the repair before Leo arrived and continued working during his arrival.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the simple past instead of the progressive construction.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses present finite “is” instead of past finite “was.”",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses the base form after “was” instead of the required -ing form.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Maya repaired her bicycle when Leo arrived."
+          },
+          {
+            "id": "B",
+            "text": "Maya was repairing her bicycle when Leo arrived."
+          },
+          {
+            "id": "C",
+            "text": "Maya is repairing her bicycle when Leo arrived."
+          },
+          {
+            "id": "D",
+            "text": "Maya was repair her bicycle when Leo arrived."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence best describes the situation?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that shows the repair was already in progress when Leo arrived.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Maya was repairing her bicycle when Leo arrived.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g02_xform",
+      "context": "Keep the same people, activity, object, and time relationship.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Maya started work on her bicycle before Leo arrived. The work continued through his arrival.",
+        "stem": null,
+        "transformation_cue": "Use “repair” and “when Leo arrived.”"
+      },
+      "instruction": "Combine the information into one sentence. Show that the activity was in progress at Leo's arrival.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Maya was repairing her bicycle when Leo arrived."
+        ],
+        "completed_target": "Maya was repairing her bicycle when Leo arrived.",
+        "correct_choice_id": null,
+        "target_response": "Maya was repairing her bicycle when Leo arrived."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Describe the activity Maya had in progress at a specific past moment.",
+    "main_verb_lemma": "repair",
+    "object_head": "bicycle",
+    "participants": [
+      "Maya",
+      "Leo"
+    ],
+    "situation_summary": "Maya's bicycle repair was already in progress at the moment Leo arrived.",
+    "time_anchor": "when Leo arrived"
+  },
+  "semantic_variant_index": 2
+}

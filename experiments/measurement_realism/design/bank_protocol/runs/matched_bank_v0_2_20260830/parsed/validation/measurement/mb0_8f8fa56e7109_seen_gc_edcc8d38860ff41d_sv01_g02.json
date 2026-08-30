@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r02_measurement_b02",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g02",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01",
+  "family_judgments": [
+    {
+      "blocking": true,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "The dialogue measures any ability question, whereas the other formats explicitly require CAN and inversion.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": true,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "In the dialogue, modal CAN is optional, effectively redefining the construct as ability-question expression.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "All formats concern Maya’s ability to carry the boxes.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The cue forces CAN, subject–modal inversion, and carry in base form.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The required grammar corresponds to modal CAN and polar-question formation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The response must realize both declared operations.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The supplied word order material determines “Can Maya carry.”",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "No reasonable alternative uses the stipulated cue words and gap.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The lexical context is transparent.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g02_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": true,
+          "criterion": "active_kc_evidence",
+          "evidence": "The dialogue asks only about ability; “Is Maya able to carry the boxes?” is a reasonable unkeyed response and does not evidence modal CAN.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "No major undeclared grammar is necessary for the intended form.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "A learner can fulfil the communicative request with “Is Maya able to carry the boxes?” without either declared CAN operation.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "The instruction does not require can, so both the keyed CAN question and the solver-proposed able-to question fit.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "“Is Maya able to carry the boxes?” is linguistically and contextually reasonable but omitted from accepted responses.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Choosing a modal versus an able-to paraphrase is a semantic-expression choice outside the declared scoring rule.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g02_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Options explicitly contrast inversion and modal base-form selection.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "Distractors target the specified modal-question operations.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Option elimination can support recognition-based success.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "D alone correctly asks the specified CAN question.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "D is the single defensible option within the options.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "No important extraneous burden is evident.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g02_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "“Using can” forces modal selection, inversion, and the base complement.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The transformation directly targets the two declared KCs.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The required CAN cue precludes the able-to paraphrase shortcut.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The source statement and cue determine the target question.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The keyed response adequately covers the constrained request.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Sentence transformation adds modest paraphrase burden.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g02_xform"
+    }
+  ],
+  "overall_accept": false,
+  "role": "measurement",
+  "summary": "Reject: the dialogue permits a valid able-to question that avoids both declared CAN evidence and keyed scoring."
+}

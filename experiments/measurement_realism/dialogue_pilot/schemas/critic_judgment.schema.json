@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "critic_judgment.schema.json",
+  "title": "Ecological-precision continuum critic judgment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "judgment_schema",
+    "critic_id",
+    "critic_role",
+    "family_id",
+    "opportunity_id",
+    "format",
+    "ratings",
+    "plausible_response_lower_bound",
+    "incidental_grammar_operations",
+    "target_avoiding_shortcut",
+    "primary_concern"
+  ],
+  "properties": {
+    "judgment_schema": {"const": "dialogue_continuum_critic_v1"},
+    "critic_id": {"type": "string", "minLength": 1},
+    "critic_role": {
+      "enum": [
+        "learner",
+        "language_teacher",
+        "platform_product",
+        "measurement",
+        "linguistic"
+      ]
+    },
+    "family_id": {"type": "string", "minLength": 1},
+    "opportunity_id": {"type": "string", "minLength": 1},
+    "format": {
+      "enum": [
+        "constrained_cloze",
+        "sentence_transformation",
+        "contextual_production",
+        "dialogue_completion",
+        "open_dialogue"
+      ]
+    },
+    "ratings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "task_comprehensibility",
+        "context_naturalness",
+        "interaction_naturalness",
+        "platform_plausibility",
+        "answer_determinacy",
+        "accepted_response_coverage",
+        "lexical_nuisance",
+        "kc_attribution"
+      ],
+      "properties": {
+        "task_comprehensibility": {"$ref": "#/$defs/concern"},
+        "context_naturalness": {"$ref": "#/$defs/concern"},
+        "interaction_naturalness": {"$ref": "#/$defs/concern"},
+        "platform_plausibility": {"$ref": "#/$defs/concern"},
+        "answer_determinacy": {
+          "enum": [
+            "determinate",
+            "bounded_multiple",
+            "materially_ambiguous",
+            "not_applicable"
+          ]
+        },
+        "accepted_response_coverage": {
+          "enum": ["complete", "minor_gap", "major_gap", "not_applicable"]
+        },
+        "lexical_nuisance": {
+          "enum": ["low", "moderate", "high", "not_applicable"]
+        },
+        "kc_attribution": {
+          "enum": [
+            "clear",
+            "partial",
+            "weak",
+            "not_attributable",
+            "not_applicable"
+          ]
+        }
+      }
+    },
+    "plausible_response_lower_bound": {
+      "type": ["integer", "null"],
+      "minimum": 1
+    },
+    "incidental_grammar_operations": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "tense_selection",
+          "aspect_selection",
+          "voice_argument_structure",
+          "negation",
+          "auxiliary_selection",
+          "do_support",
+          "operator_inversion",
+          "wh_fronting",
+          "modal_semantics",
+          "agreement",
+          "participle_morphology",
+          "progressive_morphology",
+          "reported_speech",
+          "pronoun_reference",
+          "lexical_choice",
+          "discourse_pragmatics",
+          "other"
+        ]
+      }
+    },
+    "target_avoiding_shortcut": {"type": ["boolean", "null"]},
+    "primary_concern": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "concern": {
+      "enum": ["pass", "minor_concern", "major_concern", "not_applicable"]
+    }
+  }
+}

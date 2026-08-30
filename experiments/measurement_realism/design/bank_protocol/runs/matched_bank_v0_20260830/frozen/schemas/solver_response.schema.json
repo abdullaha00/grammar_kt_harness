@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "measurement-realism-solver-batch-v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["batch_id", "replicate", "responses"],
+  "properties": {
+    "batch_id": {"type": "string", "minLength": 1},
+    "replicate": {"type": "integer", "minimum": 1, "maximum": 2},
+    "responses": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "solver_attempt_id", "item_id", "instruction_understanding",
+          "task_understood", "response_mechanism_clear", "submitted_response",
+          "multiple_material_responses_reasonable", "major_ambiguity",
+          "other_reasonable_responses", "vocabulary_or_context_blocked",
+          "ambiguity_explanation"
+        ],
+        "properties": {
+          "solver_attempt_id": {"type": "string", "minLength": 1},
+          "item_id": {"type": "string", "minLength": 1},
+          "instruction_understanding": {"type": "string", "minLength": 1},
+          "task_understood": {"type": "boolean"},
+          "response_mechanism_clear": {"type": "boolean"},
+          "submitted_response": {"type": "string"},
+          "multiple_material_responses_reasonable": {"type": "boolean"},
+          "major_ambiguity": {"type": "boolean"},
+          "other_reasonable_responses": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "vocabulary_or_context_blocked": {"type": "boolean"},
+          "ambiguity_explanation": {"type": "string"}
+        }
+      }
+    }
+  }
+}

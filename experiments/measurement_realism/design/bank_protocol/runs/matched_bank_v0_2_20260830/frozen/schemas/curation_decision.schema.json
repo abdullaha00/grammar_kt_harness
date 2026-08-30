@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "measurement-realism-curation-decision-v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "family_id", "candidate_id", "candidate_round", "decision", "deterministic_checks_pass",
+    "solver_gates_pass", "critic_gates_pass", "failed_gates", "selected_as_earliest_passing"
+  ],
+  "properties": {
+    "family_id": {"type": "string", "minLength": 1},
+    "candidate_id": {"type": "string", "minLength": 1},
+    "candidate_round": {"type": "integer", "minimum": 1, "maximum": 3},
+    "decision": {"enum": ["accept", "reject", "not_evaluated"]},
+    "deterministic_checks_pass": {"type": "boolean"},
+    "solver_gates_pass": {"type": "boolean"},
+    "critic_gates_pass": {"type": "boolean"},
+    "failed_gates": {"type": "array", "items": {"type": "string"}},
+    "selected_as_earliest_passing": {"type": "boolean"}
+  }
+}

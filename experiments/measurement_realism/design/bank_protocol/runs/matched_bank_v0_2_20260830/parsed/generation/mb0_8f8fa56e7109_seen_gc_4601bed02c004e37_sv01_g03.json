@@ -1,0 +1,156 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv01_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "Lena returned the library book yesterday.",
+  "cell_id": "gc_4601bed02c004e37",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv01_g03_cloze",
+      "context": "The book was due back at the library.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Lena [[RESPONSE]] the library book yesterday. (return)",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence with the correct form of the verb in brackets.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "returned"
+        ],
+        "completed_target": "Lena returned the library book yesterday.",
+        "correct_choice_id": null,
+        "target_response": "returned"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv01_g03_dialog",
+      "context": "Two friends are talking about a borrowed book.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Nora: Does Lena still have the library book?",
+          "Sam: No, she took it back."
+        ],
+        "incomplete_turn_template": "Sam: Lena [[RESPONSE]] yesterday.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Lena's friend's reply.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "returned the library book"
+        ],
+        "completed_target": "Lena returned the library book yesterday.",
+        "correct_choice_id": null,
+        "target_response": "returned the library book"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv01_g03_mcq",
+      "context": "Lena took a borrowed book back to the library yesterday.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the base form instead of past finite morphology.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses present finite morphology instead of past finite morphology.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses present perfect morphology instead of the simple past form required by the finished-time reference.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Lena return the library book yesterday."
+          },
+          {
+            "id": "B",
+            "text": "Lena returned the library book yesterday."
+          },
+          {
+            "id": "C",
+            "text": "Lena returns the library book yesterday."
+          },
+          {
+            "id": "D",
+            "text": "Lena has returned the library book yesterday."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly describes Lena's action?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly reports what happened yesterday.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Lena returned the library book yesterday.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv01_g03_xform",
+      "context": "Change the time of the report while keeping the people, action, and object the same.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Lena returns the library book.",
+        "stem": null,
+        "transformation_cue": "Use: yesterday; return"
+      },
+      "instruction": "Rewrite the sentence to report what happened yesterday.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Lena returned the library book yesterday."
+        ],
+        "completed_target": "Lena returned the library book yesterday.",
+        "correct_choice_id": null,
+        "target_response": "Lena returned the library book yesterday."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Report Lena's completed action yesterday.",
+    "main_verb_lemma": "return",
+    "object_head": "book",
+    "participants": [
+      "Lena"
+    ],
+    "situation_summary": "Lena took a borrowed book back to the library.",
+    "time_anchor": "yesterday"
+  },
+  "semantic_variant_index": 1
+}

@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r03_measurement_b01",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g03",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "All formats target past progressive, but the transformation adds unrestricted full-sentence production and narrow exact scoring.",
+      "severity": "minor_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "Each format still requires or recognizes past BE plus -ing; no format changes the declared KC definitions.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "Each format describes Leo's repair activity as ongoing at four yesterday.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Keyed 'was repairing' requires past finite BE and the progressive -ing form.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "No important undeclared response grammar is required.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The explicit ongoing-at-four context rules out simple past as an adequate description of the intended event.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The bounded past-time, unfinished-activity context supports 'was repairing'.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The constrained gap makes the keyed response the natural completion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Lexis and timeline are transparent.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g03_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The target requires past BE plus repairing.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The turn reads 'Leo: Leo ...', an avoidable presentation error.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The question about what Leo was doing at a specified past time elicits progressive aspect.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The response frame and time reference constrain the intended verb form.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The constrained verb-form gap reasonably limits valid responses.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The duplicated name and redundant dialogue clue add minor reading burden.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g03_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Only C correctly combines past BE and progressive -ing for an activity in progress.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "Distractors directly contrast declared past/progressive operations.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The ongoing-work context makes the simple-past option semantically inadequate.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "There is one grammatically and contextually appropriate option.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Single-choice scoring appropriately accepts the sole defensible option C.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "No material vocabulary or discourse obstacle is apparent.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g03_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Producing the intended answer requires past BE and progressive REPAIRING.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The task does not require an important undeclared syntactic transformation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Unlike the perfect transformation, the cue supplies only lemma 'repair', not the target inflectional construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "Several word orders and possessive choices can preserve the supplied meaning, although the target form is clear.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Only one exact sentence is accepted; reasonable variants such as 'Leo was repairing his bicycle at four o'clock yesterday' or different time-adjunct placement would be rejected.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Full-sentence synthesis and article/word-order choices add burden beyond progressive and past selection.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g03_xform"
+    }
+  ],
+  "overall_accept": false,
+  "role": "measurement",
+  "summary": "Rejected because the transformation's exact-only scoring excludes reasonable surface realizations despite otherwise strong past-progressive evidence."
+}

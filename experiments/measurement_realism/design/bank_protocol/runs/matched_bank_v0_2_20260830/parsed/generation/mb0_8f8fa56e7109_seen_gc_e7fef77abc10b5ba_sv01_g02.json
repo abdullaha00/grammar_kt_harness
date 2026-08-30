@@ -1,0 +1,160 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "Without Priya's help, Omar would not have completed the report.",
+  "cell_id": "gc_e7fef77abc10b5ba",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g02_cloze",
+      "context": "Priya helped Omar organize his notes, and he completed the report before the deadline. Imagine that she had not helped him.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Without Priya's help, Omar [[RESPONSE]].",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using the verb in brackets.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "would not have completed the report",
+          "wouldn't have completed the report"
+        ],
+        "completed_target": "Without Priya's help, Omar would not have completed the report.",
+        "correct_choice_id": null,
+        "target_response": "would not have completed the report"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g02_dialog",
+      "context": "Priya helped Omar organize his notes, and he completed the report before the deadline.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Eva: Did Priya's help make a difference to Omar?",
+          "Luis: Yes. He needed her help to finish his work before the deadline."
+        ],
+        "incomplete_turn_template": "Luis: Without Priya's help, Omar [[RESPONSE]].",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Luis's reply.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "would not have completed the report",
+          "wouldn't have completed the report"
+        ],
+        "completed_target": "Without Priya's help, Omar would not have completed the report.",
+        "correct_choice_id": null,
+        "target_response": "would not have completed the report"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g02_mcq",
+      "context": "Priya helped Omar organize his notes, and he completed the report before the deadline. Imagine that she had not helped him.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Omits perfect HAVE and presents the result as non-past rather than as an unreal past result.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Places NOT after perfect HAVE instead of after the finite modal WOULD.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Replaces modal WOULD with DID and incorrectly uses HAVE with a past participle after DID.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Without Priya's help, Omar would not complete the report."
+          },
+          {
+            "id": "B",
+            "text": "Without Priya's help, Omar would not have completed the report."
+          },
+          {
+            "id": "C",
+            "text": "Without Priya's help, Omar would have not completed the report."
+          },
+          {
+            "id": "D",
+            "text": "Without Priya's help, Omar did not have completed the report."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence describes the likely result?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that best describes the situation.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Without Priya's help, Omar would not have completed the report.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g02_xform",
+      "context": "Keep the people, action, object, and past situation unchanged.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Priya helped Omar, so Omar completed the report.",
+        "stem": null,
+        "transformation_cue": "Begin with “Without Priya's help” and use WOULD, NOT, HAVE, and COMPLETE."
+      },
+      "instruction": "Rewrite the information as one sentence about the likely result if Priya had not helped Omar.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Without Priya's help, Omar would not have completed the report.",
+          "Without Priya's help, Omar wouldn't have completed the report."
+        ],
+        "completed_target": "Without Priya's help, Omar would not have completed the report.",
+        "correct_choice_id": null,
+        "target_response": "Without Priya's help, Omar would not have completed the report."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Describe the likely negative result in a past situation where Priya did not help Omar.",
+    "main_verb_lemma": "complete",
+    "object_head": "report",
+    "participants": [
+      "Priya",
+      "Omar"
+    ],
+    "situation_summary": "Priya helped Omar organize his work, enabling him to complete a report before the deadline.",
+    "time_anchor": "before a past report deadline"
+  },
+  "semantic_variant_index": 1
+}

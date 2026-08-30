@@ -1,0 +1,163 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "Which file format does the office printer not accept?",
+  "cell_id": "gc_4634bf1b005f7724",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02_g02_cloze",
+      "context": "The office printer accepts PDF and JPEG files, but it does not accept TIFF files. (the office printer / not accept)",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Which file format [[RESPONSE]]?",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the question using the situation and the words in brackets.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "does the office printer not accept",
+          "doesn't the office printer accept",
+          "doesn’t the office printer accept"
+        ],
+        "completed_target": "Which file format does the office printer not accept?",
+        "correct_choice_id": null,
+        "target_response": "does the office printer not accept"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02_g02_dialog",
+      "context": "Maya is checking the file requirements for the office printer.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Leo: The printer accepts PDF and JPEG files, but it does not accept TIFF files.",
+          "Maya: Let me check that I understood."
+        ],
+        "incomplete_turn_template": "Maya: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Maya's question.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Which file format does the office printer not accept?",
+          "Which file format doesn't the office printer accept?",
+          "Which file format doesn’t the office printer accept?"
+        ],
+        "completed_target": "Which file format does the office printer not accept?",
+        "correct_choice_id": null,
+        "target_response": "Which file format does the office printer not accept?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02_g02_mcq",
+      "context": "The office printer accepts PDF and JPEG files, but it does not accept TIFF files. Maya wants to ask about the incompatible format.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "The finite operator is not inverted with the subject after the fronted non-subject WH expression.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "NOT is placed before the subject instead of after the finite operator and subject in this question pattern.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "The lexical verb incorrectly carries present agreement after the finite operator DOES.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Which file format the office printer does not accept?"
+          },
+          {
+            "id": "B",
+            "text": "Which file format does the office printer not accept?"
+          },
+          {
+            "id": "C",
+            "text": "Which file format does not the office printer accept?"
+          },
+          {
+            "id": "D",
+            "text": "Which file format does the office printer not accepts?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "What should Maya ask?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the correct question.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Which file format does the office printer not accept?",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02_g02_xform",
+      "context": "Maya is checking the file requirements for the office printer.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "The office printer does not accept one of these file formats: PDF, JPEG, or TIFF.",
+        "stem": null,
+        "transformation_cue": "Use: which file format / the office printer / not accept"
+      },
+      "instruction": "Rewrite the statement as a question asking for the incompatible file format. Use the words provided.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Which file format does the office printer not accept?",
+          "Which file format doesn't the office printer accept?",
+          "Which file format doesn’t the office printer accept?"
+        ],
+        "completed_target": "Which file format does the office printer not accept?",
+        "correct_choice_id": null,
+        "target_response": "Which file format does the office printer not accept?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Ask which file format the printer does not accept.",
+    "main_verb_lemma": "accept",
+    "object_head": "file format",
+    "participants": [
+      "Maya",
+      "office printer"
+    ],
+    "situation_summary": "Maya is checking which common file format is incompatible with an office printer.",
+    "time_anchor": "the printer's current capabilities"
+  },
+  "semantic_variant_index": 2
+}

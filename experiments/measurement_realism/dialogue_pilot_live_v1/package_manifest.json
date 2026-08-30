@@ -1,0 +1,76 @@
+{
+  "artifacts": {
+    "analysis.json": {
+      "bytes": 105198,
+      "path": "experiments/measurement_realism/dialogue_pilot_live_v1/analysis.json",
+      "sha256": "5d2538e7866855782f92fe0c946bfcfb714463ae60f8879f01135f2459e797ef"
+    },
+    "analysis_manifest.json": {
+      "bytes": 967,
+      "path": "experiments/measurement_realism/dialogue_pilot_live_v1/analysis_manifest.json",
+      "sha256": "a5db466ff41f98931c68a110655b2ff22fb6ebe91a3527d4132c649111d56530"
+    },
+    "critic_call_plan.jsonl": {
+      "bytes": 410698,
+      "path": "experiments/measurement_realism/dialogue_pilot_live_v1/critic_call_plan.jsonl",
+      "sha256": "e078cd678fc12f7c9e6f0c2c72d7f3058d0b3f87bce963c03c5a27039c2715a2"
+    },
+    "critic_envelopes.jsonl": {
+      "bytes": 87962,
+      "path": "experiments/measurement_realism/dialogue_pilot_live_v1/critic_envelopes.jsonl",
+      "sha256": "f0d0f321f54ec47d1748a6e87d8f66d4b7254d39b7fab33541856486c22cdbce"
+    },
+    "critic_judgments.jsonl": {
+      "bytes": 86112,
+      "path": "experiments/measurement_realism/dialogue_pilot_live_v1/critic_judgments.jsonl",
+      "sha256": "5551e1a39adb871eb7d6811982c47c2bd86e79c01e0aa8f72499a22ddefa8f0c"
+    },
+    "critique_manifest.json": {
+      "bytes": 56986,
+      "path": "experiments/measurement_realism/dialogue_pilot_live_v1/critique_manifest.json",
+      "sha256": "155eb942c5d7c434391152c19356e28c968210832fd911192df63fa1ff9d9813"
+    },
+    "generated_families.jsonl": {
+      "bytes": 41406,
+      "path": "experiments/measurement_realism/dialogue_pilot_live_v1/generated_families.jsonl",
+      "sha256": "efa03d40dbd51703ce981d3fc74760183cb4cc0fcfe72a5fdd7ae74994297903"
+    },
+    "generation_call_plan.jsonl": {
+      "bytes": 43662,
+      "path": "experiments/measurement_realism/dialogue_pilot_live_v1/generation_call_plan.jsonl",
+      "sha256": "a936381ca3f62917c58270ede61bccd06538d76420c5703f612b0a32c9611583"
+    },
+    "generation_manifest.json": {
+      "bytes": 11363,
+      "path": "experiments/measurement_realism/dialogue_pilot_live_v1/generation_manifest.json",
+      "sha256": "14cb0c9110c3dfbedd72a485e81ad2cb7274a6d8baea71988ed28a2b5425450e"
+    },
+    "report.md": {
+      "bytes": 3306,
+      "path": "experiments/measurement_realism/dialogue_pilot_live_v1/report.md",
+      "sha256": "96e9faccfc11c38fc18f826cedad5a195dab95522116788d99282a7532e5a0c6"
+    },
+    "study_plan.json": {
+      "bytes": 6100,
+      "path": "experiments/measurement_realism/dialogue_pilot_live_v1/study_plan.json",
+      "sha256": "a73ec86b593ddccbc480123b56526efd897f4c6280d5039e01cd971913228f20"
+    }
+  },
+  "call_evidence_bundle": {
+    "bytes": 1418267,
+    "path": "call_evidence_bundle.jsonl",
+    "rows": 24,
+    "sha256": "eaee2637f978b3a2286647b6a035d5bc6bc0da422c4c3575d72a14ba21c38ccb"
+  },
+  "calls": 24,
+  "critic_calls": 20,
+  "evidence_boundary": {
+    "automated_calls": 24,
+    "full_v1_mutated": false,
+    "human_or_expert_gold": false
+  },
+  "generation_calls": 4,
+  "restricted_evidence_root": "runs/measurement_realism/dialogue_pilot_live_v1",
+  "status": "BYTE_EXACT_CALL_EVIDENCE_PACKAGED",
+  "study_id": "dialogue_pilot_live_v1"
+}

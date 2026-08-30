@@ -1,19 +1,45 @@
-# Final full-v1 verification
+# Final programme verification
 
 Date: 2026-08-30
 
-Scope: the frozen `grammar_kt_full_v1` baseline, its construction boundary,
-headline RQ2--RQ4 experiments, mastery and sensitivity evidence, executable
-notebooks, final reports, and ACL manuscript.
+Scope: the frozen `grammar_kt_full_v1` baseline, its construction boundary and
+headline experiments, plus the measurement-realism programme evidence,
+negative matched-bank result, controlled scenarios, executable notebooks,
+final reports, and revised ACL manuscript.
 
 ## Outcome
 
-The declared synthetic programme is reproducible and complete. The deterministic
-Q* projection and all 283,000 public/private simulator rows replay exactly; the
-scientific-contract suite passes; the headline RQ2, RQ3, and RQ4 results replay
-from the frozen baseline; all three tracked notebooks execute without live model
-calls; and the ACL manuscript builds, passes its author-list/BibTeX regression,
-embeds all fonts, and passes complete rendered-page inspection.
+The scientific stages are complete. The deterministic Q* projection and all
+283,000 public/private full-v1 simulator rows replay exactly, the protected Git
+tree is unchanged, and the retained full-v1 headline experiments preserve
+their earlier exact replays. The measurement extension has frozen audit and
+model-call evidence, a release-gate failure rather than a partial bank, compact
+controlled-world aggregates, an exploratory policy analysis, a structured-
+error analysis, and a verified automated dialogue pilot.
+
+The measurement notebook, revised paper build/render inspection, compatibility
+release manifest, repository-wide suite, and non-overwriting programme evidence
+freeze/verify are final:
+
+```text
+FINAL_FULL_SUITE_COUNT = PASS (331 passed; exit 0)
+MEASUREMENT_NOTEBOOK = PASS (18/18 code cells; tracked SHA-256 8632a08c6b64c01c2e39024104a3ca37d3485542050f19e51e04f544c48d0fc1)
+ACL_PDF = PASS (17 A4 pages; SHA-256 599f47c07db5ecf70a589d5ea5c8c19574509733da6d296a8cc6af4414f1a0e2; 22/22 fonts embedded; all pages visually inspected)
+PROGRAMME_MANIFEST = PASS (1,351 explicitly allowlisted artifacts; 30,646,436 bytes; protected-v1 and no-release gates true)
+```
+
+The final repository-wide run passed all 331 contracts with exit status zero.
+The compatibility release manifest was refreshed before this
+run; its legacy full-v1-only predecessor had correctly reported extension
+drift. The programme evidence tool then performed its guarded, explicitly
+authorized, non-overwriting freeze and independent verify over 1,351 allowlisted
+artifacts (30,646,436 bytes). Both checks preserved the protected full-v1 tree
+and enforced the no-new-dataset-release gate.
+
+The release decision itself is final: **NO_NEW_DATASET_RELEASE**. There is no new dataset release because the learner-facing matched bank passed only 5/38
+families and failed coverage/rank gates. The full-rank replacement is a
+content-free controlled scenario with `release_eligible=false`; it cannot
+establish platform or release validity.
 
 The verified boundary remains:
 
@@ -27,7 +53,138 @@ reissued: their prompts, outputs, settings, intervention records, and hashes are
 frozen in the dataset provenance. Deterministic construction after those calls
 is replayed independently.
 
-## Frozen baseline
+## Measurement-realism programme evidence
+
+### Protected baseline anchor
+
+The measurement programme starts from source commit
+`f1a5eb29414dd03d173dbd9d0c4cb20762f2b259`. The tracked
+`data/grammar_kt_full_v1/` Git tree remains
+`a3d77782cd1d4a5b297cc6d63eba2551d8d71ce4`, with no worktree diff. Core
+hashes retained by `experiments/measurement_realism/baseline_anchor.json` are:
+
+| Protected artifact | SHA-256 |
+|---|---|
+| `manifest.json` | `322128843f8e7e6547a99efcecc6836fcd581f314fb49557a28d58fe79c69f4c` |
+| `q_matrix.csv` | `b6df582478f05976ceb200da6edc2b31fb305da64498e5ddb5f473a9459bf5bf` |
+| `interactions.jsonl.gz` | `9272ca86a647e3b13c9ce52b5381dde215f7ef448e4a19a41a22495fa99ef97f` |
+| `oracle/learner_truth.jsonl.gz` | `956ed53f370d5494d379072954c0821d4098f11e51e2629b33d8ee0b8b844601` |
+
+### Focused extension replay
+
+The following commands verify compact retained evidence without regenerating
+subjective calls or mutating full-v1:
+
+```bash
+.venv/bin/python scripts/experiments/analyze_platform_audits.py \
+  --json-output /tmp/platform_audit_synthesis.json \
+  --report-output /tmp/platform_plausibility_audit.md
+
+.venv/bin/python -m pytest -q \
+  tests/test_measurement_realism_kc_induction.py
+
+.venv/bin/python \
+  scripts/experiments/analyze_measurement_realism_bank_failure.py verify
+
+.venv/bin/python scripts/experiments/measurement_realism_worlds.py \
+  --stage validate-plan --controlled-scenario \
+  --config experiments/measurement_realism/design/controlled_instrument_v1/scenario_config.yaml \
+  --output-dir experiments/measurement_realism/worlds/controlled_instrument_v1
+
+.venv/bin/python -m pytest -q \
+  tests/test_controlled_instrument_scenario.py \
+  tests/test_measurement_realism_worlds.py
+
+.venv/bin/python \
+  scripts/experiments/measurement_realism_policy_recovery.py verify
+
+.venv/bin/python \
+  scripts/experiments/measurement_realism_dialogue_live.py verify
+```
+
+Retained result hashes are:
+
+| Evidence | SHA-256 |
+|---|---|
+| Controlled-world study plan | `e3d50e10001b7dff8042b002aba04b595bb8d95e496bd66beebae08e4d678667` |
+| Controlled aggregate | `06da0a0c2e297124234ad433caa0fd0d6f7924d5b13b707f4fed8ded9a81bfaf` |
+| Corrected verified synthesis | `55ac72dfdaf739597451e5766edb399690b780bbfa9499474c9142cf919e844a` |
+| Exploratory policy plan | `5a47ca244c57001ae353e4cc673754cac3df071631347fb79b1853ce3ad0f3e7` |
+| Exploratory policy results | `29702c895ae9ba34cd0e1313514b23694572d3ca60b9629923b4713c5340a5c6` |
+| Dialogue analysis | `5d2538e7866855782f92fe0c946bfcfb714463ae60f8879f01135f2459e797ef` |
+| Dialogue call bundle | `eaee2637f978b3a2286647b6a035d5bc6bc0da422c4c3575d72a14ba21c38ccb` |
+
+The dialogue verification file itself reports
+`VERIFIED_COMPLETE_AUTOMATED_DIALOGUE_PILOT`, 24 byte-exact call rows, four
+generated families, 20 critic calls, and 100 judgments.
+
+### Matched-bank and release guard
+
+`analyze_measurement_realism_bank_failure.py verify` recomputes the complete
+three-round funnel and retained hashes. The result is
+`FAILED_PREREGISTERED_BANK_FREEZE_GATE`: 5/38 complete families, 20/152 slots,
+4/20 cells, 6/18 KCs, seen-Q rank 3, and all-regime rank 4. The expected path
+`data/grammar_kt_measurement_v1/` is absent. The controlled instrument manifest,
+study plan, aggregate, policy analysis, and execution authorization all state
+`release_eligible=false`.
+
+### Final extension commands
+
+```bash
+.venv/bin/python -m pytest -q
+
+.venv/bin/jupyter nbconvert --to notebook --execute \
+  --output /tmp/measurement_realism_results.executed.ipynb \
+  --ExecutePreprocessor.timeout=600 \
+  notebooks/measurement_realism_results.ipynb
+
+TZ=UTC SOURCE_DATE_EPOCH=1788069406 FORCE_SOURCE_DATE=1 \
+  latexmk -cd -g -pdf -interaction=nonstopmode -halt-on-error ACL/paper.tex
+.venv/bin/python ACL/tests/regression/run_tests.py
+pdfinfo ACL/paper.pdf
+pdffonts ACL/paper.pdf
+
+.venv/bin/python \
+  scripts/experiments/verify_measurement_realism_programme.py preflight
+.venv/bin/python \
+  scripts/experiments/verify_measurement_realism_programme.py \
+  freeze --authorize-final-freeze
+.venv/bin/python \
+  scripts/experiments/verify_measurement_realism_programme.py verify
+```
+
+The programme-manifest command is the clean-checkout integrity check for the
+compact controlled-world synthesis. Policy verification uses the compact
+plan/results bundle when raw response runs are absent and additionally checks
+their recorded manifests when they are present. The deeper
+`synthesis/build_synthesis.py --check` recomputation requires the ignored,
+deterministically regenerable 4.59-million-event run directory; its separate
+five-test recomputation suite passed in the retained execution worktree but is
+not presented as a clean-checkout command. The repository-wide clean-checkout
+suite instead verifies the retained compact bundle.
+
+The measurement notebook independently executed all 18 code cells to
+`/tmp/measurement_realism_results.executed.ipynb` with no error or live model
+call; its focused schema/input-boundary suite passed 4 tests. The revised ACL
+PDF is 17 A4 pages and 325,252 bytes (PDF 1.7), with SHA-256
+`599f47c07db5ecf70a589d5ea5c8c19574509733da6d296a8cc6af4414f1a0e2`.
+All 22/22 fonts are embedded. The build log has no overfull box, undefined
+reference, or undefined citation warning, and all 17 Poppler-rendered pages
+were visually inspected without a clipping, overlap, glyph, table, figure,
+header, footer, numbering, or float-placement defect.
+
+The programme verifier's preflight, non-overwriting freeze, and independent
+verify all pass. It uses an explicit evidence allowlist, checks the protected
+tree and core hashes, rejects any candidate dataset path, and enforces the
+no-release wording in current reports and manuscript evidence.
+
+## Retained full-v1 verification
+
+The following sections preserve the completed baseline replay record. Their
+old test/PDF counts describe the full-v1 checkpoint and are not substitutes for
+the final extension-wide values above.
+
+### Frozen baseline
 
 The release manifest reports `FROZEN_BASELINE_COMPLETE` and an 88-file recursive
 inventory. Its scale reconciles to 75 GrammarCells, 18 generator KCs, 113 items,
@@ -315,5 +472,6 @@ remain untouched.
   content, provider snapshots, and provider sampling seeds cannot be
   redistributed or reconstructed from this release.
 
-These limitations narrow the claims. They do not leave a declared synthetic
-experiment, reconstruction check, notebook, report, or paper build incomplete.
+These limitations narrow the claims. They do not leave a declared scientific
+experiment, reconstruction check, notebook, report, paper build, contract
+suite, or programme-manifest verification incomplete.

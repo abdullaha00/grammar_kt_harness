@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "Can Mia carry the box?",
+  "cell_id": "gc_edcc8d38860ff41d",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01_cloze",
+      "context": "Ben is preparing to move a box and wants to know whether Mia is able to carry it. Use: Mia / carry / the box.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]]?",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the question using the words in brackets.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Can Mia carry the box"
+        ],
+        "completed_target": "Can Mia carry the box?",
+        "correct_choice_id": null,
+        "target_response": "Can Mia carry the box"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01_dialog",
+      "context": "Ben and Mia are preparing to move a box.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Ben: We need to move this box.",
+          "Mia: I can help if it is not too heavy."
+        ],
+        "incomplete_turn_template": "Ben: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Ben's final question.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Can Mia carry the box?"
+        ],
+        "completed_target": "Can Mia carry the box?",
+        "correct_choice_id": null,
+        "target_response": "Can Mia carry the box?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01_mcq",
+      "context": "Ben is preparing to move a box and wants to ask whether Mia is able to carry it.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses statement word order instead of placing the modal before the subject.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses an inflected verb instead of the base form after the modal.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Adds do-support even though the modal itself must form the question.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Mia can carry the box?"
+          },
+          {
+            "id": "B",
+            "text": "Can Mia carries the box?"
+          },
+          {
+            "id": "C",
+            "text": "Can Mia carry the box?"
+          },
+          {
+            "id": "D",
+            "text": "Does Mia can carry the box?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence asks about Mia's ability to carry the box?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the correct question.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "C"
+        ],
+        "completed_target": "Can Mia carry the box?",
+        "correct_choice_id": "C",
+        "target_response": "C"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01_xform",
+      "context": "Ben is preparing to move a box and wants to ask about Mia's ability.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Mia can carry the box.",
+        "stem": null,
+        "transformation_cue": "Begin with “Can” and keep the other words."
+      },
+      "instruction": "Change the statement into a yes-or-no question using the cue.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Can Mia carry the box?"
+        ],
+        "completed_target": "Can Mia carry the box?",
+        "correct_choice_id": null,
+        "target_response": "Can Mia carry the box?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Ask whether Mia has the ability to carry the box.",
+    "main_verb_lemma": "carry",
+    "object_head": "box",
+    "participants": [
+      "Ben",
+      "Mia"
+    ],
+    "situation_summary": "Ben is preparing to move a box and wants to know whether Mia is able to carry it.",
+    "time_anchor": "during the preparations to move the box"
+  },
+  "semantic_variant_index": 1
+}

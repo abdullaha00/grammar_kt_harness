@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r02_measurement_b01",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv01_g02",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv01",
+  "family_judgments": [
+    {
+      "blocking": true,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "The transformation item supplies “had locked” and therefore does not measure construction as the other formats do; the cloze/dialogue also have blocking response-key defects.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": true,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "In the transformation format, past-perfect formation is converted into copying an explicitly supplied form, effectively redefining the construct as sentence assembly.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "All formats retain Maya locking the office before the guard’s arrival.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The response requires the past perfect sequence had locked, activating past finite selection and participial perfect construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The simple-past arrival clause is appropriate supporting material for the declared past temporal relation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The cue gives only the lemma lock, so the learner must select had and locked.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The prior mention of the office licenses either “had locked the office” or “had locked it.”",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Solver-proposed “had locked it” is linguistically and contextually reasonable, but is unaccepted.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The item unnecessarily requires reproducing the object rather than merely supplying the target verb phrase, creating referential-form burden.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv01_g02_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The required reply contains had + locked and therefore measures both declared operations.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The dialogue’s question and reply do not demand a separate grammatical construction from the learner.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The response slot does not provide the past-perfect form.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "After “Maya secured it first,” “Maya had locked it before the guard arrived” is a natural completion.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "“Had locked it” is a reasonable unkeyed response, yet only the repeated noun phrase is accepted.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The dialogue switches from secured to required lock and requires a specific object realization, adding lexical and reference burden.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv01_g02_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "A is distinguished by both had rather than has and locked rather than lock; the event-order context supports past perfect.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The comparison uses a transparent two-event past context without extra grammatical requirements.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Recognition and elimination of the visibly malformed options reduce construction evidence, but the keyed choice still represents both declared KCs.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "A uniquely and clearly expresses the required earlier completed past action.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The single-choice key is complete; no solver proposed another acceptable option.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Office and guard vocabulary are common and the temporal relation is explicit.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv01_g02_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": true,
+          "criterion": "active_kc_evidence",
+          "evidence": "The transformation cue explicitly supplies the complete target grammar chunk “had locked,” so success can be simple placement rather than selection of either declared form.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "Combining two simple past statements with before does not introduce a major undeclared grammatical dependency.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The required past-perfect auxiliary and participle are both given verbatim in “use ‘had locked’,” allowing the learner to avoid constructing them.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The required beginning, supplied chunk, before, people, object, and event order constrain the intended sentence sufficiently.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "No solver-proposed unkeyed alternative requires inclusion under the tightly constrained transformation cue.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The two source statements are short and semantically transparent.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv01_g02_xform"
+    }
+  ],
+  "overall_accept": false,
+  "role": "measurement",
+  "summary": "Cloze and dialogue reject the reasonable pronoun completion, and the transformation cue gives away the entire past-perfect target form."
+}

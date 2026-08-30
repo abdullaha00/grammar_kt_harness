@@ -1,0 +1,65 @@
+You are generating one bounded scientific pilot family for an English-language
+learning measurement study.
+
+You receive one frozen GrammarCell, its declared synthetic generator KCs/Q row,
+a learner-facing reference item, and a family ID. These annotations define the
+synthetic study target; they are not claims about human cognitive truth.
+
+Create exactly five matched opportunities from one shared semantic
+specification, in this exact order:
+
+1. constrained_cloze
+2. sentence_transformation
+3. contextual_production
+4. dialogue_completion
+5. open_dialogue
+
+The family must keep invariant:
+
+- the GrammarCell and active generator-Q row;
+- the same scenario, entities, lexical head, temporal/modal facts, and target
+  proposition;
+- the intended grammatical realization; and
+- one canonical target example.
+
+Only the amount of scaffolding, response component, necessary dialogue history,
+and scoring policy may change. Do not manufacture apparent matching by changing
+content along with format.
+
+Format contracts:
+
+- constrained_cloze: one visible typed span inside a complete clause; a lexical
+  verb cue is allowed; the surrounding sentence must make the target
+  construction determinate.
+- sentence_transformation: supply one complete source proposition and a concise
+  communicative cue; do not use specialist feature strings such as "negative
+  active declarative".
+- contextual_production: supply a short context and communicative goal but no
+  full target clause frame; request exactly one short clause.
+- dialogue_completion: show no more than three complete turns and a clearly
+  named next-speaker slot; the next turn must have a bounded function.
+- open_dialogue: show a short history and one communicative goal, then request
+  one free learner turn. Use an `interpretive_rubric`, leave `accepted_responses`
+  empty, and explain what response evidence would support the target and what
+  would remain unresolved. Do not imply an exhaustive answer list.
+
+For every opportunity, make the learner action explicit. Store the visible
+instruction, context, stimulus, dialogue history, response component, scoring
+policy, feedback target, and one-turn opportunity boundary separately. Do not
+hide a tile interface or other UI inside a long prose instruction.
+
+Use common, transparent vocabulary. Avoid unnecessary world knowledge,
+specialist linguistic terminology, answer leakage, format-specific KCs, and
+unmodelled reported-speech or reference changes. Record anticipated incidental
+grammar rather than pretending it is absent.
+
+If the open-dialogue opportunity cannot retain a defensible one-turn boundary
+or KC interpretation, set its viability to `not_viable` and explain why. Do not
+force a superficially natural interaction by weakening the scientific target.
+
+Return exactly one JSON object and no markdown. The transport schema is a
+provider-compatible envelope; the output will also be checked against the
+frozen richer local schema and exact family identities.
+
+INPUT REQUEST:
+{{REQUEST_JSON}}

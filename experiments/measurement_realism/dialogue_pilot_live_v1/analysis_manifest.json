@@ -1,0 +1,25 @@
+{
+  "analysis_sha256": "5d2538e7866855782f92fe0c946bfcfb714463ae60f8879f01135f2459e797ef",
+  "critique_manifest_sha256": "155eb942c5d7c434391152c19356e28c968210832fd911192df63fa1ff9d9813",
+  "dataset_release_justified_by_this_pilot_alone": false,
+  "generation_manifest_sha256": "14cb0c9110c3dfbedd72a485e81ad2cb7274a6d8baea71988ed28a2b5425450e",
+  "human_or_expert_gold": false,
+  "report_sha256": "96e9faccfc11c38fc18f826cedad5a195dab95522116788d99282a7532e5a0c6",
+  "scalar_realism_score_computed": false,
+  "scale": {
+    "critic_roles": [
+      "learner",
+      "language_teacher",
+      "platform_product",
+      "measurement",
+      "linguistic"
+    ],
+    "judgments": 100,
+    "observed_opportunities": 20,
+    "planned_opportunities": 20
+  },
+  "source_generation_manifest_status": "GENERATION_COMPLETE_AND_LOCALLY_VALIDATED",
+  "status": "AUTOMATED_DIALOGUE_PILOT_ANALYSED",
+  "study_id": "dialogue_pilot_live_v1",
+  "weighted_composite_computed": false
+}

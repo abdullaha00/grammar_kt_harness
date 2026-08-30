@@ -11,6 +11,16 @@ morphosyntax scope, 75 canonical GrammarCells, 18 reusable generator KCs, 113
 independently model-validated items, a deterministic 113×18 true Q-matrix, and
 283,000 events from 1,000 simulated learners.
 
+The subsequent **measurement realism** programme asks whether that clean,
+mathematically useful benchmark also resembles data that a learner-facing
+platform could plausibly generate. Its conclusion is deliberately negative at
+the release boundary: **no new dataset release** is made. A preregistered
+four-format construction attempt passed only 5 of 38 complete matched families
+(20/152 slots; seen-Q rank 3/18). The retained full-rank format, difficulty,
+heterogeneity, schedule, and structured-error experiments therefore use a
+content-free **controlled scenario**, not a learner-facing dataset. Full-v1
+remains byte-for-byte unchanged as the clean reference benchmark.
+
 The central scientific boundary is:
 
 ```text
@@ -52,6 +62,16 @@ frozen items/events
 → semantic grammar-regime evaluation
 → oracle-only state-recovery evaluation
 → simulator and collection-design sensitivity
+
+LAYER C — measurement-realism extension (non-release)
+
+full-v1 item/KC audit
+→ matched four-format bank attempt and explicit release-gate failure
+→ content-free nuisance and learner-heterogeneity controls
+→ laboratory/curriculum/mixed/adaptive schedule comparisons
+→ binary-versus-structured-error analysis
+→ automated cloze-to-dialogue continuum pilot
+→ measurement and collection recommendations, not a replacement dataset
 ```
 
 Baseline construction never reads learner outcomes, discovered KCs, or KT
@@ -158,8 +178,61 @@ See the live evidence ledger and final synthesis reports:
 - [`reports/final_methodology.md`](reports/final_methodology.md)
 - [`reports/final_rq_ledger.md`](reports/final_rq_ledger.md)
 - [`reports/final_verification.md`](reports/final_verification.md)
+- [`reports/platform_plausibility_audit.md`](reports/platform_plausibility_audit.md)
+- [`reports/kc_methodology_audit.md`](reports/kc_methodology_audit.md)
+- [`reports/measurement_extension_methodology.md`](reports/measurement_extension_methodology.md)
+- [`reports/measurement_extension_rq_ledger.md`](reports/measurement_extension_rq_ledger.md)
 - [`reports/final_release_manifest.json`](reports/final_release_manifest.json)
 - [`ACL/paper.pdf`](ACL/paper.pdf)
+
+## Measurement-realism findings and dataset decision
+
+The complete 113-item audit kept learner, teacher, platform-product, and
+measurement judgments separate. A strict census classified 70 items usable in
+a minimal response-slot interface, 15 as needing minor repair, 15 as
+pedagogically artificial, 10 as having material answer-space problems, and
+three as rewrite/withhold. Across the strict and four-role audits, 60/113 were
+usable in both mappings, 53/113 were in the union requiring action, 18/113 were
+in the critical answer-space/withhold union, and the four live roles disagreed
+on 56/113. These are automated stress tests, not human deployability rates.
+
+The K* audit likewise narrows the ontology claim. Only 16/113 Q rows isolate a
+single KC, and six KCs have no isolating item. Three independent outcome-blind
+inductions produced 17/18/18 activation signatures with ranks 17/18/17; only
+nine signatures were common to all runs, and pairwise activation Jaccard was
+.400--.458. K* is retained as an explicit experimental coordinate system, not
+as a uniquely recovered set of human competencies.
+
+The failed matched-bank campaign is a substantive negative result. It
+completed 178 model calls, 106 generated families, 712 independent solver
+attempts, and 90 role judgments without a technical failure, yet only 5/38
+whole families passed every gate. Linguistic validity was not enough:
+answerability and measurement purity were the binding constraints. The passing
+subset is not released as a partial bank.
+
+The separate content-free structural experiment shows why these constraints
+matter. Under a planted strong format effect, a false format-specific KC split
+gained relative to shared K* (difference-in-differences mean `-.031551`), while
+shared K* plus the observed format beat that false split (mean `-.005317`). An
+aligned seen-item residual model recovered item nuisance planted in exactly its
+span, but this is a positive control, not a general item-difficulty solution.
+The explicit-format remedy was mixed under combined learner heterogeneity, and
+a false format split did not consistently absorb item-only difficulty.
+
+Structured error labels strongly improved planted failed-KC localisation
+(`.421` binary to `1.000` linked and `.884` at 80% linkage) but changed
+next-response log loss only slightly. The automated four-family dialogue pilot
+found the clearest ecological boundary: open dialogue received 20/20
+naturalness passes but 0/20 determinate judgments, only 4/20 clear KC
+attributions, and 13/20 shortcut judgments. A failed KC is a synthetic
+post-outcome attribution, and the dialogue judgments have no human/expert
+gold.
+
+Accordingly, `data/grammar_kt_measurement_v1/` does not exist. The evidence
+supports using synthetic perfect information to study when KT is informative
+or misleading, while treating instrument wording, response space, item and
+format nuisance, platform selection, and error retention as separate
+measurement variables.
 
 ## Researcher-facing declarations
 
@@ -267,6 +340,41 @@ command is the independent replay form. Exact commands, model settings, seeds,
 input hashes, and artifact hashes for every substantive experiment are recorded
 in `reports/experiment_log.md`.
 
+The measurement extension replays frozen model-call packages and deterministic
+compact aggregates; it does not regenerate a learner-facing bank:
+
+```bash
+.venv/bin/python scripts/experiments/analyze_measurement_realism_bank_failure.py verify
+
+.venv/bin/python scripts/experiments/measurement_realism_worlds.py \
+  --stage validate-plan --controlled-scenario \
+  --config experiments/measurement_realism/design/controlled_instrument_v1/scenario_config.yaml \
+  --output-dir experiments/measurement_realism/worlds/controlled_instrument_v1
+
+.venv/bin/python scripts/experiments/measurement_realism_policy_recovery.py verify
+.venv/bin/python scripts/experiments/measurement_realism_dialogue_live.py verify
+
+.venv/bin/python \
+  scripts/experiments/verify_measurement_realism_programme.py preflight
+.venv/bin/python \
+  scripts/experiments/verify_measurement_realism_programme.py verify
+```
+
+The programme verifier is the clean-checkout check for the compact synthesis
+bundle. `measurement_realism_policy_recovery.py verify` likewise checks the
+compact policy bundle when raw runs are absent and adds raw-manifest checks
+when they are present. The deeper synthesis recomputation below is available
+after regenerating or retaining the ignored 4.59-million-event run directory:
+
+```bash
+.venv/bin/python \
+  experiments/measurement_realism/worlds/controlled_instrument_v1/synthesis/build_synthesis.py \
+  --check
+```
+
+The final verifier also requires `data/grammar_kt_measurement_v1/` to remain
+absent and rechecks the protected full-v1 Git tree and core artifact hashes.
+
 ## Notebooks, visualization, and paper
 
 The tracked notebooks are read-only demonstrations; they do not make live model
@@ -290,6 +398,11 @@ GRAMMAR_KT_DATA_FOLDER=data/grammar_kt_full_v1 \
   --output /tmp/final_dataset_results.executed.ipynb \
   --ExecutePreprocessor.timeout=600 \
   notebooks/final_dataset_results.ipynb
+
+.venv/bin/jupyter nbconvert --to notebook --execute \
+  --output /tmp/measurement_realism_results.executed.ipynb \
+  --ExecutePreprocessor.timeout=600 \
+  notebooks/measurement_realism_results.ipynb
 
 cd ACL
 TZ=UTC SOURCE_DATE_EPOCH=1788069406 FORCE_SOURCE_DATE=1 \

@@ -1,0 +1,23 @@
+{
+  "ambiguity_explanation": "The earlier turn mentions taking boxes to the first floor, while the question ends with “upstairs,” and several verbs fit the blank.",
+  "batch_id": "solver_r03_rep1_dialogue_completion_b02",
+  "instruction_understanding": "Complete Leo's question before “the boxes upstairs.”",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv02_g03_dialog",
+  "keyed_match": true,
+  "major_ambiguity": true,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Can she carry",
+    "Could Maya take"
+  ],
+  "reasonable_unkeyed_responses": [
+    "Can she carry",
+    "Could Maya take"
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv02_g03_dialog_solver_r1",
+  "submitted_response": "Can Maya carry",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

@@ -1,0 +1,160 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "Which printer does the office computer not recognize?",
+  "cell_id": "gc_4634bf1b005f7724",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02_g03_cloze",
+      "context": "The office computer recognizes one of the two printers, but it does not recognize the other. Ask for the missing information.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]]?",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the question using these words: which printer / the office computer / not recognize.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Which printer does the office computer not recognize",
+          "Which printer doesn't the office computer recognize"
+        ],
+        "completed_target": "Which printer does the office computer not recognize?",
+        "correct_choice_id": null,
+        "target_response": "Which printer does the office computer not recognize"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02_g03_dialog",
+      "context": "Maya needs to identify the printer that is not working with the computer.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Leo: The office computer recognizes one of these two printers, but not the other.",
+          "Maya: I need to know which one is causing the problem."
+        ],
+        "incomplete_turn_template": "Maya: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Maya's question.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Which printer does the office computer not recognize?",
+          "Which printer doesn't the office computer recognize?"
+        ],
+        "completed_target": "Which printer does the office computer not recognize?",
+        "correct_choice_id": null,
+        "target_response": "Which printer does the office computer not recognize?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02_g03_mcq",
+      "context": "The office computer recognizes one of two printers but does not recognize the other. You want to identify the printer it does not recognize.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Places not before the subject instead of after the subject in the inverted question.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Fails to invert the finite operator and the subject after the fronted WH expression.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses third-person singular morphology on the main verb after finite does.",
+          "option_id": "C"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Which printer does not the office computer recognize?"
+          },
+          {
+            "id": "B",
+            "text": "Which printer the office computer does not recognize?"
+          },
+          {
+            "id": "C",
+            "text": "Which printer does the office computer not recognizes?"
+          },
+          {
+            "id": "D",
+            "text": "Which printer does the office computer not recognize?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which question should you ask?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the correct question.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "D"
+        ],
+        "completed_target": "Which printer does the office computer not recognize?",
+        "correct_choice_id": "D",
+        "target_response": "D"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02_g03_xform",
+      "context": "There are two printers in the office.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "The office computer recognizes one printer. It does not recognize the other printer.",
+        "stem": null,
+        "transformation_cue": "which printer"
+      },
+      "instruction": "Write a question to find out which printer the computer fails to recognize. Use the cue provided.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Which printer does the office computer not recognize?",
+          "Which printer doesn't the office computer recognize?"
+        ],
+        "completed_target": "Which printer does the office computer not recognize?",
+        "correct_choice_id": null,
+        "target_response": "Which printer does the office computer not recognize?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Ask which of the two printers the computer fails to recognize.",
+    "main_verb_lemma": "recognize",
+    "object_head": "printer",
+    "participants": [
+      "office computer",
+      "office worker"
+    ],
+    "situation_summary": "An office computer recognizes one of two printers but fails to recognize the other.",
+    "time_anchor": "now"
+  },
+  "semantic_variant_index": 2
+}

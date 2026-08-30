@@ -1,0 +1,59 @@
+{
+  "dataset_id": "grammar_kt_full_v1",
+  "dataset_manifest_id": "grammar_kt_full_v1_frozen_baseline_manifest_v1",
+  "forbidden_inputs_confirmed_not_opened": [
+    "data/grammar_kt_full_v1/interactions.jsonl.gz",
+    "data/grammar_kt_full_v1/oracle/learner_truth.jsonl.gz",
+    "experiments/full_v1/**/results.json"
+  ],
+  "full_v1_manifest_hashes_verified": {
+    "cells": true,
+    "items": true,
+    "kcs": true,
+    "q_matrix": true,
+    "regimes": true
+  },
+  "inputs": {
+    "cells": {
+      "bytes": 22345,
+      "path": "data/grammar_kt_full_v1/grammar/cells.jsonl",
+      "sha256": "a6bf8041e93fdea21d0ba7b318a24cb64610a6064517a2f7fbbbf3aca2fa4e1a"
+    },
+    "dataset_manifest": {
+      "bytes": 26456,
+      "path": "data/grammar_kt_full_v1/manifest.json",
+      "sha256": "322128843f8e7e6547a99efcecc6836fcd581f314fb49557a28d58fe79c69f4c"
+    },
+    "item_audit": {
+      "bytes": 204089,
+      "path": "experiments/measurement_realism/audits/item_audit/item_level_audit.jsonl",
+      "sha256": "dd191531629bdb85b767208b9871d6f2ad387781e89b39d80d78b5b991c30445"
+    },
+    "items": {
+      "bytes": 81382,
+      "path": "data/grammar_kt_full_v1/items/items.jsonl",
+      "sha256": "46e2fcbd723d11f6b30ecdd197fb05c39f04f7b0fc8f61e2183ffb8fb7110011"
+    },
+    "kcs": {
+      "bytes": 15814,
+      "path": "data/grammar_kt_full_v1/kcs.jsonl",
+      "sha256": "f3b308dcda7c11886e1dc67476dbe6adbcb53b8676b643c62d226fe68cfe0355"
+    },
+    "q_matrix": {
+      "bytes": 8404,
+      "path": "data/grammar_kt_full_v1/q_matrix.csv",
+      "sha256": "b6df582478f05976ceb200da6edc2b31fb305da64498e5ddb5f473a9459bf5bf"
+    },
+    "regimes": {
+      "bytes": 31714,
+      "path": "data/grammar_kt_full_v1/grammar/regime_assignments.jsonl",
+      "sha256": "5e65cf1bca33778e8300d7fe0125871c2d622c9b4aca8ebe5280a3e93a9e4bdf"
+    },
+    "selector": {
+      "bytes": 39890,
+      "path": "experiments/measurement_realism/design/format_selection/select_cells.py",
+      "sha256": "0dbf6ce4796f422fe17a996238eeb92c4254f7d1ad323905ea653005ae778a2f"
+    }
+  },
+  "manifest_schema": "matched_format_selection_inputs_v1"
+}

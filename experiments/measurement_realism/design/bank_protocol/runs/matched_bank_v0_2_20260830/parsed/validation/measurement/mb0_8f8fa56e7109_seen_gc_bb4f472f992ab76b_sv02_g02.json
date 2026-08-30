@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r02_measurement_b02",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g02",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02",
+  "family_judgments": [
+    {
+      "blocking": true,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "Open-response formats impose arbitrary particle, pronoun, vocative, and politeness choices absent from the MCQ.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "Each format nominally targets imperative formation rather than redefining it.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "All formats concern instructing Alex to switch off the oven.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The response must realize a direct imperative clause.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The simple imperative is the principal grammatical demand.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The required response is an imperative rather than a declarative or fragment.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "“Turn the oven off.” is an equally standard separable-phrasal-verb order.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Solver-proposed “Turn the oven off.” is reasonable and uses the stipulated words, but is unaccepted.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Knowledge of phrasal-verb particle placement is a non-target lexical-syntactic burden.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g02_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The intended reply is an imperative.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The core required grammar is imperative formation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The open dialogue can be successfully completed with a range of direct instructions, so correctness is tied to a particular wording rather than uniquely evidencing the target realization.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "“Turn it off,” “Turn the oven off,” and “Please turn it off” are contextually suitable direct instructions.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Every solver-proposed alternative is reasonable; none is accepted, so valid imperative production is scored incorrect.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Anaphora and politeness selection affect the response independently of imperative knowledge.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g02_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The answer contrasts imperative syntax with declarative and nonfinite alternatives.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The options principally assess imperative-clause recognition.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Eliminating fragments and the declarative can yield the answer through recognition rather than free imperative production.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "D is the only complete direct imperative among the options.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "D is the sole keyed choice.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The baking scenario and vocabulary are accessible.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g02_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The instruction explicitly requires conversion to a direct imperative.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "No major undeclared grammar is needed.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "A complete answer must form an imperative.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "“Alex, turn off the oven.” and polite imperative wording are valid responses under the stated instruction.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Solver-proposed “Alex, turn off the oven.” and “Please turn off the oven.” are reasonable but rejected.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Vocative and politeness choices are unrelated to the imperative KC.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g02_xform"
+    }
+  ],
+  "overall_accept": false,
+  "role": "measurement",
+  "summary": "Reject: reasonable imperative variants are systematically omitted from open-response scoring."
+}

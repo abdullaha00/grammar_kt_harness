@@ -1,4 +1,4 @@
-\section{From Grammar to a Frozen KT Dataset}
+\section{Known-Truth Construction and Measurement Programme}
 \label{sec:method}
 
 \subsection{Outcome-independent generator KCs}
@@ -55,12 +55,13 @@ intended learner-facing measurement surface, but they have no causal role in the
 baseline response generator after the bank is frozen.  The simulator neither
 renders a prompt nor collects or scores free text: an item identifier selects
 its \qstar{} row, mastery over the active KCs determines response probability,
-and keyed randomness samples binary $y$.  Table~\ref{tab:stored-item-example}
-shows this boundary for one retained item.  The baseline is consequently a
+and keyed randomness samples binary $y$.  Table~\ref{tab:item-audit-examples}
+shows how the same stored surface can pass linguistic checks yet fail
+answerability or KC purity.  The baseline is consequently a
 controlled forward-generation and inverse-recovery benchmark, not a simulation
 of linguistic production.
 
-\subsection{True Q-matrix and structural gate}
+\subsection{True Q-matrix and Q-geometry gate}
 
 For fixed item $i$ and generator KC $k$,
 \begin{equation}
@@ -112,3 +113,83 @@ may hide or perturb \kstar/\qstar{} and construct \khat/\qhat{}, but cannot
 mutate the release.  Pure representation comparisons reuse the same learner
 events.  Oracle fields are opened only for explicitly labelled post-selection
 structural or mastery evaluation.
+
+\subsection{Validity audit beyond Q geometry}
+
+We next assess internal and ecological validity separately.  A complete strict
+census codes comprehension, answer determinacy, pedagogical and format
+plausibility, lexical/context burden, response-space fairness, KC purity,
+shortcuts, and deployability.  A second frozen audit obtains learner, teacher,
+platform-product, and measurement judgments independently.  We retain exact
+item IDs, rationales, role disagreements, and a declared cross-audit label map;
+no scalar ``realism'' score overrides a critical answer-space failure.  These
+model judgments are automated stress tests, not human evidence.
+
+We audit \kstar{} separately for support, isolates, nesting, plausible
+independent mastery, pedagogical transfer, and format/lexical confounds.  To
+measure dependence on one decomposition, three independent outcome-blind KC
+inductions receive only frozen cells, support information, and an activation
+predicate grammar.  Proposals are canonicalised by which cells they activate,
+not by wording.  Generator truth remains unchanged regardless of their output.
+
+\subsection{Matched-format construction and release gate}
+
+Twelve cell-Q rows cannot have rank 18, so we select 18 seen cells with a
+rank-18 witness, plus one unseen-combination and one unseen-value probe cell,
+before response outcomes.  The target bank crosses each seen cell with four
+formats (constrained cloze, dialogue completion, multiple choice, and sentence
+transformation) and two semantic variants; held-out cells receive one variant.
+Each family shares a semantic specification and Q row.
+
+Three append-only generation rounds pass through deterministic schema/target
+checks, independent learner solvers, and linguistic, measurement, and product
+critics.  A family passes only if all four formats pass; raw attempts are never
+silently repaired.  Exact crossing, answerability, measurement purity, cell/KC
+coverage, held-out coverage, and seen-Q rank are hard release gates.  Failure
+means no measurement dataset, not a lower-quality partial release.
+
+\subsection{Content-free nuisance worlds}
+
+Because the learner-facing bank fails (Section~\ref{sec:results}), we do not
+simulate it.  Instead, a separate non-release instrument instantiates only the
+preselected 152-slot geometry and categorical format labels.  It contains no
+prompt, answer, or scorer.  For minimum active mastery $m$, responses use
+\begin{equation}
+p=g_l+(1-g_l-s_l)\,\sigma\!\left[
+\operatorname{logit}(m)+a_l+\delta_f-d_i\right],
+\end{equation}
+where $a_l$, $\delta_f$, and $d_i$ are learner, format, and item effects.  Six
+paired worlds separately set these effects to zero; add moderate/strong format
+offsets; add moderate item difficulty; cross item and format; and add learner
+ability, learning-rate, guess, and slip heterogeneity.  Item effects are
+orthogonal to intercept, Q, and format over equally weighted seen slots.  All
+effect sizes are planted stress levels, not human estimates.
+
+Each world uses 500 learners, seeds 20260829--20260831, 188 acquisition events,
+and 152 non-updating probes.  Keyed common random numbers pair disabled and
+enabled mechanisms.  Public and oracle streams remain separate.  Four
+observable models compare shared \kstar{} without nuisance (A), false
+format-split KCs (B), shared \kstar{} plus format (C), and shared \kstar{} plus
+format and a seen-item residual basis (D).  D deliberately spans the planted
+seen-item effect and is a positive control, not a general difficulty solution.
+
+\subsection{Policy, errors, and dialogue}
+
+The Q-balanced laboratory schedule is compared under the same budget with a
+fixed curriculum order, mixed practice, and an adaptive policy using only
+observable cell-level correctness, exposure, and spacing.  The latter cannot
+read generator Q or mastery.  Policy model fits are declared post-response
+exploratory; the confirmatory comparison is process morphology.
+
+For incorrect multi-KC responses, a private diagnostic KC is sampled
+proportional to active mastery deficits.  It is post-outcome attribution, not a
+unique causal failure.  We expose binary-only, oracle-linked positive-control,
+80\%-linked/unresolved, and within-item shuffled error histories while holding
+all other observable fields fixed.  Current-row errors update history only
+after prediction.
+
+Finally, four visible item families span cloze, transformation, contextual
+production, dialogue completion, and open dialogue.  Independent role critics
+judge naturalness, determinacy, response-family size, incidental grammar,
+shortcuts, KC attribution, and platform plausibility separately.  This is an
+automated opportunity-boundary stress test, not learner validation.

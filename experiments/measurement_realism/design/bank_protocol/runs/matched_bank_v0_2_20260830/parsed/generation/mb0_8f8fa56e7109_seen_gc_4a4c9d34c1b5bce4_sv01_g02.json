@@ -1,0 +1,161 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "Nina must have taken the spare key.",
+  "cell_id": "gc_4a4c9d34c1b5bce4",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g02_cloze",
+      "context": "The spare key is gone. Nina was the only person who entered the office this morning.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Nina [[RESPONSE]] the spare key.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using “must” and the correct form of “take.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "must have taken",
+          "must've taken"
+        ],
+        "completed_target": "Nina must have taken the spare key.",
+        "correct_choice_id": null,
+        "target_response": "must have taken"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g02_dialog",
+      "context": "Two coworkers are discussing a missing office key.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Lena: The spare key is gone.",
+          "Omar: Who entered the office this morning?",
+          "Lena: Only Nina did."
+        ],
+        "incomplete_turn_template": "Omar: Nina [[RESPONSE]] the spare key.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Omar’s reply using “must” and the correct form of “take.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "must have taken",
+          "must've taken"
+        ],
+        "completed_target": "Nina must have taken the spare key.",
+        "correct_choice_id": null,
+        "target_response": "must have taken"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g02_mcq",
+      "context": "The spare key is gone. Nina was the only person who entered the office this morning.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Omits the perfect construction after MUST, expressing a present obligation instead of a deduction about an earlier event.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses the base form TAKE instead of the required past participle TAKEN after perfect HAVE.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Selects MIGHT instead of MUST, weakening the intended confident deduction.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Nina must have taken the spare key."
+          },
+          {
+            "id": "B",
+            "text": "Nina must take the spare key."
+          },
+          {
+            "id": "C",
+            "text": "Nina must have take the spare key."
+          },
+          {
+            "id": "D",
+            "text": "Nina might have taken the spare key."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence best explains what happened?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that makes the best deduction.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "Nina must have taken the spare key.",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g02_xform",
+      "context": "The spare key is gone, and there is only one possible explanation.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "The spare key is gone. Nina was the only person who entered the office this morning.",
+        "stem": null,
+        "transformation_cue": "Use “must” and “take.”"
+      },
+      "instruction": "Write one sentence that makes a confident deduction about what happened.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Nina must have taken the spare key.",
+          "Nina must've taken the spare key."
+        ],
+        "completed_target": "Nina must have taken the spare key.",
+        "correct_choice_id": null,
+        "target_response": "Nina must have taken the spare key."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Make a confident deduction about why the spare key is gone.",
+    "main_verb_lemma": "take",
+    "object_head": "key",
+    "participants": [
+      "Nina",
+      "the spare key"
+    ],
+    "situation_summary": "The spare key is gone, and Nina was the only person who entered the office that morning.",
+    "time_anchor": "that morning, before the present discovery"
+  },
+  "semantic_variant_index": 1
+}

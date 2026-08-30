@@ -1,0 +1,17 @@
+{
+  "ambiguity_explanation": "",
+  "batch_id": "solver_r01_rep1_constrained_cloze_b01",
+  "instruction_understanding": "Write a question using the supplied words.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g01_cloze",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": false,
+  "other_reasonable_responses": [],
+  "reasonable_unkeyed_responses": [],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g01_cloze_solver_r1",
+  "submitted_response": "Which report does Maya not upload?",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

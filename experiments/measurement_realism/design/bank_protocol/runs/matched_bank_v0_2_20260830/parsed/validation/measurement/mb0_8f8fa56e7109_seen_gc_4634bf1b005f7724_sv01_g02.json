@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r02_measurement_b01",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g02",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "Each format elicits or recognizes the same present negative non-subject-WH question, with appropriate production/recognition mechanism differences.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "No format gives away DO support, inversion, or NOT placement; these remain the declared KCs throughout.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "All items ask which ingredient is absent from the same present soup composition.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The full response requires present does, NOT placement, and non-subject-WH operator inversion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The object-WH dependency is the declared question construction; the remaining vocabulary is straightforward.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The cue supplies lexical chunks but not DO support, inversion, or the placement of NOT.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "Both standard contracted and uncontracted forms are accepted, and the cue constrains the intended question.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The accepted set includes both “does ... not” and “doesn’t ...” realizations; no other reasonable solver alternative was proposed.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Interpreting a negative question from a partial ingredient list adds some lexical/pragmatic burden, although it is manageable at B2.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g02_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Producing the customer’s question requires all declared present, negation, and WH-inversion operations.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The response grammar is confined to the declared question and negative DO-support construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The preceding turns establish meaning but do not provide the target word order or finite form.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The two normal contraction variants are both accepted and no competing grammatical form is required by the cue.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "No solver-proposed unkeyed response is omitted; the accepted forms cover the material standard variants.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Dietary-suitability discourse adds a small pragmatic load beyond form production.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g02_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "B uniquely has non-subject-WH inversion, present does, and NOT after the finite operator.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The response requires no grammar beyond the target operations.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The obviously nonstandard A/C forms allow partial testwise elimination, but the remaining contrast with past did requires target-form recognition.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "B is the unique correctly formed present-time question among the listed choices.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "B is the sole defensible option; no unkeyed option was proposed.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The stem explicitly identifies the intended absent-ingredient meaning.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g02_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The learner must turn the negative declarative into a non-subject-WH question with present DO support and correct NOT position.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The source clauses provide the semantic basis; the requested transformation is exactly the declared construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The cue supplies lexical elements but not the operator, inversion, or negation placement.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "Both standard contracted and uncontracted target forms are accepted.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The accepted alternatives cover the material standard realizations and no solver proposed another reasonable response.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The transformation requires integrating two source statements, adding modest reading burden beyond the target grammar.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g02_xform"
+    }
+  ],
+  "overall_accept": true,
+  "role": "measurement",
+  "summary": "The family consistently measures present negative non-subject-WH formation and accepts both standard contraction variants; only modest contextual burden remains."
+}

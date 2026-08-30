@@ -1,0 +1,1057 @@
+{
+  "call_records": [
+    {
+      "call_key": "ecp_simple_gc_d15de8b5658bd6a5__learner",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__learner",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 135,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__learner/call_metadata.json",
+          "sha256": "3062726766d229eb06aa909bf71446582a1c3509a0797187e51ae60917075e01"
+        },
+        "cli_stderr.txt": {
+          "bytes": 9035,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__learner/cli_stderr.txt",
+          "sha256": "e9707db02aee435e6531480b6ce8cb71beb5d2bf699bb850e50803210acd4d0d"
+        },
+        "input.json": {
+          "bytes": 3840,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__learner/input.json",
+          "sha256": "4657c868c5618a346baba6479a0c6188b77d5322f433395f7d843989d0d2b2d6"
+        },
+        "model_settings.json": {
+          "bytes": 575,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__learner/model_settings.json",
+          "sha256": "54536ed28bed496e98248c40f1170d0e6e253cb452f5ad79d39d961b7f879e3c"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__learner/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 4821,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__learner/parsed_result.json",
+          "sha256": "fa4df192a57cf7ed0a0fd8fd8f83dfe5071055ad2cb4bede263fa30f30c1c878"
+        },
+        "raw_output.txt": {
+          "bytes": 3823,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__learner/raw_output.txt",
+          "sha256": "91bb4591aec6ae53af52dafd35b888016148967c0317c4ec3e9c689f2204095d"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 4828,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__learner/rendered_prompt.txt",
+          "sha256": "e2989c14fc8674942579beaeb1cf6ee86c0041cfca8c1806c2f77720c72ce414"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 43.712905558000784,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_simple_gc_d15de8b5658bd6a5__language_teacher",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__language_teacher",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 135,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__language_teacher/call_metadata.json",
+          "sha256": "ab3da416906ab87314f05849679313e0b018d5c871d53721eea745c29cc8798c"
+        },
+        "cli_stderr.txt": {
+          "bytes": 17350,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__language_teacher/cli_stderr.txt",
+          "sha256": "b257f4a9facecf3427c965ff6197c9911c0cf0e2b0fae5808ecd5ed3a9d93a14"
+        },
+        "input.json": {
+          "bytes": 12694,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__language_teacher/input.json",
+          "sha256": "57fd9d38bf64c136375ac884cdaa031b6459343fe74d3fa8f9bce63d7fc5c4cf"
+        },
+        "model_settings.json": {
+          "bytes": 593,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__language_teacher/model_settings.json",
+          "sha256": "5d70f31c4873ac0787e7a40460d64048754bc4a37b80b0e1fd518c26420edaf1"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__language_teacher/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 5872,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__language_teacher/parsed_result.json",
+          "sha256": "e5ee55af9dc5c7d21c135da33ff9dc584d612952a08d3a647ca20a8575f501f5"
+        },
+        "raw_output.txt": {
+          "bytes": 4725,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__language_teacher/raw_output.txt",
+          "sha256": "7c5276e6df604e56b70ee8c1b72ecedaa7d4cda8c7715a48e602eaf3b530dffe"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 12232,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__language_teacher/rendered_prompt.txt",
+          "sha256": "b964441b6bfc4f725a84f29253363821114514b453fbabea60e04cb4f2bcdadf"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 28.109465333996923,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_simple_gc_d15de8b5658bd6a5__platform_product",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__platform_product",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 135,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__platform_product/call_metadata.json",
+          "sha256": "524c5e36b7f8143f469be772c61dd154362fe016985d88b1244014478b6bd4ce"
+        },
+        "cli_stderr.txt": {
+          "bytes": 14477,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__platform_product/cli_stderr.txt",
+          "sha256": "0479fc7c2d0b887320643a243ab95e0e37b4977203681eaf36574f5d7601bfbc"
+        },
+        "input.json": {
+          "bytes": 9627,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__platform_product/input.json",
+          "sha256": "818a49b760f651d4490f07b39876838e9fa31a896afca58a34c84e1f94b3c72e"
+        },
+        "model_settings.json": {
+          "bytes": 593,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__platform_product/model_settings.json",
+          "sha256": "53ce8c0428bd50e0c5df9e338f57fe6d8eb9fe55c6707088f0adcbff9df85e9c"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__platform_product/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 5281,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__platform_product/parsed_result.json",
+          "sha256": "a91f32c48ef0fce8b5785a03b2a1fa24fd697cbbf6d8cf23c6a00553c617715e"
+        },
+        "raw_output.txt": {
+          "bytes": 4240,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__platform_product/raw_output.txt",
+          "sha256": "e38c65276392f3ca3aa1b835982efaae9aa490ec2ae30b2f3a3f833f8da7546f"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 9844,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__platform_product/rendered_prompt.txt",
+          "sha256": "d4a60e598ca85235c543fd49e6bb162b8c9026c8ffdf05d6e4f9a3d9aac3a637"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 38.743400601997564,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_simple_gc_d15de8b5658bd6a5__measurement",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__measurement",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 134,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__measurement/call_metadata.json",
+          "sha256": "92e348322181f570e8057381d3f7b1d20b34d68679252ba4ae6b9eb87e394160"
+        },
+        "cli_stderr.txt": {
+          "bytes": 17069,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__measurement/cli_stderr.txt",
+          "sha256": "9fd644bec3e078fe7af70452f75ce89d3c86c9a6e757292c4d58105f8c4f52bb"
+        },
+        "input.json": {
+          "bytes": 12717,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__measurement/input.json",
+          "sha256": "9f85ca63ccb336b4974c26815ff11266f13c64accf307458f0ee42add774c095"
+        },
+        "model_settings.json": {
+          "bytes": 583,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__measurement/model_settings.json",
+          "sha256": "d6461fd8c62d8bce760e65c61cc057a71124b7af307a3f26f34f796899aa4a68"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__measurement/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 5555,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__measurement/parsed_result.json",
+          "sha256": "aef321fdf030fa9a73af51ea77e27c55d287f3a8772eca38729a78bb255f9f98"
+        },
+        "raw_output.txt": {
+          "bytes": 4426,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__measurement/raw_output.txt",
+          "sha256": "24ad81bb200acc4b59c691fec58d531d83e12e127ecd2e500cabde25f7944952"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 12255,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__measurement/rendered_prompt.txt",
+          "sha256": "6bb7f1d27bc7fadc5c836ede8dabb66f0e2bd238532914ad78e5e20368ead5fc"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 40.08545413999673,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_simple_gc_d15de8b5658bd6a5__linguistic",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__linguistic",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 134,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__linguistic/call_metadata.json",
+          "sha256": "41b07cbe0ef8a81609c8993027346e707b49698c459ca96632b54be6822eb5ce"
+        },
+        "cli_stderr.txt": {
+          "bytes": 17087,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__linguistic/cli_stderr.txt",
+          "sha256": "8a385497905e6b9ac682ba94e61dd3e0a5668e9714447c140224cd99067702a1"
+        },
+        "input.json": {
+          "bytes": 12677,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__linguistic/input.json",
+          "sha256": "7f15327d55054c9398c3791276ea49c6cdf576c508c92e7bd698548601fdfe78"
+        },
+        "model_settings.json": {
+          "bytes": 581,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__linguistic/model_settings.json",
+          "sha256": "ddcc9dcf00dfe50490ea6c6f0bd5ab5004b7b6861d096bca3b12e6a79c720d1c"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__linguistic/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 5614,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__linguistic/parsed_result.json",
+          "sha256": "ce1dece2b491d9cc4fecbe82e959d189204c94b7b9e60aba8cdba21bfc04d2a6"
+        },
+        "raw_output.txt": {
+          "bytes": 4485,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__linguistic/raw_output.txt",
+          "sha256": "5b37e478cb7003994976fbe3e55fed8d3c808b754c7e22e0def127a7bd442f74"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 12215,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_simple_gc_d15de8b5658bd6a5__linguistic/rendered_prompt.txt",
+          "sha256": "b87b574b13d969a94ed22b0100c3479b3260a4e642d2e9fb991a198aec8251e4"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 33.96116391800024,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_multi_kc_gc_2d6eb4f93cba4c6b__learner",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__learner",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 135,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__learner/call_metadata.json",
+          "sha256": "11c01335b189ff7bff4ed78fec4ef8056dd8545ed06626be0fdfc41a9304429b"
+        },
+        "cli_stderr.txt": {
+          "bytes": 10066,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__learner/cli_stderr.txt",
+          "sha256": "5d70a95d66f86106250ddbf54c334e1b36a1656b0a23969547344c749bbda921"
+        },
+        "input.json": {
+          "bytes": 4539,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__learner/input.json",
+          "sha256": "984c90b928d954c7d03e92af4fb59d9f328f4355982caec0b28663d11ea3ccf9"
+        },
+        "model_settings.json": {
+          "bytes": 579,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__learner/model_settings.json",
+          "sha256": "431462eca3a6911c1cd33b8d1217bf3566b794ac249356c62bf7ac7ad321ce01"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__learner/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 5296,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__learner/parsed_result.json",
+          "sha256": "6f32d628fecd73d6a026966a9b38d3fec38c186af734f5e864f2d97d2612d9be"
+        },
+        "raw_output.txt": {
+          "bytes": 4255,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__learner/raw_output.txt",
+          "sha256": "4fa2281f78148a9c167a524fbde806bbe8dcd95df4d6cedefbfc7ec103338ef8"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 5425,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__learner/rendered_prompt.txt",
+          "sha256": "510954878f581db3a48075a12b4b39e285469509601abad7194cd47ba7e85781"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 32.086263848999806,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_multi_kc_gc_2d6eb4f93cba4c6b__language_teacher",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__language_teacher",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 135,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__language_teacher/call_metadata.json",
+          "sha256": "08e2530e4dfff58b3b795dc103b1ee31e200d16daa47e18a1de5f5b75ba0e1bf"
+        },
+        "cli_stderr.txt": {
+          "bytes": 18135,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__language_teacher/cli_stderr.txt",
+          "sha256": "b0d104cf88157377179d344cd3da9f7468ca264ee793c5ec5c3133b60c763bcd"
+        },
+        "input.json": {
+          "bytes": 13532,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__language_teacher/input.json",
+          "sha256": "d25805ce8d77498fd452dc7ebf08ca0c6b3fd835df80d13cbbbeb6ad448e9e3e"
+        },
+        "model_settings.json": {
+          "bytes": 597,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__language_teacher/model_settings.json",
+          "sha256": "b77d57b5592f0133fdf9227e0a5d36cd72c19193732f4ef7bfe6d65937215a17"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__language_teacher/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 5767,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__language_teacher/parsed_result.json",
+          "sha256": "a67ba5dfe288d85f322972a3ee1204ebb6931da7e7ff0121d77aae7186768740"
+        },
+        "raw_output.txt": {
+          "bytes": 4692,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__language_teacher/raw_output.txt",
+          "sha256": "38c77b8aba4c31955a504f6970cadfd6ff7dd82b6a9abf3ca964a86179b36e76"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 13048,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__language_teacher/rendered_prompt.txt",
+          "sha256": "feab1149afbb77f92eaadb1db953e04fe15f77539c51eb88f5d396481e9a17ec"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 42.559161212993786,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_multi_kc_gc_2d6eb4f93cba4c6b__platform_product",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__platform_product",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 134,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__platform_product/call_metadata.json",
+          "sha256": "c38e1e7f6890da58529e061467829b0cd36e9e0340fa92ffc569e649e1b3c658"
+        },
+        "cli_stderr.txt": {
+          "bytes": 14785,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__platform_product/cli_stderr.txt",
+          "sha256": "9e2b6e8b2fabbbb80bced11b5eaf5a32cf90956f0c03c54bf737123b09258f7a"
+        },
+        "input.json": {
+          "bytes": 9988,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__platform_product/input.json",
+          "sha256": "3db8b0ddb6f1db9a9ed03d6532790dcf150c47aa3ba9bf677e46cbe68e3c163f"
+        },
+        "model_settings.json": {
+          "bytes": 597,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__platform_product/model_settings.json",
+          "sha256": "c3dd273ff4b2f715fc1cffa8f34215f31aa1515156fed9dfc26a926fcadffec2"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__platform_product/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 5276,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__platform_product/parsed_result.json",
+          "sha256": "9058d6ea07a278662aefe65afe28a7d1c93392e765cd3eed36b721eac6fe50cd"
+        },
+        "raw_output.txt": {
+          "bytes": 4235,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__platform_product/raw_output.txt",
+          "sha256": "7287b59ef501da041c1837db0713d81b238f40f45b9a711c5da773eeae167d21"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 10155,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__platform_product/rendered_prompt.txt",
+          "sha256": "02639150af91599d7804c31a35f5518dd622fe193e1ca276085500799c893943"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 41.32094619500276,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_multi_kc_gc_2d6eb4f93cba4c6b__measurement",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__measurement",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 135,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__measurement/call_metadata.json",
+          "sha256": "7846c4579f3099be9d935bf17af10167af2eec5fea6996ebc24511e9584a366a"
+        },
+        "cli_stderr.txt": {
+          "bytes": 18051,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__measurement/cli_stderr.txt",
+          "sha256": "384b022941697db614e29b0069400d2b7021fcffad84e425c3362ad0bdbd99fd"
+        },
+        "input.json": {
+          "bytes": 13555,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__measurement/input.json",
+          "sha256": "d9447071b27fb4d516e39f5929ce1e5ec005a0cadbc4e8c077f3034db474486e"
+        },
+        "model_settings.json": {
+          "bytes": 587,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__measurement/model_settings.json",
+          "sha256": "04cd9dca1cb99babfded23112ee229c6f6f3b74d3b6d1116cc60a5d415ab6be4"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__measurement/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 5665,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__measurement/parsed_result.json",
+          "sha256": "89625a6630f43f8f5563125dcf2c81e30d6b4af8d4da20197bf4366f529431e7"
+        },
+        "raw_output.txt": {
+          "bytes": 4590,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__measurement/raw_output.txt",
+          "sha256": "a332e2ca1f17c9463bcf62a8ba3c6b500d8bd22a9141b7262e061529182e30b4"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 13071,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__measurement/rendered_prompt.txt",
+          "sha256": "27b046d2dd886f746a28c17aa92b4fbc4ea66f0deaf15def5dbe465b697dfedd"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 46.906111871001485,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_multi_kc_gc_2d6eb4f93cba4c6b__linguistic",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__linguistic",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 135,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__linguistic/call_metadata.json",
+          "sha256": "f46e1a092fcde2a45d9c2fe98448d48ac7c99d686d2594ab7feedc3f4508e8ec"
+        },
+        "cli_stderr.txt": {
+          "bytes": 17969,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__linguistic/cli_stderr.txt",
+          "sha256": "135234c37db72044f59410a8fdfb0a16cc5a7be12addb5fa546acce9df79bb87"
+        },
+        "input.json": {
+          "bytes": 13515,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__linguistic/input.json",
+          "sha256": "9e6d99b0dfae44f3bd69aeb79b1b21de8f3047a05d964f90bd9350826ea72f28"
+        },
+        "model_settings.json": {
+          "bytes": 585,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__linguistic/model_settings.json",
+          "sha256": "e4f7d4a0d5f2d873146ef650a49f80baa9ac0dede6832d2f03227561efe0b011"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__linguistic/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 5651,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__linguistic/parsed_result.json",
+          "sha256": "81c544071a5529f81af51e570f237897042a31c1a6f1dece345ddd0510799f63"
+        },
+        "raw_output.txt": {
+          "bytes": 4549,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__linguistic/raw_output.txt",
+          "sha256": "d48ab08b22d176cda9e8068816e971c70d2af9d976962cbea2125f5a5553a3bf"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 13031,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_multi_kc_gc_2d6eb4f93cba4c6b__linguistic/rendered_prompt.txt",
+          "sha256": "6efded6854cdd412575fa7106a296eb97d624bd697625c435e1c65d0372c5de4"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 42.902232088003075,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_question_gc_08d90a35b669ed28__learner",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__learner",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 135,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__learner/call_metadata.json",
+          "sha256": "5e9cc58db5391a9078f932d5aa424651b363defb2222e29ff32f8be31b9491c4"
+        },
+        "cli_stderr.txt": {
+          "bytes": 9387,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__learner/cli_stderr.txt",
+          "sha256": "f251866c658d9958c31847873dd357599eda0c980f40da5c840c1c778f19a03e"
+        },
+        "input.json": {
+          "bytes": 4432,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__learner/input.json",
+          "sha256": "cb9ee9e5bed68e74bdaa2d687e943bc919d671d2e15000791bfa425474ae5169"
+        },
+        "model_settings.json": {
+          "bytes": 579,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__learner/model_settings.json",
+          "sha256": "a5019c20d3943cb384bf19675c87ec6639b9668cfd53cf19ba3e96fc3d111015"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__learner/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 4724,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__learner/parsed_result.json",
+          "sha256": "3d44f948e68a869cad6e3e4f86253e745536da5ec8c0e13cecb15e5f62193825"
+        },
+        "raw_output.txt": {
+          "bytes": 3783,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__learner/raw_output.txt",
+          "sha256": "4d8091d237df661c9c673b8777629d4b0bce595de82cf3cb761e4789ecadd7b3"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 5218,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__learner/rendered_prompt.txt",
+          "sha256": "450b9dae8322edf84b83d3f0738fba255e27e575640fb6a35afc379aac130805"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 30.119895134004764,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_question_gc_08d90a35b669ed28__language_teacher",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__language_teacher",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 135,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__language_teacher/call_metadata.json",
+          "sha256": "33cfbd6bf928d90c65d56f75eabe7ccd590a31286b7e4f67e1dcb97f1299eaf4"
+        },
+        "cli_stderr.txt": {
+          "bytes": 17797,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__language_teacher/cli_stderr.txt",
+          "sha256": "b7cdb9b3e17a0e92c05ea023981116c50e9e1e104c9b526fab470284ad34402d"
+        },
+        "input.json": {
+          "bytes": 13602,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__language_teacher/input.json",
+          "sha256": "1b212a189646629e9228094d4a995117e1966082f06106cbd69a883e8f2e2c15"
+        },
+        "model_settings.json": {
+          "bytes": 597,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__language_teacher/model_settings.json",
+          "sha256": "644ef2308ebe70a64404bf0cbce1ab27b1e280c145ded71552dc35eaa877f76c"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__language_teacher/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 5559,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__language_teacher/parsed_result.json",
+          "sha256": "34eafb9124071dfdff51a1514fe9182e320e88f1adade857a407d782e22b13c6"
+        },
+        "raw_output.txt": {
+          "bytes": 4448,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__language_teacher/raw_output.txt",
+          "sha256": "db7a04ae80aeebbd5df370d88ec72eba567ccbf44ecee1593e0edec29ece96d4"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 12954,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__language_teacher/rendered_prompt.txt",
+          "sha256": "74f9854a85e4d454d41a3068b44aa15df5fda096c0ea02b9e617007b56d4c1e4"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 42.489740062002966,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_question_gc_08d90a35b669ed28__platform_product",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__platform_product",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 135,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__platform_product/call_metadata.json",
+          "sha256": "fe8aee2d414637b06816adeb3412aa230492c5109b91e358d4740c9a80883677"
+        },
+        "cli_stderr.txt": {
+          "bytes": 15340,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__platform_product/cli_stderr.txt",
+          "sha256": "629b00366c7afbe7a9c6c78ccdd0b30d60dc6437afd7becb472a3d78742895fe"
+        },
+        "input.json": {
+          "bytes": 10346,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__platform_product/input.json",
+          "sha256": "5e3ccd916a69dddea8ff58bfedce347463d776d6c776aca4705f41c65c776c0d"
+        },
+        "model_settings.json": {
+          "bytes": 597,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__platform_product/model_settings.json",
+          "sha256": "1211ef3e0f6f9da5dd359b18ce27db77c43a2c2d7ba02774f98557e9d64a9de8"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__platform_product/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 5580,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__platform_product/parsed_result.json",
+          "sha256": "58d2fc73db2ba07d3f438a05c7e607522fac4c84547724d1d3bc6c678dc57caf"
+        },
+        "raw_output.txt": {
+          "bytes": 4532,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__platform_product/raw_output.txt",
+          "sha256": "f59e09fe8fbf43b938a1bdfa99781691c88538ff3c42e41571cb66aa195ed73c"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 10413,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__platform_product/rendered_prompt.txt",
+          "sha256": "0239e3dfe51a4964a6ef23429c11ccff0b5dc3c78fe70b24b25cdb2fde5f819c"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 39.700388685996586,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_question_gc_08d90a35b669ed28__measurement",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__measurement",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 134,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__measurement/call_metadata.json",
+          "sha256": "df4ec9a0610b7334eee379b57da35777925b9091846b4a702f031b54272d3a95"
+        },
+        "cli_stderr.txt": {
+          "bytes": 17775,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__measurement/cli_stderr.txt",
+          "sha256": "58d6e46805674374ebde702542de482f6da0aeed0f39d954e309241617dffc21"
+        },
+        "input.json": {
+          "bytes": 13625,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__measurement/input.json",
+          "sha256": "a21396237d9ba3a2ad37f001102e6c4dd7976728fc663fcb483dffa8aff73daf"
+        },
+        "model_settings.json": {
+          "bytes": 587,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__measurement/model_settings.json",
+          "sha256": "9698dd6dfb77f5873c164c995863b88ee759a3d6729ecb9d993e3e6eed5b3df6"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__measurement/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 5447,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__measurement/parsed_result.json",
+          "sha256": "5942e272d2e015f6aead866fb0266b9adf7f3eb19ded0a4efad8508d65b141a4"
+        },
+        "raw_output.txt": {
+          "bytes": 4408,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__measurement/raw_output.txt",
+          "sha256": "2e4e56b07d471fcca472b23791801fa73a2fc27b9da888e3080dc2bd1bb124b8"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 12977,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__measurement/rendered_prompt.txt",
+          "sha256": "a87c981da7b5e3ea5bc33f81b2ce520d305fa91f5b18b5c0478cb779df2cc422"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 47.64735342300264,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_question_gc_08d90a35b669ed28__linguistic",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__linguistic",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 135,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__linguistic/call_metadata.json",
+          "sha256": "b4815effccab946a5f08e7b030d4f6b5555ea7fa3beb326a0f05f072b6b7bd28"
+        },
+        "cli_stderr.txt": {
+          "bytes": 17731,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__linguistic/cli_stderr.txt",
+          "sha256": "f2379ccddddda079a55b975e7275110e6dd37d15d71c3e7211bb37b887b34b4d"
+        },
+        "input.json": {
+          "bytes": 13585,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__linguistic/input.json",
+          "sha256": "33c1328d2ef40f929882b096f52747bf371a3229ebd5c42cc34e5e524649cc31"
+        },
+        "model_settings.json": {
+          "bytes": 585,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__linguistic/model_settings.json",
+          "sha256": "d1bc5a0d4f993bd95348529d3733c5ee23a353a04e191113e4c2d5670120a86e"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__linguistic/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 5437,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__linguistic/parsed_result.json",
+          "sha256": "380fae51d14ed9322460289aa13ad9be93eec5fa736f1a0a7c6c2115fcb59730"
+        },
+        "raw_output.txt": {
+          "bytes": 4405,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__linguistic/raw_output.txt",
+          "sha256": "d7712949a54d1e8cd2568a4a0c65a9507b61beace9c2961e4f825d81a85c07c9"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 12937,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_question_gc_08d90a35b669ed28__linguistic/rendered_prompt.txt",
+          "sha256": "3e35ddc858dac62af031b3ed80d3df52358a4c0e5b6d27e209760c72d04768e2"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 42.281857592999586,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_rare_complex_gc_4634bf1b005f7724__learner",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__learner",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 134,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__learner/call_metadata.json",
+          "sha256": "5da1dc6de424c3416a08b9b7ba0942d1d74102d9ae900f1f55f9c2675d4ce7c9"
+        },
+        "cli_stderr.txt": {
+          "bytes": 9639,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__learner/cli_stderr.txt",
+          "sha256": "c3e50af0e65a38f6c6807ebea18ee0def6d8fe399a577799e0adde3dc6fbbfe6"
+        },
+        "input.json": {
+          "bytes": 4061,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__learner/input.json",
+          "sha256": "04b83b96009643686c474b591a1dbe595176b56c218ae7af9e0574f6b27b653f"
+        },
+        "model_settings.json": {
+          "bytes": 587,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__learner/model_settings.json",
+          "sha256": "1a9488d06d7259a0386f9d0c472f2ae9e86f181dcd7b60040e0b009b3f4e18e6"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__learner/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 5413,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__learner/parsed_result.json",
+          "sha256": "91e23d8f838982d16f06642e9326d6b90f3354fd645c315df2b97077e3a4ec9f"
+        },
+        "raw_output.txt": {
+          "bytes": 4356,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__learner/raw_output.txt",
+          "sha256": "3987068827aef1cfe2037536c1eaffcd88f79fcc956f2c4b0b4fd2cd6714599b"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 4893,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__learner/rendered_prompt.txt",
+          "sha256": "f59c49a1c8e28ec86567da32580f851fa6a47f9b2108b2a8b134fe33d8f71c25"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 40.86374608200276,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_rare_complex_gc_4634bf1b005f7724__language_teacher",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__language_teacher",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 134,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__language_teacher/call_metadata.json",
+          "sha256": "a415ea83e983490ba40a120d5fe45f310ab62b1fc5ef5bee561167e8d3dc660d"
+        },
+        "cli_stderr.txt": {
+          "bytes": 17424,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__language_teacher/cli_stderr.txt",
+          "sha256": "8a030418bcf6495a390142e2cac870345475fe7eaef4c15b8e9ab3cf4e93cb39"
+        },
+        "input.json": {
+          "bytes": 12983,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__language_teacher/input.json",
+          "sha256": "8528ac90411aaf8881ec5fe71708e27bae3447df7999226f1d49ef72dd2d29d3"
+        },
+        "model_settings.json": {
+          "bytes": 605,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__language_teacher/model_settings.json",
+          "sha256": "3418f67cab3dfafecca067cc2a6b3efedd457cc645ee1b39a691dd79ea600496"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__language_teacher/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 5714,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__language_teacher/parsed_result.json",
+          "sha256": "dd6d662cd3d5bcea5f52acfbcab8b6b7a71f1357287bc30681cef101ae38c7ff"
+        },
+        "raw_output.txt": {
+          "bytes": 4613,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__language_teacher/raw_output.txt",
+          "sha256": "e3ceabfa5312e66833e4cec6a53d286ae433bc16dee2dc808a4ee301b761716c"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 12412,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__language_teacher/rendered_prompt.txt",
+          "sha256": "c7b6ef932c7319030a36f6d460d791a7b8f781297c21b19760706eb6162608cb"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 35.36323925299803,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_rare_complex_gc_4634bf1b005f7724__platform_product",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__platform_product",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 134,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__platform_product/call_metadata.json",
+          "sha256": "96a8dba25395602394f0f96e8cadc89b1a9ee5f71805dc66a5f9c327495ad0e4"
+        },
+        "cli_stderr.txt": {
+          "bytes": 14849,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__platform_product/cli_stderr.txt",
+          "sha256": "b09ee74b2e2d5e2a34e5410727d011983c79c36772b3f05c840b7b66e5426798"
+        },
+        "input.json": {
+          "bytes": 9931,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__platform_product/input.json",
+          "sha256": "799239a9fde23985863c7e6e66e6a266d11076de6d022f069a9de2ae95bf107c"
+        },
+        "model_settings.json": {
+          "bytes": 605,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__platform_product/model_settings.json",
+          "sha256": "92d1aa3b3a9bef02146f3abfd353284917c09ea03498192140b937945a3127bb"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__platform_product/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 5408,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__platform_product/parsed_result.json",
+          "sha256": "e7599ac267b30e12c0f8e0bc9f440b2302413a7d09671724af279bb46283d1e3"
+        },
+        "raw_output.txt": {
+          "bytes": 4419,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__platform_product/raw_output.txt",
+          "sha256": "5d1779a176bc86253f666daaadf6c4d60caf83d9ab66b2944ccb5b13ecf56e0c"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 10031,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__platform_product/rendered_prompt.txt",
+          "sha256": "899934bca12ea1b890eec366d226128893aec8f094ba7461a38cbb6ce0ea7265"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 33.90137677700113,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_rare_complex_gc_4634bf1b005f7724__measurement",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__measurement",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 134,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__measurement/call_metadata.json",
+          "sha256": "429ac88701012df7a92cfdac6f70cf7218c3f9308b6c10457c44092bf3767b8c"
+        },
+        "cli_stderr.txt": {
+          "bytes": 17169,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__measurement/cli_stderr.txt",
+          "sha256": "399244af378c79bc36025955fbe36113c0c8c7be905ac5003b55c92bdd6fd1ed"
+        },
+        "input.json": {
+          "bytes": 13006,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__measurement/input.json",
+          "sha256": "0652776743006d80c8f6647c3b6be8f26ef596f12c5848e8b88ef44b9ace8138"
+        },
+        "model_settings.json": {
+          "bytes": 595,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__measurement/model_settings.json",
+          "sha256": "9512434964125a34a928805dca34809a80d089763e38b229319274446c95f1ed"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__measurement/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 5329,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__measurement/parsed_result.json",
+          "sha256": "e038b4f12fcb9cc0b1f3a750820a9c83d00a76608c657d52f31553ce80d0c436"
+        },
+        "raw_output.txt": {
+          "bytes": 4340,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__measurement/raw_output.txt",
+          "sha256": "415bbfae6946dc5725322c35855cec022a40ebb22a59666320d2bec0ad1b6035"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 12435,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__measurement/rendered_prompt.txt",
+          "sha256": "50631793ec30de85de0d5d6b96446203fcc46ace6ae9cd1b1b468a44fd01ad27"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 58.17017138700612,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_rare_complex_gc_4634bf1b005f7724__linguistic",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__linguistic",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 134,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__linguistic/call_metadata.json",
+          "sha256": "968e1c9cf46783125f780b54290b1dc7d02b273c2d651e482c1db8b5ca8b6e0f"
+        },
+        "cli_stderr.txt": {
+          "bytes": 17427,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__linguistic/cli_stderr.txt",
+          "sha256": "dda895026f41203b580801f72564472bcc3db7cdbaafa71485235eed0376e795"
+        },
+        "input.json": {
+          "bytes": 12966,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__linguistic/input.json",
+          "sha256": "3c6de59c1054340ce48f466e1e21a0625398e1bbda8a1f8df3a2965f038cb67a"
+        },
+        "model_settings.json": {
+          "bytes": 593,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__linguistic/model_settings.json",
+          "sha256": "8d210683ada34a45f91b206397fb58e538b114148b93bef9ff9e4ab9b5fa39c2"
+        },
+        "output_schema.json": {
+          "bytes": 5606,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__linguistic/output_schema.json",
+          "sha256": "3a8f448e0ea282eac3ca8e71174b87f091ba5a8135d5a8de799d58f578e45582"
+        },
+        "parsed_result.json": {
+          "bytes": 5822,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__linguistic/parsed_result.json",
+          "sha256": "572fd6d6e3455fdb2a295d460664dd24e91341c7faa573942f3f2ad97ed570e2"
+        },
+        "raw_output.txt": {
+          "bytes": 4639,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__linguistic/raw_output.txt",
+          "sha256": "db25b125607a43b2b1c6fee8069ed9d58ed6adce8284ea616bdf0ac6053f5de8"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 12395,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/critique/ecp_rare_complex_gc_4634bf1b005f7724__linguistic/rendered_prompt.txt",
+          "sha256": "1c7c9dc6a13a6ae9e8c73bd7c3ef7835dce1c1c807a8d6c5b32dd417042c97b6"
+        }
+      },
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 34.48294991800503,
+      "stage": "dialogue_continuum_critique",
+      "tokens_used": null
+    }
+  ],
+  "calls": 20,
+  "critic_call_plan_sha256": "e078cd678fc12f7c9e6f0c2c72d7f3058d0b3f87bce963c03c5a27039c2715a2",
+  "critic_envelopes_sha256": "f0d0f321f54ec47d1748a6e87d8f66d4b7254d39b7fab33541856486c22cdbce",
+  "critic_judgments_sha256": "5551e1a39adb871eb7d6811982c47c2bd86e79c01e0aa8f72499a22ddefa8f0c",
+  "evidence_boundary": {
+    "automated_stress_test": true,
+    "human_or_expert_gold": false,
+    "role_labels_do_not_confer_human_identity": true
+  },
+  "families": 4,
+  "generation_manifest_sha256": "14cb0c9110c3dfbedd72a485e81ad2cb7274a6d8baea71988ed28a2b5425450e",
+  "judgments": 100,
+  "judgments_per_call": 5,
+  "model": {
+    "name": "gpt-5.6-terra",
+    "reasoning_effort": "medium"
+  },
+  "role_independence": {
+    "fresh_model_context_per_call": true,
+    "one_family_and_one_role_per_call": true,
+    "roles_receive_other_role_outputs": false
+  },
+  "roles": [
+    "learner",
+    "language_teacher",
+    "platform_product",
+    "measurement",
+    "linguistic"
+  ],
+  "source_generation_manifest_status": "GENERATION_COMPLETE_AND_LOCALLY_VALIDATED",
+  "status": "INDEPENDENT_AUTOMATED_CRITIQUE_COMPLETE",
+  "study_id": "dialogue_pilot_live_v1",
+  "token_total": 0
+}

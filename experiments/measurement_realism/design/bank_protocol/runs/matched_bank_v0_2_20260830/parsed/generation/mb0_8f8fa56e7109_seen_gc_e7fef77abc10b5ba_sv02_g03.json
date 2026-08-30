@@ -1,0 +1,160 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "I would not have forgotten the appointment.",
+  "cell_id": "gc_e7fef77abc10b5ba",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g03_cloze",
+      "context": "Sam reminded you about a morning appointment, but your phone calendar had already alerted you. Explain that his reminder was not necessary.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]].",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using the verb “forget.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "I would not have forgotten the appointment",
+          "I wouldn't have forgotten the appointment"
+        ],
+        "completed_target": "I would not have forgotten the appointment.",
+        "correct_choice_id": null,
+        "target_response": "I would not have forgotten the appointment"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g03_dialog",
+      "context": "Lena's phone calendar had already alerted her before Sam sent a reminder about the appointment.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Sam: I sent you a reminder about your appointment this morning.",
+          "Sam: What would have happened if I had not sent it?"
+        ],
+        "incomplete_turn_template": "Lena: [[RESPONSE]].",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Lena's reply using the verb “forget.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "I would not have forgotten the appointment",
+          "I wouldn't have forgotten the appointment"
+        ],
+        "completed_target": "I would not have forgotten the appointment.",
+        "correct_choice_id": null,
+        "target_response": "I would not have forgotten the appointment"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g03_mcq",
+      "context": "Sam reminded Lena about a morning appointment, but her phone calendar had already alerted her. Lena explains what would have happened without Sam's reminder.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Omits perfect HAVE and presents the result without the required perfect construction.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Omits verbal negation and reverses the intended polarity.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses WILL instead of the required counterfactual modal WOULD.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "I would not have forgotten the appointment."
+          },
+          {
+            "id": "B",
+            "text": "I would not forget the appointment."
+          },
+          {
+            "id": "C",
+            "text": "I would have forgotten the appointment."
+          },
+          {
+            "id": "D",
+            "text": "I will not have forgotten the appointment."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "What does Lena say?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that best completes the situation.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "I would not have forgotten the appointment.",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g03_xform",
+      "context": "Lena is explaining that Sam's reminder was not necessary.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Sam sent me a reminder. My phone calendar had already alerted me, so I remembered the appointment.",
+        "stem": null,
+        "transformation_cue": "Begin with “I” and refer to the appointment unchanged. Use: would / not / have / forget."
+      },
+      "instruction": "Rewrite the result for the imagined situation in which Sam did not send the reminder. Use WOULD, NOT, HAVE, and the correct form of FORGET.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "I would not have forgotten the appointment.",
+          "I wouldn't have forgotten the appointment."
+        ],
+        "completed_target": "I would not have forgotten the appointment.",
+        "correct_choice_id": null,
+        "target_response": "I would not have forgotten the appointment."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Explain that Lena would still have remembered the appointment without Sam's reminder.",
+    "main_verb_lemma": "forget",
+    "object_head": "appointment",
+    "participants": [
+      "Lena",
+      "Sam"
+    ],
+    "situation_summary": "Lena received a reminder from Sam, but her phone calendar had already alerted her about the appointment.",
+    "time_anchor": "the morning of the appointment"
+  },
+  "semantic_variant_index": 2
+}

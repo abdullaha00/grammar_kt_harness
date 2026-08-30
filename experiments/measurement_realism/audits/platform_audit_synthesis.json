@@ -1,0 +1,4183 @@
+{
+  "agreement": {
+    "action_threshold": {
+      "both_require_action": {
+        "count": 24,
+        "fraction": 0.212389381,
+        "item_ids": [
+          "candidate_gc_0397fa37f2228649_01",
+          "candidate_gc_172c3f1039296750_01",
+          "candidate_gc_927e9714cc21a97d_01",
+          "candidate_gc_9e9b4cb1a49adcac_02",
+          "candidate_gc_b1516a79b61c8fd0_03",
+          "candidate_gc_c0167d1a83f95500_01",
+          "candidate_gc_c2ed1b09f0bb32d4_03",
+          "cue_bounded_imperative_gc_04a854582c08aa84_01",
+          "cue_bounded_imperative_gc_04a854582c08aa84_02",
+          "cue_bounded_imperative_gc_bb4f472f992ab76b_01",
+          "cue_bounded_imperative_gc_bb4f472f992ab76b_02",
+          "determinacy_intervention_gc_0ce5f41f37500df4_01",
+          "determinacy_intervention_gc_0ce5f41f37500df4_02",
+          "determinacy_intervention_gc_28d8bf2edc192d4c_02",
+          "determinacy_intervention_gc_2924f6e63e1c1da2_02",
+          "determinacy_intervention_gc_67bcfeedfa77f954_02",
+          "determinacy_intervention_gc_a94168b2255fe062_01",
+          "determinacy_intervention_gc_a94168b2255fe062_02",
+          "determinacy_intervention_gc_bdf25ed4941e5de3_01",
+          "determinacy_intervention_gc_bdf25ed4941e5de3_02",
+          "packaging_correction_determinacy_intervention_gc_019f7fb10012b606_01",
+          "unchanged_rescue_gc_8a330fc9e496e359_02",
+          "unchanged_rescue_gc_d14f05acb53845b9_02",
+          "unchanged_rescue_gc_fb92e9307e236d8c_02"
+        ]
+      },
+      "both_usable": {
+        "count": 60,
+        "fraction": 0.530973451,
+        "item_ids": [
+          "candidate_gc_0397fa37f2228649_02",
+          "candidate_gc_08d90a35b669ed28_02",
+          "candidate_gc_0bbfaece19d0255d_03",
+          "candidate_gc_19656e31c58c2c07_01",
+          "candidate_gc_19656e31c58c2c07_02",
+          "candidate_gc_19ed2b72505b3a96_02",
+          "candidate_gc_2b730d0e1d9443b7_01",
+          "candidate_gc_2b730d0e1d9443b7_03",
+          "candidate_gc_2d6eb4f93cba4c6b_03",
+          "candidate_gc_2f1bd922c732c078_03",
+          "candidate_gc_325e05b06bb38886_01",
+          "candidate_gc_325e05b06bb38886_02",
+          "candidate_gc_3aaf5191d5f45601_02",
+          "candidate_gc_44ff4acdb263024b_01",
+          "candidate_gc_4601bed02c004e37_01",
+          "candidate_gc_4601bed02c004e37_03",
+          "candidate_gc_4777747f8b0a6b46_01",
+          "candidate_gc_483f3ac117f331a7_02",
+          "candidate_gc_4a2ccf1526ca832c_01",
+          "candidate_gc_4ad408e9b8193c7c_02",
+          "candidate_gc_4ad408e9b8193c7c_03",
+          "candidate_gc_63a057f3a47e95b1_03",
+          "candidate_gc_6a255aa977e4289a_01",
+          "candidate_gc_6a255aa977e4289a_02",
+          "candidate_gc_6a5e38b390521990_02",
+          "candidate_gc_7224db1e1a3bbebd_01",
+          "candidate_gc_7ea73f7f16fe2684_01",
+          "candidate_gc_809d40d141731b61_02",
+          "candidate_gc_8b7e8b31b496e102_01",
+          "candidate_gc_90b9229122fa55d6_01",
+          "candidate_gc_9d70af80c0843115_01",
+          "candidate_gc_9e9b4cb1a49adcac_01",
+          "candidate_gc_a0fe7953b9fffca8_02",
+          "candidate_gc_a0fe7953b9fffca8_03",
+          "candidate_gc_a7789cd4faa9d95a_01",
+          "candidate_gc_a7789cd4faa9d95a_03",
+          "candidate_gc_b798d2e32a62c25c_03",
+          "candidate_gc_b81e4f2e78894945_01",
+          "candidate_gc_ba3d77af90f26ab2_03",
+          "candidate_gc_bea554636af1b127_01",
+          "candidate_gc_bea554636af1b127_03",
+          "candidate_gc_c2cf343c43ce329d_02",
+          "candidate_gc_c2cf343c43ce329d_03",
+          "candidate_gc_d15de8b5658bd6a5_01",
+          "candidate_gc_d15de8b5658bd6a5_03",
+          "candidate_gc_d2c20fe6a8269c51_01",
+          "candidate_gc_d2c20fe6a8269c51_03",
+          "candidate_gc_dfd385cd88abc20f_01",
+          "candidate_gc_e730dbce7b036961_01",
+          "candidate_gc_e7fef77abc10b5ba_01",
+          "candidate_gc_e7fef77abc10b5ba_02",
+          "candidate_gc_edcc8d38860ff41d_01",
+          "candidate_gc_edcc8d38860ff41d_02",
+          "candidate_gc_f86ecd83135f0b52_02",
+          "candidate_gc_fcb801c76c95c7bf_01",
+          "candidate_gc_fcb801c76c95c7bf_03",
+          "candidate_gc_ffa50061bcce266c_01",
+          "unchanged_rescue_gc_4a4c9d34c1b5bce4_01",
+          "unchanged_rescue_gc_4a4c9d34c1b5bce4_02",
+          "unchanged_rescue_gc_db71873bec316091_01"
+        ]
+      },
+      "live_only_requires_action": {
+        "count": 10,
+        "fraction": 0.088495575,
+        "item_ids": [
+          "candidate_gc_19ed2b72505b3a96_01",
+          "candidate_gc_4634bf1b005f7724_03",
+          "candidate_gc_7224db1e1a3bbebd_03",
+          "candidate_gc_ca719d192c20c030_01",
+          "candidate_gc_ca719d192c20c030_03",
+          "candidate_gc_e5bdd8211eed997b_03",
+          "candidate_gc_f6431bc7f8a16c1b_02",
+          "unchanged_rescue_gc_16d9f6e33f0517ec_01",
+          "unchanged_rescue_gc_9b8833161ce61d83_01",
+          "unchanged_rescue_gc_bdf8215fea798df6_02"
+        ]
+      },
+      "strict_only_requires_action": {
+        "count": 19,
+        "fraction": 0.168141593,
+        "item_ids": [
+          "candidate_gc_17fcb3b3c0156c98_03",
+          "candidate_gc_3ac515345a227486_03",
+          "candidate_gc_44ff4acdb263024b_02",
+          "candidate_gc_4634bf1b005f7724_01",
+          "candidate_gc_6a5e38b390521990_03",
+          "candidate_gc_70772a95583e5587_02",
+          "candidate_gc_7ea73f7f16fe2684_02",
+          "candidate_gc_832cfb85e1f965ed_02",
+          "candidate_gc_8b7e8b31b496e102_02",
+          "candidate_gc_90b9229122fa55d6_02",
+          "candidate_gc_927e9714cc21a97d_03",
+          "candidate_gc_b1516a79b61c8fd0_01",
+          "candidate_gc_b55bebc82e7087e7_02",
+          "candidate_gc_b55bebc82e7087e7_03",
+          "candidate_gc_bba42336e267985f_01",
+          "candidate_gc_c2ed1b09f0bb32d4_02",
+          "candidate_gc_dfd385cd88abc20f_02",
+          "candidate_gc_e730dbce7b036961_03",
+          "unchanged_rescue_gc_fac1ce90011b677c_02"
+        ]
+      }
+    },
+    "confusion_counts_rows_strict_columns_live": {
+      "answer_space": {
+        "answer_space": 4,
+        "artificial": 0,
+        "local_change": 0,
+        "usable": 6,
+        "withhold": 0
+      },
+      "artificial": {
+        "answer_space": 0,
+        "artificial": 1,
+        "local_change": 12,
+        "usable": 2,
+        "withhold": 0
+      },
+      "local_change": {
+        "answer_space": 0,
+        "artificial": 1,
+        "local_change": 5,
+        "usable": 9,
+        "withhold": 0
+      },
+      "usable": {
+        "answer_space": 4,
+        "artificial": 0,
+        "local_change": 5,
+        "usable": 60,
+        "withhold": 1
+      },
+      "withhold": {
+        "answer_space": 0,
+        "artificial": 0,
+        "local_change": 1,
+        "usable": 2,
+        "withhold": 0
+      }
+    },
+    "confusion_item_ids_rows_strict_columns_live": {
+      "answer_space": {
+        "answer_space": [
+          "candidate_gc_0397fa37f2228649_01",
+          "candidate_gc_c2ed1b09f0bb32d4_03",
+          "unchanged_rescue_gc_8a330fc9e496e359_02",
+          "unchanged_rescue_gc_d14f05acb53845b9_02"
+        ],
+        "artificial": [],
+        "local_change": [],
+        "usable": [
+          "candidate_gc_17fcb3b3c0156c98_03",
+          "candidate_gc_3ac515345a227486_03",
+          "candidate_gc_6a5e38b390521990_03",
+          "candidate_gc_7ea73f7f16fe2684_02",
+          "candidate_gc_bba42336e267985f_01",
+          "candidate_gc_dfd385cd88abc20f_02"
+        ],
+        "withhold": []
+      },
+      "artificial": {
+        "answer_space": [],
+        "artificial": [
+          "cue_bounded_imperative_gc_04a854582c08aa84_01"
+        ],
+        "local_change": [
+          "cue_bounded_imperative_gc_04a854582c08aa84_02",
+          "cue_bounded_imperative_gc_bb4f472f992ab76b_01",
+          "cue_bounded_imperative_gc_bb4f472f992ab76b_02",
+          "determinacy_intervention_gc_0ce5f41f37500df4_01",
+          "determinacy_intervention_gc_0ce5f41f37500df4_02",
+          "determinacy_intervention_gc_2924f6e63e1c1da2_02",
+          "determinacy_intervention_gc_a94168b2255fe062_01",
+          "determinacy_intervention_gc_a94168b2255fe062_02",
+          "determinacy_intervention_gc_bdf25ed4941e5de3_01",
+          "determinacy_intervention_gc_bdf25ed4941e5de3_02",
+          "packaging_correction_determinacy_intervention_gc_019f7fb10012b606_01",
+          "unchanged_rescue_gc_fb92e9307e236d8c_02"
+        ],
+        "usable": [
+          "candidate_gc_70772a95583e5587_02",
+          "candidate_gc_832cfb85e1f965ed_02"
+        ],
+        "withhold": []
+      },
+      "local_change": {
+        "answer_space": [],
+        "artificial": [
+          "candidate_gc_b1516a79b61c8fd0_03"
+        ],
+        "local_change": [
+          "candidate_gc_172c3f1039296750_01",
+          "candidate_gc_9e9b4cb1a49adcac_02",
+          "candidate_gc_c0167d1a83f95500_01",
+          "determinacy_intervention_gc_28d8bf2edc192d4c_02",
+          "determinacy_intervention_gc_67bcfeedfa77f954_02"
+        ],
+        "usable": [
+          "candidate_gc_44ff4acdb263024b_02",
+          "candidate_gc_4634bf1b005f7724_01",
+          "candidate_gc_8b7e8b31b496e102_02",
+          "candidate_gc_90b9229122fa55d6_02",
+          "candidate_gc_927e9714cc21a97d_03",
+          "candidate_gc_b1516a79b61c8fd0_01",
+          "candidate_gc_b55bebc82e7087e7_02",
+          "candidate_gc_b55bebc82e7087e7_03",
+          "candidate_gc_e730dbce7b036961_03"
+        ],
+        "withhold": []
+      },
+      "usable": {
+        "answer_space": [
+          "candidate_gc_ca719d192c20c030_01",
+          "candidate_gc_ca719d192c20c030_03",
+          "unchanged_rescue_gc_16d9f6e33f0517ec_01",
+          "unchanged_rescue_gc_9b8833161ce61d83_01"
+        ],
+        "artificial": [],
+        "local_change": [
+          "candidate_gc_4634bf1b005f7724_03",
+          "candidate_gc_7224db1e1a3bbebd_03",
+          "candidate_gc_e5bdd8211eed997b_03",
+          "candidate_gc_f6431bc7f8a16c1b_02",
+          "unchanged_rescue_gc_bdf8215fea798df6_02"
+        ],
+        "usable": [
+          "candidate_gc_0397fa37f2228649_02",
+          "candidate_gc_08d90a35b669ed28_02",
+          "candidate_gc_0bbfaece19d0255d_03",
+          "candidate_gc_19656e31c58c2c07_01",
+          "candidate_gc_19656e31c58c2c07_02",
+          "candidate_gc_19ed2b72505b3a96_02",
+          "candidate_gc_2b730d0e1d9443b7_01",
+          "candidate_gc_2b730d0e1d9443b7_03",
+          "candidate_gc_2d6eb4f93cba4c6b_03",
+          "candidate_gc_2f1bd922c732c078_03",
+          "candidate_gc_325e05b06bb38886_01",
+          "candidate_gc_325e05b06bb38886_02",
+          "candidate_gc_3aaf5191d5f45601_02",
+          "candidate_gc_44ff4acdb263024b_01",
+          "candidate_gc_4601bed02c004e37_01",
+          "candidate_gc_4601bed02c004e37_03",
+          "candidate_gc_4777747f8b0a6b46_01",
+          "candidate_gc_483f3ac117f331a7_02",
+          "candidate_gc_4a2ccf1526ca832c_01",
+          "candidate_gc_4ad408e9b8193c7c_02",
+          "candidate_gc_4ad408e9b8193c7c_03",
+          "candidate_gc_63a057f3a47e95b1_03",
+          "candidate_gc_6a255aa977e4289a_01",
+          "candidate_gc_6a255aa977e4289a_02",
+          "candidate_gc_6a5e38b390521990_02",
+          "candidate_gc_7224db1e1a3bbebd_01",
+          "candidate_gc_7ea73f7f16fe2684_01",
+          "candidate_gc_809d40d141731b61_02",
+          "candidate_gc_8b7e8b31b496e102_01",
+          "candidate_gc_90b9229122fa55d6_01",
+          "candidate_gc_9d70af80c0843115_01",
+          "candidate_gc_9e9b4cb1a49adcac_01",
+          "candidate_gc_a0fe7953b9fffca8_02",
+          "candidate_gc_a0fe7953b9fffca8_03",
+          "candidate_gc_a7789cd4faa9d95a_01",
+          "candidate_gc_a7789cd4faa9d95a_03",
+          "candidate_gc_b798d2e32a62c25c_03",
+          "candidate_gc_b81e4f2e78894945_01",
+          "candidate_gc_ba3d77af90f26ab2_03",
+          "candidate_gc_bea554636af1b127_01",
+          "candidate_gc_bea554636af1b127_03",
+          "candidate_gc_c2cf343c43ce329d_02",
+          "candidate_gc_c2cf343c43ce329d_03",
+          "candidate_gc_d15de8b5658bd6a5_01",
+          "candidate_gc_d15de8b5658bd6a5_03",
+          "candidate_gc_d2c20fe6a8269c51_01",
+          "candidate_gc_d2c20fe6a8269c51_03",
+          "candidate_gc_dfd385cd88abc20f_01",
+          "candidate_gc_e730dbce7b036961_01",
+          "candidate_gc_e7fef77abc10b5ba_01",
+          "candidate_gc_e7fef77abc10b5ba_02",
+          "candidate_gc_edcc8d38860ff41d_01",
+          "candidate_gc_edcc8d38860ff41d_02",
+          "candidate_gc_f86ecd83135f0b52_02",
+          "candidate_gc_fcb801c76c95c7bf_01",
+          "candidate_gc_fcb801c76c95c7bf_03",
+          "candidate_gc_ffa50061bcce266c_01",
+          "unchanged_rescue_gc_4a4c9d34c1b5bce4_01",
+          "unchanged_rescue_gc_4a4c9d34c1b5bce4_02",
+          "unchanged_rescue_gc_db71873bec316091_01"
+        ],
+        "withhold": [
+          "candidate_gc_19ed2b72505b3a96_01"
+        ]
+      },
+      "withhold": {
+        "answer_space": [],
+        "artificial": [],
+        "local_change": [
+          "candidate_gc_927e9714cc21a97d_01"
+        ],
+        "usable": [
+          "candidate_gc_c2ed1b09f0bb32d4_02",
+          "unchanged_rescue_gc_fac1ce90011b677c_02"
+        ],
+        "withhold": []
+      }
+    },
+    "critical_redesign_threshold": {
+      "both_critical": {
+        "count": 4,
+        "fraction": 0.03539823,
+        "item_ids": [
+          "candidate_gc_0397fa37f2228649_01",
+          "candidate_gc_c2ed1b09f0bb32d4_03",
+          "unchanged_rescue_gc_8a330fc9e496e359_02",
+          "unchanged_rescue_gc_d14f05acb53845b9_02"
+        ]
+      },
+      "definition": "canonical answer_space or withhold",
+      "either_critical": {
+        "count": 18,
+        "fraction": 0.159292035,
+        "item_ids": [
+          "candidate_gc_0397fa37f2228649_01",
+          "candidate_gc_17fcb3b3c0156c98_03",
+          "candidate_gc_19ed2b72505b3a96_01",
+          "candidate_gc_3ac515345a227486_03",
+          "candidate_gc_6a5e38b390521990_03",
+          "candidate_gc_7ea73f7f16fe2684_02",
+          "candidate_gc_927e9714cc21a97d_01",
+          "candidate_gc_bba42336e267985f_01",
+          "candidate_gc_c2ed1b09f0bb32d4_02",
+          "candidate_gc_c2ed1b09f0bb32d4_03",
+          "candidate_gc_ca719d192c20c030_01",
+          "candidate_gc_ca719d192c20c030_03",
+          "candidate_gc_dfd385cd88abc20f_02",
+          "unchanged_rescue_gc_16d9f6e33f0517ec_01",
+          "unchanged_rescue_gc_8a330fc9e496e359_02",
+          "unchanged_rescue_gc_9b8833161ce61d83_01",
+          "unchanged_rescue_gc_d14f05acb53845b9_02",
+          "unchanged_rescue_gc_fac1ce90011b677c_02"
+        ]
+      },
+      "live_only_critical": {
+        "count": 5,
+        "fraction": 0.044247788,
+        "item_ids": [
+          "candidate_gc_19ed2b72505b3a96_01",
+          "candidate_gc_ca719d192c20c030_01",
+          "candidate_gc_ca719d192c20c030_03",
+          "unchanged_rescue_gc_16d9f6e33f0517ec_01",
+          "unchanged_rescue_gc_9b8833161ce61d83_01"
+        ]
+      },
+      "neither_critical": {
+        "count": 95,
+        "fraction": 0.840707965,
+        "item_ids": [
+          "candidate_gc_0397fa37f2228649_02",
+          "candidate_gc_08d90a35b669ed28_02",
+          "candidate_gc_0bbfaece19d0255d_03",
+          "candidate_gc_172c3f1039296750_01",
+          "candidate_gc_19656e31c58c2c07_01",
+          "candidate_gc_19656e31c58c2c07_02",
+          "candidate_gc_19ed2b72505b3a96_02",
+          "candidate_gc_2b730d0e1d9443b7_01",
+          "candidate_gc_2b730d0e1d9443b7_03",
+          "candidate_gc_2d6eb4f93cba4c6b_03",
+          "candidate_gc_2f1bd922c732c078_03",
+          "candidate_gc_325e05b06bb38886_01",
+          "candidate_gc_325e05b06bb38886_02",
+          "candidate_gc_3aaf5191d5f45601_02",
+          "candidate_gc_44ff4acdb263024b_01",
+          "candidate_gc_44ff4acdb263024b_02",
+          "candidate_gc_4601bed02c004e37_01",
+          "candidate_gc_4601bed02c004e37_03",
+          "candidate_gc_4634bf1b005f7724_01",
+          "candidate_gc_4634bf1b005f7724_03",
+          "candidate_gc_4777747f8b0a6b46_01",
+          "candidate_gc_483f3ac117f331a7_02",
+          "candidate_gc_4a2ccf1526ca832c_01",
+          "candidate_gc_4ad408e9b8193c7c_02",
+          "candidate_gc_4ad408e9b8193c7c_03",
+          "candidate_gc_63a057f3a47e95b1_03",
+          "candidate_gc_6a255aa977e4289a_01",
+          "candidate_gc_6a255aa977e4289a_02",
+          "candidate_gc_6a5e38b390521990_02",
+          "candidate_gc_70772a95583e5587_02",
+          "candidate_gc_7224db1e1a3bbebd_01",
+          "candidate_gc_7224db1e1a3bbebd_03",
+          "candidate_gc_7ea73f7f16fe2684_01",
+          "candidate_gc_809d40d141731b61_02",
+          "candidate_gc_832cfb85e1f965ed_02",
+          "candidate_gc_8b7e8b31b496e102_01",
+          "candidate_gc_8b7e8b31b496e102_02",
+          "candidate_gc_90b9229122fa55d6_01",
+          "candidate_gc_90b9229122fa55d6_02",
+          "candidate_gc_927e9714cc21a97d_03",
+          "candidate_gc_9d70af80c0843115_01",
+          "candidate_gc_9e9b4cb1a49adcac_01",
+          "candidate_gc_9e9b4cb1a49adcac_02",
+          "candidate_gc_a0fe7953b9fffca8_02",
+          "candidate_gc_a0fe7953b9fffca8_03",
+          "candidate_gc_a7789cd4faa9d95a_01",
+          "candidate_gc_a7789cd4faa9d95a_03",
+          "candidate_gc_b1516a79b61c8fd0_01",
+          "candidate_gc_b1516a79b61c8fd0_03",
+          "candidate_gc_b55bebc82e7087e7_02",
+          "candidate_gc_b55bebc82e7087e7_03",
+          "candidate_gc_b798d2e32a62c25c_03",
+          "candidate_gc_b81e4f2e78894945_01",
+          "candidate_gc_ba3d77af90f26ab2_03",
+          "candidate_gc_bea554636af1b127_01",
+          "candidate_gc_bea554636af1b127_03",
+          "candidate_gc_c0167d1a83f95500_01",
+          "candidate_gc_c2cf343c43ce329d_02",
+          "candidate_gc_c2cf343c43ce329d_03",
+          "candidate_gc_d15de8b5658bd6a5_01",
+          "candidate_gc_d15de8b5658bd6a5_03",
+          "candidate_gc_d2c20fe6a8269c51_01",
+          "candidate_gc_d2c20fe6a8269c51_03",
+          "candidate_gc_dfd385cd88abc20f_01",
+          "candidate_gc_e5bdd8211eed997b_03",
+          "candidate_gc_e730dbce7b036961_01",
+          "candidate_gc_e730dbce7b036961_03",
+          "candidate_gc_e7fef77abc10b5ba_01",
+          "candidate_gc_e7fef77abc10b5ba_02",
+          "candidate_gc_edcc8d38860ff41d_01",
+          "candidate_gc_edcc8d38860ff41d_02",
+          "candidate_gc_f6431bc7f8a16c1b_02",
+          "candidate_gc_f86ecd83135f0b52_02",
+          "candidate_gc_fcb801c76c95c7bf_01",
+          "candidate_gc_fcb801c76c95c7bf_03",
+          "candidate_gc_ffa50061bcce266c_01",
+          "cue_bounded_imperative_gc_04a854582c08aa84_01",
+          "cue_bounded_imperative_gc_04a854582c08aa84_02",
+          "cue_bounded_imperative_gc_bb4f472f992ab76b_01",
+          "cue_bounded_imperative_gc_bb4f472f992ab76b_02",
+          "determinacy_intervention_gc_0ce5f41f37500df4_01",
+          "determinacy_intervention_gc_0ce5f41f37500df4_02",
+          "determinacy_intervention_gc_28d8bf2edc192d4c_02",
+          "determinacy_intervention_gc_2924f6e63e1c1da2_02",
+          "determinacy_intervention_gc_67bcfeedfa77f954_02",
+          "determinacy_intervention_gc_a94168b2255fe062_01",
+          "determinacy_intervention_gc_a94168b2255fe062_02",
+          "determinacy_intervention_gc_bdf25ed4941e5de3_01",
+          "determinacy_intervention_gc_bdf25ed4941e5de3_02",
+          "packaging_correction_determinacy_intervention_gc_019f7fb10012b606_01",
+          "unchanged_rescue_gc_4a4c9d34c1b5bce4_01",
+          "unchanged_rescue_gc_4a4c9d34c1b5bce4_02",
+          "unchanged_rescue_gc_bdf8215fea798df6_02",
+          "unchanged_rescue_gc_db71873bec316091_01",
+          "unchanged_rescue_gc_fb92e9307e236d8c_02"
+        ]
+      },
+      "strict_only_critical": {
+        "count": 9,
+        "fraction": 0.079646018,
+        "item_ids": [
+          "candidate_gc_17fcb3b3c0156c98_03",
+          "candidate_gc_3ac515345a227486_03",
+          "candidate_gc_6a5e38b390521990_03",
+          "candidate_gc_7ea73f7f16fe2684_02",
+          "candidate_gc_927e9714cc21a97d_01",
+          "candidate_gc_bba42336e267985f_01",
+          "candidate_gc_c2ed1b09f0bb32d4_02",
+          "candidate_gc_dfd385cd88abc20f_02",
+          "unchanged_rescue_gc_fac1ce90011b677c_02"
+        ]
+      }
+    },
+    "different_mapped_category": {
+      "count": 43,
+      "fraction": 0.380530973,
+      "item_ids": [
+        "candidate_gc_17fcb3b3c0156c98_03",
+        "candidate_gc_19ed2b72505b3a96_01",
+        "candidate_gc_3ac515345a227486_03",
+        "candidate_gc_44ff4acdb263024b_02",
+        "candidate_gc_4634bf1b005f7724_01",
+        "candidate_gc_4634bf1b005f7724_03",
+        "candidate_gc_6a5e38b390521990_03",
+        "candidate_gc_70772a95583e5587_02",
+        "candidate_gc_7224db1e1a3bbebd_03",
+        "candidate_gc_7ea73f7f16fe2684_02",
+        "candidate_gc_832cfb85e1f965ed_02",
+        "candidate_gc_8b7e8b31b496e102_02",
+        "candidate_gc_90b9229122fa55d6_02",
+        "candidate_gc_927e9714cc21a97d_01",
+        "candidate_gc_927e9714cc21a97d_03",
+        "candidate_gc_b1516a79b61c8fd0_01",
+        "candidate_gc_b1516a79b61c8fd0_03",
+        "candidate_gc_b55bebc82e7087e7_02",
+        "candidate_gc_b55bebc82e7087e7_03",
+        "candidate_gc_bba42336e267985f_01",
+        "candidate_gc_c2ed1b09f0bb32d4_02",
+        "candidate_gc_ca719d192c20c030_01",
+        "candidate_gc_ca719d192c20c030_03",
+        "candidate_gc_dfd385cd88abc20f_02",
+        "candidate_gc_e5bdd8211eed997b_03",
+        "candidate_gc_e730dbce7b036961_03",
+        "candidate_gc_f6431bc7f8a16c1b_02",
+        "cue_bounded_imperative_gc_04a854582c08aa84_02",
+        "cue_bounded_imperative_gc_bb4f472f992ab76b_01",
+        "cue_bounded_imperative_gc_bb4f472f992ab76b_02",
+        "determinacy_intervention_gc_0ce5f41f37500df4_01",
+        "determinacy_intervention_gc_0ce5f41f37500df4_02",
+        "determinacy_intervention_gc_2924f6e63e1c1da2_02",
+        "determinacy_intervention_gc_a94168b2255fe062_01",
+        "determinacy_intervention_gc_a94168b2255fe062_02",
+        "determinacy_intervention_gc_bdf25ed4941e5de3_01",
+        "determinacy_intervention_gc_bdf25ed4941e5de3_02",
+        "packaging_correction_determinacy_intervention_gc_019f7fb10012b606_01",
+        "unchanged_rescue_gc_16d9f6e33f0517ec_01",
+        "unchanged_rescue_gc_9b8833161ce61d83_01",
+        "unchanged_rescue_gc_bdf8215fea798df6_02",
+        "unchanged_rescue_gc_fac1ce90011b677c_02",
+        "unchanged_rescue_gc_fb92e9307e236d8c_02"
+      ]
+    },
+    "exact_mapped_category": {
+      "count": 70,
+      "fraction": 0.619469027,
+      "item_ids": [
+        "candidate_gc_0397fa37f2228649_01",
+        "candidate_gc_0397fa37f2228649_02",
+        "candidate_gc_08d90a35b669ed28_02",
+        "candidate_gc_0bbfaece19d0255d_03",
+        "candidate_gc_172c3f1039296750_01",
+        "candidate_gc_19656e31c58c2c07_01",
+        "candidate_gc_19656e31c58c2c07_02",
+        "candidate_gc_19ed2b72505b3a96_02",
+        "candidate_gc_2b730d0e1d9443b7_01",
+        "candidate_gc_2b730d0e1d9443b7_03",
+        "candidate_gc_2d6eb4f93cba4c6b_03",
+        "candidate_gc_2f1bd922c732c078_03",
+        "candidate_gc_325e05b06bb38886_01",
+        "candidate_gc_325e05b06bb38886_02",
+        "candidate_gc_3aaf5191d5f45601_02",
+        "candidate_gc_44ff4acdb263024b_01",
+        "candidate_gc_4601bed02c004e37_01",
+        "candidate_gc_4601bed02c004e37_03",
+        "candidate_gc_4777747f8b0a6b46_01",
+        "candidate_gc_483f3ac117f331a7_02",
+        "candidate_gc_4a2ccf1526ca832c_01",
+        "candidate_gc_4ad408e9b8193c7c_02",
+        "candidate_gc_4ad408e9b8193c7c_03",
+        "candidate_gc_63a057f3a47e95b1_03",
+        "candidate_gc_6a255aa977e4289a_01",
+        "candidate_gc_6a255aa977e4289a_02",
+        "candidate_gc_6a5e38b390521990_02",
+        "candidate_gc_7224db1e1a3bbebd_01",
+        "candidate_gc_7ea73f7f16fe2684_01",
+        "candidate_gc_809d40d141731b61_02",
+        "candidate_gc_8b7e8b31b496e102_01",
+        "candidate_gc_90b9229122fa55d6_01",
+        "candidate_gc_9d70af80c0843115_01",
+        "candidate_gc_9e9b4cb1a49adcac_01",
+        "candidate_gc_9e9b4cb1a49adcac_02",
+        "candidate_gc_a0fe7953b9fffca8_02",
+        "candidate_gc_a0fe7953b9fffca8_03",
+        "candidate_gc_a7789cd4faa9d95a_01",
+        "candidate_gc_a7789cd4faa9d95a_03",
+        "candidate_gc_b798d2e32a62c25c_03",
+        "candidate_gc_b81e4f2e78894945_01",
+        "candidate_gc_ba3d77af90f26ab2_03",
+        "candidate_gc_bea554636af1b127_01",
+        "candidate_gc_bea554636af1b127_03",
+        "candidate_gc_c0167d1a83f95500_01",
+        "candidate_gc_c2cf343c43ce329d_02",
+        "candidate_gc_c2cf343c43ce329d_03",
+        "candidate_gc_c2ed1b09f0bb32d4_03",
+        "candidate_gc_d15de8b5658bd6a5_01",
+        "candidate_gc_d15de8b5658bd6a5_03",
+        "candidate_gc_d2c20fe6a8269c51_01",
+        "candidate_gc_d2c20fe6a8269c51_03",
+        "candidate_gc_dfd385cd88abc20f_01",
+        "candidate_gc_e730dbce7b036961_01",
+        "candidate_gc_e7fef77abc10b5ba_01",
+        "candidate_gc_e7fef77abc10b5ba_02",
+        "candidate_gc_edcc8d38860ff41d_01",
+        "candidate_gc_edcc8d38860ff41d_02",
+        "candidate_gc_f86ecd83135f0b52_02",
+        "candidate_gc_fcb801c76c95c7bf_01",
+        "candidate_gc_fcb801c76c95c7bf_03",
+        "candidate_gc_ffa50061bcce266c_01",
+        "cue_bounded_imperative_gc_04a854582c08aa84_01",
+        "determinacy_intervention_gc_28d8bf2edc192d4c_02",
+        "determinacy_intervention_gc_67bcfeedfa77f954_02",
+        "unchanged_rescue_gc_4a4c9d34c1b5bce4_01",
+        "unchanged_rescue_gc_4a4c9d34c1b5bce4_02",
+        "unchanged_rescue_gc_8a330fc9e496e359_02",
+        "unchanged_rescue_gc_d14f05acb53845b9_02",
+        "unchanged_rescue_gc_db71873bec316091_01"
+      ]
+    }
+  },
+  "analysis_id": "full_v1_platform_audit_cross_synthesis_v1",
+  "category_mapping": [
+    {
+      "canonical": "usable",
+      "live": "usable_as_is",
+      "meaning": "No material stored-task problem was identified under the audit's stated UI/scoring assumptions.",
+      "operational_severity_rank": 0,
+      "strict": "usable_as_stored"
+    },
+    {
+      "canonical": "local_change",
+      "live": "minor_ui_or_answer_set_change",
+      "meaning": "A local UI, wording, context, or accepted-answer change may suffice.",
+      "operational_severity_rank": 1,
+      "strict": "minor_ui_or_context_change"
+    },
+    {
+      "canonical": "artificial",
+      "live": "pedagogically_artificial",
+      "meaning": "The form is answerable but the interaction is pedagogically or platform-wise artificial as stored.",
+      "operational_severity_rank": 2,
+      "strict": "technically_valid_but_artificial"
+    },
+    {
+      "canonical": "answer_space",
+      "live": "problematic_answer_space",
+      "meaning": "A salient reasonable response or construction is not fairly excluded or credited.",
+      "operational_severity_rank": 3,
+      "strict": "answer_space_problem"
+    },
+    {
+      "canonical": "withhold",
+      "live": "probably_not_deployable",
+      "meaning": "The task requires substantive redesign or withholding, not ordinary copy-editing.",
+      "operational_severity_rank": 4,
+      "strict": "rewrite_or_withhold"
+    }
+  ],
+  "coverage": {
+    "common_items": 113,
+    "live_items": 113,
+    "live_judgments": 452,
+    "live_roles": [
+      "learner",
+      "teacher",
+      "platform_product",
+      "measurement"
+    ],
+    "strict_items": 113
+  },
+  "evidence_boundary": {
+    "full_v1_mutated": false,
+    "human_or_expert_gold": false,
+    "interpretation": "automated qualitative stress tests and triage; no percentage estimates real learner comprehension, expert validity, or platform deployability",
+    "learner_outcomes_read": false,
+    "live_audit": "four independent Codex role prompts with preregistered plurality aggregation",
+    "private_oracle_trajectories_read": false,
+    "strict_audit": "single-Codex role-separated census; learner/platform disagreement is within one review, not independent inter-rater disagreement"
+  },
+  "extension_hard_gates": [
+    {
+      "failure_action": "Rewrite or withhold; do not repair by accepting an answer that changes the intended Q row.",
+      "gate": "linguistic_fidelity",
+      "requirement": "The visible task and keyed answer instantiate the declared GrammarCell; the context must not favor a different cell."
+    },
+    {
+      "failure_action": "Supply the missing UI/media or redesign the interaction before validation.",
+      "gate": "task_and_ui_completeness",
+      "requirement": "Instruction, context/stimulus, response component, and learner action are explicit and executable rather than described through annotation-like prose."
+    },
+    {
+      "failure_action": "Add a natural constraint or redesign; an extra answer is insufficient when it changes the measured GrammarCell.",
+      "gate": "answer_determinacy",
+      "requirement": "The information shown selects the intended response mechanism and construction without requiring the learner to guess author intent."
+    },
+    {
+      "failure_action": "Expand the scoring policy or replace the task; retain every change as append-only provenance.",
+      "gate": "response_space_fairness",
+      "requirement": "The executable scorer covers licensed contractions, punctuation/whitespace normalization, and salient valid responses appropriate to the displayed slot or options."
+    },
+    {
+      "failure_action": "Redesign the item or explicitly revise the successor measurement/KC declaration before learner simulation.",
+      "gate": "kc_measurement_purity",
+      "requirement": "Success supplies defensible evidence about the declared active KCs without a major undeclared operation or obvious shortcut."
+    },
+    {
+      "failure_action": "Add diagnostically distinct families or retain the bank as a bounded pilot rather than a release.",
+      "gate": "crossed_measurement_design",
+      "requirement": "KCs are crossed with formats and semantic families so no KC is wholly confounded with one campaign or interface; report support, anchors, crossings, nesting, and rank separately."
+    },
+    {
+      "failure_action": "Escalate unresolved major concerns and all cross-audit category changes to targeted review.",
+      "gate": "independent_revalidation",
+      "requirement": "Every corrected or newly rendered item passes deterministic checks and independent role-specific validation; critic disagreement remains visible."
+    },
+    {
+      "failure_action": "Use 'platform-oriented' or 'automatically audited', not 'platform-validated' or 'learner-validated'.",
+      "gate": "claim_boundary",
+      "requirement": "Automated audits may support stress-test and triage claims only; deployability, learner comprehension, and proficiency appropriateness require rendered human/expert evidence."
+    }
+  ],
+  "inputs": {
+    "analysis_script": {
+      "bytes": 48236,
+      "path": "scripts/experiments/analyze_platform_audits.py",
+      "sha256": "53bd5d99fdf1be5b4922b114cd01de9ba17312a4b029779ad56d49b079fb423e"
+    },
+    "frozen_dataset_manifest": {
+      "bytes": 26456,
+      "path": "data/grammar_kt_full_v1/manifest.json",
+      "sha256": "322128843f8e7e6547a99efcecc6836fcd581f314fb49557a28d58fe79c69f4c"
+    },
+    "frozen_items": {
+      "bytes": 81382,
+      "path": "data/grammar_kt_full_v1/items/items.jsonl",
+      "rows": 113,
+      "sha256": "46e2fcbd723d11f6b30ecdd197fb05c39f04f7b0fc8f61e2183ffb8fb7110011"
+    },
+    "live_item_aggregates": {
+      "bytes": 293643,
+      "path": "experiments/measurement_realism/audits/full_v1_items_v2/item_aggregates.jsonl",
+      "rows": 113,
+      "sha256": "b01233c62681824fd73c0256a05c90fb2a9dd2c8c1deead2aae3c186009f110d"
+    },
+    "live_role_judgments": {
+      "bytes": 234637,
+      "path": "experiments/measurement_realism/audits/full_v1_items_v2/judgments.jsonl",
+      "rows": 452,
+      "sha256": "591eefba751307f5c4f732c24ec135c3929a3e2213e6f2f926dd1ef180cdc625"
+    },
+    "live_study_plan": {
+      "bytes": 4049,
+      "path": "experiments/measurement_realism/audits/full_v1_items_v2/study_plan.json",
+      "sha256": "c28f52a20a99cdd8aa86ecccca8921ac5b36ef45664ed7e02d17c285d49269e1"
+    },
+    "live_summary": {
+      "bytes": 9603,
+      "path": "experiments/measurement_realism/audits/full_v1_items_v2/summary.json",
+      "sha256": "23c04fc03851e6535d8e026b6e474f78a15af8814d3efdc720827579bf5d259e"
+    },
+    "strict_item_ledger": {
+      "bytes": 204089,
+      "path": "experiments/measurement_realism/audits/item_audit/item_level_audit.jsonl",
+      "rows": 113,
+      "sha256": "dd191531629bdb85b767208b9871d6f2ad387781e89b39d80d78b5b991c30445"
+    },
+    "strict_summary": {
+      "bytes": 22999,
+      "path": "experiments/measurement_realism/audits/item_audit/summary.json",
+      "sha256": "8bf914158588dd6952730496e609ecb966e5278311de5476649cef6ff41ea419"
+    }
+  },
+  "item_level": [
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_0397fa37f2228649_01",
+      "live_canonical": "answer_space",
+      "live_independent_role_disagreement": true,
+      "live_raw": "problematic_answer_space",
+      "live_role_canonical_dispositions": {
+        "learner": "answer_space",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "answer_space"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "answer_space",
+      "strict_raw": "answer_space_problem",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_0397fa37f2228649_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_08d90a35b669ed28_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_0bbfaece19d0255d_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_172c3f1039296750_01",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "withhold",
+        "platform_product": "local_change",
+        "teacher": "local_change"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "local_change",
+      "strict_raw": "minor_ui_or_context_change",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_17fcb3b3c0156c98_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "artificial"
+      },
+      "operational_severity_delta_strict_minus_live": 3,
+      "strict_canonical": "answer_space",
+      "strict_raw": "answer_space_problem",
+      "strict_role_perspective_disagreement": true
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_19656e31c58c2c07_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_19656e31c58c2c07_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_19ed2b72505b3a96_01",
+      "live_canonical": "withhold",
+      "live_independent_role_disagreement": true,
+      "live_raw": "probably_not_deployable",
+      "live_role_canonical_dispositions": {
+        "learner": "answer_space",
+        "measurement": "withhold",
+        "platform_product": "usable",
+        "teacher": "local_change"
+      },
+      "operational_severity_delta_strict_minus_live": -4,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_19ed2b72505b3a96_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_2b730d0e1d9443b7_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_2b730d0e1d9443b7_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_2d6eb4f93cba4c6b_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_2f1bd922c732c078_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_325e05b06bb38886_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_325e05b06bb38886_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_3aaf5191d5f45601_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_3ac515345a227486_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "local_change"
+      },
+      "operational_severity_delta_strict_minus_live": 3,
+      "strict_canonical": "answer_space",
+      "strict_raw": "answer_space_problem",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_44ff4acdb263024b_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_44ff4acdb263024b_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "local_change",
+      "strict_raw": "minor_ui_or_context_change",
+      "strict_role_perspective_disagreement": true
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_4601bed02c004e37_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_4601bed02c004e37_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_4634bf1b005f7724_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "local_change",
+      "strict_raw": "minor_ui_or_context_change",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_4634bf1b005f7724_03",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": false,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "local_change",
+        "platform_product": "local_change",
+        "teacher": "local_change"
+      },
+      "operational_severity_delta_strict_minus_live": -1,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_4777747f8b0a6b46_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_483f3ac117f331a7_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "answer_space",
+        "platform_product": "usable",
+        "teacher": "local_change"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_4a2ccf1526ca832c_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_4ad408e9b8193c7c_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_4ad408e9b8193c7c_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "answer_space"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_63a057f3a47e95b1_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "local_change",
+        "platform_product": "usable",
+        "teacher": "answer_space"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_6a255aa977e4289a_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_6a255aa977e4289a_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_6a5e38b390521990_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_6a5e38b390521990_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 3,
+      "strict_canonical": "answer_space",
+      "strict_raw": "answer_space_problem",
+      "strict_role_perspective_disagreement": true
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_70772a95583e5587_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 2,
+      "strict_canonical": "artificial",
+      "strict_raw": "technically_valid_but_artificial",
+      "strict_role_perspective_disagreement": true
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_7224db1e1a3bbebd_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_7224db1e1a3bbebd_03",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "local_change",
+        "platform_product": "local_change",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": -1,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_7ea73f7f16fe2684_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_7ea73f7f16fe2684_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "answer_space",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 3,
+      "strict_canonical": "answer_space",
+      "strict_raw": "answer_space_problem",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_809d40d141731b61_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "answer_space",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_832cfb85e1f965ed_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 2,
+      "strict_canonical": "artificial",
+      "strict_raw": "technically_valid_but_artificial",
+      "strict_role_perspective_disagreement": true
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_8b7e8b31b496e102_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_8b7e8b31b496e102_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "local_change",
+      "strict_raw": "minor_ui_or_context_change",
+      "strict_role_perspective_disagreement": true
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_90b9229122fa55d6_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_90b9229122fa55d6_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "local_change",
+      "strict_raw": "minor_ui_or_context_change",
+      "strict_role_perspective_disagreement": true
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_927e9714cc21a97d_01",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "answer_space",
+        "platform_product": "local_change",
+        "teacher": "withhold"
+      },
+      "operational_severity_delta_strict_minus_live": 3,
+      "strict_canonical": "withhold",
+      "strict_raw": "rewrite_or_withhold",
+      "strict_role_perspective_disagreement": true
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_927e9714cc21a97d_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "local_change",
+      "strict_raw": "minor_ui_or_context_change",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_9d70af80c0843115_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_9e9b4cb1a49adcac_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_9e9b4cb1a49adcac_02",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "withhold",
+        "platform_product": "local_change",
+        "teacher": "local_change"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "local_change",
+      "strict_raw": "minor_ui_or_context_change",
+      "strict_role_perspective_disagreement": true
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_a0fe7953b9fffca8_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_a0fe7953b9fffca8_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_a7789cd4faa9d95a_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "answer_space",
+        "measurement": "local_change",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_a7789cd4faa9d95a_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "answer_space",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_b1516a79b61c8fd0_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "local_change",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "local_change",
+      "strict_raw": "minor_ui_or_context_change",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_b1516a79b61c8fd0_03",
+      "live_canonical": "artificial",
+      "live_independent_role_disagreement": true,
+      "live_raw": "pedagogically_artificial",
+      "live_role_canonical_dispositions": {
+        "learner": "artificial",
+        "measurement": "usable",
+        "platform_product": "artificial",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": -1,
+      "strict_canonical": "local_change",
+      "strict_raw": "minor_ui_or_context_change",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_b55bebc82e7087e7_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "local_change",
+      "strict_raw": "minor_ui_or_context_change",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_b55bebc82e7087e7_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "local_change",
+      "strict_raw": "minor_ui_or_context_change",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_b798d2e32a62c25c_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_b81e4f2e78894945_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_ba3d77af90f26ab2_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "local_change",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_bba42336e267985f_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 3,
+      "strict_canonical": "answer_space",
+      "strict_raw": "answer_space_problem",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_bea554636af1b127_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_bea554636af1b127_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_c0167d1a83f95500_01",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "local_change",
+        "platform_product": "local_change",
+        "teacher": "withhold"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "local_change",
+      "strict_raw": "minor_ui_or_context_change",
+      "strict_role_perspective_disagreement": true
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_c2cf343c43ce329d_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "answer_space",
+        "measurement": "usable",
+        "platform_product": "local_change",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_c2cf343c43ce329d_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "answer_space",
+        "measurement": "usable",
+        "platform_product": "local_change",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_c2ed1b09f0bb32d4_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "answer_space"
+      },
+      "operational_severity_delta_strict_minus_live": 4,
+      "strict_canonical": "withhold",
+      "strict_raw": "rewrite_or_withhold",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_c2ed1b09f0bb32d4_03",
+      "live_canonical": "answer_space",
+      "live_independent_role_disagreement": true,
+      "live_raw": "problematic_answer_space",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "answer_space",
+        "platform_product": "local_change",
+        "teacher": "answer_space"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "answer_space",
+      "strict_raw": "answer_space_problem",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_ca719d192c20c030_01",
+      "live_canonical": "answer_space",
+      "live_independent_role_disagreement": true,
+      "live_raw": "problematic_answer_space",
+      "live_role_canonical_dispositions": {
+        "learner": "answer_space",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "answer_space"
+      },
+      "operational_severity_delta_strict_minus_live": -3,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_ca719d192c20c030_03",
+      "live_canonical": "answer_space",
+      "live_independent_role_disagreement": true,
+      "live_raw": "problematic_answer_space",
+      "live_role_canonical_dispositions": {
+        "learner": "answer_space",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "answer_space"
+      },
+      "operational_severity_delta_strict_minus_live": -3,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_d15de8b5658bd6a5_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_d15de8b5658bd6a5_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_d2c20fe6a8269c51_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_d2c20fe6a8269c51_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_dfd385cd88abc20f_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_dfd385cd88abc20f_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "answer_space",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 3,
+      "strict_canonical": "answer_space",
+      "strict_raw": "answer_space_problem",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_e5bdd8211eed997b_03",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "local_change",
+        "platform_product": "local_change",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": -1,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_e730dbce7b036961_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "answer_space"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_e730dbce7b036961_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "local_change",
+      "strict_raw": "minor_ui_or_context_change",
+      "strict_role_perspective_disagreement": true
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_e7fef77abc10b5ba_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_e7fef77abc10b5ba_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_edcc8d38860ff41d_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_edcc8d38860ff41d_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "candidate_gc_f6431bc7f8a16c1b_02",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "local_change",
+        "platform_product": "local_change",
+        "teacher": "local_change"
+      },
+      "operational_severity_delta_strict_minus_live": -1,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_f86ecd83135f0b52_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_fcb801c76c95c7bf_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_fcb801c76c95c7bf_03",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "local_change",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "candidate_gc_ffa50061bcce266c_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "answer_space",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "cue_bounded_imperative_gc_04a854582c08aa84_01",
+      "live_canonical": "artificial",
+      "live_independent_role_disagreement": true,
+      "live_raw": "pedagogically_artificial",
+      "live_role_canonical_dispositions": {
+        "learner": "withhold",
+        "measurement": "artificial",
+        "platform_product": "artificial",
+        "teacher": "artificial"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "artificial",
+      "strict_raw": "technically_valid_but_artificial",
+      "strict_role_perspective_disagreement": true
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "cue_bounded_imperative_gc_04a854582c08aa84_02",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "artificial",
+        "platform_product": "local_change",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "artificial",
+      "strict_raw": "technically_valid_but_artificial",
+      "strict_role_perspective_disagreement": true
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "cue_bounded_imperative_gc_bb4f472f992ab76b_01",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "local_change",
+        "platform_product": "local_change",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "artificial",
+      "strict_raw": "technically_valid_but_artificial",
+      "strict_role_perspective_disagreement": true
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "cue_bounded_imperative_gc_bb4f472f992ab76b_02",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "local_change",
+        "platform_product": "local_change",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "artificial",
+      "strict_raw": "technically_valid_but_artificial",
+      "strict_role_perspective_disagreement": true
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "determinacy_intervention_gc_0ce5f41f37500df4_01",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "local_change",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "artificial",
+      "strict_raw": "technically_valid_but_artificial",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "determinacy_intervention_gc_0ce5f41f37500df4_02",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "local_change",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "artificial",
+      "strict_raw": "technically_valid_but_artificial",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "determinacy_intervention_gc_28d8bf2edc192d4c_02",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "local_change",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "local_change",
+      "strict_raw": "minor_ui_or_context_change",
+      "strict_role_perspective_disagreement": true
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "determinacy_intervention_gc_2924f6e63e1c1da2_02",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "local_change",
+        "platform_product": "local_change",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "artificial",
+      "strict_raw": "technically_valid_but_artificial",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "determinacy_intervention_gc_67bcfeedfa77f954_02",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "local_change",
+        "platform_product": "local_change",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "local_change",
+      "strict_raw": "minor_ui_or_context_change",
+      "strict_role_perspective_disagreement": true
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "determinacy_intervention_gc_a94168b2255fe062_01",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "local_change",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "artificial",
+      "strict_raw": "technically_valid_but_artificial",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "determinacy_intervention_gc_a94168b2255fe062_02",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "answer_space",
+        "measurement": "local_change",
+        "platform_product": "local_change",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "artificial",
+      "strict_raw": "technically_valid_but_artificial",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "determinacy_intervention_gc_bdf25ed4941e5de3_01",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "local_change",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "artificial",
+      "strict_raw": "technically_valid_but_artificial",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "determinacy_intervention_gc_bdf25ed4941e5de3_02",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "local_change",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "artificial",
+      "strict_raw": "technically_valid_but_artificial",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "packaging_correction_determinacy_intervention_gc_019f7fb10012b606_01",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "local_change",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "artificial",
+      "strict_raw": "technically_valid_but_artificial",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "unchanged_rescue_gc_16d9f6e33f0517ec_01",
+      "live_canonical": "answer_space",
+      "live_independent_role_disagreement": true,
+      "live_raw": "problematic_answer_space",
+      "live_role_canonical_dispositions": {
+        "learner": "answer_space",
+        "measurement": "answer_space",
+        "platform_product": "local_change",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": -3,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "unchanged_rescue_gc_4a4c9d34c1b5bce4_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "unchanged_rescue_gc_4a4c9d34c1b5bce4_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "unchanged_rescue_gc_8a330fc9e496e359_02",
+      "live_canonical": "answer_space",
+      "live_independent_role_disagreement": true,
+      "live_raw": "problematic_answer_space",
+      "live_role_canonical_dispositions": {
+        "learner": "answer_space",
+        "measurement": "answer_space",
+        "platform_product": "local_change",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "answer_space",
+      "strict_raw": "answer_space_problem",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "unchanged_rescue_gc_9b8833161ce61d83_01",
+      "live_canonical": "answer_space",
+      "live_independent_role_disagreement": true,
+      "live_raw": "problematic_answer_space",
+      "live_role_canonical_dispositions": {
+        "learner": "answer_space",
+        "measurement": "answer_space",
+        "platform_product": "local_change",
+        "teacher": "local_change"
+      },
+      "operational_severity_delta_strict_minus_live": -3,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "unchanged_rescue_gc_bdf8215fea798df6_02",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": true,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "answer_space",
+        "measurement": "local_change",
+        "platform_product": "local_change",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": -1,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "unchanged_rescue_gc_d14f05acb53845b9_02",
+      "live_canonical": "answer_space",
+      "live_independent_role_disagreement": true,
+      "live_raw": "problematic_answer_space",
+      "live_role_canonical_dispositions": {
+        "learner": "answer_space",
+        "measurement": "answer_space",
+        "platform_product": "local_change",
+        "teacher": "local_change"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "answer_space",
+      "strict_raw": "answer_space_problem",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": true,
+      "item_id": "unchanged_rescue_gc_db71873bec316091_01",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": false,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "usable",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 0,
+      "strict_canonical": "usable",
+      "strict_raw": "usable_as_stored",
+      "strict_role_perspective_disagreement": false
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "unchanged_rescue_gc_fac1ce90011b677c_02",
+      "live_canonical": "usable",
+      "live_independent_role_disagreement": true,
+      "live_raw": "usable_as_is",
+      "live_role_canonical_dispositions": {
+        "learner": "usable",
+        "measurement": "local_change",
+        "platform_product": "usable",
+        "teacher": "usable"
+      },
+      "operational_severity_delta_strict_minus_live": 4,
+      "strict_canonical": "withhold",
+      "strict_raw": "rewrite_or_withhold",
+      "strict_role_perspective_disagreement": true
+    },
+    {
+      "exact_mapped_agreement": false,
+      "item_id": "unchanged_rescue_gc_fb92e9307e236d8c_02",
+      "live_canonical": "local_change",
+      "live_independent_role_disagreement": false,
+      "live_raw": "minor_ui_or_answer_set_change",
+      "live_role_canonical_dispositions": {
+        "learner": "local_change",
+        "measurement": "local_change",
+        "platform_product": "local_change",
+        "teacher": "local_change"
+      },
+      "operational_severity_delta_strict_minus_live": 1,
+      "strict_canonical": "artificial",
+      "strict_raw": "technically_valid_but_artificial",
+      "strict_role_perspective_disagreement": true
+    }
+  ],
+  "marginals": {
+    "live_canonical": {
+      "answer_space": {
+        "count": 8,
+        "fraction": 0.07079646
+      },
+      "artificial": {
+        "count": 2,
+        "fraction": 0.017699115
+      },
+      "local_change": {
+        "count": 23,
+        "fraction": 0.203539823
+      },
+      "usable": {
+        "count": 79,
+        "fraction": 0.699115044
+      },
+      "withhold": {
+        "count": 1,
+        "fraction": 0.008849558
+      }
+    },
+    "strict_canonical": {
+      "answer_space": {
+        "count": 10,
+        "fraction": 0.088495575
+      },
+      "artificial": {
+        "count": 15,
+        "fraction": 0.132743363
+      },
+      "local_change": {
+        "count": 15,
+        "fraction": 0.132743363
+      },
+      "usable": {
+        "count": 70,
+        "fraction": 0.619469027
+      },
+      "withhold": {
+        "count": 3,
+        "fraction": 0.026548673
+      }
+    }
+  },
+  "operational_strictness": {
+    "definition": "Canonical ranks reproduce the live audit's declared least-to-most-severe plurality tie-break order. Artificial and answer-space failures remain qualitatively distinct; the delta is a triage diagnostic, not a psychometric scale.",
+    "live_more_severe": {
+      "count": 11,
+      "fraction": 0.097345133,
+      "item_ids": [
+        "candidate_gc_19ed2b72505b3a96_01",
+        "candidate_gc_4634bf1b005f7724_03",
+        "candidate_gc_7224db1e1a3bbebd_03",
+        "candidate_gc_b1516a79b61c8fd0_03",
+        "candidate_gc_ca719d192c20c030_01",
+        "candidate_gc_ca719d192c20c030_03",
+        "candidate_gc_e5bdd8211eed997b_03",
+        "candidate_gc_f6431bc7f8a16c1b_02",
+        "unchanged_rescue_gc_16d9f6e33f0517ec_01",
+        "unchanged_rescue_gc_9b8833161ce61d83_01",
+        "unchanged_rescue_gc_bdf8215fea798df6_02"
+      ]
+    },
+    "same_rank_and_category": {
+      "count": 70,
+      "fraction": 0.619469027,
+      "item_ids": [
+        "candidate_gc_0397fa37f2228649_01",
+        "candidate_gc_0397fa37f2228649_02",
+        "candidate_gc_08d90a35b669ed28_02",
+        "candidate_gc_0bbfaece19d0255d_03",
+        "candidate_gc_172c3f1039296750_01",
+        "candidate_gc_19656e31c58c2c07_01",
+        "candidate_gc_19656e31c58c2c07_02",
+        "candidate_gc_19ed2b72505b3a96_02",
+        "candidate_gc_2b730d0e1d9443b7_01",
+        "candidate_gc_2b730d0e1d9443b7_03",
+        "candidate_gc_2d6eb4f93cba4c6b_03",
+        "candidate_gc_2f1bd922c732c078_03",
+        "candidate_gc_325e05b06bb38886_01",
+        "candidate_gc_325e05b06bb38886_02",
+        "candidate_gc_3aaf5191d5f45601_02",
+        "candidate_gc_44ff4acdb263024b_01",
+        "candidate_gc_4601bed02c004e37_01",
+        "candidate_gc_4601bed02c004e37_03",
+        "candidate_gc_4777747f8b0a6b46_01",
+        "candidate_gc_483f3ac117f331a7_02",
+        "candidate_gc_4a2ccf1526ca832c_01",
+        "candidate_gc_4ad408e9b8193c7c_02",
+        "candidate_gc_4ad408e9b8193c7c_03",
+        "candidate_gc_63a057f3a47e95b1_03",
+        "candidate_gc_6a255aa977e4289a_01",
+        "candidate_gc_6a255aa977e4289a_02",
+        "candidate_gc_6a5e38b390521990_02",
+        "candidate_gc_7224db1e1a3bbebd_01",
+        "candidate_gc_7ea73f7f16fe2684_01",
+        "candidate_gc_809d40d141731b61_02",
+        "candidate_gc_8b7e8b31b496e102_01",
+        "candidate_gc_90b9229122fa55d6_01",
+        "candidate_gc_9d70af80c0843115_01",
+        "candidate_gc_9e9b4cb1a49adcac_01",
+        "candidate_gc_9e9b4cb1a49adcac_02",
+        "candidate_gc_a0fe7953b9fffca8_02",
+        "candidate_gc_a0fe7953b9fffca8_03",
+        "candidate_gc_a7789cd4faa9d95a_01",
+        "candidate_gc_a7789cd4faa9d95a_03",
+        "candidate_gc_b798d2e32a62c25c_03",
+        "candidate_gc_b81e4f2e78894945_01",
+        "candidate_gc_ba3d77af90f26ab2_03",
+        "candidate_gc_bea554636af1b127_01",
+        "candidate_gc_bea554636af1b127_03",
+        "candidate_gc_c0167d1a83f95500_01",
+        "candidate_gc_c2cf343c43ce329d_02",
+        "candidate_gc_c2cf343c43ce329d_03",
+        "candidate_gc_c2ed1b09f0bb32d4_03",
+        "candidate_gc_d15de8b5658bd6a5_01",
+        "candidate_gc_d15de8b5658bd6a5_03",
+        "candidate_gc_d2c20fe6a8269c51_01",
+        "candidate_gc_d2c20fe6a8269c51_03",
+        "candidate_gc_dfd385cd88abc20f_01",
+        "candidate_gc_e730dbce7b036961_01",
+        "candidate_gc_e7fef77abc10b5ba_01",
+        "candidate_gc_e7fef77abc10b5ba_02",
+        "candidate_gc_edcc8d38860ff41d_01",
+        "candidate_gc_edcc8d38860ff41d_02",
+        "candidate_gc_f86ecd83135f0b52_02",
+        "candidate_gc_fcb801c76c95c7bf_01",
+        "candidate_gc_fcb801c76c95c7bf_03",
+        "candidate_gc_ffa50061bcce266c_01",
+        "cue_bounded_imperative_gc_04a854582c08aa84_01",
+        "determinacy_intervention_gc_28d8bf2edc192d4c_02",
+        "determinacy_intervention_gc_67bcfeedfa77f954_02",
+        "unchanged_rescue_gc_4a4c9d34c1b5bce4_01",
+        "unchanged_rescue_gc_4a4c9d34c1b5bce4_02",
+        "unchanged_rescue_gc_8a330fc9e496e359_02",
+        "unchanged_rescue_gc_d14f05acb53845b9_02",
+        "unchanged_rescue_gc_db71873bec316091_01"
+      ]
+    },
+    "strict_minus_live_rank_delta": {
+      "-1": {
+        "count": 6,
+        "fraction": 0.053097345,
+        "item_ids": [
+          "candidate_gc_4634bf1b005f7724_03",
+          "candidate_gc_7224db1e1a3bbebd_03",
+          "candidate_gc_b1516a79b61c8fd0_03",
+          "candidate_gc_e5bdd8211eed997b_03",
+          "candidate_gc_f6431bc7f8a16c1b_02",
+          "unchanged_rescue_gc_bdf8215fea798df6_02"
+        ]
+      },
+      "-2": {
+        "count": 0,
+        "fraction": 0.0,
+        "item_ids": []
+      },
+      "-3": {
+        "count": 4,
+        "fraction": 0.03539823,
+        "item_ids": [
+          "candidate_gc_ca719d192c20c030_01",
+          "candidate_gc_ca719d192c20c030_03",
+          "unchanged_rescue_gc_16d9f6e33f0517ec_01",
+          "unchanged_rescue_gc_9b8833161ce61d83_01"
+        ]
+      },
+      "-4": {
+        "count": 1,
+        "fraction": 0.008849558,
+        "item_ids": [
+          "candidate_gc_19ed2b72505b3a96_01"
+        ]
+      },
+      "0": {
+        "count": 70,
+        "fraction": 0.619469027,
+        "item_ids": [
+          "candidate_gc_0397fa37f2228649_01",
+          "candidate_gc_0397fa37f2228649_02",
+          "candidate_gc_08d90a35b669ed28_02",
+          "candidate_gc_0bbfaece19d0255d_03",
+          "candidate_gc_172c3f1039296750_01",
+          "candidate_gc_19656e31c58c2c07_01",
+          "candidate_gc_19656e31c58c2c07_02",
+          "candidate_gc_19ed2b72505b3a96_02",
+          "candidate_gc_2b730d0e1d9443b7_01",
+          "candidate_gc_2b730d0e1d9443b7_03",
+          "candidate_gc_2d6eb4f93cba4c6b_03",
+          "candidate_gc_2f1bd922c732c078_03",
+          "candidate_gc_325e05b06bb38886_01",
+          "candidate_gc_325e05b06bb38886_02",
+          "candidate_gc_3aaf5191d5f45601_02",
+          "candidate_gc_44ff4acdb263024b_01",
+          "candidate_gc_4601bed02c004e37_01",
+          "candidate_gc_4601bed02c004e37_03",
+          "candidate_gc_4777747f8b0a6b46_01",
+          "candidate_gc_483f3ac117f331a7_02",
+          "candidate_gc_4a2ccf1526ca832c_01",
+          "candidate_gc_4ad408e9b8193c7c_02",
+          "candidate_gc_4ad408e9b8193c7c_03",
+          "candidate_gc_63a057f3a47e95b1_03",
+          "candidate_gc_6a255aa977e4289a_01",
+          "candidate_gc_6a255aa977e4289a_02",
+          "candidate_gc_6a5e38b390521990_02",
+          "candidate_gc_7224db1e1a3bbebd_01",
+          "candidate_gc_7ea73f7f16fe2684_01",
+          "candidate_gc_809d40d141731b61_02",
+          "candidate_gc_8b7e8b31b496e102_01",
+          "candidate_gc_90b9229122fa55d6_01",
+          "candidate_gc_9d70af80c0843115_01",
+          "candidate_gc_9e9b4cb1a49adcac_01",
+          "candidate_gc_9e9b4cb1a49adcac_02",
+          "candidate_gc_a0fe7953b9fffca8_02",
+          "candidate_gc_a0fe7953b9fffca8_03",
+          "candidate_gc_a7789cd4faa9d95a_01",
+          "candidate_gc_a7789cd4faa9d95a_03",
+          "candidate_gc_b798d2e32a62c25c_03",
+          "candidate_gc_b81e4f2e78894945_01",
+          "candidate_gc_ba3d77af90f26ab2_03",
+          "candidate_gc_bea554636af1b127_01",
+          "candidate_gc_bea554636af1b127_03",
+          "candidate_gc_c0167d1a83f95500_01",
+          "candidate_gc_c2cf343c43ce329d_02",
+          "candidate_gc_c2cf343c43ce329d_03",
+          "candidate_gc_c2ed1b09f0bb32d4_03",
+          "candidate_gc_d15de8b5658bd6a5_01",
+          "candidate_gc_d15de8b5658bd6a5_03",
+          "candidate_gc_d2c20fe6a8269c51_01",
+          "candidate_gc_d2c20fe6a8269c51_03",
+          "candidate_gc_dfd385cd88abc20f_01",
+          "candidate_gc_e730dbce7b036961_01",
+          "candidate_gc_e7fef77abc10b5ba_01",
+          "candidate_gc_e7fef77abc10b5ba_02",
+          "candidate_gc_edcc8d38860ff41d_01",
+          "candidate_gc_edcc8d38860ff41d_02",
+          "candidate_gc_f86ecd83135f0b52_02",
+          "candidate_gc_fcb801c76c95c7bf_01",
+          "candidate_gc_fcb801c76c95c7bf_03",
+          "candidate_gc_ffa50061bcce266c_01",
+          "cue_bounded_imperative_gc_04a854582c08aa84_01",
+          "determinacy_intervention_gc_28d8bf2edc192d4c_02",
+          "determinacy_intervention_gc_67bcfeedfa77f954_02",
+          "unchanged_rescue_gc_4a4c9d34c1b5bce4_01",
+          "unchanged_rescue_gc_4a4c9d34c1b5bce4_02",
+          "unchanged_rescue_gc_8a330fc9e496e359_02",
+          "unchanged_rescue_gc_d14f05acb53845b9_02",
+          "unchanged_rescue_gc_db71873bec316091_01"
+        ]
+      },
+      "1": {
+        "count": 21,
+        "fraction": 0.185840708,
+        "item_ids": [
+          "candidate_gc_44ff4acdb263024b_02",
+          "candidate_gc_4634bf1b005f7724_01",
+          "candidate_gc_8b7e8b31b496e102_02",
+          "candidate_gc_90b9229122fa55d6_02",
+          "candidate_gc_927e9714cc21a97d_03",
+          "candidate_gc_b1516a79b61c8fd0_01",
+          "candidate_gc_b55bebc82e7087e7_02",
+          "candidate_gc_b55bebc82e7087e7_03",
+          "candidate_gc_e730dbce7b036961_03",
+          "cue_bounded_imperative_gc_04a854582c08aa84_02",
+          "cue_bounded_imperative_gc_bb4f472f992ab76b_01",
+          "cue_bounded_imperative_gc_bb4f472f992ab76b_02",
+          "determinacy_intervention_gc_0ce5f41f37500df4_01",
+          "determinacy_intervention_gc_0ce5f41f37500df4_02",
+          "determinacy_intervention_gc_2924f6e63e1c1da2_02",
+          "determinacy_intervention_gc_a94168b2255fe062_01",
+          "determinacy_intervention_gc_a94168b2255fe062_02",
+          "determinacy_intervention_gc_bdf25ed4941e5de3_01",
+          "determinacy_intervention_gc_bdf25ed4941e5de3_02",
+          "packaging_correction_determinacy_intervention_gc_019f7fb10012b606_01",
+          "unchanged_rescue_gc_fb92e9307e236d8c_02"
+        ]
+      },
+      "2": {
+        "count": 2,
+        "fraction": 0.017699115,
+        "item_ids": [
+          "candidate_gc_70772a95583e5587_02",
+          "candidate_gc_832cfb85e1f965ed_02"
+        ]
+      },
+      "3": {
+        "count": 7,
+        "fraction": 0.061946903,
+        "item_ids": [
+          "candidate_gc_17fcb3b3c0156c98_03",
+          "candidate_gc_3ac515345a227486_03",
+          "candidate_gc_6a5e38b390521990_03",
+          "candidate_gc_7ea73f7f16fe2684_02",
+          "candidate_gc_927e9714cc21a97d_01",
+          "candidate_gc_bba42336e267985f_01",
+          "candidate_gc_dfd385cd88abc20f_02"
+        ]
+      },
+      "4": {
+        "count": 2,
+        "fraction": 0.017699115,
+        "item_ids": [
+          "candidate_gc_c2ed1b09f0bb32d4_02",
+          "unchanged_rescue_gc_fac1ce90011b677c_02"
+        ]
+      }
+    },
+    "strict_more_severe": {
+      "count": 32,
+      "fraction": 0.283185841,
+      "item_ids": [
+        "candidate_gc_17fcb3b3c0156c98_03",
+        "candidate_gc_3ac515345a227486_03",
+        "candidate_gc_44ff4acdb263024b_02",
+        "candidate_gc_4634bf1b005f7724_01",
+        "candidate_gc_6a5e38b390521990_03",
+        "candidate_gc_70772a95583e5587_02",
+        "candidate_gc_7ea73f7f16fe2684_02",
+        "candidate_gc_832cfb85e1f965ed_02",
+        "candidate_gc_8b7e8b31b496e102_02",
+        "candidate_gc_90b9229122fa55d6_02",
+        "candidate_gc_927e9714cc21a97d_01",
+        "candidate_gc_927e9714cc21a97d_03",
+        "candidate_gc_b1516a79b61c8fd0_01",
+        "candidate_gc_b55bebc82e7087e7_02",
+        "candidate_gc_b55bebc82e7087e7_03",
+        "candidate_gc_bba42336e267985f_01",
+        "candidate_gc_c2ed1b09f0bb32d4_02",
+        "candidate_gc_dfd385cd88abc20f_02",
+        "candidate_gc_e730dbce7b036961_03",
+        "cue_bounded_imperative_gc_04a854582c08aa84_02",
+        "cue_bounded_imperative_gc_bb4f472f992ab76b_01",
+        "cue_bounded_imperative_gc_bb4f472f992ab76b_02",
+        "determinacy_intervention_gc_0ce5f41f37500df4_01",
+        "determinacy_intervention_gc_0ce5f41f37500df4_02",
+        "determinacy_intervention_gc_2924f6e63e1c1da2_02",
+        "determinacy_intervention_gc_a94168b2255fe062_01",
+        "determinacy_intervention_gc_a94168b2255fe062_02",
+        "determinacy_intervention_gc_bdf25ed4941e5de3_01",
+        "determinacy_intervention_gc_bdf25ed4941e5de3_02",
+        "packaging_correction_determinacy_intervention_gc_019f7fb10012b606_01",
+        "unchanged_rescue_gc_fac1ce90011b677c_02",
+        "unchanged_rescue_gc_fb92e9307e236d8c_02"
+      ]
+    }
+  },
+  "representative_items": [
+    {
+      "accepted_answers": [
+        "had been painted"
+      ],
+      "cell_id": "gc_0397fa37f2228649",
+      "generator_kc_ids": [
+        "gkc_aspect_perfect",
+        "gkc_be_passive",
+        "gkc_finite_past"
+      ],
+      "item_id": "candidate_gc_0397fa37f2228649_02",
+      "live": {
+        "canonical_disposition": "usable",
+        "disposition_by_role": {
+          "learner": "usable_as_is",
+          "measurement": "usable_as_is",
+          "platform_product": "usable_as_is",
+          "teacher": "usable_as_is"
+        },
+        "primary_concern_by_role": {
+          "learner": "none",
+          "measurement": "none",
+          "platform_product": "none",
+          "teacher": "none"
+        },
+        "raw_disposition": "usable_as_is"
+      },
+      "panel": "shared_clear_pass",
+      "prompt": "The workers finished painting the room before lunch. Complete the sentence using the verb in brackets: By lunchtime, the room _____. (paint)",
+      "strict": {
+        "canonical_disposition": "usable",
+        "issue_tags": [],
+        "learner_note": "The before-lunch/by-lunchtime contrast and verb cue make the expected span clear.",
+        "platform_note": "This is a recognizable platform cloze with a focused passive-perfect dependency.",
+        "raw_disposition": "usable_as_stored"
+      },
+      "target_answer": "By lunchtime, the room had been painted."
+    },
+    {
+      "accepted_answers": [
+        "had been opened"
+      ],
+      "cell_id": "gc_0397fa37f2228649",
+      "generator_kc_ids": [
+        "gkc_aspect_perfect",
+        "gkc_be_passive",
+        "gkc_finite_past"
+      ],
+      "item_id": "candidate_gc_0397fa37f2228649_01",
+      "live": {
+        "canonical_disposition": "answer_space",
+        "disposition_by_role": {
+          "learner": "problematic_answer_space",
+          "measurement": "usable_as_is",
+          "platform_product": "usable_as_is",
+          "teacher": "problematic_answer_space"
+        },
+        "primary_concern_by_role": {
+          "learner": "“The gate was open” is a natural, unaccepted completion; no time relation requires the keyed past perfect passive.",
+          "measurement": "none",
+          "platform_product": "none",
+          "teacher": "“Had been open” is a plausible completion, so the context does not securely require the passive verb form."
+        },
+        "raw_disposition": "problematic_answer_space"
+      },
+      "panel": "shared_answer_space_failure",
+      "prompt": "When we arrived at the park, the workers were gone and the gate was open. Complete the sentence using the cue “open”: The gate ____.",
+      "strict": {
+        "canonical_disposition": "answer_space",
+        "issue_tags": [
+          "context_does_not_force_target",
+          "adjective_passive_ambiguity"
+        ],
+        "learner_note": "“The gate was open” supports an adjectival state or simple-past completion as readily as past-perfect passive “had been opened.”",
+        "platform_note": "The item cannot cleanly attribute failure to perfect + passive + past because the visible context does not select that analysis.",
+        "raw_disposition": "answer_space_problem"
+      },
+      "target_answer": "The gate had been opened."
+    },
+    {
+      "accepted_answers": [
+        "Do not touch the hot pan"
+      ],
+      "cell_id": "gc_04a854582c08aa84",
+      "generator_kc_ids": [
+        "gkc_imperative",
+        "gkc_negation"
+      ],
+      "item_id": "cue_bounded_imperative_gc_04a854582c08aa84_01",
+      "live": {
+        "canonical_disposition": "artificial",
+        "disposition_by_role": {
+          "learner": "probably_not_deployable",
+          "measurement": "pedagogically_artificial",
+          "platform_product": "pedagogically_artificial",
+          "teacher": "pedagogically_artificial"
+        },
+        "primary_concern_by_role": {
+          "learner": "Technical constraints and dense prohibitions test instruction parsing more than an ordinary learner warning.",
+          "measurement": "Extensive metalanguage and arbitrary lexical restrictions overshadow the negative-imperative learning objective.",
+          "platform_product": "The unusually restrictive metalinguistic directions dominate a simple safety-warning grammar task.",
+          "teacher": "The lengthy specialist constraints overwhelm a simple imperative exercise and are unsuitable for ordinary learners."
+        },
+        "raw_disposition": "pedagogically_artificial"
+      },
+      "panel": "shared_artificial_interface",
+      "prompt": "A child reaches toward a hot pan. Give a warning using an ordinary uncontracted negative imperative. Lexical cue chunks (deliberately out of order): “the hot pan” | “touch”. Rearrange and use all and only these chunks, exactly once each. You may add only the function words needed for ordinary uncontracted negative DO-support. Do not make any other additions, omissions, or substitutions; do not use contractions, politeness markers, vocatives, pronouns, or adverbs. Begin with a capital letter. Response: [________].",
+      "strict": {
+        "canonical_disposition": "artificial",
+        "issue_tags": [
+          "overconstrained_annotation_prompt",
+          "prompt_too_long"
+        ],
+        "learner_note": "The 78-word rule set is answerable but burdens the learner with “all and only,” function-word, punctuation, and exclusion instructions.",
+        "platform_note": "A platform could implement the same task with draggable tiles, but the prose-as-UI is annotation-like and implausible as stored.",
+        "raw_disposition": "technically_valid_but_artificial"
+      },
+      "target_answer": "Do not touch the hot pan."
+    },
+    {
+      "accepted_answers": [
+        "would carry one bag"
+      ],
+      "cell_id": "gc_fac1ce90011b677c",
+      "generator_kc_ids": [
+        "gkc_modal_would"
+      ],
+      "item_id": "unchanged_rescue_gc_fac1ce90011b677c_02",
+      "live": {
+        "canonical_disposition": "usable",
+        "disposition_by_role": {
+          "learner": "usable_as_is",
+          "measurement": "minor_ui_or_answer_set_change",
+          "platform_product": "usable_as_is",
+          "teacher": "usable_as_is"
+        },
+        "primary_concern_by_role": {
+          "learner": "none",
+          "measurement": "A natural contracted response (“she’d carry one bag”) is not visibly accepted.",
+          "platform_product": "none",
+          "teacher": "none"
+        },
+        "raw_disposition": "usable_as_is"
+      },
+      "panel": "strict_measurement_purity_escalation",
+      "prompt": "Mia said, “I will carry one bag.” Complete the report: Mia said that she _____.",
+      "strict": {
+        "canonical_disposition": "withhold",
+        "issue_tags": [
+          "extra_unmodelled_grammar",
+          "reported_speech_confound"
+        ],
+        "learner_note": "The report-completion task is understandable and has a clear answer.",
+        "platform_note": "Success also requires reported-speech backshift and pronoun change, neither represented in the one-KC Q-row; it is not a pure `would` item.",
+        "raw_disposition": "rewrite_or_withhold"
+      },
+      "target_answer": "Mia said that she would carry one bag."
+    },
+    {
+      "accepted_answers": [
+        "will have been working"
+      ],
+      "cell_id": "gc_19ed2b72505b3a96",
+      "generator_kc_ids": [
+        "gkc_aspect_perfect",
+        "gkc_aspect_progressive",
+        "gkc_modal_will"
+      ],
+      "item_id": "candidate_gc_19ed2b72505b3a96_01",
+      "live": {
+        "canonical_disposition": "withhold",
+        "disposition_by_role": {
+          "learner": "problematic_answer_space",
+          "measurement": "probably_not_deployable",
+          "platform_product": "usable_as_is",
+          "teacher": "minor_ui_or_answer_set_change"
+        },
+        "primary_concern_by_role": {
+          "learner": "No future reference is given; “has been working” or “will have worked” are reasonable alternatives to the keyed answer.",
+          "measurement": "No future reference point establishes “will have been working”; “By noon” alone leaves the intended temporal frame underdetermined.",
+          "platform_product": "none",
+          "teacher": "The intended future reference point is implied rather than explicitly stated."
+        },
+        "raw_disposition": "probably_not_deployable"
+      },
+      "panel": "live_temporal_determinacy_escalation",
+      "prompt": "Maya starts work at 9:00 a.m. Complete the sentence using the verb in brackets: By noon, Maya ___ for three hours. (work)",
+      "strict": {
+        "canonical_disposition": "usable",
+        "issue_tags": [],
+        "learner_note": "The start time and future endpoint uniquely motivate the future perfect progressive.",
+        "platform_note": "An advanced but coherent platform cloze.",
+        "raw_disposition": "usable_as_stored"
+      },
+      "target_answer": "By noon, Maya will have been working for three hours."
+    },
+    {
+      "accepted_answers": [
+        "may rain"
+      ],
+      "cell_id": "gc_8a330fc9e496e359",
+      "generator_kc_ids": [
+        "gkc_modal_may"
+      ],
+      "item_id": "unchanged_rescue_gc_8a330fc9e496e359_02",
+      "live": {
+        "canonical_disposition": "answer_space",
+        "disposition_by_role": {
+          "learner": "problematic_answer_space",
+          "measurement": "problematic_answer_space",
+          "platform_product": "minor_ui_or_answer_set_change",
+          "teacher": "usable_as_is"
+        },
+        "primary_concern_by_role": {
+          "learner": "The context permits “might rain,” “will rain,” and “is going to rain,” not only “may rain.”",
+          "measurement": "The context licenses several future or possibility forms, but neither the prompt nor scoring establishes may as required.",
+          "platform_product": "The context also naturally supports “might rain,” but the accepted answer permits only may.",
+          "teacher": "The context also naturally permits “might rain,” though the instruction likely implies may."
+        },
+        "raw_disposition": "problematic_answer_space"
+      },
+      "panel": "shared_modal_answer_space_failure",
+      "prompt": "The sky is dark, so take an umbrella. Complete the sentence using the cue “rain”: It ___ soon.",
+      "strict": {
+        "canonical_disposition": "answer_space",
+        "issue_tags": [
+          "context_does_not_force_target"
+        ],
+        "learner_note": "A dark sky and umbrella make “might rain” at least as natural as the sole accepted “may rain.”",
+        "platform_note": "Because the modal is not supplied, correctness does not validly isolate the declared `may` KC.",
+        "raw_disposition": "answer_space_problem"
+      },
+      "target_answer": "It may rain soon."
+    }
+  ],
+  "role_disagreement": {
+    "live_independent_roles": {
+      "aggregate_usable_despite_role_disagreement": {
+        "count": 24,
+        "fraction": 0.212389381,
+        "item_ids": [
+          "candidate_gc_17fcb3b3c0156c98_03",
+          "candidate_gc_3ac515345a227486_03",
+          "candidate_gc_483f3ac117f331a7_02",
+          "candidate_gc_4ad408e9b8193c7c_03",
+          "candidate_gc_63a057f3a47e95b1_03",
+          "candidate_gc_7224db1e1a3bbebd_01",
+          "candidate_gc_7ea73f7f16fe2684_02",
+          "candidate_gc_809d40d141731b61_02",
+          "candidate_gc_a0fe7953b9fffca8_03",
+          "candidate_gc_a7789cd4faa9d95a_01",
+          "candidate_gc_a7789cd4faa9d95a_03",
+          "candidate_gc_b1516a79b61c8fd0_01",
+          "candidate_gc_ba3d77af90f26ab2_03",
+          "candidate_gc_bba42336e267985f_01",
+          "candidate_gc_c2cf343c43ce329d_02",
+          "candidate_gc_c2cf343c43ce329d_03",
+          "candidate_gc_c2ed1b09f0bb32d4_02",
+          "candidate_gc_dfd385cd88abc20f_02",
+          "candidate_gc_e730dbce7b036961_01",
+          "candidate_gc_fcb801c76c95c7bf_03",
+          "candidate_gc_ffa50061bcce266c_01",
+          "unchanged_rescue_gc_4a4c9d34c1b5bce4_01",
+          "unchanged_rescue_gc_4a4c9d34c1b5bce4_02",
+          "unchanged_rescue_gc_fac1ce90011b677c_02"
+        ]
+      },
+      "count": 56,
+      "definition": "at least two of learner, teacher, platform_product, and measurement chose different dispositions",
+      "distinct_canonical_disposition_count": {
+        "1": 57,
+        "2": 41,
+        "3": 14,
+        "4": 1
+      },
+      "fraction": 0.495575221,
+      "item_ids": [
+        "candidate_gc_0397fa37f2228649_01",
+        "candidate_gc_172c3f1039296750_01",
+        "candidate_gc_17fcb3b3c0156c98_03",
+        "candidate_gc_19ed2b72505b3a96_01",
+        "candidate_gc_3ac515345a227486_03",
+        "candidate_gc_483f3ac117f331a7_02",
+        "candidate_gc_4ad408e9b8193c7c_03",
+        "candidate_gc_63a057f3a47e95b1_03",
+        "candidate_gc_7224db1e1a3bbebd_01",
+        "candidate_gc_7224db1e1a3bbebd_03",
+        "candidate_gc_7ea73f7f16fe2684_02",
+        "candidate_gc_809d40d141731b61_02",
+        "candidate_gc_927e9714cc21a97d_01",
+        "candidate_gc_9e9b4cb1a49adcac_02",
+        "candidate_gc_a0fe7953b9fffca8_03",
+        "candidate_gc_a7789cd4faa9d95a_01",
+        "candidate_gc_a7789cd4faa9d95a_03",
+        "candidate_gc_b1516a79b61c8fd0_01",
+        "candidate_gc_b1516a79b61c8fd0_03",
+        "candidate_gc_ba3d77af90f26ab2_03",
+        "candidate_gc_bba42336e267985f_01",
+        "candidate_gc_c0167d1a83f95500_01",
+        "candidate_gc_c2cf343c43ce329d_02",
+        "candidate_gc_c2cf343c43ce329d_03",
+        "candidate_gc_c2ed1b09f0bb32d4_02",
+        "candidate_gc_c2ed1b09f0bb32d4_03",
+        "candidate_gc_ca719d192c20c030_01",
+        "candidate_gc_ca719d192c20c030_03",
+        "candidate_gc_dfd385cd88abc20f_02",
+        "candidate_gc_e5bdd8211eed997b_03",
+        "candidate_gc_e730dbce7b036961_01",
+        "candidate_gc_f6431bc7f8a16c1b_02",
+        "candidate_gc_fcb801c76c95c7bf_03",
+        "candidate_gc_ffa50061bcce266c_01",
+        "cue_bounded_imperative_gc_04a854582c08aa84_01",
+        "cue_bounded_imperative_gc_04a854582c08aa84_02",
+        "cue_bounded_imperative_gc_bb4f472f992ab76b_01",
+        "cue_bounded_imperative_gc_bb4f472f992ab76b_02",
+        "determinacy_intervention_gc_0ce5f41f37500df4_01",
+        "determinacy_intervention_gc_0ce5f41f37500df4_02",
+        "determinacy_intervention_gc_28d8bf2edc192d4c_02",
+        "determinacy_intervention_gc_2924f6e63e1c1da2_02",
+        "determinacy_intervention_gc_67bcfeedfa77f954_02",
+        "determinacy_intervention_gc_a94168b2255fe062_01",
+        "determinacy_intervention_gc_a94168b2255fe062_02",
+        "determinacy_intervention_gc_bdf25ed4941e5de3_01",
+        "determinacy_intervention_gc_bdf25ed4941e5de3_02",
+        "packaging_correction_determinacy_intervention_gc_019f7fb10012b606_01",
+        "unchanged_rescue_gc_16d9f6e33f0517ec_01",
+        "unchanged_rescue_gc_4a4c9d34c1b5bce4_01",
+        "unchanged_rescue_gc_4a4c9d34c1b5bce4_02",
+        "unchanged_rescue_gc_8a330fc9e496e359_02",
+        "unchanged_rescue_gc_9b8833161ce61d83_01",
+        "unchanged_rescue_gc_bdf8215fea798df6_02",
+        "unchanged_rescue_gc_d14f05acb53845b9_02",
+        "unchanged_rescue_gc_fac1ce90011b677c_02"
+      ]
+    },
+    "live_role_marginals": {
+      "learner": {
+        "answer_space": {
+          "count": 14,
+          "fraction": 0.123893805
+        },
+        "artificial": {
+          "count": 1,
+          "fraction": 0.008849558
+        },
+        "local_change": {
+          "count": 23,
+          "fraction": 0.203539823
+        },
+        "usable": {
+          "count": 74,
+          "fraction": 0.654867257
+        },
+        "withhold": {
+          "count": 1,
+          "fraction": 0.008849558
+        }
+      },
+      "measurement": {
+        "answer_space": {
+          "count": 10,
+          "fraction": 0.088495575
+        },
+        "artificial": {
+          "count": 2,
+          "fraction": 0.017699115
+        },
+        "local_change": {
+          "count": 22,
+          "fraction": 0.194690265
+        },
+        "usable": {
+          "count": 76,
+          "fraction": 0.672566372
+        },
+        "withhold": {
+          "count": 3,
+          "fraction": 0.026548673
+        }
+      },
+      "platform_product": {
+        "answer_space": {
+          "count": 1,
+          "fraction": 0.008849558
+        },
+        "artificial": {
+          "count": 2,
+          "fraction": 0.017699115
+        },
+        "local_change": {
+          "count": 26,
+          "fraction": 0.230088496
+        },
+        "usable": {
+          "count": 84,
+          "fraction": 0.743362832
+        },
+        "withhold": {
+          "count": 0,
+          "fraction": 0.0
+        }
+      },
+      "teacher": {
+        "answer_space": {
+          "count": 8,
+          "fraction": 0.07079646
+        },
+        "artificial": {
+          "count": 2,
+          "fraction": 0.017699115
+        },
+        "local_change": {
+          "count": 10,
+          "fraction": 0.088495575
+        },
+        "usable": {
+          "count": 91,
+          "fraction": 0.805309735
+        },
+        "withhold": {
+          "count": 2,
+          "fraction": 0.017699115
+        }
+      }
+    },
+    "overlap": {
+      "both": {
+        "count": 11,
+        "fraction": 0.097345133,
+        "item_ids": [
+          "candidate_gc_17fcb3b3c0156c98_03",
+          "candidate_gc_927e9714cc21a97d_01",
+          "candidate_gc_9e9b4cb1a49adcac_02",
+          "candidate_gc_c0167d1a83f95500_01",
+          "cue_bounded_imperative_gc_04a854582c08aa84_01",
+          "cue_bounded_imperative_gc_04a854582c08aa84_02",
+          "cue_bounded_imperative_gc_bb4f472f992ab76b_01",
+          "cue_bounded_imperative_gc_bb4f472f992ab76b_02",
+          "determinacy_intervention_gc_28d8bf2edc192d4c_02",
+          "determinacy_intervention_gc_67bcfeedfa77f954_02",
+          "unchanged_rescue_gc_fac1ce90011b677c_02"
+        ]
+      },
+      "live_only": {
+        "count": 45,
+        "fraction": 0.398230088,
+        "item_ids": [
+          "candidate_gc_0397fa37f2228649_01",
+          "candidate_gc_172c3f1039296750_01",
+          "candidate_gc_19ed2b72505b3a96_01",
+          "candidate_gc_3ac515345a227486_03",
+          "candidate_gc_483f3ac117f331a7_02",
+          "candidate_gc_4ad408e9b8193c7c_03",
+          "candidate_gc_63a057f3a47e95b1_03",
+          "candidate_gc_7224db1e1a3bbebd_01",
+          "candidate_gc_7224db1e1a3bbebd_03",
+          "candidate_gc_7ea73f7f16fe2684_02",
+          "candidate_gc_809d40d141731b61_02",
+          "candidate_gc_a0fe7953b9fffca8_03",
+          "candidate_gc_a7789cd4faa9d95a_01",
+          "candidate_gc_a7789cd4faa9d95a_03",
+          "candidate_gc_b1516a79b61c8fd0_01",
+          "candidate_gc_b1516a79b61c8fd0_03",
+          "candidate_gc_ba3d77af90f26ab2_03",
+          "candidate_gc_bba42336e267985f_01",
+          "candidate_gc_c2cf343c43ce329d_02",
+          "candidate_gc_c2cf343c43ce329d_03",
+          "candidate_gc_c2ed1b09f0bb32d4_02",
+          "candidate_gc_c2ed1b09f0bb32d4_03",
+          "candidate_gc_ca719d192c20c030_01",
+          "candidate_gc_ca719d192c20c030_03",
+          "candidate_gc_dfd385cd88abc20f_02",
+          "candidate_gc_e5bdd8211eed997b_03",
+          "candidate_gc_e730dbce7b036961_01",
+          "candidate_gc_f6431bc7f8a16c1b_02",
+          "candidate_gc_fcb801c76c95c7bf_03",
+          "candidate_gc_ffa50061bcce266c_01",
+          "determinacy_intervention_gc_0ce5f41f37500df4_01",
+          "determinacy_intervention_gc_0ce5f41f37500df4_02",
+          "determinacy_intervention_gc_2924f6e63e1c1da2_02",
+          "determinacy_intervention_gc_a94168b2255fe062_01",
+          "determinacy_intervention_gc_a94168b2255fe062_02",
+          "determinacy_intervention_gc_bdf25ed4941e5de3_01",
+          "determinacy_intervention_gc_bdf25ed4941e5de3_02",
+          "packaging_correction_determinacy_intervention_gc_019f7fb10012b606_01",
+          "unchanged_rescue_gc_16d9f6e33f0517ec_01",
+          "unchanged_rescue_gc_4a4c9d34c1b5bce4_01",
+          "unchanged_rescue_gc_4a4c9d34c1b5bce4_02",
+          "unchanged_rescue_gc_8a330fc9e496e359_02",
+          "unchanged_rescue_gc_9b8833161ce61d83_01",
+          "unchanged_rescue_gc_bdf8215fea798df6_02",
+          "unchanged_rescue_gc_d14f05acb53845b9_02"
+        ]
+      },
+      "neither": {
+        "count": 49,
+        "fraction": 0.433628319,
+        "item_ids": [
+          "candidate_gc_0397fa37f2228649_02",
+          "candidate_gc_08d90a35b669ed28_02",
+          "candidate_gc_0bbfaece19d0255d_03",
+          "candidate_gc_19656e31c58c2c07_01",
+          "candidate_gc_19656e31c58c2c07_02",
+          "candidate_gc_19ed2b72505b3a96_02",
+          "candidate_gc_2b730d0e1d9443b7_01",
+          "candidate_gc_2b730d0e1d9443b7_03",
+          "candidate_gc_2d6eb4f93cba4c6b_03",
+          "candidate_gc_2f1bd922c732c078_03",
+          "candidate_gc_325e05b06bb38886_01",
+          "candidate_gc_325e05b06bb38886_02",
+          "candidate_gc_3aaf5191d5f45601_02",
+          "candidate_gc_44ff4acdb263024b_01",
+          "candidate_gc_4601bed02c004e37_01",
+          "candidate_gc_4601bed02c004e37_03",
+          "candidate_gc_4634bf1b005f7724_01",
+          "candidate_gc_4634bf1b005f7724_03",
+          "candidate_gc_4777747f8b0a6b46_01",
+          "candidate_gc_4a2ccf1526ca832c_01",
+          "candidate_gc_4ad408e9b8193c7c_02",
+          "candidate_gc_6a255aa977e4289a_01",
+          "candidate_gc_6a255aa977e4289a_02",
+          "candidate_gc_6a5e38b390521990_02",
+          "candidate_gc_7ea73f7f16fe2684_01",
+          "candidate_gc_8b7e8b31b496e102_01",
+          "candidate_gc_90b9229122fa55d6_01",
+          "candidate_gc_927e9714cc21a97d_03",
+          "candidate_gc_9d70af80c0843115_01",
+          "candidate_gc_9e9b4cb1a49adcac_01",
+          "candidate_gc_a0fe7953b9fffca8_02",
+          "candidate_gc_b55bebc82e7087e7_02",
+          "candidate_gc_b55bebc82e7087e7_03",
+          "candidate_gc_b798d2e32a62c25c_03",
+          "candidate_gc_b81e4f2e78894945_01",
+          "candidate_gc_bea554636af1b127_01",
+          "candidate_gc_bea554636af1b127_03",
+          "candidate_gc_d15de8b5658bd6a5_01",
+          "candidate_gc_d15de8b5658bd6a5_03",
+          "candidate_gc_d2c20fe6a8269c51_01",
+          "candidate_gc_d2c20fe6a8269c51_03",
+          "candidate_gc_dfd385cd88abc20f_01",
+          "candidate_gc_e7fef77abc10b5ba_01",
+          "candidate_gc_e7fef77abc10b5ba_02",
+          "candidate_gc_edcc8d38860ff41d_01",
+          "candidate_gc_edcc8d38860ff41d_02",
+          "candidate_gc_f86ecd83135f0b52_02",
+          "candidate_gc_fcb801c76c95c7bf_01",
+          "unchanged_rescue_gc_db71873bec316091_01"
+        ]
+      },
+      "strict_only": {
+        "count": 8,
+        "fraction": 0.07079646,
+        "item_ids": [
+          "candidate_gc_44ff4acdb263024b_02",
+          "candidate_gc_6a5e38b390521990_03",
+          "candidate_gc_70772a95583e5587_02",
+          "candidate_gc_832cfb85e1f965ed_02",
+          "candidate_gc_8b7e8b31b496e102_02",
+          "candidate_gc_90b9229122fa55d6_02",
+          "candidate_gc_e730dbce7b036961_03",
+          "unchanged_rescue_gc_fb92e9307e236d8c_02"
+        ]
+      }
+    },
+    "strict_role_perspectives": {
+      "count": 19,
+      "definition": "learner_overall differs from platform_overall inside one Codex review",
+      "fraction": 0.168141593,
+      "item_ids": [
+        "candidate_gc_17fcb3b3c0156c98_03",
+        "candidate_gc_44ff4acdb263024b_02",
+        "candidate_gc_6a5e38b390521990_03",
+        "candidate_gc_70772a95583e5587_02",
+        "candidate_gc_832cfb85e1f965ed_02",
+        "candidate_gc_8b7e8b31b496e102_02",
+        "candidate_gc_90b9229122fa55d6_02",
+        "candidate_gc_927e9714cc21a97d_01",
+        "candidate_gc_9e9b4cb1a49adcac_02",
+        "candidate_gc_c0167d1a83f95500_01",
+        "candidate_gc_e730dbce7b036961_03",
+        "cue_bounded_imperative_gc_04a854582c08aa84_01",
+        "cue_bounded_imperative_gc_04a854582c08aa84_02",
+        "cue_bounded_imperative_gc_bb4f472f992ab76b_01",
+        "cue_bounded_imperative_gc_bb4f472f992ab76b_02",
+        "determinacy_intervention_gc_28d8bf2edc192d4c_02",
+        "determinacy_intervention_gc_67bcfeedfa77f954_02",
+        "unchanged_rescue_gc_fac1ce90011b677c_02",
+        "unchanged_rescue_gc_fb92e9307e236d8c_02"
+      ]
+    },
+    "strict_vs_each_live_role": {
+      "learner": {
+        "exact": {
+          "count": 59,
+          "fraction": 0.522123894,
+          "item_ids": [
+            "candidate_gc_0397fa37f2228649_01",
+            "candidate_gc_0397fa37f2228649_02",
+            "candidate_gc_08d90a35b669ed28_02",
+            "candidate_gc_0bbfaece19d0255d_03",
+            "candidate_gc_172c3f1039296750_01",
+            "candidate_gc_19656e31c58c2c07_01",
+            "candidate_gc_19656e31c58c2c07_02",
+            "candidate_gc_19ed2b72505b3a96_02",
+            "candidate_gc_2b730d0e1d9443b7_01",
+            "candidate_gc_2b730d0e1d9443b7_03",
+            "candidate_gc_2d6eb4f93cba4c6b_03",
+            "candidate_gc_2f1bd922c732c078_03",
+            "candidate_gc_325e05b06bb38886_01",
+            "candidate_gc_325e05b06bb38886_02",
+            "candidate_gc_3aaf5191d5f45601_02",
+            "candidate_gc_44ff4acdb263024b_01",
+            "candidate_gc_4601bed02c004e37_01",
+            "candidate_gc_4601bed02c004e37_03",
+            "candidate_gc_4777747f8b0a6b46_01",
+            "candidate_gc_483f3ac117f331a7_02",
+            "candidate_gc_4a2ccf1526ca832c_01",
+            "candidate_gc_4ad408e9b8193c7c_02",
+            "candidate_gc_4ad408e9b8193c7c_03",
+            "candidate_gc_63a057f3a47e95b1_03",
+            "candidate_gc_6a255aa977e4289a_01",
+            "candidate_gc_6a255aa977e4289a_02",
+            "candidate_gc_6a5e38b390521990_02",
+            "candidate_gc_7ea73f7f16fe2684_01",
+            "candidate_gc_809d40d141731b61_02",
+            "candidate_gc_8b7e8b31b496e102_01",
+            "candidate_gc_90b9229122fa55d6_01",
+            "candidate_gc_9d70af80c0843115_01",
+            "candidate_gc_9e9b4cb1a49adcac_01",
+            "candidate_gc_a0fe7953b9fffca8_02",
+            "candidate_gc_a7789cd4faa9d95a_03",
+            "candidate_gc_b798d2e32a62c25c_03",
+            "candidate_gc_b81e4f2e78894945_01",
+            "candidate_gc_ba3d77af90f26ab2_03",
+            "candidate_gc_bea554636af1b127_01",
+            "candidate_gc_bea554636af1b127_03",
+            "candidate_gc_d15de8b5658bd6a5_01",
+            "candidate_gc_d15de8b5658bd6a5_03",
+            "candidate_gc_d2c20fe6a8269c51_01",
+            "candidate_gc_d2c20fe6a8269c51_03",
+            "candidate_gc_dfd385cd88abc20f_01",
+            "candidate_gc_e730dbce7b036961_01",
+            "candidate_gc_e7fef77abc10b5ba_01",
+            "candidate_gc_e7fef77abc10b5ba_02",
+            "candidate_gc_edcc8d38860ff41d_01",
+            "candidate_gc_edcc8d38860ff41d_02",
+            "candidate_gc_f6431bc7f8a16c1b_02",
+            "candidate_gc_f86ecd83135f0b52_02",
+            "candidate_gc_fcb801c76c95c7bf_01",
+            "candidate_gc_fcb801c76c95c7bf_03",
+            "determinacy_intervention_gc_28d8bf2edc192d4c_02",
+            "determinacy_intervention_gc_67bcfeedfa77f954_02",
+            "unchanged_rescue_gc_8a330fc9e496e359_02",
+            "unchanged_rescue_gc_d14f05acb53845b9_02",
+            "unchanged_rescue_gc_db71873bec316091_01"
+          ]
+        },
+        "live_role_more": {
+          "count": 20,
+          "fraction": 0.17699115,
+          "item_ids": [
+            "candidate_gc_19ed2b72505b3a96_01",
+            "candidate_gc_4634bf1b005f7724_03",
+            "candidate_gc_7224db1e1a3bbebd_01",
+            "candidate_gc_7224db1e1a3bbebd_03",
+            "candidate_gc_a0fe7953b9fffca8_03",
+            "candidate_gc_a7789cd4faa9d95a_01",
+            "candidate_gc_b1516a79b61c8fd0_03",
+            "candidate_gc_c2cf343c43ce329d_02",
+            "candidate_gc_c2cf343c43ce329d_03",
+            "candidate_gc_ca719d192c20c030_01",
+            "candidate_gc_ca719d192c20c030_03",
+            "candidate_gc_e5bdd8211eed997b_03",
+            "candidate_gc_ffa50061bcce266c_01",
+            "cue_bounded_imperative_gc_04a854582c08aa84_01",
+            "determinacy_intervention_gc_a94168b2255fe062_02",
+            "unchanged_rescue_gc_16d9f6e33f0517ec_01",
+            "unchanged_rescue_gc_4a4c9d34c1b5bce4_01",
+            "unchanged_rescue_gc_4a4c9d34c1b5bce4_02",
+            "unchanged_rescue_gc_9b8833161ce61d83_01",
+            "unchanged_rescue_gc_bdf8215fea798df6_02"
+          ]
+        },
+        "strict_more": {
+          "count": 34,
+          "fraction": 0.300884956,
+          "item_ids": [
+            "candidate_gc_17fcb3b3c0156c98_03",
+            "candidate_gc_3ac515345a227486_03",
+            "candidate_gc_44ff4acdb263024b_02",
+            "candidate_gc_4634bf1b005f7724_01",
+            "candidate_gc_6a5e38b390521990_03",
+            "candidate_gc_70772a95583e5587_02",
+            "candidate_gc_7ea73f7f16fe2684_02",
+            "candidate_gc_832cfb85e1f965ed_02",
+            "candidate_gc_8b7e8b31b496e102_02",
+            "candidate_gc_90b9229122fa55d6_02",
+            "candidate_gc_927e9714cc21a97d_01",
+            "candidate_gc_927e9714cc21a97d_03",
+            "candidate_gc_9e9b4cb1a49adcac_02",
+            "candidate_gc_b1516a79b61c8fd0_01",
+            "candidate_gc_b55bebc82e7087e7_02",
+            "candidate_gc_b55bebc82e7087e7_03",
+            "candidate_gc_bba42336e267985f_01",
+            "candidate_gc_c0167d1a83f95500_01",
+            "candidate_gc_c2ed1b09f0bb32d4_02",
+            "candidate_gc_c2ed1b09f0bb32d4_03",
+            "candidate_gc_dfd385cd88abc20f_02",
+            "candidate_gc_e730dbce7b036961_03",
+            "cue_bounded_imperative_gc_04a854582c08aa84_02",
+            "cue_bounded_imperative_gc_bb4f472f992ab76b_01",
+            "cue_bounded_imperative_gc_bb4f472f992ab76b_02",
+            "determinacy_intervention_gc_0ce5f41f37500df4_01",
+            "determinacy_intervention_gc_0ce5f41f37500df4_02",
+            "determinacy_intervention_gc_2924f6e63e1c1da2_02",
+            "determinacy_intervention_gc_a94168b2255fe062_01",
+            "determinacy_intervention_gc_bdf25ed4941e5de3_01",
+            "determinacy_intervention_gc_bdf25ed4941e5de3_02",
+            "packaging_correction_determinacy_intervention_gc_019f7fb10012b606_01",
+            "unchanged_rescue_gc_fac1ce90011b677c_02",
+            "unchanged_rescue_gc_fb92e9307e236d8c_02"
+          ]
+        }
+      },
+      "measurement": {
+        "exact": {
+          "count": 66,
+          "fraction": 0.584070796,
+          "item_ids": [
+            "candidate_gc_0397fa37f2228649_02",
+            "candidate_gc_08d90a35b669ed28_02",
+            "candidate_gc_0bbfaece19d0255d_03",
+            "candidate_gc_19656e31c58c2c07_01",
+            "candidate_gc_19656e31c58c2c07_02",
+            "candidate_gc_19ed2b72505b3a96_02",
+            "candidate_gc_2b730d0e1d9443b7_01",
+            "candidate_gc_2b730d0e1d9443b7_03",
+            "candidate_gc_2d6eb4f93cba4c6b_03",
+            "candidate_gc_2f1bd922c732c078_03",
+            "candidate_gc_325e05b06bb38886_01",
+            "candidate_gc_325e05b06bb38886_02",
+            "candidate_gc_3aaf5191d5f45601_02",
+            "candidate_gc_44ff4acdb263024b_01",
+            "candidate_gc_4601bed02c004e37_01",
+            "candidate_gc_4601bed02c004e37_03",
+            "candidate_gc_4777747f8b0a6b46_01",
+            "candidate_gc_4a2ccf1526ca832c_01",
+            "candidate_gc_4ad408e9b8193c7c_02",
+            "candidate_gc_4ad408e9b8193c7c_03",
+            "candidate_gc_6a255aa977e4289a_01",
+            "candidate_gc_6a255aa977e4289a_02",
+            "candidate_gc_6a5e38b390521990_02",
+            "candidate_gc_7224db1e1a3bbebd_01",
+            "candidate_gc_7ea73f7f16fe2684_01",
+            "candidate_gc_7ea73f7f16fe2684_02",
+            "candidate_gc_8b7e8b31b496e102_01",
+            "candidate_gc_90b9229122fa55d6_01",
+            "candidate_gc_9d70af80c0843115_01",
+            "candidate_gc_9e9b4cb1a49adcac_01",
+            "candidate_gc_a0fe7953b9fffca8_02",
+            "candidate_gc_a0fe7953b9fffca8_03",
+            "candidate_gc_b798d2e32a62c25c_03",
+            "candidate_gc_b81e4f2e78894945_01",
+            "candidate_gc_ba3d77af90f26ab2_03",
+            "candidate_gc_bea554636af1b127_01",
+            "candidate_gc_bea554636af1b127_03",
+            "candidate_gc_c0167d1a83f95500_01",
+            "candidate_gc_c2cf343c43ce329d_02",
+            "candidate_gc_c2cf343c43ce329d_03",
+            "candidate_gc_c2ed1b09f0bb32d4_03",
+            "candidate_gc_ca719d192c20c030_01",
+            "candidate_gc_ca719d192c20c030_03",
+            "candidate_gc_d15de8b5658bd6a5_01",
+            "candidate_gc_d15de8b5658bd6a5_03",
+            "candidate_gc_d2c20fe6a8269c51_01",
+            "candidate_gc_d2c20fe6a8269c51_03",
+            "candidate_gc_dfd385cd88abc20f_01",
+            "candidate_gc_e730dbce7b036961_01",
+            "candidate_gc_e7fef77abc10b5ba_01",
+            "candidate_gc_e7fef77abc10b5ba_02",
+            "candidate_gc_edcc8d38860ff41d_01",
+            "candidate_gc_edcc8d38860ff41d_02",
+            "candidate_gc_f86ecd83135f0b52_02",
+            "candidate_gc_fcb801c76c95c7bf_01",
+            "candidate_gc_fcb801c76c95c7bf_03",
+            "candidate_gc_ffa50061bcce266c_01",
+            "cue_bounded_imperative_gc_04a854582c08aa84_01",
+            "cue_bounded_imperative_gc_04a854582c08aa84_02",
+            "determinacy_intervention_gc_28d8bf2edc192d4c_02",
+            "determinacy_intervention_gc_67bcfeedfa77f954_02",
+            "unchanged_rescue_gc_4a4c9d34c1b5bce4_01",
+            "unchanged_rescue_gc_4a4c9d34c1b5bce4_02",
+            "unchanged_rescue_gc_8a330fc9e496e359_02",
+            "unchanged_rescue_gc_d14f05acb53845b9_02",
+            "unchanged_rescue_gc_db71873bec316091_01"
+          ]
+        },
+        "live_role_more": {
+          "count": 15,
+          "fraction": 0.132743363,
+          "item_ids": [
+            "candidate_gc_172c3f1039296750_01",
+            "candidate_gc_19ed2b72505b3a96_01",
+            "candidate_gc_4634bf1b005f7724_03",
+            "candidate_gc_483f3ac117f331a7_02",
+            "candidate_gc_63a057f3a47e95b1_03",
+            "candidate_gc_7224db1e1a3bbebd_03",
+            "candidate_gc_809d40d141731b61_02",
+            "candidate_gc_9e9b4cb1a49adcac_02",
+            "candidate_gc_a7789cd4faa9d95a_01",
+            "candidate_gc_a7789cd4faa9d95a_03",
+            "candidate_gc_e5bdd8211eed997b_03",
+            "candidate_gc_f6431bc7f8a16c1b_02",
+            "unchanged_rescue_gc_16d9f6e33f0517ec_01",
+            "unchanged_rescue_gc_9b8833161ce61d83_01",
+            "unchanged_rescue_gc_bdf8215fea798df6_02"
+          ]
+        },
+        "strict_more": {
+          "count": 32,
+          "fraction": 0.283185841,
+          "item_ids": [
+            "candidate_gc_0397fa37f2228649_01",
+            "candidate_gc_17fcb3b3c0156c98_03",
+            "candidate_gc_3ac515345a227486_03",
+            "candidate_gc_44ff4acdb263024b_02",
+            "candidate_gc_4634bf1b005f7724_01",
+            "candidate_gc_6a5e38b390521990_03",
+            "candidate_gc_70772a95583e5587_02",
+            "candidate_gc_832cfb85e1f965ed_02",
+            "candidate_gc_8b7e8b31b496e102_02",
+            "candidate_gc_90b9229122fa55d6_02",
+            "candidate_gc_927e9714cc21a97d_01",
+            "candidate_gc_927e9714cc21a97d_03",
+            "candidate_gc_b1516a79b61c8fd0_01",
+            "candidate_gc_b1516a79b61c8fd0_03",
+            "candidate_gc_b55bebc82e7087e7_02",
+            "candidate_gc_b55bebc82e7087e7_03",
+            "candidate_gc_bba42336e267985f_01",
+            "candidate_gc_c2ed1b09f0bb32d4_02",
+            "candidate_gc_dfd385cd88abc20f_02",
+            "candidate_gc_e730dbce7b036961_03",
+            "cue_bounded_imperative_gc_bb4f472f992ab76b_01",
+            "cue_bounded_imperative_gc_bb4f472f992ab76b_02",
+            "determinacy_intervention_gc_0ce5f41f37500df4_01",
+            "determinacy_intervention_gc_0ce5f41f37500df4_02",
+            "determinacy_intervention_gc_2924f6e63e1c1da2_02",
+            "determinacy_intervention_gc_a94168b2255fe062_01",
+            "determinacy_intervention_gc_a94168b2255fe062_02",
+            "determinacy_intervention_gc_bdf25ed4941e5de3_01",
+            "determinacy_intervention_gc_bdf25ed4941e5de3_02",
+            "packaging_correction_determinacy_intervention_gc_019f7fb10012b606_01",
+            "unchanged_rescue_gc_fac1ce90011b677c_02",
+            "unchanged_rescue_gc_fb92e9307e236d8c_02"
+          ]
+        }
+      },
+      "platform_product": {
+        "exact": {
+          "count": 66,
+          "fraction": 0.584070796,
+          "item_ids": [
+            "candidate_gc_0397fa37f2228649_02",
+            "candidate_gc_08d90a35b669ed28_02",
+            "candidate_gc_0bbfaece19d0255d_03",
+            "candidate_gc_172c3f1039296750_01",
+            "candidate_gc_19656e31c58c2c07_01",
+            "candidate_gc_19656e31c58c2c07_02",
+            "candidate_gc_19ed2b72505b3a96_01",
+            "candidate_gc_19ed2b72505b3a96_02",
+            "candidate_gc_2b730d0e1d9443b7_01",
+            "candidate_gc_2b730d0e1d9443b7_03",
+            "candidate_gc_2d6eb4f93cba4c6b_03",
+            "candidate_gc_2f1bd922c732c078_03",
+            "candidate_gc_325e05b06bb38886_01",
+            "candidate_gc_325e05b06bb38886_02",
+            "candidate_gc_3aaf5191d5f45601_02",
+            "candidate_gc_44ff4acdb263024b_01",
+            "candidate_gc_4601bed02c004e37_01",
+            "candidate_gc_4601bed02c004e37_03",
+            "candidate_gc_4777747f8b0a6b46_01",
+            "candidate_gc_483f3ac117f331a7_02",
+            "candidate_gc_4a2ccf1526ca832c_01",
+            "candidate_gc_4ad408e9b8193c7c_02",
+            "candidate_gc_4ad408e9b8193c7c_03",
+            "candidate_gc_63a057f3a47e95b1_03",
+            "candidate_gc_6a255aa977e4289a_01",
+            "candidate_gc_6a255aa977e4289a_02",
+            "candidate_gc_6a5e38b390521990_02",
+            "candidate_gc_7224db1e1a3bbebd_01",
+            "candidate_gc_7ea73f7f16fe2684_01",
+            "candidate_gc_809d40d141731b61_02",
+            "candidate_gc_8b7e8b31b496e102_01",
+            "candidate_gc_90b9229122fa55d6_01",
+            "candidate_gc_9d70af80c0843115_01",
+            "candidate_gc_9e9b4cb1a49adcac_01",
+            "candidate_gc_9e9b4cb1a49adcac_02",
+            "candidate_gc_a0fe7953b9fffca8_02",
+            "candidate_gc_a0fe7953b9fffca8_03",
+            "candidate_gc_a7789cd4faa9d95a_01",
+            "candidate_gc_a7789cd4faa9d95a_03",
+            "candidate_gc_b1516a79b61c8fd0_01",
+            "candidate_gc_b798d2e32a62c25c_03",
+            "candidate_gc_b81e4f2e78894945_01",
+            "candidate_gc_bea554636af1b127_01",
+            "candidate_gc_bea554636af1b127_03",
+            "candidate_gc_c0167d1a83f95500_01",
+            "candidate_gc_ca719d192c20c030_01",
+            "candidate_gc_ca719d192c20c030_03",
+            "candidate_gc_d15de8b5658bd6a5_01",
+            "candidate_gc_d15de8b5658bd6a5_03",
+            "candidate_gc_d2c20fe6a8269c51_01",
+            "candidate_gc_d2c20fe6a8269c51_03",
+            "candidate_gc_dfd385cd88abc20f_01",
+            "candidate_gc_dfd385cd88abc20f_02",
+            "candidate_gc_e730dbce7b036961_01",
+            "candidate_gc_e7fef77abc10b5ba_01",
+            "candidate_gc_e7fef77abc10b5ba_02",
+            "candidate_gc_edcc8d38860ff41d_01",
+            "candidate_gc_edcc8d38860ff41d_02",
+            "candidate_gc_f86ecd83135f0b52_02",
+            "candidate_gc_fcb801c76c95c7bf_01",
+            "candidate_gc_ffa50061bcce266c_01",
+            "cue_bounded_imperative_gc_04a854582c08aa84_01",
+            "determinacy_intervention_gc_67bcfeedfa77f954_02",
+            "unchanged_rescue_gc_4a4c9d34c1b5bce4_01",
+            "unchanged_rescue_gc_4a4c9d34c1b5bce4_02",
+            "unchanged_rescue_gc_db71873bec316091_01"
+          ]
+        },
+        "live_role_more": {
+          "count": 12,
+          "fraction": 0.10619469,
+          "item_ids": [
+            "candidate_gc_4634bf1b005f7724_03",
+            "candidate_gc_7224db1e1a3bbebd_03",
+            "candidate_gc_b1516a79b61c8fd0_03",
+            "candidate_gc_ba3d77af90f26ab2_03",
+            "candidate_gc_c2cf343c43ce329d_02",
+            "candidate_gc_c2cf343c43ce329d_03",
+            "candidate_gc_e5bdd8211eed997b_03",
+            "candidate_gc_f6431bc7f8a16c1b_02",
+            "candidate_gc_fcb801c76c95c7bf_03",
+            "unchanged_rescue_gc_16d9f6e33f0517ec_01",
+            "unchanged_rescue_gc_9b8833161ce61d83_01",
+            "unchanged_rescue_gc_bdf8215fea798df6_02"
+          ]
+        },
+        "strict_more": {
+          "count": 35,
+          "fraction": 0.309734513,
+          "item_ids": [
+            "candidate_gc_0397fa37f2228649_01",
+            "candidate_gc_17fcb3b3c0156c98_03",
+            "candidate_gc_3ac515345a227486_03",
+            "candidate_gc_44ff4acdb263024b_02",
+            "candidate_gc_4634bf1b005f7724_01",
+            "candidate_gc_6a5e38b390521990_03",
+            "candidate_gc_70772a95583e5587_02",
+            "candidate_gc_7ea73f7f16fe2684_02",
+            "candidate_gc_832cfb85e1f965ed_02",
+            "candidate_gc_8b7e8b31b496e102_02",
+            "candidate_gc_90b9229122fa55d6_02",
+            "candidate_gc_927e9714cc21a97d_01",
+            "candidate_gc_927e9714cc21a97d_03",
+            "candidate_gc_b55bebc82e7087e7_02",
+            "candidate_gc_b55bebc82e7087e7_03",
+            "candidate_gc_bba42336e267985f_01",
+            "candidate_gc_c2ed1b09f0bb32d4_02",
+            "candidate_gc_c2ed1b09f0bb32d4_03",
+            "candidate_gc_e730dbce7b036961_03",
+            "cue_bounded_imperative_gc_04a854582c08aa84_02",
+            "cue_bounded_imperative_gc_bb4f472f992ab76b_01",
+            "cue_bounded_imperative_gc_bb4f472f992ab76b_02",
+            "determinacy_intervention_gc_0ce5f41f37500df4_01",
+            "determinacy_intervention_gc_0ce5f41f37500df4_02",
+            "determinacy_intervention_gc_28d8bf2edc192d4c_02",
+            "determinacy_intervention_gc_2924f6e63e1c1da2_02",
+            "determinacy_intervention_gc_a94168b2255fe062_01",
+            "determinacy_intervention_gc_a94168b2255fe062_02",
+            "determinacy_intervention_gc_bdf25ed4941e5de3_01",
+            "determinacy_intervention_gc_bdf25ed4941e5de3_02",
+            "packaging_correction_determinacy_intervention_gc_019f7fb10012b606_01",
+            "unchanged_rescue_gc_8a330fc9e496e359_02",
+            "unchanged_rescue_gc_d14f05acb53845b9_02",
+            "unchanged_rescue_gc_fac1ce90011b677c_02",
+            "unchanged_rescue_gc_fb92e9307e236d8c_02"
+          ]
+        }
+      },
+      "teacher": {
+        "exact": {
+          "count": 66,
+          "fraction": 0.584070796,
+          "item_ids": [
+            "candidate_gc_0397fa37f2228649_01",
+            "candidate_gc_0397fa37f2228649_02",
+            "candidate_gc_08d90a35b669ed28_02",
+            "candidate_gc_0bbfaece19d0255d_03",
+            "candidate_gc_172c3f1039296750_01",
+            "candidate_gc_19656e31c58c2c07_01",
+            "candidate_gc_19656e31c58c2c07_02",
+            "candidate_gc_19ed2b72505b3a96_02",
+            "candidate_gc_2b730d0e1d9443b7_01",
+            "candidate_gc_2b730d0e1d9443b7_03",
+            "candidate_gc_2d6eb4f93cba4c6b_03",
+            "candidate_gc_2f1bd922c732c078_03",
+            "candidate_gc_325e05b06bb38886_01",
+            "candidate_gc_325e05b06bb38886_02",
+            "candidate_gc_3aaf5191d5f45601_02",
+            "candidate_gc_44ff4acdb263024b_01",
+            "candidate_gc_4601bed02c004e37_01",
+            "candidate_gc_4601bed02c004e37_03",
+            "candidate_gc_4777747f8b0a6b46_01",
+            "candidate_gc_4a2ccf1526ca832c_01",
+            "candidate_gc_4ad408e9b8193c7c_02",
+            "candidate_gc_6a255aa977e4289a_01",
+            "candidate_gc_6a255aa977e4289a_02",
+            "candidate_gc_6a5e38b390521990_02",
+            "candidate_gc_7224db1e1a3bbebd_01",
+            "candidate_gc_7224db1e1a3bbebd_03",
+            "candidate_gc_7ea73f7f16fe2684_01",
+            "candidate_gc_809d40d141731b61_02",
+            "candidate_gc_8b7e8b31b496e102_01",
+            "candidate_gc_90b9229122fa55d6_01",
+            "candidate_gc_927e9714cc21a97d_01",
+            "candidate_gc_9d70af80c0843115_01",
+            "candidate_gc_9e9b4cb1a49adcac_01",
+            "candidate_gc_9e9b4cb1a49adcac_02",
+            "candidate_gc_a0fe7953b9fffca8_02",
+            "candidate_gc_a0fe7953b9fffca8_03",
+            "candidate_gc_a7789cd4faa9d95a_01",
+            "candidate_gc_a7789cd4faa9d95a_03",
+            "candidate_gc_b798d2e32a62c25c_03",
+            "candidate_gc_b81e4f2e78894945_01",
+            "candidate_gc_ba3d77af90f26ab2_03",
+            "candidate_gc_bea554636af1b127_01",
+            "candidate_gc_bea554636af1b127_03",
+            "candidate_gc_c2cf343c43ce329d_02",
+            "candidate_gc_c2cf343c43ce329d_03",
+            "candidate_gc_c2ed1b09f0bb32d4_03",
+            "candidate_gc_d15de8b5658bd6a5_01",
+            "candidate_gc_d15de8b5658bd6a5_03",
+            "candidate_gc_d2c20fe6a8269c51_01",
+            "candidate_gc_d2c20fe6a8269c51_03",
+            "candidate_gc_dfd385cd88abc20f_01",
+            "candidate_gc_e5bdd8211eed997b_03",
+            "candidate_gc_e7fef77abc10b5ba_01",
+            "candidate_gc_e7fef77abc10b5ba_02",
+            "candidate_gc_edcc8d38860ff41d_01",
+            "candidate_gc_edcc8d38860ff41d_02",
+            "candidate_gc_f86ecd83135f0b52_02",
+            "candidate_gc_fcb801c76c95c7bf_01",
+            "candidate_gc_fcb801c76c95c7bf_03",
+            "candidate_gc_ffa50061bcce266c_01",
+            "cue_bounded_imperative_gc_04a854582c08aa84_01",
+            "unchanged_rescue_gc_16d9f6e33f0517ec_01",
+            "unchanged_rescue_gc_4a4c9d34c1b5bce4_01",
+            "unchanged_rescue_gc_4a4c9d34c1b5bce4_02",
+            "unchanged_rescue_gc_bdf8215fea798df6_02",
+            "unchanged_rescue_gc_db71873bec316091_01"
+          ]
+        },
+        "live_role_more": {
+          "count": 11,
+          "fraction": 0.097345133,
+          "item_ids": [
+            "candidate_gc_19ed2b72505b3a96_01",
+            "candidate_gc_4634bf1b005f7724_03",
+            "candidate_gc_483f3ac117f331a7_02",
+            "candidate_gc_4ad408e9b8193c7c_03",
+            "candidate_gc_63a057f3a47e95b1_03",
+            "candidate_gc_c0167d1a83f95500_01",
+            "candidate_gc_ca719d192c20c030_01",
+            "candidate_gc_ca719d192c20c030_03",
+            "candidate_gc_e730dbce7b036961_01",
+            "candidate_gc_f6431bc7f8a16c1b_02",
+            "unchanged_rescue_gc_9b8833161ce61d83_01"
+          ]
+        },
+        "strict_more": {
+          "count": 36,
+          "fraction": 0.318584071,
+          "item_ids": [
+            "candidate_gc_17fcb3b3c0156c98_03",
+            "candidate_gc_3ac515345a227486_03",
+            "candidate_gc_44ff4acdb263024b_02",
+            "candidate_gc_4634bf1b005f7724_01",
+            "candidate_gc_6a5e38b390521990_03",
+            "candidate_gc_70772a95583e5587_02",
+            "candidate_gc_7ea73f7f16fe2684_02",
+            "candidate_gc_832cfb85e1f965ed_02",
+            "candidate_gc_8b7e8b31b496e102_02",
+            "candidate_gc_90b9229122fa55d6_02",
+            "candidate_gc_927e9714cc21a97d_03",
+            "candidate_gc_b1516a79b61c8fd0_01",
+            "candidate_gc_b1516a79b61c8fd0_03",
+            "candidate_gc_b55bebc82e7087e7_02",
+            "candidate_gc_b55bebc82e7087e7_03",
+            "candidate_gc_bba42336e267985f_01",
+            "candidate_gc_c2ed1b09f0bb32d4_02",
+            "candidate_gc_dfd385cd88abc20f_02",
+            "candidate_gc_e730dbce7b036961_03",
+            "cue_bounded_imperative_gc_04a854582c08aa84_02",
+            "cue_bounded_imperative_gc_bb4f472f992ab76b_01",
+            "cue_bounded_imperative_gc_bb4f472f992ab76b_02",
+            "determinacy_intervention_gc_0ce5f41f37500df4_01",
+            "determinacy_intervention_gc_0ce5f41f37500df4_02",
+            "determinacy_intervention_gc_28d8bf2edc192d4c_02",
+            "determinacy_intervention_gc_2924f6e63e1c1da2_02",
+            "determinacy_intervention_gc_67bcfeedfa77f954_02",
+            "determinacy_intervention_gc_a94168b2255fe062_01",
+            "determinacy_intervention_gc_a94168b2255fe062_02",
+            "determinacy_intervention_gc_bdf25ed4941e5de3_01",
+            "determinacy_intervention_gc_bdf25ed4941e5de3_02",
+            "packaging_correction_determinacy_intervention_gc_019f7fb10012b606_01",
+            "unchanged_rescue_gc_8a330fc9e496e359_02",
+            "unchanged_rescue_gc_d14f05acb53845b9_02",
+            "unchanged_rescue_gc_fac1ce90011b677c_02",
+            "unchanged_rescue_gc_fb92e9307e236d8c_02"
+          ]
+        }
+      }
+    }
+  },
+  "status": "DETERMINISTIC_CROSS_AUDIT_SYNTHESIS_COMPLETE"
+}

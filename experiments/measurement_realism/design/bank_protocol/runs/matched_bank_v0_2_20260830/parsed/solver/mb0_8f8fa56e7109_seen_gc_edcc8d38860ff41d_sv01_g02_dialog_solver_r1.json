@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "Both questions ask about Maya's ability.",
+  "batch_id": "solver_r02_rep1_dialogue_completion_b02",
+  "instruction_understanding": "Ask whether Maya is able to carry the boxes.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g02_dialog",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Is Maya able to carry the boxes?"
+  ],
+  "reasonable_unkeyed_responses": [
+    "Is Maya able to carry the boxes?"
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g02_dialog_solver_r1",
+  "submitted_response": "Can Maya carry the boxes?",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

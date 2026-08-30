@@ -1,0 +1,17 @@
+{
+  "ambiguity_explanation": "",
+  "batch_id": "solver_r01_rep1_dialogue_completion_b01",
+  "instruction_understanding": "Express uncertainty that the delivery will arrive this afternoon using might and arrive.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01_g01_dialog",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": false,
+  "other_reasonable_responses": [],
+  "reasonable_unkeyed_responses": [],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv01_g01_dialog_solver_r1",
+  "submitted_response": "might arrive",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

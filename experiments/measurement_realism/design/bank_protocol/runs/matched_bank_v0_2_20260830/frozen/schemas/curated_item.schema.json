@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "measurement-realism-curated-item-v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "item_id", "family_id", "cell_id", "semantic_variant_index", "format",
+    "response_mode", "instruction", "context", "format_payload", "scoring",
+    "canonical_target_sentence", "semantic_frame", "grammar_regime",
+    "acquisition_updates", "generator_kc_ids", "q_row", "validation_status",
+    "provenance"
+  ],
+  "properties": {
+    "item_id": {"type": "string", "minLength": 1},
+    "family_id": {"type": "string", "minLength": 1},
+    "cell_id": {"type": "string", "pattern": "^gc_[0-9a-f]{16}$"},
+    "semantic_variant_index": {"type": "integer", "minimum": 1, "maximum": 2},
+    "format": {"enum": ["constrained_cloze", "dialogue_completion", "multiple_choice", "sentence_transformation"]},
+    "response_mode": {"enum": ["short_text", "single_choice", "full_sentence"]},
+    "instruction": {"type": "string", "minLength": 1},
+    "context": {"type": "string"},
+    "format_payload": {"type": "object"},
+    "scoring": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target_response", "accepted_responses", "completed_target", "correct_choice_id"],
+      "properties": {
+        "target_response": {"type": "string", "minLength": 1},
+        "accepted_responses": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "completed_target": {"type": "string", "minLength": 2},
+        "correct_choice_id": {"type": ["string", "null"], "enum": ["A", "B", "C", "D", null]}
+      }
+    },
+    "canonical_target_sentence": {"type": "string", "minLength": 2},
+    "semantic_frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["situation_summary", "communicative_goal", "participants", "time_anchor", "main_verb_lemma", "object_head"],
+      "properties": {
+        "situation_summary": {"type": "string", "minLength": 2},
+        "communicative_goal": {"type": "string", "minLength": 2},
+        "participants": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "time_anchor": {"type": "string", "minLength": 1},
+        "main_verb_lemma": {"type": "string", "minLength": 1},
+        "object_head": {"type": ["string", "null"]}
+      }
+    },
+    "grammar_regime": {"enum": ["seen", "unseen_combination", "unseen_value"]},
+    "acquisition_updates": {"type": "boolean"},
+    "generator_kc_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "q_row": {"type": "array", "minItems": 18, "maxItems": 18, "items": {"enum": [0, 1]}},
+    "validation_status": {"const": "hard_gates_passed"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["protocol_id", "source_candidate_id", "source_candidate_item_id", "selected_candidate_round", "selection_rule"],
+      "properties": {
+        "protocol_id": {"const": "measurement_realism_matched_bank_v0"},
+        "source_candidate_id": {"type": "string", "minLength": 1},
+        "source_candidate_item_id": {"type": "string", "minLength": 1},
+        "selected_candidate_round": {"type": "integer", "minimum": 1, "maximum": 3},
+        "selection_rule": {"const": "earliest_whole_family_passing_all_gates"}
+      }
+    }
+  }
+}

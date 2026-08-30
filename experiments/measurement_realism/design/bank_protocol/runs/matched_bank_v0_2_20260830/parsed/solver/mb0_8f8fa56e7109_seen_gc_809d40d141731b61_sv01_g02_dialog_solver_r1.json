@@ -1,0 +1,19 @@
+{
+  "ambiguity_explanation": "Both must and should can express advice, with a different degree of strength.",
+  "batch_id": "solver_r02_rep1_dialogue_completion_b01",
+  "instruction_understanding": "Complete Sam's advice using the correct form of charge.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv01_g02_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "should charge her phone"
+  ],
+  "reasonable_unkeyed_responses": [],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv01_g02_dialog_solver_r1",
+  "submitted_response": "must charge her phone",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

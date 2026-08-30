@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "May I borrow this charger?",
+  "cell_id": "gc_325e05b06bb38886",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01_g01_cloze",
+      "context": "You are visiting a library. A charger is available at the desk, and you want the librarian's permission to borrow it. Cue: may / I / borrow / this charger",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]]?",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the question using all the cue words.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "May I borrow this charger"
+        ],
+        "completed_target": "May I borrow this charger?",
+        "correct_choice_id": null,
+        "target_response": "May I borrow this charger"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01_g01_dialog",
+      "context": "A library visitor wants permission to borrow a charger from the desk.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Visitor: I need to charge my phone.",
+          "Librarian: This charger is available."
+        ],
+        "incomplete_turn_template": "Visitor: [[RESPONSE]]?",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the visitor's question.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "May I borrow this charger"
+        ],
+        "completed_target": "May I borrow this charger?",
+        "correct_choice_id": null,
+        "target_response": "May I borrow this charger"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01_g01_mcq",
+      "context": "A charger is available at the library desk. The visitor wants the librarian's permission to borrow it now.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses declarative subject–modal order instead of finite-operator inversion for a polar question.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses an inflected verb instead of the base-form complement after MAY.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Adds DO-support instead of inverting MAY to form the polar question.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "May I borrow this charger?"
+          },
+          {
+            "id": "B",
+            "text": "I may borrow this charger?"
+          },
+          {
+            "id": "C",
+            "text": "May I borrows this charger?"
+          },
+          {
+            "id": "D",
+            "text": "Do I may borrow this charger?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "What should the visitor ask?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the best question for the visitor to ask.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "May I borrow this charger?",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01_g01_xform",
+      "context": "A charger is available at the library desk, and you want to borrow it now.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "I want to borrow this charger.",
+        "stem": null,
+        "transformation_cue": "may / I / borrow / this charger"
+      },
+      "instruction": "Rewrite the statement as a polite question asking the librarian for permission. Use the cue.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "May I borrow this charger?"
+        ],
+        "completed_target": "May I borrow this charger?",
+        "correct_choice_id": null,
+        "target_response": "May I borrow this charger?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Ask politely for permission to borrow the available charger.",
+    "main_verb_lemma": "borrow",
+    "object_head": "charger",
+    "participants": [
+      "library visitor",
+      "librarian"
+    ],
+    "situation_summary": "A library visitor sees an available charger and asks the librarian for permission to borrow it.",
+    "time_anchor": "now"
+  },
+  "semantic_variant_index": 1
+}

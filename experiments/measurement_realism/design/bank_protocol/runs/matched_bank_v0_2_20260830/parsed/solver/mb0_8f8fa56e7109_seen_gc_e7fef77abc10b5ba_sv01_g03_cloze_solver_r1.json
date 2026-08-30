@@ -1,0 +1,23 @@
+{
+  "ambiguity_explanation": "The instruction refers to a verb in brackets, but no bracketed verb is shown. Several verbs fit the context and sentence.",
+  "batch_id": "solver_r03_rep1_constrained_cloze_b02",
+  "instruction_understanding": "Complete the sentence about the hypothetical result without the taxi.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g03_cloze",
+  "keyed_match": true,
+  "major_ambiguity": true,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "wouldn't have arrived at",
+    "wouldn't have got to"
+  ],
+  "reasonable_unkeyed_responses": [
+    "wouldn't have arrived at",
+    "wouldn't have got to"
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g03_cloze_solver_r1",
+  "submitted_response": "wouldn't have reached",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

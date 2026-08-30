@@ -1,0 +1,195 @@
+{
+  "study_id": "measurement_realism_kc_induction_v1",
+  "status": "ANALYSED_AFTER_PROPOSALS_FROZEN",
+  "evidence_boundary": {
+    "automated_proposers": 3,
+    "human_or_expert_gold": false,
+    "interpretation": "Activation stability and structural diagnostics only; no ontology is selected."
+  },
+  "replicates": [
+    {
+      "replicate_id": "independent_01",
+      "raw_hypotheses": 18,
+      "unique_activation_hypotheses": 17,
+      "duplicate_activation_groups": [
+        {
+          "signature_sha256": "d2c3e0299501c80fb245103468e7b15dad46419cea53394e61fe445526285c13",
+          "proposal_ids": [
+            "p06",
+            "p18"
+          ]
+        }
+      ],
+      "raw_q_rank": 17,
+      "unique_q_rank": 17,
+      "full_column_rank_after_canonicalisation": true,
+      "support_cells": {
+        "minimum": 1,
+        "median": 9.0,
+        "maximum": 43
+      },
+      "exact_kstar_activation_matches": [
+        {
+          "proposal_id": "p02",
+          "generator_kc_id": "gkc_negation"
+        },
+        {
+          "proposal_id": "p06",
+          "generator_kc_id": "gkc_be_passive"
+        },
+        {
+          "proposal_id": "p07",
+          "generator_kc_id": "gkc_polar_question"
+        },
+        {
+          "proposal_id": "p08",
+          "generator_kc_id": "gkc_non_subject_wh_question"
+        },
+        {
+          "proposal_id": "p09",
+          "generator_kc_id": "gkc_imperative"
+        },
+        {
+          "proposal_id": "p18",
+          "generator_kc_id": "gkc_be_passive"
+        }
+      ],
+      "exact_kstar_match_count": 5,
+      "ontology_level_limitations": [
+        "GrammarCells encode only coarse structural features; they do not establish the response operations, prompts, or error types that make a construction measurable.",
+        "Modal identity is not modal function, so proposed modal families should be tested against item semantics and response evidence rather than treated as cognitive truth.",
+        "The universe has sparse support for some combinations, especially wh-questions and modal perfect-progressives; an item bank must provide independent contrasts before retaining such hypotheses.",
+        "Activation overlap is intentional and compositional, but the GrammarCell schema alone cannot determine whether overlapping hypotheses are empirically separable or whether one subsumes another.",
+        "Source-support counts indicate resource coverage, not the number, quality, or independence of eventual measurement items."
+      ]
+    },
+    {
+      "replicate_id": "independent_02",
+      "raw_hypotheses": 18,
+      "unique_activation_hypotheses": 18,
+      "duplicate_activation_groups": [],
+      "raw_q_rank": 18,
+      "unique_q_rank": 18,
+      "full_column_rank_after_canonicalisation": true,
+      "support_cells": {
+        "minimum": 1,
+        "median": 5.0,
+        "maximum": 43
+      },
+      "exact_kstar_activation_matches": [
+        {
+          "proposal_id": "p07",
+          "generator_kc_id": "gkc_be_passive"
+        },
+        {
+          "proposal_id": "p08",
+          "generator_kc_id": "gkc_polar_question"
+        },
+        {
+          "proposal_id": "p09",
+          "generator_kc_id": "gkc_non_subject_wh_question"
+        },
+        {
+          "proposal_id": "p10",
+          "generator_kc_id": "gkc_imperative"
+        }
+      ],
+      "exact_kstar_match_count": 4,
+      "ontology_level_limitations": [
+        "GrammarCells encode constructional labels but not lexical material, person/number agreement, auxiliary order, morphology, word order, or task demands; these are needed to determine what an item actually measures.",
+        "Modal identity alone does not encode modal function such as ability, permission, prediction, obligation, or epistemic inference, so no semantic modal hypotheses are warranted here.",
+        "Source-support counts indicate resource coverage, not the number, quality, independence, or diagnosticity of eventual measurement items.",
+        "The schema cannot establish whether interactions such as modal perfect or perfect passive are independent learner knowledge units rather than compositions of lower-level operations.",
+        "The absence or sparsity of some construction combinations limits claims about transfer, discriminability, and support for a final generator-KC inventory."
+      ]
+    },
+    {
+      "replicate_id": "independent_03",
+      "raw_hypotheses": 18,
+      "unique_activation_hypotheses": 18,
+      "duplicate_activation_groups": [],
+      "raw_q_rank": 17,
+      "unique_q_rank": 17,
+      "full_column_rank_after_canonicalisation": false,
+      "support_cells": {
+        "minimum": 1,
+        "median": 9.5,
+        "maximum": 43
+      },
+      "exact_kstar_activation_matches": [
+        {
+          "proposal_id": "p01",
+          "generator_kc_id": "gkc_finite_present"
+        },
+        {
+          "proposal_id": "p02",
+          "generator_kc_id": "gkc_finite_past"
+        },
+        {
+          "proposal_id": "p06",
+          "generator_kc_id": "gkc_be_passive"
+        },
+        {
+          "proposal_id": "p07",
+          "generator_kc_id": "gkc_negation"
+        },
+        {
+          "proposal_id": "p08",
+          "generator_kc_id": "gkc_polar_question"
+        },
+        {
+          "proposal_id": "p09",
+          "generator_kc_id": "gkc_non_subject_wh_question"
+        },
+        {
+          "proposal_id": "p10",
+          "generator_kc_id": "gkc_imperative"
+        }
+      ],
+      "exact_kstar_match_count": 7,
+      "ontology_level_limitations": [
+        "The GrammarCell schema encodes structural categories but not lexical morphology, agreement, auxiliary realization, word order, task format, or learner errors; it cannot by itself establish that any proposal is psychologically atomic.",
+        "Modal identity is available, but modal function, pragmatic force, register, and context are absent. The proposals therefore avoid treating individual modal meanings as validated KCs.",
+        "Sparse or absent cells limit evidence for independent measurement and identifiability. Item-bank contrasts and learner-response studies would be needed to decide whether overlapping hypotheses can be separated.",
+        "The schema does not encode instructional sequencing or prerequisites. Any prerequisite relation would require longitudinal learning evidence or an independently declared curricular rationale."
+      ]
+    }
+  ],
+  "pairwise_activation_set_agreement": [
+    {
+      "left": "independent_01",
+      "right": "independent_02",
+      "shared_activation_hypotheses": 11,
+      "union_activation_hypotheses": 24,
+      "jaccard": 0.4583333333333333
+    },
+    {
+      "left": "independent_01",
+      "right": "independent_03",
+      "shared_activation_hypotheses": 10,
+      "union_activation_hypotheses": 25,
+      "jaccard": 0.4
+    },
+    {
+      "left": "independent_02",
+      "right": "independent_03",
+      "shared_activation_hypotheses": 11,
+      "union_activation_hypotheses": 25,
+      "jaccard": 0.44
+    }
+  ],
+  "activation_hypotheses_shared_by_all_replicates": 9,
+  "activation_hypotheses_in_union": 30,
+  "frozen_kstar_columns": 18,
+  "kstar_columns_recovered_by_any_exact_activation": 7,
+  "methodological_conclusion_rule": {
+    "high_agreement": "Convergence by activation supports reproducibility, not human truth.",
+    "low_agreement": "Divergence demonstrates ontology underdetermination from GrammarCells alone.",
+    "rank": "Rank is reported as geometry and never used as a semantic selection score."
+  },
+  "activation_ledger": {
+    "path": "activation_ledger.jsonl",
+    "rows": 54,
+    "sha256": "d2cbcc1faf1cbe73d01b10afd7056f44881e26a109ef810d6b8729a0b2d9f7a5"
+  }
+}

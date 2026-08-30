@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "The article can vary while preserving the meaning.",
+  "batch_id": "solver_r03_rep2_dialogue_completion_b01",
+  "instruction_understanding": "Complete Leo's reply to say that Maya had an earlier-bus option.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g03_dialog",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "could have taken an earlier bus"
+  ],
+  "reasonable_unkeyed_responses": [
+    "could have taken an earlier bus"
+  ],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g03_dialog_solver_r2",
+  "submitted_response": "could have taken the earlier bus",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

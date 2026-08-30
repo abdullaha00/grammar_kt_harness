@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r01_measurement_b02",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g01",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02",
+  "family_judgments": [
+    {
+      "blocking": true,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "Open formats and MCQ admit simple-past passive, while the transformation expressly requires a past-perfect interpretation.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": true,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "The transformation measures the four-KC construction, but other formats can be answered correctly with only passive negation; MCQ even presents that alternative.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "All formats concern the room remaining uncleaned before client arrival.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": true,
+          "criterion": "active_kc_evidence",
+          "evidence": "The keyed form targets all declared KCs, but solver replicate 1 supplied reasonable “wasn't cleaned,” which does not require perfect HAVE.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The intended response itself contains only the declared past-perfect passive negation operations.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "“Wasn't cleaned” accurately describes a dirty room before arrival while avoiding the perfect construction.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "The context does not require past perfect rather than simple past passive; both are grammatical and contextually plausible.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The reasonable unkeyed “wasn't cleaned” is absent from the accepted responses, so an otherwise defensible answer is rejected.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The meeting-room context and clean vocabulary are not unduly demanding.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g01_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": true,
+          "criterion": "active_kc_evidence",
+          "evidence": "The open reply allows “wasn't cleaned,” so mastery of perfect HAVE is not necessary for success.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "No major undeclared grammar is intrinsically required by the intended completion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Simple-past passive negation is a target-avoiding but natural response to the dirty-room explanation.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "“The conference room wasn't cleaned before the clients arrived” is a defensible completion not excluded by the context.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "This defensible simple-past alternative is unaccepted; accepting only HAD forms makes the omission blocking.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The short dialogue provides direct and familiar contextual support.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g01_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "D exhibits the full target, but the obvious option errors enable recognition by elimination.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "Options focus on passive BE, perfect HAVE, and negation, matching declared KCs.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Option B, “was not cleaned before the clients arrived,” is grammatical and accurately describes the context, so it is a second defensible answer that avoids perfect HAVE.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "B and D can both state that cleaning had not occurred by the stated time; the stem's wording does not make D uniquely correct.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The reasonable offered alternative B is not keyed. Because this is MCQ, omission creates two defensible options and is blocking.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The situation is explicit; the flaw is grammatical ambiguity rather than vocabulary.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g01_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The instruction to begin with the room and state that cleaning had not happened calls for the negative past-perfect passive.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The task also converts an active nobody-cleaned proposition into passive form and combines propositions.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The explicit requirement that the cleaning had not happened by then makes the perfect target necessary.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The mandated start, lexical verb, time clause, and past-perfect meaning sufficiently fix the intended sentence.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Full and contracted target negatives are accepted; no solver-proposed unkeyed alternative applies here.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Active-to-passive recasting imposes extra transformation burden.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g01_xform"
+    }
+  ],
+  "overall_accept": false,
+  "role": "measurement",
+  "summary": "Reject: simple-past passive alternatives are reasonable in both open formats and the MCQ, leaving the past-perfect KC neither necessary nor uniquely measurable."
+}

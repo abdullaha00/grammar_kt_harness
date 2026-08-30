@@ -1,0 +1,160 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "The package had not been delivered before the office closed.",
+  "cell_id": "gc_9d70af80c0843115",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g03_cloze",
+      "context": "The office closed for the day, but the expected package was still missing.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "The package [[RESPONSE]] before the office closed.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence with the correct form of “deliver.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "had not been delivered",
+          "hadn't been delivered"
+        ],
+        "completed_target": "The package had not been delivered before the office closed.",
+        "correct_choice_id": null,
+        "target_response": "had not been delivered"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g03_dialog",
+      "context": "Two colleagues are checking what happened to an expected package.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Leo: Did the package arrive while the office was open?",
+          "Maya: No. It was still missing when everyone left."
+        ],
+        "incomplete_turn_template": "Maya: The package [[RESPONSE]] before the office closed.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the final reply using the correct form of “deliver.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "had not been delivered",
+          "hadn't been delivered"
+        ],
+        "completed_target": "The package had not been delivered before the office closed.",
+        "correct_choice_id": null,
+        "target_response": "had not been delivered"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g03_mcq",
+      "context": "The office closed for the day while the expected package was still missing.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Omits passive BE, leaving an active perfect form with the package incorrectly acting as the deliverer.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses a negative past passive but omits the perfect construction needed to mark the earlier situation.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses the past perfect passive but omits negation, reversing whether the delivery occurred.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "The package had not been delivered before the office closed."
+          },
+          {
+            "id": "B",
+            "text": "The package had not delivered before the office closed."
+          },
+          {
+            "id": "C",
+            "text": "The package was not delivered before the office closed."
+          },
+          {
+            "id": "D",
+            "text": "The package had been delivered before the office closed."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly describes the situation?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly reports what happened.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "The package had not been delivered before the office closed.",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g03_xform",
+      "context": "The expected package was still missing at closing time.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "The office closed. The package was still undelivered.",
+        "stem": null,
+        "transformation_cue": "Begin with “The package” and use “deliver” and “before.”"
+      },
+      "instruction": "Combine the statements into one sentence. Keep the same meaning and use the cue provided.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "The package had not been delivered before the office closed.",
+          "The package hadn't been delivered before the office closed."
+        ],
+        "completed_target": "The package had not been delivered before the office closed.",
+        "correct_choice_id": null,
+        "target_response": "The package had not been delivered before the office closed."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Report that the expected delivery had not occurred by the closing time.",
+    "main_verb_lemma": "deliver",
+    "object_head": "package",
+    "participants": [
+      "courier",
+      "office staff"
+    ],
+    "situation_summary": "A package was still undelivered when an office closed for the day.",
+    "time_anchor": "before the office closed"
+  },
+  "semantic_variant_index": 1
+}

@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "generated_family.schema.json",
+  "title": "Ecological-precision continuum generated family",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "family_id",
+    "cell_id",
+    "pilot_stratum",
+    "grammar_cell",
+    "active_generator_kc_ids",
+    "q_row",
+    "shared_semantic_specification",
+    "opportunities",
+    "generation_notes"
+  ],
+  "properties": {
+    "schema_version": {"const": "dialogue_continuum_family_v1"},
+    "family_id": {"type": "string", "minLength": 1},
+    "cell_id": {"type": "string", "pattern": "^gc_[0-9a-f]+$"},
+    "pilot_stratum": {
+      "enum": ["simple", "multi_kc", "question", "rare_complex"]
+    },
+    "grammar_cell": {
+      "type": "object",
+      "additionalProperties": {"type": "string"},
+      "minProperties": 6,
+      "maxProperties": 6
+    },
+    "active_generator_kc_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^gkc_"}
+    },
+    "q_row": {
+      "type": "array",
+      "minItems": 18,
+      "maxItems": 18,
+      "items": {"type": "integer", "enum": [0, 1]}
+    },
+    "shared_semantic_specification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scenario",
+        "entities_and_referents",
+        "lexical_head",
+        "target_proposition",
+        "intended_response_function",
+        "canonical_target_example",
+        "non_target_vocabulary_policy"
+      ],
+      "properties": {
+        "scenario": {"type": "string", "minLength": 1},
+        "entities_and_referents": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "lexical_head": {"type": "string", "minLength": 1},
+        "target_proposition": {"type": "string", "minLength": 1},
+        "intended_response_function": {"type": "string", "minLength": 1},
+        "canonical_target_example": {"type": "string", "minLength": 1},
+        "non_target_vocabulary_policy": {"type": "string", "minLength": 1}
+      }
+    },
+    "opportunities": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "opportunity_id",
+          "format",
+          "viability",
+          "instruction",
+          "context",
+          "stimulus",
+          "dialogue_history",
+          "response_mechanism",
+          "canonical_target_example",
+          "scoring_interpretation",
+          "feedback_target",
+          "opportunity_boundary",
+          "anticipated_incidental_grammar",
+          "viability_note"
+        ],
+        "properties": {
+          "opportunity_id": {"type": "string", "minLength": 1},
+          "format": {
+            "enum": [
+              "constrained_cloze",
+              "sentence_transformation",
+              "contextual_production",
+              "dialogue_completion",
+              "open_dialogue"
+            ]
+          },
+          "viability": {"enum": ["candidate", "not_viable"]},
+          "instruction": {"type": "string", "minLength": 1},
+          "context": {"type": "string"},
+          "stimulus": {"type": "string"},
+          "dialogue_history": {
+            "type": "array",
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["speaker", "text"],
+              "properties": {
+                "speaker": {"type": "string", "minLength": 1},
+                "text": {"type": "string", "minLength": 1}
+              }
+            }
+          },
+          "response_mechanism": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["type", "visible_component", "options"],
+            "properties": {
+              "type": {
+                "enum": [
+                  "typed_span",
+                  "typed_sentence",
+                  "typed_short_clause",
+                  "typed_turn",
+                  "typed_free_turn"
+                ]
+              },
+              "visible_component": {"type": "string", "minLength": 1},
+              "options": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {"type": "string"}
+              }
+            }
+          },
+          "canonical_target_example": {"type": "string", "minLength": 1},
+          "scoring_interpretation": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "accepted_responses", "normalization", "rubric"],
+            "properties": {
+              "kind": {
+                "enum": ["exhaustive_set", "bounded_variants", "interpretive_rubric"]
+              },
+              "accepted_responses": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {"type": "string"}
+              },
+              "normalization": {"type": "string", "minLength": 1},
+              "rubric": {"type": "string", "minLength": 1}
+            }
+          },
+          "feedback_target": {"type": "string", "minLength": 1},
+          "opportunity_boundary": {"type": "string", "minLength": 1},
+          "anticipated_incidental_grammar": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "viability_note": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "generation_notes": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}

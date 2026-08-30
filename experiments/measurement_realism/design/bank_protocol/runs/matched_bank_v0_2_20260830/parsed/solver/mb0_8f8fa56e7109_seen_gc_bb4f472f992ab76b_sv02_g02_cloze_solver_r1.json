@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "Both word orders are natural with this phrasal verb.",
+  "batch_id": "solver_r02_rep1_constrained_cloze_b02",
+  "instruction_understanding": "Use the given words to write Maya's instruction.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g02_cloze",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Turn the oven off."
+  ],
+  "reasonable_unkeyed_responses": [
+    "Turn the oven off."
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g02_cloze_solver_r1",
+  "submitted_response": "Turn off the oven.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

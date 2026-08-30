@@ -1,0 +1,158 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "Can Priya lift the suitcase?",
+  "cell_id": "gc_edcc8d38860ff41d",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01_cloze",
+      "context": "A suitcase is heavy, and you want to know whether Priya is able to lift it.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]]?",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the question using these words: can / Priya / lift / the suitcase.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Can Priya lift the suitcase"
+        ],
+        "completed_target": "Can Priya lift the suitcase?",
+        "correct_choice_id": null,
+        "target_response": "Can Priya lift the suitcase"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01_dialog",
+      "context": "Two friends are deciding who can move a heavy suitcase.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Nina: This suitcase is too heavy for me.",
+          "Leo: Priya is nearby. Perhaps she can help.",
+          "Nina: I don't know whether she is strong enough."
+        ],
+        "incomplete_turn_template": "Leo: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the final turn with a question.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Can Priya lift the suitcase?"
+        ],
+        "completed_target": "Can Priya lift the suitcase?",
+        "correct_choice_id": null,
+        "target_response": "Can Priya lift the suitcase?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01_mcq",
+      "context": "A suitcase is heavy. A friend wants to ask whether Priya is able to lift it.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses do-support with the modal instead of placing can before the subject.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses a third-person singular verb form instead of the base form after can.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Keeps statement word order instead of inverting can and the subject.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Does Priya can lift the suitcase?"
+          },
+          {
+            "id": "B",
+            "text": "Can Priya lift the suitcase?"
+          },
+          {
+            "id": "C",
+            "text": "Can Priya lifts the suitcase?"
+          },
+          {
+            "id": "D",
+            "text": "Priya can lift the suitcase?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which question correctly asks about Priya's ability?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the correct question.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Can Priya lift the suitcase?",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01_xform",
+      "context": "You want to ask whether Priya has the ability to move a heavy suitcase.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Priya is able to lift the suitcase.",
+        "stem": null,
+        "transformation_cue": "Use: can / Priya / lift / the suitcase"
+      },
+      "instruction": "Rewrite the statement as a yes-or-no question using the cue.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Can Priya lift the suitcase?"
+        ],
+        "completed_target": "Can Priya lift the suitcase?",
+        "correct_choice_id": null,
+        "target_response": "Can Priya lift the suitcase?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Ask a yes-or-no question about Priya's ability to lift the suitcase.",
+    "main_verb_lemma": "lift",
+    "object_head": "suitcase",
+    "participants": [
+      "Priya",
+      "friend"
+    ],
+    "situation_summary": "A friend asks whether Priya is able to lift a heavy suitcase.",
+    "time_anchor": "now"
+  },
+  "semantic_variant_index": 1
+}

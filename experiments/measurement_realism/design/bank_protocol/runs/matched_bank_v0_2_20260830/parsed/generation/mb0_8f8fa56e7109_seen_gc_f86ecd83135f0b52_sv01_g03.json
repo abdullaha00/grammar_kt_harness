@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "Shall I open the window for you?",
+  "cell_id": "gc_f86ecd83135f0b52",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01_g03_cloze",
+      "context": "The room is warm, and you offer to help by opening the window.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]] the window for you?",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the offer using “shall” and “open.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Shall I open"
+        ],
+        "completed_target": "Shall I open the window for you?",
+        "correct_choice_id": null,
+        "target_response": "Shall I open"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01_g03_dialog",
+      "context": "Sam feels warm, so Alex offers to help.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Sam: It is very warm in here.",
+          "Alex: The window is right beside me."
+        ],
+        "incomplete_turn_template": "Alex: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Alex’s offer using “shall” and “open.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Shall I open the window for you?"
+        ],
+        "completed_target": "Shall I open the window for you?",
+        "correct_choice_id": null,
+        "target_response": "Shall I open the window for you?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01_g03_mcq",
+      "context": "The room is warm, and you offer to help by opening the window.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "The finite modal and subject are not inverted to form the polar question.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "The verb after the modal is incorrectly marked instead of using the base form.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "An unnecessary do-operator is added before the inverted modal and subject.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Shall I open the window for you?"
+          },
+          {
+            "id": "B",
+            "text": "I shall open the window for you?"
+          },
+          {
+            "id": "C",
+            "text": "Shall I opens the window for you?"
+          },
+          {
+            "id": "D",
+            "text": "Do shall I open the window for you?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which question correctly uses “shall” and “open” to make the offer?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the correct question for the offer.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "Shall I open the window for you?",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01_g03_xform",
+      "context": "The room is warm, and you want to offer help now.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "I offer to open the window for you.",
+        "stem": null,
+        "transformation_cue": "shall / I / open / the window / for you"
+      },
+      "instruction": "Rewrite the offer as a question using all the words in the cue.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Shall I open the window for you?"
+        ],
+        "completed_target": "Shall I open the window for you?",
+        "correct_choice_id": null,
+        "target_response": "Shall I open the window for you?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Offer practical help by asking whether to open the window.",
+    "main_verb_lemma": "open",
+    "object_head": "window",
+    "participants": [
+      "speaker offering help",
+      "person who feels warm"
+    ],
+    "situation_summary": "A room is warm, and one person offers to open a window for another person.",
+    "time_anchor": "now"
+  },
+  "semantic_variant_index": 1
+}

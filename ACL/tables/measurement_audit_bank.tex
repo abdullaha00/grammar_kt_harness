@@ -1,0 +1,52 @@
+\begin{table*}[t]
+  \centering
+  \footnotesize
+  \setlength{\tabcolsep}{3pt}
+  \begin{minipage}[t]{.48\textwidth}
+    \centering
+    \begin{tabularx}{\linewidth}{@{}Xrr@{}}
+      \toprule
+      Automated full-v1 item audit & Count & Share \\
+      \midrule
+      Usable under stated minimal UI & 70 & 61.9\% \\
+      Minor UI/context change & 15 & 13.3\% \\
+      Valid but pedagogically artificial & 15 & 13.3\% \\
+      Material answer-space problem & 10 & 8.8\% \\
+      Rewrite or withhold & 3 & 2.7\% \\
+      \midrule
+      Exact cross-audit disposition & 70 & 61.9\% \\
+      Usable in both audits & 60 & 53.1\% \\
+      Either audit requires action & 53 & 46.9\% \\
+      Either audit flags critical risk & 18 & 15.9\% \\
+      Live four-role disagreement & 56 & 49.6\% \\
+      \bottomrule
+    \end{tabularx}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{.49\textwidth}
+    \centering
+    \begin{tabularx}{\linewidth}{@{}Xrrr@{}}
+      \toprule
+      Matched-family construction & Determ. & Solver & Critics \\
+      \midrule
+      Round 1 (38 active families) & 31 & 12 & 3 \\
+      Round 2 (35 active families) & 32 & 12 & 2 \\
+      Round 3 (33 active families) & 26 & 6 & 0 \\
+      \midrule
+      Freeze requirement & \multicolumn{2}{r}{Required} & Retained \\
+      Whole families & \multicolumn{2}{r}{38} & 5 \\
+      Four-format item slots & \multicolumn{2}{r}{152} & 20 \\
+      Selected cells & \multicolumn{2}{r}{20} & 4 \\
+      Generator KCs covered & \multicolumn{2}{r}{18} & 6 \\
+      Seen-cell Q rank & \multicolumn{2}{r}{18} & 3 \\
+      Dataset freeze permitted & \multicolumn{2}{r}{yes} & no \\
+      \bottomrule
+    \end{tabularx}
+  \end{minipage}
+  \caption{Learner/platform audit and matched-bank construction.  The left
+  panel is a 113-item automated census; cross-audit rows compare its strict
+  disposition with a separate four-role model audit (452 judgments).
+  ``Critical'' denotes answer-space or withhold risk.  Right-panel gates are
+  sequential within each round.  Passing families are examples, not a partial
+  release; model judgments are not human deployability evidence.}
+  \label{tab:measurement-audit-bank}
+\end{table*}

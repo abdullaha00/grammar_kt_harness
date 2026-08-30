@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "Maya must have locked the office door.",
+  "cell_id": "gc_4a4c9d34c1b5bce4",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g01_cloze",
+      "context": "The office door is locked now, and Maya was the last person to leave.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Maya [[RESPONSE]] the office door.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using “must” and “lock.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "must have locked"
+        ],
+        "completed_target": "Maya must have locked the office door.",
+        "correct_choice_id": null,
+        "target_response": "must have locked"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g01_dialog",
+      "context": "Two colleagues arrive at the office and find the door locked.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Nina: The office door is locked.",
+          "Omar: Maya was the last person to leave."
+        ],
+        "incomplete_turn_template": "Nina: Maya [[RESPONSE]] the office door.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Maya's colleague's reply using “must” and “lock.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "must have locked"
+        ],
+        "completed_target": "Maya must have locked the office door.",
+        "correct_choice_id": null,
+        "target_response": "must have locked"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g01_mcq",
+      "context": "The office door is locked now, and Maya was the last person to leave.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses MUST with a simple base-form complement and omits the perfect construction needed for a conclusion about an earlier action.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses the base form “lock” instead of the required past participle after perfect HAVE.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses the perfect construction but omits MUST, so it states the action rather than expressing a confident conclusion.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Maya must have locked the office door."
+          },
+          {
+            "id": "B",
+            "text": "Maya must lock the office door."
+          },
+          {
+            "id": "C",
+            "text": "Maya must have lock the office door."
+          },
+          {
+            "id": "D",
+            "text": "Maya has locked the office door."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence gives the most likely explanation?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that best completes the conclusion.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "Maya must have locked the office door.",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g01_xform",
+      "context": "The evidence supports a confident conclusion about an earlier action.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "The office door is locked now. Maya was the last person to leave.",
+        "stem": null,
+        "transformation_cue": "Use “must” and “lock.”"
+      },
+      "instruction": "Write one sentence giving the most likely explanation. Keep the same person, action, and object.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Maya must have locked the office door."
+        ],
+        "completed_target": "Maya must have locked the office door.",
+        "correct_choice_id": null,
+        "target_response": "Maya must have locked the office door."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Draw a confident conclusion about who locked the door before leaving.",
+    "main_verb_lemma": "lock",
+    "object_head": "door",
+    "participants": [
+      "Maya",
+      "office staff"
+    ],
+    "situation_summary": "The office door is locked, and Maya was the last person to leave.",
+    "time_anchor": "before Maya left the office"
+  },
+  "semantic_variant_index": 1
+}

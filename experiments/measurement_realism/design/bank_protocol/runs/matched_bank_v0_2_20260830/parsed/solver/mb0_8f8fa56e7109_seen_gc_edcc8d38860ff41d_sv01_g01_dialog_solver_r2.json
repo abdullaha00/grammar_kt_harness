@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "Different natural questions ask about Priya's ability.",
+  "batch_id": "solver_r01_rep2_dialogue_completion_b02",
+  "instruction_understanding": "Ask a question about whether Priya can move the suitcase.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Can Priya move the suitcase?"
+  ],
+  "reasonable_unkeyed_responses": [
+    "Can Priya move the suitcase?"
+  ],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g01_dialog_solver_r2",
+  "submitted_response": "Is Priya strong enough to move it?",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

@@ -1,0 +1,160 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv01_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "Maya will deliver the keys to Leo tomorrow morning.",
+  "cell_id": "gc_16d9f6e33f0517ec",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv01_g02_cloze",
+      "context": "Maya has Leo's keys and has promised to return them before he goes to work.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Maya [[RESPONSE]] the keys to Leo tomorrow morning.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using “will” and “deliver.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "will deliver"
+        ],
+        "completed_target": "Maya will deliver the keys to Leo tomorrow morning.",
+        "correct_choice_id": null,
+        "target_response": "will deliver"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv01_g02_dialog",
+      "context": "Maya has Leo's keys and has promised to return them before he goes to work.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Nina: You need your keys before work tomorrow.",
+          "Leo: Maya has them and has promised to return them.",
+          "Nina: What is the arrangement?"
+        ],
+        "incomplete_turn_template": "Leo: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Leo's reply using “will” and “deliver.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Maya will deliver the keys to Leo tomorrow morning.",
+          "Maya'll deliver the keys to Leo tomorrow morning."
+        ],
+        "completed_target": "Maya will deliver the keys to Leo tomorrow morning.",
+        "correct_choice_id": null,
+        "target_response": "Maya will deliver the keys to Leo tomorrow morning."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv01_g02_mcq",
+      "context": "Maya has Leo's keys and has promised to return them before he goes to work.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses a third-person singular form instead of the base form after WILL.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Omits the required modal WILL.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses a past form instead of the base form after WILL.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Maya will delivers the keys to Leo tomorrow morning."
+          },
+          {
+            "id": "B",
+            "text": "Maya delivers the keys to Leo tomorrow morning."
+          },
+          {
+            "id": "C",
+            "text": "Maya will deliver the keys to Leo tomorrow morning."
+          },
+          {
+            "id": "D",
+            "text": "Maya will delivered the keys to Leo tomorrow morning."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly states what Maya is going to do?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly states the arrangement.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "C"
+        ],
+        "completed_target": "Maya will deliver the keys to Leo tomorrow morning.",
+        "correct_choice_id": "C",
+        "target_response": "C"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv01_g02_xform",
+      "context": "Maya has Leo's keys and has promised to return them before he goes to work.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Maya has promised to deliver the keys to Leo tomorrow morning.",
+        "stem": null,
+        "transformation_cue": "Begin with “Maya” and use “will deliver.”"
+      },
+      "instruction": "Rewrite the information as a direct statement about the arrangement.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Maya will deliver the keys to Leo tomorrow morning.",
+          "Maya'll deliver the keys to Leo tomorrow morning."
+        ],
+        "completed_target": "Maya will deliver the keys to Leo tomorrow morning.",
+        "correct_choice_id": null,
+        "target_response": "Maya will deliver the keys to Leo tomorrow morning."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "State the arrangement Maya has made for returning Leo's keys.",
+    "main_verb_lemma": "deliver",
+    "object_head": "keys",
+    "participants": [
+      "Maya",
+      "Leo"
+    ],
+    "situation_summary": "Maya has Leo's keys and has promised to return them before he goes to work.",
+    "time_anchor": "tomorrow morning"
+  },
+  "semantic_variant_index": 1
+}

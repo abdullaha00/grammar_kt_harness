@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "A polite direct instruction is also natural.",
+  "batch_id": "solver_r01_rep1_dialogue_completion_b02",
+  "instruction_understanding": "Write Alex's direct instruction to Mia about the light.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g01_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Please turn off the light."
+  ],
+  "reasonable_unkeyed_responses": [
+    "Please turn off the light."
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g01_dialog_solver_r1",
+  "submitted_response": "Turn off the light.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

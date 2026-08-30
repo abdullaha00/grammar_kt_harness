@@ -1,0 +1,23 @@
+{
+  "ambiguity_explanation": "No actual lunch-serving time is provided in the context, so the schedule must be guessed.",
+  "batch_id": "solver_r01_rep2_dialogue_completion_b02",
+  "instruction_understanding": "State the cafe's weekday lunch schedule.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv01_g01_dialog",
+  "keyed_match": false,
+  "major_ambiguity": true,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "starts serving lunch at twelve",
+    "serves lunch from noon on weekdays"
+  ],
+  "reasonable_unkeyed_responses": [
+    "starts serving lunch at twelve",
+    "serves lunch from noon on weekdays"
+  ],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv01_g01_dialog_solver_r2",
+  "submitted_response": "starts serving lunch at noon",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

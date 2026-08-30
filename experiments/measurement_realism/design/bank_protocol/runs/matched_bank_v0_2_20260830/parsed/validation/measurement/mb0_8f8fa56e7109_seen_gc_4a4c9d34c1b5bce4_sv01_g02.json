@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r02_measurement_b01",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g02",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01",
+  "family_judgments": [
+    {
+      "blocking": true,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "The transformation item has a blocking exact-key failure for ordinary pronoun/noun-phrase variants, unlike the constrained and selected-response items.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "All formats preserve the requirement to select MUST and form HAVE + participle; no format supplies the target sequence verbatim.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "Each format concerns a confident deduction that Nina took the missing spare key earlier.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The blank requires modal MUST plus perfect HAVE and irregular participle taken.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The deduction context is necessary to interpret MUST and adds no major undeclared response grammar.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Neither must nor the perfect sequence is supplied in the response slot.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The required modal and lemma, plus the past-evidence context, constrain “must have taken”; the contraction is accepted.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Both full and contracted forms are accepted, and no unkeyed alternative was proposed.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The irregular participle taken contributes lexical-morphology burden alongside the target modal-perfect construction.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g02_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The reply requires MUST + HAVE + TAKEN, directly engaging both declared KCs.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The dialogue only supplies evidence for the intended epistemic deduction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The response form is not supplied by the dialogue or cue.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The missing-key evidence and mandatory must/take cue select the intended modal perfect, including the accepted contraction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The key includes the full and contracted target forms; no solver proposed a further reasonable completion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The learner must track evidential reasoning and an irregular participle in addition to the grammar target.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g02_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "A is distinguished from omission of the perfect, base-form take, and weaker might; it represents both modal MUST and perfect HAVE.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The options use a common lexical frame and the context supports the intended deduction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Recognition and the visibly malformed base-form distractor allow some testwise elimination, though the must-versus-might semantic contrast remains relevant.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "A is the uniquely strongest deduction under the instruction and supplied evidence.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "A is the only keyed option and no reasonable unkeyed option was proposed.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Selecting MUST rather than MIGHT requires pragmatic strength-of-inference judgment in addition to form recognition.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g02_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The learner must construct MUST + HAVE + TAKEN from the lemmas must and take, so both declared operations remain active.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The source statements establish the deduction and do not impose a further grammatical transformation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The cue does not provide HAVE or TAKEN, so the modal-perfect sequence must be formed.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "“Nina must have taken it” and “Nina must have taken the key” are natural responses in the supplied key context.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Reasonable contextually resolved alternatives such as “Nina must have taken it” are unaccepted; the prompt requires must and take but not the exact noun phrase.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Open production adds referential-choice and inference burden beyond forming the modal perfect.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g02_xform"
+    }
+  ],
+  "overall_accept": false,
+  "role": "measurement",
+  "summary": "The modal-perfect target is active across formats, but the open transformation rejects reasonable referential variants such as “Nina must have taken it.”"
+}

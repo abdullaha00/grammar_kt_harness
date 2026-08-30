@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r03_measurement_b01",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv02_g03",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv02",
+  "family_judgments": [
+    {
+      "blocking": true,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "Cloze/dialogue/MCQ permit simple-past answers that avoid the perfect, whereas transformation supplies the target words and measures assembly/copying.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": true,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "The transformation cue pre-specifies 'had submitted', changing the task from selecting perfect morphology to reproducing it.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "All formats concern submission before the meeting.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The keyed response 'had submitted' requires past HAVE plus participle SUBMITTED.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The response target is limited to the declared past-perfect active construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Solver-proposed 'submitted' is grammatical and contextually reasonable with 'before the meeting began'; it succeeds semantically while omitting perfect HAVE.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "Both 'had submitted' and unkeyed 'submitted' can express the stated temporal ordering; the stem does not require past perfect.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Unkeyed 'submitted' is linguistically and contextually reasonable but rejected.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Interpreting the report/meeting timeline contributes temporal-pragmatic burden beyond morphology.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv02_g03_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The keyed gap response realizes past-perfect HAVE plus participle.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The incomplete turn redundantly reads 'Maya: Maya ...', creating a presentation defect but no required extra grammar.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "A learner may write grammatical simple-past 'submitted'; the prior dialogue and 'before' do not force the perfect.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "The target sentence permits simple past with the same event ordering.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Reasonable unkeyed response 'submitted' is not accepted.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The duplicated speaker/name and dialogue reconciliation add avoidable reading burden.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv02_g03_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Option B displays the declared past-perfect morphology.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "Options contrast the declared perfect and past-form operations without requiring another response construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Option C is grammatical and says Maya submitted the report before the meeting; selecting it avoids perfect construction.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "Solver-proposed option C is a reasonable unkeyed answer under the stated context and stem.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Reasonable option C is excluded because only B is accepted.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Vocabulary and scenario are transparent for B2 learners.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv02_g03_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "A correctly formed response contains past HAVE and the participle SUBMITTED.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "Combining the supplied events requires no important undeclared grammatical operation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The cue explicitly supplies 'had submitted' and 'before', so a learner can copy and arrange the target string without selecting either declared operation.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The compulsory cue and required beginning constrain the intended response adequately.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The exact full-sentence key is narrow, though the cue substantially constrains wording.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Sentence combination and punctuation impose production burden beyond the two target KCs.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv02_g03_xform"
+    }
+  ],
+  "overall_accept": false,
+  "role": "measurement",
+  "summary": "Rejected: simple past is a reasonable target-avoiding answer in three formats, and the transformation cue gives away the target construction."
+}

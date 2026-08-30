@@ -1,0 +1,80 @@
+{
+  "forbidden_inputs": [
+    "learner interactions",
+    "private mastery trajectories",
+    "response probabilities",
+    "KT predictions or discovery selections"
+  ],
+  "full_v1_mutated": false,
+  "human_judgments_collected": 0,
+  "inputs": {
+    "analysis_script": {
+      "bytes": 20963,
+      "path": "experiments/measurement_realism/dialogue_pilot/analyze_dialogue_pilot.py",
+      "sha256": "bb22e2ebe990f39aacc34e47038b9eafd40987ec6c4c4c4dfe0a5233f4ca7ab4"
+    },
+    "builder": {
+      "bytes": 11922,
+      "path": "experiments/measurement_realism/dialogue_pilot/build_plan.py",
+      "sha256": "43db126baae678adc074ffd930d9eb469d438cae99e004945d25d8c9dca413a6"
+    },
+    "canonical_selection": {
+      "bytes": 46461,
+      "path": "experiments/measurement_realism/design/format_selection/selected_cells.json",
+      "sha256": "8f8fa56e710982c92426f154482d062cffebfb32d29f19c7fe96f4208a4b479b"
+    },
+    "config": {
+      "bytes": 4653,
+      "path": "experiments/measurement_realism/dialogue_pilot/config.yaml",
+      "sha256": "fdf48a118b54aa879112adcca411e116bf757b66da72abc709ab2e58ab6b5a6d"
+    },
+    "critic_prompt": {
+      "bytes": 2132,
+      "path": "experiments/measurement_realism/dialogue_pilot/prompts/critic_continuum.txt",
+      "sha256": "f4b9251a3df6ffecf5c2e403e902be0c20e729b1535af27e31e80dbbf6bf4893"
+    },
+    "critic_schema": {
+      "bytes": 3373,
+      "path": "experiments/measurement_realism/dialogue_pilot/schemas/critic_judgment.schema.json",
+      "sha256": "4a73beade6cd6f02e9233b9a9152567f2d7e55f26c21269d2d39b99a1d8197e7"
+    },
+    "family_schema": {
+      "bytes": 5750,
+      "path": "experiments/measurement_realism/dialogue_pilot/schemas/generated_family.schema.json",
+      "sha256": "a0080c0dd57cbedddef9b219010ce67d843da722b90094bb370d92ffdd48637d"
+    },
+    "generation_prompt": {
+      "bytes": 3005,
+      "path": "experiments/measurement_realism/dialogue_pilot/prompts/generate_continuum_family.txt",
+      "sha256": "22e668b4c7624ebf492de7fb063e439e81f903eb7f20b7b1ab49be52cd0fa465"
+    },
+    "human_validation_protocol": {
+      "bytes": 10858,
+      "path": "experiments/measurement_realism/dialogue_pilot/human_expert_validation_protocol.md",
+      "sha256": "e8f61c730e09b1fd4b54ebaee1202a40a8648f00a0304f1b0e211bb4557ea67b"
+    },
+    "preregistration": {
+      "bytes": 10973,
+      "path": "experiments/measurement_realism/dialogue_pilot/preregistration.md",
+      "sha256": "2b473ece1c6c2df26d2939d5e7c15d2640959b06fb9a22a2ee8236e58429a151"
+    }
+  },
+  "live_model_calls_made": 0,
+  "outputs": {
+    "generation_requests": {
+      "bytes": 13541,
+      "path": "generation_requests.jsonl",
+      "rows": 4,
+      "sha256": "241268090bc9b61558ad947eab1189ac3bf942741799434409864288c8d5a09f"
+    },
+    "selected_cells": {
+      "bytes": 15658,
+      "cells": 4,
+      "path": "selected_cells.json",
+      "sha256": "bb5403ffd1f581dbdadd113e10c0604eb2b503d387086f6f2a4debd253efb2c3"
+    }
+  },
+  "pilot_id": "ecological_precision_continuum_v1",
+  "replay_command": ".venv/bin/python experiments/measurement_realism/dialogue_pilot/build_plan.py",
+  "status": "FROZEN_NO_CALL_CONTINUUM_PLAN"
+}

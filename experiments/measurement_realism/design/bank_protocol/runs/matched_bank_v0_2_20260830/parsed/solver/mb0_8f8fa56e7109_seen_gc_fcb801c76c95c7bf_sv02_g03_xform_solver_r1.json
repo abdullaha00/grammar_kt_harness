@@ -1,0 +1,17 @@
+{
+  "ambiguity_explanation": "",
+  "batch_id": "solver_r03_rep1_sentence_transformation_b02",
+  "instruction_understanding": "Describe the work in progress on the bridge at noon.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_sv02_g03_xform",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": false,
+  "other_reasonable_responses": [],
+  "reasonable_unkeyed_responses": [],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_sv02_g03_xform_solver_r1",
+  "submitted_response": "The bridge was being inspected at noon.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

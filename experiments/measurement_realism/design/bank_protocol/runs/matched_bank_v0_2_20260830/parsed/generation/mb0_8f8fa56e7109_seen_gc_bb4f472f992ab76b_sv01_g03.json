@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "Turn off the oven.",
+  "cell_id": "gc_bb4f472f992ab76b",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g03_cloze",
+      "context": "The cake is now on the counter, but the oven is still on. Alex tells Sam what to do next.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]]",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Alex's instruction. Use “turn off” and “the oven.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Turn off the oven."
+        ],
+        "completed_target": "Turn off the oven.",
+        "correct_choice_id": null,
+        "target_response": "Turn off the oven."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g03_dialog",
+      "context": "The cake has been removed, but the oven is still on.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Sam: The cake is on the counter now, but the oven is still on.",
+          "Sam: What should I do next?"
+        ],
+        "incomplete_turn_template": "Alex: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Alex's reply. Use “turn off” and “the oven.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Turn off the oven."
+        ],
+        "completed_target": "Turn off the oven.",
+        "correct_choice_id": null,
+        "target_response": "Turn off the oven."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g03_mcq",
+      "context": "The cake is on the counter, but the oven is still on. Alex tells Sam what to do next.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses a declarative clause with an explicit subject instead of an imperative clause.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses an -ing phrase instead of an imperative clause.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses an infinitive phrase instead of an imperative clause.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "You turn off the oven."
+          },
+          {
+            "id": "B",
+            "text": "Turn off the oven."
+          },
+          {
+            "id": "C",
+            "text": "Turning off the oven."
+          },
+          {
+            "id": "D",
+            "text": "To turn off the oven."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence should Alex use?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that gives Alex's direct instruction.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Turn off the oven.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g03_xform",
+      "context": "The cake has been removed, but the oven is still on.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "The oven is still on after the cake has been removed.",
+        "stem": null,
+        "transformation_cue": "turn off / the oven"
+      },
+      "instruction": "Write Alex's direct instruction to Sam. Use all the cue words without adding a subject.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Turn off the oven."
+        ],
+        "completed_target": "Turn off the oven.",
+        "correct_choice_id": null,
+        "target_response": "Turn off the oven."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Alex directly instructs Sam to switch off the oven.",
+    "main_verb_lemma": "turn off",
+    "object_head": "oven",
+    "participants": [
+      "Alex",
+      "Sam"
+    ],
+    "situation_summary": "The cake has been removed, but the oven is still on.",
+    "time_anchor": "immediately after the cake is removed"
+  },
+  "semantic_variant_index": 1
+}

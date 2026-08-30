@@ -1,0 +1,23 @@
+{
+  "ambiguity_explanation": "No time for Nina's action is supplied.",
+  "batch_id": "solver_r01_rep1_dialogue_completion_b01",
+  "instruction_understanding": "State when Nina will water the plants, using the required words.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02_g01_dialog",
+  "keyed_match": false,
+  "major_ambiguity": true,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "She will water them tomorrow morning.",
+    "She will water them later today."
+  ],
+  "reasonable_unkeyed_responses": [
+    "She will water them tomorrow morning.",
+    "She will water them later today."
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02_g01_dialog_solver_r1",
+  "submitted_response": "She will water them this afternoon.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

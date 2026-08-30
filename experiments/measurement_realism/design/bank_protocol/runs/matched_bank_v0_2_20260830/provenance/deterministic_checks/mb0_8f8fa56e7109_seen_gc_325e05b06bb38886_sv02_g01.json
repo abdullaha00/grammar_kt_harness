@@ -1,0 +1,11 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv02_g01",
+  "candidate_round": 1,
+  "failed_checks": [
+    "constrained_cloze:accepted_responses_not_unique",
+    "dialogue_completion:accepted_responses_not_unique",
+    "sentence_transformation:accepted_responses_not_unique"
+  ],
+  "family_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv02",
+  "passed": false
+}

@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r02_measurement_b01",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g02",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02",
+  "family_judgments": [
+    {
+      "blocking": true,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "The transformation format has a blocking exact-key problem for normal word-order/object variants, unlike the constrained formats and MCQ.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "Every format retains past BE plus -ing as the target; format differences principally alter production versus recognition.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "All four items describe Maya repairing her bicycle when Leo arrived.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The blank requires past was and the -ing form repairing.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The when-clause supplies a simple past reference event and does not impose major additional grammar.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Neither auxiliary nor -ing form is provided.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The explicit in-progress-at-arrival context selects “was repairing” under the supplied lemma.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "No reasonable unkeyed response was proposed, and the constrained slot targets only the verb phrase.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The bicycle-repair situation is concrete and accessible at B2.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g02_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The required completion is the past progressive “was repairing.”",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The dialogue offers supporting meaning but requires no undeclared response grammar.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The target morphology is not embedded in the cue or dialogue completion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The preceding question and in-the-middle explanation clearly select an ongoing past activity.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "No solver-proposed alternative is omitted from the key.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The dialogue is brief and its paraphrase of repair is readily interpretable.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g02_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "B uniquely combines past was with repairing and matches the stipulated ongoing event.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The options share the same lexical and temporal frame.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "It is a recognition task and the ungrammatical C/D options permit some elimination, though A remains a meaningful aspect contrast.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "Only B expresses that the repair was in progress when Leo arrived.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "B is the sole defensible keyed choice; no unkeyed option was proposed.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The semantic contrast is directly stated in the context.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g02_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The learner must supply past was and the -ing dependency; the cue supplies only repair and the time clause.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "Combining the two supplied propositions is a natural means of eliciting the declared past progressive.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The grammar-forming material is not supplied verbatim.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "“When Leo arrived, Maya was repairing her bicycle” and “Maya was repairing the bicycle when Leo arrived” preserve the stipulated meaning.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "These natural unkeyed full-sentence variants are omitted from an exact-string key; neither the instruction nor cue requires the keyed word order or possessive.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The source material clearly establishes the required time relation.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g02_xform"
+    }
+  ],
+  "overall_accept": false,
+  "role": "measurement",
+  "summary": "The past-progressive construct is well elicited, but the full-sentence transformation rejects ordinary equivalent realizations."
+}

@@ -1,0 +1,23 @@
+{
+  "ambiguity_explanation": "The instruction requires the verb but does not specify the modal or advice wording.",
+  "batch_id": "solver_r02_rep1_constrained_cloze_b01",
+  "instruction_understanding": "Complete the advice using the verb “charge.”",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv01_g02_cloze",
+  "keyed_match": true,
+  "major_ambiguity": true,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "needs to charge her phone",
+    "ought to charge her phone"
+  ],
+  "reasonable_unkeyed_responses": [
+    "needs to charge her phone",
+    "ought to charge her phone"
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv01_g02_cloze_solver_r1",
+  "submitted_response": "should charge her phone",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

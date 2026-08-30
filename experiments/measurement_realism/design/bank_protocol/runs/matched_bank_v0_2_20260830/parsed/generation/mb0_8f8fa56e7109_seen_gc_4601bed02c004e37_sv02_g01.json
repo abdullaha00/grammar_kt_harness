@@ -1,0 +1,155 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "Lena repaired the bicycle yesterday.",
+  "cell_id": "gc_4601bed02c004e37",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02_g01_cloze",
+      "context": "The bicycle needed attention, and Lena worked on it the previous day.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Lena [[RESPONSE]] the bicycle yesterday.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence with the correct form of “repair.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "repaired"
+        ],
+        "completed_target": "Lena repaired the bicycle yesterday.",
+        "correct_choice_id": null,
+        "target_response": "repaired"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02_g01_dialog",
+      "context": "Sam asks what Lena did with the bicycle the previous day.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Sam: What did you do with the bicycle yesterday?"
+        ],
+        "incomplete_turn_template": "Lena: I [[RESPONSE]] the bicycle yesterday.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Lena’s reply with the correct form of “repair.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "repaired"
+        ],
+        "completed_target": "Lena repaired the bicycle yesterday.",
+        "correct_choice_id": null,
+        "target_response": "repaired"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02_g01_mcq",
+      "context": "The bicycle needed attention, and Lena worked on it yesterday.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses present finite morphology instead of past finite morphology.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses the bare verb form instead of a past finite form.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Marks the past twice by combining “did” with a past-form main verb.",
+          "option_id": "C"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Lena repairs the bicycle yesterday."
+          },
+          {
+            "id": "B",
+            "text": "Lena repair the bicycle yesterday."
+          },
+          {
+            "id": "C",
+            "text": "Lena did repaired the bicycle yesterday."
+          },
+          {
+            "id": "D",
+            "text": "Lena repaired the bicycle yesterday."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence is correct?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly reports what happened yesterday.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "D"
+        ],
+        "completed_target": "Lena repaired the bicycle yesterday.",
+        "correct_choice_id": "D",
+        "target_response": "D"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02_g01_xform",
+      "context": "Keep the same person, action, and object.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Lena repairs the bicycle today.",
+        "stem": null,
+        "transformation_cue": "Use “yesterday” instead of “today.”"
+      },
+      "instruction": "Rewrite the sentence so that it reports the action as happening yesterday.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Lena repaired the bicycle yesterday."
+        ],
+        "completed_target": "Lena repaired the bicycle yesterday.",
+        "correct_choice_id": null,
+        "target_response": "Lena repaired the bicycle yesterday."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Report what Lena did to the bicycle on the previous day.",
+    "main_verb_lemma": "repair",
+    "object_head": "bicycle",
+    "participants": [
+      "Lena"
+    ],
+    "situation_summary": "Lena repaired a bicycle that needed attention.",
+    "time_anchor": "yesterday"
+  },
+  "semantic_variant_index": 2
+}

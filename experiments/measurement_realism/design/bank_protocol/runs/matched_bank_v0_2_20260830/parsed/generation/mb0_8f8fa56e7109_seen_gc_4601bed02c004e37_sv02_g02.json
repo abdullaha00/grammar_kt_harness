@@ -1,0 +1,156 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "Nora returned the library book yesterday.",
+  "cell_id": "gc_4601bed02c004e37",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02_g02_cloze",
+      "context": "The book is back at the library now.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Nora [[RESPONSE]] the library book yesterday.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence with the correct form of “return.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "returned"
+        ],
+        "completed_target": "Nora returned the library book yesterday.",
+        "correct_choice_id": null,
+        "target_response": "returned"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02_g02_dialog",
+      "context": "Sam is explaining why Nora no longer has the library book.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Librarian: What did Nora do with the library book yesterday?"
+        ],
+        "incomplete_turn_template": "Sam: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Sam’s answer with one sentence.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Nora returned the library book yesterday."
+        ],
+        "completed_target": "Nora returned the library book yesterday.",
+        "correct_choice_id": null,
+        "target_response": "Nora returned the library book yesterday."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02_g02_mcq",
+      "context": "The library book is back because Nora took it there yesterday.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses present finite morphology instead of past finite morphology.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses the uninflected base form instead of past finite morphology.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses future marking instead of past finite morphology.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Nora returns the library book yesterday."
+          },
+          {
+            "id": "B",
+            "text": "Nora return the library book yesterday."
+          },
+          {
+            "id": "C",
+            "text": "Nora returned the library book yesterday."
+          },
+          {
+            "id": "D",
+            "text": "Nora will return the library book yesterday."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly states what Nora did yesterday?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly describes the completed action.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "C"
+        ],
+        "completed_target": "Nora returned the library book yesterday.",
+        "correct_choice_id": "C",
+        "target_response": "C"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02_g02_xform",
+      "context": "The action is complete, and the book is now back at the library.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Nora returns the library book. This happened yesterday.",
+        "stem": null,
+        "transformation_cue": "Use the verb “return” and include “yesterday.”"
+      },
+      "instruction": "Rewrite the first sentence to show that the action happened yesterday.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Nora returned the library book yesterday."
+        ],
+        "completed_target": "Nora returned the library book yesterday.",
+        "correct_choice_id": null,
+        "target_response": "Nora returned the library book yesterday."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "State what Nora did with the library book yesterday.",
+    "main_verb_lemma": "return",
+    "object_head": "book",
+    "participants": [
+      "Nora",
+      "the library book"
+    ],
+    "situation_summary": "Nora took a borrowed book back to the library yesterday.",
+    "time_anchor": "yesterday"
+  },
+  "semantic_variant_index": 2
+}

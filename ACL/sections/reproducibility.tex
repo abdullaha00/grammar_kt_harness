@@ -1,35 +1,34 @@
 \section{Reproducibility and Audit Trail}
 
-The frozen release is rooted at
-\nolinkurl{data/grammar_kt_full_v1/}.  Its top-level manifest distinguishes
-linguistic representation, generator truth, observable data, and private
-oracle artifacts.  It records the pre-response code revision, exact simulator
-command, configuration and input hashes, deterministic gzip metadata, row
-counts, and an 88-file recursive inventory.  The observable and private-oracle
-SHA-256 values begin \texttt{9272ca86a647} and \texttt{956ed53f370d},
-respectively; the complete values are in the manifest and evidence ledger.
+The immutable reference is rooted at
+\nolinkurl{data/grammar_kt_full_v1/}.  Its manifest records the pre-response
+revision, exact simulator command, configurations, inputs, deterministic gzip
+metadata, row counts, and an 88-file recursive inventory.  Independent replay
+reconstructs the $113\times18$ Q and all 283,000 linked public/private events.
+The measurement programme stores a separate baseline anchor containing the
+protected tree and core hashes; no extension command writes inside full-v1.
 
-\nolinkurl{scripts/build_dataset.py} is the chronological Layer-A runner.  It
-loads the typed source, normalises and canonicalises, constructs generator KCs,
-generates/validates/curates items, builds and audits \qstar{}, and invokes the
-frozen simulator.  Q and dataset verification modes replay deterministic
-artifacts without making LLM calls.  Raw prompts and outputs, independent
-judgments, intervention plans, and immutable superseded records are linked
-through provenance directories.
+Every LLM-backed scientific stage freezes its prompt, exact input, provider
+schema, model and reasoning setting, raw response, parsed response, and hashes.
+The complete item audit, three KC inductions, matched-bank attempts, and
+dialogue critics retain role-specific output rather than a collapsed score.
+Infrastructure failures are labelled separately from scientific failures.  In
+particular, the matched-bank negative result is replayed from its immutable
+candidate, solver, critic, and curation evidence.
 
-Separate scripts under \nolinkurl{scripts/experiments/} implement
-misspecification, discovery, generalisation, mastery recovery, robustness, and
-collection design.  Every substantive study writes its question, hypothesis,
-manipulation, held-fixed variables, seeds, input hashes, and intended
-interpretation before its final run.  Pure representation comparisons verify a
-shared probe-event hash.  Discovery freezes selection before truth is loaded;
-mastery recovery freezes observable predictions before opening the oracle.
-Exact commands and artifact hashes are retained in the experiment ledger.
+Deterministic scripts under \nolinkurl{scripts/experiments/} reconstruct the
+cross-audit synthesis, bank funnel, controlled worlds, structured-error
+comparisons, and exploratory policy recovery.  The controlled-scenario study
+plan hashes the structural instrument and implementation before responses.
+Observable archives exclude mastery, Q, response probabilities, and planted
+failure attributions; oracle archives are opened only by declared evaluations.
+Cross-world contrasts verify learner sets and exact evaluation-row identity.
 
-The public stream is sufficient for ordinary KT and KC discovery.  Oracle state
-is not embedded in public rows or required by the fitting code.  A
-non-English-named toy schema exercises the generic cells-to-K*-to-Q-to-events
-contract.  Unit and scientific-contract tests cover leakage boundaries,
-non-updating probes, deterministic Q projection, alternate-schema execution,
-same-event representation comparisons, replay hashes, and all paper-facing
-experiments.
+Because the controlled response archives contain 4.59 million events, the
+programme-level evidence package retains compact aggregates, manifests, exact
+hash contracts, and reconstruction commands rather than treating generated
+rows as a new released dataset.  The final allow-list manifest also excludes
+failed-attempt scratch trees, caches, and incomplete staging artifacts.  The
+executable measurement notebook reads only retained compact evidence, and the
+paper build, notebook execution, full test suite, and full-v1 replays are part
+of final verification.

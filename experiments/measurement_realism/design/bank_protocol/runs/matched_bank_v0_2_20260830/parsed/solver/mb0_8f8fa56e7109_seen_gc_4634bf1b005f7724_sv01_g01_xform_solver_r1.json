@@ -1,0 +1,19 @@
+{
+  "ambiguity_explanation": "The contracted and uncontracted negative forms have the same meaning.",
+  "batch_id": "solver_r01_rep1_sentence_transformation_b01",
+  "instruction_understanding": "Ask which weekly report Maya does not upload.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g01_xform",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Which report doesn't Maya upload?"
+  ],
+  "reasonable_unkeyed_responses": [],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g01_xform_solver_r1",
+  "submitted_response": "Which report does Maya not upload?",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

@@ -1,12 +1,11 @@
 # ACL manuscript
 
-`paper.tex` is the paper-facing account of the active grammar-KT dataset and KC
-selection pipeline.  Quantitative claims are indexed in `evidence.md` and
-`results_summary.md`; detailed experiment commands and artifacts remain in the
-repository-level reports.  Its named ACL-style preprint shell, modular section
-order, and artifact-map convention follow `report_versions/UROP/`.  The
-archived UROP pilot claims are historical and are not copied into this full-v1
-manuscript.
+`paper.tex` is the paper-facing account of the immutable full-v1 known-truth
+benchmark and the post-GrammarCell measurement-realism programme. Quantitative
+claims are indexed in `evidence.md` and `results_summary.md`; detailed commands
+and artifacts remain in the repository-level reports. The manuscript keeps the
+failed matched-bank construction and the non-release controlled scenario
+distinct from full-v1. The archived UROP pilot is historical evidence only.
 
 ## Build
 
@@ -45,6 +44,8 @@ source or bibliography change.
 - `evidence.md`: claim-to-artifact ledger;
 - `results_summary.md`: compact quantitative handoff.
 
-The appendix contains detailed sensitivities and the artifact/RQ maps.  Human
-validity, another-language evidence, or stability beyond the declared synthetic
-worlds must not be inferred from executable completion.
+The appendix contains detailed sensitivities, learner-facing audit examples,
+and the artifact/RQ maps. Human validity, another-language evidence, or
+stability beyond the declared synthetic worlds must not be inferred from
+executable completion. There is no new dataset release: full-v1 remains the
+controlled reference.

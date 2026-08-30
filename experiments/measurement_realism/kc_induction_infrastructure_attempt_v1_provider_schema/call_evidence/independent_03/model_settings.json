@@ -1,0 +1,21 @@
+{
+  "model": "gpt-5.6-terra",
+  "reasoning_effort": "medium",
+  "stage": "kc_hypothesis_induction",
+  "call_key": "independent_03",
+  "command": [
+    "codex",
+    "exec",
+    "--ephemeral",
+    "--sandbox",
+    "read-only",
+    "--model",
+    "gpt-5.6-terra",
+    "--config",
+    "model_reasoning_effort=\"medium\"",
+    "--output-schema",
+    "/home/abdullah/grammar_kt_harness/runs/measurement_realism/kc_induction_v1/independent_03/output_schema.json",
+    "-"
+  ],
+  "output_schema_supplied": true
+}

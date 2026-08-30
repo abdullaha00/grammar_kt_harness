@@ -1,0 +1,26 @@
+{
+  "analysis_replayed_exactly": true,
+  "byte_exact_call_evidence_rows": 24,
+  "critic_calls": 20,
+  "critic_judgments": 100,
+  "critic_roles_independent": true,
+  "dataset_release_justified_by_this_pilot_alone": false,
+  "generated_families": 4,
+  "generation_calls": 4,
+  "hashes": {
+    "analysis": "5d2538e7866855782f92fe0c946bfcfb714463ae60f8879f01135f2459e797ef",
+    "call_evidence_bundle": "eaee2637f978b3a2286647b6a035d5bc6bc0da422c4c3575d72a14ba21c38ccb",
+    "critic_judgments": "5551e1a39adb871eb7d6811982c47c2bd86e79c01e0aa8f72499a22ddefa8f0c",
+    "generated_families": "efa03d40dbd51703ce981d3fc74760183cb4cc0fcfe72a5fdd7ae74994297903",
+    "package_manifest": "8ad84e3200d4997041bccc92e46da2d46c08645c19fa6da6e78104dd0efa4f8e",
+    "study_plan": "a73ec86b593ddccbc480123b56526efd897f4c6280d5039e01cd971913228f20"
+  },
+  "human_or_expert_gold": false,
+  "opportunities": 20,
+  "protected_full_v1_unchanged": true,
+  "scalar_realism_score_computed": false,
+  "status": "VERIFIED_COMPLETE_AUTOMATED_DIALOGUE_PILOT",
+  "strict_local_validation_replayed": true,
+  "study_id": "dialogue_pilot_live_v1",
+  "weighted_composite_computed": false
+}

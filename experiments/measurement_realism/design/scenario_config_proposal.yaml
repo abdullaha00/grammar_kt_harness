@@ -1,0 +1,378 @@
+# Design proposal only. Freeze a copied, executable config before simulation.
+design_id: measurement_realism_minimal_confirmatory_v0
+status: proposal_before_response_generation
+date: 2026-08-30
+protected_reference: data/grammar_kt_full_v1
+
+bank:
+  generator_kcs: 18
+  confirmatory_seen_cells:
+    minimum: 18
+    required_cell_q_rank: 18
+    selection_uses_learner_outcomes: false
+  formats:
+    canonical_order:
+      - constrained_cloze
+      - dialogue_completion
+      - multiple_choice
+      - sentence_transformation
+    variants_per_seen_cell: 2
+    required_crossing: complete_cell_by_format
+  heldout_audit:
+    acquisition_updates: false
+    cells:
+      unseen_combination: 1
+      unseen_value: 1
+    variants_per_cell: 1
+  expected_scale_if_minimum_design_passes:
+    seen_acquisition_items: 144
+    heldout_probe_only_items: 8
+    total_items: 152
+  partial_rank_pilot:
+    cells: 12
+    items: 96
+    maximum_cell_q_rank: 12
+    permitted_claim: usability_and_local_format_contrasts_only
+    prohibited_claim: all_18_kc_identifiability_or_recovery
+
+simulation:
+  learners_per_seed: 500
+  seeds: [20260829, 20260830, 20260831]
+  initial_mastery:
+    distribution: beta
+    alpha: 2.0
+    beta: 2.0
+  aggregation: minimum
+  response_link:
+    id: bounded_latent_logit_measurement_v1
+    epsilon: 1.0e-12
+    equation: >-
+      p = g_l + (1 - g_l - s_l) * logistic(
+      logit(clip(min_active_mastery, epsilon, 1-epsilon))
+      + learner_ability + format_offset - item_difficulty)
+  learning:
+    rule: all_active_opportunity
+    correctness_conditioned: false
+    forgetting: none
+    homogeneous_rate: 0.02
+    heterogeneous_rate:
+      distribution: beta
+      target_mean: 0.02
+      target_cv: 0.25
+      alpha: 15.66
+      beta: 767.34
+  homogeneous_noise:
+    guess: 0.10
+    slip: 0.10
+  heterogeneous_noise:
+    guess:
+      distribution: scaled_beta
+      alpha: 2.0
+      beta: 2.0
+      lower: 0.05
+      upper: 0.15
+    slip:
+      distribution: scaled_beta
+      alpha: 2.0
+      beta: 2.0
+      lower: 0.05
+      upper: 0.15
+  learner_ability:
+    raw_distribution: standard_normal
+    finite_sample_center_and_population_standardize: true
+    moderate_logit_sd: 0.35
+    strong_sensitivity_logit_sd: 0.70
+  item_difficulty:
+    raw_distribution: standard_normal
+    orthogonalize_against:
+      - intercept
+      - format_contrasts
+      - q_star_columns
+    finite_bank_population_standardize: true
+    moderate_logit_sd: 0.50
+    strong_sensitivity_logit_sd: 1.00
+  format_effect:
+    contrast_numerators: [-3, -1, 1, 3]
+    contrast_denominator: sqrt_5
+    direction_has_substantive_interpretation: false
+    moderate_logit_sd: 0.35
+    strong_control_logit_sd: 0.70
+
+worlds:
+  - world_id: clean_zero
+    item_logit_sd: 0.0
+    format_logit_sd: 0.0
+    learner_ability_logit_sd: 0.0
+    learning_rate_cv: 0.0
+    learner_guess_slip_heterogeneous: false
+    role: negative_control
+  - world_id: format_moderate
+    item_logit_sd: 0.0
+    format_logit_sd: 0.35
+    learner_ability_logit_sd: 0.0
+    learning_rate_cv: 0.0
+    learner_guess_slip_heterogeneous: false
+    role: primary_scenario
+  - world_id: format_strong_control
+    item_logit_sd: 0.0
+    format_logit_sd: 0.70
+    learner_ability_logit_sd: 0.0
+    learning_rate_cv: 0.0
+    learner_guess_slip_heterogeneous: false
+    role: positive_control
+  - world_id: item_moderate
+    item_logit_sd: 0.50
+    format_logit_sd: 0.0
+    learner_ability_logit_sd: 0.0
+    learning_rate_cv: 0.0
+    learner_guess_slip_heterogeneous: false
+    role: primary_scenario
+  - world_id: item_format_moderate
+    item_logit_sd: 0.50
+    format_logit_sd: 0.35
+    learner_ability_logit_sd: 0.0
+    learning_rate_cv: 0.0
+    learner_guess_slip_heterogeneous: false
+    role: primary_scenario
+  - world_id: combined_heterogeneous
+    item_logit_sd: 0.50
+    format_logit_sd: 0.35
+    learner_ability_logit_sd: 0.35
+    learning_rate_cv: 0.25
+    learner_guess_slip_heterogeneous: true
+    role: robustness_scenario
+
+common_random_numbers:
+  scheme: keyed_sha256_measurement_v1
+  always_draw_disabled_latents: true
+  namespaces:
+    initial_mastery: [seed, learner_id, kc_id]
+    learner_ability_z: [seed, learner_id]
+    learner_learning_rate: [seed, learner_id]
+    learner_guess: [seed, learner_id]
+    learner_slip: [seed, learner_id]
+    item_difficulty_z: [seed, item_id]
+    acquisition_response: [seed, learner_id, acquisition_step]
+    probe_response: [seed, learner_id, probe_repeat, item_id]
+    failed_kc_draw: [seed, learner_id, phase, sequence_index]
+    policy_exploration: [seed, learner_id, acquisition_step]
+    policy_tie_rank: [seed, policy_id, learner_id, acquisition_step, item_id]
+    model_split: [20260830, learner_id]
+    error_shuffle: [seed, item_id, phase]
+
+schedule:
+  acquisition_target_opportunities_per_kc: 12
+  acquisition_budget_rule: >-
+    Freeze the length produced by exhaustive_then_q_balanced on the final seen
+    bank; use this exact B for every policy.
+  expected_budget_for_rank_witness: 184
+  terminal_probe:
+    repeats: 1
+    all_items: true
+    updates_mastery: false
+  relative_sessions:
+    count: 10
+    wall_clock_time_claimed: false
+  policies:
+    - policy_id: q_balanced_lab
+      occurrence_multiset: exhaustive_then_q_balanced
+      order: keyed_occurrence_rank
+      stochastic: false
+    - policy_id: curriculum
+      occurrence_multiset: same_as_q_balanced_lab
+      order: curriculum_stage_then_exposure_then_keyed_rank
+      curriculum_stages: 4
+      stochastic: false
+    - policy_id: mixed_practice
+      occurrence_multiset: same_as_q_balanced_lab
+      order_lexicographic_objectives:
+        - minimize_previous_q_jaccard
+        - avoid_previous_format
+        - maximize_same_cell_gap
+        - maximize_same_item_gap
+        - keyed_tie_rank
+      stochastic: false
+    - policy_id: adaptive_weakness
+      total_budget: same_as_q_balanced_lab
+      burn_in:
+        one_item_per_seen_cell_format: true
+        expected_events: 72
+        variant_selection: keyed
+      exploration_probability: 0.20
+      weakness_estimator: beta_1_1_smoothed_kc_correctness
+      exploit_priority:
+        - minimum_estimated_kc_correctness
+        - minimum_item_exposure
+        - maximum_item_gap
+        - keyed_tie_rank
+      same_item_cooldown_events: 8
+      stochastic: true
+      propensity_equation: >-
+        pi(i|h) = .20 / eligible_count + .80 * indicator(i == deterministic_exploit_item)
+      oracle_fields_allowed: []
+
+models:
+  learner_split:
+    keyed_hash: true
+    train_fraction: 0.60
+    dev_fraction: 0.20
+    test_fraction: 0.20
+    invariant_across_worlds: true
+  history:
+    prior_alpha: 1.0
+    prior_beta: 1.0
+    probe_updates: false
+    fields:
+      - learner_smoothed_correctness
+      - mean_active_kc_smoothed_correctness
+      - mean_active_kc_log1p_opportunities
+      - active_kc_count
+      - active_kc_indicators
+  primary_link:
+    equation: p_hat = .10 + .80 * logistic(linear_predictor)
+    objective: penalized_bernoulli_log_likelihood
+  standardization: fit_on_training_learners_only
+  inverse_l2_grid: [0.1, 1.0, 10.0]
+  selection_metric: dev_probe_log_loss
+  conditions:
+    A:
+      representation: shared_kstar
+      format_covariate: false
+      item_covariate: false
+    B:
+      representation: format_split_kstar
+      projection_equation: q_b[i,k,f] = q_star[i,k] * indicator(item_format[i] == f)
+      format_covariate: false
+      item_covariate: false
+    C:
+      representation: shared_kstar
+      format_covariate: orthonormal_sum_zero_contrasts
+      item_covariate: false
+    D:
+      representation: shared_kstar
+      format_covariate: orthonormal_sum_zero_contrasts
+      item_covariate: orthonormal_within_format_sum_zero_contrasts
+
+evaluation:
+  primary_metric: event_weighted_log_loss
+  secondary_metrics:
+    - brier_score
+    - ece_10_fixed_width
+    - roc_auc
+    - accuracy_at_0_5
+    - item_prerequisite_state_rmse
+    - item_prerequisite_state_mae
+    - terminal_kc_state_rmse_secondary
+  primary_contrasts:
+    - id: format_confounding_difference_in_differences
+      formula: (LL_B-LL_A)_format_strong - (LL_B-LL_A)_clean_zero
+    - id: explicit_format_remedy
+      formula: (LL_C-LL_B)_format_strong
+    - id: explicit_item_remedy_item_only
+      formula: (LL_D-LL_C)_item_moderate
+    - id: explicit_item_remedy_combined
+      formula: (LL_D-LL_C)_item_format_moderate
+  bootstrap:
+    unit: learner
+    paired: true
+    repeats: 2000
+    interval: percentile_95
+  report_seed_specific: true
+  report_seed_mean_and_range: true
+
+structured_errors:
+  run_on_world: combined_heterogeneous
+  run_on_policy: q_balanced_lab
+  failed_kc:
+    scope: private_oracle
+    primary_rule: deficit_proportional
+    equation: probability(k) = (1 - mastery[k]) / sum_active(1 - mastery)
+    secondary_rule: deterministic_weakest_mastery
+  taxonomy:
+    gkc_aspect_perfect: perfect_auxiliary_or_participle
+    gkc_aspect_progressive: progressive_auxiliary_or_ing
+    gkc_be_passive: passive_auxiliary_or_participle
+    gkc_finite_past: tense_or_finite_form
+    gkc_finite_present: tense_or_finite_form
+    gkc_imperative: imperative_formation
+    gkc_modal_can: modal_choice_or_complement
+    gkc_modal_could: modal_choice_or_complement
+    gkc_modal_may: modal_choice_or_complement
+    gkc_modal_might: modal_choice_or_complement
+    gkc_modal_must: modal_choice_or_complement
+    gkc_modal_shall: modal_choice_or_complement
+    gkc_modal_should: modal_choice_or_complement
+    gkc_modal_will: modal_choice_or_complement
+    gkc_modal_would: modal_choice_or_complement
+    gkc_negation: negation
+    gkc_non_subject_wh_question: question_formation_or_order
+    gkc_polar_question: question_formation_or_order
+  observable_streams:
+    - stream_id: binary_only
+      category: null
+    - stream_id: linked_positive_control
+      linked_probability: 1.0
+    - stream_id: linked_80_percent
+      linked_probability: 0.80
+      otherwise: non_target_or_unresolved
+    - stream_id: within_item_shuffled_negative_control
+      source: linked_positive_control
+      blocks: [item_id, phase]
+      preserve_block_marginals: true
+  error_history:
+    correct_updates_success_for_all_active: true
+    binary_failure_updates_all_active: true
+    linked_failure_updates_category_compatible_active_only: true
+    unresolved_falls_back_to_binary: true
+    evidence_rate: (1 + successes) / (2 + successes + attributed_failures)
+    opportunities_retained_separately: true
+    current_label_available_for_current_prediction: false
+  metrics:
+    - next_response_log_loss
+    - next_response_brier
+    - next_response_calibration
+    - failed_kc_top1
+    - failed_kc_mrr
+    - failed_kc_log_loss
+    - category_candidate_set_size
+    - item_prerequisite_state_rmse
+    - terminal_kc_state_rmse
+
+observable_fields:
+  - learner_id
+  - item_id
+  - sequence_index
+  - session_index
+  - phase
+  - correct
+  - format
+  - policy_id
+  - selection_propensity
+  - grammar_regime
+  - error_category
+
+private_oracle_fields:
+  - active_generator_kcs
+  - mastery_before
+  - mastery_after
+  - aggregated_mastery_before
+  - item_effect
+  - format_effect
+  - learner_ability
+  - learner_learning_rate
+  - learner_guess
+  - learner_slip
+  - response_probability
+  - response_draw
+  - failed_kc
+  - failed_kc_draw
+  - policy_eligibility_audit
+
+deferred_not_in_confirmatory_matrix:
+  - forgetting
+  - response_times
+  - dropout
+  - motivation_or_personality
+  - format_specific_guess_slip
+  - surface_error_text
+  - open_dialogue

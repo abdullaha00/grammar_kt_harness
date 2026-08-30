@@ -1,0 +1,46 @@
+{
+  "artifacts": {
+    "full_rank_cells": {
+      "bytes": 29704,
+      "path": "experiments/measurement_realism/design/format_selection/full_rank_cells.jsonl",
+      "sha256": "c013579cf69a21b7f3e3782a938b840ca23bfc22a1081c828839c971f4385372"
+    },
+    "full_rank_q": {
+      "bytes": 1968,
+      "path": "experiments/measurement_realism/design/format_selection/full_rank_q.csv",
+      "sha256": "043d94ecccbc5520399f6531b553058c598c61a4c45765885ad1929459851a66"
+    },
+    "identification_contrasts": {
+      "bytes": 6728,
+      "path": "experiments/measurement_realism/design/format_selection/identification_contrasts.json",
+      "sha256": "d2a48281ef2bdfdc54215a72b870664fcf96d81e2e6593511fa4e6f79f03fffd"
+    },
+    "input_manifest": {
+      "bytes": 2112,
+      "path": "experiments/measurement_realism/design/format_selection/input_manifest.json",
+      "sha256": "78f5a8dcda03645ca62baf72a6d76ebf48d49a424d0cdef341180865a4fb42af"
+    },
+    "pilot_cells": {
+      "bytes": 19583,
+      "path": "experiments/measurement_realism/design/format_selection/pilot_cells.jsonl",
+      "sha256": "28ea88740b84206d36b77baaa5173b7472ccd021da7c9c781c153086eeed9471"
+    },
+    "pilot_q": {
+      "bytes": 1434,
+      "path": "experiments/measurement_realism/design/format_selection/pilot_q.csv",
+      "sha256": "76be2202449f8efa151dc2493f80ba876ce101cc0d2a8e8676b820d47f91b646"
+    },
+    "selected_cells": {
+      "bytes": 46461,
+      "path": "experiments/measurement_realism/design/format_selection/selected_cells.json",
+      "sha256": "8f8fa56e710982c92426f154482d062cffebfb32d29f19c7fe96f4208a4b479b"
+    },
+    "selection_summary": {
+      "bytes": 20583,
+      "path": "experiments/measurement_realism/design/format_selection/selection_summary.json",
+      "sha256": "15a5d51a3412b1941a19a547420ca553819c39deb76297e9abcb2611d7286f9e"
+    }
+  },
+  "generator": "experiments/measurement_realism/design/format_selection/select_cells.py",
+  "manifest_schema": "matched_format_selection_outputs_v1"
+}

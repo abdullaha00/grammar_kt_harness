@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv02_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "I might miss the train this morning.",
+  "cell_id": "gc_90b9229122fa55d6",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv02_g01_cloze",
+      "context": "I am delayed in slow traffic, and my train leaves soon.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "I [[RESPONSE]] the train this morning.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using “might” and “miss.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "might miss"
+        ],
+        "completed_target": "I might miss the train this morning.",
+        "correct_choice_id": null,
+        "target_response": "might miss"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv02_g01_dialog",
+      "context": "Maya is on her way to the station, but traffic is moving slowly.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Leo: Your train leaves in ten minutes.",
+          "Leo: Do you think you will arrive in time?"
+        ],
+        "incomplete_turn_template": "Maya: I [[RESPONSE]] the train this morning.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Maya’s reply using “might” and “miss.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "might miss"
+        ],
+        "completed_target": "I might miss the train this morning.",
+        "correct_choice_id": null,
+        "target_response": "might miss"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv02_g01_mcq",
+      "context": "I am delayed in slow traffic, and my train leaves soon.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses a third-person singular form instead of the base-form complement after MIGHT.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses a past-tense form instead of the base-form complement after MIGHT.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Adds TO before the base-form complement of MIGHT.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "I might miss the train this morning."
+          },
+          {
+            "id": "B",
+            "text": "I might misses the train this morning."
+          },
+          {
+            "id": "C",
+            "text": "I might missed the train this morning."
+          },
+          {
+            "id": "D",
+            "text": "I might to miss the train this morning."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence is correct?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly expresses the possibility.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "I might miss the train this morning.",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_90b9229122fa55d6_sv02_g01_xform",
+      "context": "I am delayed in slow traffic, and my train leaves soon.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "There is a possibility that I will miss the train this morning.",
+        "stem": null,
+        "transformation_cue": "Use: might + miss"
+      },
+      "instruction": "Rewrite the sentence using “might” and “miss.”",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "I might miss the train this morning."
+        ],
+        "completed_target": "I might miss the train this morning.",
+        "correct_choice_id": null,
+        "target_response": "I might miss the train this morning."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Express the possibility of not reaching the train in time.",
+    "main_verb_lemma": "miss",
+    "object_head": "train",
+    "participants": [
+      "Maya",
+      "Leo"
+    ],
+    "situation_summary": "Maya is delayed in slow traffic while travelling to the station.",
+    "time_anchor": "this morning"
+  },
+  "semantic_variant_index": 2
+}

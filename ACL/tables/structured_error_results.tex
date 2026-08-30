@@ -1,0 +1,57 @@
+\begin{table*}[t]
+  \centering
+  \footnotesize
+  \setlength{\tabcolsep}{3pt}
+  \begin{minipage}[t]{.46\textwidth}
+    \centering
+    \begin{tabularx}{\linewidth}{@{}Xrrr@{}}
+      \toprule
+      Error history & LL & Loc.@1 & KC-evid. RMSE \\
+      \midrule
+      Binary only & .636359 & .420781 & .228727 \\
+      Linked positive control & .635493 & 1.000000 & .144357 \\
+      Linked on 80\% & .635833 & .883728 & .158804 \\
+      Within-item shuffled & .636987 & .462525 & .165519 \\
+      \bottomrule
+    \end{tabularx}
+
+    \vspace{2pt}
+    \emph{(a) Structured-error controls; three-seed means.}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{.51\textwidth}
+    \centering
+    \begin{tabularx}{\linewidth}{@{}Xrrrr@{}}
+      \toprule
+      Format & Det. & KC clear & Shortcut & Response LB \\
+      \midrule
+      Constrained cloze & 17/20 & 17/20 & 1/20 & 1.30 \\
+      Dialogue completion & 0/20 & 3/20 & 14/20 & 3.85 \\
+      Open dialogue & 0/20 & 4/20 & 13/20 & 4.55 \\
+      \bottomrule
+    \end{tabularx}
+
+    \vspace{2pt}
+    \emph{(b) Automated dialogue-continuum judgments.}
+  \end{minipage}
+
+  \vspace{5pt}
+  \begin{tabularx}{\textwidth}{@{}Xrrrrrr@{}}
+    \toprule
+    Assignment & D LL & $\Delta$LL vs. lab & CI away & State RMSE & Item Gini & Median gap \\
+    \midrule
+    Q-balanced lab & .636359 & -- & -- & .129724 & .162530 & 93.67 \\
+    Curriculum & .639779 & +.003420 & 2/3 & .139472 & .162530 & 31.00 \\
+    Mixed practice & .636341 & $-.000018$ & 0/3 & .130748 & .162530 & 92.00 \\
+    Adaptive cell weakness & .639477 & +.003118 & 1/3 & .141659 & .080298 & 26.67 \\
+    \bottomrule
+  \end{tabularx}
+
+  \vspace{2pt}
+  \emph{(c) Post-response, frozen-before-fit exploratory policy recovery.}
+  \caption{Response, dialogue, and assignment boundaries.  (a) targets a
+  synthetic post-outcome attribution; KC-evidence RMSE is a secondary count
+  diagnostic.  (b) reports model judgments, not human ratings.  (c) uses
+  item-prerequisite state RMSE; lab, curriculum, and mixed share an occurrence
+  multiset and terminal oracle state, so this is recovery, not policy efficacy.}
+  \label{tab:structured-errors}
+\end{table*}

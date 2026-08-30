@@ -1,0 +1,164 @@
+{
+  "batch_id": "critic_r02_linguistic_b02",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g02",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "shared_target_proposition",
+      "evidence": "All items intend the proposition that Nina checks the office door every evening.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "target_construction_consistency",
+      "evidence": "All declared targets use the same positive active simple-present declarative construction.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "“Nina checks the office door every evening” is a positive active present declarative without aspect or modal.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "The target has correct third-person singular present morphology.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "The routine context supports the simple present statement.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "A regular workplace security check is a natural context.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "“checks” correctly completes the displayed sentence template.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g02_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "The declared completed target is a positive active present declarative.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "The declared completed target “Nina checks the office door every evening” is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "The intended proposition appropriately answers a question about Nina’s routine.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The incomplete-turn template is “Nina: Nina [[RESPONSE]] the office door every evening.” With the accepted response, the rendered turn is “Nina: Nina checks the office door every evening,” an unnatural duplicated self-reference.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "Accepted response “checks” does not yield the declared completed target in the supplied dialogue template; it yields “Nina: Nina checks the office door every evening.”",
+          "severity": "major_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g02_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "Accepted option C is a positive active simple-present declarative.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "Option C is grammatical and has correct agreement.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "It accurately describes Nina’s repeated evening routine.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The context clearly establishes a habitual event.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "Response “C” uniquely selects the completed target.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g02_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "grammar_cell_fidelity",
+          "evidence": "The target is a positive active present declarative with no aspect or modal.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_grammaticality",
+          "evidence": "“Nina checks the office door every evening” is grammatical.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "target_meaning_coherence",
+          "evidence": "The target preserves the stated routine meaning.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "contextual_naturalness",
+          "evidence": "The transformation context is natural and unambiguous.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_linguistic_equivalence",
+          "evidence": "The sole accepted full sentence exactly matches the target.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g02_xform"
+    }
+  ],
+  "overall_accept": false,
+  "role": "linguistic",
+  "summary": "The dialogue-completion template duplicates “Nina,” so its accepted response does not produce the declared target."
+}

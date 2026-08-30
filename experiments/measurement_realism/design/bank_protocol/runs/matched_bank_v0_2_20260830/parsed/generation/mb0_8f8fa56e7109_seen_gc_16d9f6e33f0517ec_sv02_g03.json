@@ -1,0 +1,158 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "Maya will deliver the keys to the office tomorrow.",
+  "cell_id": "gc_16d9f6e33f0517ec",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02_g03_cloze",
+      "context": "The office needs its keys tomorrow, and Maya has agreed to take them there.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Maya [[RESPONSE]] the keys to the office tomorrow.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using the cues “will” and “deliver.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "will deliver"
+        ],
+        "completed_target": "Maya will deliver the keys to the office tomorrow.",
+        "correct_choice_id": null,
+        "target_response": "will deliver"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02_g03_dialog",
+      "context": "The office staff are checking who has agreed to bring the keys.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Nora: Who has agreed to take the keys to the office tomorrow?"
+        ],
+        "incomplete_turn_template": "Alex: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Alex’s reply with one sentence.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Maya will deliver the keys to the office tomorrow.",
+          "Maya'll deliver the keys to the office tomorrow."
+        ],
+        "completed_target": "Maya will deliver the keys to the office tomorrow.",
+        "correct_choice_id": null,
+        "target_response": "Maya will deliver the keys to the office tomorrow."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02_g03_mcq",
+      "context": "The office needs its keys tomorrow, and Maya has agreed to take them there.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Omits the required modal WILL.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses a third-person singular verb instead of the base form after WILL.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Adds an incompatible form of BE before WILL.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Maya delivers the keys to the office tomorrow."
+          },
+          {
+            "id": "B",
+            "text": "Maya will deliver the keys to the office tomorrow."
+          },
+          {
+            "id": "C",
+            "text": "Maya will delivers the keys to the office tomorrow."
+          },
+          {
+            "id": "D",
+            "text": "Maya is will deliver the keys to the office tomorrow."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence is correct?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly states what Maya has agreed to do.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Maya will deliver the keys to the office tomorrow.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02_g03_xform",
+      "context": "Maya has agreed to take the keys to the office.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Maya is going to deliver the keys to the office tomorrow.",
+        "stem": null,
+        "transformation_cue": "Use: WILL"
+      },
+      "instruction": "Rewrite the sentence using the cue. Keep the meaning the same.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Maya will deliver the keys to the office tomorrow.",
+          "Maya'll deliver the keys to the office tomorrow."
+        ],
+        "completed_target": "Maya will deliver the keys to the office tomorrow.",
+        "correct_choice_id": null,
+        "target_response": "Maya will deliver the keys to the office tomorrow."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "State the future action that Maya has agreed to perform.",
+    "main_verb_lemma": "deliver",
+    "object_head": "keys",
+    "participants": [
+      "Maya",
+      "office staff"
+    ],
+    "situation_summary": "Maya has agreed to take a set of keys to the office the next day.",
+    "time_anchor": "tomorrow"
+  },
+  "semantic_variant_index": 2
+}

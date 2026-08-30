@@ -1,0 +1,17 @@
+{
+  "ambiguity_explanation": "",
+  "batch_id": "solver_r03_rep1_sentence_transformation_b02",
+  "instruction_understanding": "Write one sentence beginning with Maya and ending with when Leo arrived, emphasizing the two-hour continuing activity.",
+  "item_id": "mb0_8f8fa56e7109_uval_gc_483f3ac117f331a7_sv01_g03_xform",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": false,
+  "other_reasonable_responses": [],
+  "reasonable_unkeyed_responses": [],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_uval_gc_483f3ac117f331a7_sv01_g03_xform_solver_r1",
+  "submitted_response": "Maya had been repairing her bicycle for two hours when Leo arrived.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

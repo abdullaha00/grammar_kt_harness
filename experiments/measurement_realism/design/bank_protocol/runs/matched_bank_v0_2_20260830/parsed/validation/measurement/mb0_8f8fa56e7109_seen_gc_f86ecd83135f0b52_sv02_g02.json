@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r02_measurement_b03",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02_g02",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "All formats target SHALL question formation, but the dialogue's unconstrained object reference creates a materially less determinate production task than the cloze and cue-bound transformation.",
+      "severity": "minor_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "The declared modal/base-complement and inversion operations remain the intended construct in every format; recognition and reconstruction are format mechanisms rather than renamed KCs.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "Each format presents the same immediate situation: Maya offers to close the window because Leo is cold.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The gap requires both finite-modal-before-subject order ('Shall I') and the base complement 'close'.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The supplied subject, object, and lexical material do not require a further major grammatical operation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The required response cannot be completed as the intended offer without selecting SHALL, inversion, and the base verb form.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "With the fixed template '[[RESPONSE]] the window?' and instruction to use shall and close, 'Shall I close' is determinate.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The constrained gap fixes the relevant response string; no solver-proposed unkeyed alternative was supplied.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The context and fixed noun phrase impose little lexical or discourse burden beyond interpreting a straightforward offer.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02_g02_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Producing an offer with 'shall' and 'close' requires 'Shall I close ...?', evidencing the declared modal/base-complement and polar-question operations.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The item does not require a major grammatical construction beyond the declared modal question; object reference is ordinary contextual vocabulary.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "A grammatical offer using the stipulated words still requires modal–subject inversion and a base-form complement.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "The dialogue licenses multiple natural offers, including 'Shall I close it?' and 'Shall I close the window for you?'; the instruction does not require the exact target object wording.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "'Shall I close it?' is linguistically and contextually reasonable because the window is salient, but it is unkeyed; its rejection makes the open-response item blocking.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Success partly depends on choosing the scorer's preferred explicit noun phrase rather than the equally natural pronoun reference in the dialogue.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02_g02_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Only B realizes both SHALL + base complement and finite-operator inversion; the distractors directly contrast these operations.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The options do not introduce a substantial additional grammatical requirement.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The very overtly ungrammatical distractors allow testwise elimination, especially 'Do I shall...' and 'closes' after shall, reducing the need for productive control.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "B is the sole well-formed and contextually appropriate offer among the supplied choices.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "This is a closed single-choice task and B is the unique defensible keyed option; no solver-proposed unkeyed alternative exists.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Reading the short scenario and option set creates only modest recognition-format burden.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02_g02_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The cue requires rearranging SHALL and I into a polar question and retaining close as a base complement.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The declarative source is semantically simple and the required transformation is limited to the declared offer form.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Using all cue words prevents an answer that avoids either SHALL or question inversion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The supplied cue includes 'the window' and requires all words, yielding the keyed question.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The cue constrains the response to the accepted target; no solver-proposed unkeyed alternative was supplied.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The item adds word-order reconstruction and the instruction to use all cue words, which is a format burden beyond ordinary offer production.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02_g02_xform"
+    }
+  ],
+  "overall_accept": false,
+  "role": "measurement",
+  "summary": "Reject: the dialogue-completion item has blocking answer non-determinacy and excludes the natural contextually recoverable answer 'Shall I close it?'."
+}

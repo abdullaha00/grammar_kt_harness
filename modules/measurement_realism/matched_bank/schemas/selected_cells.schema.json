@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "matched-format-selected-cells-v1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "selection_schema",
+    "dataset_id",
+    "kc_order",
+    "seen_cells",
+    "held_out_cells",
+    "seen_rank_claim",
+    "input_hashes"
+  ],
+  "properties": {
+    "selection_schema": {"const": "matched_format_selected_cells_v1"},
+    "dataset_id": {"const": "grammar_kt_full_v1"},
+    "kc_order": {
+      "type": "array",
+      "minItems": 18,
+      "maxItems": 18,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "seen_cells": {
+      "type": "array",
+      "minItems": 18,
+      "maxItems": 18,
+      "items": {"$ref": "#/$defs/cell"}
+    },
+    "held_out_cells": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"$ref": "#/$defs/cell"}
+    },
+    "seen_rank_claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cell_count", "exact_determinant", "exact_rank", "held_out_cells_excluded"],
+      "properties": {
+        "cell_count": {"const": 18},
+        "exact_determinant": {"type": "integer"},
+        "exact_rank": {"const": 18},
+        "held_out_cells_excluded": {"const": true}
+      }
+    },
+    "input_hashes": {"type": "object", "minProperties": 1}
+  },
+  "$defs": {
+    "cell": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "cell_id", "features", "grammar_regime", "acquisition_updates",
+        "generator_kc_ids", "q_row", "source_ids", "selection_order"
+      ],
+      "properties": {
+        "cell_id": {"type": "string", "pattern": "^gc_[0-9a-f]{16}$"},
+        "features": {
+          "type": "object",
+          "required": ["aspect", "clause", "modal", "polarity", "tense", "voice"]
+        },
+        "grammar_regime": {"enum": ["seen", "unseen_combination", "unseen_value"]},
+        "acquisition_updates": {"type": "boolean"},
+        "generator_kc_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "q_row": {"type": "array", "minItems": 18, "maxItems": 18, "items": {"enum": [0, 1]}},
+        "source_ids": {"type": "array", "items": {"type": "string"}},
+        "selection_order": {"type": "integer", "minimum": 1, "maximum": 20}
+      }
+    }
+  }
+}

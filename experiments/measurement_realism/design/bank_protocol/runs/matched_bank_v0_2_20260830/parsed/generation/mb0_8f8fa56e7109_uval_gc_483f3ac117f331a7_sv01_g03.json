@@ -1,0 +1,164 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_uval_gc_483f3ac117f331a7_sv01_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "Maya had been repairing her bicycle for two hours when Leo arrived.",
+  "cell_id": "gc_483f3ac117f331a7",
+  "family_id": "mb0_8f8fa56e7109_uval_gc_483f3ac117f331a7_sv01",
+  "grammar_regime": "unseen_value",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_uval_gc_483f3ac117f331a7_sv01_g03_cloze",
+      "context": "Maya started working on her bicycle two hours before Leo arrived. She was still working on it when he arrived.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]] her bicycle for two hours when Leo arrived.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using the verb repair.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Maya had been repairing",
+          "Maya'd been repairing",
+          "Maya’d been repairing"
+        ],
+        "completed_target": "Maya had been repairing her bicycle for two hours when Leo arrived.",
+        "correct_choice_id": null,
+        "target_response": "Maya had been repairing"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_uval_gc_483f3ac117f331a7_sv01_g03_dialog",
+      "context": "Maya started repairing her bicycle two hours before Leo arrived and was still working when he got there.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Nina: What was Maya doing when you arrived?",
+          "Leo: She was still working on her bicycle.",
+          "Nina: How long had she been doing that?"
+        ],
+        "incomplete_turn_template": "Leo: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Leo's final reply in one sentence.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Maya had been repairing her bicycle for two hours when Leo arrived.",
+          "Maya'd been repairing her bicycle for two hours when Leo arrived.",
+          "Maya’d been repairing her bicycle for two hours when Leo arrived."
+        ],
+        "completed_target": "Maya had been repairing her bicycle for two hours when Leo arrived.",
+        "correct_choice_id": null,
+        "target_response": "Maya had been repairing her bicycle for two hours when Leo arrived."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_uval_gc_483f3ac117f331a7_sv01_g03_mcq",
+      "context": "Maya started repairing her bicycle two hours before Leo arrived. She was still repairing it when he arrived.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the past perfect but omits the progressive construction for the continuing activity.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses the past progressive but omits the perfect construction linking the earlier duration to Leo's arrival.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses present rather than past finite-form selection despite the past arrival time.",
+          "option_id": "C"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Maya had repaired her bicycle for two hours when Leo arrived."
+          },
+          {
+            "id": "B",
+            "text": "Maya was repairing her bicycle for two hours when Leo arrived."
+          },
+          {
+            "id": "C",
+            "text": "Maya has been repairing her bicycle for two hours when Leo arrived."
+          },
+          {
+            "id": "D",
+            "text": "Maya had been repairing her bicycle for two hours when Leo arrived."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence emphasizes the duration of Maya's continuing activity before Leo's arrival?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that best describes the situation.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "D"
+        ],
+        "completed_target": "Maya had been repairing her bicycle for two hours when Leo arrived.",
+        "correct_choice_id": "D",
+        "target_response": "D"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_uval_gc_483f3ac117f331a7_sv01_g03_xform",
+      "context": "Keep the same people, activity, duration, and arrival time.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Maya started repairing her bicycle two hours before Leo arrived. She was still repairing it when he arrived.",
+        "stem": null,
+        "transformation_cue": "Begin with Maya and end with when Leo arrived. Use had, been, and the -ing form of repair."
+      },
+      "instruction": "Combine the statements into one sentence that emphasizes how long the activity continued before Leo arrived.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Maya had been repairing her bicycle for two hours when Leo arrived.",
+          "Maya'd been repairing her bicycle for two hours when Leo arrived.",
+          "Maya’d been repairing her bicycle for two hours when Leo arrived."
+        ],
+        "completed_target": "Maya had been repairing her bicycle for two hours when Leo arrived.",
+        "correct_choice_id": null,
+        "target_response": "Maya had been repairing her bicycle for two hours when Leo arrived."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Describe the duration of Maya's ongoing activity before Leo arrived.",
+    "main_verb_lemma": "repair",
+    "object_head": "bicycle",
+    "participants": [
+      "Maya",
+      "Leo"
+    ],
+    "situation_summary": "Maya worked continuously on her bicycle for two hours before Leo arrived and found her still working.",
+    "time_anchor": "the two hours before Leo arrived"
+  },
+  "semantic_variant_index": 1
+}

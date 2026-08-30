@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "Maya could have brought the spare charger.",
+  "cell_id": "gc_9b8833161ce61d83",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g01_cloze",
+      "context": "Maya knew her friend's phone battery was low. She had a spare charger at home, but she left it there.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Maya [[RESPONSE]].",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using the cues “could” and “bring.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "could have brought the spare charger"
+        ],
+        "completed_target": "Maya could have brought the spare charger.",
+        "correct_choice_id": null,
+        "target_response": "could have brought the spare charger"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g01_dialog",
+      "context": "Maya's friend needed to charge her phone. Maya owned a spare charger but had left it at home.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Nina: My phone died while we were out.",
+          "Leo: Did anyone have another charger?",
+          "Nina: Maya had one at home, but she didn't bring it."
+        ],
+        "incomplete_turn_template": "Leo: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Leo's reply using the cues “could” and “bring.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Maya could have brought the spare charger."
+        ],
+        "completed_target": "Maya could have brought the spare charger.",
+        "correct_choice_id": null,
+        "target_response": "Maya could have brought the spare charger."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g01_mcq",
+      "context": "Maya knew her friend's phone battery was low. She had a spare charger at home, but she left it there.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Omits perfect HAVE after the modal COULD.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses the base form BRING instead of the past participle BROUGHT after perfect HAVE.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Places perfect HAVE before COULD and uses the wrong form of HAVE for a modal-perfect construction.",
+          "option_id": "C"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Maya could brought the spare charger."
+          },
+          {
+            "id": "B",
+            "text": "Maya could have bring the spare charger."
+          },
+          {
+            "id": "C",
+            "text": "Maya has could brought the spare charger."
+          },
+          {
+            "id": "D",
+            "text": "Maya could have brought the spare charger."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly says that bringing the charger was possible earlier?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that best completes the situation.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "D"
+        ],
+        "completed_target": "Maya could have brought the spare charger.",
+        "correct_choice_id": "D",
+        "target_response": "D"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9b8833161ce61d83_sv01_g01_xform",
+      "context": "Maya's friend needed to charge her phone while they were out.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Maya had the spare charger at home. She did not bring it.",
+        "stem": null,
+        "transformation_cue": "Use “could” and the verb “bring.” Begin with “Maya.”"
+      },
+      "instruction": "Rewrite the statements as one sentence to say that this was possible in the past but did not happen.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Maya could have brought the spare charger."
+        ],
+        "completed_target": "Maya could have brought the spare charger.",
+        "correct_choice_id": null,
+        "target_response": "Maya could have brought the spare charger."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "State that Maya had a past opportunity to bring the charger but did not do so.",
+    "main_verb_lemma": "bring",
+    "object_head": "charger",
+    "participants": [
+      "Maya"
+    ],
+    "situation_summary": "Maya had a spare charger available but left it at home when it was needed.",
+    "time_anchor": "earlier that day"
+  },
+  "semantic_variant_index": 1
+}

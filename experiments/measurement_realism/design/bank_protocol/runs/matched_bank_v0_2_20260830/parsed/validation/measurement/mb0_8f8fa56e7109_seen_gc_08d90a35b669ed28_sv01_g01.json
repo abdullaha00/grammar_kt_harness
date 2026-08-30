@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r01_measurement_b01",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g01",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01",
+  "family_judgments": [
+    {
+      "blocking": true,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "The MCQ admits a reasonable simple-past alternative while the constructed formats constrain the present-perfect target; thus the formats do not provide equivalent evidence.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": true,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "In MCQ, pragmatic preference for present perfect over simple past becomes decisive, whereas constructed items directly require assembling the declared form.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "All formats concern whether Maya completed sending the invitation by now.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Producing “Has Maya sent” requires present HAVE, participle sent, and inversion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "Lexis and active transitive clause structure are simple; no substantial additional production grammar is required.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The constrained blank requires the finite operator, subject, and participle rather than allowing a one-word lexical answer.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The fixed template ending “the invitation?” makes “Has Maya sent” the determinate target completion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "No solver-proposed unkeyed alternative was supplied, and the template sharply constrains the response span.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Success also depends on reading the completion-by-now contextual cue, but vocabulary and discourse burden are low.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g01_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The response slot requires the present-perfect polar-question sequence “Has Maya sent”.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The short dialogue introduces no material undeclared grammar in the required response.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "A successful completion must realize HAVE inversion and the participle.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The fixed final turn and following object phrase determine the keyed response.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "No solver-proposed unkeyed alternative was supplied; the response slot excludes additions such as “yet” after the verb phrase.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Dialogue tracking is a small nuisance burden beyond the declared grammar.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g01_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Option A displays all three operations, but selecting it is recognition and can be aided by eliminating visibly ill-formed C and D.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The options and prompt use accessible vocabulary and do not require additional target-side grammar.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "B, “Did Maya send the invitation?”, is a grammatical and contextually reasonable way to ask whether the planned action happened; the learner can choose it without the target construction, while the instruction’s “best” wording does not rule it out robustly.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "Both A and B can ask about completion of a sending event this morning; A better matches a present-result reading, but B is not an invalid question for the stated situation.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The response mechanism is selection among displayed options, so accepted option A covers the keyed response.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Pragmatic interpretation of “by now” is needed to prefer A over the otherwise reasonable simple-past option.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g01_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Writing the target requires present-perfect HAVE, participle sent, and polar-question inversion.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The requested subject, verb, and object are supplied and require no substantial additional grammar.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "“Did Maya send the invitation?” is a viable yes/no question from the source sentence, although the explicit completion-now instruction favors the target.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The intended present-perfect reading is clear, but a simple-past question remains communicatively defensible without an explicit requirement to use the present perfect.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "“Has Maya sent the invitation yet?” is linguistically and contextually reasonable for the stated by-now goal, but is unkeyed; its omission rejects a defensible full response.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Full-sentence production and punctuation add response burden beyond the three declared KCs.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g01_xform"
+    }
+  ],
+  "overall_accept": false,
+  "role": "measurement",
+  "summary": "Reject: the MCQ is not determinate against grammatical simple-past B, and the transformation rejects the defensible “yet” question."
+}

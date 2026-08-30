@@ -1,0 +1,156 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv02_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "You should charge your phone before the trip.",
+  "cell_id": "gc_809d40d141731b61",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv02_g02_cloze",
+      "context": "Your phone battery is almost empty, and the trip starts soon.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "You [[RESPONSE]] your phone before the trip.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the advice with the correct words.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "should charge"
+        ],
+        "completed_target": "You should charge your phone before the trip.",
+        "correct_choice_id": null,
+        "target_response": "should charge"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv02_g02_dialog",
+      "context": "Maya and Leo are preparing to leave for a trip.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Maya: My phone battery is almost empty, and we're leaving soon."
+        ],
+        "incomplete_turn_template": "Leo: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Leo's reply with a natural piece of advice.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "You should charge your phone before the trip."
+        ],
+        "completed_target": "You should charge your phone before the trip.",
+        "correct_choice_id": null,
+        "target_response": "You should charge your phone before the trip."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv02_g02_mcq",
+      "context": "Your phone battery is almost empty, and the trip starts soon.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses an -ing form instead of the base-form complement after should.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Adds to before the base-form complement after should.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Places should after the main verb instead of before it.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "You should charge your phone before the trip."
+          },
+          {
+            "id": "B",
+            "text": "You should charging your phone before the trip."
+          },
+          {
+            "id": "C",
+            "text": "You should to charge your phone before the trip."
+          },
+          {
+            "id": "D",
+            "text": "You charge should your phone before the trip."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "What advice should your friend give you?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that gives the advice correctly.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "You should charge your phone before the trip.",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv02_g02_xform",
+      "context": "Your phone battery is almost empty, and the trip starts soon.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "It is a good idea for you to charge your phone before the trip.",
+        "stem": null,
+        "transformation_cue": "Use: should"
+      },
+      "instruction": "Rewrite the sentence as advice using the cue. Keep the same meaning.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "You should charge your phone before the trip."
+        ],
+        "completed_target": "You should charge your phone before the trip.",
+        "correct_choice_id": null,
+        "target_response": "You should charge your phone before the trip."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Advise the person to charge the phone before leaving.",
+    "main_verb_lemma": "charge",
+    "object_head": "phone",
+    "participants": [
+      "traveler",
+      "friend"
+    ],
+    "situation_summary": "A person's phone battery is nearly empty shortly before a trip.",
+    "time_anchor": "before the trip"
+  },
+  "semantic_variant_index": 2
+}

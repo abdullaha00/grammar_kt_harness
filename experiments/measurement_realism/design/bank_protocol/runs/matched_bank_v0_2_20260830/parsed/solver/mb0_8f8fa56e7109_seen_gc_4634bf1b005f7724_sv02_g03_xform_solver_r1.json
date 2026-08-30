@@ -1,0 +1,19 @@
+{
+  "ambiguity_explanation": "Both questions ask for the unrecognized printer and keep the same meaning.",
+  "batch_id": "solver_r03_rep1_sentence_transformation_b01",
+  "instruction_understanding": "Ask which of the two printers the office computer does not recognize.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02_g03_xform",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Which printer doesn't the office computer recognize?"
+  ],
+  "reasonable_unkeyed_responses": [],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02_g03_xform_solver_r1",
+  "submitted_response": "Which printer does the office computer fail to recognize?",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "Shall I close the window?",
+  "cell_id": "gc_f86ecd83135f0b52",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01_g02_cloze",
+      "context": "You notice that your colleague is cold because a window is open.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]] the window?",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the offer using “shall” and “close.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Shall I close"
+        ],
+        "completed_target": "Shall I close the window?",
+        "correct_choice_id": null,
+        "target_response": "Shall I close"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01_g02_dialog",
+      "context": "Two colleagues are in a room with an open window.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Alex: It is getting cold in here.",
+          "Alex: The open window is letting in a lot of cold air."
+        ],
+        "incomplete_turn_template": "Sam: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the dialogue with a suitable offer using “shall.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Shall I close the window?"
+        ],
+        "completed_target": "Shall I close the window?",
+        "correct_choice_id": null,
+        "target_response": "Shall I close the window?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01_g02_mcq",
+      "context": "Your colleague is cold because a window is open. You offer to close it.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses declarative subject–modal order instead of inversion for a polar question.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses an inflected verb instead of the base-form complement after “shall.”",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Adds incorrect do-support instead of forming the question by inverting “shall” and the subject.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Shall I close the window?"
+          },
+          {
+            "id": "B",
+            "text": "I shall close the window?"
+          },
+          {
+            "id": "C",
+            "text": "Shall I closes the window?"
+          },
+          {
+            "id": "D",
+            "text": "Do I shall close the window?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence makes the intended offer?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly offers to help.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "Shall I close the window?",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01_g02_xform",
+      "context": "Your colleague is cold, and you are offering to act now.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "The window is open. I can close the window.",
+        "stem": null,
+        "transformation_cue": "Ask whether you should close the window now. Begin with “Shall.”"
+      },
+      "instruction": "Rewrite the statements as an offer to help. Use “shall” and keep the same meaning.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Shall I close the window?"
+        ],
+        "completed_target": "Shall I close the window?",
+        "correct_choice_id": null,
+        "target_response": "Shall I close the window?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Offer to close the window now.",
+    "main_verb_lemma": "close",
+    "object_head": "window",
+    "participants": [
+      "speaker",
+      "colleague"
+    ],
+    "situation_summary": "An open window is letting cold air into a room.",
+    "time_anchor": "now"
+  },
+  "semantic_variant_index": 1
+}

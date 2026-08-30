@@ -1,0 +1,9 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv01_g02",
+  "candidate_round": 2,
+  "failed_checks": [
+    "constrained_cloze:canonical_reconstruction"
+  ],
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv01",
+  "passed": false
+}

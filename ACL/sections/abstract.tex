@@ -1,24 +1,24 @@
-Knowledge tracing (KT) requires items, knowledge components (KCs), and an
-item--KC mapping, yet existing language-learning datasets rarely expose a
-transparent grammatical measurement structure.  We present \system, an
-auditable pipeline that separates canonical linguistic constructions
-(\grammarcell{}s), a declared synthetic generator ontology
-$(\kstar,\qstar)$, observable items and responses, and downstream KC
-hypotheses $(\khat,\qhat)$.  All 1,222 source records receive
-an explicit disposition; 211 complete mappings yield 75 canonical cells.  We
-freeze an outcome-independent 18-KC reusable-operation ontology, curate 113
-model-screened items, construct a full-rank $113{\times}18$
-\qstar, and simulate 283,000 replay-verifiable events from 1,000 learners.
-On this frozen benchmark, both coarsening and refinement worsen response
-prediction, while 10\% Q-matrix corruption is reliably harmful.  An
-observable-only KC-discovery procedure recovers a high-overlap representation
-but cannot distinguish atomic and compositional rules that have identical
-activation on seen items; unique recovery is therefore rejected even in a
-controlled positive case.  Reusable KCs transfer substantially better than
-exact-cell KCs to 15 unseen combinations.  The primary \kstar{} ranking holds
-in every seed for 12 of 13 conditions (baseline plus 12 perturbations);
-unmodelled item difficulty is the exception.
-The release provides explicit construction evidence,
-public learner events, separate oracle truth, and controlled
-experiments---not a claim that the generator ontology or simulator describes
-human cognition.
+Language-learning logs rarely expose trustworthy ground truth for grammatical
+opportunity boundaries, knowledge components (KCs), item--KC mappings, or
+learner mastery.  Synthetic data can expose those quantities, but known latent
+truth does not make the observable measurement valid.  We build and preserve a
+clean grammar-KT benchmark from all 1,222 records of a grammar resource: 75
+canonical constructions, 18 declared generator factors, 113 prompts, a
+full-rank Q-matrix, and 283,000 interactions from 1,000 synthetic learners.
+Its known truth enables counterfactual studies unavailable in ordinary logs:
+KC coarsening/refinement, Q misspecification, ontology equivalence, state
+recovery, and collection geometry.  We then audit the measurement process
+rather than assuming it is realistic.  Two model-based item audits agree that
+only 60/113 prompts are usable as stored and flag 18 critical answer-space or
+withhold cases; three outcome-blind KC inductions share only nine activation
+signatures.  A preregistered four-format bank construction passes all gates for
+only 5/38 matched families, so we release no ``realistic'' successor dataset.
+In a separate content-free structural control, planted format nuisance makes a
+false format-specific KC split relatively more predictive (three-seed
+difference-in-differences $-.0316$); an explicit format covariate outperforms
+that split.  Oracle-linked structured errors greatly improve failed-KC
+localisation but yield only small next-response gains.  A dialogue continuum
+improves visible naturalness while sharply reducing answer determinacy and KC
+attribution.  The resulting contribution is not a synthetic human clone: it is
+an auditable analysis of how KC structure, measurement nuisance, response
+information, and assignment policy determine what grammar KT can infer.

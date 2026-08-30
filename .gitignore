@@ -5,3 +5,31 @@ __pycache__/
 *.egg-info/
 runs/*
 !runs/.gitkeep
+
+# Reconstructable measurement-realism run streams and per-attempt call trees.
+experiments/measurement_realism/worlds/controlled_instrument_v1/runs/
+experiments/measurement_realism/design/bank_protocol/runs/*/raw/
+experiments/measurement_realism/design/bank_protocol/runs/*/parsed/
+experiments/measurement_realism/design/bank_protocol/runs/*/provenance/calls/
+experiments/measurement_realism/design/bank_protocol/runs/*/provenance/deterministic_checks/
+
+# Exact matched-bank evidence needed to replay the frozen negative result.
+# The v0/v0_1 trees are failed preflights (not scientific-run call evidence).
+!experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_20260830/raw/
+!experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_20260830/raw/**
+!experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_20260830/provenance/calls/
+!experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_20260830/provenance/calls/**
+!experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_1_20260830/raw/
+!experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_1_20260830/raw/**
+!experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_1_20260830/parsed/
+!experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_1_20260830/parsed/**
+!experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_1_20260830/provenance/calls/
+!experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_1_20260830/provenance/calls/**
+!experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_1_20260830/provenance/deterministic_checks/
+!experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_1_20260830/provenance/deterministic_checks/**
+!experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/parsed/
+!experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/parsed/**
+!experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/provenance/deterministic_checks/
+!experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/provenance/deterministic_checks/**
+**/.analysis.incomplete*/
+**/.results.incomplete*/

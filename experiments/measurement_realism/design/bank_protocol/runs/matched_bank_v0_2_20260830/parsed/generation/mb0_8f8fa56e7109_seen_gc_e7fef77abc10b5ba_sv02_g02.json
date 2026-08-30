@@ -1,0 +1,161 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "The hikers would not have crossed the river.",
+  "cell_id": "gc_e7fef77abc10b5ba",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g02_cloze",
+      "context": "The hikers reached the other side because the temporary bridge was still open. Imagine that it had already been closed.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]].",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using the verb “cross.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "The hikers would not have crossed the river",
+          "The hikers wouldn't have crossed the river"
+        ],
+        "completed_target": "The hikers would not have crossed the river.",
+        "correct_choice_id": null,
+        "target_response": "The hikers would not have crossed the river"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g02_dialog",
+      "context": "The hikers used a temporary bridge to reach the other side of a river.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Maya: Did the hikers cross the river before dark?",
+          "Leo: Yes, because the temporary bridge was still open.",
+          "Maya: What would have happened if it had already been closed?"
+        ],
+        "incomplete_turn_template": "Leo: [[RESPONSE]].",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Leo’s final reply.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "The hikers would not have crossed the river",
+          "The hikers wouldn't have crossed the river"
+        ],
+        "completed_target": "The hikers would not have crossed the river.",
+        "correct_choice_id": null,
+        "target_response": "The hikers would not have crossed the river"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g02_mcq",
+      "context": "The hikers crossed the river because the temporary bridge was still open. Imagine that it had already been closed.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Omits the perfect construction after WOULD.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Omits verbal negation.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses the base form CROSS instead of the participle CROSSED after perfect HAVE.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "The hikers would not cross the river."
+          },
+          {
+            "id": "B",
+            "text": "The hikers would have crossed the river."
+          },
+          {
+            "id": "C",
+            "text": "The hikers would not have crossed the river."
+          },
+          {
+            "id": "D",
+            "text": "The hikers would not have cross the river."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "What would have happened?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly completes the situation.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "C"
+        ],
+        "completed_target": "The hikers would not have crossed the river.",
+        "correct_choice_id": "C",
+        "target_response": "C"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g02_xform",
+      "context": "Keep the same hikers, action, and river.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "The temporary bridge was still open, so the hikers crossed the river.",
+        "stem": null,
+        "transformation_cue": "Use: the hikers / would / not / have / cross / the river"
+      },
+      "instruction": "Rewrite the information to say what would have happened if the bridge had already been closed.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "The hikers would not have crossed the river.",
+          "The hikers wouldn't have crossed the river."
+        ],
+        "completed_target": "The hikers would not have crossed the river.",
+        "correct_choice_id": null,
+        "target_response": "The hikers would not have crossed the river."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Explain the negative result that would have followed if the bridge had been closed.",
+    "main_verb_lemma": "cross",
+    "object_head": "river",
+    "participants": [
+      "the hikers",
+      "the temporary bridge"
+    ],
+    "situation_summary": "A temporary bridge enabled a group of hikers to cross a river before it closed.",
+    "time_anchor": "before the temporary bridge closed"
+  },
+  "semantic_variant_index": 2
+}

@@ -1,0 +1,17 @@
+{
+  "ambiguity_explanation": "",
+  "batch_id": "solver_r01_rep1_sentence_transformation_b01",
+  "instruction_understanding": "Write one sentence saying that Lena repaired the broken chair yesterday.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv01_g01_xform",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": false,
+  "other_reasonable_responses": [],
+  "reasonable_unkeyed_responses": [],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv01_g01_xform_solver_r1",
+  "submitted_response": "Lena repaired the broken chair yesterday.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

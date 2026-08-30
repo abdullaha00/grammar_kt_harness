@@ -1,0 +1,188 @@
+{
+  "batch_id": "critic_r02_platform_product_b03",
+  "candidate_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g02",
+  "family_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "plausible_format_crossing",
+      "evidence": "Each format—cloze, dialogue completion, multiple choice, and transformation—uses an appropriate and understandable interaction pattern.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "non_repetitive_learner_experience",
+      "evidence": "Every format repeats Maya, the office move, the boxes, and essentially the same completed sentence, limiting perceived variety within the family.",
+      "severity": "minor_concern"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The instruction identifies the verb and the sentence blank clearly indicates what the learner must complete.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "The short-text blank is sized conceptually for “is carrying,” and the sentence supplies the subject and complement.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "“Office,” “move,” “boxes,” and “carry” are common and appropriate for B2.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "Carrying boxes into an office during a move is a credible present-time situation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The lexical cue and complete sentence frame focus the task on forming the ongoing action.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The response field and stated accepted contracted variants make this straightforward to deliver and score.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g02_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The question “What is Maya doing right now?” and the partial reply make the intended completion clear.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "The partial turn “Maya [[RESPONSE]] the boxes…” appropriately prompts a short typed verb phrase.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "The dialogue uses familiar workplace and action vocabulary for the declared level.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "Nina’s first reply, “I can see her near the entrance with the boxes,” is followed by another Nina turn that simply states the answer, which is slightly stilted as a dialogue sequence.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The context and fixed sentence frame support production without adding lexical difficulty.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "This works as a standard typed dialogue completion with a clearly delimited answer position.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g02_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "Both the instruction and stem explicitly ask for the sentence describing Maya’s current action.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "The labelled sentence options are suitable for one single-choice answer.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "The prompt and choices use common vocabulary, and the context explains “in progress.”",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "Having boxes in her arms during an office move naturally supports the described action.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The choices provide accessible contrasts in verb form and agreement for B2 grammar practice.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The item has one clear keyed option and fits a standard multiple-choice component.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g02_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The instruction asks for one sentence about an action happening now, and the source information supplies the meaning to express.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "A full-sentence text response is appropriate, with the cue specifying both the starting word and verb.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "“Started,” “finished,” “boxes,” and “office” are accessible at B2.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "The unfinished carrying action is a natural paraphrase of an ongoing office-move activity.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The task requires a controlled rewrite but gives enough semantic and lexical support for the level.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The specified target and accepted contracted forms can be scored in a normal free-text transformation activity.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_ucomb_gc_e730dbce7b036961_sv01_g02_xform"
+    }
+  ],
+  "overall_accept": true,
+  "role": "platform_product",
+  "summary": "The family is clear and technically deployable at B2; small dialogue awkwardness and repeated surface content reduce variety but do not prevent use."
+}

@@ -1,0 +1,381 @@
+{
+  "audit_id": "full_v1_platform_plausibility_audit_v1",
+  "status": "AUTOMATED_AUDIT_ANALYSED",
+  "evidence_boundary": {
+    "critics": "four independent Codex role prompts",
+    "human_or_expert_gold": false,
+    "interpretation": "automated qualitative stress test; percentages are not validated prevalence estimates"
+  },
+  "scale": {
+    "items": 113,
+    "roles": 4,
+    "judgments": 452
+  },
+  "aggregate_dispositions": {
+    "usable_as_is": {
+      "count": 79,
+      "fraction": 0.6991150442477876
+    },
+    "minor_ui_or_answer_set_change": {
+      "count": 23,
+      "fraction": 0.20353982300884957
+    },
+    "pedagogically_artificial": {
+      "count": 2,
+      "fraction": 0.017699115044247787
+    },
+    "problematic_answer_space": {
+      "count": 8,
+      "fraction": 0.07079646017699115
+    },
+    "probably_not_deployable": {
+      "count": 1,
+      "fraction": 0.008849557522123894
+    }
+  },
+  "disposition_disagreement": {
+    "items": 56,
+    "fraction": 0.49557522123893805
+  },
+  "role_dispositions": {
+    "learner": {
+      "minor_ui_or_answer_set_change": 23,
+      "pedagogically_artificial": 1,
+      "probably_not_deployable": 1,
+      "problematic_answer_space": 14,
+      "usable_as_is": 74
+    },
+    "measurement": {
+      "minor_ui_or_answer_set_change": 22,
+      "pedagogically_artificial": 2,
+      "probably_not_deployable": 3,
+      "problematic_answer_space": 10,
+      "usable_as_is": 76
+    },
+    "platform_product": {
+      "minor_ui_or_answer_set_change": 26,
+      "pedagogically_artificial": 2,
+      "problematic_answer_space": 1,
+      "usable_as_is": 84
+    },
+    "teacher": {
+      "minor_ui_or_answer_set_change": 10,
+      "pedagogically_artificial": 2,
+      "probably_not_deployable": 2,
+      "problematic_answer_space": 8,
+      "usable_as_is": 91
+    }
+  },
+  "role_dimension_counts": {
+    "learner": {
+      "answer_determinacy": {
+        "major_concern": 9,
+        "minor_concern": 12,
+        "pass": 92
+      },
+      "context_naturalness": {
+        "major_concern": 2,
+        "minor_concern": 12,
+        "pass": 99
+      },
+      "difficulty_plausibility": {
+        "major_concern": 2,
+        "minor_concern": 17,
+        "pass": 94
+      },
+      "format_plausibility": {
+        "minor_concern": 1,
+        "pass": 112
+      },
+      "kc_measurement_purity": {
+        "major_concern": 1,
+        "minor_concern": 10,
+        "pass": 102
+      },
+      "lexical_simplicity": {
+        "major_concern": 1,
+        "minor_concern": 1,
+        "pass": 111
+      },
+      "pedagogical_plausibility": {
+        "major_concern": 2,
+        "minor_concern": 11,
+        "pass": 100
+      },
+      "platform_deployability": {
+        "major_concern": 8,
+        "minor_concern": 24,
+        "pass": 81
+      },
+      "response_space_plausibility": {
+        "major_concern": 14,
+        "minor_concern": 14,
+        "pass": 85
+      },
+      "task_comprehensibility": {
+        "major_concern": 1,
+        "minor_concern": 13,
+        "pass": 99
+      }
+    },
+    "measurement": {
+      "answer_determinacy": {
+        "major_concern": 11,
+        "minor_concern": 8,
+        "pass": 94
+      },
+      "context_naturalness": {
+        "major_concern": 2,
+        "minor_concern": 10,
+        "pass": 101
+      },
+      "difficulty_plausibility": {
+        "major_concern": 4,
+        "minor_concern": 22,
+        "pass": 87
+      },
+      "format_plausibility": {
+        "minor_concern": 4,
+        "pass": 109
+      },
+      "kc_measurement_purity": {
+        "major_concern": 7,
+        "minor_concern": 10,
+        "pass": 96
+      },
+      "lexical_simplicity": {
+        "pass": 113
+      },
+      "pedagogical_plausibility": {
+        "major_concern": 3,
+        "minor_concern": 19,
+        "pass": 91
+      },
+      "platform_deployability": {
+        "major_concern": 7,
+        "minor_concern": 24,
+        "pass": 82
+      },
+      "response_space_plausibility": {
+        "major_concern": 12,
+        "minor_concern": 16,
+        "pass": 85
+      },
+      "task_comprehensibility": {
+        "major_concern": 10,
+        "minor_concern": 8,
+        "pass": 95
+      }
+    },
+    "platform_product": {
+      "answer_determinacy": {
+        "major_concern": 1,
+        "minor_concern": 17,
+        "pass": 95
+      },
+      "context_naturalness": {
+        "major_concern": 2,
+        "minor_concern": 15,
+        "pass": 96
+      },
+      "difficulty_plausibility": {
+        "major_concern": 1,
+        "minor_concern": 16,
+        "pass": 96
+      },
+      "format_plausibility": {
+        "minor_concern": 4,
+        "pass": 109
+      },
+      "kc_measurement_purity": {
+        "minor_concern": 5,
+        "pass": 108
+      },
+      "lexical_simplicity": {
+        "pass": 113
+      },
+      "pedagogical_plausibility": {
+        "major_concern": 1,
+        "minor_concern": 12,
+        "pass": 100
+      },
+      "platform_deployability": {
+        "major_concern": 2,
+        "minor_concern": 26,
+        "pass": 85
+      },
+      "response_space_plausibility": {
+        "major_concern": 2,
+        "minor_concern": 18,
+        "pass": 93
+      },
+      "task_comprehensibility": {
+        "major_concern": 1,
+        "minor_concern": 9,
+        "pass": 103
+      }
+    },
+    "teacher": {
+      "answer_determinacy": {
+        "major_concern": 8,
+        "minor_concern": 12,
+        "pass": 93
+      },
+      "context_naturalness": {
+        "major_concern": 1,
+        "minor_concern": 10,
+        "pass": 102
+      },
+      "difficulty_plausibility": {
+        "major_concern": 3,
+        "minor_concern": 16,
+        "pass": 94
+      },
+      "format_plausibility": {
+        "minor_concern": 1,
+        "pass": 112
+      },
+      "kc_measurement_purity": {
+        "major_concern": 6,
+        "minor_concern": 5,
+        "pass": 102
+      },
+      "lexical_simplicity": {
+        "major_concern": 1,
+        "pass": 112
+      },
+      "pedagogical_plausibility": {
+        "major_concern": 3,
+        "minor_concern": 14,
+        "pass": 96
+      },
+      "platform_deployability": {
+        "major_concern": 7,
+        "minor_concern": 12,
+        "pass": 94
+      },
+      "response_space_plausibility": {
+        "major_concern": 9,
+        "minor_concern": 8,
+        "pass": 96
+      },
+      "task_comprehensibility": {
+        "major_concern": 1,
+        "minor_concern": 15,
+        "pass": 97
+      }
+    }
+  },
+  "by_generation_campaign": {
+    "cue_bounded_imperative_production_v1": {
+      "minor_ui_or_answer_set_change": 3,
+      "pedagogically_artificial": 1
+    },
+    "explicit_construction_determinacy_intervention_v1": {
+      "minor_ui_or_answer_set_change": 9
+    },
+    "full_v1_validator_named_answer_packaging_correction_v1": {
+      "minor_ui_or_answer_set_change": 1
+    },
+    "initial": {
+      "minor_ui_or_answer_set_change": 8,
+      "pedagogically_artificial": 1,
+      "probably_not_deployable": 1,
+      "problematic_answer_space": 4,
+      "usable_as_is": 75
+    },
+    "unchanged_prompt_zero_coverage_rescue_v1": {
+      "minor_ui_or_answer_set_change": 2,
+      "problematic_answer_space": 4,
+      "usable_as_is": 4
+    }
+  },
+  "by_generator_kc": {
+    "gkc_aspect_perfect": {
+      "minor_ui_or_answer_set_change": 8,
+      "probably_not_deployable": 1,
+      "problematic_answer_space": 3,
+      "usable_as_is": 30
+    },
+    "gkc_aspect_progressive": {
+      "minor_ui_or_answer_set_change": 11,
+      "probably_not_deployable": 1,
+      "problematic_answer_space": 1,
+      "usable_as_is": 16
+    },
+    "gkc_be_passive": {
+      "problematic_answer_space": 1,
+      "usable_as_is": 21
+    },
+    "gkc_finite_past": {
+      "minor_ui_or_answer_set_change": 3,
+      "problematic_answer_space": 2,
+      "usable_as_is": 15
+    },
+    "gkc_finite_present": {
+      "minor_ui_or_answer_set_change": 4,
+      "pedagogically_artificial": 1,
+      "usable_as_is": 25
+    },
+    "gkc_imperative": {
+      "minor_ui_or_answer_set_change": 3,
+      "pedagogically_artificial": 1
+    },
+    "gkc_modal_can": {
+      "minor_ui_or_answer_set_change": 1,
+      "usable_as_is": 6
+    },
+    "gkc_modal_could": {
+      "minor_ui_or_answer_set_change": 1,
+      "problematic_answer_space": 1,
+      "usable_as_is": 3
+    },
+    "gkc_modal_may": {
+      "problematic_answer_space": 2,
+      "usable_as_is": 6
+    },
+    "gkc_modal_might": {
+      "usable_as_is": 5
+    },
+    "gkc_modal_must": {
+      "minor_ui_or_answer_set_change": 3,
+      "usable_as_is": 4
+    },
+    "gkc_modal_shall": {
+      "minor_ui_or_answer_set_change": 1,
+      "usable_as_is": 3
+    },
+    "gkc_modal_should": {
+      "minor_ui_or_answer_set_change": 1,
+      "usable_as_is": 3
+    },
+    "gkc_modal_will": {
+      "minor_ui_or_answer_set_change": 5,
+      "probably_not_deployable": 1,
+      "problematic_answer_space": 3,
+      "usable_as_is": 5
+    },
+    "gkc_modal_would": {
+      "minor_ui_or_answer_set_change": 1,
+      "usable_as_is": 4
+    },
+    "gkc_negation": {
+      "minor_ui_or_answer_set_change": 14,
+      "pedagogically_artificial": 2,
+      "problematic_answer_space": 2,
+      "usable_as_is": 31
+    },
+    "gkc_non_subject_wh_question": {
+      "minor_ui_or_answer_set_change": 1,
+      "usable_as_is": 1
+    },
+    "gkc_polar_question": {
+      "minor_ui_or_answer_set_change": 1,
+      "pedagogically_artificial": 1,
+      "problematic_answer_space": 2,
+      "usable_as_is": 8
+    }
+  },
+  "item_aggregates_sha256": "b01233c62681824fd73c0256a05c90fb2a9dd2c8c1deead2aae3c186009f110d",
+  "judgments_sha256": "591eefba751307f5c4f732c24ec135c3929a3e2213e6f2f926dd1ef180cdc625"
+}

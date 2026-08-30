@@ -1,0 +1,104 @@
+{
+  "audit_id": "full_v1_platform_plausibility_audit_v1",
+  "status": "PREREGISTERED_BEFORE_AUTOMATED_CRITIQUE",
+  "evidence_type": "independent_non_human_codex_stress_test",
+  "human_or_expert_gold": false,
+  "items": 113,
+  "roles": [
+    "learner",
+    "teacher",
+    "platform_product",
+    "measurement"
+  ],
+  "dimensions": [
+    "task_comprehensibility",
+    "answer_determinacy",
+    "pedagogical_plausibility",
+    "format_plausibility",
+    "lexical_simplicity",
+    "context_naturalness",
+    "difficulty_plausibility",
+    "response_space_plausibility",
+    "kc_measurement_purity",
+    "platform_deployability"
+  ],
+  "ratings": [
+    "pass",
+    "minor_concern",
+    "major_concern",
+    "not_applicable"
+  ],
+  "dispositions": [
+    "usable_as_is",
+    "minor_ui_or_answer_set_change",
+    "pedagogically_artificial",
+    "problematic_answer_space",
+    "probably_not_deployable"
+  ],
+  "batch_size": 30,
+  "model": {
+    "name": "gpt-5.6-terra",
+    "reasoning_effort": "medium"
+  },
+  "aggregation": {
+    "dimension": "plurality across non-not_applicable role ratings; severity tie break major_concern > minor_concern > pass",
+    "disposition": "plurality across roles; tie broken by declared disposition_tie_break_order from least to most severe",
+    "disagreement": "number of distinct non-not_applicable ratings, plus role-specific values",
+    "interpretation": "diagnostic automated prevalence only; not validated population prevalence"
+  },
+  "scientific_boundary": {
+    "learner_outcomes_read": false,
+    "private_oracle_read": false,
+    "generator_annotations_hidden_from_learner_role": true,
+    "roles_receive_other_role_outputs": false,
+    "frozen_dataset_mutated": false
+  },
+  "inputs": {
+    "dataset_manifest": {
+      "path": "data/grammar_kt_full_v1/manifest.json",
+      "sha256": "322128843f8e7e6547a99efcecc6836fcd581f314fb49557a28d58fe79c69f4c",
+      "bytes": 26456
+    },
+    "items": {
+      "path": "data/grammar_kt_full_v1/items/items.jsonl",
+      "sha256": "46e2fcbd723d11f6b30ecdd197fb05c39f04f7b0fc8f61e2183ffb8fb7110011",
+      "bytes": 81382
+    },
+    "cells": {
+      "path": "data/grammar_kt_full_v1/grammar/cells.jsonl",
+      "sha256": "a6bf8041e93fdea21d0ba7b318a24cb64610a6064517a2f7fbbbf3aca2fa4e1a",
+      "bytes": 22345
+    },
+    "kcs": {
+      "path": "data/grammar_kt_full_v1/kcs.jsonl",
+      "sha256": "f3b308dcda7c11886e1dc67476dbe6adbcb53b8676b643c62d226fe68cfe0355",
+      "bytes": 15814
+    },
+    "q_matrix": {
+      "path": "data/grammar_kt_full_v1/q_matrix.csv",
+      "sha256": "b6df582478f05976ceb200da6edc2b31fb305da64498e5ddb5f473a9459bf5bf",
+      "bytes": 8404
+    },
+    "config": {
+      "path": "modules/measurement_realism/item_audit.yaml",
+      "sha256": "10adf2da19e6116d92ac8f99ccfea3ec0c39187c5fa474d4b15cb2017acf8fa1",
+      "bytes": 3022
+    }
+  },
+  "audit_input": {
+    "path": "audit_input.jsonl",
+    "sha256": "3d2dd0c94b1797d16a34039193f47f81e0398a3b9099463602b21f2a9a27e020",
+    "rows": 113
+  },
+  "implementation": {
+    "script": "scripts/experiments/measurement_realism_audit.py",
+    "script_sha256": "78050d8c113e6f0a889c4bcc58f38751a147d68908044993ab764c2d1f1a6919",
+    "repository_head_at_plan": "f1a5eb29414dd03d173dbd9d0c4cb20762f2b259",
+    "python": "3.14.7"
+  },
+  "exact_commands": {
+    "plan": ".venv/bin/python scripts/experiments/measurement_realism_audit.py plan",
+    "run": ".venv/bin/python scripts/experiments/measurement_realism_audit.py run --evidence-root runs/measurement_realism/full_v1_item_audit_evidence",
+    "analyse": ".venv/bin/python scripts/experiments/measurement_realism_audit.py analyse"
+  }
+}

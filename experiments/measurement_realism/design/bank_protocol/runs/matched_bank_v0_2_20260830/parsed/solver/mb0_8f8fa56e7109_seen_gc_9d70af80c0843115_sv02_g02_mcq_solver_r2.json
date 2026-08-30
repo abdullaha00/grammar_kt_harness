@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "A also correctly describes the situation, though C more clearly marks the earlier deadline.",
+  "batch_id": "solver_r02_rep2_multiple_choice_b02",
+  "instruction_understanding": "Choose the sentence reporting that the package had not arrived by noon.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g02_mcq",
+  "keyed_match": true,
+  "major_ambiguity": true,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "A"
+  ],
+  "reasonable_unkeyed_responses": [
+    "A"
+  ],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g02_mcq_solver_r2",
+  "submitted_response": "C",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

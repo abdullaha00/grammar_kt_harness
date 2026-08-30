@@ -1,0 +1,6 @@
+{
+  "returncode": 0,
+  "runtime_seconds": 33.56861913100147,
+  "tokens_used": null,
+  "token_metric": "codex_cli_total_tokens_used"
+}

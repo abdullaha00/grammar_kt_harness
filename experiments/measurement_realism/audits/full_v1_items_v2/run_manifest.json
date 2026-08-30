@@ -1,0 +1,190 @@
+{
+  "audit_id": "full_v1_platform_plausibility_audit_v1",
+  "status": "AUTOMATED_CRITIQUE_COMPLETE",
+  "evidence_type": "independent_non_human_codex_stress_test",
+  "human_or_expert_gold": false,
+  "calls": 16,
+  "judgments": 452,
+  "items": 113,
+  "call_manifest": [
+    {
+      "role": "learner",
+      "batch_number": 1,
+      "items": 30,
+      "first_item_id": "candidate_gc_0397fa37f2228649_01",
+      "last_item_id": "candidate_gc_63a057f3a47e95b1_03",
+      "evidence_dir": "runs/measurement_realism/full_v1_item_audit_evidence_v2/learner/batch_01",
+      "rendered_prompt_sha256": "309d4bb2abbe0d8aa26920fe657052efb7a1e4b6518eb82c3e428964cb27f124",
+      "raw_output_sha256": "816d109adb0173735d78ee9a56ea6af73cb2a019c084fcdc1f15c4250e77b929",
+      "parsed_result_sha256": "b4b83719803d788f161a694dd4ae6cf562e7c5c0758312e4f362f6ae88b31909"
+    },
+    {
+      "role": "learner",
+      "batch_number": 2,
+      "items": 30,
+      "first_item_id": "candidate_gc_6a255aa977e4289a_01",
+      "last_item_id": "candidate_gc_b81e4f2e78894945_01",
+      "evidence_dir": "runs/measurement_realism/full_v1_item_audit_evidence_v2/learner/batch_02",
+      "rendered_prompt_sha256": "3536e2cd0fb07c005f304dd62df511ee559945b343776bc26c70699458bba36b",
+      "raw_output_sha256": "614766f633e76f002a9596f7cf9450665e48fcecfbfb6460eca825cf3818c7c1",
+      "parsed_result_sha256": "ff72b1cf5efd1efac6be0ca13e1f63ad54466316b7463eb4fcce472a5360e768"
+    },
+    {
+      "role": "learner",
+      "batch_number": 3,
+      "items": 30,
+      "first_item_id": "candidate_gc_ba3d77af90f26ab2_03",
+      "last_item_id": "cue_bounded_imperative_gc_04a854582c08aa84_01",
+      "evidence_dir": "runs/measurement_realism/full_v1_item_audit_evidence_v2/learner/batch_03",
+      "rendered_prompt_sha256": "601de61ae4401b1aa750a95156a9ee4e66f247b93f46c8977039e65ed13b1b25",
+      "raw_output_sha256": "d720a170ba39b154a992fed3cc37f44bc491bc325154facd5e4ab021c5b9244a",
+      "parsed_result_sha256": "76ac6f55a9ecf5b1a4c17f859f69d2ac098e3bcd55156d8500450ca5cfb5f472"
+    },
+    {
+      "role": "learner",
+      "batch_number": 4,
+      "items": 23,
+      "first_item_id": "cue_bounded_imperative_gc_04a854582c08aa84_02",
+      "last_item_id": "unchanged_rescue_gc_fb92e9307e236d8c_02",
+      "evidence_dir": "runs/measurement_realism/full_v1_item_audit_evidence_v2/learner/batch_04",
+      "rendered_prompt_sha256": "0072645aa8b457c37925bd1770c95f32057252409adf600425ae1b288a3a0c56",
+      "raw_output_sha256": "67ee4c139a771558ff05d5b5dfa57006ada43c9bd3200e3c13124fc6aff22637",
+      "parsed_result_sha256": "49ec66fc2edd8feb0094d4bc4b11f2ebdc318cd37f65e9bc4f7a759477b741af"
+    },
+    {
+      "role": "teacher",
+      "batch_number": 1,
+      "items": 30,
+      "first_item_id": "candidate_gc_0397fa37f2228649_01",
+      "last_item_id": "candidate_gc_63a057f3a47e95b1_03",
+      "evidence_dir": "runs/measurement_realism/full_v1_item_audit_evidence_v2/teacher/batch_01",
+      "rendered_prompt_sha256": "1379c7b49ec58d7cf6aea7be248bf956477139fa8634ec8ac50933b552fc8b09",
+      "raw_output_sha256": "ddb22a2c1680edc0c80097dc9dff0902ea006960c2b25aea2853de26436ae73a",
+      "parsed_result_sha256": "b8e18f3135f63d1f1b60c167186f4e3cfd8245bb970fcb3420905086475e81ee"
+    },
+    {
+      "role": "teacher",
+      "batch_number": 2,
+      "items": 30,
+      "first_item_id": "candidate_gc_6a255aa977e4289a_01",
+      "last_item_id": "candidate_gc_b81e4f2e78894945_01",
+      "evidence_dir": "runs/measurement_realism/full_v1_item_audit_evidence_v2/teacher/batch_02",
+      "rendered_prompt_sha256": "df09eaac6b77a6cf06abf2c30d43e2ee6a37fee6aad513b56b3d4ec6db0da8aa",
+      "raw_output_sha256": "59988de8a6f4008dc875d4404f3e55356bb3db9a02a039ba0fef423dff7943aa",
+      "parsed_result_sha256": "956f8a098d3eabfcd7324875c39bed0d3e6399c59e32e676cc0d240a563e04fa"
+    },
+    {
+      "role": "teacher",
+      "batch_number": 3,
+      "items": 30,
+      "first_item_id": "candidate_gc_ba3d77af90f26ab2_03",
+      "last_item_id": "cue_bounded_imperative_gc_04a854582c08aa84_01",
+      "evidence_dir": "runs/measurement_realism/full_v1_item_audit_evidence_v2/teacher/batch_03",
+      "rendered_prompt_sha256": "9e44ccf0b01e711d6b98c2df59dcd6c1f39aece82c6da6fb152ee23943b324e9",
+      "raw_output_sha256": "9322a29f74ab9305c3b6443bdb205b61f26a05761d7087534fd2780283f2d081",
+      "parsed_result_sha256": "ccbedda8e462ec74950683052ef97ae463c66ead8735c7bec6131c50e1d74fef"
+    },
+    {
+      "role": "teacher",
+      "batch_number": 4,
+      "items": 23,
+      "first_item_id": "cue_bounded_imperative_gc_04a854582c08aa84_02",
+      "last_item_id": "unchanged_rescue_gc_fb92e9307e236d8c_02",
+      "evidence_dir": "runs/measurement_realism/full_v1_item_audit_evidence_v2/teacher/batch_04",
+      "rendered_prompt_sha256": "47b1d5e80d8b751ed5280264edff72d94a22f191dfb96e6f3416ba848c05fba4",
+      "raw_output_sha256": "96df6a06507f9f5b177884f5522a16fbbc63b372d77b2728c803e8dfa023de6b",
+      "parsed_result_sha256": "566e4c91bb7a6b371a6e15a90d7489e8e07ad46ca3f49bb8061feb6885a9c1a8"
+    },
+    {
+      "role": "platform_product",
+      "batch_number": 1,
+      "items": 30,
+      "first_item_id": "candidate_gc_0397fa37f2228649_01",
+      "last_item_id": "candidate_gc_63a057f3a47e95b1_03",
+      "evidence_dir": "runs/measurement_realism/full_v1_item_audit_evidence_v2/platform_product/batch_01",
+      "rendered_prompt_sha256": "605b100e92d23413967c2b7916b7e9bb3a4b18bc27ae233590c2d887ce66c1e7",
+      "raw_output_sha256": "5a7fe4ea2ab2b57ac73255d7d62077363971a0753a6a1c1421d5c949ebac0378",
+      "parsed_result_sha256": "c437d50db3f2555b1d533e05e3ece567808d7d6fc8ff001754bae438bf32caf9"
+    },
+    {
+      "role": "platform_product",
+      "batch_number": 2,
+      "items": 30,
+      "first_item_id": "candidate_gc_6a255aa977e4289a_01",
+      "last_item_id": "candidate_gc_b81e4f2e78894945_01",
+      "evidence_dir": "runs/measurement_realism/full_v1_item_audit_evidence_v2/platform_product/batch_02",
+      "rendered_prompt_sha256": "3c312035247c2987872fccc996f2dfe48dc29ab1ad14ec034a2feab61c81b7c2",
+      "raw_output_sha256": "fd93e3000343345e5e02d451d221c3d33ff299953b45ecbfe3ecc060e78e0cb2",
+      "parsed_result_sha256": "0effdb866d5f220bc20b69533874998fc583fbb6c1607bbedf2dc5d05f444dcd"
+    },
+    {
+      "role": "platform_product",
+      "batch_number": 3,
+      "items": 30,
+      "first_item_id": "candidate_gc_ba3d77af90f26ab2_03",
+      "last_item_id": "cue_bounded_imperative_gc_04a854582c08aa84_01",
+      "evidence_dir": "runs/measurement_realism/full_v1_item_audit_evidence_v2/platform_product/batch_03",
+      "rendered_prompt_sha256": "b8bfe597d043ef45715f0927806e778514d6316f708aa094eef740331c11266d",
+      "raw_output_sha256": "38df8837c3fe430b315e9554f1bbd58787ce28335cb14af42097b3e4263fd6c1",
+      "parsed_result_sha256": "fa8d003079abd700abded9ebe94cd49cb7a114f1db56d918458d26b6c7d57c1b"
+    },
+    {
+      "role": "platform_product",
+      "batch_number": 4,
+      "items": 23,
+      "first_item_id": "cue_bounded_imperative_gc_04a854582c08aa84_02",
+      "last_item_id": "unchanged_rescue_gc_fb92e9307e236d8c_02",
+      "evidence_dir": "runs/measurement_realism/full_v1_item_audit_evidence_v2/platform_product/batch_04",
+      "rendered_prompt_sha256": "cfcaca9ddbf5ca706ca2d87bf9d3a87f961a44baebce2929787aae004332800a",
+      "raw_output_sha256": "69cfba3cf70d0f9434e9fa3781fecfb0febf2f16673f29eca8f0bb6e88b02cae",
+      "parsed_result_sha256": "4e363692a4a23af1eb9932b7c0608742c7deb9d4843b3ae3628c12b16a9b05f3"
+    },
+    {
+      "role": "measurement",
+      "batch_number": 1,
+      "items": 30,
+      "first_item_id": "candidate_gc_0397fa37f2228649_01",
+      "last_item_id": "candidate_gc_63a057f3a47e95b1_03",
+      "evidence_dir": "runs/measurement_realism/full_v1_item_audit_evidence_v2/measurement/batch_01",
+      "rendered_prompt_sha256": "37c33b896323fd981bc2b4869d3b8b10f7036f02922447d56c8d65af7b4cf4c1",
+      "raw_output_sha256": "8c91bcd0bd918aba146baa085383ceb93bf54a694eb55b95c1401fb26e22c267",
+      "parsed_result_sha256": "f7e3e86d825ea3141097c7caa624ebb8cfd1643d010fbccb34538119c3ded417"
+    },
+    {
+      "role": "measurement",
+      "batch_number": 2,
+      "items": 30,
+      "first_item_id": "candidate_gc_6a255aa977e4289a_01",
+      "last_item_id": "candidate_gc_b81e4f2e78894945_01",
+      "evidence_dir": "runs/measurement_realism/full_v1_item_audit_evidence_v2/measurement/batch_02",
+      "rendered_prompt_sha256": "dba545f1492fbe9d1b854b101dfda6e6e1f08d78fb03606503ac251e5cb9718b",
+      "raw_output_sha256": "3f2bd38ffb898dd75b32a67139bea21e5233ce35afc31c59d96b18c77c8ac68d",
+      "parsed_result_sha256": "c282ddcf624f296fcbb8387fc8c4c131aa551f21d3ac943b97e17330ca5c56b3"
+    },
+    {
+      "role": "measurement",
+      "batch_number": 3,
+      "items": 30,
+      "first_item_id": "candidate_gc_ba3d77af90f26ab2_03",
+      "last_item_id": "cue_bounded_imperative_gc_04a854582c08aa84_01",
+      "evidence_dir": "runs/measurement_realism/full_v1_item_audit_evidence_v2/measurement/batch_03",
+      "rendered_prompt_sha256": "d2be8821369029372862747c5044c5715ca52454e9f8655732ebfa4a276fff9e",
+      "raw_output_sha256": "3a7a744bfa4431df1dc563f647509a294a9c4d21c2925e62fb52a82dddbfa33b",
+      "parsed_result_sha256": "7490ed2ce619db75c36978ecd603dd3e052913e1dbb85bdf8ecad4c43c80727f"
+    },
+    {
+      "role": "measurement",
+      "batch_number": 4,
+      "items": 23,
+      "first_item_id": "cue_bounded_imperative_gc_04a854582c08aa84_02",
+      "last_item_id": "unchanged_rescue_gc_fb92e9307e236d8c_02",
+      "evidence_dir": "runs/measurement_realism/full_v1_item_audit_evidence_v2/measurement/batch_04",
+      "rendered_prompt_sha256": "6493141d2ef475dfdba4818bb4bf7e0c903d5d120ff7a79af95a3651817b647d",
+      "raw_output_sha256": "6bc3eb689850dea75fc2f16f2f019787cc4a7667c8c95545a6bf8fb85d563ced",
+      "parsed_result_sha256": "645fbb71f4ee72b5bf12110f796fe98a20a01a96bf597b209950dd515ac89620"
+    }
+  ],
+  "judgments_sha256": "591eefba751307f5c4f732c24ec135c3929a3e2213e6f2f926dd1ef180cdc625",
+  "raw_model_outputs_sha256": "1043e1f002659e024273b1b196bfd6f618a7a9b618c6d486ac90dfbd5a9e7346",
+  "restricted_call_evidence_root": "runs/measurement_realism/full_v1_item_audit_evidence_v2"
+}

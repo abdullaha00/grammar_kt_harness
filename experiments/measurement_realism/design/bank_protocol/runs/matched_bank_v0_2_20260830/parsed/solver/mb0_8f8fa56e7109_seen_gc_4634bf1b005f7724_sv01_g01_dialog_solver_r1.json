@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "The report itself is unknown, but the natural question is clear.",
+  "batch_id": "solver_r01_rep1_dialogue_completion_b01",
+  "instruction_understanding": "Ask which weekly report Leo handles.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g01_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Which of the weekly reports does Leo handle?"
+  ],
+  "reasonable_unkeyed_responses": [
+    "Which of the weekly reports does Leo handle?"
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv01_g01_dialog_solver_r1",
+  "submitted_response": "Which report does Leo handle?",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

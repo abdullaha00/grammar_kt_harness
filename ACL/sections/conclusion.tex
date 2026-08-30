@@ -1,18 +1,19 @@
 \section{Conclusion}
 
-\system{} demonstrates that a grammar resource can be transformed into an
-auditable KT benchmark when canonical constructions, generator knowledge,
-measurement, and downstream hypotheses remain distinct.  The full-v1 release
-contains explicit \kstar{}, fixed items, deterministic \qstar{}, observable
-responses, separate oracle truth, and construction provenance.
+Synthetic perfect-information data can answer questions that real
+language-learning logs usually cannot: whether a supplied KC system matches the
+generator, how Q errors alter inference, and how well fitted state tracks known
+mastery.  Full-v1 preserves those clean controls.  This programme shows why
+known truth alone is not enough.  Learner-facing answerability, KC
+interpretation, item and format nuisance, assignment history, and response
+information all constrain what KT results mean.
 
-Known truth then supports questions opaque datasets cannot answer.  Both
-coarsening and refinement harm prediction in the baseline; exact-cell KCs
-transfer poorly to unseen grammatical tuples; and observable KC discovery
-recovers a strong equivalence class without uniquely identifying the planted
-ontology.  State recovery and simulator sensitivity show why prediction alone
-is not enough: KT state semantics can mismatch generator mastery, and item
-difficulty can reverse a representation ranking.  These are controlled
-methodological findings and design guidance for future learner collection, not
-claims about the cognitive decomposition of English or the behaviour of human
-learners.
+The strongest evidence is deliberately bounded.  A planted format effect can
+make false format-specific KCs look predictive, explicit nuisance modelling can
+recover the shared structure in that control, structured errors can localise a
+planted failure without greatly improving prediction, and open dialogue trades
+answer determinacy for visible naturalness.  The matched platform-oriented bank
+did not pass its release gate, so we preserve the negative result and make no
+new dataset release.  The contribution is thus an auditable controlled analysis
+of when grammar KT is informative or misleading, together with concrete data-
+collection requirements for testing those conclusions with real learners.

@@ -1,0 +1,158 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "Nora must have taken the parcel.",
+  "cell_id": "gc_4a4c9d34c1b5bce4",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g03_cloze",
+      "context": "The parcel is no longer on the desk, and Nora was the only person near it.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Nora [[RESPONSE]] the parcel.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using “must” and “take.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "must have taken"
+        ],
+        "completed_target": "Nora must have taken the parcel.",
+        "correct_choice_id": null,
+        "target_response": "must have taken"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g03_dialog",
+      "context": "Leo and Mia are discussing a parcel that has disappeared from a desk.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Mia: The parcel has disappeared from the desk.",
+          "Leo: Was anyone near it?",
+          "Mia: Only Nora."
+        ],
+        "incomplete_turn_template": "Leo: Nora [[RESPONSE]] the parcel.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Nora's friend's conclusion using “must” and “take.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "must have taken"
+        ],
+        "completed_target": "Nora must have taken the parcel.",
+        "correct_choice_id": null,
+        "target_response": "must have taken"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g03_mcq",
+      "context": "The parcel is no longer on the desk, and Nora was the only person near it.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Omits perfect HAVE and uses a past-tense form directly after MUST.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses finite HAS instead of the base form HAVE after MUST.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses the base form TAKE instead of the past participle TAKEN after HAVE.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Nora must took the parcel."
+          },
+          {
+            "id": "B",
+            "text": "Nora must have taken the parcel."
+          },
+          {
+            "id": "C",
+            "text": "Nora must has taken the parcel."
+          },
+          {
+            "id": "D",
+            "text": "Nora must have take the parcel."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly states what probably happened?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that best expresses the conclusion.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Nora must have taken the parcel.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv01_g03_xform",
+      "context": "Use the supplied words without adding new information.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "The parcel is no longer on the desk. Nora was the only person near it.",
+        "stem": null,
+        "transformation_cue": "Begin with “Nora” and use “must,” “have,” “take,” and “the parcel.”"
+      },
+      "instruction": "Combine the information into one sentence that expresses a confident conclusion.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Nora must have taken the parcel."
+        ],
+        "completed_target": "Nora must have taken the parcel.",
+        "correct_choice_id": null,
+        "target_response": "Nora must have taken the parcel."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Express a confident conclusion about who took the parcel.",
+    "main_verb_lemma": "take",
+    "object_head": "parcel",
+    "participants": [
+      "Nora",
+      "the parcel"
+    ],
+    "situation_summary": "A parcel has disappeared from a desk, and Nora was the only person near it.",
+    "time_anchor": "before now"
+  },
+  "semantic_variant_index": 1
+}

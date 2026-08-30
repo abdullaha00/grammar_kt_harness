@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "Place the wet umbrellas in the stand.",
+  "cell_id": "gc_bb4f472f992ab76b",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g03_cloze",
+      "context": "Several wet umbrellas are dripping on the floor beside the entrance.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]].",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the instruction using all these chunks: “place” / “the wet umbrellas” / “in the stand”.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Place the wet umbrellas in the stand"
+        ],
+        "completed_target": "Place the wet umbrellas in the stand.",
+        "correct_choice_id": null,
+        "target_response": "Place the wet umbrellas in the stand"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g03_dialog",
+      "context": "A helper is holding several dripping umbrellas beside an umbrella stand.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Host: These wet umbrellas are making the floor slippery.",
+          "Helper: What should I do with them?"
+        ],
+        "incomplete_turn_template": "Host: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the host’s final turn with a direct instruction.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Place the wet umbrellas in the stand."
+        ],
+        "completed_target": "Place the wet umbrellas in the stand.",
+        "correct_choice_id": null,
+        "target_response": "Place the wet umbrellas in the stand."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g03_mcq",
+      "context": "Wet umbrellas are dripping on the entrance floor, and you want a helper to put them in the umbrella stand now.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses an explicit subject and forms a declarative clause instead of an imperative.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses an -ing clause fragment instead of an imperative main clause.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses a to-infinitive clause fragment instead of an imperative main clause.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "You place the wet umbrellas in the stand."
+          },
+          {
+            "id": "B",
+            "text": "Placing the wet umbrellas in the stand."
+          },
+          {
+            "id": "C",
+            "text": "Place the wet umbrellas in the stand."
+          },
+          {
+            "id": "D",
+            "text": "To place the wet umbrellas in the stand."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence gives the helper the intended direct instruction?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that gives a direct instruction.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "C"
+        ],
+        "completed_target": "Place the wet umbrellas in the stand.",
+        "correct_choice_id": "C",
+        "target_response": "C"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g03_xform",
+      "context": "A helper is holding several dripping umbrellas near the entrance.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "The umbrellas are wet. The umbrella stand is beside the helper.",
+        "stem": null,
+        "transformation_cue": "Use: place / the wet umbrellas / in the stand"
+      },
+      "instruction": "Turn the information into a direct instruction. Use the supplied words without adding new content.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Place the wet umbrellas in the stand."
+        ],
+        "completed_target": "Place the wet umbrellas in the stand.",
+        "correct_choice_id": null,
+        "target_response": "Place the wet umbrellas in the stand."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Give a direct instruction to put the umbrellas in the stand.",
+    "main_verb_lemma": "place",
+    "object_head": "umbrellas",
+    "participants": [
+      "host",
+      "helper"
+    ],
+    "situation_summary": "Wet umbrellas are dripping near the entrance, and an umbrella stand is available.",
+    "time_anchor": "immediately at the entrance"
+  },
+  "semantic_variant_index": 2
+}

@@ -1,9 +1,58 @@
 # Research state
 
-Last updated: 2026-08-30. The programme is complete under the revised
-baseline-versus-experiment framing in `AGENTS.md`. The previous medium-scale
-programme remains historical evidence; it is not the generator truth for the
-full dataset.
+Last updated: 2026-08-30. The immutable full-v1 programme and the subsequent
+measurement-realism scientific stages, notebook, reports, and revised ACL
+manuscript are complete. The final repository-wide suite passes 328 contracts,
+and the guarded programme evidence freeze/verify passes over 1,351 explicitly
+allowlisted artifacts. The previous medium-scale programme remains historical
+evidence; it is not the generator truth for the full dataset.
+
+## Active measurement-realism programme
+
+Active branch: `agent/measurement-realism-methodology-program`, started from
+the latest completed state of `agent/full-dataset-research-program`.
+
+The programme now treats synthetic data as a controlled substitute for an
+unrealistically perfectly annotated learner dataset. Known GrammarCells, K*,
+Q*, mastery, response generation, and counterfactual worlds enable analyses
+that ordinary learner logs cannot. Relevance to real data is a separate
+measurement question: can a learner understand and answer the visible task,
+would the item plausibly occur on a platform, and do the observable histories
+remain informative once item, format, learner, policy, and error processes are
+varied?
+
+The final programme decision is **NO_NEW_DATASET_RELEASE**: there is no new dataset release.
+`data/grammar_kt_measurement_v1/` must not exist. The preregistered matched
+learner-facing construction passed only 5/38 whole families (20/152 slots),
+covering 4/20 cells, 6/18 KCs, seen-Q rank 3, and all-regime rank 4. The passing
+subset is not frozen or promoted as a partial dataset. The separate full-rank
+instrument contains slot geometry and format labels but no learner-facing
+prompts or answers; it is a **controlled scenario**, carries
+`release_eligible=false`, and supports sensitivity claims only.
+
+The retained evidence establishes the following bounded conclusions:
+
+- the 113-item bank is mathematically useful but not platform-validated: 60
+  items were usable in both automated audit mappings, 53 were in the union
+  requiring action, and 18 were in the critical answer-space/withhold union;
+- K* remains a declared, interpretable experimental coordinate system, not a
+  unique psychological ontology: only 16/113 items isolate one KC, six KCs
+  lack an isolating row, and three outcome-blind inductions shared only nine
+  activation signatures;
+- in the content-free strong-format positive control, planted format nuisance
+  increases the relative advantage of a false format split over shared K*
+  (difference-in-differences mean `-.031551`), while an explicit observed
+  format model beats that split (mean `-.005317`); this remedy is not uniform
+  in the combined heterogeneous world;
+- linked structured errors contain strong planted failed-KC localisation
+  information but only small next-response gains; the failed KC is a
+  post-outcome synthetic attribution, not causal human truth;
+- curriculum, mixed, and adaptive assignments alter observable history and
+  exploratory model recovery, but the results do not estimate educational
+  policy value; and
+- open dialogue appears more natural in the automated pilot while sharply
+  reducing determinacy and KC attribution. Human/expert validation remains
+  absent.
 
 ## Active scientific framing
 
@@ -48,21 +97,30 @@ verified 1,222-row EGP snapshot
 The dataset is frozen. KC misspecification, KC discovery, linguistic
 generalisation, oracle-only state recovery, compact simulator robustness, and
 bounded collection design are complete. The declared synthetic experiment
-queue is closed. Final synthesis, replay, notebook, release-manifest, and ACL
-verification are also complete; none mutated the baseline.
+queue is closed. The prior full-v1 synthesis, replay, notebooks,
+release-manifest, and ACL verification are complete. Measurement-realism
+scientific analyses, synthesis notebook, and revised manuscript are also
+complete. The final compatibility manifest, 328-contract suite, and programme
+evidence freeze/verify are complete. No stage mutated the baseline.
 
 ## Repository audit result
 
-- Active research branch: `agent/full-dataset-research-program`; its latest
-  completed experimental checkpoint is pushed to the same remote branch.
+- Active research branch: `agent/measurement-realism-methodology-program`.
+  Full-v1 remains anchored to source commit
+  `f1a5eb29414dd03d173dbd9d0c4cb20762f2b259` and protected Git tree
+  `a3d77782cd1d4a5b297cc6d63eba2551d8d71ce4`.
 - User-owned dirty files are preserved: modified `pipeline.txt`; untracked
   `AGENTS.md`, root `experiment_bank.md`, `ideas.txt`, `rqs.txt`,
   and `tmp/`.
-- Final verification passes 272 Pytest contracts, exact Q*/event replay,
-  independent headline-experiment replay, all three tracked notebooks, a
-  machine-readable release root, and the deterministic 14-page named ACL
-  preprint build using the retained UROP shell, with 71/71 author-list/BibTeX
-  regressions and complete visual inspection.
+- The prior full-v1 release verification passed 272 Pytest contracts, exact
+  Q*/event replay, independent headline-experiment replay, three tracked
+  notebooks, the release root, and its deterministic ACL manuscript. The
+  extension adds focused audit, matched-bank, controlled-world, policy,
+  dialogue, notebook, manuscript, and programme-manifest checks. Its notebook
+  executes 18/18 code cells; its 17-page PDF passes build and visual QA. The
+  final repository-wide suite passes 328/328 contracts. The non-overwriting
+  programme manifest verifies 1,351 allowlisted artifacts (30,646,436 bytes)
+  while preserving the full-v1 and no-release gates.
 
 ## Artifact classification
 
@@ -358,10 +416,14 @@ support and geometry checks before K* and Q* passed the measurement gate.
 
 ## Current unresolved research questions
 
-No declared synthetic experiment remains unexecuted. The unresolved questions
-require evidence outside this programme: expert/human item validation, real
-learner dynamics, unseen-value structures beyond perfect-progressive, and
-empirical cross-lingual replication.
+No declared measurement-realism scientific experiment remains unexecuted. The
+unresolved questions require evidence outside this programme: human learner
+answerability, expert deployability/KC review, corpus-grounded learner errors,
+empirical format-effect and learner-heterogeneity ranges, causal evaluation of
+platform policies, unseen-value structures beyond perfect-progressive, and
+cross-lingual replication. The content-free controlled scenario cannot resolve
+release validity, and its planted magnitudes must not be relabelled as human
+estimates.
 
 ## Important active paths
 
@@ -378,16 +440,32 @@ empirical cross-lingual replication.
 - Mastery artifacts: `reports/full_v1_artifacts/mastery_recovery_v1/`
 - Robustness artifacts: `experiments/full_v1/simulator_robustness_v1/`
 - Collection-design artifacts: `experiments/full_v1/collection_design_v1/`
+- Measurement-realism root: `experiments/measurement_realism/`
+- Platform/item audit: `reports/platform_plausibility_audit.md`
+- KC methodology audit: `reports/kc_methodology_audit.md`
+- Extension methodology: `reports/measurement_extension_methodology.md`
+- Extension results: `reports/measurement_realism_results.md`
+- Extension RQ ledger: `reports/measurement_extension_rq_ledger.md`
+- Controlled-scenario aggregate:
+  `experiments/measurement_realism/worlds/controlled_instrument_v1/aggregate/`
+- Exploratory policy recovery:
+  `experiments/measurement_realism/worlds/controlled_instrument_v1/policy_recovery_v1/`
+- Matched-bank negative result:
+  `experiments/measurement_realism/design/bank_protocol/runs/matched_bank_v0_2_20260830/analysis/`
+- Automated dialogue pilot: `experiments/measurement_realism/dialogue_pilot_live_v1/`
+- Programme evidence verifier:
+  `scripts/experiments/verify_measurement_realism_programme.py`
 - Release root: `reports/final_release_manifest.json`
 - Standalone dataset visualization: `reports/final_dataset_visualization.html`
 - Executable dataset viewer: `notebooks/final_dataset.ipynb`
 - Executable results notebook: `notebooks/final_dataset_results.ipynb`
-- Manuscript: `ACL/paper.pdf` (named full-v1 ACL preprint using the retained
-  `report_versions/UROP/` presentation shell)
+- Manuscript: `ACL/paper.pdf` (17-page measurement-realism ACL preprint,
+  *Known Truth, Ambiguous Measurement*)
 - Historical medium dataset: `data/grammar_kt_medium_v1/`
 
 ## Current next action
 
-Preserve `grammar_kt_full_v1` immutably. Any human-validation, real-learner, or
+Preserve `grammar_kt_full_v1` and the frozen measurement-realism evidence
+immutably. Any human-validation, real-learner, corpus-calibration, or
 cross-lingual study should be versioned as a new programme rather than changing
-this baseline or post-hoc extending its final claims.
+this baseline or post-hoc extending its claims.

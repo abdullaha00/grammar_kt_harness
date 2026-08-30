@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "The separable phrasal verb can also be written with the object between its parts.",
+  "batch_id": "solver_r03_rep1_sentence_transformation_b02",
+  "instruction_understanding": "Write a direct instruction using the cue words and no subject.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g03_xform",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Turn the oven off."
+  ],
+  "reasonable_unkeyed_responses": [
+    "Turn the oven off."
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv01_g03_xform_solver_r1",
+  "submitted_response": "Turn off the oven.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

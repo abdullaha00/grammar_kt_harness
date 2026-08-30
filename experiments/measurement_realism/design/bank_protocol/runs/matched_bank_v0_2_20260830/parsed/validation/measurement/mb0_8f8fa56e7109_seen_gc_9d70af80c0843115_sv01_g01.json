@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r01_measurement_b02",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g01",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01",
+  "family_judgments": [
+    {
+      "blocking": true,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "Cloze and dialogue permit simple-past passive “wasn't tested,” whereas MCQ and cue-driven transformation force past-perfect passive.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": true,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "The open formats can measure only passive negation in practice, while the transformation explicitly supplies BEEN and imposes the full perfect-passive construction.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "All formats concern the alarm not being tested before the drill.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": true,
+          "criterion": "active_kc_evidence",
+          "evidence": "The keyed past-perfect passive is targeted, but “wasn't tested” is a linguistically and contextually reasonable completion that avoids perfect HAVE and past finite selection; solver replicate 1 supplied it.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The response does target passive, perfect, past, and negation; no additional major construction is required.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "A learner can accurately complete the sentence with simple-past passive “wasn't tested,” avoiding the declared perfect construction.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "“The alarm wasn't tested before the drill began” is grammatical and fits the stated record of no earlier test; past perfect is not forced.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The reasonable unkeyed response “wasn't tested” is omitted from the accepted set, so its rejection is blocking.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Safety-alarm context and test are comprehensible for B2 and are not the source of the defect.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g01_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": true,
+          "criterion": "active_kc_evidence",
+          "evidence": "Despite the intended target, “wasn't tested” remains a reasonable simple-past passive completion and avoids perfect HAVE.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "Dialogue content supports the intended passive-perfect-negative construction without extra major grammar.",
+          "severity": "pass"
+        },
+        {
+          "blocking": true,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The response can be correct in context without performing the declared perfect operation.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "The dialogue establishes prior non-testing but does not make past perfect obligatory over simple past passive.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "“Wasn't tested” is linguistically/contextually reasonable yet unaccepted; contraction coverage for had not does not cure this alternative.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The preceding paraphrase “No one had checked whether it worked” adds discourse interpretation, though it is manageable.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g01_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Option B realizes all four declared operations, and the distractors contrast passive BE, perfect HAVE, and negation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The choice stays within the stated passive-perfect-negative construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The malformed alternatives allow substantial elimination, although no offered option provides a valid target-avoiding answer.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "Among the presented options, B alone correctly describes the no-test-before-drill situation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "B is the sole defensible option in this closed response set.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The causal context is explicit and vocabulary is ordinary.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g01_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Changing “No one had tested the alarm” into the required subject-initial negative passive actively calls for HAD, NOT, BEEN, and TESTED.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The task additionally requires active-to-passive transformation and combining two source propositions.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The required start and BEEN cue rule out a simple-past passive shortcut.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "The cue and explicit unchanged-meaning instruction constrain the target sufficiently.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Both full and contracted negative target forms are accepted; no further reasonable unkeyed response was proposed.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Voice conversion and sentence combination create appreciable burden beyond the component KCs.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv01_g01_xform"
+    }
+  ],
+  "overall_accept": false,
+  "role": "measurement",
+  "summary": "Reject: the open completions do not determine past perfect. “Wasn't tested” is a reasonable, unaccepted target-avoiding response and makes format equivalence fail."
+}

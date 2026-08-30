@@ -1,0 +1,23 @@
+{
+  "ambiguity_explanation": "The dialogue gives no information about where the keys were.",
+  "batch_id": "solver_r03_rep1_dialogue_completion_b01",
+  "instruction_understanding": "State a plausible location where Mia found the keys.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02_g03_dialog",
+  "keyed_match": false,
+  "major_ambiguity": true,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "They were in my bag.",
+    "They were on the kitchen table."
+  ],
+  "reasonable_unkeyed_responses": [
+    "They were in my bag.",
+    "They were on the kitchen table."
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_4601bed02c004e37_sv02_g03_dialog_solver_r1",
+  "submitted_response": "They were under the sofa.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

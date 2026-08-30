@@ -1,0 +1,161 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "The package had not been delivered by noon.",
+  "cell_id": "gc_9d70af80c0843115",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g02_cloze",
+      "context": "At noon, the tracking page showed that the package was still at the depot.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "The package [[RESPONSE]] by noon.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence with the correct form of “deliver.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "had not been delivered",
+          "hadn't been delivered"
+        ],
+        "completed_target": "The package had not been delivered by noon.",
+        "correct_choice_id": null,
+        "target_response": "had not been delivered"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g02_dialog",
+      "context": "Maya and Leo are discussing a package that was due at the office by noon.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Maya: Was the package at the office by noon?",
+          "Leo: No, it was still at the depot when I checked at noon."
+        ],
+        "incomplete_turn_template": "Maya: The package [[RESPONSE]] by noon.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Maya’s reply with the correct form of “deliver.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "had not been delivered",
+          "hadn't been delivered"
+        ],
+        "completed_target": "The package had not been delivered by noon.",
+        "correct_choice_id": null,
+        "target_response": "had not been delivered"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g02_mcq",
+      "context": "At noon, Maya checked the tracking page. The package was still at the depot, although it was due at the office by then.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the simple past passive instead of the past perfect passive.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Omits passive BE, incorrectly making the package the agent of “deliver.”",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses present finite HAVE instead of past finite HAVE.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "The package was not delivered by noon."
+          },
+          {
+            "id": "B",
+            "text": "The package had not delivered by noon."
+          },
+          {
+            "id": "C",
+            "text": "The package had not been delivered by noon."
+          },
+          {
+            "id": "D",
+            "text": "The package has not been delivered by noon."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly describes the situation?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that best reports what Maya discovered.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "C"
+        ],
+        "completed_target": "The package had not been delivered by noon.",
+        "correct_choice_id": "C",
+        "target_response": "C"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_9d70af80c0843115_sv02_g02_xform",
+      "context": "At noon, Maya checked the tracking page and saw that the package was still at the depot.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "The courier did not deliver the package before the noon deadline.",
+        "stem": null,
+        "transformation_cue": "The package / had / not / been / delivered / by noon"
+      },
+      "instruction": "Rewrite the information as one sentence beginning with “The package.” Use all the words in the cue.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "The package had not been delivered by noon.",
+          "The package hadn't been delivered by noon."
+        ],
+        "completed_target": "The package had not been delivered by noon.",
+        "correct_choice_id": null,
+        "target_response": "The package had not been delivered by noon."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Report that the expected delivery had not happened by the past deadline.",
+    "main_verb_lemma": "deliver",
+    "object_head": "package",
+    "participants": [
+      "the package",
+      "the courier",
+      "Maya"
+    ],
+    "situation_summary": "A package was still at the depot when the noon delivery deadline passed.",
+    "time_anchor": "the noon delivery deadline"
+  },
+  "semantic_variant_index": 2
+}

@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grammar-kt.local/schemas/programme-evidence-manifest-v1.json",
+  "title": "Frozen measurement-realism programme evidence manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "status",
+    "config",
+    "protected_full_v1",
+    "dataset_release_decision",
+    "claim_boundary_verification",
+    "scope",
+    "reconstruction_commands",
+    "artifact_count",
+    "artifact_bytes",
+    "inventory_semantic_sha256",
+    "artifacts"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "manifest_id": {"const": "measurement_realism_programme_evidence_v1"},
+    "status": {"const": "PROGRAMME_EVIDENCE_VERIFIED"},
+    "config": {"$ref": "#/$defs/fileIdentity"},
+    "protected_full_v1": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "source_commit",
+        "source_git_tree_object",
+        "head_git_tree_object",
+        "expected_git_tree_object",
+        "git_tree_listing_sha256",
+        "filesystem_clean_against_source_commit",
+        "untracked_or_ignored_inside_protected_path",
+        "filesystem_file_count",
+        "filesystem_bytes",
+        "filesystem_inventory_semantic_sha256",
+        "anchor",
+        "core_sha256"
+      ],
+      "properties": {
+        "path": {"type": "string"},
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "source_git_tree_object": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "head_git_tree_object": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "expected_git_tree_object": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "git_tree_listing_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "filesystem_clean_against_source_commit": {"const": true},
+        "untracked_or_ignored_inside_protected_path": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "filesystem_file_count": {"type": "integer", "minimum": 1},
+        "filesystem_bytes": {"type": "integer", "minimum": 1},
+        "filesystem_inventory_semantic_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "anchor": {"$ref": "#/$defs/fileIdentity"},
+        "core_sha256": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "dataset_release_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decision", "candidate_path", "candidate_path_absent", "basis"],
+      "properties": {
+        "decision": {"const": "NO_NEW_DATASET_RELEASE"},
+        "candidate_path": {"type": "string"},
+        "candidate_path_absent": {"const": true},
+        "basis": {"type": "string", "minLength": 1}
+      }
+    },
+    "claim_boundary_verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["json_assertions", "text_contracts"],
+      "properties": {
+        "json_assertions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["assertion_id", "path", "json_pointer", "observed", "passed"],
+            "properties": {
+              "assertion_id": {"type": "string"},
+              "path": {"type": "string"},
+              "json_pointer": {"type": "string"},
+              "observed": true,
+              "passed": {"const": true}
+            }
+          }
+        },
+        "text_contracts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["contract_id", "path", "required_casefold_phrases", "forbidden_casefold_phrases", "passed"],
+            "properties": {
+              "contract_id": {"type": "string"},
+              "path": {"type": "string"},
+              "required_casefold_phrases": {"type": "array", "items": {"type": "string"}},
+              "forbidden_casefold_phrases": {"type": "array", "items": {"type": "string"}},
+              "passed": {"const": true}
+            }
+          }
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["explicit_allowlist", "exclusion_patterns", "required_absent_paths"],
+      "properties": {
+        "explicit_allowlist": {"type": "object"},
+        "exclusion_patterns": {"type": "array", "items": {"type": "string"}},
+        "required_absent_paths": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "reconstruction_commands": {"type": "array", "minItems": 1},
+    "artifact_count": {"type": "integer", "minimum": 1},
+    "artifact_bytes": {"type": "integer", "minimum": 1},
+    "inventory_semantic_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["group", "path", "bytes", "sha256"],
+        "properties": {
+          "group": {"type": "string"},
+          "path": {"type": "string"},
+          "bytes": {"type": "integer", "minimum": 0},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "fileIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "bytes", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "bytes": {"type": "integer", "minimum": 0},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

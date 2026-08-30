@@ -1,0 +1,9 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g03",
+  "candidate_round": 3,
+  "failed_checks": [
+    "sentence_transformation:instruction_word_limit"
+  ],
+  "family_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02",
+  "passed": false
+}

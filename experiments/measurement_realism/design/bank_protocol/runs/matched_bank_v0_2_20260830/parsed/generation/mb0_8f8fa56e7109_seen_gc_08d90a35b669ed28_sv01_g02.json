@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "Has Maya packed the picnic basket?",
+  "cell_id": "gc_08d90a35b669ed28",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g02_cloze",
+      "context": "Maya started preparing the picnic basket earlier. Alex wants to know whether she has completed that task now. Use: Maya / pack.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]] the picnic basket?",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the question using the words in brackets.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Has Maya packed"
+        ],
+        "completed_target": "Has Maya packed the picnic basket?",
+        "correct_choice_id": null,
+        "target_response": "Has Maya packed"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g02_dialog",
+      "context": "Maya started packing the picnic basket earlier. Alex wants to check whether she has finished. Use: Maya / pack.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Maya: We should leave for the picnic soon.",
+          "Alex: I will check whether everything is ready."
+        ],
+        "incomplete_turn_template": "Alex: [[RESPONSE]] the picnic basket?",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Alex's question using the words in brackets.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Has Maya packed"
+        ],
+        "completed_target": "Has Maya packed the picnic basket?",
+        "correct_choice_id": null,
+        "target_response": "Has Maya packed"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g02_mcq",
+      "context": "Maya started packing the picnic basket earlier. Alex wants to know whether she has completed the task.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the wrong present-tense form of HAVE for the singular subject Maya.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Uses the base form pack instead of the past participle packed after HAVE.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Keeps declarative word order instead of inverting the finite operator and subject to form a standard polar question.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Has Maya packed the picnic basket?"
+          },
+          {
+            "id": "B",
+            "text": "Have Maya packed the picnic basket?"
+          },
+          {
+            "id": "C",
+            "text": "Has Maya pack the picnic basket?"
+          },
+          {
+            "id": "D",
+            "text": "Maya has packed the picnic basket?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which question should Alex ask?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the standard question that asks whether the task is complete now.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "Has Maya packed the picnic basket?",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g02_xform",
+      "context": "Maya is preparing for a picnic, and Alex wants to check whether this task is complete.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Maya started packing the picnic basket earlier.",
+        "stem": null,
+        "transformation_cue": "Use these words: Maya / pack / the picnic basket."
+      },
+      "instruction": "Write a question asking whether Maya has completed the task now.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Has Maya packed the picnic basket?"
+        ],
+        "completed_target": "Has Maya packed the picnic basket?",
+        "correct_choice_id": null,
+        "target_response": "Has Maya packed the picnic basket?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Ask whether Maya has completed packing the picnic basket.",
+    "main_verb_lemma": "pack",
+    "object_head": "basket",
+    "participants": [
+      "Maya",
+      "Alex"
+    ],
+    "situation_summary": "Maya started packing a picnic basket earlier, and Alex wants to know whether the task is complete now.",
+    "time_anchor": "now, after Maya started the task earlier"
+  },
+  "semantic_variant_index": 1
+}

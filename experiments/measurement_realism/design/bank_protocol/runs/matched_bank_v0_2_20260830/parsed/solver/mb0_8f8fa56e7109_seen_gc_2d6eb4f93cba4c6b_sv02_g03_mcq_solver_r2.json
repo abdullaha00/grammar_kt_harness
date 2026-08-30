@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "C can also describe a submission before the meeting, but B more clearly marks it as earlier.",
+  "batch_id": "solver_r03_rep2_multiple_choice_b01",
+  "instruction_understanding": "Choose the sentence showing that the report was submitted before the meeting.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv02_g03_mcq",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "C"
+  ],
+  "reasonable_unkeyed_responses": [
+    "C"
+  ],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_2d6eb4f93cba4c6b_sv02_g03_mcq_solver_r2",
+  "submitted_response": "B",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

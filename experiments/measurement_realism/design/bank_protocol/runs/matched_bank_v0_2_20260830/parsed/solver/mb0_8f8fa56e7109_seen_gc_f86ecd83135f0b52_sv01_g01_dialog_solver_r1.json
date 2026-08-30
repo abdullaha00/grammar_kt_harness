@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "Close and shut are both natural in this context.",
+  "batch_id": "solver_r01_rep1_dialogue_completion_b02",
+  "instruction_understanding": "Make a natural offer using shall about the open window.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01_g01_dialog",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Shall I shut the window?"
+  ],
+  "reasonable_unkeyed_responses": [
+    "Shall I shut the window?"
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv01_g01_dialog_solver_r1",
+  "submitted_response": "Shall I close the window?",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

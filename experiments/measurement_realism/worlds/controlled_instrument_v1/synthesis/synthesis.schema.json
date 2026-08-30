@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "controlled_world_synthesis_v1",
+  "additionalProperties": false,
+  "properties": {
+    "abcd_seen_terminal_probe_summary": {"type": "object"},
+    "bottom_line": {"type": "object"},
+    "claim_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "learner_facing_measurement_validity": {"const": "NOT_ASSESSED"},
+        "permitted": {"const": "controlled_structural_sensitivity_only"},
+        "platform_plausibility": {"const": "NOT_ASSESSED"},
+        "prohibited": {"items": {"type": "string"}, "type": "array"}
+      },
+      "required": [
+        "permitted",
+        "learner_facing_measurement_validity",
+        "platform_plausibility",
+        "prohibited"
+      ],
+      "type": "object"
+    },
+    "content_free_instrument": {"const": true},
+    "contrasts": {"type": "object"},
+    "controlled_scenario": {"const": true},
+    "error_history": {"type": "object"},
+    "model_conditions": {"type": "object"},
+    "release_eligible": {"const": false},
+    "scenario_kind": {"const": "controlled_instrument_scaffold"},
+    "schedule_diagnostics": {"type": "object"},
+    "schema_version": {"const": "controlled_world_synthesis_v1"},
+    "study_id": {"const": "measurement_realism_controlled_instrument_v1"},
+    "synthesis_kind": {"const": "posthoc_controlled_structural_evidence_synthesis"},
+    "synthesis_timing": {"const": "post_response_derived_summary"},
+    "uncertainty_and_generalisation_limits": {
+      "items": {"type": "string"},
+      "minItems": 1,
+      "type": "array"
+    },
+    "uncertainty_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "across_seed_summary": {"const": "descriptive_unweighted_mean_minimum_maximum_not_confidence_interval"},
+        "covered": {"type": "string"},
+        "interval_type": {"const": "learner_cluster_percentile_bootstrap"},
+        "not_covered": {"items": {"type": "string"}, "minItems": 1, "type": "array"},
+        "predictions_refit_within_bootstrap": {"const": false},
+        "repeats_per_seed": {"const": 2000},
+        "resampling_unit": {"const": "held_out_test_learner"}
+      },
+      "required": [
+        "interval_type",
+        "repeats_per_seed",
+        "resampling_unit",
+        "predictions_refit_within_bootstrap",
+        "covered",
+        "not_covered",
+        "across_seed_summary"
+      ],
+      "type": "object"
+    },
+    "verification": {"type": "object"}
+  },
+  "required": [
+    "schema_version",
+    "synthesis_kind",
+    "synthesis_timing",
+    "study_id",
+    "scenario_kind",
+    "controlled_scenario",
+    "release_eligible",
+    "content_free_instrument",
+    "claim_boundary",
+    "verification",
+    "model_conditions",
+    "abcd_seen_terminal_probe_summary",
+    "contrasts",
+    "error_history",
+    "schedule_diagnostics",
+    "uncertainty_and_generalisation_limits",
+    "uncertainty_contract",
+    "bottom_line"
+  ],
+  "type": "object"
+}

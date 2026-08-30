@@ -1,0 +1,227 @@
+{
+  "call_records": [
+    {
+      "call_key": "ecp_simple_gc_d15de8b5658bd6a5",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_simple_gc_d15de8b5658bd6a5",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 134,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_simple_gc_d15de8b5658bd6a5/call_metadata.json",
+          "sha256": "0c67e238309d9e9236cb58de27817fa9bdd764ac67ff733e644931db1e317019"
+        },
+        "cli_stderr.txt": {
+          "bytes": 18281,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_simple_gc_d15de8b5658bd6a5/cli_stderr.txt",
+          "sha256": "6c6a30b3f69fc45dbd5c83e8b8117291670a72072533a5c0fb3e678475ed7af4"
+        },
+        "input.json": {
+          "bytes": 4857,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_simple_gc_d15de8b5658bd6a5/input.json",
+          "sha256": "afac949469e205cc98af1fabf6831ab7c151ec322a06b57451620e16af4d29dd"
+        },
+        "model_settings.json": {
+          "bytes": 557,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_simple_gc_d15de8b5658bd6a5/model_settings.json",
+          "sha256": "846673939f81decad380c7de103d95ee045f6fcb33279b19d9acede544427b18"
+        },
+        "output_schema.json": {
+          "bytes": 6595,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_simple_gc_d15de8b5658bd6a5/output_schema.json",
+          "sha256": "e4bfc182d16172482dec0e15437f8b80c368b0ba2e4432f119f86db1fc7d9a31"
+        },
+        "parsed_result.json": {
+          "bytes": 11695,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_simple_gc_d15de8b5658bd6a5/parsed_result.json",
+          "sha256": "2cdd0851a0cb52e17b696c426ce878ad3874d644a8942372a8652cbb94e6c011"
+        },
+        "raw_output.txt": {
+          "bytes": 9922,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_simple_gc_d15de8b5658bd6a5/raw_output.txt",
+          "sha256": "5540dee8d16c2391ad102946e7a2d737fe4bfcca218e788a67b134b4e712d996"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 6413,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_simple_gc_d15de8b5658bd6a5/rendered_prompt.txt",
+          "sha256": "108eb1a8d09b61018338ebdcc2faf48216107edc788b7c8f26abf7b1069c8107"
+        }
+      },
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 81.81508231599582,
+      "stage": "dialogue_continuum_generation",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_multi_kc_gc_2d6eb4f93cba4c6b",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_multi_kc_gc_2d6eb4f93cba4c6b",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 134,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_multi_kc_gc_2d6eb4f93cba4c6b/call_metadata.json",
+          "sha256": "6146e01b7da7d68c91d63ab63352319e8eba7905be2a588a3c3ae60e1da61f78"
+        },
+        "cli_stderr.txt": {
+          "bytes": 19228,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_multi_kc_gc_2d6eb4f93cba4c6b/cli_stderr.txt",
+          "sha256": "694e557379605834bd7e5f85b03075a9c52d87caf8b0eddfefbe0a385fa02d73"
+        },
+        "input.json": {
+          "bytes": 4995,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_multi_kc_gc_2d6eb4f93cba4c6b/input.json",
+          "sha256": "9ffd1cbe2600cc68e1676268f83f6663a1e836aa272f69409eb9c1f949cb9826"
+        },
+        "model_settings.json": {
+          "bytes": 561,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_multi_kc_gc_2d6eb4f93cba4c6b/model_settings.json",
+          "sha256": "72d29d5cfaca1de4a512843e6d24870d92e842cc690d8f5120a3d9039f25ced7"
+        },
+        "output_schema.json": {
+          "bytes": 6595,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_multi_kc_gc_2d6eb4f93cba4c6b/output_schema.json",
+          "sha256": "e4bfc182d16172482dec0e15437f8b80c368b0ba2e4432f119f86db1fc7d9a31"
+        },
+        "parsed_result.json": {
+          "bytes": 12527,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_multi_kc_gc_2d6eb4f93cba4c6b/parsed_result.json",
+          "sha256": "e11abba7c2286823cdb22add774b4ee47ca7004666cc2402a251a7e5b1abe782"
+        },
+        "raw_output.txt": {
+          "bytes": 10738,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_multi_kc_gc_2d6eb4f93cba4c6b/raw_output.txt",
+          "sha256": "ca09f4cc2790dcfa338acdbb05a9d703c02508d01b2ead392a994243b743d777"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 6542,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_multi_kc_gc_2d6eb4f93cba4c6b/rendered_prompt.txt",
+          "sha256": "4f993204ec692490219735ede47fc7f0ff40b44def3d906b0aabe5767920def2"
+        }
+      },
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 83.66891650699836,
+      "stage": "dialogue_continuum_generation",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_question_gc_08d90a35b669ed28",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_question_gc_08d90a35b669ed28",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 134,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_question_gc_08d90a35b669ed28/call_metadata.json",
+          "sha256": "a85ee979bfee5b791f8f5c4d7f19d2f0b91493a2140e6fadad8eed92d941d3d7"
+        },
+        "cli_stderr.txt": {
+          "bytes": 19180,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_question_gc_08d90a35b669ed28/cli_stderr.txt",
+          "sha256": "8e6371a4a860eeefc14f90aad2fc593e4d333b99d18cbdf1af45eac5f9ff6ab9"
+        },
+        "input.json": {
+          "bytes": 5057,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_question_gc_08d90a35b669ed28/input.json",
+          "sha256": "3064f91f54e8edb3f41ff88c9fca805190307b94b20c25de8eb0378ee0a66394"
+        },
+        "model_settings.json": {
+          "bytes": 561,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_question_gc_08d90a35b669ed28/model_settings.json",
+          "sha256": "db3dc9b6261071b99a8e9b1a8e17afb91538a7082581e8352033017e4f251c24"
+        },
+        "output_schema.json": {
+          "bytes": 6595,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_question_gc_08d90a35b669ed28/output_schema.json",
+          "sha256": "e4bfc182d16172482dec0e15437f8b80c368b0ba2e4432f119f86db1fc7d9a31"
+        },
+        "parsed_result.json": {
+          "bytes": 12569,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_question_gc_08d90a35b669ed28/parsed_result.json",
+          "sha256": "0bb42bc7ae820d7f58ad883b03d28af54b18c22fc1118535c984aa1439ddd4af"
+        },
+        "raw_output.txt": {
+          "bytes": 10644,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_question_gc_08d90a35b669ed28/raw_output.txt",
+          "sha256": "e5dbc469554c5076698bfac928a29d9c129680de13e07fc6af3a6ae6dff8adc1"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 6588,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_question_gc_08d90a35b669ed28/rendered_prompt.txt",
+          "sha256": "0a9c2d539f6f755fae78ca98d649125687d974e92658dc90e70244eee3e8a268"
+        }
+      },
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 80.49107129400363,
+      "stage": "dialogue_continuum_generation",
+      "tokens_used": null
+    },
+    {
+      "call_key": "ecp_rare_complex_gc_4634bf1b005f7724",
+      "evidence_dir": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_rare_complex_gc_4634bf1b005f7724",
+      "files": {
+        "call_metadata.json": {
+          "bytes": 134,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_rare_complex_gc_4634bf1b005f7724/call_metadata.json",
+          "sha256": "9be0de38633d73c1998cc91c5e3680e21c5acf4a6821e796f7475cf4af83e7de"
+        },
+        "cli_stderr.txt": {
+          "bytes": 18664,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_rare_complex_gc_4634bf1b005f7724/cli_stderr.txt",
+          "sha256": "458cfbdcd768a5f694cd768602e225cfe18bd2bece252c4c5400446c7664c85c"
+        },
+        "input.json": {
+          "bytes": 5074,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_rare_complex_gc_4634bf1b005f7724/input.json",
+          "sha256": "bc4da458ec89f03c56d7e6201e4080416d727a2a078b66b1ad33cec6dddde22b"
+        },
+        "model_settings.json": {
+          "bytes": 569,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_rare_complex_gc_4634bf1b005f7724/model_settings.json",
+          "sha256": "b3e742b791dec933bbc36d2fb90ef3b2898c181691dbbf2e8b99afc4d5af7df8"
+        },
+        "output_schema.json": {
+          "bytes": 6595,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_rare_complex_gc_4634bf1b005f7724/output_schema.json",
+          "sha256": "e4bfc182d16172482dec0e15437f8b80c368b0ba2e4432f119f86db1fc7d9a31"
+        },
+        "parsed_result.json": {
+          "bytes": 11960,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_rare_complex_gc_4634bf1b005f7724/parsed_result.json",
+          "sha256": "db60ff6ea38901a880ccbd942e5af44a5b23b54392fb1a90cabf2fbfbdf7e979"
+        },
+        "raw_output.txt": {
+          "bytes": 10102,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_rare_complex_gc_4634bf1b005f7724/raw_output.txt",
+          "sha256": "b6fc89e0c066a489edba307cb8ac2dc20499e14fccc870bb3d5991c9e7518233"
+        },
+        "rendered_prompt.txt": {
+          "bytes": 6610,
+          "path": "runs/measurement_realism/dialogue_pilot_live_v1/generation/ecp_rare_complex_gc_4634bf1b005f7724/rendered_prompt.txt",
+          "sha256": "4031f397209d49f81ca30510e8a192f512cca821e52b56651a52f49bfd52b99d"
+        }
+      },
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "medium",
+      "runtime_seconds": 78.80298052600119,
+      "stage": "dialogue_continuum_generation",
+      "tokens_used": null
+    }
+  ],
+  "calls": 4,
+  "families": 4,
+  "generated_families_sha256": "efa03d40dbd51703ce981d3fc74760183cb4cc0fcfe72a5fdd7ae74994297903",
+  "generation_call_plan_sha256": "a936381ca3f62917c58270ede61bccd06538d76420c5703f612b0a32c9611583",
+  "model": {
+    "name": "gpt-5.6-sol",
+    "reasoning_effort": "medium"
+  },
+  "opportunities": 20,
+  "scientific_boundary": {
+    "critic_outputs_read": false,
+    "exact_frozen_identities_validated": true,
+    "human_validation": false,
+    "learner_outcomes_read": false,
+    "local_rich_schema_validated": true
+  },
+  "status": "GENERATION_COMPLETE_AND_LOCALLY_VALIDATED",
+  "study_id": "dialogue_pilot_live_v1",
+  "token_total": 0
+}

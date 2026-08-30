@@ -1,4 +1,4 @@
-\begin{thebibliography}{20}
+\begin{thebibliography}{27}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Abdelrahman et~al.(2023)Abdelrahman, Wang, and
@@ -8,23 +8,22 @@ Ghodai Abdelrahman, Qing Wang, and Bernardo~Pereira Nunes. 2023.
   survey}.
 \newblock \emph{ACM Computing Surveys}, 55(11):1--37.
 
-\bibitem[{Bender and Friedman(2018)}]{bender-friedman-2018}
-Emily~M. Bender and Batya Friedman. 2018.
-\newblock \href {https://doi.org/10.1162/tacl_a_00041} {Data statements for
-  natural language processing: Toward mitigating system bias and enabling
-  better science}.
-\newblock \emph{Transactions of the Association for Computational Linguistics},
-  6:587--604.
+\bibitem[{Bryant et~al.(2017)Bryant, Felice, and Briscoe}]{bryant-etal-2017}
+Christopher Bryant, Mariano Felice, and Ted Briscoe. 2017.
+\newblock \href {https://doi.org/10.18653/v1/P17-1074} {Automatic annotation
+  and evaluation of error types for grammatical error correction}.
+\newblock In \emph{Proceedings of the 55th Annual Meeting of the Association
+  for Computational Linguistics}, pages 793--805. Association for Computational
+  Linguistics.
 
-\bibitem[{Bitew et~al.(2023)Bitew, Deleu, Do{\u{g}}ru{\"o}z, Develder, and
-  Demeester}]{bitew-etal-2023-learning}
-Semere~Kiros Bitew, Johannes Deleu, A.~Seza Do{\u{g}}ru{\"o}z, Chris Develder,
-  and Thomas Demeester. 2023.
-\newblock \href {https://doi.org/10.18653/v1/2023.bea-1.51} {Learning from
-  partially annotated data: Example-aware creation of gap-filling exercises for
-  language learning}.
-\newblock In \emph{Proceedings of the 18th Workshop on Innovative Use of {NLP}
-  for Building Educational Applications}, pages 598--609. Association for
+\bibitem[{Bryant et~al.(2019)Bryant, Felice, {O}istein E.~Andersen, and
+  Briscoe}]{bryant-etal-2019}
+Christopher Bryant, Mariano Felice, {O}istein E.~Andersen, and Ted Briscoe.
+  2019.
+\newblock \href {https://doi.org/10.18653/v1/W19-4406} {The {BEA}-2019 shared
+  task on grammatical error correction}.
+\newblock In \emph{Proceedings of the 14th Workshop on Innovative Use of {NLP}
+  for Building Educational Applications}, pages 52--75. Association for
   Computational Linguistics.
 
 \bibitem[{Caines et~al.(2022)Caines, Yannakoudakis, Allen, P{\'e}rez-Paredes,
@@ -44,14 +43,14 @@ Hao Cen, Kenneth Koedinger, and Brian Junker. 2006.
 \newblock In \emph{Intelligent Tutoring Systems}, volume 4053 of \emph{Lecture
   Notes in Computer Science}, pages 164--175. Springer.
 
-\bibitem[{Chan et~al.(2022)Chan, Somasundaran, Ghosh, and
-  Zhao}]{chan-etal-2022-agree}
-Sophia Chan, Swapna Somasundaran, Debanjan Ghosh, and Mengxuan Zhao. 2022.
-\newblock \href {https://doi.org/10.18653/v1/2022.emnlp-demos.17} {{AGR}e{E}: A
-  system for generating automated grammar reading exercises}.
-\newblock In \emph{Proceedings of the 2022 Conference on Empirical Methods in
-  Natural Language Processing: System Demonstrations}, pages 169--177.
-  Association for Computational Linguistics.
+\bibitem[{Choi et~al.(2020)Choi, Lee, Cho, Baek, Kim, Cha, Shin, Bae, and
+  Heo}]{choi-etal-2020}
+Youngduck Choi, Youngnam Lee, Junghyun Cho, Jineon Baek, Byungsoo Kim, Yeongmin
+  Cha, Dongmin Shin, Chan Bae, and Jaewe Heo. 2020.
+\newblock \href {https://arxiv.org/abs/1912.03072} {{EdNet}: A large-scale
+  hierarchical dataset in education}.
+\newblock In \emph{Artificial Intelligence in Education}, pages 69--73.
+  Springer.
 
 \bibitem[{Corbett and Anderson(1995)}]{corbett-anderson-1995}
 Albert~T. Corbett and John~R. Anderson. 1995.
@@ -67,19 +66,37 @@ Albert~T. Corbett and John~R. Anderson. 1995.
   Teaching, Assessment---Companion Volume}}.
 \newblock Council of Europe Publishing, Strasbourg.
 
-\bibitem[{Cui and Sachan(2023)}]{cui-sachan-2023-adaptive}
-Peng Cui and Mrinmaya Sachan. 2023.
-\newblock \href {https://doi.org/10.18653/v1/2023.acl-long.567} {Adaptive and
-  personalized exercise generation for online language learning}.
-\newblock In \emph{Proceedings of the 61st Annual Meeting of the Association
-  for Computational Linguistics (Volume 1: Long Papers)}, pages 10184--10198.
-  Association for Computational Linguistics.
-
 \bibitem[{de~la Torre and Chiu(2016)}]{de-la-torre-chiu-2016}
 Jimmy de~la Torre and Chia-Yi Chiu. 2016.
 \newblock \href {https://doi.org/10.1007/s11336-015-9467-8} {A general method
   of empirical {Q}-matrix validation}.
 \newblock \emph{Psychometrika}, 81(2):253--273.
+
+\bibitem[{Gu and Xu(2021)}]{gu-xu-2021}
+Yuqi Gu and Gongjun Xu. 2021.
+\newblock \href {https://doi.org/10.5705/ss.202018.0410} {Sufficient and
+  necessary conditions for the identifiability of the {Q}-matrix}.
+\newblock \emph{Statistica Sinica}, 31:449--472.
+
+\bibitem[{In'nami and Koizumi(2009)}]{innami-koizumi-2009}
+Yo~In'nami and Rie Koizumi. 2009.
+\newblock \href {https://doi.org/10.1177/0265532208101006} {A meta-analysis of
+  test format effects on reading and listening test performance}.
+\newblock \emph{Language Testing}, 26(2):219--244.
+
+\bibitem[{Kane(2013)}]{kane-2013}
+Michael~T. Kane. 2013.
+\newblock \href {https://doi.org/10.1111/jedm.12000} {Validating the
+  interpretations and uses of test scores}.
+\newblock \emph{Journal of Educational Measurement}, 50(1):1--73.
+
+\bibitem[{Kaser and Alexandron(2024)}]{kaser-alexandron-2024}
+Tanja Kaser and Giora Alexandron. 2024.
+\newblock \href {https://doi.org/10.1007/s40593-023-00337-2} {Simulated
+  learners in educational technology: A systematic literature review and a
+  turing-like test}.
+\newblock \emph{International Journal of Artificial Intelligence in Education},
+  34:545--585.
 
 \bibitem[{Koedinger et~al.(2012)Koedinger, Corbett, and
   Perfetti}]{koedinger-etal-2012}
@@ -88,6 +105,13 @@ Kenneth~R. Koedinger, Albert~T. Corbett, and Charles Perfetti. 2012.
   knowledge-learning-instruction framework: Bridging the science-practice chasm
   to enhance robust student learning}.
 \newblock \emph{Cognitive Science}, 36(5):757--798.
+
+\bibitem[{Messick(1994)}]{messick-1994}
+Samuel~J. Messick. 1994.
+\newblock \href {https://doi.org/10.1002/j.2333-8504.1994.tb01618.x} {Validity
+  of psychological assessment: Validation of inferences from persons' responses
+  and performances as scientific inquiry into score meaning}.
+\newblock Technical Report RR-94-45, Educational Testing Service.
 
 \bibitem[{O'Keeffe and Mark(2017)}]{okeeffe-mark-2017}
 Anne O'Keeffe and Geraldine Mark. 2017.
@@ -111,6 +135,13 @@ Zachary~A. Pardos and Anant Dadu. 2018.
   refinement}.
 \newblock \emph{Journal of Educational Data Mining}, 10(2):1--27.
 
+\bibitem[{Pardos and Heffernan(2011)}]{pardos-heffernan-2011}
+Zachary~A. Pardos and Neil~T. Heffernan. 2011.
+\newblock \href {https://doi.org/10.1007/978-3-642-22362-4_21} {{KT-IDEM}:
+  Introducing item difficulty to the knowledge tracing model}.
+\newblock In \emph{User Modeling, Adaption and Personalization}, pages
+  243--254. Springer.
+
 \bibitem[{Pavlik et~al.(2009)Pavlik, Cen, and Koedinger}]{pavlik-etal-2009}
 Philip~I. Pavlik, Hao Cen, and Kenneth~R. Koedinger. 2009.
 \newblock \href {https://doi.org/10.3233/978-1-60750-028-5-531} {Performance
@@ -118,14 +149,6 @@ Philip~I. Pavlik, Hao Cen, and Kenneth~R. Koedinger. 2009.
 \newblock In \emph{Proceedings of the 14th International Conference on
   Artificial Intelligence in Education}, volume 200 of \emph{Frontiers in
   Artificial Intelligence and Applications}, pages 531--538.
-
-\bibitem[{Picones et~al.(2022)Picones, Paa{\ss}en, Koprinska, and
-  Yacef}]{picones-etal-2022}
-Gio Picones, Benjamin Paa{\ss}en, Irena Koprinska, and Kalina Yacef. 2022.
-\newblock \href {https://doi.org/10.5281/zenodo.6853131} {Combining domain
-  modelling and student modelling techniques in a single automated pipeline}.
-\newblock In \emph{Proceedings of the 15th International Conference on
-  Educational Data Mining}, pages 217--227.
 
 \bibitem[{Piech et~al.(2015)Piech, Bassen, Huang, Ganguli, Sahami, Guibas, and
   Sohl-Dickstein}]{piech-etal-2015}
@@ -137,6 +160,20 @@ Chris Piech, Jonathan Bassen, Jonathan Huang, Surya Ganguli, Mehran Sahami,
 \newblock In \emph{Advances in Neural Information Processing Systems 28}, pages
   505--513.
 
+\bibitem[{Rodriguez(2003)}]{rodriguez-2003}
+Michael~C. Rodriguez. 2003.
+\newblock \href {https://doi.org/10.1111/j.1745-3984.2003.tb01102.x} {Construct
+  equivalence of multiple-choice and constructed-response items: A random
+  effects synthesis of correlations}.
+\newblock \emph{Journal of Educational Measurement}, 40(2):163--184.
+
+\bibitem[{Rupp and Templin(2008)}]{rupp-templin-2008}
+Andr{\'e}~A. Rupp and Jonathan Templin. 2008.
+\newblock \href {https://doi.org/10.1177/0013164407301545} {The effects of
+  {Q}-matrix misspecification on parameter estimates and classification
+  accuracy in the {DINA} model}.
+\newblock \emph{Educational and Psychological Measurement}, 68(1):78--96.
+
 \bibitem[{Scarlatos et~al.(2025)Scarlatos, Baker, and
   Lan}]{scarlatos-etal-2025-dialogue}
 Alexander Scarlatos, Ryan~S. Baker, and Andrew Lan. 2025.
@@ -145,21 +182,30 @@ Alexander Scarlatos, Ryan~S. Baker, and Andrew Lan. 2025.
 \newblock In \emph{Proceedings of the 15th International Learning Analytics and
   Knowledge Conference}, pages 249--259. ACM.
 
-\bibitem[{Srivastava and Goodman(2021)}]{srivastava-goodman-2021-question}
-Megha Srivastava and Noah Goodman. 2021.
-\newblock \href {https://doi.org/10.18653/v1/2021.acl-short.88} {Question
-  generation for adaptive education}.
-\newblock In \emph{Proceedings of the 59th Annual Meeting of the Association
-  for Computational Linguistics and the 11th International Joint Conference on
-  Natural Language Processing (Volume 2: Short Papers)}, pages 692--701.
-  Association for Computational Linguistics.
+\bibitem[{Settles et~al.(2018)Settles, Brust, Gustafson, Hagiwara, and
+  Madnani}]{settles-etal-2018}
+Burr Settles, Chris Brust, Erin Gustafson, Masato Hagiwara, and Nitin Madnani.
+  2018.
+\newblock \href {https://doi.org/10.18653/v1/W18-0506} {Second language
+  acquisition modeling}.
+\newblock In \emph{Proceedings of the 13th Workshop on Innovative Use of {NLP}
+  for Building Educational Applications}, pages 56--65. Association for
+  Computational Linguistics.
 
-\bibitem[{Verratti-Souto et~al.(2025)Verratti-Souto, Sagirov, and
-  Chen}]{verratti-souto-etal-2025}
-Daniela Verratti-Souto, Nelly Sagirov, and Xiaobin Chen. 2025.
-\newblock \href {https://doi.org/10.1017/S0267190525100093} {{NLP}-powered
-  quantitative verification of the {English Grammar Profile}'s structure-level
-  assignment}.
-\newblock \emph{Annual Review of Applied Linguistics}, 45:109--130.
+\bibitem[{Settles and Meeder(2016)}]{settles-meeder-2016}
+Burr Settles and Brendan Meeder. 2016.
+\newblock \href {https://doi.org/10.18653/v1/P16-1174} {A trainable spaced
+  repetition model for language learning}.
+\newblock In \emph{Proceedings of the 54th Annual Meeting of the Association
+  for Computational Linguistics}, pages 1848--1858. Association for
+  Computational Linguistics.
+
+\bibitem[{Yudelson et~al.(2013)Yudelson, Koedinger, and
+  Gordon}]{yudelson-etal-2013}
+Michael~V. Yudelson, Kenneth~R. Koedinger, and Geoffrey~J. Gordon. 2013.
+\newblock \href {https://doi.org/10.1007/978-3-642-39112-5_18} {Individualized
+  {Bayesian Knowledge Tracing} models}.
+\newblock In \emph{Artificial Intelligence in Education}, pages 171--180.
+  Springer.
 
 \end{thebibliography}

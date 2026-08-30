@@ -1,0 +1,188 @@
+{
+  "batch_id": "critic_r02_platform_product_b02",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g02",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02",
+  "family_judgments": [
+    {
+      "blocking": false,
+      "criterion": "plausible_format_crossing",
+      "evidence": "The dialogue format has a broken response frame that creates a duplicated subject.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "non_repetitive_learner_experience",
+      "evidence": "The same office-door routine and sentence recur across all four activities.",
+      "severity": "minor_concern"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The verb and sentence frame make the required form unambiguous.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "A one-word entry completes the sentence naturally.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "Office door and every evening are accessible workplace language.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "A routine door check is plausible in the stated work setting.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "Third-person present -s is below typical B2 grammatical demand.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The simple cloze has a clear, scorable target.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g02_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The reply frame reads “Nina: Nina [[RESPONSE]]...”, so the learner cannot tell whether to enter only a verb or a complete reply.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "The accepted response “checks” renders as “Nina: Nina checks the office door every evening,” with an erroneous repeated subject.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "The dialogue vocabulary remains accessible at B2.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "A speaker normally would not answer a colleague with “Nina checks...” about herself; the repeated name is unnatural.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The intended third-person present form is elementary for B2.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The displayed scored completion is grammatically and pragmatically defective.",
+          "severity": "major_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g02_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The instruction and routine context clearly identify the correct description.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "The answer is selected from four complete sentences.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "The vocabulary is transparent and repeated in the context.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "The sentence naturally describes a repeated workplace action.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The distinction mainly tests elementary subject-verb agreement.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The MCQ is self-contained and readily deployable.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g02_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "task_comprehensibility",
+          "evidence": "The source and cue words clearly specify the target sentence.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "ui_response_mechanism_coherence",
+          "evidence": "A full-sentence response is appropriate for rewriting.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "lexical_accessibility",
+          "evidence": "All key vocabulary appears in the source or cue.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "context_naturalness",
+          "evidence": "The routine is clear and plausible.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "difficulty_plausibility",
+          "evidence": "The construction is too basic to provide meaningful B2 challenge.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "platform_deployability",
+          "evidence": "The constrained target can be scored directly.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv02_g02_xform"
+    }
+  ],
+  "overall_accept": false,
+  "role": "platform_product",
+  "summary": "Not acceptable as supplied: the dialogue-completion frame renders an incorrect and unnatural answer."
+}

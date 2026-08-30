@@ -1,0 +1,159 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "Lena would not have reached the office on time.",
+  "cell_id": "gc_e7fef77abc10b5ba",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g03_cloze",
+      "context": "Yesterday morning, Lena's train was delayed. She took a taxi and arrived at work on time. Think about what would have happened without the taxi.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Lena [[RESPONSE]] the office on time.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using the verb in brackets.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "would not have reached",
+          "wouldn't have reached"
+        ],
+        "completed_target": "Lena would not have reached the office on time.",
+        "correct_choice_id": null,
+        "target_response": "would not have reached"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g03_dialog",
+      "context": "Yesterday morning, Lena's delayed train made her late, but a taxi got her to the office on time.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Omar: That taxi was lucky. What would have happened without it?"
+        ],
+        "incomplete_turn_template": "Lena: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Lena's reply with one sentence.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Lena would not have reached the office on time.",
+          "Lena wouldn't have reached the office on time."
+        ],
+        "completed_target": "Lena would not have reached the office on time.",
+        "correct_choice_id": null,
+        "target_response": "Lena would not have reached the office on time."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g03_mcq",
+      "context": "Yesterday morning, Lena's train was delayed. She took a taxi and reached the office on time.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Omits perfect HAVE and uses a bare main verb after WOULD.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Places NOT after perfect HAVE instead of after the finite modal WOULD.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Selects WILL instead of the required modal WOULD for the unreal past result.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Lena would not have reached the office on time."
+          },
+          {
+            "id": "B",
+            "text": "Lena would not reach the office on time."
+          },
+          {
+            "id": "C",
+            "text": "Lena would have not reached the office on time."
+          },
+          {
+            "id": "D",
+            "text": "Lena will not have reached the office on time."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Without the taxi, what would have happened?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly describes what would have happened without the taxi.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "Lena would not have reached the office on time.",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv01_g03_xform",
+      "context": "Yesterday morning, Lena's train was delayed. A taxi helped her reach the office on time.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Lena reached the office on time because she took a taxi.",
+        "stem": null,
+        "transformation_cue": "Without the taxi: Lena / not / reach / the office / on time"
+      },
+      "instruction": "Write one sentence saying what the result would have been without the taxi. Use all the words in the cue.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Lena would not have reached the office on time.",
+          "Lena wouldn't have reached the office on time."
+        ],
+        "completed_target": "Lena would not have reached the office on time.",
+        "correct_choice_id": null,
+        "target_response": "Lena would not have reached the office on time."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Explain the unreal past result if Lena had not taken the taxi.",
+    "main_verb_lemma": "reach",
+    "object_head": "office",
+    "participants": [
+      "Lena",
+      "taxi driver"
+    ],
+    "situation_summary": "A taxi allowed Lena to reach the office on time despite a delayed train.",
+    "time_anchor": "yesterday morning after Lena's train was delayed"
+  },
+  "semantic_variant_index": 1
+}

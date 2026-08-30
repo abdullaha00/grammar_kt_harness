@@ -1,0 +1,39 @@
+\begin{table*}[t]
+  \centering
+  \footnotesize
+  \setlength{\tabcolsep}{2pt}
+  \newcommand{\mrpair}[2]{\shortstack{#1\\#2}}
+  \begin{tabularx}{\textwidth}{@{}XccccX@{}}
+    \toprule
+    Controlled world & A & B & C & D & Paired log-loss contrast \\
+    \midrule
+    Clean zero & \mrpair{.6572}{.1156} & \mrpair{.6641}{.1358} &
+      \mrpair{.6572}{.1156} & \mrpair{.6578}{.1157} &
+      $B-A=+.006919$ (3/3) \\
+    Strong format & \mrpair{.6636}{.1225} & \mrpair{.6390}{.2019} &
+      \mrpair{.6336}{.1185} & \mrpair{.6341}{.1186} &
+      $C-B=-.005317$ (3/3) \\
+    Item only & \mrpair{.6614}{.1203} & \mrpair{.6616}{.1545} &
+      \mrpair{.6615}{.1203} & \mrpair{.6484}{.1174} &
+      $D-C=-.013099$ (3/3) \\
+    Item + format & \mrpair{.6625}{.1220} & \mrpair{.6545}{.1715} &
+      \mrpair{.6545}{.1209} & \mrpair{.6419}{.1178} &
+      $D-C=-.012609$ (3/3) \\
+    Combined heterogeneous & \mrpair{.6561}{.1316} & \mrpair{.6487}{.1772} &
+      \mrpair{.6484}{.1311} & \mrpair{.6364}{.1297} &
+      $C-B=-.000327$ (0/3); $D-C=-.012031$ (3/3) \\
+    \midrule
+    \multicolumn{5}{@{}l}{Format DiD
+      ${}(B-A)_{\mathrm{strong}}-(B-A)_{\mathrm{zero}}$} &
+      $-.031551\;[-.033431,-.029013]$ (3/3) \\
+    \bottomrule
+  \end{tabularx}
+  \caption{A--D results on 11,808 seen terminal probes per seed.  Model cells
+  stack three-seed mean log loss over item-prerequisite state RMSE (lower is
+  better).  A uses shared \kstar{}, B a false format split, C adds observed
+  format, and D adds a residual basis aligned to planted effects of the same
+  seen items.  Parentheses count seed-conditional learner intervals excluding
+  zero in the stated direction.  A negative DiD means nuisance increases B's
+  relative advantage; it does not validate B.}
+  \label{tab:measurement-nuisance}
+\end{table*}

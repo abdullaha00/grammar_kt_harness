@@ -1,11 +1,20 @@
-# Final full-v1 research-question ledger
+# Final research-question ledger
 
 Statuses are `supported`, `rejected`, or `inconclusive with reason`. Every
-answer is conditional on the declared synthetic world and model-validated item
-bank. Exact protocols, commands, seeds, intervals, and hashes are in
-`reports/experiment_log.md`.
+answer is conditional on its declared evidence source. The measurement-realism
+programme does not convert automated audits, planted content-free worlds, or
+synthetic error labels into human/platform evidence. Exact protocols, commands,
+seeds, intervals, and hashes are in `reports/experiment_log.md`.
 
-## Headline ledger
+## Current paper-level ledger
+
+| RQ | Status | Evidence-backed answer | Confidence and remaining caveat | Paper location |
+|---|---|---|---|---|
+| **RQ1 — What must be declared and audited to construct a grammar-learning measurement environment with known latent structure, and where does a clean Q-driven benchmark fall short?** | **Auditable clean construction supported; platform-valid extension rejected** | Full-v1 supplies immutable GrammarCells, K*, Q*, state, and responses. The broader audit found 60/113 items usable under both mappings, 53/113 in the action-required union, and 18/113 in the critical-answer-space/withhold union. The matched four-format bank passed only 5/38 families, so **no new dataset release** is made. | High for artifact integrity and the frozen automated negative result; inconclusive for actual learner comprehension and expert deployability because there is no human/expert gold. | Construction and Audit; Limitations |
+| **RQ2 — How do KC/Q assumptions and item/format nuisance affect prediction and recovery of planted state?** | **Supported for declared controls; external format claim rejected** | The full-v1 clean-control misspecification result remains. In the content-free extension, planted format nuisance shifts the false-split-versus-shared contrast by mean DiD `-.031551`; explicit format C beats false split B in every strong-format seed (mean `-.005317`). Aligned model D recovers item nuisance planted in its seen-item residual span. | This is a controlled scenario, not validated task-format evidence. Item-only B-A is mixed/null; combined-heterogeneous C-B is mixed with every interval crossing zero; D is an exactly aligned positive control and cannot recover new-item nuisance. | Measurement Nuisance; Results; Discussion |
+| **RQ3 — Which measurement contrasts, histories, and response information make structure or state distinguishable?** | **Equivalence limits supported; policy and richer-response effects bounded** | Outcome-blind KC inductions are non-unique; existing Q-equivalence results persist. Linked structured errors raise planted failed-KC top-1 from `.421` for binary evidence to `1.000` linked and `.884` at 80%, but predictive gains are small. Schedules change observable histories and exploratory fit. More open dialogue increases automated naturalness while weakening determinacy and KC attribution. | Failed KC is post-outcome attribution, policy fits are post-response exploratory, and the dialogue pilot covers four families with automated critics only. None establishes human error causality, policy value, or deployability. | Identifiability; Structured Errors; Platform Policy; Dialogue Boundary |
+
+## Retained full-v1 ledger
 
 | RQ | Status | Evidence-backed answer | Confidence and remaining caveat | Paper location |
 |---|---|---|---|---|
@@ -68,10 +77,23 @@ not turn synthetic thresholds into human study requirements.
 
 ## Overall answer
 
-The programme supports RQ1 and the controlled RQ2/RQ4 recombination claims. It
-answers RQ3 with a scientifically important negative result: response
-prediction can recover a strong structural equivalence class without uniquely
-identifying generator truth. The principal unresolved empirical questions are
-human linguistic/item validity, real learner dynamics, generalisation beyond
-perfect-progressive unseen values, and cross-lingual replication—not missing
-execution of the declared synthetic programme.
+Synthetic perfect-information data support analyses that ordinary learner logs
+cannot validate directly: controlled KC/Q perturbation, true-state recovery,
+counterfactual nuisance mechanisms, and exact equivalence checks. Full-v1
+continues to support its clean-world construction, misspecification, and narrow
+recombination findings, while rejecting unique KC recovery from seen responses.
+
+The measurement extension changes the external-validity interpretation. A
+ranked Q and known state do not establish that a learner can answer the item or
+that the platform process is plausible. Format nuisance can masquerade as skill
+granularity in a planted control; structured errors can retain diagnostic
+information that correctness discards; and schedule and dialogue choices alter
+what KT can observe. But the learner-facing bank failed its coverage, rank,
+answerability, and measurement gates, so the controlled worlds remain
+`release_eligible=false` and there is no new dataset release.
+
+The principal unresolved empirical questions are human linguistic/item
+validity, real learner dynamics and format effects, corpus-grounded error
+validity, policy-value estimation, generalisation beyond perfect-progressive
+unseen values, and cross-lingual replication—not missing execution of a declared
+synthetic experiment.

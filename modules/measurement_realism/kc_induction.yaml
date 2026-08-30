@@ -1,0 +1,29 @@
+study_id: measurement_realism_kc_induction_v1
+status: preregistered_before_model_calls
+date: 2026-08-30
+model:
+  name: gpt-5.6-terra
+  reasoning_effort: medium
+independent_replicates: 3
+proposal_count:
+  minimum: 12
+  maximum: 24
+inputs_visible_to_proposer:
+  - canonical GrammarCell schema and all 75 cells
+  - cell-level source-support counts
+  - allowed executable predicate grammar
+inputs_hidden_until_evaluation:
+  - frozen generator K* names, descriptions, and activation columns
+  - item wording and validation judgments
+  - Q*
+  - learner interactions and private trajectories
+  - KT, discovery, and measurement-realism outcomes
+canonicalisation:
+  equivalence: identical activation vector over the frozen 75-cell universe
+  empty_activation: reject
+  duplicate_within_replicate: retain_raw_but_collapse_for_structural_metrics
+  wording_similarity_used_for_equivalence: false
+claim_boundary: >-
+  Independent automated hypothesis induction is a reproducibility and
+  underdetermination stress test. It is not expert evidence, a psychological
+  ontology, or a procedure for selecting generator truth from outcomes.

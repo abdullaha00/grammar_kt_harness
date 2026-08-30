@@ -1,0 +1,161 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv01_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "Maya will collect the keys from reception tomorrow morning.",
+  "cell_id": "gc_16d9f6e33f0517ec",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv01_g01_cloze",
+      "context": "The office needs someone to pick up the keys, and Maya has agreed to do it.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Maya [[RESPONSE]] the keys from reception tomorrow morning.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using the cue “collect.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "will collect"
+        ],
+        "completed_target": "Maya will collect the keys from reception tomorrow morning.",
+        "correct_choice_id": null,
+        "target_response": "will collect"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv01_g01_dialog",
+      "context": "Nora and Leo are confirming who has agreed to pick up the office keys.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Nora: Who has agreed to pick up the keys from reception tomorrow morning?"
+        ],
+        "incomplete_turn_template": "Leo: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Leo’s reply with one sentence.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Maya will collect the keys from reception tomorrow morning.",
+          "Maya'll collect the keys from reception tomorrow morning.",
+          "Maya’ll collect the keys from reception tomorrow morning."
+        ],
+        "completed_target": "Maya will collect the keys from reception tomorrow morning.",
+        "correct_choice_id": null,
+        "target_response": "Maya will collect the keys from reception tomorrow morning."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv01_g01_mcq",
+      "context": "The office needs someone to pick up the keys, and Maya has agreed to do it tomorrow morning.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Omits WILL and uses the present-simple form instead.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses a third-person singular form instead of the base form after WILL.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses an -ing form instead of the base form after WILL.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Maya collects the keys from reception tomorrow morning."
+          },
+          {
+            "id": "B",
+            "text": "Maya will collect the keys from reception tomorrow morning."
+          },
+          {
+            "id": "C",
+            "text": "Maya will collects the keys from reception tomorrow morning."
+          },
+          {
+            "id": "D",
+            "text": "Maya will collecting the keys from reception tomorrow morning."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly describes Maya’s commitment?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly states what Maya has agreed to do.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Maya will collect the keys from reception tomorrow morning.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv01_g01_xform",
+      "context": "The office needs someone to pick up the keys from reception.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Maya has agreed to collect the keys from reception. She plans to do this tomorrow morning.",
+        "stem": null,
+        "transformation_cue": "Maya / will / collect / the keys / from reception / tomorrow morning"
+      },
+      "instruction": "Rewrite the information as one sentence stating what Maya has agreed to do. Use the cue provided.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Maya will collect the keys from reception tomorrow morning.",
+          "Maya'll collect the keys from reception tomorrow morning.",
+          "Maya’ll collect the keys from reception tomorrow morning."
+        ],
+        "completed_target": "Maya will collect the keys from reception tomorrow morning.",
+        "correct_choice_id": null,
+        "target_response": "Maya will collect the keys from reception tomorrow morning."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "State what Maya has agreed to do.",
+    "main_verb_lemma": "collect",
+    "object_head": "keys",
+    "participants": [
+      "Maya",
+      "Leo",
+      "Nora"
+    ],
+    "situation_summary": "Maya has agreed to pick up some keys from reception the next morning.",
+    "time_anchor": "tomorrow morning"
+  },
+  "semantic_variant_index": 1
+}

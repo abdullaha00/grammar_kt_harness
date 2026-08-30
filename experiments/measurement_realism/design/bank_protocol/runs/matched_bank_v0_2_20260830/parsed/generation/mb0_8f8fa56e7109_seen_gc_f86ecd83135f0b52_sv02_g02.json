@@ -1,0 +1,156 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "Shall I close the window?",
+  "cell_id": "gc_f86ecd83135f0b52",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02_g02_cloze",
+      "context": "The window is open, and Leo says that he feels cold.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]] the window?",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Maya's offer using “shall” and “close.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Shall I close"
+        ],
+        "completed_target": "Shall I close the window?",
+        "correct_choice_id": null,
+        "target_response": "Shall I close"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02_g02_dialog",
+      "context": "Maya and Leo are sitting beside an open window.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Leo: The cold air from the window is making me uncomfortable."
+        ],
+        "incomplete_turn_template": "Maya: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Maya's offer using “shall” and “close.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Shall I close the window?"
+        ],
+        "completed_target": "Shall I close the window?",
+        "correct_choice_id": null,
+        "target_response": "Shall I close the window?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02_g02_mcq",
+      "context": "The window is open, and Leo says that he feels cold. Maya offers to close it.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses a third-person singular verb form instead of the base form after “shall”.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Does not invert the subject and finite modal to form the question.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Incorrectly adds “do” instead of forming the question by inverting “shall” and the subject.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Shall I closes the window?"
+          },
+          {
+            "id": "B",
+            "text": "Shall I close the window?"
+          },
+          {
+            "id": "C",
+            "text": "I shall close the window?"
+          },
+          {
+            "id": "D",
+            "text": "Do I shall close the window?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "What should Maya say?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the correct offer.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Shall I close the window?",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_f86ecd83135f0b52_sv02_g02_xform",
+      "context": "The window is open, and Leo says that he feels cold.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Maya offers to close the window for Leo.",
+        "stem": null,
+        "transformation_cue": "shall / I / close / the window"
+      },
+      "instruction": "Rewrite the statement as Maya's offer. Use all the words in the cue.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Shall I close the window?"
+        ],
+        "completed_target": "Shall I close the window?",
+        "correct_choice_id": null,
+        "target_response": "Shall I close the window?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Offer to close the window for Leo.",
+    "main_verb_lemma": "close",
+    "object_head": "window",
+    "participants": [
+      "Maya",
+      "Leo"
+    ],
+    "situation_summary": "An open window is making Leo feel cold, so Maya offers to close it.",
+    "time_anchor": "now"
+  },
+  "semantic_variant_index": 2
+}

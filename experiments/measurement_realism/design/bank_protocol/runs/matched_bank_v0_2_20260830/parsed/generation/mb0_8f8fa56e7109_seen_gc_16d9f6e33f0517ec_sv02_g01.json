@@ -1,0 +1,164 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "Nina will water the plants tomorrow morning.",
+  "cell_id": "gc_16d9f6e33f0517ec",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02_g01_cloze",
+      "context": "The office plants need water tomorrow morning, and Nina has agreed to do it.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]] the plants tomorrow morning.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using “will” and “water.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Nina will water",
+          "Nina'll water",
+          "Nina’ll water"
+        ],
+        "completed_target": "Nina will water the plants tomorrow morning.",
+        "correct_choice_id": null,
+        "target_response": "Nina will water"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02_g01_dialog",
+      "context": "Leo and Maya are confirming who has agreed to care for the office plants.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Leo: The office plants need water. Who has agreed to do it?",
+          "Maya: Nina has.",
+          "Leo: When is she going to do it?"
+        ],
+        "incomplete_turn_template": "Maya: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Maya's final reply using “will” and “water.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Nina will water the plants tomorrow morning.",
+          "Nina'll water the plants tomorrow morning.",
+          "Nina’ll water the plants tomorrow morning."
+        ],
+        "completed_target": "Nina will water the plants tomorrow morning.",
+        "correct_choice_id": null,
+        "target_response": "Nina will water the plants tomorrow morning."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02_g01_mcq",
+      "context": "The office plants need water tomorrow morning, and Nina has agreed to do it.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses an inflected verb instead of the base form after WILL.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Omits WILL and uses the present simple form.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Incorrectly places BE before WILL.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Nina will waters the plants tomorrow morning."
+          },
+          {
+            "id": "B",
+            "text": "Nina waters the plants tomorrow morning."
+          },
+          {
+            "id": "C",
+            "text": "Nina will water the plants tomorrow morning."
+          },
+          {
+            "id": "D",
+            "text": "Nina is will water the plants tomorrow morning."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly states what Nina has agreed to do?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly reports Nina's commitment.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "C"
+        ],
+        "completed_target": "Nina will water the plants tomorrow morning.",
+        "correct_choice_id": "C",
+        "target_response": "C"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_16d9f6e33f0517ec_sv02_g01_xform",
+      "context": "The office plants need water, and Nina has agreed to take care of them.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Nina has agreed to water the plants tomorrow morning.",
+        "stem": null,
+        "transformation_cue": "Use “will” and the verb “water.”"
+      },
+      "instruction": "Rewrite the sentence to report Nina's commitment. Keep all the details unchanged.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Nina will water the plants tomorrow morning.",
+          "Nina'll water the plants tomorrow morning.",
+          "Nina’ll water the plants tomorrow morning."
+        ],
+        "completed_target": "Nina will water the plants tomorrow morning.",
+        "correct_choice_id": null,
+        "target_response": "Nina will water the plants tomorrow morning."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Report Nina's commitment to water the plants.",
+    "main_verb_lemma": "water",
+    "object_head": "plants",
+    "participants": [
+      "Nina",
+      "office staff"
+    ],
+    "situation_summary": "The office plants need water, and Nina has agreed to take care of them.",
+    "time_anchor": "tomorrow morning"
+  },
+  "semantic_variant_index": 2
+}

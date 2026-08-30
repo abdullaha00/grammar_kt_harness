@@ -1,0 +1,45 @@
+{
+  "record_id": "measurement_realism_controlled_instrument_v1_execution_authorization",
+  "recorded_after_execution": true,
+  "record_date": "2026-08-30",
+  "retrospective_provenance_record": true,
+  "does_not_rewrite_preregistration": true,
+  "controlled_scenario": true,
+  "release_eligible": false,
+  "authority": {
+    "source": "user_request_for_autonomous_measurement_realism_methodology_program",
+    "scope": "execute the specified controlled measurement, learner, error, and schedule experiments while preserving full-v1",
+    "interpretation": "ordinary in-scope experiment execution authority; not human-participant, deployment, or dataset-release approval"
+  },
+  "preregistration_history": {
+    "study_plan_status_remains": "PREREGISTERED_CONTROLLED_SCENARIO_BEFORE_RESPONSES",
+    "study_plan_sha256": "e3d50e10001b7dff8042b002aba04b595bb8d95e496bd66beebae08e4d678667",
+    "external_approval_recorded_in_frozen_plan": false,
+    "this_record_is_append_only": true,
+    "retroactive_preregistration_claimed": false
+  },
+  "executed_confirmatory_matrix": {
+    "response_runs": 27,
+    "events_per_run": 170000,
+    "total_events": 4590000,
+    "q_balanced_model_analyses": 18,
+    "q_balanced_error_history_analyses": 3,
+    "aggregate_results_sha256": "06da0a0c2e297124234ad433caa0fd0d6f7924d5b13b707f4fed8ded9a81bfaf"
+  },
+  "measured_execution_record": {
+    "response_manifest_first_mtime_utc": "2026-08-30T17:28:28+00:00",
+    "response_manifest_last_mtime_utc": "2026-08-30T17:39:39+00:00",
+    "response_manifest_wall_span_seconds": 670.422206577,
+    "confirmatory_analysis_manifest_first_mtime_utc": "2026-08-30T17:30:10+00:00",
+    "confirmatory_analysis_manifest_last_mtime_utc": "2026-08-30T17:59:25+00:00",
+    "confirmatory_analysis_manifest_wall_span_seconds": 1755.315835157,
+    "timing_semantics": "filesystem manifest-completion span on this host with parallel execution; not summed CPU time",
+    "peak_memory": "not_instrumented_do_not_infer"
+  },
+  "claim_boundary": {
+    "content_free_structural_instrument": true,
+    "learner_facing_measurement_validity": "not_assessed",
+    "platform_plausibility": "not_established",
+    "new_dataset_release": false
+  }
+}

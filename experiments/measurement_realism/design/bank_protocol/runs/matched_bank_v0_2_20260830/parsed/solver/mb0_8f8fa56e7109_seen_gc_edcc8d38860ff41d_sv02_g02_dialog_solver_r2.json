@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "Both questions ask about Nora's ability.",
+  "batch_id": "solver_r02_rep2_dialogue_completion_b02",
+  "instruction_understanding": "Ask whether Nora is able to fix the broken lamp.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv02_g02_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Is Nora able to fix the broken lamp?"
+  ],
+  "reasonable_unkeyed_responses": [
+    "Is Nora able to fix the broken lamp?"
+  ],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv02_g02_dialog_solver_r2",
+  "submitted_response": "Can Nora fix the lamp?",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

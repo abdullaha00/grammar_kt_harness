@@ -1,0 +1,157 @@
+# Frozen executable overlay. The complete scientific proposal is content-
+# addressed below; the harness refuses to load it if that file changes.
+design_id: measurement_realism_minimal_confirmatory_v1
+status: FROZEN_BEFORE_RESPONSE_GENERATION
+date_frozen: 2026-08-30
+protected_reference: data/grammar_kt_full_v1
+
+base_config:
+  path: experiments/measurement_realism/design/scenario_config_proposal.yaml
+  sha256: 8676afae327f78f803fab9fc29fac954c7e78af864157f9287a628f601ed5102
+
+selected_cells:
+  path: experiments/measurement_realism/design/format_selection/selected_cells.json
+  sha256: 8f8fa56e710982c92426f154482d062cffebfb32d29f19c7fe96f4208a4b479b
+  seen_acquisition_cells: 18
+  held_out_probe_cells: 2
+  held_out_acquisition_updates: false
+
+curated_bank_contract:
+  schema_path: modules/measurement_realism/matched_bank/schemas/curated_item.schema.json
+  items_path_pattern: experiments/measurement_realism/design/bank_protocol/runs/{run_id}/bank/items.jsonl
+  schema_hash_frozen_with_run_plan: true
+  exact_items: 152
+  seen_acquisition_items: 144
+  held_out_probe_items: 8
+  fixture_is_confirmatory_evidence: false
+
+# Corrections/clarifications frozen before confirmatory response generation.
+# Fixture-only smoke streams are explicitly non-evidence. These entries resolve
+# implementation ambiguities without tuning a simulator parameter to outcomes.
+execution_clarifications:
+  acquisition_budget_resolution:
+    base_proposal_rank_witness_value: 184
+    selected_18_cell_crossed_bank_value: 188
+    exhaustive_items: 144
+    q_balanced_top_up_items: 44
+    interpretation: >-
+      The proposal value was an illustrative pre-selection rank witness. The
+      outcome-free selected 18-cell Q geometry deterministically requires 188;
+      the curated run plan must freeze that exact occurrence multiset and hash.
+  curriculum_stage_rule:
+    id: grammar_cell_surface_complexity_four_stage_v1
+    equation: >-
+      min(4, 1 + indicator(non-simple aspect) + indicator(passive voice) +
+      indicator(negative polarity) + indicator(question clause))
+    permitted_inputs: [cell_id, frozen_grammar_cell_features]
+    prohibited_inputs: [generator_kc_ids, q_row, learner_oracle]
+    interpretation: outcome-free structural ordering, not CEFR calibration
+  mixed_policy_oracle_exclusion:
+    replace_base_q_jaccard_objective_with: avoid_immediate_same_cell
+    other_inputs: [item_id, cell_id, format, prior_exposure, prior_spacing]
+    prohibited_inputs: [generator_kc_ids, q_row, learner_oracle]
+  q_balanced_lab_scope:
+    q_star_use: fixed_prelearner_experimental_design_only
+    interpretation: >-
+      The clean laboratory benchmark deliberately uses Q* to construct one
+      fixed balanced multiset. Q* is not available to curriculum, mixed, or
+      adaptive platform alternatives and is never conditioned on learner state.
+  adaptive_policy_oracle_exclusion:
+    base_proposal_label: adaptive_weakness
+    estimator: beta_1_1_smoothed_observable_cell_correctness
+    focus: items_in_weakest_observed_seen_cell
+    prohibited_inputs: [generator_kc_ids, q_row, latent_mastery, response_probability]
+    reason: >-
+      True K*/Q* are private oracle structure in this programme. The simple
+      adaptive platform alternative may use item IDs, cell IDs, formats, prior
+      correctness, exposure, and spacing, but not the generator mapping.
+  sessions:
+    assignment: equal_width_by_acquisition_step_then_terminal_probe_session_10
+    relative_only: true
+  linked_error_observation_rng:
+    namespace: error_observation
+    keys: [seed, learner_id, phase, sequence_index]
+  bounded_objective:
+    equation: mean_negative_log_likelihood_plus_inverse_C_L2_over_2n
+    intercept_penalized: false
+    optimizer: scipy_L-BFGS-B
+    maximum_iterations: 500
+    gradient_tolerance: 1.0e-7
+  model_history_correction:
+    active_kc_count:
+      retain_as_observable_diagnostic: true
+      include_as_fitted_predictor: false
+      reason: exact_sum_of_active_kc_indicators_with_intercept
+    indicator_reference_coding:
+      shared_kstar_reference: gkc_finite_past
+      format_split_reference: gkc_finite_past@@constrained_cloze
+      reason: >-
+        Within the selected bank, finite/modal/imperative indicators partition
+        every item, so their sum equals the intercept. Dropping one declared
+        reference indicator preserves the representation and gives full-rank
+        treatment coding without reading outcomes.
+  item_contrast_scope:
+    fit_columns_for: seen_acquisition_items_only
+    held_out_probe_encoding: all_zero
+    basis: orthonormal_null_space_of_intercept_format_contrasts_and_q_star
+    reason: probe-only items have no outcomes eligible to estimate item coefficients
+  planted_item_effect_scope:
+    seen_items: >-
+      keyed raw draws projected into and standardized within the same residual
+      subspace represented by the model-D nuisance basis
+    held_out_probe_items: >-
+      keyed raw draws independently finite-sample centered and standardized;
+      retained as explicitly non-estimable out-of-sample nuisance
+    primary_item_remedy_interpretation: >-
+      model D spans the complete planted seen-item effect, but no model may
+      estimate a coefficient from the non-updating held-out probes
+  error_history_analysis:
+    fitted_condition: D
+    reason: >-
+      Hold the shared K*, observable format adjustment, and estimable seen-item
+      nuisance basis fixed so that only the diagnostic content of error history
+      changes across binary, linked, noisy-linked, and shuffled streams.
+    reference_stream: binary_only
+    compared_streams:
+      - linked_positive_control
+      - linked_80_percent
+      - within_item_shuffled_negative_control
+  failed_kc_interpretation:
+    status: post_outcome_model_based_attribution_not_causal_event
+    rule: deficit_proportional_over_active_kcs_after_an_incorrect_outcome
+    claim_limit: >-
+      The category is a planted diagnostic signal linked to mastery deficits.
+      It must not be described as proof that a human error had one true cause;
+      slip, item, format, and other measurement nuisance can also yield failure.
+  weakest_mastery_error_sensitivity:
+    base_proposal_label: secondary_rule
+    status: deferred_outside_minimal_confirmatory_v1
+    reason: >-
+      The bounded implementation task freezes the four declared observable
+      streams around the deficit-proportional positive control. A deterministic
+      weakest-attribution sensitivity must be a separately preregistered derived
+      analysis and is not silently mixed into this confirmatory matrix.
+  ece:
+    bins: 10
+    interval: left_closed_right_open_except_final
+  bootstrap:
+    fixture_default_repeats: 100
+    confirmatory_repeats_from_base_config: 2000
+  cross_world_aggregation:
+    policy: q_balanced_lab
+    primary_scope: seen_terminal_probes
+    seed_specific: true
+    across_seed_summary: [mean, minimum, maximum]
+    learner_bootstrap_seed_namespace: measurement_world_cross_contrast
+
+response_generation_gate:
+  confirmatory_run_requires_frozen_plan: true
+  plan_hashes:
+    - executable_config
+    - base_config
+    - selected_cells
+    - curated_item_schema
+    - curated_bank
+    - implementation_script
+  plan_status: PREREGISTERED_BEFORE_RESPONSE_GENERATION
+  refuse_changed_or_missing_hash: true

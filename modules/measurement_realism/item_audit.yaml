@@ -1,0 +1,64 @@
+audit_id: full_v1_platform_plausibility_audit_v1
+dataset: data/grammar_kt_full_v1
+model:
+  name: gpt-5.6-terra
+  reasoning_effort: medium
+batch_size: 30
+ratings:
+  - pass
+  - minor_concern
+  - major_concern
+  - not_applicable
+dimensions:
+  task_comprehensibility: Could the intended-level learner understand what to do without specialist linguistic knowledge?
+  answer_determinacy: Does the visible prompt make the keyed response or response set sufficiently determinate?
+  pedagogical_plausibility: Is this a sensible focused grammar-learning opportunity?
+  format_plausibility: Could this response mechanism plausibly be presented in a mainstream learning interface?
+  lexical_simplicity: Is non-target vocabulary unlikely to dominate success or failure?
+  context_naturalness: Is the context coherent and natural enough for educational use?
+  difficulty_plausibility: Is the non-target reasoning burden proportionate to the grammar operation?
+  response_space_plausibility: Are likely reasonable responses handled fairly by the accepted-answer mechanism?
+  kc_measurement_purity: Does success require the declared target operations without an obvious shortcut or major undeclared operation?
+  platform_deployability: Could the item be deployed after ordinary copy-editing, without redesigning the task?
+dispositions:
+  - usable_as_is
+  - minor_ui_or_answer_set_change
+  - pedagogically_artificial
+  - problematic_answer_space
+  - probably_not_deployable
+disposition_tie_break_order:
+  - usable_as_is
+  - minor_ui_or_answer_set_change
+  - pedagogically_artificial
+  - problematic_answer_space
+  - probably_not_deployable
+roles:
+  learner:
+    lens: >-
+      Act as an intended-level adult English learner who is not trained in
+      linguistic terminology. Focus on the visible task, what response you
+      would think is requested, vocabulary burden, and reasonable alternate
+      answers. This is an automated stress test, not human learner evidence.
+    sees_oracle_annotations: false
+  teacher:
+    lens: >-
+      Act as an experienced English-language teacher. Focus on pedagogical
+      usefulness, level/difficulty coherence, target construction, naturalness,
+      and incidental grammatical burden. This is an automated critic, not an
+      expert annotation study.
+    sees_oracle_annotations: true
+  platform_product:
+    lens: >-
+      Act as a language-learning platform exercise designer. Focus on concise
+      instructions, interface feasibility, response mechanism, feedback and
+      deployability. Do not imitate any proprietary product. This is an
+      automated product critique, not platform-user evidence.
+    sees_oracle_annotations: true
+  measurement:
+    lens: >-
+      Act as an educational measurement critic. Focus on determinacy, construct
+      relevance, likely shortcuts, construct-irrelevant variance, undeclared
+      grammatical demands, and fair scoring. This is an automated methodological
+      critique, not validated psychometric evidence.
+    sees_oracle_annotations: true
+

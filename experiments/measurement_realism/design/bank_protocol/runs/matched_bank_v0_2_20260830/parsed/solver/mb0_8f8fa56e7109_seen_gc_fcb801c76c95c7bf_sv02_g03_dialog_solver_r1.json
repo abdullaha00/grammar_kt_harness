@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "The given timing clearly indicates an inspection in progress, though it can be phrased differently.",
+  "batch_id": "solver_r03_rep1_dialogue_completion_b02",
+  "instruction_understanding": "Complete the guide's sentence about the bridge at noon.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_sv02_g03_dialog",
+  "keyed_match": true,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "was undergoing an inspection"
+  ],
+  "reasonable_unkeyed_responses": [
+    "was undergoing an inspection"
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_fcb801c76c95c7bf_sv02_g03_dialog_solver_r1",
+  "submitted_response": "was being inspected",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

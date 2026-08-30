@@ -24,6 +24,7 @@ def audited_model_call(
     stage: str,
     call_key: str,
     evidence_dir: Path | None = None,
+    output_schema: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Make one call while retaining inputs, raw output, stderr, and usage.
 
@@ -46,8 +47,12 @@ def audited_model_call(
         model,
         "--config",
         f'model_reasoning_effort="{reasoning_effort}"',
-        "-",
     ]
+    if output_schema is not None:
+        schema_path = evidence_dir / "output_schema.json"
+        write_json(schema_path, output_schema)
+        command.extend(["--output-schema", str(schema_path)])
+    command.append("-")
     write_json(
         evidence_dir / "model_settings.json",
         {
@@ -56,6 +61,7 @@ def audited_model_call(
             "stage": stage,
             "call_key": call_key,
             "command": command,
+            "output_schema_supplied": output_schema is not None,
         },
     )
     started = time.monotonic()

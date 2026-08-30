@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r01_measurement_b02",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g01",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02",
+  "family_judgments": [
+    {
+      "blocking": true,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "The cloze fixes lexical wording, the dialogue permits several natural directives, MCQ recognizes a fixed option, and transformation also permits unaccepted variants.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "All formats nominally target imperative form, but open formats additionally score lexical/politeness selection while transformation requires indirect-to-direct conversion.",
+      "severity": "minor_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "Every format concerns telling Leo to switch off the oven before leaving.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Producing “Turn off the oven” realizes the imperative clause with a base verb and no overt subject.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The required lexical phrase and object are supplied, leaving imperative formation as the focal operation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The direct-instruction wording and required cue call for an imperative response.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "Use of the prescribed phrase and object yields the keyed imperative.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The instruction constrains the cue strongly, but punctuation and capitalization variants are not explicitly stated as accepted.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The kitchen situation and phrasal verb are simple and context-supported.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g01_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The keyed response is a genuine imperative directed to Leo.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "No additional major grammatical operation is needed for the intended imperative.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "A learner could give another appropriate directive, but it would still normally be imperative; this is chiefly an open-response scoring issue.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "answer_determinacy",
+          "evidence": "The dialogue asks for an instruction, not the exact wording. “Please turn off the oven” and “Switch off the oven,” both solver-proposed, are linguistically and contextually reasonable.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Both proposed alternatives are reasonable and unaccepted. Their omission would reject correct directives and is blocking.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Success partly depends on choosing the intended lexical phrasing rather than merely forming an imperative.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g01_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "C represents the imperative, but the malformed fragment options and declarative contrast permit recognition by elimination.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The contrast is principally declarative versus imperative versus nonfinite fragment.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Testwise elimination can identify C without independently generating an imperative, though no offered alternative is an equally direct standard instruction.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "C is the clear conventional direct instruction; A is ordinarily declarative and B/D are fragments.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The sole defensible conventional option C is keyed.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The context explicitly specifies a direct instruction and the lexical content is transparent.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g01_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Converting the indirect need statement into a direct instruction calls for imperative formation.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The task requires indirect-to-direct-speech reformulation beyond bare imperative formation.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The requested direct instruction cannot be supplied as the source declarative.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "“Please turn off the oven” and “Turn the oven off” are defensible direct imperatives, despite the cue encouraging the keyed wording.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The accepted set contains only “Turn off the oven.” A polite version and separable-particle order are reasonable unkeyed full-sentence answers; omission is blocking for this unrestricted production task.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Indirect-to-direct reformulation and exact phrasal-verb wording create non-target burden.",
+          "severity": "minor_concern"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_bb4f472f992ab76b_sv02_g01_xform"
+    }
+  ],
+  "overall_accept": false,
+  "role": "measurement",
+  "summary": "Reject: the dialogue has multiple reasonable unaccepted directives, and the transformation likewise undercovers polite and phrasal-verb-order variants."
+}

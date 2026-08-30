@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "Several natural advice statements are possible.",
+  "batch_id": "solver_r03_rep1_dialogue_completion_b01",
+  "instruction_understanding": "Give advice about Maya's low phone battery before her trip.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv02_g03_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "She needs to charge her phone before she leaves."
+  ],
+  "reasonable_unkeyed_responses": [
+    "She needs to charge her phone before she leaves."
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_809d40d141731b61_sv02_g03_dialog_solver_r1",
+  "submitted_response": "She should charge her phone before the trip.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

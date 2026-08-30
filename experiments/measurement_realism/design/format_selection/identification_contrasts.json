@@ -1,0 +1,305 @@
+{
+  "contrasts": [
+    {
+      "cell_coefficients": [
+        {
+          "cell_id": "gc_4601bed02c004e37",
+          "coefficient": -1
+        },
+        {
+          "cell_id": "gc_2d6eb4f93cba4c6b",
+          "coefficient": 1
+        }
+      ],
+      "generator_kc_id": "gkc_aspect_perfect"
+    },
+    {
+      "cell_coefficients": [
+        {
+          "cell_id": "gc_4601bed02c004e37",
+          "coefficient": -1
+        },
+        {
+          "cell_id": "gc_44ff4acdb263024b",
+          "coefficient": 1
+        }
+      ],
+      "generator_kc_id": "gkc_aspect_progressive"
+    },
+    {
+      "cell_coefficients": [
+        {
+          "cell_id": "gc_44ff4acdb263024b",
+          "coefficient": -1
+        },
+        {
+          "cell_id": "gc_fcb801c76c95c7bf",
+          "coefficient": 1
+        }
+      ],
+      "generator_kc_id": "gkc_be_passive"
+    },
+    {
+      "cell_coefficients": [
+        {
+          "cell_id": "gc_4601bed02c004e37",
+          "coefficient": 1
+        }
+      ],
+      "generator_kc_id": "gkc_finite_past"
+    },
+    {
+      "cell_coefficients": [
+        {
+          "cell_id": "gc_d15de8b5658bd6a5",
+          "coefficient": 1
+        }
+      ],
+      "generator_kc_id": "gkc_finite_present"
+    },
+    {
+      "cell_coefficients": [
+        {
+          "cell_id": "gc_bb4f472f992ab76b",
+          "coefficient": 1
+        }
+      ],
+      "generator_kc_id": "gkc_imperative"
+    },
+    {
+      "cell_coefficients": [
+        {
+          "cell_id": "gc_edcc8d38860ff41d",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_4601bed02c004e37",
+          "coefficient": -1
+        },
+        {
+          "cell_id": "gc_d15de8b5658bd6a5",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_2d6eb4f93cba4c6b",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_08d90a35b669ed28",
+          "coefficient": -1
+        }
+      ],
+      "generator_kc_id": "gkc_modal_can"
+    },
+    {
+      "cell_coefficients": [
+        {
+          "cell_id": "gc_9b8833161ce61d83",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_4601bed02c004e37",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_2d6eb4f93cba4c6b",
+          "coefficient": -1
+        }
+      ],
+      "generator_kc_id": "gkc_modal_could"
+    },
+    {
+      "cell_coefficients": [
+        {
+          "cell_id": "gc_325e05b06bb38886",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_4601bed02c004e37",
+          "coefficient": -1
+        },
+        {
+          "cell_id": "gc_d15de8b5658bd6a5",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_2d6eb4f93cba4c6b",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_08d90a35b669ed28",
+          "coefficient": -1
+        }
+      ],
+      "generator_kc_id": "gkc_modal_may"
+    },
+    {
+      "cell_coefficients": [
+        {
+          "cell_id": "gc_90b9229122fa55d6",
+          "coefficient": 1
+        }
+      ],
+      "generator_kc_id": "gkc_modal_might"
+    },
+    {
+      "cell_coefficients": [
+        {
+          "cell_id": "gc_4a4c9d34c1b5bce4",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_4601bed02c004e37",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_2d6eb4f93cba4c6b",
+          "coefficient": -1
+        }
+      ],
+      "generator_kc_id": "gkc_modal_must"
+    },
+    {
+      "cell_coefficients": [
+        {
+          "cell_id": "gc_f86ecd83135f0b52",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_4601bed02c004e37",
+          "coefficient": -1
+        },
+        {
+          "cell_id": "gc_d15de8b5658bd6a5",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_2d6eb4f93cba4c6b",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_08d90a35b669ed28",
+          "coefficient": -1
+        }
+      ],
+      "generator_kc_id": "gkc_modal_shall"
+    },
+    {
+      "cell_coefficients": [
+        {
+          "cell_id": "gc_809d40d141731b61",
+          "coefficient": 1
+        }
+      ],
+      "generator_kc_id": "gkc_modal_should"
+    },
+    {
+      "cell_coefficients": [
+        {
+          "cell_id": "gc_16d9f6e33f0517ec",
+          "coefficient": 1
+        }
+      ],
+      "generator_kc_id": "gkc_modal_will"
+    },
+    {
+      "cell_coefficients": [
+        {
+          "cell_id": "gc_e7fef77abc10b5ba",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_4601bed02c004e37",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_44ff4acdb263024b",
+          "coefficient": -1
+        },
+        {
+          "cell_id": "gc_fcb801c76c95c7bf",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_9d70af80c0843115",
+          "coefficient": -1
+        }
+      ],
+      "generator_kc_id": "gkc_modal_would"
+    },
+    {
+      "cell_coefficients": [
+        {
+          "cell_id": "gc_2d6eb4f93cba4c6b",
+          "coefficient": -1
+        },
+        {
+          "cell_id": "gc_44ff4acdb263024b",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_fcb801c76c95c7bf",
+          "coefficient": -1
+        },
+        {
+          "cell_id": "gc_9d70af80c0843115",
+          "coefficient": 1
+        }
+      ],
+      "generator_kc_id": "gkc_negation"
+    },
+    {
+      "cell_coefficients": [
+        {
+          "cell_id": "gc_4634bf1b005f7724",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_d15de8b5658bd6a5",
+          "coefficient": -1
+        },
+        {
+          "cell_id": "gc_2d6eb4f93cba4c6b",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_44ff4acdb263024b",
+          "coefficient": -1
+        },
+        {
+          "cell_id": "gc_fcb801c76c95c7bf",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_9d70af80c0843115",
+          "coefficient": -1
+        }
+      ],
+      "generator_kc_id": "gkc_non_subject_wh_question"
+    },
+    {
+      "cell_coefficients": [
+        {
+          "cell_id": "gc_4601bed02c004e37",
+          "coefficient": 1
+        },
+        {
+          "cell_id": "gc_d15de8b5658bd6a5",
+          "coefficient": -1
+        },
+        {
+          "cell_id": "gc_2d6eb4f93cba4c6b",
+          "coefficient": -1
+        },
+        {
+          "cell_id": "gc_08d90a35b669ed28",
+          "coefficient": 1
+        }
+      ],
+      "generator_kc_id": "gkc_polar_question"
+    }
+  ],
+  "determinant": -1,
+  "meaning": "For each KC, the listed linear combination of selected Q rows reconstructs its unit column vector exactly.",
+  "schema": "matched_format_exact_identification_contrasts_v1"
+}

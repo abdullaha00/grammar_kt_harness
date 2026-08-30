@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv01_g02",
+  "candidate_round": 2,
+  "canonical_target_sentence": "Maya checks the fire alarm every Monday.",
+  "cell_id": "gc_d15de8b5658bd6a5",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv01_g02_cloze",
+      "context": "Maya is responsible for a weekly safety task.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Maya [[RESPONSE]] the fire alarm every Monday. (check)",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence with the correct form of the verb in brackets.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "checks"
+        ],
+        "completed_target": "Maya checks the fire alarm every Monday.",
+        "correct_choice_id": null,
+        "target_response": "checks"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv01_g02_dialog",
+      "context": "Leo explains who performs the weekly safety check.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Nina: Who is responsible for checking the fire alarm each week?",
+          "Leo: Maya is responsible for it.",
+          "Nina: When does she do it?"
+        ],
+        "incomplete_turn_template": "Leo: Maya [[RESPONSE]] the fire alarm every Monday. (check)",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Leo's reply with the correct form of the verb in brackets.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "checks"
+        ],
+        "completed_target": "Maya checks the fire alarm every Monday.",
+        "correct_choice_id": null,
+        "target_response": "checks"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv01_g02_mcq",
+      "context": "Maya is responsible for checking the fire alarm at the start of every week.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the base form instead of present-tense third-person singular agreement.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses past-tense morphology instead of the present finite form.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses the present progressive instead of the simple present form for the routine.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Maya check the fire alarm every Monday."
+          },
+          {
+            "id": "B",
+            "text": "Maya checks the fire alarm every Monday."
+          },
+          {
+            "id": "C",
+            "text": "Maya checked the fire alarm every Monday."
+          },
+          {
+            "id": "D",
+            "text": "Maya is checking the fire alarm every Monday."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence correctly describes this weekly routine?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly describes Maya's regular routine.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Maya checks the fire alarm every Monday.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_d15de8b5658bd6a5_sv01_g02_xform",
+      "context": "Maya has a regular weekly safety duty.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Maya's weekly duty is the fire alarm check.",
+        "stem": null,
+        "transformation_cue": "Begin with “Maya” and use: check; the fire alarm; every Monday."
+      },
+      "instruction": "Rewrite the statement as a sentence describing Maya's regular routine. Use the verb “check” and the words “every Monday.”",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Maya checks the fire alarm every Monday."
+        ],
+        "completed_target": "Maya checks the fire alarm every Monday.",
+        "correct_choice_id": null,
+        "target_response": "Maya checks the fire alarm every Monday."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Describe Maya's recurring safety task.",
+    "main_verb_lemma": "check",
+    "object_head": "alarm",
+    "participants": [
+      "Maya"
+    ],
+    "situation_summary": "Maya performs a regular weekly safety check.",
+    "time_anchor": "every Monday"
+  },
+  "semantic_variant_index": 1
+}

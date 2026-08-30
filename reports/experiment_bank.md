@@ -41,21 +41,53 @@ planted-interaction positive/negative controls. It establishes that response
 volume cannot repair equivalent Q columns and that full rank alone need not
 make a weak interaction practically recoverable.
 
-## High-priority downstream experiments
+The measurement-realism programme has additionally completed the full-v1
+platform/item census, KC plausibility audit, outcome-blind repeated KC
+induction, literature review, matched-format generation/validation campaign,
+six controlled nuisance worlds, structured-error controls, assignment-policy
+diagnostics, and a dialogue/openness pilot. The matched bank failed its release
+gate (5/38 complete families), so the result is a methodological negative and
+not `grammar_kt_measurement_v1`. Exact entries belong in the experiment log.
 
-None. The declared synthetic programme is closed. The six-cell unseen-value
-limitation is already bounded by per-cell and leave-one-cell-out evidence;
-resplitting this inventory cannot create a broader unseen-value construct.
+## High-priority future evidence (not required to close the synthetic study)
+
+- **Declared-correction matched bank.** Create a new append-only correction
+  layer linked to every raw candidate; re-run all deterministic, solver, and
+  role-critic gates over all 38 families. Do not patch the failed run or spend
+  another blind no-feedback round. Passing the automated gate would justify a
+  controlled instrument, not a platform release.
+- **Expert instrument review.** Have at least three independent experts cover
+  linguistic content, language pedagogy/assessment, and measurement; add two
+  platform reviewers. Review all proposed matched items in rendered minimal
+  UI form, preserve dimension-level disagreements, and adjudicate hard-gate
+  failures.
+- **Learner response-process pilot.** For a preregistered stratified subset,
+  collect responses plus short comprehension/strategy probes from learners in
+  a declared proficiency range. Estimate ambiguity and alternative-valid-answer
+  rates without showing KC labels. A sample-size analysis belongs in that
+  protocol; synthetic learner counts are not a recruitment prescription.
+- **External calibration audit.** Use one or more public language-learning logs
+  or learner corpora only to bound marginal ranges and failure modes. Do not fit
+  the simulator to reproduce one platform or call marginal similarity causal
+  validation.
 
 ## Deferred unless primary RQs expose a need
 
 - Neural KT architectures: add only if simpler BKT/PFA models cannot answer a
   primary question.
-- Adaptive teaching policies and prediction-versus-teaching trade-offs.
-- Dropout and policy-bias simulations.
-- Post-training generation models.
-- Further LLM item generation or more than two selected variants/cell; the
-  frozen bank already answers the baseline construction question.
+- Policy-value/off-policy estimation: the current policy study measures
+  selected-history morphology and exploratory recovery, not teaching value.
+- Dropout, wall-clock forgetting, response time, motivation, and other realism
+  variables until real evidence makes one a rival explanation for a retained
+  conclusion.
+- Surface learner-error generation. Promote only after structured categories
+  show useful information and independent learner-corpus/expert validation can
+  test intended and unintended errors.
+- Open dialogue at scale. The current pilot shows a steep determinacy/KC
+  attribution cost; scale only if a defensible opportunity and scoring boundary
+  is established.
+- Additional LLM item generation or more variants per cell without a declared
+  correction hypothesis and complete revalidation.
 - Large Q-noise, simulator, or KT hyperparameter Cartesian grids.
 - Universal human sample-size thresholds derived from synthetic learners.
 - Further learner-count, opportunity, or anchor grids. Promote only if a new

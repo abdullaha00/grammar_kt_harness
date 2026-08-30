@@ -1,0 +1,158 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "Maya must have taken the umbrella.",
+  "cell_id": "gc_4a4c9d34c1b5bce4",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g01_cloze",
+      "context": "It is raining, the umbrella is gone, and Maya was the only person who left the house this morning.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Maya [[RESPONSE]] the umbrella.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using “must” and the correct form of “take.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "must have taken"
+        ],
+        "completed_target": "Maya must have taken the umbrella.",
+        "correct_choice_id": null,
+        "target_response": "must have taken"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g01_dialog",
+      "context": "Leo and Nina are wondering why the umbrella is missing.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Nina: It is raining, and our umbrella is gone.",
+          "Leo: Maya was the only person who left the house this morning.",
+          "Nina: So what do you think happened?"
+        ],
+        "incomplete_turn_template": "Leo: Maya [[RESPONSE]] the umbrella.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Leo’s reply using “must” and the correct form of “take.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "must have taken"
+        ],
+        "completed_target": "Maya must have taken the umbrella.",
+        "correct_choice_id": null,
+        "target_response": "must have taken"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g01_mcq",
+      "context": "It is raining, the umbrella is gone, and Maya was the only person who left the house this morning.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the past form “took” instead of the past participle required after perfect “have.”",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses inflected “has” instead of the base form “have” after the modal “must.”",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Places the perfect auxiliary before the modal instead of using modal “must” followed by perfect “have.”",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Maya must have took the umbrella."
+          },
+          {
+            "id": "B",
+            "text": "Maya must have taken the umbrella."
+          },
+          {
+            "id": "C",
+            "text": "Maya must has taken the umbrella."
+          },
+          {
+            "id": "D",
+            "text": "Maya have must taken the umbrella."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "What does Leo conclude about the missing umbrella?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly expresses Leo’s deduction.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Maya must have taken the umbrella.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_4a4c9d34c1b5bce4_sv02_g01_xform",
+      "context": "It is raining, the umbrella is gone, and Maya was the only person who left the house this morning.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "I am certain that Maya took the umbrella.",
+        "stem": null,
+        "transformation_cue": "Use “must” and “take.”"
+      },
+      "instruction": "Rewrite the statement as a confident deduction about the earlier event.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Maya must have taken the umbrella."
+        ],
+        "completed_target": "Maya must have taken the umbrella.",
+        "correct_choice_id": null,
+        "target_response": "Maya must have taken the umbrella."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Express a confident deduction that Maya took the umbrella earlier.",
+    "main_verb_lemma": "take",
+    "object_head": "umbrella",
+    "participants": [
+      "Maya",
+      "Leo"
+    ],
+    "situation_summary": "The umbrella is missing after Maya left home on a rainy morning.",
+    "time_anchor": "earlier this morning"
+  },
+  "semantic_variant_index": 2
+}

@@ -1,0 +1,159 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "Nora would not have arrived on time.",
+  "cell_id": "gc_e7fef77abc10b5ba",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g01_cloze",
+      "context": "Yesterday, Nora's alarm rang and she reached work on time. Without the alarm, the result would have been different.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Nora [[RESPONSE]].",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using the verb in brackets.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "would not have arrived on time",
+          "wouldn't have arrived on time"
+        ],
+        "completed_target": "Nora would not have arrived on time.",
+        "correct_choice_id": null,
+        "target_response": "would not have arrived on time"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g01_dialog",
+      "context": "Nora is explaining why she reached work at the correct time yesterday.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Nora: Luckily, my alarm rang yesterday, so I woke up early and reached work on time.",
+          "Maya: What would have happened without the alarm?"
+        ],
+        "incomplete_turn_template": "Leo: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Leo's reply about what would have happened without the alarm.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Nora would not have arrived on time.",
+          "Nora wouldn't have arrived on time."
+        ],
+        "completed_target": "Nora would not have arrived on time.",
+        "correct_choice_id": null,
+        "target_response": "Nora would not have arrived on time."
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g01_mcq",
+      "context": "Yesterday, Nora's alarm rang, so she woke up early and reached work on time.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Omits perfect HAVE and the past participle dependency after WOULD.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses DID instead of WOULD and incorrectly combines HAVE with a past participle.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Places NOT after HAVE and uses the base form ARRIVE instead of the past participle.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Nora would not arrive on time."
+          },
+          {
+            "id": "B",
+            "text": "Nora did not have arrived on time."
+          },
+          {
+            "id": "C",
+            "text": "Nora would not have arrived on time."
+          },
+          {
+            "id": "D",
+            "text": "Nora would have not arrive on time."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Without the alarm, what would have happened?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that correctly describes what would have happened without the alarm.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "C"
+        ],
+        "completed_target": "Nora would not have arrived on time.",
+        "correct_choice_id": "C",
+        "target_response": "C"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_e7fef77abc10b5ba_sv02_g01_xform",
+      "context": "This happened yesterday morning.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Nora's alarm rang, so she woke up early and arrived on time.",
+        "stem": null,
+        "transformation_cue": "Without the alarm: Nora / would / not / arrive on time"
+      },
+      "instruction": "Rewrite the information to say what would have happened without the alarm. Use all the words in the cue.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Nora would not have arrived on time.",
+          "Nora wouldn't have arrived on time."
+        ],
+        "completed_target": "Nora would not have arrived on time.",
+        "correct_choice_id": null,
+        "target_response": "Nora would not have arrived on time."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "State the past result that would not have occurred without the alarm.",
+    "main_verb_lemma": "arrive",
+    "object_head": null,
+    "participants": [
+      "Nora"
+    ],
+    "situation_summary": "Nora's alarm rang, allowing her to wake early and arrive at work on time.",
+    "time_anchor": "yesterday morning"
+  },
+  "semantic_variant_index": 2
+}

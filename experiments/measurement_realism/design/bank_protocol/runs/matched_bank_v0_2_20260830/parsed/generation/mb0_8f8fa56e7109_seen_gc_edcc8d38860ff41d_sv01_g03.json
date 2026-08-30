@@ -1,0 +1,157 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g03",
+  "candidate_round": 3,
+  "canonical_target_sentence": "Can Elena carry the boxes?",
+  "cell_id": "gc_edcc8d38860ff41d",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g03_cloze",
+      "context": "You are organizing an office move and want to know whether Elena is able to help with some boxes.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "[[RESPONSE]]?",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the question using these words: Elena, carry, the boxes.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Can Elena carry the boxes"
+        ],
+        "completed_target": "Can Elena carry the boxes?",
+        "correct_choice_id": null,
+        "target_response": "Can Elena carry the boxes"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g03_dialog",
+      "context": "Two colleagues are deciding who can help during an office move.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Maya: We need someone to carry these boxes.",
+          "Sam: Elena may be able to help."
+        ],
+        "incomplete_turn_template": "Maya: [[RESPONSE]]",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Sam's question.",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "Can Elena carry the boxes?"
+        ],
+        "completed_target": "Can Elena carry the boxes?",
+        "correct_choice_id": null,
+        "target_response": "Can Elena carry the boxes?"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g03_mcq",
+      "context": "You are organizing an office move and want to ask whether Elena is able to carry the boxes.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses declarative subject–modal order instead of finite-operator inversion.",
+          "option_id": "B"
+        },
+        {
+          "intended_operation_error": "Adds do-support instead of inverting the modal can.",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses a third-person singular verb form instead of the base-form complement after can.",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Can Elena carry the boxes?"
+          },
+          {
+            "id": "B",
+            "text": "Elena can carry the boxes?"
+          },
+          {
+            "id": "C",
+            "text": "Does Elena can carry the boxes?"
+          },
+          {
+            "id": "D",
+            "text": "Can Elena carries the boxes?"
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which question correctly asks about Elena's ability to help?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the correct question.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "A"
+        ],
+        "completed_target": "Can Elena carry the boxes?",
+        "correct_choice_id": "A",
+        "target_response": "A"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_edcc8d38860ff41d_sv01_g03_xform",
+      "context": "You are organizing an office move and want to ask about Elena's ability to help.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "Elena is able to carry the boxes.",
+        "stem": null,
+        "transformation_cue": "Use can and keep all the other information unchanged."
+      },
+      "instruction": "Rewrite the statement as a yes-or-no question using can.",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Can Elena carry the boxes?"
+        ],
+        "completed_target": "Can Elena carry the boxes?",
+        "correct_choice_id": null,
+        "target_response": "Can Elena carry the boxes?"
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Ask whether Elena is able to carry the boxes.",
+    "main_verb_lemma": "carry",
+    "object_head": "boxes",
+    "participants": [
+      "Elena",
+      "two colleagues"
+    ],
+    "situation_summary": "Two colleagues are deciding whether Elena is able to carry some boxes during an office move.",
+    "time_anchor": "now, during an office move"
+  },
+  "semantic_variant_index": 1
+}

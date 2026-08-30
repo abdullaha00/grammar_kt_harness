@@ -2,52 +2,51 @@
   \centering
   \begin{tikzpicture}[
     >=Latex,
-    node distance=1.8mm,
+    node distance=2.5mm and 4.5mm,
     box/.style={draw, rounded corners=1.5pt, align=center, minimum height=8mm,
-      text width=1.62cm, font=\scriptsize, inner sep=2pt},
-    model/.style={box, fill=orange!16, dashed},
-    fixed/.style={box, fill=blue!10},
-    truth/.style={box, fill=green!14},
-    experiment/.style={box, fill=violet!11},
+      text width=2.05cm, font=\scriptsize, inner sep=2.5pt},
+    linguistic/.style={box, fill=blue!10},
+    truth/.style={box, fill=green!14, very thick},
+    measurement/.style={box, fill=orange!16},
+    observable/.style={box, fill=violet!12},
+    hypothesis/.style={box, fill=gray!14, dashed},
     arrow/.style={->, semithick},
-    layer/.style={draw, rounded corners=2pt, inner sep=4pt}
+    label/.style={font=\scriptsize\bfseries, align=right, text width=1.55cm}
   ]
-    \node[fixed] (source) {grammar\\resource};
-    \node[model, right=of source] (norm) {constrained\\normalisation};
-    \node[fixed, right=of norm] (cells) {canonical\\GrammarCells};
-    \node[truth, very thick, right=of cells] (kstar) {declared\\$\kstar$};
-    \node[model, right=of kstar] (items) {generate, validate,\\curate items};
-    \node[truth, right=of items] (qstar) {$\qstar$ + measurement\\audit};
-    \node[truth, right=of qstar] (simulate) {baseline learner\\simulation};
-    \node[fixed, very thick, right=of simulate] (dataset) {frozen dataset:\\items + responses};
+    \node[label] (l1) {linguistic\\structure};
+    \node[linguistic, right=of l1] (resource) {grammar resource\\+ explicit scope};
+    \node[linguistic, right=of resource] (cells) {canonical\\\grammarcell{}s};
+    \node[truth, right=of cells] (kstar) {declared generator\\$\kstar+\qstar$};
 
-    \draw[arrow] (source) -- (norm);
-    \draw[arrow] (norm) -- (cells);
+    \node[label, below=5mm of l1] (l2) {measurement\\and platform};
+    \node[measurement, right=of l2] (item) {visible item:\\format, context,\\answer space};
+    \node[measurement, right=of item] (policy) {assignment policy:\\curriculum, review,\\adaptation};
+    \node[truth, right=of policy] (learner) {latent learner:\\mastery +\\heterogeneity};
+    \node[observable, right=of learner] (response) {observable response:\\correctness +\\optional error};
+
+    \node[label, below=5mm of l2] (l3) {inference\\and evaluation};
+    \node[hypothesis, right=of l3] (model) {model hypothesis\\$\khat+\qhat$ + KT};
+    \node[observable, right=of model] (prediction) {prediction,\\calibration,\\state estimate};
+    \node[truth, right=of prediction] (oracle) {private oracle:\\true Q, mastery,\\failed-KC draw};
+    \node[measurement, right=of oracle] (claims) {bounded claims +\\collection design};
+
+    \draw[arrow] (resource) -- (cells);
     \draw[arrow] (cells) -- (kstar);
-    \draw[arrow] (kstar) -- (items);
-    \draw[arrow] (items) -- (qstar);
-    \draw[arrow] (qstar) -- (simulate);
-    \draw[arrow] (simulate) -- (dataset);
-
-    \node[experiment, below=9mm of dataset] (hide) {hide or perturb\\$\kstar,\qstar$};
-    \node[experiment, left=of hide] (khat) {construct/select\\$\khat,\qhat$};
-    \node[experiment, left=of khat] (evaluate) {prediction, state,\\structure};
-    \node[experiment, left=of evaluate] (claims) {RQ2--RQ4 +\\robustness};
-
-    \draw[arrow] (dataset) -- (hide);
-    \draw[arrow] (hide) -- (khat);
-    \draw[arrow] (khat) -- (evaluate);
-    \draw[arrow] (evaluate) -- (claims);
-
-    \node[layer, fit=(source)(dataset),
-      label={[font=\scriptsize\bfseries]above:Layer A: frozen dataset construction}] {};
-    \node[layer, fit=(claims)(hide),
-      label={[font=\scriptsize\bfseries]below:Layer B: downstream hypotheses and tests}] {};
+    \draw[arrow] (item) -- (response);
+    \draw[arrow] (policy) -- (response);
+    \draw[arrow] (learner) -- (response);
+    \draw[arrow] (kstar) -- (learner);
+    \draw[arrow] (cells.south) |- (item.north);
+    \draw[arrow] (kstar.south) |- (item.north east);
+    \draw[arrow] (response.south) |- (model.east);
+    \draw[arrow] (model) -- (prediction);
+    \draw[arrow] (prediction) -- (oracle);
+    \draw[arrow] (oracle) -- (claims);
   \end{tikzpicture}
-  \caption{\system{} separates dataset construction from downstream research.
-  Generator truth is fixed before item responses exist.  Later discovery and
-  misspecification experiments may hide or perturb it but never redefine the
-  immutable baseline.  Model assistance is confined to the dashed linguistic
-  normalisation and item-construction boxes.}
+  \caption{Known latent truth and observable measurement are different
+  layers.  Responses arise jointly from learner state, the visible instrument,
+  and the platform policy.  Model hypotheses consume observable histories;
+  private oracle fields are opened only for declared evaluation.  Full-v1
+  fixes the green truth but idealises the orange measurement layer.}
   \label{fig:pipeline}
 \end{figure*}

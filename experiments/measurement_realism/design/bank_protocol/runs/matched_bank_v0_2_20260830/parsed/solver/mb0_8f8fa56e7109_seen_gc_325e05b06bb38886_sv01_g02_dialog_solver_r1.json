@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "Several polite requests fit the context.",
+  "batch_id": "solver_r02_rep1_dialogue_completion_b01",
+  "instruction_understanding": "Write the visitor's polite request to borrow the charger.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01_g02_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "May I use your charger, please?"
+  ],
+  "reasonable_unkeyed_responses": [
+    "May I use your charger, please?"
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_325e05b06bb38886_sv01_g02_dialog_solver_r1",
+  "submitted_response": "Could I borrow your charger, please?",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

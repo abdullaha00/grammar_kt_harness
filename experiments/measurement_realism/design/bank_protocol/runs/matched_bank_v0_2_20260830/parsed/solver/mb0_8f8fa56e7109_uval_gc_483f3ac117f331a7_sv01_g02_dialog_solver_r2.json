@@ -1,0 +1,23 @@
+{
+  "ambiguity_explanation": "Several natural sentences explain the same situation; the task gives no required wording or grammar form.",
+  "batch_id": "solver_r02_rep2_dialogue_completion_b02",
+  "instruction_understanding": "Complete Maya's reply with a sentence explaining her frustration about the late bus.",
+  "item_id": "mb0_8f8fa56e7109_uval_gc_483f3ac117f331a7_sv01_g02_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "I had waited for forty minutes.",
+    "I had been at the bus stop for forty minutes."
+  ],
+  "reasonable_unkeyed_responses": [
+    "I had waited for forty minutes.",
+    "I had been at the bus stop for forty minutes."
+  ],
+  "replicate": 2,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_uval_gc_483f3ac117f331a7_sv01_g02_dialog_solver_r2",
+  "submitted_response": "I had been waiting for forty minutes.",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}

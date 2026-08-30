@@ -1,7 +1,8 @@
-# Retained ACL results summary — full-v1
+# Retained ACL results summary — known truth and measurement realism
 
-All values below are final full-v1 evidence. Historical medium-v1 values are
-not paper-facing results.
+Full-v1 values below remain the immutable known-truth reference. The later
+measurement programme is reported separately and never changes its rows.
+Historical medium-v1 values are not paper-facing results.
 
 ## Dataset construction
 
@@ -109,3 +110,90 @@ omitting a planted interaction costs only +.000506 with balanced anchors at
 N=1,000; the spurious-interaction negative control is approximately null.
 These are conditional synthetic failure boundaries, not human recruitment
 thresholds.
+
+## Measurement audit and KC methodology
+
+The strict audit rates 70/113 prompts usable as stored, 15 minor repair, 15
+technically valid but artificial, 10 answer-space failure, and three
+rewrite/withhold. Across the strict and four-role audits, 60 items are usable in
+both, 53 occur in the union requiring action, and 18 occur in the critical
+answer-space/withhold union. Four live roles disagree on 56 items.
+
+Only 16/113 Q rows isolate one KC and six KCs lack an isolate. Three independent
+outcome-blind induction worlds produce 17/18/18 activation signatures at rank
+17/18/17; their intersection is nine, union 30, pairwise Jaccard
+.400/.440/.458, and exact K* matches 5/4/7.
+
+## Matched-format bank negative result
+
+The v0.2 run has no technical call failures: 178 calls, 106 generated
+candidates, 712 solver attempts, and 90 role outputs. Its three funnels are
+38→31→12→3, 35→32→12→2, and 33→26→6→0. Only 5/38 whole families and 20/152
+slots pass, covering 4/20 cells, 6/18 KCs, and seen-Q rank 3/18. Measurement
+critics accept 9/30 critic-reached candidates, compared with 29/30 linguistic
+and 24/30 product decisions; 23/30 are mixed. The release gate fails.
+
+## Controlled measurement nuisance
+
+This is a content-free controlled scenario with 27 × 500-learner response
+runs, not a learner-facing bank.
+
+| Contrast (candidate minus reference) | Three-seed mean | Range |
+|---|---:|---:|
+| Format DiD `(B−A)strong − (B−A)zero` | -.03155149 | [-.03343064,-.02901315] |
+| Strong format `C−B` | -.00531682 | [-.00603405,-.00465212] |
+| Item-only `D−C` | -.01309876 | [-.01331319,-.01269811] |
+| Item+format `D−C` | -.01260890 | [-.01350604,-.01194687] |
+
+Negative format DiD means planted nuisance increases false split B's relative
+advantage over shared A. D exactly spans the planted same-seen-item residual
+basis and is only a positive control. Item-only B−A is
++.00119473/+.00084733/−.00132758 and every interval crosses zero. Combined
+heterogeneity C−B is −.00222577/+.00016911/+.00107418 and every interval
+crosses zero.
+
+## Structured response information
+
+| History | Log loss | Failed-KC top-1 | Terminal evidence RMSE |
+|---|---:|---:|---:|
+| Binary | .636359 | .420781 | .228727 |
+| Linked positive control | .635493 | 1.000000 | .144357 |
+| 80% linked, otherwise unresolved | .635833 | .883728 | .158804 |
+| Within-item shuffled | .636987 | .462525 | .165519 |
+
+Linked-minus-binary log loss averages −.00086664 but one seed interval crosses
+zero. The failed KC is post-outcome, deficit-proportional oracle attribution.
+The shuffled improvement in the evidence-count diagnostic shows that it is not
+sufficient evidence for learner-specific state recovery.
+
+## Assignment-policy recovery diagnostics
+
+| Policy | Item Gini | Median repetition gap | D loss | D item-state RMSE |
+|---|---:|---:|---:|---:|
+| Q-balanced lab | .162530 | 93.67 | .636359 | .129724 |
+| Curriculum | .162530 | 31.00 | .639779 | .139472 |
+| Mixed | .162530 | 92.00 | .636341 | .130748 |
+| Adaptive | .080298 | 26.67 | .639477 | .141659 |
+
+Relative to lab, mean D-loss deltas are +.003420 curriculum, −.000018 mixed,
+and +.003118 adaptive. These are exploratory model-recovery diagnostics, not
+policy efficacy. Lab/curriculum/mixed share an occurrence multiset and terminal
+oracle mastery by construction; adaptive also changes exposure and state.
+
+## Dialogue continuum
+
+Cloze receives 17/20 naturalness, 17/20 determinacy, 17/20 clear-KC, one
+shortcut, and mean response-family lower bound 1.30. Open dialogue receives
+20/20 naturalness, 0/20 determinate, 4/20 clear-KC, 13 shortcuts, and response
+bound 4.55. Open-minus-cloze risk deltas are +1.00 determinacy, +.70 KC
+attribution, +1.50 incidental grammar, +.60 shortcuts, and +3.25 response
+families. The pilot contains four generated families and automated critics
+only.
+
+## Release decision
+
+There is **no new dataset release**. Full-v1 remains the controlled reference;
+the matched learner-facing bank failed its gates, while the structural world is
+explicitly non-release and lacks prompts, answers, and scorers. Human/expert
+review and a learner answerability pilot remain prerequisites for release
+validity.

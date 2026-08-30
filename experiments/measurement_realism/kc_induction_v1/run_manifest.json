@@ -1,0 +1,8 @@
+{
+  "study_id": "measurement_realism_kc_induction_v1",
+  "status": "MODEL_PROPOSALS_FROZEN_BEFORE_KSTAR_EVALUATION",
+  "calls": 3,
+  "raw_proposals_sha256": "15fc31a384cee666c7261ebf56ef8c23207bdc20a40e78ab6b09542426f70c5c",
+  "call_evidence_bundle_sha256": "180b99ffbf54488a88d6d1ceafeb408d40b6be019dfc636ffa3582bdfcec1f46",
+  "token_total": 0
+}

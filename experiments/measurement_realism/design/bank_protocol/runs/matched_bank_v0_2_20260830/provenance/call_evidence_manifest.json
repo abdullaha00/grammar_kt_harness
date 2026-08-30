@@ -1,0 +1,6 @@
+{
+  "bundle": "provenance/call_evidence_bundle.jsonl",
+  "bytes": 15582498,
+  "calls_or_attempts": 178,
+  "sha256": "a8a59bf265ce209994bf2cc244c979729ee5f2abbadf4e1c04f442bdb635d982"
+}

@@ -1,0 +1,194 @@
+{
+  "batch_id": "critic_r02_measurement_b01",
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g02",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01",
+  "family_judgments": [
+    {
+      "blocking": true,
+      "criterion": "construct_equivalence_across_formats",
+      "evidence": "The two short-text and transformation items are invalid under their narrow answer keys, whereas the MCQ is determinately scoreable; this prevents equivalent measurement evidence across formats.",
+      "severity": "major_concern"
+    },
+    {
+      "blocking": false,
+      "criterion": "no_format_specific_kc_redefinition",
+      "evidence": "All formats retain present-perfect formation, present agreement, and polar-question inversion as the intended grammar; MCQ changes response mechanism rather than the KC definition.",
+      "severity": "pass"
+    },
+    {
+      "blocking": false,
+      "criterion": "comparable_semantic_content",
+      "evidence": "Every format concerns Alex asking whether Maya has completed packing the same picnic basket.",
+      "severity": "pass"
+    }
+  ],
+  "item_judgments": [
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The blank requires present HAVE agreement (Has), participle packed, and operator-first question order.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The object and lexical material are simple; no important grammar beyond the declared perfect, present finite form, and polar-question operations is required.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The supplied lemma and subject do not supply either the auxiliary or participial form, so the declared operations remain necessary.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "“Has Maya already packed” also completes the context naturally; the instruction does not say to use only the supplied words.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The reasonable completion “Has Maya already packed” is unaccepted; omission makes a grammatically correct response fail exact-match scoring.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "Picnic-basket vocabulary and the completion context are transparent for B2 learners.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g02_cloze"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Producing the turn requires Has + Maya + packed, activating all three declared operations.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The dialogue introduces no material grammatical dependency outside the target construction.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "Neither inversion nor the auxiliary/participle sequence is supplied in the response slot.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "“Has Maya already packed the picnic basket?” is a natural question in this completion-now context.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "The reasonable unkeyed completion “Has Maya already packed” is excluded despite yielding a correct question.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The short dialogue is semantically clear and does not add substantial pragmatic burden.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g02_dialog"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "Selecting A requires distinguishing agreement, participial form, and standard inversion from the targeted distractors.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "All options use the same simple lexical frame; the later-completion meaning is explicit.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "As a recognition task, testwise elimination of visibly ill-formed B/C can reduce evidence for independently constructing the full target, though A still contrasts with uninverted D.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "Given “standard question,” A is the uniquely appropriate option; D is marked declarative intonation rather than the requested standard written form.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "accepted_response_coverage",
+          "evidence": "A is the sole keyed option and no solver-proposed unkeyed alternative requires adjudication.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The options and context impose little lexical or discourse burden.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g02_mcq"
+    },
+    {
+      "criteria": [
+        {
+          "blocking": false,
+          "criterion": "active_kc_evidence",
+          "evidence": "The learner must construct present perfect auxiliary agreement, participle, and inversion in a full question.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_major_undeclared_grammar",
+          "evidence": "The supplied lexical frame controls vocabulary while leaving the declared grammatical operations active.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "no_target_avoiding_shortcut",
+          "evidence": "The cue supplies lemmas and content words but not Has or packed, and does not give an already formed question.",
+          "severity": "pass"
+        },
+        {
+          "blocking": false,
+          "criterion": "answer_determinacy",
+          "evidence": "“Has Maya already packed the picnic basket?” and “Has Maya finished packing the picnic basket?” are contextually natural ways to ask about completion.",
+          "severity": "minor_concern"
+        },
+        {
+          "blocking": true,
+          "criterion": "accepted_response_coverage",
+          "evidence": "Natural full-sentence alternatives such as “Has Maya already packed the picnic basket?” are unaccepted; the prompt does not prohibit the optional adverb.",
+          "severity": "major_concern"
+        },
+        {
+          "blocking": false,
+          "criterion": "non_target_burden",
+          "evidence": "The source situation is simple and maintains the same participants and event.",
+          "severity": "pass"
+        }
+      ],
+      "item_id": "mb0_8f8fa56e7109_seen_gc_08d90a35b669ed28_sv01_g02_xform"
+    }
+  ],
+  "overall_accept": false,
+  "role": "measurement",
+  "summary": "The target construction is active and semantically matched, but the production items reject natural optional “already” variants, a blocking response-coverage defect."
+}

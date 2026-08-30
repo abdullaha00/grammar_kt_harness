@@ -1,0 +1,103 @@
+study_id: dialogue_pilot_live_v1
+status: PREREGISTERED_EXECUTION_PROTOCOL_BEFORE_LIVE_CALLS
+date: 2026-08-30
+
+source_protocol:
+  root: experiments/measurement_realism/dialogue_pilot
+  selected_cells: experiments/measurement_realism/dialogue_pilot/selected_cells.json
+  generation_requests: experiments/measurement_realism/dialogue_pilot/generation_requests.jsonl
+  generation_prompt: experiments/measurement_realism/dialogue_pilot/prompts/generate_continuum_family.txt
+  generation_local_schema: experiments/measurement_realism/dialogue_pilot/schemas/generated_family.schema.json
+  critic_local_schema: experiments/measurement_realism/dialogue_pilot/schemas/critic_judgment.schema.json
+  analyzer: experiments/measurement_realism/dialogue_pilot/analyze_dialogue_pilot.py
+  expected_source_status: FROZEN_NO_CALL_CONTINUUM_PLAN
+
+protected_reference:
+  root: data/grammar_kt_full_v1
+  required_manifest_status: FROZEN_BASELINE_COMPLETE
+  mutation: prohibited
+
+authorization:
+  live_calls_authorized_by_protocol_file: false
+  conversational_root_approval_required: true
+  command_guard: --authorize-live-calls-after-root-approval
+  guard_is_not_scientific_evidence: true
+
+generation:
+  model: gpt-5.6-sol
+  reasoning_effort: medium
+  calls: 4
+  unit: one_frozen_cell_family
+  prompt: prompts/generation.txt
+  provider_schema: schemas/generation_provider.schema.json
+  provider_schema_is_transport_constraint_only: true
+  strict_local_schema_is_source_protocol_schema: true
+
+critique:
+  model: gpt-5.6-terra
+  reasoning_effort: medium
+  calls: 20
+  unit: one_family_by_one_role
+  judgments_per_call: 5
+  prompt: prompts/critic_envelope.txt
+  provider_schema: schemas/critic_envelope_provider.schema.json
+  provider_schema_is_transport_constraint_only: true
+  strict_local_schema_is_source_protocol_schema: true
+  roles_do_not_see_other_outputs: true
+  roles:
+    learner:
+      critic_id: automated_learner_gpt_5_6_terra_v1
+      sees_oracle_annotations: false
+      sees_scoring_key: false
+      lens: >-
+        Take the learner perspective. Judge whether the visible action, context,
+        vocabulary, response field, and conversational turn are understandable
+        and reasonably answerable. Do not infer a hidden answer key.
+    language_teacher:
+      critic_id: automated_language_teacher_gpt_5_6_terra_v1
+      sees_oracle_annotations: true
+      sees_scoring_key: true
+      lens: >-
+        Take the language-teacher and item-writer perspective. Judge whether the
+        task is pedagogically sensible, the target response fits the context,
+        and feedback could support learning without demanding undeclared skills.
+    platform_product:
+      critic_id: automated_platform_product_gpt_5_6_terra_v1
+      sees_oracle_annotations: false
+      sees_scoring_key: true
+      lens: >-
+        Take the educational-platform product perspective. Judge interface
+        clarity, likely lesson or review fit, response-mechanism feasibility,
+        interaction naturalness, scoring fairness, and deployability.
+    measurement:
+      critic_id: automated_measurement_gpt_5_6_terra_v1
+      sees_oracle_annotations: true
+      sees_scoring_key: true
+      lens: >-
+        Take the educational-measurement perspective. Identify determinacy,
+        response-coverage gaps, target-avoiding shortcuts, lexical nuisance,
+        incidental grammar, and whether evidence is attributable to the declared
+        generator KCs in this synthetic world.
+    linguistic:
+      critic_id: automated_linguistic_gpt_5_6_terra_v1
+      sees_oracle_annotations: true
+      sees_scoring_key: true
+      lens: >-
+        Take the English-grammar analyst perspective. Check target-cell fidelity,
+        grammaticality, meaning preservation across formats, incidental
+        operations, and whether the one-turn opportunity boundary remains valid.
+
+analysis:
+  exact_opportunities: 20
+  exact_judgments: 100
+  ecology_and_precision_remain_separate: true
+  scalar_realism_score: prohibited
+  human_or_expert_gold: false
+  dataset_release_decision_from_this_pilot_alone: prohibited
+
+reproducibility:
+  raw_call_evidence: required
+  tracked_byte_exact_bundle: required
+  append_only_outputs: true
+  incomplete_call_directory_requires_audit: true
+  resume_only_from_parsed_result: true

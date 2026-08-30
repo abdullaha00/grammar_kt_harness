@@ -1,0 +1,155 @@
+{
+  "candidate_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g01",
+  "candidate_round": 1,
+  "canonical_target_sentence": "Leo was repairing his bicycle at six yesterday.",
+  "cell_id": "gc_44ff4acdb263024b",
+  "family_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02",
+  "grammar_regime": "seen",
+  "intended_cefr": "B2",
+  "items": [
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g01_cloze",
+      "context": "The work on Leo's bicycle was already in progress at six yesterday.",
+      "distractor_annotations": [],
+      "format": "constrained_cloze",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": "Leo [[RESPONSE]] at six yesterday.",
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete the sentence using the verb “repair.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "was repairing his bicycle"
+        ],
+        "completed_target": "Leo was repairing his bicycle at six yesterday.",
+        "correct_choice_id": null,
+        "target_response": "was repairing his bicycle"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g01_dialog",
+      "context": "A friend asks Leo's sister about his activity at a particular time yesterday.",
+      "distractor_annotations": [],
+      "format": "dialogue_completion",
+      "format_payload": {
+        "dialogue_turns": [
+          "Friend: What was Leo doing at six yesterday?"
+        ],
+        "incomplete_turn_template": "Sister: Leo [[RESPONSE]] at six yesterday.",
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": null,
+        "transformation_cue": null
+      },
+      "instruction": "Complete Leo's sister's reply using the verb “repair.”",
+      "response_mode": "short_text",
+      "scoring": {
+        "accepted_responses": [
+          "was repairing his bicycle"
+        ],
+        "completed_target": "Leo was repairing his bicycle at six yesterday.",
+        "correct_choice_id": null,
+        "target_response": "was repairing his bicycle"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g01_mcq",
+      "context": "The work on Leo's bicycle was already happening at six yesterday.",
+      "distractor_annotations": [
+        {
+          "intended_operation_error": "Uses the simple past instead of constructing the progressive form.",
+          "option_id": "A"
+        },
+        {
+          "intended_operation_error": "Uses present finite “is” instead of past finite “was.”",
+          "option_id": "C"
+        },
+        {
+          "intended_operation_error": "Uses the base form “repair” instead of the required -ing form after “was.”",
+          "option_id": "D"
+        }
+      ],
+      "format": "multiple_choice",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [
+          {
+            "id": "A",
+            "text": "Leo repaired his bicycle at six yesterday."
+          },
+          {
+            "id": "B",
+            "text": "Leo was repairing his bicycle at six yesterday."
+          },
+          {
+            "id": "C",
+            "text": "Leo is repairing his bicycle at six yesterday."
+          },
+          {
+            "id": "D",
+            "text": "Leo was repair his bicycle at six yesterday."
+          }
+        ],
+        "sentence_template": null,
+        "source_sentence": null,
+        "stem": "Which sentence best describes the situation?",
+        "transformation_cue": null
+      },
+      "instruction": "Choose the sentence that shows Leo's activity was in progress at that time.",
+      "response_mode": "single_choice",
+      "scoring": {
+        "accepted_responses": [
+          "B"
+        ],
+        "completed_target": "Leo was repairing his bicycle at six yesterday.",
+        "correct_choice_id": "B",
+        "target_response": "B"
+      }
+    },
+    {
+      "candidate_item_id": "mb0_8f8fa56e7109_seen_gc_44ff4acdb263024b_sv02_g01_xform",
+      "context": "Describe Leo's activity at a specific time yesterday.",
+      "distractor_annotations": [],
+      "format": "sentence_transformation",
+      "format_payload": {
+        "dialogue_turns": [],
+        "incomplete_turn_template": null,
+        "options": [],
+        "sentence_template": null,
+        "source_sentence": "It was six yesterday. Leo's bicycle repair was in progress then.",
+        "stem": null,
+        "transformation_cue": "Begin with “Leo” and use the verb “repair.” Include “at six yesterday.”"
+      },
+      "instruction": "Combine the statements into one sentence showing that the activity was in progress at that time. Use “repair.”",
+      "response_mode": "full_sentence",
+      "scoring": {
+        "accepted_responses": [
+          "Leo was repairing his bicycle at six yesterday."
+        ],
+        "completed_target": "Leo was repairing his bicycle at six yesterday.",
+        "correct_choice_id": null,
+        "target_response": "Leo was repairing his bicycle at six yesterday."
+      }
+    }
+  ],
+  "protocol_id": "measurement_realism_matched_bank_v0",
+  "semantic_frame": {
+    "communicative_goal": "Describe what Leo was doing at six yesterday.",
+    "main_verb_lemma": "repair",
+    "object_head": "bicycle",
+    "participants": [
+      "Leo"
+    ],
+    "situation_summary": "Leo's bicycle repair was in progress at a specific time yesterday.",
+    "time_anchor": "at six yesterday"
+  },
+  "semantic_variant_index": 2
+}

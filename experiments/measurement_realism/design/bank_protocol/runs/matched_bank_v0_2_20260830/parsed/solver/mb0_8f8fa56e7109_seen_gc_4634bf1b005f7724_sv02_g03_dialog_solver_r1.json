@@ -1,0 +1,21 @@
+{
+  "ambiguity_explanation": "The same question can be phrased in more than one natural way.",
+  "batch_id": "solver_r03_rep1_dialogue_completion_b01",
+  "instruction_understanding": "Ask which printer the computer does not recognize.",
+  "item_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02_g03_dialog",
+  "keyed_match": false,
+  "major_ambiguity": false,
+  "multiple_material_responses_reasonable": true,
+  "other_reasonable_responses": [
+    "Which printer does the computer not recognize?"
+  ],
+  "reasonable_unkeyed_responses": [
+    "Which printer does the computer not recognize?"
+  ],
+  "replicate": 1,
+  "response_mechanism_clear": true,
+  "solver_attempt_id": "mb0_8f8fa56e7109_seen_gc_4634bf1b005f7724_sv02_g03_dialog_solver_r1",
+  "submitted_response": "Which printer isn't the computer recognizing?",
+  "task_understood": true,
+  "vocabulary_or_context_blocked": false
+}
