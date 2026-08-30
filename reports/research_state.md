@@ -213,11 +213,16 @@ and geometry checks before K* and Q* pass their measurement gate.
   would add only 13 further variants without new cell coverage. The imperative
   all-and-only cue constraint is explicitly labelled as a format-specific
   limitation.
-- The structural grammar-regime pilot supports 54 `seen`, 15
+- The final structural grammar split contains 54 `seen`, 15
   `unseen_combination`, and six `unseen_value` cells. Every unseen combination
   is pairwise-seen/full-tuple-unseen; perfect-progressive aspect defines the
-  unseen-value cohort without creating an unseen-value-only generator KC. Final
-  assignments wait for the curated item bank.
+  unseen-value cohort without creating an unseen-value-only generator KC.
+- The frozen 113x18 Q* passes the pre-simulation gate: 269 edges, density
+  0.1323, rank 18/18, all 75 cells measured, every KC supported by at least two
+  items, and no identical or Jaccard>=.90 near-identical columns. Seven KCs have
+  fewer than six items. The sole non-subject-WH cell creates two nested KC-pair
+  geometries; these cannot be repaired by more variants of the same cell and
+  are retained as an explicit source-inventory limitation.
 - The baseline simulator decision is weakest-link/minimum response aggregation,
   all-active opportunity learning, independent Beta(2,2) initial mastery,
   fixed synthetic guess/slip 0.10/0.10, no forgetting or item difficulty, and
@@ -227,12 +232,10 @@ and geometry checks before K* and Q* pass their measurement gate.
 
 ## Current unresolved construction questions
 
-1. Full-bank items per KC, Q rank, near-equivalence, and rare-KC support.
-2. Final-bank confirmation of the 54/15/6 semantic grammar regimes.
-3. Whether the provisional 20-opportunity simulator schedule passes its frozen
+1. Whether the provisional 20-opportunity simulator schedule passes its frozen
    informativeness and saturation gates.
-4. Final observable/oracle packaging, hashes, and reconstruction verification.
-5. Automatic item validation remains non-human evidence.
+2. Final observable/oracle packaging, hashes, and reconstruction verification.
+3. Automatic item validation remains non-human evidence.
 
 ## Important active paths
 
@@ -248,6 +251,6 @@ and geometry checks before K* and Q* pass their measurement gate.
 
 ## Current next action
 
-Assign the frozen structural grammar regimes to the 113-item bank and run the
-mandatory K*/Q* support, rank, equivalence, and contrast gate before the
-preregistered simulator pilot.
+Run the preregistered final-bank simulator pilot, select the lowest passing
+opportunity target without outcome tuning, then freeze the 1,000-learner
+observable/oracle dataset with deterministic hashes.

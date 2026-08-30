@@ -1752,6 +1752,52 @@ experiment:
   .venv/bin/python scripts/build_true_q_matrix.py --cells data/grammar_kt_full_v1/grammar/cells.jsonl --items data/grammar_kt_full_v1/items/items.jsonl --kcs data/grammar_kt_full_v1/kcs.jsonl --design modules/kcs/generator/design.yaml --regimes data/grammar_kt_full_v1/grammar/regime_assignments.jsonl --dense-q-matrix data/grammar_kt_full_v1/q_matrix.csv --sparse-q-matrix data/grammar_kt_full_v1/oracle/q_matrix_sparse.jsonl --audit data/grammar_kt_full_v1/provenance/measurement/audit.json --manifest data/grammar_kt_full_v1/provenance/measurement/manifest.json
   ```
 
+## FULL-REGIME-Q-001 — semantic regimes and pre-simulation Q* gate
+
+- **Date executed:** 2026-08-30.
+- **Methodology and held-fixed variables:** Exactly the preregistered procedure
+  above, using the frozen 75 cells, 113 items, 18-KC declaration, semantic
+  regime design, and deterministic activation projection. No learner events,
+  discovered KCs, answers, item text, or holdout outcomes were read.
+- **Results:** PASS. The assignment contains 54 `seen`, 15
+  `unseen_combination`, and six `unseen_value` cells. All 15 unseen
+  combinations are constituent-seen and pairwise-seen while their complete
+  tuples are absent from seen grammar. Perfect-progressive aspect is the sole
+  unseen value. Every generator KC remains represented in seen grammar.
+  All 75 cells and 113 items are measured; Q* contains 269 edges, density
+  0.1323, and rank 18/18. Every item has at least one active KC and every KC has
+  at least two items. There are no identical or Jaccard>=.90 near-identical Q
+  columns and no repeated canonical-cell activation rows.
+- **Support and limitations:** Items/KC range from 2 to 49 and cells/KC from 1
+  to 32. Seven KCs fall below the descriptive six-item rarity threshold;
+  `gkc_non_subject_wh_question` has the minimum support (two items from its one
+  canonical cell), followed by imperative (four items from two cells). Six
+  composition KCs have no single-KC item, but Q* remains full rank. Of 153 KC
+  pairs, 46 have A-only, B-only, and A+B evidence, 105 have two-sided evidence
+  without co-occurrence, and two are nested: non-subject WH is contained within
+  finite-present and negation in the only licensed canonical cell. Adding
+  surface variants cannot alter those two cell-level contrasts; fixing them
+  would require inventing new linguistic structures outside the frozen source
+  inventory, so they are retained as an explicit limitation rather than an
+  unnatural item intervention.
+- **Interpretation:** The bank passes the mandatory measurement gate and is
+  structurally distinguishable at the declared 18-KC level. Full rank does not
+  imply uniform statistical power: rare and nested KCs require explicit
+  uncertainty and recovery analysis downstream.
+- **Reproducibility:** The dense Q artifact SHA-256 is
+  `b6df582478f05976ceb200da6edc2b31fb305da64498e5ddb5f473a9459bf5bf`;
+  sparse Q is
+  `30b735a7d9698a965701fcf04ee5c831377c4b10e78fc2aba85fc75c953a0937`;
+  and semantic Q* is
+  `56e1984d7a4d98886429603f30839ea3b3d94fb289190e6d8928193c581e5cdd`.
+  The exact construction commands are the two preregistered commands above;
+  independent verification used the Q command with `--verify-only`.
+- **Artifacts:** `data/grammar_kt_full_v1/grammar/regime_assignments.jsonl`,
+  `data/grammar_kt_full_v1/provenance/grammar_regimes/audit.json`,
+  `data/grammar_kt_full_v1/q_matrix.csv`,
+  `data/grammar_kt_full_v1/oracle/q_matrix_sparse.jsonl`, and
+  `data/grammar_kt_full_v1/provenance/measurement/`.
+
 ## FULL-SIM-001-PREREG — baseline simulator assumption and schedule audit
 
 - **Date frozen:** 2026-08-29, before the full-v1 simulator pilot or learner

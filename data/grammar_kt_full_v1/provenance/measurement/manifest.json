@@ -1,0 +1,38 @@
+{
+  "manifest_id": "full_v1_q_star_measurement_artifacts_v1",
+  "measurement_status": "PASS",
+  "canonical_order": {
+    "rows": "item_id_lexicographic",
+    "columns": "generator_kc_id_lexicographic"
+  },
+  "input_semantic_sha256": {
+    "cells": "8f0aad677013d45485aca45680cd45284337318bea815b4b3237d90508076251",
+    "items": "9e5e513e1ae9661cce204341a089b482fddd0120caa03b5f902371419c08880a",
+    "generator_kcs": "fe02f302f0304bebdca4512dbb43db0c6ca51f16e041d090b7f5bf144c72f601",
+    "measurement_design": "2bf628d1f3777e86d345764c38bf15d4fcc6dae3f9394dbb16394985e51ace18",
+    "grammar_regime_by_cell": "d2a7f93455bf4ca5f93f56984cdb1fa98013915197e9d922247adb9f8aa87923"
+  },
+  "q_star_semantic_sha256": "56e1984d7a4d98886429603f30839ea3b3d94fb289190e6d8928193c581e5cdd",
+  "artifacts": {
+    "dense_q_matrix": {
+      "filename": "q_matrix.csv",
+      "sha256": "b6df582478f05976ceb200da6edc2b31fb305da64498e5ddb5f473a9459bf5bf",
+      "bytes": 8404
+    },
+    "sparse_q_matrix": {
+      "filename": "q_matrix_sparse.jsonl",
+      "sha256": "30b735a7d9698a965701fcf04ee5c831377c4b10e78fc2aba85fc75c953a0937",
+      "bytes": 17415
+    },
+    "measurement_audit": {
+      "filename": "audit.json",
+      "sha256": "ba087772a4b605d5efdbbb0baf87aa1cb3c3753cbdfeb0051ef0578130bdea74",
+      "bytes": 97733
+    }
+  },
+  "scientific_boundary": {
+    "learner_events_read": false,
+    "discovered_kcs_read": false,
+    "projection_depends_only_on_fixed_items_cells_and_k_star": true
+  }
+}

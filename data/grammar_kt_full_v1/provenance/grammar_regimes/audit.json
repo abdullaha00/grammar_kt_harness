@@ -1,0 +1,1911 @@
+{
+  "counts": {
+    "cells": 75,
+    "pairwise_seen_unseen_combination_cells": 15,
+    "seen_cells": 54,
+    "unseen_combination_cells": 15,
+    "unseen_value_cells": 6
+  },
+  "design_id": "grammar_regimes_structural_v1",
+  "generator_kc_cell_support_by_regime": {
+    "seen": {
+      "gkc_aspect_perfect": 17,
+      "gkc_aspect_progressive": 10,
+      "gkc_be_passive": 12,
+      "gkc_finite_past": 10,
+      "gkc_finite_present": 14,
+      "gkc_imperative": 2,
+      "gkc_modal_can": 3,
+      "gkc_modal_could": 3,
+      "gkc_modal_may": 3,
+      "gkc_modal_might": 2,
+      "gkc_modal_must": 3,
+      "gkc_modal_shall": 3,
+      "gkc_modal_should": 3,
+      "gkc_modal_will": 5,
+      "gkc_modal_would": 3,
+      "gkc_negation": 26,
+      "gkc_non_subject_wh_question": 1,
+      "gkc_polar_question": 8
+    },
+    "unseen_combination": {
+      "gkc_aspect_perfect": 7,
+      "gkc_aspect_progressive": 1,
+      "gkc_be_passive": 1,
+      "gkc_finite_past": 1,
+      "gkc_finite_present": 1,
+      "gkc_imperative": 0,
+      "gkc_modal_can": 1,
+      "gkc_modal_could": 2,
+      "gkc_modal_may": 2,
+      "gkc_modal_might": 1,
+      "gkc_modal_must": 2,
+      "gkc_modal_shall": 1,
+      "gkc_modal_should": 1,
+      "gkc_modal_will": 2,
+      "gkc_modal_would": 1,
+      "gkc_negation": 3,
+      "gkc_non_subject_wh_question": 0,
+      "gkc_polar_question": 0
+    },
+    "unseen_value": {
+      "gkc_aspect_perfect": 6,
+      "gkc_aspect_progressive": 6,
+      "gkc_be_passive": 0,
+      "gkc_finite_past": 2,
+      "gkc_finite_present": 2,
+      "gkc_imperative": 0,
+      "gkc_modal_can": 0,
+      "gkc_modal_could": 0,
+      "gkc_modal_may": 0,
+      "gkc_modal_might": 0,
+      "gkc_modal_must": 0,
+      "gkc_modal_shall": 0,
+      "gkc_modal_should": 0,
+      "gkc_modal_will": 2,
+      "gkc_modal_would": 0,
+      "gkc_negation": 3,
+      "gkc_non_subject_wh_question": 0,
+      "gkc_polar_question": 0
+    }
+  },
+  "generator_kcs_absent_from_seen": [],
+  "generator_kcs_unique_to_unseen_value": [],
+  "limitations": [],
+  "metadata": {
+    "cell_ids_used_for_selection": false,
+    "discovered_kcs_read": false,
+    "holdout_outcomes_read": false,
+    "item_answers_read": false,
+    "item_text_read": false,
+    "learner_outcomes_read": false,
+    "selection_inputs": [
+      "canonical_feature_tuples",
+      "generator_kc_activation_rules",
+      "item_counts_by_cell",
+      "fixed_design"
+    ],
+    "semantic_tie_seed": 20260829,
+    "tie_breaker": "sha256_of_feature_tuples_and_declared_seed"
+  },
+  "pair_support": [
+    {
+      "left_dimension": "aspect",
+      "left_value": "none",
+      "right_dimension": "clause",
+      "right_value": "declarative",
+      "seen_cells": 17,
+      "total_cells": 24,
+      "unseen_combination_cells": 7,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "none",
+      "right_dimension": "clause",
+      "right_value": "imperative",
+      "seen_cells": 2,
+      "total_cells": 2,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "none",
+      "right_dimension": "clause",
+      "right_value": "non_subject_wh_question",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "none",
+      "right_dimension": "clause",
+      "right_value": "polar_question",
+      "seen_cells": 7,
+      "total_cells": 7,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "none",
+      "right_dimension": "modal",
+      "right_value": "can",
+      "seen_cells": 2,
+      "total_cells": 3,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "none",
+      "right_dimension": "modal",
+      "right_value": "could",
+      "seen_cells": 2,
+      "total_cells": 3,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "none",
+      "right_dimension": "modal",
+      "right_value": "may",
+      "seen_cells": 2,
+      "total_cells": 3,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "none",
+      "right_dimension": "modal",
+      "right_value": "might",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "none",
+      "right_dimension": "modal",
+      "right_value": "must",
+      "seen_cells": 1,
+      "total_cells": 3,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "none",
+      "right_dimension": "modal",
+      "right_value": "none",
+      "seen_cells": 12,
+      "total_cells": 12,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "none",
+      "right_dimension": "modal",
+      "right_value": "shall",
+      "seen_cells": 2,
+      "total_cells": 3,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "none",
+      "right_dimension": "modal",
+      "right_value": "should",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "none",
+      "right_dimension": "modal",
+      "right_value": "will",
+      "seen_cells": 2,
+      "total_cells": 3,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "none",
+      "right_dimension": "modal",
+      "right_value": "would",
+      "seen_cells": 2,
+      "total_cells": 2,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "none",
+      "right_dimension": "polarity",
+      "right_value": "negative",
+      "seen_cells": 11,
+      "total_cells": 13,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "none",
+      "right_dimension": "polarity",
+      "right_value": "positive",
+      "seen_cells": 16,
+      "total_cells": 21,
+      "unseen_combination_cells": 5,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "none",
+      "right_dimension": "voice",
+      "right_value": "active",
+      "seen_cells": 21,
+      "total_cells": 28,
+      "unseen_combination_cells": 7,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "none",
+      "right_dimension": "voice",
+      "right_value": "passive",
+      "seen_cells": 6,
+      "total_cells": 6,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect",
+      "right_dimension": "clause",
+      "right_value": "declarative",
+      "seen_cells": 16,
+      "total_cells": 23,
+      "unseen_combination_cells": 7,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect",
+      "right_dimension": "clause",
+      "right_value": "polar_question",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect",
+      "right_dimension": "modal",
+      "right_value": "can",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect",
+      "right_dimension": "modal",
+      "right_value": "could",
+      "seen_cells": 1,
+      "total_cells": 2,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect",
+      "right_dimension": "modal",
+      "right_value": "may",
+      "seen_cells": 1,
+      "total_cells": 2,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect",
+      "right_dimension": "modal",
+      "right_value": "might",
+      "seen_cells": 1,
+      "total_cells": 2,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect",
+      "right_dimension": "modal",
+      "right_value": "must",
+      "seen_cells": 2,
+      "total_cells": 2,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect",
+      "right_dimension": "modal",
+      "right_value": "none",
+      "seen_cells": 8,
+      "total_cells": 9,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect",
+      "right_dimension": "modal",
+      "right_value": "should",
+      "seen_cells": 1,
+      "total_cells": 2,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect",
+      "right_dimension": "modal",
+      "right_value": "will",
+      "seen_cells": 1,
+      "total_cells": 2,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect",
+      "right_dimension": "modal",
+      "right_value": "would",
+      "seen_cells": 1,
+      "total_cells": 2,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect",
+      "right_dimension": "polarity",
+      "right_value": "negative",
+      "seen_cells": 11,
+      "total_cells": 12,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect",
+      "right_dimension": "polarity",
+      "right_value": "positive",
+      "seen_cells": 6,
+      "total_cells": 12,
+      "unseen_combination_cells": 6,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect",
+      "right_dimension": "voice",
+      "right_value": "active",
+      "seen_cells": 14,
+      "total_cells": 20,
+      "unseen_combination_cells": 6,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect",
+      "right_dimension": "voice",
+      "right_value": "passive",
+      "seen_cells": 3,
+      "total_cells": 4,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect_progressive",
+      "right_dimension": "clause",
+      "right_value": "declarative",
+      "seen_cells": 0,
+      "total_cells": 6,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 6
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect_progressive",
+      "right_dimension": "modal",
+      "right_value": "none",
+      "seen_cells": 0,
+      "total_cells": 4,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 4
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect_progressive",
+      "right_dimension": "modal",
+      "right_value": "will",
+      "seen_cells": 0,
+      "total_cells": 2,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 2
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect_progressive",
+      "right_dimension": "polarity",
+      "right_value": "negative",
+      "seen_cells": 0,
+      "total_cells": 3,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 3
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect_progressive",
+      "right_dimension": "polarity",
+      "right_value": "positive",
+      "seen_cells": 0,
+      "total_cells": 3,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 3
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "perfect_progressive",
+      "right_dimension": "voice",
+      "right_value": "active",
+      "seen_cells": 0,
+      "total_cells": 6,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 6
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "progressive",
+      "right_dimension": "clause",
+      "right_value": "declarative",
+      "seen_cells": 10,
+      "total_cells": 11,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "progressive",
+      "right_dimension": "modal",
+      "right_value": "none",
+      "seen_cells": 6,
+      "total_cells": 7,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "progressive",
+      "right_dimension": "modal",
+      "right_value": "shall",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "progressive",
+      "right_dimension": "modal",
+      "right_value": "should",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "progressive",
+      "right_dimension": "modal",
+      "right_value": "will",
+      "seen_cells": 2,
+      "total_cells": 2,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "progressive",
+      "right_dimension": "polarity",
+      "right_value": "negative",
+      "seen_cells": 4,
+      "total_cells": 4,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "progressive",
+      "right_dimension": "polarity",
+      "right_value": "positive",
+      "seen_cells": 6,
+      "total_cells": 7,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "progressive",
+      "right_dimension": "voice",
+      "right_value": "active",
+      "seen_cells": 7,
+      "total_cells": 8,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "aspect",
+      "left_value": "progressive",
+      "right_dimension": "voice",
+      "right_value": "passive",
+      "seen_cells": 3,
+      "total_cells": 3,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "clause",
+      "left_value": "declarative",
+      "right_dimension": "modal",
+      "right_value": "can",
+      "seen_cells": 2,
+      "total_cells": 3,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "clause",
+      "left_value": "declarative",
+      "right_dimension": "modal",
+      "right_value": "could",
+      "seen_cells": 2,
+      "total_cells": 4,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "clause",
+      "left_value": "declarative",
+      "right_dimension": "modal",
+      "right_value": "may",
+      "seen_cells": 2,
+      "total_cells": 4,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "clause",
+      "left_value": "declarative",
+      "right_dimension": "modal",
+      "right_value": "might",
+      "seen_cells": 2,
+      "total_cells": 3,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "clause",
+      "left_value": "declarative",
+      "right_dimension": "modal",
+      "right_value": "must",
+      "seen_cells": 3,
+      "total_cells": 5,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "clause",
+      "left_value": "declarative",
+      "right_dimension": "modal",
+      "right_value": "none",
+      "seen_cells": 21,
+      "total_cells": 27,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 4
+    },
+    {
+      "left_dimension": "clause",
+      "left_value": "declarative",
+      "right_dimension": "modal",
+      "right_value": "shall",
+      "seen_cells": 2,
+      "total_cells": 3,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "clause",
+      "left_value": "declarative",
+      "right_dimension": "modal",
+      "right_value": "should",
+      "seen_cells": 3,
+      "total_cells": 4,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "clause",
+      "left_value": "declarative",
+      "right_dimension": "modal",
+      "right_value": "will",
+      "seen_cells": 4,
+      "total_cells": 8,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 2
+    },
+    {
+      "left_dimension": "clause",
+      "left_value": "declarative",
+      "right_dimension": "modal",
+      "right_value": "would",
+      "seen_cells": 2,
+      "total_cells": 3,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "clause",
+      "left_value": "imperative",
+      "right_dimension": "modal",
+      "right_value": "none",
+      "seen_cells": 2,
+      "total_cells": 2,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "clause",
+      "left_value": "non_subject_wh_question",
+      "right_dimension": "modal",
+      "right_value": "none",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "clause",
+      "left_value": "polar_question",
+      "right_dimension": "modal",
+      "right_value": "can",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "clause",
+      "left_value": "polar_question",
+      "right_dimension": "modal",
+      "right_value": "could",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "clause",
+      "left_value": "polar_question",
+      "right_dimension": "modal",
+      "right_value": "may",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "clause",
+      "left_value": "polar_question",
+      "right_dimension": "modal",
+      "right_value": "none",
+      "seen_cells": 2,
+      "total_cells": 2,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "clause",
+      "left_value": "polar_question",
+      "right_dimension": "modal",
+      "right_value": "shall",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "clause",
+      "left_value": "polar_question",
+      "right_dimension": "modal",
+      "right_value": "will",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "clause",
+      "left_value": "polar_question",
+      "right_dimension": "modal",
+      "right_value": "would",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "negative",
+      "right_dimension": "clause",
+      "right_value": "declarative",
+      "seen_cells": 23,
+      "total_cells": 29,
+      "unseen_combination_cells": 3,
+      "unseen_value_cells": 3
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "negative",
+      "right_dimension": "clause",
+      "right_value": "imperative",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "negative",
+      "right_dimension": "clause",
+      "right_value": "non_subject_wh_question",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "negative",
+      "right_dimension": "clause",
+      "right_value": "polar_question",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "negative",
+      "right_dimension": "modal",
+      "right_value": "can",
+      "seen_cells": 2,
+      "total_cells": 2,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "negative",
+      "right_dimension": "modal",
+      "right_value": "could",
+      "seen_cells": 1,
+      "total_cells": 2,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "negative",
+      "right_dimension": "modal",
+      "right_value": "may",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "negative",
+      "right_dimension": "modal",
+      "right_value": "might",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "negative",
+      "right_dimension": "modal",
+      "right_value": "must",
+      "seen_cells": 2,
+      "total_cells": 3,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "negative",
+      "right_dimension": "modal",
+      "right_value": "none",
+      "seen_cells": 14,
+      "total_cells": 16,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 2
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "negative",
+      "right_dimension": "modal",
+      "right_value": "shall",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "negative",
+      "right_dimension": "modal",
+      "right_value": "should",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "negative",
+      "right_dimension": "modal",
+      "right_value": "will",
+      "seen_cells": 2,
+      "total_cells": 4,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 1
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "negative",
+      "right_dimension": "modal",
+      "right_value": "would",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "positive",
+      "right_dimension": "clause",
+      "right_value": "declarative",
+      "seen_cells": 20,
+      "total_cells": 35,
+      "unseen_combination_cells": 12,
+      "unseen_value_cells": 3
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "positive",
+      "right_dimension": "clause",
+      "right_value": "imperative",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "positive",
+      "right_dimension": "clause",
+      "right_value": "polar_question",
+      "seen_cells": 7,
+      "total_cells": 7,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "positive",
+      "right_dimension": "modal",
+      "right_value": "can",
+      "seen_cells": 1,
+      "total_cells": 2,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "positive",
+      "right_dimension": "modal",
+      "right_value": "could",
+      "seen_cells": 2,
+      "total_cells": 3,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "positive",
+      "right_dimension": "modal",
+      "right_value": "may",
+      "seen_cells": 2,
+      "total_cells": 4,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "positive",
+      "right_dimension": "modal",
+      "right_value": "might",
+      "seen_cells": 1,
+      "total_cells": 2,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "positive",
+      "right_dimension": "modal",
+      "right_value": "must",
+      "seen_cells": 1,
+      "total_cells": 2,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "positive",
+      "right_dimension": "modal",
+      "right_value": "none",
+      "seen_cells": 12,
+      "total_cells": 16,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 2
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "positive",
+      "right_dimension": "modal",
+      "right_value": "shall",
+      "seen_cells": 2,
+      "total_cells": 3,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "positive",
+      "right_dimension": "modal",
+      "right_value": "should",
+      "seen_cells": 2,
+      "total_cells": 3,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "positive",
+      "right_dimension": "modal",
+      "right_value": "will",
+      "seen_cells": 3,
+      "total_cells": 5,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 1
+    },
+    {
+      "left_dimension": "polarity",
+      "left_value": "positive",
+      "right_dimension": "modal",
+      "right_value": "would",
+      "seen_cells": 2,
+      "total_cells": 3,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "aspect",
+      "right_value": "none",
+      "seen_cells": 17,
+      "total_cells": 24,
+      "unseen_combination_cells": 7,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "aspect",
+      "right_value": "perfect",
+      "seen_cells": 9,
+      "total_cells": 15,
+      "unseen_combination_cells": 6,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "aspect",
+      "right_value": "perfect_progressive",
+      "seen_cells": 0,
+      "total_cells": 2,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 2
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "aspect",
+      "right_value": "progressive",
+      "seen_cells": 4,
+      "total_cells": 4,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "clause",
+      "right_value": "declarative",
+      "seen_cells": 22,
+      "total_cells": 37,
+      "unseen_combination_cells": 13,
+      "unseen_value_cells": 2
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "clause",
+      "right_value": "imperative",
+      "seen_cells": 2,
+      "total_cells": 2,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "clause",
+      "right_value": "polar_question",
+      "seen_cells": 6,
+      "total_cells": 6,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "modal",
+      "right_value": "can",
+      "seen_cells": 3,
+      "total_cells": 4,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "modal",
+      "right_value": "could",
+      "seen_cells": 3,
+      "total_cells": 5,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "modal",
+      "right_value": "may",
+      "seen_cells": 3,
+      "total_cells": 5,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "modal",
+      "right_value": "might",
+      "seen_cells": 2,
+      "total_cells": 3,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "modal",
+      "right_value": "must",
+      "seen_cells": 3,
+      "total_cells": 5,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "modal",
+      "right_value": "none",
+      "seen_cells": 2,
+      "total_cells": 2,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "modal",
+      "right_value": "shall",
+      "seen_cells": 3,
+      "total_cells": 4,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "modal",
+      "right_value": "should",
+      "seen_cells": 3,
+      "total_cells": 4,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "modal",
+      "right_value": "will",
+      "seen_cells": 5,
+      "total_cells": 9,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 2
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "modal",
+      "right_value": "would",
+      "seen_cells": 3,
+      "total_cells": 4,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "polarity",
+      "right_value": "negative",
+      "seen_cells": 13,
+      "total_cells": 17,
+      "unseen_combination_cells": 3,
+      "unseen_value_cells": 1
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "polarity",
+      "right_value": "positive",
+      "seen_cells": 17,
+      "total_cells": 28,
+      "unseen_combination_cells": 10,
+      "unseen_value_cells": 1
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "voice",
+      "right_value": "active",
+      "seen_cells": 28,
+      "total_cells": 43,
+      "unseen_combination_cells": 13,
+      "unseen_value_cells": 2
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "NA",
+      "right_dimension": "voice",
+      "right_value": "passive",
+      "seen_cells": 2,
+      "total_cells": 2,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "past",
+      "right_dimension": "aspect",
+      "right_value": "none",
+      "seen_cells": 4,
+      "total_cells": 4,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "past",
+      "right_dimension": "aspect",
+      "right_value": "perfect",
+      "seen_cells": 3,
+      "total_cells": 4,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "past",
+      "right_dimension": "aspect",
+      "right_value": "perfect_progressive",
+      "seen_cells": 0,
+      "total_cells": 2,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 2
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "past",
+      "right_dimension": "aspect",
+      "right_value": "progressive",
+      "seen_cells": 3,
+      "total_cells": 3,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "past",
+      "right_dimension": "clause",
+      "right_value": "declarative",
+      "seen_cells": 10,
+      "total_cells": 13,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 2
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "past",
+      "right_dimension": "modal",
+      "right_value": "none",
+      "seen_cells": 10,
+      "total_cells": 13,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 2
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "past",
+      "right_dimension": "polarity",
+      "right_value": "negative",
+      "seen_cells": 5,
+      "total_cells": 6,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 1
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "past",
+      "right_dimension": "polarity",
+      "right_value": "positive",
+      "seen_cells": 5,
+      "total_cells": 7,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 1
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "past",
+      "right_dimension": "voice",
+      "right_value": "active",
+      "seen_cells": 6,
+      "total_cells": 8,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 2
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "past",
+      "right_dimension": "voice",
+      "right_value": "passive",
+      "seen_cells": 4,
+      "total_cells": 5,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "present",
+      "right_dimension": "aspect",
+      "right_value": "none",
+      "seen_cells": 6,
+      "total_cells": 6,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "present",
+      "right_dimension": "aspect",
+      "right_value": "perfect",
+      "seen_cells": 5,
+      "total_cells": 5,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "present",
+      "right_dimension": "aspect",
+      "right_value": "perfect_progressive",
+      "seen_cells": 0,
+      "total_cells": 2,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 2
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "present",
+      "right_dimension": "aspect",
+      "right_value": "progressive",
+      "seen_cells": 3,
+      "total_cells": 4,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "present",
+      "right_dimension": "clause",
+      "right_value": "declarative",
+      "seen_cells": 11,
+      "total_cells": 14,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 2
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "present",
+      "right_dimension": "clause",
+      "right_value": "non_subject_wh_question",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "present",
+      "right_dimension": "clause",
+      "right_value": "polar_question",
+      "seen_cells": 2,
+      "total_cells": 2,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "present",
+      "right_dimension": "modal",
+      "right_value": "none",
+      "seen_cells": 14,
+      "total_cells": 17,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 2
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "present",
+      "right_dimension": "polarity",
+      "right_value": "negative",
+      "seen_cells": 8,
+      "total_cells": 9,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 1
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "present",
+      "right_dimension": "polarity",
+      "right_value": "positive",
+      "seen_cells": 6,
+      "total_cells": 8,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 1
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "present",
+      "right_dimension": "voice",
+      "right_value": "active",
+      "seen_cells": 8,
+      "total_cells": 11,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 2
+    },
+    {
+      "left_dimension": "tense",
+      "left_value": "present",
+      "right_dimension": "voice",
+      "right_value": "passive",
+      "seen_cells": 6,
+      "total_cells": 6,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "active",
+      "right_dimension": "clause",
+      "right_value": "declarative",
+      "seen_cells": 31,
+      "total_cells": 51,
+      "unseen_combination_cells": 14,
+      "unseen_value_cells": 6
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "active",
+      "right_dimension": "clause",
+      "right_value": "imperative",
+      "seen_cells": 2,
+      "total_cells": 2,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "active",
+      "right_dimension": "clause",
+      "right_value": "non_subject_wh_question",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "active",
+      "right_dimension": "clause",
+      "right_value": "polar_question",
+      "seen_cells": 8,
+      "total_cells": 8,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "active",
+      "right_dimension": "modal",
+      "right_value": "can",
+      "seen_cells": 3,
+      "total_cells": 4,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "active",
+      "right_dimension": "modal",
+      "right_value": "could",
+      "seen_cells": 3,
+      "total_cells": 5,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "active",
+      "right_dimension": "modal",
+      "right_value": "may",
+      "seen_cells": 2,
+      "total_cells": 4,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "active",
+      "right_dimension": "modal",
+      "right_value": "might",
+      "seen_cells": 2,
+      "total_cells": 3,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "active",
+      "right_dimension": "modal",
+      "right_value": "must",
+      "seen_cells": 2,
+      "total_cells": 4,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "active",
+      "right_dimension": "modal",
+      "right_value": "none",
+      "seen_cells": 16,
+      "total_cells": 21,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 4
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "active",
+      "right_dimension": "modal",
+      "right_value": "shall",
+      "seen_cells": 3,
+      "total_cells": 4,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "active",
+      "right_dimension": "modal",
+      "right_value": "should",
+      "seen_cells": 3,
+      "total_cells": 4,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "active",
+      "right_dimension": "modal",
+      "right_value": "will",
+      "seen_cells": 5,
+      "total_cells": 9,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 2
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "active",
+      "right_dimension": "modal",
+      "right_value": "would",
+      "seen_cells": 3,
+      "total_cells": 4,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "active",
+      "right_dimension": "polarity",
+      "right_value": "negative",
+      "seen_cells": 20,
+      "total_cells": 26,
+      "unseen_combination_cells": 3,
+      "unseen_value_cells": 3
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "active",
+      "right_dimension": "polarity",
+      "right_value": "positive",
+      "seen_cells": 22,
+      "total_cells": 36,
+      "unseen_combination_cells": 11,
+      "unseen_value_cells": 3
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "passive",
+      "right_dimension": "clause",
+      "right_value": "declarative",
+      "seen_cells": 12,
+      "total_cells": 13,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "passive",
+      "right_dimension": "modal",
+      "right_value": "may",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "passive",
+      "right_dimension": "modal",
+      "right_value": "must",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "passive",
+      "right_dimension": "modal",
+      "right_value": "none",
+      "seen_cells": 10,
+      "total_cells": 11,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "passive",
+      "right_dimension": "polarity",
+      "right_value": "negative",
+      "seen_cells": 6,
+      "total_cells": 6,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0
+    },
+    {
+      "left_dimension": "voice",
+      "left_value": "passive",
+      "right_dimension": "polarity",
+      "right_value": "positive",
+      "seen_cells": 6,
+      "total_cells": 7,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0
+    }
+  ],
+  "semantic_assignment_sha256": "0dc608ed630507a2abfd9e5876a3698f090fce7b04dcfdc181b0ce3974608ecd",
+  "status": "PASS",
+  "unseen_combination_search": {
+    "all_constituents_seen": true,
+    "all_full_tuples_unseen": true,
+    "all_pairs_seen": true,
+    "candidate_cells": 69,
+    "evaluated_states": 59278,
+    "target_reached": true
+  },
+  "unseen_value_search": {
+    "all_values_absent_from_seen": [
+      {
+        "dimension": "aspect",
+        "value": "perfect_progressive"
+      }
+    ],
+    "evaluated_candidates": 25,
+    "feasible_candidates": 1,
+    "trigger_values": [
+      {
+        "dimension": "aspect",
+        "value": "perfect_progressive"
+      }
+    ]
+  },
+  "value_support": [
+    {
+      "dimension": "aspect",
+      "seen_cells": 27,
+      "total_cells": 34,
+      "unseen_combination_cells": 7,
+      "unseen_value_cells": 0,
+      "value": "none"
+    },
+    {
+      "dimension": "aspect",
+      "seen_cells": 17,
+      "total_cells": 24,
+      "unseen_combination_cells": 7,
+      "unseen_value_cells": 0,
+      "value": "perfect"
+    },
+    {
+      "dimension": "aspect",
+      "seen_cells": 0,
+      "total_cells": 6,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 6,
+      "value": "perfect_progressive"
+    },
+    {
+      "dimension": "aspect",
+      "seen_cells": 10,
+      "total_cells": 11,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0,
+      "value": "progressive"
+    },
+    {
+      "dimension": "clause",
+      "seen_cells": 43,
+      "total_cells": 64,
+      "unseen_combination_cells": 15,
+      "unseen_value_cells": 6,
+      "value": "declarative"
+    },
+    {
+      "dimension": "clause",
+      "seen_cells": 2,
+      "total_cells": 2,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0,
+      "value": "imperative"
+    },
+    {
+      "dimension": "clause",
+      "seen_cells": 1,
+      "total_cells": 1,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0,
+      "value": "non_subject_wh_question"
+    },
+    {
+      "dimension": "clause",
+      "seen_cells": 8,
+      "total_cells": 8,
+      "unseen_combination_cells": 0,
+      "unseen_value_cells": 0,
+      "value": "polar_question"
+    },
+    {
+      "dimension": "modal",
+      "seen_cells": 3,
+      "total_cells": 4,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0,
+      "value": "can"
+    },
+    {
+      "dimension": "modal",
+      "seen_cells": 3,
+      "total_cells": 5,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 0,
+      "value": "could"
+    },
+    {
+      "dimension": "modal",
+      "seen_cells": 3,
+      "total_cells": 5,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 0,
+      "value": "may"
+    },
+    {
+      "dimension": "modal",
+      "seen_cells": 2,
+      "total_cells": 3,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0,
+      "value": "might"
+    },
+    {
+      "dimension": "modal",
+      "seen_cells": 3,
+      "total_cells": 5,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 0,
+      "value": "must"
+    },
+    {
+      "dimension": "modal",
+      "seen_cells": 26,
+      "total_cells": 32,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 4,
+      "value": "none"
+    },
+    {
+      "dimension": "modal",
+      "seen_cells": 3,
+      "total_cells": 4,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0,
+      "value": "shall"
+    },
+    {
+      "dimension": "modal",
+      "seen_cells": 3,
+      "total_cells": 4,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0,
+      "value": "should"
+    },
+    {
+      "dimension": "modal",
+      "seen_cells": 5,
+      "total_cells": 9,
+      "unseen_combination_cells": 2,
+      "unseen_value_cells": 2,
+      "value": "will"
+    },
+    {
+      "dimension": "modal",
+      "seen_cells": 3,
+      "total_cells": 4,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0,
+      "value": "would"
+    },
+    {
+      "dimension": "polarity",
+      "seen_cells": 26,
+      "total_cells": 32,
+      "unseen_combination_cells": 3,
+      "unseen_value_cells": 3,
+      "value": "negative"
+    },
+    {
+      "dimension": "polarity",
+      "seen_cells": 28,
+      "total_cells": 43,
+      "unseen_combination_cells": 12,
+      "unseen_value_cells": 3,
+      "value": "positive"
+    },
+    {
+      "dimension": "tense",
+      "seen_cells": 30,
+      "total_cells": 45,
+      "unseen_combination_cells": 13,
+      "unseen_value_cells": 2,
+      "value": "NA"
+    },
+    {
+      "dimension": "tense",
+      "seen_cells": 10,
+      "total_cells": 13,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 2,
+      "value": "past"
+    },
+    {
+      "dimension": "tense",
+      "seen_cells": 14,
+      "total_cells": 17,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 2,
+      "value": "present"
+    },
+    {
+      "dimension": "voice",
+      "seen_cells": 42,
+      "total_cells": 62,
+      "unseen_combination_cells": 14,
+      "unseen_value_cells": 6,
+      "value": "active"
+    },
+    {
+      "dimension": "voice",
+      "seen_cells": 12,
+      "total_cells": 13,
+      "unseen_combination_cells": 1,
+      "unseen_value_cells": 0,
+      "value": "passive"
+    }
+  ]
+}
