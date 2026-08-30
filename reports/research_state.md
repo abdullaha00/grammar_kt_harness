@@ -1,6 +1,6 @@
 # Research state
 
-Last updated: 2026-08-29. The programme has been reopened under the revised
+Last updated: 2026-08-30. The programme has been reopened under the revised
 baseline-versus-experiment framing in `AGENTS.md`. The previous medium-scale
 programme remains historical evidence; it is not the generator truth for the
 new full dataset.
@@ -45,9 +45,9 @@ verified 1,222-row EGP snapshot
 → immutable `data/grammar_kt_full_v1/`
 ```
 
-Only after that dataset is frozen will KC misspecification, KC discovery, KT
-robustness, sample complexity, and grammatical-generalisation experiments
-become the active queue.
+The dataset is now frozen. KC misspecification, KC discovery, KT robustness,
+sample complexity, and grammatical-generalisation experiments are the active
+Layer-B queue and must not mutate the baseline.
 
 ## Repository audit result
 
@@ -233,10 +233,33 @@ and geometry checks before K* and Q* pass their measurement gate.
   0.181, and only 2.21% terminal KC saturation above .95. No extra pilot seed
   was required by the frozen boundary rule.
 
-## Current unresolved construction questions
+## Frozen full-v1 dataset
 
-1. Final observable/oracle packaging, hashes, and reconstruction verification.
-2. Automatic item validation remains non-human evidence.
+- `data/grammar_kt_full_v1/` is complete and immutable at 75 GrammarCells, 18
+  generator KCs, 113 items, 269 Q* edges, 1,000 learners, and 283,000 events.
+- Each learner has 170 seen-only acquisition rows and 113 terminal all-bank
+  probes. The observable stream contains no K*, mastery, probability, draw, or
+  update fields; aligned private truth is retained separately under `oracle/`.
+- Generation and an independent `--verify-only` execution both replayed every
+  keyed event and validated all public/private, Q*, mastery, probability,
+  schedule, and artifact-hash contracts.
+- Observable gzip SHA-256:
+  `9272ca86a647e3b13c9ce52b5381dde215f7ef448e4a19a41a22495fa99ef97f`;
+  private-oracle gzip:
+  `956ed53f370d5494d379072954c0821d4098f11e51e2629b33d8ee0b8b844601`.
+- The manifest records the pre-response code revision `930d43f2`, exact
+  command, input hashes, deterministic gzip settings, and an 88-file recursive
+  inventory. Automatic validation remains a declared non-human limitation.
+
+## Current unresolved research questions
+
+1. How response prediction and mastery recovery degrade under controlled KC
+   merge/split and Q-edge misspecification relative to K*.
+2. Whether observable response evidence can recover Q*/K* structurally, or
+   whether distinct representations are predictively indistinguishable.
+3. How K*, coarse/fine hypotheses, and discovered K-hat generalise across the
+   54/15/6 semantic grammar regimes.
+4. Which simulator and collection-design assumptions carry those conclusions.
 
 ## Important active paths
 
@@ -252,6 +275,6 @@ and geometry checks before K* and Q* pass their measurement gate.
 
 ## Current next action
 
-Freeze and independently replay-verify the 1,000-learner observable/oracle
-dataset under the selected target-12 simulator, then close Layer A before any
-downstream KC/KT experiment runs.
+Preregister and execute the bounded full-dataset RQ2 misspecification study,
+including paired response prediction and oracle-only mastery recovery, while
+implementing structural K*/Q* recovery metrics for the subsequent RQ3 study.

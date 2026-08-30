@@ -1899,3 +1899,61 @@ experiment:
   `reports/baseline/artifacts/full_simulator_v1/pilot_seed_20260829.json`;
   condition-grid SHA-256
   `a52288d68539981bdf05899b019470d01b5f049a5e56c624010ee12fcd38f567`.
+
+## FULL-DATASET-FREEZE-001 — immutable full-v1 baseline
+
+- **Date executed:** 2026-08-30, after K*, the item bank, Q*, regimes, and the
+  simulator protocol were frozen and committed at `930d43f2`.
+- **Research question:** Can the complete Layer-A inputs deterministically
+  produce a dataset-neutral observable KT stream while retaining aligned
+  simulator truth privately and preventing downstream information leakage?
+- **Hypothesis:** The target-12 protocol will produce exactly 283 rows for each
+  of 1,000 learners: 170 seen-only acquisition events and 113 non-updating
+  all-bank probes. Streaming generation and exact keyed replay will agree.
+- **Manipulated variable:** None; this is the one-time production execution of
+  the already selected baseline protocol.
+- **Held fixed:** 75 GrammarCells, 18 K*, 113 items, 269 Q* edges, 54/15/6
+  regimes, target 12, minimum aggregation, all-active rate .02, `Beta(2,2)`,
+  guess/slip .10/.10, no forgetting/item difficulty, 1,000 learners, and seed
+  20260829.
+- **Exact commands:**
+
+  ```bash
+  .venv/bin/python scripts/freeze_baseline_dataset.py --dataset-dir data/grammar_kt_full_v1 --pilot reports/baseline/artifacts/full_simulator_v1/pilot_seed_20260829.json
+  .venv/bin/python scripts/freeze_baseline_dataset.py --dataset-dir data/grammar_kt_full_v1 --pilot reports/baseline/artifacts/full_simulator_v1/pilot_seed_20260829.json --verify-only
+  ```
+- **Results:** PASS. The public stream contains 283,000 rows from 1,000
+  learners: 170,000 acquisition and 113,000 probe events. Every learner has
+  identical structural opportunity counts, every seen item occurs at least
+  once, and every seen KC receives at least 12 opportunities. Acquisition has
+  84,438 correct responses (49.67%); probes have 65,986 (58.40%). Probe rows do
+  not update mastery. Public rows expose only learner, item, sequence, outcome,
+  phase, pass index, and grammar regime; K* activations, mastery, probabilities,
+  and draws occur only in the private oracle.
+- **Verification:** Both the generation command's internal exact replay and a
+  separate `--verify-only` invocation passed. The verifier reconstructed
+  regimes and Q* from frozen declarations, checked the selected pilot and all
+  input hashes, replayed all 283,000 keyed events, linked public/private rows,
+  validated mastery transitions and probabilities, and checked all 88 retained
+  artifact hashes. The freeze plan predates learner output and records git
+  revision `930d43f27d3053a5a5a8046432848c25aadb2f55`.
+- **Hashes:** observable gzip
+  `9272ca86a647e3b13c9ce52b5381dde215f7ef448e4a19a41a22495fa99ef97f`
+  (canonical content
+  `9b5eb37cf398132453e2247b70cacf9266ccf9a817fe1230a1812efa0d06cdd9`);
+  private oracle gzip
+  `956ed53f370d5494d379072954c0821d4098f11e51e2629b33d8ee0b8b844601`
+  (canonical content
+  `46f5da111ae4f8e411c2fc262644d8a8acb31c8408dd87642e5d725cfaa88a10`);
+  artifact-inventory semantic hash
+  `78008283ae56bad84199145495ad76c9c4897031f4e9bc0861fbb964b2338387`.
+- **Interpretation:** RQ1's construction object now exists at full declared
+  scope and is independently replay-verifiable. It is a controlled synthetic
+  benchmark, not evidence that K* or simulator parameters describe humans.
+- **Methodological consequence:** Layer A is closed. Treat
+  `data/grammar_kt_full_v1/` as immutable; all KC misspecification, discovery,
+  KT, robustness, and generalisation work must write outside it and may use the
+  oracle only for explicitly labelled evaluation.
+- **Artifacts:** `data/grammar_kt_full_v1/{README.md,manifest.json,
+  interactions.jsonl.gz}`, `data/grammar_kt_full_v1/oracle/learner_truth.jsonl.gz`,
+  and `data/grammar_kt_full_v1/provenance/simulation/`.

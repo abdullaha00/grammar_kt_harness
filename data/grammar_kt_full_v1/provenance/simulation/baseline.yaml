@@ -1,0 +1,68 @@
+simulation_id: explicit_generator_kstar_baseline_v1
+description: >-
+  Simple controlled learner world over the frozen generator KC inventory and
+  true Q-matrix. Acquisition uses seen grammar only and is followed by a
+  terminal, non-updating probe over the complete fixed item bank.
+
+# The dataset construction runner should pass this value explicitly to
+# simulate_baseline(..., seed=...).
+seed: 20260829
+learners: 1000
+
+initial_mastery:
+  distribution: beta
+  alpha: 2.0
+  beta: 2.0
+  background_mastery: "none"
+
+response:
+  aggregation: minimum
+  guess: 0.10
+  slip: 0.10
+  item_difficulty: "none"
+
+learning:
+  rule: all_active_opportunity
+  rate: 0.02
+  correctness_conditioned: false
+  forgetting: "none"
+
+schedule:
+  grammar_regimes:
+    - seen
+    - unseen_combination
+    - unseen_value
+  acquisition_regime: seen
+  acquisition:
+    mode: exhaustive_then_q_balanced
+    exhaustive_coverage_passes: 1
+    target_opportunities_per_seen_kc: 12
+  item_order: keyed_occurrence_rank
+  probe:
+    timing: terminal
+    repeats: 1
+    item_scope: all_regimes
+    updates_mastery: false
+
+rng:
+  scheme: keyed_sha256_v1
+  rationale: >-
+    Stable independent streams are keyed by learner and KC for initial states,
+    by learner/item/item-exposure for acquisition responses, and by
+    learner/probe-repeat/item for terminal responses. Learner prefixes and
+    terminal probes therefore do not depend on unrelated draws.
+
+learner_ids:
+  prefix: learner_
+  zero_pad_width: 6
+
+observable_schema:
+  - learner_id
+  - item_id
+  - sequence_index
+  - correct
+  - phase
+  - pass_index
+  - grammar_regime
+
+oracle_mastery_scope: active_generator_kcs
