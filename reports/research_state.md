@@ -45,9 +45,10 @@ verified 1,222-row EGP snapshot
 → immutable `data/grammar_kt_full_v1/`
 ```
 
-The dataset is now frozen. KC misspecification, KC discovery, KT robustness,
-sample complexity, and grammatical-generalisation experiments are the active
-Layer-B queue and must not mutate the baseline.
+The dataset is now frozen. KC misspecification, KC discovery, linguistic
+generalisation, and oracle-only state recovery are complete. Simulator
+robustness and bounded collection design are the remaining active Layer-B
+queue and must not mutate the baseline.
 
 ## Repository audit result
 
@@ -311,15 +312,31 @@ and geometry checks before K* and Q* pass their measurement gate.
   consequence of the declared simulator's lack of item memory/difficulty and
   correctness-independent same-Q updates, not evidence about human item
   novelty.
+- Oracle-only evaluation of the frozen observable fits agrees with the RQ2
+  headline ordering overall: K* item-prerequisite-state RMSE is .123738 versus
+  .146300 coarse, .132752 split-2, .140428 split-4, and .163828 exact-cell.
+  Every candidate-minus-K* overall RMSE interval from 2,000 paired learner
+  resamples excludes zero. This target is the minimum active-KC mastery that
+  governs the item response, not individual-KC or human mastery.
+- The mastery result is not uniform across regimes. Coarse is worse on seen and
+  unseen-combination probes but improves RMSE by .003663 on the six
+  unseen-value cells (95% interval [-.005740,-.001507]). This retained local
+  reversal limits the headline claim to the declared overall distribution and
+  reinforces the six-cell holdout caveat.
+- A deliberately misspecified fixed BKT poorly tracks per-KC oracle state:
+  terminal active-KC-pair RMSE .291195 and correlation .355418; unique
+  learner-KC RMSE .300804 and correlation .434973. Its correctness-conditioned,
+  full-credit update does not match opportunity-based all-active learning or
+  minimum aggregation. Predictive adequacy and state semantics must therefore
+  be reported separately.
 
 ## Current unresolved research questions
 
-1. Whether predictive ranking agrees with oracle-only mastery recovery.
-2. Which simulator and collection-design assumptions carry the RQ2--RQ4
+1. Which simulator and collection-design assumptions carry the RQ2--RQ4
    conclusions.
-3. How learner count, opportunity volume, and measurement contrasts affect
+2. How learner count, opportunity volume, and measurement contrasts affect
    recovery under the declared synthetic conditions.
-4. Whether the final synthesis, executable notebooks, verification audit, and
+3. Whether the final synthesis, executable notebooks, verification audit, and
    ACL manuscript consistently delimit the supported synthetic claims.
 
 ## Important active paths
@@ -334,11 +351,11 @@ and geometry checks before K* and Q* pass their measurement gate.
 - Active experiment queue: `reports/experiment_bank.md`
 - Frozen RQ3 artifacts: `experiments/full_v1/rq3_kc_discovery_v1/`
 - Frozen RQ4 artifacts: `experiments/full_v1/rq4_generalisation_v1/`
+- Mastery artifacts: `reports/full_v1_artifacts/mastery_recovery_v1/`
 - Historical medium dataset: `data/grammar_kt_medium_v1/`
 
 ## Current next action
 
-Complete oracle-only state recovery and the compact multi-world
-simulator-robustness study, then finish the bounded learner/opportunity/anchor
-collection-design controls before consolidating the RQ ledger, verification
-report, notebooks, and ACL paper.
+Complete the compact multi-world simulator-robustness study and bounded
+learner/opportunity/anchor collection-design controls, then consolidate the RQ
+ledger, verification report, notebooks, and ACL paper.

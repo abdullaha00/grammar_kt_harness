@@ -1,0 +1,14 @@
+{
+  "study_id": "full_v1_mastery_recovery_post_plan_paired_bootstrap_v1",
+  "classification": "post-plan robustness",
+  "artifacts": {
+    "post_plan_bootstrap_plan.json": {
+      "sha256": "8f9c92048a43687e62505e43e941b60b70061abaf82c81b010a43b62c472e994",
+      "bytes": 5085
+    },
+    "post_plan_paired_bootstrap.json": {
+      "sha256": "684bda7d9ae25758f9ad5b56c4328fe9ac5bd5258ddcf1cb59dd4d546277d651",
+      "bytes": 22707
+    }
+  }
+}

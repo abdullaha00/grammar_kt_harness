@@ -2190,3 +2190,88 @@ experiment:
   results `a25f43833e620f40294c350259673dadfaaf3f38356339cd6b4cef42be4ec144`;
   novelty interactions
   `7403ab24b07633ea04304793706f924548630ee8616da7ef4c73fb373a2ad3f8`.
+
+## FULL-MASTERY-001 — oracle-only prerequisite-state recovery
+
+- **Date frozen/executed:** 2026-08-30. Observable predictions were written
+  before the private oracle was opened. The learner-paired bootstrap and the
+  fixed-BKT analysis are explicitly labelled post-plan and secondary checks;
+  neither altered the primary estimand or predictions.
+- **Research question:** Do representations with similar response-prediction
+  scores recover the frozen simulator's latent state equally well, and does the
+  RQ2 predictive ordering agree with recovery of the item state that actually
+  governs a response?
+- **Hypothesis:** The true K*/Q* projection should best recover the minimum
+  pre-response mastery of an item's active generator KCs overall; coarsening
+  should blur prerequisites and fine partitions should lose reusable evidence.
+- **Manipulated variable:** Five already-frozen RQ2 hypotheses: K*,
+  linguistic-family coarse, structural split-2, split-4, and exact-cell. The
+  same observable PFA-like fits used their public acquisition histories. A
+  fixed BKT (`initial=.35`, `learn=.12`, `guess=.18`, `slip=.10`) was added as
+  a secondary deliberately misspecified state model.
+- **Held fixed:** All 1,000 learners, 170,000 acquisition rows, 113,000 terminal
+  probes, RQ2 projections, fitting settings, seed 20260830, and public/private
+  event keys. The primary estimate is the observable response prediction
+  inverse-linked through the known baseline guess/slip transformation,
+  `(p-.10)/.80`; the oracle target is `aggregated_mastery_before`, the minimum
+  mastery of active K*. It is an item prerequisite state, not individual-KC or
+  human mastery. No inverse-linked value required clipping.
+- **Exact commands:**
+
+  ```bash
+  .venv/bin/python scripts/experiments/full_v1_mastery_recovery.py --stage plan
+  .venv/bin/python scripts/experiments/full_v1_mastery_recovery.py --stage run
+  .venv/bin/python scripts/experiments/full_v1_mastery_recovery_bootstrap.py --stage plan
+  .venv/bin/python scripts/experiments/full_v1_mastery_recovery_bootstrap.py --stage run
+  .venv/bin/python scripts/experiments/full_v1_bkt_state_recovery.py --stage plan
+  .venv/bin/python scripts/experiments/full_v1_bkt_state_recovery.py --stage run
+  ```
+- **Primary result:** On all 113,000 probes K* gives RMSE .123738, MAE
+  .100560, Pearson correlation .569746, and mean estimate-minus-oracle bias
+  -.025206. Coarse, split-2, split-4, and exact-cell RMSEs are .146300,
+  .132752, .140428, and .163828. The ordering is not identical in every pair,
+  but every candidate is worse than K* overall.
+- **Paired uncertainty:** A post-plan 2,000-repeat whole-learner bootstrap gives
+  candidate-minus-K* RMSE differences +.022562 for coarse (95% interval
+  [.021715,.023348]), +.009013 split-2 ([.008596,.009421]), +.016689 split-4
+  ([.016130,.017191]), and +.040090 exact-cell ([.039248,.040925]). Thus the
+  overall K* advantage is stable to learner resampling.
+- **Regime result and negative finding:** K* RMSE is .122352 seen, .130717 on
+  unseen combinations, and .120623 on unseen values. Exact-cell is especially
+  poor on combinations (.218837) and unseen values (.188047). Coarse is worse
+  on seen and combinations, but *better* on the six-cell unseen-value cohort:
+  candidate-minus-K* RMSE -.003663, interval [-.005740,-.001507]. Split-2's
+  unseen-value RMSE cost is +.001564 ([.000812,.002371]), while its MAE interval
+  crosses zero. This local reversal prevents a claim that true granularity is
+  uniformly optimal under sparse out-of-regime support.
+- **Secondary BKT result:** The exposed terminal fixed-BKT states are evaluated
+  against per-KC oracle mastery on 269,000 active-KC probe pairs. RMSE is
+  .291195, correlation .355418, and expected absolute ten-bin calibration gap
+  .225853. On the 18,000 unique terminal learner-KC states, RMSE is .300804,
+  correlation .434973, bias +.094505, and bin gap .240860. This is an expected
+  model-generator mismatch: BKT conditions learning on correctness and applies
+  full item credit, while the generator updates every active KC by opportunity
+  and aggregates responses by the minimum. It demonstrates that a model can
+  expose a plausible-looking state whose semantics do not match generator
+  mastery.
+- **Failure/limitations:** The inverse link uses declared generator guess/slip
+  and therefore is oracle-assisted evaluation even though model fitting is
+  public-only. Its item-level minimum target is not directly comparable with
+  BKT's per-KC target. Bootstrap intervals quantify learner sampling only, and
+  the unseen-value reversal concerns six perfect-progressive cells. None of
+  these values estimate human mastery.
+- **Methodological consequence:** Predictive and item-state recovery evidence
+  both favor K* overall, but response prediction alone still does not imply
+  correct latent-state semantics or unique cognitive ontology. Report the
+  unseen-value coarse reversal and keep model-specific state meanings explicit.
+- **Artifacts/hashes:** `reports/full_v1_artifacts/mastery_recovery_v1/`;
+  primary plan
+  `703005079cfed1f679d75b7e7ac73c70c24fa9dd07a84a14379c397318d567d3`,
+  observable predictions
+  `9fba28d564f31c1b9ee552f15bf2e23a8c65b3c12817cd30f3e6f6f6fc33df93`,
+  primary result
+  `3055096d70232dd53b37010f5eb22d59d47c763b7df950b33ecbb0093a2824c6`,
+  bootstrap result
+  `684bda7d9ae25758f9ad5b56c4328fe9ac5bd5258ddcf1cb59dd4d546277d651`,
+  and secondary BKT result
+  `b6099901212302c47cbb353848fffbe099ffe2b780918c80bca01155bd96f07e`.

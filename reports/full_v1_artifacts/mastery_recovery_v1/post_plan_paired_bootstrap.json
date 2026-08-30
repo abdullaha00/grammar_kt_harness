@@ -1,0 +1,603 @@
+{
+  "study_id": "full_v1_mastery_recovery_post_plan_paired_bootstrap_v1",
+  "status": "FINAL_POST_PLAN_ROBUSTNESS_RESULT",
+  "post_plan_classification": "User-requested after the frozen primary result; not preregistered primary inference.",
+  "primary_plan_or_result_modified": false,
+  "post_plan_specification_sha256": "8f9c92048a43687e62505e43e941b60b70061abaf82c81b010a43b62c472e994",
+  "primary_result_sha256": "3055096d70232dd53b37010f5eb22d59d47c763b7df950b33ecbb0093a2824c6",
+  "public_prediction_sha256": "9fba28d564f31c1b9ee552f15bf2e23a8c65b3c12817cd30f3e6f6f6fc33df93",
+  "private_oracle_sha256": "956ed53f370d5494d379072954c0821d4098f11e51e2629b33d8ee0b8b844601",
+  "same_probe_event_key_sha256_as_primary": true,
+  "join_audit": {
+    "join_key": [
+      "learner_id",
+      "sequence_index"
+    ],
+    "paired_fields_checked": [
+      "item_id",
+      "phase",
+      "pass_index",
+      "grammar_regime",
+      "correct"
+    ],
+    "public_events": 283000,
+    "oracle_events": 283000,
+    "terminal_probe_predictions": 113000,
+    "terminal_probe_oracle_targets": 113000,
+    "all_public_oracle_keys_match": true,
+    "all_probe_prediction_oracle_keys_match": true,
+    "public_event_key_sha256": "41fe676cf55d73cb565e479979b33f04cf51d5b0a8f3b5d15e1287caeeb12fcf",
+    "probe_event_key_sha256": "a4efb717955f5e8e36dae92f63b17294b85758e119262218dabfe2abdc04cb0f"
+  },
+  "method": {
+    "name": "paired percentile bootstrap over whole learners",
+    "sampling_unit": "learner",
+    "resampling": "sample 1000 learners with replacement; retain every selected learner's probe rows in the requested regime",
+    "aggregation": "event-weighted within each bootstrap sample",
+    "repeats": 2000,
+    "seed": 20260830,
+    "common_draws": "the same sorted learner IDs and seed generate identical learner resamples for every candidate and regime",
+    "metrics": [
+      "RMSE",
+      "MAE"
+    ],
+    "delta_sign": "candidate minus K*; positive favors K*",
+    "interval": "2.5th and 97.5th percentiles, linear quantiles",
+    "zero_rule": "interval crosses zero iff lower <= 0 <= upper"
+  },
+  "comparisons_by_candidate": {
+    "coarse_linguistic_families": {
+      "display_label": "coarse",
+      "reference_id": "true_kstar",
+      "candidate_minus_kstar_by_regime": {
+        "all_probe": {
+          "learners": 1000,
+          "events": 113000,
+          "events_per_learner_minimum": 113,
+          "events_per_learner_maximum": 113,
+          "repeats": 2000,
+          "seed": 20260830,
+          "sampling_unit": "whole learner",
+          "aggregation": "event_weighted",
+          "sign_convention": "candidate minus K*; positive favors K*",
+          "rmse": {
+            "reference_kstar": 0.12373837034053331,
+            "candidate": 0.14630017643153595,
+            "candidate_minus_kstar": 0.02256180609100264,
+            "percentile_interval_95": [
+              0.021714852143249346,
+              0.023348230239473192
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          },
+          "mae": {
+            "reference_kstar": 0.10055970434094923,
+            "candidate": 0.12051351577329965,
+            "candidate_minus_kstar": 0.01995381143235042,
+            "percentile_interval_95": [
+              0.01914679594365947,
+              0.020711855986410822
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          }
+        },
+        "seen": {
+          "learners": 1000,
+          "events": 84000,
+          "events_per_learner_minimum": 84,
+          "events_per_learner_maximum": 84,
+          "repeats": 2000,
+          "seed": 20260830,
+          "sampling_unit": "whole learner",
+          "aggregation": "event_weighted",
+          "sign_convention": "candidate minus K*; positive favors K*",
+          "rmse": {
+            "reference_kstar": 0.12235184482369514,
+            "candidate": 0.14672309399521666,
+            "candidate_minus_kstar": 0.024371249171521517,
+            "percentile_interval_95": [
+              0.023538017498966935,
+              0.025160798891352726
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          },
+          "mae": {
+            "reference_kstar": 0.09946352245151922,
+            "candidate": 0.12106071964590713,
+            "candidate_minus_kstar": 0.021597197194387907,
+            "percentile_interval_95": [
+              0.020781912416866853,
+              0.02234226533641043
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          }
+        },
+        "unseen_combination": {
+          "learners": 1000,
+          "events": 20000,
+          "events_per_learner_minimum": 20,
+          "events_per_learner_maximum": 20,
+          "repeats": 2000,
+          "seed": 20260830,
+          "sampling_unit": "whole learner",
+          "aggregation": "event_weighted",
+          "sign_convention": "candidate minus K*; positive favors K*",
+          "rmse": {
+            "reference_kstar": 0.13071681988971548,
+            "candidate": 0.15607415868326494,
+            "candidate_minus_kstar": 0.025357338793549455,
+            "percentile_interval_95": [
+              0.024161460242100447,
+              0.026569153639460906
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          },
+          "mae": {
+            "reference_kstar": 0.10606457154504371,
+            "candidate": 0.12979583338248413,
+            "candidate_minus_kstar": 0.023731261837440412,
+            "percentile_interval_95": [
+              0.022613921129434465,
+              0.024801413958684827
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          }
+        },
+        "unseen_value": {
+          "learners": 1000,
+          "events": 9000,
+          "events_per_learner_minimum": 9,
+          "events_per_learner_maximum": 9,
+          "repeats": 2000,
+          "seed": 20260830,
+          "sampling_unit": "whole learner",
+          "aggregation": "event_weighted",
+          "sign_convention": "candidate minus K*; positive favors K*",
+          "rmse": {
+            "reference_kstar": 0.12062258631893533,
+            "candidate": 0.11695961941262034,
+            "candidate_minus_kstar": -0.003662966906314985,
+            "percentile_interval_95": [
+              -0.005739828781505776,
+              -0.0015072081686111536
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_below_zero"
+          },
+          "mae": {
+            "reference_kstar": 0.09855769707764145,
+            "candidate": 0.09477890716410849,
+            "candidate_minus_kstar": -0.0037787899135329622,
+            "percentile_interval_95": [
+              -0.005866123881496795,
+              -0.0017333385980216245
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_below_zero"
+          }
+        }
+      }
+    },
+    "structural_split2": {
+      "display_label": "split2",
+      "reference_id": "true_kstar",
+      "candidate_minus_kstar_by_regime": {
+        "all_probe": {
+          "learners": 1000,
+          "events": 113000,
+          "events_per_learner_minimum": 113,
+          "events_per_learner_maximum": 113,
+          "repeats": 2000,
+          "seed": 20260830,
+          "sampling_unit": "whole learner",
+          "aggregation": "event_weighted",
+          "sign_convention": "candidate minus K*; positive favors K*",
+          "rmse": {
+            "reference_kstar": 0.12373837034053331,
+            "candidate": 0.13275165324138263,
+            "candidate_minus_kstar": 0.009013282900849323,
+            "percentile_interval_95": [
+              0.008595564152705447,
+              0.0094212920679598
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          },
+          "mae": {
+            "reference_kstar": 0.10055970434094923,
+            "candidate": 0.10758257203040561,
+            "candidate_minus_kstar": 0.007022867689456383,
+            "percentile_interval_95": [
+              0.006650171302468762,
+              0.007373878776966715
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          }
+        },
+        "seen": {
+          "learners": 1000,
+          "events": 84000,
+          "events_per_learner_minimum": 84,
+          "events_per_learner_maximum": 84,
+          "repeats": 2000,
+          "seed": 20260830,
+          "sampling_unit": "whole learner",
+          "aggregation": "event_weighted",
+          "sign_convention": "candidate minus K*; positive favors K*",
+          "rmse": {
+            "reference_kstar": 0.12235184482369514,
+            "candidate": 0.12842681292992084,
+            "candidate_minus_kstar": 0.006074968106225695,
+            "percentile_interval_95": [
+              0.005695114142392918,
+              0.006434226270037988
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          },
+          "mae": {
+            "reference_kstar": 0.09946352245151922,
+            "candidate": 0.10459844523128818,
+            "candidate_minus_kstar": 0.005134922779768958,
+            "percentile_interval_95": [
+              0.004761052859673608,
+              0.005481241569243502
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          }
+        },
+        "unseen_combination": {
+          "learners": 1000,
+          "events": 20000,
+          "events_per_learner_minimum": 20,
+          "events_per_learner_maximum": 20,
+          "repeats": 2000,
+          "seed": 20260830,
+          "sampling_unit": "whole learner",
+          "aggregation": "event_weighted",
+          "sign_convention": "candidate minus K*; positive favors K*",
+          "rmse": {
+            "reference_kstar": 0.13071681988971548,
+            "candidate": 0.15355502504448154,
+            "candidate_minus_kstar": 0.02283820515476606,
+            "percentile_interval_95": [
+              0.021648692502729824,
+              0.023992701414246444
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          },
+          "mae": {
+            "reference_kstar": 0.10606457154504371,
+            "candidate": 0.12385909869223628,
+            "candidate_minus_kstar": 0.017794527147192568,
+            "percentile_interval_95": [
+              0.01677728454282409,
+              0.018799108126067596
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          }
+        },
+        "unseen_value": {
+          "learners": 1000,
+          "events": 9000,
+          "events_per_learner_minimum": 9,
+          "events_per_learner_maximum": 9,
+          "repeats": 2000,
+          "seed": 20260830,
+          "sampling_unit": "whole learner",
+          "aggregation": "event_weighted",
+          "sign_convention": "candidate minus K*; positive favors K*",
+          "rmse": {
+            "reference_kstar": 0.12062258631893533,
+            "candidate": 0.12218690634418719,
+            "candidate_minus_kstar": 0.001564320025251864,
+            "percentile_interval_95": [
+              0.0008119536642275601,
+              0.0023712821949463995
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          },
+          "mae": {
+            "reference_kstar": 0.09855769707764145,
+            "candidate": 0.09926436290698873,
+            "candidate_minus_kstar": 0.0007066658293472805,
+            "percentile_interval_95": [
+              -4.039207903522891e-05,
+              0.0014979141642440907
+            ],
+            "interval_crosses_zero": true,
+            "interval_relation_to_zero": "crosses_zero"
+          }
+        }
+      }
+    },
+    "structural_split4": {
+      "display_label": "split4",
+      "reference_id": "true_kstar",
+      "candidate_minus_kstar_by_regime": {
+        "all_probe": {
+          "learners": 1000,
+          "events": 113000,
+          "events_per_learner_minimum": 113,
+          "events_per_learner_maximum": 113,
+          "repeats": 2000,
+          "seed": 20260830,
+          "sampling_unit": "whole learner",
+          "aggregation": "event_weighted",
+          "sign_convention": "candidate minus K*; positive favors K*",
+          "rmse": {
+            "reference_kstar": 0.12373837034053331,
+            "candidate": 0.1404276875756226,
+            "candidate_minus_kstar": 0.01668931723508929,
+            "percentile_interval_95": [
+              0.0161301612395604,
+              0.017191438522539952
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          },
+          "mae": {
+            "reference_kstar": 0.10055970434094923,
+            "candidate": 0.11415124641905058,
+            "candidate_minus_kstar": 0.013591542078101357,
+            "percentile_interval_95": [
+              0.013110494271573576,
+              0.0140537755114801
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          }
+        },
+        "seen": {
+          "learners": 1000,
+          "events": 84000,
+          "events_per_learner_minimum": 84,
+          "events_per_learner_maximum": 84,
+          "repeats": 2000,
+          "seed": 20260830,
+          "sampling_unit": "whole learner",
+          "aggregation": "event_weighted",
+          "sign_convention": "candidate minus K*; positive favors K*",
+          "rmse": {
+            "reference_kstar": 0.12235184482369514,
+            "candidate": 0.1329061437551715,
+            "candidate_minus_kstar": 0.010554298931476372,
+            "percentile_interval_95": [
+              0.010050192943267408,
+              0.011033208916393776
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          },
+          "mae": {
+            "reference_kstar": 0.09946352245151922,
+            "candidate": 0.10860769731883023,
+            "candidate_minus_kstar": 0.009144174867311006,
+            "percentile_interval_95": [
+              0.008680403036622706,
+              0.009597093740248794
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          }
+        },
+        "unseen_combination": {
+          "learners": 1000,
+          "events": 20000,
+          "events_per_learner_minimum": 20,
+          "events_per_learner_maximum": 20,
+          "repeats": 2000,
+          "seed": 20260830,
+          "sampling_unit": "whole learner",
+          "aggregation": "event_weighted",
+          "sign_convention": "candidate minus K*; positive favors K*",
+          "rmse": {
+            "reference_kstar": 0.13071681988971548,
+            "candidate": 0.16974962883762604,
+            "candidate_minus_kstar": 0.03903280894791056,
+            "percentile_interval_95": [
+              0.03754949396649031,
+              0.04051211050259886
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          },
+          "mae": {
+            "reference_kstar": 0.10606457154504371,
+            "candidate": 0.13839076555691912,
+            "candidate_minus_kstar": 0.032326194011875406,
+            "percentile_interval_95": [
+              0.030980065464515514,
+              0.03368859447310063
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          }
+        },
+        "unseen_value": {
+          "learners": 1000,
+          "events": 9000,
+          "events_per_learner_minimum": 9,
+          "events_per_learner_maximum": 9,
+          "repeats": 2000,
+          "seed": 20260830,
+          "sampling_unit": "whole learner",
+          "aggregation": "event_weighted",
+          "sign_convention": "candidate minus K*; positive favors K*",
+          "rmse": {
+            "reference_kstar": 0.12062258631893533,
+            "candidate": 0.1367375257947387,
+            "candidate_minus_kstar": 0.016114939475803364,
+            "percentile_interval_95": [
+              0.015001334022551011,
+              0.017189732033232808
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          },
+          "mae": {
+            "reference_kstar": 0.09855769707764145,
+            "candidate": 0.11202543993695449,
+            "candidate_minus_kstar": 0.013467742859313042,
+            "percentile_interval_95": [
+              0.012377066752100202,
+              0.014499769543639856
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          }
+        }
+      }
+    },
+    "exact_cell": {
+      "display_label": "exact-cell",
+      "reference_id": "true_kstar",
+      "candidate_minus_kstar_by_regime": {
+        "all_probe": {
+          "learners": 1000,
+          "events": 113000,
+          "events_per_learner_minimum": 113,
+          "events_per_learner_maximum": 113,
+          "repeats": 2000,
+          "seed": 20260830,
+          "sampling_unit": "whole learner",
+          "aggregation": "event_weighted",
+          "sign_convention": "candidate minus K*; positive favors K*",
+          "rmse": {
+            "reference_kstar": 0.12373837034053331,
+            "candidate": 0.1638280617415919,
+            "candidate_minus_kstar": 0.040089691401058586,
+            "percentile_interval_95": [
+              0.03924821080510416,
+              0.040925153303344924
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          },
+          "mae": {
+            "reference_kstar": 0.10055970434094923,
+            "candidate": 0.13341859406820847,
+            "candidate_minus_kstar": 0.03285888972725924,
+            "percentile_interval_95": [
+              0.03206927721199988,
+              0.033607090780605656
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          }
+        },
+        "seen": {
+          "learners": 1000,
+          "events": 84000,
+          "events_per_learner_minimum": 84,
+          "events_per_learner_maximum": 84,
+          "repeats": 2000,
+          "seed": 20260830,
+          "sampling_unit": "whole learner",
+          "aggregation": "event_weighted",
+          "sign_convention": "candidate minus K*; positive favors K*",
+          "rmse": {
+            "reference_kstar": 0.12235184482369514,
+            "candidate": 0.14461883091110242,
+            "candidate_minus_kstar": 0.02226698608740728,
+            "percentile_interval_95": [
+              0.02164390589807386,
+              0.022873595341432375
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          },
+          "mae": {
+            "reference_kstar": 0.09946352245151922,
+            "candidate": 0.11868804646910294,
+            "candidate_minus_kstar": 0.01922452401758372,
+            "percentile_interval_95": [
+              0.018639750590107314,
+              0.019780037732980222
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          }
+        },
+        "unseen_combination": {
+          "learners": 1000,
+          "events": 20000,
+          "events_per_learner_minimum": 20,
+          "events_per_learner_maximum": 20,
+          "repeats": 2000,
+          "seed": 20260830,
+          "sampling_unit": "whole learner",
+          "aggregation": "event_weighted",
+          "sign_convention": "candidate minus K*; positive favors K*",
+          "rmse": {
+            "reference_kstar": 0.13071681988971548,
+            "candidate": 0.21883747408990373,
+            "candidate_minus_kstar": 0.08812065420018825,
+            "percentile_interval_95": [
+              0.08617975634509434,
+              0.09015429292133077
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          },
+          "mae": {
+            "reference_kstar": 0.10606457154504371,
+            "candidate": 0.1828150385993502,
+            "candidate_minus_kstar": 0.07675046705430648,
+            "percentile_interval_95": [
+              0.07455457066307349,
+              0.07898703783174159
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          }
+        },
+        "unseen_value": {
+          "learners": 1000,
+          "events": 9000,
+          "events_per_learner_minimum": 9,
+          "events_per_learner_maximum": 9,
+          "repeats": 2000,
+          "seed": 20260830,
+          "sampling_unit": "whole learner",
+          "aggregation": "event_weighted",
+          "sign_convention": "candidate minus K*; positive favors K*",
+          "rmse": {
+            "reference_kstar": 0.12062258631893533,
+            "candidate": 0.1880469487234768,
+            "candidate_minus_kstar": 0.06742436240454147,
+            "percentile_interval_95": [
+              0.06518314181086375,
+              0.06946214266377583
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          },
+          "mae": {
+            "reference_kstar": 0.09855769707764145,
+            "candidate": 0.16113382825732284,
+            "candidate_minus_kstar": 0.06257613117968139,
+            "percentile_interval_95": [
+              0.05985800674840195,
+              0.06508966607206843
+            ],
+            "interval_crosses_zero": false,
+            "interval_relation_to_zero": "entirely_above_zero"
+          }
+        }
+      }
+    }
+  },
+  "interpretation_boundary": "Intervals quantify resampling uncertainty across the 1,000 synthetic learners for item-level prerequisite-state error differences; they do not establish human KC or mastery truth."
+}

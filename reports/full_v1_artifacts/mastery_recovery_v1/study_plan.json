@@ -1,0 +1,148 @@
+{
+  "study_id": "full_v1_terminal_probe_prerequisite_state_recovery_v1",
+  "status": "LOCKED_BEFORE_PRIVATE_ORACLE_READ",
+  "dataset_scope": "frozen grammar_kt_full_v1, all 1000 learners",
+  "research_question": "How accurately do observable RQ2 terminal-probe response predictions, after inversion of the declared synthetic response link, recover the oracle item prerequisite state?",
+  "conditions_in_execution_order": [
+    "true_kstar",
+    "coarse_linguistic_families",
+    "structural_split2",
+    "structural_split4",
+    "exact_cell"
+  ],
+  "condition_labels": {
+    "true_kstar": "K*",
+    "coarse_linguistic_families": "coarse",
+    "structural_split2": "split2",
+    "structural_split4": "split4",
+    "exact_cell": "exact-cell"
+  },
+  "frozen_rq2_reuse": {
+    "projection_source": "reports/full_v1_artifacts/rq2_misspecification_v1/projections.jsonl",
+    "predictor_implementation": "scripts/experiments/rq2_kc_misspecification.py",
+    "predictor_implementation_sha256": "33ccd24d6050943cde338bc0129f2cafdbeca2b3e586322d1657a5da8fd3027a",
+    "predictor_name": "observable_history_logistic_pfa_like",
+    "model_random_seed": 20260830,
+    "core_projection_counts": {
+      "true_kstar": {
+        "items": 113,
+        "hypothesis_kcs": 18
+      },
+      "coarse_linguistic_families": {
+        "items": 113,
+        "hypothesis_kcs": 6
+      },
+      "structural_split2": {
+        "items": 113,
+        "hypothesis_kcs": 35
+      },
+      "structural_split4": {
+        "items": 113,
+        "hypothesis_kcs": 66
+      },
+      "exact_cell": {
+        "items": 113,
+        "hypothesis_kcs": 75
+      }
+    }
+  },
+  "estimator": {
+    "name": "derived_terminal_probe_item_prerequisite_state",
+    "input": "public-only fitted terminal-probe response probability p_hat",
+    "formula": "clip((p_hat - 0.1) / 0.8, 0, 1)",
+    "response_link": {
+      "guess": 0.1,
+      "slip": 0.1,
+      "scale": 0.8,
+      "generator_formula": "p = guess + (1 - guess - slip) * aggregated_mastery_before"
+    },
+    "target_loaded_only_during_evaluation": "oracle aggregated_mastery_before",
+    "scope_warning": "This is a derived item-level weakest-prerequisite state estimate. It is not a logistic coefficient, a recovered individual KC state, or human mastery."
+  },
+  "evaluation": {
+    "events": "terminal non-updating probes only",
+    "regimes": [
+      "all_probe",
+      "seen",
+      "unseen_combination",
+      "unseen_value"
+    ],
+    "metrics": [
+      "RMSE",
+      "MAE",
+      "Pearson correlation",
+      "10-bin fixed-width state calibration"
+    ],
+    "calibration_outputs": [
+      "signed mean estimate-minus-oracle bias",
+      "expected absolute bin gap",
+      "maximum nonempty-bin absolute gap",
+      "truth-on-estimate linear intercept and slope",
+      "bin table"
+    ],
+    "join_key": [
+      "learner_id",
+      "sequence_index"
+    ],
+    "paired_fields_checked": [
+      "item_id",
+      "phase",
+      "pass_index",
+      "grammar_regime",
+      "correct"
+    ]
+  },
+  "leakage_controls": {
+    "oracle_read_during_plan": false,
+    "oracle_read_during_prediction_fit": false,
+    "public_predictions_frozen_before_oracle_open": true,
+    "oracle_use": "evaluation target and strict join validation only",
+    "oracle_fit_tuning_or_condition_selection": false,
+    "probe_outcomes_used_for_fit_or_tuning": false,
+    "same_probe_keys_and_oracle_targets_for_every_representation": true
+  },
+  "public_inputs": {
+    "dataset_manifest": {
+      "path": "data/grammar_kt_full_v1/manifest.json",
+      "sha256": "322128843f8e7e6547a99efcecc6836fcd581f314fb49557a28d58fe79c69f4c",
+      "bytes": 26456
+    },
+    "observable_interactions": {
+      "path": "data/grammar_kt_full_v1/interactions.jsonl.gz",
+      "sha256": "9272ca86a647e3b13c9ce52b5381dde215f7ef448e4a19a41a22495fa99ef97f",
+      "bytes": 2158088
+    },
+    "rq2_study_plan": {
+      "path": "reports/full_v1_artifacts/rq2_misspecification_v1/study_plan.json",
+      "sha256": "e1945fb1078e883f2c420c3b8adbee4b0772359facaa4321ba616277ff7ddb6d",
+      "bytes": 18016
+    },
+    "rq2_projection_bundle": {
+      "path": "reports/full_v1_artifacts/rq2_misspecification_v1/projections.jsonl",
+      "sha256": "4b793fc6a44a14b975db41f272abfcc0d9df7c3f8effa6b1109f0711c3885661",
+      "bytes": 269501
+    }
+  },
+  "private_oracle_declared_but_not_opened": {
+    "path": "oracle/learner_truth.jsonl.gz",
+    "sha256": "956ed53f370d5494d379072954c0821d4098f11e51e2629b33d8ee0b8b844601",
+    "content_sha256": "46f5da111ae4f8e411c2fc262644d8a8acb31c8408dd87642e5d725cfaa88a10",
+    "rows": 283000
+  },
+  "implementation": {
+    "script": "scripts/experiments/full_v1_mastery_recovery.py",
+    "script_sha256": "40db706624cc279311eebe3ba27662c5f514526ceb1d7ae05157f96eda366623",
+    "repository_head_at_plan": "3b403c711ae99759f142ac30127a73275bbf2e31",
+    "python": "3.14.7",
+    "numpy": "2.5.1"
+  },
+  "exact_commands": {
+    "plan": ".venv/bin/python scripts/experiments/full_v1_mastery_recovery.py --stage plan",
+    "run": ".venv/bin/python scripts/experiments/full_v1_mastery_recovery.py --stage run",
+    "test": ".venv/bin/python -m pytest -q tests/test_full_v1_mastery_recovery.py"
+  },
+  "optional_bkt_sensitivity": {
+    "run": false,
+    "reason": "The bounded primary study avoids conflating BKT's correctness-conditioned Bayesian KC state with the generator's outcome-independent opportunity update."
+  }
+}

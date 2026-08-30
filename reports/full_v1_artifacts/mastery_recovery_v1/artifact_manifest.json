@@ -1,0 +1,17 @@
+{
+  "study_id": "full_v1_terminal_probe_prerequisite_state_recovery_v1",
+  "artifacts": {
+    "study_plan.json": {
+      "sha256": "703005079cfed1f679d75b7e7ac73c70c24fa9dd07a84a14379c397318d567d3",
+      "bytes": 5416
+    },
+    "observable_probe_state_estimates.jsonl.gz": {
+      "sha256": "9fba28d564f31c1b9ee552f15bf2e23a8c65b3c12817cd30f3e6f6f6fc33df93",
+      "bytes": 9057642
+    },
+    "results.json": {
+      "sha256": "3055096d70232dd53b37010f5eb22d59d47c763b7df950b33ecbb0093a2824c6",
+      "bytes": 100613
+    }
+  }
+}

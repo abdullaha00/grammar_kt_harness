@@ -1,0 +1,120 @@
+{
+  "study_id": "full_v1_mastery_recovery_post_plan_paired_bootstrap_v1",
+  "status": "POST_PLAN_USER_REQUESTED_ROBUSTNESS_LOCKED_BEFORE_REANALYSIS",
+  "relationship_to_primary": {
+    "primary_study_id": "full_v1_terminal_probe_prerequisite_state_recovery_v1",
+    "primary_plan_sha256": "703005079cfed1f679d75b7e7ac73c70c24fa9dd07a84a14379c397318d567d3",
+    "primary_result_sha256": "3055096d70232dd53b37010f5eb22d59d47c763b7df950b33ecbb0093a2824c6",
+    "primary_plan_licensed_uncertainty": false,
+    "primary_plan_or_result_modified": false,
+    "classification": "post-plan robustness, not preregistered primary inference",
+    "reason": "Requested after the frozen primary result to quantify the apparent coarse-versus-K* unseen-value RMSE reversal."
+  },
+  "reference": "true_kstar",
+  "candidates_in_execution_order": [
+    "coarse_linguistic_families",
+    "structural_split2",
+    "structural_split4",
+    "exact_cell"
+  ],
+  "condition_labels": {
+    "true_kstar": "K*",
+    "coarse_linguistic_families": "coarse",
+    "structural_split2": "split2",
+    "structural_split4": "split4",
+    "exact_cell": "exact-cell"
+  },
+  "events": "the same terminal non-updating probes as the primary study",
+  "regimes": [
+    "all_probe",
+    "seen",
+    "unseen_combination",
+    "unseen_value"
+  ],
+  "method": {
+    "name": "paired percentile bootstrap over whole learners",
+    "sampling_unit": "learner",
+    "resampling": "sample 1000 learners with replacement; retain every selected learner's probe rows in the requested regime",
+    "aggregation": "event-weighted within each bootstrap sample",
+    "repeats": 2000,
+    "seed": 20260830,
+    "common_draws": "the same sorted learner IDs and seed generate identical learner resamples for every candidate and regime",
+    "metrics": [
+      "RMSE",
+      "MAE"
+    ],
+    "delta_sign": "candidate minus K*; positive favors K*",
+    "interval": "2.5th and 97.5th percentiles, linear quantiles",
+    "zero_rule": "interval crosses zero iff lower <= 0 <= upper"
+  },
+  "target_and_estimate_scope": {
+    "estimate": "derived terminal-probe item prerequisite state",
+    "target": "oracle aggregated_mastery_before: the minimum pre-response mastery over the item's active generator KCs",
+    "not_claimed": [
+      "logistic coefficient recovery",
+      "individual generator-KC mastery recovery",
+      "human learner mastery"
+    ]
+  },
+  "leakage_controls": {
+    "reuse_already_frozen_public_only_estimates": true,
+    "oracle_use": "paired evaluation target only",
+    "no_fit_tuning_or_condition_selection": true
+  },
+  "inputs": {
+    "dataset_manifest": {
+      "path": "data/grammar_kt_full_v1/manifest.json",
+      "sha256": "322128843f8e7e6547a99efcecc6836fcd581f314fb49557a28d58fe79c69f4c",
+      "bytes": 26456
+    },
+    "observable_interactions": {
+      "path": "data/grammar_kt_full_v1/interactions.jsonl.gz",
+      "sha256": "9272ca86a647e3b13c9ce52b5381dde215f7ef448e4a19a41a22495fa99ef97f",
+      "bytes": 2158088
+    },
+    "primary_study_plan": {
+      "path": "reports/full_v1_artifacts/mastery_recovery_v1/study_plan.json",
+      "sha256": "703005079cfed1f679d75b7e7ac73c70c24fa9dd07a84a14379c397318d567d3",
+      "bytes": 5416
+    },
+    "primary_results": {
+      "path": "reports/full_v1_artifacts/mastery_recovery_v1/results.json",
+      "sha256": "3055096d70232dd53b37010f5eb22d59d47c763b7df950b33ecbb0093a2824c6",
+      "bytes": 100613
+    },
+    "primary_public_estimates": {
+      "path": "reports/full_v1_artifacts/mastery_recovery_v1/observable_probe_state_estimates.jsonl.gz",
+      "sha256": "9fba28d564f31c1b9ee552f15bf2e23a8c65b3c12817cd30f3e6f6f6fc33df93",
+      "bytes": 9057642
+    },
+    "primary_artifact_manifest": {
+      "path": "reports/full_v1_artifacts/mastery_recovery_v1/artifact_manifest.json",
+      "sha256": "7afe93f1037a62749da15697fba55fe2323e0f3f5066bd9fae59171cf543c8e5",
+      "bytes": 531
+    },
+    "primary_implementation": {
+      "path": "scripts/experiments/full_v1_mastery_recovery.py",
+      "sha256": "40db706624cc279311eebe3ba27662c5f514526ceb1d7ae05157f96eda366623",
+      "bytes": 34444
+    }
+  },
+  "private_oracle_declared_in_manifest": {
+    "path": "oracle/learner_truth.jsonl.gz",
+    "sha256": "956ed53f370d5494d379072954c0821d4098f11e51e2629b33d8ee0b8b844601",
+    "content_sha256": "46f5da111ae4f8e411c2fc262644d8a8acb31c8408dd87642e5d725cfaa88a10",
+    "rows": 283000
+  },
+  "implementation": {
+    "script": "scripts/experiments/full_v1_mastery_recovery_bootstrap.py",
+    "script_sha256": "374c74c7a2f0046fc4ab74601afc9187115b2bf945fefe3970b1fb0a1876bd2a",
+    "repository_head_at_post_plan_lock": "3b403c711ae99759f142ac30127a73275bbf2e31",
+    "python": "3.14.7",
+    "numpy": "2.5.1"
+  },
+  "exact_commands": {
+    "plan": ".venv/bin/python scripts/experiments/full_v1_mastery_recovery_bootstrap.py --stage plan",
+    "run": ".venv/bin/python scripts/experiments/full_v1_mastery_recovery_bootstrap.py --stage run",
+    "test": ".venv/bin/python -m pytest -q tests/test_full_v1_mastery_recovery_bootstrap.py"
+  },
+  "primary_condition_count": 5
+}

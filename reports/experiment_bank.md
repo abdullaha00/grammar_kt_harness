@@ -25,9 +25,13 @@ leave-one-cell-out analysis for all 54/15/6 grammar cells, plus the exact-item
 novelty negative control. Further grammar resplitting is not warranted by the
 current inventory.
 
+FULL-MASTERY-001 has completed frozen observable prediction, oracle-only
+item-prerequisite-state evaluation, learner-paired uncertainty, and the
+secondary fixed-BKT per-KC state check. Further state models are not automatic:
+promote one only if it has a clearly comparable mastery semantics.
+
 ## High-priority downstream experiments
 
-- Oracle-only prerequisite/mastery recovery for the fixed RQ2 hypotheses.
 - Compact multi-seed robustness capable of changing RQ2 rankings: guess/slip,
   aggregation, learner heterogeneity, forgetting, item difficulty, and update
   rule. BKT remains secondary because its mean/full-credit semantics mismatch

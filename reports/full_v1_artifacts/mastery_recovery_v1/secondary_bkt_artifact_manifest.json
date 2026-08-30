@@ -1,0 +1,18 @@
+{
+  "study_id": "full_v1_secondary_fixed_bkt_terminal_kc_recovery_v1",
+  "classification": "secondary fixed-BKT state recovery",
+  "artifacts": {
+    "secondary_bkt_plan.json": {
+      "sha256": "2d05150b3ab156ef9a6df1fcf47a38b266a290b62f49a1b248932305a9e02e5e",
+      "bytes": 5236
+    },
+    "secondary_bkt_terminal_kc_states.jsonl.gz": {
+      "sha256": "cfb088dd16b8afdd85f7c6854615d6aeb937e29e26852bbd8fc2a4935f3773ec",
+      "bytes": 226362
+    },
+    "secondary_bkt_state_recovery.json": {
+      "sha256": "b6099901212302c47cbb353848fffbe099ffe2b780918c80bca01155bd96f07e",
+      "bytes": 24699
+    }
+  }
+}

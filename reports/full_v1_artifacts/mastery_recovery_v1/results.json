@@ -1,0 +1,2337 @@
+{
+  "study_id": "full_v1_terminal_probe_prerequisite_state_recovery_v1",
+  "status": "FINAL_FULL_DATASET_ORACLE_EVALUATION",
+  "plan_sha256": "703005079cfed1f679d75b7e7ac73c70c24fa9dd07a84a14379c397318d567d3",
+  "frozen_rq2_projection_bundle_sha256": "4b793fc6a44a14b975db41f272abfcc0d9df7c3f8effa6b1109f0711c3885661",
+  "observable_prediction_artifact": {
+    "path": "observable_probe_state_estimates.jsonl.gz",
+    "sha256": "9fba28d564f31c1b9ee552f15bf2e23a8c65b3c12817cd30f3e6f6f6fc33df93",
+    "bytes": 9057642,
+    "rows": 113000,
+    "contains_private_oracle_fields": false,
+    "frozen_before_private_oracle_open": true
+  },
+  "private_oracle_evaluation": {
+    "path": "oracle/learner_truth.jsonl.gz",
+    "declared_sha256": "956ed53f370d5494d379072954c0821d4098f11e51e2629b33d8ee0b8b844601",
+    "actual_sha256_after_predictions_frozen": "956ed53f370d5494d379072954c0821d4098f11e51e2629b33d8ee0b8b844601",
+    "fit_tuning_or_condition_selection": false,
+    "target_field": "aggregated_mastery_before"
+  },
+  "scale": {
+    "learners": 1000,
+    "public_events": 283000,
+    "acquisition_events": 170000,
+    "terminal_probe_events": 113000
+  },
+  "join_audit": {
+    "join_key": [
+      "learner_id",
+      "sequence_index"
+    ],
+    "paired_fields_checked": [
+      "item_id",
+      "phase",
+      "pass_index",
+      "grammar_regime",
+      "correct"
+    ],
+    "public_events": 283000,
+    "oracle_events": 283000,
+    "terminal_probe_predictions": 113000,
+    "terminal_probe_oracle_targets": 113000,
+    "all_public_oracle_keys_match": true,
+    "all_probe_prediction_oracle_keys_match": true,
+    "public_event_key_sha256": "41fe676cf55d73cb565e479979b33f04cf51d5b0a8f3b5d15e1287caeeb12fcf",
+    "probe_event_key_sha256": "a4efb717955f5e8e36dae92f63b17294b85758e119262218dabfe2abdc04cb0f"
+  },
+  "model_and_inverse_link_audit": {
+    "true_kstar": {
+      "model": {
+        "hypothesis_kcs": 18,
+        "features": 22,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          8
+        ],
+        "converged": true
+      },
+      "inverse_link": {
+        "response_probability_minimum": 0.34375032782554626,
+        "response_probability_maximum": 0.7945038080215454,
+        "unclipped_state_minimum": 0.30468790978193283,
+        "unclipped_state_maximum": 0.8681297600269318,
+        "clipped_below_zero": 0,
+        "clipped_above_one": 0,
+        "estimated_state_minimum": 0.30468790978193283,
+        "estimated_state_maximum": 0.8681297600269318
+      }
+    },
+    "coarse_linguistic_families": {
+      "model": {
+        "hypothesis_kcs": 6,
+        "features": 10,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          10
+        ],
+        "converged": true
+      },
+      "inverse_link": {
+        "response_probability_minimum": 0.45395219326019287,
+        "response_probability_maximum": 0.688504695892334,
+        "unclipped_state_minimum": 0.4424402415752411,
+        "unclipped_state_maximum": 0.7356308698654175,
+        "clipped_below_zero": 0,
+        "clipped_above_one": 0,
+        "estimated_state_minimum": 0.4424402415752411,
+        "estimated_state_maximum": 0.7356308698654175
+      }
+    },
+    "structural_split2": {
+      "model": {
+        "hypothesis_kcs": 35,
+        "features": 39,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          12
+        ],
+        "converged": true
+      },
+      "inverse_link": {
+        "response_probability_minimum": 0.3879190683364868,
+        "response_probability_maximum": 0.79157954454422,
+        "unclipped_state_minimum": 0.3598988354206085,
+        "unclipped_state_maximum": 0.864474430680275,
+        "clipped_below_zero": 0,
+        "clipped_above_one": 0,
+        "estimated_state_minimum": 0.3598988354206085,
+        "estimated_state_maximum": 0.864474430680275
+      }
+    },
+    "structural_split4": {
+      "model": {
+        "hypothesis_kcs": 66,
+        "features": 70,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          25
+        ],
+        "converged": true
+      },
+      "inverse_link": {
+        "response_probability_minimum": 0.3868710994720459,
+        "response_probability_maximum": 0.7866324782371521,
+        "unclipped_state_minimum": 0.3585888743400574,
+        "unclipped_state_maximum": 0.8582905977964401,
+        "clipped_below_zero": 0,
+        "clipped_above_one": 0,
+        "estimated_state_minimum": 0.3585888743400574,
+        "estimated_state_maximum": 0.8582905977964401
+      }
+    },
+    "exact_cell": {
+      "model": {
+        "hypothesis_kcs": 75,
+        "features": 79,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          6
+        ],
+        "converged": true
+      },
+      "inverse_link": {
+        "response_probability_minimum": 0.3998577892780304,
+        "response_probability_maximum": 0.7459812760353088,
+        "unclipped_state_minimum": 0.374822236597538,
+        "unclipped_state_maximum": 0.807476595044136,
+        "clipped_below_zero": 0,
+        "clipped_above_one": 0,
+        "estimated_state_minimum": 0.374822236597538,
+        "estimated_state_maximum": 0.807476595044136
+      }
+    }
+  },
+  "metrics_by_representation": {
+    "true_kstar": {
+      "display_label": "K*",
+      "metrics_by_regime": {
+        "all_probe": {
+          "n": 113000,
+          "rmse": 0.12373837034053331,
+          "mae": 0.10055970434094923,
+          "pearson_correlation": 0.5697461328166596,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.025205607049706043,
+            "fixed_bin_expected_absolute_gap": 0.02520560704970603,
+            "maximum_nonempty_bin_absolute_gap": 0.03451386742421669,
+            "linear_truth_on_estimate_intercept": -0.030487486926816243,
+            "linear_truth_on_estimate_slope": 1.096112038652439,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 675,
+                "mean_estimated_item_prerequisite_state": 0.3754299411067256,
+                "mean_oracle_aggregated_mastery_before": 0.3824850625433941,
+                "estimate_minus_oracle": -0.007055121436668477
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 15737,
+                "mean_estimated_item_prerequisite_state": 0.4675936517101796,
+                "mean_oracle_aggregated_mastery_before": 0.47515700253898824,
+                "estimate_minus_oracle": -0.007563350828808657
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 53560,
+                "mean_estimated_item_prerequisite_state": 0.5530536065352462,
+                "mean_oracle_aggregated_mastery_before": 0.5776573313481603,
+                "estimate_minus_oracle": -0.024603724812914174
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 35747,
+                "mean_estimated_item_prerequisite_state": 0.6398465727671452,
+                "mean_oracle_aggregated_mastery_before": 0.6743604401913619,
+                "estimate_minus_oracle": -0.03451386742421669
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 6881,
+                "mean_estimated_item_prerequisite_state": 0.7329683732503965,
+                "mean_oracle_aggregated_mastery_before": 0.7573532061862643,
+                "estimate_minus_oracle": -0.024384832935867795
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 400,
+                "mean_estimated_item_prerequisite_state": 0.8233892289921642,
+                "mean_oracle_aggregated_mastery_before": 0.8361696850651762,
+                "estimate_minus_oracle": -0.012780456073012036
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        },
+        "seen": {
+          "n": 84000,
+          "rmse": 0.12235184482369514,
+          "mae": 0.09946352245151922,
+          "pearson_correlation": 0.5842495452620108,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.026061535921467833,
+            "fixed_bin_expected_absolute_gap": 0.026061535921467847,
+            "maximum_nonempty_bin_absolute_gap": 0.03740184768160215,
+            "linear_truth_on_estimate_intercept": -0.04215470193472215,
+            "linear_truth_on_estimate_slope": 1.1172792357348629,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 495,
+                "mean_estimated_item_prerequisite_state": 0.3775248252833732,
+                "mean_oracle_aggregated_mastery_before": 0.38732428068193947,
+                "estimate_minus_oracle": -0.009799455398566248
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 11162,
+                "mean_estimated_item_prerequisite_state": 0.467692284655414,
+                "mean_oracle_aggregated_mastery_before": 0.4718013350813995,
+                "estimate_minus_oracle": -0.004109050425985472
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 39564,
+                "mean_estimated_item_prerequisite_state": 0.5535696619085289,
+                "mean_oracle_aggregated_mastery_before": 0.5783654994412802,
+                "estimate_minus_oracle": -0.024795837532751386
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 26902,
+                "mean_estimated_item_prerequisite_state": 0.6397254486856926,
+                "mean_oracle_aggregated_mastery_before": 0.6771272963672947,
+                "estimate_minus_oracle": -0.03740184768160215
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 5539,
+                "mean_estimated_item_prerequisite_state": 0.7333269268946864,
+                "mean_oracle_aggregated_mastery_before": 0.7595447335170662,
+                "estimate_minus_oracle": -0.026217806622379825
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 338,
+                "mean_estimated_item_prerequisite_state": 0.824478527013014,
+                "mean_oracle_aggregated_mastery_before": 0.8423057837247305,
+                "estimate_minus_oracle": -0.017827256711716477
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "rmse": 0.13071681988971548,
+          "mae": 0.10606457154504371,
+          "pearson_correlation": 0.5636726179604243,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.00589712302321869,
+            "fixed_bin_expected_absolute_gap": 0.012958762428616277,
+            "maximum_nonempty_bin_absolute_gap": 0.023717225822991295,
+            "linear_truth_on_estimate_intercept": -0.10299543073040307,
+            "linear_truth_on_estimate_slope": 1.1835915373464738,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 146,
+                "mean_estimated_item_prerequisite_state": 0.36614627227799534,
+                "mean_oracle_aggregated_mastery_before": 0.365042082634443,
+                "estimate_minus_oracle": 0.0011041896435523557
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 1828,
+                "mean_estimated_item_prerequisite_state": 0.46617621607687204,
+                "mean_oracle_aggregated_mastery_before": 0.44245899025388075,
+                "estimate_minus_oracle": 0.023717225822991295
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 8640,
+                "mean_estimated_item_prerequisite_state": 0.5555643752234539,
+                "mean_oracle_aggregated_mastery_before": 0.5525335114245843,
+                "estimate_minus_oracle": 0.003030863798869632
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 7984,
+                "mean_estimated_item_prerequisite_state": 0.6420177646235139,
+                "mean_oracle_aggregated_mastery_before": 0.6627917421454689,
+                "estimate_minus_oracle": -0.020773977521954978
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 1340,
+                "mean_estimated_item_prerequisite_state": 0.7315113978710637,
+                "mean_oracle_aggregated_mastery_before": 0.7484512620375273,
+                "estimate_minus_oracle": -0.016939864166463647
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 62,
+                "mean_estimated_item_prerequisite_state": 0.8174507978462404,
+                "mean_oracle_aggregated_mastery_before": 0.8027180504372828,
+                "estimate_minus_oracle": 0.01473274740895758
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        },
+        "unseen_value": {
+          "n": 9000,
+          "rmse": 0.12062258631893533,
+          "mae": 0.09855769707764145,
+          "pearson_correlation": 0.5359215566735328,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.06012467986101236,
+            "fixed_bin_expected_absolute_gap": 0.06015308284606067,
+            "maximum_nonempty_bin_absolute_gap": 0.0716878930867928,
+            "linear_truth_on_estimate_intercept": -0.060979102659727724,
+            "linear_truth_on_estimate_slope": 1.2291047267694286,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 34,
+                "mean_estimated_item_prerequisite_state": 0.38479605821125645,
+                "mean_oracle_aggregated_mastery_before": 0.3869339474883033,
+                "estimate_minus_oracle": -0.002137889277046834
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 2747,
+                "mean_estimated_item_prerequisite_state": 0.46813610944697587,
+                "mean_oracle_aggregated_mastery_before": 0.510551224096608,
+                "estimate_minus_oracle": -0.04241511464963216
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 5356,
+                "mean_estimated_item_prerequisite_state": 0.5451913480859046,
+                "mean_oracle_aggregated_mastery_before": 0.6129545385370139,
+                "estimate_minus_oracle": -0.06776319045110923
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 861,
+                "mean_estimated_item_prerequisite_state": 0.6234977739959366,
+                "mean_oracle_aggregated_mastery_before": 0.6951856670827294,
+                "estimate_minus_oracle": -0.0716878930867928
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 2,
+                "mean_estimated_item_prerequisite_state": 0.716127559542656,
+                "mean_oracle_aggregated_mastery_before": 0.652220843184076,
+                "estimate_minus_oracle": 0.06390671635857992
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "coarse_linguistic_families": {
+      "display_label": "coarse",
+      "metrics_by_regime": {
+        "all_probe": {
+          "n": 113000,
+          "rmse": 0.14630017643153595,
+          "mae": 0.12051351577329965,
+          "pearson_correlation": 0.2679686093177069,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.036060196461678413,
+            "fixed_bin_expected_absolute_gap": 0.03606019646167845,
+            "maximum_nonempty_bin_absolute_gap": 0.09048417450903523,
+            "linear_truth_on_estimate_intercept": 0.07523276914786858,
+            "linear_truth_on_estimate_slope": 0.9311076480930816,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 4534,
+                "mean_estimated_item_prerequisite_state": 0.4870003148811501,
+                "mean_oracle_aggregated_mastery_before": 0.5344767373072248,
+                "estimate_minus_oracle": -0.047476422426074694
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 81881,
+                "mean_estimated_item_prerequisite_state": 0.5543018304837676,
+                "mean_oracle_aggregated_mastery_before": 0.5911912056783125,
+                "estimate_minus_oracle": -0.03688937519454494
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 26483,
+                "mean_estimated_item_prerequisite_state": 0.6262580483315714,
+                "mean_oracle_aggregated_mastery_before": 0.6575904421232637,
+                "estimate_minus_oracle": -0.03133239379169228
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 102,
+                "mean_estimated_item_prerequisite_state": 0.7096673612501107,
+                "mean_oracle_aggregated_mastery_before": 0.8001515357591459,
+                "estimate_minus_oracle": -0.09048417450903523
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        },
+        "seen": {
+          "n": 84000,
+          "rmse": 0.14672309399521666,
+          "mae": 0.12106071964590713,
+          "pearson_correlation": 0.29059167741938485,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.042125434422587274,
+            "fixed_bin_expected_absolute_gap": 0.042125434422587364,
+            "maximum_nonempty_bin_absolute_gap": 0.0932753209487549,
+            "linear_truth_on_estimate_intercept": 0.05564439334780413,
+            "linear_truth_on_estimate_slope": 0.9760977119512297,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 4101,
+                "mean_estimated_item_prerequisite_state": 0.48703735655501135,
+                "mean_oracle_aggregated_mastery_before": 0.5356097003607955,
+                "estimate_minus_oracle": -0.048572343805784124
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 61151,
+                "mean_estimated_item_prerequisite_state": 0.5517245995067239,
+                "mean_oracle_aggregated_mastery_before": 0.5944121171495687,
+                "estimate_minus_oracle": -0.04268751764284473
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 18651,
+                "mean_estimated_item_prerequisite_state": 0.6275830948787761,
+                "mean_oracle_aggregated_mastery_before": 0.6661820553656235,
+                "estimate_minus_oracle": -0.03859896048684741
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 97,
+                "mean_estimated_item_prerequisite_state": 0.7101115874715687,
+                "mean_oracle_aggregated_mastery_before": 0.8033869084203236,
+                "estimate_minus_oracle": -0.0932753209487549
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "rmse": 0.15607415868326494,
+          "mae": 0.12979583338248413,
+          "pearson_correlation": 0.1872545620315167,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.020249248638100206,
+            "fixed_bin_expected_absolute_gap": 0.020249248638100095,
+            "maximum_nonempty_bin_absolute_gap": 0.03793251506077866,
+            "linear_truth_on_estimate_intercept": 0.16678968729924865,
+            "linear_truth_on_estimate_slope": 0.7468079638478224,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 391,
+                "mean_estimated_item_prerequisite_state": 0.4859853173651354,
+                "mean_oracle_aggregated_mastery_before": 0.523917832425914,
+                "estimate_minus_oracle": -0.03793251506077866
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 13510,
+                "mean_estimated_item_prerequisite_state": 0.560524871913395,
+                "mean_oracle_aggregated_mastery_before": 0.586585123915572,
+                "estimate_minus_oracle": -0.026060252002177098
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 6094,
+                "mean_estimated_item_prerequisite_state": 0.6250774037150387,
+                "mean_oracle_aggregated_mastery_before": 0.6312962542493237,
+                "estimate_minus_oracle": -0.006218850534284948
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 5,
+                "mean_estimated_item_prerequisite_state": 0.7010493725538254,
+                "mean_oracle_aggregated_mastery_before": 0.7373853061323004,
+                "estimate_minus_oracle": -0.03633593357847498
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        },
+        "unseen_value": {
+          "n": 9000,
+          "rmse": 0.11695961941262034,
+          "mae": 0.09477890716410849,
+          "pearson_correlation": 0.349016013076038,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.014586748434480632,
+            "fixed_bin_expected_absolute_gap": 0.01458674843448067,
+            "maximum_nonempty_bin_absolute_gap": 0.04140903198461354,
+            "linear_truth_on_estimate_intercept": -0.24701532917456948,
+            "linear_truth_on_estimate_slope": 1.4556466390226401,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 42,
+                "mean_estimated_item_prerequisite_state": 0.49283260355393094,
+                "mean_oracle_aggregated_mastery_before": 0.5221493641143402,
+                "estimate_minus_oracle": -0.029316760560409272
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 7220,
+                "mean_estimated_item_prerequisite_state": 0.5644856202016246,
+                "mean_oracle_aggregated_mastery_before": 0.5725300155447729,
+                "estimate_minus_oracle": -0.00804439534314827
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 1738,
+                "mean_estimated_item_prerequisite_state": 0.6161783044542625,
+                "mean_oracle_aggregated_mastery_before": 0.657587336438876,
+                "estimate_minus_oracle": -0.04140903198461354
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "structural_split2": {
+      "display_label": "split2",
+      "metrics_by_regime": {
+        "all_probe": {
+          "n": 113000,
+          "rmse": 0.13275165324138263,
+          "mae": 0.10758257203040561,
+          "pearson_correlation": 0.4657990715041356,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.025715891938832818,
+            "fixed_bin_expected_absolute_gap": 0.02571589193883288,
+            "maximum_nonempty_bin_absolute_gap": 0.06110478081406745,
+            "linear_truth_on_estimate_intercept": 0.050599579604321154,
+            "linear_truth_on_estimate_slope": 0.9570192684730507,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 262,
+                "mean_estimated_item_prerequisite_state": 0.3889405274664173,
+                "mean_oracle_aggregated_mastery_before": 0.4500453082804847,
+                "estimate_minus_oracle": -0.06110478081406745
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 14608,
+                "mean_estimated_item_prerequisite_state": 0.4705322581875829,
+                "mean_oracle_aggregated_mastery_before": 0.5076983929717209,
+                "estimate_minus_oracle": -0.03716613478413805
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 56836,
+                "mean_estimated_item_prerequisite_state": 0.553521254135234,
+                "mean_oracle_aggregated_mastery_before": 0.5767013575217599,
+                "estimate_minus_oracle": -0.023180103386525874
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 35004,
+                "mean_estimated_item_prerequisite_state": 0.6387148084777305,
+                "mean_oracle_aggregated_mastery_before": 0.6642358380644839,
+                "estimate_minus_oracle": -0.025521029586753397
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 6121,
+                "mean_estimated_item_prerequisite_state": 0.7334818076126288,
+                "mean_oracle_aggregated_mastery_before": 0.7556878031423789,
+                "estimate_minus_oracle": -0.02220599552975011
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 169,
+                "mean_estimated_item_prerequisite_state": 0.8209765634593174,
+                "mean_oracle_aggregated_mastery_before": 0.8223852333956492,
+                "estimate_minus_oracle": -0.001408669936331819
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        },
+        "seen": {
+          "n": 84000,
+          "rmse": 0.12842681292992084,
+          "mae": 0.10459844523128818,
+          "pearson_correlation": 0.5097370723526438,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.022780112821419243,
+            "fixed_bin_expected_absolute_gap": 0.022780112821419226,
+            "maximum_nonempty_bin_absolute_gap": 0.038692725152866536,
+            "linear_truth_on_estimate_intercept": 0.0025195259103786283,
+            "linear_truth_on_estimate_slope": 1.0346371533213505,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 147,
+                "mean_estimated_item_prerequisite_state": 0.38813382883866626,
+                "mean_oracle_aggregated_mastery_before": 0.4268265539915328,
+                "estimate_minus_oracle": -0.038692725152866536
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 9302,
+                "mean_estimated_item_prerequisite_state": 0.4714949021968527,
+                "mean_oracle_aggregated_mastery_before": 0.48978412584268666,
+                "estimate_minus_oracle": -0.018289223645833963
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 41322,
+                "mean_estimated_item_prerequisite_state": 0.5539530656738132,
+                "mean_oracle_aggregated_mastery_before": 0.5747408041914768,
+                "estimate_minus_oracle": -0.02078773851766358
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 27550,
+                "mean_estimated_item_prerequisite_state": 0.6393546093343174,
+                "mean_oracle_aggregated_mastery_before": 0.6665647824926474,
+                "estimate_minus_oracle": -0.027210173158329964
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 5510,
+                "mean_estimated_item_prerequisite_state": 0.7347508104359173,
+                "mean_oracle_aggregated_mastery_before": 0.7581348433379266,
+                "estimate_minus_oracle": -0.0233840329020093
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 169,
+                "mean_estimated_item_prerequisite_state": 0.8209765634593174,
+                "mean_oracle_aggregated_mastery_before": 0.8223852333956492,
+                "estimate_minus_oracle": -0.001408669936331819
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "rmse": 0.15355502504448154,
+          "mae": 0.12385909869223628,
+          "pearson_correlation": 0.3051895284806217,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.026487585119254173,
+            "fixed_bin_expected_absolute_gap": 0.026487585119254146,
+            "maximum_nonempty_bin_absolute_gap": 0.09871848834312813,
+            "linear_truth_on_estimate_intercept": 0.2038162857398385,
+            "linear_truth_on_estimate_slope": 0.6902737089057854,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 107,
+                "mean_estimated_item_prerequisite_state": 0.3902218879383301,
+                "mean_oracle_aggregated_mastery_before": 0.48894037628145826,
+                "estimate_minus_oracle": -0.09871848834312813
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 3086,
+                "mean_estimated_item_prerequisite_state": 0.46507560329696457,
+                "mean_oracle_aggregated_mastery_before": 0.5519218361988675,
+                "estimate_minus_oracle": -0.08684623290190291
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 9850,
+                "mean_estimated_item_prerequisite_state": 0.5565570559144625,
+                "mean_oracle_aggregated_mastery_before": 0.5716180367955276,
+                "estimate_minus_oracle": -0.015060980881065111
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 6358,
+                "mean_estimated_item_prerequisite_state": 0.6384020983216597,
+                "mean_oracle_aggregated_mastery_before": 0.6534919424328932,
+                "estimate_minus_oracle": -0.015089844111233486
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 599,
+                "mean_estimated_item_prerequisite_state": 0.7222819673597116,
+                "mean_oracle_aggregated_mastery_before": 0.7337835681266265,
+                "estimate_minus_oracle": -0.011501600766914866
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        },
+        "unseen_value": {
+          "n": 9000,
+          "rmse": 0.12218690634418719,
+          "mae": 0.09926436290698873,
+          "pearson_correlation": 0.4337332159467823,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.05140162330042316,
+            "fixed_bin_expected_absolute_gap": 0.051455235806401066,
+            "maximum_nonempty_bin_absolute_gap": 0.05475331274208839,
+            "linear_truth_on_estimate_intercept": 0.029017489260179774,
+            "linear_truth_on_estimate_slope": 1.0416589447364615,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 8,
+                "mean_estimated_item_prerequisite_state": 0.3866254184395075,
+                "mean_oracle_aggregated_mastery_before": 0.35646838382695745,
+                "estimate_minus_oracle": 0.030157034612550038
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 2220,
+                "mean_estimated_item_prerequisite_state": 0.47408393495254686,
+                "mean_oracle_aggregated_mastery_before": 0.5212862159605962,
+                "estimate_minus_oracle": -0.04720228100804935
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 5664,
+                "mean_estimated_item_prerequisite_state": 0.545091528866419,
+                "mean_oracle_aggregated_mastery_before": 0.5998448416085074,
+                "estimate_minus_oracle": -0.05475331274208839
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 1096,
+                "mean_estimated_item_prerequisite_state": 0.6244462843658063,
+                "mean_oracle_aggregated_mastery_before": 0.6680198430186375,
+                "estimate_minus_oracle": -0.04357355865283119
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 12,
+                "mean_estimated_item_prerequisite_state": 0.709856703877449,
+                "mean_oracle_aggregated_mastery_before": 0.7254749112231211,
+                "estimate_minus_oracle": -0.015618207345672097
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "structural_split4": {
+      "display_label": "split4",
+      "metrics_by_regime": {
+        "all_probe": {
+          "n": 113000,
+          "rmse": 0.1404276875756226,
+          "mae": 0.11415124641905058,
+          "pearson_correlation": 0.3830380608901037,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.03195952678716902,
+            "fixed_bin_expected_absolute_gap": 0.03198224983149651,
+            "maximum_nonempty_bin_absolute_gap": 0.09599345680626498,
+            "linear_truth_on_estimate_intercept": 0.15243211543840768,
+            "linear_truth_on_estimate_slope": 0.7896432980020243,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 147,
+                "mean_estimated_item_prerequisite_state": 0.39061462078370207,
+                "mean_oracle_aggregated_mastery_before": 0.48660807758996705,
+                "estimate_minus_oracle": -0.09599345680626498
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 18799,
+                "mean_estimated_item_prerequisite_state": 0.47494981871346437,
+                "mean_oracle_aggregated_mastery_before": 0.5432906212406803,
+                "estimate_minus_oracle": -0.06834080252721592
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 56723,
+                "mean_estimated_item_prerequisite_state": 0.5523319158395007,
+                "mean_oracle_aggregated_mastery_before": 0.5814146308150545,
+                "estimate_minus_oracle": -0.029082714975553814
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 31881,
+                "mean_estimated_item_prerequisite_state": 0.6395930754805048,
+                "mean_oracle_aggregated_mastery_before": 0.6571009986595844,
+                "estimate_minus_oracle": -0.017507923179079565
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 5275,
+                "mean_estimated_item_prerequisite_state": 0.7328101230599869,
+                "mean_oracle_aggregated_mastery_before": 0.7529109104845123,
+                "estimate_minus_oracle": -0.020100787424525368
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 175,
+                "mean_estimated_item_prerequisite_state": 0.8196328891175134,
+                "mean_oracle_aggregated_mastery_before": 0.8122965919489074,
+                "estimate_minus_oracle": 0.007336297168606065
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        },
+        "seen": {
+          "n": 84000,
+          "rmse": 0.1329061437551715,
+          "mae": 0.10860769731883023,
+          "pearson_correlation": 0.4541815162021425,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.022565760490428043,
+            "fixed_bin_expected_absolute_gap": 0.0225963283952972,
+            "maximum_nonempty_bin_absolute_gap": 0.0556089967433005,
+            "linear_truth_on_estimate_intercept": 0.06784266433045638,
+            "linear_truth_on_estimate_slope": 0.9226237333205908,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 66,
+                "mean_estimated_item_prerequisite_state": 0.3943032245292808,
+                "mean_oracle_aggregated_mastery_before": 0.4499122212725813,
+                "estimate_minus_oracle": -0.0556089967433005
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 9686,
+                "mean_estimated_item_prerequisite_state": 0.4714509441590176,
+                "mean_oracle_aggregated_mastery_before": 0.5102875087713872,
+                "estimate_minus_oracle": -0.03883656461236956
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 40567,
+                "mean_estimated_item_prerequisite_state": 0.5537591728970883,
+                "mean_oracle_aggregated_mastery_before": 0.5759449031546509,
+                "estimate_minus_oracle": -0.02218573025756254
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 28302,
+                "mean_estimated_item_prerequisite_state": 0.6408568361019736,
+                "mean_oracle_aggregated_mastery_before": 0.658886525818436,
+                "estimate_minus_oracle": -0.01802968971646235
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 5204,
+                "mean_estimated_item_prerequisite_state": 0.7330870032138681,
+                "mean_oracle_aggregated_mastery_before": 0.7535869603364915,
+                "estimate_minus_oracle": -0.020499957122623425
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 175,
+                "mean_estimated_item_prerequisite_state": 0.8196328891175134,
+                "mean_oracle_aggregated_mastery_before": 0.8122965919489074,
+                "estimate_minus_oracle": 0.007336297168606065
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "rmse": 0.16974962883762604,
+          "mae": 0.13839076555691912,
+          "pearson_correlation": 0.10516989491950395,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.05514621680910068,
+            "fixed_bin_expected_absolute_gap": 0.05521122912927675,
+            "maximum_nonempty_bin_absolute_gap": 0.1060200024861307,
+            "linear_truth_on_estimate_intercept": 0.4294082944500349,
+            "linear_truth_on_estimate_slope": 0.31186004715452154,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 6007,
+                "mean_estimated_item_prerequisite_state": 0.4862363895508956,
+                "mean_oracle_aggregated_mastery_before": 0.5922563920370263,
+                "estimate_minus_oracle": -0.1060200024861307
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 10909,
+                "mean_estimated_item_prerequisite_state": 0.5502956607037105,
+                "mean_oracle_aggregated_mastery_before": 0.5915135538353102,
+                "estimate_minus_oracle": -0.04121789313159974
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 3013,
+                "mean_estimated_item_prerequisite_state": 0.6315674979278031,
+                "mean_oracle_aggregated_mastery_before": 0.6372317223808285,
+                "estimate_minus_oracle": -0.0056642244530253905
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 71,
+                "mean_estimated_item_prerequisite_state": 0.7125159776966337,
+                "mean_oracle_aggregated_mastery_before": 0.7033593128831,
+                "estimate_minus_oracle": 0.00915666481353361
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        },
+        "unseen_value": {
+          "n": 9000,
+          "rmse": 0.1367375257947387,
+          "mae": 0.11202543993695449,
+          "pearson_correlation": 0.300010871735626,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.06810870106356998,
+            "fixed_bin_expected_absolute_gap": 0.06810870106357,
+            "maximum_nonempty_bin_absolute_gap": 0.1288993131538657,
+            "linear_truth_on_estimate_intercept": 0.23268394900760675,
+            "linear_truth_on_estimate_slope": 0.6838810151801274,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 81,
+                "mean_estimated_item_prerequisite_state": 0.38760909180582304,
+                "mean_oracle_aggregated_mastery_before": 0.5165084049596887,
+                "estimate_minus_oracle": -0.1288993131538657
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 3106,
+                "mean_estimated_item_prerequisite_state": 0.46403277683127564,
+                "mean_oracle_aggregated_mastery_before": 0.551510441654049,
+                "estimate_minus_oracle": -0.08747766482277342
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 5247,
+                "mean_estimated_item_prerequisite_state": 0.5455306904194853,
+                "mean_oracle_aggregated_mastery_before": 0.6027070437694352,
+                "estimate_minus_oracle": -0.05717635334994986
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 566,
+                "mean_estimated_item_prerequisite_state": 0.6191233087976071,
+                "mean_oracle_aggregated_mastery_before": 0.6735888781261333,
+                "estimate_minus_oracle": -0.0544655693285262
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "exact_cell": {
+      "display_label": "exact-cell",
+      "metrics_by_regime": {
+        "all_probe": {
+          "n": 113000,
+          "rmse": 0.1638280617415919,
+          "mae": 0.13341859406820847,
+          "pearson_correlation": 0.2916464208800457,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.07096188005825937,
+            "fixed_bin_expected_absolute_gap": 0.07096188005825939,
+            "maximum_nonempty_bin_absolute_gap": 0.1262896724939379,
+            "linear_truth_on_estimate_intercept": 0.3431900595391433,
+            "linear_truth_on_estimate_slope": 0.4899265234335242,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 369,
+                "mean_estimated_item_prerequisite_state": 0.3943783898098359,
+                "mean_oracle_aggregated_mastery_before": 0.5186596060693152,
+                "estimate_minus_oracle": -0.12428121625947924
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 47534,
+                "mean_estimated_item_prerequisite_state": 0.44986466558874044,
+                "mean_oracle_aggregated_mastery_before": 0.5761543380826784,
+                "estimate_minus_oracle": -0.1262896724939379
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 36643,
+                "mean_estimated_item_prerequisite_state": 0.5499395950780803,
+                "mean_oracle_aggregated_mastery_before": 0.5867709096719209,
+                "estimate_minus_oracle": -0.03683131459384059
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 24169,
+                "mean_estimated_item_prerequisite_state": 0.6410178110454162,
+                "mean_oracle_aggregated_mastery_before": 0.6622048822753762,
+                "estimate_minus_oracle": -0.021187071229959997
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 4257,
+                "mean_estimated_item_prerequisite_state": 0.7311364774843155,
+                "mean_oracle_aggregated_mastery_before": 0.7564694729837228,
+                "estimate_minus_oracle": -0.025332995499407263
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 28,
+                "mean_estimated_item_prerequisite_state": 0.8035230615309307,
+                "mean_oracle_aggregated_mastery_before": 0.812688718557318,
+                "estimate_minus_oracle": -0.009165657026387275
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        },
+        "seen": {
+          "n": 84000,
+          "rmse": 0.14461883091110242,
+          "mae": 0.11868804646910294,
+          "pearson_correlation": 0.3831732643081045,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.043411687253208306,
+            "fixed_bin_expected_absolute_gap": 0.043411687253208354,
+            "maximum_nonempty_bin_absolute_gap": 0.12428121625947924,
+            "linear_truth_on_estimate_intercept": 0.21685835645841073,
+            "linear_truth_on_estimate_slope": 0.6926374327540142,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 369,
+                "mean_estimated_item_prerequisite_state": 0.3943783898098359,
+                "mean_oracle_aggregated_mastery_before": 0.5186596060693152,
+                "estimate_minus_oracle": -0.12428121625947924
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 18534,
+                "mean_estimated_item_prerequisite_state": 0.4573794517453446,
+                "mean_oracle_aggregated_mastery_before": 0.5453767850254263,
+                "estimate_minus_oracle": -0.08799733328008169
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 36643,
+                "mean_estimated_item_prerequisite_state": 0.5499395950780803,
+                "mean_oracle_aggregated_mastery_before": 0.5867709096719209,
+                "estimate_minus_oracle": -0.03683131459384059
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 24169,
+                "mean_estimated_item_prerequisite_state": 0.6410178110454162,
+                "mean_oracle_aggregated_mastery_before": 0.6622048822753762,
+                "estimate_minus_oracle": -0.021187071229959997
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 4257,
+                "mean_estimated_item_prerequisite_state": 0.7311364774843155,
+                "mean_oracle_aggregated_mastery_before": 0.7564694729837228,
+                "estimate_minus_oracle": -0.025332995499407263
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 28,
+                "mean_estimated_item_prerequisite_state": 0.8035230615309307,
+                "mean_oracle_aggregated_mastery_before": 0.812688718557318,
+                "estimate_minus_oracle": -0.009165657026387275
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "rmse": 0.21883747408990373,
+          "mae": 0.1828150385993502,
+          "pearson_correlation": 0.16424343149371126,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.15395921998219864,
+            "fixed_bin_expected_absolute_gap": 0.1539592199821987,
+            "maximum_nonempty_bin_absolute_gap": 0.1539592199821987,
+            "linear_truth_on_estimate_intercept": -0.215036656765776,
+            "linear_truth_on_estimate_slope": 1.8290888159929886,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 20000,
+                "mean_estimated_item_prerequisite_state": 0.44506193984299897,
+                "mean_oracle_aggregated_mastery_before": 0.5990211598251977,
+                "estimate_minus_oracle": -0.1539592199821987
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        },
+        "unseen_value": {
+          "n": 9000,
+          "rmse": 0.1880469487234768,
+          "mae": 0.16113382825732284,
+          "pearson_correlation": 0.1740706926418353,
+          "calibration": {
+            "definition": "Calibration compares the derived item prerequisite-state estimate with oracle aggregated_mastery_before in ten fixed-width estimate bins.",
+            "bins": 10,
+            "mean_estimate_minus_oracle": -0.14365847974109314,
+            "fixed_bin_expected_absolute_gap": 0.1436584797410932,
+            "maximum_nonempty_bin_absolute_gap": 0.1436584797410932,
+            "linear_truth_on_estimate_intercept": -0.08628819387461639,
+            "linear_truth_on_estimate_slope": 1.5166621834633311,
+            "bin_table": [
+              {
+                "bin_index": 1,
+                "lower_inclusive": 0.0,
+                "upper_inclusive_only_for_last_bin": 0.1,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 2,
+                "lower_inclusive": 0.1,
+                "upper_inclusive_only_for_last_bin": 0.2,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 3,
+                "lower_inclusive": 0.2,
+                "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 4,
+                "lower_inclusive": 0.30000000000000004,
+                "upper_inclusive_only_for_last_bin": 0.4,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 5,
+                "lower_inclusive": 0.4,
+                "upper_inclusive_only_for_last_bin": 0.5,
+                "n": 9000,
+                "mean_estimated_item_prerequisite_state": 0.44506193984299897,
+                "mean_oracle_aggregated_mastery_before": 0.5887204195840922,
+                "estimate_minus_oracle": -0.1436584797410932
+              },
+              {
+                "bin_index": 6,
+                "lower_inclusive": 0.5,
+                "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 7,
+                "lower_inclusive": 0.6000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 8,
+                "lower_inclusive": 0.7000000000000001,
+                "upper_inclusive_only_for_last_bin": 0.8,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 9,
+                "lower_inclusive": 0.8,
+                "upper_inclusive_only_for_last_bin": 0.9,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              },
+              {
+                "bin_index": 10,
+                "lower_inclusive": 0.9,
+                "upper_inclusive_only_for_last_bin": 1.0,
+                "n": 0,
+                "mean_estimated_item_prerequisite_state": null,
+                "mean_oracle_aggregated_mastery_before": null,
+                "estimate_minus_oracle": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "quantity_definition": {
+    "estimate": "derived terminal-probe item prerequisite state",
+    "target": "oracle aggregated_mastery_before: the minimum pre-response mastery over the item's active generator KCs",
+    "not_claimed": [
+      "logistic coefficient recovery",
+      "individual generator-KC mastery recovery",
+      "human learner mastery"
+    ]
+  },
+  "interpretation_boundary": "Results quantify item-level weakest-prerequisite-state recovery only inside the declared frozen synthetic world."
+}

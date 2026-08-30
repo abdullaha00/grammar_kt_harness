@@ -1,0 +1,135 @@
+{
+  "study_id": "full_v1_secondary_fixed_bkt_terminal_kc_recovery_v1",
+  "status": "SECONDARY_FIXED_ANALYSIS_PLAN_LOCKED_BEFORE_BKT_STATE_EVALUATION",
+  "classification": "Secondary model-exposed mastery analysis requested after the primary inverse-link study; not a replacement primary estimand.",
+  "model": {
+    "name": "repository fixed BKT with exposed terminal per-KC state",
+    "parameter_source": "modules/evaluation/kt/protocol.yaml",
+    "parameters": {
+      "initial_mastery": 0.35,
+      "learn": 0.12,
+      "guess": 0.18,
+      "slip": 0.1
+    },
+    "parameters_fit_or_tuned": false,
+    "projection": "true_kstar",
+    "projection_label": "frozen true K*/Q*",
+    "public_inputs": "acquisition item IDs, order, and binary outcomes only",
+    "probe_outcomes_used": false,
+    "state_timing": "after all acquisition updates and before terminal probes",
+    "multi_kc_update": "the same item outcome is treated as full evidence for every active KC, matching src/grammar_kt/kt.py::_bkt"
+  },
+  "generator_mismatch": {
+    "deliberately_misspecified": true,
+    "bkt_initial_mastery": "fixed 0.35",
+    "generator_initial_mastery": "learner-KC Beta(2,2) draws",
+    "bkt_learning": "correctness-conditioned Bayesian posterior followed by learn=0.12",
+    "generator_learning": "outcome-independent all-active opportunity update at rate 0.02",
+    "bkt_multi_kc_credit": "full item outcome applied to every active KC",
+    "generator_response_aggregation": "minimum",
+    "bkt_response_aggregation": "mean active KC state in existing implementation",
+    "bkt_guess_slip": [
+      0.18,
+      0.1
+    ],
+    "generator_guess_slip": [
+      0.1,
+      0.1
+    ],
+    "interpretation": "Agreement is not expected by construction; this evaluates whether a standard fixed BKT state tracks the different generator state."
+  },
+  "evaluation": {
+    "oracle_target": "mastery_before[kc_id] for every active KC on each terminal probe",
+    "metrics": [
+      "RMSE",
+      "MAE",
+      "Pearson correlation",
+      "10-bin fixed-width KC-state calibration"
+    ],
+    "regimes": [
+      "all_probe",
+      "seen",
+      "unseen_combination",
+      "unseen_value"
+    ],
+    "primary_weighting_within_secondary": "event-active-KC pair weighted",
+    "additional_weighting": "unique terminal learner-KC pairs overall",
+    "join_key": [
+      "learner_id",
+      "sequence_index"
+    ],
+    "paired_fields_checked": [
+      "item_id",
+      "phase",
+      "pass_index",
+      "grammar_regime",
+      "correct"
+    ],
+    "oracle_active_kcs_checked_against_true_q": true
+  },
+  "leakage_controls": {
+    "terminal_bkt_states_frozen_before_oracle_open": true,
+    "oracle_fit_tuning_or_state_update": false,
+    "oracle_use": "secondary evaluation target only"
+  },
+  "true_projection_structure": {
+    "items": 113,
+    "kcs": 18,
+    "edges": 269
+  },
+  "public_inputs": {
+    "dataset_manifest": {
+      "path": "data/grammar_kt_full_v1/manifest.json",
+      "sha256": "322128843f8e7e6547a99efcecc6836fcd581f314fb49557a28d58fe79c69f4c",
+      "bytes": 26456
+    },
+    "observable_interactions": {
+      "path": "data/grammar_kt_full_v1/interactions.jsonl.gz",
+      "sha256": "9272ca86a647e3b13c9ce52b5381dde215f7ef448e4a19a41a22495fa99ef97f",
+      "bytes": 2158088
+    },
+    "rq2_study_plan": {
+      "path": "reports/full_v1_artifacts/rq2_misspecification_v1/study_plan.json",
+      "sha256": "e1945fb1078e883f2c420c3b8adbee4b0772359facaa4321ba616277ff7ddb6d",
+      "bytes": 18016
+    },
+    "rq2_projection_bundle": {
+      "path": "reports/full_v1_artifacts/rq2_misspecification_v1/projections.jsonl",
+      "sha256": "4b793fc6a44a14b975db41f272abfcc0d9df7c3f8effa6b1109f0711c3885661",
+      "bytes": 269501
+    },
+    "declared_kt_protocol": {
+      "path": "modules/evaluation/kt/protocol.yaml",
+      "sha256": "f97f97993f45a2568109978300873141c284226677a360c2705f78fe0fc7367a",
+      "bytes": 370
+    },
+    "existing_bkt_implementation": {
+      "path": "src/grammar_kt/kt.py",
+      "sha256": "05d9b351ece19c99911c19aac9b16fb5f4846f9561809784e50cc7d8453e61a8",
+      "bytes": 8411
+    },
+    "rq2_projection_implementation": {
+      "path": "scripts/experiments/rq2_kc_misspecification.py",
+      "sha256": "33ccd24d6050943cde338bc0129f2cafdbeca2b3e586322d1657a5da8fd3027a",
+      "bytes": 42277
+    }
+  },
+  "private_oracle_declared_but_not_opened_by_plan": {
+    "path": "oracle/learner_truth.jsonl.gz",
+    "sha256": "956ed53f370d5494d379072954c0821d4098f11e51e2629b33d8ee0b8b844601",
+    "content_sha256": "46f5da111ae4f8e411c2fc262644d8a8acb31c8408dd87642e5d725cfaa88a10",
+    "rows": 283000
+  },
+  "implementation": {
+    "script": "scripts/experiments/full_v1_bkt_state_recovery.py",
+    "script_sha256": "2a2eb50e2f622f61ceaf558856c509b6828f5e30ef25dc569fa443690d691255",
+    "repository_head_at_secondary_plan": "3b403c711ae99759f142ac30127a73275bbf2e31",
+    "python": "3.14.7",
+    "numpy": "2.5.1"
+  },
+  "exact_commands": {
+    "plan": ".venv/bin/python scripts/experiments/full_v1_bkt_state_recovery.py --stage plan",
+    "run": ".venv/bin/python scripts/experiments/full_v1_bkt_state_recovery.py --stage run",
+    "test": ".venv/bin/python -m pytest -q tests/test_full_v1_bkt_state_recovery.py"
+  }
+}

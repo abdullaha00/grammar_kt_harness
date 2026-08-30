@@ -1,0 +1,613 @@
+{
+  "study_id": "full_v1_secondary_fixed_bkt_terminal_kc_recovery_v1",
+  "status": "FINAL_SECONDARY_FIXED_BKT_STATE_RECOVERY",
+  "classification": "Secondary model-exposed mastery analysis requested after the primary inverse-link study; not a replacement primary estimand.",
+  "secondary_plan_sha256": "2d05150b3ab156ef9a6df1fcf47a38b266a290b62f49a1b248932305a9e02e5e",
+  "terminal_state_artifact": {
+    "path": "secondary_bkt_terminal_kc_states.jsonl.gz",
+    "sha256": "cfb088dd16b8afdd85f7c6854615d6aeb937e29e26852bbd8fc2a4935f3773ec",
+    "bytes": 226362,
+    "rows": 18000,
+    "contains_private_oracle_fields": false,
+    "frozen_before_private_oracle_open": true
+  },
+  "private_oracle_evaluation": {
+    "declared_sha256": "956ed53f370d5494d379072954c0821d4098f11e51e2629b33d8ee0b8b844601",
+    "actual_sha256_after_states_frozen": "956ed53f370d5494d379072954c0821d4098f11e51e2629b33d8ee0b8b844601",
+    "fit_tuning_or_state_update": false,
+    "target": "mastery_before[kc_id]"
+  },
+  "fixed_bkt_parameters": {
+    "initial_mastery": 0.35,
+    "learn": 0.12,
+    "guess": 0.18,
+    "slip": 0.1
+  },
+  "state_construction_audit": {
+    "learners": 1000,
+    "kcs": 18,
+    "terminal_learner_kc_states": 18000,
+    "acquisition_events_used": 170000,
+    "active_kc_full_credit_updates": 387000,
+    "probe_outcomes_ignored": 113000,
+    "all_terminal_states_finite_and_bounded": true
+  },
+  "join_audit": {
+    "join_key": [
+      "learner_id",
+      "sequence_index"
+    ],
+    "paired_fields_checked": [
+      "item_id",
+      "phase",
+      "pass_index",
+      "grammar_regime",
+      "correct"
+    ],
+    "public_events": 283000,
+    "oracle_events": 283000,
+    "terminal_probe_active_kc_pairs": 269000,
+    "unique_terminal_learner_kc_pairs": 18000,
+    "all_public_oracle_keys_match": true,
+    "all_oracle_active_kcs_match_true_q": true,
+    "all_repeated_probe_kc_truth_is_constant": true,
+    "public_event_key_sha256": "41fe676cf55d73cb565e479979b33f04cf51d5b0a8f3b5d15e1287caeeb12fcf"
+  },
+  "event_active_kc_weighted_metrics_by_regime": {
+    "all_probe": {
+      "n": 269000,
+      "rmse": 0.2911946245556719,
+      "mae": 0.2392815048743041,
+      "pearson_correlation": 0.35541796994018227,
+      "calibration": {
+        "definition": "Calibration compares exposed terminal BKT KC state with oracle mastery_before[kc_id] in fixed-width estimate bins.",
+        "bins": 10,
+        "mean_estimate_minus_oracle": 0.06015215135741008,
+        "fixed_bin_expected_absolute_gap": 0.2258527798738078,
+        "maximum_nonempty_bin_absolute_gap": 0.4665975529080988,
+        "linear_truth_on_estimate_intercept": 0.5756838350158585,
+        "linear_truth_on_estimate_slope": 0.1974943218732594,
+        "bin_table": [
+          {
+            "bin_index": 1,
+            "lower_inclusive": 0.0,
+            "upper_inclusive_only_for_last_bin": 0.1,
+            "n": 0,
+            "mean_estimated_terminal_bkt_kc_state": null,
+            "mean_oracle_kc_mastery_before": null,
+            "estimate_minus_oracle": null
+          },
+          {
+            "bin_index": 2,
+            "lower_inclusive": 0.1,
+            "upper_inclusive_only_for_last_bin": 0.2,
+            "n": 23687,
+            "mean_estimated_terminal_bkt_kc_state": 0.14797425369442255,
+            "mean_oracle_kc_mastery_before": 0.6145718066025213,
+            "estimate_minus_oracle": -0.4665975529080988
+          },
+          {
+            "bin_index": 3,
+            "lower_inclusive": 0.2,
+            "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+            "n": 15023,
+            "mean_estimated_terminal_bkt_kc_state": 0.2410648706772736,
+            "mean_oracle_kc_mastery_before": 0.6452341032454514,
+            "estimate_minus_oracle": -0.40416923256817777
+          },
+          {
+            "bin_index": 4,
+            "lower_inclusive": 0.30000000000000004,
+            "upper_inclusive_only_for_last_bin": 0.4,
+            "n": 3798,
+            "mean_estimated_terminal_bkt_kc_state": 0.33642336840957215,
+            "mean_oracle_kc_mastery_before": 0.6899998556120989,
+            "estimate_minus_oracle": -0.3535764872025267
+          },
+          {
+            "bin_index": 5,
+            "lower_inclusive": 0.4,
+            "upper_inclusive_only_for_last_bin": 0.5,
+            "n": 6763,
+            "mean_estimated_terminal_bkt_kc_state": 0.4641833435419952,
+            "mean_oracle_kc_mastery_before": 0.6689931167772115,
+            "estimate_minus_oracle": -0.20480977323521632
+          },
+          {
+            "bin_index": 6,
+            "lower_inclusive": 0.5,
+            "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+            "n": 16593,
+            "mean_estimated_terminal_bkt_kc_state": 0.5293682752909097,
+            "mean_oracle_kc_mastery_before": 0.6582035934156574,
+            "estimate_minus_oracle": -0.1288353181247477
+          },
+          {
+            "bin_index": 7,
+            "lower_inclusive": 0.6000000000000001,
+            "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+            "n": 10935,
+            "mean_estimated_terminal_bkt_kc_state": 0.6459483755393093,
+            "mean_oracle_kc_mastery_before": 0.6730930934561556,
+            "estimate_minus_oracle": -0.02714471791684636
+          },
+          {
+            "bin_index": 8,
+            "lower_inclusive": 0.7000000000000001,
+            "upper_inclusive_only_for_last_bin": 0.8,
+            "n": 6571,
+            "mean_estimated_terminal_bkt_kc_state": 0.7536893198804494,
+            "mean_oracle_kc_mastery_before": 0.7180538057676689,
+            "estimate_minus_oracle": 0.03563551411278054
+          },
+          {
+            "bin_index": 9,
+            "lower_inclusive": 0.8,
+            "upper_inclusive_only_for_last_bin": 0.9,
+            "n": 21377,
+            "mean_estimated_terminal_bkt_kc_state": 0.8575838280960403,
+            "mean_oracle_kc_mastery_before": 0.6889112985099893,
+            "estimate_minus_oracle": 0.16867252958605095
+          },
+          {
+            "bin_index": 10,
+            "lower_inclusive": 0.9,
+            "upper_inclusive_only_for_last_bin": 1.0,
+            "n": 164253,
+            "mean_estimated_terminal_bkt_kc_state": 0.9890619492186594,
+            "mean_oracle_kc_mastery_before": 0.7782421186986523,
+            "estimate_minus_oracle": 0.21081983052000708
+          }
+        ]
+      }
+    },
+    "seen": {
+      "n": 200000,
+      "rmse": 0.2908756066186996,
+      "mae": 0.23782966382090667,
+      "pearson_correlation": 0.35290413478169125,
+      "calibration": {
+        "definition": "Calibration compares exposed terminal BKT KC state with oracle mastery_before[kc_id] in fixed-width estimate bins.",
+        "bins": 10,
+        "mean_estimate_minus_oracle": 0.05783895512376592,
+        "fixed_bin_expected_absolute_gap": 0.22442179047171526,
+        "maximum_nonempty_bin_absolute_gap": 0.4713177841353492,
+        "linear_truth_on_estimate_intercept": 0.5793469862143042,
+        "linear_truth_on_estimate_slope": 0.19705411486057212,
+        "bin_table": [
+          {
+            "bin_index": 1,
+            "lower_inclusive": 0.0,
+            "upper_inclusive_only_for_last_bin": 0.1,
+            "n": 0,
+            "mean_estimated_terminal_bkt_kc_state": null,
+            "mean_oracle_kc_mastery_before": null,
+            "estimate_minus_oracle": null
+          },
+          {
+            "bin_index": 2,
+            "lower_inclusive": 0.1,
+            "upper_inclusive_only_for_last_bin": 0.2,
+            "n": 17502,
+            "mean_estimated_terminal_bkt_kc_state": 0.1481112316954615,
+            "mean_oracle_kc_mastery_before": 0.6194290158308107,
+            "estimate_minus_oracle": -0.4713177841353492
+          },
+          {
+            "bin_index": 3,
+            "lower_inclusive": 0.2,
+            "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+            "n": 11073,
+            "mean_estimated_terminal_bkt_kc_state": 0.2412919481381494,
+            "mean_oracle_kc_mastery_before": 0.6487885145131831,
+            "estimate_minus_oracle": -0.40749656637503373
+          },
+          {
+            "bin_index": 4,
+            "lower_inclusive": 0.30000000000000004,
+            "upper_inclusive_only_for_last_bin": 0.4,
+            "n": 2876,
+            "mean_estimated_terminal_bkt_kc_state": 0.3366519595994124,
+            "mean_oracle_kc_mastery_before": 0.694587070455254,
+            "estimate_minus_oracle": -0.3579351108558416
+          },
+          {
+            "bin_index": 5,
+            "lower_inclusive": 0.4,
+            "upper_inclusive_only_for_last_bin": 0.5,
+            "n": 4900,
+            "mean_estimated_terminal_bkt_kc_state": 0.46390816753470937,
+            "mean_oracle_kc_mastery_before": 0.6689565413317131,
+            "estimate_minus_oracle": -0.20504837379700375
+          },
+          {
+            "bin_index": 6,
+            "lower_inclusive": 0.5,
+            "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+            "n": 12377,
+            "mean_estimated_terminal_bkt_kc_state": 0.5293339091367946,
+            "mean_oracle_kc_mastery_before": 0.6607564712057027,
+            "estimate_minus_oracle": -0.13142256206890812
+          },
+          {
+            "bin_index": 7,
+            "lower_inclusive": 0.6000000000000001,
+            "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+            "n": 8105,
+            "mean_estimated_terminal_bkt_kc_state": 0.6464095541447519,
+            "mean_oracle_kc_mastery_before": 0.6755637473876521,
+            "estimate_minus_oracle": -0.02915419324290025
+          },
+          {
+            "bin_index": 8,
+            "lower_inclusive": 0.7000000000000001,
+            "upper_inclusive_only_for_last_bin": 0.8,
+            "n": 4834,
+            "mean_estimated_terminal_bkt_kc_state": 0.7536828333660961,
+            "mean_oracle_kc_mastery_before": 0.720200483090798,
+            "estimate_minus_oracle": 0.03348235027529811
+          },
+          {
+            "bin_index": 9,
+            "lower_inclusive": 0.8,
+            "upper_inclusive_only_for_last_bin": 0.9,
+            "n": 15740,
+            "mean_estimated_terminal_bkt_kc_state": 0.8575722158909381,
+            "mean_oracle_kc_mastery_before": 0.691165477369333,
+            "estimate_minus_oracle": 0.16640673852160515
+          },
+          {
+            "bin_index": 10,
+            "lower_inclusive": 0.9,
+            "upper_inclusive_only_for_last_bin": 1.0,
+            "n": 122593,
+            "mean_estimated_terminal_bkt_kc_state": 0.9892442202571805,
+            "mean_oracle_kc_mastery_before": 0.7816876810258437,
+            "estimate_minus_oracle": 0.20755653923133677
+          }
+        ]
+      }
+    },
+    "unseen_combination": {
+      "n": 38000,
+      "rmse": 0.2925477563191255,
+      "mae": 0.24548123714650874,
+      "pearson_correlation": 0.40549217904201335,
+      "calibration": {
+        "definition": "Calibration compares exposed terminal BKT KC state with oracle mastery_before[kc_id] in fixed-width estimate bins.",
+        "bins": 10,
+        "mean_estimate_minus_oracle": 0.07705589767549477,
+        "fixed_bin_expected_absolute_gap": 0.22944534484290052,
+        "maximum_nonempty_bin_absolute_gap": 0.4193836485851745,
+        "linear_truth_on_estimate_intercept": 0.5240715430049436,
+        "linear_truth_on_estimate_slope": 0.22962243728896703,
+        "bin_table": [
+          {
+            "bin_index": 1,
+            "lower_inclusive": 0.0,
+            "upper_inclusive_only_for_last_bin": 0.1,
+            "n": 0,
+            "mean_estimated_terminal_bkt_kc_state": null,
+            "mean_oracle_kc_mastery_before": null,
+            "estimate_minus_oracle": null
+          },
+          {
+            "bin_index": 2,
+            "lower_inclusive": 0.1,
+            "upper_inclusive_only_for_last_bin": 0.2,
+            "n": 3671,
+            "mean_estimated_terminal_bkt_kc_state": 0.14704360053127066,
+            "mean_oracle_kc_mastery_before": 0.5664272491164452,
+            "estimate_minus_oracle": -0.4193836485851745
+          },
+          {
+            "bin_index": 3,
+            "lower_inclusive": 0.2,
+            "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+            "n": 2180,
+            "mean_estimated_terminal_bkt_kc_state": 0.2393126984178653,
+            "mean_oracle_kc_mastery_before": 0.6029262647760426,
+            "estimate_minus_oracle": -0.3636135663581773
+          },
+          {
+            "bin_index": 4,
+            "lower_inclusive": 0.30000000000000004,
+            "upper_inclusive_only_for_last_bin": 0.4,
+            "n": 519,
+            "mean_estimated_terminal_bkt_kc_state": 0.336029725476832,
+            "mean_oracle_kc_mastery_before": 0.6542235096087644,
+            "estimate_minus_oracle": -0.3181937841319324
+          },
+          {
+            "bin_index": 5,
+            "lower_inclusive": 0.4,
+            "upper_inclusive_only_for_last_bin": 0.5,
+            "n": 1053,
+            "mean_estimated_terminal_bkt_kc_state": 0.464447970054209,
+            "mean_oracle_kc_mastery_before": 0.6402658052077292,
+            "estimate_minus_oracle": -0.17581783515352023
+          },
+          {
+            "bin_index": 6,
+            "lower_inclusive": 0.5,
+            "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+            "n": 2449,
+            "mean_estimated_terminal_bkt_kc_state": 0.5289814094627738,
+            "mean_oracle_kc_mastery_before": 0.6159090506153175,
+            "estimate_minus_oracle": -0.0869276411525437
+          },
+          {
+            "bin_index": 7,
+            "lower_inclusive": 0.6000000000000001,
+            "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+            "n": 1586,
+            "mean_estimated_terminal_bkt_kc_state": 0.6447630920137822,
+            "mean_oracle_kc_mastery_before": 0.643595661140737,
+            "estimate_minus_oracle": 0.001167430873045272
+          },
+          {
+            "bin_index": 8,
+            "lower_inclusive": 0.7000000000000001,
+            "upper_inclusive_only_for_last_bin": 0.8,
+            "n": 910,
+            "mean_estimated_terminal_bkt_kc_state": 0.7542871126436718,
+            "mean_oracle_kc_mastery_before": 0.7035738386131524,
+            "estimate_minus_oracle": 0.050713274030519395
+          },
+          {
+            "bin_index": 9,
+            "lower_inclusive": 0.8,
+            "upper_inclusive_only_for_last_bin": 0.9,
+            "n": 3129,
+            "mean_estimated_terminal_bkt_kc_state": 0.8581381574811884,
+            "mean_oracle_kc_mastery_before": 0.6624002460403371,
+            "estimate_minus_oracle": 0.1957379114408513
+          },
+          {
+            "bin_index": 10,
+            "lower_inclusive": 0.9,
+            "upper_inclusive_only_for_last_bin": 1.0,
+            "n": 22503,
+            "mean_estimated_terminal_bkt_kc_state": 0.9881768213227742,
+            "mean_oracle_kc_mastery_before": 0.7587381216730091,
+            "estimate_minus_oracle": 0.22943869964976504
+          }
+        ]
+      }
+    },
+    "unseen_value": {
+      "n": 31000,
+      "rmse": 0.29158887903940583,
+      "mae": 0.24104854953029492,
+      "pearson_correlation": 0.29926812146245757,
+      "calibration": {
+        "definition": "Calibration compares exposed terminal BKT KC state with oracle mastery_before[kc_id] in fixed-width estimate bins.",
+        "bins": 10,
+        "mean_estimate_minus_oracle": 0.054355276732946094,
+        "fixed_bin_expected_absolute_gap": 0.23080063478742938,
+        "maximum_nonempty_bin_absolute_gap": 0.5026789991412394,
+        "linear_truth_on_estimate_intercept": 0.6229104014945972,
+        "linear_truth_on_estimate_slope": 0.15235007027427075,
+        "bin_table": [
+          {
+            "bin_index": 1,
+            "lower_inclusive": 0.0,
+            "upper_inclusive_only_for_last_bin": 0.1,
+            "n": 0,
+            "mean_estimated_terminal_bkt_kc_state": null,
+            "mean_oracle_kc_mastery_before": null,
+            "estimate_minus_oracle": null
+          },
+          {
+            "bin_index": 2,
+            "lower_inclusive": 0.1,
+            "upper_inclusive_only_for_last_bin": 0.2,
+            "n": 2514,
+            "mean_estimated_terminal_bkt_kc_state": 0.1483795992742741,
+            "mean_oracle_kc_mastery_before": 0.6510585984155135,
+            "estimate_minus_oracle": -0.5026789991412394
+          },
+          {
+            "bin_index": 3,
+            "lower_inclusive": 0.2,
+            "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+            "n": 1770,
+            "mean_estimated_terminal_bkt_kc_state": 0.24180233214689678,
+            "mean_oracle_kc_mastery_before": 0.6751059065763658,
+            "estimate_minus_oracle": -0.43330357442946904
+          },
+          {
+            "bin_index": 4,
+            "lower_inclusive": 0.30000000000000004,
+            "upper_inclusive_only_for_last_bin": 0.4,
+            "n": 403,
+            "mean_estimated_terminal_bkt_kc_state": 0.33529898235525846,
+            "mean_oracle_kc_mastery_before": 0.7033375570682189,
+            "estimate_minus_oracle": -0.3680385747129604
+          },
+          {
+            "bin_index": 5,
+            "lower_inclusive": 0.4,
+            "upper_inclusive_only_for_last_bin": 0.5,
+            "n": 810,
+            "mean_estimated_terminal_bkt_kc_state": 0.46550397405846355,
+            "mean_oracle_kc_mastery_before": 0.7065598806853676,
+            "estimate_minus_oracle": -0.24105590662690402
+          },
+          {
+            "bin_index": 6,
+            "lower_inclusive": 0.5,
+            "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+            "n": 1767,
+            "mean_estimated_terminal_bkt_kc_state": 0.5301451764242368,
+            "mean_oracle_kc_mastery_before": 0.6989406431670095,
+            "estimate_minus_oracle": -0.1687954667427728
+          },
+          {
+            "bin_index": 7,
+            "lower_inclusive": 0.6000000000000001,
+            "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+            "n": 1244,
+            "mean_estimated_terminal_bkt_kc_state": 0.6444548120942715,
+            "mean_oracle_kc_mastery_before": 0.6946029628592706,
+            "estimate_minus_oracle": -0.05014815076499912
+          },
+          {
+            "bin_index": 8,
+            "lower_inclusive": 0.7000000000000001,
+            "upper_inclusive_only_for_last_bin": 0.8,
+            "n": 827,
+            "mean_estimated_terminal_bkt_kc_state": 0.7530694461148525,
+            "mean_oracle_kc_mastery_before": 0.7214392131807325,
+            "estimate_minus_oracle": 0.03163023293412004
+          },
+          {
+            "bin_index": 9,
+            "lower_inclusive": 0.8,
+            "upper_inclusive_only_for_last_bin": 0.9,
+            "n": 2508,
+            "mean_estimated_terminal_bkt_kc_state": 0.8569651197476271,
+            "mean_oracle_kc_mastery_before": 0.7078396509547551,
+            "estimate_minus_oracle": 0.14912546879287203
+          },
+          {
+            "bin_index": 10,
+            "lower_inclusive": 0.9,
+            "upper_inclusive_only_for_last_bin": 1.0,
+            "n": 19157,
+            "mean_estimated_terminal_bkt_kc_state": 0.9889352529517946,
+            "mean_oracle_kc_mastery_before": 0.7791032463642924,
+            "estimate_minus_oracle": 0.20983200658750223
+          }
+        ]
+      }
+    }
+  },
+  "unique_terminal_learner_kc_metrics": {
+    "n": 18000,
+    "rmse": 0.30080428353263694,
+    "mae": 0.2570569300246405,
+    "pearson_correlation": 0.43497296036731026,
+    "calibration": {
+      "definition": "Calibration compares exposed terminal BKT KC state with oracle mastery_before[kc_id] in fixed-width estimate bins.",
+      "bins": 10,
+      "mean_estimate_minus_oracle": 0.09450533938048425,
+      "fixed_bin_expected_absolute_gap": 0.2408601703217776,
+      "maximum_nonempty_bin_absolute_gap": 0.37405221756810314,
+      "linear_truth_on_estimate_intercept": 0.47451702864946765,
+      "linear_truth_on_estimate_slope": 0.24617261822376496,
+      "bin_table": [
+        {
+          "bin_index": 1,
+          "lower_inclusive": 0.0,
+          "upper_inclusive_only_for_last_bin": 0.1,
+          "n": 0,
+          "mean_estimated_terminal_bkt_kc_state": null,
+          "mean_oracle_kc_mastery_before": null,
+          "estimate_minus_oracle": null
+        },
+        {
+          "bin_index": 2,
+          "lower_inclusive": 0.1,
+          "upper_inclusive_only_for_last_bin": 0.2,
+          "n": 1979,
+          "mean_estimated_terminal_bkt_kc_state": 0.14659504152026584,
+          "mean_oracle_kc_mastery_before": 0.520647259088369,
+          "estimate_minus_oracle": -0.37405221756810314
+        },
+        {
+          "bin_index": 3,
+          "lower_inclusive": 0.2,
+          "upper_inclusive_only_for_last_bin": 0.30000000000000004,
+          "n": 1167,
+          "mean_estimated_terminal_bkt_kc_state": 0.23948532161878555,
+          "mean_oracle_kc_mastery_before": 0.564772530582657,
+          "estimate_minus_oracle": -0.3252872089638714
+        },
+        {
+          "bin_index": 4,
+          "lower_inclusive": 0.30000000000000004,
+          "upper_inclusive_only_for_last_bin": 0.4,
+          "n": 280,
+          "mean_estimated_terminal_bkt_kc_state": 0.33839638536823274,
+          "mean_oracle_kc_mastery_before": 0.6211442644711228,
+          "estimate_minus_oracle": -0.28274787910289007
+        },
+        {
+          "bin_index": 5,
+          "lower_inclusive": 0.4,
+          "upper_inclusive_only_for_last_bin": 0.5,
+          "n": 525,
+          "mean_estimated_terminal_bkt_kc_state": 0.4640489149381251,
+          "mean_oracle_kc_mastery_before": 0.587158580027185,
+          "estimate_minus_oracle": -0.1231096650890599
+        },
+        {
+          "bin_index": 6,
+          "lower_inclusive": 0.5,
+          "upper_inclusive_only_for_last_bin": 0.6000000000000001,
+          "n": 1335,
+          "mean_estimated_terminal_bkt_kc_state": 0.5291349482918601,
+          "mean_oracle_kc_mastery_before": 0.5692338147510071,
+          "estimate_minus_oracle": -0.04009886645914695
+        },
+        {
+          "bin_index": 7,
+          "lower_inclusive": 0.6000000000000001,
+          "upper_inclusive_only_for_last_bin": 0.7000000000000001,
+          "n": 807,
+          "mean_estimated_terminal_bkt_kc_state": 0.6457613577833502,
+          "mean_oracle_kc_mastery_before": 0.5926210037465194,
+          "estimate_minus_oracle": 0.05314035403683082
+        },
+        {
+          "bin_index": 8,
+          "lower_inclusive": 0.7000000000000001,
+          "upper_inclusive_only_for_last_bin": 0.8,
+          "n": 397,
+          "mean_estimated_terminal_bkt_kc_state": 0.7536314832830705,
+          "mean_oracle_kc_mastery_before": 0.6631452182290494,
+          "estimate_minus_oracle": 0.09048626505402113
+        },
+        {
+          "bin_index": 9,
+          "lower_inclusive": 0.8,
+          "upper_inclusive_only_for_last_bin": 0.9,
+          "n": 1609,
+          "mean_estimated_terminal_bkt_kc_state": 0.8585940053285727,
+          "mean_oracle_kc_mastery_before": 0.6204452766116658,
+          "estimate_minus_oracle": 0.23814872871690684
+        },
+        {
+          "bin_index": 10,
+          "lower_inclusive": 0.9,
+          "upper_inclusive_only_for_last_bin": 1.0,
+          "n": 9901,
+          "mean_estimated_terminal_bkt_kc_state": 0.9868737822649392,
+          "mean_oracle_kc_mastery_before": 0.7286876424931299,
+          "estimate_minus_oracle": 0.25818613977180926
+        }
+      ]
+    }
+  },
+  "deliberate_model_generator_mismatch": {
+    "deliberately_misspecified": true,
+    "bkt_initial_mastery": "fixed 0.35",
+    "generator_initial_mastery": "learner-KC Beta(2,2) draws",
+    "bkt_learning": "correctness-conditioned Bayesian posterior followed by learn=0.12",
+    "generator_learning": "outcome-independent all-active opportunity update at rate 0.02",
+    "bkt_multi_kc_credit": "full item outcome applied to every active KC",
+    "generator_response_aggregation": "minimum",
+    "bkt_response_aggregation": "mean active KC state in existing implementation",
+    "bkt_guess_slip": [
+      0.18,
+      0.1
+    ],
+    "generator_guess_slip": [
+      0.1,
+      0.1
+    ],
+    "interpretation": "Agreement is not expected by construction; this evaluates whether a standard fixed BKT state tracks the different generator state."
+  },
+  "interpretation_boundary": "These are exposed states of a deliberately misspecified fixed BKT, not inverse-link item states, generator parameters, logistic coefficients, or human mastery estimates."
+}
