@@ -1,109 +1,139 @@
 \section{Results}
 
-\subsection{Dataset construction (RQ1)}
+\subsection{RQ1: a frozen auditable dataset}
 
 \input{tables/normalization_results}
-
-The final normalization outcome is 44/139 complete mappings (31.7\%), 77
-partial, 16 out of scope, and two unresolved.  The complete rows contribute 48
-source--cell edges to 24 unique cells.  Explicit Phase-2 eligibility identifies
-only 9 of the 80 historical partial Phase-1 rows; the retained broad routing had
-resolved only two.  All 80 retained transitions pass the stronger
-branch-preservation audit, and six adversarial tests reject unsafe changes.
-
-Initial default $N=3$ generation produced 72 attempts, 71 payloads, 53 validator
-acceptances, and coverage of 22/24 cells; its initial $N=1,2,3$ prefixes covered
-18, 21, and 22 cells.  The unchanged-prompt rescue accepted one of four
-candidates and reached 23 cells.  Two explicit-construction-cue attempts
-initially accepted one and completed coverage.
-
-An exhaustive agent audit then identified five packaging/reference defects in
-the selected bank and one likely judge error among rejected items.  We corrected
-only answer/reference fields, preserved the raw artifacts, and independently
-rejudged this frozen six-item cohort.  Two former accepts failed and the former
-reject passed.  Post-correction $N=1,2,3$ prefixes therefore contain 16, 33, and
-51 accepts covering 16, 19, and 22 cells; both explicit-cue candidates pass.
-The curated total is 54 accepts and 44 selected items over all 24 cells.
-Determinacy fails on 22/77 curated judgments and remains the dominant rejection;
-naturalness and pedagogical suitability fail on two and three.  The other six
-criteria have no failures.  These are model judgments and an agent audit, not
-expert gold labels.
-
-The earlier eight-cell audit supports the chosen generation design: model-
-selected language covered 8/8 cells at $N=3$, versus 5/8 for a controlled
-lexicon; $N=5$ added accepted variants but no model-selected cell coverage.
-On a stratified 24-item reliability sample, original versus same-model repeat
-acceptance agreed on 19/23 valid rejudgments ($\kappa=.652$), and original versus
-alternate model on 19/24 ($\kappa=.583$).  The final bank therefore supports
-traceable model-validity claims only.
-
-\subsection{Candidate space and selected granularity (RQ2)}
-
 \input{tables/policy_results}
 
-The 18 development cells and 32 items induce 55 candidates: nine feature
-values, ten declared operations, 18 supported co-occurring pairs, and 18 exact
-development cells.  Seventeen candidates duplicate another activation vector,
-leaving 38 classes; support and equivalence rules leave 28 selection-eligible
-representatives.  Direct negation, passive, imperative, and inversion operations
-alias corresponding feature KCs on this bank.  Finite-tense, perfect-dependency,
-and progressive-dependency operations remain distinct.  Using only one item per
-cell would leave two eligible interactions rather than seven, showing that item
-support affects the measurable hypothesis space even when cell support is
-fixed.
+All 1,222 source rows complete without a technical failure.  Phase 2 is
+licensed for 106 partial rows, 105 of which have usable examples; it converts
+41 to complete, leaves 57 partial, and makes seven unresolved.  No remaining
+failure group justifies expanding the declared grammar schema.  The exact
+cell-set agreement in the 120-row repeat is perfect among jointly complete
+cases, while lower partial-branch agreement supports retaining uncertainty.
 
-The forward selector starts with nine features and adds only
-\texttt{aspect=perfect}$\wedge$\texttt{polarity=negative}, supported by two
-cells and four items.  The frozen automated policy therefore has ten KCs and
-mean row width 2.18, compared with 16 KCs/2.89 for all supported interactions
-and 24 unit-width oracle cell KCs.
+Default $N=3$ generation produces 225/225 valid payloads.  The independent
+validator accepts 102 (45.3\%), covering 57/75 cells.  Determinacy fails for
+117/223 model-judged candidates and is the dominant bottleneck; pedagogical
+suitability is next at 22 failures.  Unchanged rescue adds nine cells and
+explicit-construction instructions add six.  The finite answer-package
+correction succeeds for one of three candidates.  Its two imperative failures
+are an informative negative result: open sentence production has an
+effectively unbounded valid response set.  All four cue-bounded imperative
+candidates pass unchanged validation, yielding 75/75 coverage.  These are
+automatic judgments, not expert gold.
 
-\subsection{Fixed-event KT comparison (RQ3)}
+The measurement gate passes before learner generation.  Every KC has seen
+support, \qstar{} has full column rank, and there are no activation-equivalent
+or near-equivalent columns.  The release contains 170,000 seen acquisition
+rows and 113,000 non-updating probes; an independent replay verifies all
+283,000 public rows and their private state transitions.
+
+\subsection{RQ2: both coarsening and refinement hurt}
 
 \input{tables/kt_results}
 
-On the final mixed-world stream, automated selection lowers all-probe logistic
-log loss from .643731 to .643356 ($\Delta=-.000375$, 95\% learner-bootstrap CI
-$[-.000631,-.000109]$).  The gain is concentrated in development probes
-($-.000450$ $[-.000758,-.000141]$); its compositional estimate remains
-inconclusive ($-.000234$ $[-.000836,.000375]$).  All seven supported interactions
-reach .643334 and improve over factorization on all probes ($-.000397$
-$[-.000782,-.000026]$) and compositional probes ($-.001168$
-$[-.002042,-.000246]$).  This richer policy was not selected by the penalized
-development objective; its one-stream result is a sensitivity, not grounds to
-replace the active method.  The 24-cell oracle performs worse overall (.657507)
-and especially on compositional probes because its evaluation-cell columns have
-no acquisition history.
+K* obtains all-probe log loss .670627.  On the frozen six-point curve, loss is
+minimized at K* and increases toward both coarser and finer representations:
+family merging costs .008132, structural split-2 .003165, split-4 .005868,
+and exact cells .015039.  Every learner-paired interval in
+Table~\ref{tab:kt-results} excludes zero.  No off-truth optimum was observed.
+This is a controlled predictive result, not a cognitive-truth result.
 
-Novel-value estimates use only 2,000 events from two items.  Automated minus
-factorized log loss is $+.000119$ $[-.000099,.000352]$, and a development-
-derived policy cannot create a \texttt{would} KC after seeing the holdout.  The
-gap is reported rather than repaired using evaluation grammar.
+All nine 10\% Q-corruption instances are harmful.  Mean log-loss costs are
+.001685 for false positives (three-seed range .001265--.001970), .002644 for
+false negatives (.001791--.004004), and .002294 for mixed corruption
+(.001757--.002641).  False negatives tend to cost more, but three structural
+seeds and overlapping ranges do not establish a universal ordering.
 
-\subsection{Robustness and support (RQ4)}
+Oracle-only state evaluation agrees with the overall predictive ranking:
+\kstar{} gives prerequisite-state RMSE .123738, versus .146300 family-coarse,
+.132752 split-2, .140428 split-4, and .163828 exact-cell.  All four paired
+RMSE-difference intervals exclude zero.  The conclusion is not uniform by
+regime: family-coarse improves RMSE by .003663 on the six unseen-value cells
+(95\% interval $[-.005740,-.001507]$).  A deliberately mismatched fixed BKT
+recovers unique learner--KC states poorly (RMSE .300804, correlation .434973),
+showing that a plausible KT state need not share the generator state's
+semantics.
 
-At 240 learners and $\lambda=.0005$, the selector adds no KC in any of three
-factorized or cell-specific null seeds, and recovers both eligible planted
-interactions in all three interaction-heavy seeds; one extra operation appears
-once.  At 30 learners the factorized null has additions in 2/3 seeds, while the
-cell-specific null becomes clean only at 240.  Addition-only Jaccard remains
-.778 in the interaction world and .333 in the mixed world, so repeated events
-do not eliminate limited structural support.
+\subsection{RQ3: discovery reaches an equivalence class}
 
-Penalty sensitivity exposes the intended tradeoff.  With $\lambda=0$, all
-three factorized-null runs add irrelevant KCs; $.00025$ does so in 2/3.
-Penalties $.001$ and $.002$ miss at least one planted interaction in 1/3 and
-3/3 positive-control runs.  The retained $.0005$ is the only tested point with
-zero null additions and joint 3/3 planted recovery.  Across worlds, automated
-minus factorized mean log loss is 0 in the factorized world, $-.002256$ in the
-interaction-heavy world, 0 in the cell-specific world, and $+.000016$ in the
-mixed world.  Exact cells win only in their matching cell-specific world.  No
-representation is universally best.
+\input{tables/discovery_results}
 
-On the curated final bank, all five 1,000-learner mixed-world seeds select the
-same ten KCs, including perfect$\wedge$negative (pairwise inventory
-Jaccard $=1$).  Nested 60/240/500/1,000-learner subsets of the reference seed
-also match; the 120-learner subset instead adds present$\wedge$passive, giving
-Jaccard .818 with the reference inventory.  Thus full-support selection is
-stable across the tested simulation seeds, while a single intermediate support
-sample exposes finite-evidence sensitivity.
+The observable selector tests every eligible addition and retains its
+18-feature base.  Atomic features, compositional operations, and both automated
+projections have exactly the same seen-Q signature; separately fitted seen
+losses differ only numerically.  After truth is opened, the compositional
+candidate-space ceiling exactly recovers all 18 generator activations.  The
+selected atomic projection exactly recovers 16/18, with activation Jaccard
+.970854 and aligned edge F1 .965385.  Its two aspect features fail to compose
+onto the six unseen perfect-progressive cells.
+
+On all probes, atomic costs .000374 relative to the compositional ceiling
+(95\% interval $[.000228,.000517]$), entirely through unseen-value
+extrapolation; seen predictions are identical.  Hash distractors recover no
+exact KC and cost .013238.  Adding supported intersections costs .000206 with
+interval $[-.000069,.000478]$, so that contrast is inconclusive.  The candidate
+space contains the truth-like policy and rejects a spurious negative control,
+but observable seen responses cannot select uniquely among activation-equivalent
+rules.  RQ3 therefore supports high-overlap equivalence-class recovery and
+rejects unique ontology recovery.
+
+\subsection{RQ4: reusable KCs transfer to new tuples}
+
+\input{tables/generalisation_results}
+
+K* log loss is .669161 on seen grammar, .672036 on 15
+pairwise-seen/full-tuple-unseen cells, and .681181 on six unseen-value cells.
+Exact-cell KCs cost .037609 on unseen combinations and .028627 on unseen
+values.  Family unions and split-2 also have supported combination costs.
+Adding spurious intersections is harmful in all three regimes, empirically
+confirming that a union merge and an intersection are different
+perturbations.
+
+Atomic and compositional predictions differ by at most $1.2{\times}10^{-7}$ on
+seen and combination rows.  Their unseen-value difference is inconclusive and
+changes point direction under the separate RQ3 fitting protocol; evaluation
+outcomes may expose the extrapolation but cannot legitimately break a tie
+formed on seen evidence.  The unseen-value result is cell-sensitive: K*
+per-cell loss ranges from .666512 to .691208; leave-one-cell-out macro loss
+ranges from .680016 to .684955.
+
+In the exact-item negative control, same-cell replacement preserves every
+\kstar{} opportunity and all 30,000 held-out-item outcomes exactly match their
+paired baseline outcomes.  The result follows from a simulator with no item
+memory or difficulty and outcome-independent same-Q updates; it does not imply
+human transfer between surface variants.
+
+\subsection{Supporting robustness evidence}
+
+The compact sensitivity study contains 39 worlds (13 conditions, three seeds)
+and 117 converged primary fits.  In the baseline 500-learner condition,
+candidate-minus-\kstar{} mean log-loss costs are .007924 for family-coarse and
+.003241 for split-2.  K* beats both in every seed for 12/13 conditions,
+including altered noise, product or arithmetic-mean aggregation, learner
+noise/rate heterogeneity, mild forgetting, correlated initial mastery, and
+correct-only updates.
+
+Unmodelled item logit difficulty (SD .60) is the exception.  Split-2's mean
+cost remains .004138, but its three-seed range is
+$-.000413$--$+.009955$: it beats \kstar{} once and falls behind the coarse
+representation once.  K* ranks first in 38/39 primary worlds, so the headline
+is broadly robust but not invariant to item nuisance structure.  Fixed BKT
+produces additional reversals under its known aggregation/update mismatch and
+does not drive the conclusion.
+
+In the collection controls, unpenalized prediction selects \kstar{} in all 21
+nested cohorts, but a fixed $.0005|K|$ criterion selects the family union in
+18/21: the penalty changes the objective rather than consistently revealing
+generator truth.  Raising the opportunity target from 6 to 24 improves
+\kstar{} loss (.681757 to .636837) and widens its advantage.  Max-two adds 38
+within-cell variants over max-one and raises minimum KC support from one to
+two, but adds no Q row or rank.
+
+With A+B-only micro-items, every representation ties exactly through
+$N=1000$.  Anchors restore full Q rank and make union merging detectably worse,
+yet omitting a planted interaction costs only .000506 under balanced anchors
+at $N=1000$; the spurious-interaction negative control is approximately null.
+Thus response volume cannot repair structural equivalence, and full rank does
+not by itself guarantee practically unique predictive recovery.

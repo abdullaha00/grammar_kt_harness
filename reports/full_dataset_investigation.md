@@ -1,567 +1,494 @@
-# Full dataset investigation — final curated medium-v1
+# Full-v1 dataset and research investigation
 
-Date: 2026-08-27  
-Status: complete for the retained English sample and declared synthetic learner
-world; human item quality and human KC validity remain untested.
+Date: 2026-08-30
 
-## Evidence boundary and supersession
+Dataset status: **frozen and replay-verified**
 
-The authoritative Phase-6 dataset is `data/grammar_kt_medium_v1/` after the
-frozen F36 packaging correction and downstream rerun. It contains 139 source
-descriptors, 24 canonical GrammarCells, 44 selected items, 1,000 synthetic
-learners, and 204,000 events. The final analysis is
-`reports/phase6/artifacts/full_dataset_analysis/summary.json`; its paper-facing
-tables are in the same directory. The selection-stability result is
-`reports/phase6/artifacts/selection_stability_v1/results.json`.
+Research scope: controlled English grammar-KT methodology; no claim of human
+cognitive truth or classroom validity
 
-The earlier 45-item finalization and selection-stability run are superseded.
-Their dataset derivatives were moved to
-`data/grammar_kt_medium_v1/superseded_pre_curation/2026-08-27_f36_packaging_correction/`,
-and the old selection-stability study was moved to
-`reports/phase6/artifacts/superseded_pre_curation_selection_stability_v1/`.
-They are provenance, not final evidence. Raw generation candidates and original
-validator judgments remain unchanged; the curated layer records six exact
-edits and six replacement judgments separately.
+This report consolidates the investigation that produced
+`data/grammar_kt_full_v1/` and the evidence derived from it. The former
+medium-v1 investigation is preserved at
+`reports/historical/medium_v1/full_dataset_investigation.md`.
 
-All item-quality judgments are model judgments or an agent-based qualitative
-audit. No teacher, learner, linguist, or other human annotator evaluated the
-bank. All learner responses are synthetic under declared latent worlds. Thus
-the investigation establishes an executable methodology and controlled
-recovery/prediction evidence, not human pedagogical effectiveness or cognitive
-truth.
+## Executive findings
 
-## Final experiment in one view
+1. **A complete, auditable baseline exists.** All 1,222 source rows were
+   processed. The bounded exact subset yields 75 canonical GrammarCells, 18
+   declared generator KCs, 113 fixed items, a full-rank true Q-matrix, and
+   283,000 public interactions plus a separate private oracle.
+2. **The scientific layers are now clean.** GrammarCells describe linguistic
+   constructions; K*/Q* define synthetic generator truth; items/responses are
+   observations; K-hat/Q-hat are downstream hypotheses. No response was used to
+   define the skills that generated it.
+3. **Measurement, not response volume, is the main construction bottleneck.**
+   Default N=3 generation produced structurally valid output for every cell,
+   but independent validation covered only 57/75 because prompts often failed
+   to make marked modal/aspect choices determinate. Declared rescue and narrow
+   format interventions—not silent repair—were required.
+4. **K* is structurally measurable but not uniformly supported.** Q* has rank
+   18/18 and no equal or near-equal columns. Nevertheless, item support ranges
+   2--49 and one non-subject-WH construction is nested inside present and
+   negative evidence. Full rank is not a substitute for balanced support.
+5. **Misspecification matters.** Under one common observable model, K* beats
+   every frozen coarser and finer representation. Exact-cell KCs are especially
+   poor on unseen grammatical combinations. Ten-percent Q-edge corruption is
+   consistently harmful but smaller than severe granularity errors.
+6. **Prediction does not identify ontology uniquely.** Observable-only KC
+   discovery reaches an atomic/compositional equivalence class with very high
+   structural overlap, but the two rules have identical Q on seen items. The
+   perfect compositional candidate is reachable but cannot be uniquely selected
+   without using held-out evidence or an external prior.
+7. **Response prediction and state recovery tell related but distinct stories.**
+   K* best recovers the weakest prerequisite state overall, but a coarse model
+   reverses on the six unseen-value cells. A deliberately mismatched fixed BKT
+   exposes states that correlate only .435 with terminal per-KC oracle mastery.
+8. **The main RQ2 ordering is broad, not absolute.** It survives 12/13 compact
+   simulator conditions across all three seeds. Unmodelled item difficulty is
+   the exception: split-2 beats K* in one seed and changes its ordering relative
+   to coarse in another.
+
+## 1. Repository and evidence audit
+
+The repository initially mixed two scientific layers. The historical medium
+pipeline built grammar/items, simulated responses in candidate-specific latent
+worlds, and used predictive KC selection as part of the apparent dataset
+definition. That work remains useful pilot evidence for Phase-2 routing, N=3
+generation, validation disagreement, semantic holdouts, and predictive
+selection. It is not the full-v1 generator truth.
+
+The active architecture is:
 
 ```text
-139 retained EGP descriptors
-→ retained constrained normalization
-→ 24 exact six-feature GrammarCells
-→ 78 generation attempts / 77 valid candidate payloads
-→ independent all-criteria validation
-→ frozen six-record packaging correction and revalidation
-→ 54 validator-accepted candidates / 44 selected items / 24 covered cells
-→ semantic 18 development / 5 compositional / 1 novel-value cell fold
-→ 1,000 mixed-world synthetic learners / 204,000 events
-→ 55 structural KC candidates / 28 selection-eligible representatives
-→ 9 protected feature KCs + 1 selected interaction
-→ frozen Q-matrices → empirical, BKT, and observable-logistic KT
-→ 44,000 frozen probes and learner-cluster paired uncertainty
+LAYER A
+resource -> mappings -> GrammarCells -> K* -> items -> Q* -> measurement gate
+         -> fixed simulator -> public responses + private oracle -> frozen data
+
+LAYER B
+frozen data -> K_hat/Q_hat perturbation or discovery -> KT/state evaluation
+            -> grammar generalisation -> simulator and collection sensitivity
 ```
 
-The fixed-bank boundary was maintained: item generation and validation did not
-receive the grammar fold, learner evidence, candidate KCs, latent world, KT
-predictions, or evaluation results. KC selection received 160,000 development
-acquisition events (128,000 train; 32,000 chronological validation), and no
-holdout or reserved test event.
+Construction lives in `scripts/build_dataset.py`,
+`scripts/build_true_q_matrix.py`, `scripts/investigate_baseline_simulator.py`,
+and `scripts/freeze_baseline_dataset.py`. Downstream studies live under
+`scripts/experiments/`. The baseline runner does not call KC discovery or KT
+evaluation.
 
-## Source, normalization, and canonical inventory
+User-owned pre-existing working files were preserved throughout. Historical
+datasets and reports were versioned rather than deleted. Research decisions and
+negative results are append-only in `reports/experiment_log.md`.
 
-| Result | Count | Proportion of 139 |
+## 2. Full linguistic inventory
+
+### Scope and census
+
+The verified consult-only EGP snapshot contains 1,222 unique records. Every row
+crosses the typed source boundary and is classified against a declared
+single-main-clause English verbal-morphosyntax scope. The final outcome is:
+
+| Outcome | Phase 1 | Final after eligible Phase 2 |
 |---|---:|---:|
-| complete | 44 | 31.65% |
-| partial | 77 | 55.40% |
-| unresolved | 2 | 1.44% |
-| out of scope | 16 | 11.51% |
+| Complete | 170 | 211 |
+| Partial | 375 | 327 |
+| Unresolved | 2 | 9 |
+| Out of scope | 675 | 675 |
 
-The 44 contributing descriptors produce 48 source-to-cell edges and 24 unique
-GrammarCells: 1.83 contributing descriptors and 2.00 edges per cell on average.
-This is genuine editorial compression, but it should not be summarized as
-139-to-24 because 95 partial, unresolved, or out-of-scope rows do not contribute
-an exact cell. Current canonicalization exactly reproduces the retained legacy
-24-cell feature inventory and source memberships.
+Of 106 eligible Phase-1 partials, 105 had licensed examples. Phase 2 completed
+41, retained 57 partial, and made seven unresolved. Branches expanded from 124
+to 137; they were never collapsed into an unsupported Cartesian product.
 
-The inventory is uneven. Present and past occur in 11 and 10 cells (22 and 17
-selected items); three cells have `tense=NA`. Active voice dominates (19 cells,
-35 items) over passive (5, 9). Declaratives dominate (20 cells, 37 items), with
-two polar-question and two imperative cells; no WH-question cell is present.
-Twenty-three cells use `modal=none`; the sole modal cell has `would`, and every
-other schema-declared modal has zero support. Thirteen of 24 exact cells have
-only one source edge, while positive imperative has seven. Sparse schema values
-therefore remain a source-coverage limitation, not evidence that they are
-unimportant KCs.
+The 211 complete mappings yield 75 unique exact cells and 228 source-cell
+relations. Remaining uncertainty concentrates in unspecified polarity,
+clause, voice, aspect, and tense. Inspection found no high-yield failure group
+that justified adding a seventh dimension or inventing defaults. The schema
+therefore remained stable.
 
-The Phase-4 replay gives the relevant normalization audit boundary. Historical
-Phase 2 made 80 calls but resolved only 2 (2.5%); explicit eligibility identifies
-only 9/80 rows, all uncertain in tense, and would have avoided 71 calls. All 80
-retained transitions pass the stronger branch-preserving checks. Eight selected
-repeat annotations agree exactly, but that is too small and selected to estimate
-general annotation reliability. The retained `gpt-5.6-sol`/medium snapshot is
-not a repeated-run or cross-model stability study.
+### Stability
 
-## Item construction, validation, and curation
+A fresh category/CEFR-balanced repeat of 120 Phase-1 rows found:
 
-### Generation and coverage
+- status agreement 112/120 (93.3%);
+- Phase-2 eligibility agreement 115/120 (95.8%);
+- exact complete-cell-set agreement 38/38 where both were complete; and
+- partial branch-multiset agreement 64/81 (79.0%) where either result branched.
 
-The final curated reconstruction is:
+This supports the final exact inventory while demonstrating why partial model
+annotations should remain explicit evidence instead of being treated as truth.
 
-| Stage | Attempts | Candidate payloads | Accepted | Covered cells | Would select |
-|---|---:|---:|---:|---:|---:|
-| default prefix N=1 | 24 | 24 | 16 | 16 | 16 |
-| default prefix N=2 | 48 | 48 | 33 | 19 | 33 |
-| default prefix N=3 | 72 | 71 | 51 | 22 | 41 |
-| rescue only | 4 | 4 | 1 | 1 | 1 |
-| cumulative through rescue | 76 | 75 | 52 | 23 | 42 |
-| explicit-construction intervention only | 2 | 2 | 2 | 1 | 2 |
-| **final cumulative** | **78** | **77** | **54** | **24** | **44** |
+## 3. Generator-KC design
 
-The counts differ from the preregistration's pre-curation checkpoint because
-fresh F36 judgments rejected two formerly accepted default candidates and
-accepted one formerly rejected intervention candidate. The 44-item table above
-is final; the old 53-default/45-selected counts are superseded. Twenty-two
-cells required the default three attempts, `cell_022` required five, and
-`cell_017` required seven. The single structural failure was a missing required
-legacy output field for `candidate_cell_001_03`, not an API loss or a linguistic
-failure.
+Four outcome-free principles were compared before learner generation:
 
-N=3 materially improves coverage over N=1 (22/24 versus 16/24), but does not
-complete the bank. The separate eight-cell Phase-4 prefix experiment found that
-N=5 added accepted candidates but no coverage beyond N=3 (8/8 at both) and
-reduced acceptance from .750 to .675. This supports N=3 as a cost/coverage
-default, not a claim that N=3 is universally optimal. The full bank never ran
-N=5 for all cells.
+| Ontology | KCs | Reuse | Structural result | Decision |
+|---|---:|---|---|---|
+| Feature-value | 19 | reusable | full rank | downstream atomic control |
+| Reusable operations | 18 | reusable | full rank; 75 distinct rows | **K*** |
+| Operations + perfect-progressive chain | 19 | reusable/nested | full rank; chain nested in both components | rejected as redundant |
+| Exact cell | 75 | none across cells | identity-like upper bound | downstream fine control |
 
-### Validation behavior
+K* contains finite present/past, shared perfect/progressive, BE-passive,
+negation, four clause operations, and modal-specific skills. Reference values
+are conditions, not automatic KCs. Seventeen of 18 KCs recur across multiple
+cells. The exact-cell ontology was not rejected because it later predicted
+poorly; it was rejected as generator truth because it provides no reuse. The
+chain was excluded because the cell inventory contains no chain-only evidence
+or separate operation.
 
-Final acceptance is 54/77 valid candidates (70.13%), or 54/78 attempts (69.23%).
-The all-required criterion pass rates are:
+The declaration is explicit, deterministic, and English-specific. Generic
+code receives activation predicates and contains no hidden `if tense == past`
+branch. K* is ground truth only inside this synthetic experiment.
 
-| Criterion | Passed / 77 | Pass rate |
-|---|---:|---:|
-| target fidelity | 77 | 100% |
-| grammaticality | 77 | 100% |
-| naturalness | 75 | 97.40% |
-| pedagogical suitability | 74 | 96.10% |
-| determinacy | 55 | 71.43% |
-| non-target-language simplicity | 77 | 100% |
-| no answer leakage | 77 | 100% |
-| no extraneous grammar | 77 | 100% |
-| no world knowledge | 77 | 100% |
+## 4. Measurement-bank investigation
 
-Determinacy fails on 22 candidates and is by far the active bottleneck;
-naturalness fails twice and pedagogical suitability three times, sometimes
-alongside determinacy. Always-passing criteria are not proven redundant: this
-is one model, one snapshot, and one English sample. In particular, zero failures for
-non-target-language simplicity means that the validator detected none, not that
-lexical nuisance difficulty is absent.
+### Default generation and validation
 
-Phase-4 repeated-judgment evidence quantifies this boundary. Original versus
-same-model acceptance agrees on 19/23 valid rejudgments (82.6%, Wilson 95%
-interval [62.9%, 93.0%], kappa .652); original Terra versus Sol agrees on
-19/24 (79.2%, [59.5%, 90.8%], kappa .583). One repeat output is malformed.
-This is material judgment/model uncertainty and gives no basis for treating
-the validator as gold or using an ensemble without human adjudication.
+The full default campaign made three frozen calls for each of 75 cells:
 
-The hardest cells are structurally marked and temporally difficult to elicit:
-past perfect passive `cell_022` accepts 1/5, negative past perfect progressive
-`cell_017` accepts 2/7 after intervention and correction, and positive past
-perfect progressive `cell_018`, positive past perfect `cell_015`, and positive
-imperative `cell_005` each accept 1/3. Five of the first two cells' failures are
-explicitly about determinacy. This is a realistic-scale failure of semantic
-elicitation, not random call loss.
+| Quantity | Result |
+|---|---:|
+| Planned/completed candidate payloads | 225 / 225 |
+| Independent accepts | 102 (45.3%) |
+| Cells covered | 57 / 75 |
+| Zero-coverage cells | 18 |
 
-### Rescue and explicit-construction intervention
+Every model-judged candidate passed target fidelity, grammaticality, simple
+non-target language, and world-knowledge checks. Determinacy failed 117/223;
+pedagogical suitability failed 22, naturalness six, extraneous grammar three,
+answer leakage one. This distinguishes a measurement-contract failure from an
+inability to form the target construction.
 
-Default N=3 left `cell_017` and `cell_022` uncovered. The unchanged-prompt
-rescue generated exactly two further candidates for each; one of four passed,
-covering `cell_022`, while all five accumulated `cell_017` candidates still
-failed determinacy. The rescue therefore resolved one of two cells, not the
-whole failure.
+### Declared recovery path
 
-For the still-uncovered `cell_017`, the preregistered intervention changed only
-the generation prompt so it could name the target construction. Both generated
-items are accepted in the final curated evidence: one passed originally and the
-second passed after its complete-target packaging error was corrected and
-independently rejudged. This restores coverage but is only two candidates from
-one cell. The surviving prompts are metalinguistic and one is contrived; the
-result shows an operational escape hatch, not a general causal estimate of
-prompt effectiveness or realism.
+The coverage path remained append-only:
 
-### Frozen packaging correction (F36)
-
-An agent audit identified five selected packaging defects and a likely
-slot-versus-complete-target error on rejected `candidate_cell_017_06`. The
-correction plan froze six exact before/after values and preserved item IDs,
-prompts, cells, raw candidates, and original judgments. Independent
-`gpt-5.6-terra`/medium revalidation accepted four corrections:
-`candidate_cell_003_01`, `_017_06`, `_018_03`, and `_019_03`. It rejected
-`_005_01` because “Turn the light on” remained an unlisted alternative and
-`_018_01` because a `since eight` completion remained possible. The selected
-bank therefore changed from 45 to 44: two formerly selected items were removed,
-one formerly rejected item entered, and all 24 cells remained covered.
-The frozen plan hash is
-`bbed7be77c2d326bd7133308ea22d637bed5de8d44cd4bb470a2421c4ebe0dc5`.
-
-This partly supports F36. The frozen edits repaired serialization defects and
-the pipeline responded correctly to fresh evidence, but correction did not make
-all six packages valid. The raw candidate and judgment hashes are preserved;
-all stale downstream artifacts were archived and recomputed.
-
-### Bank size, diversity, and realism
-
-At most two variants per cell reduces 54 accepted candidates to 44 selected
-items (18.52% reduction) while retaining all 24 cells. Twenty cells have two
-items and four have one. All 44 prompts are distinct. They contain 795 prompt
-word tokens and 242 types (TTR .304), with median prompt length 17 tokens. The
-20 rank-2 items have median token-set distance .739 from their cell's first
-item. These are lexical surface statistics, not evidence of instructional
-diversity.
-
-The pre-curation independent agent audit inspected every then-selected item and
-all 22 rejections. It found no clearly ungrammatical or wrong-cell selected
-target, but flagged judgment-sensitive perfect/simple-past, past-progressive,
-and passive decisions. It also found heavy worksheet-template reuse, repeated
-names, domestic contexts, and predicates. That audit's 45-item category counts
-are superseded by F36; its qualitative failure modes remain traceable in
-`reports/phase6/artifacts/qualitative_item_audit.md`. A direct count over the
-final 44 prompts still finds 33 containing “complete,” 18 explicitly mentioning
-a cue, 13 mentioning Mia, and 7 mentioning Maya. The resulting material is
-plausible focused controlled-production practice, but is more worksheet-like
-than communicatively diverse. Human usability remains unresolved.
-
-## Grammar fold and learner evidence
-
-| Regime | Cells | Items | Unseen development values | Value pairs unseen in development |
+| Campaign | New candidates | Accepted | Newly covered cells | Cumulative coverage |
 |---|---:|---:|---:|---:|
-| development | 18 | 32 | 0 | 0 |
-| compositional holdout | 5 | 10 | 0 | 1 |
-| novel-value holdout | 1 | 2 | 1 (`modal=would`) | 6 |
+| Default N=3 | 225 | 102 | 57 | 57 |
+| Same-prompt rescue | 36 | 10 | 9 | 66 |
+| Explicit-construction intervention | 18 | 9 | 6 | 72 |
+| Frozen answer-package correction | 3 | 1 | 1 | 73 |
+| Cue-bounded imperative | 4 | 4 | 2 | 75 |
 
-Every compositional cell is an unseen exact tuple whose individual feature
-values occur in development. However, one of its 37 value pairs is also unseen,
-so the fold is clean at the constituent level but not a pure all-pairs-seen
-test. The novel regime is only one cell and cannot support a broad novel-value
-claim.
+The correction added a validator-named accepted equivalent but did not alter
+the visible prompt or overwrite raw output. Open sentence-level imperatives
+still failed after correction because natural polite/referential alternatives
+could not be finitely enumerated. The final all-and-only lexical-chunk contract
+is a narrow, labelled format intervention. It fixes determinacy at the cost of
+format comparability and must not be generalized as a universal item design.
 
-Each learner receives five passes over 32 development items (160 acquisition
-events) followed by one non-updating probe for each of 44 items. Across 1,000
-learners this gives 204,000 events: 160,000 acquisition and 44,000 probes. The
-probe set contains 32,000 development, 10,000 compositional, and 2,000 novel
-events. No holdout item occurs in acquisition. Events and outcomes are identical
-across KC policies, and logistic KT uses no simulator-derived item difficulty or
-KC count.
+### Curation scale
 
-## KC hypothesis space and automated selection
+Max-one gives 75 items; outcome-free max-two gives 113; up-to-three gives 126.
+The second item adds contextual replication to 38 cells. Thirteen third items
+add no cells and relatively little new lexical surface. The max-two bank was
+therefore frozen before Q* and simulation. All 113 prompts are unique, but
+surface uniqueness is not equated with measurement independence.
 
-### Structural candidates
+## 5. Q* and identifiability gate
 
-| Family | Raw | Support eligible | Activation duplicates | Selection eligible | Median item support |
-|---|---:|---:|---:|---:|---:|
-| feature value | 9 | 9 | 0 | 9 | 6.0 |
-| declared operation | 10 | 7 | 6 | 3 | 4.5 |
-| pairwise interaction | 18 | 8 | 2 | 7 | 2.0 |
-| development full cell | 18 | 18 | 9 | 9 | 2.0 |
-| **total** | **55** | **42** | **17** | **28** | — |
+The final pre-simulation audit passes every hard condition:
 
-Support filtering removes 13 candidates and activation-equivalence plus family
-eligibility reduces the usable inventory to 28 representatives across 38
-activation classes. These are equivalences on the 32 development items, not
-universal linguistic identities.
+| Diagnostic | Full-v1 |
+|---|---:|
+| Cells measured | 75 / 75 |
+| Items / KCs / Q edges | 113 / 18 / 269 |
+| Q density | .1323 |
+| Column rank | 18 / 18 |
+| Equal / near-equal columns | 0 / 0 |
+| Distinct cell activation rows | 75 |
+| Items per KC | 2--49 (median 7.5) |
+| Cells per KC | 1--32 |
 
-Of ten English operation declarations, only `finite_tense_form` (16 cells/29
-items), `perfect_dependency` (8/13), and `progressive_dependency` (6/11) remain
-selection eligible. Imperative, negation, inversion, and passive-dependency are
-activation aliases of canonical feature KCs. Central modal and the two WH
-operations have zero development support. No operation is selected in the
-final policy.
+Forty-six KC pairs have complete A-only/B-only/A+B contrasts; another 105 have
+two-sided contrast without observed co-occurrence. Two pairs remain nested
+because the source inventory licenses non-subject WH only with present and
+negative. More text variants cannot change cell-level activation geometry, so
+inventing unnatural cells was rejected. The release reports this limitation
+rather than claiming that rank proves recovery.
 
-### Selected policy and trace
+The semantic regime design yields:
 
-The selector starts with nine protected non-background feature KCs, scores
-supported nonredundant operations/interactions using chronological development
-evidence, minimizes validation log loss plus `.0005 × KC count`, and
-backward-prunes before freezing. From ten eligible additions it selects only:
+- 54 seen cells;
+- 15 unseen combinations whose values and all lower-order pairs are seen but
+  whose complete tuple is absent; and
+- six unseen-value perfect-progressive cells.
 
-`kc_interaction__aspect_perfect__and__polarity_negative`
+The full-v1 split is materially stronger than medium-v1's 18/5/1 fold, while
+the six-cell unseen-value family remains narrow.
 
-The interaction has two-cell/four-item structural support. It reduces selector
-validation log loss from .647160 to .646354. After paying the extra .0005
-complexity penalty, objective improves by .000307; the best second addition
-would worsen objective by .000137. No holdout grammar or outcome enters this
-trace.
+## 6. Simulator decision and release scale
 
-| Policy | KCs | Interactions | KCs/item | Q density | Median item support |
-|---|---:|---:|---:|---:|---:|
-| factorized | 9 | 0 | 2.091 | .232 | 8 |
-| **automated** | **10** | **1** | **2.182** | **.218** | **8** |
-| all supported interactions | 16 | 7 | 2.886 | .180 | 6 |
-| oracle exact-all-cell | 24 | 0 | 1.000 | .042 | 2 |
+The frozen pre-response simulator pilot tested aggregation semantics, update
+rules, response noise, initial mastery, learning rate, and opportunity targets.
+Minimum aggregation alone satisfied the declared interpretation that every
+active KC is required. Product changes when an equally mastered prerequisite
+is duplicated; arithmetic/logit means compensate for a weak prerequisite.
+All-active opportunity learning was chosen because it is simple and does not
+condition simulated acquisition on the random correctness draw.
 
-The lower Q density of larger policies reflects a larger denominator; KCs/item
-is the more direct edge-load comparison. Reusable policies cover every
-compositional item but do not activate on the two novel-`would` items. The
-oracle covers all items by construction and is not development-admissible.
+Target 12 is the lowest schedule passing every information/saturation gate. It
+produces 170 seen-only acquisitions per learner, covers every seen item, gives
+each seen KC at least 12 opportunities, and then presents 113 frozen probes.
+The 128-learner pilot's median response probability changes from .3822 to
+.5936, with median gain .1806 and only 2.21% terminal seen-KC states above .95.
 
-### Selection stability and support
+The production release contains:
 
-The final 44-item bank was replayed at nested 60/120/240/500/1,000 learner
-prefixes for seed 20260827 and at 1,000 learners for five seeds
-20260827–20260831. All five 1,000-learner seeds select exactly the same ten KCs
-(all-KC and addition Jaccard 1.0). Eight of nine total conditions reproduce the
-final inventory. The 120-learner prefix replaces perfect×negative with
-present×passive; 60, 240, 500, and 1,000 select perfect×negative. Thus the nine
-protected features are invariant and the full-support result is stable, but
-one small-sample anomaly shows that the interaction is not an ontology fact.
-No holdout or reserved test event enters any stability selection.
+| Quantity | Count |
+|---|---:|
+| Learners | 1,000 |
+| Acquisition events | 170,000 |
+| Non-updating probes | 113,000 |
+| Total public events | 283,000 |
+| Acquisition / probe correct | 84,438 / 65,986 |
 
-Phase 5 supplies the complementary four-world support result. At 240 learners,
-the selector recovered both eligible planted interactions in all three
-interaction-heavy seeds and made no addition in any factorized-null seed; at
-smaller samples false or swapped additions were more common. More learners
-reduce sampling noise, but they do not increase the final interaction's two-cell
-structural support. Broader grammar/item support remains needed.
+Exact replay reconstructs every response probability, draw, transition, Q
+edge, and public/private join. Public rows contain no latent state. The
+baseline is intentionally simpler than a human-learning model; its deviations
+are experimental variables downstream.
 
-Selecting two variants materially changes the candidate measurement space.
-Using only the rank-1 development variant gives 37 support-eligible and 23
-selection-eligible candidates, including two eligible interactions; up to two
-variants gives 42, 28, and seven. Five interactions become eligible only with
-the larger bank. This is a structural sensitivity analysis: learner outcomes
-were not read and the selector was not rerun on the one-variant bank, so an
-inventory-change claim remains unresolved.
+## 7. RQ2: misspecification and Q noise
 
-## KT prediction and generalization
+The primary PFA-like model is fitted on all acquisition rows and evaluated on
+the same 113,000 probes for every representation. Candidate-minus-K* log-loss
+deltas are:
 
-### Absolute primary-logistic results
+| Representation | KCs | All-probe loss | Delta [95% learner-paired interval] |
+|---|---:|---:|---:|
+| K* | 18 | .670627 | reference |
+| Split-2 | 35 | .673792 | +.003165 [.002744,.003581] |
+| Split-4 | 66 | .676495 | +.005868 [.005281,.006473] |
+| Family union | 6 | .678759 | +.008132 [.007450,.008779] |
+| All merged | 1 | .680852 | +.010225 [.009380,.011029] |
+| Exact cell | 75 | .685666 | +.015039 [.014108,.015990] |
 
-All rows use the same 44,000 frozen probes.
+The prespecified six-point curve is descriptively U-shaped: K* is its minimum,
+and cost rises monotonically away from K* on each coarser/finer side. This
+discrete asymmetric pattern is not a universal smooth law; it shows the
+consequences of matching or mismatching the declared world, not human ontology
+optimality. Exact-cell sparsity costs +.037609 on unseen combinations and
++.028627 on unseen values.
 
-| Policy | Log loss | Brier | AUC | ECE |
-|---|---:|---:|---:|---:|
-| factorized | .643731 | .225775 | .5604 | .0034 |
-| all supported interactions | **.643334** | **.225596** | **.5650** | **.0027** |
-| automated | .643356 | .225610 | .5641 | .0044 |
-| oracle exact-all-cell | .657507 | .232565 | .5459 | .0413 |
+At an equal 27-edge budget, false-positive, false-negative, and mixed Q noise
+increase mean loss by .001685, .002644, and .002294 across three structures.
+Every instance harms performance. The limited structural seed range does not
+establish that false negatives are universally worse.
 
-All-supported interactions have the best point estimate by only .000022 log
-loss over automated while using six more KCs. The automated method is therefore
-a prediction/parsimony choice, not the absolute predictive winner. The labelled
-all-cell oracle performs worst overall because its evaluation-cell KCs lack
-acquisition history.
+## 8. RQ3: discovery and identifiability
 
-Empirical and BKT results are retained as sensitivities, not as the primary KC
-comparison. Their all-test log losses are .665–.693 and .817–.828 for reusable
-policies, respectively, versus about .643 for logistic. Phase 4 also found that
-BKT's full-credit updates over multiple active KCs change inventories and
-confound representation size; the observable logistic remains the selector and
-primary evaluator.
+The blinded candidate space contains 181 hypotheses. Selection uses only seen
+acquisition evidence in learner-disjoint fit/validation groups. K*, Q*, oracle,
+and all probe outcomes remain unopened until the selection artifact is frozen.
 
-### Paired representation effects
+At 1,000 learners, the selector retains its 18-feature base. Atomic features,
+compositional operations, and their automated projections have the exact same
+seen-Q signature; their separately fitted validation losses differ only at
+floating-point scale. Post-selection truth comparison finds:
 
-Effects below are candidate minus factorized; negative favors the candidate.
-Intervals are 5,000 whole-learner bootstrap resamples, seed 20260827.
+| Hypothesis | Exact KCs | Padded activation Jaccard | Aligned Q-edge F1 |
+|---|---:|---:|---:|
+| Compositional candidate ceiling | 18 / 18 | 1.000000 | 1.000000 |
+| Atomic / selected equivalence class | 16 / 18 | .970854 | .965385 |
+| Family coarse | 5 exact + 3 merges | .371913 | .750929 |
+| Exact-cell fine | -- | .084184 | .186969 |
+| Hash distractor | 0 / 18 | .202342 | .359259 |
 
-| Regime | Candidate | Δ log loss [95% interval] | Δ Brier [95% interval] |
-|---|---|---:|---:|
-| all probes | automated | **−.000375 [−.000631, −.000109]** | **−.000166 [−.000281, −.000046]** |
-| all probes | all interactions | **−.000397 [−.000782, −.000026]** | **−.000180 [−.000356, −.000008]** |
-| all probes | exact-cell oracle | **+.013777 [+.012288, +.015235]** | **+.006789 [+.006070, +.007491]** |
-| development | automated | **−.000450 [−.000758, −.000141]** | **−.000203 [−.000339, −.000065]** |
-| compositional | automated | −.000234 [−.000836, +.000375] | −.000091 [−.000372, +.000192] |
-| compositional | all interactions | **−.001168 [−.002042, −.000246]** | **−.000532 [−.000935, −.000109]** |
-| novel value | automated | +.000119 [−.000099, +.000352] | +.000057 [−.000047, +.000169] |
+Compositional probe loss is .669606 versus atomic .669979, delta +.000374
+[.000228,.000517]. Seen loss is identical; all difference occurs on withheld
+perfect-progressive cells where atomic rules do not extrapolate component
+activation. Those outcomes cannot legitimately be used to resolve the
+selection tie. The N=120 pilot selects coarse, reinforcing that small-sample
+policy choice is unstable.
 
-The automated policy's all-probe and development gains are small but
-learner-cluster-robust under the declared mixed world. Its compositional interval
-crosses zero, so the main selector has no established compositional advantage.
-The richer all-interaction policy does improve compositional probes in this
-world, at a six-KC complexity cost. Novel-value evidence is inconclusive and
-only 2,000 probes from one cell; factorized/automated policies have no KC for
-`would`, so these metrics cannot establish novel-KC generalization.
+The supported RQ3 answer is therefore deliberately two-part: the method
+recovers a high-overlap, truth-containing equivalence class, but unique
+generator ontology recovery is rejected. Predictive KT fit alone is
+insufficient evidence for cognitive truth even in a positive synthetic case.
 
-### Latent-world robustness
+## 9. RQ4: linguistic generalisation
 
-The final 44-item experiment uses one mixed world. The retained Phase-5
-four-world, three-seed study constrains interpretation but used the immediately
-preceding structural bank. Mean all-probe fixed-logistic losses were:
+K* reference losses are:
 
-| World | Factorized | All interactions | Automated | Exact cell |
-|---|---:|---:|---:|---:|
-| factorized | .578311 | .578334 | .578311 | .603004 |
-| interaction-heavy | .609353 | .607225 | **.607097** | .621903 |
-| cell-specific | .686715 | .686379 | .686715 | **.679439** |
-| mixed | .641559 | **.641273** | .641575 | .652886 |
+| Regime | Cells | Probe events | Event-weighted / cell-macro log loss |
+|---|---:|---:|---:|
+| Seen | 54 | 84,000 | .669161 / .669783 |
+| Pairwise-seen combination | 15 | 20,000 | .672036 / .670637 |
+| Unseen value | 6 | 9,000 | .681181 / .681882 |
 
-Automation recovers predictive interactions in the positive-control world and
-collapses to factorized KCs in clean controls, but no representation dominates
-all plausible worlds. Exact cells win only when the latent world is itself
-cell-specific. These are synthetic stress tests; they do not identify the
-latent structure of human grammar learning.
+Relative to K*, exact-cell costs +.008209 seen, +.037609 combination, and
++.028627 unseen value; all intervals exclude zero. Split-2 and family-union
+also have supported combination costs (+.008806 and +.009185). Adding
+unsupported conjunctive/intersection KCs harms all three regimes, demonstrating
+that a union merge is not an interaction.
 
-## Cost evidence
+Atomic and compositional predictions are numerical-equivalent on seen and
+combination rows. Their unseen-value difference is -.003236 with interval
+[-.007943,.001272] and changes point direction under the RQ3 fitting protocol.
+It is inconclusive. The unseen-value result is also composition-sensitive:
+per-cell K* loss ranges .666512--.691208 and leave-one-cell-out macro estimates
+.680016--.684955.
 
-Across 78 generation calls, recorded per-call durations sum to 784.2 seconds
-(median 9.30 s). Across 77 validation records, 57 have duration metadata and
-sum to 626.3 seconds (median 10.93 s); 20 reused pilot judgments lack retained
-duration. Calls ran with four workers, so sums are workload totals, not elapsed
-wall time. Generation has the larger recorded workload total, while validation
-has the larger median per recorded call. Provider prices were unavailable, and
-the retained normalization snapshot has no comparable cost accounting.
+The exact-item negative control retains the same 170 acquisition opportunities
+and K* counts while withholding one item from each of 30 two-item seen cells.
+All 30,000 paired probe outcomes are exactly identical to baseline. This is the
+expected consequence of no item memory/difficulty and same-Q opportunity
+updates; it does not imply human surface-form transfer.
 
-## RQ-F1–F36 ledger
+## 10. Mastery recovery
 
-Statuses refer only to the evidence retained in this repository.
+The public-only PFA predictions were frozen before opening oracle state. Their
+known guess/slip inverse link estimates the weakest active prerequisite state:
 
-| RQ | Status | Evidence-based answer and implication |
-|---|---|---|
-| F1 | answered for sample | Of 139 descriptors, 44 complete, 77 partial, 2 unresolved, and 16 out of scope (31.65%, 55.40%, 1.44%, 11.51%). Most source rows do not safely yield an exact cell. |
-| F2 | answered | The 44 complete mappings yield 24 unique GrammarCells. |
-| F3 | answered | Forty-four contributors create 48 source-cell edges compressed to 24 unique cells (1.83 contributors and 2.00 edges/cell). Noncontributors are not counted as compressed cells. |
-| F4 | answered for sample | Modal, WH, passive, question, imperative, and several aspect values are sparse; only `would` is observed among non-`none` modals and WH support is zero. |
-| F5 | answered for sample | Active declaratives and `modal=none` dominate. Thirteen cells have one source edge; positive imperative has seven. The inventory is not balanced English grammar coverage. |
-| F6 | answered | Five cells/ten items form constituent-compositional holdout; all values are seen, but one of 37 value pairs is unseen. |
-| F7 | answered narrowly | One `modal=would` cell/two items form novel-value holdout. This is too small for a general novel-feature conclusion. |
-| F8 | answered | N=1/2/3 covers 16/19/22 cells. Twenty-two cells stop at three attempts, one needs five, and one needs seven including the separate intervention. |
-| F9 | partially answered | N=3 gives large full-bank coverage gains. An eight-cell pilot found no N=5 coverage gain, but full-bank N=5 was not run; universal optimality is unresolved. |
-| F10 | answered under model judge | Final acceptance is 54/77 valid payloads (70.13%) and coverage is 24/24 after rescue/intervention/curation. |
-| F11 | answered | `cell_017` and `cell_022` are hardest to generate determinately; their marked tense/aspect contexts require 7 and 5 attempts. The only structural payload failure is a missing legacy field. |
-| F12 | answered under one judge | Determinacy passes only 55/77 and dominates model-judged rejection; two records also fail the deterministic slot-contract precheck. Every target-fidelity and grammaticality judgment passes. Always-passing criteria are not proven redundant. |
-| F13 | quantitatively answered; pedagogically unresolved | Final prompts are unique, with 242 types/795 tokens and TTR .304, but template/name/context repetition is substantial and no human diversity judgment exists. |
-| F14 | answered within validator boundary | Non-target-language simplicity fails 0/77. The proper conclusion is “not detected by this validator,” not “lexical difficulty absent.” |
-| F15 | answered | Development grammar/items produce 55 raw candidates: 9 feature, 10 operation, 18 pair, and 18 full-cell. |
-| F16 | answered | Support leaves 42; activation/family filtering leaves 28 representatives and marks 17 duplicates across 38 activation classes. |
-| F17 | answered structurally | Three operations are nonredundant and supported; four are canonical-feature aliases; three have zero support. No operation survives learner-evidence selection. |
-| F18 | answered for mixed synthetic world | The selector adds only perfect×negative (2 cells/4 items) to nine protected features. This is not evidence of a human English dependency. |
-| F19 | answered at tested scale | All five 1,000-learner seeds select the same inventory; 8/9 nested/seed conditions match. One 120-learner swap shows finite-sample instability. |
-| F20 | answered | Automated uses 10 KCs versus 9 factorized, 16 all-interaction, and 24 oracle exact-cell KCs; it is close to the reusable extreme. |
-| F21 | answered | Automated median selected-KC item support is 8 (range 3–22), 2.182 KCs/item, Q density .218; its interaction has four-item support. |
-| F22 | answered for synthetic mixed world | Automated improves all-probe log loss over factorized by .000375 with a paired interval excluding zero, while using six fewer KCs than all-interaction. All-interaction has a .000022 better point estimate, so automation is a parsimony trade-off. |
-| F23 | partially answered | Automated compositional Δ log loss is −.000234 with an interval crossing zero; all-interaction improves by −.001168 with an interval below zero. A compositional benefit of the selected policy is unresolved. |
-| F24 | partially answered | Four synthetic worlds show strong method×world dependence and no universal winner. Human-world robustness is unknown, and final-bank KT is run only in the mixed world. |
-| F25 | partially answered | Full-support selection is identical across five 1,000-learner seeds; 120 learners swaps the interaction while 60/240/500/1,000 match on one seed. Learner volume cannot replace broader cell/item support. |
-| F26 | partially answered | Recorded generation workload is 784.2 call-seconds and validation 626.3; concurrency prevents wall-time interpretation and provider price is unavailable. |
-| F27 | answered | Scale exposes incomplete N=3 coverage, systematic tense/aspect determinacy failure, judge inconsistency, packaging defects, and variant-dependent KC eligibility. These failures changed the active method. |
-| F28 | partially answered | Items are recognizable controlled grammar practice and no audited final target is clearly wrong-cell, but the bank is worksheet-like and model/agent judged. Human realism and pedagogical efficacy are unresolved. |
-| F29 | partially answered | Candidate enumeration, activation, support, equivalence, selection, and freezing consume declared dimensions generically; EGP normalization, the six-feature schema, operation declarations, prompts, and empirical results are English-specific. A toy alternate-schema contract is structural, not cross-lingual validation. |
-| F30 | partially answered | Current conversion exactly reproduces the retained 24 cells/source memberships and eight selected repeats agree, but the unpinned retained model snapshot supplies no general repeat- or cross-model-stability estimate. |
-| F31 | answered | The deterministic prefix check rejects two malformed slot contracts (`cell_010_02`, `cell_021_02`) before judging; both cells retain other selected items, so coverage is unchanged. The active suffix guard now protects the punctuation-defect class exposed by F36. |
-| F32 | answered | Selection reduces 54 accepted items to 44, preserves 24/24 coverage and unique prompts, and gives median rank-2 token distance .739. Surface diversity does not establish contextual diversity. |
-| F33 | answered | The frozen two-per-cell rescue covers one of two N=3 gaps (1/4 accepts); `cell_017` remains uncovered and requires the separately declared F35 intervention. |
-| F34 | partially answered | Two variants raise eligible interactions from 2 to 7 and total selection-eligible candidates from 23 to 28. Because outcomes were not read and selection was not rerun on the one-variant bank, the policy effect is unresolved. |
-| F35 | partially answered | Explicitly naming the construction yields 2/2 final accepts for the one hard cell after correction, versus 0/5 prior semantic prompts, and restores coverage. The one-cell, two-item, metalinguistic comparison cannot establish general effectiveness or realism. |
-| F36 | answered operationally; hypothesis partly supported | Six frozen corrections are independently rejudged: four pass, two remain indeterminate. The selected bank changes 45→44, retains 24-cell coverage, preserves raw evidence, and all downstream results are recomputed. |
+| Representation | All-probe RMSE | Correlation | Seen / combination / unseen-value RMSE |
+|---|---:|---:|---:|
+| K* | .123738 | .569746 | .122352 / .130717 / .120623 |
+| Family coarse | .146300 | .267969 | .146723 / .156074 / .116960 |
+| Split-2 | .132752 | .465799 | .128427 / .153555 / .122187 |
+| Split-4 | .140428 | .383038 | .132906 / .169750 / .136738 |
+| Exact cell | .163828 | .291646 | .144619 / .218837 / .188047 |
 
-## Methodological decisions and negative results
+Every overall candidate-minus-K* RMSE interval excludes zero. The coarse
+unseen-value delta is nevertheless -.003663 [-.005740,-.001507], a supported
+local reversal. State recovery therefore agrees with RQ2 overall but not
+uniformly across narrow regimes.
 
-1. **Retain constrained exact canonicalization.** Partial evidence is not forced
-   into exact cells. Phase 2 is explicitly eligible and branch preserving; its
-   2.5% historical yield rejects routine example-based resolution.
-2. **Retain model-selected common language and N=3 as defaults.** The controlled
-   six-entry lexicon had worse pilot coverage, source evidence showed no gain in
-   only three cells, and pilot N=5 added no coverage. These remain scale-limited
-   ablations.
-3. **Keep independent all-criteria validation and deterministic slot checks.**
-   Determinacy filters substantial output, but one validator is inconsistent.
-   The final bank therefore includes an explicit, hashed curation overlay rather
-   than silent edits.
-4. **Keep semantic folds and frozen probes.** Mixed-history probes have prior
-   holdout exposure and do not estimate clean acquisition transfer. The final
-   holdouts have zero acquisition exposure.
-5. **Keep the forward/prune selector at `lambda=.0005`.** It is interpretable,
-   stable at 1,000 learners, and parsimonious. Residual shortlisting, top-down
-   merging, the old obligation selector, and unpenalized selection remain
-   rejected baselines/negative results.
-6. **Do not claim a universal KC ontology.** The final policy's gain is tiny,
-   compositional evidence is mixed, and world rankings change with latent
-   structure. Exact cells are useful only in the matching synthetic world and
-   generalize poorly elsewhere.
-7. **Do not claim human dataset validity.** Model acceptance, lexical TTR, and
-   agent audit are insufficient substitutes for expert or learner evaluation.
+Fixed BKT is evaluated separately because its exposed state is per KC rather
+than an item minimum. Unique terminal learner-KC RMSE is .300804, correlation
+.434973, and bias +.094505. Its posterior-plus-learning and full-credit update
+do not match the generator. Similar response scores cannot be assumed to imply
+equivalent or correctly interpreted learner states.
 
-## Remaining unresolved questions
+## 11. Simulator robustness
 
-- Will human teachers and learners judge the 44 items grammatical, natural,
-  determinate, appropriately difficult, and pedagogically useful?
-- Do real learner responses select perfect×negative, another interaction, or a
-  different representation entirely?
-- Does the selected policy improve compositional transfer with more cells,
-  especially when every held-out value pair is observed in development?
-- How should truly novel values such as `would` receive a KC without leaking
-  holdout grammar into development-only selection?
-- Are normalization mappings stable across representative repeats, pinned model
-  snapshots, and human annotation?
-- Does one-versus-two item selection change the learned KC policy, rather than
-  only structural eligibility?
-- Does the schema-generic methodology retain interpretability and predictive
-  value in another language? The current alternate-schema test verifies only
-  software/interface reuse.
-- Can item prompts gain communicative/contextual diversity without sacrificing
-  determinacy, especially for marked tense/aspect combinations?
+The compact robustness design materializes 13 conditions over three common
+seeds and 500 learners (39 worlds). It fits K*, family-coarse, and split-2 with
+the primary observable model and retains empirical/BKT only as secondary
+sensitivities.
 
-## Exact reproducibility
+Baseline mean log-loss costs are +.007924 coarse and +.003241 split-2. K* beats
+both candidates in every seed for 12/13 conditions, including noise .00--.20,
+product/mean aggregation, learner guess/slip and learning-rate heterogeneity,
+mild forgetting, correlated starting mastery, and correct-only updates.
 
-Models and settings:
+Unmodelled item difficulty is the exception. At logit SD .60, coarse remains
+worse in every seed, while split-2's mean cost +.004138 spans -.000413 to
++.009955. Split-2 wins one seed and falls below coarse in another. The fine
+partition can accidentally absorb stable item nuisance. This is a genuine
+warning: representation recovery and item effects are confounded when items
+are not crossed or modelled.
 
-- retained normalization: `gpt-5.6-sol`, medium, retained 2026-08-20;
-- generation: `gpt-5.6-sol`, medium;
-- independent validation and correction revalidation: `gpt-5.6-terra`, medium;
-- item calls: four workers; calls are independently checkpointed;
-- primary learner/selector/logistic/bootstrap seed: `20260827`;
-- stability seeds: `20260827`–`20260831`;
-- prior four-world robustness seeds: `20260827`–`20260829`;
-- learner bootstrap: 5,000 whole-learner resamples.
+Fixed BKT shows further reversals, but its mean/full-credit semantics are
+deliberately mismatched and were prohibited from driving the conclusion. All
+worlds are one-factor synthetic controls; three seeds and one severity per
+nuisance are not a universal robustness envelope.
 
-Commands, in scientific order:
+## 12. Collection design
 
-```bash
-.venv/bin/python scripts/run_normalisation_audit.py
+The frozen bounded study contains four deliberately small interventions. It
+uses outcome-free nested cohorts and reads only acquisition outcomes for
+selection. Unpenalized predictive validation selects K* in all 21 learner
+cohorts: five repetitions each at N=60, 120, 240, and 500, and the complete
+N=1,000 cohort. At N=1,000, family union, split-2, and exact-cell cost +.005242,
++.002567, and +.004878 log loss; all learner-paired intervals exclude zero.
+This is stability inside the simulator, not a human sample-size prescription.
+A fixed `.0005 * number_of_KCs` penalty instead selects family union in 18/21
+cohorts. The penalty has changed the estimand; parsimony is not empirical proof
+of generator truth.
 
-.venv/bin/python scripts/run_item_audit.py --pilot --select-second --workers 4 \
-  --generation-model gpt-5.6-sol --validation-model gpt-5.6-terra \
-  --reasoning-effort medium \
-  --output-dir reports/phase4/artifacts/item_audit/live_pilot
+Opportunity targets 6, 12, and 24 give K* mean all-bank probe losses .681757,
+.672104, and .636837 across three seeds. Absolute prediction improves, while
+the gap to family union grows from +.005437 to +.010070 and the exact-cell gap
+from +.007523 to +.032110. More practice strengthens reusable-state evidence.
+It also makes exact-cell combination prediction worse (.703218 to .720349):
+isolated seen-cell histories become more confident but do not transfer. Three
+unequal schedule lengths do not establish a diminishing-return threshold.
 
-.venv/bin/python scripts/run_validation_reliability.py \
-  --input-dir reports/phase4/artifacts/item_audit/live_pilot \
-  --output-dir reports/phase4/artifacts/validation_reliability \
-  --sample-size 24 --seed 20260827 --workers 4 \
-  --repeat-model gpt-5.6-terra --sensitivity-model gpt-5.6-sol \
-  --reasoning-effort medium
+Max-one versus max-two curation separates replication from geometry. The bank
+grows from 75 to 113 items, minimum/median KC support grows from 1/5 to 2/7.5,
+but both projections contain the same 75 Q rows, rank 18, and no identical KC
+columns. The additional 38 items improve within-cell support and contextual
+replication; they add no new activation contrast.
 
-.venv/bin/python scripts/run_phase4_world_audit.py
+The two-KC control gives the sharpest design result. When every item is A+B,
+A/B columns (and planted interaction I) are identical: every tested
+representation ties exactly even at N=1,000. Sparse or balanced A-only/B-only
+anchors restore full rank and make the OR/union merge detectably worse. At
+N=1,000 union costs +.003194 in the factorized balanced bank and +.010952 in
+the planted balanced bank. Yet omitting the planted intersection costs only
++.000506 (three-seed range [.000313,.000621]) with balanced anchors, while the
+spurious-intersection negative control remains near zero. Thus structural rank
+is necessary but does not guarantee practically unique predictive recovery of
+a weak interaction.
 
-.venv/bin/python scripts/run_phase5_integrated_validation.py
+## 13. Implications for future real learner collection
 
-.venv/bin/python scripts/run_full_dataset.py --prepare-only \
-  --output-dir data/grammar_kt_medium_v1
+The current evidence supports design principles, not numeric human power
+claims:
 
-.venv/bin/python scripts/run_full_dataset.py --generate-missing --workers 4 \
-  --generation-model gpt-5.6-sol --validation-model gpt-5.6-terra \
-  --reasoning-effort medium --output-dir data/grammar_kt_medium_v1
+- retain item-to-GrammarCell provenance independently of the KC hypothesis;
+- measure stable item effects or cross items over learners, because nuisance
+  difficulty can mimic finer KCs;
+- collect structurally distinct A-only, B-only, and A+B opportunities where
+  linguistically natural; repeated responses cannot break equivalent Q
+  columns;
+- evaluate effect size after rank is restored, because a full-rank bank can
+  still leave an interaction only weakly recoverable;
+- obtain multiple independently reviewed contexts for rare KCs rather than
+  relying on surface paraphrases of one cell; count these separately as
+  replication and as distinct Q rows;
+- keep acquisition separate from non-updating grammar probes;
+- preregister Q/KC selection evidence and hide grammar holdouts until policy
+  freeze;
+- estimate guess, slip, learning heterogeneity, forgetting, and item
+  difficulty from pilot learners instead of borrowing the synthetic settings;
+  and
+- include qualified human review of normalisation and item determinacy before
+  deployment.
 
-.venv/bin/python scripts/run_full_dataset.py --rescue-uncovered --workers 4 \
-  --generation-model gpt-5.6-sol --validation-model gpt-5.6-terra \
-  --reasoning-effort medium --output-dir data/grammar_kt_medium_v1
+Under the declared synthetic conditions, inference becomes unreliable when
+structural contrast is absent, a weak interaction has too little predictive
+effect even after rank is restored, exact-cell histories do not transfer, a
+complexity penalty changes the selection target, or unmodelled item variation
+aligns with a split. None of these observations says that a human study
+requires an exact learner count.
 
-.venv/bin/python scripts/run_full_dataset.py --determinacy-intervention \
-  --workers 4 --generation-model gpt-5.6-sol \
-  --validation-model gpt-5.6-terra --reasoning-effort medium \
-  --output-dir data/grammar_kt_medium_v1
+## 14. Limitations and negative results
 
-.venv/bin/python scripts/curate_item_packaging.py \
-  --dataset-dir data/grammar_kt_medium_v1 --workers 4 \
-  --validation-model gpt-5.6-terra --reasoning-effort medium
+- The six-dimensional scope excludes 675 legitimate EGP records; full source
+  processing is not the same as full English grammar coverage.
+- Normalisation and validation are automatic. Repeat evidence is useful but no
+  expert or learner gold standard exists.
+- Cue-bounded imperatives are a measurement-format confound. Open natural
+  imperative production remained unresolved under the finite-answer contract.
+- K* is a designed synthetic truth. Independent `Beta(2,2)` mastery, fixed
+  noise, minimum aggregation, and .02 updates are not human estimates.
+- Q* rank and unique columns do not prove statistical or cognitive
+  identifiability; RQ3 demonstrates an exact seen-Q equivalence class.
+- The unseen-value cohort is six perfect-progressive cells and introduces no
+  unseen generator KC.
+- Learner bootstrap captures sampling of synthetic learners, not uncertainty
+  over grammar resources, item generation, simulator worlds, or people.
+- The robustness study is compact and one-factor-at-a-time. Item difficulty is
+  a demonstrated confound; prerequisites and policy bias remain future work.
+- The alternate `mood`/`person` test proves an interface contract, not
+  cross-lingual empirical validity.
 
-.venv/bin/python scripts/finalize_full_dataset.py \
-  --dataset-dir data/grammar_kt_medium_v1 --learners 1000 \
-  --seed 20260827 --bootstrap-repeats 5000
+## 15. Artifact map
 
-.venv/bin/python scripts/run_phase6_selection_stability.py
+| Object | Path |
+|---|---|
+| Frozen dataset and README | `data/grammar_kt_full_v1/` |
+| K* declaration | `modules/kcs/generator/` |
+| Measurement audit | `data/grammar_kt_full_v1/provenance/measurement/audit.json` |
+| Simulator pilot | `reports/baseline/artifacts/full_simulator_v1/` |
+| RQ2 | `reports/full_v1_artifacts/rq2_misspecification_v1/` |
+| RQ3 | `experiments/full_v1/rq3_kc_discovery_v1/` |
+| RQ4 | `experiments/full_v1/rq4_generalisation_v1/` |
+| Mastery recovery | `reports/full_v1_artifacts/mastery_recovery_v1/` |
+| Simulator robustness | `experiments/full_v1/simulator_robustness_v1/` |
+| Exact experiment ledger | `reports/experiment_log.md` |
 
-.venv/bin/python scripts/analyze_full_dataset.py \
-  --dataset-dir data/grammar_kt_medium_v1 \
-  --output-dir reports/phase6/artifacts/full_dataset_analysis
-```
-
-The analysis command makes no model calls and does not recompute learner
-outcomes. Primary retained artifacts are:
-
-- `data/grammar_kt_medium_v1/manifest.json` and
-  `finalization_manifest.json`;
-- `items/curated_candidates.jsonl`, `items/curated_validation.jsonl`,
-  `items/selected_bank.jsonl`, and `items/packaging_correction_manifest.json`;
-- `fold/assignments.jsonl`, `simulation/events.jsonl.gz`, and private
-  `simulation/oracle_debug.json.gz`;
-- `kc/candidate_inventory.json`, `kc/selection_trace.json`, frozen policies,
-  Q-matrices, and projections;
-- `kt/{policy}/predictions.jsonl.gz` and `evaluation/{policy}/results.json`;
-- `reports/phase6/artifacts/full_dataset_analysis/` and
-  `reports/phase6/artifacts/selection_stability_v1/results.json`.
+The final verification report records tests, notebook execution, artifact
+replay, paper compilation, and clean-diff checks after all evidence is frozen.

@@ -1,89 +1,77 @@
-# Final research-question ledger
+# Final full-v1 research-question ledger
 
-Statuses use `answered`, `partially answered`, `unanswered`, or
-`rejected/superseded`.  “Answered” is always bounded by the experiment named in
-the caveat; it does not imply human cognitive or cross-lingual validity.  Exact
-commands, seeds, and artifacts are in `reports/experiment_log.md`.
+Statuses are `supported`, `rejected`, or `inconclusive with reason`. Every
+answer is conditional on the declared synthetic world and model-validated item
+bank. Exact protocols, commands, seeds, intervals, and hashes are in
+`reports/experiment_log.md`.
 
-## Programme RQs
+## Headline ledger
 
-| RQ | Status | Experiment / retained evidence | Answer | Caveat |
+| RQ | Status | Evidence-backed answer | Confidence and remaining caveat | Paper location |
 |---|---|---|---|---|
-| RQ1. Predictive and parsimonious KC granularity | partially answered | P3 selector studies; P4 four-world audit; P5 integrated validation; P6 curated final evaluation | Protected feature marginals plus evidence-supported interactions give the retained trade-off. Exact cells are too sparse for transfer; all-supported interactions predict slightly better in the final composition regime but use 16 vs 10 KCs. | No human learner evidence and no universal winner across latent worlds. |
-| RQ2. Are feature-value KCs sufficient? | partially answered | P4/P5 world×representation results | Yes in the factorized/null controls; no in the interaction-heavy world; they cannot express cell-specific structure. | These are declared simulator controls. |
-| RQ3. Which interactions add value? | partially answered | P3/P5 planted controls; P6 final selection | Perfect×negative and present×negative are recovered when strongly planted; perfect×negative is selected in the final mixed world. | Natural human interaction structure is unknown; final support is two cells/four items. |
-| RQ4. Can automation recover interactions? | answered for synthetic controls | P5-LAMBDA-SUPPORT; P6-SELECTION-STABILITY | At λ=.0005 and ≥240 learners it jointly recovers both eligible strong interactions in 3/3 seeds with 0/3 additions in each clean null; the final interaction is stable in 5/5 1,000-learner streams. | Does not establish recovery from real learner data. |
-| RQ5. Compositional generalisation | partially answered | P4 frozen-probe repair; P5 and P6 paired results | The protocol now measures transfer without holdout practice. Automated−factorized composition effects cross zero; all-supported interactions improve the final mixed-world compositional interval. | Five cells/10 items, one unseen pair, synthetic outcomes. |
-| RQ6. Robustness across latent worlds | answered within declared worlds | P4-WORLD-KT-001; P5 integrated validation | Rankings depend on the world. Factorized, interaction-heavy, and cell-specific structures favour matching representations; no universal winner. | The worlds are controls, not estimates of human cognition. |
-| RQ7. Selector-model sensitivity | answered at medium scale | P3 selector audit; P4 KT audit | BKT and logistic select materially different inventories. Shared full-credit multi-KC updates make BKT overselect, so observable logistic is primary. | Other KT families are not studied. |
-| RQ8. Scalable grammar folds | answered for the current inventory | P4-FOLD-001; final fold artifact | Semantic tuple/coverage rules yield an ID- and order-invariant 18/5/1 split. | Only 24 English cells; exact balance is inventory-dependent. |
-| RQ9. Does simulation test composition? | answered | P4 mixed-history vs frozen-probe audit | The former mixed history did not. Development-only acquisition plus non-updating probes is now primary. | Still simulated transfer. |
-| RQ10. Model-selected vs controlled lexical/context material | answered at an eight-cell pilot | P4-ITEM-AUDIT | Model-selected N=3 covered 8/8 cells versus 5/8 controlled; common-language checks passed. | No human realism study; final bank remains template-heavy. |
-| RQ11. Best-of-N | answered conditionally | P4 pilot and P6-ITEM-N3/curated analysis | Final curated N=1/2/3 prefixes cover 16/19/22 cells. N=3 is retained; N=5 added no pilot coverage. | Complete coverage needs separately labelled fallbacks. |
-| RQ12. Phase-2 normalisation usefulness | partially answered | P4-NORM-001 | Only 2/80 legacy Phase-2 calls resolve; explicit eligibility avoids most calls. | Fresh large repeated annotation was not run. |
-| RQ13. Operation KCs | answered structurally | P2 operation audit; final operation table | Imperative, negation, inversion, and passive declarations are aliases of feature KCs on this bank; finite/perfect/progressive can be distinct; generator tags add no independent evidence. | Bank-specific activation equivalence is not linguistic equivalence. |
-| RQ14. Candidate-space size | answered structurally | P2 medium structural run; final candidate inventory | Final development data produce 55 raw candidates, 38 activation classes, 42 support-eligible, and 28 selection-eligible. | Candidate size depends on schema, fold, and bank. |
-| RQ15. Background/reference values | partially answered | P2 support sensitivity; active candidate design | Explicit background declarations prevent hidden conventions and candidate explosion. | Whether present/active/positive/declarative/none are cognitively “background” is assumed. |
-| RQ16. Source evidence in item generation | partially answered | P4 source-evidence matched pilot | Three matched cells show no N=3 coverage benefit; opaque source IDs were removed. | Too small for a general negative claim. |
-| RQ17. Eligibility and transition safety | answered structurally | P4-NORM-001 | Explicit eligible dimensions plus branch-preserving validation avoid 71/80 calls and reject six unsafe adversarial transitions. | Annotation correctness beyond structural safety remains model-dependent. |
-| RQ18. Validation criteria reliability/redundancy | partially answered | P4-VALID-001; P6 qualitative/correction audit | Same-model/alternate-model acceptance agreement is .826/.792; determinacy dominates rejection; ceiling criteria cannot be justified for deletion. | No human gold; six corrected cases produced unrelated decision flips. |
-| RQ19. Paired KC-policy comparison | answered methodologically | policy-statistics tests; P5/P6 5,000-repeat comparisons | Resample whole learners and compute within-learner fixed-event loss differences. | Intervals quantify synthetic learner sampling only. |
-| RQ20. Structural/event support for selection | answered within controls | P5 support curve; P6 stability | Require ≥2 cells/≥3 items for pair eligibility and use ≥240 learners at current scale. Five full 1,000-learner seeds agree; one 120-learner prefix swaps interactions. | Repeated learners do not increase structural diversity. |
-| RQ21. Backend reasoning effort by module | answered operationally; strict rule inconclusive | BACKEND-THINKING-001 | Use Sol/high for future normalisation and retain Sol/medium generation plus Terra/medium validation. Higher effort is not monotonically better: high and xhigh tie on normalisation quality, while medium leads validation; generation's coverage/safety evidence is mixed. | 905 fresh model calls use mutable aliases without provider seeds; challenge cohorts and research-agent reviews are not human/expert gold, and the zero-critical confirmatory gate selected no winner. |
+| **RQ1 — Can a grammar resource be transformed into an auditable fixed language-learning dataset with explicit KCs, items, Q, and interactions?** | **Supported within declared scope** | All 1,222 EGP rows receive a disposition. The complete in-scope subset yields 75 GrammarCells, an outcome-free 18-KC K*, 113 fixed items, a deterministic full-rank 113-by-18 Q*, and 283,000 replay-verifiable events from 1,000 learners with oracle truth stored separately. | High for software/artifact integrity; moderate for automatic linguistic/item judgments; no human learner or expert-validation claim. | Methods; Dataset Construction; Limitations |
+| **RQ2 — How does KT behave when the supplied KC representation differs from K*?** | **Supported for the frozen perturbations** | K* has the lowest primary all-probe log loss (.670627). Split-2, split-4, family merge, all-merge, and exact-cell cost +.003165, +.005868, +.008132, +.010225, and +.015039; every learner-paired interval excludes zero. All nine 10% Q-noise instances harm prediction. Oracle item-state recovery also favors K* overall. | High for learner sampling in the baseline stream. Representation ordering outside the compact robustness worlds remains simulator-dependent; coarse mastery recovery reverses on the six unseen-value cells. | Misspecification; Robustness; Mastery Recovery |
+| **RQ3 — Can observable response evidence recover an appropriate KC representation when K*/Q* are hidden?** | **Unique recovery rejected; high-overlap equivalence-class recovery supported** | The observable-only selector reaches an atomic/compositional seen-Q equivalence class. Its atomic projection recovers 16/18 KCs exactly (activation Jaccard .970854; aligned Q-edge F1 .965385); a declared compositional ceiling is 18/18 but is not blindly selected. Hash distractors recover 0/18. | High that seen response prediction cannot distinguish exact-Q-equivalent rules in this benchmark. The result does not rule out recovery with new measurement contrasts or priors; the N=120 pilot selects coarse. | KC Discovery; Identifiability; Discussion |
+| **RQ4 — How do representations generalise to seen structures, unseen combinations, and unseen values?** | **Supported for recombination; unseen-value ontology choice inconclusive** | K* log loss is .669161 seen, .672036 on 15 pairwise-seen/full-tuple-unseen cells, and .681181 on six unseen-value cells. Exact-cell costs +.008209, +.037609, and +.028627. Merges and split-2 also have supported combination costs. Atomic and compositional rules are indistinguishable on seen/combination rows. | High for the full-tuple recombination result under learner bootstrap. The six unseen-value cells all test perfect-progressive composition; atomic-vs-compositional CI crosses zero and cannot break the RQ3 equivalence class. | Linguistic Generalisation; Limitations |
 
-## Full-dataset RQs
+## RQ1 supporting questions
 
-The paper-facing tables referenced below live in
-`reports/phase6/artifacts/full_dataset_analysis/`; qualitative evidence is in
-`reports/phase6/artifacts/qualitative_item_audit.md` and the complete narrative
-is `reports/full_dataset_investigation.md`.
+| Question | Evidence | Result | Status / caveat |
+|---|---|---|---|
+| What is the final source scope? | FULL-LING-001 | 211 complete, 327 partial, 9 unresolved, 675 out of scope from all 1,222 rows. | Supported; bounded six-dimensional verbal-morphosyntax scope. |
+| Is normalisation stable? | 120-row balanced repeat | 93.3% status, 95.8% eligibility, 100% exact cell-set agreement among 38 jointly complete rows; 79.0% partial-branch agreement. | Exact-cell stability supported; uncertain branching remains model-sensitive. |
+| Why this K*? | FULL-KC-001 pilots/full audit | 18 reusable operation KCs, full rank, 75 activation rows; nested chain rejected; exact cells lack reuse. | Supported as declared generator design, never as human truth. |
+| Does the bank cover grammar and K*? | FULL-ITEM-001--004; FULL-REGIME-Q-001 | 75/75 cells, 113 items, every KC measured, Q* rank 18, no equal/near-equal columns. | Supported; seven KCs are rare and one WH construction is nested. |
+| How reliable is item validation? | Independent full-bank validator; retained medium reliability audit | Full default acceptance 45.3%; determinacy dominates failure. Historical 24-item repeat/alternate agreement is .826/.792. | Inconclusive as human validity; future human expert sample required. |
+| Is the learner stream reproducible and nonleaking? | FULL-DATASET-FREEZE-001 | Exact 283,000-row replay; public/private link and 88 artifact hashes pass; probes do not update. | Supported. |
 
-| RQ | Status | Evidence | Answer | Caveat |
-|---|---|---|---|---|
-| F1. Normalisation outcome proportions | answered | `source_normalisation.csv` | 44/139 complete (31.7%), 77 partial (55.4%), 2 unresolved (1.4%), 16 out-of-scope (11.5%). | Retained one main model run. |
-| F2. Unique GrammarCells | answered | `grammar_cells.csv` | 24 exact cells emerge. | Inventory is source/sample bounded. |
-| F3. Editorial compression | answered | source summary/relations | 44 contributing complete descriptors form 24 cells and 48 source→cell edges (1.83 contributors/cell). | “Compression” is structural, not information quality. |
-| F4. Sparse dimensions/values | answered | `dimension_value_support.csv` | Modal identities except `would` are absent; wh-clause values are absent; `would` occurs in one cell/two items; imperative and polar-question each have two cells. | Zero support reflects this inventory. |
-| F5. Dominant combinations | answered | `grammar_cells.csv` | Active/positive/declarative/modal-none dominate; their cell supports are 19/16/20/23 of 24. | Descriptive, not a target-language frequency estimate. |
-| F6. Clean compositional holdouts | answered | `fold_summary.csv` | Five cells/10 items have no unseen constituent values. | One of 37 value pairs is unseen in development. |
-| F7. Novel-feature holdouts | answered | `fold_summary.csv` | One `modal=would` cell/two items. | Too small for broad novel-value claims. |
-| F8. Generations required | answered | `item_generation_stages.csv` | 78 attempts/77 payloads; default 72, rescue 4, explicit cue 2. | Model sampling seed unavailable. |
-| F9. Realistic-scale best-of-N | partially answered | stage table plus P4 N=5 | N=3 improves coverage to 22/24; N=5 was only tested at eight-cell pilot scale. | No full-scale N=5 counterfactual. |
-| F10. Acceptance rate | answered | stage table | 54/77=.701 after curation; N=3 prefix 51/71=.718. | Model judgment, not human acceptance. |
-| F11. Hardest generation structures | answered descriptively | per-cell table; audit | Negative past perfect progressive and past-perfect passive required rescue/intervention; temporal contexts often underdetermined marked aspect. | Few cells per construction. |
-| F12. Hardest validation structures | answered descriptively | criterion/per-cell tables | Determinacy fails 22/77; all other criteria fail at most three times. | Validator may be inconsistent at boundaries. |
-| F13. Final-bank diversity | answered descriptively | `lexical_diversity.csv`; audit | 44/44 prompts unique, 242 types/795 tokens, TTR .304; median second-item token-set distance .739. | “Complete…” stems, names, predicates, and domestic contexts repeat. |
-| F14. Non-target lexical/context rejection | answered by the validator | criterion table | 0/77 fail the simplicity or world-knowledge criteria. | Ceiling result may reflect judge sensitivity, not true absence. |
-| F15. Raw KC space | answered | candidate-family table | 55: 9 features, 10 operations, 18 pairs, 18 development cells. | Development-derived only. |
-| F16. Structural reduction | answered | candidate inventory/table | 55 raw →38 activation classes; 42 support-eligible and 28 selection-eligible. | Equivalence is bank-specific. |
-| F17. Nonredundant operations | answered structurally | `operation_candidates.csv` | Finite tense form, perfect dependency, and progressive dependency are eligible; four common operations alias marginals, three have no support. | Selection retained no operation. |
-| F18. Selected interactions | answered | `automated_selected_kcs.csv` | Perfect×negative is the sole final addition. | It matches a declared mixed-world dependency. |
-| F19. Inventory stability | answered in one world | `kc/selection_stability.json` | 5/5 1,000-learner seeds identical; reference interaction frequency 8/9 over all supports. | Not generation/model/human stability. |
-| F20. KC count vs extremes | answered | `policy_granularity.csv` | Factorized 9, automated 10, all-supported 16, exact-all-cell 24. | Counts alone do not establish cognition. |
-| F21. Final support distribution | answered | policy/candidate tables | Automated selected item supports range 3--22, median 8; interaction support is four items/two cells. | Item variants share structure and are not independent cells. |
-| F22. Prediction/parsimony trade-off | answered within final world | KT and paired tables | Automated gives a small overall logistic gain with one extra KC; all-supported has the best point log loss with six extra KCs; exact-cell is worse. | One main mixed stream; no human data. |
-| F23. Compositional transfer | answered but inconclusive for automation | `paired_logistic.csv` | Automated−factorized −.000234 [−.000836,.000375]; all-supported −.001168 [−.002042,−.000246]. | Five cells/10 items and synthetic outcomes. |
-| F24. World robustness | partially answered | Phase-4 four-world artifacts | No universal winner; matching structural assumptions drive gains. | Final large run is mixed-world only. |
-| F25. Required learners/opportunities | partially answered | Phase-5 support curve; final stability | 240 is the smallest tested level with 3/3 strong recovery and both clean nulls; 1,000 is 5/5 stable final. | World/bank-specific, no power law estimate. |
-| F26. Cost-dominant stages | answered partially | `call_times.csv` | Generation and validation sum to 784.2s and 626.3s of recorded per-call work; deterministic downstream stages need no LM. | Concurrent sums are not wall time; provider price unavailable. |
-| F27. Realistic-scale failures | answered | qualitative audit; F36 | Zero-coverage marked aspect, slot packaging defects, validator flips, template repetition, and low novel-value coverage appear. | Agent audit is not expert review. |
-| F28. Plausible learner material | partially answered | all-item audit/examples | No selected target is clearly ungrammatical/wrong-cell, but nine are judgment-sensitive and contexts remain worksheet-like. | No human acceptability/pedagogy study. |
-| F29. English vs generic dependence | partially answered | language audit/toy-schema test | Candidate/support/selection/projection code is schema-driven; sources, schema, operations, prompts, and empirical conclusions are English-specific. | No second-language experiment. |
-| F30. Mapping/item stability across model runs | partially answered | exact legacy replay; validation repeat audit | Legacy mapping feature inventory/source membership reproduces exactly; item validator agreement is moderate/substantial. | Normalisation and generation were not repeated comprehensively across models. |
-| F31. Rejection-stage distribution | answered | `rejection_stages.csv` | 54 accepted, 21 model-judgment rejections, two deterministic precheck rejections. | Counts use curated override judgments. |
-| F32. Surface vs contextual diversity | answered descriptively | lexical table/audit | Surface strings are unique and lexically varied, while exercise stems and scenarios repeat substantially. | No embedding/human diversity gold. |
-| F33. Does unchanged extra sampling rescue coverage? | answered negatively/partially | P6-ITEM-RESCUE | Only 1/4 rescue candidates is accepted; the hardest cell remains 0/5 before intervention. | Two cells only. |
-| F34. Do second variants change structural KC support? | answered structurally | `one_vs_two_variant_sensitivity.csv` | Selection eligibility rises 23→28 and eligible pairs 2→7 with up to two variants. | Learner selection is not rerun; variants are not new cells. |
-| F35. Does an explicit construction cue repair persistent determinacy? | answered for one cell | P6-ITEM-DETERMINACY + curated revalidation | Corrected active evidence accepts 2/2 intervention candidates and covers the final cell. | One marked cell; cue reduces communicative naturalness. |
-| F36. Can frozen packaging correction repair audited defects safely? | answered | P6-ITEM-CURATION | Six preregistered edits preserve raw hashes and yield a 44-item/24-cell bank; three acceptance decisions change. | Reveals, rather than resolves, validator instability. |
+## RQ2 supporting questions
 
-## Superseded questions/methods
+| Question | Evidence | Result | Status / caveat |
+|---|---|---|---|
+| Is the granularity curve U-shaped? | FULL-RQ2-001 | Descriptively yes on the six-point frozen grid: K* is the minimum and loss rises on both the coarser and finer sides; within each side it increases away from K*. | Supported only for this discrete, asymmetric grid; not a smooth or universal law. |
+| Are merge/union and interaction/intersection equivalent? | FULL-RQ4-001; planted two-KC control | No. Family union and added conjunctions have distinct activation and predictive effects. | Supported structurally and empirically. |
+| Are false negatives worse than false positives? | Three seeds at 10% Q noise | Mean costs .002644 vs .001685; ranges overlap in the limited structural sample. | Inconclusive; every corruption is harmful, but ordering is not established. |
+| Does predictive ranking agree with state recovery? | FULL-MASTERY-001 | Yes overall: K* prerequisite-state RMSE .123738 versus .132752--.163828 alternatives. | Supported overall; coarse unseen-value reversal retained. |
+| Does a plausible KT state necessarily match simulator mastery? | Secondary fixed BKT | No: unique learner-KC RMSE .300804, correlation .434973 under deliberate update/aggregation mismatch. | Negative result; targets differ from inverse-linked item state. |
 
-- The original “does mixed history test compositional transfer?” formulation is
-  answered negatively and superseded by the frozen-probe estimand.
-- Obligation-based KC selection is rejected as the main method because
-  conjunctions could replace reusable marginals without learner evidence.
-- A universal-best-representation hypothesis is rejected by the four-world
-  results.
-- A strong automated compositional-gain claim remains unsupported and is not
-  made in the paper.
+## RQ3 supporting questions
+
+| Question | Evidence | Result | Status / caveat |
+|---|---|---|---|
+| Does the candidate space contain K*? | Compositional ceiling after selection freeze | Exact 18/18 recovery, Jaccard/F1 1.0. | Positive control passes; reachability is not selection. |
+| Does selection reject irrelevant structure? | Hash and interaction controls | Hash: 0 exact KCs and +.013238 probe loss. Added interactions do not improve over compositional; CI crosses zero in RQ3. | Negative control passes; one interaction contrast is inconclusive. |
+| Can predictive fit uniquely identify K*? | Seen-Q signatures and paired predictions | Atomic and compositional policies have exactly identical seen Q and numerical-equivalent predictions. | Rejected by construction/evidence. |
+| Is recovery stable at small N? | Pilot selector; FULL-COLLECTION-001 | The older N=120 discovery pilot selects coarse, but frozen unpenalized K*/coarse/split/exact comparison selects K* in all 21 nested cohorts from N=60 upward. A fixed KC penalty selects union in 18/21. | Criterion- and candidate-space-dependent; no universal sample threshold. |
+
+## RQ4 supporting questions
+
+| Question | Evidence | Result | Status / caveat |
+|---|---|---|---|
+| Does exact-cell memorisation transfer to new tuples? | 15 combination cells | Exact-cell costs +.037609 log loss, CI [.033761,.041513]. | Strongly rejected as a transfer representation in this world. |
+| Is unseen-value performance cell-sensitive? | Per-cell and leave-one-cell-out | K* per-cell loss .666512--.691208; LOO macro .680016--.684955. | Yes; report cells, not only pooled events. |
+| Does holdout item identity cause the grammar gap? | Exact-item novelty negative control | 30,000 paired outcomes are exactly identical after same-cell schedule replacement; K* loss remains below grammar holdouts. | Negative control passes only because baseline has no item memory/difficulty. |
+| Can unseen outcomes choose between equivalent hypotheses? | Frozen-policy protocol | They expose differing extrapolations but are prohibited from selection. | No; using them would leak the evaluation target. |
+
+## Robustness and collection-design ledger
+
+| Question | Evidence-backed result | Status / caveat |
+|---|---|---|
+| Does K* remain predictively preferred under plausible simulator perturbations? | K* wins 38/39 primary worlds and every seed in 12/13 conditions. Split-2 reverses once under unmodelled item difficulty. | Broadly supported in the compact one-factor design; not invariant to item nuisance. |
+| Does more response volume repair an activation-equivalent Q? | With A+B-only items, all representations tie exactly through N=1,000. | Rejected: structural equivalence persists at any tested volume. |
+| What do second within-cell variants add? | Max-one to max-two raises minimum KC support 1 to 2 but adds zero Q rows or rank. | Replication/support, not structural diversity; lexical benefit is not represented by this simulator. |
+| Do anchor items guarantee recovery? | Anchors restore full rank and expose union merging; omitting a planted interaction costs only +.000506 at N=1,000 balanced. | Rank is necessary but insufficient for practically unique predictive recovery. |
+| Does a KC-count penalty reveal truth? | Raw prediction selects K* 21/21; fixed penalty selects family union 18/21. | Rejected as a truth criterion; the penalty encodes a different objective. |
+
+These are supporting design results rather than new paper-level RQs. They do
+not turn synthetic thresholds into human study requirements.
+
+## Overall answer
+
+The programme supports RQ1 and the controlled RQ2/RQ4 recombination claims. It
+answers RQ3 with a scientifically important negative result: response
+prediction can recover a strong structural equivalence class without uniquely
+identifying generator truth. The principal unresolved empirical questions are
+human linguistic/item validity, real learner dynamics, generalisation beyond
+perfect-progressive unseen values, and cross-lingual replication—not missing
+execution of the declared synthetic programme.

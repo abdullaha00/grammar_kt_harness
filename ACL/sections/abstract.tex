@@ -1,20 +1,23 @@
-Knowledge tracing (KT) requires an item--knowledge-component (KC) mapping, yet
-grammar resources usually express targets in prose and do not determine the
-right KC granularity.  We present \system, an executable pipeline that converts
-resource descriptors into canonical grammar cells, generates and independently
-screens a fixed item bank, derives interpretable KC hypotheses from development
-grammar, and selects among them using development learner evidence.  From 139
-English Grammar Profile descriptors, 44 complete mappings yield 24 unique
-six-dimensional cells and 44 model-validated items covering every cell.  The
-development bank induces 55 feature, operation, interaction, and exact-cell
-candidates, reduced to 38 activation classes and 28 selection-eligible
-representatives.  A parsimonious forward selector retains nine feature KCs and
-one perfect--negative interaction.  In a 1,000-learner mixed synthetic world,
-it gives a small fixed-logistic improvement over factorization
-($\Delta$ log loss $=-.000375$, learner-bootstrap 95\% CI
-$[-.000631,-.000109]$), while its compositional-only interval includes zero.
-The selected inventory is identical across five full-support simulation seeds;
-controlled four-world experiments show recovery of strong planted interactions
-and fallback to marginals under nulls.  No representation wins across all
-latent worlds.  We release the dataset, scientific declarations, selection
-traces, and evidence needed to audit these deliberately limited claims.
+Knowledge tracing (KT) requires items, knowledge components (KCs), and an
+item--KC mapping, yet existing language-learning datasets rarely expose a
+transparent grammatical measurement structure.  We present \system, an
+auditable pipeline that separates canonical linguistic constructions
+(\grammarcell{}s), a declared synthetic generator ontology
+$(\kstar,\qstar)$, observable items and responses, and downstream KC
+hypotheses $(\khat,\qhat)$.  All 1,222 English Grammar Profile records receive
+an explicit disposition; 211 complete mappings yield 75 canonical cells.  We
+freeze an outcome-independent 18-KC reusable-operation ontology, curate 113
+independently model-screened items, construct a full-rank $113{\times}18$
+\qstar, and simulate 283,000 replay-verifiable events from 1,000 learners.
+On this frozen benchmark, both coarsening and refinement worsen observable
+response prediction, while 10\% Q-matrix corruption is reliably harmful.  An
+observable-only KC-discovery procedure recovers a high-overlap representation
+but cannot distinguish atomic and compositional rules that have identical
+activation on seen items; unique recovery is therefore rejected even in a
+controlled positive case.  Reusable KCs transfer substantially better than
+exact-cell KCs to 15 unseen combinations.  These rankings survive 12 of 13
+compact simulator perturbations, with unmodelled item difficulty producing the
+sole primary reversal.  The release provides explicit construction evidence,
+public learner events, separate private oracle truth, and controlled
+experiments---not a claim that the generator ontology or simulator describes
+human cognition.

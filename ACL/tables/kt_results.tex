@@ -1,25 +1,23 @@
 \begin{table*}[t]
   \centering
   \small
-  \begin{tabular}{@{}lrrcc@{}}
+  \begin{tabular}{@{}lrrrl@{}}
     \toprule
-    Representation & KCs & All-probe LL &
-      $\Delta$ all probes [95\% CI] & $\Delta$ compositional [95\% CI] \\
+    Supplied representation & KCs &
+      Probe log loss / $\Delta$ vs.\ \kstar{} [95\% CI] &
+      State RMSE & Interpretation \\
     \midrule
-    Factorized & 9 & .643731 & reference & reference \\
-    Automated & 10 & .643356 &
-      $-.000375\;[-.000631,-.000109]$ &
-      $-.000234\;[-.000836,.000375]$ \\
-    All supported interactions & 16 & .643334 &
-      $-.000397\;[-.000782,-.000026]$ &
-      $-.001168\;[-.002042,-.000246]$ \\
-    Oracle all-cell & 24 & .657507 &
-      $+.013777\;[.012288,.015234]$ &
-      $+.059615\;[.053390,.065675]$ \\
+    All merged & 1 & $+.010225\;[.009380,.011029]$ & -- & maximal coarsening \\
+    Linguistic families & 6 & $+.008132\;[.007450,.008779]$ & .146300 & union merge \\
+    Generator \kstar{} & 18 & $.670627$ (reference) & \textbf{.123738} & planted truth \\
+    Structural split-2 & 35 & $+.003165\;[.002744,.003581]$ & .132752 & context refinement \\
+    Structural split-4 & 66 & $+.005868\;[.005281,.006473]$ & .140428 & finer refinement \\
+    Exact cell & 75 & $+.015039\;[.014108,.015990]$ & .163828 & no reuse \\
     \bottomrule
   \end{tabular}
-  \caption{Primary fixed-logistic results on the final 1,000-learner mixed-world
-  stream.  Deltas are candidate minus factorized log loss; intervals resample
-  whole learners 5,000 times.  Negative is better.  This is one simulation seed.}
+  \caption{RQ2 response prediction and oracle-only prerequisite-state recovery.
+  Log-loss intervals resample 1,000 learners 2,000 times.  State RMSE compares
+  the inverse-linked public prediction with the oracle minimum active-KC
+  mastery on 113,000 probes; all-merged was not in the frozen mastery subset.}
   \label{tab:kt-results}
 \end{table*}

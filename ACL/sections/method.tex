@@ -1,113 +1,104 @@
-\section{Grammar-to-KT Pipeline}
+\section{From Grammar to a Frozen KT Dataset}
 \label{sec:method}
 
-\subsection{Normalization and canonicalization}
+\subsection{Outcome-independent generator KCs}
 
-Each source unit is processed in a fresh model context containing the closed
-schema, rulebook, phase instructions, and JSON schema.  Deterministic validation
-checks domains, status invariants, and compatibility constraints.  Phase~2 is
-allowed only for explicitly eligible uncertain dimensions; it must narrow a
-Phase-1 branch, retain every branch, and leave ineligible exact fields fixed.
-Contradictory or insufficient evidence remains partial or unresolved.
+Generator \kstar{} is declared after canonicalisation and before item or learner
+outcomes exist.  The selected reusable-operation hybrid contains 18 KCs:
+present and past finite-form selection; shared perfect and progressive
+dependencies; canonical BE-passive and verbal negation; imperative,
+polar-question, and non-subject-WH operations; and one KC for each of nine
+central modals.  Active, positive, declarative, simple, modal-free, tenseless,
+and unsupported subject-WH conditions are not separate latent states.
+Perfect-progressive activates both shared aspect operations.
 
-Complete mappings are serialized in a fixed dimension order.  A canonical
-inventory stores each exact tuple once, while a separate edge table preserves
-every source descriptor and source-cell position.  Thus many source statements
-can support one cell without turning source identifiers into grammatical
-features.
+The declaration is stored as machine-readable activation rules.  Generic
+projection code contains no English KC names.  Before item construction, we
+also audited a 19-KC feature-only control, a hybrid with a
+perfect-progressive-chain KC, and a 75-KC exact-cell upper bound.  The chain was
+rejected because its six-cell column is strictly nested in both components and
+adds no independently motivated operation; exact cells have no reuse.  These
+decisions use linguistic coherence, reuse, support geometry, and parsimony,
+never response prediction.
 
-\subsection{Item generation and independent screening}
+\subsection{Measurement-bank construction}
 \label{sec:item-generation}
 
-The item generator receives one \grammarcell{}, the generation prompt,
-grammar rulebook, and task-format schema.  It chooses common lexical and
-contextual material and returns an instruction, prompt, answer, and rationale;
-it receives no KC policy, fold, learner record, or outcome.  The default design
-draws three independent candidates per cell.  A deterministic answer-span check
-first rejects malformed response contracts.  A separate model then judges
-target fidelity, grammaticality, naturalness, pedagogical suitability,
-determinacy, non-target-language simplicity, answer leakage, extraneous grammar,
-and world-knowledge dependence.  Acceptance requires every criterion.
+For each of 75 cells, the default campaign draws three independent contextual
+controlled-production candidates from one model configuration.  Generation
+receives the cell, English rulebook, item-format declaration, and a
+common-language instruction, but no learner outcomes, regime labels, KT
+metrics, or discovered KCs.  A deterministic answer/slot check precedes an
+independent model validator.  Acceptance requires target fidelity,
+grammaticality, naturalness, pedagogical suitability, determinacy, simple
+non-target language, no answer leakage, no extraneous grammar, and no
+unnecessary world knowledge.
 
-For each cell we retain the earliest accepted candidate and, when available,
-the accepted candidate with the greatest token-set distance from it, up to two
-items.  Default $N=3$ left two cells uncovered.  A preregistered unchanged-prompt
-two-draw rescue covered one; a separate explicit-construction-cue intervention
-covered the remaining determinacy failure.  These cohorts retain distinct
-provenance and are not relabelled as default-$N$ evidence.  An exhaustive agent
-audit then found five answer-packaging/reference defects and one likely rejected
-judge error.  We corrected only declared non-learner-facing fields, preserved
-the raw records, and independently rejudged all six corrected candidates with
-the validator.  The resulting 44-item bank is frozen before folding,
-simulation, or KC construction.
+Raw evidence is immutable.  The default campaign left 18 cells uncovered, so
+we executed a frozen two-draw unchanged-prompt rescue, followed by a separately
+labelled explicit-construction intervention for the remaining
+determinacy-dominated cohort.  An append-only accepted-answer correction fixed
+one finite omission.  Open full-sentence imperative production remained
+indeterminate; a final preregistered all-and-only unordered-cue format bounded
+the response space while retaining imperative word order and negative
+DO-support.  No repair is hidden as default generation.
 
-\subsection{Development-derived KC candidates}
+Outcome-free curation retains at most two distinct accepted prompts per cell:
+the first and, where available, a contextually distant second candidate.
+This produces 113 unique prompts: 37 cells have one item and 38 have two.
+Max-one would retain 75 items; up-to-three adds 13 variants but no cell.  The
+chosen bank supports contextual replication without treating surface
+variation as new grammatical structure.
 
-Let $D$ be development cells and their fixed items.  Candidate construction is
-outcome-free and reads only the declared canonical schema, $D$, the item--cell
-relation, and a compact design file.  It enumerates:
+\subsection{True Q-matrix and structural gate}
 
-\begin{enumerate}
-  \item observed non-background feature--value KCs;
-  \item language-specific operations whose activation is deterministically
-        declared from a cell;
-  \item cross-dimension feature pairs that co-occur in development; and
-  \item one exact-cell candidate for each development cell.
-\end{enumerate}
-
-Background values (e.g., active voice and positive polarity) are explicit
-English-schema choices rather than hidden program constants.  Each candidate
-stores supporting development cells and items.  Pair candidates require at
-least two cells and three items.  We represent every candidate by its binary
-activation vector over development items and mark identical vectors as one
-measurement-bank equivalence class, preferring feature candidates as
-representatives.  This is observed-bank equivalence, not a claim of universal
-linguistic identity.  Generic enumeration contains no English feature names;
-English operations live in a separate declaration.
-
-\subsection{Predictive--parsimonious selection}
-\label{sec:selection}
-
-All supported feature--value marginals form the protected initial
-representation.  Remaining nonredundant operation and pair candidates are
-considered by forward selection.  For policy $K$, a standardized observable
-PFA-style logistic model \citep{pavlik-etal-2009} is fitted on development
-selection-train events and scored on the next chronological development pass.
-Its features contain only strictly prior learner successes and failures for the
-currently active KCs; simulator difficulty, latent state, response probability,
-item identity, and holdout grammar are excluded.  We minimize
-
-\begin{align}
-  J(K) &= \operatorname{LogLoss}_{\mathrm{dev\text{-}val}}(K)
-          +\lambda |K|, \\
-  \lambda &= 0.0005.
-\end{align}
-
-At each step the candidate with the strict best objective improvement is added;
-a final backward pass removes any unprotected addition whose deletion improves
-the objective.  Exact cells are retained as a granularity diagnostic but are
-not active additions because they do not provide reusable abstractions.  The
-selected activation rules are copied into a plain frozen policy before any
-grammar-holdout prediction.
-
-\subsection{Projection, learner evidence, and KT}
-
-For fixed item $i$ and frozen policy $K$, projection gives
-
+For fixed item $i$ and generator KC $k$,
 \begin{equation}
- Q_{ik}=\mathbb{I}[k\text{ activates on }c_i].
+ \qstar_{ik}=\mathbb{I}[k\text{ activates on }c_i].
 \end{equation}
+Projection is deterministic from the item cell and frozen KC rule; response
+data never enter.  Before simulation, a mandatory gate measures item and cell
+support, row widths, KC co-occurrence, isolated opportunities, identical and
+near-identical columns, activation-equivalence classes, and matrix rank.
 
-Simulation is policy-independent: a declared latent world first generates one
-fixed response stream.  Each learner receives five shuffled development-only
-acquisition passes---four for selection training and one for selection
-validation---followed by one non-updating probe of every bank item.  Holdout
-items therefore provide no acquisition evidence.  Policies are compared on
-identical learners, items, response outcomes, and temporal positions.
+The final $113{\times}18$ \qstar{} has 269 edges, density .1323, rank 18, 75
+distinct cell-activation rows, no identical columns, and no column pair with
+Jaccard similarity at least .90.  Each KC has at least two items, although
+seven have fewer than six.  Forty-six KC pairs have A-only, B-only, and A+B
+evidence; 105 have two-sided evidence without co-occurrence.  The sole
+non-subject-WH cell leaves two nested pair geometries, retained as a source
+inventory limitation.
 
-We report a smoothed empirical estimator, fixed-parameter multi-KC BKT, and the
-same observable standardized logistic family.  Logistic is primary because a
-separate audit found BKT's full-credit update to every active KC confounds
-representation width.  Primary logistic excludes simulator-derived difficulty
-and KC count.  Evaluation reports log loss and Brier score primarily, with AUC,
-calibration error, and accuracy as diagnostics.
+\subsection{Baseline learner simulator}
+
+The simulator consumes only fixed items, \kstar{}, \qstar{}, a protocol, and a
+seed.  Learner-by-KC initial mastery is independently
+$\operatorname{Beta}(2,2)$.  For an item with active set $A_i$, the response
+probability is
+\begin{equation}
+ p(y_i=1)=.10+.80\min_{k\in A_i}m_k .
+\end{equation}
+Every active KC receives outcome-independent opportunity learning
+$m'_k=m_k+.02(1-m_k)$.  The baseline has no forgetting, item difficulty,
+prerequisites, or transfer.  Minimum aggregation was frozen because it is
+permutation invariant, noncompensatory, and invariant to repeating an
+equal-mastery prerequisite; product and compensatory means fail at least one
+of these interpretation checks.
+
+A seen-only \qstar-balanced schedule gives each learner at least 12
+opportunities per seen KC.  It contains 170 acquisition events, followed by
+one non-updating probe of all 113 items.  For 1,000 learners this yields 283,000
+rows.  Public events contain only learner, item, sequence, correctness, phase,
+pass, and grammar-regime fields.  Active generator KCs, mastery before/after,
+response probability, and random draw are stored separately as private oracle
+truth.
+
+\subsection{Frozen release and downstream hypotheses}
+
+The versioned release records commands, configurations, hashes, deterministic
+gzip settings, and a recursive artifact inventory.  An independent replay
+verifies every public/private link and state transition.  Downstream studies
+may hide or perturb \kstar/\qstar{} and construct \khat/\qhat{}, but cannot
+mutate the release.  Pure representation comparisons reuse the same learner
+events.  Oracle fields are opened only for explicitly labelled post-selection
+structural or mastery evaluation.

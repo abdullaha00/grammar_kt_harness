@@ -1,43 +1,44 @@
 \begin{table*}[t]
   \centering
-  \small
-  \begin{minipage}[t]{.37\textwidth}
+  \footnotesize
+  \setlength{\tabcolsep}{3pt}
+  \begin{minipage}[t]{.39\textwidth}
     \centering
     \begin{tabular}{@{}lrr@{}}
       \toprule
-      Mapping outcome & Count & Share \\
+      Final source disposition & Count & Share \\
       \midrule
-      Complete & 44 & 31.7\% \\
-      Partial & 77 & 55.4\% \\
-      Out of scope & 16 & 11.5\% \\
-      Unresolved & 2 & 1.4\% \\
+      Complete & 211 & 17.3\% \\
+      Partial & 327 & 26.8\% \\
+      Unresolved & 9 & 0.7\% \\
+      Out of scope & 675 & 55.2\% \\
       \midrule
-      Source--cell edges & 48 & -- \\
-      Unique cells & 24 & -- \\
+      Source records & 1,222 & 100\% \\
+      Source--cell relations & 228 & -- \\
+      Canonical cells & 75 & -- \\
       \bottomrule
     \end{tabular}
   \end{minipage}\hfill
-  \begin{minipage}[t]{.60\textwidth}
+  \begin{minipage}[t]{.58\textwidth}
     \centering
-    \begin{tabular}{@{}lrrrr@{}}
+    \begin{tabular}{@{}lrrr@{}}
       \toprule
-      Item cohort & Attempts & Payloads & Accepted & Cells \\
+      Item cohort & Candidates & Accepted & Cells added/covered \\
       \midrule
-      Curated $N=1$ prefix & 24 & 24 & 16 & 16 \\
-      Curated $N=2$ prefix & 48 & 48 & 33 & 19 \\
-      Curated $N=3$ prefix & 72 & 71 & 51 & 22 \\
-      Unchanged-prompt rescue & 4 & 4 & 1 & 1 \\
-      Explicit-cue intervention & 2 & 2 & 2 & 1 \\
+      Default $N=3$ & 225 & 102 & 57 covered \\
+      Unchanged rescue & 36 & 10 & 9 added \\
+      Explicit construction & 18 & 9 & 6 added \\
+      Answer-package copies & 3 & 1 & 1 added \\
+      Cue-bounded imperatives & 4 & 4 & 2 added \\
       \midrule
-      Final curated & 78 & 77 & 54 & 24 \\
-      Selected fixed bank & -- & -- & 44 & 24 \\
+      Accepted pool & -- & 126 & 75 covered \\
+      Fixed max-two bank & -- & 113 & 75 covered \\
       \bottomrule
     \end{tabular}
   \end{minipage}
-  \caption{Source normalization (left) and item construction (right).
-  Prefix rows reuse the same first $N$ default draws after the frozen six-item
-  correction/rejudgment.  Initial pre-correction coverage was 18/21/22 cells.
-  Rescue/intervention cohorts have separate provenance; accepted denotes model,
-  not human, validation.}
+  \caption{Full-source normalisation (left) and append-only item construction
+  (right).  Each intervention was frozen and separately labelled before its
+  calls.  Accepted denotes automatic independent validation, not human
+  expert judgment.}
   \label{tab:normalization-results}
 \end{table*}

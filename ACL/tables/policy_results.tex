@@ -1,37 +1,41 @@
 \begin{table*}[t]
   \centering
   \small
-  \begin{minipage}[t]{.49\textwidth}
+  \begin{minipage}[t]{.43\textwidth}
     \centering
-    \begin{tabular}{@{}lrrrr@{}}
+    \begin{tabular}{@{}lr@{}}
       \toprule
-      Candidate family & Raw & Support & Duplicate & Eligible \\
+      Frozen artifact & Count \\
       \midrule
-      Feature value & 9 & 9 & 0 & 9 \\
-      Operation & 10 & 7 & 6 & 3 \\
-      Interaction & 18 & 8 & 2 & 7 \\
-      Development cell & 18 & 18 & 9 & 9 \\
-      \midrule
-      Total / classes & 55 & 42 & 17 & 28 \\
+      Canonical \grammarcell{}s & 75 \\
+      Generator KCs & 18 \\
+      Fixed learner-facing items & 113 \\
+      \qstar{} dimensions & $113{\times}18$ \\
+      \qstar{} edges & 269 \\
+      Learners & 1,000 \\
+      Acquisition / probe events & 170,000 / 113,000 \\
       \bottomrule
     \end{tabular}
   \end{minipage}\hfill
-  \begin{minipage}[t]{.49\textwidth}
+  \begin{minipage}[t]{.54\textwidth}
     \centering
-    \begin{tabular}{@{}lrrrr@{}}
+    \begin{tabular}{@{}lr@{}}
       \toprule
-      Policy & KCs & Inter. & $Q$ density & KCs/item \\
+      Pre-simulation measurement diagnostic & Result \\
       \midrule
-      Factorized & 9 & 0 & .232 & 2.09 \\
-      Automated & 10 & 1 & .218 & 2.18 \\
-      All supported & 16 & 7 & .180 & 2.89 \\
-      Oracle all-cell & 24 & 0 & .042 & 1.00 \\
+      Q density & .1323 \\
+      Column rank & 18/18 \\
+      Distinct cell activation rows & 75 \\
+      Identical / near-identical columns & 0 / 0 \\
+      Items per KC & 2--49 \\
+      KCs with fewer than six items & 7 \\
+      KC pairs with A-only, B-only, A+B & 46 \\
+      Two-sided pairs without co-occurrence & 105 \\
       \bottomrule
     \end{tabular}
   \end{minipage}
-  \caption{Development-derived candidate space (left) and frozen policy
-  granularity on the 44-item bank (right).  Duplicate means activation-equivalent
-  on development items; ``oracle'' includes evaluation-cell KCs unavailable to
-  the selector.}
-  \label{tab:policy-results}
+  \caption{The frozen full-v1 dataset and its outcome-free measurement gate.
+  Near-identical means activation-column Jaccard similarity at least .90.
+  Full rank does not eliminate rare-KC or finite-sample limitations.}
+  \label{tab:measurement-results}
 \end{table*}

@@ -1,60 +1,78 @@
-\section{Experimental Design}
+\section{Downstream Experimental Design}
 \label{sec:experimental-design}
 
-\paragraph{Final integrated dataset.}
-The final experiment uses the fixed 44-item bank, semantic 18/5/1 cell fold,
-the declared mixed latent world, 1,000 learners, and seed 20260827.  It contains
-204,000 events: 160,000 development acquisition events supplied to selection
-and 44,000 frozen probes.  Four representations reuse exactly this stream:
-(i) nine factorized feature KCs; (ii) those features plus all seven structurally
-eligible pair interactions; (iii) the automated policy; and (iv) a labelled
-oracle with one exact KC for each of all 24 cells.  The oracle violates
-development-only discovery and serves only as a granularity diagnostic.
+\paragraph{Common observable protocol.}
+All headline representation comparisons fit on the same 170,000 acquisition
+rows and evaluate the same 113,000 terminal probes.  The primary model is a
+standardized PFA-like logistic regression \citep{pavlik-etal-2009} whose
+features use strictly prior successes and opportunities on active hypothesis
+KCs.  It receives no item identity, generator state, response probability,
+random draw, or probe outcome.  Log loss and Brier score are primary;
+calibration, AUC, and accuracy are diagnostic.  Paired intervals resample
+whole learners 2,000 times, retaining all events for a sampled learner.
+Empirical history and fixed BKT are secondary sensitivities because their
+multi-KC semantics do not match every generator condition.
 
-The primary comparison fixes observable logistic KT and contrasts each policy
-with factorization.  We resample whole learners 5,000 times and report the
-candidate-minus-factorized change in log loss and Brier score with percentile
-95\% intervals.  Negative values favour the candidate.  Development,
-compositional, and novel-value probe subsets are reported separately.  The
-novel subset has only one cell and two items, so it is descriptive.
+\paragraph{RQ2: controlled misspecification.}
+Six deterministic representations span one all-merged KC, six linguistic
+family unions, the 18-KC \kstar{}, 35 structural split-2 KCs, 66 split-4 KCs,
+and 75 exact-cell KCs.  Separate controls add false-positive, false-negative,
+or mixed Q edges at a 27-edge (approximately 10\%) Hamming budget over three
+structural seeds.  Every projection is frozen before outcomes are loaded and
+all representations reuse the exact event stream.
 
-\paragraph{Method-development audits.}
-Settings were chosen through staged controls rather than the final test stream.
-The item audit compares model-selected text with a six-entry controlled lexicon
-and evaluates $N\in\{1,3,5\}$ on eight fixed cells.  A 24-item stratified sample
-is rejudged by the same validator family and an alternate model.  The fold audit
-tests tuple-level coverage and ID/order invariance.
+\paragraph{RQ3: observable-only discovery.}
+The outcome-independent candidate space contains 181 atomic features,
+operations, coarse unions, structural splits, supported intersections, exact
+cells, and deterministic hash distractors.  Stable learner-disjoint groups
+provide 800 fit and 200 validation learners.  A protected-feature forward
+selector scores validation log loss plus $.0005|K|$ and evaluates 22 eligible
+additions.  Selection may read canonical item structure and seen acquisition
+outcomes, but not \kstar{}, \qstar{}, oracle state, or any probe outcome.
+After freezing, name-free optimal column matching reports exact KC recovery,
+activation Jaccard, and aligned Q-edge precision, recall, and F1.  The declared
+compositional operation policy is a candidate-space ceiling, not evidence of
+blind selection.
 
-KC robustness uses a fixed 24-cell/42-item structural bank, 240 learners,
-seeds 20260827--20260829, and four readable worlds: factorized,
-interaction-heavy, cell-specific, and mixed.  We compare factorized,
-all-supported, automated, and exact-all-cell representations under fixed
-logistic KT.  Nested 30/60/120/240-learner samples study support.  A predeclared
-grid $\lambda\in\{0,.00025,.0005,.001,.002\}$ is evaluated only in the
-factorized null and interaction-heavy positive control.  These synthetic worlds
-test whether the selector behaves appropriately when its assumptions are true
-or false; they do not identify a human learner ontology.
+\paragraph{RQ4: linguistic generalisation.}
+Six predeclared hypotheses---\kstar{}, RQ3 atomic features, family unions,
+split-2, exact cells, and \kstar{} plus supported intersections---are evaluated
+by seen, pairwise-seen/full-tuple-unseen combination, and unseen-value regimes.
+We report event-weighted and cell-macro metrics, per-cell and leave-one-cell-out
+sensitivity, and learner-paired contrasts.  A separate negative control
+withholds one item from each of 30 two-item seen cells and replaces its
+acquisition occurrences with the same-cell counterpart while preserving every
+\kstar{} opportunity count.
 
-For final-bank stability, we rerun selection at 1,000 learners over five mixed-
-world seeds (20260827--20260831), and on nested 60/120/240/500/1,000-learner
-subsets of the reference stream.  Every run supplies development acquisition
-events only; holdout and reserved test outcomes are absent from selection.
+\paragraph{Mastery recovery.}
+Observable predictions for the frozen RQ2 representations are written before
+the private oracle is opened.  Under the known baseline response link,
+$(p-.10)/.80$ estimates the minimum active-prerequisite state and is compared
+with oracle pre-response aggregate mastery.  A separate fixed-BKT analysis
+compares exposed terminal per-KC states with oracle KC mastery.  The targets
+are intentionally distinct and are not called human mastery.
 
-\paragraph{Models and baselines.}
-Retained normalization and generation outputs use \texttt{gpt-5.6-sol} at
-medium reasoning effort; independent item judgments use
-\texttt{gpt-5.6-terra} at medium effort.  Outputs, rendered prompts, parsed
-records, and call settings are retained.  The provider did not expose a pinned
-snapshot or monetary price.  KT baselines are empirical rate, fixed BKT, and
-regularized logistic; no neural KT model is added because the research variable
-is KC representation rather than predictive architecture.
+\paragraph{Simulator robustness.}
+A compact preregistered study runs 13 conditions, three seeds, and 500 learners
+per world.  It varies guess/slip, product and arithmetic-mean aggregation,
+learner noise and learning-rate heterogeneity, mild forgetting, item logit
+difficulty, correlated initial mastery, and correctness-conditioned updating.
+\kstar{}, family-coarse, and split-2 projections share rows within each world.
+Primary conclusions use the unchanged observable logistic model; empirical
+and BKT results remain secondary.
 
-After freezing the dataset, a separate 905-call matched operational audit
-compared medium, high, and xhigh effort with two condition-blind research-agent
-reviews.  A zero-critical-error rule was inconclusive for every stage.  For
-future pipeline runs, high was retained for normalization (higher semantic
-quality and repeatability than medium, cheaper than tied xhigh), while medium
-was retained for generation and validation because deeper effort brought no
-independently confirmed quality gain.  This post-construction audit changes the
-active runner declaration, not the all-medium provenance or results reported
-for the fixed dataset.
+\paragraph{Collection-design controls.}
+Outcome-free nested cohorts test $N\in\{60,120,240,500,1000\}$; three common
+seeds test acquisition targets 6, 12, and 24.  An outcome-free max-one/max-two
+audit separates within-cell replication from distinct Q rows.  Finally,
+factorized A/B and planted A/B/interaction micro-worlds compare A+B-only,
+sparse-anchor, and balanced A-only/B-only/A+B banks at $N=100,300,1000$ with
+60 acquisition events and three terminal probes per learner.  The latter
+distinguishes OR/union merging from an A+B-only intersection.
+
+\paragraph{Model-assisted construction.}
+Retained normalisation and generation use \texttt{gpt-5.6-sol}; independent
+item judgments use \texttt{gpt-5.6-terra}.  Normalisation uses high reasoning
+effort and generation/validation medium.  Rendered prompts, parsed outputs,
+settings, retries, and call evidence are retained.  Provider sampling seeds and
+pinned snapshots were unavailable.

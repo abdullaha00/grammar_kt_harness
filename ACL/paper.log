@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.28)  28 AUG 2026 05:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.28)  30 AUG 2026 05:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -733,24 +733,24 @@ File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 ) (./paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -812,18 +812,18 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 29.
+Package hyperref Info: Link coloring ON on input line 33.
 (./paper.out) (./paper.out)
 \@outlinefile=\write4
 \openout4 = `paper.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 29.
-Package microtype Info: Applying patch `item' on input line 29.
-Package microtype Info: Applying patch `toc' on input line 29.
-Package microtype Info: Applying patch `eqnum' on input line 29.
-Package microtype Info: Applying patch `footnote' on input line 29.
-Package microtype Info: Applying patch `verbatim' on input line 29.
-LaTeX Info: Redefining \microtypesetup on input line 29.
+LaTeX Info: Redefining \microtypecontext on input line 33.
+Package microtype Info: Applying patch `item' on input line 33.
+Package microtype Info: Applying patch `toc' on input line 33.
+Package microtype Info: Applying patch `eqnum' on input line 33.
+Package microtype Info: Applying patch `footnote' on input line 33.
+Package microtype Info: Applying patch `verbatim' on input line 33.
+LaTeX Info: Redefining \microtypesetup on input line 33.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -846,13 +846,13 @@ tim
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 30
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 34
 .
 
 (/usr/share/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -861,7 +861,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -870,15 +870,8 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/share/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) (./sections/abstract.tex)
-Underfull \hbox (badness 1694) in paragraph at lines 1--34
-\T1/ptm/m/n/10 (+20) knowledge-component (KC) map-ping, yet
- []
-
-
-Underfull \hbox (badness 1789) in paragraph at lines 1--34
-\T1/ptm/m/n/10 (+20) 95% CI $\OT1/cmr/m/n/10 [\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it
-/10 :\OT1/cmr/m/n/10 000631\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it
-/10 :\OT1/cmr/m/n/10 000109]$\T1/ptm/m/n/10 (+20) ), while its
+Underfull \hbox (badness 6876) in paragraph at lines 1--38
+\T1/ptm/m/n/10 (+20) a de-clared syn-thetic gen-er-a-tor on-tol-ogy
  []
 
 (./sections/introduction.tex
@@ -892,206 +885,56 @@ ts/enc/dvips/base/8r.enc}
 
 
 ] (./figures/pipeline.tex))
-(./sections/related_work.tex
-Underfull \hbox (badness 5519) in paragraph at lines 4--12
- []\T1/ptm/b/n/10.95 (+20) Proficiency-scale gram-mar re-sources.[] \T1/ptm/m/n
-/10.95 (+20) The
- []
-
-
-Underfull \hbox (badness 3601) in paragraph at lines 14--24
-[][]\T1/ptm/m/n/10.95 (+20) 2023[][]). Grammar-focused sys-tems gen-er-ate
- []
-
-) (./sections/task_and_data.tex (./tables/grammar_dimensions.tex
-Underfull \hbox (badness 3590) in paragraph at lines 17--17
-[]|\T1/ptm/m/n/9 (+20) Passive is canon-i-cal BE-
- []
-
-) [2]
-LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 52
+(./sections/related_work.tex) (./sections/task_and_data.tex
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 15
 .
- (/usr/share/texmf-dist/tex/latex/inconsolata/t1zi4.fd
+
+(/usr/share/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 10.95pt on input line 52.
+(Font)              scaled to size 10.95pt on input line 15.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-)
-(./sections/method.tex
-Underfull \hbox (badness 3333) in paragraph at lines 47--1
-\T1/ptm/m/n/10.95 (+20) Forty-four com-plete map-pings con-tribute 48
+ [2]
+(./tables/grammar_dimensions.tex
+Underfull \hbox (badness 3590) in paragraph at lines 17--17
+[]|\T1/ptm/m/n/9 (+20) Passive is canon-i-cal BE-
  []
 
-[3{/usr/share/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}])
-(./sections/experimental_setup.tex [4]
-Underfull \hbox (badness 1226) in paragraph at lines 28--37
-\T1/ptm/m/n/10.95 (+20) 20260829, and four read-able worlds: fac-tor-
+)) (./sections/method.tex [3{/usr/share/texmf-dist/fonts/enc/dvips/inconsolata/
+i4-t1-0.enc}]
+Underfull \hbox (badness 5771) in paragraph at lines 37--45
+\T1/ptm/m/n/10.95 (+20) in-ter-ven-tion for the re-main-ing determinacy-
  []
 
-
-Underfull \hbox (badness 1515) in paragraph at lines 28--37
-\T1/ptm/m/n/10.95 (+20) gis-tic KT. Nested 30/60/120/240-learner sam-
+[4]) (./sections/experimental_setup.tex [5]
+Underfull \hbox (badness 10000) in paragraph at lines 65--72
+ []\T1/ptm/b/n/10.95 (+20) Collection-design con-trols.[] \T1/ptm/m/n/10.95 (+2
+0) Outcome-free
  []
 
-
-Underfull \hbox (badness 6625) in paragraph at lines 38--42
-[]\T1/ptm/m/n/10.95 (+20) For final-bank sta-bil-ity, we re-run se-lec-
+) (./sections/results.tex (./tables/normalization_results.tex)
+(./tables/policy_results.tex) (./tables/kt_results.tex)
+(./tables/discovery_results.tex) [6]
+Underfull \hbox (badness 1742) in paragraph at lines 72--81
+[]\T1/ptm/m/n/10.95 (+20) On all probes, atomic costs .000374 rel-a-
  []
 
+(./tables/generalisation_results.tex) [7]) (./sections/discussion.tex [8])
+(./sections/reproducibility.tex
+Underfull \vbox (badness 3657) has occurred while \output is active []
 
-Underfull \hbox (badness 3547) in paragraph at lines 38--42
-\T1/ptm/m/n/10.95 (+20) seeds (20260827--20260831), and on nested
+ [9])
+(./sections/conclusion.tex) (./sections/limitations.tex
+Underfull \hbox (badness 3000) in paragraph at lines 55--59
+ []\T1/ptm/b/n/10.95 (+20) Collection and lan-guage claims.[] \T1/ptm/m/n/10.95
+ (+20) Syn-thetic
  []
 
-
-Underfull \hbox (badness 2980) in paragraph at lines 44--51
- []\T1/ptm/b/n/10.95 (+20) Models and base-lines.[] \T1/ptm/m/n/10.95 (+20) Re-
-tained nor-mal-iza-
- []
-
-) (./sections/results.tex (./tables/normalization_results.tex) [5]
-(./tables/policy_results.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 55--60
-[]\T1/ptm/m/n/10.95 (+20) The for-ward se-lec-tor starts
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--60
-\T1/ptm/m/n/10.95 (+20) with nine fea-tures and adds only
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--60
-\T1/zi4/m/n/10.95 aspect=perfect$\OMS/cmsy/m/n/10.95 ^$\T1/zi4/m/n/10.95 polari
-ty=negative\T1/ptm/m/n/10.95 (+20) , sup-
- []
-
-(./tables/kt_results.tex)
-Underfull \hbox (badness 1596) in paragraph at lines 65--77
-\T1/ptm/m/n/10.95 (+20) On the fi-nal mixed-world stream, au-to-mated
- []
-
-
-Underfull \hbox (badness 1558) in paragraph at lines 65--77
-\T1/ptm/m/n/10.95 (+20) .643731 to .643356 ($\OT1/cmr/m/n/10.95 ^^A = \OMS/cmsy
-/m/n/10.95 ^^@\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 000375$\T1/ptm/m/n/10.95
-(+20) , 95%
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 65--77
-\T1/ptm/m/n/10.95 (+20) learner-bootstrap CI $\OT1/cmr/m/n/10.95 [\OMS/cmsy/m/n
-/10.95 ^^@\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 000631\OML/cmm/m/it/10.95 ; \
-OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 000109]$\T1/ptm/m
-/n/10.95 (+20) ).
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 65--77
-\T1/ptm/m/n/10.95 (+20) The gain is con-cen-trated in de-vel-op-ment
- []
-
-
-Underfull \hbox (badness 2080) in paragraph at lines 65--77
-\T1/ptm/m/n/10.95 (+20) probes ($\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 :\O
-T1/cmr/m/n/10.95 000450$ $[\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 :\OT1/cmr
-/m/n/10.95 000758\OML/cmm/m/it/10.95 ; \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.
-95 :\OT1/cmr/m/n/10.95 000141]$\T1/ptm/m/n/10.95 (+20) ); its
- []
-
-
-Underfull \hbox (badness 5696) in paragraph at lines 65--77
-\T1/ptm/m/n/10.95 (+20) com-po-si-tional es-ti-mate re-mains in-con-clu-sive
- []
-
-
-Underfull \hbox (badness 2961) in paragraph at lines 65--77
-\T1/ptm/m/n/10.95 (+20) ($\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 :\OT1/cmr/
-m/n/10.95 000234$ $[\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10
-.95 000836\OML/cmm/m/it/10.95 ; :\OT1/cmr/m/n/10.95 000375]$\T1/ptm/m/n/10.95 (
-+20) ). All seven
- []
-
-
-Underfull \hbox (badness 4792) in paragraph at lines 65--77
-\T1/ptm/m/n/10.95 (+20) over fac-tor-iza-tion on all probes ($\OMS/cmsy/m/n/10.
-95 ^^@\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 000397$
- []
-
-[6]) (./sections/discussion.tex [7]) (./sections/reproducibility.tex
-Underfull \hbox (badness 10000) in paragraph at lines 13--25
-[]\T1/ptm/m/n/10.95 (+20) The ex-e-cutable se-quence is
- []
-
-
-Underfull \hbox (badness 3536) in paragraph at lines 13--25
-\T1/zi4/m/n/10.95 run_full_dataset.py \T1/ptm/m/n/10.95 (+20) (de-fault, res-cu
-e, then
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--25
-\T1/ptm/m/n/10.95 (+20) in-ter-ven-tion), \T1/zi4/m/n/10.95 curate_item_packagi
-ng.py\T1/ptm/m/n/10.95 (+20) ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--25
-\T1/zi4/m/n/10.95 finalize_full_dataset.py\T1/ptm/m/n/10.95 (+20) ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--25
-\T1/zi4/m/n/10.95 run_phase6_selection_stability.py\T1/ptm/m/n/10.95 (+20) , an
-d
- []
-
-
-Underfull \hbox (badness 2735) in paragraph at lines 13--25
-\T1/ptm/m/n/10.95 (+20) ef-fort, four work-ers, seed 20260827, 1,000
- []
-
-
-Underfull \hbox (badness 2197) in paragraph at lines 13--25
-\T1/ptm/m/n/10.95 (+20) learn-ers, and 5,000 boot-strap replicates---are
- []
-
-
-Underfull \hbox (badness 4634) in paragraph at lines 13--25
-\T1/ptm/m/n/10.95 (+20) rows and de-clared source meta-data re-main
- []
-
-) (./sections/conclusion.tex
-Underfull \hbox (badness 10000) in paragraph at lines 26--1
-[]\T1/ptm/m/n/10.95 (+20) Future live runs read per-stage model
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 26--1
-\T1/ptm/m/n/10.95 (+20) and ef-fort choices from the com-pact
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 26--1
-\T1/zi4/m/n/10.95 modules/model_backends.yaml \T1/ptm/m/n/10.95 (+20) dec-la-ra
--tion.
- []
-
-
-Underfull \hbox (badness 1701) in paragraph at lines 26--1
-\T1/ptm/m/n/10.95 (+20) The matched effort-audit man-i-fest re-tains its
- []
-
-
-Underfull \hbox (badness 1655) in paragraph at lines 26--1
-\T1/ptm/m/n/10.95 (+20) strict in-con-clu-sive out-comes, and op-er-a-tional
- []
-
-) (./sections/limitations.tex [8]) (./paper.bbl
+[10]) (./paper.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 6--10
 []\T1/ptm/m/n/10 (+20) Ghodai Ab-del-rah-man, Qing Wang, and
  []
@@ -1112,129 +955,94 @@ Underfull \hbox (badness 1635) in paragraph at lines 21--29
 \T1/ptm/m/n/10 (+20) Chris De-velder, and Thomas De-meester. 2023.
  []
 
-[9]
+
 Underfull \hbox (badness 1331) in paragraph at lines 84--89
 []\T1/ptm/m/n/10 (+20) Panagiotis Pag-o-nis, Kai Har-tung, Di Wu, Mu-nir
  []
 
-) (./sections/appendix.tex
+[11]) (./sections/appendix.tex
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 5
+.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 3019) in paragraph at lines 76--81
-\T1/ptm/m/n/10.95 (+20) to-mated mi-nus fac-tor-ized all-probe log loss
- []
-
-
-Underfull \hbox (badness 6542) in paragraph at lines 76--81
-\T1/ptm/m/n/10.95 (+20) is $\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 :\OT1/cm
-r/m/n/10.95 002666$ \T1/ptm/m/n/10.95 (+20) with learner-bootstrap in-ter-val
- []
-
-[10]
-Underfull \hbox (badness 1087) in paragraph at lines 123--123
-[]|\T1/ptm/m/n/9 (+20) Automation im-proves the re-tained
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
-[]|\T1/ptm/m/n/9 (+20) Source man-i-fest, prompts, rule-book,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
-[]|\T1/ptm/m/n/9 (+20) English di-men-sions, gen-er-a-tion
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
-\T1/ptm/m/n/9 (+20) prompt/design, val-i-da-tion cri-te-ria;
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
-\T1/zi4/m/n/9 canonicalise.py\T1/ptm/m/n/9 (+20) , \T1/zi4/m/n/9 generate.py\T1
-/ptm/m/n/9 (+20) ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
-\T1/zi4/m/n/9 validate_items.py\T1/ptm/m/n/9 (+20) ; all calls, judg-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
-[]|\T1/zi4/m/n/9 candidate_design.yaml\T1/ptm/m/n/9 (+20) , En-glish op-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
-\T1/ptm/m/n/9 (+20) er-a-tion dec-la-ra-tion, \T1/zi4/m/n/9 selection.yaml\T1/p
-tm/m/n/9 (+20) ;
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
-\T1/zi4/m/n/9 kc_candidates.py\T1/ptm/m/n/9 (+20) , \T1/zi4/m/n/9 kc_selection.
-py\T1/ptm/m/n/9 (+20) ;
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
-[]|\T1/ptm/m/n/9 (+20) Observable KT pro-to-col; \T1/zi4/m/n/9 kt.py\T1/ptm/m/n
-/9 (+20) ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
-\T1/zi4/m/n/9 evaluate.py\T1/ptm/m/n/9 (+20) ; pre-dic-tions, regime
- []
-
+(/usr/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 1158) in paragraph at lines 9--11
+[]\T1/ptm/m/n/10.95 (+20) central-modal iden-tity: can, could, may,
+ []
 
- [11]
-[12
 
-] (./paper.aux)
+Underfull \hbox (badness 1320) in paragraph at lines 70--73
+[]\T1/ptm/m/n/10.95 (+20) All 1,222 rows re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+[]\T1/ptm/m/n/10.95 (+20) Reusable
+ []
+
+
+Underfull \hbox (badness 2698) in paragraph at lines 80--83
+\T1/ptm/m/n/10.95 (+20) KCs trans-fer bet-ter than ex-act cells to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+\T1/ptm/m/n/10.95 (+20) pairwise-seen/full-tuple-unseen gram-mar.
+ []
+
+
+Underfull \hbox (badness 2088) in paragraph at lines 80--83
+\T1/ptm/m/n/10.95 (+20) The six-cell unseen-value com-par-i-son is
+ []
+
+
+Underfull \hbox (badness 3989) in paragraph at lines 98--99
+[]|$\OML/cmm/m/it/9 K[]$ \T1/ptm/m/n/9 (+20) loss is .681757/.672104/.636837;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
+\T1/ptm/m/n/9 (+20) its gap to ex-act cells grows
+ []
+
+) [12] [13] (./paper.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 6891F134BBA475BC72700182577EC4A3;4771.
+(rerunfilecheck)             Checksum: 060EF433313F032140F0DE41E67C153B;4669.
  ) 
 Here is how much of TeX's memory you used:
- 26876 strings out of 469515
- 487417 string characters out of 5470807
- 934912 words of memory out of 5000000
- 54562 multiletter control sequences out of 15000+600000
- 701853 words of font info for 352 fonts, out of 8000000 for 9000
+ 27000 strings out of 469515
+ 489594 string characters out of 5470807
+ 934837 words of memory out of 5000000
+ 54635 multiletter control sequences out of 15000+600000
+ 717002 words of font info for 377 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 84i,12n,94p,1002b,889s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,12n,94p,1002b,891s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></
-usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
-fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9
-.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></us
-r/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/f
-onts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/ut
-mr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (12 pages, 249078 bytes).
+usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texm
+f-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
+share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
+sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
+></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/sh
+are/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts
+/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a
+.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on paper.pdf (13 pages, 306950 bytes).
 PDF statistics:
- 443 PDF objects out of 1000 (max. 8388607)
- 393 compressed objects within 4 object streams
- 86 named destinations out of 1000 (max. 500000)
- 62677 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 482 PDF objects out of 1000 (max. 8388607)
+ 418 compressed objects within 5 object streams
+ 95 named destinations out of 1000 (max. 500000)
+ 73421 words of extra memory for PDF output out of 74296 (max. 10000000)

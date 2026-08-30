@@ -1,52 +1,64 @@
 \section{Introduction}
 
 Knowledge tracing (KT) estimates changing learner knowledge from chronological
-responses \citep{corbett-anderson-1995,abdelrahman-etal-2023}.  Its inputs
-normally associate each item with one or more knowledge components (KCs), often
-through a binary Q-matrix.  That matrix embeds consequential decisions: what
-counts as reusable knowledge, which interactions deserve separate state, and
-whether evidence from one grammatical construction should transfer to another.
-These are scientific choices, not data formatting.
+responses \citep{corbett-anderson-1995,abdelrahman-etal-2023}.  A KT dataset
+normally associates each item with one or more knowledge components (KCs),
+often through a binary Q-matrix.  That matrix embeds consequential scientific
+decisions: what counts as reusable knowledge, which interactions require
+separate state, and where learning should transfer.  It is not merely a data
+format.
 
-Grammar resources pose a sharp version of the problem.  The English Grammar
-Profile (EGP) contains over 1,200 corpus-derived competence descriptions mapped
-to CEFR levels \citep{okeeffe-mark-2017}.  A description can combine tense,
-aspect, voice, polarity, clause type, and modality, state bounded alternatives,
-or fall outside a selected ontology.  Treating every descriptor as one KC
-obscures reuse; decomposing it without explicit rules can invent unsupported
-distinctions.  Even after canonicalization, granularity remains empirical:
-feature KCs transfer broadly, conjunctions represent dependencies, and exact
-cells can memorize combinations.
+Those decisions are unusually difficult to audit in language learning.
+Conversational corpora obscure where a grammatical opportunity begins and
+which construction it measures; vocabulary-oriented benchmarks do not isolate
+grammar KCs; and large tutoring logs may expose skill labels without a
+transparent linguistic decomposition.  Grammar resources offer richer
+descriptions, but not ready-made KT objects.  The English Grammar Profile (EGP),
+for example, contains over 1,200 corpus-derived competence descriptions
+\citep{okeeffe-mark-2017}.  A descriptor can combine tense, aspect, voice,
+polarity, clause type, and modality, state bounded alternatives, or lie outside
+a declared grammar scope.
 
-We introduce \system, a dataset and research pipeline that makes this path
-explicit (Figure~\ref{fig:pipeline}).  It first fixes grammar cells and items
-without access to KCs or learner outcomes.  It then constructs a
-development-only KC hypothesis space from a declared schema and selects
-supported hypotheses using observable learner history.  The resulting policy
-is frozen before compositional and novel-value probes.  This ordering makes
-leakage, support, and representation complexity inspectable.
+We introduce \system, a controlled environment in which the scientific
+objects and their causal order are explicit:
+\begin{equation}
+\grammarcell \ne \kstar \ne \khat .
+\end{equation}
+A \grammarcell{} is a canonical linguistic description of the construction
+instantiated by an item.  The generator inventory \kstar{} and its deterministic
+item mapping \qstar{} are declared synthetic truth: simulated learners have
+mastery over these KCs.  A discovered or deliberately misspecified inventory
+\khat{} with mapping \qhat{} is instead a downstream experimental hypothesis.
+None of these objects is asserted to be the cognitive truth of human grammar.
 
-We ask four paper-level questions:
+Figure~\ref{fig:pipeline} shows the resulting two-layer programme.  Layer A
+processes the complete source inventory, freezes \kstar{} before learner
+outcomes exist, constructs and audits a fixed measurement bank and \qstar{},
+and only then simulates public responses plus separate private oracle truth.
+Layer B leaves that release immutable while changing or hiding the supplied KC
+representation.
+
+We ask four questions:
 \begin{enumerate}
-  \item[RQ1] What dataset results from conservative source normalization and
-        independently screened item generation?
-  \item[RQ2] What interpretable KC hypothesis space follows from development
-        grammar, and which granularity does predictive--parsimonious selection
-        retain?
-  \item[RQ3] Does the frozen selection improve prediction on development,
-        compositional, and novel-value probes?
-  \item[RQ4] How sensitive are selection and prediction to learner support,
-        complexity penalty, KT model, and plausible latent learner worlds?
+  \item[RQ1] Can a grammar resource be transformed into an auditable fixed
+    language-learning dataset with explicit KCs, items, item--KC mappings, and
+    learner interactions?
+  \item[RQ2] How does KT behave when the supplied KC representation differs
+    from the generator ontology?
+  \item[RQ3] Can observable learner-response evidence recover an appropriate
+    KC representation when generator truth is hidden?
+  \item[RQ4] How do alternative representations generalise from seen grammar
+    to unseen combinations and unseen values?
 \end{enumerate}
 
-Our contributions are: (i) a retained medium-scale grammar-KT dataset with a
-provenance path from descriptors to 44 fixed items and 204,000 chronological
-events; (ii) a direct candidate procedure spanning reusable features,
-language-declared operations, supported interactions, and exact cells; (iii) an
-automated development-evidence selector with a simple predictive--parsimony
-objective; and (iv) controlled fold, latent-world, support, and validation
-audits that delimit the contribution.  The learners are synthetic and item
-quality is model-judged, so our results validate method behavior under declared
-worlds, not cognitive atomicity or classroom efficacy.
+Our contributions are: (i) a versioned benchmark constructed from every EGP
+record under an explicit English verbal-morphosyntax scope; (ii) an
+outcome-independent 18-KC generator ontology, 113-item bank, audited full-rank
+\qstar{}, and 283,000-event learner stream; (iii) controlled full-dataset
+studies of granularity, Q-matrix noise, discovery, linguistic generalisation,
+and mastery recovery; and (iv) compact simulator and collection-design
+controls that identify which assumptions carry the conclusions.  The result is
+an executable methodological test bed.  Automatic linguistic judgments and
+synthetic learner dynamics remain explicit limitations.
 
 \input{figures/pipeline}

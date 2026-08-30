@@ -1,55 +1,59 @@
-\section{Task Formulation and Source Data}
+\section{Scientific Objects and Source Data}
 \label{sec:task-data}
 
-\subsection{Grammar-cell representation}
+\subsection{Canonical grammar cells}
 
-For descriptor $d$, normalization returns a status, cells, explicit Phase-2
-eligibility, and a note.  A cell
-has six dimensions,
+The empirical scope is single-main-clause English verbal morphosyntax.  For
+source descriptor $d$, constrained normalisation returns a status, one or more
+branches, explicit uncertainty, Phase-2 eligibility, and provenance.  A scalar
+\grammarcell{}
 \begin{equation}
-  c=(t,a,v,p,q,m),
+  c=(t,a,v,p,q,m)
 \end{equation}
-for tense, aspect, voice, polarity, clause type, and modal choice.
-Table~\ref{tab:grammar-domains} gives the domains.  Scalars record exact
-evidence, lists bounded unresolved alternatives, and null no usable constraint.
-Dimensions within a cell are conjunctive; separate cells are source-supported
-alternatives.  Lists are not expanded into unsupported Cartesian products.
-
-Mappings are \emph{complete} only when all values are scalar.  Partial mappings
-contain a list or null.  Zero-cell statuses distinguish out-of-scope,
-schema-failure, and unresolved cases.  Compatibility constraints include
-$m\neq\text{none}\Rightarrow t=\text{NA}$ and imperative
-clauses requiring $t=\text{NA}$ and $m=\text{none}$.  Only complete cells enter
-the downstream canonical inventory.
+contains tense, aspect, voice, polarity, clause type, and modal choice.
+Table~\ref{tab:grammar-domains} gives the domains.  The value
+\texttt{NA} is a licensed structural value, not missing evidence.
+Compatibility rules include
+$m\ne\text{none}\Rightarrow t=\texttt{NA}$ and imperative clauses requiring
+$t=\texttt{NA}$ and $m=\text{none}$.
 
 \input{tables/grammar_dimensions}
 
-\subsection{Declared source subset}
+Phase 1 receives typed descriptor fields but no examples.  It may return
+complete scalar branches, bounded alternatives, explicit missing constraints,
+or a zero-cell status.  Phase 2 is called only for an eligible uncertain
+dimension with a licensed example; it may narrow named uncertainty but must
+preserve every Phase-1 branch and every ineligible exact value.  Deterministic
+validation checks domains, statuses, compatibility, branch preservation, and
+resume-input identity.  Only complete scalar mappings canonicalise.  A
+separate relation table retains every descriptor-to-cell link, so repeated
+source evidence does not become a grammatical feature.
 
-The input is a consult-only parsed EGP snapshot that is not redistributed.  Its
-declared SHA-256 digest and size are checked before execution.  From 1,222
-records, an ordered list selects 139 descriptors: 23 regression controls and
-116 fresh cases stratified over tense--aspect combinations, passive voice,
-negation, questions, imperatives, central modals, and out-of-scope phenomena.
+\subsection{Complete source census}
 
-The design contains 139 primary annotation units and eight repeated units.
-Every unit retains model evidence; only primaries feed canonicalization.  The
-retained annotation snapshot is used as evidence rather than regenerated for
-this study.
+The consult-only input is a parsed 1,222-record EGP snapshot with a declared
+SHA-256 digest.  We process every row rather than selecting descriptors likely
+to fit the schema.  Descriptions outside the declared verbal-morphosyntax
+boundary remain auditable \texttt{out\_of\_scope} rows.  This is full processing
+of the source under a bounded grammar scope, not coverage of all phenomena
+described by EGP.
 
-Phase~1 exposes category fields, guideword, and can-do statement.  Source
-examples remain hidden unless a partial result explicitly identifies an
-uncertain dimension as Phase-2 eligible.  Phase~2 may narrow only those domains
-while preserving every Phase-1 branch and ineligible exact value.
+The final census contains 211 complete, 327 partial, nine unresolved, and 675
+out-of-scope mappings.  Complete mappings yield 228 source--cell relations and
+75 unique cells.  A fresh balanced repeat of 120 Phase-1 rows gives 93.3\%
+status agreement and 95.8\% eligibility agreement.  All 38 rows complete in
+both annotations have the same canonical cell set; partial-branch agreement is
+79.0\%.  This supports explicit uncertainty rather than silent completion, but
+does not constitute expert annotation.
 
-\subsection{Fixed dataset boundary and grammar fold}
+\subsection{Semantic grammar regimes}
 
-Forty-four complete mappings contribute 48 source--cell edges and 24 unique
-cells.  Item generation and validation see cells and language-facing design
-files, but no fold, KC, learner outcome, or KT result.  After the bank is fixed,
-a deterministic semantic split assigns 18 cells to development, five to a
-constituent-compositional holdout, and one containing unseen
-\texttt{modal=would} to a novel-value holdout.  The five compositional cells use
-only feature values seen in development; 36 of their 37 value pairs are also
-seen.  We therefore call the split constituent-compositional rather than claim
-that every pair has been observed.
+Before simulation, a deterministic structural rule assigns 54 cells to
+\texttt{seen}, 15 to \texttt{unseen\_combination}, and six to
+\texttt{unseen\_value}.  Each unseen combination contains only values and
+lower-order value pairs found in seen grammar, while its complete six-tuple is
+absent.  The unseen-value cells contain the withheld perfect-progressive aspect
+value.  All generator KCs nevertheless have seen support: this cohort tests a
+new linguistic composition, not a latent KC observed only at evaluation.
+Acquisition uses seen grammar only; every item receives one terminal,
+non-updating probe.

@@ -2,44 +2,52 @@
   \centering
   \begin{tikzpicture}[
     >=Latex,
-    node distance=3.5mm,
+    node distance=1.8mm,
     box/.style={draw, rounded corners=1.5pt, align=center, minimum height=8mm,
-      text width=2.0cm, font=\scriptsize, inner sep=2pt},
+      text width=1.62cm, font=\scriptsize, inner sep=2pt},
     model/.style={box, fill=orange!16, dashed},
     fixed/.style={box, fill=blue!10},
-    evidence/.style={box, fill=violet!10},
-    kc/.style={box, fill=green!12},
-    arrow/.style={->, semithick}
+    truth/.style={box, fill=green!14},
+    experiment/.style={box, fill=violet!11},
+    arrow/.style={->, semithick},
+    layer/.style={draw, rounded corners=2pt, inner sep=4pt}
   ]
     \node[fixed] (source) {grammar\\resource};
-    \node[model, right=of source] (norm) {resource-specific\\normalization};
+    \node[model, right=of source] (norm) {constrained\\normalisation};
     \node[fixed, right=of norm] (cells) {canonical\\GrammarCells};
-    \node[model, right=of cells] (gen) {$N=3$ item\\generation};
-    \node[model, right=of gen] (valid) {independent\\screening};
-    \node[fixed, very thick, right=of valid] (bank) {fixed\\item bank};
-
-    \node[fixed, below=8mm of source] (fold) {semantic\\grammar fold};
-    \node[evidence, right=of fold] (events) {development\\learner evidence};
-    \node[kc, right=of events] (cands) {KC candidates\\+ support};
-    \node[kc, right=of cands] (select) {predictive--\\parsimonious selection};
-    \node[fixed, very thick, right=of select] (policy) {frozen policy\\+ Q-matrix};
-    \node[evidence, right=of policy] (eval) {KT + frozen-probe\\evaluation};
+    \node[truth, very thick, right=of cells] (kstar) {declared\\$\kstar$};
+    \node[model, right=of kstar] (items) {generate, validate,\\curate items};
+    \node[truth, right=of items] (qstar) {$\qstar$ + measurement\\audit};
+    \node[truth, right=of qstar] (simulate) {baseline learner\\simulation};
+    \node[fixed, very thick, right=of simulate] (dataset) {frozen dataset:\\items + responses};
 
     \draw[arrow] (source) -- (norm);
     \draw[arrow] (norm) -- (cells);
-    \draw[arrow] (cells) -- (gen);
-    \draw[arrow] (gen) -- (valid);
-    \draw[arrow] (valid) -- (bank);
-    \draw[arrow] (bank.south) |- (fold.east);
-    \draw[arrow] (fold) -- (events);
-    \draw[arrow] (events) -- (cands);
-    \draw[arrow] (cands) -- (select);
-    \draw[arrow] (select) -- (policy);
-    \draw[arrow] (policy) -- (eval);
+    \draw[arrow] (cells) -- (kstar);
+    \draw[arrow] (kstar) -- (items);
+    \draw[arrow] (items) -- (qstar);
+    \draw[arrow] (qstar) -- (simulate);
+    \draw[arrow] (simulate) -- (dataset);
+
+    \node[experiment, below=9mm of dataset] (hide) {hide or perturb\\$\kstar,\qstar$};
+    \node[experiment, left=of hide] (khat) {construct/select\\$\khat,\qhat$};
+    \node[experiment, left=of khat] (evaluate) {prediction, state,\\structure};
+    \node[experiment, left=of evaluate] (claims) {RQ2--RQ4 +\\robustness};
+
+    \draw[arrow] (dataset) -- (hide);
+    \draw[arrow] (hide) -- (khat);
+    \draw[arrow] (khat) -- (evaluate);
+    \draw[arrow] (evaluate) -- (claims);
+
+    \node[layer, fit=(source)(dataset),
+      label={[font=\scriptsize\bfseries]above:Layer A: frozen dataset construction}] {};
+    \node[layer, fit=(claims)(hide),
+      label={[font=\scriptsize\bfseries]below:Layer B: downstream hypotheses and tests}] {};
   \end{tikzpicture}
-  \caption{Active \system{} methodology.  Model assistance is confined to
-  normalization, item generation, and item screening.  Candidate construction
-  uses development grammar only; selection uses development responses only.
-  Thick boxes mark the bank and policy freezing boundaries.}
+  \caption{\system{} separates dataset construction from downstream research.
+  Generator truth is fixed before item responses exist.  Later discovery and
+  misspecification experiments may hide or perturb it but never redefine the
+  immutable baseline.  Model assistance is confined to the dashed linguistic
+  normalisation and item-construction boxes.}
   \label{fig:pipeline}
 \end{figure*}

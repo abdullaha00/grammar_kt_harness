@@ -1,30 +1,35 @@
 \section{Reproducibility and Audit Trail}
 
-Researcher-facing YAML/text files separately declare the English schema,
-normalization boundary, item prompt and criteria, semantic fold, latent worlds,
-candidate families and support, selector penalty, and KT protocol.  Direct
-Python procedures materialize each transformation.  The retained dataset
-contains source rows, mappings, canonical edges, all 78 generation attempts,
-77 original judgments, six correction judgments, the 54-item accepted pool,
-44-item selected bank, fold, 204,000 events, private oracle, 55-candidate
-inventory, selection trace, five-seed stability study, frozen
-policies, Q-matrices, predictions, metrics, and paired comparisons.
+The frozen release is rooted at
+\nolinkurl{data/grammar_kt_full_v1/}.  Its top-level manifest distinguishes
+linguistic representation, generator truth, observable data, and private
+oracle artifacts.  It records the pre-response code revision, exact simulator
+command, configuration and input hashes, deterministic gzip metadata, row
+counts, and an 88-file recursive inventory.  The observable and private-oracle
+SHA-256 values begin \texttt{9272ca86a647} and \texttt{956ed53f370d},
+respectively; the complete values are in the manifest and evidence ledger.
 
-The executable sequence is \texttt{run\_full\_dataset.py} (default, rescue,
-then intervention), \texttt{curate\_item\_packaging.py},
-\texttt{finalize\_full\_dataset.py},
-\texttt{run\_phase6\_selection\_stability.py}, and
-\texttt{analyze\_full\_dataset.py}.  Exact invocations---including both model
-names, medium reasoning effort, four workers, seed 20260827, 1,000 learners,
-and 5,000 bootstrap replicates---are retained in the dataset manifests and
-append-only experiment ledger.  Large event and
-prediction files use deterministic gzip metadata.  A no-live-call notebook
-executes the same active functions.  The external EGP snapshot is consult-only,
-which limits independent source-stage replay; derived rows and declared source
-metadata remain auditable in the package.
+\nolinkurl{scripts/build_dataset.py} is the chronological Layer-A runner.  It
+loads the typed source, normalises and canonicalises, constructs generator KCs,
+generates/validates/curates items, builds and audits \qstar{}, and invokes the
+frozen simulator.  Q and dataset verification modes replay deterministic
+artifacts without making LLM calls.  Raw prompts and outputs, independent
+judgments, intervention plans, and immutable superseded records are linked
+through provenance directories.
 
-Future live runs read per-stage model and effort choices from the compact
-\texttt{modules/model\_backends.yaml} declaration.  The matched effort-audit
-manifest retains its 905 prompts/outputs, token and latency records, blind
-reviews, adjudications, paired resamples, strict inconclusive outcomes, and
-operational high/medium/medium decision separately from the final dataset.
+Separate scripts under \nolinkurl{scripts/experiments/} implement
+misspecification, discovery, generalisation, mastery recovery, robustness, and
+collection design.  Every substantive study writes its question, hypothesis,
+manipulation, held-fixed variables, seeds, input hashes, and intended
+interpretation before its final run.  Pure representation comparisons verify a
+shared probe-event hash.  Discovery freezes selection before truth is loaded;
+mastery recovery freezes observable predictions before opening the oracle.
+Exact commands and artifact hashes are retained in the experiment ledger.
+
+The public stream is sufficient for ordinary KT and KC discovery.  Oracle state
+is not embedded in public rows or required by the fitting code.  A
+non-English-named toy schema exercises the generic cells-to-K*-to-Q-to-events
+contract.  Unit and scientific-contract tests cover leakage boundaries,
+non-updating probes, deterministic Q projection, alternate-schema execution,
+same-event representation comparisons, replay hashes, and all paper-facing
+experiments.

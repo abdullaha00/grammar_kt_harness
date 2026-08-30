@@ -1,0 +1,28 @@
+\begin{table*}[t]
+  \centering
+  \small
+  \begin{tabular}{@{}lrrr@{}}
+    \toprule
+    Representation & Seen (54 cells) &
+      Unseen combination (15) & Unseen value (6) \\
+    \midrule
+    Generator \kstar{} (absolute LL) & .669161 & .672036 & .681181 \\
+    RQ3 atomic (delta) & $\approx0$ & $\approx0$ &
+      $-.003236$ (n.s.) \\
+    Family union (delta) & $+.008940^{\dagger}$ &
+      $+.009185^{\dagger}$ & $-.001751$ (n.s.) \\
+    Structural split-2 (delta) & $+.002234^{\dagger}$ &
+      $+.008806^{\dagger}$ & $-.000684$ (n.s.) \\
+    Exact cell (delta) & $+.008209^{\dagger}$ &
+      $+.037609^{\dagger}$ & $+.028627^{\dagger}$ \\
+    \kstar{} + intersections (delta) & $+.001415^{\dagger}$ &
+      $+.001196^{\dagger}$ & $+.006954^{\dagger}$ \\
+    \bottomrule
+  \end{tabular}
+  \caption{RQ4 event-weighted log loss by semantic grammar regime.  Deltas are
+  candidate minus \kstar{} under one common fitting protocol.  A dagger marks a
+  2,000-repeat whole-learner interval strictly above zero; n.s.\ marks an
+  interval spanning zero.  All unseen combinations are pairwise-seen and
+  full-tuple-unseen.}
+  \label{tab:generalisation-results}
+\end{table*}

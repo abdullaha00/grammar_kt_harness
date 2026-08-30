@@ -277,39 +277,53 @@ def test_final_dataset_results_notebook_is_parameterized_and_executed() -> None:
     assert "DATA_FOLDER" in "".join(parameter_cells[0]["source"])
     assert "GRAMMAR_KT_DATA_FOLDER" in source_text
 
-    required_stage_artifacts = [
-        "source/descriptors.jsonl",
-        "normalisation/mappings.jsonl",
-        "canonical/cells.jsonl",
-        "items/generation_attempts.jsonl",
-        "items/curated_validation.jsonl",
-        "items/selected_bank.jsonl",
-        "fold/assignments.jsonl",
-        "kc/candidate_inventory.json",
-        "simulation/events.jsonl.gz",
-        "kc/selection_trace.json",
-        "kc/q_matrices/automated.csv",
-        "kt/automated/predictions.jsonl.gz",
-        "evaluation/automated/results.json",
-        "evaluation/paired_logistic.json",
-        "kc/selection_stability.json",
+    required_full_v1_artifacts = [
+        "manifest.json",
+        "provenance/normalisation/full_audit.json",
+        "grammar/cells.jsonl",
+        "grammar/regime_assignments.jsonl",
+        "kcs.jsonl",
+        "items/items.jsonl",
+        "provenance/measurement/audit.json",
+        "q_matrix.csv",
+        "interactions.jsonl.gz",
+        "reports/full_v1_artifacts/rq2_misspecification_v1/results.json",
+        "experiments/full_v1/rq3_kc_discovery_v1/final_evaluation.json",
+        "experiments/full_v1/rq4_generalisation_v1/results.json",
+        "reports/full_v1_artifacts/mastery_recovery_v1/results.json",
+        "experiments/full_v1/simulator_robustness_v1/results.json",
+        "experiments/full_v1/collection_design_v1/results.json",
     ]
-    assert all(artifact in source_text for artifact in required_stage_artifacts)
+    assert all(artifact in source_text for artifact in required_full_v1_artifacts)
+    assert "grammar_kt_full_v1" in source_text
+    assert "GrammarCell != generator K* != discovered K_hat" in source_text
     assert "pd.DataFrame" in source_text
     assert "show_table(" in source_text
     assert "FINAL_DATASET_SUMMARY" in source_text
-    assert "reports/" not in source_text
+    assert "learner_truth.jsonl" not in source_text
+    assert 'DATASET / "oracle' not in source_text
+    assert "oracle/q_matrix_sparse.jsonl" not in source_text
     assert "oracle_debug" not in source_text
     assert "call_model" not in source_text
+    assert "write_text(" not in source_text
 
     code_cells = [cell for cell in notebook["cells"] if cell["cell_type"] == "code"]
     assert all(cell["execution_count"] is not None for cell in code_cells)
-    assert sum(bool(cell["outputs"]) for cell in code_cells) >= 15
+    assert sum(bool(cell["outputs"]) for cell in code_cells) >= 18
     assert not any(
         output.get("output_type") == "error"
         for cell in code_cells
         for output in cell["outputs"]
     )
+    output_text = json.dumps(
+        [output for cell in code_cells for output in cell["outputs"]],
+        sort_keys=True,
+    )
+    assert "FROZEN_BASELINE_COMPLETE" in output_text
+    assert "283000" in output_text
+    assert "true_kstar" in output_text
+    assert "hash_distractor_negative_control" in output_text
+    assert "all_ab_no_anchors" in output_text
 
 
 def test_baseline_generation_has_no_controlled_lexicon_dependency() -> None:

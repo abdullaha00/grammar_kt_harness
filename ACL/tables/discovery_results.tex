@@ -1,0 +1,23 @@
+\begin{table*}[t]
+  \centering
+  \small
+  \begin{tabular}{@{}lrrrrl@{}}
+    \toprule
+    Downstream hypothesis & KCs & Exact \kstar{} KCs &
+      Activation Jaccard & Aligned edge F1 & Probe loss vs.\ ceiling \\
+    \midrule
+    Compositional ceiling & 18 & 18/18 & 1.000000 & 1.000000 & .669606 (reference) \\
+    Selected atomic class & 18 & 16/18 & .970854 & .965385 &
+      $+.000374\;[.000228,.000517]$ \\
+    Linguistic-family coarse & 8 & 5/18 & .371913 & .750929 & +.005864 \\
+    Exact-cell fine & 54 & 1/18 & .084184 & .186969 & +.006657 \\
+    Hash distractors & 18 & 0/18 & .202342 & .359259 & +.013238 \\
+    \bottomrule
+  \end{tabular}
+  \caption{RQ3 structural and predictive recovery after observable-only
+  selection is frozen.  Jaccard is padded optimal activation-column matching
+  over the complete bank.  The compositional row is a positive-control ceiling,
+  not a blindly selected policy; only the selected-versus-ceiling delta is
+  shown with its preregistered learner interval.}
+  \label{tab:discovery-results}
+\end{table*}

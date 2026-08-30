@@ -1,156 +1,113 @@
-\section{Candidate and Operation Audit}
+\section{Generator and Measurement Detail}
 
-The active English background values are tense \texttt{NA}, aspect
-\texttt{none}, active voice, positive polarity, declarative clause, and modal
-\texttt{none}.  Present and past remain explicit KCs.  Making every observed
-value explicit expanded the Phase-2 raw space from 48 to 107 candidates and
-produced 53 duplicate excess candidates, so the retained backgrounds are a
-parsimonious declaration rather than a cognitive claim.
+The 18 generator KCs fall into five auditable groups:
+\begin{itemize}
+  \item finite-form selection: present and past;
+  \item aspectual dependencies: perfect and progressive;
+  \item voice/polarity: BE-passive and verbal negation;
+  \item clause operations: imperative, polar question, and non-subject-WH; and
+  \item central-modal identity: can, could, may, might, must, shall, should,
+    will, and would.
+\end{itemize}
+Seventeen recur across cells.  Seven have fewer than six final items, but every
+KC has at least two items and 12 seen acquisition opportunities per learner.
+The perfect-progressive-chain alternative would be active in six cells but is
+nested in both aspect dependencies; it was excluded before item generation.
 
-Of ten English operation declarations, finite-tense form, perfect dependency,
-and progressive dependency are nonredundant and selection-eligible.  Negation,
-passive dependency, imperative, and operator inversion duplicate corresponding
-feature columns.  Central modal, subject-WH, and WH-fronting have zero
-development support.  Generator self-reported operation tags are not used.
-Candidate construction has no learner-event or holdout parameter; mutating all
-holdout features leaves the retained development inventory byte-identical.
+The final bank contains 84 seen, 20 unseen-combination, and nine unseen-value
+items.  Max-one preserves all 75 cells with 75 items, while max-three adds only
+13 items beyond max-two.  No selected prompts are exact duplicates.  Surface
+nonidentity is not itself evidence of pedagogical diversity.
 
-With one rank-1 development item per cell, the same 55 raw candidates yield 23
-eligible representatives and two eligible interactions.  With up to two items,
-they yield 28 and seven.  The five newly eligible pairs all meet the unchanged
-two-cell requirement but gain the required third item.  This is a structural
-sensitivity; outcomes were not read and selection was not rerun.
-
-\section{Selector Sensitivity and Latent Worlds}
-
-\begin{table*}[h]
-  \centering
-  \small
-  \begin{tabular}{@{}lrrrrr@{}}
-    \toprule
-    $\lambda$ & Null runs with additions & Null KC counts &
-      Interaction KC counts & Both planted recovered \\
-    \midrule
-    0 & 3/3 & 14, 14, 11 & 13, 15, 13 & 3/3 \\
-    .00025 & 2/3 & 9, 10, 10 & 11, 13, 12 & 3/3 \\
-    .0005 & 0/3 & 9, 9, 9 & 11, 12, 11 & 3/3 \\
-    .001 & 0/3 & 9, 9, 9 & 11, 11, 10 & 2/3 \\
-    .002 & 0/3 & 9, 9, 9 & 9, 10, 10 & 0/3 \\
-    \bottomrule
-  \end{tabular}
-  \caption{Complexity-penalty sensitivity at 240 learners.  The null is the
-  factorized world; recovery is measured in the interaction-heavy world over
-  seeds 20260827--20260829.}
-  \label{tab:lambda-sensitivity}
-\end{table*}
-
-\begin{table*}[h]
-  \centering
-  \small
-  \begin{tabular}{@{}lrrrrr@{}}
-    \toprule
-    Latent world & Factorized & All supported & Automated & Oracle cell &
-      Auto.--fact. \\
-    \midrule
-    Factorized & .578311 & .578334 & .578311 & .603004 & .000000 \\
-    Interaction-heavy & .609353 & .607225 & \textbf{.607097} & .621903 & -.002256 \\
-    Cell-specific & .686715 & .686379 & .686715 & \textbf{.679439} & .000000 \\
-    Mixed & .641559 & \textbf{.641273} & .641575 & .652886 & +.000016 \\
-    \bottomrule
-  \end{tabular}
-  \caption{Three-seed mean frozen-probe logistic log loss on the structural
-  robustness bank.  Bold marks the lowest value within a declared synthetic
-  world, not a human-validity ranking.}
-  \label{tab:world-results}
-\end{table*}
-
-At 240 learners, selected KC counts across the three seeds are 9/9/9 in the
-factorized world, 11/12/11 in the interaction-heavy world, 9/9/9 in the
-cell-specific world, and 9/9/10 in the mixed world.  On the curated final bank,
-five independent 1,000-learner mixed-world streams select the identical ten-KC
-inventory (all ten pairwise Jaccards equal 1).  In nested reference-seed samples,
-60, 240, 500, and 1,000 learners match that inventory; 120 learners substitute
-present$\wedge$passive for perfect$\wedge$negative (Jaccard .818).  No holdout
-or reserved test event is supplied to any selection run.
-
-On the reference interaction-heavy seed, automated minus factorized all-probe
-log loss is $-.002666$ with learner-bootstrap interval
-$[-.004244,-.001103]$; the compositional-only interval
-$[-.005286,.002518]$ includes zero.  This separates predictive recovery of a
-planted interaction from the unresolved transfer claim.
-
-\section{Item and Validation Audit}
-
-The eight-cell item audit made 89 generation attempts and 86 structurally valid
-objects.  Model-selected $N=1/3/5$ covered 6/8, 8/8, and 8/8 cells; controlled
-lexicon generation covered 5/8, 5/8, and 7/8.  Model-selected $N=3$ accepted
-18/24 candidates, while $N=5$ accepted 27/40 without further coverage.  On three
-matched cells, readable source evidence and cell-only prompting each accepted
-six candidates at $N=3$; that sample is too small for a source-evidence claim.
-
-The final bank's 44 prompts are all unique.  They contain 242 lexical types in
-795 lexical tokens (type--token ratio .304).  Twenty rank-2 items have median
-token-set distance .739 from their cell's first item.  These automatic
-surface statistics show nonidentity, not pedagogical diversity.
-
-Before curation, the exhaustive agent audit classified 31/45 selected items as
-having no material item-level concern, nine as usable but judgment-sensitive,
-and five as requiring deterministic packaging/reference correction.  Six
-corrected candidates were independently rejudged: two original accepts became
-rejects, one original reject became accepted, and three accepts remained
-accepted.  The raw records and superseded downstream artifacts are retained.
-This audit is qualitative agent evidence, not expert or learner validation.
-
-\section{RQ and Artifact Map}
-
-\begin{table}[H]
+\begin{table*}[t]
   \centering
   \footnotesize
-  \begin{tabularx}{\columnwidth}{@{}l>{\raggedright\arraybackslash}p{0.20\columnwidth}X@{}}
+  \begin{tabular}{@{}lrrrr@{}}
     \toprule
-    RQ & Status & Evidence-supported answer \\
+    Generator condition & \multicolumn{2}{c}{Family-coarse $\Delta$ LL} &
+      \multicolumn{2}{c}{Split-2 $\Delta$ LL} \\
+    & Mean & Three-seed range & Mean & Three-seed range \\
     \midrule
-    RQ1 & Partial & 24 cells and 44 model-validated items are retained; source
-      completion is 31.7\%, and no human item study was performed. \\
-    RQ2 & Partial & The bank gives 55 raw/38 activation-class/28 eligible
-      candidates; automation freezes nine marginals plus one interaction. \\
-    RQ3 & Partial & Automation improves the retained stream overall, but its
-      compositional and novel-value intervals include zero. \\
-    RQ4 & Answered within controls & Recovery, penalty, support, KT, and four-world
-      audits show assumption sensitivity and no universal winner; the final
-      inventory is identical over five full-support seeds. \\
+    Baseline minimum, .10/.10 & .007924 & [.007568,.008306] &
+      .003241 & [.003001,.003575] \\
+    Noise .00/.00 & .016363 & [.016032,.016957] &
+      .005969 & [.005573,.006636] \\
+    Noise .20/.10 & .005259 & [.004938,.005684] &
+      .002222 & [.001971,.002457] \\
+    Noise .10/.20 & .005310 & [.005110,.005692] &
+      .002283 & [.002159,.002526] \\
+    Noise .20/.20 & .003082 & [.002904,.003436] &
+      .001506 & [.001372,.001604] \\
+    Product aggregation & .008237 & [.007820,.008762] &
+      .004188 & [.003755,.004678] \\
+    Arithmetic-mean aggregation & .004500 & [.004353,.004790] &
+      .001738 & [.001486,.002218] \\
+    Learner guess/slip heterogeneity & .008186 & [.007748,.008794] &
+      .003294 & [.003077,.003722] \\
+    Forgetting .002/gap & .003467 & [.003061,.003829] &
+      .001753 & [.001567,.001979] \\
+    Item difficulty logit SD .60 & .006346 & [.004579,.007505] &
+      .004138 & [-.000413,.009955] \\
+    Learner learning-rate heterogeneity & .007939 & [.007471,.008279] &
+      .003311 & [.002908,.003588] \\
+    Correlated initial mastery & .005836 & [.005357,.006275] &
+      .002380 & [.002034,.002737] \\
+    Correct-only updating & .011085 & [.010698,.011391] &
+      .005046 & [.004769,.005209] \\
     \bottomrule
-  \end{tabularx}
-  \caption{Paper-level research-question ledger.  ``Partial'' marks missing
-  human or cross-world evidence, not an unfinished software stage.}
-  \label{tab:rq-ledger}
-\end{table}
+  \end{tabular}
+  \caption{Simulator-sensitivity detail for the primary observable-logistic
+  model.  Values are
+  candidate minus \kstar{} on common terminal probes; positive favours
+  \kstar{}.  Seeds are 20260829--20260831 with 500 learners per world.  Ranges
+  describe these three structural seeds, not population intervals.}
+  \label{tab:robustness-detail}
+\end{table*}
 
-\begin{table}[H]
+\section{Research-Question Ledger}
+
+\begin{description}
+  \item[RQ1---supported in scope.] All 1,222 rows receive a disposition; the
+    complete subset yields 75 cells, 18 generator KCs, 113 items, audited
+    \qstar{}, and 283,000 replayable events.
+  \item[RQ2---supported for frozen controls.] \kstar{} gives the lowest
+    overall primary loss and item-state RMSE; coarsening, refinement, and every
+    tested 10\% Q corruption are harmful.  Local and robustness reversals
+    delimit the claim.
+  \item[RQ3---unique recovery rejected.] Observable selection recovers a
+    high-overlap seen-Q equivalence class, but cannot distinguish atomic from
+    compositional rules with identical seen activation.
+  \item[RQ4---recombination supported.] Reusable KCs transfer better than
+    exact cells to pairwise-seen/full-tuple-unseen grammar.  The six-cell
+    unseen-value comparison is narrow and cannot resolve RQ3 equivalence.
+\end{description}
+
+Every answer is conditional on the declared synthetic world and automatically
+screened item bank.
+
+\begin{table*}[t]
   \centering
   \footnotesize
-  \begin{tabularx}{\columnwidth}{@{}>{\raggedright\arraybackslash}p{0.24\columnwidth}X@{}}
+  \begin{tabular}{@{}p{.20\textwidth}p{.33\textwidth}p{.39\textwidth}@{}}
     \toprule
-    Component & Retained declaration, executor, and evidence \\
+    Control & Frozen result & Interpretation boundary \\
     \midrule
-    Source \& normalisation & Source manifest, prompts, rulebook, schema;
-      \texttt{io.py}, \texttt{normalise.py}; retained mappings and transition
-      audit. \\
-    Canonical \& items & English dimensions, generation prompt/design,
-      validation criteria; \texttt{canonicalise.py}, \texttt{generate.py},
-      \texttt{validate\_items.py}; all calls, judgments, accepted pool, and
-      selected bank. \\
-    Fold \& simulation & Semantic fold, frozen-probe protocol, four world files;
-      \texttt{fold.py}, \texttt{simulate.py}; fixed events and private oracle. \\
-    KC method & \texttt{candidate\_design.yaml}, English operation declaration,
-      \texttt{selection.yaml}; \texttt{kc\_candidates.py},
-      \texttt{kc\_selection.py}; inventory, trace, policies, and Q-matrices. \\
-    KT \& evaluation & Observable KT protocol; \texttt{kt.py},
-      \texttt{evaluate.py}; predictions, regime metrics, and learner-paired
-      comparisons. \\
+    Nested learners & Raw prediction selects \kstar{} in 21/21 cohorts;
+      $.0005|K|$ selects union in 18/21. & Selection depends on the criterion;
+      no synthetic count is a human recruitment threshold. \\
+    Opportunities 6/12/24 & \kstar{} loss is .681757/.672104/.636837; its
+      gap to exact cells grows .007523/.014301/.032110. & Schedule lengths
+      differ; no diminishing-return threshold is inferred. \\
+    Max-one vs. max-two & 75 vs. 113 items and minimum support 1 vs. 2, but
+      both have 75 Q rows and rank 18. & Added contexts are replication, not
+      structural diversity in this simulator. \\
+    Two-KC anchors & A+B-only gives exact ties through $N=1000$; anchors
+      restore rank, but missing planted interaction costs only .000506 at
+      balanced $N=1000$. & Rank is necessary but insufficient for practically
+      unique predictive recovery. \\
     \bottomrule
-  \end{tabularx}
-  \caption{Compact artifact map.  Exact commands, model settings, seeds, hashes,
-  negative results, and output paths are recorded in the experiment ledger.}
-  \label{tab:artifact-map}
-\end{table}
+  \end{tabular}
+  \caption{Bounded collection-design controls. All counts and effects are
+  conditional on the declared synthetic worlds.}
+  \label{tab:collection-design}
+\end{table*}
