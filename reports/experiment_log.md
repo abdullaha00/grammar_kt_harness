@@ -1856,3 +1856,46 @@ experiment:
   learner, item, and item-local exposure so target extensions preserve aligned
   draws. The final learner dataset remains blocked on item/Q/regime completion
   and this pilot.
+
+## FULL-SIM-001 — baseline simulator assumption and schedule audit
+
+- **Date executed:** 2026-08-30.
+- **Exact command:**
+
+  ```bash
+  .venv/bin/python scripts/investigate_baseline_simulator.py --items data/grammar_kt_full_v1/items/items.jsonl --kcs data/grammar_kt_full_v1/kcs.jsonl --q-matrix data/grammar_kt_full_v1/q_matrix.csv --regimes data/grammar_kt_full_v1/grammar/regime_assignments.jsonl --learners 128 --seed 20260829 --output reports/baseline/artifacts/full_simulator_v1/pilot_seed_20260829.json
+  ```
+- **Frozen inputs/settings:** 113 fixed items, 18 generator KCs, 269 Q* edges,
+  54/15/6 grammar regimes, 128 learners, seed 20260829, and the compact staged
+  grid declared above. Twenty conditions generated 931,584 events in 91.12
+  seconds. No K-hat, KT prediction, or KC-recovery evidence was accepted.
+- **Analytical result:** Minimum was the only aggregation to satisfy all four
+  declared semantic checks. Product failed equal-mastery row-count invariance;
+  arithmetic mean and mean-logit failed the weakest-link/noncompensation check.
+  Opportunity-based all-active learning remains the lowest-complexity update
+  and does not condition learning on the simulated response.
+- **Schedule result:** One or two exhaustive passes failed the minimum rare-KC
+  opportunity gate. Q-balanced targets 12 and 20 passed; target 30 failed the
+  gain and saturation gates. Under the preregistered lowest-passing rule,
+  target 12 is selected. It gives 170 acquisition events per learner, covers
+  every one of the 84 seen items, and gives each seen KC at least 12
+  opportunities (median 12; maximum 84). Item exposure ranges from one to six.
+- **Selected-condition metrics:** Initial median seen response probability
+  0.3822; terminal 0.5936; median gain 0.1806; terminal seen-KC states above
+  .95, 2.21%; acquisition response rate 0.4995; terminal-probe response rate
+  0.5860. Acquisition was seen-only and probes were exactly non-updating. The
+  unseen-value-only-KC check is not applicable because every K* also has seen
+  support.
+- **Stability decision:** No stochastic metric lies within .02 of a declared
+  gate boundary (the closest is terminal probability, .0436 above its lower
+  bound). The minimum-opportunity check is fixed by the deterministic schedule,
+  so the preregistered extra-seed condition is not triggered.
+- **Methodological consequence:** Freeze minimum aggregation, all-active
+  opportunity learning at .02, independent `Beta(2,2)` learner-by-KC initial
+  mastery, guess/slip .10/.10, no forgetting or item difficulty, target 12,
+  one terminal all-bank probe, seed 20260829, and 1,000 learners. This produces
+  283 observable rows per learner (283,000 total) while avoiding saturation.
+- **Artifacts:**
+  `reports/baseline/artifacts/full_simulator_v1/pilot_seed_20260829.json`;
+  condition-grid SHA-256
+  `a52288d68539981bdf05899b019470d01b5f049a5e56c624010ee12fcd38f567`.

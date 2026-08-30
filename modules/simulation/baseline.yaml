@@ -36,7 +36,7 @@ schedule:
   acquisition:
     mode: exhaustive_then_q_balanced
     exhaustive_coverage_passes: 1
-    target_opportunities_per_seen_kc: 20
+    target_opportunities_per_seen_kc: 12
   item_order: keyed_occurrence_rank
   probe:
     timing: terminal

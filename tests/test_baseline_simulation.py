@@ -9,6 +9,7 @@ from grammar_kt.baseline_simulation import (
     OBSERVABLE_FIELDS,
     ORACLE_FIELDS,
     build_acquisition_occurrences,
+    iter_baseline_rows,
     order_acquisition_occurrences,
     simulate_baseline,
     validate_baseline_config,
@@ -87,6 +88,22 @@ def test_generic_explicit_kstar_simulation_has_separate_exact_schemas() -> None:
         for row in interactions
         if row["phase"] == "probe"
     } == {"seen", "unseen_combination", "unseen_value"}
+
+
+def test_streaming_iterator_exactly_preserves_materialized_api() -> None:
+    items, inventory, q_rows, regimes, config = _toy_inputs()
+    config["seed"] = 919
+    materialized_interactions, materialized_oracle = simulate_baseline(
+        items, inventory, q_rows, regimes, config, seed=919
+    )
+
+    streamed = list(
+        iter_baseline_rows(
+            items, inventory, q_rows, regimes, config, seed=919
+        )
+    )
+    assert [row[0] for row in streamed] == materialized_interactions
+    assert [row[1] for row in streamed] == materialized_oracle
 
 
 def test_minimum_response_and_all_active_opportunity_update_are_exact() -> None:
@@ -375,7 +392,7 @@ def test_production_config_freezes_hybrid_schedule_and_rejects_drift() -> None:
     assert config["schedule"]["acquisition"] == {
         "mode": "exhaustive_then_q_balanced",
         "exhaustive_coverage_passes": 1,
-        "target_opportunities_per_seen_kc": 20,
+        "target_opportunities_per_seen_kc": 12,
     }
     assert config["schedule"]["item_order"] == "keyed_occurrence_rank"
 

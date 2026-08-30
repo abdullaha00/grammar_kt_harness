@@ -226,16 +226,17 @@ and geometry checks before K* and Q* pass their measurement gate.
 - The baseline simulator decision is weakest-link/minimum response aggregation,
   all-active opportunity learning, independent Beta(2,2) initial mastery,
   fixed synthetic guess/slip 0.10/0.10, no forgetting or item difficulty, and
-  terminal non-updating probes. Production now uses one exhaustive seen-item
-  occurrence followed by deterministic Q*-balanced top-up. The provisional
-  20-opportunity target must pass the preregistered final-bank pilot.
+  terminal non-updating probes. The final-bank pilot selected the preregistered
+  lowest passing target of 12 opportunities per seen KC: one exhaustive
+  seen-item occurrence followed by deterministic Q*-balanced top-up. It gives
+  170 acquisition and 113 probe rows per learner, median probability gain
+  0.181, and only 2.21% terminal KC saturation above .95. No extra pilot seed
+  was required by the frozen boundary rule.
 
 ## Current unresolved construction questions
 
-1. Whether the provisional 20-opportunity simulator schedule passes its frozen
-   informativeness and saturation gates.
-2. Final observable/oracle packaging, hashes, and reconstruction verification.
-3. Automatic item validation remains non-human evidence.
+1. Final observable/oracle packaging, hashes, and reconstruction verification.
+2. Automatic item validation remains non-human evidence.
 
 ## Important active paths
 
@@ -251,6 +252,6 @@ and geometry checks before K* and Q* pass their measurement gate.
 
 ## Current next action
 
-Run the preregistered final-bank simulator pilot, select the lowest passing
-opportunity target without outcome tuning, then freeze the 1,000-learner
-observable/oracle dataset with deterministic hashes.
+Freeze and independently replay-verify the 1,000-learner observable/oracle
+dataset under the selected target-12 simulator, then close Layer A before any
+downstream KC/KT experiment runs.

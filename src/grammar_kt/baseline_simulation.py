@@ -17,7 +17,7 @@ import hashlib
 import json
 import math
 from collections import Counter
-from collections.abc import Mapping, Sequence
+from collections.abc import Iterator, Mapping, Sequence
 from statistics import median
 from typing import Any
 
@@ -633,7 +633,7 @@ def order_acquisition_occurrences(
     ]
 
 
-def simulate_baseline(
+def iter_baseline_rows(
     items: Sequence[Mapping[str, Any]],
     generator_kcs: Mapping[str, Any] | Sequence[Mapping[str, Any]],
     q_rows: Sequence[Mapping[str, Any]],
@@ -641,8 +641,8 @@ def simulate_baseline(
     config: Mapping[str, Any],
     *,
     seed: int,
-) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    """Simulate observable interactions and separate private oracle rows.
+) -> Iterator[tuple[dict[str, Any], dict[str, Any]]]:
+    """Yield aligned observable and private-oracle rows without materializing them.
 
     Mastery is initialized independently for every learner/KC from the declared
     beta distribution.  Acquisition presents only the configured seen regime.
@@ -689,9 +689,6 @@ def simulate_baseline(
         active_by_item,
         target_opportunities_per_seen_kc=target_opportunities,
     )
-    interactions: list[dict[str, Any]] = []
-    oracle_rows: list[dict[str, Any]] = []
-
     for learner_number in range(1, learner_count + 1):
         learner_id = f"{prefix}{learner_number:0{zero_pad_width}d}"
         mastery = {
@@ -789,7 +786,37 @@ def simulate_baseline(
                 raise AssertionError("internal observable schema drift")
             if tuple(oracle) != ORACLE_FIELDS:
                 raise AssertionError("internal oracle schema drift")
-            interactions.append(interaction)
-            oracle_rows.append(oracle)
+            yield interaction, oracle
+
+
+def simulate_baseline(
+    items: Sequence[Mapping[str, Any]],
+    generator_kcs: Mapping[str, Any] | Sequence[Mapping[str, Any]],
+    q_rows: Sequence[Mapping[str, Any]],
+    grammar_regime_by_cell: Mapping[str, str],
+    config: Mapping[str, Any],
+    *,
+    seed: int,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Materialize the aligned baseline rows for small analyses and tests.
+
+    Full dataset construction should consume :func:`iter_baseline_rows`
+    directly so observable and private rows can be written in one bounded-
+    memory pass. This compatibility wrapper intentionally preserves the
+    original public API.
+    """
+
+    interactions: list[dict[str, Any]] = []
+    oracle_rows: list[dict[str, Any]] = []
+    for interaction, oracle in iter_baseline_rows(
+        items,
+        generator_kcs,
+        q_rows,
+        grammar_regime_by_cell,
+        config,
+        seed=seed,
+    ):
+        interactions.append(interaction)
+        oracle_rows.append(oracle)
 
     return interactions, oracle_rows
