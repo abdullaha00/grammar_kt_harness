@@ -24,6 +24,11 @@ added one. Open full-sentence imperative production remained indeterminate, so
 a separately declared cue-bounded N=2 campaign accepted 4/4 and added the final
 two cells. Item quality is model-judged, not human-validated.
 
+Prompt and accepted-answer fields document the intended measurement surface.
+The baseline simulator does not render those strings or score a textual
+response; it samples binary correctness from item identity, Q*, active mastery,
+and keyed randomness.
+
 The final Q* has density .1323, 75 distinct cell-activation rows, no identical
 columns, no Jaccard-at-least-.90 pairs, and 2–49 items per KC. Seven KCs have
 fewer than six items.
@@ -55,8 +60,8 @@ signature. After selection freezes:
 |---|---:|---:|---:|---:|
 | Compositional ceiling | 18/18 | 1.000000 | 1.000000 | .669606 absolute |
 | Selected atomic class | 16/18 | .970854 | .965385 | +.000374 [.000228,.000517] |
-| Coarse | 5/18 | .371913 | .750929 | +.005864 |
-| Fine exact-cell | 1/18 | .084184 | .186969 | +.006657 |
+| RQ3 operation groups | 5/18 | .371913 | .750929 | +.005864 |
+| RQ3 seen-cell fine | 1/18 | .084184 | .186969 | +.006657 |
 | Hash negative control | 0/18 | .202342 | .359259 | +.013238 |
 
 The ceiling proves reachability, not blind recovery. Unique predictive recovery

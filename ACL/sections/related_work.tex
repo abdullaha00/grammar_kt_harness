@@ -11,6 +11,17 @@ Instead, we convert descriptor content into a bounded structural
 representation while retaining uncertainty, source relations, and
 out-of-scope decisions.
 
+\paragraph{Language tutoring data and dialogue KT.}
+TSCCv2 retains discourse sequences, pedagogical focus, response relations, and
+grammatical-error corrections from real English tutoring
+\citep{caines-etal-2022-teacher}.  Dialogue KT has used language models to mark
+candidate KCs and correctness at individual turns before fitting a tracer
+\citep{scarlatos-etal-2025-dialogue}.  Such work demonstrates the value of
+expert-audited learner interaction, but it must infer whether a turn is an
+assessment opportunity and what it tests.  We study the complementary setting:
+the linguistic opportunity, item, and generator mapping are constructed and
+audited before any learner event exists.
+
 \paragraph{Exercise generation and documentation.}
 Adaptive question generation has conditioned text on learner history and target
 difficulty \citep{srivastava-goodman-2021-question,
@@ -29,8 +40,9 @@ KCs are acquired units connecting instruction and performance
 state with learning, guess, and slip parameters
 \citep{corbett-anderson-1995}; factor models instead use logistic practice
 features \citep{pavlik-etal-2009}.  A Q-matrix supplies the assumed item--KC
-mapping, and learner responses can be used to refine that mapping or compare
-cognitive models \citep{pardos-dadu-2018,cen-etal-2006}.  Related work combines
+mapping, and learner responses can be used to validate or refine that mapping
+or compare cognitive models
+\citep{de-la-torre-chiu-2016,pardos-dadu-2018,cen-etal-2006}.  Related work combines
 domain-model induction with student modelling \citep{picones-etal-2022}.
 
 Our boundary differs in two ways.  First, generator \kstar/\qstar{} is fixed

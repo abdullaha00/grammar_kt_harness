@@ -1,4 +1,5 @@
-\section*{Limitations}
+\section{Limitations and Ethics}
+\label{sec:limitations}
 
 \paragraph{Linguistic scope and annotation.}
 The empirical domain is English single-main-clause verbal morphosyntax under
@@ -14,7 +15,10 @@ learners assessed correctness, naturalness, difficulty, accessibility, bias, or
 educational value.  Determinacy caused most rejection, and two imperative cells
 required a separately labelled cue-bounded format after open production and a
 finite answer-list correction failed.  The fixed bank is auditable measurement
-material, not a classroom-ready assessment.
+material, not a classroom-ready assessment.  Prompt and accepted-answer strings
+are never rendered to the simulated learner or used to score $y$, so ambiguity
+cannot affect the synthetic outcome---but neither can this benchmark test
+whether a person would interpret or answer an item as intended.
 
 \paragraph{Generator truth.}
 The 18 KCs are a deliberately simple reusable-operation ontology.  They are
@@ -26,8 +30,9 @@ not evidence about cognitive atomicity or human acquisition.
 \paragraph{Synthetic learners and uncertainty.}
 The baseline uses $\operatorname{Beta}(2,2)$ mastery, guess/slip .10/.10,
 learning rate .02, and no item difficulty, forgetting, vocabulary state,
-prerequisites, or transfer.  Compact sensitivity worlds vary several of these
-assumptions one at a time but use three seeds and one severity per condition.
+prerequisites, or transfer.  Compact sensitivity worlds vary these assumptions
+mostly one at a time, apart from the combined guess/slip design, and use three
+seeds and one severity per condition.
 The correlated-mastery control is undirected rather than a prerequisite graph.
 Learner bootstrap intervals quantify sampling of synthetic learners within a
 world, not uncertainty over grammar cells, simulator families, prompts, or
@@ -57,8 +62,7 @@ directly to human-study recruitment.  They identify failure modes under stated
 generative conditions.  The alternate-schema test verifies reusable software,
 not empirical cross-lingual validity or a universal grammar ontology.
 
-\section*{Ethics Statement}
-
+\paragraph{Ethics.}
 No human-participant or learner records are used; all response sequences are
 synthetic.  Latent conditions denote simulation assumptions, not demographic
 or ability groups.  Generated items must not be deployed for assessment or

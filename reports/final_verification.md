@@ -83,7 +83,7 @@ response probability, active-KC, update, or random-draw fields.
 .venv/bin/python -m pytest -q
 ```
 
-Final result: **271 passed**. Contracts cover, among other boundaries:
+Final result: **272 passed**. Contracts cover, among other boundaries:
 
 - incomplete mappings cannot silently become exact GrammarCells;
 - generator-KC declarations and Q* precede learner outcomes;
@@ -238,24 +238,31 @@ pdfinfo paper.pdf
 pdffonts paper.pdf
 ```
 
+The manuscript now uses the named ACL preprint shell, section order, and
+artifact-map convention retained in `report_versions/UROP/`; none of that
+report's superseded 139-descriptor pilot evidence is reused. The full-v1 paper
+also makes the stored-text boundary explicit: prompts and accepted responses
+support item validation and audit, but the simulator generates binary outcomes
+from item IDs, Q*, mastery, and keyed randomness without rendering or scoring
+text. A real frozen item, Q* row, and public event make this distinction
+inspectable in the appendix.
+
 The build succeeds and the author-list/BibTeX regression passes **71/71**; it is
-not treated as a paper-content correctness test. The final PDF
-is 13 A4 pages, PDF 1.7, with SHA-256
-`aef66e282bcec04d19ce6fc9f3216dce6ee3f9bda526ac28207fcc693e20d61b`.
-The fixed epoch makes the tracked PDF byte-reproducible; two independent audit
-builds and the final in-tree build produce this digest.
-Every font is embedded. The log contains no overfull box, undefined citation or
-reference, multiply defined label, or LaTeX error. All 13 pages were rendered
-with Poppler and inspected for clipping, overlap, broken glyphs, table and
-figure legibility, headers, footers, numbering, and float placement; no visual
-defect remains. Underfull-box messages are benign line-breaking diagnostics.
-All 13 page rasters from the fixed-epoch build are byte-identical to the
-visually inspected render.
+not treated as a paper-content correctness test. The final PDF is 14 A4 pages,
+PDF 1.7, with SHA-256
+`cf7857910fc24c7175cead27fb3e4982aecbeb530874286c711f10da57512563`.
+The fixed epoch makes the tracked PDF byte-reproducible; an independent audit
+build and the final in-tree build both produce this digest. Every font is
+embedded. The log contains no overfull box, undefined citation or reference,
+multiply defined label, or LaTeX error. All 14 pages were rendered with Poppler
+and inspected for clipping, overlap, broken glyphs, table and figure
+legibility, headers, footers, numbering, and float placement; no visual defect
+remains. Underfull-box messages are benign line-breaking diagnostics.
 
 Text extraction contains no stale medium-v1 headline counts (`139`, `44`,
-`204,000`, or `18/5/1`) and no unresolved insertion marker. The evidence ledger
-maps each central manuscript claim to a full-v1 artifact and an explicit claim
-boundary.
+`204,000`, or `18/5/1`), anonymous-review placeholder, or unresolved insertion
+marker. The evidence ledger maps each central manuscript claim to a full-v1
+artifact and an explicit claim boundary.
 
 ## Repository and report consistency
 

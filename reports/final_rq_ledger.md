@@ -57,7 +57,7 @@ bank. Exact protocols, commands, seeds, intervals, and hashes are in
 
 | Question | Evidence-backed result | Status / caveat |
 |---|---|---|
-| Does K* remain predictively preferred under plausible simulator perturbations? | K* wins 38/39 primary worlds and every seed in 12/13 conditions. Split-2 reverses once under unmodelled item difficulty. | Broadly supported in the compact one-factor design; not invariant to item nuisance. |
+| Does K* remain predictively preferred under plausible simulator perturbations? | K* wins 38/39 primary worlds and every seed in 12/13 conditions. Split-2 reverses once under unmodelled item difficulty. | Broadly supported in the compact design, which varies assumptions mostly one at a time apart from combined guess/slip; not invariant to item nuisance. |
 | Does more response volume repair an activation-equivalent Q? | With A+B-only items, all representations tie exactly through N=1,000. | Rejected: structural equivalence persists at any tested volume. |
 | What do second within-cell variants add? | Max-one to max-two raises minimum KC support 1 to 2 but adds zero Q rows or rank. | Replication/support, not structural diversity; lexical benefit is not represented by this simulator. |
 | Do anchor items guarantee recovery? | Anchors restore full rank and expose union merging; omitting a planted interaction costs only +.000506 at N=1,000 balanced. | Rank is necessary but insufficient for practically unique predictive recovery. |

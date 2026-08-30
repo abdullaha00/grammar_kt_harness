@@ -4,20 +4,21 @@ transparent grammatical measurement structure.  We present \system, an
 auditable pipeline that separates canonical linguistic constructions
 (\grammarcell{}s), a declared synthetic generator ontology
 $(\kstar,\qstar)$, observable items and responses, and downstream KC
-hypotheses $(\khat,\qhat)$.  All 1,222 English Grammar Profile records receive
+hypotheses $(\khat,\qhat)$.  All 1,222 source records receive
 an explicit disposition; 211 complete mappings yield 75 canonical cells.  We
 freeze an outcome-independent 18-KC reusable-operation ontology, curate 113
-independently model-screened items, construct a full-rank $113{\times}18$
+model-screened items, construct a full-rank $113{\times}18$
 \qstar, and simulate 283,000 replay-verifiable events from 1,000 learners.
-On this frozen benchmark, both coarsening and refinement worsen observable
-response prediction, while 10\% Q-matrix corruption is reliably harmful.  An
+On this frozen benchmark, both coarsening and refinement worsen response
+prediction, while 10\% Q-matrix corruption is reliably harmful.  An
 observable-only KC-discovery procedure recovers a high-overlap representation
 but cannot distinguish atomic and compositional rules that have identical
 activation on seen items; unique recovery is therefore rejected even in a
 controlled positive case.  Reusable KCs transfer substantially better than
-exact-cell KCs to 15 unseen combinations.  These rankings survive 12 of 13
-compact simulator perturbations, with unmodelled item difficulty producing the
-sole primary reversal.  The release provides explicit construction evidence,
-public learner events, separate private oracle truth, and controlled
+exact-cell KCs to 15 unseen combinations.  The primary \kstar{} ranking holds
+in every seed for 12 of 13 conditions (baseline plus 12 perturbations);
+unmodelled item difficulty is the exception.
+The release provides explicit construction evidence,
+public learner events, separate oracle truth, and controlled
 experiments---not a claim that the generator ontology or simulator describes
 human cognition.

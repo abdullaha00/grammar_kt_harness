@@ -1,3 +1,51 @@
+\section{Artifact Map}
+\label{sec:artifact-map}
+
+\begin{center}
+  \footnotesize
+  \begin{tabularx}{\columnwidth}{@{}p{.22\columnwidth} >{\raggedright\arraybackslash}X@{}}
+    \toprule
+    Scientific object & Inspectable declaration and frozen evidence \\
+    \midrule
+    Source and \grammarcell{}s &
+      \nolinkurl{modules/grammar/resource/egp/};
+      \nolinkurl{modules/grammar/canonical/};
+      \nolinkurl{data/grammar_kt_full_v1/grammar/}; normalisation and inventory
+      provenance \\
+    Generator \kstar{} &
+      \nolinkurl{modules/kcs/generator/};
+      \nolinkurl{data/grammar_kt_full_v1/kcs.jsonl}; construction provenance \\
+    Item bank &
+      \nolinkurl{modules/items/};
+      \nolinkurl{data/grammar_kt_full_v1/items/items.jsonl}; immutable generation,
+      validation, correction, and curation evidence \\
+    True \qstar{} &
+      \nolinkurl{scripts/build_true_q_matrix.py};
+      \nolinkurl{data/grammar_kt_full_v1/q_matrix.csv};
+      \nolinkurl{data/grammar_kt_full_v1/oracle/q_matrix_sparse.jsonl};
+      \nolinkurl{data/grammar_kt_full_v1/provenance/measurement/audit.json} \\
+    Observable and oracle events &
+      \nolinkurl{modules/simulation/};
+      \nolinkurl{scripts/freeze_baseline_dataset.py};
+      \nolinkurl{data/grammar_kt_full_v1/interactions.jsonl.gz};
+      \nolinkurl{data/grammar_kt_full_v1/oracle/learner_truth.jsonl.gz} \\
+    Downstream hypotheses &
+      \nolinkurl{scripts/experiments/};
+      \nolinkurl{experiments/full_v1/};
+      \nolinkurl{reports/full_v1_artifacts/} \\
+    Release and claims &
+      \nolinkurl{data/grammar_kt_full_v1/manifest.json};
+      \nolinkurl{reports/final_release_manifest.json};
+      \nolinkurl{reports/experiment_log.md};
+      \nolinkurl{ACL/evidence.md} \\
+    \bottomrule
+  \end{tabularx}
+  \captionsetup{hypcap=false}
+  \captionof{table}{Repository-root map from scientific objects to their
+  inspectable declarations and frozen evidence.}
+  \label{tab:artifact-map}
+\end{center}
+
 \section{Generator and Measurement Detail}
 
 The 18 generator KCs fall into five auditable groups:
@@ -18,6 +66,35 @@ The final bank contains 84 seen, 20 unseen-combination, and nine unseen-value
 items.  Max-one preserves all 75 cells with 75 items, while max-three adds only
 13 items beyond max-two.  No selected prompts are exact duplicates.  Surface
 nonidentity is not itself evidence of pedagogical diversity.
+
+\begin{table*}[t]
+  \centering
+  \footnotesize
+  \begin{tabularx}{\textwidth}{@{}p{.18\textwidth}X@{}}
+    \toprule
+    Field & Frozen value and role \\
+    \midrule
+    Item ID & \nolinkurl{candidate_gc_e7fef77abc10b5ba_01} \\
+    Stored prompt & \emph{Mia had a map, so she found the house. Without the
+      map, [\_\_\_\_]. (find)} \\
+    Stored answer key & \emph{she would not have found the house}; or
+      \emph{she wouldn't have found the house} \\
+    \grammarcell & \texttt{tense=NA, aspect=perfect, voice=active,
+      polarity=negative, clause=declarative, modal=would} \\
+    Active \kstar{} / \qstar{} row & perfect construction; central modal
+      WOULD; verbal negation / \texttt{100000000000001100} (K01--K18) \\
+    Example public event & simulated \texttt{learner\_000001}, sequence 2,
+      acquisition, \texttt{y=1} \\
+    Causal role in baseline & The item ID selects the \qstar{} row.  Active-KC
+      mastery and keyed randomness generate binary $y$; no prompt is rendered
+      and no textual response is collected or scored. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{One retained item and event, separating the auditable measurement
+  surface from response generation.  The stored answer is not evidence that
+  the simulated learner produced it verbatim.}
+  \label{tab:stored-item-example}
+\end{table*}
 
 \begin{table*}[t]
   \centering

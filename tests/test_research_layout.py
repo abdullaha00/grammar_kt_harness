@@ -391,6 +391,51 @@ def test_final_dataset_notebook_is_full_v1_public_viewer() -> None:
         assert expected in output_text
 
 
+def test_acl_paper_uses_urop_preprint_shell_with_full_v1_evidence() -> None:
+    paper = (ROOT / "ACL/paper.tex").read_text(encoding="utf-8")
+    section_text = " ".join(
+        path.read_text(encoding="utf-8")
+        for path in sorted((ROOT / "ACL/sections").glob("*.tex"))
+    )
+    normalized = " ".join(section_text.split())
+
+    for required in (
+        r"\usepackage[preprint]{acl}",
+        "Abdullah Akram",
+        "University of Cambridge",
+        r"aa2527@cam.ac.uk",
+        "Operationalising Grammar Knowledge Components",
+    ):
+        assert required in paper
+
+    assert r"\usepackage[review]{acl}" not in paper
+    assert "Anonymous ACL submission" not in paper
+    assert paper.index(r"\input{sections/limitations}") < paper.index(
+        r"\input{sections/conclusion}"
+    )
+
+    for required in (
+        "Stored prompt",
+        "neither renders a prompt nor collects or scores free text",
+        "controlled forward-generation and inverse-recovery benchmark",
+        r"The primary \kstar{} ranking holds",
+        "baseline plus 12 perturbations",
+        "were processed without technical failure",
+        "eight-KC operation-group baseline and 54-KC seen-cell baseline",
+        "candidate_gc_e7fef77abc10b5ba_01",
+        "100000000000001100",
+        r"\section{Artifact Map}",
+    ):
+        assert required in normalized
+
+    for stale in (
+        "139 descriptors",
+        "Current Evidence Status and Results Contract",
+        "quantitative research comparisons are deliberately reserved",
+    ):
+        assert stale not in normalized
+
+
 def test_final_dataset_visualization_is_public_full_v1_only() -> None:
     path = ROOT / "reports/final_dataset_visualization.html"
     html = path.read_text(encoding="utf-8")

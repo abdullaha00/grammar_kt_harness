@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{20}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Abdelrahman et~al.(2023)Abdelrahman, Wang, and
@@ -26,6 +26,16 @@ Semere~Kiros Bitew, Johannes Deleu, A.~Seza Do{\u{g}}ru{\"o}z, Chris Develder,
 \newblock In \emph{Proceedings of the 18th Workshop on Innovative Use of {NLP}
   for Building Educational Applications}, pages 598--609. Association for
   Computational Linguistics.
+
+\bibitem[{Caines et~al.(2022)Caines, Yannakoudakis, Allen, P{\'e}rez-Paredes,
+  Byrne, and Buttery}]{caines-etal-2022-teacher}
+Andrew Caines, Helen Yannakoudakis, Helen Allen, Pascual P{\'e}rez-Paredes,
+  Bill Byrne, and Paula Buttery. 2022.
+\newblock \href {https://aclanthology.org/2022.nlp4call-1.3/} {The
+  teacher-student chatroom corpus version 2: More lessons, new annotation,
+  automatic detection of sequence shifts}.
+\newblock In \emph{Proceedings of the 11th Workshop on {NLP} for Computer
+  Assisted Language Learning}, pages 23--35. LiU Electronic Press.
 
 \bibitem[{Cen et~al.(2006)Cen, Koedinger, and Junker}]{cen-etal-2006}
 Hao Cen, Kenneth Koedinger, and Brian Junker. 2006.
@@ -64,6 +74,12 @@ Peng Cui and Mrinmaya Sachan. 2023.
 \newblock In \emph{Proceedings of the 61st Annual Meeting of the Association
   for Computational Linguistics (Volume 1: Long Papers)}, pages 10184--10198.
   Association for Computational Linguistics.
+
+\bibitem[{de~la Torre and Chiu(2016)}]{de-la-torre-chiu-2016}
+Jimmy de~la Torre and Chia-Yi Chiu. 2016.
+\newblock \href {https://doi.org/10.1007/s11336-015-9467-8} {A general method
+  of empirical {Q}-matrix validation}.
+\newblock \emph{Psychometrika}, 81(2):253--273.
 
 \bibitem[{Koedinger et~al.(2012)Koedinger, Corbett, and
   Perfetti}]{koedinger-etal-2012}
@@ -120,6 +136,14 @@ Chris Piech, Jonathan Bassen, Jonathan Huang, Surya Ganguli, Mehran Sahami,
   {Deep knowledge tracing}.
 \newblock In \emph{Advances in Neural Information Processing Systems 28}, pages
   505--513.
+
+\bibitem[{Scarlatos et~al.(2025)Scarlatos, Baker, and
+  Lan}]{scarlatos-etal-2025-dialogue}
+Alexander Scarlatos, Ryan~S. Baker, and Andrew Lan. 2025.
+\newblock \href {https://doi.org/10.1145/3706468.3706501} {Exploring knowledge
+  tracing in tutor-student dialogues using {LLM}s}.
+\newblock In \emph{Proceedings of the 15th International Learning Analytics and
+  Knowledge Conference}, pages 249--259. ACM.
 
 \bibitem[{Srivastava and Goodman(2021)}]{srivastava-goodman-2021-question}
 Megha Srivastava and Noah Goodman. 2021.

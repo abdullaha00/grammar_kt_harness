@@ -50,6 +50,16 @@ Max-one would retain 75 items; up-to-three adds 13 variants but no cell.  The
 chosen bank supports contextual replication without treating surface
 variation as new grammatical structure.
 
+Prompt and accepted-answer text are central to generation, validation, and the
+intended learner-facing measurement surface, but they have no causal role in the
+baseline response generator after the bank is frozen.  The simulator neither
+renders a prompt nor collects or scores free text: an item identifier selects
+its \qstar{} row, mastery over the active KCs determines response probability,
+and keyed randomness samples binary $y$.  Table~\ref{tab:stored-item-example}
+shows this boundary for one retained item.  The baseline is consequently a
+controlled forward-generation and inverse-recovery benchmark, not a simulation
+of linguistic production.
+
 \subsection{True Q-matrix and structural gate}
 
 For fixed item $i$ and generator KC $k$,

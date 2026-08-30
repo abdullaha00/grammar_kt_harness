@@ -3,7 +3,10 @@
 `paper.tex` is the paper-facing account of the active grammar-KT dataset and KC
 selection pipeline.  Quantitative claims are indexed in `evidence.md` and
 `results_summary.md`; detailed experiment commands and artifacts remain in the
-repository-level reports.
+repository-level reports.  Its named ACL-style preprint shell, modular section
+order, and artifact-map convention follow `report_versions/UROP/`.  The
+archived UROP pilot claims are historical and are not copied into this full-v1
+manuscript.
 
 ## Build
 
@@ -28,7 +31,7 @@ cd ACL
 python tests/regression/run_tests.py
 ```
 
-The review manuscript uses the unmodified ACL style files in this directory.
+The named preprint uses the unmodified ACL style files in this directory.
 Generated `paper.aux`, `paper.bbl`, `paper.blg`, `paper.fdb_latexmk`,
 `paper.fls`, `paper.log`, `paper.out`, and `paper.pdf` must be rebuilt after any
 source or bibliography change.

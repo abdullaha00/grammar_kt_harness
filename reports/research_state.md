@@ -58,10 +58,11 @@ verification are also complete; none mutated the baseline.
 - User-owned dirty files are preserved: modified `pipeline.txt`; untracked
   `AGENTS.md`, root `experiment_bank.md`, `ideas.txt`, `rqs.txt`,
   and `tmp/`.
-- Final verification passes 271 Pytest contracts, exact Q*/event replay,
+- Final verification passes 272 Pytest contracts, exact Q*/event replay,
   independent headline-experiment replay, all three tracked notebooks, a
-  machine-readable release root, and the deterministic 13-page ACL build with
-  71/71 author-list/BibTeX regressions and complete visual inspection.
+  machine-readable release root, and the deterministic 14-page named ACL
+  preprint build using the retained UROP shell, with 71/71 author-list/BibTeX
+  regressions and complete visual inspection.
 
 ## Artifact classification
 
@@ -381,7 +382,8 @@ empirical cross-lingual replication.
 - Standalone dataset visualization: `reports/final_dataset_visualization.html`
 - Executable dataset viewer: `notebooks/final_dataset.ipynb`
 - Executable results notebook: `notebooks/final_dataset_results.ipynb`
-- Manuscript: `ACL/paper.pdf`
+- Manuscript: `ACL/paper.pdf` (named full-v1 ACL preprint using the retained
+  `report_versions/UROP/` presentation shell)
 - Historical medium dataset: `data/grammar_kt_medium_v1/`
 
 ## Current next action

@@ -1,9 +1,10 @@
 \documentclass[11pt]{article}
 
-% Use the review option for the anonymous submission draft.
-\usepackage[review]{acl}
+% Named ACL-style preprint, following the retained UROP report template.
+\usepackage[preprint]{acl}
 \usepackage{times}
 \usepackage{latexsym}
+\usepackage{xspace}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{microtype}
@@ -18,17 +19,19 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc,fit,positioning}
 
-\newcommand{\system}{Grammar--KT}
-\newcommand{\grammarcell}{\textsc{GrammarCell}}
+\newcommand{\system}{Grammar--KT\xspace}
+\newcommand{\grammarcell}{\textsc{GrammarCell}\xspace}
 \newcommand{\kstar}{\ensuremath{K^{*}}}
 \newcommand{\qstar}{\ensuremath{Q^{*}}}
 \newcommand{\khat}{\ensuremath{\widehat{K}}}
 \newcommand{\qhat}{\ensuremath{\widehat{Q}}}
 
-\title{From Grammar Resources to Interpretable Knowledge Components:\\
-Generator Truth, Misspecification, and Discovery}
+\title{\system: Operationalising Grammar Knowledge Components for
+Knowledge Tracing}
 
-\author{Anonymous ACL submission}
+\author{Abdullah Akram \\
+  University of Cambridge \\
+  \texttt{aa2527@cam.ac.uk}}
 
 \begin{document}
 \maketitle
@@ -45,8 +48,8 @@ Generator Truth, Misspecification, and Discovery}
 \input{sections/results}
 \input{sections/discussion}
 \input{sections/reproducibility}
-\input{sections/conclusion}
 \input{sections/limitations}
+\input{sections/conclusion}
 
 \bibliography{paper}
 
