@@ -1,9 +1,9 @@
 # Research state
 
-Last updated: 2026-08-30. The programme has been reopened under the revised
+Last updated: 2026-08-30. The programme is complete under the revised
 baseline-versus-experiment framing in `AGENTS.md`. The previous medium-scale
 programme remains historical evidence; it is not the generator truth for the
-new full dataset.
+full dataset.
 
 ## Active scientific framing
 
@@ -48,20 +48,20 @@ verified 1,222-row EGP snapshot
 The dataset is frozen. KC misspecification, KC discovery, linguistic
 generalisation, oracle-only state recovery, compact simulator robustness, and
 bounded collection design are complete. The declared synthetic experiment
-queue is closed; only final synthesis and verification remain, and neither may
-mutate the baseline.
+queue is closed. Final synthesis, replay, notebook, release-manifest, and ACL
+verification are also complete; none mutated the baseline.
 
 ## Repository audit result
 
-- Active research branch: `agent/full-dataset-research-program`, based on
-  `c2e1d21e`.
-- The previous branch is synchronized with its remote and ten commits ahead of
-  `origin/main`.
+- Active research branch: `agent/full-dataset-research-program`; its latest
+  completed experimental checkpoint is pushed to the same remote branch.
 - User-owned dirty files are preserved: modified `pipeline.txt`; untracked
   `AGENTS.md`, root `experiment_bank.md`, `ideas.txt`, `rqs.txt`,
   `notebooks/final_dataset.ipynb`, and `tmp/`.
-- Initial verification passes: 112 Pytest contracts, both tracked notebooks,
-  the fixture runner, the ACL build, and 71 ACL regression checks.
+- Final verification passes 269 Pytest contracts, exact Q*/event replay,
+  independent headline-experiment replay, both tracked notebooks, a
+  machine-readable release root, and the deterministic 13-page ACL build with
+  71/71 author-list/BibTeX regressions and complete visual inspection.
 
 ## Artifact classification
 
@@ -82,6 +82,9 @@ mutate the baseline.
   1,000 learners, and 204,000 events.
 - Phase 2--7 reports/artifacts and the backend-effort audit.
 - `runs/base/kc/kc_inventory.jsonl`: earlier nine-KC hybrid structural design.
+- The pre-item generator-alternative audit's temporary structural-item path is
+  development evidence only. It is not an input to the frozen K*/Q*/event
+  release or any paper-facing result.
 
 ### Reusable Layer-B experiments
 
@@ -96,9 +99,9 @@ construction.
 
 - The outcome-selected pipeline in `scripts/run.py` and
   `scripts/finalize_full_dataset.py`.
-- The old “programme complete” conclusions in the existing final reports and
-  ACL manuscript. They remain retained until full-v1 evidence supports their
-  replacements.
+- The old “programme complete” reports are archived under
+  `reports/historical/medium_v1/`. The active final reports and ACL manuscript
+  are full-v1 syntheses; medium-v1 evidence remains a labeled pilot.
 
 ## Full linguistic scope and completed census
 
@@ -143,8 +146,7 @@ hybrid:
 - shared perfect and progressive dependencies;
 - canonical BE-passive;
 - verbal negation;
-- imperative, polar-question, subject-WH, and non-subject-WH operations when
-  supported;
+- imperative, polar-question, and non-subject-WH operations when supported;
 - one specific KC for each observed central modal.
 
 Reference active/positive/declarative/simple/modal-free/tenseless conditions
@@ -158,8 +160,8 @@ KCs; the exact-cell diagnostic needs 75 non-reusable KCs. Adding a
 perfect-progressive-chain KC also retains full rank, but its six cells are
 strictly nested inside both component operations and it adds no linguistic
 operation absent from the compositional declaration. It is excluded on
-parsimony grounds, not predictive fit. The final item bank will rerun support
-and geometry checks before K* and Q* pass their measurement gate.
+parsimony grounds, not predictive fit. The final item bank subsequently reran
+support and geometry checks before K* and Q* passed the measurement gate.
 
 ## Established evidence retained from the medium programme
 
@@ -355,8 +357,10 @@ and geometry checks before K* and Q* pass their measurement gate.
 
 ## Current unresolved research questions
 
-1. Whether the final synthesis, executable notebooks, verification audit, and
-   ACL manuscript consistently delimit the supported synthetic claims.
+No declared synthetic experiment remains unexecuted. The unresolved questions
+require evidence outside this programme: expert/human item validation, real
+learner dynamics, unseen-value structures beyond perfect-progressive, and
+empirical cross-lingual replication.
 
 ## Important active paths
 
@@ -373,9 +377,13 @@ and geometry checks before K* and Q* pass their measurement gate.
 - Mastery artifacts: `reports/full_v1_artifacts/mastery_recovery_v1/`
 - Robustness artifacts: `experiments/full_v1/simulator_robustness_v1/`
 - Collection-design artifacts: `experiments/full_v1/collection_design_v1/`
+- Release root: `reports/final_release_manifest.json`
+- Executable results notebook: `notebooks/final_dataset_results.ipynb`
+- Manuscript: `ACL/paper.pdf`
 - Historical medium dataset: `data/grammar_kt_medium_v1/`
 
 ## Current next action
 
-Consolidate and verify the final reports, executable full-v1 notebook, dataset
-replay contracts, and ACL paper; then freeze the coherent repository state.
+Preserve `grammar_kt_full_v1` immutably. Any human-validation, real-learner, or
+cross-lingual study should be versioned as a new programme rather than changing
+this baseline or post-hoc extending its final claims.

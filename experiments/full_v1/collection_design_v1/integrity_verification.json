@@ -1,0 +1,12 @@
+{
+  "status": "APPEND_ONLY_SERIALIZATION_HASH_VERIFICATION",
+  "artifact": "experiments/full_v1/collection_design_v1/results.json",
+  "artifact_byte_sha256": "5ef059f18025ec6f5fc88bfeaccfebb536be29fab8ff32767059ebd40f931533",
+  "embedded_pre_serialization_semantic_sha256": "399ef1acd589788e6fc32d5cd3a0ab2fd0ec6cdaa77a5d5a92a89560a0403223",
+  "plain_json_roundtrip_semantic_sha256": "29334cb61c3489cc4c70e8a2b9bc8707c2b7a57cfec199bdd714a22b02028c4d",
+  "typed_key_restored_semantic_sha256": "399ef1acd589788e6fc32d5cd3a0ab2fd0ec6cdaa77a5d5a92a89560a0403223",
+  "q_row_multiplicity_maps_restored": 8,
+  "restoration_rule": "After removing result_semantic_sha256, recursively convert every key in mappings named q_row_multiplicity from its JSON string form to an integer before applying the runner's canonical JSON SHA-256 function.",
+  "explanation": "Counter-derived q_row_multiplicity mappings had integer keys in memory, while JSON object keys are necessarily strings. The embedded semantic digest was computed before serialization and therefore validates only after the declared key restoration. The byte SHA-256 is the authoritative digest for the immutable stored artifact; its values and conclusions were not changed.",
+  "correction_policy": "The original results.json is preserved byte-for-byte. This append-only record and its scientific-contract test document the representation issue without overwriting executed evidence."
+}

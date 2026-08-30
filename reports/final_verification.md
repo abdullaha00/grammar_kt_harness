@@ -1,245 +1,288 @@
-# Final verification
+# Final full-v1 verification
 
-Date: 2026-08-28  
-Scope: final curated dataset, active pipeline, backend-effort audit, experiment
-evidence, executable notebooks, and ACL manuscript.
+Date: 2026-08-30
+
+Scope: the frozen `grammar_kt_full_v1` baseline, its construction boundary,
+headline RQ2--RQ4 experiments, mastery and sensitivity evidence, executable
+notebooks, final reports, and ACL manuscript.
 
 ## Outcome
 
-All active scientific-contract tests pass; the fixture pipeline and notebook
-execute without live model calls; the final dataset counts reconcile; the ACL
-paper builds and passes its regression suite; the 12-page PDF has embedded
-fonts and passed complete rendered-page inspection. No required active
-execution remains failed.
+The declared synthetic programme is reproducible and complete. The deterministic
+Q* projection and all 283,000 public/private simulator rows replay exactly; the
+scientific-contract suite passes; the headline RQ2, RQ3, and RQ4 results replay
+from the frozen baseline; both tracked notebooks execute without live model
+calls; and the ACL manuscript builds, passes its author-list/BibTeX regression,
+embeds all fonts, and passes complete rendered-page inspection.
 
-## Commands and results
+The verified boundary remains:
 
-### Scientific-contract tests
+```text
+GrammarCell != generator K* != discovered K_hat
+```
+
+No verification step uses downstream outcomes to construct K* or Q*. The
+LLM-backed source-normalisation and item-construction calls are not needlessly
+reissued: their prompts, outputs, settings, intervention records, and hashes are
+frozen in the dataset provenance. Deterministic construction after those calls
+is replayed independently.
+
+## Frozen baseline
+
+The release manifest reports `FROZEN_BASELINE_COMPLETE` and an 88-file recursive
+inventory. Its scale reconciles to 75 GrammarCells, 18 generator KCs, 113 items,
+269 Q* edges, 1,000 learners, and 283,000 interactions: 170,000 seen acquisition
+events followed by 113,000 non-updating probes.
+
+Core SHA-256 values are:
+
+| Artifact | SHA-256 |
+|---|---|
+| `manifest.json` | `322128843f8e7e6547a99efcecc6836fcd581f314fb49557a28d58fe79c69f4c` |
+| `interactions.jsonl.gz` | `9272ca86a647e3b13c9ce52b5381dde215f7ef448e4a19a41a22495fa99ef97f` |
+| `oracle/learner_truth.jsonl.gz` | `956ed53f370d5494d379072954c0821d4098f11e51e2629b33d8ee0b8b844601` |
+| Recursive inventory semantic digest | `78008283ae56bad84199145495ad76c9c4897031f4e9bc0861fbb964b2338387` |
+
+### Q* replay
+
+```bash
+.venv/bin/python scripts/build_true_q_matrix.py \
+  --cells data/grammar_kt_full_v1/grammar/cells.jsonl \
+  --items data/grammar_kt_full_v1/items/items.jsonl \
+  --kcs data/grammar_kt_full_v1/kcs.jsonl \
+  --design modules/kcs/generator/design.yaml \
+  --regimes data/grammar_kt_full_v1/grammar/regime_assignments.jsonl \
+  --dense-q-matrix data/grammar_kt_full_v1/q_matrix.csv \
+  --sparse-q-matrix data/grammar_kt_full_v1/oracle/q_matrix_sparse.jsonl \
+  --audit data/grammar_kt_full_v1/provenance/measurement/audit.json \
+  --manifest data/grammar_kt_full_v1/provenance/measurement/manifest.json \
+  --verify-only
+```
+
+Result: `verified frozen Q* artifacts`. The 113-by-18 matrix retains rank 18,
+269 edges, 75 distinct cell rows, and no equal or Jaccard-at-least-.90 columns.
+
+### Event and oracle replay
+
+```bash
+.venv/bin/python scripts/freeze_baseline_dataset.py \
+  --dataset-dir data/grammar_kt_full_v1 \
+  --pilot reports/baseline/artifacts/full_simulator_v1/pilot_seed_20260829.json \
+  --verify-only
+```
+
+Result: `FROZEN_BASELINE_COMPLETE`, 113 items, 1,000 learners, and 283,000
+events. Verification regenerates keyed draws and state trajectories and checks
+public/private event alignment, probabilities, updates, non-updating probes,
+gzip determinism, and every manifest digest. Public rows expose no mastery,
+response probability, active-KC, update, or random-draw fields.
+
+## Scientific-contract suite
 
 ```bash
 .venv/bin/python -m pytest -q
 ```
 
-Final result after the backend-effort integration and notebook additions:
-**112 passed in 5.22 s**.
+Final result: **269 passed**. Contracts cover, among other boundaries:
 
-This includes outcome-independent candidate construction, holdout mutation
-invariance, development-only selection, fixed-event representation comparison,
-semantic folds, frozen probes, no-oracle logistic KT, support/equivalence,
-penalty behavior, final-dataset preparation/finalization/analysis, stability,
-and the alternate `mood`/`person` candidate→selection→freeze→projection
-contract.
+- incomplete mappings cannot silently become exact GrammarCells;
+- generator-KC declarations and Q* precede learner outcomes;
+- item generation and baseline construction cannot read learner responses;
+- the simulator consumes K*/Q* rather than discovered KCs;
+- pure representation comparisons reuse identical events;
+- selection skips probe outcomes before reading `correct`;
+- private oracle fields cannot enter ordinary KT or discovery;
+- probes do not update state;
+- a `mood`/`person` alternate schema executes cells to K* to Q* to events
+  without English-specific branches; and
+- the collection result's typed pre-serialization and stored-byte hashes are
+  both independently validated.
 
-### Paper-facing fixture runner
+## Headline experiment replay
+
+### RQ2 misspecification
+
+An independent output directory was planned and run from the frozen baseline:
 
 ```bash
-fixture_parent_dir=$(mktemp -d tmp/final-fixture-parent.XXXXXX)
-.venv/bin/python scripts/run.py --fixture --output "$fixture_parent_dir/run"
+.venv/bin/python scripts/experiments/rq2_kc_misspecification.py \
+  --stage plan --dataset-dir data/grammar_kt_full_v1 \
+  --output-dir /tmp/grammar_kt_rq2_replay_final
+.venv/bin/python scripts/experiments/rq2_kc_misspecification.py \
+  --stage run --dataset-dir data/grammar_kt_full_v1 \
+  --output-dir /tmp/grammar_kt_rq2_replay_final
 ```
 
-Result: completed with 6 selected items and 624 events. The temporary output
-was removed after inspection. Fixture evidence is software verification, not a
-scientific result.
+All 15 conditions reran. The projection bundle is byte-identical to the frozen
+bundle (`4b793fc6a44a14b975db41f272abfcc0d9df7c3f8effa6b1109f0711c3885661`).
+After excluding only expected output-path plan metadata and the later repository
+revision field, canonical replay and frozen result both hash to
+`e0572337c64eb491ff941e75abc5a5cf969e5a53598f4fae465392b8d0e181c5`.
+Every metric, interval, and ordering is identical.
 
-### Executable walkthrough
+### RQ3 observable-only discovery evaluation
 
 ```bash
-.venv/bin/jupyter nbconvert --to notebook --execute --inplace \
+.venv/bin/python scripts/experiments/rq3_kc_discovery.py evaluate \
+  --plan experiments/full_v1/rq3_kc_discovery_v1/plan.json \
+  --selection experiments/full_v1/rq3_kc_discovery_v1/final_selection.json \
+  --cohort final --output /tmp/rq3_final_evaluation.json
+```
+
+The replay is byte-identical to the frozen evaluation at SHA-256
+`52e4ff8cba3932010d54fa3af653d64553d3e042d901ab5ac5f9d308bf12f0cd`.
+Truth and probes enter only after the immutable selection is supplied.
+
+### RQ4 linguistic generalisation
+
+RQ4 records repository-relative artifact paths, so its independent output is
+placed in the ignored `runs/` verification area rather than `/tmp`:
+
+```bash
+.venv/bin/python scripts/experiments/rq4_grammar_generalisation.py \
+  --stage plan --dataset data/grammar_kt_full_v1 \
+  --output runs/final_verification_rq4_replay
+.venv/bin/python scripts/experiments/rq4_grammar_generalisation.py \
+  --stage run --dataset data/grammar_kt_full_v1 \
+  --output runs/final_verification_rq4_replay
+```
+
+The plan reproduces SHA-256
+`0f7a2d423f3761f196ddb4c16dd76aa18a3a0eac2ad114c14aa27342f0813515`;
+the full N=1,000 result reproduces
+`a25f43833e620f40294c350259673dadfaaf3f38356339cd6b4cef42be4ec144`.
+
+### Mastery, robustness, and collection-design integrity
+
+Mastery recovery preserves the observable-before-oracle boundary. Its frozen
+observable estimates, primary result, learner-paired bootstrap, and secondary
+BKT result hash respectively to:
+
+```text
+9fba28d564f31c1b9ee552f15bf2e23a8c65b3c12817cd30f3e6f6f6fc33df93
+3055096d70232dd53b37010f5eb22d59d47c763b7df950b33ecbb0093a2824c6
+684bda7d9ae25758f9ad5b56c4328fe9ac5bd5258ddcf1cb59dd4d546277d651
+b6099901212302c47cbb353848fffbe099ffe2b780918c80bca01155bd96f07e
+```
+
+The 39-world robustness plan/result hashes are
+`66403c074fe7dbdfa3bd859225d7998a34524e8a2332e1286adecdc6a77636dc`
+and `f9a01e718588e6fbb69994d111f62bee2384333d94526bdaa456f8806d052d6a`.
+All 117 primary fits converged, common keyed draws match, and the baseline seed
+reproduces the first 500 frozen learners exactly.
+
+The collection plan/result hashes are
+`5049a7f4cd61579ee68034e33e2cec1b6588eb09efe83490607e464ffb10242d`
+and `5ef059f18025ec6f5fc88bfeaccfebb536be29fab8ff32767059ebd40f931533`;
+all 282 fits converged and before/after baseline manifests match. The immutable
+result contains a pre-serialization semantic digest over eight integer-keyed
+`q_row_multiplicity` maps. JSON necessarily serializes those keys as strings.
+Rather than overwrite the result, `integrity_verification.json` records the
+stored-byte digest, plain JSON-roundtrip digest, typed-key restoration rule,
+and restored digest. A test validates all four claims. This is a metadata
+representation caveat, not numeric nondeterminism.
+
+## Executable notebooks
+
+```bash
+.venv/bin/jupyter nbconvert --to notebook --execute \
+  --output /tmp/pipeline_walkthrough.executed.ipynb \
   --ExecutePreprocessor.timeout=600 notebooks/pipeline_walkthrough.ipynb
-```
 
-Result: completed in offline `LIVE_MODE = False`. Every code cell has an
-execution count and no error output. The walkthrough uses the active
-normalisation, canonicalisation, generation, validation, semantic fold,
-schema-validated latent-world materialisation, frozen-probe simulation,
-candidate generation, learner-evidence selection, projection, KT, and
-evaluation functions. Its reduced demonstration contains 6 cells/items, 8
-learners, 208 events, 27 structural candidates, 6 selection-eligible
-candidates, and a 4-KC selected policy.
-
-The walkthrough now reads the same per-stage backend declaration as
-`scripts/run.py`: Sol/high for normalisation, Sol/medium for generation, and
-Terra/medium for validation. Its offline fixture overrides all three stages
-with deterministic responses, so notebook execution makes no model calls.
-
-### Final-dataset results notebook
-
-```bash
-.venv/bin/jupyter nbconvert --to notebook --execute --inplace \
+GRAMMAR_KT_DATA_FOLDER=data/grammar_kt_full_v1 \
+  .venv/bin/jupyter nbconvert --to notebook --execute \
+  --output /tmp/final_dataset_results.executed.ipynb \
   --ExecutePreprocessor.timeout=600 notebooks/final_dataset_results.ipynb
 ```
 
-Result: completed with no error output against
-`data/grammar_kt_medium_v1`. The first code cell exposes `DATA_FOLDER` (or
-the `GRAMMAR_KT_DATA_FOLDER` environment variable); every subsequent stage
-resolves artifacts relative to that folder. Pandas tables cover
-manifest/provenance, source and normalisation, canonical cells and fold,
-generation and validation, fixed item bank, learner events, KC
-candidates/equivalence, selected policy and Q-matrices, KT metrics, paired
-comparisons, stability, and retained RQ results.
+Both complete without error or live model calls. The walkthrough executes all
+nine code cells. The full-v1 results notebook executes 20/20 code cells, all
+with outputs; its tracked SHA-256 is
+`89671397bd05c18d23e682cbd7de68aca53131f7df5f2abc1a6e8988af5aeaa9`.
+Static and runtime contracts prohibit direct access to
+`oracle/learner_truth.jsonl.gz`; the notebook opens only publishable summaries
+and already-derived oracle-evaluation aggregates.
 
-### Curated finalization and analysis
-
-Final retained executions:
-
-```bash
-.venv/bin/python scripts/curate_item_packaging.py \
-  --dataset-dir data/grammar_kt_medium_v1 --workers 4 \
-  --validation-model gpt-5.6-terra --reasoning-effort medium
-
-.venv/bin/python scripts/finalize_full_dataset.py \
-  --dataset-dir data/grammar_kt_medium_v1 \
-  --learners 1000 --seed 20260827 --bootstrap-repeats 5000
-
-.venv/bin/python scripts/run_phase6_selection_stability.py
-
-.venv/bin/python scripts/analyze_full_dataset.py \
-  --dataset-dir data/grammar_kt_medium_v1 \
-  --output-dir reports/phase6/artifacts/full_dataset_analysis
-```
-
-Reconciled retained counts:
-
-- 139 source rows and 139 mappings;
-- 24 cells and 24 fold assignments;
-- 44 selected items and four 44-row projections/Q-matrices;
-- 204,000 events;
-- 612,000 prediction rows per policy (204,000 events × 3 KT techniques);
-- zero holdout or reserved-test events supplied to any stability selection;
-- four evaluated policies, 48 policy×KT×regime metric rows, and 12 paired
-  logistic representation comparisons.
-
-The finalization manifest fixes 1,000 learners, seed 20260827, 55 raw/38
-activation-class/28 selection-eligible candidates, and λ=.0005. The compact
-stability artifact fixes seeds 20260827--20260831 and five identical full-
-support inventories.
-
-After the Phase-7 simulator cleanup, the exact finalizer was deliberately run
-again and reproduced every count, selected KC, log-loss value, and interval.
-All five stability streams and all nine selections were then forced through
-`scripts/run_phase6_selection_stability.py --recompute`; the resulting
-inventories/frequencies were unchanged. A final no-flag replay restored the
-paper-recorded resumable command in the artifact manifest.
-
-### Backend thinking-effort audit
-
-```bash
-.venv/bin/python scripts/run_backend_thinking_audit.py \
-  --stage prepare \
-  --output-dir reports/backend_thinking/artifacts/live_v1
-.venv/bin/python scripts/run_backend_thinking_audit.py \
-  --stage normalisation \
-  --output-dir reports/backend_thinking/artifacts/live_v1 --workers 4
-.venv/bin/python scripts/run_backend_thinking_audit.py \
-  --stage validation \
-  --output-dir reports/backend_thinking/artifacts/live_v1 --workers 4
-.venv/bin/python scripts/run_backend_thinking_audit.py \
-  --stage generation \
-  --output-dir reports/backend_thinking/artifacts/live_v1 --workers 4
-.venv/bin/python scripts/run_backend_thinking_audit.py \
-  --stage generation \
-  --output-dir reports/backend_thinking/artifacts/live_v1 \
-  --workers 4 --judge-effort medium
-.venv/bin/python scripts/analyze_backend_thinking_reviews.py \
-  --output-dir reports/backend_thinking/artifacts/live_v1 \
-  --bootstrap-replicates 10000
-```
-
-The frozen audit records 918 stage evaluations: 905 live model calls and 13
-deterministic precheck decisions. It used 3,351,258 Codex CLI tokens, returned
-no nonzero CLI status, and produced one malformed fixed-judge response. Two
-condition-blind research-agent reviewers each assessed 318 rows; an independent
-adjudicator resolved 26 flagged rows. All seven result hashes in the final
-manifest match the retained files.
-
-The strict zero-critical rule was inconclusive for every stage. The operational
-decision is normalisation **high**, generation **medium**, and validation
-**medium**. This changes future active configuration only: the retained dataset
-and all paper dataset results preserve their original all-medium provenance.
-
-### ACL paper
+## ACL manuscript
 
 ```bash
 cd ACL
-latexmk -pdf -interaction=nonstopmode -halt-on-error paper.tex
-cd ..
-.venv/bin/python ACL/tests/regression/run_tests.py
+TZ=UTC SOURCE_DATE_EPOCH=1788069406 FORCE_SOURCE_DATE=1 \
+  latexmk -g -pdf -interaction=nonstopmode -halt-on-error paper.tex
+python tests/regression/run_tests.py
+pdfinfo paper.pdf
+pdffonts paper.pdf
 ```
 
-Result: build succeeded; author-list/content regression **71/71 passed**.
-`paper.pdf` is 12 A4 pages (249,078 bytes, PDF 1.7). `pdffonts` reports every
-font embedded. The log contains no overfull box, undefined reference/citation,
-or LaTeX error. All 12 rendered pages were inspected for clipping, overlap,
-broken glyphs, table/figure legibility, headers/footers, page numbers, and
-section transitions; the final render has no observed layout defect.
+The build succeeds and the author-list/BibTeX regression passes **71/71**; it is
+not treated as a paper-content correctness test. The final PDF
+is 13 A4 pages, PDF 1.7, with SHA-256
+`aef66e282bcec04d19ce6fc9f3216dce6ee3f9bda526ac28207fcc693e20d61b`.
+The fixed epoch makes the tracked PDF byte-reproducible; two independent audit
+builds and the final in-tree build produce this digest.
+Every font is embedded. The log contains no overfull box, undefined citation or
+reference, multiply defined label, or LaTeX error. All 13 pages were rendered
+with Poppler and inspected for clipping, overlap, broken glyphs, table and
+figure legibility, headers, footers, numbering, and float placement; no visual
+defect remains. Underfull-box messages are benign line-breaking diagnostics.
+All 13 page rasters from the fixed-epoch build are byte-identical to the
+visually inspected render.
 
-### Whitespace check
+Text extraction contains no stale medium-v1 headline counts (`139`, `44`,
+`204,000`, or `18/5/1`) and no unresolved insertion marker. The evidence ledger
+maps each central manuscript claim to a full-v1 artifact and an explicit claim
+boundary.
+
+## Repository and report consistency
+
+The active `README.md`, methodology, investigation, RQ ledger, experiment log,
+experiment bank, results notebook, and manuscript all use the full-v1 causal
+order and counts. Earlier final reports are preserved under
+`reports/historical/medium_v1/` rather than overwritten without provenance.
+The experiment bank has no remaining high-priority synthetic execution item;
+deferred ideas require a new research purpose or real-data parameter range.
+
+`reports/final_release_manifest.json` is the machine-readable root anchor for
+every scoped release artifact. It records repository-relative path, byte size,
+SHA-256, and scope group; its deterministic selector detects changed, missing,
+and newly added scoped files. The manifest deliberately excludes itself to
+avoid a circular self-hash and is anchored by the final Git tree. Verify it
+with:
 
 ```bash
-git diff --cached --check -- . \
-  ':(exclude)pipeline.txt' \
-  ':(exclude)reports/**' \
-  ':(exclude)28/**' \
-  ':(exclude)data/grammar_kt_medium_v1/**'
+.venv/bin/python scripts/final_release_manifest.py --verify
 ```
 
-Result: pass with no output across active source, declarations, tests,
-fixtures, notebooks, and manuscript artifacts. The full staged check also
-reports retained textual formatting: CommonMark two-space hard breaks in
-reports and their `28/` copies, plus terminal blank lines in immutable
-rendered model prompts. These frozen evidence files were not rewritten merely
-to satisfy a whitespace linter.
+Task-scoped `git diff --check` passes. The unfiltered command continues to
+report only the pre-existing trailing whitespace in user-owned `pipeline.txt`,
+which is not read by the pipeline or paper and was deliberately preserved.
+The unrelated untracked user files listed in `reports/research_state.md` also
+remain untouched.
 
-The unfiltered working-tree command separately reports three trailing-space
-lines in pre-existing user-owned `pipeline.txt` (lines 18, 20, and 30).
-That unrelated file was intentionally preserved; it is not read by the
-pipeline, tests, experiments, dataset, or paper.
+## Remaining limitations, not execution failures
 
-## Models and seeds
+- Automatic normalisation and item validation have no expert or learner gold.
+- K*, simulator parameters, synthetic sample counts, and structural thresholds
+  are controlled-world declarations, not human estimates.
+- The unseen-value cohort consists of six perfect-progressive cells and cannot
+  establish unrestricted out-of-inventory generalisation.
+- Learner bootstrap does not represent uncertainty over source annotations,
+  item prompts, simulator families, or human populations.
+- The compact robustness design uses three seeds and one-factor severities;
+  unmodelled item difficulty produces a genuine representation reversal.
+- Q full rank is not sufficient for practically unique recovery: the planted
+  interaction remains weak even after anchors restore rank.
+- The alternate-language schema proves software abstraction only; empirical
+  cross-lingual validity remains untested.
+- The pre-item generator-alternative pilot records a transient
+  `/tmp/grammar_kt_full_v1_structural_items.jsonl` path. It is classified as
+  development evidence, not a release reconstruction input; the frozen K*,
+  item bank, Q*, measurement audit, and paper results use retained repository
+  artifacts.
+- Python and TeX dependency versions are recorded where available but the
+  environment is not supplied as a fully locked container. Licensed EGP source
+  content, provider snapshots, and provider sampling seeds cannot be
+  redistributed or reconstructed from this release.
 
-| Purpose | Model / setting | Seed |
-|---|---|---|
-| Retained normalisation snapshot | `gpt-5.6-sol`, medium, 2026-08-20 | provider sampling seed unavailable |
-| Item generation | `gpt-5.6-sol`, medium, four workers | provider sampling seed unavailable; deterministic candidate positions |
-| Independent validation | `gpt-5.6-terra`, medium, four workers | provider sampling seed unavailable |
-| Backend-effort audit | same aliases, medium/high/xhigh, four workers | 20260828 controls order/blinding/bootstrap; provider sampling seed unavailable |
-| Future active normalisation | `gpt-5.6-sol`, high | operational fallback; strict audit rule inconclusive |
-| Future active generation/validation | `gpt-5.6-sol`/`gpt-5.6-terra`, medium | operational fallbacks; strict audit rule inconclusive |
-| Frozen correction revalidation | `gpt-5.6-terra`, medium, six records | frozen plan SHA-256; provider seed unavailable |
-| Final mixed simulation / selection / bootstrap | declared synthetic world / observable logistic | 20260827; 5,000 learner resamples |
-| Final policy stability | declared mixed world / same selector | 20260827--20260831 |
-| Phase-5 world robustness | four declared worlds | 20260827--20260829 |
-| Selector logistic | regularisation C=.1, max 300 iterations | 20260827 |
-
-No language model is called by finalization, stability replay when retained
-streams are valid, KT evaluation, paper-table analysis, fixture tests, or the
-default notebook.
-
-## Final artifact locations
-
-- Dataset: `data/grammar_kt_medium_v1/`
-- Final dataset report: `reports/full_dataset_investigation.md`
-- Final methodology: `reports/final_methodology.md`
-- RQ ledger: `reports/final_rq_ledger.md`
-- Backend effort analysis: `reports/backend_thinking/analysis.md`
-- Backend effort raw/derived evidence:
-  `reports/backend_thinking/artifacts/live_v1/`
-- Experiment ledger/state: `reports/experiment_log.md`,
-  `reports/research_state.md`
-- Final-dataset results notebook: `notebooks/final_dataset_results.ipynb`
-- Paper-facing tables: `reports/phase6/artifacts/full_dataset_analysis/`
-- Full-support stability: `reports/phase6/artifacts/selection_stability_v1/`
-- Manuscript/PDF: `ACL/paper.tex`, `ACL/paper.pdf`
-
-## Remaining execution and evidence failures
-
-There are no unresolved active-code, test, notebook, finalization, analysis, or
-paper-build failures. The remaining limitations are evidential rather than
-execution failures: no human/expert item validation, no real learner outcomes,
-English-only empirical data, incomplete normalisation/model-run stability,
-five compositional cells, one novel-value cell, and synthetic latent-world
-assumptions. Backend choices additionally use mutable aliases, unseeded
-provider sampling, condition-blind research agents rather than human experts,
-and operational fallbacks because every strict critical-error gate was
-inconclusive. The programme narrows its claims accordingly rather than treating
-these as established results.
+These limitations narrow the claims. They do not leave a declared synthetic
+experiment, reconstruction check, notebook, report, or paper build incomplete.

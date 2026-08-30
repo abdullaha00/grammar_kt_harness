@@ -2000,9 +2000,11 @@ experiment:
   Split-2 costs +0.003165 (95% CI [.002744,.003581]); split-4 +0.005868
   ([.005281,.006473]); linguistic-family coarse +0.008132
   ([.007450,.008779]); all-merged +0.010225 ([.009380,.011029]); exact-cell
-  +0.015039 ([.014108,.015990]). Thus this frozen grid is monotone away from
-  K*, not U-shaped. These are predictive consequences in the declared world,
-  not evidence that K* is human cognitive truth.
+  +0.015039 ([.014108,.015990]). Thus this frozen grid is descriptively
+  U-shaped, with K* at the minimum and monotone increases away from it on each
+  coarser/finer side. It is a discrete asymmetric pattern, not a claim of a
+  universal smooth curve. These are predictive consequences in the declared
+  world, not evidence that K* is human cognitive truth.
 - **Grammar-regime result:** Exact-cell sparsity is especially costly on unseen
   combination (+0.037609, [.033761,.041513]) and unseen value (+0.028627,
   [.025120,.032174]). Split-2, all-merged, and family-coarse unseen-value
@@ -2480,3 +2482,6 @@ experiment:
   `f6a6d1a2133fea3175c4dae9d2dd8cc8c63ce7f3bceea17e16b15e74b36e571e`,
   and runner
   `8e3261702dcda46ee24a9f7408da7948455a5c065a8c7a6ff454c08a319ee9d0`.
+  The append-only `integrity_verification.json` records and tests the declared
+  integer-key restoration needed to validate the pre-serialization semantic
+  digest; `results.json` remains byte-identical.

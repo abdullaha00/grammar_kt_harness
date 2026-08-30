@@ -18,6 +18,7 @@ from scripts.experiments.collection_design import (
     micro_hypotheses,
     micro_q_audit,
     run_items_per_kc_audit,
+    semantic_sha256,
     simulate_micro_events,
 )
 
@@ -175,3 +176,42 @@ def test_collection_structural_checks_do_not_mutate_frozen_baseline() -> None:
     run_items_per_kc_audit(DEFAULT_DATASET, projections["true_kstar"])
     micro_q_audit("factorized_ab", micro_designs()["balanced_anchors"])
     assert before == [file_sha256(path) for path in paths]
+
+
+def test_frozen_collection_result_hash_has_append_only_roundtrip_verification() -> None:
+    artifact_dir = DEFAULT_DATASET.parents[1] / "experiments/full_v1/collection_design_v1"
+    result_path = artifact_dir / "results.json"
+    verification = json.loads(
+        (artifact_dir / "integrity_verification.json").read_text(encoding="utf-8")
+    )
+    result = json.loads(result_path.read_text(encoding="utf-8"))
+    embedded = result.pop("result_semantic_sha256")
+
+    restored_count = 0
+
+    def restore_integer_keys(value):
+        nonlocal restored_count
+        if isinstance(value, list):
+            return [restore_integer_keys(member) for member in value]
+        if not isinstance(value, dict):
+            return value
+        restored = {}
+        for key, member in value.items():
+            if key == "q_row_multiplicity" and isinstance(member, dict):
+                restored_count += 1
+                restored[key] = {
+                    int(inner_key): restore_integer_keys(inner_value)
+                    for inner_key, inner_value in member.items()
+                }
+            else:
+                restored[key] = restore_integer_keys(member)
+        return restored
+
+    assert file_sha256(result_path) == verification["artifact_byte_sha256"]
+    assert semantic_sha256(result) == verification[
+        "plain_json_roundtrip_semantic_sha256"
+    ]
+    assert semantic_sha256(restore_integer_keys(result)) == embedded
+    assert embedded == verification["embedded_pre_serialization_semantic_sha256"]
+    assert embedded == verification["typed_key_restored_semantic_sha256"]
+    assert restored_count == verification["q_row_multiplicity_maps_restored"]
