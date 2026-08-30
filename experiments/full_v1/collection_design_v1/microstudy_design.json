@@ -1,0 +1,153 @@
+{
+  "designs": {
+    "all_ab_no_anchors": {
+      "a_only": 0,
+      "b_only": 0,
+      "a_plus_b": 60
+    },
+    "sparse_anchors": {
+      "a_only": 6,
+      "b_only": 6,
+      "a_plus_b": 48
+    },
+    "balanced_anchors": {
+      "a_only": 20,
+      "b_only": 20,
+      "a_plus_b": 20
+    }
+  },
+  "worlds": {
+    "factorized_ab": {
+      "generator_q": {
+        "a_only": [
+          "A"
+        ],
+        "b_only": [
+          "B"
+        ],
+        "a_plus_b": [
+          "A",
+          "B"
+        ]
+      },
+      "representations": {
+        "true_factorized": {
+          "a_only": [
+            "A"
+          ],
+          "b_only": [
+            "B"
+          ],
+          "a_plus_b": [
+            "A",
+            "B"
+          ]
+        },
+        "union_merge": {
+          "a_only": [
+            "U"
+          ],
+          "b_only": [
+            "U"
+          ],
+          "a_plus_b": [
+            "U"
+          ]
+        },
+        "spurious_intersection": {
+          "a_only": [
+            "A"
+          ],
+          "b_only": [
+            "B"
+          ],
+          "a_plus_b": [
+            "A",
+            "B",
+            "I"
+          ]
+        }
+      }
+    },
+    "planted_abi": {
+      "generator_q": {
+        "a_only": [
+          "A"
+        ],
+        "b_only": [
+          "B"
+        ],
+        "a_plus_b": [
+          "A",
+          "B",
+          "I"
+        ]
+      },
+      "representations": {
+        "true_planted_intersection": {
+          "a_only": [
+            "A"
+          ],
+          "b_only": [
+            "B"
+          ],
+          "a_plus_b": [
+            "A",
+            "B",
+            "I"
+          ]
+        },
+        "union_merge": {
+          "a_only": [
+            "U"
+          ],
+          "b_only": [
+            "U"
+          ],
+          "a_plus_b": [
+            "U"
+          ]
+        },
+        "missing_intersection": {
+          "a_only": [
+            "A"
+          ],
+          "b_only": [
+            "B"
+          ],
+          "a_plus_b": [
+            "A",
+            "B"
+          ]
+        }
+      }
+    }
+  },
+  "learners": [
+    100,
+    300,
+    1000
+  ],
+  "seeds": [
+    20260840,
+    20260841,
+    20260842
+  ],
+  "fixed_opportunities_per_learner": 60,
+  "terminal_probe_rows_per_learner": 3,
+  "probe_scope": "common A-only, B-only, A+B terminal probes; non-updating",
+  "generator_assumptions": {
+    "initial_mastery": "independent Beta(2,2) per learner/KC",
+    "response": "0.10 + 0.80 * minimum(active mastery)",
+    "learning": "all active KCs += 0.02 * (1-mastery), outcome-independent",
+    "forgetting": "none",
+    "order": "keyed SHA-256 rank of 60 acquisition opportunities",
+    "cross_world_pairing": "same A/B initial streams, item order, and response draws"
+  },
+  "interpretation_rule": {
+    "structural": "rank/equivalence is primary; N cannot repair identical Q columns",
+    "factorized_negative_control": "spurious I should show no stable probe advantage over true factorized A/B",
+    "planted_positive_control": "with full-rank anchor designs, missing I should underperform planted A/B/I",
+    "all_ab": "predictive ties/differences cannot establish separate KC recovery because columns are identical"
+  }
+}

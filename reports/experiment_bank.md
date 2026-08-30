@@ -35,17 +35,17 @@ sensitivity study. The primary ordering survives every condition except a
 seed-sensitive split-2 reversal under unmodelled item difficulty. Additional
 severity grids are deferred unless a later claim depends on a threshold.
 
+FULL-COLLECTION-001 has completed the bounded learner-count, opportunity,
+max-one/max-two, and A-only/B-only/A+B anchor study, including factorized and
+planted-interaction positive/negative controls. It establishes that response
+volume cannot repair equivalent Q columns and that full rank alone need not
+make a weak interaction practically recoverable.
+
 ## High-priority downstream experiments
 
-- One planted two-KC union-versus-intersection micro-control. The real-bank RQ4
-  spurious-intersection test is complete; K* contains no separate true
-  interaction KC, so a real-bank missing-true-interaction ablation is not
-  applicable.
-- Bounded collection-design evidence after headline RQs: learner-count nested
-  resampling; opportunity targets 6/12/24; max-one versus max-two bank; and a
-  two-KC A-only/B-only/A+B anchor microstudy at matched response volume.
-- Grammar-holdout-size resampling only if the six-cell unseen-value conclusion
-  remains sensitive in leave-one-cell-out analysis.
+None. The declared synthetic programme is closed. The six-cell unseen-value
+limitation is already bounded by per-cell and leave-one-cell-out evidence;
+resplitting this inventory cannot create a broader unseen-value construct.
 
 ## Deferred unless primary RQs expose a need
 
@@ -58,3 +58,5 @@ severity grids are deferred unless a later claim depends on a threshold.
   frozen bank already answers the baseline construction question.
 - Large Q-noise, simulator, or KT hyperparameter Cartesian grids.
 - Universal human sample-size thresholds derived from synthetic learners.
+- Further learner-count, opportunity, or anchor grids. Promote only if a new
+  real-data design supplies parameter ranges that make a threshold actionable.

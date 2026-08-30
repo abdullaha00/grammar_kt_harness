@@ -2359,3 +2359,124 @@ experiment:
   `f9a01e718588e6fbb69994d111f62bee2384333d94526bdaa456f8806d052d6a`,
   and seed comparison table
   `4c5a8e6044ffb68fe62c0c4cb3a9a052fd4c09705528706ba4a7d2778d4cf866`.
+
+## FULL-COLLECTION-001 — bounded collection-design study
+
+- **Date frozen/executed:** 2026-08-30. Learner-count cohorts, opportunity
+  targets, max-item variants, microstudy worlds, anchors, representations,
+  seeds, metrics, and interpretation boundaries were materialized in
+  `study_plan.json` before results were produced.
+- **Research question:** Under the declared synthetic conditions, how do
+  learner count, opportunities per seen KC, within-cell replication, and
+  A-only/B-only/A+B measurement contrasts affect predictive representation
+  selection and structural identifiability?
+- **Motivation:** The headline experiments establish representation effects on
+  one fixed bank and sample. They do not by themselves distinguish response
+  volume from Q-matrix structure or show what the second item per cell adds.
+- **Hypotheses:** More learners should stabilize unpenalized predictive
+  comparison; more opportunities should improve prediction; a second item per
+  cell should improve support but not necessarily Q geometry; repeated A+B
+  rows should not distinguish A and B, whereas linguistically valid anchors
+  should restore rank and expose a union merge. A planted A+B interaction is a
+  positive control and a spurious interaction in the factorized world is a
+  negative control.
+- **Manipulated variables:** (A) nested learner cohorts N=60, 120, 240, 500,
+  and 1,000; (B) acquisition targets 6, 12, and 24 opportunities per seen KC;
+  (C) max-one versus max-two curated items per GrammarCell; and (D) all-A+B,
+  sparse-anchor, and balanced-anchor two-KC microbanks in factorized and
+  planted-interaction worlds at N=100, 300, and 1,000.
+- **Held fixed:** Full-v1 inputs and event rows are immutable. Learner cohorts
+  are outcome-free hash selections; learner-count selection uses acquisition
+  outcomes and skips every probe before outcome access. Opportunity worlds
+  keep the 113-item bank, K*, Q*, response/update rules, and 500 learners.
+  Max-one/max-two is an outcome-free structural projection. Microstudy designs
+  keep 60 acquisition rows plus three terminal probes per learner and common
+  seeds 20260829--20260831 within each comparison. No oracle state enters a
+  selector.
+- **Models/settings:** The unchanged observable PFA-like logistic model is fit
+  with C=1, standardized predictors, at most 500 iterations, and deterministic
+  seed 20260830. Learner-count selection compares raw validation log loss and a
+  predeclared illustrative `log_loss + .0005 * number_of_KCs` criterion. The
+  latter changes the estimand and is not treated as recovery truth. All 282
+  fits converged.
+- **Exact commands:**
+
+  ```bash
+  .venv/bin/python scripts/experiments/collection_design.py --stage plan \
+    --dataset data/grammar_kt_full_v1 \
+    --output experiments/full_v1/collection_design_v1
+  .venv/bin/python scripts/experiments/collection_design.py --stage run \
+    --dataset data/grammar_kt_full_v1 \
+    --output experiments/full_v1/collection_design_v1
+  .venv/bin/python -m pytest tests/test_collection_design.py -q
+  ```
+- **Learner-count result:** Unpenalized validation prediction selects K* in all
+  21 cohorts: 5/5 repetitions at each of N=60, 120, 240, and 500, and the one
+  full N=1,000 cohort. At N=1,000, candidate-minus-K* log-loss costs are
+  +.005242 for family union (95% learner-paired interval
+  [.004056,.006489]), +.002567 split-2 ([.001762,.003378]), and +.004878
+  exact-cell ([.003741,.006055]). This does not establish an N=60 human sample
+  requirement: the effects are properties of this simulator and fixed item
+  bank. The fixed KC-count penalty selects K* only 3/21 times and selects the
+  family union 18/21 times, showing that complexity penalties encode a
+  preference rather than consistently reveal generator truth.
+- **Opportunity result:** Mean K* all-bank probe log loss across three seeds is
+  .681757, .672104, and .636837 at targets 6, 12, and 24, with realized
+  acquisition lengths 106, 170, and 311. Family-union costs grow
+  +.005437, +.007885, +.010070; split-2 costs +.002712, +.003027, +.003680;
+  exact-cell costs +.007523, +.014301, +.032110. More practice improves
+  absolute K* prediction and amplifies the representation contrast. The
+  unequal schedule lengths and three targets do not support a formal
+  diminishing-return threshold. Exact-cell unseen-combination loss worsens
+  (.703218, .709853, .720349) because increasingly confident isolated seen-cell
+  histories do not transfer to new tuples.
+- **Bank-variant result:** Max-one gives 75 items and max-two gives 113. KC
+  support increases from min/median/max 1/5/32 to 2/7.5/49, but both banks
+  have 75 distinct Q rows, rank 18, and no identical KC columns. The 38 second
+  variants therefore add within-cell replication and context support, not a
+  new structural contrast. The simulator has no lexical-memory nuisance, so
+  this cannot quantify human lexical diversity.
+- **Anchor and interaction result:** With A+B-only items, factorized A/B and
+  planted A/B/I Q columns are identical and union, spurious-interaction, and
+  missing-interaction representations tie exactly at N=100, 300, and 1,000.
+  Sparse and balanced anchors restore rank two in the factorized world and rank
+  three in the planted world. At N=1,000, union-minus-true log loss is +.004775
+  sparse and +.003194 balanced in the factorized world, and +.009495 sparse
+  and +.010952 balanced when the interaction is planted. Thus response volume
+  cannot repair structural equivalence, while anchors make a union merge
+  detectably wrong.
+- **Negative and positive controls:** The spurious-interaction negative
+  control is approximately null at N=1,000 (factorized sparse -.000007,
+  balanced +.000092). The planted-interaction positive control is weak despite
+  full Q rank: omitting I costs only +.000060 under sparse anchors and +.000506
+  under balanced anchors at N=1,000; the balanced three-seed range is
+  [.000313,.000621], while N=100 crosses zero. Structural full rank is
+  necessary here but does not guarantee practically unique predictive
+  recovery. Union is explicitly OR support; interaction I is A+B-only
+  intersection.
+- **Failure/limitations:** Only one synthetic response/update family, compact
+  sample sizes, three opportunity seeds, and an artificial two-KC microstudy
+  are tested. Cohorts share learners and are not independent replications.
+  The illustrative penalty is not calibrated to a generative prior. Result
+  JSON converts integer `q_row_multiplicity` keys to strings on reload, so the
+  byte SHA below is authoritative; the documented in-memory semantic hash
+  requires restoring integer keys. None of the counts transfers directly to
+  human learners.
+- **Interpretation and methodological consequence:** Collect structural
+  contrasts before collecting more repetitions of the same Q row; cross items
+  and learners to model item nuisance; treat within-cell variants as support,
+  not structural diversity; and report the selection criterion because a KC
+  penalty changes the target. Even a full-rank Q may leave a small interaction
+  effect predictively difficult to recover, so rank audits must be paired with
+  effect-size and uncertainty evidence.
+- **Artifacts/hashes:** `experiments/full_v1/collection_design_v1/`; plan byte
+  SHA-256
+  `5049a7f4cd61579ee68034e33e2cec1b6588eb09efe83490607e464ffb10242d`,
+  results byte SHA-256
+  `5ef059f18025ec6f5fc88bfeaccfebb536be29fab8ff32767059ebd40f931533`,
+  projections
+  `25b03ac893ee9a0323e9e713f3ba93fb0686d6a149e31b70cbe2c500b16e8c1b`,
+  microstudy design
+  `f6a6d1a2133fea3175c4dae9d2dd8cc8c63ce7f3bceea17e16b15e74b36e571e`,
+  and runner
+  `8e3261702dcda46ee24a9f7408da7948455a5c065a8c7a6ff454c08a319ee9d0`.

@@ -1,0 +1,310 @@
+{
+  "study_id": "full_v1_collection_design_v1",
+  "status": "FROZEN_ANALYSIS_PLAN_BEFORE_THIS_STUDY_EXECUTION",
+  "parts": {
+    "A_learner_count": {
+      "counts": [
+        60,
+        120,
+        240,
+        500,
+        1000
+      ],
+      "replicates": 5,
+      "full_n_replicates": 1,
+      "cohort_rule": "SHA-256 learner-ID rank",
+      "nested_cohorts": true,
+      "split": "learner-disjoint stable SHA-256 80/20 membership",
+      "outcomes": "acquisition only; probes skipped before correct access",
+      "evidence_status": "preregistered secondary analysis of already-available full-v1 outcomes",
+      "report_winners": [
+        "raw validation log loss",
+        "log loss + 0.0005 * KC count"
+      ]
+    },
+    "B_opportunities": {
+      "targets": [
+        6,
+        12,
+        24
+      ],
+      "learners": 500,
+      "seeds": [
+        20260830,
+        20260831,
+        20260832
+      ],
+      "simulator": "frozen K*/Q*, beta(2,2), min, guess/slip=.1, learning=.02, no forgetting",
+      "probe": "one all-bank terminal non-updating probe",
+      "target_semantics": "minimum opportunities per seen generator KC, not rows per learner"
+    },
+    "C_items_per_kc": {
+      "conditions": [
+        "max_one_per_cell",
+        "max_two_per_cell"
+      ],
+      "metrics": [
+        "support",
+        "rank",
+        "Q row diversity",
+        "Q column equivalence"
+      ],
+      "human_lexical_claim_allowed": false
+    },
+    "D_anchor_microstudy": {
+      "designs": {
+        "all_ab_no_anchors": {
+          "a_only": 0,
+          "b_only": 0,
+          "a_plus_b": 60
+        },
+        "sparse_anchors": {
+          "a_only": 6,
+          "b_only": 6,
+          "a_plus_b": 48
+        },
+        "balanced_anchors": {
+          "a_only": 20,
+          "b_only": 20,
+          "a_plus_b": 20
+        }
+      },
+      "worlds": {
+        "factorized_ab": {
+          "generator_q": {
+            "a_only": [
+              "A"
+            ],
+            "b_only": [
+              "B"
+            ],
+            "a_plus_b": [
+              "A",
+              "B"
+            ]
+          },
+          "representations": {
+            "true_factorized": {
+              "a_only": [
+                "A"
+              ],
+              "b_only": [
+                "B"
+              ],
+              "a_plus_b": [
+                "A",
+                "B"
+              ]
+            },
+            "union_merge": {
+              "a_only": [
+                "U"
+              ],
+              "b_only": [
+                "U"
+              ],
+              "a_plus_b": [
+                "U"
+              ]
+            },
+            "spurious_intersection": {
+              "a_only": [
+                "A"
+              ],
+              "b_only": [
+                "B"
+              ],
+              "a_plus_b": [
+                "A",
+                "B",
+                "I"
+              ]
+            }
+          }
+        },
+        "planted_abi": {
+          "generator_q": {
+            "a_only": [
+              "A"
+            ],
+            "b_only": [
+              "B"
+            ],
+            "a_plus_b": [
+              "A",
+              "B",
+              "I"
+            ]
+          },
+          "representations": {
+            "true_planted_intersection": {
+              "a_only": [
+                "A"
+              ],
+              "b_only": [
+                "B"
+              ],
+              "a_plus_b": [
+                "A",
+                "B",
+                "I"
+              ]
+            },
+            "union_merge": {
+              "a_only": [
+                "U"
+              ],
+              "b_only": [
+                "U"
+              ],
+              "a_plus_b": [
+                "U"
+              ]
+            },
+            "missing_intersection": {
+              "a_only": [
+                "A"
+              ],
+              "b_only": [
+                "B"
+              ],
+              "a_plus_b": [
+                "A",
+                "B"
+              ]
+            }
+          }
+        }
+      },
+      "learners": [
+        100,
+        300,
+        1000
+      ],
+      "seeds": [
+        20260840,
+        20260841,
+        20260842
+      ],
+      "fixed_opportunities_per_learner": 60,
+      "terminal_probe_rows_per_learner": 3,
+      "probe_scope": "common A-only, B-only, A+B terminal probes; non-updating",
+      "generator_assumptions": {
+        "initial_mastery": "independent Beta(2,2) per learner/KC",
+        "response": "0.10 + 0.80 * minimum(active mastery)",
+        "learning": "all active KCs += 0.02 * (1-mastery), outcome-independent",
+        "forgetting": "none",
+        "order": "keyed SHA-256 rank of 60 acquisition opportunities",
+        "cross_world_pairing": "same A/B initial streams, item order, and response draws"
+      },
+      "interpretation_rule": {
+        "structural": "rank/equivalence is primary; N cannot repair identical Q columns",
+        "factorized_negative_control": "spurious I should show no stable probe advantage over true factorized A/B",
+        "planted_positive_control": "with full-rank anchor designs, missing I should underperform planted A/B/I",
+        "all_ab": "predictive ties/differences cannot establish separate KC recovery because columns are identical"
+      }
+    }
+  },
+  "representations": {
+    "true_kstar": "18-KC generator reference",
+    "family_union_coarse": "six OR/union family merges; not interactions",
+    "structural_split2": "outcome-free two-way context splits",
+    "exact_cell": "one KC per exact GrammarCell"
+  },
+  "common_predictor": {
+    "model": "observable PFA-like logistic",
+    "features": [
+      "learner correctness history",
+      "active-KC correctness history",
+      "active-KC opportunity history",
+      "KC count",
+      "KC indicators"
+    ],
+    "standardize": true,
+    "C": 1.0,
+    "max_iterations": 500,
+    "seed": 20260830,
+    "complexity_penalty": 0.0005
+  },
+  "scientific_boundary": {
+    "plans_and_projections_frozen_before_outcomes": true,
+    "probe_outcomes_used_to_choose_representations": false,
+    "same_events_reused_for_pure_representation_comparisons": true,
+    "private_oracle_used_by_selection_or_prediction": false,
+    "all_probes_non_updating": true,
+    "baseline_dataset_mutated": false
+  },
+  "inputs": {
+    "manifest": {
+      "path": "data/grammar_kt_full_v1/manifest.json",
+      "sha256": "322128843f8e7e6547a99efcecc6836fcd581f314fb49557a28d58fe79c69f4c"
+    },
+    "interactions": {
+      "path": "data/grammar_kt_full_v1/interactions.jsonl.gz",
+      "sha256": "9272ca86a647e3b13c9ce52b5381dde215f7ef448e4a19a41a22495fa99ef97f"
+    },
+    "items": {
+      "path": "data/grammar_kt_full_v1/items/items.jsonl",
+      "sha256": "46e2fcbd723d11f6b30ecdd197fb05c39f04f7b0fc8f61e2183ffb8fb7110011"
+    },
+    "cells": {
+      "path": "data/grammar_kt_full_v1/grammar/cells.jsonl",
+      "sha256": "a6bf8041e93fdea21d0ba7b318a24cb64610a6064517a2f7fbbbf3aca2fa4e1a"
+    },
+    "regimes": {
+      "path": "data/grammar_kt_full_v1/grammar/regime_assignments.jsonl",
+      "sha256": "5e65cf1bca33778e8300d7fe0125871c2d622c9b4aca8ebe5280a3e93a9e4bdf"
+    },
+    "generator_kcs": {
+      "path": "data/grammar_kt_full_v1/kcs.jsonl",
+      "sha256": "f3b308dcda7c11886e1dc67476dbe6adbcb53b8676b643c62d226fe68cfe0355"
+    },
+    "q_dense": {
+      "path": "data/grammar_kt_full_v1/q_matrix.csv",
+      "sha256": "b6df582478f05976ceb200da6edc2b31fb305da64498e5ddb5f473a9459bf5bf"
+    },
+    "q_sparse": {
+      "path": "data/grammar_kt_full_v1/oracle/q_matrix_sparse.jsonl",
+      "sha256": "30b735a7d9698a965701fcf04ee5c831377c4b10e78fc2aba85fc75c953a0937"
+    },
+    "simulator_config": {
+      "path": "modules/simulation/baseline.yaml",
+      "sha256": "6aceb28d748ba16ec63977516df36b58b2da39ef43674ba473145d949c4bb2a9"
+    },
+    "rq2_plan": {
+      "path": "reports/full_v1_artifacts/rq2_misspecification_v1/study_plan.json",
+      "sha256": "e1945fb1078e883f2c420c3b8adbee4b0772359facaa4321ba616277ff7ddb6d"
+    },
+    "rq2_projections": {
+      "path": "reports/full_v1_artifacts/rq2_misspecification_v1/projections.jsonl",
+      "sha256": "4b793fc6a44a14b975db41f272abfcc0d9df7c3f8effa6b1109f0711c3885661"
+    },
+    "rq2_script": {
+      "path": "scripts/experiments/rq2_kc_misspecification.py",
+      "sha256": "33ccd24d6050943cde338bc0129f2cafdbeca2b3e586322d1657a5da8fd3027a"
+    },
+    "baseline_simulator": {
+      "path": "src/grammar_kt/baseline_simulation.py",
+      "sha256": "e39cacd5c43306f49f8aab14a8389c0f69b82cf8d96ccdcf2eda71bb8e8567c4"
+    }
+  },
+  "frozen_artifacts": {
+    "full_v1_projections": {
+      "path": "full_v1_projections.jsonl",
+      "sha256": "25b03ac893ee9a0323e9e713f3ba93fb0686d6a149e31b70cbe2c500b16e8c1b"
+    },
+    "microstudy_design": {
+      "path": "microstudy_design.json",
+      "sha256": "f6a6d1a2133fea3175c4dae9d2dd8cc8c63ce7f3bceea17e16b15e74b36e571e"
+    }
+  },
+  "implementation": {
+    "path": "scripts/experiments/collection_design.py",
+    "sha256": "8e3261702dcda46ee24a9f7408da7948455a5c065a8c7a6ff454c08a319ee9d0"
+  },
+  "exact_commands": {
+    "plan": ".venv/bin/python scripts/experiments/collection_design.py --stage plan",
+    "run": ".venv/bin/python scripts/experiments/collection_design.py --stage run"
+  },
+  "plan_semantic_sha256": "e81061e2967b04859e11b70997a6b1b066e516e549ffd7c7af719b036ccdd0be"
+}

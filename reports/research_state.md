@@ -45,10 +45,11 @@ verified 1,222-row EGP snapshot
 → immutable `data/grammar_kt_full_v1/`
 ```
 
-The dataset is now frozen. KC misspecification, KC discovery, linguistic
-generalisation, oracle-only state recovery, and compact simulator robustness
-are complete. Bounded collection design is the remaining active Layer-B queue
-and must not mutate the baseline.
+The dataset is frozen. KC misspecification, KC discovery, linguistic
+generalisation, oracle-only state recovery, compact simulator robustness, and
+bounded collection design are complete. The declared synthetic experiment
+queue is closed; only final synthesis and verification remain, and neither may
+mutate the baseline.
 
 ## Repository audit result
 
@@ -341,12 +342,20 @@ and geometry checks before K* and Q* pass their measurement gate.
   therefore broad within the compact study but explicitly conditional on item
   nuisance control. Fixed BKT produces further reversals under its known
   aggregation/update mismatch and remains secondary.
+- The bounded collection-design study makes four distinctions explicit. Raw
+  validation selects K* in all 21 nested learner cohorts from N=60 to 1,000,
+  whereas a fixed KC-count penalty selects family union in 18/21, so a penalty
+  changes the estimand. Targets 6/12/24 improve absolute prediction and widen
+  K*'s advantage; they do not establish a human threshold. Max-two raises KC
+  support over max-one but adds zero Q rows or rank. In the two-KC control,
+  A+B-only repetitions remain exactly unidentifiable through N=1,000; anchors
+  restore rank and expose union merging, yet the planted-interaction omission
+  costs only +.000506 at N=1,000 balanced. Full rank therefore need not imply
+  practically unique predictive recovery.
 
 ## Current unresolved research questions
 
-1. How learner count, opportunity volume, and measurement contrasts affect
-   recovery under the declared synthetic conditions.
-2. Whether the final synthesis, executable notebooks, verification audit, and
+1. Whether the final synthesis, executable notebooks, verification audit, and
    ACL manuscript consistently delimit the supported synthetic claims.
 
 ## Important active paths
@@ -363,9 +372,10 @@ and geometry checks before K* and Q* pass their measurement gate.
 - Frozen RQ4 artifacts: `experiments/full_v1/rq4_generalisation_v1/`
 - Mastery artifacts: `reports/full_v1_artifacts/mastery_recovery_v1/`
 - Robustness artifacts: `experiments/full_v1/simulator_robustness_v1/`
+- Collection-design artifacts: `experiments/full_v1/collection_design_v1/`
 - Historical medium dataset: `data/grammar_kt_medium_v1/`
 
 ## Current next action
 
-Complete the bounded learner/opportunity/anchor collection-design controls,
-then consolidate the RQ ledger, verification report, notebooks, and ACL paper.
+Consolidate and verify the final reports, executable full-v1 notebook, dataset
+replay contracts, and ACL paper; then freeze the coherent repository state.
