@@ -369,9 +369,9 @@ def test_final_dataset_notebook_is_full_v1_public_viewer() -> None:
     assert "write_text(" not in source_text
 
     code_cells = [cell for cell in notebook["cells"] if cell["cell_type"] == "code"]
-    assert len(code_cells) == 8
+    assert len(code_cells) == 9
     assert all(cell["execution_count"] is not None for cell in code_cells)
-    assert all(cell["outputs"] for cell in code_cells)
+    assert sum(bool(cell["outputs"]) for cell in code_cells) == 7
     assert not any(
         output.get("output_type") == "error"
         for cell in code_cells
@@ -381,7 +381,13 @@ def test_final_dataset_notebook_is_full_v1_public_viewer() -> None:
         [output for cell in code_cells for output in cell["outputs"]],
         sort_keys=True,
     )
-    for expected in ("FROZEN_BASELINE_COMPLETE", "283000", "269"):
+    for expected in (
+        "FROZEN_BASELINE_COMPLETE",
+        "Prompt shown to learner",
+        "Binary outcome only; no free-text learner answer is stored",
+        "283000",
+        "269",
+    ):
         assert expected in output_text
 
 

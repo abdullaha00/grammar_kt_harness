@@ -201,9 +201,10 @@ GRAMMAR_KT_DATA_FOLDER=data/grammar_kt_full_v1 \
 ```
 
 All three complete without error or live model calls. The walkthrough executes
-all nine code cells. The dataset viewer executes 8/8 code cells, all with
-outputs; its tracked SHA-256 is
-`f02b80fb76c43b8ffbbecfe35514c6185f5b3db2ed50af389c17fc45420189ec`.
+all nine code cells. The dataset viewer executes 9/9 code cells; its two setup
+cells are intentionally quiet and its seven display cells have outputs. Its
+tracked SHA-256 is
+`f339ef58e579ea837e2981fcc5c71658c0f8df6fd90b1c697397f10a933e3369`.
 The full-v1 results notebook executes 20/20 code cells, all with outputs; its
 tracked SHA-256 is
 `89671397bd05c18d23e682cbd7de68aca53131f7df5f2abc1a6e8988af5aeaa9`.
