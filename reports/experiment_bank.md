@@ -20,23 +20,22 @@ matching, predictive-equivalence analysis, and positive/negative controls. It
 found a high-overlap seen-Q equivalence class rather than unique ontology
 recovery; further selector tuning is not an automatic follow-up.
 
+FULL-RQ4-001 has completed learner-paired, cell-macro, per-cell, and
+leave-one-cell-out analysis for all 54/15/6 grammar cells, plus the exact-item
+novelty negative control. Further grammar resplitting is not warranted by the
+current inventory.
+
 ## High-priority downstream experiments
 
-- RQ4 cell-macro and learner-paired evaluation on 54 `seen`, 15
-  pairwise-seen/full-tuple-unseen `unseen_combination`, and six
-  perfect-progressive `unseen_value` cells. There is no weaker constituent-only
-  stratum in full-v1.
-- RQ4 exact-item-novelty control: a downstream sensitivity schedule that
-  withholds one item in eligible two-item seen cells, without changing the
-  frozen baseline.
 - Oracle-only prerequisite/mastery recovery for the fixed RQ2 hypotheses.
 - Compact multi-seed robustness capable of changing RQ2 rankings: guess/slip,
   aggregation, learner heterogeneity, forgetting, item difficulty, and update
   rule. BKT remains secondary because its mean/full-credit semantics mismatch
   the generator.
-- One explicit union-versus-intersection control; K* contains no separate true
-  interaction KC, so a missing-true-interaction ablation is not applicable to
-  full-v1.
+- One planted two-KC union-versus-intersection micro-control. The real-bank RQ4
+  spurious-intersection test is complete; K* contains no separate true
+  interaction KC, so a real-bank missing-true-interaction ablation is not
+  applicable.
 - Bounded collection-design evidence after headline RQs: learner-count nested
   resampling; opportunity targets 6/12/24; max-one versus max-two bank; and a
   two-KC A-only/B-only/A+B anchor microstudy at matched response volume.

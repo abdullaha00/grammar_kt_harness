@@ -2109,3 +2109,84 @@ experiment:
   `d60ff9898448d68312b7fea346666640fdd75aad7bb6408e64b50b91fb1d22ee`;
   final evaluation
   `52e4ff8cba3932010d54fa3af653d64553d3e042d901ab5ac5f9d308bf12f0cd`.
+
+## FULL-RQ4-001 — linguistic generalisation and exact-item novelty control
+
+- **Date frozen/executed:** 2026-08-30. The six representations, grammar
+  cohorts, cell-level estimands, learner bootstrap, and 30-cell item-novelty
+  partition were frozen before RQ4 outcome analysis.
+- **Research question:** How do reusable, merged, split, exact-cell, and
+  interaction-augmented KC hypotheses generalise from seen grammar to
+  pairwise-seen/full-tuple-unseen combinations and genuinely unseen aspect
+  values? Is the apparent gap merely exact item novelty?
+- **Hypotheses:** Reusable K* should transfer better than exact-cell KCs to new
+  combinations; RQ3 atomic and compositional projections should remain
+  indistinguishable wherever their Q columns agree; same-cell item replacement
+  should be a negative control because the baseline simulator has no
+  item-memory or item-difficulty variable.
+- **Manipulated variable:** Six already frozen representations under one common
+  fitting protocol: compositional K* ceiling, RQ3 atomic, family-union coarse,
+  structural split-2, exact-cell fine, and compositional plus supported
+  conjunctive/intersection candidates. The separate novelty control withholds
+  one SHA-ranked item from each of 30 exactly-two-item seen cells and replaces
+  its 54 schedule occurrences with the same-cell counterpart.
+- **Held fixed:** Full-v1's 1,000 learners, 170,000 seen acquisition events,
+  non-updating terminal probes, item/cell/regime declarations, all model
+  settings, and seed. Every baseline representation reads the same rows. The
+  novelty schedule retains 170 acquisitions/learner and exactly preserves all
+  18 K* opportunity counts. No probe outcome enters fitting or selection; no
+  learner oracle is read.
+- **Primary metrics/statistics:** Event-weighted and cell-macro log loss/Brier,
+  full per-cell results, leave-one-cell-out cell-macro sensitivity, and a
+  2,000-repeat learner-paired percentile bootstrap for candidate-minus-K* by
+  regime (seed 20260830). The 15 combination cells are all pairwise-seen and
+  full-tuple-unseen; there is no constituent-only stratum.
+- **Exact commands:**
+
+  ```bash
+  .venv/bin/python scripts/experiments/rq4_grammar_generalisation.py --stage plan --dataset data/grammar_kt_full_v1 --output experiments/full_v1/rq4_generalisation_v1
+  .venv/bin/python scripts/experiments/rq4_grammar_generalisation.py --stage run --dataset data/grammar_kt_full_v1 --output experiments/full_v1/rq4_generalisation_v1
+  ```
+- **Reference result:** K* event-weighted log loss is .669161 seen, .672036 on
+  unseen combinations, and .681181 on unseen values; corresponding cell-macro
+  values are .669783, .670637, and .681882. The six-cell unseen-value cohort is
+  sensitive to composition: per-cell loss ranges .666512--.691208 and its six
+  leave-one-cell-out macro estimates range .680016--.684955.
+- **Representation result:** Exact-cell costs +.008209 seen
+  ([.007486,.008906]), +.037609 on combinations
+  ([.033761,.041513]), and +.028627 on unseen values
+  ([.025120,.032174]). Split-2 costs +.002234 seen and +.008806 on
+  combinations; family-union coarse costs +.008940 and +.009185, respectively;
+  all four intervals exclude zero. Their unseen-value point differences are
+  small and intervals cross zero. Compositional plus spurious intersections
+  costs +.001415 seen, +.001196 on combinations, and +.006954 on unseen values,
+  with all intervals above zero. Thus union/merge and
+  intersection/conjunction are not interchangeable perturbations.
+- **RQ3 equivalence result:** Atomic and compositional predictions differ by at
+  most 1.2e-7 on seen and combination rows. Atomic-minus-compositional on
+  unseen values is -.003236 with CI [-.007943,.001272], so it is inconclusive;
+  its point direction differs from the RQ3 protocol. Holdout outcomes may expose
+  the ambiguity but cannot legitimately select among seen-Q-equivalent rules.
+- **Exact-item negative control:** The new stream contains 170,000 acquisition
+  and 30,000 probe rows. All 30,000 held-out-item outcomes exactly match their
+  paired baseline seen probes (correct rate .5897), because same-Q replacements
+  preserve outcome-independent mastery updates and probe response draws are
+  keyed to the held-out item. K* loss is .668028 versus .668343 on matched
+  baseline rows, compared with .672036 on unseen combinations and .681181 on
+  unseen values. Prediction differences reflect the refitted public histories;
+  the identical outcomes are the causal negative-control result.
+- **Failure/limitations:** Six unseen-value cells all concern
+  perfect-progressive composition, not arbitrary novel grammar or a novel
+  latent KC. Learner bootstrap does not capture grammar-cell sampling. The
+  exact-item control is guaranteed by a simulator with no lexical memory or
+  difficulty and says nothing about human transfer between surface variants.
+- **Methodological consequence:** RQ4 supports reusable compositional
+  representations over exact-cell memorisation for full-tuple recombination,
+  while the strongest unseen-value comparison remains limited and cannot break
+  the RQ3 equivalence class. Preserve per-cell/leave-one-cell-out evidence and
+  do not interpret item novelty beyond the declared negative control.
+- **Artifacts/hashes:** `experiments/full_v1/rq4_generalisation_v1/`; plan
+  `0f7a2d423f3761f196ddb4c16dd76aa18a3a0eac2ad114c14aa27342f0813515`;
+  results `a25f43833e620f40294c350259673dadfaaf3f38356339cd6b4cef42be4ec144`;
+  novelty interactions
+  `7403ab24b07633ea04304793706f924548630ee8616da7ef4c73fb373a2ad3f8`.

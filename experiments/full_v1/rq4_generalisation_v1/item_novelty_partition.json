@@ -1,0 +1,212 @@
+[
+  {
+    "cell_id": "gc_04a854582c08aa84",
+    "heldout_item_id": "cue_bounded_imperative_gc_04a854582c08aa84_02",
+    "practised_item_id": "cue_bounded_imperative_gc_04a854582c08aa84_01",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_19656e31c58c2c07",
+    "heldout_item_id": "candidate_gc_19656e31c58c2c07_01",
+    "practised_item_id": "candidate_gc_19656e31c58c2c07_02",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_325e05b06bb38886",
+    "heldout_item_id": "candidate_gc_325e05b06bb38886_02",
+    "practised_item_id": "candidate_gc_325e05b06bb38886_01",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_44ff4acdb263024b",
+    "heldout_item_id": "candidate_gc_44ff4acdb263024b_02",
+    "practised_item_id": "candidate_gc_44ff4acdb263024b_01",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_4601bed02c004e37",
+    "heldout_item_id": "candidate_gc_4601bed02c004e37_03",
+    "practised_item_id": "candidate_gc_4601bed02c004e37_01",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_4634bf1b005f7724",
+    "heldout_item_id": "candidate_gc_4634bf1b005f7724_03",
+    "practised_item_id": "candidate_gc_4634bf1b005f7724_01",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_4a4c9d34c1b5bce4",
+    "heldout_item_id": "unchanged_rescue_gc_4a4c9d34c1b5bce4_02",
+    "practised_item_id": "unchanged_rescue_gc_4a4c9d34c1b5bce4_01",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_6a255aa977e4289a",
+    "heldout_item_id": "candidate_gc_6a255aa977e4289a_01",
+    "practised_item_id": "candidate_gc_6a255aa977e4289a_02",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_6a5e38b390521990",
+    "heldout_item_id": "candidate_gc_6a5e38b390521990_02",
+    "practised_item_id": "candidate_gc_6a5e38b390521990_03",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_7224db1e1a3bbebd",
+    "heldout_item_id": "candidate_gc_7224db1e1a3bbebd_01",
+    "practised_item_id": "candidate_gc_7224db1e1a3bbebd_03",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_7ea73f7f16fe2684",
+    "heldout_item_id": "candidate_gc_7ea73f7f16fe2684_02",
+    "practised_item_id": "candidate_gc_7ea73f7f16fe2684_01",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_8b7e8b31b496e102",
+    "heldout_item_id": "candidate_gc_8b7e8b31b496e102_01",
+    "practised_item_id": "candidate_gc_8b7e8b31b496e102_02",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_90b9229122fa55d6",
+    "heldout_item_id": "candidate_gc_90b9229122fa55d6_02",
+    "practised_item_id": "candidate_gc_90b9229122fa55d6_01",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_927e9714cc21a97d",
+    "heldout_item_id": "candidate_gc_927e9714cc21a97d_01",
+    "practised_item_id": "candidate_gc_927e9714cc21a97d_03",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_a0fe7953b9fffca8",
+    "heldout_item_id": "candidate_gc_a0fe7953b9fffca8_02",
+    "practised_item_id": "candidate_gc_a0fe7953b9fffca8_03",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_a94168b2255fe062",
+    "heldout_item_id": "determinacy_intervention_gc_a94168b2255fe062_01",
+    "practised_item_id": "determinacy_intervention_gc_a94168b2255fe062_02",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_b1516a79b61c8fd0",
+    "heldout_item_id": "candidate_gc_b1516a79b61c8fd0_01",
+    "practised_item_id": "candidate_gc_b1516a79b61c8fd0_03",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_b55bebc82e7087e7",
+    "heldout_item_id": "candidate_gc_b55bebc82e7087e7_03",
+    "practised_item_id": "candidate_gc_b55bebc82e7087e7_02",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_bb4f472f992ab76b",
+    "heldout_item_id": "cue_bounded_imperative_gc_bb4f472f992ab76b_01",
+    "practised_item_id": "cue_bounded_imperative_gc_bb4f472f992ab76b_02",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_bdf25ed4941e5de3",
+    "heldout_item_id": "determinacy_intervention_gc_bdf25ed4941e5de3_01",
+    "practised_item_id": "determinacy_intervention_gc_bdf25ed4941e5de3_02",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_bea554636af1b127",
+    "heldout_item_id": "candidate_gc_bea554636af1b127_03",
+    "practised_item_id": "candidate_gc_bea554636af1b127_01",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_c2cf343c43ce329d",
+    "heldout_item_id": "candidate_gc_c2cf343c43ce329d_02",
+    "practised_item_id": "candidate_gc_c2cf343c43ce329d_03",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_c2ed1b09f0bb32d4",
+    "heldout_item_id": "candidate_gc_c2ed1b09f0bb32d4_03",
+    "practised_item_id": "candidate_gc_c2ed1b09f0bb32d4_02",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_ca719d192c20c030",
+    "heldout_item_id": "candidate_gc_ca719d192c20c030_01",
+    "practised_item_id": "candidate_gc_ca719d192c20c030_03",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_d15de8b5658bd6a5",
+    "heldout_item_id": "candidate_gc_d15de8b5658bd6a5_03",
+    "practised_item_id": "candidate_gc_d15de8b5658bd6a5_01",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_d2c20fe6a8269c51",
+    "heldout_item_id": "candidate_gc_d2c20fe6a8269c51_03",
+    "practised_item_id": "candidate_gc_d2c20fe6a8269c51_01",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_dfd385cd88abc20f",
+    "heldout_item_id": "candidate_gc_dfd385cd88abc20f_02",
+    "practised_item_id": "candidate_gc_dfd385cd88abc20f_01",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_e7fef77abc10b5ba",
+    "heldout_item_id": "candidate_gc_e7fef77abc10b5ba_01",
+    "practised_item_id": "candidate_gc_e7fef77abc10b5ba_02",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_edcc8d38860ff41d",
+    "heldout_item_id": "candidate_gc_edcc8d38860ff41d_01",
+    "practised_item_id": "candidate_gc_edcc8d38860ff41d_02",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  },
+  {
+    "cell_id": "gc_fcb801c76c95c7bf",
+    "heldout_item_id": "candidate_gc_fcb801c76c95c7bf_03",
+    "practised_item_id": "candidate_gc_fcb801c76c95c7bf_01",
+    "selection_rule": "minimum SHA-256 rank within exactly-two-item seen cell",
+    "seed": 20260830
+  }
+]

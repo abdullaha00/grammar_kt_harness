@@ -288,17 +288,39 @@ and geometry checks before K* and Q* pass their measurement gate.
   interactions do not produce a supported gain over the compositional policy
   (delta +.000206, 95% CI [-.000069,.000478]). Selection never read Q*, K*,
   oracle state, or probe outcomes; truth entered only after frozen selection.
+- RQ4 confirms reusable transfer on the 15 pairwise-seen/full-tuple-unseen
+  cells. Under one common observable model, K* log loss is .669161 seen,
+  .672036 on unseen combinations, and .681181 on unseen values. Exact-cell KCs
+  cost +.037609 on combinations (95% learner-paired CI
+  [.033761,.041513]) and +.028627 on unseen values
+  ([.025120,.032174]); split-2 and family-union merges also have supported
+  combination costs. Spurious conjunctive/intersection additions harm all
+  three regimes, so a union merge and an intersection are empirically and
+  conceptually distinct perturbations.
+- Atomic and compositional hypotheses remain effectively identical on seen and
+  combination probes (maximum probability difference 1.2e-7). Their nominal
+  unseen-value difference is inconclusive (atomic-minus-compositional
+  -.003236, [-.007943,.001272]) and changes direction under the distinct RQ3
+  fitting protocol. It cannot resolve the seen-Q equivalence class. The six
+  unseen-value cells are visibly cell-sensitive: K* per-cell log loss ranges
+  .666512--.691208 and leave-one-cell-out macro values .680016--.684955.
+- A downstream exact-item-novelty negative control withheld one item in each of
+  30 two-item seen cells while replacing its 54 acquisition occurrences with
+  the same-cell counterpart. It preserved every K* opportunity and produced
+  exactly the same 30,000 probe outcomes as the paired baseline rows. This is a
+  consequence of the declared simulator's lack of item memory/difficulty and
+  correctness-independent same-Q updates, not evidence about human item
+  novelty.
 
 ## Current unresolved research questions
 
-1. How K*, coarse/fine hypotheses, and the RQ3 equivalence class generalise
-   cell-by-cell across the
-   54/15/6 semantic grammar regimes.
-2. Whether predictive ranking agrees with oracle-only mastery recovery.
-3. Which simulator and collection-design assumptions carry the RQ2/RQ3
+1. Whether predictive ranking agrees with oracle-only mastery recovery.
+2. Which simulator and collection-design assumptions carry the RQ2--RQ4
    conclusions.
-4. How learner count, opportunity volume, and measurement contrasts affect
+3. How learner count, opportunity volume, and measurement contrasts affect
    recovery under the declared synthetic conditions.
+4. Whether the final synthesis, executable notebooks, verification audit, and
+   ACL manuscript consistently delimit the supported synthetic claims.
 
 ## Important active paths
 
@@ -311,11 +333,12 @@ and geometry checks before K* and Q* pass their measurement gate.
 - Persistent experiment ledger: `reports/experiment_log.md`
 - Active experiment queue: `reports/experiment_bank.md`
 - Frozen RQ3 artifacts: `experiments/full_v1/rq3_kc_discovery_v1/`
+- Frozen RQ4 artifacts: `experiments/full_v1/rq4_generalisation_v1/`
 - Historical medium dataset: `data/grammar_kt_medium_v1/`
 
 ## Current next action
 
-Complete cell-sensitive RQ4, oracle-only mastery recovery, and the compact
-multi-world simulator-robustness study; then run bounded collection-design
-controls before consolidating the RQ ledger, verification report, notebooks,
-and ACL paper.
+Complete oracle-only state recovery and the compact multi-world
+simulator-robustness study, then finish the bounded learner/opportunity/anchor
+collection-design controls before consolidating the RQ ledger, verification
+report, notebooks, and ACL paper.
