@@ -73,6 +73,7 @@ def test_active_source_is_one_cohesive_file_per_stage() -> None:
         "measurement.py",
         "model_evidence.py",
         "baseline_simulation.py",
+        "sensitivity_simulation.py",
         "dataset_freeze.py",
         "full_items.py",
         "grammar_regimes.py",

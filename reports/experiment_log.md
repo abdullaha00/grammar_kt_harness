@@ -2275,3 +2275,87 @@ experiment:
   `684bda7d9ae25758f9ad5b56c4328fe9ac5bd5258ddcf1cb59dd4d546277d651`,
   and secondary BKT result
   `b6099901212302c47cbb353848fffbe099ffe2b780918c80bca01155bd96f07e`.
+
+## FULL-ROBUST-001 — compact simulator-sensitivity study
+
+- **Date frozen/executed:** 2026-08-30. The 13 conditions, three seeds,
+  representations, primary/secondary models, common-random-number scheme, and
+  reversal rules were written before any sensitivity response was generated.
+- **Research question:** Which simple simulator assumptions carry the RQ2
+  conclusion that K* predicts better than a family merge or structural
+  split-2, and which plausible nuisance factors can reverse that ordering?
+- **Hypothesis:** K* should remain best under response noise, alternative
+  aggregation, learner heterogeneity, mild forgetting, correlated starting
+  mastery, and correctness-dependent updating. Unmodelled item difficulty is
+  the strongest candidate for rank instability because none of the compared
+  observable models contains item identity.
+- **Manipulated variables:** Baseline minimum aggregation with guess/slip
+  .10/.10; noise .00/.00, .20/.10, .10/.20, and .20/.20; product and arithmetic
+  mean aggregation; learner-specific guess/slip in [0,.20]; forgetting .002 per
+  acquisition gap; item logit difficulty SD .60; learner learning rate in
+  [.005,.035]; an undirected .50 global-versus-independent `Beta(2,2)` starting-
+  mastery mixture; and correct-only active-KC updating. Each sensitivity
+  changes one assumption except the declared compact noise design.
+- **Held fixed:** The full 113-item bank, 18-KC K*, Q*, regimes, target-12
+  schedule, 500 learners/world, seeds 20260829--20260831, and K*/family-
+  coarse/split-2 projections. Within a seed, keyed initial, learner, item,
+  event, and response latents are common across conditions. Events are
+  transient; neither frozen baseline interactions nor its private oracle is
+  read. Every representation/model receives identical observable rows inside
+  a world.
+- **Models/settings:** The primary model is the unchanged observable PFA-like
+  logistic fit on acquisition and evaluated on all terminal probes (C=1,
+  standardized, 500 iterations, seed 20260830). All 117 fits converged.
+  Prior-smoothed empirical history and fixed mean/full-credit BKT are secondary
+  sensitivities. BKT is prohibited from driving conclusions because its
+  response aggregation and correctness-conditioned full-credit update
+  deliberately mismatch the generator.
+- **Exact commands:**
+
+  ```bash
+  .venv/bin/python scripts/experiments/simulator_robustness.py --stage plan
+  .venv/bin/python scripts/experiments/simulator_robustness.py --stage run
+  ```
+- **Scale:** 13 conditions x 3 seeds = 39 transient worlds, each with 500
+  learners and 141,500 events; 117 primary fits and 234 secondary evaluations.
+  The 500-learner baseline seed exactly matches the corresponding first half of
+  the frozen observable stream, and all common-draw hashes match.
+- **Baseline result:** Mean candidate-minus-K* primary log loss is +.007924 for
+  family-coarse (seed range +.007568--+.008306) and +.003241 for split-2
+  (+.003001--+.003575). Corresponding Brier costs are +.003845 and +.001584.
+- **Robustness result:** K* beats both candidates in every seed for 12/13
+  conditions. Coarse log-loss costs remain positive in all 39 worlds. Split-2
+  costs remain positive in 38/39 worlds. Noise-free data amplify the mean K*
+  advantage (coarse +.016363; split-2 +.005969); .20/.20 noise attenuates it
+  (+.003082; +.001506). Product, compensatory mean, learner noise/rate
+  heterogeneity, forgetting, correlated initial mastery, and correct-only
+  updates do not change the primary winner.
+- **Important exception:** With unmodelled item logit difficulty SD .60,
+  split-2 mean cost remains +.004138 but spans -.000413 to +.009955 across
+  seeds. It beats K* on seed 20260830 and falls behind coarse on seed 20260831.
+  Thus the headline ranking is robust to the other compact assumptions but not
+  invariant to item-specific nuisance structure. This motivates measuring or
+  modelling item difficulty in any real collection.
+- **Secondary-model result:** Empirical and especially BKT rankings vary more;
+  fixed BKT often prefers split-2 under its mismatched credit semantics. These
+  are retained model-sensitivity results, not evidence against the primary
+  conclusion. They reinforce the mastery study's warning that KT model and
+  generator state semantics must be aligned.
+- **Failure/limitations:** Three structural seeds characterize direction and
+  visible range, not a population interval. The correlated condition is an
+  undirected marginal-preserving mixture, not a prerequisite model. Only one
+  severity per heterogeneity, forgetting, and difficulty assumption is tested;
+  no interaction grid was run. The worlds are not human parameter estimates.
+- **Methodological consequence:** The RQ2 K* advantage is not an artefact of
+  fixed moderate guess/slip, minimum aggregation alone, independent initial
+  mastery, homogeneous learning, no forgetting, or opportunity-only updates.
+  It is vulnerable to omitted item difficulty, so paper claims must be
+  conditional and future learner studies should include crossed item evidence.
+- **Artifacts/hashes:** `experiments/full_v1/simulator_robustness_v1/`; plan
+  `66403c074fe7dbdfa3bd859225d7998a34524e8a2332e1286adecdc6a77636dc`,
+  projection bundle
+  `2292ff0a2d99f1d853a02ff651b0f4f3ce539a17112c47200d5f1ecd0814eb62`,
+  result
+  `f9a01e718588e6fbb69994d111f62bee2384333d94526bdaa456f8806d052d6a`,
+  and seed comparison table
+  `4c5a8e6044ffb68fe62c0c4cb3a9a052fd4c09705528706ba4a7d2778d4cf866`.

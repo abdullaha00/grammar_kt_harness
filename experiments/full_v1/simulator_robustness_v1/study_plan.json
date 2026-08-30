@@ -1,0 +1,481 @@
+{
+  "study_id": "full_v1_compact_simulator_robustness_v1",
+  "status": "PLANNED_BEFORE_RESPONSE_GENERATION",
+  "question": "Does KC-representation ranking under one observable logistic survive compact perturbations of declared simulator assumptions?",
+  "fixed_measurement_scope": {
+    "grammar_cells": 75,
+    "items": 113,
+    "generator_kcs": 18,
+    "q_edges": 269,
+    "item_bank_changed": false,
+    "q_star_changed": false
+  },
+  "execution_design": {
+    "learners_per_world": 500,
+    "seeds": [
+      20260829,
+      20260830,
+      20260831
+    ],
+    "conditions": [
+      {
+        "condition": {
+          "condition_id": "baseline_minimum_g10_s10",
+          "aggregation": "minimum",
+          "guess": 0.1,
+          "slip": 0.1,
+          "learner_guess_slip_range": null,
+          "item_difficulty_logit_sd": 0.0,
+          "learning_rate": 0.02,
+          "learner_learning_rate_range": null,
+          "initial_mastery_global_mixture_weight": 0.0,
+          "forgetting_per_acquisition_gap": 0.0,
+          "update_rule": "all_opportunities"
+        },
+        "rationale": "Frozen baseline dynamics; reference for rank and sign reversals."
+      },
+      {
+        "condition": {
+          "condition_id": "noise_g00_s00",
+          "aggregation": "minimum",
+          "guess": 0.0,
+          "slip": 0.0,
+          "learner_guess_slip_range": null,
+          "item_difficulty_logit_sd": 0.0,
+          "learning_rate": 0.02,
+          "learner_learning_rate_range": null,
+          "initial_mastery_global_mixture_weight": 0.0,
+          "forgetting_per_acquisition_gap": 0.0,
+          "update_rule": "all_opportunities"
+        },
+        "rationale": "Noise-free boundary separates ontology effects from irreducible response noise."
+      },
+      {
+        "condition": {
+          "condition_id": "noise_g20_s10",
+          "aggregation": "minimum",
+          "guess": 0.2,
+          "slip": 0.1,
+          "learner_guess_slip_range": null,
+          "item_difficulty_logit_sd": 0.0,
+          "learning_rate": 0.02,
+          "learner_learning_rate_range": null,
+          "initial_mastery_global_mixture_weight": 0.0,
+          "forgetting_per_acquisition_gap": 0.0,
+          "update_rule": "all_opportunities"
+        },
+        "rationale": "Raise guess alone to distinguish lower-tail noise from slip."
+      },
+      {
+        "condition": {
+          "condition_id": "noise_g10_s20",
+          "aggregation": "minimum",
+          "guess": 0.1,
+          "slip": 0.2,
+          "learner_guess_slip_range": null,
+          "item_difficulty_logit_sd": 0.0,
+          "learning_rate": 0.02,
+          "learner_learning_rate_range": null,
+          "initial_mastery_global_mixture_weight": 0.0,
+          "forgetting_per_acquisition_gap": 0.0,
+          "update_rule": "all_opportunities"
+        },
+        "rationale": "Raise slip alone to distinguish upper-tail noise from guess."
+      },
+      {
+        "condition": {
+          "condition_id": "noise_g20_s20",
+          "aggregation": "minimum",
+          "guess": 0.2,
+          "slip": 0.2,
+          "learner_guess_slip_range": null,
+          "item_difficulty_logit_sd": 0.0,
+          "learning_rate": 0.02,
+          "learner_learning_rate_range": null,
+          "initial_mastery_global_mixture_weight": 0.0,
+          "forgetting_per_acquisition_gap": 0.0,
+          "update_rule": "all_opportunities"
+        },
+        "rationale": "Raise both response-noise bounds without adding a larger noise grid."
+      },
+      {
+        "condition": {
+          "condition_id": "aggregation_product",
+          "aggregation": "product",
+          "guess": 0.1,
+          "slip": 0.1,
+          "learner_guess_slip_range": null,
+          "item_difficulty_logit_sd": 0.0,
+          "learning_rate": 0.02,
+          "learner_learning_rate_range": null,
+          "initial_mastery_global_mixture_weight": 0.0,
+          "forgetting_per_acquisition_gap": 0.0,
+          "update_rule": "all_opportunities"
+        },
+        "rationale": "Non-compensatory product is the strongest concise alternative to minimum."
+      },
+      {
+        "condition": {
+          "condition_id": "aggregation_arithmetic_mean",
+          "aggregation": "arithmetic_mean",
+          "guess": 0.1,
+          "slip": 0.1,
+          "learner_guess_slip_range": null,
+          "item_difficulty_logit_sd": 0.0,
+          "learning_rate": 0.02,
+          "learner_learning_rate_range": null,
+          "initial_mastery_global_mixture_weight": 0.0,
+          "forgetting_per_acquisition_gap": 0.0,
+          "update_rule": "all_opportunities"
+        },
+        "rationale": "Arithmetic mean is the canonical compensatory contrast to minimum."
+      },
+      {
+        "condition": {
+          "condition_id": "learner_guess_slip_heterogeneity_beta2_2_00_20",
+          "aggregation": "minimum",
+          "guess": 0.1,
+          "slip": 0.1,
+          "learner_guess_slip_range": [
+            0.0,
+            0.2
+          ],
+          "item_difficulty_logit_sd": 0.0,
+          "learning_rate": 0.02,
+          "learner_learning_rate_range": null,
+          "initial_mastery_global_mixture_weight": 0.0,
+          "forgetting_per_acquisition_gap": 0.0,
+          "update_rule": "all_opportunities"
+        },
+        "rationale": "One bounded learner-noise distribution preserves mean 0.10 while testing heterogeneity."
+      },
+      {
+        "condition": {
+          "condition_id": "forgetting_gap_002",
+          "aggregation": "minimum",
+          "guess": 0.1,
+          "slip": 0.1,
+          "learner_guess_slip_range": null,
+          "item_difficulty_logit_sd": 0.0,
+          "learning_rate": 0.02,
+          "learner_learning_rate_range": null,
+          "initial_mastery_global_mixture_weight": 0.0,
+          "forgetting_per_acquisition_gap": 0.002,
+          "update_rule": "all_opportunities"
+        },
+        "rationale": "A single mild per-gap decay accumulates over the fixed acquisition schedule."
+      },
+      {
+        "condition": {
+          "condition_id": "item_difficulty_logit_sd_060",
+          "aggregation": "minimum",
+          "guess": 0.1,
+          "slip": 0.1,
+          "learner_guess_slip_range": null,
+          "item_difficulty_logit_sd": 0.6,
+          "learning_rate": 0.02,
+          "learner_learning_rate_range": null,
+          "initial_mastery_global_mixture_weight": 0.0,
+          "forgetting_per_acquisition_gap": 0.0,
+          "update_rule": "all_opportunities"
+        },
+        "rationale": "One centered item logit-offset distribution tests unmodelled item variation."
+      },
+      {
+        "condition": {
+          "condition_id": "learner_learning_rate_heterogeneity_beta2_2_005_035",
+          "aggregation": "minimum",
+          "guess": 0.1,
+          "slip": 0.1,
+          "learner_guess_slip_range": null,
+          "item_difficulty_logit_sd": 0.0,
+          "learning_rate": 0.02,
+          "learner_learning_rate_range": [
+            0.005,
+            0.035
+          ],
+          "initial_mastery_global_mixture_weight": 0.0,
+          "forgetting_per_acquisition_gap": 0.0,
+          "update_rule": "all_opportunities"
+        },
+        "rationale": "One bounded learner-rate distribution preserves mean 0.02 while testing heterogeneity."
+      },
+      {
+        "condition": {
+          "condition_id": "correlated_initial_mastery_global_mixture_050",
+          "aggregation": "minimum",
+          "guess": 0.1,
+          "slip": 0.1,
+          "learner_guess_slip_range": null,
+          "item_difficulty_logit_sd": 0.0,
+          "learning_rate": 0.02,
+          "learner_learning_rate_range": null,
+          "initial_mastery_global_mixture_weight": 0.5,
+          "forgetting_per_acquisition_gap": 0.0,
+          "update_rule": "all_opportunities"
+        },
+        "rationale": "A 0.50 learner-global/independent Beta(2,2) selection mixture induces initial-mastery correlation while preserving every KC marginal; it is not directed prerequisite learning."
+      },
+      {
+        "condition": {
+          "condition_id": "update_correct_only",
+          "aggregation": "minimum",
+          "guess": 0.1,
+          "slip": 0.1,
+          "learner_guess_slip_range": null,
+          "item_difficulty_logit_sd": 0.0,
+          "learning_rate": 0.02,
+          "learner_learning_rate_range": null,
+          "initial_mastery_global_mixture_weight": 0.0,
+          "forgetting_per_acquisition_gap": 0.0,
+          "update_rule": "correct_only"
+        },
+        "rationale": "Correct-only updating is one transparent correctness-dependent boundary case."
+      }
+    ],
+    "representations": [
+      "true_kstar",
+      "coarse_linguistic_families",
+      "structural_split2"
+    ],
+    "worlds": 39,
+    "primary_logistic_fits": 117,
+    "secondary_model_evaluations": 234,
+    "acquisition_item_ids": null,
+    "novelty_grid_executed": false
+  },
+  "frozen_reduction_rationale": [
+    "Use the requested 500 learners and three common seeds; do not add a sample-size grid.",
+    "Vary one simulator assumption at a time around the baseline, except the four explicitly requested guess/slip pairs.",
+    "Use one bounded distribution each for learner noise, item difficulty, and learner learning rate rather than severity grids.",
+    "Use one exact marginal-preserving correlated-initial-mastery mixture; do not add a prerequisite or correlation-strength grid.",
+    "Use one mild forgetting rate and one transparent correct-only update boundary rather than factorial combinations.",
+    "Evaluate K*, coarse linguistic families, and structural split2 only, with the same fixed observable logistic and all terminal probes.",
+    "Retain seed-wise deltas and reversal diagnostics; do not add bootstrap, novelty, KT-model, or regime grids.",
+    "Materialize worlds transiently and persist aggregate results/hashes only, avoiding redundant event copies across representations."
+  ],
+  "common_random_numbers": {
+    "scheme": "keyed_sha256_v1",
+    "shared_across_conditions_within_seed": [
+      "initial K* mastery beta draws",
+      "response uniform draws keyed by learner/phase/item/exposure",
+      "learner heterogeneity Beta(2,2) latent draws",
+      "item difficulty standard-normal latent draws",
+      "learner-keyed acquisition and probe order ranks"
+    ],
+    "verification": "Every condition within a seed must have identical common-random-number hashes and event keys."
+  },
+  "sensitivity_semantics": {
+    "response": "guess + (1 - guess - slip) * logistic(logit(aggregate mastery) - item difficulty)",
+    "heterogeneity_distribution": "independent Beta(2,2) quantiles scaled to each declared bounded interval",
+    "forgetting": "before every acquisition response after the first, decay every K* mastery by the declared per-gap rate; no additional pre-probe gap",
+    "correctness_dependent_update": "correct-only active-KC learning update",
+    "correlated_initial_mastery": "for each learner, draw global G and learner-KC independent I from Beta(2,2); a keyed Bernoulli with declared mixture weight selects G versus I, preserving the Beta(2,2) KC marginal while inducing undirected correlation",
+    "prerequisite_learning_modelled": false,
+    "probes": "terminal complete-bank snapshot; non-updating"
+  },
+  "outcome_free_acquisition_hook": {
+    "parameter": "acquisition_item_ids",
+    "availability": "implemented and tested",
+    "constraint": "fixed item IDs in the declared acquisition grammar regime only",
+    "used_in_this_run": false,
+    "purpose": "later RQ4 acquisition-set control without consulting outcomes"
+  },
+  "predictors": {
+    "primary": {
+      "model_id": "observable_pfa_logistic_primary",
+      "name": "observable_history_logistic_pfa_like",
+      "implementation": "fit_observable_logistic from scripts/experiments/rq2_kc_misspecification.py",
+      "training_rows": "all acquisition events",
+      "evaluation_rows": "all terminal probe events",
+      "features": [
+        "prior-smoothed learner correctness",
+        "mean prior-smoothed active-hypothesis-KC correctness",
+        "mean log1p active-hypothesis-KC opportunities",
+        "active hypothesis-KC count",
+        "hypothesis-KC indicators"
+      ],
+      "history_update_flag": "deterministically derived as phase == acquisition from the observable phase field",
+      "standardize": true,
+      "regularization_c": 1.0,
+      "max_iterations": 500,
+      "random_seed": 20260830
+    },
+    "secondary": [
+      {
+        "model_id": "empirical_history_secondary",
+        "name": "prior-smoothed active-KC empirical history",
+        "alpha": 1.0,
+        "beta": 1.0,
+        "role": "transparent nonparametric history sensitivity only"
+      },
+      {
+        "model_id": "bkt_mean_full_credit_secondary",
+        "name": "simple per-KC BKT with mean multi-KC response and full-credit outcome update",
+        "parameters": {
+          "initial_mastery": 0.35,
+          "learn": 0.12,
+          "guess": 0.18,
+          "slip": 0.1
+        },
+        "role": "secondary KT-form sensitivity only; prohibited from driving the scientific choice",
+        "known_generator_mismatch": [
+          "BKT averages active-KC mastery whereas the baseline generator uses weakest-link minimum aggregation.",
+          "BKT assigns the complete item outcome to every active KC and performs posterior-plus-learning updates, whereas the baseline generator gives all active KCs opportunity-based updates independent of correctness.",
+          "Consequently BKT performance mixes KC-representation sensitivity with deliberate response/update-model misspecification."
+        ]
+      }
+    ],
+    "same_observable_rows_within_world_across_representations_and_models": true,
+    "interpretation_policy": "Primary KC robustness conclusions use the observable PFA/logistic. Empirical history and BKT are secondary sensitivity checks and cannot override the primary analysis."
+  },
+  "evaluation": {
+    "metrics": [
+      "log_loss",
+      "brier_score"
+    ],
+    "delta_sign": "candidate_minus_true_kstar; positive favours K*",
+    "reported_by_seed": true,
+    "candidates": [
+      "coarse_linguistic_families",
+      "structural_split2"
+    ],
+    "reversals": [
+      "representation rank order versus same-seed baseline world",
+      "candidate-minus-K* metric sign versus same-seed baseline world",
+      "candidate delta sign variation across seeds within condition"
+    ]
+  },
+  "scientific_boundary": {
+    "simulator_inputs": [
+      "fixed item IDs/cell IDs",
+      "fixed K* IDs",
+      "fixed Q*",
+      "fixed grammar-regime assignment",
+      "frozen baseline measurement schedule",
+      "declared downstream condition"
+    ],
+    "predictor_inputs": [
+      "observable sensitivity interaction rows",
+      "one outcome-free item-to-KC hypothesis"
+    ],
+    "observable_fields": [
+      "learner_id",
+      "item_id",
+      "sequence_index",
+      "correct",
+      "phase",
+      "pass_index",
+      "grammar_regime"
+    ],
+    "derived_predictor_protocol_fields": [
+      "updates_history := (phase == acquisition)"
+    ],
+    "frozen_baseline_interactions_read": false,
+    "private_baseline_oracle_read": false,
+    "private_sensitivity_event_state_emitted": false,
+    "generator_truth_use": "world generation and the declared K* reference representation only"
+  },
+  "representations": {
+    "true_kstar": {
+      "items": 113,
+      "kcs": 18,
+      "edges": 269,
+      "density": 0.13225172074729596,
+      "empty_items": 0,
+      "support": {
+        "minimum": 2,
+        "median": 7.5,
+        "maximum": 49
+      },
+      "identical_column_groups": [],
+      "column_rank": 18
+    },
+    "coarse_linguistic_families": {
+      "items": 113,
+      "kcs": 6,
+      "edges": 260,
+      "density": 0.3834808259587021,
+      "empty_items": 0,
+      "support": {
+        "minimum": 18,
+        "median": 49.5,
+        "maximum": 62
+      },
+      "identical_column_groups": [],
+      "column_rank": 6
+    },
+    "structural_split2": {
+      "items": 113,
+      "kcs": 35,
+      "edges": 269,
+      "density": 0.06801517067003793,
+      "empty_items": 0,
+      "support": {
+        "minimum": 1,
+        "median": 4.0,
+        "maximum": 25
+      },
+      "identical_column_groups": [],
+      "column_rank": 35
+    }
+  },
+  "projection_bundle": {
+    "path": "projections.jsonl",
+    "sha256": "2292ff0a2d99f1d853a02ff651b0f4f3ce539a17112c47200d5f1ecd0814eb62",
+    "rows": 339
+  },
+  "inputs": {
+    "manifest": {
+      "path": "manifest.json",
+      "sha256": "322128843f8e7e6547a99efcecc6836fcd581f314fb49557a28d58fe79c69f4c",
+      "bytes": 26456
+    },
+    "items": {
+      "path": "items/items.jsonl",
+      "sha256": "46e2fcbd723d11f6b30ecdd197fb05c39f04f7b0fc8f61e2183ffb8fb7110011",
+      "bytes": 81382
+    },
+    "cells": {
+      "path": "grammar/cells.jsonl",
+      "sha256": "a6bf8041e93fdea21d0ba7b318a24cb64610a6064517a2f7fbbbf3aca2fa4e1a",
+      "bytes": 22345
+    },
+    "generator_kcs": {
+      "path": "kcs.jsonl",
+      "sha256": "f3b308dcda7c11886e1dc67476dbe6adbcb53b8676b643c62d226fe68cfe0355",
+      "bytes": 15814
+    },
+    "true_q_matrix": {
+      "path": "q_matrix.csv",
+      "sha256": "b6df582478f05976ceb200da6edc2b31fb305da64498e5ddb5f473a9459bf5bf",
+      "bytes": 8404
+    },
+    "grammar_regimes": {
+      "path": "grammar/regime_assignments.jsonl",
+      "sha256": "5e65cf1bca33778e8300d7fe0125871c2d622c9b4aca8ebe5280a3e93a9e4bdf",
+      "bytes": 31714
+    },
+    "baseline_design": {
+      "path": "provenance/simulation/baseline.yaml",
+      "sha256": "6aceb28d748ba16ec63977516df36b58b2da39ef43674ba473145d949c4bb2a9",
+      "bytes": 1639
+    }
+  },
+  "implementation": {
+    "files": {
+      "scripts/experiments/simulator_robustness.py": "1caf6eb4720e6341e17d15aa9d761ab9a5e46b490d93768fe73710edbe589ecf",
+      "src/grammar_kt/sensitivity_simulation.py": "282180fc686b94bda8ce029be044edb35d339cc1300b87af0bd893a02f8c438b",
+      "src/grammar_kt/baseline_simulation.py": "e39cacd5c43306f49f8aab14a8389c0f69b82cf8d96ccdcf2eda71bb8e8567c4",
+      "scripts/experiments/rq2_kc_misspecification.py": "33ccd24d6050943cde338bc0129f2cafdbeca2b3e586322d1657a5da8fd3027a"
+    },
+    "repository_head_at_plan": "3b403c711ae99759f142ac30127a73275bbf2e31",
+    "python": "3.14.7",
+    "numpy": "2.5.1",
+    "scikit_learn": "1.9.0"
+  },
+  "exact_commands": {
+    "plan": ".venv/bin/python scripts/experiments/simulator_robustness.py --stage plan",
+    "run": ".venv/bin/python scripts/experiments/simulator_robustness.py --stage run"
+  }
+}

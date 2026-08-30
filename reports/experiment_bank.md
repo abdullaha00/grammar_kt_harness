@@ -30,12 +30,13 @@ item-prerequisite-state evaluation, learner-paired uncertainty, and the
 secondary fixed-BKT per-KC state check. Further state models are not automatic:
 promote one only if it has a clearly comparable mastery semantics.
 
+FULL-ROBUST-001 has completed the compact 13-condition, three-seed simulator
+sensitivity study. The primary ordering survives every condition except a
+seed-sensitive split-2 reversal under unmodelled item difficulty. Additional
+severity grids are deferred unless a later claim depends on a threshold.
+
 ## High-priority downstream experiments
 
-- Compact multi-seed robustness capable of changing RQ2 rankings: guess/slip,
-  aggregation, learner heterogeneity, forgetting, item difficulty, and update
-  rule. BKT remains secondary because its mean/full-credit semantics mismatch
-  the generator.
 - One planted two-KC union-versus-intersection micro-control. The real-bank RQ4
   spurious-intersection test is complete; K* contains no separate true
   interaction KC, so a real-bank missing-true-interaction ablation is not

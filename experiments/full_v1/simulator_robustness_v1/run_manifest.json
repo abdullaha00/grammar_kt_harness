@@ -1,0 +1,64 @@
+{
+  "study_id": "full_v1_compact_simulator_robustness_v1",
+  "status": "COMPLETE",
+  "artifacts": {
+    "study_plan.json": "66403c074fe7dbdfa3bd859225d7998a34524e8a2332e1286adecdc6a77636dc",
+    "projections.jsonl": "2292ff0a2d99f1d853a02ff651b0f4f3ce539a17112c47200d5f1ecd0814eb62",
+    "results.json": "f9a01e718588e6fbb69994d111f62bee2384333d94526bdaa456f8806d052d6a",
+    "seed_comparisons.csv": "4c5a8e6044ffb68fe62c0c4cb3a9a052fd4c09705528706ba4a7d2778d4cf866"
+  },
+  "inputs": {
+    "manifest": {
+      "path": "manifest.json",
+      "sha256": "322128843f8e7e6547a99efcecc6836fcd581f314fb49557a28d58fe79c69f4c",
+      "bytes": 26456
+    },
+    "items": {
+      "path": "items/items.jsonl",
+      "sha256": "46e2fcbd723d11f6b30ecdd197fb05c39f04f7b0fc8f61e2183ffb8fb7110011",
+      "bytes": 81382
+    },
+    "cells": {
+      "path": "grammar/cells.jsonl",
+      "sha256": "a6bf8041e93fdea21d0ba7b318a24cb64610a6064517a2f7fbbbf3aca2fa4e1a",
+      "bytes": 22345
+    },
+    "generator_kcs": {
+      "path": "kcs.jsonl",
+      "sha256": "f3b308dcda7c11886e1dc67476dbe6adbcb53b8676b643c62d226fe68cfe0355",
+      "bytes": 15814
+    },
+    "true_q_matrix": {
+      "path": "q_matrix.csv",
+      "sha256": "b6df582478f05976ceb200da6edc2b31fb305da64498e5ddb5f473a9459bf5bf",
+      "bytes": 8404
+    },
+    "grammar_regimes": {
+      "path": "grammar/regime_assignments.jsonl",
+      "sha256": "5e65cf1bca33778e8300d7fe0125871c2d622c9b4aca8ebe5280a3e93a9e4bdf",
+      "bytes": 31714
+    },
+    "baseline_design": {
+      "path": "provenance/simulation/baseline.yaml",
+      "sha256": "6aceb28d748ba16ec63977516df36b58b2da39ef43674ba473145d949c4bb2a9",
+      "bytes": 1639
+    }
+  },
+  "implementation": {
+    "files": {
+      "scripts/experiments/simulator_robustness.py": "1caf6eb4720e6341e17d15aa9d761ab9a5e46b490d93768fe73710edbe589ecf",
+      "src/grammar_kt/sensitivity_simulation.py": "282180fc686b94bda8ce029be044edb35d339cc1300b87af0bd893a02f8c438b",
+      "src/grammar_kt/baseline_simulation.py": "e39cacd5c43306f49f8aab14a8389c0f69b82cf8d96ccdcf2eda71bb8e8567c4",
+      "scripts/experiments/rq2_kc_misspecification.py": "33ccd24d6050943cde338bc0129f2cafdbeca2b3e586322d1657a5da8fd3027a"
+    },
+    "repository_head_at_plan": "3b403c711ae99759f142ac30127a73275bbf2e31",
+    "python": "3.14.7",
+    "numpy": "2.5.1",
+    "scikit_learn": "1.9.0"
+  },
+  "exact_commands": {
+    "plan": ".venv/bin/python scripts/experiments/simulator_robustness.py --stage plan",
+    "run": ".venv/bin/python scripts/experiments/simulator_robustness.py --stage run"
+  },
+  "repository_head_at_run": "071e1b96425806477e6c98db77163ab34be16a36"
+}

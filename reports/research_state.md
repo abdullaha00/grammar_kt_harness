@@ -46,9 +46,9 @@ verified 1,222-row EGP snapshot
 ```
 
 The dataset is now frozen. KC misspecification, KC discovery, linguistic
-generalisation, and oracle-only state recovery are complete. Simulator
-robustness and bounded collection design are the remaining active Layer-B
-queue and must not mutate the baseline.
+generalisation, oracle-only state recovery, and compact simulator robustness
+are complete. Bounded collection design is the remaining active Layer-B queue
+and must not mutate the baseline.
 
 ## Repository audit result
 
@@ -329,14 +329,24 @@ and geometry checks before K* and Q* pass their measurement gate.
   full-credit update does not match opportunity-based all-active learning or
   minimum aggregation. Predictive adequacy and state semantics must therefore
   be reported separately.
+- The compact robustness study runs 39 worlds (13 conditions x three seeds) at
+  500 learners with 117 converged primary fits. K* beats family-coarse and
+  split-2 in every seed for 12/13 conditions. Baseline mean log-loss costs are
+  +.007924 coarse and +.003241 split-2; noise, product/mean aggregation,
+  learner noise/rate heterogeneity, mild forgetting, correlated initial
+  mastery, and correct-only learning preserve the winner.
+- Unmodelled item logit difficulty (SD .60) is the exception. Split-2's mean
+  cost is still +.004138 but its three-seed range is -.000413--+.009955: it
+  beats K* in one seed and falls below coarse in another. The RQ2 conclusion is
+  therefore broad within the compact study but explicitly conditional on item
+  nuisance control. Fixed BKT produces further reversals under its known
+  aggregation/update mismatch and remains secondary.
 
 ## Current unresolved research questions
 
-1. Which simulator and collection-design assumptions carry the RQ2--RQ4
-   conclusions.
-2. How learner count, opportunity volume, and measurement contrasts affect
+1. How learner count, opportunity volume, and measurement contrasts affect
    recovery under the declared synthetic conditions.
-3. Whether the final synthesis, executable notebooks, verification audit, and
+2. Whether the final synthesis, executable notebooks, verification audit, and
    ACL manuscript consistently delimit the supported synthetic claims.
 
 ## Important active paths
@@ -352,10 +362,10 @@ and geometry checks before K* and Q* pass their measurement gate.
 - Frozen RQ3 artifacts: `experiments/full_v1/rq3_kc_discovery_v1/`
 - Frozen RQ4 artifacts: `experiments/full_v1/rq4_generalisation_v1/`
 - Mastery artifacts: `reports/full_v1_artifacts/mastery_recovery_v1/`
+- Robustness artifacts: `experiments/full_v1/simulator_robustness_v1/`
 - Historical medium dataset: `data/grammar_kt_medium_v1/`
 
 ## Current next action
 
-Complete the compact multi-world simulator-robustness study and bounded
-learner/opportunity/anchor collection-design controls, then consolidate the RQ
-ledger, verification report, notebooks, and ACL paper.
+Complete the bounded learner/opportunity/anchor collection-design controls,
+then consolidate the RQ ledger, verification report, notebooks, and ACL paper.
