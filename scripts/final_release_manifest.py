@@ -23,6 +23,7 @@ EXACT_GROUPS: dict[str, tuple[str, ...]] = {
         "reports/final_rq_ledger.md",
         "reports/final_verification.md",
         "reports/full_dataset_investigation.md",
+        "reports/final_dataset_visualization.html",
     ),
     "dataset_root": (
         "data/grammar_kt_full_v1/README.md",

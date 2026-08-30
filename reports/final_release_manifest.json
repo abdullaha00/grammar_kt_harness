@@ -12,7 +12,8 @@
         "reports/final_methodology.md",
         "reports/final_rq_ledger.md",
         "reports/final_verification.md",
-        "reports/full_dataset_investigation.md"
+        "reports/full_dataset_investigation.md",
+        "reports/final_dataset_visualization.html"
       ],
       "dataset_root": [
         "data/grammar_kt_full_v1/README.md",
@@ -121,9 +122,9 @@
     "TeX auxiliary/log files and local render intermediates",
     "licensed source content, provider snapshots/seeds, and unrelated user files"
   ],
-  "artifact_count": 163,
-  "artifact_bytes": 37723750,
-  "inventory_semantic_sha256": "09931ee03544429020312195b81191fd666e81d4e970d0b16e2c9b8844d236a6",
+  "artifact_count": 164,
+  "artifact_bytes": 37731275,
+  "inventory_semantic_sha256": "ce0c635817b6ecb4ae11bc5c390e65e0b8b963c4d8103a8280f78799e0320f59",
   "artifacts": [
     {
       "group": "acl_manuscript",
@@ -326,8 +327,8 @@
     {
       "group": "release_documentation",
       "path": "README.md",
-      "bytes": 13052,
-      "sha256": "29ff43c72cc68c53fe9a48301f5dcb021dff82a4d4cc006a88c38b95d47d8a22"
+      "bytes": 13151,
+      "sha256": "c29e2cde5e470636204fbc0b679b4b23cb6a9b7b80cb0373314ad452164076a2"
     },
     {
       "group": "dataset_root",
@@ -745,6 +746,12 @@
     },
     {
       "group": "release_documentation",
+      "path": "reports/final_dataset_visualization.html",
+      "bytes": 5496,
+      "sha256": "a47612a59ac02726efe721b3cf66ad41e256e80b297bbe67f0f64194746e9b22"
+    },
+    {
+      "group": "release_documentation",
       "path": "reports/final_methodology.md",
       "bytes": 16008,
       "sha256": "d845d72181381c0eee3c58246fd256fcce0ce3b3ac027c49471db8595fd61281"
@@ -758,8 +765,8 @@
     {
       "group": "release_documentation",
       "path": "reports/final_verification.md",
-      "bytes": 13600,
-      "sha256": "5e6d18df509d7349c76f466392e1ad60a977320f61bba530a580e883f7f3fbf9"
+      "bytes": 14162,
+      "sha256": "7c5d03385311f087d9a53896da924b777bd1651c15e59e128f7f50dcbba59a5f"
     },
     {
       "group": "release_documentation",
@@ -860,8 +867,8 @@
     {
       "group": "release_documentation",
       "path": "reports/research_state.md",
-      "bytes": 21342,
-      "sha256": "e072d6ad22cd1cc5958f162adcd85f0b2c34ca6c41d4cb914de25cd6e7e8b162"
+      "bytes": 21421,
+      "sha256": "f8ebbe0af41646e60394a9717e49d119a9791e3faf16ec0e05144a95dccdc708"
     },
     {
       "group": "active_runners_and_notebooks",
@@ -932,8 +939,8 @@
     {
       "group": "active_runners_and_notebooks",
       "path": "scripts/final_release_manifest.py",
-      "bytes": 10066,
-      "sha256": "6ca9a274b29031beb9f361504949702caa6372da6b78157420545417c5129fc6"
+      "bytes": 10118,
+      "sha256": "9e37366f20fef14a58d5a9e8ee6251f3a961129844c0d95bf4631521976440bd"
     },
     {
       "group": "active_runners_and_notebooks",
@@ -1100,8 +1107,8 @@
     {
       "group": "release_contracts",
       "path": "tests/test_research_layout.py",
-      "bytes": 15213,
-      "sha256": "7bce30203e8978a1dfd4c07634ca68dbf723032c860fba40cceb0c38fceb2adb"
+      "bytes": 16450,
+      "sha256": "cd2d7d6cb0736c410510bf8d4ea8bb7205d3675b5721582e3836d205760c244b"
     }
   ]
 }

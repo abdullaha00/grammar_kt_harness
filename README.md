@@ -267,10 +267,12 @@ command is the independent replay form. Exact commands, model settings, seeds,
 input hashes, and artifact hashes for every substantive experiment are recorded
 in `reports/experiment_log.md`.
 
-## Notebooks and paper
+## Notebooks, visualization, and paper
 
 The tracked notebooks are read-only demonstrations; they do not make live model
 calls or mutate the dataset:
+
+- [Concise final-dataset visualization](reports/final_dataset_visualization.html)
 
 ```bash
 .venv/bin/jupyter nbconvert --to notebook --execute \

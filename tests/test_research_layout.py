@@ -391,6 +391,45 @@ def test_final_dataset_notebook_is_full_v1_public_viewer() -> None:
         assert expected in output_text
 
 
+def test_final_dataset_visualization_is_public_full_v1_only() -> None:
+    path = ROOT / "reports/final_dataset_visualization.html"
+    html = path.read_text(encoding="utf-8")
+
+    for required in (
+        "Grammar-KT full-v1",
+        "learner_000001",
+        "event 2 of 283",
+        "Mia had a map, so she found the house. Without the map, [____]. (find)",
+        "Correct = 1",
+        "candidate_gc_e7fef77abc10b5ba_01",
+        "tense: NA · aspect: perfect · voice: active · polarity: negative",
+        "perfect construction · central modal WOULD · verbal negation",
+        "she would not have found the house",
+        "283,000 observable rows",
+        "170 acquisition + 113 probe events per learner",
+        "113 items · 75 GrammarCells · 18 generator KCs",
+    ):
+        assert required in html
+
+    for forbidden in (
+        "learner_truth",
+        "mastery_before",
+        "mastery_after",
+        "response_probability",
+        "response_draw",
+        "RQ2",
+        "RQ3",
+        "RQ4",
+        "<script",
+        "fetch(",
+    ):
+        assert forbidden not in html
+
+    assert '<meta name="viewport"' in html
+    assert "@media (max-width: 52rem)" in html
+    assert path.stat().st_size < 10_000
+
+
 def test_baseline_generation_has_no_controlled_lexicon_dependency() -> None:
     active_paths = [
         ROOT / "scripts/run.py",

@@ -83,7 +83,7 @@ response probability, active-KC, update, or random-draw fields.
 .venv/bin/python -m pytest -q
 ```
 
-Final result: **270 passed**. Contracts cover, among other boundaries:
+Final result: **271 passed**. Contracts cover, among other boundaries:
 
 - incomplete mappings cannot silently become exact GrammarCells;
 - generator-KC declarations and Q* precede learner outcomes;
@@ -212,6 +212,16 @@ Static and runtime contracts prohibit direct access to private learner
 trajectories. The dataset viewer opens only the public baseline artifacts; the
 results notebook additionally opens publishable summaries and already-derived
 oracle-evaluation aggregates.
+
+## Standalone dataset visualization
+
+`reports/final_dataset_visualization.html` gives a single public full-v1 event
+from learner-facing prompt through observable outcome and the fixed
+item-to-GrammarCell-to-Q* mapping. It contains no scripts, controls, downstream
+results, or private oracle fields. Its factual labels were checked against the
+frozen public artifacts, and its responsive layout was visually inspected at
+1,024, 736, and 360 pixels in both light and dark themes. Its SHA-256 is
+`a47612a59ac02726efe721b3cf66ad41e256e80b297bbe67f0f64194746e9b22`.
 
 ## ACL manuscript
 

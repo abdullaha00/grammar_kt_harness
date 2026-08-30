@@ -58,7 +58,7 @@ verification are also complete; none mutated the baseline.
 - User-owned dirty files are preserved: modified `pipeline.txt`; untracked
   `AGENTS.md`, root `experiment_bank.md`, `ideas.txt`, `rqs.txt`,
   and `tmp/`.
-- Final verification passes 270 Pytest contracts, exact Q*/event replay,
+- Final verification passes 271 Pytest contracts, exact Q*/event replay,
   independent headline-experiment replay, all three tracked notebooks, a
   machine-readable release root, and the deterministic 13-page ACL build with
   71/71 author-list/BibTeX regressions and complete visual inspection.
@@ -378,6 +378,7 @@ empirical cross-lingual replication.
 - Robustness artifacts: `experiments/full_v1/simulator_robustness_v1/`
 - Collection-design artifacts: `experiments/full_v1/collection_design_v1/`
 - Release root: `reports/final_release_manifest.json`
+- Standalone dataset visualization: `reports/final_dataset_visualization.html`
 - Executable dataset viewer: `notebooks/final_dataset.ipynb`
 - Executable results notebook: `notebooks/final_dataset_results.ipynb`
 - Manuscript: `ACL/paper.pdf`
