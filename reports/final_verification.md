@@ -11,7 +11,7 @@ notebooks, final reports, and ACL manuscript.
 The declared synthetic programme is reproducible and complete. The deterministic
 Q* projection and all 283,000 public/private simulator rows replay exactly; the
 scientific-contract suite passes; the headline RQ2, RQ3, and RQ4 results replay
-from the frozen baseline; both tracked notebooks execute without live model
+from the frozen baseline; all three tracked notebooks execute without live model
 calls; and the ACL manuscript builds, passes its author-list/BibTeX regression,
 embeds all fonts, and passes complete rendered-page inspection.
 
@@ -83,7 +83,7 @@ response probability, active-KC, update, or random-draw fields.
 .venv/bin/python -m pytest -q
 ```
 
-Final result: **269 passed**. Contracts cover, among other boundaries:
+Final result: **270 passed**. Contracts cover, among other boundaries:
 
 - incomplete mappings cannot silently become exact GrammarCells;
 - generator-KC declarations and Q* precede learner outcomes;
@@ -191,17 +191,26 @@ representation caveat, not numeric nondeterminism.
 
 GRAMMAR_KT_DATA_FOLDER=data/grammar_kt_full_v1 \
   .venv/bin/jupyter nbconvert --to notebook --execute \
+  --output /tmp/final_dataset.executed.ipynb \
+  --ExecutePreprocessor.timeout=600 notebooks/final_dataset.ipynb
+
+GRAMMAR_KT_DATA_FOLDER=data/grammar_kt_full_v1 \
+  .venv/bin/jupyter nbconvert --to notebook --execute \
   --output /tmp/final_dataset_results.executed.ipynb \
   --ExecutePreprocessor.timeout=600 notebooks/final_dataset_results.ipynb
 ```
 
-Both complete without error or live model calls. The walkthrough executes all
-nine code cells. The full-v1 results notebook executes 20/20 code cells, all
-with outputs; its tracked SHA-256 is
+All three complete without error or live model calls. The walkthrough executes
+all nine code cells. The dataset viewer executes 8/8 code cells, all with
+outputs; its tracked SHA-256 is
+`f02b80fb76c43b8ffbbecfe35514c6185f5b3db2ed50af389c17fc45420189ec`.
+The full-v1 results notebook executes 20/20 code cells, all with outputs; its
+tracked SHA-256 is
 `89671397bd05c18d23e682cbd7de68aca53131f7df5f2abc1a6e8988af5aeaa9`.
-Static and runtime contracts prohibit direct access to
-`oracle/learner_truth.jsonl.gz`; the notebook opens only publishable summaries
-and already-derived oracle-evaluation aggregates.
+Static and runtime contracts prohibit direct access to private learner
+trajectories. The dataset viewer opens only the public baseline artifacts; the
+results notebook additionally opens publishable summaries and already-derived
+oracle-evaluation aggregates.
 
 ## ACL manuscript
 

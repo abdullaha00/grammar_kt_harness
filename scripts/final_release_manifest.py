@@ -57,6 +57,7 @@ EXACT_GROUPS: dict[str, tuple[str, ...]] = {
         "scripts/experiments/collection_design.py",
         "scripts/final_release_manifest.py",
         "notebooks/pipeline_walkthrough.ipynb",
+        "notebooks/final_dataset.ipynb",
         "notebooks/final_dataset_results.ipynb",
     ),
     "release_contracts": (

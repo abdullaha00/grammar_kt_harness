@@ -326,6 +326,65 @@ def test_final_dataset_results_notebook_is_parameterized_and_executed() -> None:
     assert "all_ab_no_anchors" in output_text
 
 
+def test_final_dataset_notebook_is_full_v1_public_viewer() -> None:
+    path = ROOT / "notebooks/final_dataset.ipynb"
+    assert path.is_file()
+    notebook = json.loads(path.read_text(encoding="utf-8"))
+    source_text = "\n".join(
+        "".join(cell["source"])
+        if isinstance(cell["source"], list)
+        else cell["source"]
+        for cell in notebook["cells"]
+    )
+
+    parameter_cells = [
+        cell
+        for cell in notebook["cells"]
+        if "parameters" in cell.get("metadata", {}).get("tags", [])
+    ]
+    assert len(parameter_cells) == 1
+    assert "GRAMMAR_KT_DATA_FOLDER" in source_text
+    assert "grammar_kt_full_v1" in source_text
+    assert "GrammarCell != generator K* != discovered K_hat" in source_text
+    for artifact in (
+        "manifest.json",
+        "grammar/cells.jsonl",
+        "grammar/regime_assignments.jsonl",
+        "kcs.jsonl",
+        "items/items.jsonl",
+        "q_matrix.csv",
+        "interactions.jsonl.gz",
+        "provenance/measurement/audit.json",
+    ):
+        assert artifact in source_text
+    for stale_or_private_reference in (
+        "grammar_kt_medium_v1",
+        "kc/policies/automated.yaml",
+        "oracle/learner_truth.jsonl",
+        "protocol_phase",
+        "dataset_split",
+        "item_difficulty",
+    ):
+        assert stale_or_private_reference not in source_text
+    assert "write_text(" not in source_text
+
+    code_cells = [cell for cell in notebook["cells"] if cell["cell_type"] == "code"]
+    assert len(code_cells) == 8
+    assert all(cell["execution_count"] is not None for cell in code_cells)
+    assert all(cell["outputs"] for cell in code_cells)
+    assert not any(
+        output.get("output_type") == "error"
+        for cell in code_cells
+        for output in cell["outputs"]
+    )
+    output_text = json.dumps(
+        [output for cell in code_cells for output in cell["outputs"]],
+        sort_keys=True,
+    )
+    for expected in ("FROZEN_BASELINE_COMPLETE", "283000", "269"):
+        assert expected in output_text
+
+
 def test_baseline_generation_has_no_controlled_lexicon_dependency() -> None:
     active_paths = [
         ROOT / "scripts/run.py",

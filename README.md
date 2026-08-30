@@ -279,6 +279,12 @@ calls or mutate the dataset:
 
 GRAMMAR_KT_DATA_FOLDER=data/grammar_kt_full_v1 \
   .venv/bin/jupyter nbconvert --to notebook --execute \
+  --output /tmp/final_dataset.executed.ipynb \
+  --ExecutePreprocessor.timeout=600 \
+  notebooks/final_dataset.ipynb
+
+GRAMMAR_KT_DATA_FOLDER=data/grammar_kt_full_v1 \
+  .venv/bin/jupyter nbconvert --to notebook --execute \
   --output /tmp/final_dataset_results.executed.ipynb \
   --ExecutePreprocessor.timeout=600 \
   notebooks/final_dataset_results.ipynb
