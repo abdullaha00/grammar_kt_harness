@@ -1,0 +1,42 @@
+protocol_id: full_v1_cue_bounded_imperative_measurement_v1
+campaign:
+  campaign_id: cue_bounded_imperative_production_v1
+  trigger: residual_imperative_cells_after_packaging_correction
+  cohort: exact_two_preregistered_residual_imperative_cells
+  generation_prompt: cue_bounded_all_and_only_chunks
+  format: controlled_production
+  cell_ids:
+    - gc_04a854582c08aa84
+    - gc_bb4f472f992ab76b
+  generation:
+    candidates_per_cell: 2
+    candidate_calls: independent
+    only_generation_prompt_changes: true
+  response_space:
+    cue_chunks: unordered_non_target_lexical_chunks
+    chunk_use: all_and_only_exactly_once
+    forbid:
+      - additions
+      - omissions
+      - substitutions
+      - politeness_markers
+      - vocatives
+      - pronouns
+      - adverbs
+    initial_capitalization: required
+    final_punctuation: outside_response_slot
+    negative_imperative:
+      cue_words_omitted:
+        - do
+        - not
+      learner_additions: uncontracted_do_support_function_words_only
+      contractions: forbidden
+  validation:
+    reuse_baseline_prompt: true
+    reuse_baseline_criteria: true
+    independent_and_blinded: true
+decision_rule:
+  minimum_accepted_per_cell: 1
+  minimum_accepted_overall: 2
+  early_stopping: false
+  post_call_repair: forbidden

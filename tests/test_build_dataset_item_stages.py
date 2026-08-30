@@ -1055,3 +1055,273 @@ def test_packaging_correction_requires_determinacy_as_sole_failure(
     monkeypatch.setattr(build_dataset, "_packaging_correction_config", lambda: config)
     with pytest.raises(ValueError, match="sole failed required criterion"):
         build_dataset._expected_packaging_correction(cells, candidates, judgments)
+
+
+def _cue_bounded_fixture() -> tuple[list[dict], list[dict], list[dict]]:
+    negative = _cell("gc_04a854582c08aa84")
+    negative["features"]["clause"] = "imperative"
+    negative["features"]["polarity"] = "negative"
+    positive = _cell("gc_bb4f472f992ab76b")
+    positive["features"]["clause"] = "imperative"
+    positive["features"]["polarity"] = "positive"
+    candidates = [
+        {"item_id": f"prior_{index:03d}", "cell_id": "historical_cell"}
+        for index in range(282)
+    ]
+    judgments = [
+        {"item_id": row["item_id"], "accepted": False}
+        for row in candidates
+    ]
+    return [negative, positive], candidates, judgments
+
+
+def test_cue_bounded_protocol_and_prompt_hashes_are_frozen(
+    tmp_path, monkeypatch
+) -> None:
+    protocol = build_dataset._cue_bounded_imperative_protocol()
+    assert protocol["campaign"]["cell_ids"] == [
+        "gc_04a854582c08aa84",
+        "gc_bb4f472f992ab76b",
+    ]
+    assert protocol["decision_rule"] == {
+        "minimum_accepted_per_cell": 1,
+        "minimum_accepted_overall": 2,
+        "early_stopping": False,
+        "post_call_repair": "forbidden",
+    }
+    assert build_dataset.sha256_file(
+        build_dataset.CUE_BOUNDED_IMPERATIVE_PROTOCOL_PATH
+    ) == build_dataset.EXPECTED_CUE_BOUNDED_IMPERATIVE_PROTOCOL_SHA256
+    assert build_dataset.sha256_file(
+        build_dataset.CUE_BOUNDED_IMPERATIVE_PROMPT_PATH
+    ) == build_dataset.EXPECTED_CUE_BOUNDED_IMPERATIVE_PROMPT_SHA256
+
+    changed = tmp_path / "changed-cue-prompt.txt"
+    changed.write_text(
+        build_dataset.CUE_BOUNDED_IMPERATIVE_PROMPT_PATH.read_text(
+            encoding="utf-8"
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(build_dataset, "CUE_BOUNDED_IMPERATIVE_PROMPT_PATH", changed)
+    with pytest.raises(ValueError, match="prompt hash changed"):
+        build_dataset._cue_bounded_imperative_protocol()
+
+
+def test_cue_bounded_campaign_freezes_resumes_rejects_drift_and_curates(
+    tmp_path, monkeypatch
+) -> None:
+    dataset_dir, private_dir = _prepare_dataset(tmp_path)
+    cells, prior_candidates, prior_judgments = _cue_bounded_fixture()
+    monkeypatch.setattr(
+        build_dataset,
+        "_load_complete_pre_imperative_constraint_evidence",
+        lambda _dataset_dir: (cells, prior_candidates, prior_judgments),
+    )
+    monkeypatch.setattr(build_dataset, "_git_revision", lambda: "fixture-revision")
+    criteria = read_yaml(
+        ROOT / "modules/items/validation/criteria.yaml"
+    )["criteria"]
+    calls = []
+    visible_validation_inputs = []
+
+    def campaign_model(prompt, **kwargs):
+        calls.append((kwargs["stage"], kwargs["call_key"]))
+        campaign_dir = (
+            dataset_dir
+            / "provenance/items/campaigns/cue_bounded_imperative"
+        )
+        assert (campaign_dir / "plan.json").is_file()
+        assert (campaign_dir / "generation_plan.jsonl").is_file()
+        if kwargs["stage"] == "generation":
+            features = kwargs["input_data"]["target_cell"]["features"]
+            if features["polarity"] == "negative":
+                parsed = {
+                    "prompt": (
+                        "The paint is wet. Use all and only the chunks exactly "
+                        "once; add no politeness, vocatives, pronouns, or adverbs. "
+                        "Chunks (unordered): the wall | touch. Begin with a "
+                        "capital letter and add only uncontracted negative "
+                        "DO-support: [____]."
+                    ),
+                    "target_answer": "Do not touch the wall.",
+                    "accepted_answers": ["Do not touch the wall"],
+                }
+            else:
+                parsed = {
+                    "prompt": (
+                        "The light is on. Use all and only the chunks exactly "
+                        "once; add no politeness, vocatives, pronouns, or adverbs. "
+                        "Chunks (unordered): the light | turn off. Begin with "
+                        "a capital letter: [____]."
+                    ),
+                    "target_answer": "Turn off the light.",
+                    "accepted_answers": ["Turn off the light"],
+                }
+        else:
+            visible_validation_inputs.append(kwargs["input_data"])
+            parsed = {
+                "judgments": {
+                    name: {
+                        "passed": True,
+                        "note": "Independent cue-bounded fixture judgment.",
+                    }
+                    for name in criteria
+                }
+            }
+        _write_fake_evidence(
+            kwargs["evidence_dir"],
+            prompt=prompt,
+            input_data=kwargs["input_data"],
+            parsed=parsed,
+            model=kwargs["model"],
+            reasoning_effort=kwargs["reasoning_effort"],
+            stage=kwargs["stage"],
+            call_key=kwargs["call_key"],
+        )
+        return parsed
+
+    build_dataset.constrain_imperatives_full(
+        dataset_dir,
+        private_dir,
+        workers=4,
+        max_attempts=1,
+        retry_failures=False,
+        exact_command="fixture constrain-imperatives",
+        model_call=campaign_model,
+    )
+    assert len([row for row in calls if row[0] == "generation"]) == 4
+    assert len([row for row in calls if row[0] == "validation"]) == 4
+    campaign_dir = (
+        dataset_dir / "provenance/items/campaigns/cue_bounded_imperative"
+    )
+    plan = json.loads((campaign_dir / "plan.json").read_text())
+    assert plan["cell_ids"] == [
+        "gc_04a854582c08aa84",
+        "gc_bb4f472f992ab76b",
+    ]
+    assert plan["planned_generation_calls"] == 4
+    assert plan["prior_candidates"] == plan["prior_judgments"] == 282
+    assert plan["stops_after_early_acceptance"] is False
+    candidates = read_jsonl(campaign_dir / "candidates.jsonl")
+    assert len(candidates) == 4
+    assert {row["generation_metadata"]["candidate_index"] for row in candidates} == {
+        8,
+        9,
+    }
+    assert {row["generation_metadata"]["candidate_count"] for row in candidates} == {
+        9
+    }
+    negative_prompts = [
+        row["prompt"]
+        for row in candidates
+        if row["cell_id"] == "gc_04a854582c08aa84"
+    ]
+    assert len(negative_prompts) == 2
+    for prompt in negative_prompts:
+        cue_text = prompt.split("Chunks (unordered):", 1)[1].split(".", 1)[0]
+        assert " do " not in f" {cue_text.casefold()} "
+        assert " not " not in f" {cue_text.casefold()} "
+        assert "the wall" in cue_text and "touch" in cue_text
+    assert all(
+        set(row) == {"visible_item", "target_cell", "criteria"}
+        and "generation_metadata" not in str(row)
+        and "campaign" not in str(row)
+        for row in visible_validation_inputs
+    )
+    effect = json.loads((campaign_dir / "coverage_effect.json").read_text())
+    assert effect["decision_rule_passed"] is True
+    assert effect["accepted_candidates_by_cell"] == {
+        "gc_04a854582c08aa84": 2,
+        "gc_bb4f472f992ab76b": 2,
+    }
+
+    # Exact-context resume neither recalls a backend nor shrinks the cohort.
+    build_dataset.constrain_imperatives_full(
+        dataset_dir,
+        private_dir,
+        workers=1,
+        max_attempts=1,
+        retry_failures=False,
+        exact_command="fixture constrain-imperatives resume",
+        model_call=lambda *args, **kwargs: pytest.fail("resume must not call"),
+    )
+    assert json.loads((campaign_dir / "plan.json").read_text()) == plan
+
+    # An upstream coverage change invalidates the frozen exact cohort before a
+    # generation or validation call can occur.
+    drift_candidates = deepcopy(prior_candidates)
+    drift_judgments = deepcopy(prior_judgments)
+    drift_candidates[0]["cell_id"] = "gc_04a854582c08aa84"
+    drift_judgments[0]["accepted"] = True
+    monkeypatch.setattr(
+        build_dataset,
+        "_load_complete_pre_imperative_constraint_evidence",
+        lambda _dataset_dir: (cells, drift_candidates, drift_judgments),
+    )
+    with pytest.raises(ValueError, match="frozen residual cells"):
+        build_dataset.constrain_imperatives_full(
+            dataset_dir,
+            private_dir,
+            workers=1,
+            max_attempts=1,
+            retry_failures=False,
+            exact_command="fixture cohort drift",
+            model_call=lambda *args, **kwargs: pytest.fail("drift must not call"),
+        )
+    monkeypatch.setattr(
+        build_dataset,
+        "_load_complete_pre_imperative_constraint_evidence",
+        lambda _dataset_dir: (cells, prior_candidates, prior_judgments),
+    )
+
+    # Curation sees the cue-bounded campaign only after the correction layer,
+    # and consumes it only because the frozen coverage rule passed.
+    for path in (
+        dataset_dir / "provenance/items/campaigns/unchanged_rescue/plan.json",
+        dataset_dir
+        / "provenance/items/campaigns/determinacy_intervention/plan.json",
+        dataset_dir / "provenance/items/packaging_corrections/plan.json",
+    ):
+        write_json(path, {})
+    monkeypatch.setattr(
+        build_dataset,
+        "_load_complete_baseline_item_evidence",
+        lambda _dataset_dir: (cells, prior_candidates, prior_judgments),
+    )
+    real_campaign_loader = build_dataset._load_complete_campaign
+
+    def campaign_loader(_dataset_dir, _cells, campaign_id, prior_c, prior_j):
+        if campaign_id in {
+            build_dataset.UNCHANGED_RESCUE_ID,
+            build_dataset.DETERMINACY_INTERVENTION_ID,
+        }:
+            return [], []
+        return real_campaign_loader(
+            _dataset_dir, _cells, campaign_id, prior_c, prior_j
+        )
+
+    monkeypatch.setattr(build_dataset, "_load_complete_campaign", campaign_loader)
+    monkeypatch.setattr(
+        build_dataset,
+        "_load_complete_packaging_corrections",
+        lambda _dataset_dir, _cells, _prior_c, _prior_j: ([], []),
+    )
+    build_dataset.curate_items_full(dataset_dir, "fixture cue-bounded curation")
+    items = read_jsonl(dataset_dir / "items/items.jsonl")
+    assert len(items) == 4
+    assert all(
+        row["generation_metadata"]["campaign"]
+        == build_dataset.CUE_BOUNDED_IMPERATIVE_ID
+        for row in items
+    )
+    curation = json.loads(
+        (dataset_dir / "provenance/items/curation.json").read_text()
+    )
+    assert curation["declared_post_n3_campaigns"][-1] == {
+        "campaign_id": build_dataset.CUE_BOUNDED_IMPERATIVE_ID,
+        "candidates": 4,
+        "accepted": 4,
+        "decision_rule_passed": True,
+    }

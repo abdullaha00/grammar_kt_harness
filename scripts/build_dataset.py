@@ -34,6 +34,8 @@ from grammar_kt.full_normalisation import (
     stable_canonicalise,
 )
 from grammar_kt.full_items import (
+    CUE_BOUNDED_IMPERATIVE_CANDIDATES_PER_CELL,
+    CUE_BOUNDED_IMPERATIVE_ID,
     DETERMINACY_INTERVENTION_CANDIDATES_PER_CELL,
     DETERMINACY_INTERVENTION_ID,
     PACKAGING_CORRECTION_ID,
@@ -117,6 +119,22 @@ PACKAGING_CORRECTIONS_PATH = (
 )
 EXPECTED_PACKAGING_CORRECTIONS_SHA256 = (
     "3bd85b52db7d0f5679bc24e142657c6a35bb42bc08250aa364e40123ef6037e6"
+)
+CUE_BOUNDED_IMPERATIVE_PROTOCOL_PATH = (
+    ROOT
+    / "modules/items/generation/interventions/"
+    "full_v1_cue_bounded_imperative.yaml"
+)
+CUE_BOUNDED_IMPERATIVE_PROMPT_PATH = (
+    ROOT
+    / "modules/items/generation/interventions/"
+    "cue_bounded_imperative_prompt.txt"
+)
+EXPECTED_CUE_BOUNDED_IMPERATIVE_PROTOCOL_SHA256 = (
+    "3d240408e76977a3f4b7892f16d7585b836502a70d9c6b44f9ebc2eebddb4c5f"
+)
+EXPECTED_CUE_BOUNDED_IMPERATIVE_PROMPT_SHA256 = (
+    "ea6775b6b7d61ae8ca2bb8fc13d70b713fbe78ae27bf4e7e774c8e6c007d181f"
 )
 PUBLIC_NORMALISATION_NOTE = (
     "Unsanitised model note retained in restricted normalisation evidence."
@@ -1662,6 +1680,8 @@ def _campaign_slug(campaign_id: str) -> str:
         return "unchanged_rescue"
     if campaign_id == DETERMINACY_INTERVENTION_ID:
         return "determinacy_intervention"
+    if campaign_id == CUE_BOUNDED_IMPERATIVE_ID:
+        return "cue_bounded_imperative"
     raise ValueError(f"unknown item campaign: {campaign_id}")
 
 
@@ -1691,6 +1711,78 @@ def _campaign_protocol() -> tuple[dict[str, Any], dict[str, dict[str, Any]]]:
         ) != campaign_id:
             raise ValueError(f"invalid item-campaign declaration: {campaign_id}")
     return protocol, declarations
+
+
+def _cue_bounded_imperative_protocol() -> dict[str, Any]:
+    if sha256_file(CUE_BOUNDED_IMPERATIVE_PROTOCOL_PATH) != (
+        EXPECTED_CUE_BOUNDED_IMPERATIVE_PROTOCOL_SHA256
+    ):
+        raise ValueError("cue-bounded imperative protocol hash changed")
+    if sha256_file(CUE_BOUNDED_IMPERATIVE_PROMPT_PATH) != (
+        EXPECTED_CUE_BOUNDED_IMPERATIVE_PROMPT_SHA256
+    ):
+        raise ValueError("cue-bounded imperative prompt hash changed")
+    protocol = read_yaml(CUE_BOUNDED_IMPERATIVE_PROTOCOL_PATH)
+    if not isinstance(protocol, dict) or set(protocol) != {
+        "protocol_id",
+        "campaign",
+        "decision_rule",
+    }:
+        raise ValueError("cue-bounded imperative protocol fields changed")
+    if protocol.get("protocol_id") != (
+        "full_v1_cue_bounded_imperative_measurement_v1"
+    ):
+        raise ValueError("unexpected cue-bounded imperative protocol ID")
+    campaign = protocol.get("campaign")
+    if (
+        not isinstance(campaign, dict)
+        or campaign.get("campaign_id") != CUE_BOUNDED_IMPERATIVE_ID
+        or campaign.get("cell_ids")
+        != ["gc_04a854582c08aa84", "gc_bb4f472f992ab76b"]
+        or campaign.get("generation", {}).get("candidates_per_cell")
+        != CUE_BOUNDED_IMPERATIVE_CANDIDATES_PER_CELL
+    ):
+        raise ValueError("cue-bounded imperative campaign declaration changed")
+    if protocol.get("decision_rule") != {
+        "minimum_accepted_per_cell": 1,
+        "minimum_accepted_overall": 2,
+        "early_stopping": False,
+        "post_call_repair": "forbidden",
+    }:
+        raise ValueError("cue-bounded imperative decision rule changed")
+    response_space = campaign.get("response_space", {})
+    if (
+        response_space.get("cue_chunks")
+        != "unordered_non_target_lexical_chunks"
+        or response_space.get("chunk_use") != "all_and_only_exactly_once"
+        or response_space.get("initial_capitalization") != "required"
+        or response_space.get("final_punctuation") != "outside_response_slot"
+        or response_space.get("negative_imperative", {}).get("cue_words_omitted")
+        != ["do", "not"]
+        or response_space.get("negative_imperative", {}).get(
+            "learner_additions"
+        )
+        != "uncontracted_do_support_function_words_only"
+        or response_space.get("negative_imperative", {}).get("contractions")
+        != "forbidden"
+    ):
+        raise ValueError("cue-bounded imperative response-space contract changed")
+    return protocol
+
+
+def _campaign_generation_resources(
+    campaign_id: str,
+) -> tuple[dict[str, Any], Path]:
+    if campaign_id == CUE_BOUNDED_IMPERATIVE_ID:
+        protocol = _cue_bounded_imperative_protocol()
+        return protocol["campaign"], CUE_BOUNDED_IMPERATIVE_PROMPT_PATH
+    _, declarations = _campaign_protocol()
+    prompt_path = (
+        GENERATION_PROMPT_PATH
+        if campaign_id == UNCHANGED_RESCUE_ID
+        else DETERMINACY_INTERVENTION_PROMPT_PATH
+    )
+    return declarations[campaign_id], prompt_path
 
 
 def _accepted_cell_ids(
@@ -1840,18 +1932,12 @@ def _prepare_campaign_plan(
 def _campaign_generation_calls(
     cells: list[dict[str, Any]], plan: dict[str, Any]
 ) -> list[dict[str, Any]]:
-    _, declarations = _campaign_protocol()
     campaign_id = plan["campaign_id"]
-    declaration = declarations[campaign_id]
+    declaration, prompt_path = _campaign_generation_resources(campaign_id)
     cells_by_id = {row["cell_id"]: row for row in cells}
     unknown = set(plan["cell_ids"]) - set(cells_by_id)
     if unknown:
         raise ValueError(f"item-campaign plan contains unknown cells: {sorted(unknown)}")
-    prompt_path = (
-        GENERATION_PROMPT_PATH
-        if campaign_id == UNCHANGED_RESCUE_ID
-        else DETERMINACY_INTERVENTION_PROMPT_PATH
-    )
     if plan.get("generation_prompt_sha256") != sha256_file(prompt_path):
         raise ValueError("item-campaign generation prompt changed")
     backend = read_yaml(MODEL_BACKENDS_PATH)["generation"]
@@ -2879,6 +2965,199 @@ def _load_complete_packaging_corrections(
     return corrected, judgments
 
 
+def _load_complete_pre_imperative_constraint_evidence(
+    dataset_dir: Path,
+) -> tuple[
+    list[dict[str, Any]],
+    list[dict[str, Any]],
+    list[dict[str, Any]],
+]:
+    """Load all frozen item evidence through the packaging correction."""
+
+    cells, raw_candidates, raw_judgments = (
+        _load_complete_pre_correction_evidence(dataset_dir)
+    )
+    corrected, correction_judgments = _load_complete_packaging_corrections(
+        dataset_dir,
+        cells,
+        raw_candidates,
+        raw_judgments,
+    )
+    candidates = sorted(
+        [*raw_candidates, *corrected], key=lambda row: row["item_id"]
+    )
+    judgments = sorted(
+        [*raw_judgments, *correction_judgments], key=lambda row: row["item_id"]
+    )
+    if len({row["item_id"] for row in candidates}) != len(candidates):
+        raise ValueError("pre-imperative-constraint candidate IDs are not unique")
+    return cells, candidates, judgments
+
+
+def _prepare_cue_bounded_imperative_plan(
+    dataset_dir: Path,
+    cells: list[dict[str, Any]],
+    prior_candidates: list[dict[str, Any]],
+    prior_judgments: list[dict[str, Any]],
+) -> dict[str, Any]:
+    """Freeze the exact two-cell/four-call cohort before its first call."""
+
+    protocol = _cue_bounded_imperative_protocol()
+    campaign = protocol["campaign"]
+    if len(prior_candidates) != 282 or len(prior_judgments) != 282:
+        raise ValueError(
+            "cue-bounded imperative campaign requires all 282 frozen prior "
+            "candidates and judgments"
+        )
+    declared_cells = campaign["cell_ids"]
+    residual = sorted(
+        set(cell["cell_id"] for cell in cells)
+        - _accepted_cell_ids(prior_candidates, prior_judgments)
+    )
+    if residual != declared_cells:
+        raise ValueError(
+            "cue-bounded imperative cohort differs from the frozen residual cells"
+        )
+    cell_by_id = {row["cell_id"]: row for row in cells}
+    if set(declared_cells) - set(cell_by_id):
+        raise ValueError("cue-bounded imperative plan contains unknown cells")
+    for cell_id in declared_cells:
+        features = cell_by_id[cell_id].get("features", {})
+        if features.get("clause") != "imperative":
+            raise ValueError(
+                f"cue-bounded campaign contains a non-imperative cell: {cell_id}"
+            )
+    count = CUE_BOUNDED_IMPERATIVE_CANDIDATES_PER_CELL
+    plan = {
+        "dataset_id": DATASET_ID,
+        "protocol_id": protocol["protocol_id"],
+        "protocol_path": str(
+            CUE_BOUNDED_IMPERATIVE_PROTOCOL_PATH.relative_to(ROOT)
+        ),
+        "protocol_sha256": sha256_file(CUE_BOUNDED_IMPERATIVE_PROTOCOL_PATH),
+        "campaign_id": CUE_BOUNDED_IMPERATIVE_ID,
+        "trigger": campaign["trigger"],
+        "cell_ids": list(declared_cells),
+        "candidates_per_cell": count,
+        "planned_generation_calls": len(declared_cells) * count,
+        "prior_candidates": len(prior_candidates),
+        "prior_candidates_sha256": _json_sha256(prior_candidates),
+        "prior_judgments": len(prior_judgments),
+        "prior_judgments_sha256": _json_sha256(prior_judgments),
+        "generation_prompt_path": str(
+            CUE_BOUNDED_IMPERATIVE_PROMPT_PATH.relative_to(ROOT)
+        ),
+        "generation_prompt_sha256": sha256_file(
+            CUE_BOUNDED_IMPERATIVE_PROMPT_PATH
+        ),
+        "generation_rulebook_sha256": sha256_file(GENERATION_RULEBOOK_PATH),
+        "generation_design_sha256": sha256_file(GENERATION_DESIGN_PATH),
+        "item_format_sha256": sha256_file(ITEM_FORMAT_PATH),
+        "validation_prompt_sha256": sha256_file(VALIDATION_PROMPT_PATH),
+        "validation_criteria_sha256": sha256_file(VALIDATION_CRITERIA_PATH),
+        "generation_backend": read_yaml(MODEL_BACKENDS_PATH)["generation"],
+        "validation_backend": read_yaml(MODEL_BACKENDS_PATH)["validation"],
+        "decision_rule": protocol["decision_rule"],
+        "response_space": campaign["response_space"],
+        "uses_learner_data": False,
+        "uses_q_matrix": False,
+        "uses_discovered_kcs": False,
+        "stops_after_early_acceptance": False,
+        "post_call_repair_allowed": False,
+    }
+    plan_path = (
+        dataset_dir
+        / "provenance/items/campaigns/cue_bounded_imperative/plan.json"
+    )
+    _freeze_public_json(
+        plan_path, plan, "cue-bounded imperative cohort plan"
+    )
+    return plan
+
+
+def constrain_imperatives_full(
+    dataset_dir: Path,
+    private_dir: Path,
+    *,
+    workers: int,
+    max_attempts: int,
+    retry_failures: bool,
+    exact_command: str,
+    model_call: Callable[..., dict[str, Any]] = audited_model_call,
+) -> None:
+    """Run the frozen cue-bounded imperative generation/validation campaign."""
+
+    _assert_private_dir(private_dir)
+    cells, prior_candidates, prior_judgments = (
+        _load_complete_pre_imperative_constraint_evidence(dataset_dir)
+    )
+    plan = _prepare_cue_bounded_imperative_plan(
+        dataset_dir, cells, prior_candidates, prior_judgments
+    )
+    _calls, candidates = _run_campaign_generation(
+        dataset_dir,
+        private_dir,
+        cells,
+        plan,
+        workers=workers,
+        max_attempts=max_attempts,
+        retry_failures=retry_failures,
+        exact_command=exact_command,
+        model_call=model_call,
+    )
+    judgments, accepted = _run_campaign_validation(
+        dataset_dir,
+        private_dir,
+        cells,
+        plan,
+        candidates,
+        workers=workers,
+        max_attempts=max_attempts,
+        retry_failures=retry_failures,
+        exact_command=exact_command,
+        model_call=model_call,
+    )
+    accepted_by_cell = Counter(row["cell_id"] for row in accepted)
+    rule = plan["decision_rule"]
+    per_cell_pass = all(
+        accepted_by_cell.get(cell_id, 0) >= rule["minimum_accepted_per_cell"]
+        for cell_id in plan["cell_ids"]
+    )
+    overall_pass = len(accepted) >= rule["minimum_accepted_overall"]
+    decision_passed = per_cell_pass and overall_pass
+    accepted_before = _accepted_cell_ids(prior_candidates, prior_judgments)
+    accepted_after = accepted_before | {row["cell_id"] for row in accepted}
+    write_json(
+        dataset_dir
+        / "provenance/items/campaigns/cue_bounded_imperative/coverage_effect.json",
+        {
+            "dataset_id": DATASET_ID,
+            "campaign_id": CUE_BOUNDED_IMPERATIVE_ID,
+            "cohort_cells": len(plan["cell_ids"]),
+            "candidates": len(candidates),
+            "judgments": len(judgments),
+            "accepted_candidates": len(accepted),
+            "accepted_candidates_by_cell": {
+                cell_id: accepted_by_cell.get(cell_id, 0)
+                for cell_id in plan["cell_ids"]
+            },
+            "decision_rule": rule,
+            "per_cell_rule_passed": per_cell_pass,
+            "overall_rule_passed": overall_pass,
+            "decision_rule_passed": decision_passed,
+            "status": "PASS" if decision_passed else "FAIL_DECISION_RULE",
+            "covered_cells_before": len(accepted_before),
+            "newly_covered_cell_ids": sorted(accepted_after - accepted_before),
+            "covered_cells_after": len(accepted_after),
+            "remaining_zero_coverage_cell_ids": sorted(
+                set(cell["cell_id"] for cell in cells) - accepted_after
+            ),
+            "early_stopping_used": False,
+            "post_call_repair_used": False,
+        },
+    )
+
+
 def _selection_for_maximum(
     accepted: list[dict[str, Any]], design: dict[str, Any], maximum: int
 ) -> list[dict[str, Any]]:
@@ -3130,6 +3409,111 @@ def curate_items_full(dataset_dir: Path, exact_command: str) -> None:
             }
         )
 
+    residual_after_correction = sorted(
+        set(cell["cell_id"] for cell in cells)
+        - _accepted_cell_ids(candidates, judgments)
+    )
+    cue_plan_path = (
+        dataset_dir
+        / "provenance/items/campaigns/cue_bounded_imperative/plan.json"
+    )
+    if residual_after_correction and not cue_plan_path.exists():
+        write_json(
+            dataset_dir / "provenance/items/curation_blockers.json",
+            {
+                "status": "CUE_BOUNDED_IMPERATIVE_REQUIRED",
+                "zero_accepted_candidate_cell_ids": residual_after_correction,
+                "automatic_rescue_or_repair_performed": False,
+                "next_stage": "constrain-imperatives",
+            },
+        )
+        raise RuntimeError(
+            "curation blocked: "
+            f"{len(residual_after_correction)} imperative cells require the "
+            "frozen cue-bounded campaign"
+        )
+    if cue_plan_path.exists():
+        prior_candidates = list(candidates)
+        prior_judgments = list(judgments)
+        constrained_candidates, constrained_judgments = _load_complete_campaign(
+            dataset_dir,
+            cells,
+            CUE_BOUNDED_IMPERATIVE_ID,
+            prior_candidates,
+            prior_judgments,
+        )
+        accepted_constrained = [
+            candidate
+            for candidate in constrained_candidates
+            if next(
+                row
+                for row in constrained_judgments
+                if row["item_id"] == candidate["item_id"]
+            )["accepted"]
+        ]
+        accepted_by_cell = Counter(
+            row["cell_id"] for row in accepted_constrained
+        )
+        rule = _cue_bounded_imperative_protocol()["decision_rule"]
+        decision_passed = (
+            len(accepted_constrained) >= rule["minimum_accepted_overall"]
+            and all(
+                accepted_by_cell.get(cell_id, 0)
+                >= rule["minimum_accepted_per_cell"]
+                for cell_id in _read_json(cue_plan_path)["cell_ids"]
+            )
+        )
+        effect_path = (
+            dataset_dir
+            / "provenance/items/campaigns/cue_bounded_imperative/"
+            "coverage_effect.json"
+        )
+        if not effect_path.exists():
+            raise FileNotFoundError(
+                "cue-bounded imperative coverage decision does not exist"
+            )
+        effect = _read_json(effect_path)
+        if (
+            effect.get("campaign_id") != CUE_BOUNDED_IMPERATIVE_ID
+            or effect.get("decision_rule") != rule
+            or effect.get("decision_rule_passed") is not decision_passed
+        ):
+            raise ValueError("cue-bounded imperative coverage decision changed")
+        if not decision_passed:
+            write_json(
+                dataset_dir / "provenance/items/curation_blockers.json",
+                {
+                    "status": "CUE_BOUNDED_IMPERATIVE_DECISION_FAILED",
+                    "zero_accepted_candidate_cell_ids": sorted(
+                        set(_read_json(cue_plan_path)["cell_ids"])
+                        - set(accepted_by_cell)
+                    ),
+                    "accepted_candidates": len(accepted_constrained),
+                    "automatic_rescue_or_repair_performed": False,
+                    "next_step": (
+                        "Retain the negative result and explicitly rescope or "
+                        "version the baseline; no further prompt campaign is allowed."
+                    ),
+                },
+            )
+            raise RuntimeError(
+                "curation blocked: cue-bounded imperative decision rule failed"
+            )
+        candidates = sorted(
+            [*candidates, *constrained_candidates], key=lambda row: row["item_id"]
+        )
+        judgments = sorted(
+            [*judgments, *constrained_judgments], key=lambda row: row["item_id"]
+        )
+        campaigns_used.append(
+            {
+                "campaign_id": CUE_BOUNDED_IMPERATIVE_ID,
+                "candidates": len(constrained_candidates),
+                "accepted": len(accepted_constrained),
+                "decision_rule_passed": True,
+            }
+        )
+
     candidate_by_id = {row["item_id"]: row for row in candidates}
     accepted = [
         candidate_by_id[row["item_id"]] for row in judgments if row["accepted"]
@@ -3243,6 +3627,7 @@ def parse_args() -> argparse.Namespace:
             "rescue-items",
             "intervene-items",
             "correct-items",
+            "constrain-imperatives",
             "curate-items",
         ],
     )
@@ -3341,6 +3726,15 @@ def main() -> int:
         )
     elif arguments.stage == "correct-items":
         correct_items_full(
+            dataset_dir,
+            private_dir,
+            workers=arguments.workers,
+            max_attempts=arguments.max_attempts,
+            retry_failures=arguments.retry_failures,
+            exact_command=exact_command,
+        )
+    elif arguments.stage == "constrain-imperatives":
+        constrain_imperatives_full(
             dataset_dir,
             private_dir,
             workers=arguments.workers,

@@ -26,9 +26,11 @@ from .validate_items import answer_span_consistency
 ACTIVE_CANDIDATES_PER_CELL = 3
 UNCHANGED_RESCUE_CANDIDATES_PER_CELL = 2
 DETERMINACY_INTERVENTION_CANDIDATES_PER_CELL = 2
+CUE_BOUNDED_IMPERATIVE_CANDIDATES_PER_CELL = 2
 UNCHANGED_RESCUE_ID = "unchanged_prompt_zero_coverage_rescue_v1"
 DETERMINACY_INTERVENTION_ID = "explicit_construction_determinacy_intervention_v1"
 PACKAGING_CORRECTION_ID = "full_v1_validator_named_answer_packaging_correction_v1"
+CUE_BOUNDED_IMPERATIVE_ID = "cue_bounded_imperative_production_v1"
 _CANDIDATE_PAYLOAD_FIELDS = {"prompt", "target_answer", "accepted_answers"}
 _VISIBLE_ITEM_FIELDS = (
     "item_id",
@@ -164,6 +166,11 @@ def _campaign_spec(campaign_id: str) -> dict[str, Any]:
             "trigger": "zero_validator_accepted_after_baseline_n3",
             "cohort": "all_zero_accepted_cells_after_baseline_n3",
             "generation_prompt": "baseline_unchanged",
+            "candidate_count": (
+                ACTIVE_CANDIDATES_PER_CELL
+                + UNCHANGED_RESCUE_CANDIDATES_PER_CELL
+                + DETERMINACY_INTERVENTION_CANDIDATES_PER_CELL
+            ),
         },
         DETERMINACY_INTERVENTION_ID: {
             "prefix": "determinacy_intervention",
@@ -175,6 +182,29 @@ def _campaign_spec(campaign_id: str) -> dict[str, Any]:
             "trigger": "residual_zero_coverage_with_determinacy_dominant",
             "cohort": "all_eligible_residual_zero_coverage_cells",
             "generation_prompt": "explicit_construction",
+            "candidate_count": (
+                ACTIVE_CANDIDATES_PER_CELL
+                + UNCHANGED_RESCUE_CANDIDATES_PER_CELL
+                + DETERMINACY_INTERVENTION_CANDIDATES_PER_CELL
+            ),
+        },
+        CUE_BOUNDED_IMPERATIVE_ID: {
+            "prefix": "cue_bounded_imperative",
+            "count": CUE_BOUNDED_IMPERATIVE_CANDIDATES_PER_CELL,
+            "selection_offset": (
+                ACTIVE_CANDIDATES_PER_CELL
+                + UNCHANGED_RESCUE_CANDIDATES_PER_CELL
+                + DETERMINACY_INTERVENTION_CANDIDATES_PER_CELL
+            ),
+            "trigger": "residual_imperative_cells_after_packaging_correction",
+            "cohort": "exact_two_preregistered_residual_imperative_cells",
+            "generation_prompt": "cue_bounded_all_and_only_chunks",
+            "candidate_count": (
+                ACTIVE_CANDIDATES_PER_CELL
+                + UNCHANGED_RESCUE_CANDIDATES_PER_CELL
+                + DETERMINACY_INTERVENTION_CANDIDATES_PER_CELL
+                + CUE_BOUNDED_IMPERATIVE_CANDIDATES_PER_CELL
+            ),
         },
     }
     if campaign_id not in specs:
@@ -332,7 +362,10 @@ def _validate_campaign_declaration(
         raise ValueError("full-v1 post-N=3 campaigns are frozen to two candidates")
     if generation.get("candidate_calls") != "independent":
         raise ValueError("item-campaign candidates must use independent calls")
-    expected_prompt_change = campaign_id == DETERMINACY_INTERVENTION_ID
+    expected_prompt_change = campaign_id in {
+        DETERMINACY_INTERVENTION_ID,
+        CUE_BOUNDED_IMPERATIVE_ID,
+    }
     if generation.get("only_generation_prompt_changes") is not expected_prompt_change:
         raise ValueError("item-campaign prompt-change declaration is inconsistent")
     validation = declaration.get("validation")
@@ -507,11 +540,7 @@ def recover_campaign_candidate(
         "accepted_answers": deepcopy(parsed["accepted_answers"]),
         "generation_metadata": {
             "candidate_index": spec["selection_offset"] + campaign_index,
-            "candidate_count": (
-                ACTIVE_CANDIDATES_PER_CELL
-                + UNCHANGED_RESCUE_CANDIDATES_PER_CELL
-                + DETERMINACY_INTERVENTION_CANDIDATES_PER_CELL
-            ),
+            "candidate_count": spec["candidate_count"],
             "campaign": campaign_id,
             "campaign_candidate_index": campaign_index,
             "model": generation_call["model"],
@@ -838,7 +867,11 @@ def build_validation_call(
             != metadata.get("input_sha256")
         ):
             raise ValueError("packaging correction provenance drift")
-    elif campaign_id in {UNCHANGED_RESCUE_ID, DETERMINACY_INTERVENTION_ID}:
+    elif campaign_id in {
+        UNCHANGED_RESCUE_ID,
+        DETERMINACY_INTERVENTION_ID,
+        CUE_BOUNDED_IMPERATIVE_ID,
+    }:
         campaign_index = metadata.get("campaign_candidate_index")
         spec = _campaign_spec(campaign_id)
         expected_candidate_id = stable_campaign_candidate_id(
@@ -848,11 +881,7 @@ def build_validation_call(
             spec["selection_offset"] + campaign_index
         ):
             raise ValueError("item-campaign candidate selection index drift")
-        if metadata.get("candidate_count") != (
-            ACTIVE_CANDIDATES_PER_CELL
-            + UNCHANGED_RESCUE_CANDIDATES_PER_CELL
-            + DETERMINACY_INTERVENTION_CANDIDATES_PER_CELL
-        ):
+        if metadata.get("candidate_count") != spec["candidate_count"]:
             raise ValueError("item-campaign candidate count drift")
     else:
         expected_candidate_id = stable_candidate_id(

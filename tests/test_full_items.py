@@ -7,6 +7,7 @@ from copy import deepcopy
 import pytest
 
 from grammar_kt.full_items import (
+    CUE_BOUNDED_IMPERATIVE_ID,
     DETERMINACY_INTERVENTION_ID,
     PACKAGING_CORRECTION_ID,
     UNCHANGED_RESCUE_ID,
@@ -46,6 +47,16 @@ VALIDATION_CRITERIA = read_yaml(ROOT / "modules/items/validation/criteria.yaml")
 RESCUE_PROTOCOL = read_yaml(
     ROOT / "modules/items/generation/interventions/full_v1_rescue.yaml"
 )
+CUE_BOUNDED_PROTOCOL = read_yaml(
+    ROOT
+    / "modules/items/generation/interventions/"
+    "full_v1_cue_bounded_imperative.yaml"
+)
+CUE_BOUNDED_PROMPT = read_text(
+    ROOT
+    / "modules/items/generation/interventions/"
+    "cue_bounded_imperative_prompt.txt"
+)
 
 
 def _cell(cell_id: str = "toy_cell") -> dict:
@@ -84,26 +95,26 @@ def _candidate(cell_id: str = "toy_cell", index: int = 1) -> dict:
 
 
 def _campaign_call(campaign_id: str, index: int = 1) -> dict:
-    key = (
-        "unchanged_rescue"
-        if campaign_id == UNCHANGED_RESCUE_ID
-        else "determinacy_intervention"
-    )
-    prompt = (
-        GENERATION_PROMPT
-        if campaign_id == UNCHANGED_RESCUE_ID
-        else read_text(
+    if campaign_id == UNCHANGED_RESCUE_ID:
+        declaration = RESCUE_PROTOCOL["campaigns"]["unchanged_rescue"]
+        prompt = GENERATION_PROMPT
+    elif campaign_id == DETERMINACY_INTERVENTION_ID:
+        declaration = RESCUE_PROTOCOL["campaigns"]["determinacy_intervention"]
+        prompt = read_text(
             ROOT
             / "modules/items/generation/ablations/"
             "determinacy_explicit_construction_prompt.txt"
         )
-    )
+    else:
+        assert campaign_id == CUE_BOUNDED_IMPERATIVE_ID
+        declaration = CUE_BOUNDED_PROTOCOL["campaign"]
+        prompt = CUE_BOUNDED_PROMPT
     return build_campaign_generation_call(
         _cell(),
         prompt,
         GENERATION_RULEBOOK,
         GENERATION_DESIGN,
-        RESCUE_PROTOCOL["campaigns"][key],
+        declaration,
         ITEM_FORMAT,
         campaign_index=index,
         model="fixture-generator",
@@ -224,6 +235,39 @@ def test_packaging_correction_is_append_only_stable_and_revalidatable() -> None:
         construct_packaging_corrected_candidate(
             source, drifted, config_sha256="b" * 64
         )
+
+
+def test_cue_bounded_campaign_has_disjoint_positions_and_frozen_prompt_contract() -> None:
+    first = _campaign_call(CUE_BOUNDED_IMPERATIVE_ID, 1)
+    second = _campaign_call(CUE_BOUNDED_IMPERATIVE_ID, 2)
+    assert first["candidate_id"] == "cue_bounded_imperative_toy_cell_01"
+    assert second["candidate_id"] == "cue_bounded_imperative_toy_cell_02"
+    candidate = recover_campaign_candidate(_payload(), first)
+    assert candidate["generation_metadata"]["candidate_index"] == 8
+    assert candidate["generation_metadata"]["candidate_count"] == 9
+
+    required_phrases = [
+        "all and only those chunks",
+        "exactly once each",
+        "politeness markers",
+        "vocatives",
+        "pronouns",
+        "adverbs",
+        "capital letter",
+        "outside and after the response slot",
+        "omit both `do` and `not`",
+        "ordinary uncontracted negative DO-support",
+        "never `Don't`",
+    ]
+    assert all(phrase in CUE_BOUNDED_PROMPT for phrase in required_phrases)
+    negative = CUE_BOUNDED_PROTOCOL["campaign"]["response_space"][
+        "negative_imperative"
+    ]
+    assert negative == {
+        "cue_words_omitted": ["do", "not"],
+        "learner_additions": "uncontracted_do_support_function_words_only",
+        "contractions": "forbidden",
+    }
 
 
 def test_generation_recovery_requires_exact_three_field_payload() -> None:

@@ -1,0 +1,51 @@
+Create one cue-bounded controlled-production English exercise for the supplied
+target GrammarCell.
+
+This campaign is restricted to imperative GrammarCells. The GrammarCell is
+fixed: do not choose, weaken, or reinterpret it. Retain the controlled_production
+item format, use common transparent lexical material, and generate this
+candidate independently.
+
+The learner-facing prompt must give a short natural context followed by an
+explicit response-space contract and one response slot. It must:
+
+1. name either a positive imperative or an ordinary uncontracted negative
+   imperative, exactly as required by the target GrammarCell;
+2. display two or more lexical cue chunks in a deliberately non-target order;
+3. tell the learner to rearrange and use all and only those chunks, exactly once each;
+4. explicitly forbid additions, omissions, substitutions, politeness markers,
+   vocatives, pronouns, and adverbs;
+5. require the response to begin with a capital letter;
+6. print final punctuation immediately outside and after the response slot, so
+   accepted_answers contain no final punctuation.
+
+For a positive imperative, the learner may use no words beyond the displayed
+chunks. For a negative imperative, the displayed chunks must omit both `do` and `not`;
+the prompt must say that the learner may add only the function words
+needed for ordinary uncontracted negative DO-support. The target and accepted
+answer must use `Do not`, never `Don't` or another contraction. Do not include a
+subject pronoun.
+
+The prompt must make one ordering uniquely correct. Each accepted answer must
+contain only the text entered in the response slot. `target_answer` must be the
+complete clause including the final punctuation printed outside the slot.
+
+Do not infer or mention KC information, grammar regimes, simulation, learner
+outcomes, Q-matrices, KC discovery, or KT models. Candidate position is
+experimental metadata and must not appear in the exercise. Return exactly one
+JSON object containing prompt, target_answer, and accepted_answers.
+
+TARGET GRAMMAR CELL:
+{{target_cell}}
+
+CANDIDATE POSITION:
+{{candidate_position}}
+
+ITEM FORMAT:
+{{item_format}}
+
+GENERATION DESIGN:
+{{design}}
+
+ENGLISH GENERATION RULES:
+{{rulebook}}
