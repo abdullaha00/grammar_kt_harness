@@ -1,0 +1,573 @@
+{
+  "study_id": "full_v1_rq2_kc_misspecification_v1",
+  "status": "PREREGISTERED_BEFORE_OUTCOME_ANALYSIS",
+  "research_question": "How does observable KT prediction change when K-hat/Q-hat differs from frozen generator K*/Q*?",
+  "hypotheses": [
+    "Very coarse merging will lose reusable distinction and worsen terminal-probe log loss relative to K*.",
+    "Moderate linguistically grouped merging may remain predictively competitive, demonstrating that prediction need not uniquely identify K*.",
+    "Increasing structural splitting will eventually reduce support per hypothesis KC and worsen prediction.",
+    "Ten-percent Q false negatives, false positives, and mixed corruption will worsen prediction on average, with false negatives expected to be most damaging under a conjunctive generator."
+  ],
+  "scientific_boundary": {
+    "predictor_inputs": [
+      "observable interaction rows",
+      "one preregistered item-to-KC hypothesis"
+    ],
+    "learner_oracle_read": false,
+    "generator_truth_use": "reference representation and controlled perturbation construction only",
+    "same_frozen_events_across_representations": true,
+    "training_outcomes": "all acquisition events",
+    "evaluation_outcomes": "terminal non-updating probes only",
+    "probe_outcomes_used_for_selection_or_tuning": false
+  },
+  "conditions_in_execution_order": [
+    "all_merged",
+    "coarse_linguistic_families",
+    "true_kstar",
+    "structural_split2",
+    "structural_split4",
+    "exact_cell",
+    "q_false_positive_10pct_seed_20260830",
+    "q_false_positive_10pct_seed_20260831",
+    "q_false_positive_10pct_seed_20260832",
+    "q_false_negative_10pct_seed_20260830",
+    "q_false_negative_10pct_seed_20260831",
+    "q_false_negative_10pct_seed_20260832",
+    "q_mixed_10pct_seed_20260830",
+    "q_mixed_10pct_seed_20260831",
+    "q_mixed_10pct_seed_20260832"
+  ],
+  "representations": {
+    "all_merged": {
+      "kind": "merge",
+      "granularity": "very_coarse",
+      "structure": {
+        "items": 113,
+        "kcs": 1,
+        "edges": 113,
+        "density": 1.0,
+        "empty_items": 0,
+        "support": {
+          "minimum": 113,
+          "median": 113.0,
+          "maximum": 113
+        },
+        "identical_column_groups": [],
+        "column_rank": 1
+      }
+    },
+    "coarse_linguistic_families": {
+      "kind": "merge",
+      "granularity": "coarse",
+      "groups": {
+        "coarse_aspect": [
+          "gkc_aspect_perfect",
+          "gkc_aspect_progressive"
+        ],
+        "coarse_clause_formation": [
+          "gkc_imperative",
+          "gkc_non_subject_wh_question",
+          "gkc_polar_question"
+        ],
+        "coarse_finite_tense": [
+          "gkc_finite_past",
+          "gkc_finite_present"
+        ],
+        "coarse_modality": [
+          "gkc_modal_can",
+          "gkc_modal_could",
+          "gkc_modal_may",
+          "gkc_modal_might",
+          "gkc_modal_must",
+          "gkc_modal_shall",
+          "gkc_modal_should",
+          "gkc_modal_will",
+          "gkc_modal_would"
+        ],
+        "coarse_negation": [
+          "gkc_negation"
+        ],
+        "coarse_voice": [
+          "gkc_be_passive"
+        ]
+      },
+      "structure": {
+        "items": 113,
+        "kcs": 6,
+        "edges": 260,
+        "density": 0.3834808259587021,
+        "empty_items": 0,
+        "support": {
+          "minimum": 18,
+          "median": 49.5,
+          "maximum": 62
+        },
+        "identical_column_groups": [],
+        "column_rank": 6
+      }
+    },
+    "true_kstar": {
+      "kind": "reference",
+      "granularity": "generator_truth",
+      "structure": {
+        "items": 113,
+        "kcs": 18,
+        "edges": 269,
+        "density": 0.13225172074729596,
+        "empty_items": 0,
+        "support": {
+          "minimum": 2,
+          "median": 7.5,
+          "maximum": 49
+        },
+        "identical_column_groups": [],
+        "column_rank": 18
+      }
+    },
+    "structural_split2": {
+      "kind": "split",
+      "factor": 2,
+      "rule": "lexicographic canonical-cell contexts, cyclic buckets within parent K*",
+      "structure": {
+        "items": 113,
+        "kcs": 35,
+        "edges": 269,
+        "density": 0.06801517067003793,
+        "empty_items": 0,
+        "support": {
+          "minimum": 1,
+          "median": 4.0,
+          "maximum": 25
+        },
+        "identical_column_groups": [],
+        "column_rank": 35
+      }
+    },
+    "structural_split4": {
+      "kind": "split",
+      "factor": 4,
+      "rule": "lexicographic canonical-cell contexts, cyclic buckets within parent K*",
+      "structure": {
+        "items": 113,
+        "kcs": 66,
+        "edges": 269,
+        "density": 0.0360686511128989,
+        "empty_items": 0,
+        "support": {
+          "minimum": 1,
+          "median": 2.5,
+          "maximum": 14
+        },
+        "identical_column_groups": [],
+        "column_rank": 64
+      }
+    },
+    "exact_cell": {
+      "kind": "upper_bound",
+      "rule": "one hypothesis KC per canonical GrammarCell",
+      "structure": {
+        "items": 113,
+        "kcs": 75,
+        "edges": 113,
+        "density": 0.013333333333333334,
+        "empty_items": 0,
+        "support": {
+          "minimum": 1,
+          "median": 2.0,
+          "maximum": 2
+        },
+        "identical_column_groups": [],
+        "column_rank": 75
+      }
+    },
+    "q_false_positive_10pct_seed_20260830": {
+      "kind": "false_positive",
+      "base": "true_kstar",
+      "seed": 20260830,
+      "rate_relative_to_true_edges": 0.1,
+      "true_edges": 269,
+      "hamming_budget": 27,
+      "removed_edges": 0,
+      "added_edges": 27,
+      "realized_hamming_rate_relative_to_true_edges": 0.10037174721189591,
+      "result_edges": 296,
+      "deletion_constraints": {
+        "minimum_edges_per_item": 1,
+        "minimum_support_per_kc": 1
+      },
+      "removed_edge_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "added_edge_sha256": "5551387ee17345b0706205f548bc2d3c917feb5feeae783a863face3056cf56e",
+      "structure": {
+        "items": 113,
+        "kcs": 18,
+        "edges": 296,
+        "density": 0.1455260570304818,
+        "empty_items": 0,
+        "support": {
+          "minimum": 3,
+          "median": 10.0,
+          "maximum": 52
+        },
+        "identical_column_groups": [],
+        "column_rank": 18
+      }
+    },
+    "q_false_positive_10pct_seed_20260831": {
+      "kind": "false_positive",
+      "base": "true_kstar",
+      "seed": 20260831,
+      "rate_relative_to_true_edges": 0.1,
+      "true_edges": 269,
+      "hamming_budget": 27,
+      "removed_edges": 0,
+      "added_edges": 27,
+      "realized_hamming_rate_relative_to_true_edges": 0.10037174721189591,
+      "result_edges": 296,
+      "deletion_constraints": {
+        "minimum_edges_per_item": 1,
+        "minimum_support_per_kc": 1
+      },
+      "removed_edge_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "added_edge_sha256": "19210cacc5a8019c54eb7445f7ca513b1c89f06d6e2bc3d2f447b90c94c6517a",
+      "structure": {
+        "items": 113,
+        "kcs": 18,
+        "edges": 296,
+        "density": 0.1455260570304818,
+        "empty_items": 0,
+        "support": {
+          "minimum": 3,
+          "median": 10.0,
+          "maximum": 51
+        },
+        "identical_column_groups": [],
+        "column_rank": 18
+      }
+    },
+    "q_false_positive_10pct_seed_20260832": {
+      "kind": "false_positive",
+      "base": "true_kstar",
+      "seed": 20260832,
+      "rate_relative_to_true_edges": 0.1,
+      "true_edges": 269,
+      "hamming_budget": 27,
+      "removed_edges": 0,
+      "added_edges": 27,
+      "realized_hamming_rate_relative_to_true_edges": 0.10037174721189591,
+      "result_edges": 296,
+      "deletion_constraints": {
+        "minimum_edges_per_item": 1,
+        "minimum_support_per_kc": 1
+      },
+      "removed_edge_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "added_edge_sha256": "9784f4fa78b50504b40be18da248efead8dcf00152ea3a8a2d3bd34db1bd5101",
+      "structure": {
+        "items": 113,
+        "kcs": 18,
+        "edges": 296,
+        "density": 0.1455260570304818,
+        "empty_items": 0,
+        "support": {
+          "minimum": 5,
+          "median": 9.5,
+          "maximum": 50
+        },
+        "identical_column_groups": [],
+        "column_rank": 18
+      }
+    },
+    "q_false_negative_10pct_seed_20260830": {
+      "kind": "false_negative",
+      "base": "true_kstar",
+      "seed": 20260830,
+      "rate_relative_to_true_edges": 0.1,
+      "true_edges": 269,
+      "hamming_budget": 27,
+      "removed_edges": 27,
+      "added_edges": 0,
+      "realized_hamming_rate_relative_to_true_edges": 0.10037174721189591,
+      "result_edges": 242,
+      "deletion_constraints": {
+        "minimum_edges_per_item": 1,
+        "minimum_support_per_kc": 1
+      },
+      "removed_edge_sha256": "9914ca01faa79b19c6a83296705b4e4cd00686b76890646a9409d0d45e99dd4a",
+      "added_edge_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "structure": {
+        "items": 113,
+        "kcs": 18,
+        "edges": 242,
+        "density": 0.11897738446411013,
+        "empty_items": 0,
+        "support": {
+          "minimum": 2,
+          "median": 6.5,
+          "maximum": 42
+        },
+        "identical_column_groups": [],
+        "column_rank": 18
+      }
+    },
+    "q_false_negative_10pct_seed_20260831": {
+      "kind": "false_negative",
+      "base": "true_kstar",
+      "seed": 20260831,
+      "rate_relative_to_true_edges": 0.1,
+      "true_edges": 269,
+      "hamming_budget": 27,
+      "removed_edges": 27,
+      "added_edges": 0,
+      "realized_hamming_rate_relative_to_true_edges": 0.10037174721189591,
+      "result_edges": 242,
+      "deletion_constraints": {
+        "minimum_edges_per_item": 1,
+        "minimum_support_per_kc": 1
+      },
+      "removed_edge_sha256": "4d74d7c979ce62f057783b7659999fff5731df15f9907dd5991ab5a435c9e0bf",
+      "added_edge_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "structure": {
+        "items": 113,
+        "kcs": 18,
+        "edges": 242,
+        "density": 0.11897738446411013,
+        "empty_items": 0,
+        "support": {
+          "minimum": 2,
+          "median": 6.5,
+          "maximum": 46
+        },
+        "identical_column_groups": [],
+        "column_rank": 18
+      }
+    },
+    "q_false_negative_10pct_seed_20260832": {
+      "kind": "false_negative",
+      "base": "true_kstar",
+      "seed": 20260832,
+      "rate_relative_to_true_edges": 0.1,
+      "true_edges": 269,
+      "hamming_budget": 27,
+      "removed_edges": 27,
+      "added_edges": 0,
+      "realized_hamming_rate_relative_to_true_edges": 0.10037174721189591,
+      "result_edges": 242,
+      "deletion_constraints": {
+        "minimum_edges_per_item": 1,
+        "minimum_support_per_kc": 1
+      },
+      "removed_edge_sha256": "5e5a3955c1a7a2227cb39d94f43807d61909b230bb656319b36994923331078c",
+      "added_edge_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "structure": {
+        "items": 113,
+        "kcs": 18,
+        "edges": 242,
+        "density": 0.11897738446411013,
+        "empty_items": 0,
+        "support": {
+          "minimum": 1,
+          "median": 6.5,
+          "maximum": 42
+        },
+        "identical_column_groups": [],
+        "column_rank": 18
+      }
+    },
+    "q_mixed_10pct_seed_20260830": {
+      "kind": "mixed",
+      "base": "true_kstar",
+      "seed": 20260830,
+      "rate_relative_to_true_edges": 0.1,
+      "true_edges": 269,
+      "hamming_budget": 27,
+      "removed_edges": 14,
+      "added_edges": 13,
+      "realized_hamming_rate_relative_to_true_edges": 0.10037174721189591,
+      "result_edges": 268,
+      "deletion_constraints": {
+        "minimum_edges_per_item": 1,
+        "minimum_support_per_kc": 1
+      },
+      "removed_edge_sha256": "c7824e0abd9d19eaa0046f095289bfec55033c4034df6c18b4a3feaf35a048bc",
+      "added_edge_sha256": "23c59dcb6087bae8668746d6c1a767ae91017a940a4e9469777e87bce691e6d1",
+      "structure": {
+        "items": 113,
+        "kcs": 18,
+        "edges": 268,
+        "density": 0.13176007866273354,
+        "empty_items": 0,
+        "support": {
+          "minimum": 3,
+          "median": 7.0,
+          "maximum": 47
+        },
+        "identical_column_groups": [],
+        "column_rank": 18
+      }
+    },
+    "q_mixed_10pct_seed_20260831": {
+      "kind": "mixed",
+      "base": "true_kstar",
+      "seed": 20260831,
+      "rate_relative_to_true_edges": 0.1,
+      "true_edges": 269,
+      "hamming_budget": 27,
+      "removed_edges": 14,
+      "added_edges": 13,
+      "realized_hamming_rate_relative_to_true_edges": 0.10037174721189591,
+      "result_edges": 268,
+      "deletion_constraints": {
+        "minimum_edges_per_item": 1,
+        "minimum_support_per_kc": 1
+      },
+      "removed_edge_sha256": "a63db10477f928c3c8812c2c1a4535d346d5f6b3030e2c4ab25cf725b8364104",
+      "added_edge_sha256": "abe6e5ff6010b27d7e7f3ee1be36baafa6f82809e1d49b97abbc684bb56eb971",
+      "structure": {
+        "items": 113,
+        "kcs": 18,
+        "edges": 268,
+        "density": 0.13176007866273354,
+        "empty_items": 0,
+        "support": {
+          "minimum": 2,
+          "median": 8.0,
+          "maximum": 46
+        },
+        "identical_column_groups": [],
+        "column_rank": 18
+      }
+    },
+    "q_mixed_10pct_seed_20260832": {
+      "kind": "mixed",
+      "base": "true_kstar",
+      "seed": 20260832,
+      "rate_relative_to_true_edges": 0.1,
+      "true_edges": 269,
+      "hamming_budget": 27,
+      "removed_edges": 14,
+      "added_edges": 13,
+      "realized_hamming_rate_relative_to_true_edges": 0.10037174721189591,
+      "result_edges": 268,
+      "deletion_constraints": {
+        "minimum_edges_per_item": 1,
+        "minimum_support_per_kc": 1
+      },
+      "removed_edge_sha256": "525b7274c4b0b13d0273b6bff1e42ff472d963fa9f8c650541aaa96c2813f23e",
+      "added_edge_sha256": "4bad79b29983343069348c11018de369819dcc2cd8f3d57e266907ca89762afc",
+      "structure": {
+        "items": 113,
+        "kcs": 18,
+        "edges": 268,
+        "density": 0.13176007866273354,
+        "empty_items": 0,
+        "support": {
+          "minimum": 4,
+          "median": 7.5,
+          "maximum": 48
+        },
+        "identical_column_groups": [],
+        "column_rank": 18
+      }
+    }
+  },
+  "model": {
+    "name": "observable_history_logistic_pfa_like",
+    "history_priors": {
+      "alpha": 1.0,
+      "beta": 1.0
+    },
+    "features": [
+      "learner prior-smoothed overall correctness",
+      "mean prior-smoothed correctness over active hypothesis KCs",
+      "mean log1p opportunities over active hypothesis KCs",
+      "active hypothesis-KC count",
+      "hypothesis-KC indicators"
+    ],
+    "history_updates": "after acquisition events only; probes are non-updating",
+    "standardize": true,
+    "regularization_c": 1.0,
+    "max_iterations": 500,
+    "random_seed": 20260830,
+    "technique_scope": "Logistic is the RQ2 primary model; empirical/BKT technique sensitivity is reserved for the separate KT robustness programme."
+  },
+  "evaluation": {
+    "primary_metric": "terminal-probe event-weighted log loss",
+    "secondary_metrics": [
+      "Brier score",
+      "ECE",
+      "AUC",
+      "accuracy"
+    ],
+    "grammar_regimes": [
+      "all_probe",
+      "seen",
+      "unseen_combination",
+      "unseen_value"
+    ],
+    "uncertainty": {
+      "method": "paired percentile bootstrap over whole learners",
+      "reference": "true_kstar",
+      "repeats": 2000,
+      "seed": 20260830,
+      "aggregation": "event_weighted",
+      "delta_sign": "candidate_minus_true_kstar; positive favours K*"
+    },
+    "interpretation": {
+      "cost_supported": "candidate-minus-K* log-loss interval is entirely above zero",
+      "candidate_predictive_gain": "interval is entirely below zero; this does not establish cognitive truth",
+      "not_resolved": "interval includes zero; this is not an equivalence test"
+    }
+  },
+  "inputs": {
+    "manifest": {
+      "path": "manifest.json",
+      "sha256": "322128843f8e7e6547a99efcecc6836fcd581f314fb49557a28d58fe79c69f4c",
+      "bytes": 26456
+    },
+    "interactions": {
+      "path": "interactions.jsonl.gz",
+      "sha256": "9272ca86a647e3b13c9ce52b5381dde215f7ef448e4a19a41a22495fa99ef97f",
+      "bytes": 2158088
+    },
+    "items": {
+      "path": "items/items.jsonl",
+      "sha256": "46e2fcbd723d11f6b30ecdd197fb05c39f04f7b0fc8f61e2183ffb8fb7110011",
+      "bytes": 81382
+    },
+    "cells": {
+      "path": "grammar/cells.jsonl",
+      "sha256": "a6bf8041e93fdea21d0ba7b318a24cb64610a6064517a2f7fbbbf3aca2fa4e1a",
+      "bytes": 22345
+    },
+    "generator_kcs": {
+      "path": "kcs.jsonl",
+      "sha256": "f3b308dcda7c11886e1dc67476dbe6adbcb53b8676b643c62d226fe68cfe0355",
+      "bytes": 15814
+    },
+    "true_q_matrix": {
+      "path": "q_matrix.csv",
+      "sha256": "b6df582478f05976ceb200da6edc2b31fb305da64498e5ddb5f473a9459bf5bf",
+      "bytes": 8404
+    },
+    "grammar_regimes": {
+      "path": "grammar/regime_assignments.jsonl",
+      "sha256": "5e65cf1bca33778e8300d7fe0125871c2d622c9b4aca8ebe5280a3e93a9e4bdf",
+      "bytes": 31714
+    }
+  },
+  "projection_bundle": {
+    "path": "projections.jsonl",
+    "sha256": "4b793fc6a44a14b975db41f272abfcc0d9df7c3f8effa6b1109f0711c3885661",
+    "rows": 1695
+  },
+  "implementation": {
+    "script": "scripts/experiments/rq2_kc_misspecification.py",
+    "script_sha256": "33ccd24d6050943cde338bc0129f2cafdbeca2b3e586322d1657a5da8fd3027a",
+    "repository_head_at_preregistration": "621a18aa9ea7e3660388421153f7dee64b2535a0",
+    "python": "3.14.7",
+    "numpy": "2.5.1"
+  },
+  "exact_commands": {
+    "plan": ".venv/bin/python scripts/experiments/rq2_kc_misspecification.py --stage plan",
+    "run": ".venv/bin/python scripts/experiments/rq2_kc_misspecification.py --stage run"
+  }
+}

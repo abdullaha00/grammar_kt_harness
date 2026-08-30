@@ -1957,3 +1957,78 @@ experiment:
 - **Artifacts:** `data/grammar_kt_full_v1/{README.md,manifest.json,
   interactions.jsonl.gz}`, `data/grammar_kt_full_v1/oracle/learner_truth.jsonl.gz`,
   and `data/grammar_kt_full_v1/provenance/simulation/`.
+
+## FULL-RQ2-001 — preregistered KC granularity and Q-noise study
+
+- **Date frozen/executed:** Plan and all 15 Q-hypothesis projections were
+  frozen on 2026-08-30 before the first outcome load; an N=20 development run
+  checked execution, then the unchanged plan ran on all 1,000 learners.
+- **Research question:** How does observable KT prediction change when the
+  supplied K-hat/Q-hat is coarser, finer, or edge-corrupted relative to the
+  known generator K*/Q*?
+- **Hypotheses:** Moderate merging may remain competitive, but increasing
+  structural splitting should dilute histories; 10% Q corruption should hurt,
+  with false negatives expected to be most damaging under weakest-link
+  generation. No U-shaped curve was assumed.
+- **Manipulated variables:** Six outcome-free granularity representations:
+  all-merged (1 KC), linguistic-family union merge (6), K* (18), deterministic
+  context split-2, split-4, and exact cell (75); plus false-positive,
+  false-negative, and mixed Q corruption at a total 27-edge Hamming budget for
+  seeds 20260830--20260832. Mixed corruption removes 14 and adds 13 edges.
+  Deletions preserve at least one edge/item and one item/KC.
+- **Held fixed:** The exact 283,000 full-v1 event rows, acquisition/probe
+  schedule, public fields, learner histories, model, seed, and evaluation rows.
+  Every representation uses all 170,000 acquisition rows for fitting and the
+  same 113,000 terminal non-updating probes for evaluation (event-key SHA-256
+  `e6432a583c8bb6b451b9b3bf07e069ad800c95e87b801958610e612907b0250b`).
+  No private oracle was read.
+- **Model/settings:** Standardized observable history logistic/PFA-like model,
+  Beta(1,1) history prior, overall and active-KC prior success rates, active
+  opportunity history, KC count/indicators, C=1, max 500 iterations, seed
+  20260830. All 15 fits converged. Primary metric is probe log loss; Brier,
+  ECE, AUC, and accuracy are secondary. Uncertainty is a 2,000-repeat paired
+  percentile bootstrap over whole learners; deltas are candidate minus K*.
+  Empirical/BKT sensitivity was explicitly reserved for the robustness study.
+- **Exact commands:**
+
+  ```bash
+  .venv/bin/python scripts/experiments/rq2_kc_misspecification.py --stage plan
+  .venv/bin/python scripts/experiments/rq2_kc_misspecification.py --stage run --learner-limit 20
+  .venv/bin/python scripts/experiments/rq2_kc_misspecification.py --stage run
+  ```
+- **Granularity result:** K* has the lowest all-probe log loss, 0.670627.
+  Split-2 costs +0.003165 (95% CI [.002744,.003581]); split-4 +0.005868
+  ([.005281,.006473]); linguistic-family coarse +0.008132
+  ([.007450,.008779]); all-merged +0.010225 ([.009380,.011029]); exact-cell
+  +0.015039 ([.014108,.015990]). Thus this frozen grid is monotone away from
+  K*, not U-shaped. These are predictive consequences in the declared world,
+  not evidence that K* is human cognitive truth.
+- **Grammar-regime result:** Exact-cell sparsity is especially costly on unseen
+  combination (+0.037609, [.033761,.041513]) and unseen value (+0.028627,
+  [.025120,.032174]). Split-2, all-merged, and family-coarse unseen-value
+  intervals cross zero; those specific contrasts are unresolved. Unseen-value
+  comprises six perfect-progressive cells and is not a novel latent-KC test.
+- **Q-noise result:** Every 10% corruption replicate has a supported positive
+  overall cost. Mean delta log loss is +0.001685 for false positives (seed
+  range .001265--.001970), +0.002644 for false negatives
+  (.001791--.004004), and +0.002294 for mixed corruption
+  (.001757--.002641). False negatives tend to be larger, but three structural
+  seeds and the visible range do not support a precise universal ordering.
+- **Failure/limitations:** The split children are controlled context buckets,
+  not proposed human subskills. Learner bootstrap represents learner sampling,
+  not uncertainty over simulator worlds or Q-corruption structures. K* has no
+  atomic planted interaction KC, so missing-true-interaction is not applicable;
+  union versus added-intersection controls remain a separate experiment.
+- **Methodological consequence:** RQ2 has a supported baseline answer: both
+  coarsening and refinement can measurably hurt prediction, finer exact-cell
+  ontologies generalise particularly poorly, and modest Q errors have smaller
+  but reliable costs. The next tests must ask whether observable selection can
+  identify K* uniquely and whether these rankings survive alternative learner
+  worlds/models.
+- **Artifacts/hashes:**
+  `reports/full_v1_artifacts/rq2_misspecification_v1/`; plan
+  `e1945fb1078e883f2c420c3b8adbee4b0772359facaa4321ba616277ff7ddb6d`,
+  projection bundle
+  `4b793fc6a44a14b975db41f272abfcc0d9df7c3f8effa6b1109f0711c3885661`,
+  final result
+  `46230a37cd7e6e5cf64d1f9a41e9ae24c26c07c81c1605c889f2026181842050`.

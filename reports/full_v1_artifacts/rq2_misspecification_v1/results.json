@@ -1,0 +1,2223 @@
+{
+  "study_id": "full_v1_rq2_kc_misspecification_v1",
+  "status": "FINAL_FULL_DATASET_RESULT",
+  "plan_sha256": "e1945fb1078e883f2c420c3b8adbee4b0772359facaa4321ba616277ff7ddb6d",
+  "projection_bundle_sha256": "4b793fc6a44a14b975db41f272abfcc0d9df7c3f8effa6b1109f0711c3885661",
+  "observable_only": true,
+  "private_learner_oracle_read": false,
+  "same_evaluation_event_rows_for_every_representation": true,
+  "evaluation_event_key_sha256": "e6432a583c8bb6b451b9b3bf07e069ad800c95e87b801958610e612907b0250b",
+  "scale": {
+    "learners": 1000,
+    "events": 283000,
+    "acquisition_events": 170000,
+    "probe_events": 113000
+  },
+  "metrics_by_representation": {
+    "all_merged": {
+      "model_audit": {
+        "hypothesis_kcs": 1,
+        "features": 5,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          3
+        ],
+        "converged": true
+      },
+      "probe_metrics": {
+        "all_probe": {
+          "n": 113000,
+          "log_loss": 0.6808518271069761,
+          "brier_score": 0.2438730690424038,
+          "ece": 0.03619925447533612,
+          "auc": 0.5243219855315789,
+          "accuracy": 0.5839469026548673
+        },
+        "seen": {
+          "n": 84000,
+          "log_loss": 0.6802311427003739,
+          "brier_score": 0.24356396658263513,
+          "ece": 0.03920473277284986,
+          "auc": 0.5255092833678983,
+          "accuracy": 0.586952380952381
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "log_loss": 0.6828468347801064,
+          "brier_score": 0.244866425741419,
+          "ece": 0.026852351820468856,
+          "auc": 0.5206715622044714,
+          "accuracy": 0.5746
+        },
+        "unseen_value": {
+          "n": 9000,
+          "log_loss": 0.6822115311838598,
+          "brier_score": 0.2445505660024333,
+          "ece": 0.028919018487135517,
+          "auc": 0.5214723954303401,
+          "accuracy": 0.5766666666666667
+        }
+      }
+    },
+    "coarse_linguistic_families": {
+      "model_audit": {
+        "hypothesis_kcs": 6,
+        "features": 10,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          10
+        ],
+        "converged": true
+      },
+      "probe_metrics": {
+        "all_probe": {
+          "n": 113000,
+          "log_loss": 0.6787588321664131,
+          "brier_score": 0.24285694894731832,
+          "ece": 0.02906247381008836,
+          "auc": 0.5355269635045108,
+          "accuracy": 0.5820884955752212
+        },
+        "seen": {
+          "n": 84000,
+          "log_loss": 0.678100813258861,
+          "brier_score": 0.24253313610280863,
+          "ece": 0.034478244664413585,
+          "auc": 0.5383190344621339,
+          "accuracy": 0.584202380952381
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "log_loss": 0.6812206711533143,
+          "brier_score": 0.2440680050126738,
+          "ece": 0.011794091777503495,
+          "auc": 0.5263889141171528,
+          "accuracy": 0.57525
+        },
+        "unseen_value": {
+          "n": 9000,
+          "log_loss": 0.6794295886660106,
+          "brier_score": 0.24318796646195176,
+          "ece": 0.01819510207573574,
+          "auc": 0.5440871805764164,
+          "accuracy": 0.5775555555555556
+        }
+      }
+    },
+    "true_kstar": {
+      "model_audit": {
+        "hypothesis_kcs": 18,
+        "features": 22,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          8
+        ],
+        "converged": true
+      },
+      "probe_metrics": {
+        "all_probe": {
+          "n": 113000,
+          "log_loss": 0.6706272461092545,
+          "brier_score": 0.23892498051706845,
+          "ece": 0.020378802280510446,
+          "auc": 0.5779980416855344,
+          "accuracy": 0.5892566371681416
+        },
+        "seen": {
+          "n": 84000,
+          "log_loss": 0.6691611608437145,
+          "brier_score": 0.2382090788872436,
+          "ece": 0.02162712586351806,
+          "auc": 0.5812369034114196,
+          "accuracy": 0.5923690476190476
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "log_loss": 0.6720356967512789,
+          "brier_score": 0.2396214851290938,
+          "ece": 0.0063059548601507994,
+          "auc": 0.5798851700109526,
+          "accuracy": 0.5865
+        },
+        "unseen_value": {
+          "n": 9000,
+          "log_loss": 0.6811808182720206,
+          "brier_score": 0.24405894103537715,
+          "ece": 0.053790074888202886,
+          "auc": 0.563722507952402,
+          "accuracy": 0.5663333333333334
+        }
+      }
+    },
+    "structural_split2": {
+      "model_audit": {
+        "hypothesis_kcs": 35,
+        "features": 39,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          12
+        ],
+        "converged": true
+      },
+      "probe_metrics": {
+        "all_probe": {
+          "n": 113000,
+          "log_loss": 0.6737919943059221,
+          "brier_score": 0.24047090077902938,
+          "ece": 0.020806741580762688,
+          "auc": 0.5628046333904663,
+          "accuracy": 0.5815929203539822
+        },
+        "seen": {
+          "n": 84000,
+          "log_loss": 0.6713950307526502,
+          "brier_score": 0.2393024460827393,
+          "ece": 0.019028503894805933,
+          "auc": 0.5687807108709286,
+          "accuracy": 0.5877976190476191
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "log_loss": 0.6808420916290954,
+          "brier_score": 0.24391566039484427,
+          "ece": 0.01668812346607449,
+          "auc": 0.5420740605144504,
+          "accuracy": 0.56355
+        },
+        "unseen_value": {
+          "n": 9000,
+          "log_loss": 0.6804967711960748,
+          "brier_score": 0.2437214565759263,
+          "ece": 0.046811629639731483,
+          "auc": 0.5606945013376219,
+          "accuracy": 0.5637777777777778
+        }
+      }
+    },
+    "structural_split4": {
+      "model_audit": {
+        "hypothesis_kcs": 66,
+        "features": 70,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          25
+        ],
+        "converged": true
+      },
+      "probe_metrics": {
+        "all_probe": {
+          "n": 113000,
+          "log_loss": 0.676495204220865,
+          "brier_score": 0.24179425712976174,
+          "ece": 0.025781938070480806,
+          "auc": 0.5504171737309973,
+          "accuracy": 0.5704601769911505
+        },
+        "seen": {
+          "n": 84000,
+          "log_loss": 0.6729867051697629,
+          "brier_score": 0.2400743751978275,
+          "ece": 0.018830505518686154,
+          "auc": 0.5612370230617341,
+          "accuracy": 0.5828095238095238
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "log_loss": 0.6865214688493666,
+          "brier_score": 0.24670861256012622,
+          "ece": 0.0403217102244496,
+          "auc": 0.5131906370221201,
+          "accuracy": 0.53115
+        },
+        "unseen_value": {
+          "n": 9000,
+          "log_loss": 0.6869606073011472,
+          "brier_score": 0.24692569864922684,
+          "ece": 0.06017729185024897,
+          "auc": 0.5342638022848301,
+          "accuracy": 0.5425555555555556
+        }
+      }
+    },
+    "exact_cell": {
+      "model_audit": {
+        "hypothesis_kcs": 75,
+        "features": 79,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          6
+        ],
+        "converged": true
+      },
+      "probe_metrics": {
+        "all_probe": {
+          "n": 113000,
+          "log_loss": 0.6856662732151116,
+          "brier_score": 0.2463483622916172,
+          "ece": 0.05698382068735307,
+          "auc": 0.5369075618383086,
+          "accuracy": 0.530858407079646
+        },
+        "seen": {
+          "n": 84000,
+          "log_loss": 0.6773706549513346,
+          "brier_score": 0.24224083937000812,
+          "ece": 0.035507246928910406,
+          "auc": 0.5512335602525593,
+          "accuracy": 0.5674880952380953
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "log_loss": 0.7096442564942288,
+          "brier_score": 0.258220464940636,
+          "ece": 0.11855044812560084,
+          "auc": 0.5206715622044714,
+          "accuracy": 0.4254
+        },
+        "unseen_value": {
+          "n": 9000,
+          "log_loss": 0.7098076363901031,
+          "brier_score": 0.258302792562149,
+          "ece": 0.1206171147922675,
+          "auc": 0.5214723954303401,
+          "accuracy": 0.42333333333333334
+        }
+      }
+    },
+    "q_false_positive_10pct_seed_20260830": {
+      "model_audit": {
+        "hypothesis_kcs": 18,
+        "features": 22,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          11
+        ],
+        "converged": true
+      },
+      "probe_metrics": {
+        "all_probe": {
+          "n": 113000,
+          "log_loss": 0.6718920178605807,
+          "brier_score": 0.23952564319849523,
+          "ece": 0.01998317541933698,
+          "auc": 0.5728656587738348,
+          "accuracy": 0.5888230088495575
+        },
+        "seen": {
+          "n": 84000,
+          "log_loss": 0.6705985802121452,
+          "brier_score": 0.23889531413684104,
+          "ece": 0.02281661202119926,
+          "auc": 0.5760092576513816,
+          "accuracy": 0.5908571428571429
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "log_loss": 0.6741576641281779,
+          "brier_score": 0.24063357999173798,
+          "ece": 0.005187040999531778,
+          "auc": 0.5705065151514408,
+          "accuracy": 0.5842
+        },
+        "unseen_value": {
+          "n": 9000,
+          "log_loss": 0.6789293330957611,
+          "brier_score": 0.24294663267783864,
+          "ece": 0.03769331142637462,
+          "auc": 0.5595750711796863,
+          "accuracy": 0.5801111111111111
+        }
+      }
+    },
+    "q_false_positive_10pct_seed_20260831": {
+      "model_audit": {
+        "hypothesis_kcs": 18,
+        "features": 22,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          10
+        ],
+        "converged": true
+      },
+      "probe_metrics": {
+        "all_probe": {
+          "n": 113000,
+          "log_loss": 0.6724479845986316,
+          "brier_score": 0.23978884081234056,
+          "ece": 0.022117894291877736,
+          "auc": 0.5714153559035265,
+          "accuracy": 0.5885575221238938
+        },
+        "seen": {
+          "n": 84000,
+          "log_loss": 0.6713139541360116,
+          "brier_score": 0.2392325399569617,
+          "ece": 0.02342582604501928,
+          "auc": 0.5733377145138165,
+          "accuracy": 0.5906785714285714
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "log_loss": 0.6743897067796997,
+          "brier_score": 0.24075366329929287,
+          "ece": 0.010138315351307397,
+          "auc": 0.5702221806842265,
+          "accuracy": 0.58265
+        },
+        "unseen_value": {
+          "n": 9000,
+          "log_loss": 0.6787173307362678,
+          "brier_score": 0.24283693215820473,
+          "ece": 0.04105153986149362,
+          "auc": 0.5654403026211319,
+          "accuracy": 0.5818888888888889
+        }
+      }
+    },
+    "q_false_positive_10pct_seed_20260832": {
+      "model_audit": {
+        "hypothesis_kcs": 18,
+        "features": 22,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          10
+        ],
+        "converged": true
+      },
+      "probe_metrics": {
+        "all_probe": {
+          "n": 113000,
+          "log_loss": 0.6725974381555837,
+          "brier_score": 0.23986785971333685,
+          "ece": 0.02258771235805697,
+          "auc": 0.5706945488736722,
+          "accuracy": 0.5866902654867256
+        },
+        "seen": {
+          "n": 84000,
+          "log_loss": 0.6713484622190593,
+          "brier_score": 0.23925775549956735,
+          "ece": 0.026470204103915478,
+          "auc": 0.5744776915367471,
+          "accuracy": 0.5885714285714285
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "log_loss": 0.6746896148616532,
+          "brier_score": 0.2408979511070488,
+          "ece": 0.007338788737356635,
+          "auc": 0.5687283316486308,
+          "accuracy": 0.58175
+        },
+        "unseen_value": {
+          "n": 9000,
+          "log_loss": 0.6796052653274344,
+          "brier_score": 0.24327307372249177,
+          "ece": 0.03563452135854296,
+          "auc": 0.5531922635393118,
+          "accuracy": 0.5801111111111111
+        }
+      }
+    },
+    "q_false_negative_10pct_seed_20260830": {
+      "model_audit": {
+        "hypothesis_kcs": 18,
+        "features": 22,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          12
+        ],
+        "converged": true
+      },
+      "probe_metrics": {
+        "all_probe": {
+          "n": 113000,
+          "log_loss": 0.6727640441697639,
+          "brier_score": 0.23996012158607768,
+          "ece": 0.02458175989378863,
+          "auc": 0.5706973212022035,
+          "accuracy": 0.5851061946902655
+        },
+        "seen": {
+          "n": 84000,
+          "log_loss": 0.6709738878564385,
+          "brier_score": 0.23908508175623142,
+          "ece": 0.023834888756984786,
+          "auc": 0.5744581863959506,
+          "accuracy": 0.5896666666666667
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "log_loss": 0.6737502521786906,
+          "brier_score": 0.24043161872982335,
+          "ece": 0.01458446398079393,
+          "auc": 0.5746523797507753,
+          "accuracy": 0.5849
+        },
+        "unseen_value": {
+          "n": 9000,
+          "log_loss": 0.6872805964076293,
+          "brier_score": 0.24707938856743042,
+          "ece": 0.0664218924774064,
+          "auc": 0.5452796868599518,
+          "accuracy": 0.543
+        }
+      }
+    },
+    "q_false_negative_10pct_seed_20260831": {
+      "model_audit": {
+        "hypothesis_kcs": 18,
+        "features": 22,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          11
+        ],
+        "converged": true
+      },
+      "probe_metrics": {
+        "all_probe": {
+          "n": 113000,
+          "log_loss": 0.6724179350087738,
+          "brier_score": 0.23978923058283508,
+          "ece": 0.0204202241694505,
+          "auc": 0.5695853958489496,
+          "accuracy": 0.5867787610619469
+        },
+        "seen": {
+          "n": 84000,
+          "log_loss": 0.6703194395564841,
+          "brier_score": 0.23876457185209837,
+          "ece": 0.02113872073945546,
+          "auc": 0.5757043033843179,
+          "accuracy": 0.5915357142857143
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "log_loss": 0.6760530217310445,
+          "brier_score": 0.24155787841013107,
+          "ece": 0.007012072579562645,
+          "auc": 0.5596817591551188,
+          "accuracy": 0.5798
+        },
+        "unseen_value": {
+          "n": 9000,
+          "log_loss": 0.6839259220695434,
+          "brier_score": 0.24542238356460908,
+          "ece": 0.0515943013495869,
+          "auc": 0.5434345779031956,
+          "accuracy": 0.5578888888888889
+        }
+      }
+    },
+    "q_false_negative_10pct_seed_20260832": {
+      "model_audit": {
+        "hypothesis_kcs": 18,
+        "features": 22,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          10
+        ],
+        "converged": true
+      },
+      "probe_metrics": {
+        "all_probe": {
+          "n": 113000,
+          "log_loss": 0.6746314108010265,
+          "brier_score": 0.24085769340994823,
+          "ece": 0.0339962957817897,
+          "auc": 0.5660693673429666,
+          "accuracy": 0.5834867256637168
+        },
+        "seen": {
+          "n": 84000,
+          "log_loss": 0.6735896564781126,
+          "brier_score": 0.24034641897319453,
+          "ece": 0.03504585041708894,
+          "auc": 0.5676151535367239,
+          "accuracy": 0.5858809523809524
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "log_loss": 0.6749364994993382,
+          "brier_score": 0.2410106945476743,
+          "ece": 0.020221232272684575,
+          "auc": 0.570694919144914,
+          "accuracy": 0.5827
+        },
+        "unseen_value": {
+          "n": 9000,
+          "log_loss": 0.6836764762630837,
+          "brier_score": 0.24528958562470224,
+          "ece": 0.05481170476145212,
+          "auc": 0.5486656400608884,
+          "accuracy": 0.5628888888888889
+        }
+      }
+    },
+    "q_mixed_10pct_seed_20260830": {
+      "model_audit": {
+        "hypothesis_kcs": 18,
+        "features": 22,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          11
+        ],
+        "converged": true
+      },
+      "probe_metrics": {
+        "all_probe": {
+          "n": 113000,
+          "log_loss": 0.6732683186917633,
+          "brier_score": 0.24019409104896006,
+          "ece": 0.025327936226024052,
+          "auc": 0.5678672103881399,
+          "accuracy": 0.5866194690265487
+        },
+        "seen": {
+          "n": 84000,
+          "log_loss": 0.6718929404972244,
+          "brier_score": 0.239523149794297,
+          "ece": 0.026350611413163798,
+          "auc": 0.5704886583146553,
+          "accuracy": 0.5894404761904762
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "log_loss": 0.6746742639776783,
+          "brier_score": 0.2408719406120971,
+          "ece": 0.012831508295237992,
+          "auc": 0.5713793806971216,
+          "accuracy": 0.58285
+        },
+        "unseen_value": {
+          "n": 9000,
+          "log_loss": 0.6829808589832032,
+          "brier_score": 0.2449498770632884,
+          "ece": 0.05004321172833444,
+          "auc": 0.5454570671440636,
+          "accuracy": 0.5686666666666667
+        }
+      }
+    },
+    "q_mixed_10pct_seed_20260831": {
+      "model_audit": {
+        "hypothesis_kcs": 18,
+        "features": 22,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          10
+        ],
+        "converged": true
+      },
+      "probe_metrics": {
+        "all_probe": {
+          "n": 113000,
+          "log_loss": 0.6723845286696165,
+          "brier_score": 0.239768643064831,
+          "ece": 0.021807927775435755,
+          "auc": 0.5706555082151175,
+          "accuracy": 0.5876460176991151
+        },
+        "seen": {
+          "n": 84000,
+          "log_loss": 0.6707031660768727,
+          "brier_score": 0.23894724430736392,
+          "ece": 0.022876842598475118,
+          "auc": 0.5752147551280671,
+          "accuracy": 0.5914047619047619
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "log_loss": 0.6751775438554121,
+          "brier_score": 0.24113521616634065,
+          "ece": 0.0044886476024984965,
+          "auc": 0.5651409338783293,
+          "accuracy": 0.5813
+        },
+        "unseen_value": {
+          "n": 9000,
+          "log_loss": 0.6818705457890113,
+          "brier_score": 0.24439820235339196,
+          "ece": 0.05078829455706804,
+          "auc": 0.5571085875826216,
+          "accuracy": 0.5666666666666667
+        }
+      }
+    },
+    "q_mixed_10pct_seed_20260832": {
+      "model_audit": {
+        "hypothesis_kcs": 18,
+        "features": 22,
+        "training_events": 170000,
+        "evaluation_events": 113000,
+        "iterations": [
+          9
+        ],
+        "converged": true
+      },
+      "probe_metrics": {
+        "all_probe": {
+          "n": 113000,
+          "log_loss": 0.6731098014202442,
+          "brier_score": 0.24011916629522623,
+          "ece": 0.026392533503802492,
+          "auc": 0.5695456990570624,
+          "accuracy": 0.5854247787610619
+        },
+        "seen": {
+          "n": 84000,
+          "log_loss": 0.671829353833581,
+          "brier_score": 0.2394954448278824,
+          "ece": 0.028259726869563268,
+          "auc": 0.5724547392696887,
+          "accuracy": 0.5877261904761905
+        },
+        "unseen_combination": {
+          "n": 20000,
+          "log_loss": 0.6747286327762769,
+          "brier_score": 0.2409037754111792,
+          "ece": 0.013952939251065239,
+          "auc": 0.5696821748078138,
+          "accuracy": 0.5838
+        },
+        "unseen_value": {
+          "n": 9000,
+          "log_loss": 0.6814632425490301,
+          "brier_score": 0.2441969908438731,
+          "ece": 0.04258380368351937,
+          "auc": 0.5466719008389848,
+          "accuracy": 0.5675555555555556
+        }
+      }
+    }
+  },
+  "paired_comparisons": [
+    {
+      "grammar_regime": "all_probe",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "all_merged",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 113000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.010224580997721338,
+        "interval_95": [
+          0.009380157182155173,
+          0.011028542321694193
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.004948088525335378,
+        "interval_95": [
+          0.004537836885286848,
+          0.005339929828873914
+        ]
+      }
+    },
+    {
+      "grammar_regime": "seen",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "all_merged",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 84000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.011069981856659594,
+        "interval_95": [
+          0.010111667365581991,
+          0.01196894415899767
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0053548876953915265,
+        "interval_95": [
+          0.004891150622858204,
+          0.005785999595963981
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_combination",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "all_merged",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 20000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.01081113802882758,
+        "interval_95": [
+          0.009089733020780996,
+          0.012731877435795892
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.005244940612325196,
+        "interval_95": [
+          0.004420328555175157,
+          0.006174726772118698
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_value",
+      "interpretation": "not_resolved",
+      "reference_id": "true_kstar",
+      "candidate_id": "all_merged",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 9000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0010307129118392942,
+        "interval_95": [
+          -0.0009645444479595499,
+          0.002954344919873098
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0004916249670561664,
+        "interval_95": [
+          -0.0004939349009754645,
+          0.0014466292047794335
+        ]
+      }
+    },
+    {
+      "grammar_regime": "all_probe",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "coarse_linguistic_families",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 113000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.008131586057158623,
+        "interval_95": [
+          0.007450186098926476,
+          0.008778640245111092
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.003931968430249867,
+        "interval_95": [
+          0.0036022140625624937,
+          0.004241139546750707
+        ]
+      }
+    },
+    {
+      "grammar_regime": "seen",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "coarse_linguistic_families",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 84000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.00893965241514652,
+        "interval_95": [
+          0.008179940925252167,
+          0.009638625374055446
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.004324057215565053,
+        "interval_95": [
+          0.003960065321953411,
+          0.004657991830384714
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_combination",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "coarse_linguistic_families",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 20000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.009184974402035338,
+        "interval_95": [
+          0.007564810361099395,
+          0.01083337319408471
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.004446519883579948,
+        "interval_95": [
+          0.0036604972484459816,
+          0.005245447719244042
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_value",
+      "interpretation": "not_resolved",
+      "reference_id": "true_kstar",
+      "candidate_id": "coarse_linguistic_families",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 9000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": -0.0017512296060099913,
+        "interval_95": [
+          -0.0037168509651329187,
+          0.0001121282004039456
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.0008709745734253833,
+        "interval_95": [
+          -0.0018480535597748568,
+          5.823239030139505e-05
+        ]
+      }
+    },
+    {
+      "grammar_regime": "all_probe",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "structural_split2",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 113000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.003164748196667516,
+        "interval_95": [
+          0.002744198659917256,
+          0.0035813433093743706
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0015459202619609643,
+        "interval_95": [
+          0.0013394220270863972,
+          0.0017495932884982323
+        ]
+      }
+    },
+    {
+      "grammar_regime": "seen",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "structural_split2",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 84000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0022338699089358284,
+        "interval_95": [
+          0.0017839653258390302,
+          0.002655952405842081
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0010933671954956685,
+        "interval_95": [
+          0.0008741213531049497,
+          0.001297274067264215
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_combination",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "structural_split2",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 20000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.00880639487781655,
+        "interval_95": [
+          0.007264775411332612,
+          0.010331688566432304
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.004294175265750512,
+        "interval_95": [
+          0.0035499366130641407,
+          0.005032823266783515
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_value",
+      "interpretation": "not_resolved",
+      "reference_id": "true_kstar",
+      "candidate_id": "structural_split2",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 9000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": -0.000684047075945701,
+        "interval_95": [
+          -0.0016930991089950933,
+          0.0002666170466278976
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.00033748445945082703,
+        "interval_95": [
+          -0.0008381854501828843,
+          0.0001316827718619872
+        ]
+      }
+    },
+    {
+      "grammar_regime": "all_probe",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "structural_split4",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 113000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.005867958111610399,
+        "interval_95": [
+          0.005281352720158416,
+          0.006472945324328398
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.002869276612693296,
+        "interval_95": [
+          0.002585622246430351,
+          0.0031630303306797183
+        ]
+      }
+    },
+    {
+      "grammar_regime": "seen",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "structural_split4",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 84000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0038255443260485685,
+        "interval_95": [
+          0.0032712036640590546,
+          0.004371247096491735
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.001865296310583898,
+        "interval_95": [
+          0.0015960198236127023,
+          0.0021251055827874363
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_combination",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "structural_split4",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 20000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.014485772098087796,
+        "interval_95": [
+          0.012402031788190286,
+          0.016712485053924583
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.007087127431032394,
+        "interval_95": [
+          0.006075469138352317,
+          0.008167594810351031
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_value",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "structural_split4",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 9000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.005779789029126604,
+        "interval_95": [
+          0.004300860371582796,
+          0.00719627478995782
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.002866757613849684,
+        "interval_95": [
+          0.002133650119163492,
+          0.003567156213664066
+        ]
+      }
+    },
+    {
+      "grammar_regime": "all_probe",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "exact_cell",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 113000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.015039027105857002,
+        "interval_95": [
+          0.0141075321165854,
+          0.01598963685955955
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.007423381774548754,
+        "interval_95": [
+          0.006969032115022558,
+          0.00789105981709286
+        ]
+      }
+    },
+    {
+      "grammar_regime": "seen",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "exact_cell",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 84000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.008209494107620235,
+        "interval_95": [
+          0.007485501494862231,
+          0.008905798374746319
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.004031760482764518,
+        "interval_95": [
+          0.0036807291033553197,
+          0.004374367434799254
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_combination",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "exact_cell",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 20000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.03760855974294993,
+        "interval_95": [
+          0.033760840080410144,
+          0.0415129829169406
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.018598979811542182,
+        "interval_95": [
+          0.016701824633185463,
+          0.020504629542041124
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_value",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "exact_cell",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 9000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.028626818118082552,
+        "interval_95": [
+          0.02511952226469434,
+          0.032173699936800165
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.014243851526771793,
+        "interval_95": [
+          0.012494952793337278,
+          0.016007579640183626
+        ]
+      }
+    },
+    {
+      "grammar_regime": "all_probe",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_positive_10pct_seed_20260830",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 113000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0012647717513261053,
+        "interval_95": [
+          0.0009526069300474696,
+          0.0015729762045625414
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0006006626814267735,
+        "interval_95": [
+          0.00045161984418823944,
+          0.0007487507933347605
+        ]
+      }
+    },
+    {
+      "grammar_regime": "seen",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_positive_10pct_seed_20260830",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 84000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0014374193684309937,
+        "interval_95": [
+          0.001093305638341987,
+          0.0017648318485253497
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0006862352495974658,
+        "interval_95": [
+          0.0005205957976437065,
+          0.0008426968256072727
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_combination",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_positive_10pct_seed_20260830",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 20000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.002121967376899109,
+        "interval_95": [
+          0.001316215169218781,
+          0.002933036340369585
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.001012094862644224,
+        "interval_95": [
+          0.0006263981186255705,
+          0.0014017909694962088
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_value",
+      "interpretation": "candidate_predictive_gain",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_positive_10pct_seed_20260830",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 9000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": -0.0022514851762595275,
+        "interval_95": [
+          -0.0031898941442917274,
+          -0.0013492576875664066
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.001112308357538468,
+        "interval_95": [
+          -0.0015764235257919841,
+          -0.000669510649758249
+        ]
+      }
+    },
+    {
+      "grammar_regime": "all_probe",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_positive_10pct_seed_20260831",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 113000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0018207384893770546,
+        "interval_95": [
+          0.0014822161329715823,
+          0.002163050133087238
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0008638602952721132,
+        "interval_95": [
+          0.0006996531165096568,
+          0.0010284690002151696
+        ]
+      }
+    },
+    {
+      "grammar_regime": "seen",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_positive_10pct_seed_20260831",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 84000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0021527932922972273,
+        "interval_95": [
+          0.0017455041700185437,
+          0.002543004020875046
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0010234610697180757,
+        "interval_95": [
+          0.0008275418455499447,
+          0.0012097206263076458
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_combination",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_positive_10pct_seed_20260831",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 20000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0023540100284207646,
+        "interval_95": [
+          0.0015335406916194086,
+          0.0032267230083828295
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0011321781701990879,
+        "interval_95": [
+          0.0007415923940266744,
+          0.0015519702098463425
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_value",
+      "interpretation": "candidate_predictive_gain",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_positive_10pct_seed_20260831",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 9000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": -0.0024634875357528035,
+        "interval_95": [
+          -0.0032119618424324863,
+          -0.001699850933063142
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.0012220088771723705,
+        "interval_95": [
+          -0.0015914828178971204,
+          -0.0008450378523934248
+        ]
+      }
+    },
+    {
+      "grammar_regime": "all_probe",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_positive_10pct_seed_20260832",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 113000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.001970192046329123,
+        "interval_95": [
+          0.0016735529944319379,
+          0.002265375362369176
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0009428791962684062,
+        "interval_95": [
+          0.0007978274950318743,
+          0.001087810002842546
+        ]
+      }
+    },
+    {
+      "grammar_regime": "seen",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_positive_10pct_seed_20260832",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 84000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0021873013753449964,
+        "interval_95": [
+          0.0018669261692873692,
+          0.0025118618049827014
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.001048676612323788,
+        "interval_95": [
+          0.0008942993948612055,
+          0.0012047520172274472
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_combination",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_positive_10pct_seed_20260832",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 20000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0026539181103743294,
+        "interval_95": [
+          0.00183956671156605,
+          0.003498666239709397
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0012764659779549963,
+        "interval_95": [
+          0.0008869637743057723,
+          0.0016837423368208798
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_value",
+      "interpretation": "candidate_predictive_gain",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_positive_10pct_seed_20260832",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 9000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": -0.0015755529445861506,
+        "interval_95": [
+          -0.002606359883736656,
+          -0.0006268871498605358
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": -0.0007858673128853582,
+        "interval_95": [
+          -0.00129730554534873,
+          -0.00031200931511673796
+        ]
+      }
+    },
+    {
+      "grammar_regime": "all_probe",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_negative_10pct_seed_20260830",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 113000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0021367980605091733,
+        "interval_95": [
+          0.0018033284150452405,
+          0.002463873371698031
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0010351410690092684,
+        "interval_95": [
+          0.0008721222209227899,
+          0.0011928570450575773
+        ]
+      }
+    },
+    {
+      "grammar_regime": "seen",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_negative_10pct_seed_20260830",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 84000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0018127270127241053,
+        "interval_95": [
+          0.0014392077906149124,
+          0.002171726735907911
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0008760028689878071,
+        "interval_95": [
+          0.0006936037424368323,
+          0.001050139200036828
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_combination",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_negative_10pct_seed_20260830",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 20000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.001714555427411671,
+        "interval_95": [
+          0.0010634014652401973,
+          0.002438047649341548
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0008101336007296001,
+        "interval_95": [
+          0.0004967231512166602,
+          0.0011526518460391601
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_value",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_negative_10pct_seed_20260830",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 9000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0060997781356087,
+        "interval_95": [
+          0.004630122203569426,
+          0.007570270326713727
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0030204475320532807,
+        "interval_95": [
+          0.002303908770594389,
+          0.0037423389283638155
+        ]
+      }
+    },
+    {
+      "grammar_regime": "all_probe",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_negative_10pct_seed_20260831",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 113000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0017906888995192958,
+        "interval_95": [
+          0.0015029417287993954,
+          0.0021025084307498207
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0008642500657666561,
+        "interval_95": [
+          0.0007251905827757291,
+          0.001016617717783805
+        ]
+      }
+    },
+    {
+      "grammar_regime": "seen",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_negative_10pct_seed_20260831",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 84000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0011582787127697894,
+        "interval_95": [
+          0.0008534461377357473,
+          0.001472086207379681
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.00055549296485475,
+        "interval_95": [
+          0.00041065051369290346,
+          0.000706743692706356
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_combination",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_negative_10pct_seed_20260831",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 20000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0040173249797656515,
+        "interval_95": [
+          0.0031178383567357104,
+          0.004926475850331595
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0019363932810372705,
+        "interval_95": [
+          0.0014965625540211492,
+          0.0023806513838513115
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_value",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_negative_10pct_seed_20260831",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 9000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.002745103797522788,
+        "interval_95": [
+          0.0015324682546461513,
+          0.004091805563638923
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0013634425292319702,
+        "interval_95": [
+          0.0007646653460301067,
+          0.002028554550146969
+        ]
+      }
+    },
+    {
+      "grammar_regime": "all_probe",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_negative_10pct_seed_20260832",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 113000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.004004164691771801,
+        "interval_95": [
+          0.003603719246566606,
+          0.0044035974382929674
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.001932712892879801,
+        "interval_95": [
+          0.0017375839083186738,
+          0.0021267610118644487
+        ]
+      }
+    },
+    {
+      "grammar_regime": "seen",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_negative_10pct_seed_20260832",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 84000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.004428495634398317,
+        "interval_95": [
+          0.003978423805456521,
+          0.004853592250039505
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.002137340085950962,
+        "interval_95": [
+          0.001917574860042444,
+          0.0023411544756667957
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_combination",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_negative_10pct_seed_20260832",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 20000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.002900802748059333,
+        "interval_95": [
+          0.0019159751940722657,
+          0.003916934289258741
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.001389209418580535,
+        "interval_95": [
+          0.0009149626818911407,
+          0.001876083191048136
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_value",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_false_negative_10pct_seed_20260832",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 9000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.00249565799106314,
+        "interval_95": [
+          0.0013685504349940636,
+          0.0036604443076387614
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0012306445893251134,
+        "interval_95": [
+          0.0006727826450110662,
+          0.0018073625043031573
+        ]
+      }
+    },
+    {
+      "grammar_regime": "all_probe",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_mixed_10pct_seed_20260830",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 113000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0026410725825086324,
+        "interval_95": [
+          0.0022825032047873806,
+          0.002984343747250121
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0012691105318916292,
+        "interval_95": [
+          0.001094498705295131,
+          0.001432885444152304
+        ]
+      }
+    },
+    {
+      "grammar_regime": "seen",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_mixed_10pct_seed_20260830",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 84000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.002731779653510066,
+        "interval_95": [
+          0.0023210033658560545,
+          0.0031359411322841573
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.001314070907053407,
+        "interval_95": [
+          0.0011183600501648463,
+          0.0015090335837485863
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_combination",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_mixed_10pct_seed_20260830",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 20000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0026385672263992896,
+        "interval_95": [
+          0.0018824711588361093,
+          0.0034320170851351475
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0012504554830033022,
+        "interval_95": [
+          0.000890194703666712,
+          0.001632572276689882
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_value",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_mixed_10pct_seed_20260830",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 9000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0018000407111826832,
+        "interval_95": [
+          0.0005795047236487747,
+          0.0030131532955211004
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0008909360279113204,
+        "interval_95": [
+          0.00028667526621150235,
+          0.0014930615075257178
+        ]
+      }
+    },
+    {
+      "grammar_regime": "all_probe",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_mixed_10pct_seed_20260831",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 113000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0017572825603618726,
+        "interval_95": [
+          0.0014572849539996886,
+          0.002069957883091587
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0008436625477626005,
+        "interval_95": [
+          0.0006969662405272819,
+          0.0009975936369786957
+        ]
+      }
+    },
+    {
+      "grammar_regime": "seen",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_mixed_10pct_seed_20260831",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 84000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0015420052331584523,
+        "interval_95": [
+          0.001198707699323037,
+          0.0018793493714074029
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.000738165420120274,
+        "interval_95": [
+          0.0005703129852236565,
+          0.000900906046769385
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_combination",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_mixed_10pct_seed_20260831",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 20000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.003141847104133269,
+        "interval_95": [
+          0.0023470493759319756,
+          0.004019991354005547
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0015137310372468665,
+        "interval_95": [
+          0.0011322053550553318,
+          0.0019342204249156202
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_value",
+      "interpretation": "not_resolved",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_mixed_10pct_seed_20260831",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 9000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0006897275169906909,
+        "interval_95": [
+          -0.00013570614478304306,
+          0.0015938365492695632
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0003392613180148349,
+        "interval_95": [
+          -6.831858453061252e-05,
+          0.0007880828374811544
+        ]
+      }
+    },
+    {
+      "grammar_regime": "all_probe",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_mixed_10pct_seed_20260832",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 113000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.002482555310989723,
+        "interval_95": [
+          0.002136047750000771,
+          0.002837338370606644
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0011941857781578049,
+        "interval_95": [
+          0.0010258561602896922,
+          0.0013657145531065526
+        ]
+      }
+    },
+    {
+      "grammar_regime": "seen",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_mixed_10pct_seed_20260832",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 84000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0026681929898665618,
+        "interval_95": [
+          0.0023108935493168768,
+          0.0030280415396309263
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0012863659406388136,
+        "interval_95": [
+          0.0011130762773350338,
+          0.0014580562545638586
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_combination",
+      "interpretation": "cost_supported",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_mixed_10pct_seed_20260832",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 20000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.002692936024998086,
+        "interval_95": [
+          0.0017128737366300189,
+          0.0037260589110706204
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0012822902820853784,
+        "interval_95": [
+          0.0008081996584090646,
+          0.0017754179632743067
+        ]
+      }
+    },
+    {
+      "grammar_regime": "unseen_value",
+      "interpretation": "not_resolved",
+      "reference_id": "true_kstar",
+      "candidate_id": "q_mixed_10pct_seed_20260832",
+      "sign_convention": "candidate_minus_true_kstar; positive favours K*",
+      "sampling_unit": "learner",
+      "aggregation": "event_weighted",
+      "learners": 1000,
+      "events": 9000,
+      "repeats": 2000,
+      "seed": 20260830,
+      "delta_log_loss": {
+        "point_estimate": 0.0002824242770095348,
+        "interval_95": [
+          -0.0010975786332835672,
+          0.0016060358271427972
+        ]
+      },
+      "delta_brier_score": {
+        "point_estimate": 0.0001380498084960049,
+        "interval_95": [
+          -0.0005447788880322218,
+          0.000792606047021174
+        ]
+      }
+    }
+  ],
+  "result_scope_note": "Predictive differences identify consequences under the declared synthetic world; they do not establish human cognitive KC truth."
+}

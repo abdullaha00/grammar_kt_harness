@@ -251,14 +251,30 @@ and geometry checks before K* and Q* pass their measurement gate.
   command, input hashes, deterministic gzip settings, and an 88-file recursive
   inventory. Automatic validation remains a declared non-human limitation.
 
+## Established full-v1 downstream evidence
+
+- In the preregistered 15-condition RQ2 study, K* gives the best overall
+  observable-logistic probe log loss (0.670627). Costs increase for structural
+  split-2 (+.003165), split-4 (+.005868), linguistic-family coarse (+.008132),
+  all-merged (+.010225), and exact-cell (+.015039); every learner-paired 95%
+  interval excludes zero. This is a monotone predictive granularity result on
+  the tested grid, not a cognitive-truth claim.
+- Exact-cell hypotheses generalise especially poorly to unseen combinations
+  (+.037609 log loss) and unseen values (+.028627). Some lower-dimensional
+  unseen-value contrasts remain unresolved, so RQ4 needs explicit structural
+  recovery and cell-sensitivity evidence rather than only pooled events.
+- All nine preregistered 10% Q-corruption structures degrade prediction. Mean
+  costs are +.001685 false-positive, +.002644 false-negative, and +.002294
+  mixed; seed spread prevents a strong ordering claim. The shared 113,000 probe
+  rows and observable-only boundary were verified.
+
 ## Current unresolved research questions
 
-1. How response prediction and mastery recovery degrade under controlled KC
-   merge/split and Q-edge misspecification relative to K*.
-2. Whether observable response evidence can recover Q*/K* structurally, or
+1. Whether observable response evidence can recover Q*/K* structurally, or
    whether distinct representations are predictively indistinguishable.
-3. How K*, coarse/fine hypotheses, and discovered K-hat generalise across the
+2. How K*, coarse/fine hypotheses, and discovered K-hat generalise across the
    54/15/6 semantic grammar regimes.
+3. Whether predictive ranking agrees with oracle-only mastery recovery.
 4. Which simulator and collection-design assumptions carry those conclusions.
 
 ## Important active paths
@@ -275,6 +291,6 @@ and geometry checks before K* and Q* pass their measurement gate.
 
 ## Current next action
 
-Preregister and execute the bounded full-dataset RQ2 misspecification study,
-including paired response prediction and oracle-only mastery recovery, while
-implementing structural K*/Q* recovery metrics for the subsequent RQ3 study.
+Complete the outcome-hidden RQ3 selector and name-free Q-recovery evaluation,
+then combine its frozen K-hat with RQ2 hypotheses for regime-specific RQ4 and
+oracle-only mastery-recovery analysis.
