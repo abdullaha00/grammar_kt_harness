@@ -398,18 +398,33 @@ def test_final_dataset_visualization_is_public_full_v1_only() -> None:
     for required in (
         "Grammar-KT full-v1",
         "learner_000001",
-        "event 2 of 283",
+        "sequence 1–10 of 283",
+        "Binary + Q* view",
+        "Stored prompt view",
+        "item_id → Q* required KCs · mastery over those KCs → P(correct) → sampled y",
+        "Q*=1",
+        "Q*=0",
+        "Q star row 000100000000000000",
+        "Q star row 000000000000001001",
+        "candidate_gc_4601bed02c004e37_01",
         "Mia had a map, so she found the house. Without the map, [____]. (find)",
-        "Correct = 1",
         "candidate_gc_e7fef77abc10b5ba_01",
-        "tense: NA · aspect: perfect · voice: active · polarity: negative",
-        "perfect construction · central modal WOULD · verbal negation",
+        "candidate_gc_172c3f1039296750_01",
         "she would not have found the house",
-        "283,000 observable rows",
-        "170 acquisition + 113 probe events per learner",
-        "113 items · 75 GrammarCells · 18 generator KCs",
+        "Would she open the window?",
+        "Accepted response text · not used by simulator",
+        "text is neither rendered nor scored by this simulator",
+        "K*/Q* are controlled synthetic truth, not claims about human cognition",
+        "Full dataset: 1,000 learners · 113 items · 18 generator KCs",
+        "283,000 observable interactions",
     ):
         assert required in html
+
+    assert html.count('data-event="') == 10
+    assert html.count('data-entry="') == 10
+    assert html.count('class="view-tab"') == 2
+    assert html.count("<script>") == 1
+    assert 'querySelectorAll("[data-view]")' in html
 
     for forbidden in (
         "learner_truth",
@@ -420,14 +435,14 @@ def test_final_dataset_visualization_is_public_full_v1_only() -> None:
         "RQ2",
         "RQ3",
         "RQ4",
-        "<script",
         "fetch(",
+        "<script src=",
     ):
         assert forbidden not in html
 
     assert '<meta name="viewport"' in html
-    assert "@media (max-width: 52rem)" in html
-    assert path.stat().st_size < 10_000
+    assert "@media (max-width: 48rem)" in html
+    assert path.stat().st_size < 30_000
 
 
 def test_baseline_generation_has_no_controlled_lexicon_dependency() -> None:

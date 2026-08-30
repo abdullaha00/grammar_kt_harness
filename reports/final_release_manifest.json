@@ -123,8 +123,8 @@
     "licensed source content, provider snapshots/seeds, and unrelated user files"
   ],
   "artifact_count": 164,
-  "artifact_bytes": 37731275,
-  "inventory_semantic_sha256": "ce0c635817b6ecb4ae11bc5c390e65e0b8b963c4d8103a8280f78799e0320f59",
+  "artifact_bytes": 37752424,
+  "inventory_semantic_sha256": "dad5522318e7bfa5a13f1f06246c4b598aeb8a48313873d44c4e6c1cfc2db89d",
   "artifacts": [
     {
       "group": "acl_manuscript",
@@ -747,8 +747,8 @@
     {
       "group": "release_documentation",
       "path": "reports/final_dataset_visualization.html",
-      "bytes": 5496,
-      "sha256": "a47612a59ac02726efe721b3cf66ad41e256e80b297bbe67f0f64194746e9b22"
+      "bytes": 25724,
+      "sha256": "85bf379f03ea4473cbb64d4ff759e1f3f478f2bea5f965ab9bedc700346d5218"
     },
     {
       "group": "release_documentation",
@@ -765,8 +765,8 @@
     {
       "group": "release_documentation",
       "path": "reports/final_verification.md",
-      "bytes": 14162,
-      "sha256": "7c5d03385311f087d9a53896da924b777bd1651c15e59e128f7f50dcbba59a5f"
+      "bytes": 14457,
+      "sha256": "ada789aa8149c27dd050b43dd5369037864afa23e0759119e73fdf35cfeb162f"
     },
     {
       "group": "release_documentation",
@@ -1107,8 +1107,8 @@
     {
       "group": "release_contracts",
       "path": "tests/test_research_layout.py",
-      "bytes": 16450,
-      "sha256": "cd2d7d6cb0736c410510bf8d4ea8bb7205d3675b5721582e3836d205760c244b"
+      "bytes": 17076,
+      "sha256": "5607b0eadd156deeeca7554bad69a84e5bea4fa5199f8e57226150ee26f46ca6"
     }
   ]
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Grammar-KT full-v1 dataset</title>
+  <title>Grammar-KT full-v1: two views</title>
   <style>
     :root {
       color-scheme: light dark;
@@ -16,32 +16,42 @@
 
     body {
       margin: 0;
-      padding: clamp(1.25rem, 5vw, 3.5rem);
+      padding: clamp(1.25rem, 4vw, 3rem);
       background: Canvas;
       color: CanvasText;
       font-size: 1rem;
-      line-height: 1.5;
+      line-height: 1.45;
     }
 
     main {
-      width: min(100%, 58rem);
+      width: min(100%, 76rem);
       margin: 0 auto;
     }
 
-    h1 {
+    h1,
+    h2 {
       margin: 0;
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
       font-weight: 500;
-      letter-spacing: -0.025em;
+      letter-spacing: -0.02em;
     }
 
-    p,
-    figure {
+    h1 {
+      font-size: clamp(1.75rem, 4vw, 2.4rem);
+    }
+
+    h2 {
+      font-size: 1.2rem;
+    }
+
+    p {
       margin: 0;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
     }
 
     .eyebrow {
-      margin-bottom: 0.3rem;
       color: GrayText;
       font-size: 0.75rem;
       font-weight: 500;
@@ -49,184 +59,507 @@
       text-transform: uppercase;
     }
 
-    .subtitle {
-      margin-top: 0.25rem;
+    .subtitle,
+    .view-note,
+    .sample-meta,
+    .prompt-key,
+    .scope-note,
+    footer {
       color: GrayText;
     }
 
-    figure {
-      margin-top: clamp(1.5rem, 4vw, 2.5rem);
+    .subtitle {
+      margin-top: 0.25rem;
     }
 
-    .event-head,
-    .response,
-    .scale {
+    .sample-meta {
+      margin-top: 1.1rem;
+    }
+
+    .view-tabs {
+      display: flex;
+      gap: 1.25rem;
+      margin: 1.5rem 0 1.1rem;
+      border-bottom: 1px solid color-mix(in srgb, CanvasText 22%, Canvas);
+    }
+
+    .view-tab {
+      margin: 0 0 -1px;
+      padding: 0.55rem 0;
+      border: 0;
+      border-bottom: 2px solid transparent;
+      background: transparent;
+      color: GrayText;
+      font: inherit;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .view-tab[aria-selected="true"] {
+      border-bottom-color: AccentColor;
+      color: CanvasText;
+    }
+
+    .view-tab:focus-visible {
+      outline: 2px solid AccentColor;
+      outline-offset: 3px;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    .view-heading {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      gap: 0.75rem 1.25rem;
+      gap: 0.5rem 1.5rem;
       flex-wrap: wrap;
+      margin-bottom: 0.8rem;
     }
 
-    .learner {
-      font-weight: 500;
-    }
-
-    .event-meta,
-    .response-note,
-    figcaption {
+    .causal-path {
+      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
       color: GrayText;
+      font-size: 0.82rem;
     }
 
-    .prompt {
-      margin: 0.8rem 0;
-      padding: 1rem 1.1rem;
-      border-left: 4px solid AccentColor;
-      background: color-mix(in srgb, CanvasText 5%, Canvas);
+    .table-wrap {
+      overflow-x: auto;
     }
 
-    .prompt-text {
-      margin-top: 0.3rem;
-      font-size: 1.08rem;
+    table {
+      width: 100%;
+      min-width: 58rem;
+      border-collapse: collapse;
+      font-size: 0.78rem;
     }
 
-    .response {
-      padding: 0.65rem 0;
-      border-bottom: 1px solid color-mix(in srgb, CanvasText 22%, Canvas);
+    th,
+    td {
+      padding: 0.5rem 0.4rem;
+      border-bottom: 1px solid color-mix(in srgb, CanvasText 16%, Canvas);
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    th {
+      color: GrayText;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .event-number,
+    .outcome {
+      width: 2.25rem;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
     }
 
     .outcome {
       font-weight: 500;
     }
 
-    .mapping {
-      display: grid;
-      grid-template-columns: minmax(0, 0.8fr) 1rem minmax(0, 1.45fr) 1rem minmax(0, 1.15fr);
-      gap: 0.75rem;
-      align-items: center;
-      padding: 1rem 0 0.65rem;
-    }
-
-    .node strong {
+    .item-id {
       display: block;
-      margin-top: 0.18rem;
-      font-weight: 500;
+      max-width: 15rem;
       overflow-wrap: anywhere;
+      color: inherit;
+      font-size: 0.72rem;
     }
 
-    .arrow {
+    .active-kcs {
+      white-space: nowrap;
+      color: inherit;
+    }
+
+    .q-bits {
+      display: grid;
+      grid-template-columns: repeat(18, 1.05rem);
+      gap: 0.12rem;
+      width: max-content;
+    }
+
+    .bit {
+      display: inline-grid;
+      place-items: center;
+      min-height: 1.05rem;
       color: GrayText;
-      text-align: center;
+      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+      font-size: 0.68rem;
+      font-weight: 400;
     }
 
-    .arrow::before {
-      content: "→";
+    .bit.one {
+      background: Highlight;
+      color: HighlightText;
+      font-weight: 500;
     }
 
-    .answer-key {
-      margin-top: 0.45rem;
+    .q-head .bit {
+      min-height: auto;
       color: GrayText;
+      font-size: 0.62rem;
     }
 
-    .answer-key .eyebrow {
-      display: block;
-      margin-bottom: 0.1rem;
+    .matrix-legend {
+      display: flex;
+      gap: 0.45rem 1.4rem;
+      flex-wrap: wrap;
+      margin-top: 0.65rem;
+      color: GrayText;
+      font-size: 0.78rem;
     }
 
-    figcaption {
-      margin-top: 1.25rem;
-      padding-top: 0.8rem;
-      border-top: 1px solid color-mix(in srgb, CanvasText 22%, Canvas);
+    details {
+      margin-top: 0.8rem;
+      color: GrayText;
+      font-size: 0.8rem;
     }
 
-    .scale {
+    summary {
+      width: max-content;
+      cursor: pointer;
+    }
+
+    .kc-key {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.3rem 1.25rem;
+      margin-top: 0.65rem;
+    }
+
+    .kc-key code {
       color: CanvasText;
     }
 
-    .scale strong {
-      font-weight: 500;
+    .prompt-list {
+      display: grid;
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
 
-    .inventory {
-      margin-top: 0.35rem;
+    .prompt-entry {
+      padding: 1rem 0;
+      border-bottom: 1px solid color-mix(in srgb, CanvasText 18%, Canvas);
     }
 
-    @media (max-width: 52rem) {
-      .mapping {
+    .prompt-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.45rem;
+    }
+
+    .prompt-text {
+      padding: 0.8rem 0.95rem;
+      border-left: 3px solid AccentColor;
+      background: color-mix(in srgb, CanvasText 5%, Canvas);
+      font-size: 1rem;
+    }
+
+    .prompt-key {
+      margin-top: 0.45rem;
+      font-size: 0.82rem;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.4rem 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid color-mix(in srgb, CanvasText 22%, Canvas);
+      font-size: 0.82rem;
+    }
+
+    .scope-note {
+      flex-basis: 100%;
+    }
+
+    @media (max-width: 48rem) {
+      body {
+        padding: 1.2rem;
+      }
+
+      .view-tabs {
+        gap: 0.85rem;
+      }
+
+      .view-tab {
+        font-size: 0.9rem;
+      }
+
+      .kc-key {
         grid-template-columns: 1fr;
-        gap: 0.35rem;
-      }
-
-      .arrow {
-        width: max-content;
-      }
-
-      .arrow::before {
-        content: "↓";
       }
     }
   </style>
 </head>
 <body>
-  <main>
+  <main id="dataset-views">
     <header>
-      <p class="eyebrow">Frozen public dataset</p>
+      <p class="eyebrow">Frozen synthetic dataset · same records, two representations</p>
       <h1>Grammar-KT full-v1</h1>
-      <p class="subtitle">One learner event, end to end</p>
+      <p class="subtitle">Ten retained events for simulated learner_000001</p>
+      <p class="sample-meta">Acquisition · item-local pass_index=1 · seen grammar · sequence 1–10 of 283</p>
     </header>
 
-    <figure aria-label="A real observable event and its fixed grammatical and generator-KC mapping">
-      <div class="event-head">
-        <div>
-          <span class="eyebrow">Learner</span>
-          <div class="learner">learner_000001</div>
-        </div>
-        <div class="event-meta">Acquisition · seen grammar · event 2 of 283</div>
+    <nav class="view-tabs" role="tablist" aria-label="Dataset representation">
+      <button class="view-tab" type="button" role="tab" aria-selected="true" aria-controls="model-view" data-view="model-view">Binary + Q* view</button>
+      <button class="view-tab" type="button" role="tab" aria-selected="false" aria-controls="learner-view" data-view="learner-view" tabindex="-1">Stored prompt view</button>
+    </nav>
+
+    <section id="model-view" role="tabpanel" aria-labelledby="model-heading">
+      <div class="view-heading">
+        <h2 id="model-heading">Binary response + declared Q*</h2>
+        <p class="causal-path">item_id → Q* required KCs · mastery over those KCs → P(correct) → sampled y</p>
+      </div>
+      <p class="view-note">Each retained event is joined to controlled generator truth Q* for inspection; private mastery and probabilities are not shown.</p>
+
+      <div class="table-wrap">
+        <table aria-label="Ten observable events with binary outcomes and 18-column true Q-matrix rows">
+          <thead>
+            <tr>
+              <th scope="col">Event</th>
+              <th scope="col">y</th>
+              <th scope="col">item_id</th>
+              <th scope="col">
+                <span>Q* row</span>
+                <div class="q-bits q-head" aria-hidden="true">
+                  <span class="bit">01</span><span class="bit">02</span><span class="bit">03</span><span class="bit">04</span><span class="bit">05</span><span class="bit">06</span><span class="bit">07</span><span class="bit">08</span><span class="bit">09</span><span class="bit">10</span><span class="bit">11</span><span class="bit">12</span><span class="bit">13</span><span class="bit">14</span><span class="bit">15</span><span class="bit">16</span><span class="bit">17</span><span class="bit">18</span>
+                </div>
+              </th>
+              <th scope="col">Active K*</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-event="1">
+              <td class="event-number">01</td>
+              <td class="outcome" aria-label="correct equals 1">1</td>
+              <td><code class="item-id">candidate_gc_4601bed02c004e37_01</code></td>
+              <td><div class="q-bits" aria-label="Q star row 000100000000000000">
+                <span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span>
+              </div></td>
+              <td><code class="active-kcs">K04</code></td>
+            </tr>
+            <tr data-event="2">
+              <td class="event-number">02</td>
+              <td class="outcome" aria-label="correct equals 1">1</td>
+              <td><code class="item-id">candidate_gc_e7fef77abc10b5ba_01</code></td>
+              <td><div class="q-bits" aria-label="Q star row 100000000000001100">
+                <span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit one">1</span><span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span>
+              </div></td>
+              <td><code class="active-kcs">K01 K15 K16</code></td>
+            </tr>
+            <tr data-event="3">
+              <td class="event-number">03</td>
+              <td class="outcome" aria-label="correct equals 0">0</td>
+              <td><code class="item-id">candidate_gc_a0fe7953b9fffca8_03</code></td>
+              <td><div class="q-bits" aria-label="Q star row 001010000000000100">
+                <span class="bit">0</span><span class="bit">0</span><span class="bit one">1</span><span class="bit">0</span><span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span>
+              </div></td>
+              <td><code class="active-kcs">K03 K05 K16</code></td>
+            </tr>
+            <tr data-event="4">
+              <td class="event-number">04</td>
+              <td class="outcome" aria-label="correct equals 1">1</td>
+              <td><code class="item-id">candidate_gc_8b7e8b31b496e102_02</code></td>
+              <td><div class="q-bits" aria-label="Q star row 011010000000000100">
+                <span class="bit">0</span><span class="bit one">1</span><span class="bit one">1</span><span class="bit">0</span><span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span>
+              </div></td>
+              <td><code class="active-kcs">K02 K03 K05 K16</code></td>
+            </tr>
+            <tr data-event="5">
+              <td class="event-number">05</td>
+              <td class="outcome" aria-label="correct equals 0">0</td>
+              <td><code class="item-id">unchanged_rescue_gc_4a4c9d34c1b5bce4_01</code></td>
+              <td><div class="q-bits" aria-label="Q star row 100000000010000000">
+                <span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span>
+              </div></td>
+              <td><code class="active-kcs">K01 K11</code></td>
+            </tr>
+            <tr data-event="6">
+              <td class="event-number">06</td>
+              <td class="outcome" aria-label="correct equals 0">0</td>
+              <td><code class="item-id">candidate_gc_c2cf343c43ce329d_02</code></td>
+              <td><div class="q-bits" aria-label="Q star row 100010000000000100">
+                <span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span>
+              </div></td>
+              <td><code class="active-kcs">K01 K05 K16</code></td>
+            </tr>
+            <tr data-event="7">
+              <td class="event-number">07</td>
+              <td class="outcome" aria-label="correct equals 1">1</td>
+              <td><code class="item-id">determinacy_intervention_gc_a94168b2255fe062_01</code></td>
+              <td><div class="q-bits" aria-label="Q star row 010000000000010100">
+                <span class="bit">0</span><span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit one">1</span><span class="bit">0</span><span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span>
+              </div></td>
+              <td><code class="active-kcs">K02 K14 K16</code></td>
+            </tr>
+            <tr data-event="8">
+              <td class="event-number">08</td>
+              <td class="outcome" aria-label="correct equals 1">1</td>
+              <td><code class="item-id">candidate_gc_dfd385cd88abc20f_02</code></td>
+              <td><div class="q-bits" aria-label="Q star row 001000000010000100">
+                <span class="bit">0</span><span class="bit">0</span><span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span>
+              </div></td>
+              <td><code class="active-kcs">K03 K11 K16</code></td>
+            </tr>
+            <tr data-event="9">
+              <td class="event-number">09</td>
+              <td class="outcome" aria-label="correct equals 0">0</td>
+              <td><code class="item-id">determinacy_intervention_gc_a94168b2255fe062_02</code></td>
+              <td><div class="q-bits" aria-label="Q star row 010000000000010100">
+                <span class="bit">0</span><span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit one">1</span><span class="bit">0</span><span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span>
+              </div></td>
+              <td><code class="active-kcs">K02 K14 K16</code></td>
+            </tr>
+            <tr data-event="10">
+              <td class="event-number">10</td>
+              <td class="outcome" aria-label="correct equals 1">1</td>
+              <td><code class="item-id">candidate_gc_172c3f1039296750_01</code></td>
+              <td><div class="q-bits" aria-label="Q star row 000000000000001001">
+                <span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit">0</span><span class="bit one">1</span><span class="bit">0</span><span class="bit">0</span><span class="bit one">1</span>
+              </div></td>
+              <td><code class="active-kcs">K15 K18</code></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
-      <section class="prompt" aria-labelledby="prompt-label">
-        <div class="eyebrow" id="prompt-label">Prompt shown to learner</div>
-        <p class="prompt-text">Mia had a map, so she found the house. Without the map, [____]. (find)</p>
-      </section>
-
-      <div class="response">
-        <div>
-          <span class="eyebrow">Observable response</span>
-          <div class="outcome">Correct = 1</div>
-        </div>
-        <div class="response-note">Binary outcome only; no free-text learner answer is stored</div>
+      <div class="matrix-legend" aria-label="Matrix legend">
+        <span><strong>y</strong>: sampled correctness</span>
+        <span><strong>Q*=1</strong>: item requires KC</span>
+        <span><strong>Q*=0</strong>: KC inactive for item</span>
       </div>
 
-      <div class="mapping" aria-label="Item to GrammarCell to true generator-KC mapping">
-        <div class="node">
-          <span class="eyebrow">Item</span>
-          <strong>candidate_gc_e7fef77abc10b5ba_01</strong>
+      <details>
+        <summary>Q* column key · 18 generator KCs</summary>
+        <div class="kc-key">
+          <span><code>K01</code> perfect construction</span>
+          <span><code>K02</code> progressive construction</span>
+          <span><code>K03</code> canonical BE-passive</span>
+          <span><code>K04</code> past finite-form selection</span>
+          <span><code>K05</code> present finite-form selection</span>
+          <span><code>K06</code> imperative clause formation</span>
+          <span><code>K07</code> central modal CAN</span>
+          <span><code>K08</code> central modal COULD</span>
+          <span><code>K09</code> central modal MAY</span>
+          <span><code>K10</code> central modal MIGHT</span>
+          <span><code>K11</code> central modal MUST</span>
+          <span><code>K12</code> central modal SHALL</span>
+          <span><code>K13</code> central modal SHOULD</span>
+          <span><code>K14</code> central modal WILL</span>
+          <span><code>K15</code> central modal WOULD</span>
+          <span><code>K16</code> verbal negation</span>
+          <span><code>K17</code> non-subject-WH question formation</span>
+          <span><code>K18</code> polar-question formation</span>
         </div>
-        <span class="arrow" aria-hidden="true"></span>
-        <div class="node">
-          <span class="eyebrow">GrammarCell</span>
-          <strong>tense: NA · aspect: perfect · voice: active · polarity: negative · clause: declarative · modal: would</strong>
-        </div>
-        <span class="arrow" aria-hidden="true"></span>
-        <div class="node">
-          <span class="eyebrow">Q* requires · generator KCs</span>
-          <strong>perfect construction · central modal WOULD · verbal negation</strong>
-        </div>
+      </details>
+    </section>
+
+    <section id="learner-view" role="tabpanel" aria-labelledby="learner-heading" hidden>
+      <div class="view-heading">
+        <h2 id="learner-heading">Stored learner-facing item material</h2>
+        <p class="view-note">How each item could be presented; text is neither rendered nor scored by this simulator.</p>
       </div>
 
-      <p class="answer-key">
-        <span class="eyebrow">Answer key · not shown during the attempt</span>
-        she would not have found the house
-      </p>
+      <ol class="prompt-list">
+        <li class="prompt-entry" data-entry="1">
+          <div class="prompt-meta"><span class="eyebrow">Event 01 · stored prompt</span><span>stored y = 1</span></div>
+          <p class="prompt-text">Yesterday, Mia needed some milk, so she ___ to the shop. (walk)</p>
+          <p class="prompt-key"><span class="eyebrow">Accepted response text · not used by simulator</span><br>walked</p>
+        </li>
+        <li class="prompt-entry" data-entry="2">
+          <div class="prompt-meta"><span class="eyebrow">Event 02 · stored prompt</span><span>stored y = 1</span></div>
+          <p class="prompt-text">Mia had a map, so she found the house. Without the map, [____]. (find)</p>
+          <p class="prompt-key"><span class="eyebrow">Accepted response text · not used by simulator</span><br>she would not have found the house · or · she wouldn't have found the house</p>
+        </li>
+        <li class="prompt-entry" data-entry="3">
+          <div class="prompt-meta"><span class="eyebrow">Event 03 · stored prompt</span><span>stored y = 0</span></div>
+          <p class="prompt-text">The cleaner washes the office windows on Fridays, but leaves the kitchen windows dirty. Complete using “clean”: The kitchen windows ____ on Fridays.</p>
+          <p class="prompt-key"><span class="eyebrow">Accepted response text · not used by simulator</span><br>are not cleaned</p>
+        </li>
+        <li class="prompt-entry" data-entry="4">
+          <div class="prompt-meta"><span class="eyebrow">Event 04 · stored prompt</span><span>stored y = 1</span></div>
+          <p class="prompt-text">The workers are painting the front door, but they have not started the back door. Complete the sentence using the verb in brackets: The back door _____. (paint)</p>
+          <p class="prompt-key"><span class="eyebrow">Accepted response text · not used by simulator</span><br>is not being painted · or · isn't being painted</p>
+        </li>
+        <li class="prompt-entry" data-entry="5">
+          <div class="prompt-meta"><span class="eyebrow">Event 05 · stored prompt</span><span>stored y = 0</span></div>
+          <p class="prompt-text">The kitchen light is off, but Ben left it on when he went out. Complete the sentence using the cue in brackets: Ben ___ it off. (must / turn)</p>
+          <p class="prompt-key"><span class="eyebrow">Accepted response text · not used by simulator</span><br>must have turned</p>
+        </li>
+        <li class="prompt-entry" data-entry="6">
+          <div class="prompt-meta"><span class="eyebrow">Event 06 · stored prompt</span><span>stored y = 0</span></div>
+          <p class="prompt-text">Maya planned to wash the car today, but it is still dirty. Complete the sentence using the cue (wash): Maya ____ the car.</p>
+          <p class="prompt-key"><span class="eyebrow">Accepted response text · not used by simulator</span><br>has not washed · or · hasn't washed</p>
+        </li>
+        <li class="prompt-entry" data-entry="7">
+          <div class="prompt-meta"><span class="eyebrow">Event 07 · stored prompt</span><span>stored y = 1</span></div>
+          <p class="prompt-text">Mia's car will be at the repair shop tomorrow. Use a negative active declarative with will and the progressive aspect. Complete the sentence using “Mia / drive / to work”: [____]</p>
+          <p class="prompt-key"><span class="eyebrow">Accepted response text · not used by simulator</span><br>Mia will not be driving to work. · or · Mia won't be driving to work.</p>
+        </li>
+        <li class="prompt-entry" data-entry="8">
+          <div class="prompt-meta"><span class="eyebrow">Event 08 · stored prompt</span><span>stored y = 1</span></div>
+          <p class="prompt-text">The wet floor is dangerous. Complete the rule: The door ___ until the floor is dry.</p>
+          <p class="prompt-key"><span class="eyebrow">Accepted response text · not used by simulator</span><br>must not be opened</p>
+        </li>
+        <li class="prompt-entry" data-entry="9">
+          <div class="prompt-meta"><span class="eyebrow">Event 09 · stored prompt</span><span>stored y = 0</span></div>
+          <p class="prompt-text">Mia has a dentist appointment tomorrow morning. Complete the sentence using the negative progressive with will and the verb “work”: [__________]</p>
+          <p class="prompt-key"><span class="eyebrow">Accepted response text · not used by simulator</span><br>Mia will not be working. · or · Mia won't be working.</p>
+        </li>
+        <li class="prompt-entry" data-entry="10">
+          <div class="prompt-meta"><span class="eyebrow">Event 10 · stored prompt</span><span>stored y = 1</span></div>
+          <p class="prompt-text">The room is hot. Ask politely if your friend is willing to open the window. Use: she / open / the window<br>Response: [____]</p>
+          <p class="prompt-key"><span class="eyebrow">Accepted response text · not used by simulator</span><br>Would she open the window?</p>
+        </li>
+      </ol>
+    </section>
 
-      <figcaption>
-        <div class="scale">
-          <span><strong>1,000 learners</strong> × 283 events each</span>
-          <span><strong>283,000 observable rows</strong></span>
-        </div>
-        <p class="inventory">170 acquisition + 113 probe events per learner · 113 items · 75 GrammarCells · 18 generator KCs</p>
-      </figcaption>
-    </figure>
+    <footer>
+      <span>Full dataset: 1,000 learners · 113 items · 18 generator KCs</span>
+      <span>283,000 observable interactions</span>
+      <span class="scope-note">K*/Q* are controlled synthetic truth, not claims about human cognition.</span>
+    </footer>
   </main>
+
+  <script>
+    const root = document.getElementById("dataset-views");
+    const tabs = Array.from(root.querySelectorAll("[data-view]"));
+    const panels = tabs.map((tab) => document.getElementById(tab.dataset.view));
+
+    function selectView(tab) {
+      tabs.forEach((candidate, index) => {
+        const selected = candidate === tab;
+        candidate.setAttribute("aria-selected", String(selected));
+        candidate.tabIndex = selected ? 0 : -1;
+        panels[index].hidden = !selected;
+      });
+    }
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => selectView(tab));
+      tab.addEventListener("keydown", (event) => {
+        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+        event.preventDefault();
+        const direction = event.key === "ArrowRight" ? 1 : -1;
+        const next = tabs[(index + direction + tabs.length) % tabs.length];
+        next.focus();
+        selectView(next);
+      });
+    });
+
+    const linkedTab = tabs.find((tab) => tab.dataset.view === location.hash.slice(1));
+    if (linkedTab) selectView(linkedTab);
+  </script>
 </body>
 </html>

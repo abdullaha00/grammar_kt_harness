@@ -215,13 +215,17 @@ oracle-evaluation aggregates.
 
 ## Standalone dataset visualization
 
-`reports/final_dataset_visualization.html` gives a single public full-v1 event
-from learner-facing prompt through observable outcome and the fixed
-item-to-GrammarCell-to-Q* mapping. It contains no scripts, controls, downstream
-results, or private oracle fields. Its factual labels were checked against the
-frozen public artifacts, and its responsive layout was visually inspected at
-1,024, 736, and 360 pixels in both light and dark themes. Its SHA-256 is
-`a47612a59ac02726efe721b3cf66ad41e256e80b297bbe67f0f64194746e9b22`.
+`reports/final_dataset_visualization.html` presents the same ten public full-v1
+events in two switchable views: binary outcomes joined to their 18-column Q*
+rows, and the stored prompts with accepted response text. It explicitly labels
+the learner as simulated, distinguishes sampled `y` from Q*, and states that
+the prompt/answer strings were neither rendered nor scored by the simulator.
+The only script performs local tab switching; there are no external resources,
+downstream results, or private oracle values. Event IDs, outcomes, prompts,
+accepted responses, Q* rows, KC labels, and scale claims were checked against
+the frozen artifacts. Both views were visually inspected at 1,024, 736, and 360
+pixels in light and dark themes. Its SHA-256 is
+`85bf379f03ea4473cbb64d4ff759e1f3f478f2bea5f965ab9bedc700346d5218`.
 
 ## ACL manuscript
 
