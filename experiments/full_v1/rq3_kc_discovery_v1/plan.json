@@ -1,0 +1,179 @@
+{
+  "study_id": "full_v1_rq3_observable_kc_discovery_v1",
+  "plan_version": 1,
+  "status": "FROZEN_BEFORE_PILOT_AND_FINAL_EXECUTION",
+  "scientific_boundary": {
+    "selection_reads": [
+      "canonical GrammarCell features",
+      "fixed item-to-cell relations",
+      "seen acquisition outcomes"
+    ],
+    "selection_never_reads": [
+      "generator KCs K*",
+      "true Q-matrix Q*",
+      "private oracle learner truth",
+      "probe outcomes",
+      "unseen-combination or unseen-value outcomes"
+    ],
+    "evaluation_truth_loaded_only_after_frozen_selection": true,
+    "candidate_space_ceiling_is_not_learner_evidence_recovery": true
+  },
+  "cohorts": {
+    "pilot": {
+      "learners": 120,
+      "status": "development_diagnostic_only"
+    },
+    "final": {
+      "learners": 1000,
+      "status": "paper_facing_final"
+    }
+  },
+  "candidate_space": {
+    "seen_grammar_only_during_construction": true,
+    "families": [
+      "atomic_feature_values",
+      "declared_reusable_operations",
+      "coarse_merges",
+      "supported_pairwise_interactions",
+      "context_conditioned_structural_splits",
+      "exact_cell_fine",
+      "deterministic_hash_distractors"
+    ],
+    "minimum_interaction_cell_support": 2,
+    "minimum_interaction_item_support": 3,
+    "structural_split_rule": "For each compositional parent, choose the dimension/value predicate with maximum minimum child cell support on seen grammar; ties are lexical; retain unsplittable parents.",
+    "hash_distractor_seed": 20260830,
+    "hash_distractor_count": 18,
+    "q_equivalence": "unordered activation columns on seen items"
+  },
+  "selection": {
+    "learner_split": {
+      "mode": "learner_disjoint_stable_hash",
+      "validation_fraction": 0.2,
+      "seed": 20260830
+    },
+    "model": "observable_pfa_logistic",
+    "features": [
+      "learner_success_rate",
+      "learner_log_attempts",
+      "per_kc_active",
+      "per_kc_prior_successes",
+      "per_kc_prior_failures"
+    ],
+    "history_prior": {
+      "alpha": 1.0,
+      "beta": 1.0
+    },
+    "regularization_c": 0.1,
+    "max_iterations": 300,
+    "model_seed": 20260827,
+    "objective": {
+      "metric": "validation_log_loss",
+      "complexity": "kc_count",
+      "complexity_penalty": 0.0005,
+      "minimum_improvement": 0.0
+    },
+    "whole_policy_ids": [
+      "atomic_features",
+      "compositional_operations",
+      "coarse_operations",
+      "fine_exact_cells",
+      "structural_splits",
+      "compositional_plus_interactions",
+      "hash_distractor_negative_control"
+    ],
+    "automated": {
+      "protected_base": "atomic_features",
+      "addition_families": [
+        "operation",
+        "interaction"
+      ],
+      "forward_add": true,
+      "backward_prune": true,
+      "complexity_penalty": 0.0005,
+      "preserve_all_seen_q_equivalent_projections": true
+    },
+    "winner_rule": {
+      "objective_tolerance": 1e-12,
+      "retain_all_tied_policies": true,
+      "operational_representative": "minimum SHA-256 of the name-free sorted Q-column signature; this is not recovery evidence"
+    }
+  },
+  "evaluation": {
+    "probe_history_updates": false,
+    "predictive_metrics": [
+      "log_loss",
+      "brier_score"
+    ],
+    "grammar_regimes": [
+      "seen",
+      "unseen_combination",
+      "unseen_value"
+    ],
+    "structural_metrics": [
+      "optimal_activation_jaccard",
+      "name_free_aligned_q_edge_precision_recall_f1",
+      "exact_activation_recovery",
+      "merge_split_missing_spurious_characterisation"
+    ],
+    "bootstrap": {
+      "unit": "learner",
+      "repeats": 2000,
+      "seed": 20260830,
+      "interval": 0.95
+    },
+    "positive_control_interpretation": "candidate-space structural reachability ceiling only",
+    "negative_control": "hash_distractor_negative_control"
+  },
+  "inputs": {
+    "selection_public": {
+      "interactions": {
+        "path": "data/grammar_kt_full_v1/interactions.jsonl.gz",
+        "sha256": "9272ca86a647e3b13c9ce52b5381dde215f7ef448e4a19a41a22495fa99ef97f"
+      },
+      "cells": {
+        "path": "data/grammar_kt_full_v1/grammar/cells.jsonl",
+        "sha256": "a6bf8041e93fdea21d0ba7b318a24cb64610a6064517a2f7fbbbf3aca2fa4e1a"
+      },
+      "regimes": {
+        "path": "data/grammar_kt_full_v1/grammar/regime_assignments.jsonl",
+        "sha256": "5e65cf1bca33778e8300d7fe0125871c2d622c9b4aca8ebe5280a3e93a9e4bdf"
+      },
+      "items": {
+        "path": "data/grammar_kt_full_v1/items/items.jsonl",
+        "sha256": "46e2fcbd723d11f6b30ecdd197fb05c39f04f7b0fc8f61e2183ffb8fb7110011"
+      },
+      "grammar_schema": {
+        "path": "modules/grammar/canonical/schema.yaml",
+        "sha256": "a3e8d4f1c419eff10c4498db4b3b243fddf51b708ad569c652a9caaa3a8f0aaf"
+      },
+      "candidate_design": {
+        "path": "modules/kcs/candidate_design.yaml",
+        "sha256": "9ad4a143ba8e802b23e0251039e7b76a69616d2875751c9d349dad1daba4330b"
+      },
+      "operation_declarations": {
+        "path": "modules/grammar/canonical/english_operations.yaml",
+        "sha256": "6fec47303eea42224da0c8dcc9d875dd9fdc965183f198a1700079342620507d"
+      },
+      "retained_selection_design": {
+        "path": "modules/kcs/selection.yaml",
+        "sha256": "75b572a4931236c7b4e351d8ed86aeb3a2c3b58f5e13c3d4d7b526b81f58bbcd"
+      }
+    },
+    "evaluation_only_truth": {
+      "generator_kcs": {
+        "path": "data/grammar_kt_full_v1/kcs.jsonl",
+        "sha256": "f3b308dcda7c11886e1dc67476dbe6adbcb53b8676b643c62d226fe68cfe0355"
+      },
+      "true_q_sparse": {
+        "path": "data/grammar_kt_full_v1/oracle/q_matrix_sparse.jsonl",
+        "sha256": "30b735a7d9698a965701fcf04ee5c831377c4b10e78fc2aba85fc75c953a0937"
+      }
+    }
+  },
+  "implementation": {
+    "path": "scripts/experiments/rq3_kc_discovery.py",
+    "sha256": "0d856bf271693d8df0a224cd3b8189af031e215d8b234290a25a2b0e66b9846f"
+  },
+  "plan_semantic_sha256": "502bf50f62ff83ba7d68b855fa7376de5847389d030a6e902097654cd8f8ce29"
+}

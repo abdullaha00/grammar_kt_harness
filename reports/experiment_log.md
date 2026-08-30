@@ -2032,3 +2032,80 @@ experiment:
   `4b793fc6a44a14b975db41f272abfcc0d9df7c3f8effa6b1109f0711c3885661`,
   final result
   `46230a37cd7e6e5cf64d1f9a41e9ae24c26c07c81c1605c889f2026181842050`.
+
+## FULL-RQ3-001 — observable-only KC discovery and name-free recovery
+
+- **Date frozen/executed:** 2026-08-30. The plan was written before the pilot
+  or final selection. An N=120 development cohort exercised the unchanged
+  procedure; final evidence uses all 1,000 learners.
+- **Research question:** Can canonical item structure and observed learner
+  responses recover an appropriate KC representation when generator K*/Q* is
+  hidden, and does predictive selection identify the generator ontology
+  uniquely?
+- **Hypothesis:** Truth-like reusable operations should be reachable and beat
+  coarse/fine or spurious controls, but hypotheses with identical activation on
+  seen items may remain observationally indistinguishable.
+- **Manipulated variable:** An outcome-independent 181-candidate space spanning
+  18 atomic features, 18 reusable operations, eight coarse KCs, 54 exact-cell
+  KCs, 35 structural splits, 19 supported interactions, and 18 deterministic
+  hash distractors. Seven whole policies and a protected-feature forward
+  selector were compared. The selector evaluated 22 eligible operation or
+  interaction additions.
+- **Held fixed:** Full-v1 items/cells, the same 170,000 seen acquisition rows,
+  stable learner-disjoint 800/200 fit/validation groups, observable PFA-like
+  model, C=.1, complexity penalty .0005/KC, and seed 20260830. Selection could
+  read item/cell structure and seen acquisition outcomes only; it skipped all
+  113,000 probe outcomes before outcome access and could not read generator
+  KCs, Q*, or private learner truth. Truth was loaded only after the frozen
+  selection artifact for evaluation.
+- **Exact commands:**
+
+  ```bash
+  .venv/bin/python scripts/experiments/rq3_kc_discovery.py plan --output experiments/full_v1/rq3_kc_discovery_v1/plan.json
+  .venv/bin/python scripts/experiments/rq3_kc_discovery.py select --plan experiments/full_v1/rq3_kc_discovery_v1/plan.json --cohort pilot --output experiments/full_v1/rq3_kc_discovery_v1/pilot_selection.json
+  .venv/bin/python scripts/experiments/rq3_kc_discovery.py evaluate --plan experiments/full_v1/rq3_kc_discovery_v1/plan.json --selection experiments/full_v1/rq3_kc_discovery_v1/pilot_selection.json --cohort pilot --output experiments/full_v1/rq3_kc_discovery_v1/pilot_evaluation.json
+  .venv/bin/python scripts/experiments/rq3_kc_discovery.py select --plan experiments/full_v1/rq3_kc_discovery_v1/plan.json --cohort final --output experiments/full_v1/rq3_kc_discovery_v1/final_selection.json
+  .venv/bin/python scripts/experiments/rq3_kc_discovery.py evaluate --plan experiments/full_v1/rq3_kc_discovery_v1/plan.json --selection experiments/full_v1/rq3_kc_discovery_v1/final_selection.json --cohort final --output experiments/full_v1/rq3_kc_discovery_v1/final_evaluation.json
+  ```
+- **Selection result:** The automated procedure retained its 18-feature base
+  after testing every eligible addition. Atomic features obtain validation log
+  loss .679686 and objective .688686; all interactions have nearly identical
+  raw loss (.679683) but worse penalized objective (.698183); coarse KCs have
+  .685129/.689129; hash distractors .686588/.695588. Atomic features,
+  compositional operations, and both automated projections share one exact
+  seen-Q signature. Their tiny separately fitted loss difference (4e-9) is
+  numerical, not evidence. The pilot selected coarse narrowly, while N=1,000
+  selected the atomic/compositional equivalence class.
+- **Structural result after selection:** The public compositional policy is a
+  candidate-space ceiling and exactly matches all 18 generator activations
+  (Jaccard and aligned Q-edge F1 1.0). This proves reachability, not blind
+  recovery. Atomic/automated-atomic recover 16/18 exactly, with padded Jaccard
+  .970854 and F1 .965385; their two aspect columns fail to compose onto the six
+  unseen perfect-progressive cells. Coarse KCs recover five exact plus three
+  merges (Jaccard .371913, F1 .750929); exact-cell fine gives Jaccard .084184
+  and F1 .186969; the hash negative control recovers zero exact (Jaccard
+  .202342, F1 .359259).
+- **Predictive result:** On frozen non-updating probes, compositional log loss
+  is .669606 and atomic .669979: learner-paired delta +.000374, 95% bootstrap
+  CI [.000228,.000517]. Seen loss is identical (.668208); the difference is
+  concentrated in unseen values (.676281 versus .680974). Relative to the
+  compositional ceiling, coarse costs +.005864, fine +.006657, and hash
+  distractors +.013238. Added interactions cost +.000206 with CI
+  [-.000069,.000478], so that contrast is inconclusive.
+- **Failure analysis:** Seen response evidence cannot distinguish semantic
+  rules whose Q columns agree on every seen item. The held-out cells reveal
+  that the rules differ, but their outcomes cannot legitimately break the
+  selection tie. The N=120 pilot also shows that finite-sample policy choice
+  can be unstable. Consequently predictive fit alone is insufficient evidence
+  for unique cognitive KC truth in this controlled positive case.
+- **Methodological consequence:** RQ3 is answered negatively for unique
+  recovery but positively for recovering a high-overlap equivalence class.
+  Report all seen-Q-equivalent hypotheses and separate structural reachability
+  from selection evidence. RQ4 must retain the atomic/compositional ambiguity
+  and quantify cell-level holdout sensitivity.
+- **Artifacts/hashes:** `experiments/full_v1/rq3_kc_discovery_v1/`; plan
+  SHA-256 `2746b39d46ebdfa47d4f95d52a26946ea90e874b01a13a3f74bcdbcba1a50394`;
+  final selection
+  `d60ff9898448d68312b7fea346666640fdd75aad7bb6408e64b50b91fb1d22ee`;
+  final evaluation
+  `52e4ff8cba3932010d54fa3af653d64553d3e042d901ab5ac5f9d308bf12f0cd`.

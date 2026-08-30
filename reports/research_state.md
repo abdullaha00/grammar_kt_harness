@@ -267,15 +267,38 @@ and geometry checks before K* and Q* pass their measurement gate.
   costs are +.001685 false-positive, +.002644 false-negative, and +.002294
   mixed; seed spread prevents a strong ordering claim. The shared 113,000 probe
   rows and observable-only boundary were verified.
+- The frozen observable-only RQ3 selector evaluated 181 structural candidates
+  and all 22 eligible forward additions on 170,000 seen acquisition rows. It
+  retained the 18-feature base; the atomic-feature and compositional-operation
+  projections are exactly Q-equivalent on seen items, so the selected object is
+  an equivalence class rather than a uniquely recovered ontology. The N=120
+  development cohort selected the coarse policy, whereas N=1,000 selected this
+  equivalence class, which also exposes sample instability at pilot scale.
+- Post-selection truth evaluation confirms that the candidate space contains a
+  perfect structural ceiling (18/18 exact KCs, activation Jaccard and aligned
+  Q-edge F1 both 1.0), but that ceiling is reachability evidence only. The
+  selected atomic projection recovers 16/18 exactly (padded Jaccard .970854,
+  F1 .965385) because it cannot infer the compositional activation of perfect
+  and progressive operations on the six unseen-value cells. Its all-probe log
+  loss is .000374 worse than the compositional ceiling (95% learner-paired CI
+  [.000228,.000517]); the difference is entirely concentrated in unseen-value
+  probes. Prediction on seen evidence therefore does not uniquely identify K*.
+- The RQ3 negative control behaves as intended: hash distractors recover 0/18
+  KCs (Jaccard .202342, F1 .359259) and cost .013238 probe log loss. Added
+  interactions do not produce a supported gain over the compositional policy
+  (delta +.000206, 95% CI [-.000069,.000478]). Selection never read Q*, K*,
+  oracle state, or probe outcomes; truth entered only after frozen selection.
 
 ## Current unresolved research questions
 
-1. Whether observable response evidence can recover Q*/K* structurally, or
-   whether distinct representations are predictively indistinguishable.
-2. How K*, coarse/fine hypotheses, and discovered K-hat generalise across the
+1. How K*, coarse/fine hypotheses, and the RQ3 equivalence class generalise
+   cell-by-cell across the
    54/15/6 semantic grammar regimes.
-3. Whether predictive ranking agrees with oracle-only mastery recovery.
-4. Which simulator and collection-design assumptions carry those conclusions.
+2. Whether predictive ranking agrees with oracle-only mastery recovery.
+3. Which simulator and collection-design assumptions carry the RQ2/RQ3
+   conclusions.
+4. How learner count, opportunity volume, and measurement contrasts affect
+   recovery under the declared synthetic conditions.
 
 ## Important active paths
 
@@ -287,10 +310,12 @@ and geometry checks before K* and Q* pass their measurement gate.
   `src/grammar_kt/measurement.py`
 - Persistent experiment ledger: `reports/experiment_log.md`
 - Active experiment queue: `reports/experiment_bank.md`
+- Frozen RQ3 artifacts: `experiments/full_v1/rq3_kc_discovery_v1/`
 - Historical medium dataset: `data/grammar_kt_medium_v1/`
 
 ## Current next action
 
-Complete the outcome-hidden RQ3 selector and name-free Q-recovery evaluation,
-then combine its frozen K-hat with RQ2 hypotheses for regime-specific RQ4 and
-oracle-only mastery-recovery analysis.
+Complete cell-sensitive RQ4, oracle-only mastery recovery, and the compact
+multi-world simulator-robustness study; then run bounded collection-design
+controls before consolidating the RQ ledger, verification report, notebooks,
+and ACL paper.
