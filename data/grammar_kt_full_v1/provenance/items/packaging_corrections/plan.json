@@ -1,0 +1,67 @@
+{
+  "dataset_id": "grammar_kt_full_v1",
+  "protocol_id": "full_v1_validator_named_answer_packaging_correction_v1",
+  "config_path": "modules/items/corrections/full_v1_packaging_corrections.yaml",
+  "config_sha256": "3bd85b52db7d0f5679bc24e142657c6a35bb42bc08250aa364e40123ef6037e6",
+  "operation": "append_accepted_answers_only",
+  "corrections": [
+    {
+      "correction_id": "must_not_contraction",
+      "source_item_id": "determinacy_intervention_gc_019f7fb10012b606_01",
+      "corrected_item_id": "packaging_correction_determinacy_intervention_gc_019f7fb10012b606_01",
+      "cell_id": "gc_019f7fb10012b606",
+      "source_candidate_sha256": "3365c38a8cc8d6be06b2c6ee9e875acfae0dcaa3b8c0f5009012a434300ff469",
+      "source_judgment_sha256": "79795824a8ce3235555342ced0c49fd8a52f46731f1a5519d4748bbcae90561a",
+      "append_accepted_answers": [
+        "The children mustn't enter the kitchen."
+      ],
+      "corrected_candidate_sha256": "b14069098e5346324e0d6e2249e5f9fe95c17db83b204001325e3a4423b690b2",
+      "correction_input_sha256": "8593d267a4ce19750c407ad753f172aac7ca0076273b128bbbf58c56f3a5d81f"
+    },
+    {
+      "correction_id": "negative_imperative_references",
+      "source_item_id": "determinacy_intervention_gc_04a854582c08aa84_02",
+      "corrected_item_id": "packaging_correction_determinacy_intervention_gc_04a854582c08aa84_02",
+      "cell_id": "gc_04a854582c08aa84",
+      "source_candidate_sha256": "7dc04169fb65fe6c1654f3738c1e9cdb606dc1cb885404880f87dce55d10f254",
+      "source_judgment_sha256": "fb68cdb3c752f7a75b72cd7a78e8ef728bd0a626b2e1240e13f61aaeeaee0ebb",
+      "append_accepted_answers": [
+        "Don't touch it.",
+        "Do not touch it.",
+        "Don't touch that wall.",
+        "Do not touch that wall."
+      ],
+      "corrected_candidate_sha256": "40d24b544896a3ad84ee499b204cfd9c0ca4191586e4327c6306a686ed7b17d8",
+      "correction_input_sha256": "932d6aabe43c55edad4936447bc1fdd50b9f3d53c24ea40c6d97f9c1f070ec43"
+    },
+    {
+      "correction_id": "particle_placement",
+      "source_item_id": "determinacy_intervention_gc_bb4f472f992ab76b_01",
+      "corrected_item_id": "packaging_correction_determinacy_intervention_gc_bb4f472f992ab76b_01",
+      "cell_id": "gc_bb4f472f992ab76b",
+      "source_candidate_sha256": "8fbc7c80b5dbf498134f6f63dff65d9a3f313000106d9ce08666f1ec41ed0533",
+      "source_judgment_sha256": "f1f2e4b040a970e61ad1f1b4fe9a6cc4512f946ae8e67431297e65e49a9b54e9",
+      "append_accepted_answers": [
+        "Turn the light off."
+      ],
+      "corrected_candidate_sha256": "04abbffc0b65b33276e65db6ab862d1e9f998ebc31f9032d8126459fc37fc400",
+      "correction_input_sha256": "2333c45d3ee4e52a06ec3f143c9e8d3628754b9d0d22bc8304290e062abd2910"
+    }
+  ],
+  "source_candidate_checkpoint_sha256": "4bd62d3807a031ad75e48e2d2d9a53e4f9281de8f716ea3e24fbc856ebe46e50",
+  "source_judgment_checkpoint_sha256": "a55f28b5a02ca4f4216e531ab21950323f014e43f9b8e4f41ee049bba418bce9",
+  "corrected_candidate_checkpoint_sha256": "d5798efde0af0f5b1486ac3ae32492c37bda71b047b74f0faabe5e750a31f6e1",
+  "validation_prompt_path": "modules/items/validation/prompt.txt",
+  "validation_prompt_sha256": "9252f92c8d711d06ad10456f1ba7c83169d47d6b64720dbb13cce86f2a01e96b",
+  "validation_criteria_path": "modules/items/validation/criteria.yaml",
+  "validation_criteria_sha256": "da9ca74c3b2eb4b1835cb1d569830c8d1e4dc006a86a7829b0ddc47b041b9b85",
+  "validation_backend": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium"
+  },
+  "uses_learner_data": false,
+  "uses_q_matrix": false,
+  "uses_discovered_kcs": false,
+  "raw_candidates_modified": false,
+  "raw_judgments_modified": false
+}

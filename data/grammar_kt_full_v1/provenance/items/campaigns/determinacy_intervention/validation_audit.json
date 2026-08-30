@@ -1,0 +1,128 @@
+{
+  "recovered_candidates": 18,
+  "completed_judgments": 18,
+  "judgment_completion_rate": 1.0,
+  "accepted_candidates": 9,
+  "acceptance_rate_among_judged": 0.5,
+  "accepted_cell_coverage": 6,
+  "rejection_stage_counts": {
+    "accepted": 9,
+    "deterministic_precheck": 1,
+    "independent_model_judgment": 8
+  },
+  "criteria": {
+    "target_fidelity": {
+      "judged": 17,
+      "passed": 17,
+      "failed": 0,
+      "not_judged": 1,
+      "pass_rate": 1.0
+    },
+    "grammaticality": {
+      "judged": 17,
+      "passed": 17,
+      "failed": 0,
+      "not_judged": 1,
+      "pass_rate": 1.0
+    },
+    "naturalness": {
+      "judged": 17,
+      "passed": 17,
+      "failed": 0,
+      "not_judged": 1,
+      "pass_rate": 1.0
+    },
+    "pedagogical_suitability": {
+      "judged": 17,
+      "passed": 16,
+      "failed": 1,
+      "not_judged": 1,
+      "pass_rate": 0.9411764705882353
+    },
+    "determinacy": {
+      "judged": 17,
+      "passed": 9,
+      "failed": 8,
+      "not_judged": 1,
+      "pass_rate": 0.5294117647058824
+    },
+    "non_target_language_simplicity": {
+      "judged": 17,
+      "passed": 17,
+      "failed": 0,
+      "not_judged": 1,
+      "pass_rate": 1.0
+    },
+    "no_answer_leakage": {
+      "judged": 17,
+      "passed": 16,
+      "failed": 1,
+      "not_judged": 1,
+      "pass_rate": 0.9411764705882353
+    },
+    "no_extraneous_grammar": {
+      "judged": 17,
+      "passed": 17,
+      "failed": 0,
+      "not_judged": 1,
+      "pass_rate": 1.0
+    },
+    "no_world_knowledge": {
+      "judged": 17,
+      "passed": 17,
+      "failed": 0,
+      "not_judged": 1,
+      "pass_rate": 1.0
+    }
+  },
+  "by_cell": {
+    "gc_019f7fb10012b606": {
+      "judged_candidates": 2,
+      "accepted_candidates": 0
+    },
+    "gc_04a854582c08aa84": {
+      "judged_candidates": 2,
+      "accepted_candidates": 0
+    },
+    "gc_0ce5f41f37500df4": {
+      "judged_candidates": 2,
+      "accepted_candidates": 2
+    },
+    "gc_28d8bf2edc192d4c": {
+      "judged_candidates": 2,
+      "accepted_candidates": 1
+    },
+    "gc_2924f6e63e1c1da2": {
+      "judged_candidates": 2,
+      "accepted_candidates": 1
+    },
+    "gc_67bcfeedfa77f954": {
+      "judged_candidates": 2,
+      "accepted_candidates": 1
+    },
+    "gc_a94168b2255fe062": {
+      "judged_candidates": 2,
+      "accepted_candidates": 2
+    },
+    "gc_bb4f472f992ab76b": {
+      "judged_candidates": 2,
+      "accepted_candidates": 0
+    },
+    "gc_bdf25ed4941e5de3": {
+      "judged_candidates": 2,
+      "accepted_candidates": 2
+    }
+  },
+  "dataset_id": "grammar_kt_full_v1",
+  "campaign_id": "explicit_construction_determinacy_intervention_v1",
+  "status": "PASS",
+  "technical_failure_candidate_ids": [],
+  "judgment_checkpoint_sha256": "c72bff4ff7d0dcd5c870ab5660b1bdacbe3d071f66c2696290e5acdae3bba9a6",
+  "models": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium"
+  },
+  "max_technical_attempts": 2,
+  "code_revision_at_stage_start": "43e38b7d798dd85d5502cfa12ae6950205c6e934",
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/build_dataset.py --stage intervene-items --workers 8 --max-attempts 2"
+}

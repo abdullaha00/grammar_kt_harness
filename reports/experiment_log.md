@@ -1674,6 +1674,42 @@ experiment:
   independent judgments, audit, coverage effect, and private raw evidence under
   a separately labelled full-v1 imperative-constraint campaign.
 
+### Execution result (post-freeze)
+
+- **Date executed:** 2026-08-30.
+- **Exact commands:**
+
+  ```bash
+  .venv/bin/python scripts/build_dataset.py --stage constrain-imperatives --workers 4 --max-attempts 2
+  .venv/bin/python scripts/build_dataset.py --stage curate-items
+  ```
+- **Models/settings:** Generation `gpt-5.6-sol`/medium and independent
+  validation `gpt-5.6-terra`/medium; four workers; two maximum technical
+  attempts. All eight calls completed on their first technical attempt.
+  Aggregate recorded runtimes were 50.82 seconds for generation and 42.25
+  seconds for validation.
+- **Results:** All 4/4 cue-bounded candidates passed all nine required
+  validation criteria, with two accepted items in each imperative cell. The
+  decision rule passed, coverage rose 73→75/75, and no repair or early stopping
+  occurred. Negative items require learners to supply uncontracted `Do not`;
+  positive items retain base-verb imperative ordering. The resulting fixed
+  max-two bank contains 113 unique-prompt items over all 75 cells: 37 cells have
+  one item and 38 have two. The max-one counterfactual has 75 items; up-to-three
+  adds only 13 items (126 total), no new cell coverage, and proportionally less
+  lexical-type gain.
+- **Interpretation:** The original open-production failure was a response-space
+  problem. A narrow all-and-only cue contract resolved it without changing the
+  GrammarCell, K*, target item format, validator, or downstream evidence. This
+  format occurs only for imperative cells and is therefore a declared
+  measurement-format confound/limitation.
+- **Methodological consequence:** Freeze the 113-item max-two bank. It adds 38
+  structurally identical cell variants for lexical/contextual diversity while
+  avoiding the weak marginal value of a third variant. Proceed to semantic
+  regimes and the preregistered Q* measurement gate; make no further item calls.
+- **Artifacts:** `data/grammar_kt_full_v1/items/items.jsonl` and
+  `data/grammar_kt_full_v1/provenance/items/`, including the separately labelled
+  `campaigns/cue_bounded_imperative/` evidence.
+
 ## FULL-REGIME-Q-001-PREREG — semantic regimes and pre-simulation Q* gate
 
 - **Date frozen:** 2026-08-29, before final-item regime assignment and Q*

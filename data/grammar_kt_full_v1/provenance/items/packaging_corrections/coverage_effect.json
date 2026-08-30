@@ -1,0 +1,16 @@
+{
+  "dataset_id": "grammar_kt_full_v1",
+  "protocol_id": "full_v1_validator_named_answer_packaging_correction_v1",
+  "corrected_candidates": 3,
+  "validation_judgments": 3,
+  "accepted_corrected_candidates": 1,
+  "newly_covered_cell_ids": [
+    "gc_019f7fb10012b606"
+  ],
+  "remaining_zero_coverage_cell_ids": [
+    "gc_04a854582c08aa84",
+    "gc_bb4f472f992ab76b"
+  ],
+  "raw_candidates_modified": false,
+  "raw_judgments_modified": false
+}

@@ -1,0 +1,33 @@
+{
+  "dataset_id": "grammar_kt_full_v1",
+  "campaign_id": "unchanged_prompt_zero_coverage_rescue_v1",
+  "cohort_cells": 18,
+  "candidates": 36,
+  "judgments": 36,
+  "accepted_candidates": 10,
+  "covered_cells_before": 57,
+  "newly_covered_cell_ids": [
+    "gc_16d9f6e33f0517ec",
+    "gc_4a4c9d34c1b5bce4",
+    "gc_8a330fc9e496e359",
+    "gc_9b8833161ce61d83",
+    "gc_bdf8215fea798df6",
+    "gc_d14f05acb53845b9",
+    "gc_db71873bec316091",
+    "gc_fac1ce90011b677c",
+    "gc_fb92e9307e236d8c"
+  ],
+  "newly_covered_cells": 9,
+  "covered_cells_after": 66,
+  "remaining_zero_coverage_cell_ids": [
+    "gc_019f7fb10012b606",
+    "gc_04a854582c08aa84",
+    "gc_0ce5f41f37500df4",
+    "gc_28d8bf2edc192d4c",
+    "gc_2924f6e63e1c1da2",
+    "gc_67bcfeedfa77f954",
+    "gc_a94168b2255fe062",
+    "gc_bb4f472f992ab76b",
+    "gc_bdf25ed4941e5de3"
+  ]
+}

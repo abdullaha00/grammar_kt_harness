@@ -1,0 +1,49 @@
+{
+  "campaign_id": "explicit_construction_determinacy_intervention_v1",
+  "planned_candidates": 18,
+  "completed_candidates": 18,
+  "completion_rate": 1.0,
+  "cells": 9,
+  "cells_with_all_candidates": 9,
+  "zero_candidate_cells": [],
+  "by_cell": {
+    "gc_019f7fb10012b606": {
+      "completed_candidates": 2
+    },
+    "gc_04a854582c08aa84": {
+      "completed_candidates": 2
+    },
+    "gc_0ce5f41f37500df4": {
+      "completed_candidates": 2
+    },
+    "gc_28d8bf2edc192d4c": {
+      "completed_candidates": 2
+    },
+    "gc_2924f6e63e1c1da2": {
+      "completed_candidates": 2
+    },
+    "gc_67bcfeedfa77f954": {
+      "completed_candidates": 2
+    },
+    "gc_a94168b2255fe062": {
+      "completed_candidates": 2
+    },
+    "gc_bb4f472f992ab76b": {
+      "completed_candidates": 2
+    },
+    "gc_bdf25ed4941e5de3": {
+      "completed_candidates": 2
+    }
+  },
+  "dataset_id": "grammar_kt_full_v1",
+  "status": "PASS",
+  "technical_failure_candidate_ids": [],
+  "candidate_checkpoint_sha256": "1708fe13d15b50778d0a5616dcb3899e32716945871ebe21ce7788e5f17110a2",
+  "models": {
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium"
+  },
+  "max_technical_attempts": 2,
+  "code_revision_at_stage_start": "43e38b7d798dd85d5502cfa12ae6950205c6e934",
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/build_dataset.py --stage intervene-items --workers 8 --max-attempts 2"
+}

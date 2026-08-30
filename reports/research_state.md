@@ -205,7 +205,14 @@ and geometry checks before K* and Q* pass their measurement gate.
   preregistered N=2 campaign therefore retains controlled production but bounds
   responses with unordered lexical chunks and an all-and-only-use contract.
   Negative cues omit `do not`, so learners still produce uncontracted
-  DO-support. No further answer repair or prompt campaign is allowed.
+  DO-support. All four candidates passed unchanged independent validation,
+  restoring 75/75 cell coverage. No further answer repair or prompt campaign is
+  allowed.
+- Outcome-free max-two curation froze 113 items: 37 cells have one item and 38
+  have two, with no duplicate prompt. Max-one would retain 75 items; up-to-three
+  would add only 13 further variants without new cell coverage. The imperative
+  all-and-only cue constraint is explicitly labelled as a format-specific
+  limitation.
 - The structural grammar-regime pilot supports 54 `seen`, 15
   `unseen_combination`, and six `unseen_value` cells. Every unseen combination
   is pairwise-seen/full-tuple-unseen; perfect-progressive aspect defines the
@@ -220,14 +227,12 @@ and geometry checks before K* and Q* pass their measurement gate.
 
 ## Current unresolved construction questions
 
-1. Whether cue-bounded imperative production covers the final two cells and
-   permits full 75-cell curation.
-2. Full-bank items per KC, Q rank, near-equivalence, and rare-KC support.
-3. Final-bank confirmation of the 54/15/6 semantic grammar regimes.
-4. Whether the provisional 20-opportunity simulator schedule passes its frozen
+1. Full-bank items per KC, Q rank, near-equivalence, and rare-KC support.
+2. Final-bank confirmation of the 54/15/6 semantic grammar regimes.
+3. Whether the provisional 20-opportunity simulator schedule passes its frozen
    informativeness and saturation gates.
-5. Final observable/oracle packaging, hashes, and reconstruction verification.
-6. Automatic item validation remains non-human evidence.
+4. Final observable/oracle packaging, hashes, and reconstruction verification.
+5. Automatic item validation remains non-human evidence.
 
 ## Important active paths
 
@@ -243,7 +248,6 @@ and geometry checks before K* and Q* pass their measurement gate.
 
 ## Current next action
 
-Generate and independently validate the four frozen cue-bounded imperative
-candidates. If both cells pass, curate the fixed max-two bank, assign the
-structural grammar regimes, and run the mandatory K*/Q* support and
-identifiability gate before the preregistered simulator pilot.
+Assign the frozen structural grammar regimes to the 113-item bank and run the
+mandatory K*/Q* support, rank, equivalence, and contrast gate before the
+preregistered simulator pilot.

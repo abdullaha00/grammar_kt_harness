@@ -1,0 +1,41 @@
+{
+  "dataset_id": "grammar_kt_full_v1",
+  "status": "PASS",
+  "raw_candidates_retained": 286,
+  "raw_judgments_retained": 286,
+  "validator_accepted_candidates": 126,
+  "selected_items": 113,
+  "covered_cells": 75,
+  "final_bank_sha256": "eba3e2c6eb41b0fe17ef0656605e3b9a96096880c73f4fbed0463408f5e81bcb",
+  "selection_design_path": "modules/items/generation/design.yaml",
+  "automatic_rescue_or_repair_performed": false,
+  "declared_post_n3_campaigns": [
+    {
+      "campaign_id": "unchanged_prompt_zero_coverage_rescue_v1",
+      "candidates": 36,
+      "accepted": 10
+    },
+    {
+      "campaign_id": "explicit_construction_determinacy_intervention_v1",
+      "candidates": 18,
+      "accepted": 9
+    },
+    {
+      "campaign_id": "cue_bounded_imperative_production_v1",
+      "candidates": 4,
+      "accepted": 4,
+      "decision_rule_passed": true
+    }
+  ],
+  "declared_packaging_corrections": [
+    {
+      "protocol_id": "full_v1_validator_named_answer_packaging_correction_v1",
+      "corrected_candidates": 3,
+      "accepted": 1
+    }
+  ],
+  "original_n3_candidates_retained": 225,
+  "original_n3_judgments_retained": 225,
+  "code_revision_at_stage_start": "944b74ad27d3c93db30049a88a4ceb4b094ac46d",
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/build_dataset.py --stage curate-items"
+}

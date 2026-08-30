@@ -1,0 +1,24 @@
+{
+  "dataset_id": "grammar_kt_full_v1",
+  "campaign_id": "explicit_construction_determinacy_intervention_v1",
+  "cohort_cells": 9,
+  "candidates": 18,
+  "judgments": 18,
+  "accepted_candidates": 9,
+  "covered_cells_before": 66,
+  "newly_covered_cell_ids": [
+    "gc_0ce5f41f37500df4",
+    "gc_28d8bf2edc192d4c",
+    "gc_2924f6e63e1c1da2",
+    "gc_67bcfeedfa77f954",
+    "gc_a94168b2255fe062",
+    "gc_bdf25ed4941e5de3"
+  ],
+  "newly_covered_cells": 6,
+  "covered_cells_after": 72,
+  "remaining_zero_coverage_cell_ids": [
+    "gc_019f7fb10012b606",
+    "gc_04a854582c08aa84",
+    "gc_bb4f472f992ab76b"
+  ]
+}

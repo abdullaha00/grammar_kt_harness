@@ -1,0 +1,31 @@
+{
+  "dataset_id": "grammar_kt_full_v1",
+  "campaign_id": "cue_bounded_imperative_production_v1",
+  "cohort_cells": 2,
+  "candidates": 4,
+  "judgments": 4,
+  "accepted_candidates": 4,
+  "accepted_candidates_by_cell": {
+    "gc_04a854582c08aa84": 2,
+    "gc_bb4f472f992ab76b": 2
+  },
+  "decision_rule": {
+    "minimum_accepted_per_cell": 1,
+    "minimum_accepted_overall": 2,
+    "early_stopping": false,
+    "post_call_repair": "forbidden"
+  },
+  "per_cell_rule_passed": true,
+  "overall_rule_passed": true,
+  "decision_rule_passed": true,
+  "status": "PASS",
+  "covered_cells_before": 73,
+  "newly_covered_cell_ids": [
+    "gc_04a854582c08aa84",
+    "gc_bb4f472f992ab76b"
+  ],
+  "covered_cells_after": 75,
+  "remaining_zero_coverage_cell_ids": [],
+  "early_stopping_used": false,
+  "post_call_repair_used": false
+}

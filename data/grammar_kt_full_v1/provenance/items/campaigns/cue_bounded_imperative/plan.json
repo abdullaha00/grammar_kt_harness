@@ -1,0 +1,67 @@
+{
+  "dataset_id": "grammar_kt_full_v1",
+  "protocol_id": "full_v1_cue_bounded_imperative_measurement_v1",
+  "protocol_path": "modules/items/generation/interventions/full_v1_cue_bounded_imperative.yaml",
+  "protocol_sha256": "3d240408e76977a3f4b7892f16d7585b836502a70d9c6b44f9ebc2eebddb4c5f",
+  "campaign_id": "cue_bounded_imperative_production_v1",
+  "trigger": "residual_imperative_cells_after_packaging_correction",
+  "cell_ids": [
+    "gc_04a854582c08aa84",
+    "gc_bb4f472f992ab76b"
+  ],
+  "candidates_per_cell": 2,
+  "planned_generation_calls": 4,
+  "prior_candidates": 282,
+  "prior_candidates_sha256": "983b1852eb80bde05bbf56ecf4598652dc53d0544e334746c8b638d43abd47a2",
+  "prior_judgments": 282,
+  "prior_judgments_sha256": "7ba7df1069bf79847426680067917878dc403385023b3d1e01061a802ae5551d",
+  "generation_prompt_path": "modules/items/generation/interventions/cue_bounded_imperative_prompt.txt",
+  "generation_prompt_sha256": "ea6775b6b7d61ae8ca2bb8fc13d70b713fbe78ae27bf4e7e774c8e6c007d181f",
+  "generation_rulebook_sha256": "3539401fa99acdf921bc90f39eb6b326bbc09cea7c82793111ded3f4b1979d26",
+  "generation_design_sha256": "d944d2b4b16cc9787c5ae0ea7de09d9720585db030f8d14033b84cd8000add81",
+  "item_format_sha256": "ec944d6cdc1ffdcdddff24359c303e9f0c3b0f2bebe64641ed69e86e22eaca30",
+  "validation_prompt_sha256": "9252f92c8d711d06ad10456f1ba7c83169d47d6b64720dbb13cce86f2a01e96b",
+  "validation_criteria_sha256": "da9ca74c3b2eb4b1835cb1d569830c8d1e4dc006a86a7829b0ddc47b041b9b85",
+  "generation_backend": {
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium"
+  },
+  "validation_backend": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium"
+  },
+  "decision_rule": {
+    "minimum_accepted_per_cell": 1,
+    "minimum_accepted_overall": 2,
+    "early_stopping": false,
+    "post_call_repair": "forbidden"
+  },
+  "response_space": {
+    "cue_chunks": "unordered_non_target_lexical_chunks",
+    "chunk_use": "all_and_only_exactly_once",
+    "forbid": [
+      "additions",
+      "omissions",
+      "substitutions",
+      "politeness_markers",
+      "vocatives",
+      "pronouns",
+      "adverbs"
+    ],
+    "initial_capitalization": "required",
+    "final_punctuation": "outside_response_slot",
+    "negative_imperative": {
+      "cue_words_omitted": [
+        "do",
+        "not"
+      ],
+      "learner_additions": "uncontracted_do_support_function_words_only",
+      "contractions": "forbidden"
+    }
+  },
+  "uses_learner_data": false,
+  "uses_q_matrix": false,
+  "uses_discovered_kcs": false,
+  "stops_after_early_acceptance": false,
+  "post_call_repair_allowed": false
+}

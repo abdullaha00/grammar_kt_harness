@@ -1,0 +1,142 @@
+{
+  "dataset_id": "grammar_kt_full_v1",
+  "protocol_id": "full_v1_two_campaign_item_rescue_v1",
+  "protocol_path": "modules/items/generation/interventions/full_v1_rescue.yaml",
+  "protocol_sha256": "384bfd93d6aaf988138c709c9e9468d72ed0f09784b1a2bd32f6d27b712c0b4b",
+  "campaign_id": "explicit_construction_determinacy_intervention_v1",
+  "trigger": "residual_zero_coverage_with_determinacy_dominant",
+  "cell_ids": [
+    "gc_019f7fb10012b606",
+    "gc_04a854582c08aa84",
+    "gc_0ce5f41f37500df4",
+    "gc_28d8bf2edc192d4c",
+    "gc_2924f6e63e1c1da2",
+    "gc_67bcfeedfa77f954",
+    "gc_a94168b2255fe062",
+    "gc_bb4f472f992ab76b",
+    "gc_bdf25ed4941e5de3"
+  ],
+  "candidates_per_cell": 2,
+  "planned_generation_calls": 18,
+  "prior_candidates": 261,
+  "prior_candidates_sha256": "001e33b3514faf0235985dc3860b76fa95a2d5f349b7ad0ef4423b3bf13d95a9",
+  "prior_judgments": 261,
+  "prior_judgments_sha256": "cdbb0b40511fb580b33073df011327d3de7f2fe53e628b02f850e9a3f596db8a",
+  "generation_prompt_path": "modules/items/generation/ablations/determinacy_explicit_construction_prompt.txt",
+  "generation_prompt_sha256": "0a1e5b6af687a110a7d584f42bbc49107300cc368d3d3cf72aa6702582976862",
+  "eligibility": {
+    "gc_019f7fb10012b606": {
+      "prior_terminal_judgments": 5,
+      "prior_model_judgments": 5,
+      "criterion_failure_counts": {
+        "determinacy": 5,
+        "pedagogical_suitability": 2
+      },
+      "determinacy_failures": 5,
+      "maximum_other_criterion_failures": 2,
+      "eligible": true,
+      "rule": "determinacy failures >= 2 and strictly exceed every other criterion's failure count"
+    },
+    "gc_04a854582c08aa84": {
+      "prior_terminal_judgments": 5,
+      "prior_model_judgments": 5,
+      "criterion_failure_counts": {
+        "determinacy": 5
+      },
+      "determinacy_failures": 5,
+      "maximum_other_criterion_failures": 0,
+      "eligible": true,
+      "rule": "determinacy failures >= 2 and strictly exceed every other criterion's failure count"
+    },
+    "gc_0ce5f41f37500df4": {
+      "prior_terminal_judgments": 5,
+      "prior_model_judgments": 5,
+      "criterion_failure_counts": {
+        "determinacy": 5,
+        "naturalness": 1,
+        "pedagogical_suitability": 1
+      },
+      "determinacy_failures": 5,
+      "maximum_other_criterion_failures": 1,
+      "eligible": true,
+      "rule": "determinacy failures >= 2 and strictly exceed every other criterion's failure count"
+    },
+    "gc_28d8bf2edc192d4c": {
+      "prior_terminal_judgments": 5,
+      "prior_model_judgments": 5,
+      "criterion_failure_counts": {
+        "determinacy": 4,
+        "no_answer_leakage": 1,
+        "pedagogical_suitability": 1
+      },
+      "determinacy_failures": 4,
+      "maximum_other_criterion_failures": 1,
+      "eligible": true,
+      "rule": "determinacy failures >= 2 and strictly exceed every other criterion's failure count"
+    },
+    "gc_2924f6e63e1c1da2": {
+      "prior_terminal_judgments": 5,
+      "prior_model_judgments": 5,
+      "criterion_failure_counts": {
+        "determinacy": 5,
+        "no_extraneous_grammar": 1
+      },
+      "determinacy_failures": 5,
+      "maximum_other_criterion_failures": 1,
+      "eligible": true,
+      "rule": "determinacy failures >= 2 and strictly exceed every other criterion's failure count"
+    },
+    "gc_67bcfeedfa77f954": {
+      "prior_terminal_judgments": 5,
+      "prior_model_judgments": 5,
+      "criterion_failure_counts": {
+        "determinacy": 5,
+        "naturalness": 1,
+        "pedagogical_suitability": 1
+      },
+      "determinacy_failures": 5,
+      "maximum_other_criterion_failures": 1,
+      "eligible": true,
+      "rule": "determinacy failures >= 2 and strictly exceed every other criterion's failure count"
+    },
+    "gc_a94168b2255fe062": {
+      "prior_terminal_judgments": 5,
+      "prior_model_judgments": 5,
+      "criterion_failure_counts": {
+        "determinacy": 5,
+        "pedagogical_suitability": 2
+      },
+      "determinacy_failures": 5,
+      "maximum_other_criterion_failures": 2,
+      "eligible": true,
+      "rule": "determinacy failures >= 2 and strictly exceed every other criterion's failure count"
+    },
+    "gc_bb4f472f992ab76b": {
+      "prior_terminal_judgments": 5,
+      "prior_model_judgments": 3,
+      "criterion_failure_counts": {
+        "determinacy": 3,
+        "pedagogical_suitability": 2
+      },
+      "determinacy_failures": 3,
+      "maximum_other_criterion_failures": 2,
+      "eligible": true,
+      "rule": "determinacy failures >= 2 and strictly exceed every other criterion's failure count"
+    },
+    "gc_bdf25ed4941e5de3": {
+      "prior_terminal_judgments": 5,
+      "prior_model_judgments": 5,
+      "criterion_failure_counts": {
+        "determinacy": 5
+      },
+      "determinacy_failures": 5,
+      "maximum_other_criterion_failures": 0,
+      "eligible": true,
+      "rule": "determinacy failures >= 2 and strictly exceed every other criterion's failure count"
+    }
+  },
+  "uses_learner_data": false,
+  "uses_q_matrix": false,
+  "uses_discovered_kcs": false,
+  "stops_after_early_acceptance": false
+}

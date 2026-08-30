@@ -1,0 +1,94 @@
+{
+  "dataset_id": "grammar_kt_full_v1",
+  "comparison": [
+    {
+      "policy": "max_1",
+      "maximum_accepted_variants_per_cell": 1,
+      "items": 75,
+      "covered_cells": 75,
+      "coverage_rate": 1.0,
+      "support_distribution": {
+        "1": 75
+      },
+      "duplicate_prompts": 0,
+      "lexical_types": 447,
+      "lexical_tokens": 2134,
+      "token_diversity": 0.20946579194001874,
+      "marginal_items": 75,
+      "marginal_covered_cells": 75
+    },
+    {
+      "policy": "max_2",
+      "maximum_accepted_variants_per_cell": 2,
+      "items": 113,
+      "covered_cells": 75,
+      "coverage_rate": 1.0,
+      "support_distribution": {
+        "1": 37,
+        "2": 38
+      },
+      "duplicate_prompts": 0,
+      "lexical_types": 521,
+      "lexical_tokens": 3282,
+      "token_diversity": 0.1587446678854357,
+      "marginal_items": 38,
+      "marginal_covered_cells": 0
+    },
+    {
+      "policy": "up_to_3",
+      "maximum_accepted_variants_per_cell": 3,
+      "items": 126,
+      "covered_cells": 75,
+      "coverage_rate": 1.0,
+      "support_distribution": {
+        "1": 37,
+        "2": 25,
+        "3": 13
+      },
+      "duplicate_prompts": 0,
+      "lexical_types": 535,
+      "lexical_tokens": 3585,
+      "token_diversity": 0.1492329149232915,
+      "marginal_items": 13,
+      "marginal_covered_cells": 0
+    }
+  ],
+  "selection_rules": {
+    "maximum_items_per_cell": 2,
+    "first_item": "earliest_valid",
+    "second_item": "maximum_token_set_distance_from_first",
+    "distance_text": "prompt_and_target_answer",
+    "tie_break": "earliest_candidate"
+  },
+  "declared_campaigns_used": [
+    {
+      "campaign_id": "unchanged_prompt_zero_coverage_rescue_v1",
+      "candidates": 36,
+      "accepted": 10
+    },
+    {
+      "campaign_id": "explicit_construction_determinacy_intervention_v1",
+      "candidates": 18,
+      "accepted": 9
+    },
+    {
+      "campaign_id": "cue_bounded_imperative_production_v1",
+      "candidates": 4,
+      "accepted": 4,
+      "decision_rule_passed": true
+    }
+  ],
+  "declared_packaging_corrections_used": [
+    {
+      "protocol_id": "full_v1_validator_named_answer_packaging_correction_v1",
+      "corrected_candidates": 3,
+      "accepted": 1
+    }
+  ],
+  "uses_learner_data": false,
+  "uses_kt_or_predictive_metrics": false,
+  "uses_discovered_kcs": false,
+  "uses_q_matrix": false,
+  "code_revision_at_stage_start": "944b74ad27d3c93db30049a88a4ceb4b094ac46d",
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/build_dataset.py --stage curate-items"
+}

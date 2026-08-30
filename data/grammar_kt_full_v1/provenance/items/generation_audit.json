@@ -1,0 +1,705 @@
+{
+  "candidate_design": {
+    "candidates_per_cell": 3
+  },
+  "grammar_cells": 75,
+  "planned_candidates": 225,
+  "completed_candidates": 225,
+  "completion_rate": 1.0,
+  "cells_with_all_candidates": 75,
+  "cells_with_any_candidate": 75,
+  "zero_candidate_cells": 0,
+  "by_cell": {
+    "gc_019f7fb10012b606": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_0397fa37f2228649": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_04a854582c08aa84": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_08d90a35b669ed28": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_0bbfaece19d0255d": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_0ce5f41f37500df4": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_16d9f6e33f0517ec": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_172c3f1039296750": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_17fcb3b3c0156c98": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_19656e31c58c2c07": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_19ed2b72505b3a96": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_28d8bf2edc192d4c": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_2924f6e63e1c1da2": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_2b730d0e1d9443b7": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_2d6eb4f93cba4c6b": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_2f1bd922c732c078": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_325e05b06bb38886": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_3aaf5191d5f45601": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_3ac515345a227486": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_44ff4acdb263024b": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_4601bed02c004e37": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_4634bf1b005f7724": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_4777747f8b0a6b46": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_483f3ac117f331a7": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_4a2ccf1526ca832c": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_4a4c9d34c1b5bce4": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_4ad408e9b8193c7c": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_63a057f3a47e95b1": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_67bcfeedfa77f954": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_6a255aa977e4289a": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_6a5e38b390521990": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_70772a95583e5587": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_7224db1e1a3bbebd": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_7ea73f7f16fe2684": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_809d40d141731b61": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_832cfb85e1f965ed": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_8a330fc9e496e359": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_8b7e8b31b496e102": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_90b9229122fa55d6": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_927e9714cc21a97d": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_9b8833161ce61d83": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_9d70af80c0843115": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_9e9b4cb1a49adcac": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_a0fe7953b9fffca8": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_a7789cd4faa9d95a": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_a94168b2255fe062": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_b1516a79b61c8fd0": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_b55bebc82e7087e7": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_b798d2e32a62c25c": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_b81e4f2e78894945": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_ba3d77af90f26ab2": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_bb4f472f992ab76b": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_bba42336e267985f": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_bdf25ed4941e5de3": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_bdf8215fea798df6": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_bea554636af1b127": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_c0167d1a83f95500": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_c2cf343c43ce329d": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_c2ed1b09f0bb32d4": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_ca719d192c20c030": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_d14f05acb53845b9": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_d15de8b5658bd6a5": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_d2c20fe6a8269c51": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_db71873bec316091": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_dfd385cd88abc20f": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_e5bdd8211eed997b": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_e730dbce7b036961": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_e7fef77abc10b5ba": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_edcc8d38860ff41d": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_f6431bc7f8a16c1b": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_f86ecd83135f0b52": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_fac1ce90011b677c": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_fb92e9307e236d8c": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_fcb801c76c95c7bf": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    },
+    "gc_ffa50061bcce266c": {
+      "completed_candidates": 3,
+      "completed_indices": [
+        1,
+        2,
+        3
+      ],
+      "missing_indices": []
+    }
+  },
+  "dataset_id": "grammar_kt_full_v1",
+  "status": "PASS",
+  "technical_failure_candidate_ids": [],
+  "candidate_checkpoint_sha256": "2d4c21e0cbe4dd26eaad1d9907a8a699f387591d8cd6d04d39f2c3041f5f82ce",
+  "models": {
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium"
+  },
+  "ordering_gate": {
+    "kcs_artifact_existed": true,
+    "kc_construction_provenance_existed": true,
+    "kc_contents_read": false
+  },
+  "max_technical_attempts": 2,
+  "code_revision_at_stage_start": "d7f067b411be167d408b80a6912c257320eda925",
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/build_dataset.py --stage generate-items --workers 8 --max-attempts 2"
+}

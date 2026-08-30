@@ -1,0 +1,106 @@
+{
+  "recovered_candidates": 3,
+  "completed_judgments": 3,
+  "judgment_completion_rate": 1.0,
+  "accepted_candidates": 1,
+  "acceptance_rate_among_judged": 0.3333333333333333,
+  "accepted_cell_coverage": 1,
+  "rejection_stage_counts": {
+    "accepted": 1,
+    "independent_model_judgment": 2
+  },
+  "criteria": {
+    "target_fidelity": {
+      "judged": 3,
+      "passed": 3,
+      "failed": 0,
+      "not_judged": 0,
+      "pass_rate": 1.0
+    },
+    "grammaticality": {
+      "judged": 3,
+      "passed": 3,
+      "failed": 0,
+      "not_judged": 0,
+      "pass_rate": 1.0
+    },
+    "naturalness": {
+      "judged": 3,
+      "passed": 3,
+      "failed": 0,
+      "not_judged": 0,
+      "pass_rate": 1.0
+    },
+    "pedagogical_suitability": {
+      "judged": 3,
+      "passed": 3,
+      "failed": 0,
+      "not_judged": 0,
+      "pass_rate": 1.0
+    },
+    "determinacy": {
+      "judged": 3,
+      "passed": 1,
+      "failed": 2,
+      "not_judged": 0,
+      "pass_rate": 0.3333333333333333
+    },
+    "non_target_language_simplicity": {
+      "judged": 3,
+      "passed": 3,
+      "failed": 0,
+      "not_judged": 0,
+      "pass_rate": 1.0
+    },
+    "no_answer_leakage": {
+      "judged": 3,
+      "passed": 3,
+      "failed": 0,
+      "not_judged": 0,
+      "pass_rate": 1.0
+    },
+    "no_extraneous_grammar": {
+      "judged": 3,
+      "passed": 3,
+      "failed": 0,
+      "not_judged": 0,
+      "pass_rate": 1.0
+    },
+    "no_world_knowledge": {
+      "judged": 3,
+      "passed": 3,
+      "failed": 0,
+      "not_judged": 0,
+      "pass_rate": 1.0
+    }
+  },
+  "by_cell": {
+    "gc_019f7fb10012b606": {
+      "judged_candidates": 1,
+      "accepted_candidates": 1
+    },
+    "gc_04a854582c08aa84": {
+      "judged_candidates": 1,
+      "accepted_candidates": 0
+    },
+    "gc_bb4f472f992ab76b": {
+      "judged_candidates": 1,
+      "accepted_candidates": 0
+    }
+  },
+  "dataset_id": "grammar_kt_full_v1",
+  "protocol_id": "full_v1_validator_named_answer_packaging_correction_v1",
+  "status": "PASS",
+  "technical_failure_candidate_ids": [],
+  "corrected_candidate_checkpoint_sha256": "d5798efde0af0f5b1486ac3ae32492c37bda71b047b74f0faabe5e750a31f6e1",
+  "judgment_checkpoint_sha256": "2572eb84f3f6e1c08f5c52246495bef392e93c5761c33813a8d4ed75880edec9",
+  "models": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium"
+  },
+  "max_technical_attempts": 2,
+  "raw_candidates_modified": false,
+  "raw_judgments_modified": false,
+  "code_revision_at_stage_start": "925d82e7b64ccc43b5c20cf935280ece921ebc16",
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/build_dataset.py --stage correct-items --workers 3 --max-attempts 2"
+}

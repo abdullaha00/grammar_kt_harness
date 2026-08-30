@@ -1,0 +1,98 @@
+{
+  "recovered_candidates": 4,
+  "completed_judgments": 4,
+  "judgment_completion_rate": 1.0,
+  "accepted_candidates": 4,
+  "acceptance_rate_among_judged": 1.0,
+  "accepted_cell_coverage": 2,
+  "rejection_stage_counts": {
+    "accepted": 4
+  },
+  "criteria": {
+    "target_fidelity": {
+      "judged": 4,
+      "passed": 4,
+      "failed": 0,
+      "not_judged": 0,
+      "pass_rate": 1.0
+    },
+    "grammaticality": {
+      "judged": 4,
+      "passed": 4,
+      "failed": 0,
+      "not_judged": 0,
+      "pass_rate": 1.0
+    },
+    "naturalness": {
+      "judged": 4,
+      "passed": 4,
+      "failed": 0,
+      "not_judged": 0,
+      "pass_rate": 1.0
+    },
+    "pedagogical_suitability": {
+      "judged": 4,
+      "passed": 4,
+      "failed": 0,
+      "not_judged": 0,
+      "pass_rate": 1.0
+    },
+    "determinacy": {
+      "judged": 4,
+      "passed": 4,
+      "failed": 0,
+      "not_judged": 0,
+      "pass_rate": 1.0
+    },
+    "non_target_language_simplicity": {
+      "judged": 4,
+      "passed": 4,
+      "failed": 0,
+      "not_judged": 0,
+      "pass_rate": 1.0
+    },
+    "no_answer_leakage": {
+      "judged": 4,
+      "passed": 4,
+      "failed": 0,
+      "not_judged": 0,
+      "pass_rate": 1.0
+    },
+    "no_extraneous_grammar": {
+      "judged": 4,
+      "passed": 4,
+      "failed": 0,
+      "not_judged": 0,
+      "pass_rate": 1.0
+    },
+    "no_world_knowledge": {
+      "judged": 4,
+      "passed": 4,
+      "failed": 0,
+      "not_judged": 0,
+      "pass_rate": 1.0
+    }
+  },
+  "by_cell": {
+    "gc_04a854582c08aa84": {
+      "judged_candidates": 2,
+      "accepted_candidates": 2
+    },
+    "gc_bb4f472f992ab76b": {
+      "judged_candidates": 2,
+      "accepted_candidates": 2
+    }
+  },
+  "dataset_id": "grammar_kt_full_v1",
+  "campaign_id": "cue_bounded_imperative_production_v1",
+  "status": "PASS",
+  "technical_failure_candidate_ids": [],
+  "judgment_checkpoint_sha256": "76ffeb47eb7567a060bf27ebaf9919125a7f4fb8facf9be5aa087dab8b2e150f",
+  "models": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium"
+  },
+  "max_technical_attempts": 2,
+  "code_revision_at_stage_start": "944b74ad27d3c93db30049a88a4ceb4b094ac46d",
+  "exact_command": "/home/abdullah/grammar_kt_harness/.venv/bin/python scripts/build_dataset.py --stage constrain-imperatives --workers 4 --max-attempts 2"
+}
